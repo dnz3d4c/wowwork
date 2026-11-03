@@ -1,7 +1,7 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WowVision", "koKR")
 if not L then return end
 
-L["of"] = "/"
+L["of"] = "of"
 
 L["Health"] = "생명력"
 L["Power"] = "자원"

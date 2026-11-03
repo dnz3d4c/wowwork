@@ -1,7 +1,7 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WowVision", "koKR")
 if not L then return end
 
-L["Targeting"] = "목표 선택"
+L["Targeting"] = "대상 지정"
 L["Hard Target"] = "하드 대상"
 L["Announce Hard Target"] = "하드 대상 알림"
 L["Target Change"] = "대상 변경"

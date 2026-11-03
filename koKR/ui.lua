@@ -35,7 +35,7 @@ L["ProxyEditBox"] = "편집"
 
 L["Panel"] = "패널"
 L["List"] = "목록"
-L["Bar"] = "막대"
+L["Bar"] = "단축바"
 
 --Common UI phrases
 L["Tabs"] = "탭"
