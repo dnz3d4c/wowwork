@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import re
+from pathlib import Path
 
 from tools.locale_lib import KOKR_DIR
 
@@ -17,15 +18,16 @@ def lua_quote(s: str) -> str:
     return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def apply(fixes: dict[str, str]) -> int:
+def apply(fixes: dict[str, str], directory: Path = KOKR_DIR) -> int:
     changed = 0
-    for path in sorted(KOKR_DIR.glob("*.lua")):
+    for path in sorted(directory.glob("*.lua")):
         text = path.read_text(encoding="utf-8")
         new = text
         for key, val in fixes.items():
             pattern = re.compile(r'^(L\[' + re.escape(lua_quote(key)) + r'\] = )"(?:[^"\\]|\\.)*"', re.MULTILINE)
-            quoted = lua_quote(val)
-            new, n = pattern.subn(lambda m, q=quoted: m.group(1) + q, new)
+            # 치환 문자열 안의 백슬래시는 re 가 해석하므로 한 번 더 이스케이프한다.
+            replacement = r"\g<1>" + lua_quote(val).replace("\\", "\\\\")
+            new, n = pattern.subn(replacement, new)
             changed += n
         if new != text:
             path.write_text(new, encoding="utf-8")
