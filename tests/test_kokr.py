@@ -43,6 +43,18 @@ def test_values_valid(name: str) -> None:
         assert format_specs(ko_val) == format_specs(en[key]), f"서식 지정자 불일치: {key!r} → {ko_val!r}"
 
 
+def test_same_key_same_translation() -> None:
+    """AceLocale 은 같은 키를 나중 파일 값으로 덮어쓰므로, 파일 간 번역이 다르면 한쪽이 조용히 사라진다."""
+    seen: dict[str, tuple[str, str]] = {}
+    conflicts = []
+    for name in ENUS_FILES:
+        for key, val in parse_locale_file(KOKR_DIR / name).items():
+            if key in seen and seen[key][1] != val:
+                conflicts.append(f"{key!r}: {seen[key][0]}={seen[key][1]!r} / {name}={val!r}")
+            seen.setdefault(key, (name, val))
+    assert conflicts == []
+
+
 def test_modules_xml_lists_all_files() -> None:
     xml = (KOKR_DIR / "modules.xml").read_text(encoding="utf-8")
     for name in ENUS_FILES:
