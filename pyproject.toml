@@ -1,0 +1,24 @@
+[project]
+name = "wowwork"
+version = "0.1.0"
+description = "WowVision 한국어(koKR) 번역"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "pytest>=9.0.1",
+    "ruff>=0.14.6",
+]
+
+# 루트 C:\project 워크스페이스에 끼지 않는 독립 venv (워크스페이스 멤버는 2개만 허용)
+[tool.uv.workspace]
+members = []
+
+[tool.ruff]
+line-length = 110
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
