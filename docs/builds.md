@@ -4,7 +4,7 @@
 
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
-| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 1d22719, koKR은 dnz3d4c/vision-locale main f36a084 | a77f6c3ef0bd6d6aa8ba42d9c484b7024986272b01af41303c226a75a234b824 |
+| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko a948d1a, koKR은 dnz3d4c/vision-locale main f36a084 | 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47 |
 
 설치 프로그램은 원본 릴리스(wow-vision/WowVision)를 그대로 설치한 뒤, exe에 넣은 koKR(`payload/koKR.zip`)을 클라이언트마다 `WowVision/locale/koKR`에 쓰고 `locale/modules.xml`에 포함 줄을 한 번 더한다(`KoreanLocale.cs`). 매 실행마다 하므로 원본 업데이트로 폴더가 교체돼도 다시 들어간다.
 
@@ -16,7 +16,7 @@
 
 ## 검증 이력
 
-- 2026-11-05: 원본 자체 검사 offline 전부 통과(kolocale 12개 포함). fullinstall 전부 통과(안정판 V1.0.0 5개 클라이언트, 베타 전환 뒤 5개 클라이언트 모두 koKR 있음).
+- 2026-11-05: 원본 자체 검사 offline 전부 통과(kolocale 16개 포함, 깨진 payload 실패 경로 포함). fullinstall 전부 통과(안정판 V1.0.0 5개 클라이언트, 베타 전환 뒤 5개 클라이언트 모두 koKR 있음).
 - fullinstall이 처음에는 실패했다: 릴리스 파일이 CRLF라서 포함 줄 정규식이 맞지 않았다. 부품 검사는 LF만 써서 못 잡았다. CRLF 사례를 검사에 넣고 고쳤다.
 
 ## 이전 방식 (폐기)
