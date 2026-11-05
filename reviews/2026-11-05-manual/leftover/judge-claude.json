@@ -1,0 +1,90 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/collections.md#claude-terminology-3",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "게임 공식 한국어에서 Renown은 '명성'이 아니라 '영예'다. gs_koKR.csv에 RENOWN_LEVEL_MAXIMUM '...영예가 정점에 도달했습니다', MAJOR_FACTION_RENOWN_LEVEL_TOOLTIP '%s 활동을 완료해 영예를 올리고', COVENANT_RENOWN_LEVEL_TOAST '영예 %d'가 있다. 지적의 전제(Renown=명성)는 평가자 스스로 미확인 추정이라고 밝혔고 공식 문자열로 반증된다. 현재 번역 '영예 레벨', '영예가 도달한 레벨' 유지.",
+      "evidence_sources": [
+        "wowwork/cache/gs_koKR.csv:19181",
+        "wowwork/cache/gs_koKR.csv:19378",
+        "wowwork/cache/gs_koKR.csv:20728",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/collections.md:158",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:159"
+      ]
+    },
+    {
+      "ref": "windows/loot-trade-mail.md#gpt-context-3",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "SENDMAIL '우편 발송'은 우편 보내기 탭(창) 제목 문자열이고, 보내기 버튼 SendMailMailButton의 글자는 SEND_LABEL '보내기'다(gs_koKR.csv:3545). 원문도 'Tab to Send'로 버튼 이름 Send를 가리킨다. 버튼 글자가 SEND_LABEL이라는 연결은 Blizzard MailFrame.xml 기억에 기댄 것이라 직접 확인은 못 했지만, 평가자 근거(SENDMAIL=버튼)도 코드(classic/mail.lua:204)에 버튼 글자가 나오지 않아 입증되지 않는다. 근거가 약하므로 현재 번역 유지. 또한 지적의 quote('선택되어 있어야 하므로')는 현재 번역문(144행 '이미 선택되어 있을 것이므로')과 일치하지 않는다.",
+      "evidence_sources": [
+        "wowwork/cache/gs_koKR.csv:1938",
+        "wowwork/cache/gs_koKR.csv:3545",
+        "wowvision-ko/WowVision/classic/mail.lua:204",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/loot-trade-mail.md:143"
+      ]
+    },
+    {
+      "ref": "windows/overview.md#gpt-context-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "영어 원문 Retail 행에도 group finder가 없다(en/windows/overview.md:62). 사용자 결정(decisions.tsv:13)은 원문이 실제 동작과 달라도 원문에 충실하게 옮기고 차이는 upstream에 보고하라고 한다. 이 누락은 한국어 사용자에게만 생기는 차이가 아니므로 예외에 해당하지 않는다. 현재 번역 유지, upstream 보고 대상.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/en/windows/overview.md:62",
+        "wowvision-ko/WowVision/docs/src/user/en/reference/versions.md:102",
+        "wowwork/docs/decisions.tsv:13"
+      ]
+    },
+    {
+      "ref": "windows/spells-and-talents.md#gpt-context-0",
+      "uphold": true,
+      "final_ko": "2. 측면 탭: 체크 상자가 한 줄로 놓여 있고, 책의 기술 계열(일반, 내 전문화 등)마다 하나씩 있습니다. Enter를 누르면 그 페이지가 열립니다. 열려 있는 것은 \"체크됨\"으로 읽습니다.",
+      "reason": "원문도 'They read \"checked\"'이고, 코드는 측면 탭을 proxyCheckButton으로 만들어 L[\"Checked\"]를 읽으며 한국어 값은 '체크됨'이다. 원문 충실과 실제 동작이 모두 '체크됨'을 가리킨다. 현재 번역문 35행은 이미 '체크됨'으로 되어 있다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/en/windows/spells-and-talents.md:34",
+        "wowvision-ko/WowVision/tbc/spellbook.lua:93",
+        "wowvision-ko/WowVision/core/graph/nodes.lua:657-666",
+        "wowvision-ko/vision-locale/koKR/ui.lua:51"
+      ]
+    },
+    {
+      "ref": "world/navigation.md#gpt-context-0",
+      "uphold": true,
+      "final_ko": "경로를 따라가는 동안 Alt+P를 누르면 단거리, 중거리, 장거리, 다시 단거리 순으로 바뀝니다.",
+      "reason": "Alt+P는 L[\"Short Range\"] 등 단계 이름을 그대로 말하고 한국어 값은 단거리/중거리/장거리다. 같은 문단 예시도 '장거리, 5야드'라 이름을 맞춰야 들은 말과 설명이 이어진다. 현재 번역문 158행은 이미 이 문장('...순으로 바뀝니다')으로 되어 있어 그 표현을 따랐다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/navigation/maps/module.lua:46-49",
+        "wowvision-ko/WowVision/core/navigation/maps/module.lua:85-89",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:95-97",
+        "wowvision-ko/WowVision/docs/src/user/en/world/navigation.md:157"
+      ]
+    },
+    {
+      "ref": "world/quests.md#gpt-context-0",
+      "uphold": true,
+      "final_ko": "출현 지점의 장소 이름. 예를 들어 \"엘윈 숲, 황금골\"이나 \"네 바람의 계곡, 근처 언덕골, 40 야드\"입니다.",
+      "reason": "원문이 '40 yards'이고 코드도 L[\"yards\"](='야드')를 붙이므로 '미터'는 오역이다. 현재 번역문 29행은 이미 야드로 고쳐져 있고, 코드 형식 '%s %s, %d %s'에 L[\"near\"]='근처'를 넣은 실제 출력 '근처 언덕골, 40 야드'와 글자까지 맞으므로 그 문장을 final_ko로 둔다(지적 quote는 현재 파일과 일치하지 않음).",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/en/world/quests.md:28",
+        "wowvision-ko/WowVision/core/quests/module.lua:220-231",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:54",
+        "wowvision-ko/vision-locale/koKR/quests.lua:41"
+      ]
+    },
+    {
+      "ref": "world/quests.md#gpt-context-1",
+      "uphold": true,
+      "final_ko": "마을이나 야영지처럼 지도의 주요 지점이 약 600야드 안에 있으면 출현 지점을 \"근처 언덕골, 40 야드\"로 읽고, 탐험한 지도에서도 그곳 이름이 언덕골이면 그냥 \"언덕골, 40 야드\"로 읽습니다.",
+      "reason": "원문이 'about 600 yards', '40 yards'이고 코드는 LANDMARK_RANGE 600을 야드 거리와 비교한 뒤 L[\"yards\"]로 출력한다. 현재 번역문 134행은 이미 야드로 고쳐져 있고 실제 출력 형식('근처 언덕골, 40 야드')과도 맞으므로 그 문장을 final_ko로 둔다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/en/world/quests.md:133",
+        "wowvision-ko/WowVision/core/quests/module.lua:203",
+        "wowvision-ko/WowVision/core/quests/module.lua:220-231",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:54",
+        "wowvision-ko/vision-locale/koKR/quests.lua:41"
+      ]
+    }
+  ],
+  "ok": true
+}
