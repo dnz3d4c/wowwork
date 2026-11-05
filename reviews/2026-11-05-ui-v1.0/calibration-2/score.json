@@ -1,0 +1,122 @@
+{
+ "claude": {
+  "recall": "20/20",
+  "by_origin": {
+   "claude": "10/10",
+   "gpt": "10/10"
+  },
+  "missed": [],
+  "non_seed_flagged": [
+   "groupHealth.lua::full",
+   "navigation.lua::Direct"
+  ],
+  "by_lens": {
+   "accuracy": [
+    "buffers.lua::Not",
+    "groupHealth.lua::Include Yourself",
+    "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+    "groupHealth.lua::Repeat Only After a Change",
+    "groupHealth.lua::Watch Raid",
+    "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "navigation.lua::Auto, height %d",
+    "navigation.lua::Direct: %s, %d yards",
+    "navigation.lua::behind to the right"
+   ],
+   "terminology": [
+    "groupHealth.lua::Group Health Monitor",
+    "groupHealth.lua::Healers",
+    "groupHealth.lua::Tanks",
+    "groupHealth.lua::Watch Raid",
+    "monitors.lua::Monitors off",
+    "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there."
+   ],
+   "context": [
+    "buffers.lua::Not",
+    "errors.lua::Lua error",
+    "groupHealth.lua::dead",
+    "monitors.lua::Monitors off",
+    "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "navigation.lua::Announce Distance",
+    "navigation.lua::Auto, height %d",
+    "navigation.lua::Direct: %s, %d yards"
+   ],
+   "listening": [
+    "errors.lua::Lua error",
+    "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+    "monitors.lua::Monitors off",
+    "monitors.lua::Monitors on",
+    "navigation.lua::Announce Distance",
+    "navigation.lua::Fishing spot on the shore: %s"
+   ]
+  }
+ },
+ "gpt": {
+  "recall": "19/20",
+  "by_origin": {
+   "claude": "9/10",
+   "gpt": "10/10"
+  },
+  "missed": [
+   "groupHealth.lua::dead"
+  ],
+  "non_seed_flagged": [
+   "groupHealth.lua::full",
+   "navigation.lua::Ahead: walk into %s; the route goes on after it"
+  ],
+  "by_lens": {
+   "accuracy": [
+    "buffers.lua::Not",
+    "groupHealth.lua::Include Yourself",
+    "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+    "groupHealth.lua::Repeat Only After a Change",
+    "groupHealth.lua::Watch Raid",
+    "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "navigation.lua::Auto, height %d",
+    "navigation.lua::Direct: %s, %d yards",
+    "navigation.lua::behind to the right"
+   ],
+   "terminology": [
+    "groupHealth.lua::Group Health Monitor",
+    "groupHealth.lua::Healers",
+    "groupHealth.lua::Tanks",
+    "groupHealth.lua::Watch Raid",
+    "monitors.lua::Monitors off",
+    "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there."
+   ],
+   "context": [
+    "buffers.lua::Not",
+    "errors.lua::Lua error",
+    "groupHealth.lua::Include Yourself",
+    "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+    "groupHealth.lua::Repeat Only After a Change",
+    "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+    "groupHealth.lua::Watch Raid",
+    "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "navigation.lua::Announce Distance",
+    "navigation.lua::Direct: %s, %d yards",
+    "navigation.lua::behind to the right"
+   ],
+   "listening": [
+    "errors.lua::Lua error",
+    "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+    "monitors.lua::Monitors off",
+    "monitors.lua::Monitors on",
+    "navigation.lua::Announce Distance",
+    "navigation.lua::Fishing spot on the shore: %s"
+   ]
+  }
+ },
+ "combined": {
+  "recall": "20/20",
+  "by_origin": {
+   "claude": "10/10",
+   "gpt": "10/10"
+  },
+  "missed": [],
+  "non_seed_flagged": [
+   "groupHealth.lua::full",
+   "navigation.lua::Ahead: walk into %s; the route goes on after it",
+   "navigation.lua::Direct"
+  ]
+ }
+}

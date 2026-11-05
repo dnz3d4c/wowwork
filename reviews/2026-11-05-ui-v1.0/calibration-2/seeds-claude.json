@@ -1,0 +1,12 @@
+{
+ "buffers.lua::Not": ["포함", "뜻 반전", "accuracy"],
+ "groupHealth.lua::Repeat Every (seconds, 0 is off)": ["반복 간격 (초)", "조건 누락(0은 끔)", "accuracy"],
+ "navigation.lua::Direct: %s, %d yards": ["직선: %d야드, %s", "서식 지정자 순서(위치 지정 없이 뒤바뀜)", "context"],
+ "groupHealth.lua::Tanks": ["탱커", "공식 용어(방어 전담)", "terminology"],
+ "monitors.lua::Monitors on": ["모니터 켜짐.", "원문에 없는 기호", "listening"],
+ "navigation.lua::behind to the right": ["오른쪽 앞", "방향 반전", "accuracy"],
+ "groupHealth.lua::dead": ["명 사망", "코드 맥락(번호 뒤에 붙어 인원수로 오해)", "context"],
+ "navigation.lua::Announce Distance": ["거리를 알립니다", "문체(설정 이름은 명사형)", "style"],
+ "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.": ["사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 신호기가 계속 켜져 있습니다.", "용어집 위반(beacon=비컨)", "terminology"],
+ "groupHealth.lua::Watch Raid": ["공격대 시계", "다의어 오역(watch=감시)", "accuracy"]
+}

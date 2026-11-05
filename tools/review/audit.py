@@ -63,8 +63,14 @@ def claude_tool_inputs(lines: list[str]) -> list[str] | None:
             records.append(json.loads(line))
         except json.JSONDecodeError:
             continue
-    first_user = next((r for r in records if r.get("type") == "user"), None)
-    if first_user is None or REVIEWER_MARK not in json.dumps(first_user, ensure_ascii=False):
+    # Workflow 하위 에이전트는 첫 user 메시지가 하네스의 "user request" 전달문(사용자 원문)이고,
+    # 실제 프롬프트는 그다음 "[Workflow harness — computed task]" 메시지에 있다. 전달문만 뺀다.
+    prompts = [
+        json.dumps(r.get("message"), ensure_ascii=False)
+        for r in records
+        if r.get("type") == "user" and "user request]" not in json.dumps(r.get("message"), ensure_ascii=False)
+    ]
+    if not any(REVIEWER_MARK in p for p in prompts[:2]):
         return None
     out: list[str] = []
     for r in records:

@@ -1,0 +1,62 @@
+{
+ "navigation.lua::Visited waypoints forgotten": {
+  "original": "방문한 경유지 기록 지움",
+  "seeded": "방문한 경유지 기록 지움!",
+  "kind": "원문에 없는 기호",
+  "lens": "listening"
+ },
+ "navigation.lua::You are targeting yourself": {
+  "original": "자신을 대상으로 지정함",
+  "seeded": "대상이 당신을 지정함",
+  "kind": "뜻 반전",
+  "lens": "accuracy"
+ },
+ "navigation.lua::Your floor is not clear here. Choose your start.": {
+  "original": "여기서는 현재 층이 불분명합니다. 시작 지점을 선택하십시오.",
+  "seeded": "여기서는 현재 층이 불분명합니다.",
+  "kind": "문장 누락",
+  "lens": "accuracy"
+ },
+ "targeting.lua::Free": {
+  "original": "해제됨",
+  "seeded": "자유",
+  "kind": "파일 간 불일치(Free Sound=해제됨 소리)",
+  "lens": "terminology"
+ },
+ "targeting.lua::Open Target Menu": {
+  "original": "대상 메뉴 열기",
+  "seeded": "대상 메뉴를 엽니다",
+  "kind": "문체(메뉴 항목은 명사형)",
+  "lens": "style"
+ },
+ "targeting.lua::Cannot set virtual focus while in combat.": {
+  "original": "전투 중에는 가상 주시 대상을 설정할 수 없습니다.",
+  "seeded": "가상 주시 대상을 설정할 수 없습니다.",
+  "kind": "조건 누락",
+  "lens": "accuracy"
+ },
+ "targeting.lua::Focus %d set to %s.": {
+  "original": "주시 대상 %d 설정: %s.",
+  "seeded": "주시 대상 %s 설정: %d.",
+  "kind": "서식 지정자 순서",
+  "lens": "context"
+ },
+ "windows.lua::Leader": {
+  "original": "파티장",
+  "seeded": "지도자",
+  "kind": "코드 맥락(파티 찾기 역할 버튼)",
+  "lens": "context"
+ },
+ "windows.lua::Stable": {
+  "original": "야수 우리",
+  "seeded": "우리",
+  "kind": "동음이의어",
+  "lens": "listening"
+ },
+ "windows.lua::Guild Control": {
+  "original": "길드 권한",
+  "seeded": "길드 관리",
+  "kind": "공식 용어",
+  "lens": "terminology"
+ }
+}

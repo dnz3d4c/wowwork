@@ -202,3 +202,30 @@ def test_score_recall_by_provider_and_origin() -> None:
     assert s["claude"]["non_seed_flagged"] == ["a::9"]
     assert s["gpt"]["recall"] == "2/2"
     assert s["combined"]["recall"] == "2/2"
+
+
+def test_foreign_paths_collapses_doubled_separators() -> None:
+    from tools.review.audit import suspicious
+
+    assert suspicious(r'"C:\Program Files\PowerShell\7\pwsh.exe" -Command "rg x"', ROOT) == []
+    assert foreign_paths(r"C:\project\games\x.lua", ROOT) == ["C:/project/games/x.lua"]
+
+
+def test_audit_claude_finds_reviewer_prompt_after_harness_relay() -> None:
+    from tools.review.audit import claude_tool_inputs
+
+    lines = [
+        json.dumps({"type": "user", "message": {"content": "[Workflow harness — user request] 번역 퀄리티"}}),
+        json.dumps(
+            {"type": "user", "message": {"content": "[Workflow harness — computed task] 너는 번역 평가자다."}}
+        ),
+        json.dumps(
+            {
+                "type": "assistant",
+                "message": {
+                    "content": [{"type": "tool_use", "name": "Grep", "input": {"path": "C:/project/games"}}]
+                },
+            }
+        ),
+    ]
+    assert claude_tool_inputs(lines) == ["C:/project/games"]

@@ -19,7 +19,8 @@ _ABS_PATH = re.compile(r"[A-Za-z]:[\\/][^\s\"'`;|<>,)]*")
 
 
 def _norm(path: str) -> str:
-    return path.replace("\\", "/").strip()
+    # 셸 인용 때문에 구분자가 두 겹(C:\\Program)으로 들어오는 경우가 있다.
+    return re.sub(r"/{2,}", "/", path.replace("\\", "/")).strip()
 
 
 def valid_evidence(sources: list[str]) -> bool:

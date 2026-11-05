@@ -1,0 +1,142 @@
+{
+ "buffers.lua::Not": {
+  "original": "제외",
+  "seeded": "포함",
+  "kind": "뜻 반전",
+  "lens": "accuracy",
+  "origin": "claude"
+ },
+ "errors.lua::Lua error": {
+  "original": "Lua 오류",
+  "seeded": "Lua 오류:",
+  "kind": "코드 이어 붙이기 문맥 오류",
+  "lens": "context",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::Group Health Monitor": {
+  "original": "파티 및 공격대 생명력 모니터",
+  "seeded": "그룹 생명력 모니터",
+  "kind": "기존 번역과의 불일치",
+  "lens": "terminology",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::Include Yourself": {
+  "original": "자신 포함",
+  "seeded": "자신 제외",
+  "kind": "뜻 반전",
+  "lens": "accuracy",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::Watch Raid": {
+  "original": "공격대 감시",
+  "seeded": "공격대 시계",
+  "kind": "다의어 오역(watch=감시)",
+  "lens": "accuracy",
+  "origin": "claude"
+ },
+ "groupHealth.lua::Repeat Only After a Change": {
+  "original": "변화가 있을 때만 반복",
+  "seeded": "변화가 없을 때만 반복",
+  "kind": "조건 반전",
+  "lens": "accuracy",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::Tanks": {
+  "original": "방어 전담",
+  "seeded": "탱커",
+  "kind": "공식 용어(방어 전담)",
+  "lens": "terminology",
+  "origin": "claude"
+ },
+ "groupHealth.lua::Healers": {
+  "original": "치유 전담",
+  "seeded": "힐러",
+  "kind": "게임 공식 용어 오류",
+  "lens": "terminology",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::Repeat Every (seconds, 0 is off)": {
+  "original": "반복 간격 (초, 0은 끔)",
+  "seeded": "반복 간격 (초)",
+  "kind": "조건 누락(0은 끔)",
+  "lens": "accuracy",
+  "origin": "claude"
+ },
+ "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.": {
+  "original": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오.",
+  "seeded": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성 선택.",
+  "kind": "안내 문장 문체 규칙 위반",
+  "lens": "style",
+  "origin": "gpt"
+ },
+ "groupHealth.lua::dead": {
+  "original": "사망",
+  "seeded": "명 사망",
+  "kind": "코드 맥락(번호 뒤에 붙어 인원수로 오해)",
+  "lens": "context",
+  "origin": "claude"
+ },
+ "monitors.lua::Monitors on": {
+  "original": "모니터 켜짐",
+  "seeded": "모니터 켜짐.",
+  "kind": "원문에 없는 기호",
+  "lens": "listening",
+  "origin": "claude"
+ },
+ "monitors.lua::Monitors off": {
+  "original": "모니터 꺼짐",
+  "seeded": "모니터 오프",
+  "kind": "들었을 때 상태를 오해하기 쉬운 표현",
+  "lens": "listening",
+  "origin": "gpt"
+ },
+ "navigation.lua::Direct: %s, %d yards": {
+  "original": "직선: %s, %d야드",
+  "seeded": "직선: %d야드, %s",
+  "kind": "서식 지정자 순서(위치 지정 없이 뒤바뀜)",
+  "lens": "context",
+  "origin": "claude"
+ },
+ "navigation.lua::Announce Distance": {
+  "original": "거리 알림",
+  "seeded": "거리를 알립니다",
+  "kind": "문체(설정 이름은 명사형)",
+  "lens": "style",
+  "origin": "claude"
+ },
+ "navigation.lua::Auto, height %d": {
+  "original": "자동, 높이 %d",
+  "seeded": "자동, 높이 %d미터",
+  "kind": "원문에 없는 단위 추가",
+  "lens": "accuracy",
+  "origin": "gpt"
+ },
+ "navigation.lua::Fishing spot on the shore: %s": {
+  "original": "물가 낚시터: %s",
+  "seeded": "물가 낚시터: (%s)",
+  "kind": "원문에 없는 기호 추가",
+  "lens": "style",
+  "origin": "gpt"
+ },
+ "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.": {
+  "original": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다.",
+  "seeded": "물은 %s에 있습니다. %s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다.",
+  "kind": "서식 지정자 대상 뒤바뀜",
+  "lens": "context",
+  "origin": "gpt"
+ },
+ "navigation.lua::behind to the right": {
+  "original": "오른쪽 뒤",
+  "seeded": "오른쪽 앞",
+  "kind": "방향 반전",
+  "lens": "accuracy",
+  "origin": "claude"
+ },
+ "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.": {
+  "original": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다.",
+  "seeded": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 신호기가 계속 켜져 있습니다.",
+  "kind": "용어집 위반(beacon=비컨)",
+  "lens": "terminology",
+  "origin": "claude"
+ }
+}

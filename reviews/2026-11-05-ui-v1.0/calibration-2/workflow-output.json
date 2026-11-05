@@ -1,0 +1,752 @@
+{
+  "summary": "격리 폴더에서 오류 20개(Claude 10 + GPT 10)를 심은 묶음에 Claude 4 + GPT 4 평가자를 돌려 검출률과 오탐을 잰다",
+  "agentCount": 8,
+  "logs": [],
+  "result": [
+    {
+      "provider": "claude",
+      "lens": "accuracy",
+      "findings": [
+        {
+          "id": "buffers.lua::Not",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "Not(해당 조건을 제외하는 필터)을 '포함'으로 옮겨 뜻이 정반대가 됐다.",
+          "evidence": "AuraBuffer.lua:130-132에서 Any/Only/Not이 필터 선택지로 나란히 쓰인다. Not은 조건에 맞는 오라를 빼는 선택지인데 '포함'은 반대 뜻이다.",
+          "suggestion": "제외"
+        },
+        {
+          "id": "groupHealth.lua::Include Yourself",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "Include Yourself(자신 포함)를 '자신 제외'로 옮겨 설정 뜻이 반전됐다.",
+          "evidence": "en 'Include Yourself' / ko '자신 제외'. 이 설정을 켜면 자신이 포함되는데 이름은 제외라고 말한다.",
+          "suggestion": "자신 포함"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Only After a Change",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "'변화가 생긴 뒤에만 반복'을 '변화가 없을 때만 반복'으로 옮겨 조건이 반전됐다.",
+          "evidence": "en 'Repeat Only After a Change' / ko '변화가 없을 때만 반복'.",
+          "suggestion": "변화가 있을 때만 반복"
+        },
+        {
+          "id": "groupHealth.lua::Watch Raid",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "동사 Watch(감시)를 명사 '시계'로 오역해 다른 뜻으로 들린다.",
+          "evidence": "module.lua:83·89에서 Watch Party와 Watch Raid가 짝을 이루는 설정이고 Watch Party는 '파티 감시'로 옮겨졌다. '공격대 시계'는 감시 기능이라는 뜻을 잃는다.",
+          "suggestion": "공격대 감시"
+        },
+        {
+          "id": "navigation.lua::behind to the right",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "behind to the right(오른쪽 뒤)를 '오른쪽 앞'으로 옮겨 방향이 틀렸다. 같은 목록의 ahead to the right와 똑같이 들린다.",
+          "evidence": "text.lua:81 fishing_sector_6. 짝 항목 behind to the left는 '왼쪽 뒤', ahead to the right는 '오른쪽 앞'이다. 물 방향 안내라 사용자가 엉뚱한 쪽으로 돈다.",
+          "suggestion": "오른쪽 뒤"
+        },
+        {
+          "id": "navigation.lua::Direct: %s, %d yards",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "%s와 %d의 순서를 위치 지정 없이 바꿔 이름 자리에 거리 숫자가, 숫자 자리에 이름 문자열이 들어간다.",
+          "evidence": "module.lua:513 string.format(L[...], label, distance). ko '직선: %d야드, %s'는 첫 인자(label 문자열)를 %d로 받아 오류가 나거나 값이 뒤바뀐다.",
+          "suggestion": "직선: %s, %d야드"
+        },
+        {
+          "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "두 문장 순서를 위치 지정 없이 바꿔 첫 %s(도착 지점 이름)가 '물은 ~에 있습니다'에, 둘째 %s(물 방향)가 '~에 도착했습니다'에 들어간다.",
+          "evidence": "원문 지정자 순서는 장소, 물 방향이다. ko '물은 %s에 있습니다. %s에 도착했습니다.'는 위치 지정(%1$s, %2$s) 없이 순서만 바꿨다.",
+          "suggestion": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+        },
+        {
+          "id": "navigation.lua::Auto, height %d",
+          "category": "accuracy",
+          "severity": "major",
+          "problem": "원문에 없는 단위 '미터'를 덧붙였다. 이 애드온의 거리 단위는 야드라 틀린 단위를 알려준다.",
+          "evidence": "en 'Auto, height %d'에는 단위가 없다. 관련 항목 'height %d'는 '높이 %d', 다른 거리 문구는 모두 '야드'다.",
+          "suggestion": "자동, 높이 %d"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+          "category": "accuracy",
+          "severity": "major",
+          "problem": "괄호 안 '0 is off'(0이면 끔)가 빠졌다.",
+          "evidence": "en 'Repeat Every (seconds, 0 is off)' / ko '반복 간격 (초)'. 0을 넣으면 반복이 꺼진다는 정보가 사라졌다.",
+          "suggestion": "반복 간격 (초, 0은 끔)"
+        }
+      ]
+    },
+    {
+      "provider": "claude",
+      "lens": "terminology",
+      "findings": [
+        {
+          "id": "groupHealth.lua::Healers",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "Healers를 비공식 음차 '힐러'로 옮겼다. 확정 용어집은 healer=치유 전담|치유사이고, 같은 애드온의 역할 이름도 L[\"Healer\"]=\"치유 전담\"이다(windows.lua:133). 같은 역할 목록의 Damage Dealers는 공식 '공격 전담'을 써서 목록 안에서도 체계가 섞인다.",
+          "evidence": "glossary.tsv: healer\t치유 전담|치유사. koKR/windows.lua:133 L[\"Healer\"] = \"치유 전담\". 같은 표(module.lua:140-143)의 DAMAGER=\"공격 전담\".",
+          "suggestion": "치유 전담"
+        },
+        {
+          "id": "groupHealth.lua::Tanks",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "Tanks를 비공식 음차 '탱커'로 옮겼다. 같은 애드온의 역할 이름은 L[\"Tank\"]=\"방어 전담\"(windows.lua:132)로 게임 공식 역할 이름이고, 같은 역할 목록의 DAMAGER도 '공격 전담'이라 이 항목만 체계가 다르다.",
+          "evidence": "koKR/windows.lua:132 L[\"Tank\"] = \"방어 전담\". module.lua:140-143에서 TANK/HEALER/DAMAGER/NONE이 한 선택 목록이다.",
+          "suggestion": "방어 전담"
+        },
+        {
+          "id": "groupHealth.lua::Watch Raid",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "Watch(감시하다)를 '시계'(clock)로 옮겼다. 바로 옆 설정 Watch Party는 '파티 감시', Nobody to watch는 '감시할 대상 없음'이라 같은 용어가 어긋나고, 들으면 '공격대 시계'라는 다른 기능으로 오해할 수 있다.",
+          "evidence": "koKR/groupHealth.lua:7 L[\"Watch Party\"] = \"파티 감시\", :8 L[\"Watch Raid\"] = \"공격대 시계\", :23 \"감시할 대상 없음\". objects.lua:32에서는 Clock=\"시계\"이다.",
+          "suggestion": "공격대 감시"
+        },
+        {
+          "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "beacon을 '신호기'로 옮겼다. 확정 용어집은 beacon=비컨이고, 같은 계열의 Prepoint reached 문장들은 모두 '비컨'을 쓴다.",
+          "evidence": "glossary.tsv: beacon\t비컨. related의 \"Prepoint reached. Walk on to the waiting point of the Wind Bridge; ...\" → \"그때까지 비컨이 계속 켜져 있습니다\" 등.",
+          "suggestion": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+        },
+        {
+          "id": "groupHealth.lua::Group Health Monitor",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "모듈 이름의 Group을 '그룹'으로 옮겼다. 같은 기능의 다른 문자열은 Group을 '파티 및 공격대'로 옮겨서, 사용자가 '그룹 생명력 모니터'와 '파티 및 공격대 생명력 모니터'를 같은 기능으로 연결하지 못한다. 고칠 때는 이미 쓰인 두 곳(Speak Group Health, unavailable 알림)에 맞추는 편이 수정 범위가 작다.",
+          "evidence": "related: \"Group health monitor unavailable here\" → \"여기서는 파티 및 공격대 생명력 모니터 사용 불가\", \"Speak Group Health\" → \"파티 및 공격대 생명력 말하기\".",
+          "suggestion": "파티 및 공격대 생명력 모니터"
+        },
+        {
+          "id": "monitors.lua::Monitors off",
+          "category": "terminology",
+          "severity": "minor",
+          "problem": "짝을 이루는 상태 알림에서 on은 '켜짐'으로, off는 영어 음차 '오프'로 옮겨서 용어가 어긋난다.",
+          "evidence": "module.lua:105에서 두 키가 한 토글의 결과로 번갈아 발화된다. koKR/monitors.lua:113 \"모니터 켜짐.\", :114 \"모니터 오프\".",
+          "suggestion": "모니터 꺼짐"
+        }
+      ]
+    },
+    {
+      "provider": "claude",
+      "lens": "context",
+      "findings": [
+        {
+          "id": "navigation.lua::Direct: %s, %d yards",
+          "category": "context",
+          "severity": "critical",
+          "problem": "Swaps the order of %s and %d without positional specifiers. string.format puts the label (a string) into %d and the distance into %s, which raises an error or reads the wrong values.",
+          "evidence": "core/navigation/maps/module.lua:513: string.format(L[\"Direct: %s, %d yards\"], label or \"\", self:distanceTo(...)) — argument 1 is the label (string), argument 2 is the distance (number). ko: \"직선: %d야드, %s\"",
+          "suggestion": "직선: %1$s, %2$d야드"
+        },
+        {
+          "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+          "category": "context",
+          "severity": "critical",
+          "problem": "Reverses the order of the first two sentences without positional specifiers. The place name goes into '물은 %s에' and the direction goes into '%s에 도착', so the arrival place and the water direction swap.",
+          "evidence": "FishingNavigation.lua:98: WowVisionNavigationText(\"fishing_arrival\", name, sector, ...) — argument 1 is the place name, argument 2 is the direction (for example 정면, 왼쪽 앞). ko puts '물은 %s에 있습니다' first.",
+          "suggestion": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+        },
+        {
+          "id": "buffers.lua::Not",
+          "category": "context",
+          "severity": "critical",
+          "problem": "In the aura filter choices (Any/Only/Not), Not means exclusion (the negated filter). '포함' (include) reverses that meaning, and it also clashes with Only.",
+          "evidence": "AuraBuffer.lua:83-84 comment: 'Each is a choice of Any (not passed), Only (the filter) or Not (negated: \"!\" ...)'. The choices at line 130-132 are any/only/not.",
+          "suggestion": "제외"
+        },
+        {
+          "id": "groupHealth.lua::dead",
+          "category": "context",
+          "severity": "major",
+          "problem": "number is a member's identifying number, not a head count. Concatenated as '3 명 사망', it says 'three people died'.",
+          "evidence": "retail/groupHealth/module.lua:443-445: local number = tostring(member.number); self:speak(number .. \" \" .. L[\"dead\"]). tests.lua:281-283 assigns each member its own number (party2 = { number = 3 }).",
+          "suggestion": "사망"
+        },
+        {
+          "id": "navigation.lua::Auto, height %d",
+          "category": "context",
+          "severity": "major",
+          "problem": "Adds the unit '미터', which is not in the source. The value is a height in yards, so the unit is wrong.",
+          "evidence": "camelot/wownav/text.lua:244 comment: 'named by their height in whole yards only'. Glossary: yard=야드. Related strings ' (height %d)' and 'height %d' carry no unit (높이 %d).",
+          "suggestion": "자동, 높이 %d"
+        },
+        {
+          "id": "navigation.lua::Direct",
+          "category": "context",
+          "severity": "major",
+          "problem": "The same key is used for two features: the speech style (direct output) and the navigation window's direct-route toggle. '직접' fits only the speech style. In navigation, it clashes with the straight-line route term ('직선') used by the related strings.",
+          "evidence": "vanilla/speech.lua:86 speech style choice 'Direct'. core/navigation/maps/ui.lua:358 navigation toggle label = L[\"Direct\"]. Related navigation strings: 'Direct: %s, %d yards'=직선, 'last %d yards direct'=마지막 %d야드 직선. Uncertainty: under AceLocale one key gets one translation, so a single word has to cover both uses.",
+          "suggestion": "직선"
+        },
+        {
+          "id": "errors.lua::Lua error",
+          "category": "context",
+          "severity": "major",
+          "problem": "The code already appends \": \" after the string. With a colon added to the translation, the message reads 'Lua 오류:: 메시지' with a doubled colon.",
+          "evidence": "core/errors/module.lua:356: alert:fire({ text = L[\"Lua error\"] .. \": \" .. message }). The source 'Lua error' has no colon.",
+          "suggestion": "Lua 오류"
+        },
+        {
+          "id": "monitors.lua::Monitors off",
+          "category": "context",
+          "severity": "minor",
+          "problem": "This pair of announcements comes from one speak call (on/off), but the forms differ: '모니터 켜짐.' (with an added period) and '모니터 오프' (English loanword). When toggling, the status announcements are inconsistent.",
+          "evidence": "core/monitors/module.lua:105: WowVision:speak(anyOn and L[\"Monitors off\"] or L[\"Monitors on\"]). The sources 'Monitors on' and 'Monitors off' have no period.",
+          "suggestion": "모니터 꺼짐"
+        },
+        {
+          "id": "navigation.lua::Announce Distance",
+          "category": "context",
+          "severity": "minor",
+          "problem": "Used as a key binding (setting) label, but it is a declarative sentence. It does not match the sibling string 'Alt Gr로 거리 알림', which is a noun phrase.",
+          "evidence": "core/navigation/maps/module.lua:211-213: module:registerBinding({ ... label = L[\"Announce Distance\"] }). Related: 'Announce Distance with Alt Gr' = 'Alt Gr로 거리 알림'.",
+          "suggestion": "거리 알림"
+        }
+      ]
+    },
+    {
+      "provider": "claude",
+      "lens": "listening",
+      "findings": [
+        {
+          "id": "errors.lua::Lua error",
+          "category": "listening",
+          "severity": "major",
+          "problem": "번역에 원문에 없는 콜론을 넣었다. 코드가 뒤에 \": \"를 또 붙이므로 \"Lua 오류:: 메시지\"처럼 콜론이 두 번 이어져 발화된다.",
+          "evidence": "core/errors/module.lua:356: L[\"Lua error\"] .. \": \" .. message, en=\"Lua error\"(콜론 없음), ko=\"Lua 오류:\"",
+          "suggestion": "Lua 오류"
+        },
+        {
+          "id": "navigation.lua::Fishing spot on the shore: %s",
+          "category": "listening",
+          "severity": "major",
+          "problem": "원문에 없는 괄호를 %s 둘레에 넣었다. 짝을 이루는 'Fishing spot on pier or quay: %s'(부두 낚시터: %s)와도 형식이 다르다.",
+          "evidence": "en=\"Fishing spot on the shore: %s\", ko=\"물가 낚시터: (%s)\"; related ko=\"부두 낚시터: %s\"",
+          "suggestion": "물가 낚시터: %s"
+        },
+        {
+          "id": "monitors.lua::Monitors on",
+          "category": "listening",
+          "severity": "minor",
+          "problem": "원문에 없는 마침표를 짧은 상태 알림 끝에 붙였다. 짝인 'Monitors off'에는 마침표가 없다.",
+          "evidence": "en=\"Monitors on\", ko=\"모니터 켜짐.\"; 같은 줄 module.lua:105에서 쓰는 Monitors off ko=\"모니터 오프\"",
+          "suggestion": "모니터 켜짐"
+        },
+        {
+          "id": "monitors.lua::Monitors off",
+          "category": "style",
+          "severity": "minor",
+          "problem": "같은 코드 줄에서 번갈아 나오는 켜기/끄기 알림인데 짝 번역 '켜짐'과 형태가 다르게 '오프'라는 음차를 썼다. 들을 때 짝이 맞지 않고 번역투로 들린다.",
+          "evidence": "core/monitors/module.lua:105: anyOn and L[\"Monitors off\"] or L[\"Monitors on\"]; Monitors on ko=\"모니터 켜짐.\"",
+          "suggestion": "모니터 꺼짐"
+        },
+        {
+          "id": "navigation.lua::Announce Distance",
+          "category": "style",
+          "severity": "minor",
+          "problem": "설정 이름(label)인데 명사형이 아니라 합니다체 문장으로 옮겼다. 관련 설정 'Announce Distance with Alt Gr'는 '거리 알림'이라는 명사형이다.",
+          "evidence": "core/navigation/maps/module.lua:213: label = L[\"Announce Distance\"]; related ko=\"Alt Gr로 거리 알림\"",
+          "suggestion": "거리 알림"
+        },
+        {
+          "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+          "category": "style",
+          "severity": "minor",
+          "problem": "안내 문장인데 첫 문장은 합니다체이고 둘째 문장은 '선택.'이라는 명사형으로 끝나서 문체가 섞였다.",
+          "evidence": "ko 끝부분=\"... Windows 음성 선택.\"; 같은 문장 앞부분=\"재생하지 않습니다.\"; 비슷한 안내 related ko=\"먼저 길 안내 창에서 목적지를 선택하십시오\"",
+          "suggestion": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+        },
+        {
+          "id": "groupHealth.lua::full",
+          "category": "listening",
+          "severity": "minor",
+          "problem": "코드가 숫자 뒤에 붙여 '3 생명력 최대'로 발화된다. 듣는 사람은 '생명력 3'처럼 수치로 오해할 수 있다. 같은 방식으로 조립되는 'dead'는 '명 사망'으로 인원수임이 드러나는데 이 문자열은 그렇지 않다. 다만 원문에는 '명'에 해당하는 말이 없어서 확신하지 못해 한 단계 낮췄다.",
+          "evidence": "retail/groupHealth/module.lua:480: number .. \" \" .. L[\"full\"]; groupHealth.lua::dead ko=\"명 사망\"(module.lua:445, 같은 조립 방식)",
+          "suggestion": "명 생명력 최대"
+        }
+      ]
+    },
+    {
+      "provider": "gpt",
+      "lens": "accuracy",
+      "findings": [
+        {
+          "id": "buffers.lua::Not",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "부정 의미인 “Not”을 긍정·포함 의미인 “포함”으로 번역해 필터 조건이 반대로 전달된다.",
+          "evidence": "원문은 “Not”이며 AuraBuffer.lua:132에서 any/only와 함께 필터 선택지로 사용된다.",
+          "suggestion": "해당 아님"
+        },
+        {
+          "id": "groupHealth.lua::Include Yourself",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "자신을 포함하라는 설정을 “자신 제외”로 번역해 의미가 정반대가 되었다.",
+          "evidence": "원문 “Include Yourself”와 번역 “자신 제외”가 반대 의미이며 retail/groupHealth/module.lua:77의 설정 항목이다.",
+          "suggestion": "자신 포함"
+        },
+        {
+          "id": "groupHealth.lua::Watch Raid",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "동사 “Watch”를 시계라는 명사로 잘못 옮겨 공격대 감시 기능을 다른 기능처럼 전달한다.",
+          "evidence": "retail/groupHealth/module.lua:89의 설정 항목이며 같은 기능의 “Watch Party”는 “파티 감시”로 번역되어 있다.",
+          "suggestion": "공격대 감시"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Only After a Change",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "변화가 생긴 뒤에만 반복한다는 조건을 변화가 없을 때만 반복한다고 번역해 조건이 반전되었다.",
+          "evidence": "원문 “Only After a Change”는 변화 이후로 한정하지만 번역은 “변화가 없을 때만”으로 한정한다.",
+          "suggestion": "변화 후에만 반복"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+          "category": "accuracy",
+          "severity": "major",
+          "problem": "0을 입력하면 반복이 꺼진다는 원문의 핵심 설정 정보가 누락되었다.",
+          "evidence": "원문 괄호의 “0 is off”가 번역 “반복 간격 (초)”에 반영되지 않았다.",
+          "suggestion": "반복 간격 (초, 0은 끄기)"
+        },
+        {
+          "id": "navigation.lua::Direct: %s, %d yards",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "번역에서 `%s`와 `%d`의 순서를 위치 지정 없이 바꿔, 문자열 인수에 `%d`가 적용되면서 발화 생성이 실패할 수 있다.",
+          "evidence": "core/navigation/maps/module.lua:513은 첫 번째 인수로 label 문자열, 두 번째 인수로 거리 숫자를 전달하지만 번역은 “%d야드, %s” 순서다.",
+          "suggestion": "직선: %s, %d야드"
+        },
+        {
+          "id": "navigation.lua::Auto, height %d",
+          "category": "accuracy",
+          "severity": "major",
+          "problem": "원문에 없는 측정 단위 “미터”를 추가해 높이 값의 단위를 근거 없이 확정했다.",
+          "evidence": "원문은 “height %d”로 단위를 명시하지 않으며 관련 항목 “height %d”와 “(height %d)”의 번역에도 단위가 없다.",
+          "suggestion": "자동, 높이 %d"
+        },
+        {
+          "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "첫 번째와 두 번째 `%s`가 가리키는 대상을 위치 지정 없이 뒤바꿨다. 그 결과 도착 지점 이름이 물의 방향으로, 물의 방향이 도착 지점으로 발화된다.",
+          "evidence": "원문 지정자 순서는 ‘도착 지점, 물의 방향, 최소 거리, 최대 거리’지만 번역은 ‘물의 방향, 도착 지점, 최소 거리, 최대 거리’ 순서다. 순서를 바꾸려면 `%1$s`, `%2$s` 위치 지정이 필요하다.",
+          "suggestion": "물은 %2$s에 있습니다. %1$s에 도착했습니다. 시전 거리는 약 %3$d에서 %4$d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+        },
+        {
+          "id": "navigation.lua::behind to the right",
+          "category": "accuracy",
+          "severity": "critical",
+          "problem": "오른쪽 뒤 방향을 “오른쪽 앞”으로 번역해 정반대 방향으로 안내한다.",
+          "evidence": "원문은 “behind to the right”이며 camelot/wownav/text.lua:81에서 낚시 방향 구역 안내로 사용된다. 관련 “ahead to the right”가 이미 “오른쪽 앞”이다.",
+          "suggestion": "오른쪽 뒤"
+        }
+      ]
+    },
+    {
+      "provider": "gpt",
+      "lens": "terminology",
+      "findings": [
+        {
+          "id": "groupHealth.lua::Group Health Monitor",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "같은 기능의 `Group Health`를 다른 항목에서는 일관되게 \"파티 및 공격대 생명력\"으로 옮겼지만, 이 항목만 \"그룹 생명력\"으로 옮겼다.",
+          "evidence": "같은 기능의 `Speak Group Health`와 `Group health monitor unavailable here`는 각각 \"파티 및 공격대 생명력 말하기\", \"파티 및 공격대 생명력 모니터\"를 사용한다. 또한 retail/groupHealth/module.lua:83과 :89에서 파티와 공격대를 각각 감시하도록 구성된다.",
+          "suggestion": "파티 및 공격대 생명력 모니터"
+        },
+        {
+          "id": "groupHealth.lua::Watch Raid",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "동일한 설정 묶음의 `Watch`를 `Watch Party`에서는 \"감시\"로 옮겼지만 여기서는 기능과 무관한 \"시계\"로 옮겼다.",
+          "evidence": "retail/groupHealth/module.lua:83의 `Watch Party`는 \"파티 감시\"이고, 바로 이어지는 retail/groupHealth/module.lua:89의 `Watch Raid`만 \"공격대 시계\"다.",
+          "suggestion": "공격대 감시"
+        },
+        {
+          "id": "groupHealth.lua::Tanks",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "게임의 역할명 `Tanks`를 공식 역할 용어가 아닌 \"탱커\"로 옮겼다.",
+          "evidence": "retail/groupHealth/module.lua:140에서 역할 토큰 `TANK`의 표시 이름으로 사용된다. 같은 역할 목록의 `DAMAGER`는 공식 용어인 \"공격 전담\"을 사용하므로 `TANK`도 공식 역할명 \"방어 전담\"에 맞춰야 한다.",
+          "suggestion": "방어 전담"
+        },
+        {
+          "id": "groupHealth.lua::Healers",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "게임의 역할명 `Healers`를 공식 역할 용어가 아닌 \"힐러\"로 옮겼다.",
+          "evidence": "retail/groupHealth/module.lua:141에서 역할 토큰 `HEALER`의 표시 이름으로 사용된다. 같은 역할 목록의 `DAMAGER`는 공식 용어인 \"공격 전담\"을 사용하므로 `HEALER`도 공식 역할명 \"치유 전담\"에 맞춰야 한다.",
+          "suggestion": "치유 전담"
+        },
+        {
+          "id": "monitors.lua::Monitors off",
+          "category": "terminology",
+          "severity": "minor",
+          "problem": "서로 짝을 이루는 상태 용어에서 `on`은 \"켜짐\"으로 옮겼지만 `off`만 영어식 \"오프\"를 사용해 일관되지 않는다.",
+          "evidence": "core/monitors/module.lua:105에서 `Monitors on`과 `Monitors off`가 한 토글의 반대 상태로 발화되며, 전자는 \"모니터 켜짐.\"으로 번역되어 있다.",
+          "suggestion": "모니터 꺼짐"
+        },
+        {
+          "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+          "category": "terminology",
+          "severity": "major",
+          "problem": "같은 길 안내 기능의 `beacon`을 다른 항목에서는 \"비컨\"으로 통일했지만 이 항목만 \"신호기\"로 옮겼다.",
+          "evidence": "camelot/wownav/text.lua:62의 같은 기능 문구다. 관련 항목 `Prepoint reached. Walk on to the waiting point...`, `Prepoint reached. Walk straight ahead...`, `Prepoint reached. Dive here...`에서는 모두 `beacon`을 \"비컨\"으로 번역한다.",
+          "suggestion": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+        }
+      ]
+    },
+    {
+      "provider": "gpt",
+      "lens": "context",
+      "findings": [
+        {
+          "id": "buffers.lua::Not",
+          "category": "context",
+          "severity": "critical",
+          "problem": "필터 선택지의 `Not`이 반대 의미인 \"포함\"으로 번역됐다. 이 항목을 선택하면 사용자가 제외가 아닌 포함 동작으로 오해한다.",
+          "evidence": "core/buffers/types/AuraBuffer.lua:130-132에서 `Any`, `Only`, `Not`이 같은 필터의 상호 배타적 선택지이며, `value = \"not\"`은 해당 조건을 제외하는 선택이다.",
+          "suggestion": "제외"
+        },
+        {
+          "id": "errors.lua::Lua error",
+          "category": "context",
+          "severity": "minor",
+          "problem": "번역 자체에 콜론이 있는데 코드가 다시 `\": \"`을 붙여 실제 발화가 \"Lua 오류:: 메시지\"가 된다.",
+          "evidence": "core/errors/module.lua:356: `L[\"Lua error\"] .. \": \" .. message`",
+          "suggestion": "Lua 오류"
+        },
+        {
+          "id": "groupHealth.lua::Include Yourself",
+          "category": "context",
+          "severity": "critical",
+          "problem": "자신을 포함하는 체크 상자에 반대 동작인 \"자신 제외\"가 표시된다. 사용자가 설정 상태를 거꾸로 이해하게 된다.",
+          "evidence": "retail/groupHealth/module.lua:74-78에서 `key = \"includeSelf\"`, `type = \"Bool\"`, 기본값 `true`인 설정의 라벨로 사용된다.",
+          "suggestion": "자신 포함"
+        },
+        {
+          "id": "groupHealth.lua::Watch Raid",
+          "category": "context",
+          "severity": "critical",
+          "problem": "공격대 생명력을 감시할지를 정하는 설정이 \"공격대 시계\"로 번역되어 전혀 다른 기능처럼 들린다.",
+          "evidence": "retail/groupHealth/module.lua:89에서 `watchRaid` 불리언 설정의 라벨이며, 인접한 `Watch Party`는 \"파티 감시\"로 번역됐다.",
+          "suggestion": "공격대 감시"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Only After a Change",
+          "category": "context",
+          "severity": "critical",
+          "problem": "변화가 생긴 뒤에만 반복하는 설정이 \"변화가 없을 때만 반복\"으로 번역되어 조건이 반전됐다.",
+          "evidence": "retail/groupHealth/module.lua:113-120의 주석은 변화가 있을 때 한 번 말하고 이후 조용히 있는 동작을 설명하며, 설정 키도 `repeatOnlyAfterChange`다.",
+          "suggestion": "변화가 있을 때만 반복"
+        },
+        {
+          "id": "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+          "category": "context",
+          "severity": "major",
+          "problem": "숫자 설정에서 0을 입력하면 반복이 꺼진다는 핵심 조작 정보가 빠졌다.",
+          "evidence": "retail/groupHealth/module.lua:164에서 반복 간격을 입력하는 설정 라벨로 사용되며, 원문 괄호에 `0 is off`가 명시되어 있다.",
+          "suggestion": "반복 간격 (초, 0은 끔)"
+        },
+        {
+          "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+          "category": "context",
+          "severity": "minor",
+          "problem": "음성으로 전달되는 조작 안내인데 마지막 지시가 \"Windows 음성 선택\"이라는 불완전한 명사형으로 끝난다.",
+          "evidence": "retail/groupHealth/module.lua:622에서 `WowVision:speak`로 직접 발화되는 안내 문장이다.",
+          "suggestion": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+        },
+        {
+          "id": "navigation.lua::Direct: %s, %d yards",
+          "category": "context",
+          "severity": "critical",
+          "problem": "번역에서 `%d`와 `%s`의 순서를 바꾸면서 위치 지정자를 쓰지 않아 문자열 값을 `%d`에 넣게 된다. 실제 실행 시 형식 오류로 안내가 발화되지 않을 수 있다.",
+          "evidence": "core/navigation/maps/module.lua:513에서 첫 번째 인수는 `label or \"\"` 문자열, 두 번째 인수는 거리 숫자인데, 번역은 첫 지정자를 `%d`로 배치했다.",
+          "suggestion": "직선: %s, %d야드"
+        },
+        {
+          "id": "navigation.lua::Announce Distance",
+          "category": "context",
+          "severity": "minor",
+          "problem": "설정 라벨 자리에 서술문인 \"거리를 알립니다\"가 사용되어 인접한 설정 라벨과 문형이 맞지 않는다.",
+          "evidence": "core/navigation/maps/module.lua:213에서 설정의 `label`로 사용되며, 관련 라벨 `Announce Distance with Alt Gr`는 \"Alt Gr로 거리 알림\"이라는 명사형이다.",
+          "suggestion": "거리 알림"
+        },
+        {
+          "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+          "category": "context",
+          "severity": "critical",
+          "problem": "두 `%s`의 문장 순서를 바꾸면서 위치 지정자를 쓰지 않아 낚시터 이름이 물의 방향으로, 방향이 도착 지점으로 발화된다.",
+          "evidence": "camelot/wownav/engine/FishingNavigation.lua:98-99에서 인수는 차례대로 `name`, `sector`, `castMin`, `castMax`이며, 번역은 물 방향 문장을 먼저 배치했다.",
+          "suggestion": "물은 %2$s에 있습니다. %1$s에 도착했습니다. 시전 거리는 약 %3$d에서 %4$d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+        },
+        {
+          "id": "navigation.lua::behind to the right",
+          "category": "context",
+          "severity": "critical",
+          "problem": "오른쪽 뒤 방향이 \"오른쪽 앞\"으로 번역되어 사용자를 반대 방향으로 움직이게 할 수 있다.",
+          "evidence": "camelot/wownav/text.lua:81에서 낚시 지점 방향을 알리는 `fishing_sector_6`으로 사용되며, `ahead to the right`도 별도로 \"오른쪽 앞\"에 대응한다.",
+          "suggestion": "오른쪽 뒤"
+        }
+      ]
+    },
+    {
+      "provider": "gpt",
+      "lens": "listening",
+      "findings": [
+        {
+          "id": "errors.lua::Lua error",
+          "category": "listening",
+          "severity": "minor",
+          "problem": "원문에 없는 콜론을 추가해 실제 발화에서는 콜론이 두 번 이어진다.",
+          "evidence": "번역은 \"Lua 오류:\"이고 core/errors/module.lua:356에서 뒤에 \": \"를 다시 연결한다. 원문에 없는 기호를 추가하지 않는다는 지침에도 어긋난다.",
+          "suggestion": "Lua 오류"
+        },
+        {
+          "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+          "category": "style",
+          "severity": "minor",
+          "problem": "두 번째 안내 문장이 조사와 서술어 없이 \"Windows 음성 선택\"으로 끝나 어색하며, 안내 문장은 합니다체로 쓴다는 규칙에도 어긋난다.",
+          "evidence": "retail/groupHealth/module.lua:622에서 전체 문구를 음성 안내로 발화한다. 원문은 \"choose\"라는 완결된 지시문이다.",
+          "suggestion": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+        },
+        {
+          "id": "groupHealth.lua::full",
+          "category": "listening",
+          "severity": "major",
+          "problem": "숫자와 바로 결합되면 \"3 생명력 최대\"처럼 발화되어 인원수인지 생명력 수치인지 뜻이 갈린다.",
+          "evidence": "retail/groupHealth/module.lua:480에서 number .. \" \" .. L[\"full\"]로 조립한다. 같은 방식의 dead 번역은 인원 단위인 \"명\"을 포함한다.",
+          "suggestion": "명 생명력 최대"
+        },
+        {
+          "id": "monitors.lua::Monitors on",
+          "category": "listening",
+          "severity": "minor",
+          "problem": "원문에 없는 마침표가 추가됐다.",
+          "evidence": "core/monitors/module.lua:105에서 이 문자열을 그대로 발화하며, 원문 \"Monitors on\"에는 마침표가 없다. 원문에 없는 기호를 추가하지 않는다는 지침 위반이다.",
+          "suggestion": "모니터 켜짐"
+        },
+        {
+          "id": "monitors.lua::Monitors off",
+          "category": "style",
+          "severity": "minor",
+          "problem": "짝을 이루는 켜짐 상태는 한국어인데 꺼짐 상태만 \"오프\"로 표현해 동일 기능의 상태 문형이 어긋나고 음성으로 들을 때도 부자연스럽다.",
+          "evidence": "core/monitors/module.lua:105에서 \"Monitors on\"과 \"Monitors off\"를 같은 토글 결과로 발화한다. 켜짐 번역은 \"모니터 켜짐\"이다.",
+          "suggestion": "모니터 꺼짐"
+        },
+        {
+          "id": "navigation.lua::Announce Distance",
+          "category": "style",
+          "severity": "minor",
+          "problem": "설정 이름을 문장형인 \"알립니다\"로 번역해 짧은 명사형을 써야 한다는 규칙에 어긋난다.",
+          "evidence": "core/navigation/maps/module.lua:213에서 label로 사용한다. 관련 설정 \"Announce Distance with Alt Gr\"도 \"Alt Gr로 거리 알림\"이라는 명사형이다.",
+          "suggestion": "거리 알림"
+        },
+        {
+          "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+          "category": "style",
+          "severity": "minor",
+          "problem": "음성 길 안내인데 \"걸어 들어가기\", \"경로 계속\"이라는 메모식 명사형으로 끝나 안내 문장은 합니다체로 쓴다는 규칙에 어긋난다.",
+          "evidence": "camelot/wownav/module.lua:860에서 say로 발화하며, 원문은 이동을 지시하고 이후 경로 상태를 설명하는 안내 문장이다.",
+          "suggestion": "전방: %s 안으로 걸어 들어가십시오; 이후 경로가 계속됩니다"
+        },
+        {
+          "id": "navigation.lua::Fishing spot on the shore: %s",
+          "category": "listening",
+          "severity": "minor",
+          "problem": "원문에 없는 괄호를 서식값 주위에 추가했다.",
+          "evidence": "원문은 \"Fishing spot on the shore: %s\"이지만 번역은 \"물가 낚시터: (%s)\"이다. 관련 항목 \"Fishing spot on pier or quay: %s\"도 괄호 없이 번역됐다.",
+          "suggestion": "물가 낚시터: %s"
+        }
+      ]
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a7217eb341ad65328",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771861,
+      "queuedAt": 1793843771816,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 작업 폴더는 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 이고, 이 폴더 밖의 파일은 절대 열거나 검색하지 않는다. 프롬프트에 나오는 상대 경로(wowwork/..., wowvision-ko/...)는 모두 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 기준이다.\n다음 파일을 Read로 읽고 지시를 그대로 따른다.\n1. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\n2. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/rev…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843813401,
+      "tokens": 74112,
+      "toolCalls": 5,
+      "durationMs": 41538,
+      "resultPreview": "{\"findings\":[{\"id\":\"buffers.lua::Not\",\"category\":\"accuracy\",\"severity\":\"critical\",\"problem\":\"Not(해당 조건을 제외하는 필터)을 '포함'으로 옮겨 뜻이 정반대가 됐다.\",\"evidence\":\"AuraBuffer.lua:130-132에서 Any/Only/Not이 필터 선택지로 나란히 쓰인다. Not은 조건에 맞는 오라를 빼는 선택지인데 '포함'은 반대 뜻이다.\",\"suggestion\":\"제외\"},{\"id\":\"groupHealth.lua::Include Yourself\",\"category\":\"accuracy\",\"severity\":\"critical\",\"problem\":\"Include Yourself(자신 포함)를 '자신 제외'로 옮겨 설정…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a723559b36f75ccb9",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771861,
+      "queuedAt": 1793843771817,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 작업 폴더는 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 이고, 이 폴더 밖의 파일은 절대 열거나 검색하지 않는다. 프롬프트에 나오는 상대 경로(wowwork/..., wowvision-ko/...)는 모두 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 기준이다.\n다음 파일을 Read로 읽고 지시를 그대로 따른다.\n1. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\n2. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/rev…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843819050,
+      "tokens": 77455,
+      "toolCalls": 7,
+      "durationMs": 45403,
+      "resultPreview": "{\"findings\":[{\"id\":\"groupHealth.lua::Healers\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"Healers를 비공식 음차 '힐러'로 옮겼다. 확정 용어집은 healer=치유 전담|치유사이고, 같은 애드온의 역할 이름도 L[\\\"Healer\\\"]=\\\"치유 전담\\\"이다(windows.lua:133). 같은 역할 목록의 Damage Dealers는 공식 '공격 전담'을 써서 목록 안에서도 체계가 섞인다.\",\"evidence\":\"glossary.tsv: healer\\t치유 전담|치유사. koKR/windows.lua:133 L[\\\"Healer\\\"] = \\\"치유 전담\\\". 같은 표(module.lua:140-143)의 DAMAGER…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a9cb7a976e761bc76",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771861,
+      "queuedAt": 1793843771817,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 작업 폴더는 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 이고, 이 폴더 밖의 파일은 절대 열거나 검색하지 않는다. 프롬프트에 나오는 상대 경로(wowwork/..., wowvision-ko/...)는 모두 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 기준이다.\n다음 파일을 Read로 읽고 지시를 그대로 따른다.\n1. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\n2. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/rev…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843832678,
+      "tokens": 80791,
+      "toolCalls": 7,
+      "durationMs": 59030,
+      "resultPreview": "{\"findings\":[{\"id\":\"navigation.lua::Direct: %s, %d yards\",\"category\":\"context\",\"severity\":\"critical\",\"problem\":\"Swaps the order of %s and %d without positional specifiers. string.format puts the label (a string) into %d and the distance into %s, which raises an error or reads the wrong values.\",\"evidence\":\"core/navigation/maps/module.lua:513: string.format(L[\\\"Direct: %s, %d yards\\\"], label or \\\"\\…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a361d290615e0246a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771862,
+      "queuedAt": 1793843771817,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 작업 폴더는 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 이고, 이 폴더 밖의 파일은 절대 열거나 검색하지 않는다. 프롬프트에 나오는 상대 경로(wowwork/..., wowvision-ko/...)는 모두 C:/Users/advck/AppData/Local/Temp/wowwork-calib-2 기준이다.\n다음 파일을 Read로 읽고 지시를 그대로 따른다.\n1. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\n2. C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/rev…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843811213,
+      "tokens": 75313,
+      "toolCalls": 5,
+      "durationMs": 37564,
+      "resultPreview": "{\"findings\":[{\"id\":\"errors.lua::Lua error\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"번역에 원문에 없는 콜론을 넣었다. 코드가 뒤에 \\\": \\\"를 또 붙이므로 \\\"Lua 오류:: 메시지\\\"처럼 콜론이 두 번 이어져 발화된다.\",\"evidence\":\"core/errors/module.lua:356: L[\\\"Lua error\\\"] .. \\\": \\\" .. message, en=\\\"Lua error\\\"(콜론 없음), ko=\\\"Lua 오류:\\\"\",\"suggestion\":\"Lua 오류\"},{\"id\":\"navigation.lua::Fishing spot on the shore: %s\",\"category\":\"listening\",\"sev…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "gpt:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a3a6c2269c1d7d9eb",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771862,
+      "queuedAt": 1793843771817,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\" --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/lens-accuracy.md\" --batch \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/batch.json\" --schema t…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843843684,
+      "tokens": 49880,
+      "toolCalls": 3,
+      "durationMs": 71820,
+      "resultPreview": "{\"findings\":[{\"id\":\"buffers.lua::Not\",\"category\":\"accuracy\",\"severity\":\"critical\",\"problem\":\"부정 의미인 “Not”을 긍정·포함 의미인 “포함”으로 번역해 필터 조건이 반대로 전달된다.\",\"evidence\":\"원문은 “Not”이며 AuraBuffer.lua:132에서 any/only와 함께 필터 선택지로 사용된다.\",\"suggestion\":\"해당 아님\"},{\"id\":\"groupHealth.lua::Include Yourself\",\"category\":\"accuracy\",\"severity\":\"critical\",\"problem\":\"자신을 포함하라는 설정을 “자신 제외”로 번역해 의미가 정반대가 되었다.\",\"evidence\":\"원문 “Incl…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a074b6a04e30db5cd",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771862,
+      "queuedAt": 1793843771818,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\" --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/lens-terminology.md\" --batch \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/batch.json\" --schem…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843850061,
+      "tokens": 49586,
+      "toolCalls": 3,
+      "durationMs": 76358,
+      "resultPreview": "{\"findings\":[{\"id\":\"groupHealth.lua::Group Health Monitor\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"같은 기능의 `Group Health`를 다른 항목에서는 일관되게 \\\"파티 및 공격대 생명력\\\"으로 옮겼지만, 이 항목만 \\\"그룹 생명력\\\"으로 옮겼다.\",\"evidence\":\"같은 기능의 `Speak Group Health`와 `Group health monitor unavailable here`는 각각 \\\"파티 및 공격대 생명력 말하기\\\", \\\"파티 및 공격대 생명력 모니터\\\"를 사용한다. 또한 retail/groupHealth/module.lua:83과 :89에서 파티와 공격대를 각각 감시하도록 구성된…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a191661c8b1c9682a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771862,
+      "queuedAt": 1793843771818,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\" --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/lens-context.md\" --batch \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/batch.json\" --schema to…",
+      "promptFramed": true,
+      "lastProgressAt": 1793843867086,
+      "tokens": 50470,
+      "toolCalls": 3,
+      "durationMs": 93382,
+      "resultPreview": "{\"findings\":[{\"id\":\"buffers.lua::Not\",\"category\":\"context\",\"severity\":\"critical\",\"problem\":\"필터 선택지의 `Not`이 반대 의미인 \\\"포함\\\"으로 번역됐다. 이 항목을 선택하면 사용자가 제외가 아닌 포함 동작으로 오해한다.\",\"evidence\":\"core/buffers/types/AuraBuffer.lua:130-132에서 `Any`, `Only`, `Not`이 같은 필터의 상호 배타적 선택지이며, `value = \\\"not\\\"`은 해당 조건을 제외하는 선택이다.\",\"suggestion\":\"제외\"},{\"id\":\"errors.lua::Lua error\",\"category\":\"context\",\"severity\":\"minor\",\"proble…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a16a43be87fb6beef",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793843771862,
+      "queuedAt": 1793843771818,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/common.md\" --prompt \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/wowwork/tools/review/prompts/lens-listening.md\" --batch \"C:/Users/advck/AppData/Local/Temp/wowwork-calib-2/batch.json\" --schema …",
+      "promptFramed": true,
+      "lastProgressAt": 1793843846381,
+      "tokens": 49777,
+      "toolCalls": 3,
+      "durationMs": 72676,
+      "resultPreview": "{\"findings\":[{\"id\":\"errors.lua::Lua error\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"원문에 없는 콜론을 추가해 실제 발화에서는 콜론이 두 번 이어진다.\",\"evidence\":\"번역은 \\\"Lua 오류:\\\"이고 core/errors/module.lua:356에서 뒤에 \\\": \\\"를 다시 연결한다. 원문에 없는 기호를 추가하지 않는다는 지침에도 어긋난다.\",\"suggestion\":\"Lua 오류\"},{\"id\":\"groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Mic…"
+    }
+  ],
+  "totalTokens": 507384,
+  "totalToolCalls": 36
+}
