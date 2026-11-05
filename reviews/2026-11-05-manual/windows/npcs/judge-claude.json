@@ -1,0 +1,55 @@
+[
+  {
+    "ref": "windows/npcs.md#claude-terminology-1",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "앱 자체가 chat과 gossip을 모두 '대화'로 옮긴다(koKR/chat.lua:4 L[\"Chat\"]=\"대화\", koKR/windows.lua:68 L[\"Gossip\"]=\"대화\"). 채팅 페이지 제목도 '# 대화'(ko/windows/chat.md:2)다. 화면 문구와 맞는 '대화창'을 이 파일만 '채팅 창'으로 바꾸면 앱 표기·설명서 전체와 어긋난다. 소리로 겹치는 문제는 앱 용어 결정 사항이라 이 지적으로 고칠 일이 아니다. 현재 번역 유지.",
+    "evidence_sources": [
+      "wowvision-ko/vision-locale/koKR/chat.lua:4",
+      "wowvision-ko/vision-locale/koKR/windows.lua:68",
+      "wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md:2",
+      "input"
+    ]
+  },
+  {
+    "ref": "windows/npcs.md#claude-style-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "terminology-1과 같은 판단. chat의 앱 표기가 '대화'(koKR/chat.lua:4)라 '대화창'이 화면 문구와 맞는다. 현재 번역 유지.",
+    "evidence_sources": [
+      "wowvision-ko/vision-locale/koKR/chat.lua:4",
+      "wowvision-ko/vision-locale/koKR/windows.lua:68"
+    ]
+  },
+  {
+    "ref": "windows/npcs.md#claude-style-1",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "terminology-1과 같은 판단. chat의 앱 표기가 '대화'(koKR/chat.lua:4)라 '대화창'이 화면 문구와 맞는다. 현재 번역 유지.",
+    "evidence_sources": [
+      "wowvision-ko/vision-locale/koKR/chat.lua:4",
+      "wowvision-ko/vision-locale/koKR/windows.lua:68"
+    ]
+  },
+  {
+    "ref": "windows/npcs.md#gpt-terminology-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "게임 공식 문자열에서 HONOR_POINTS 한국어 값은 '명예'(gs_koKR.csv:5213), 상인 가격 표기 MERCHANT_HONOR_POINTS는 '명예 %d'(gs_koKR.csv:8294)다. 영어도 'Honor'/'%d Honor'라 'Points'는 화면에 나오지 않는다. '명예 1200'이 실제 표기와 맞다. 현재 번역 유지.",
+    "evidence_sources": [
+      "wowwork/cache/gs_koKR.csv:5213",
+      "wowwork/cache/gs_koKR.csv:8294",
+      "wowwork/cache/gs_enUS.csv:8287"
+    ]
+  },
+  {
+    "ref": "windows/npcs.md#gpt-context-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문은 'repair everything you have equipped'이고 번역은 이를 그대로 옮겼다. merchant.lua:71-85는 GetRepairAllCost()를 확인한 뒤 게임의 RepairAllItems()를 부를 뿐이라, 가방 장비까지 수리되는지는 앱 코드로 확인되지 않는다(게임 내부 동작, 미확인). 근거가 약하고 원문에 없는 내용을 더하는 변경이라 현재 번역 유지.",
+    "evidence_sources": [
+      "wowvision-ko/WowVision/core/windows/merchant.lua:71-85",
+      "input"
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+{
+ "file": "controller.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/controller.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/controller.md",
+ "items": [
+  {
+   "ref": "controller.md#claude-terminology-0",
+   "file": "controller.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "게임패드 주 메뉴와 게임패드 단축바는 WoW: Forever에만 있습니다",
+    "suggestion": "게임패드 주 메뉴와 게임패드 행동 단축바는 WoW: Forever에만 있습니다",
+    "problem": "같은 파일에서 'gamepad action bars'(네 단축바 전체)를 제목과 본문에서는 '게임패드 행동 단축바'로 옮겼는데 여기서는 '게임패드 단축바'로 옮겼다. '게임패드 단축바'는 네 단축바 중 하나(Gamepad Bar)의 화면 이름이라, 들었을 때 그 한 단축바만 Forever 전용이라는 뜻으로 읽힐 수 있다.",
+    "evidence": "원문 'the gamepad action bars exist only on WoW: Forever'. 같은 파일의 '## 게임패드 행동 단축바(WoW: Forever)', '게임패드 행동 단축바에 놓입니다'. 화면 문구 Gamepad Bar=게임패드 단축바 (vision-locale/koKR/controller.lua:31)."
+   },
+   "translator": {
+    "ref": "controller.md#claude-terminology-0",
+    "action": "dispute",
+    "reason": "decisions.tsv 2026-11-03 사용자 결정: 행동 단축바 계열은 '단축바'로 통일(예 '게임패드 단축바'). 통일 방향은 '게임패드 단축바'이며 제목·본문 쪽을 그렇게 고쳤다(gpt-terminology-0/1). 이 줄은 유지."
+   }
+  },
+  {
+   "ref": "controller.md#claude-terminology-1",
+   "file": "controller.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "행동 단축바 창의 게임패드 단축바 네 개",
+    "suggestion": "행동 단축바 창의 게임패드 행동 단축바 네 개",
+    "problem": "같은 네 단축바를 바로 가기 층 표에서는 '게임패드 행동 단축바 네 개'로, 여기서는 '게임패드 단축바 네 개'로 다르게 옮겼다. '게임패드 단축바'는 그중 한 단축바의 화면 이름과 같아 총칭과 고유 이름이 섞인다.",
+    "evidence": "원문 'the four gamepad bars in the action bars window'와 'which also lists the four gamepad action bars'는 같은 대상. 번역의 '게임패드 행동 단축바 네 개도 여기에 나옵니다'. 화면 문구 Gamepad Bar=게임패드 단축바 (vision-locale/koKR/controller.lua:31)."
+   },
+   "translator": {
+    "ref": "controller.md#claude-terminology-1",
+    "action": "dispute",
+    "reason": "같은 결정 근거로 표의 '게임패드 행동 단축바 네 개'를 '게임패드 단축바 네 개'로 맞췄다. '네 개'가 붙어 단일 단축바 이름으로 오해될 여지 적음."
+   }
+  },
+  {
+   "ref": "controller.md#gpt-style-3",
+   "file": "controller.md",
+   "finding": {
+    "category": "style",
+    "severity": "major",
+    "quote": "앞을 보는 플레이어가 오른쪽 스틱으로 고르는 여덟 칸짜리 휠입니다.",
+    "suggestion": "화면을 보는 플레이어가 오른쪽 스틱으로 선택하는 여덟 칸짜리 휠입니다.",
+    "problem": "‘앞을 보는 플레이어’는 ‘sighted players’를 자연스럽게 전달하지 못하고 정면을 향한 플레이어라는 다른 뜻으로 들린다.",
+    "evidence": "원문은 “a wheel of eight slices that sighted players pick with the right stick”이다. manual-translate.md의 자연스러운 한국어 원칙과 스크린리더 독자 조건에 따라 의미가 분명한 표현이 필요하다."
+   },
+   "translator": {
+    "ref": "controller.md#gpt-style-3",
+    "action": "dispute",
+    "reason": "'앞을 보는 플레이어'는 설명서 전반의 통일 번역(reference/glossary.md:26, windows/action-bars.md:139, windows/chat.md:109, world/combat.md:81 등). 이 파일만 바꾸면 용어가 갈린다."
+   }
+  },
+  {
+   "ref": "controller.md#gpt-context-0",
+   "file": "controller.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "[버퍼](./information/buffers.md)와 [이동](./world/movement.md)을 참고하십시오.",
+    "suggestion": "[버퍼](./information/buffers.md)와 [이동과 주변 환경](./world/movement.md)을 참고하십시오.",
+    "problem": "링크 글자 «이동»이 대상 페이지의 실제 제목과 일치하지 않는다.",
+    "evidence": "대상 문서 wowvision-ko/WowVision/docs/src/user/ko/world/movement.md:2의 제목은 «이동과 주변 환경»이다. context 관점은 링크 글자와 대상 페이지의 실제 제목이 맞는지 확인하도록 규정한다."
+   },
+   "translator": {
+    "ref": "controller.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문 링크 글자가 'Movement'(en/controller.md:68). 기존 번역도 '[이동]'(basics/alerts.md:92, basics/menu-and-settings.md:62)."
+   }
+  },
+  {
+   "ref": "controller.md#gpt-context-1",
+   "file": "controller.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "| 방향 패드 위 | 길 안내 창([길 안내](./world/navigation.md)) |",
+    "suggestion": "| 방향 패드 위 | 길 안내 창([길 안내: 지도, 경로, 비컨](./world/navigation.md)) |",
+    "problem": "링크 글자 «길 안내»가 대상 페이지의 실제 제목 중 부제 부분을 빠뜨렸다.",
+    "evidence": "대상 문서 wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:2의 제목은 «길 안내: 지도, 경로, 비컨»이다. context 관점은 링크 글자와 대상 페이지의 실제 제목이 맞는지 확인하도록 규정한다."
+   },
+   "translator": {
+    "ref": "controller.md#gpt-context-1",
+    "action": "dispute",
+    "reason": "원문 링크 글자가 'Navigation'(en/controller.md:78). 기존 번역도 '[길 안내]'(basics/alerts.md:92). 원문에 없는 부제를 더하지 않는다."
+   }
+  },
+  {
+   "ref": "controller.md#gpt-context-2",
+   "file": "controller.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "그다음 [버그 신고 방법](./getting-started/troubleshooting.md#버그-신고하기)을 따르십시오.",
+    "suggestion": "그다음 [버그 신고하기](./getting-started/troubleshooting.md#버그-신고하기)를 따르십시오.",
+    "problem": "링크 글자 «버그 신고 방법»이 링크 대상 절의 실제 제목과 다르다.",
+    "evidence": "대상 문서 wowvision-ko/WowVision/docs/src/user/ko/getting-started/troubleshooting.md:123의 제목은 «버그 신고하기»이다. 앵커는 올바르지만, context 관점은 링크 글자도 대상 페이지의 실제 제목과 맞는지 확인하도록 규정한다."
+   },
+   "translator": {
+    "ref": "controller.md#gpt-context-2",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 문장 속 'how to report a bug'(en/controller.md:139)라 '버그 신고 방법'이 충실한 번역. 앵커 #버그-신고하기는 대상 제목(troubleshooting.md:123)과 일치."
+   }
+  }
+ ]
+}

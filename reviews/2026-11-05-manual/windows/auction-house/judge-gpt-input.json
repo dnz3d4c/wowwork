@@ -1,0 +1,41 @@
+{
+ "file": "windows/auction-house.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/auction-house.md",
+ "items": [
+  {
+   "ref": "windows/auction-house.md#gpt-terminology-0",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "- 평균 줄. 예: \"7-일간 평균: 2 실버 10 코퍼\". 정한 일수 동안의 일별 최저가 평균입니다.",
+    "suggestion": "- 평균 줄. 예: \"7일간 평균: 2 실버 10 코퍼\". 정한 일수 동안의 일별 최저가 평균입니다.",
+    "problem": "실제 화면 문구에 쓰이는 확정 용어에 없는 하이픈이 들어가 글자가 일치하지 않습니다.",
+    "evidence": "terms에서 \"Day Mean\"의 한국어 값은 \"일간 평균\"입니다. 따라서 원문의 \"7-Day Mean\"은 \"7일간 평균\"으로 표기해야 합니다."
+   },
+   "translator": {
+    "ref": "windows/auction-house.md#gpt-terminology-0",
+    "action": "dispute",
+    "reason": "실제 툴팁 줄은 tbc/auction/prices.lua:242 `meanDays .. \"-\" .. L[\"Day Mean\"]`로 조립돼 koKR에서 '7-일간 평균'이 그대로 낭독된다. 하이픈은 코드가 넣는 글자라 설명서도 글자 그대로 두어야 듣는 말과 같다(번역 지침 용어 1). 표기 개선은 코드 쪽 과제."
+   }
+  },
+  {
+   "ref": "windows/auction-house.md#gpt-terminology-1",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "| 평균 일수 | 7 | 평균 줄이 며칠을 평균할지 정합니다. 줄 이름도 이 값을 따릅니다(\"7-일간 평균\") |",
+    "suggestion": "| 평균 일수 | 7 | 평균 줄이 며칠을 평균할지 정합니다. 줄 이름도 이 값을 따릅니다(\"7일간 평균\") |",
+    "problem": "같은 화면 문구를 설명하는 설정 표에서도 확정 용어에 없는 하이픈을 사용했습니다.",
+    "evidence": "terms의 \"Day Mean\"은 \"일간 평균\"으로 확정되어 있으므로 줄 이름은 \"7일간 평균\"이어야 합니다."
+   },
+   "translator": {
+    "ref": "windows/auction-house.md#gpt-terminology-1",
+    "action": "dispute",
+    "reason": "gpt-terminology-0과 같은 근거: prices.lua:242가 숫자와 '일간 평균' 사이에 '-'를 넣어 실제 줄 이름이 '7-일간 평균'이다."
+   }
+  }
+ ]
+}

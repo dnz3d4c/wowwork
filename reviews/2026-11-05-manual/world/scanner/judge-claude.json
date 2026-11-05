@@ -1,0 +1,46 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/scanner.md#gpt-terminology-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "'Prowler'의 공식 한국어가 '굶주린 늑대'라는 근거가 인정 자료 어디에도 없다. gs_enUS.csv, gs_koKR.csv, game_terms.tsv, glossary.tsv를 검색했지만 Prowler도 '굶주린 늑대'도 나오지 않는다. 지적의 근거를 확인할 수 없으므로 현재 번역을 유지한다.",
+      "evidence_sources": ["wowwork/cache/gs_enUS.csv", "wowwork/cache/gs_koKR.csv", "wowwork/cache/game_terms.tsv", "wowwork/docs/glossary.tsv"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-terminology-4",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "퀘스트 783의 공식 한국어가 '내부의 위협'이라는 근거가 게임 문자열 캐시와 용어표에 없다. 다른 번역 페이지 ko/world/quests.md:150-153도 같은 퀘스트를 'A Threat Within'으로 쓰고 있어서, 근거 없이 이 파일만 바꾸면 페이지끼리 이름이 달라진다. 현재 번역을 유지한다.",
+      "evidence_sources": ["wowwork/cache/gs_koKR.csv", "wowwork/cache/game_terms.tsv", "wowwork/docs/glossary.tsv", "input"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-context-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "maxEntries를 일부 그룹에만 적용한다는 코드 사실은 맞다(quests/scanner.lua:316,383,393,437, minimap/scanner.lua:30). 하지만 원문 en:104가 'The most entries listed in one group'이고 번역은 이를 충실히 옮겼다. 적용 그룹을 나열해 넣으면 원문에 없는 내용을 더하게 된다. 이건 영어 원문을 고칠 사안이지 번역 결함이 아니다.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/core/quests/scanner.lua:316", "wowvision-ko/WowVision/core/minimap/scanner.lua:30"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-context-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 en:90의 링크 글자는 'navigation window'로, 문장에서 주어인 창을 가리킨다. 번역 '길 안내 창'은 원문 그대로이고 navigation.md:4에도 '길 안내 창(F10)'이 나온다. 페이지 제목으로 바꾸면 '...가 맡습니다'의 주어가 어색해진다.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:4"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-context-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 en:131 'opens the navigation window'의 목적어가 창이다. 현재 번역은 원문 링크 글자를 충실히 옮겼다. 페이지 제목 '길 안내: 지도, 경로, 비컨'으로 바꾸면 '열린다'는 문장이 성립하지 않는다.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:4"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-context-4",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 en:138의 링크 글자는 'Navigation'이고 '길 안내'는 그 번역이다. 대상 경로 navigation.md도 맞다. 지적이 근거로 든 controller.md는 이 링크와 무관하다. 관련 페이지 목록에서 짧은 이름을 쓴 것은 원문을 따른 것이다.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:2"]
+    }
+  ]
+}

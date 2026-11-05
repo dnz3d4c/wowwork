@@ -1,0 +1,24 @@
+{
+  "responses": [
+    {
+      "ref": "reference/index.md#claude-terminology-0",
+      "action": "applied",
+      "reason": "원문 chat box는 명령을 입력하는 칸이다. 화면 문구(vision-locale/koKR/chat.lua L[\"Chat Box Opened\"] = \"대화 입력창 열림\")와 ko/reference/commands.md:4·13, quick-start.md:12, troubleshooting.md:6이 모두 '대화 입력창'을 쓰고, '대화창'은 다른 파일에서 메시지가 출력되는 창(chat window)에 쓰인다. '대화 입력창에 입력할 수 있는 모든 명령'으로 고쳤다."
+    },
+    {
+      "ref": "reference/index.md#claude-terminology-1",
+      "action": "applied",
+      "reason": "'일람'이라는 따로 노는 표현을 없앴다. 다만 같은 줄을 가리키는 합의 지적 두 건(claude-context-0, gpt-context-0)이 링크 글자를 대상 페이지 실제 제목에 맞추라고 해서 '단축키 참조' 대신 대상 ko/reference/keybindings.md:2의 제목 '키 바인딩 목록'을 썼다. 원문도 링크 글자 'Keybinding Reference'가 대상 제목과 같다. 다른 파일들의 '[단축키 참조]' 링크와의 통일은 대상 페이지 제목을 정하는 쪽에서 함께 맞출 일이다."
+    },
+    {
+      "ref": "reference/index.md#claude-context-0",
+      "action": "applied",
+      "reason": "원문 링크 글자 'Keybinding Reference'는 대상 en/reference/keybindings.md 제목과 같다. 한국어 대상 ko/reference/keybindings.md 제목이 '# 키 바인딩 목록'이므로 링크 글자를 '키 바인딩 목록'으로 맞췄다."
+    },
+    {
+      "ref": "reference/index.md#gpt-context-0",
+      "action": "applied",
+      "reason": "claude-context-0과 같은 곳, 같은 수정. 링크 글자를 대상 페이지 실제 제목 '키 바인딩 목록'으로 바꿨다."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+ "file": "windows/system.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/system.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/system.md",
+ "items": [
+  {
+   "ref": "windows/system.md#claude-context-4",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "4. Tab으로 매크로 내용까지 가십시오. `/cast Healing Touch`를 입력하고 Tab을 누르십시오.",
+    "suggestion": "4. Tab으로 매크로 내용까지 가십시오. `/cast 치유의 손길`을 입력하고 Tab을 누르십시오.",
+    "problem": "한국어 클라이언트에서 /cast는 현지화된 주문 이름을 받으므로 영어 주문 이름 Healing Touch로는 매크로가 동작하지 않는다. 예제를 따라 만든 매크로가 실패한다.",
+    "evidence": "원문 \"Type `/cast Healing Touch`\"; 게임은 주문 이름을 클라이언트 언어로 해석한다(Healing Touch의 한국어 이름 치유의 손길은 미확인 추정 — 게임 내 주문책 또는 주문 데이터로 확인 필요)"
+   },
+   "translator": {
+    "ref": "windows/system.md#claude-context-4",
+    "action": "dispute",
+    "reason": "`/cast Healing Touch`는 인라인 코드라 manual-translate.md 규칙상 바꾸지 않는다. 제안한 '치유의 손길'은 평가자 스스로 미확인 추정이라 밝혔다."
+   }
+  },
+  {
+   "ref": "windows/system.md#gpt-terminology-0",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "3. 범주: 게임 플레이, 조작 설정, 그래픽, 음성, 인터페이스 설정, 소셜, 단축키 설정 같은 범주 목록입니다.",
+    "suggestion": "3. 범주: 게임 플레이, 조작, 그래픽, 음성, 인터페이스 설정, 소셜, 단축키 설정 같은 범주 목록입니다.",
+    "problem": "화면 범주명인 Controls를 확정된 화면 문구와 다르게 옮겼다.",
+    "evidence": "원문은 범주 이름을 나열하며 \"Gameplay, Controls, Graphics\"라고 한다. 입력 terms는 Controls의 실제 한국어 값을 \"조작\"으로 지정하고, manual-translate.md는 화면 문구를 terms의 한국어 값과 글자 그대로 맞추도록 규정한다."
+   },
+   "translator": {
+    "ref": "windows/system.md#gpt-terminology-0",
+    "action": "dispute",
+    "reason": "범주 목록은 게임 설정 창 자체의 범주 이름이다. 게임 문자열 CONTROLS_LABEL=\"조작 설정\"(gs_koKR.csv)이고 같은 목록의 '인터페이스 설정', '단축키 설정'(KEY_BINDINGS)과 형식이 같다. 용어표 Controls=조작은 다른 WowVision 문구 값이다."
+   }
+  },
+  {
+   "ref": "windows/system.md#gpt-context-0",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "context",
+    "severity": "critical",
+    "quote": "3. Tab으로 녹색까지 가서 0을 입력하십시오. Tab으로 파란색까지 가서 0을 입력하십시오.",
+    "suggestion": "3. Tab으로 녹색까지 가십시오. Enter를 누르고 0을 입력한 뒤 Enter를 누르십시오. Tab으로 파란색까지 가서 Enter를 누르고 0을 입력한 뒤 Enter를 누르십시오.",
+    "problem": "녹색과 파란색 값을 바로 입력하라고 안내하지만, 숫자 조작 요소에서는 먼저 Enter를 눌러 입력 상자를 열어야 합니다. 현재 절차대로 하면 0이 색상 값으로 입력되지 않습니다.",
+    "evidence": "wowvision-ko/WowVision/core/windows/colorPicker.lua:123에서 각 색상 채널을 nodes.number로 만들며, wowvision-ko/WowVision/core/graph/nodes.lua:344-345와 374-383에서 숫자 조작 요소는 Enter를 눌러야 텍스트 입력 화면을 연다고 정의합니다."
+   },
+   "translator": {
+    "ref": "windows/system.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문 3단계는 'Tab to Green, type 0.'으로 Enter 단계가 없다. 넣으면 원문에 없는 내용을 더하게 된다(manual-translate.md 문체 규칙). 코드 지적(nodes.lua:374-383)은 맞으므로 원문 결함으로 상류에 올릴 사안이다."
+   }
+  }
+ ]
+}

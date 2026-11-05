@@ -1,0 +1,92 @@
+{
+ "file": "windows/chat.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/chat.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md",
+ "items": [
+  {
+   "ref": "windows/chat.md#claude-terminology-4",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "플레이어 검색(Shift 클릭, Battle.net 플레이어에는 없음)",
+    "suggestion": "플레이어 검색(Shift 클릭, 누구 검색. Battle.net 플레이어에는 없음)",
+    "problem": "같은 동작(who search)을 본문에서는 '누구 검색'으로, 상황별 메뉴 항목에서는 '플레이어 검색'으로 씁니다. 메뉴 이름은 화면 문구라 바꿀 수 없으니, 둘이 같은 동작임을 이어 주어야 독자가 혼동하지 않습니다.",
+    "evidence": "원문 'runs a who search' / 'Who (shift click, not for Battle.net players)'. koKR/chat.lua:32 L[\"Who %s\"] = \"%s 플레이어 검색\", gs_koKR WHO=누구"
+   },
+   "translator": {
+    "ref": "windows/chat.md#claude-terminology-4",
+    "action": "dispute",
+    "reason": "원문 메뉴 목록은 'Who (shift click, ...)'로 메뉴 이름만 적는다. 메뉴 이름은 koKR/chat.lua:32 '%s 플레이어 검색'이고, 항목에 붙은 'Shift 클릭'이 위 본문의 Shift+Enter(누구 검색)와 이어 주므로 원문에 없는 '누구 검색' 설명을 덧붙이지 않음(번역 지침: 원문에 없는 내용을 더하지 않는다)."
+   }
+  },
+  {
+   "ref": "windows/chat.md#gpt-context-2",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "| Shift+Up, Shift+Down, Shift+Left, Shift+Right | 툴팁을 한 줄씩 읽습니다([툴팁](../basics/tooltips.md) 참고). |",
+    "suggestion": "| Shift+Up, Shift+Down, Shift+Left, Shift+Right | 툴팁을 한 줄씩 읽습니다([툴팁 읽기](../basics/tooltips.md) 참고). |",
+    "problem": "링크 글자가 대상 문서의 실제 제목과 다릅니다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/basics/tooltips.md:2의 제목은 \"툴팁 읽기\"입니다."
+   },
+   "translator": {
+    "ref": "windows/chat.md#gpt-context-2",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Tooltips'로 대상 제목 'Reading Tooltips'를 줄여 쓴 것이다. 번역 지침은 링크 글자를 옮기라고 할 뿐 대상 제목으로 바꾸라고 하지 않으므로 원문대로 '툴팁'을 유지."
+   }
+  },
+  {
+   "ref": "windows/chat.md#gpt-context-3",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "그 답은 대화에 시스템 메시지로 도착합니다(클래식 시대, TBC, Mists에서는 누구 목록이 열릴 수도 있습니다. [소셜](social.md#누구-목록) 참고).",
+    "suggestion": "그 답은 대화에 시스템 메시지로 도착합니다(클래식 시대, TBC, Mists에서는 누구 목록이 열릴 수도 있습니다. [누구 목록](social.md#누구-목록) 참고).",
+    "problem": "링크 글자가 실제로 이동하는 절의 제목과 다릅니다.",
+    "evidence": "링크 대상은 wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:90의 \"누구 목록\" 절입니다."
+   },
+   "translator": {
+    "ref": "windows/chat.md#gpt-context-3",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Social'로 페이지 이름을 가리킨다. 원문 글자를 옮긴 '소셜'을 유지."
+   }
+  },
+  {
+   "ref": "windows/chat.md#gpt-context-4",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "경보, 음성, 소리를 일반적으로 설정하는 방법은 [경보](../basics/alerts.md)와 [음성](../basics/speech.md)을 참고하십시오.",
+    "suggestion": "경보, 음성, 소리를 일반적으로 설정하는 방법은 [경보](../basics/alerts.md)와 [음성 및 소리](../basics/speech.md)를 참고하십시오.",
+    "problem": "두 번째 링크 글자가 대상 문서의 실제 제목을 일부만 나타냅니다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/basics/speech.md:2의 제목은 \"음성 및 소리\"입니다."
+   },
+   "translator": {
+    "ref": "windows/chat.md#gpt-context-4",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Speech'로 대상 제목 'Speech and Sound'를 줄여 썼다. 원문 글자를 옮긴 '음성'을 유지."
+   }
+  },
+  {
+   "ref": "windows/chat.md#gpt-context-5",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "- \"여기서는 링크 사용 불가\". 게임이 애드온에게 대화 글을 숨기고 있습니다([잠금 중 대화](#잠금-중-대화-리테일과-wow-forever) 참고).",
+    "suggestion": "- \"여기서는 링크 사용 불가\". 게임이 애드온에게 대화 글을 숨기고 있습니다([잠금 중 대화 (리테일과 WoW: Forever)](#잠금-중-대화-리테일과-wow-forever) 참고).",
+    "problem": "링크 글자에서 대상 절 제목의 게임 버전 한정이 빠져 실제 제목과 일치하지 않습니다.",
+    "evidence": "같은 파일의 대상 제목은 \"잠금 중 대화 (리테일과 WoW: Forever)\"입니다."
+   },
+   "translator": {
+    "ref": "windows/chat.md#gpt-context-5",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Chat during lockdown'으로 제목의 버전 한정을 뺀 줄임이다. 원문 글자를 옮긴 '잠금 중 대화'를 유지하고 앵커만 번역 제목에 맞춤."
+   }
+  }
+ ]
+}

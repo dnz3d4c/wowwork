@@ -1,0 +1,112 @@
+{
+ "findings": [
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "구성원은 \"이름, 파티장 또는 관리자, 자리 비움 또는 다른 용무 중 또는 오프라인\"으로 읽습니다.",
+   "suggestion": "구성원은 \"이름, 지도자 또는 관리자, 자리 비움 또는 다른 용무 중 또는 오프라인\"으로 읽습니다.",
+   "problem": "커뮤니티 대화 페이지의 짧은 구성원 목록에서 Leader 역할은 게임의 커뮤니티 역할 이름으로 읽힌다. 실제 발화는 '지도자'인데 번역은 파티 지도자 용어인 '파티장'을 썼다.",
+   "evidence": "wowvision-ko/WowVision/retail/communities.lua:190-203 roleName/roleMark가 COMMUNITY_MEMBER_ROLE_NAMES[role]을 반환. cache/gs_koKR.csv COMMUNITY_MEMBER_ROLE_NAME_LEADER=지도자, COMMUNITY_MEMBER_ROLE_NAME_MODERATOR=관리자. '파티장'은 PARTY_LEADER(L[\"Leader\"] 역할 확인 팝업용) 값이라 이 목록과 무관."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "두 가지 열 묶음 사이를 전환하는 버튼(플레이어 상태: 레벨, 직업, 지역 / 길드 정보: 등급, 메모, 접속)",
+   "suggestion": "두 가지 열 묶음 사이를 전환하는 버튼(플레이어 정보: 레벨, 직업, 지역 / 길드 정보: 등급, 메모, 접속)",
+   "problem": "Classic 길드 탭의 열 전환 버튼은 게임 문구 PLAYER_STATUS를 읽는데 한국어 값은 '플레이어 정보'다. '플레이어 상태'는 실제로 들리지 않는 이름이다.",
+   "evidence": "wowvision-ko/WowVision/classic/guild.lua:249 'return playerView() and PLAYER_STATUS or GUILD_STATUS'. cache/gs_koKR.csv PLAYER_STATUS=\"플레이어 정보\", GUILD_STATUS=\"길드 정보\"."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "초대, 커뮤니티 설정, 길드 모집, 길드 권한, 기록 보기, 최대화 또는 최소화입니다.",
+   "suggestion": "초대, 커뮤니티 설정, 모집하기, 길드 설정, 기록 보기, 최대화 또는 최소화입니다.",
+   "problem": "길드 및 커뮤니티 창의 조작 버튼은 게임 버튼 글자를 그대로 읽는다(최대화·최소화만 애드온 라벨). 길드 권한 버튼의 게임 글자는 '길드 설정', 모집 버튼은 '모집하기'라서 번역의 '길드 권한', '길드 모집'은 실제로 들리지 않는다. 커뮤니티 설정 버튼 글자는 미확인(COMMUNITIES_SETTINGS_BUTTON_LABEL='그룹 설정'이 후보) — 게임에서 확인 필요.",
+   "evidence": "wowvision-ko/WowVision/retail/communities.lua:966-994 renderButtons가 GuildRecruitmentButton·GuildControlButton을 label 없이 addProxy(게임 글자 사용). cache/gs_koKR.csv GUILD_CONTROL_BUTTON_TEXT=\"길드 설정\", GUILD_RECRUITMENT=모집하기, GUILD_VIEW_LOG=\"기록 보기\". 버튼과 전역 문자열의 대응은 Blizzard_Communities XML 기준 추정."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "길드 권한 버튼(길드장과 관리자)은 등급 관리 창을 엽니다.",
+   "suggestion": "길드 설정 버튼(길드장과 관리자)은 등급 관리 창(길드 권한)을 엽니다.",
+   "problem": "리테일에서 이 창을 여는 버튼은 게임 글자 '길드 설정'으로 읽힌다. 창 자체는 애드온 라벨 '길드 권한'으로 읽히므로, 버튼 이름으로 '길드 권한'을 찾으면 못 찾는다. 같은 절 예시 1단계 '길드 창에서 길드 권한을 누릅니다'도 '길드 설정'으로 고쳐야 한다.",
+   "evidence": "retail/communities.lua:974 GuildControlButton 프록시(게임 글자). cache/gs_koKR.csv GUILD_CONTROL_BUTTON_TEXT=\"길드 설정\". 창 라벨은 retail/guildControl.lua:3 L[\"Guild Control\"]=\"길드 권한\"(vision-locale/koKR)."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "조작: 합계(\"12 players\"), 검색 버튼, 친구 추가, 파티 초대",
+   "suggestion": "조작: 합계(\"12명 조건 일치\"), 검색 버튼, 친구 추가, 파티 초대",
+   "problem": "누구 목록 합계는 게임의 WhoFrameTotals 글자를 그대로 읽으므로 한국어 클라이언트에서는 한국어로 들린다. 영어 예시를 그대로 둬서 실제 발화와 다르다.",
+   "evidence": "wowvision-ko/WowVision/classic/friends.lua:663-666 nodes.frameText(WhoFrameTotals). cache/gs_koKR.csv WHO_FRAME_TOTAL_TEMPLATE=\"%d명 조건 일치\"(Classic 클라이언트의 정확한 문구는 미확인, 게임에서 확인 필요)."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "직업(\"c-Mage\"), 지역(\"z-Orgrimmar\"), 길드(\"g-Name\") 같은 검색어를 입력하고 Enter를 누릅니다.",
+   "suggestion": "직업(\"c-마법사\"), 지역(\"z-오그리마\"), 길드(\"g-길드이름\") 같은 검색어를 입력하고 Enter를 누릅니다.",
+   "problem": "한국어 클라이언트의 누구 검색은 접두어(c-, z-, g-)는 같지만 값은 한국어 직업·지역 이름과 대조하는 것으로 추정된다. 영어 이름을 그대로 입력하면 결과가 나오지 않아 독자가 잘못 행동한다. 예시의 \"z-Elwynn Forest 10-20\"도 \"z-엘윈 숲 10-20\"이어야 한다.",
+   "evidence": "cache/gs_koKR.csv WHO_TAG_CLASS=c-, WHO_TAG_ZONE=z-(접두어는 영어 유지), WHO_LIST_SEARCH_INSTRUCTIONS=\"지역, 길드, 직업, 종족, 레벨 검색\". 같은 파일의 결과 줄은 '60 레벨 마법사'로 한국어 직업명을 읽음(classic/friends.lua:624 info.classStr). 한국어 클라이언트에서 영어 값이 매칭되지 않는다는 점은 미확인 추정 — 게임에서 /who c-Mage 실행으로 확인 가능."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "그다음 상태(오프라인, 자리 비움, 다른 용무 중), 그다음 지역과 메모(\"메모 ...\")입니다.",
+   "suggestion": "그다음 상태(접속 종료, 자리 비움, 다른 용무 중), 그다음 지역과 메모(\"메모 ...\")입니다.",
+   "problem": "Classic 친구 창의 캐릭터 친구가 오프라인이면 게임 문구 FRIENDS_LIST_OFFLINE을 읽는데 한국어 값은 '접속 종료'다. '오프라인'으로 안내하면 실제 발화와 다르다.",
+   "evidence": "wowvision-ko/WowVision/classic/friends.lua:117 'return FRIENDS_LIST_OFFLINE'. cache/gs_koKR.csv FRIENDS_LIST_OFFLINE=\"접속 종료\"(캐시는 리테일 기준, Classic 클라이언트 값은 미확인)."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "구성원은 \"이름, 80 레벨 전사, 공격대장, 방어 전담, 오프라인 또는 죽음, 지역\"으로 읽습니다.",
+   "suggestion": "구성원은 \"이름, 80 레벨 전사, 공격대장, 방어 전담, 접속 종료 또는 죽음, 지역\"으로 읽습니다.",
+   "problem": "공격대 탭 구성원의 오프라인 표시는 FRIENDS_LIST_OFFLINE을 읽으므로 실제 발화는 '접속 종료'다.",
+   "evidence": "wowvision-ko/WowVision/retail/socialUI.lua:414-418 'tinsert(parts, FRIENDS_LIST_OFFLINE)' / DEAD. cache/gs_koKR.csv FRIENDS_LIST_OFFLINE=\"접속 종료\", DEAD=죽음, RAID_LEADER=공격대장, MAIN_TANK=\"방어 전담\"."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "각 줄은 \"Xynayya earned the achievement ...\"처럼 읽습니다. 소식이 없으면 게임의 \"no news\" 문구가 들립니다.",
+   "suggestion": "각 줄은 \"Xynayya 님이 ... 업적을 이루었습니다.\"처럼 읽습니다. 소식이 없으면 소식이 없다는 게임 문구가 들립니다.",
+   "problem": "새 소식 줄은 게임의 GUILD_NEWS_FORMAT 문자열로 만들어지고, 소식 없음은 게임 글꼴 문자열(NoNews)을 읽는다. 한국어 클라이언트에서는 둘 다 한국어로 들리는데 번역이 영어 예시를 인용해 실제 발화와 다르다.",
+   "evidence": "wowvision-ko/WowVision/retail/communities.lua:726 format(_G[\"GUILD_NEWS_FORMAT\" .. newsType], who, what), :808-810 addFontLine(news.NoNews). cache/gs_koKR.csv GUILD_NEWS_FORMAT1=\"%s 님이 %s 업적을 이루었습니다.\". 소식 없음 한국어 문구는 캐시에서 못 찾음(미확인)."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "이벤트마다 한 줄(\"A invited B\", \"A promoted B to Officer\" 등)과 그 시각이 있으며",
+   "suggestion": "이벤트마다 한 줄(\"A 님이 B 님을 초대했습니다.\", \"A 님이 B 님의 등급을 관리자로 올렸습니다.\" 등)과 그 시각이 있으며",
+   "problem": "길드 이벤트 기록 줄은 게임의 GUILDEVENT_TYPE_* 문자열로 만들어져 한국어 클라이언트에서는 한국어 문장으로 들린다. 영어 예시 인용은 실제 발화와 다르다.",
+   "evidence": "wowvision-ko/WowVision/retail/communities.lua:1187-1190 invite = GUILDEVENT_TYPE_INVITE 등. cache/gs_koKR.csv GUILDEVENT_TYPE_INVITE=\"%s 님이 %s 님을 초대했습니다.\", GUILDEVENT_TYPE_PROMOTE=\"%s 님이 %s 님의 등급을 %s|1으로;로; 올렸습니다.\"."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "채널: 머리글(파티, 전체, 사용자 설정, 커뮤니티) 아래의 채널 목록입니다.",
+   "suggestion": "채널: 머리글(파티, 전체, 사용자 채널, 커뮤니티) 아래의 채널 목록입니다.",
+   "problem": "대화 채널 창의 머리글은 게임 버튼 글자를 읽는다. custom 머리글의 한국어 게임 문구는 '사용자 채널'이라 번역의 '사용자 설정'과 다르다.",
+   "evidence": "wowvision-ko/WowVision/retail/channels.lua:26-28, 80-88 머리글은 버튼 자체 글자(빈 경우만 대체). cache/gs_koKR.csv CHANNEL_CATEGORY_GROUP=파티, CHANNEL_CATEGORY_WORLD=전체, CHANNEL_CATEGORY_CUSTOM=\"사용자 채널\"."
+  },
+  {
+   "id": "windows/social.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "선택한 채널의 구성원이며, 그 채널 이름이 붙습니다(\"구성원, Trade\").",
+   "suggestion": "선택한 채널의 구성원이며, 그 채널 이름이 붙습니다(\"구성원, 거래\").",
+   "problem": "구성원 구역 라벨 뒤에는 게임의 채널 이름이 붙는데, 한국어 클라이언트의 거래 채널 이름은 한국어다. 영어 'Trade'는 실제로 들리지 않는다.",
+   "evidence": "wowvision-ko/WowVision/retail/channels.lua:208 nodes.joinLabel(L[\"Members\"], channelName). 한국어 클라이언트 거래 채널 이름이 '거래'라는 것은 미확인 추정 — 게임 대화 채널 창에서 확인 필요."
+  }
+ ]
+}

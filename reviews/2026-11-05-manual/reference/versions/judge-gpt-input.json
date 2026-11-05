@@ -1,0 +1,24 @@
+{
+ "file": "reference/versions.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/reference/versions.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/reference/versions.md",
+ "items": [
+  {
+   "ref": "reference/versions.md#gpt-context-0",
+   "file": "reference/versions.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| WowVision과 함께 제공되는 지도 데이터(WowVision_MapData_TBC) | 예 | 예 | 아니요 | 아니요 | 예 |",
+    "suggestion": "| WowVision과 함께 제공되는 지도 데이터(WowVision_MapData_TBC) | 아니요 | 예 | 아니요 | 아니요 | 예 |",
+    "problem": "Classic Era에서 지도 데이터를 사용할 수 있다고 잘못 안내한다.",
+    "evidence": "`WowVision_MapData_TBC.toc:1`의 지원 인터페이스는 TBC와 WoW: Forever에 해당하는 `20506, 16001`뿐이다. `docs/src/user/ko/getting-started/manual-installation.md:22`도 이 폴더는 TBC와 WowNav를 끈 WoW: Forever에서만 쓰며 다른 버전용이 아니라고 설명한다."
+   },
+   "translator": {
+    "ref": "reference/versions.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문 표는 Classic Era를 Yes로 적고 있다. WowVision_MapData_TBC.toc의 Interface가 20506, 16001이라 지적 내용이 사실일 가능성이 있지만, 번역은 원문에 있는 내용을 바꾸지 않는다(manual-translate.md 24행 '원문에 없는 내용을 더하지 않고'). 원문 오류로 상류에 보고할 사안이지 번역에서 고칠 사안이 아니다."
+   }
+  }
+ ]
+}

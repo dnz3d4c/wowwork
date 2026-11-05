@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "windows/system.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "1. 대화 상자에 `/macro`를 입력하고 Enter를 누르십시오.",
+   "suggestion": "1. 대화창 입력란에 `/macro`를 입력하고 Enter를 누르십시오.",
+   "problem": "원문 chat box(채팅 입력란)를 '대화 상자'로 옮겼다. 이 파일은 같은 말을 dialog(확인 대화 상자, 대화 상자를 수락)의 번역으로 쓰고 있어, 독자는 팝업 같은 대화 상자에 입력하라는 뜻으로 받아들일 수 있다. 뜻이 왜곡됐다.",
+   "evidence": "원문 'Type `/macro` in the chat box and press Enter.' / 같은 번역문 '팝업과 확인 대화 상자', 'Enter를 다시 누르면 대화 상자를 수락하고'에서 '대화 상자'=dialog."
+  }
+ ]
+}

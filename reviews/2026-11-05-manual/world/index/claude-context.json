@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/index.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "[이동과 방향](movement.md) — 나침반, 따르기, 낙하, 벽, 시체, 카메라와 상하 각도 고정",
+   "suggestion": "[이동과 주변 환경](movement.md) — 나침반, 따르기, 낙하, 벽, 시체, 카메라와 상하 각도 고정",
+   "problem": "링크 글자 '이동과 방향'이 대상 페이지의 실제 제목 '이동과 주변 환경'과 다르다. 스크린리더 사용자가 링크 목록에서 이 글자로 찾아 들어가면 다른 제목이 낭독되어 같은 페이지인지 헷갈릴 수 있다. 원문도 링크 글자(Movement and Orientation)와 대상 제목(Movement and Surroundings)이 어긋나 있어 번역이 그 불일치를 그대로 옮긴 것이다.",
+   "evidence": "ko/world/movement.md:2 '# 이동과 주변 환경', en/world/movement.md 제목 '# Movement and Surroundings', 원문 링크 글자 'Movement and Orientation'. 다른 링크(대상 지정, 전투, 스캐너, 퀘스트, WowNav)는 대상 제목과 일치하고, 길 안내·미니맵은 대상 제목의 앞부분을 줄인 형태라 같은 페이지로 알아볼 수 있다."
+  }
+ ]
+}

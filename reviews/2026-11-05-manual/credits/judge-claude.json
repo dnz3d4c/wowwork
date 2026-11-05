@@ -1,0 +1,19 @@
+{
+  "verdicts": [
+    {
+      "ref": "credits.md#gpt-terminology-0",
+      "uphold": false,
+      "final_ko": "Sku는 World of Warcraft 클래식을 시각장애인이 즐길 수 있게 만든 첫 애드온이며",
+      "reason": "게임 공식 문자열(gs_koKR.csv:17683)이 '월드 오브 워크래프트 클래식'을 쓰는 것은 맞다. 그러나 사용자가 고른 설치 프로그램 문구(decisions.tsv:12)가 'World of Warcraft'를 영문으로 두었고, 이미 번역된 설명서 전체(introduction.md:4, installer.md:6·28·33·60·66, manual-installation.md:28·40, sku-login.md:56·58, versions.md:11, overview.md:4)가 'World of Warcraft'로 통일돼 있다. 이 파일만 바꾸면 설명서 안에서 게임 이름 표기가 갈린다. 게임 이름 표기를 바꾸려면 설명서 전체 단위의 사용자 결정이 필요하고, 이 파일 한 곳의 지적으로 처리할 일이 아니다. Classic 부분은 이미 '클래식'으로 반영돼 있다.",
+      "evidence_sources": [
+        "input",
+        "wowwork/cache/gs_enUS.csv:17694",
+        "wowwork/cache/gs_koKR.csv:17683",
+        "wowwork/docs/decisions.tsv:12",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:4",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:6",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/manual-installation.md:28"
+      ]
+    }
+  ]
+}

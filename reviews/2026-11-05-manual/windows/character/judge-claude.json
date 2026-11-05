@@ -1,0 +1,47 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/character.md#gpt-accuracy-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "TBC PVP 탭은 pairText(PVPFrameHonorLabel, PVPFrameHonorPoints)로 게임 프레임 라벨 글자를 그대로 읽는다(PVP.lua:11-33). 게임 공식 문자열에서 HONOR_POINTS의 한국어 값은 '명예', ARENA_POINTS는 '투기장 점수'다. 따라서 실제로 들리는 말은 '명예 1234'이고, '명예 포인트 1234'로 바꾸면 낭독과 어긋난다. 원문 예시 'Honor Points 1234'도 enUS 라벨('Honor')과 다르므로 영어 예시를 글자대로 따르기보다 실제 한국어 낭독을 따른 현재 번역이 맞다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/tbc/character/PVP.lua:11-33",
+        "wowwork/cache/gs_koKR.csv:5213",
+        "wowwork/cache/gs_koKR.csv:5214",
+        "wowwork/cache/gs_enUS.csv:5206"
+      ]
+    },
+    {
+      "ref": "windows/character.md#gpt-terminology-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "이 줄이 가리키는 화면 문구는 게임 라벨이며 그 공식 한국어 값은 '명예'(HONOR_POINTS)와 '투기장 점수'(ARENA_POINTS)다. 용어표의 Points=포인트보다 게임 공식 용어가 우선하며, 현재 번역의 '투기장 점수'와 예시 '명예 1234'가 이 값과 일치한다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/tbc/character/PVP.lua:26-33",
+        "wowwork/cache/gs_koKR.csv:5213",
+        "wowwork/cache/gs_koKR.csv:5214"
+      ]
+    },
+    {
+      "ref": "windows/character.md#gpt-context-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 링크 글자는 'The WowVision menu'로, 대상 페이지 제목 'The WowVision Menu and Settings'와 원래부터 다르다. 번역 규칙은 링크 글자만 옮기라고 하므로 'WowVision 메뉴'가 원문에 충실하다.",
+      "evidence_sources": [
+        "input",
+        "wowwork/tools/review/prompts/manual-translate.md:9"
+      ]
+    },
+    {
+      "ref": "windows/character.md#gpt-context-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 링크 글자 'popup'은 'like any [popup](system.md)'라는 문장 속 일반 명사로, 대상 페이지 제목을 가리키는 표현이 아니다. 번역 규칙상 링크 글자만 옮기므로 '팝업'이 맞다. 링크 글자를 '시스템 창'으로 바꾸는 것은 원문 구조에서 벗어난다.",
+      "evidence_sources": [
+        "input",
+        "wowwork/tools/review/prompts/manual-translate.md:9"
+      ]
+    }
+  ]
+}

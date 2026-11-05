@@ -1,0 +1,15 @@
+[
+  {
+    "ref": "windows/action-bars.md#gpt-style-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "'탭 정지점'은 이 설명서가 용어집 항목으로 정의해 둔 말이다(reference/glossary.md:58). 인터페이스 안내 절 제목(basics/interface.md:86-88)과 bags-and-bank.md, quests.md, navigation.md 등 다른 페이지에서도 같은 말을 쓴다. 독자는 용어집과 인터페이스 페이지에서 이 말을 배우므로 스크린리더로 들어도 뜻이 갈리지 않는다. 이 파일만 풀어 쓰면 같은 개념이 두 가지로 표기되어 오히려 일관성이 깨진다. 지적이 근거로 든 번역투 문제는 확정 용어 앞에서는 성립하지 않는다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md:58",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:86",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:88",
+      "wowvision-ko/WowVision/docs/src/user/ko/windows/bags-and-bank.md:101"
+    ]
+  }
+]

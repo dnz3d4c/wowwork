@@ -1,0 +1,109 @@
+{
+ "file": "windows/overview.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/overview.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/overview.md",
+ "items": [
+  {
+   "ref": "windows/overview.md#gpt-style-0",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "style",
+    "severity": "major",
+    "quote": "앞을 보는 플레이어는 마우스로 이 창들을 클릭합니다. WowVision은 이 창들을 읽어 주고,",
+    "suggestion": "화면을 보는 플레이어는 마우스로 이 창들을 클릭합니다. WowVision은 이 창들을 읽어 주고,",
+    "problem": "‘앞을 보는 플레이어’는 전방을 바라보는 플레이어라는 뜻으로도 들려, 스크린리더로 들을 때 시각을 사용하는 플레이어를 뜻하는지 불분명하다.",
+    "evidence": "원문은 “A sighted player clicks around in them with the mouse.”이다. 번역 지침은 한국어로 자연스럽고 번역투 없이 옮기도록 규정한다. wowvision-ko/WowVision/docs/src/user/ko/windows/overview.md:4"
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-style-0",
+    "action": "dispute",
+    "reason": "sighted player는 ko 설명서 전체에서 '앞을 보는 플레이어'로 통일되어 있다(ko/basics/tooltips.md:45, controller.md:87·99, reference/glossary.md:26, windows/chat.md:10·109, world/combat.md:81, world/minimap.md:4 등). 이 파일만 바꾸면 용어가 갈린다. 바꾸려면 설명서 전체를 한꺼번에 정해야 한다."
+   }
+  },
+  {
+   "ref": "windows/overview.md#gpt-context-0",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| 길 안내 창 | F10 | [길 안내와 경로](../world/navigation.md) |",
+    "suggestion": "| 길 안내 창 | F10 | [길 안내: 지도, 경로, 비컨](../world/navigation.md) |",
+    "problem": "링크 글자가 대상 페이지의 실제 제목과 달라 스크린리더 사용자가 페이지 이동 후 제목을 듣고 다른 페이지로 잘못 이동했다고 판단할 수 있다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:2의 실제 제목은 \"길 안내: 지도, 경로, 비컨\"이다."
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Navigation and Routes'부터 대상 제목 'Navigation: Maps, Routes and Beacons'(en/world/navigation.md:1)와 다르고, 번역은 원문 링크 글자를 옮겼다. 앞선 판단(basics/keybindings.md#gpt-context-4)과 같은 기준이다."
+   }
+  },
+  {
+   "ref": "windows/overview.md#gpt-context-3",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "- [수집품](collections.md) — 탈것, 애완동물, 장난감, 계승품, 형상, 유산",
+    "suggestion": "- [수집품과 유산](collections.md) — 탈것, 애완동물, 장난감, 계승품, 형상, 유산",
+    "problem": "링크 글자에서 대상 페이지 제목의 \"유산\"이 빠져 실제 페이지 제목과 일치하지 않는다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:2의 실제 제목은 \"수집품과 유산\"이다."
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-context-3",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Collections'가 대상 제목 'Collections and Legacy'(en/windows/collections.md:1)와 다르며 번역은 원문 링크 글자를 옮겼다. 유산은 항목 설명에 이미 있다."
+   }
+  },
+  {
+   "ref": "windows/overview.md#gpt-context-4",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "- [파티 찾기](group-finder.md) — 파티 찾기, 전투 준비 확인, 역할 확인",
+    "suggestion": "- [파티 찾기, 전투 준비 확인, 역할 투표](group-finder.md) — 파티 찾기, 전투 준비 확인, 역할 확인",
+    "problem": "링크 글자가 대상 페이지의 전체 제목과 달라 전투 준비 확인과 역할 투표도 같은 페이지에서 다룬다는 정보를 전달하지 못한다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/windows/group-finder.md:2의 실제 제목은 \"파티 찾기, 전투 준비 확인, 역할 투표\"다."
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-context-4",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Group Finder'가 대상 제목 'Group Finder, Ready Check and Role Poll'(en/windows/group-finder.md:1)과 다르며 번역은 원문 링크 글자를 옮겼다. 전투 준비 확인과 역할 확인은 항목 설명에 이미 있다."
+   }
+  },
+  {
+   "ref": "windows/overview.md#gpt-context-5",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "- [소셜](social.md) — 친구, 길드, 커뮤니티, 채널",
+    "suggestion": "- [소셜: 친구, 길드, 커뮤니티와 채널](social.md) — 친구, 길드, 커뮤니티, 채널",
+    "problem": "링크 글자가 대상 페이지의 실제 제목을 축약해 이동 전후의 페이지 이름이 일치하지 않는다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:2의 실제 제목은 \"소셜: 친구, 길드, 커뮤니티와 채널\"이다."
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-context-5",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Social'이 대상 제목 'Social: Friends, Guild, Communities and Channels'(en/windows/social.md:1)와 다르며 번역은 원문 링크 글자를 옮겼다."
+   }
+  },
+  {
+   "ref": "windows/overview.md#gpt-context-6",
+   "file": "windows/overview.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "- [메뉴, 설정, 대화 상자](system.md) — 게임 메뉴, 게임 설정, 팝업, 매크로 등",
+    "suggestion": "- [시스템 창](system.md) — 게임 메뉴, 게임 설정, 팝업, 매크로 등",
+    "problem": "링크 글자와 대상 페이지 제목이 전혀 달라 스크린리더 사용자가 링크를 따라간 뒤 목적지를 확인하기 어렵다.",
+    "evidence": "대상 파일 wowvision-ko/WowVision/docs/src/user/ko/windows/system.md:2의 실제 제목은 \"시스템 창\"이다."
+   },
+   "translator": {
+    "ref": "windows/overview.md#gpt-context-6",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Menus, Options and Dialogs'가 대상 제목 'System Windows'(en/windows/system.md:1)와 다르며 번역은 원문 링크 글자를 옮겼다."
+   }
+  }
+ ]
+}

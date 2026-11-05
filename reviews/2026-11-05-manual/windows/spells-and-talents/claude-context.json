@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "windows/spells-and-talents.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "Enter를 누르면 그 페이지가 열립니다. 열려 있는 것은 \"선택됨\"으로 읽습니다.",
+      "suggestion": "Enter를 누르면 그 페이지가 열립니다. 열려 있는 것은 \"체크됨\"으로 읽습니다.",
+      "problem": "TBC 마법책의 측면 탭은 체크 상자로 만들어져 있어서, 열린 탭에서 실제로 들리는 말은 \"체크됨\"이다. 번역은 \"선택됨\"이라고 안내해서 화면에서 들리는 말과 다르다. 원문도 \"checked\"로 탭 행의 \"selected\"와 구분해 적었다.",
+      "evidence": "원문: They read \"checked\" for the open one. 코드: WowVision/tbc/spellbook.lua 측면 탭이 nodes.proxyCheckButton을 쓰고, core/graph/nodes.lua:666에서 button:GetChecked() and L[\"Checked\"]를 읽는다. vision-locale/koKR/ui.lua:51 L[\"Checked\"] = \"체크됨\" (ui.lua:50의 L[\"selected\"] = \"선택됨\"과는 다른 값)."
+    }
+  ]
+}

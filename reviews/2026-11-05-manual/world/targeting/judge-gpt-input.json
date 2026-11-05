@@ -1,0 +1,24 @@
+{
+ "file": "world/targeting.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/targeting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md",
+ "items": [
+  {
+   "ref": "world/targeting.md#gpt-terminology-0",
+   "file": "world/targeting.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "모든 키의 전체 목록은 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+    "suggestion": "모든 키의 전체 목록은 [단축키 목록](../reference/keybindings.md)에 있습니다.",
+    "problem": "같은 파일에서 keybinding을 대부분 \"단축키\"로 옮겼지만 이 링크에서만 \"키 바인딩\"으로 다르게 옮겼다.",
+    "evidence": "terms는 \"Bindings\"의 한국어 값을 \"단축키\"로 정하고 있으며, 앞 문장도 \"keybinding window\"를 \"단축키 화면\"으로 옮겼다."
+   },
+   "translator": {
+    "ref": "world/targeting.md#gpt-terminology-0",
+    "action": "dispute",
+    "reason": "링크 글자는 대상 페이지 제목을 따른다. ko/reference/keybindings.md:2 제목이 '키 바인딩 목록'이고 basics/keybindings.md:4·109·129, reference/index.md:6, reference/glossary.md:62·112도 같은 글자를 쓴다. '단축키'는 basics/keybindings.md 페이지 이름이라 오히려 헷갈린다."
+   }
+  }
+ ]
+}

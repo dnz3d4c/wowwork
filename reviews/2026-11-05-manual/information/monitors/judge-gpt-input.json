@@ -1,0 +1,58 @@
+{
+ "file": "information/monitors.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/information/monitors.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/information/monitors.md",
+ "items": [
+  {
+   "ref": "information/monitors.md#gpt-style-0",
+   "file": "information/monitors.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "화면에 사용함과, 모니터 수가 붙은 모니터 버튼이 나옵니다. 예를 들면 \"모니터 (0)\"입니다.",
+    "suggestion": "화면에는 사용함과 모니터 수가 붙은 모니터 버튼이 나옵니다. 예를 들면 \"모니터 (0)\"입니다.",
+    "problem": "접속 조사 뒤의 쉼표가 문장을 부자연스럽게 끊어 스크린리더로 들을 때 호흡을 방해한다.",
+    "evidence": "원문은 “The screen shows Enabled, and a button named Monitors with the number of monitors”이다. `manual-translate.md`의 “한국어로 자연스럽게, 번역투 없이” 규칙에 따라 한국어 접속 구조 안의 불필요한 쉼표를 제거해야 한다."
+   },
+   "translator": {
+    "ref": "information/monitors.md#gpt-style-0",
+    "action": "dispute",
+    "reason": "쉼표를 빼면 사용함에도 모니터 수가 붙은 것처럼 읽힌다. 원문은 Enabled와 Monitors 버튼 두 항목이며 쉼표가 경계를 잡는다."
+   }
+  },
+  {
+   "ref": "information/monitors.md#gpt-context-0",
+   "file": "information/monitors.md",
+   "finding": {
+    "category": "context",
+    "severity": "critical",
+    "quote": "4. 주문을 정합니다. Enter를 누르고 주문 이름을 고른 뒤 `Moonfire`를 입력하고 Enter를 누릅니다. 주문이 번호와 함께 들립니다.",
+    "suggestion": "4. 주문을 정합니다. Enter를 누르고 주문 이름을 고른 뒤 `달빛섬광`을 입력하고 Enter를 누릅니다. 주문이 번호와 함께 들립니다.",
+    "problem": "한국어 게임 클라이언트에서 영어 주문 이름을 입력하면 주문을 찾지 못해 이 절차를 완료할 수 있다.",
+    "evidence": "`core/fieldTypes.lua:477-505`는 입력한 이름을 게임의 `GetSpellInfo` 또는 `C_Spell.GetSpellInfo`로 해석하며, 실패하면 `core/graph/fieldControls.lua:96-105`에서 \"찾을 수 없음\"을 말한다. 한국어 게임 문자열은 `wowwork/cache/gs_koKR.csv:15462`에서 Moonfire를 \"달빛섬광\"으로 표시한다."
+   },
+   "translator": {
+    "ref": "information/monitors.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "`Moonfire`는 인라인 코드다. manual-translate.md는 인라인 코드 불변을 정하고 tools/manual.py:91-95 검사가 실패시킨다. 지적한 검색 실패(core/fieldTypes.lua:477-505)는 사실이라 규칙 예외 여부를 사용자 결정 사안으로 넘긴다."
+   }
+  },
+  {
+   "ref": "information/monitors.md#gpt-context-1",
+   "file": "information/monitors.md",
+   "finding": {
+    "category": "context",
+    "severity": "critical",
+    "quote": "2. 규칙, 추가, 재사용 대기 상태 규칙을 고릅니다. 주문을 `Starfire`(또는 재사용 대기가 있는 아무 주문)로 정합니다.",
+    "suggestion": "2. 규칙, 추가, 재사용 대기 상태 규칙을 고릅니다. 주문을 `별빛섬광`(또는 재사용 대기가 있는 아무 주문)으로 정합니다.",
+    "problem": "한국어 게임 클라이언트에서 영어 주문 이름을 그대로 입력하면 주문 검색이 실패하므로 예시대로 경보를 설정할 수 없다.",
+    "evidence": "`core/fieldTypes.lua:477-505`는 주문 이름을 현재 게임 클라이언트의 주문 정보 API로 해석한다. `wowwork/cache/gs_koKR.csv:15465`의 한국어 공식 이름은 \"별빛섬광\"이다."
+   },
+   "translator": {
+    "ref": "information/monitors.md#gpt-context-1",
+    "action": "dispute",
+    "reason": "`Starfire`도 인라인 코드라 같은 근거로 바꾸지 않음. 문제 자체는 사실이라 사용자 결정 사안."
+   }
+  }
+ ]
+}

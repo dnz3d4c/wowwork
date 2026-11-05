@@ -1,0 +1,37 @@
+[
+  {
+    "ref": "windows/chat.md#claude-terminology-4",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "메뉴 항목 이름은 koKR/chat.lua:32 '%s 플레이어 검색'이 화면 문구라 그대로가 맞다. 원문 메뉴 목록(en 152행)은 'Who (shift click, ...)'로 이름과 클릭만 적고, 본문 127행이 'Shift 클릭은 플레이어에서 누구 검색'이라고 이미 설명하므로 'Shift 클릭'으로 두 곳이 이어진다. 원문에 없는 '누구 검색' 설명을 덧붙일 근거가 약해 현재 번역 유지.",
+    "evidence_sources": ["input", "wowvision-ko/vision-locale/koKR/chat.lua:32", "wowvision-ko/vision-locale/enUS/chat.lua:31", "wowwork/cache/gs_koKR.csv:84"]
+  },
+  {
+    "ref": "windows/chat.md#gpt-context-2",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자는 'Tooltips'(en 88행)로 대상 제목을 줄여 쓴 것이다. 번역 규칙은 링크 글자만 옮기라고 하며 대상 제목으로 바꾸라는 조항이 없다. 원문 글자를 옮긴 '툴팁' 유지.",
+    "evidence_sources": ["input", "wowwork/tools/review/prompts/manual-translate.md:9"]
+  },
+  {
+    "ref": "windows/chat.md#gpt-context-3",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자는 'Social'(en 146행)로 절이 아니라 페이지 이름을 가리킨다. 링크 글자만 옮긴다는 규칙에 따라 '소셜' 유지.",
+    "evidence_sources": ["input", "wowwork/tools/review/prompts/manual-translate.md:9"]
+  },
+  {
+    "ref": "windows/chat.md#gpt-context-4",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자는 'Speech'(en 224행)로 대상 제목 'Speech and Sound'를 줄여 썼다. 원문 글자를 옮긴 '음성' 유지.",
+    "evidence_sources": ["input", "wowwork/tools/review/prompts/manual-translate.md:9"]
+  },
+  {
+    "ref": "windows/chat.md#gpt-context-5",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자는 'Chat during lockdown'(en 245행)으로 제목의 버전 한정을 뺐다. 번역은 글자를 그대로 옮기고 앵커만 번역 제목(ko 164행)에 맞췄으므로 규칙대로다.",
+    "evidence_sources": ["input", "wowwork/tools/review/prompts/manual-translate.md:9"]
+  }
+]

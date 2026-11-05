@@ -1,0 +1,119 @@
+[
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "승강장은 배, 비행선, 지하철 정류장을 기다리는 곳입니다.",
+  "suggestion": "승강장은 배나 비행선을 기다리는 곳, 또는 지하철 정류장입니다.",
+  "problem": "세 명사를 한꺼번에 '기다리는' 목적어로 묶어서 '지하철 정류장을 기다린다'는 말이 안 되는 문장이 됐다. 들으면 승강장이 무엇인지 뜻이 흐려진다.",
+  "evidence": "원문 'A dock is a waiting place for a ship, zeppelin or tram stop.' - 배·비행선을 기다리는 곳 또는 지하철 정류장이라는 뜻. 지침: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "Zephras Isle의 Wind Bridge에는 이런 제한이 없습니다. Wind Bridge는 제 시간에 맞춰 옵니다.",
+  "suggestion": "Zephras Isle의 Wind Bridge에는 이런 제한이 없습니다. Wind Bridge는 자기 주기에 따라 옵니다.",
+  "problem": "'제 시간에 맞춰 온다'는 한국어로 '정시에 온다, 늦지 않는다'로 읽혀 원문의 '자기 때가 되면 온다(언제 올지 정해져 있지 않다)'와 뜻이 갈린다.",
+  "evidence": "원문 'The Wind Bridge of Zephras Isle has no such limit: it comes at its own time.' - 시간 제한이 없는 이유를 설명하는 문장이라 '정시 도착'이 아니라 '제 주기대로'의 뜻."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "Wind Bridge는 제 시간에 맞춰 옵니다. \"여기서 Wind Bridge 소리가 들릴 때까지",
+  "suggestion": "Wind Bridge는 자기 주기에 따라 옵니다. \"여기서 Wind Bridge 소리가 들릴 때까지",
+  "problem": "앞 절과 같은 표현으로, '정시에 온다'로 들려 '언제 올지 모르니 소리를 듣고 기다린다'는 맥락과 어긋난다.",
+  "evidence": "원문 'The Wind Bridge comes at its own time:' 바로 뒤에 소리를 듣고 기다리라는 안내와 'There is no time limit for it.'이 이어진다."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowNav 경로 모듈 자체에도 사용함 스위치가 있으며, WowNav가 작동하려면 이것은 켜 두어야 합니다.",
+  "suggestion": "WowNav 경로 모듈 자체에도 사용함 스위치가 있으며, WowNav가 작동하려면 이 스위치를 켜 두어야 합니다.",
+  "problem": "'이것은 켜 두어야'는 대명사와 조사 '은'이 어색하고, 무엇을 가리키는지 들을 때 한 번 더 따져야 한다.",
+  "evidence": "원문 'which must stay on for WowNav to work' - 관계대명사를 '이것은'으로 직역한 번역투."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "따로 설치할 것은 없습니다. 지도 네 개의 지역 51곳을 다룹니다.",
+  "suggestion": "따로 설치할 것은 없습니다. 지도 네 개에 걸친 지역 51곳을 다룹니다.",
+  "problem": "'지도 네 개의 지역 51곳'은 '의'가 겹친 듯 어색하고, 지도마다 51곳씩인지 합쳐서 51곳인지 들을 때 모호하다.",
+  "evidence": "원문 'It covers 51 zones on four maps' - 네 지도에 걸쳐 모두 51개 지역."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "다른 곳으로 가는 장소 242곳(던전 입구, 차원문, 승강기, 승강장, 지하철 정류장, 지역 간 경계)",
+  "suggestion": "다른 곳으로 이어지는 장소 242곳(던전 입구, 차원문, 승강기, 승강장, 지하철 정류장, 지역 간 경계)",
+  "problem": "'다른 곳으로 가는 장소'는 장소가 움직인다는 듯 들려 어색하다. 장소는 '이어지는' 것이다.",
+  "evidence": "원문 '242 places to get somewhere else' - 다른 곳으로 갈 수 있게 해 주는 장소."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "## WowNav에서 길 안내 창\n\nF10은 [길 안내](./navigation.md)에서 설명한 대로 작동합니다.",
+  "suggestion": "## WowNav를 쓸 때의 길 안내 창\n\nF10은 [길 안내](./navigation.md)에서 설명한 대로 작동합니다.",
+  "problem": "'WowNav에서 길 안내 창'은 조사 연결이 끊긴 제목이라 어색하다. 제목 탐색으로 들을 때도 뜻이 바로 들어오지 않는다.",
+  "evidence": "원문 '## The navigation window with WowNav'."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록은 비어 있다고 말하고, 경로를 요청하면",
+  "suggestion": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록에서 \"비어 있음\"이 들리고, 경로를 요청하면",
+  "problem": "'목록은 비어 있다고 말하고'는 목록을 말하는 주체로 삼은 직역이라 어색하고, 실제로 들리는 문구가 무엇인지 드러나지 않는다.",
+  "evidence": "원문 'the list says Empty' - Empty는 들리는 문구. 같은 문서의 다른 곳은 '...이 들립니다' 형식을 쓴다."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "- 직접을 켜면 도달할 수 없다는 이유로 빠지는 목적지가 없습니다.",
+  "suggestion": "- 직접 옵션을 켜면 도달할 수 없다는 이유로 빠지는 목적지가 없습니다.",
+  "problem": "화면 문구 '직접'이 부사 '직접'과 소리가 같아 '직접을 켜면'은 들을 때 무엇을 켜는지 바로 잡히지 않는다.",
+  "evidence": "원문 'With Direct on' - Direct는 F10 창의 항목 이름(용어표 Direct=직접). 지침: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "자신의 층은 F10에서 시작점을 골랐으므로 묻지 않습니다.",
+  "suggestion": "지금 있는 층은 F10에서 시작점을 이미 골랐으므로 묻지 않습니다.",
+  "problem": "'자신의 층은 ... 골랐으므로 묻지 않습니다'는 주어와 이유절이 엉켜 어색한 번역투다.",
+  "evidence": "원문 'Your own floor is never asked, because you chose your start in F10.'"
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "단, WowNav가 지금 어느 층에 있는지 알 때만 그렇습니다.",
+  "suggestion": "단, 사용자가 지금 어느 층에 있는지 WowNav가 알 때만 그렇습니다.",
+  "problem": "'WowNav가 지금 어느 층에 있는지'는 WowNav가 어느 층에 있다는 뜻으로도 들린다. 층에 있는 주체(사용자)가 빠졌다.",
+  "evidence": "원문 'but only if WowNav knows which floor you are on'."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "나중에 그 승강장 가까이 가면 승강장 이름에 이어 \"근처; I 키를 누르면 그쪽으로 돌아섭니다\"가 들리고, 이제 I는 그 승강장 쪽으로 돌려세웁니다.",
+  "suggestion": "나중에 그 승강장 가까이 가면 승강장 이름에 이어 \"근처; I 키를 누르면 그쪽으로 돌아섭니다\"가 들리고, 이제 I 키를 누르면 그 승강장 쪽으로 돌아섭니다.",
+  "problem": "'I는 ... 돌려세웁니다'는 목적어 없는 타동사라 무엇을 돌려세우는지 빠져 어색하다. 같은 문서의 다른 곳은 'I 키를 누르면 ... 돌아섭니다'를 쓴다.",
+  "evidence": "원문 'and I now faces that dock'. 같은 파일의 'I 키를 누르면 그쪽으로 돌아섭니다'와도 표현이 어긋난다."
+ },
+ {
+  "id": "world/wownav.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "- [스캐너](./scanner.md): 스캐너의 Enter도 WowNav와 함께 길 안내 창을 엽니다.",
+  "suggestion": "- [스캐너](./scanner.md): 스캐너의 Enter로 여는 길 안내 창도 WowNav를 사용합니다.",
+  "problem": "'WowNav와 함께 길 안내 창을 엽니다'는 WowNav와 창을 같이 연다는 뜻으로 들린다.",
+  "evidence": "원문 'its Enter opens the navigation window with WowNav as well' - Enter로 연 창도 WowNav로 동작한다는 뜻."
+ }
+]

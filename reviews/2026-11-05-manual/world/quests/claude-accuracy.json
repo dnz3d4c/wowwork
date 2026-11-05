@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "world/quests.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "마을이나 야영지처럼 지도의 주요 지점이 약 600미터 안에 있으면 생성 지점을 \"언덕골 근처, 40미터\"로 읽고, 탐험한 지도에서도 그곳 이름이 언덕골이면 그냥 \"언덕골, 40미터\"로 읽습니다.",
+   "suggestion": "마을이나 야영지처럼 지도의 주요 지점이 약 600야드 안에 있으면 생성 지점을 \"언덕골 근처, 40야드\"로 읽고, 탐험한 지도에서도 그곳 이름이 언덕골이면 그냥 \"언덕골, 40야드\"로 읽습니다.",
+   "problem": "원문의 거리 단위 yards를 미터로 바꿔 숫자가 가리키는 거리가 달라졌다(600야드는 약 549미터). 애드온이 실제로 말하는 단위도 야드라서 들리는 값과 설명이 어긋난다.",
+   "evidence": "원문: \"within about 600 yards, the spawn reads \\\"near Halfhill, 40 yards\\\", or just \\\"Halfhill, 40 yards\\\"\". docs/glossary.tsv 17행 yard→야드. wowvision-ko/vision-locale/koKR/navigation.lua:54 L[\"yards\"] = \"야드\", 61행 \"%d야드\"."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "예를 들어 \"엘윈 숲, 황금골\"이나 \"네 바람의 계곡, 언덕골 근처, 40미터\"입니다.",
+   "suggestion": "예를 들어 \"엘윈 숲, 황금골\"이나 \"네 바람의 계곡, 언덕골 근처, 40야드\"입니다.",
+   "problem": "원문 예시의 40 yards를 40미터로 옮겨 단위가 바뀌었다. 실제 애드온 출력은 야드다.",
+   "evidence": "원문: \"Valley of the Four Winds, near Halfhill, 40 yards\". docs/glossary.tsv 17행 yard→야드. koKR/navigation.lua:54 \"야드\"."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "스캔이 추적을 켰다 껐다 하는데, 그러지 않으면 게임이 이것을 모든 지역에서 나갔다 들어온 것으로 보고하기 때문입니다.",
+   "suggestion": "스캔이 추적을 켰다 껐다 하는데, 경보를 조용히 하지 않으면 게임이 이것을 모든 지역에서 나갔다 들어온 것으로 알리기 때문입니다.",
+   "problem": "원문의 otherwise는 '경보를 잠시 끄지 않으면'이라는 뜻인데, 번역의 '그러지 않으면'은 바로 앞의 '추적을 켰다 껐다 하지 않으면'으로 읽혀 인과가 뒤집힌다.",
+   "evidence": "원문: \"The scan switches tracking on and off, which the game would otherwise report as leaving and entering every area.\" otherwise는 앞 문장의 'the area alert is silenced'에 걸린다."
+  }
+ ]
+}

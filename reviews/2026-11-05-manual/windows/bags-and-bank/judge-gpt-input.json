@@ -1,0 +1,58 @@
+{
+ "file": "windows/bags-and-bank.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/bags-and-bank.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/bags-and-bank.md",
+ "items": [
+  {
+   "ref": "windows/bags-and-bank.md#gpt-context-1",
+   "file": "windows/bags-and-bank.md",
+   "finding": {
+    "category": "context",
+    "severity": "critical",
+    "quote": "3. `hearth`를 입력합니다. 맞지 않는 칸은 이제 필터링됨이라고 읽습니다.",
+    "suggestion": "3. `귀환석`을 입력합니다. 맞지 않는 칸은 이제 필터링됨이라고 읽습니다.",
+    "problem": "한국어 클라이언트의 가방 검색창에 영어 아이템 이름을 입력하도록 안내합니다. 한국어로 표시되는 귀환석을 찾지 못해 예제 절차가 실패합니다.",
+    "evidence": "terms와 wowwork/cache/gs_koKR.csv:1644는 Hearthstone의 한국어 이름을 \"귀환석\"으로 확인합니다. wowvision-ko/WowVision/retail/containers/Bags.lua:241-247은 별도 번역이나 검색 변환 없이 게임의 BagItemSearchBox를 직접 사용합니다."
+   },
+   "translator": {
+    "ref": "windows/bags-and-bank.md#gpt-context-1",
+    "action": "dispute",
+    "reason": "manual-translate.md 규칙 '인라인 코드는 한 글자도 바꾸지 않는다'에 걸리고, 기계 검사도 인라인 코드가 일치하는지 확인한다. 한국어 클라이언트에서 `hearth`로 귀환석(gs_koKR.csv:1644)을 찾을 수 없다는 지적 자체는 맞으므로 원문 예제를 손볼지, 규칙에 예외를 둘지 사용자가 정해야 한다. 번역문은 바꾸지 않았다."
+   }
+  },
+  {
+   "ref": "windows/bags-and-bank.md#gpt-context-2",
+   "file": "windows/bags-and-bank.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "가방으로 넘어가려면 Ctrl+Tab을 누르고, 돌아오려면 Ctrl+Tab을 다시 누릅니다. [창 사이 이동](../basics/interface.md)을 보십시오.",
+    "suggestion": "가방으로 넘어가려면 Ctrl+Tab을 누르고, 돌아오려면 Ctrl+Tab을 다시 누릅니다. [인터페이스 사용하기](../basics/interface.md)를 보십시오.",
+    "problem": "링크 글자가 대상 페이지의 실제 제목과 다릅니다. 스크린리더의 링크 목록에서 문서 제목을 기준으로 찾을 때 목적지를 식별하기 어렵습니다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:2의 실제 페이지 제목은 \"인터페이스 사용하기\"입니다."
+   },
+   "translator": {
+    "ref": "windows/bags-and-bank.md#gpt-context-2",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'Navigating windows'부터 대상 페이지 제목 'Using the Interface'(en/basics/interface.md:1)와 다르다. 원문은 페이지 제목이 아니라 그 페이지에서 볼 내용(창 사이 이동)을 가리키므로 '창 사이 이동'이 맞다."
+   }
+  },
+  {
+   "ref": "windows/bags-and-bank.md#gpt-context-5",
+   "file": "windows/bags-and-bank.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "거래 칸이나 우편 첨부 칸에 놓거나, 상인에게 놓아 팔 수 있습니다. [전리품, 거래, 우편](./loot-trade-mail.md)과 [NPC](./npcs.md)를 보십시오.",
+    "suggestion": "거래 칸이나 우편 첨부 칸에 놓거나, 상인에게 놓아 팔 수 있습니다. [전리품, 거래, 우편](./loot-trade-mail.md)과 [NPC: 대화, 상인, 상급자, 비행 조련사, 책](./npcs.md)을 보십시오.",
+    "problem": "NPC 링크 글자가 대상 페이지의 실제 제목을 지나치게 줄여 목적지의 범위를 드러내지 않습니다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md:2의 실제 페이지 제목은 \"NPC: 대화, 상인, 상급자, 비행 조련사, 책\"입니다."
+   },
+   "translator": {
+    "ref": "windows/bags-and-bank.md#gpt-context-5",
+    "action": "dispute",
+    "reason": "원문 링크 글자 'NPCs'가 원문 페이지 제목을 일부러 줄여 쓴 것이다. 'NPC'만으로도 목적지를 알 수 있고, 긴 제목 전체를 문장에 넣으면 듣기 어렵다."
+   }
+  }
+ ]
+}

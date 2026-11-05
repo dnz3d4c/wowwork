@@ -1,0 +1,76 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "전투 설정은 WowVision 메뉴(/wv 입력)의 UI, 전투에 있습니다.",
+   "suggestion": "전투 설정은 WowVision 메뉴(/wv 입력)의 인터페이스, 전투에 있습니다.",
+   "problem": "메뉴 경로의 첫 항목을 'UI'로 적었지만 한국어 클라이언트의 실제 메뉴 이름은 '인터페이스'다. 독자가 메뉴에서 'UI'를 찾지 못한다.",
+   "evidence": "WowVision/core/ui modules/module.lua:3 module:setLabel(L[\"UI\"]); WowVision/locale/koKR/ui.lua:5 및 vision-locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "전투가 시작되고 끝날 때 두 경보가 알려 줍니다. UI, 전투에 있습니다.",
+   "suggestion": "전투가 시작되고 끝날 때 두 경보가 알려 줍니다. 인터페이스, 전투에 있습니다.",
+   "problem": "메뉴 경로 'UI'가 실제 화면 문구 '인터페이스'와 다르다.",
+   "evidence": "WowVision/locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"; core/ui modules/module.lua:3"
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "모두 UI, 전투에 있습니다.",
+   "suggestion": "모두 인터페이스, 전투에 있습니다.",
+   "problem": "적 수 설정 위치의 메뉴 경로 'UI'가 실제 화면 문구 '인터페이스'와 다르다.",
+   "evidence": "WowVision/locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"; core/ui modules/module.lua:3"
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "[Watch a power other than your main one](../information/buffers.md#주-자원이-아닌-자원-지켜보기)",
+   "suggestion": "[주 자원이 아닌 자원 지켜보기](../information/buffers.md#주-자원이-아닌-자원-지켜보기)",
+   "problem": "링크 글자가 영어로 남아 있어 대상 절의 실제 한국어 제목과 다르다. 스크린리더로 링크 목록을 들으면 영어 문장이 읽힌다.",
+   "evidence": "ko/information/buffers.md:328 '### 주 자원이 아닌 자원 지켜보기'"
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "[The default setup: the General group](../information/buffers.md#기본-구성-일반-그룹)",
+   "suggestion": "[기본 구성: 일반 그룹](../information/buffers.md#기본-구성-일반-그룹)",
+   "problem": "링크 글자가 영어로 남아 있어 대상 절의 실제 한국어 제목과 다르다.",
+   "evidence": "ko/information/buffers.md:57 '## 기본 구성: 일반 그룹'"
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "보통의 우선 메시지 (말 끊기)와 목소리 설정이 있습니다",
+   "suggestion": "보통의 우선 메시지 (말 끊기)와 음성 설정이 있습니다",
+   "problem": "TTS 경보의 Voice 설정 이름을 '목소리'로 적었지만 실제 화면 문구는 '음성'이다.",
+   "evidence": "WowVision/core/alerts/outputs.lua:40,50 label = L[\"Voice\"]; WowVision/locale/koKR/alerts.lua:12 및 vision-locale/koKR/alerts.lua:12 L[\"Voice\"] = \"음성\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "음성 출력을 끄거나, 다른 목소리를 고를 수 있습니다.",
+   "suggestion": "음성 출력을 끄거나, 음성 설정에서 다른 목소리를 고를 수 있습니다.",
+   "problem": "원문 'choose a different voice'는 TTS 경보의 Voice 설정을 가리키는데, 그 설정의 실제 이름 '음성'이 드러나지 않아 메뉴에서 '목소리' 항목을 찾게 된다.",
+   "evidence": "en: 'or choose a different voice for it'; WowVision/core/alerts/outputs.lua:40 label = L[\"Voice\"]; koKR/alerts.lua:12 L[\"Voice\"] = \"음성\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "끔은 단순한 수 세기를 유지합니다",
+   "suggestion": "끄기는 단순한 수 세기를 유지합니다",
+   "problem": "군중 제어 알림의 선택지 이름 Off를 인용한 부분인데, 실제 선택지 문구는 '끄기'다.",
+   "evidence": "WowVision/core/ui modules/combat.lua:117 { label = L[\"Off\"], value = \"off\" }; vision-locale/koKR/targeting.lua:38 L[\"Off\"] = \"끄기\""
+  }
+ ]
+}

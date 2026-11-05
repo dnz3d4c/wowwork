@@ -1,0 +1,29 @@
+[
+  {
+    "id": "world/wownav.md",
+    "category": "accuracy",
+    "severity": "major",
+    "quote": "경유지마다 데이터에 정해진 거리가 있고, 여기에 직접 정한 최소값이 더해짐",
+    "suggestion": "경유지마다 데이터에 정해진 거리가 있고, 직접 정한 최소값보다 작아지지 않음",
+    "problem": "원문의 plus는 '최소값도 함께 있다'는 뜻인데 '더해짐'으로 옮겨 두 값을 합산하는 것처럼 읽힌다. 최소값은 하한이지 덧셈이 아니다.",
+    "evidence": "원문 표: \"Each waypoint has its own distance from the data, plus a minimum you set\". 같은 파일 설정 표: \"The smallest distance, in yards, at which a waypoint counts as reached (0 to 10). 0 uses the distance stored with each waypoint.\" 본문: \"You can raise it for every waypoint with Minimum Arrival Distance\"."
+  },
+  {
+    "id": "world/wownav.md",
+    "category": "accuracy",
+    "severity": "minor",
+    "quote": "Zephras Isle의 Wind Bridge에는 이런 제한이 없습니다. Wind Bridge는 제 시간에 맞춰 옵니다.",
+    "suggestion": "Zephras Isle의 Wind Bridge에는 이런 제한이 없습니다. Wind Bridge는 자기 주기대로 옵니다.",
+    "problem": "\"at its own time\"은 정해진 때를 알 수 없이 제 주기대로 온다는 뜻인데, '제 시간에 맞춰'는 한국어에서 '늦지 않고 정시에'로 들려 시간 제한이 없는 이유와 어긋난다.",
+    "evidence": "원문: \"The Wind Bridge of Zephras Isle has no such limit: it comes at its own time.\""
+  },
+  {
+    "id": "world/wownav.md",
+    "category": "accuracy",
+    "severity": "minor",
+    "quote": "Wind Bridge는 제 시간에 맞춰 옵니다. \"여기서 Wind Bridge 소리가 들릴 때까지",
+    "suggestion": "Wind Bridge는 자기 주기대로 옵니다. \"여기서 Wind Bridge 소리가 들릴 때까지",
+    "problem": "위와 같은 오역이 Zephras Isle 절에서 반복된다. '정시에 온다'로 읽혀 기다림이 필요한 이유가 흐려진다.",
+    "evidence": "원문: \"The Wind Bridge comes at its own time: \\\"Wait here until you hear the Wind Bridge...\\\" There is no time limit for it.\""
+  }
+]

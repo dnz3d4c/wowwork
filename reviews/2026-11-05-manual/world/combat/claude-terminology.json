@@ -1,0 +1,121 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "전투 설정은 WowVision 메뉴(/wv 입력)의 UI, 전투에 있습니다.",
+   "suggestion": "전투 설정은 WowVision 메뉴(/wv 입력)의 인터페이스, 전투에 있습니다.",
+   "problem": "메뉴 항목 이름 UI가 실제 화면에서는 \"인터페이스\"로 나오는데 번역은 UI로 남겨 두었습니다. 메뉴에서 UI를 찾으면 찾을 수 없습니다.",
+   "evidence": "WowVision/core/ui modules/module.lua:3 module:setLabel(L[\"UI\"]); vision-locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "전투가 시작되고 끝날 때 두 경보가 알려 줍니다. UI, 전투에 있습니다.",
+   "suggestion": "전투가 시작되고 끝날 때 두 경보가 알려 줍니다. 인터페이스, 전투에 있습니다.",
+   "problem": "메뉴 항목 UI의 실제 화면 문구는 \"인터페이스\"입니다.",
+   "evidence": "vision-locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"; 원문 \"They sit in UI, Combat\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "모두 UI, 전투에 있습니다.",
+   "suggestion": "모두 인터페이스, 전투에 있습니다.",
+   "problem": "메뉴 항목 UI의 실제 화면 문구는 \"인터페이스\"입니다.",
+   "evidence": "vision-locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"; 원문 \"All in UI, Combat.\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "주 자원(예: \"50 / 100 마나\")입니다.",
+   "suggestion": "주 자원(예: \"50 / 100 MANA\")입니다.",
+   "problem": "일반 버퍼의 자원 줄은 자원 이름을 게임 내부 이름 그대로 대문자 영어(MANA)로 읽습니다. 원문도 \"50 / 100 MANA\"로 대문자로 적어 실제 출력을 인용했는데, 번역이 \"마나\"로 바꿔 실제로 들리는 값과 다릅니다.",
+   "evidence": "원문 \"your main resource, for example \\\"50 / 100 MANA\\\"\"; ko/information/buffers.md:44, :64 \"50 / 100 MANA\", :76 \"자원 줄의 자원 이름은 게임 내부에서 쓰는 이름 그대로 대문자로 나옵니다: MANA, RAGE ...\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "대신 게임 자체의 접근성 설정에 있는 전투 음성 경보를 쓰십시오.",
+   "suggestion": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 경보를 쓰십시오.",
+   "problem": "원문 Accessibility options는 게임 설정 화면의 범주 이름인데, 한국어 게임 화면에서는 \"손쉬운 사용\"입니다. \"접근성\"으로는 게임 설정에서 찾을 수 없습니다.",
+   "evidence": "원문 \"in its Accessibility options\"; cache/gs_koKR.csv:13398 ACCESSIBILITY_LABEL = \"손쉬운 사용\" (enUS \"Accessibility\")"
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "공격대 징표는 숫자로 읽습니다.",
+   "suggestion": "대상 표시기는 숫자로 읽습니다.",
+   "problem": "Raid markers의 게임 공식 용어와 확정 용어는 \"대상 표시기\"입니다. 다른 설명서 페이지도 대상 표시기로 씁니다.",
+   "evidence": "docs/glossary.tsv raid 행 \"Raid Target Marker=대상 표시기(공식)\"; cache/gs_koKR.csv:4803 RAID_TARGET_ICON = \"대상 표시기 아이콘\"; ko/basics/alerts.md:98 \"대상 표시기\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "즉 게임의 이름표 거리 안(WoW: Forever에서는 약 45미터)에 있어야 합니다.",
+   "suggestion": "즉 게임의 이름표 거리 안(WoW: Forever에서는 약 45야드)에 있어야 합니다.",
+   "problem": "yard를 미터로 바꿨습니다. 확정 용어는 \"야드\"이고, 숫자는 그대로 두고 단위만 미터로 바꿔 거리도 틀려졌습니다(45야드는 약 41미터).",
+   "evidence": "원문 \"about 45 yards on WoW: Forever\"; docs/glossary.tsv \"yard\t야드\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "리테일에서는 전투 중과 인스턴스 안에서 적의 효과가 애드온에게서 숨겨지므로",
+   "suggestion": "리테일에서는 전투 중과 인스턴스 안에서 적의 오라가 애드온에게서 숨겨지므로",
+   "problem": "auras를 \"효과\"로 옮겼습니다. 확정 용어는 \"오라\"입니다.",
+   "evidence": "원문 \"the auras of enemies are hidden from addons\"; docs/glossary.tsv \"aura\t오라\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "끔은 단순한 수 세기를 유지합니다",
+   "suggestion": "끄기는 단순한 수 세기를 유지합니다",
+   "problem": "군중 제어 알림의 선택지 Off는 화면에서 \"끄기\"로 나옵니다. 앞의 \"주문 이름 포함\", \"이름 미포함\"처럼 선택지 이름을 인용한 자리인데 \"끔\"으로 적어 화면 문구와 다릅니다.",
+   "evidence": "원문 \"Off keeps the plain count\"; WowVision/core/ui modules/combat.lua:117 { label = L[\"Off\"], value = \"off\" }; vision-locale/koKR/targeting.lua:38 L[\"Off\"] = \"끄기\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "보통의 우선 메시지 (말 끊기)와 목소리 설정이 있습니다",
+   "suggestion": "보통의 우선 메시지 (말 끊기)와 음성 설정이 있습니다",
+   "problem": "Voice는 TTS 경보 출력의 설정 이름이며 화면 문구는 \"음성\"입니다. \"목소리\"로 적으면 화면에서 같은 이름을 찾을 수 없습니다.",
+   "evidence": "원문 \"Has the usual Priority Message (interrupts) and Voice settings\"; vision-locale/koKR/alerts.lua:12 L[\"Voice\"] = \"음성\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "음성 출력을 끄거나, 다른 목소리를 고를 수 있습니다",
+   "suggestion": "음성 출력을 끄거나, 음성 설정에서 다른 목소리를 고를 수 있습니다",
+   "problem": "원문 choose a different voice는 TTS 경보의 Voice 설정을 가리키는데, 그 설정의 화면 이름(\"음성\")이 드러나지 않아 어느 설정을 바꾸는지 찾기 어렵습니다.",
+   "evidence": "원문 \"or choose a different voice for it\"; vision-locale/koKR/alerts.lua:12 L[\"Voice\"] = \"음성\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "[Watch a power other than your main one](../information/buffers.md#주-자원이-아닌-자원-지켜보기)",
+   "suggestion": "[주 자원이 아닌 자원 지켜보기](../information/buffers.md#주-자원이-아닌-자원-지켜보기)",
+   "problem": "링크 글자가 영어 원문 그대로 남았습니다. 대상 절의 한국어 제목은 \"주 자원이 아닌 자원 지켜보기\"이므로 링크 글자도 그 제목과 같아야 합니다.",
+   "evidence": "ko/information/buffers.md:328 \"### 주 자원이 아닌 자원 지켜보기\"; manual-translate.md 9행 \"링크는 글자만 옮기고 대상 경로는 바꾸지 않는다\""
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "[The default setup: the General group](../information/buffers.md#기본-구성-일반-그룹)",
+   "suggestion": "[기본 구성: 일반 그룹](../information/buffers.md#기본-구성-일반-그룹)",
+   "problem": "링크 글자가 영어 원문 그대로 남았습니다. 대상 절의 한국어 제목은 \"기본 구성: 일반 그룹\"입니다.",
+   "evidence": "ko/information/buffers.md:57 \"## 기본 구성: 일반 그룹\"; manual-translate.md 9행 \"링크는 글자만 옮기고 대상 경로는 바꾸지 않는다\""
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "file": "world/combat.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/combat.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md",
+ "items": [
+  {
+   "ref": "world/combat.md#gpt-context-3",
+   "file": "world/combat.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| 적 수 경보, 음성 팩 경보 | 끔 | 대신 음성 팩에서 녹음된 숫자를 재생합니다 |",
+    "suggestion": "| 적 수 경보, 음성 팩 경보 | 끔 | 음성 팩에서 녹음된 숫자를 재생합니다 |",
+    "problem": "\"대신\"이라고 하면 음성 팩 경보를 켤 때 TTS 출력이 대체되는 것으로 읽히지만, 실제로는 두 출력이 독립적이어서 TTS 경보를 별도로 끄지 않으면 둘 다 작동한다.",
+    "evidence": "wowvision-ko/WowVision/core/ui modules/combat.lua:39-56에서 TTS 출력을 추가하고, 같은 파일 59-72에서 별도의 Voice 출력을 추가한다. Voice 출력의 `enabled = false`만 설정할 뿐 TTS 출력을 끄는 동작은 없다."
+   },
+   "translator": {
+    "ref": "world/combat.md#gpt-context-3",
+    "action": "dispute",
+    "reason": "원문 en:72가 'Plays a recorded number from your voice pack instead'로 instead를 쓴다. 번역은 원문을 그대로 옮긴 것이고 지침상 원문 내용을 빼지 않는다. 코드와 원문이 어긋난다면 원문 문서의 문제다."
+   }
+  },
+  {
+   "ref": "world/combat.md#gpt-context-5",
+   "file": "world/combat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "미니맵 스캔과 비슷한 동작: 이것도 \"전투 중에는 불가\"라고 말합니다. [미니맵](minimap.md)을 참고하십시오.",
+    "suggestion": "미니맵 스캔과 비슷한 동작: 이것도 \"전투 중에는 불가\"라고 말합니다. [미니맵 스캐너](minimap.md)를 참고하십시오.",
+    "problem": "링크 글자가 대상 페이지의 실제 한국어 제목과 일치하지 않는다.",
+    "evidence": "링크 대상 wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:2의 제목은 \"미니맵 스캐너\"다."
+   },
+   "translator": {
+    "ref": "world/combat.md#gpt-context-5",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Minimap'이고 영문 대상 제목은 'Minimap Scanner'(en/world/minimap.md:1). 원문부터 링크 글자를 제목보다 짧게 썼고 지침은 링크 글자를 옮기라고만 한다. 같은 줄 accuracy-0은 반영했다."
+   }
+  },
+  {
+   "ref": "world/combat.md#gpt-context-6",
+   "file": "world/combat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "전투 중에는 이동 속도가 숨겨지므로, 벽 감지는 멈춰 서 있다는 것만 알아챌 수 있고 느려졌다는 것은 알아채지 못합니다([이동](movement.md)).",
+    "suggestion": "전투 중에는 이동 속도가 숨겨지므로, 벽 감지는 멈춰 서 있다는 것만 알아챌 수 있고 느려졌다는 것은 알아채지 못합니다([이동과 주변 환경](movement.md)).",
+    "problem": "링크 글자가 대상 페이지의 실제 한국어 제목보다 짧아 제목과 일치하지 않는다.",
+    "evidence": "링크 대상 wowvision-ko/WowVision/docs/src/user/ko/world/movement.md:2의 제목은 \"이동과 주변 환경\"이다."
+   },
+   "translator": {
+    "ref": "world/combat.md#gpt-context-6",
+    "action": "dispute",
+    "reason": "원문 링크 글자는 'Movement', 영문 대상 제목은 'Movement and Surroundings'(en/world/movement.md:1). 원문 링크 글자를 옮긴 '이동'이 맞다."
+   }
+  },
+  {
+   "ref": "world/combat.md#gpt-context-9",
+   "file": "world/combat.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "전투 중에도 작동하는 낙하, 벽 같은 경보는 [이동](movement.md).",
+    "suggestion": "전투 중에도 작동하는 낙하, 벽 같은 경보는 [이동과 주변 환경](movement.md).",
+    "problem": "관련 페이지 링크의 글자가 대상 페이지의 실제 제목과 일치하지 않는다.",
+    "evidence": "링크 대상 wowvision-ko/WowVision/docs/src/user/ko/world/movement.md:2의 제목은 \"이동과 주변 환경\"이다."
+   },
+   "translator": {
+    "ref": "world/combat.md#gpt-context-9",
+    "action": "dispute",
+    "reason": "원문 en:178 링크 글자가 '[Movement]'로 대상 제목보다 짧다. 원문 링크 글자를 옮긴 '이동'을 유지한다."
+   }
+  }
+ ]
+}

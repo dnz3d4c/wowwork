@@ -1,0 +1,25 @@
+[
+  {
+    "ref": "world/wownav.md#claude-style-8",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "부사 '직접'은 목적격 조사 '을'을 받지 않으므로 '직접을 켜면'은 항목 이름으로만 해석된다. 같은 설명서 navigation.md:40·60·81도 '직접이/직접을'로 항목을 가리켜 일관된다. '옵션'은 화면 문구에 없는 낱말을 더하는 것이라 근거가 더 약하다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:40",
+      "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:60",
+      "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:81"
+    ]
+  },
+  {
+    "ref": "world/wownav.md#gpt-style-1",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "navigation.md:85·150이 wownav.md#경로-시작하고-따라가기 앵커로 이 제목을 링크한다. 제목을 바꾸면 두 링크가 깨진다. 제목 명사구에서 조사 생략은 흔한 형태라 결함이라 보기 어렵다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:85",
+      "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:150"
+    ]
+  }
+]

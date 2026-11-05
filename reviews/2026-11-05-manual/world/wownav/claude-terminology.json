@@ -1,0 +1,94 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "대신 [기존 경로](./navigation.md#클래식-경로)를 사용하려면",
+   "suggestion": "대신 [클래식 경로](./navigation.md#클래식-경로)를 사용하려면",
+   "problem": "classic routes를 이 파일 전체(4, 6, 8, 12, 14, 42, 44, 62, 191행)에서 '기존 경로'로 옮겼는데, 링크 대상인 navigation.md는 같은 체계를 '클래식 경로'라는 이름으로 부르고 절 제목도 '## 클래식 경로'다. 링크 글자와 대상 제목이 다르고 두 페이지가 같은 체계를 다른 이름으로 부른다. 이 링크 외에 제목 '기존 경로와 다른 점', 표 머리 '기존 경로' 등 모든 곳을 '클래식 경로'로 바꿔야 한다.",
+   "evidence": "원문 'the [classic routes](./navigation.md#classic-routes)'. wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:229 '## 클래식 경로', 22행 '끄고 대신 클래식 경로를 쓸 수 있습니다'."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "이 페이지는 WowNav가 하는 일, 기존 경로와 다른 점, 사용하는 방법을 설명합니다.",
+   "suggestion": "이 페이지는 WowNav가 하는 일, 클래식 경로와 다른 점, 사용하는 방법을 설명합니다.",
+   "problem": "classic routes의 번역이 navigation.md의 '클래식 경로'와 다르다. 위 지적과 같은 문제가 첫 문단에도 있다.",
+   "evidence": "원문 'how it differs from the classic routes'. navigation.md:229 '## 클래식 경로'."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "\"여관주인 앨리슨 (여관주인)\"처럼 평범한 이름(많은 NPC가 괄호 안에 직업을 달고 있음)",
+   "suggestion": "\"Innkeeper Allison (Innkeeper)\"처럼 평범한 이름(많은 NPC가 괄호 안에 직업을 달고 있음)",
+   "problem": "WowNav의 NPC 이름은 데이터의 영어(또는 독일어) 이름 그대로 읽힌다. 한국어로 옮긴 이름은 실제로 들리는 글자와 다르고, navigation.md는 같은 예를 영어 그대로 적었으며, 같은 파일 예 절의 'Einris Brightspear'는 영어로 남겨 파일 안에서도 처리가 엇갈린다.",
+   "evidence": "camelot/wownav/catalog.lua:154 검색 텍스트가 entry.nameDe, entry.nameEn으로 이름을 만든다. 원문 표 '\"Innkeeper Allison (Innkeeper)\"'와 '(Matches names in English and German)'. navigation.md:83 '\"Innkeeper Allison (Innkeeper), 85야드, 퀘스트 NPC, 상인, 여관주인, 스톰윈드, 1 / 342\"'."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "예를 들면 \"여관주인 앨리슨 (여관주인), 85야드, 퀘스트 NPC, 상인, 여관주인, 스톰윈드\"입니다.",
+   "suggestion": "예를 들면 \"Innkeeper Allison (Innkeeper), 85야드, 퀘스트 NPC, 상인, 여관주인, 스톰윈드\"입니다.",
+   "problem": "들리는 목적지 이름은 데이터의 영어 이름인데 한국어로 옮겼다. navigation.md의 같은 예문과도 글자가 다르다.",
+   "evidence": "navigation.md:83 '\"Innkeeper Allison (Innkeeper), 85야드, ...\"'. catalog.lua:154 entry.nameEn 사용."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "예를 들면 \"Einris Brightspear (사냥꾼 상급자), 140야드, 퀘스트 NPC, 상급자, 스톰윈드\"가 들립니다.",
+   "suggestion": "예를 들면 \"Einris Brightspear (Hunter Trainer), 140야드, 퀘스트 NPC, 상급자, 스톰윈드\"가 들립니다.",
+   "problem": "괄호 안 직업은 NPC 이름 데이터의 일부라 영어로 들린다. 이름은 영어로 두고 괄호만 '사냥꾼 상급자'로 옮겨 한 이름 안에서 처리가 갈렸다. 뒤의 분류 낱말 '상급자'는 로캘 값이 맞다.",
+   "evidence": "원문 '\"Einris Brightspear (Hunter Trainer), 140 yards, quest giver, trainer, Stormwind City\"'. 원문 표 '(many NPCs carry their job in brackets)' — 괄호는 이름의 일부. catalog.lua:154 entry.nameEn."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "끝에서는 \"도착 Einris Brightspear (사냥꾼 상급자)\"가 들립니다.",
+   "suggestion": "끝에서는 \"도착 Einris Brightspear (Hunter Trainer)\"가 들립니다.",
+   "problem": "도착 안내의 이름도 데이터의 영어 이름 그대로 들린다. 괄호 안 직업만 번역해 실제 발화와 다르다.",
+   "evidence": "원문 '\"Arrived Einris Brightspear (Hunter Trainer)\"'. catalog.lua:154 entry.nameEn."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "\"앨리슨까지 경로 검색 중\", \"앨리슨까지 이동 중, 경유지 3 of 14\"",
+   "suggestion": "\"Allison까지 경로 검색 중\", \"Allison까지 이동 중, 경유지 3 of 14\"",
+   "problem": "%s 자리에 들어가는 목적지 이름은 데이터의 영어 이름이라 '앨리슨'으로 들리지 않는다. 같은 NPC를 navigation.md는 영어로 적었다.",
+   "evidence": "koKR/navigation.lua:252 '%s까지 경로 검색 중', 253 '%s까지 이동 중, 경유지 %d of %d'. 원문 '\"Searching the route to Allison\"'. navigation.md:83 'Innkeeper Allison'."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "그다음 요약이 들립니다. 예를 들면 \"경유지 14개, 520야드\"입니다.",
+   "suggestion": "그다음 요약이 들립니다. 예를 들면 \"14개의 경유지, 520야드\"입니다.",
+   "problem": "경로 요약의 실제 발화 형식은 '숫자 + 개의 경유지'인데 '경유지 14개'로 적어 들리는 글자와 다르다. navigation.md는 같은 요약을 '12개의 경유지, 340야드'로 적었다.",
+   "evidence": "camelot/wownav/module.lua:484 string.format(\"%d %s, %d %s\", count, L[\"waypoints\"], yards, L[\"yards\"]); koKR/navigation.lua:53 L[\"waypoints\"] = \"개의 경유지\". navigation.md:85 '\"12개의 경유지, 340야드\"'."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "Enter를 누릅니다. \"경유지 12개, 330야드\" 같은 요약이 들립니다.",
+   "suggestion": "Enter를 누릅니다. \"12개의 경유지, 330야드\" 같은 요약이 들립니다.",
+   "problem": "위와 같다. 요약 형식이 실제 발화('개의 경유지')와 navigation.md 표기와 다르다.",
+   "evidence": "camelot/wownav/module.lua:484, koKR/navigation.lua:53 L[\"waypoints\"] = \"개의 경유지\"."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록은 비어 있다고 말하고",
+   "suggestion": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록은 \"비어 있음\"으로 읽고",
+   "problem": "원문 'the list says Empty'는 화면 문구 Empty를 가리키는데, 실제 값 '비어 있음'을 인용하지 않고 풀어 써서 들리는 문구가 무엇인지 알 수 없다.",
+   "evidence": "koKR/ui.lua:78 L[\"Empty\"] = \"비어 있음\". navigation.md:83 '빈 목록은 \"비어 있음\"으로 읽습니다'."
+  }
+ ]
+}

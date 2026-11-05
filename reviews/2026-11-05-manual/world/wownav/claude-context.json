@@ -1,0 +1,94 @@
+{
+  "findings": [
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "그다음 요약이 들립니다. 예를 들면 \"경유지 14개, 520야드\"입니다.",
+      "suggestion": "그다음 요약이 들립니다. 예를 들면 \"14 개의 경유지, 520 야드\"입니다.",
+      "problem": "인용한 경로 요약이 실제로 들리는 글자와 다르다. 실제 요약은 숫자 뒤에 \"개의 경유지\", 거리 뒤에 공백과 \"야드\"가 붙는다.",
+      "evidence": "WowVision/camelot/wownav/module.lua:484 string.format(\"%d %s, %d %s\", count, L[\"waypoints\"], yards, L[\"yards\"]); vision-locale/koKR/navigation.lua:53 L[\"waypoints\"] = \"개의 경유지\", :54 L[\"yards\"] = \"야드\". navigation.md 한국어판도 \"12개의 경유지, 340야드\" 형태로 인용한다."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "Enter를 누릅니다. \"경유지 12개, 330야드\" 같은 요약이 들립니다.",
+      "suggestion": "Enter를 누릅니다. \"12 개의 경유지, 330 야드\" 같은 요약이 들립니다.",
+      "problem": "예시의 경로 요약이 실제 출력 형식과 다르다.",
+      "evidence": "WowVision/camelot/wownav/module.lua:484 형식 \"%d %s, %d %s\"와 koKR navigation.lua:53 \"개의 경유지\", :54 \"야드\"."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "\"여관주인 앨리슨 (여관주인), 85야드, 퀘스트 NPC, 상인, 여관주인, 스톰윈드\"",
+      "suggestion": "\"Innkeeper Allison (Innkeeper), 85야드, 퀘스트 NPC, 상인, 여관주인, 스톰윈드\"",
+      "problem": "WowNav의 NPC 이름은 데이터의 영어 이름(독일어 클라이언트만 독일어)으로 읽힌다. 한국어 클라이언트에서 \"여관주인 앨리슨 (여관주인)\"이라는 이름은 들리지 않는다. 분류 낱말과 지역 이름만 한국어다.",
+      "evidence": "WowVision/camelot/wownav/text.lua:216-222 targetName은 german이 아니면 target.nameEn을 그대로 돌려준다(text.lua:108-110 german = GetLocale()==\"deDE\"). 분류만 text.lua CATEGORY 표로 L[...] 번역된다. 원문도 \"names in English and German\"이라고 밝힌다."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "\"여관주인 앨리슨 (여관주인)\"처럼 평범한 이름(많은 NPC가 괄호 안에 직업을 달고 있음)",
+      "suggestion": "\"Innkeeper Allison (Innkeeper)\"처럼 평범한 이름(많은 NPC가 괄호 안에 직업을 달고 있음)",
+      "problem": "비교표의 이름 예시가 실제로 들리는 영어 NPC 이름과 다르다. 한국어 사용자는 목록에서 한국어 NPC 이름을 기대하게 된다.",
+      "evidence": "WowVision/camelot/wownav/text.lua:216-222 nameEn 사용(deDE만 nameDe)."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "\"Einris Brightspear (사냥꾼 상급자), 140야드, 퀘스트 NPC, 상급자, 스톰윈드\"",
+      "suggestion": "\"Einris Brightspear (Hunter Trainer), 140야드, 퀘스트 NPC, 상급자, 스톰윈드\"",
+      "problem": "괄호 안 직업은 NPC 이름 데이터의 일부라 영어로 읽힌다. \"사냥꾼 상급자\"는 들리지 않는다.",
+      "evidence": "WowVision/camelot/wownav/text.lua:216-222 targetName이 nameEn을 그대로 반환. 원문 \"Einris Brightspear (Hunter Trainer)\"."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "끝에서는 \"도착 Einris Brightspear (사냥꾼 상급자)\"가 들립니다.",
+      "suggestion": "끝에서는 \"도착 Einris Brightspear (Hunter Trainer)\"가 들립니다.",
+      "problem": "도착 안내에 붙는 장소 이름은 영어 이름이라 인용과 실제 발화가 다르다.",
+      "evidence": "WowVision/camelot/wownav/module.lua:814 say(L[\"Arrived\"] .. \" \" .. label); 이름은 text.lua:216-222 nameEn."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "입구가 여러 개인 던전은 구역 이름을 붙입니다. \"던전 입구: 붉은십자군 수도원, 묘지\".",
+      "suggestion": "입구가 여러 개인 던전은 구역 이름을 붙입니다. \"던전 입구: 붉은십자군 수도원, Graveyard\".",
+      "problem": "구역(wing) 이름은 데이터의 영어 값(독일어 클라이언트만 독일어)이라 한국어 클라이언트에서 \"묘지\"로 들리지 않는다. 던전 이름 부분만 클라이언트 지역 이름으로 현지화된다.",
+      "evidence": "WowVision/camelot/wownav/text.lua:203-207 wing = german and nameWingDe or nameWing; tests.lua:269 nameWing = \"Graveyard\", nameWingDe = \"Friedhof\". 던전 이름은 text.lua placeName의 C_Map.GetAreaInfo로 현지화."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "\"앨리슨까지 경로 검색 중\", \"앨리슨까지 이동 중, 경유지 3 of 14\"",
+      "suggestion": "\"Allison까지 경로 검색 중\", \"Allison까지 이동 중, 경유지 3 of 14\"",
+      "problem": "경로 상태에 들어가는 목적지 이름은 영어 NPC 이름이라 \"앨리슨\"으로 들리지 않는다.",
+      "evidence": "WowVision/camelot/wownav/module.lua:1166-1168 request.label을 그대로 끼워 넣음; 이름은 text.lua:216-222 nameEn."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록은 비어 있다고 말하고,",
+      "suggestion": "충분히 가까운 곳에 네트워크가 전혀 없으면 목록에서 \"비어 있음\"이 들리고,",
+      "problem": "원문은 목록이 화면 문구 Empty를 읽는다고 인용하는데, 번역은 풀어 써서 실제로 들리는 문구 \"비어 있음\"을 알려 주지 않는다.",
+      "evidence": "원문 \"the list says Empty\"; vision-locale/koKR/ui.lua:78 L[\"Empty\"] = \"비어 있음\"."
+    },
+    {
+      "id": "world/wownav.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "대신 [기존 경로](./navigation.md#클래식-경로)를 사용하려면:",
+      "suggestion": "대신 [클래식 경로](./navigation.md#클래식-경로)를 사용하려면:",
+      "problem": "링크 글자 \"기존 경로\"가 대상 페이지 절 제목 \"클래식 경로\"와 다르다. 링크를 따라가면 다른 이름의 절이 나온다.",
+      "evidence": "WowVision/docs/src/user/ko/world/navigation.md:229 \"## 클래식 경로\"; 같은 문서 :22-29도 \"클래식 경로\"로 부른다."
+    }
+  ]
+}

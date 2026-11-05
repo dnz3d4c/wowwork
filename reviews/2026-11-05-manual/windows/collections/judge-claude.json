@@ -1,0 +1,26 @@
+[
+  {
+    "ref": "windows/collections.md#gpt-context-4",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자 'Interface basics'(en/windows/collections.md:23)부터 대상 영문 제목 'Using the Interface'(en/basics/interface.md:1)와 다르다. 번역은 원문 링크 글자를 충실히 옮겼고, 제목으로 바꾸는 것은 원문에 없는 변경이다. 번역자 반박이 맞다.",
+    "evidence_sources": [
+      "wowvision-ko/WowVision/docs/src/user/en/windows/collections.md:23",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/interface.md:1",
+      "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:24"
+    ]
+  },
+  {
+    "ref": "windows/collections.md#gpt-context-5",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 링크 글자 'Windows overview', 'Tooltips', 'Version availability'(en/windows/collections.md:218)도 대상 영문 제목 'Game Windows', 'Reading Tooltips', 'Features by Game Version'과 다르다. 번역은 원문 링크 글자를 그대로 옮긴 것이라 결함이 아니다. 번역자 반박이 맞다.",
+    "evidence_sources": [
+      "wowvision-ko/WowVision/docs/src/user/en/windows/collections.md:218",
+      "wowvision-ko/WowVision/docs/src/user/en/windows/overview.md:1",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/tooltips.md:1",
+      "wowvision-ko/WowVision/docs/src/user/en/reference/versions.md:1",
+      "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:219"
+    ]
+  }
+]

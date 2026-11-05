@@ -1,0 +1,56 @@
+[
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "예: \"Kobold Vermin slain: 3/10\". 끝난 목표에는 \"완료\"가 붙습니다.",
+    "suggestion": "예: \"코볼트 졸개 처치: 3/10\". 끝난 목표에는 \"완료\"가 붙습니다.",
+    "problem": "목표 문구는 게임이 주는 퀘스트 목표 문자열이라 한국어 클라이언트에서는 '<이름> 처치: 3/10'으로 들린다. 영어 'slain'을 그대로 두어 실제로 듣는 말과 다르고, 같은 파일의 '치안대장 맥브라이드'는 한국어로 옮겨 놓아 예시 표기도 엇갈린다.",
+    "evidence": "원문 \"Kobold Vermin slain: 3/10\". 게임 문자열 ERR_QUEST_ADD_KILL_SII \"%s slain: %d/%d\" = \"%s 처치: %d/%d\" (wowwork/cache/gs_koKR.csv 13670). 'Kobold Vermin'의 공식 한국어 이름(코볼트 졸개)은 미확인 추정, 게임 데이터 대조 필요."
+  },
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "\"Wolves Across the Border\" 퀘스트에 \"Prowler slain: 3/10\" 목표가 있습니다.",
+    "suggestion": "\"Wolves Across the Border\" 퀘스트에 \"Prowler 처치: 3/10\" 목표가 있습니다.",
+    "problem": "한국어 클라이언트의 목표 문구 형식은 '<이름> 처치: n/m'인데 영어 'slain'을 남겼다. 바로 뒤 문장의 '목표인 \"Prowler slain: 3/10\"'도 같은 이유로 '\"Prowler 처치: 3/10\"'으로 고쳐야 한다. 퀘스트 이름과 몬스터 이름은 공식 한국어가 확인되면 그것으로 바꾼다.",
+    "evidence": "원문 \"Prowler slain: 3/10\". gs_koKR.csv 13670 ERR_QUEST_ADD_KILL_SII \"%s 처치: %d/%d\". 'Wolves Across the Border'·'Prowler'의 공식 한국어는 미확인."
+  },
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "Right를 누르면 첫 항목은 목표인 \"Prowler slain: 3/10\"입니다.",
+    "suggestion": "Right를 누르면 첫 항목은 목표인 \"Prowler 처치: 3/10\"입니다.",
+    "problem": "위 문장과 같은 목표 문구다. 한국어 클라이언트에서 낭독되는 형식('처치')과 다르다.",
+    "evidence": "gs_koKR.csv 13670 ERR_QUEST_ADD_KILL_SII \"%s 처치: %d/%d\"."
+  },
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "아이템 출처는 \"Linen Cloth from Defias Thug\"처럼 이름이 붙습니다.",
+    "suggestion": "아이템 출처는 \"리넨 옷감 출처 데피아즈단 폭력배\"처럼 이름이 붙습니다.",
+    "problem": "이 이름은 WowVision이 '아이템 이름 + from + 출처 이름'으로 조립하는데, 한국어 로케일에서 from은 '출처'로 낭독된다. 영어 'from'을 남겨 실제로 듣는 이름과 글자가 다르다. 아이템·NPC 이름도 한국어 클라이언트에서는 한국어로 나온다.",
+    "evidence": "WowVision/core/quests/scanner.lua:56 label = target.item.name .. \" \" .. L[\"from\"] .. \" \" .. label; vision-locale/koKR/quests.lua L[\"from\"] = \"출처\". 'Linen Cloth'=리넨 옷감, 'Defias Thug'=데피아즈단 폭력배는 게임 데이터로 재확인 필요(미확인 추정)."
+  },
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "- 클래식, 불타는 성전, 판다리아의 안개: Questie 애드온이 불러와져 있으면",
+    "suggestion": "- 클래식 시대, 불타는 성전, 판다리아의 안개: Questie 애드온이 불러와져 있으면",
+    "problem": "Classic Era를 '클래식'으로 옮겼다. 다른 설명서 파일은 모두 '클래식 시대'로 쓰며, '클래식'만으로는 판다리아의 안개·불타는 성전 같은 다른 클래식 클라이언트와 구분되지 않는다.",
+    "evidence": "원문 \"Classic Era, The Burning Crusade and Mists of Pandaria\". ko/basics/alerts.md:141, ko/basics/interface.md:168, ko/getting-started/introduction.md:29 모두 '클래식 시대, 불타는 성전, 판다리아의 안개'."
+  },
+  {
+    "id": "world/scanner.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "- 스캐너는 게임패드 단축 레이어에도 있습니다.",
+    "suggestion": "- 스캐너는 게임패드 바로 가기 층에도 있습니다.",
+    "problem": "controller shortcut layer를 '단축 레이어'로 옮겼는데, 링크 대상인 게임패드 페이지는 이 기능을 '바로 가기 층'으로 부른다. 독자가 링크를 따라가면 다른 이름을 만난다.",
+    "evidence": "원문 \"the controller shortcut layer\". ko/controller.md:26 '게임의 바로 가기 층', :73 '## 바로 가기 층'."
+  }
+]

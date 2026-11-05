@@ -1,0 +1,16 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/targeting.md#gpt-terminology-0",
+      "uphold": false,
+      "final_ko": "모든 키의 전체 목록은 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+      "reason": "이 문장은 같은 말을 다르게 옮긴 것이 아니라 대상 페이지 이름을 가리키는 링크 글자다. 대상 페이지 ko/reference/keybindings.md:2의 제목이 '키 바인딩 목록'이고, basics/keybindings.md:4·109·129, reference/index.md:6, reference/glossary.md:62·112, world/navigation.md:132도 같은 링크를 같은 글자로 쓴다. '단축키'로 바꾸면 바로 앞 링크 [단축키](../basics/keybindings.md)와 이름이 겹쳐 두 페이지가 구별되지 않는다. 현재 번역 유지.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:2",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4",
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/index.md:6",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:18"
+      ]
+    }
+  ]
+}

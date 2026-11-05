@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "world/navigation.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "경로를 따라가는 동안 Alt+P를 누르면 짧은, 중간, 긴, 다시 짧은 순으로 전환합니다.",
+      "suggestion": "경로를 따라가는 동안 Alt+P를 누르면 단거리, 중거리, 장거리, 다시 단거리 순으로 전환합니다.",
+      "problem": "Alt+P를 누르면 실제로 들리는 이름은 단거리/중거리/장거리인데, 본문은 '짧은, 중간, 긴'이라고 적어 들리는 낱말과 맞지 않는다. 바로 다음 문장의 예(\"장거리, 5야드\")와도 엇갈린다.",
+      "evidence": "WowVision/core/navigation/maps/module.lua:89 cycleArrivalDistance가 range.label을 말함, vision-locale/koKR/navigation.lua: L[\"Short Range\"]=\"단거리\", L[\"Medium Range\"]=\"중거리\", L[\"Long Range\"]=\"장거리\". 원문 'cycle short, medium, long and back to short'."
+    },
+    {
+      "id": "world/navigation.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "전체 목록은 [단축키 참조](../reference/keybindings.md)에 있습니다.",
+      "suggestion": "전체 목록은 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+      "problem": "링크 글자가 대상 페이지의 실제 제목과 다르다. 다른 한국어 페이지(basics/keybindings.md)는 같은 링크를 '키 바인딩 목록'으로 적는다.",
+      "evidence": "ko/reference/keybindings.md 1행 제목 '# 키 바인딩 목록'(영문 '# Keybinding Reference'). ko/basics/keybindings.md:4, 109, 129 링크 글자 '키 바인딩 목록'."
+    }
+  ]
+}

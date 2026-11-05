@@ -1,0 +1,148 @@
+{
+ "findings": [
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "TTS 경보를 끕니다.\n3. 소리 경보를 켜고 소리에서 소리를 고릅니다.",
+   "suggestion": "TTS 경보를 끕니다.\n3. 소리 경보를 켜고 소리 설정에서 원하는 소리를 고릅니다.",
+   "problem": "'소리에서 소리를'은 설정 이름과 고를 대상이 같은 말이라, 들으면 무엇을 어디서 고르라는 것인지 갈린다.",
+   "evidence": "원문 'choose a sound with Sound.' 같은 파일 앞 문단은 '그 소리 설정에서 소리를 고르십시오'로 설정임을 밝혀 두었다. 지침 style: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "길 안내 창(F10)의 경로와 경유지 기능은 별도 페이지에서 다룹니다: [길 안내](navigation.md).",
+   "suggestion": "길 안내 창(F10)의 경로와 경유지 기능은 [길 안내](navigation.md) 페이지에서 따로 다룹니다.",
+   "problem": "문장 끝에 쌍점을 두고 링크만 덧붙인 영어식 구조다. 한국어 문장 안에 링크를 넣으면 자연스럽다.",
+   "evidence": "원문 'have their own page: [Navigation](navigation.md).' 영어 문장 구조를 그대로 옮김."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "얼마나 오래 떨어지고 있는지 알려 줍니다. 오래 떨어질수록 음이 더 높이 올라가 있습니다.",
+   "suggestion": "얼마나 오래 떨어지고 있는지 알려 줍니다. 오래 떨어질수록 음이 더 높이 올라갑니다.",
+   "problem": "'올라가 있습니다'는 영어 완료형(has climbed)을 그대로 옮긴 상태 표현이라 어색하다.",
+   "evidence": "원문 'the longer the fall, the further the sequence has climbed.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "음은 Sku의 것과 같습니다. 약 5초가 지나면 음이 끝까지 올라갑니다.",
+   "suggestion": "음은 Sku에서 쓰는 음과 같습니다. 약 5초가 지나면 음이 끝까지 올라갑니다.",
+   "problem": "'~의 것'은 영어 'the ones in'을 옮긴 번역투다.",
+   "evidence": "원문 'The tones are the same as the ones in Sku.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "무엇이든 재생하기 전에 떨어지고 있어야 하는 시간으로, 0~1000입니다.",
+   "suggestion": "소리가 나기 전까지 떨어지고 있어야 하는 시간입니다. 0~1000 사이로 정합니다.",
+   "problem": "'무엇이든 재생하기 전에'는 'before anything is played'의 직역이고, '시간으로, 0~1000입니다'로 이어지는 문장이 어색하다.",
+   "evidence": "원문 'How long you must have been falling before anything is played, from 0 to 1000.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "물은 낙하가 아닙니다. 수영하는 중에 시작된 낙하나",
+   "suggestion": "물에서는 낙하로 치지 않습니다. 수영하는 중에 시작된 낙하나",
+   "problem": "'물은 낙하가 아닙니다'는 'Water is not a fall'의 직역이라 한국어로 뜻이 바로 들어오지 않는다.",
+   "evidence": "원문 'Water is not a fall: a fall that starts while you are swimming...'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "신경 쓰는 것:\n\n- 이동 명령을 따르므로, 이동에 어떤 키를 지정했든 상관없습니다.",
+   "suggestion": "이런 경우도 처리합니다:\n\n- 이동 명령을 따르므로, 이동에 어떤 키를 지정했든 상관없습니다.",
+   "problem": "'신경 쓰는 것'은 'Things it takes care of'의 직역이라 기능 설명의 머리말로 어색하다.",
+   "evidence": "원문 'Things it takes care of:'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "각각 사용함 스위치와 소리 선택이 있습니다. 그래서 예를 들어 가장 강한 두 개만 남길 수 있습니다",
+   "suggestion": "각각 사용함 스위치와 소리 선택이 있으므로, 예를 들어 가장 심하게 막힌 두 단계만 남길 수도 있습니다",
+   "problem": "'그래서 예를 들어'가 연달아 붙어 어색하고, '가장 강한 두 개'는 무엇이 강하다는지 들어서 알기 어렵다.",
+   "evidence": "원문 'so you can for instance keep only the two hardest ones'. 표의 단계는 막힌 정도로 나뉜다."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "켜 두면 손이 닿지 않는 대상과 상호작용할 때, 예를 들어 상호작용 키로 상호작용할 때 캐릭터가 먼저 대상까지 걸어갑니다",
+   "suggestion": "켜 두면 상호작용 키 등으로 손이 닿지 않는 대상과 상호작용할 때 캐릭터가 먼저 대상까지 걸어갑니다",
+   "problem": "한 문장에 '상호작용'이 세 번 나오고 '~할 때'가 반복돼 들을 때 늘어진다.",
+   "evidence": "원문 'interacting with a target that is out of reach, for example with the interact key, makes your character walk up to it first'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "죽어서 영혼으로 전환하면 WowVision이 시체까지 걸어가기 시작할 수 있습니다.",
+   "suggestion": "죽어서 영혼으로 전환하면 WowVision이 시체까지 데려가기 시작할 수 있습니다.",
+   "problem": "주어가 WowVision이라 WowVision이 직접 걸어가는 것처럼 읽힌다. 원문은 사용자를 데려간다는 뜻이다.",
+   "evidence": "원문 'WowVision can start walking you to your corpse.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "여러 층에 걸친 시체에 대해 갈 수 있는 가장 낮은 층으로 경로를 잡습니다.",
+   "suggestion": "시체가 여러 층에 걸쳐 있으면 갈 수 있는 가장 낮은 층으로 경로를 잡습니다.",
+   "problem": "'~에 대해'를 쓴 번역투 구조라 문장이 어색하다.",
+   "evidence": "원문 'a corpse that lies over several floors is routed to the lowest floor that can be reached.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "시체가 지금 있는 대륙에 있을 때만 경로를 잡습니다. 인스턴스 안의 시체는 바깥에서 걸어가지 않습니다.",
+   "suggestion": "시체가 지금 있는 대륙에 있을 때만 경로를 잡습니다. 시체가 인스턴스 안에 있으면 바깥에서 그곳까지 데려가지 않습니다.",
+   "problem": "'시체는 ... 걸어가지 않습니다'는 문장 그대로 읽으면 시체가 걷는 것처럼 들린다.",
+   "evidence": "원문 'A corpse inside an instance is not walked to from outside.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "게임이 실내와 실외 사이를 옮겼다고 판단하면 \"실외\" 또는 \"실내\",",
+   "suggestion": "실내에서 실외로, 또는 실외에서 실내로 옮겼다고 게임이 판단하면 \"실외\" 또는 \"실내\",",
+   "problem": "'게임이 ... 옮겼다고'는 게임이 옮긴 것처럼 읽혀 주어가 흐려진다.",
+   "evidence": "원문 'when the game decides that you changed from one to the other'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision은 게임이 저장하게 해 주는 시점 다섯 개 중 5번 카메라 시점 칸도 사용합니다.",
+   "suggestion": "WowVision은 게임에 저장할 수 있는 시점 다섯 개 중 5번 카메라 시점 칸도 사용합니다.",
+   "problem": "'게임이 저장하게 해 주는'은 'the game lets you save'의 직역이다.",
+   "evidence": "원문 'one of the five views the game lets you save.'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "경유지 쪽으로 돌아설 때마다 캐릭터의 앞이 조금씩 아래로 기울어서",
+   "suggestion": "경유지 쪽으로 돌아설 때마다 캐릭터의 머리가 조금씩 아래로 기울어서",
+   "problem": "'캐릭터의 앞'은 무엇이 기운다는지 모호하다. 'nose'는 앞머리 쪽이 숙여지는 것을 뜻한다.",
+   "evidence": "원문 'tip your character's nose slightly downwards'"
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "/wv keylog가 WowVision이 키를 잡고 놓는 때를 기록합니다",
+   "suggestion": "/wv keylog로 WowVision이 키를 잡고 놓는 시점을 기록할 수 있습니다",
+   "problem": "주어 '~가'가 두 번 이어져(keylog가 WowVision이) 들을 때 문장 구조가 헷갈린다.",
+   "evidence": "원문 '/wv keylog logs when WowVision takes and releases its keys.'"
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+[
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "- 적 소프트 대상(Shift+I): 게임이 앞에서 고를 적.",
+  "suggestion": "- 적 소프트 대상(Shift+I): 게임이 내 앞쪽에서 골라 주는 적.",
+  "problem": "'앞에서'가 공간(내 앞)인지 순서(앞서)인지 갈린다. 들으면 '게임이 앞서 고른 적'으로도 들린다. 미래형 '고를'도 번역투다.",
+  "evidence": "원문 'the enemy the game would pick in front of you'. 바로 아래 항목은 '앞에 있는 우호적인 유닛'으로 공간임을 분명히 했다. manual-review.md style 관점의 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "생명력 모니터는 대상의 생명력이 5퍼센트 단위로 줄어들(또는 늘어날) 때 그 값을 소리 내어 읽습니다.",
+  "suggestion": "생명력 모니터는 대상의 생명력이 5퍼센트 단위로 줄어들거나 늘어날 때 그 값을 소리 내어 읽습니다.",
+  "problem": "괄호가 관형형 어미 '-ㄹ'과 의존 명사 '때' 사이를 끊는다. 스크린리더로는 '줄어들 괄호 또는 늘어날 괄호 때'처럼 문장이 토막 난다.",
+  "evidence": "원문 'as it drops (or rises)'의 괄호를 그대로 옮긴 번역투. '-거나'로 풀면 괄호가 필요 없다."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "대상 군중 제어 상태는 대상이 누구에 의해서든 군중 제어(기절, 공포, 변이 등)되었을 때 알려 줍니다.",
+  "suggestion": "대상 군중 제어 상태는 누가 걸었든 대상이 기절, 공포, 변이 같은 군중 제어에 걸리면 알려 줍니다.",
+  "problem": "'누구에 의해서든'은 영어 by anyone을 옮긴 피동 번역투이고, 괄호가 '군중 제어'와 '되었을' 사이를 끊어 들을 때 서술어가 흩어진다.",
+  "evidence": "원문 'tells you when your target is crowd controlled, by anyone: stunned, feared, polymorphed and the like'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "게임이 전투 중, 바로 그것이 필요할 때 대상의 생명력을 애드온에 숨기기 때문입니다.",
+  "suggestion": "생명력이 가장 필요한 전투 중에 게임이 대상의 생명력을 애드온에 숨기기 때문입니다.",
+  "problem": "'전투 중, 바로 그것이 필요할 때'는 영어 삽입구 'in combat, just when you need it'을 쉼표째 옮긴 번역투다. '그것'이 무엇을 가리키는지 들어서 바로 잡히지 않는다.",
+  "evidence": "원문 'because the game hides a target's health from addons in combat, just when you need it'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "전투가 끝나기를 기다리는 설정은 \"전투 후\"와 함께 적용될 값이 표시됩니다.",
+  "suggestion": "전투가 끝나기를 기다리는 설정에는 \"전투 후\" 표시와 함께 적용될 값이 나옵니다.",
+  "problem": "주어 '설정은'과 서술어 '값이 표시됩니다'가 맞물리지 않아 무엇이 표시되는지 흐리다.",
+  "evidence": "원문 'Settings that are waiting for combat to end are marked \"after combat\" with the value they will get.'"
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "/wv soft는 현재 고정 모드와 모든 소프트 대상 지정 게임 설정을 값과 게임 기본값과 함께 읽고 대화창에 출력합니다.",
+  "suggestion": "/wv soft는 현재 고정 모드와, 모든 소프트 대상 지정 게임 설정의 현재 값과 게임 기본값을 읽어 주고 대화창에도 출력합니다.",
+  "problem": "'-와 ... -을 값과 게임 기본값과 함께'로 '와/과'가 세 번 이어져 무엇과 무엇이 묶이는지 들어서 갈린다.",
+  "evidence": "원문 'reads out and prints to chat the current lock mode and every soft targeting game setting with its value and the game's default'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "키를 누르면 /target에 그 이름을 붙여 입력한 것과 똑같이 저장된 이름을 대상으로 잡습니다.",
+  "suggestion": "키를 누르면 저장된 이름을 대상으로 잡습니다. /target 뒤에 그 이름을 붙여 입력한 것과 똑같습니다.",
+  "problem": "비교 구절이 목적어 앞에 끼어 '똑같이 저장된 이름'으로 붙어 들린다. 저장 방식이 똑같다는 뜻으로 오해할 수 있다.",
+  "evidence": "원문 'Pressing it targets the stored name, exactly like typing /target with that name.'"
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowVision은 나, 파티원이나 공격대원, 그리고 그들의 소환수의 위협 수준 목록으로 이를 판단하므로",
+  "suggestion": "WowVision은 나와 파티원 또는 공격대원, 그리고 그 소환수들의 위협 수준 목록을 보고 이를 판단하므로",
+  "problem": "'그들의 소환수의 위협 수준 목록'처럼 '의'가 겹치고, '나, 파티원이나 공격대원'의 쉼표 나열이 들을 때 묶음이 흐리다. '그들의'는 번역투 대명사다.",
+  "evidence": "원문 'from the threat lists of you, your party or raid members and their pets'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "툴팁 글을 게임이 넘겨주는 그대로 음성으로 전달하므로 그래도 알림은 계속 작동합니다.",
+  "suggestion": "그래도 알림은 계속 작동합니다. 툴팁 글을 게임이 넘겨주는 그대로 음성으로 전달하기 때문입니다.",
+  "problem": "이유절 뒤에 '그래도'가 와서 앞 문장(정체를 숨긴다)과의 양보 관계가 끊긴다. '-므로 그래도'는 어색한 접속이다.",
+  "evidence": "원문 'the announcement keeps working, because the tooltip text is passed to speech as the game hands it over'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "그 아래에 TTS 경보(음성, 기본값으로 말을 끊음)와 소리 경보가 있으며, 경보를 켜면 둘 다 기본값으로 켜져 있습니다.",
+  "suggestion": "그 아래에 TTS 경보(음성, 기본으로 말을 끊음)와 소리 경보가 있으며, 경보를 켜면 둘 다 기본으로 켜집니다.",
+  "problem": "'경보를 켜면 ... 켜져 있습니다'는 조건과 상태 서술의 시제가 어긋난다. '기본값으로'가 한 문장에 두 번 나와 '기본값'이라는 값이 있는 것처럼 들린다.",
+  "evidence": "원문 'both on by default once the alert is on'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowVision은 켜 둔 소프트 대상 종류에만 이 값을 쓰므로, 사용하지 않는 종류는 게임 값이 그대로 유지됩니다.",
+  "suggestion": "WowVision은 켜 둔 소프트 대상 종류에만 이 값을 게임에 적용하므로, 사용하지 않는 종류는 게임 값이 그대로 유지됩니다.",
+  "problem": "'값을 쓰다'는 '사용하다'와 '기록하다'로 갈리고, 바로 뒤의 '사용하지 않는'과 겹쳐 들으면 '사용한다'로 읽힌다.",
+  "evidence": "원문 'WowVision only writes them for a soft target type you have switched on'. 게임 설정값을 써 넣는다는 뜻이다."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "| 아군 소프트 대상 각도 | 전방 180도 | 아군에 대한 같은 선택 |",
+  "suggestion": "| 아군 소프트 대상 각도 | 전방 180도 | 아군에 적용하며, 선택지는 위와 같습니다 |",
+  "problem": "'~에 대한 같은 선택'은 영어 'The same choices, for friends'를 그대로 옮긴 명사구 번역투이고, 같은 표의 다른 칸은 '~합니다'로 끝나 문체가 어긋난다. 바로 아래 '상호작용 대상에 대한 같은 선택'도 같은 식으로 고친다.",
+  "evidence": "원문 표 'The same choices, for friends' / 'The same choices, for interact targets'. 같은 표의 다른 칸 '정합니다', '거리입니다'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "| 하드 대상이 없을 때만 | 실제 대상이 있으면 무엇이든 소프트 대상 지정이 꺼집니다 |",
+  "suggestion": "| 하드 대상이 없을 때만 | 실제 대상이 무엇이든 하나라도 있으면 소프트 대상 지정이 꺼집니다 |",
+  "problem": "'무엇이든'이 '꺼집니다' 앞에 붙어 '무엇이든 꺼진다'로 들릴 수 있다. 수식 위치가 어색하다.",
+  "evidence": "원문 'Any real target turns soft targeting off'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "소프트 대상을 하드 대상으로 지정(기본값 게임 기본값)은 게임이 실제 대상을 소프트 대상으로 바꾸게 합니다.",
+  "suggestion": "소프트 대상을 하드 대상으로 지정 설정(기본값: 게임 기본값)은 게임이 실제 대상을 소프트 대상으로 바꾸게 합니다.",
+  "problem": "설정 이름이 '지정'으로 끝나 '지정(…)은'이 동사처럼 들리고, 괄호 속 '기본값 게임 기본값'이 반복되어 들을 때 어디까지가 이름인지 갈린다.",
+  "evidence": "원문 'Make Soft Target the Hard Target (default Game Default) lets the game ...'. 같은 패턴이 '하드 대상이 있을 때 소프트 대상 지정(기본값 게임 기본값)'에도 있다."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "자신을 대상으로 잡으면 모든 인스턴스 초기화와 전리품 및 던전 난이도 선택 같은 항목이 나옵니다.",
+  "suggestion": "자신을 대상으로 잡으면 모든 인스턴스 초기화, 전리품 설정, 던전 난이도 선택 같은 항목이 나옵니다.",
+  "problem": "'초기화와 전리품 및 던전 난이도 선택'은 '와'와 '및'이 섞여 묶음이 갈린다. '전리품 선택'이 '전리품을 고른다'로도 들린다.",
+  "evidence": "원문 'entries such as Reset All Instances and the loot and dungeon difficulty choices'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "하드 대상 아래에 있는 거리 변경 경보가 거리가 바뀔 때마다 대상까지의 거리를 음성 팩으로 미터 단위로 재생합니다.",
+  "suggestion": "하드 대상 아래에 있는 거리 변경 경보가, 거리가 바뀔 때마다 대상까지의 거리를 미터 단위로 음성 팩에서 재생합니다.",
+  "problem": "'경보가 거리가'로 주격 조사가 겹치고 '음성 팩으로 미터 단위로'처럼 '로'가 연달아 와서 들을 때 문장 구조가 흐리다.",
+  "evidence": "원문 'the Range Changed alert ... plays your target's distance in yards from a voice pack whenever the distance changes'."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "게임의 소프트 대상 지정을 켜고 끌 수 있고, 키 하나로 대상의 메뉴를 엽니다.",
+  "suggestion": "게임의 소프트 대상 지정을 켜고 끄며, 키 하나로 대상의 메뉴를 엽니다.",
+  "problem": "나열된 동작 중 이것만 '-ㄹ 수 있고'로 가능형이 되어 병렬 구조가 어긋난다.",
+  "evidence": "원문 'can switch the game's soft targeting on and off, and opens the target's menu'. 앞뒤 항목은 '알려 주고', '엽니다'로 직접 서술."
+ },
+ {
+  "id": "world/targeting.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "가상 주시 대상은 Sku의 같은 이름 기능처럼 동작합니다.",
+  "suggestion": "가상 주시 대상은 Sku에 있는 같은 이름의 기능처럼 동작합니다.",
+  "problem": "'같은 이름 기능'은 관형격 조사가 빠져 어색하다.",
+  "evidence": "원문 'works like the Sku feature of the same name'."
+ }
+]

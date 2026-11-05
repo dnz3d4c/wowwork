@@ -1,0 +1,31 @@
+{
+  "findings": [
+    {
+      "id": "world/navigation.md",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "경로 이탈(click)은 다시 돌아섰을 때 납니다.",
+      "suggestion": "경로 이탈(click)은 다시 경유지에서 벗어나는 쪽으로 돌아섰을 때 납니다.",
+      "problem": "원문의 'turn away'(경유지에서 고개를 돌려 벗어남)에서 'away'가 빠져 '다시 돌아섰을 때'만 남았다. 바로 앞 문장도 '돌아섰을 때'라서, 들으면 방향 일치와 경로 이탈이 같은 동작에 나는 소리처럼 들린다.",
+      "evidence": "원문: \"Off course (a click) plays when you turn away again.\" 앞 문장: \"Aligned (a clack) plays when you turn to within 10 degrees of the waypoint.\""
+    },
+    {
+      "id": "world/navigation.md",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "(예외는 승강장이나 지하철역에 있을 때의 WowNav입니다.",
+      "suggestion": "(예외는 선착장이나 지하철역에 있을 때의 WowNav입니다.",
+      "problem": "'dock'(배가 닿는 부두·선착장)을 '승강장'으로 옮겼다. 승강장은 보통 열차·버스 타는 곳이라 지하철역과 뜻이 겹치고, 배 타는 곳이라는 정보가 사라진다.",
+      "evidence": "원문: \"(The exception is WowNav at a dock or tram station; see [WowNav](./wownav.md).)\""
+    },
+    {
+      "id": "world/navigation.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "quote": "| 비컨 경로 이탈 | click | 경유지에서 돌아섰습니다. |",
+      "suggestion": "| 비컨 경로 이탈 | click | 경유지를 벗어나는 쪽으로 돌아섰습니다. |",
+      "problem": "'turned away from the waypoint'를 '경유지에서 돌아섰습니다'로 옮겨, 바로 위 행 '경유지 쪽으로 돌아섰습니다'와 구별이 약하다. 'away'(벗어남)의 뜻이 흐려졌다.",
+      "evidence": "원문 표: \"| Beacon Off Course | click | You turned away from the waypoint. |\""
+    }
+  ]
+}
