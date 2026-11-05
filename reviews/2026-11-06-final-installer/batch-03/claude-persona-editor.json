@@ -1,0 +1,42 @@
+{"findings": [
+  {
+    "id": "Loc.cs::managed.acc",
+    "category": "style",
+    "severity": "minor",
+    "problem": "둘째 절의 문법이 어색하다. \"어떤 게임 버전용이 없는 애드온은\"은 '용' 뒤에 꾸밈받을 명사(빌드)가 빠져 비문에 가깝고, 앞 절의 주제 '이 애드온들은'이 이어져 \"게임 버전마다 ... 빌드를 받고\"가 '애드온이 빌드를 받는다'로 읽혀 주어와 서술어가 맞지 않는다. 목록에 초점이 갈 때마다 듣는 접근 가능한 이름이라 한 번에 뜻이 잡히지 않으면 불편하다.",
+    "evidence": "ko: \"...게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다.\" / en: \"each game version gets the build that matches it, and an addon that does not exist for a game version is left out there\" (ComponentsForm.cs:201 AccessibleName). 원문 주어는 'each game version'이다.",
+    "suggestion": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드가 설치되고, 어떤 게임 버전용 빌드가 없는 애드온은 그 버전에서 빠집니다. Space로 강조 표시된 애드온을 켜고 끕니다."
+  },
+  {
+    "id": "Loc.cs::channel.stableDesc",
+    "category": "style",
+    "severity": "minor",
+    "problem": "\"대부분의 플레이어에게 가장 좋습니다\"와 \"베타보다 덜 자주 바뀝니다\"는 영어 'Best for', 'less often'을 낱말 그대로 옮긴 번역투다. 선택지 설명을 듣는 사용자에게 부자연스럽게 들린다.",
+    "evidence": "en: \"Best for most players. Changes less often than the beta.\" / ko: \"대부분의 플레이어에게 가장 좋습니다. 베타보다 덜 자주 바뀝니다.\" (ComponentsForm.cs:224 설명 글, 채널 콤보 접근 가능한 이름에도 붙음 :225)",
+    "suggestion": "번호가 붙은 가장 최근 릴리스입니다. 대부분의 플레이어에게 알맞습니다. 베타보다 바뀌는 일이 적습니다."
+  },
+  {
+    "id": "Loc.cs::channel.betaDesc",
+    "category": "style",
+    "severity": "minor",
+    "problem": "\"최신 WowVision 빌드로, 변경이 있을 때마다 새로 만듭니다\"는 앞 절의 대상(빌드)과 뒤 서술어 '만듭니다'의 주체가 어긋난다. 숨은 주어가 '베타는'이 되어 '베타가 새로 만든다'처럼 읽힌다.",
+    "evidence": "en: \"The newest build of WowVision, rebuilt with every change.\" — rebuilt는 빌드가 다시 만들어진다는 뜻이다. ko: \"최신 WowVision 빌드로, 변경이 있을 때마다 새로 만듭니다.\"",
+    "suggestion": "최신 WowVision 빌드로, 변경이 있을 때마다 새로 만들어집니다. 최신 수정 사항과 기능이 들어 있고, 새 버그가 있을 수 있습니다."
+  },
+  {
+    "id": "Loc.cs::opt.loginTool.desc",
+    "category": "style",
+    "severity": "minor",
+    "problem": "첫 문장이 영어 어순(A program ..., for X)을 그대로 따라 \"~별도 프로그램으로, WoW Forever, Anniversary, Classic Era용입니다\"로 끝나 대상 게임 버전이 뒤에 덧붙은 꼴이다. 한국어로는 대상을 앞에 두는 편이 자연스럽다. 확신도: 코드 사용처가 입력에 없어(code 비어 있음) 실제 표시 여부는 확인하지 못했다.",
+    "evidence": "ko: \"로그인, 서버, 캐릭터 화면에 소리 메뉴를 붙여 주는 별도 프로그램으로, WoW Forever, Anniversary, Classic Era용입니다.\" (Loc.cs:1046)",
+    "suggestion": "WoW Forever, Anniversary, Classic Era의 로그인, 서버, 캐릭터 화면에 소리 메뉴를 붙여 주는 별도 프로그램입니다. 이 화면들은 그 자체로는 접근성이 없습니다."
+  },
+  {
+    "id": "Loc.cs::managed.obsoleteRemoved",
+    "category": "style",
+    "severity": "minor",
+    "problem": "\"삭제함, 남겨 두면 새 버전과 충돌함\"은 결과 뒤에 이유를 쉼표로 덧붙인 영어 어순이라 두 개의 상태 알림처럼 끊겨 들린다. 사용자 결정(원인과 결과를 \"~해서 종료\"처럼 잇는다)에 맞춰 이유를 앞에 두는 편이 한 번에 들린다.",
+    "evidence": "en: \"removed the old folder {1}, which would clash with the new version.\" / decisions.tsv:9 \"원인과 결과는 '~해서 종료'처럼 잇는다\".",
+    "suggestion": "{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함."
+  }
+]}

@@ -1,0 +1,10 @@
+{"findings": [
+ {"id": "Loc.cs::managed.obsoleteRemoved", "category": "listening", "severity": "minor",
+  "problem": "문장이 '새 버전과 충돌함'으로 끝나서, 빠른 속도로 들으면 마지막 낱말 '충돌함'만 귀에 남아 충돌이 실제로 일어났다(오류)는 상태 알림으로 들린다. 원문 'which would clash'는 지우지 않았다면 충돌했을 것이라는 이유이고, 실제 결과는 삭제다.",
+  "evidence": "ko: \"{0}: 예전 폴더 {1} 삭제함, 남겨 두면 새 버전과 충돌함.\" / ManagedAddons.cs:855 진행 메시지로 발화. 같은 진행 메시지들(ai.installed '설치함', managed.notForClient '건너뜀')은 결과 낱말로 끝나는데 이 문구만 결과(삭제함)가 가운데 묻힌다. '남겨 두면'이 조건이라 뜻은 통하므로 minor.",
+  "suggestion": "{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함."},
+ {"id": "Loc.cs::managed.acc", "category": "style", "severity": "minor",
+  "problem": "'어떤 게임 버전용이 없는 애드온은'은 '버전용' 뒤에 명사가 빠져 문법이 어색하고, 처음 들으면 무엇이 없다는 건지 한 번에 안 잡힌다. 목록에 초점이 갈 때마다 듣는 접근 가능한 이름이라 걸림이 반복된다.",
+  "evidence": "ko: \"...어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다.\" / 원문 'an addon that does not exist for a game version is left out there'. 같은 문장 앞부분이 '그 버전에 맞는 빌드를 받고'로 '빌드'를 이미 썼으므로 '버전용 빌드'로 받으면 뜻 추가 없이 문법이 맞는다. ComponentsForm.cs:201 AccessibleName.",
+  "suggestion": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용 빌드가 없는 애드온은 그 버전에서 빠집니다. Space로 강조 표시된 애드온을 켜고 끕니다."}
+]}

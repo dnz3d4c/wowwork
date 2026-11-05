@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "groupHealth.lua::Speak Group Health",
+   "category": "terminology",
+   "severity": "minor",
+   "problem": "다른 'Speak ...' 명령은 모두 '읽기'로 옮겼는데 이 항목만 '말하기'다. 처음 쓰는 사람은 같은 종류의 명령을 다른 이름으로 듣게 되어 별개 동작인지 헷갈릴 수 있다.",
+   "evidence": "같은 문형의 기존 번역: Speak Tracked Auras=추적 중인 오라 읽기, Speak Tracked Cooldowns=추적 중인 재사용 대기 읽기, Speak Compass Direction=나침반 방향 읽기, Speak Messages=메시지 읽기 (wowvision-ko 로캘 파일). 이 항목만 '말하기'.",
+   "suggestion": "파티 및 공격대 생명력 읽기"
+  },
+  {
+   "id": "minimap.lua::No position here",
+   "category": "style",
+   "severity": "minor",
+   "problem": "'이곳은 위치 정보 없음'은 '은'과 '없음'이 어울리지 않아 어색하고, 같은 종류의 '여기서는 ~' 알림들과 문형이 다르다.",
+   "evidence": "related와 같은 배치의 상태 알림: '여기서는 파티 및 공격대 생명력 모니터 사용 불가', '여기서는 링크 사용 불가', '여기서는 돌아서기 사용 불가'.",
+   "suggestion": "여기서는 위치 정보 없음"
+  }
+ ]
+}
