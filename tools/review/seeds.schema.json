@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seeds"],
+  "properties": {
+    "seeds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "seeded", "kind", "lens"],
+        "properties": {
+          "id": {"type": "string"},
+          "seeded": {"type": "string"},
+          "kind": {"type": "string"},
+          "lens": {"type": "string", "enum": ["accuracy", "terminology", "context", "listening", "style"]}
+        }
+      }
+    }
+  }
+}

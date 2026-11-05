@@ -184,3 +184,21 @@ def test_audit_claude_only_reviewer_transcripts() -> None:
     runner = [json.dumps({"type": "user", "message": {"content": "다음 명령을 실행한다"}})]
     assert claude_tool_inputs(reviewer) == ["C:/project/x.lua"]
     assert claude_tool_inputs(runner) is None
+
+
+def test_score_recall_by_provider_and_origin() -> None:
+    from tools.review.score import score
+
+    key = {"a::1": {"origin": "claude"}, "a::2": {"origin": "gpt"}}
+    runs = [
+        {"provider": "claude", "lens": "accuracy", "findings": [{"id": "a::1"}, {"id": "a::9"}]},
+        {"provider": "claude", "lens": "context", "findings": [{"id": "a::1"}]},
+        {"provider": "gpt", "lens": "accuracy", "findings": [{"id": "a::1"}, {"id": "a::2"}]},
+    ]
+    s = score(runs, key)
+    assert s["claude"]["recall"] == "1/2"
+    assert s["claude"]["by_origin"] == {"claude": "1/1", "gpt": "0/1"}
+    assert s["claude"]["missed"] == ["a::2"]
+    assert s["claude"]["non_seed_flagged"] == ["a::9"]
+    assert s["gpt"]["recall"] == "2/2"
+    assert s["combined"]["recall"] == "2/2"
