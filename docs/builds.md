@@ -13,6 +13,7 @@
 1. koKR이 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload`
 2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, PATH 앞에 scoop .NET SDK)
 3. 실제 흐름 검사(실제 릴리스를 내려받는다): `WowVisionSelfTest.exe fullinstall` — 안정판 설치 뒤와 베타 전환 뒤 모든 클라이언트에 koKR이 있는지 확인한다
+4. 테스터 폴더에 exe와 함께 `docs/tester-guide.md`를 `설치_안내.txt`로 복사한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
 
 ## 검증 이력
 

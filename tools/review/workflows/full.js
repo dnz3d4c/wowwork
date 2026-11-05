@@ -10,7 +10,8 @@ export const meta = {
 
 const W = 'C:/project/games/wowwork'
 const P = `${W}/tools/review/prompts`
-const LENSES = ['accuracy', 'terminology', 'context', 'listening']
+// 관점 파일 lens-<이름>.md 목록. 2026-11-06 최종 검수는 관점 대신 페르소나(persona-*)를 넘긴다.
+const LENSES = (args && args.lenses) || ['accuracy', 'terminology', 'context', 'listening']
 // 대상별 추가 규칙(예: installer.md). 공통 규칙 다음에 읽는다. 평가자·번역자·판정자 모두 같은 파일을 받는다.
 const EXTRA = (args && args.extraPrompts) || []
 const EXTRA_READ = EXTRA.map(f => `${P}/${f}`).join(', ')
@@ -74,7 +75,7 @@ async function runBatch(b) {
     ...LENSES.map(l => () => gptRun(['common.md', ...EXTRA, `lens-${l}.md`], batch, 'findings.schema.json', `${out}/gpt-${l}.json`,
       FINDINGS, `gpt:${l}`, 'Review', null).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
   ])).filter(Boolean)
-  const failed = 8 - runs.length
+  const failed = LENSES.length * 2 - runs.length
 
   // 항목별로 묶는다
   const groups = {}

@@ -1,0 +1,1 @@
+{"findings":[{"id":"minimap.lua::Not in combat","category":"accuracy","severity":"critical","problem":"원문의 상태를 반대로 옮겼다. 한국어는 전투 중일 때 사용할 수 없다는 뜻이어서 사용자가 잘못된 조건으로 이해하게 된다.","evidence":"원문은 \"Not in combat\"으로 현재 전투 중이 아님을 알리지만, 번역 \"전투 중에는 불가\"는 전투 중 사용 불가를 뜻한다. 이 키는 core/graph/keyCapture.lua:258과 core/minimap/module.lua:618, 1337에서 음성으로 발화된다.","suggestion":"전투 중 아님"}]}

@@ -1,0 +1,20 @@
+{
+  "findings": [
+    {
+      "id": "chat.lua::Link %s in Chat",
+      "category": "style",
+      "severity": "minor",
+      "problem": "동작 항목인데 '링크'라는 명사로 끝나서, 들으면 '대화창에 있는 %s 링크'라는 대상 이름처럼 들린다. 같은 메뉴의 다른 동작 문구('%s 툴팁 읽기', '%s에 쓰기', '%s 플레이어 검색')는 동작 명사형으로 끝나는데 이것만 어긋난다.",
+      "evidence": "core/chat/ui.lua:283 shift = L[\"Link %s in Chat\"] (같은 묶음의 left = L[\"Read Tooltip of %s\"] → '%s 툴팁 읽기', left = L[\"Write to %s\"] → '%s에 쓰기'), retail/talentTree.lua:348 버튼 label. 현재 '대화창에 %s 링크'.",
+      "suggestion": "대화창에 %s 링크 걸기"
+    },
+    {
+      "id": "colors.lua::grayish",
+      "category": "style",
+      "severity": "minor",
+      "problem": "'grayish'는 색상 이름 앞에 붙는 수식어인데, 색상 쪽도 '녹색빛 노란색', '보랏빛 파란색', '노란빛 녹색', '녹색빛 파란색'처럼 '~빛'을 쓰므로 조합하면 '회색빛 녹색빛 노란색', '어두운 회색빛 보랏빛 파란색'처럼 '빛'이 겹쳐 무엇이 무엇을 꾸미는지 듣기 어렵다. 다만 KS 색이름 체계의 정확한 대응어는 확인하지 못해 제안어는 확신이 낮다.",
+      "evidence": "core/colors/colors.lua: LOW_CHROMA = { \"very pale\", \"pale\", \"grayish\", \"dark grayish\", \"blackish\" }가 모든 HUES(greenish yellow, purplish blue 등)와 joinWords의 L[\"%s %s\"]로 결합된다. 'dark grayish'(어두운 회색빛)도 같은 겹침이 생긴다.",
+      "suggestion": "탁한"
+    }
+  ]
+}

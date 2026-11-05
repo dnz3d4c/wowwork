@@ -1,0 +1,20 @@
+{
+  "findings": [
+    {
+      "id": "Loc.cs::target.testBuild",
+      "category": "listening",
+      "severity": "minor",
+      "problem": "\"이것 대신\"의 \"이것\"이 무엇을 가리키는지 듣는 사람이 바로 알기 어렵다. 앞 문장이 \"설치된 WowVision {0} 그대로 유지\"로 끝나서 \"이것\"이 '유지하는 동작'인지 '테스트 빌드'인지 갈린다. 처음 쓰는 사용자는 무엇을 바꾸라는 안내인지 한 번 더 생각해야 한다.",
+      "evidence": "원문 \"To replace it with the release {1}\"의 it은 앞의 Test build(설치된 WowVision {0})다. 공통 규칙의 신규 사용자 관점이 모호한 대명사(\"이것\")를 지목한다. 버튼·체크 상자 이름 \"WowVision 새로 설치\", \"모두 다시 설치\"는 Loc.cs:933 opt.force.label \"모두 다시 설치(복구)\", update.customizeBtn과 맞아서 그대로 둔다.",
+      "suggestion": "테스트 빌드 — 설치된 WowVision {0} 그대로 유지. 테스트 빌드 대신 릴리스 {1} 버전을 설치하려면 \"WowVision 새로 설치\"를 고르고 \"모두 다시 설치\"를 체크하십시오."
+    },
+    {
+      "id": "Loc.cs::update.heading.available",
+      "category": "style",
+      "severity": "minor",
+      "problem": "같은 제목 라벨(_titleLabel)에 들어가는 상태 제목 넷 가운데 이것만 합니다체다. 다른 셋은 \"WowVision 최신 상태로 설치됨\", \"WowVision 아직 설치 안 됨\", \"설치된 World of Warcraft를 찾지 못함\"처럼 짧은 명사형이라, 창을 열 때마다 제목 말투가 상태에 따라 달라진다.",
+      "evidence": "UpdatePromptForm.cs:154-160에서 네 키가 같은 _titleLabel.Text에 들어간다. installer.md 문체 규칙은 제목·상태를 짧게 하라고 한다. 같은 뜻의 목록 상태 문구 target.updateAvailable도 \"업데이트 있음\"을 쓴다.",
+      "suggestion": "WowVision 업데이트 있음"
+    }
+  ]
+}

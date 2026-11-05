@@ -1,0 +1,986 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::summary.clientFailed",
+   "file": "Loc.cs",
+   "key": "summary.clientFailed",
+   "en": "Failed — {0}: {1}",
+   "ko": "실패 — {0}: {1}",
+   "de": "Fehlgeschlagen – {0}: {1}",
+   "fr": "Échec — {0} : {1}",
+   "code": [
+    "InstallRunner.cs:514: lines.Add(Loc.Format(\"summary.clientFailed\", r.Target.DisplayName, r.Error.Message));",
+    "InstallRunner.cs:518: lines.Add(Loc.Format(\"summary.clientFailed\", r.Target.DisplayName,"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.unknownError",
+   "file": "Loc.cs",
+   "key": "summary.unknownError",
+   "en": "unknown error",
+   "ko": "알 수 없는 오류",
+   "de": "unbekannter Fehler",
+   "fr": "erreur inconnue",
+   "code": [
+    "InstallRunner.cs:519: Loc.Get(\"summary.unknownError\")));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.reload",
+   "file": "Loc.cs",
+   "key": "summary.reload",
+   "en": "To use the update now, type /reload in the game. Otherwise just start it normally.",
+   "ko": "업데이트를 바로 사용하려면 게임에서 /reload를 입력하십시오. 아니면 평소처럼 게임을 시작하십시오.",
+   "de": "Um die Aktualisierung jetzt zu nutzen, gib im Spiel /reload ein. Andernfalls starte es einfach normal.",
+   "fr": "Pour utiliser la mise à jour tout de suite, tapez /reload dans le jeu. Sinon, lancez-le simplement normalement.",
+   "code": [
+    "InstallRunner.cs:561: blocks.Add(restart ? Loc.Get(\"summary.battlenet\") : Loc.Get(\"summary.reload\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.battlenet",
+   "file": "Loc.cs",
+   "key": "summary.battlenet",
+   "en": "Start World of Warcraft from Battle.net (or restart it) to use the new version.",
+   "ko": "새 버전을 사용하려면 Battle.net에서 World of Warcraft를 시작(또는 다시 시작)하십시오.",
+   "de": "Starte World of Warcraft über Battle.net (oder starte es neu), um die neue Version zu nutzen.",
+   "fr": "Lancez World of Warcraft depuis Battle.net (ou redémarrez-le) pour utiliser la nouvelle version.",
+   "code": [
+    "InstallRunner.cs:561: blocks.Add(restart ? Loc.Get(\"summary.battlenet\") : Loc.Get(\"summary.reload\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.symlink",
+   "file": "Loc.cs",
+   "key": "ai.symlink",
+   "en": "{0}: symlink — left untouched.",
+   "ko": "{0}: 심볼릭 링크 — 건드리지 않음.",
+   "de": "{0}: Symlink – unverändert gelassen.",
+   "fr": "{0} : lien symbolique — laissé intact.",
+   "code": [
+    "AddonInstaller.cs:308: Percent = 100, Message = Loc.Format(\"ai.symlink\", folderName) });",
+    "ManagedAddons.cs:701: Percent = 100, Message = Loc.Format(\"ai.symlink\", entry.DisplayName) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.downloading",
+   "file": "Loc.cs",
+   "key": "ai.downloading",
+   "en": "{0}: downloading {1}",
+   "ko": "{0}: {1} 내려받는 중",
+   "de": "{0}: lade herunter {1}",
+   "fr": "{0} : téléchargement de {1}",
+   "code": [
+    "ManagedAddons.cs:721: Message = Loc.Format(\"ai.downloading\", entry.DisplayName, mb) });",
+    "ReleasePackage.cs:87: Message = Loc.Format(\"ai.downloading\", label, mb) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.extracting",
+   "file": "Loc.cs",
+   "key": "ai.extracting",
+   "en": "{0}: extracting…",
+   "ko": "{0}: 압축 푸는 중…",
+   "de": "{0}: entpacke…",
+   "fr": "{0} : extraction…",
+   "code": [
+    "ManagedAddons.cs:748: Message = Loc.Format(\"ai.extracting\", entry.DisplayName) });",
+    "ReleasePackage.cs:101: Message = Loc.Format(\"ai.extracting\", label) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.packageReady",
+   "file": "Loc.cs",
+   "key": "ai.packageReady",
+   "en": "{0} {1} downloaded and unpacked: {2}.",
+   "ko": "{0} {1} 내려받기 및 압축 풀기 완료: {2}.",
+   "de": "{0} {1} heruntergeladen und entpackt: {2}.",
+   "fr": "{0} {1} téléchargé et décompressé : {2}.",
+   "code": [
+    "ReleasePackage.cs:117: Message = Loc.Format(\"ai.packageReady\", label, Config.SpokenVersion(tag, pkg.BuildDate),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.noPrimary",
+   "file": "Loc.cs",
+   "key": "ai.noPrimary",
+   "en": "The release file {0} contains no {1} folder, so nothing was installed.",
+   "ko": "릴리스 파일 {0} 안에 {1} 폴더가 없어서, 아무것도 설치하지 않음.",
+   "de": "Die Veröffentlichung {0} enthält keinen Ordner {1}, darum wurde nichts installiert.",
+   "fr": "Le fichier de version {0} ne contient pas de dossier {1} ; rien n'a été installé.",
+   "code": [
+    "ReleasePackage.cs:113: throw new InvalidDataException(Loc.Format(\"ai.noPrimary\", assetName, Config.PrimaryFolder));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.installing",
+   "file": "Loc.cs",
+   "key": "ai.installing",
+   "en": "{0}: installing files…",
+   "ko": "{0}: 파일 설치 중…",
+   "de": "{0}: installiere Dateien…",
+   "fr": "{0} : installation des fichiers…",
+   "code": [
+    "AddonInstaller.cs:321: Percent = -1, Message = Loc.Format(\"ai.installing\", folderName) });",
+    "ManagedAddons.cs:802: Message = Loc.Format(\"ai.installing\", entry.DisplayName) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.locked",
+   "file": "Loc.cs",
+   "key": "ai.locked",
+   "en": "{0}: {1} file(s) were in use — close the game and run the updater again.",
+   "ko": "{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.",
+   "de": "{0}: {1} Datei(en) waren in Benutzung – schließe das Spiel und starte den Updater erneut.",
+   "fr": "{0} : {1} fichier(s) étaient en cours d'utilisation — fermez le jeu et relancez l'updater.",
+   "code": [
+    "AddonInstaller.cs:340: Percent = 100, Message = Loc.Format(\"ai.locked\", folderName, locked) });",
+    "ManagedAddons.cs:819: Percent = 100, Message = Loc.Format(\"ai.locked\", entry.DisplayName, locked) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.installed",
+   "file": "Loc.cs",
+   "key": "ai.installed",
+   "en": "{0}: installed {1}.",
+   "ko": "{0}: {1} 설치함.",
+   "de": "{0}: installiert ({1}).",
+   "fr": "{0} : installé ({1}).",
+   "code": [
+    "AddonInstaller.cs:348: Percent = 100, Message = Loc.Format(\"ai.installed\", folderName, Config.SpokenVersion(package.Tag, package.BuildDate)) });",
+    "ManagedAddons.cs:827: Message = Loc.Format(\"ai.installed\", entry.DisplayName, resolved.Version) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::toc.synced",
+   "file": "Loc.cs",
+   "key": "toc.synced",
+   "en": "{0}: interface version {1} -> {2} (matches your game client).",
+   "ko": "{0}: 인터페이스 버전 {1} -> {2} (게임 클라이언트에 맞춤).",
+   "de": "{0}: Interface-Version {1} -> {2} (passend zu deinem Spielclient).",
+   "fr": "{0} : version d'interface {1} -> {2} (correspond à votre client de jeu).",
+   "code": [
+    "TocSync.cs:136: report?.Invoke(Loc.Format(\"toc.synced\", Path.GetFileName(toc), current, desired));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::gs.setGlobal",
+   "file": "Loc.cs",
+   "key": "gs.setGlobal",
+   "en": "Game setting: {0} = {1} (global).",
+   "ko": "게임 설정: {0} = {1} (전역).",
+   "de": "Spieleinstellung: {0} = {1} (global).",
+   "fr": "Réglage du jeu : {0} = {1} (global).",
+   "code": [
+    "GameSettings.cs:155: report?.Invoke(Loc.Format(\"gs.setGlobal\", cv.Name, cv.Value));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::gs.setAccount",
+   "file": "Loc.cs",
+   "key": "gs.setAccount",
+   "en": "Game setting: {0} = {1} (account).",
+   "ko": "게임 설정: {0} = {1} (계정).",
+   "de": "Spieleinstellung: {0} = {1} (Account).",
+   "fr": "Réglage du jeu : {0} = {1} (compte).",
+   "code": [
+    "GameSettings.cs:167: report?.Invoke(Loc.Format(\"gs.setAccount\", cv.Name, cv.Value));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::gs.deferred",
+   "file": "Loc.cs",
+   "key": "gs.deferred",
+   "en": "Game setting: {0} will be set after your first login (no account profile yet).",
+   "ko": "게임 설정: {0} 항목은 첫 로그인 후 설정 예정(아직 계정 프로필 없음).",
+   "de": "Spieleinstellung: {0} wird nach deinem ersten Login gesetzt (noch kein Account-Profil vorhanden).",
+   "fr": "Réglage du jeu : {0} sera défini après votre première connexion (pas encore de profil de compte).",
+   "code": [
+    "GameSettings.cs:162: report?.Invoke(Loc.Format(\"gs.deferred\", cv.Name));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::gs.noWtf",
+   "file": "Loc.cs",
+   "key": "gs.noWtf",
+   "en": "Game settings: no WTF folder here; skipped.",
+   "ko": "게임 설정: 여기에 WTF 폴더가 없음; 건너뜀.",
+   "de": "Spieleinstellungen: kein WTF-Ordner hier; übersprungen.",
+   "fr": "Réglages du jeu : pas de dossier WTF ici ; ignoré.",
+   "code": [
+    "GameSettings.cs:146: report?.Invoke(Loc.Get(\"gs.noWtf\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.installing",
+   "file": "Loc.cs",
+   "key": "sapi2sr.installing",
+   "en": "NVDA voice: installing the SAPI2SR bridge…",
+   "ko": "NVDA 음성: SAPI2SR 브리지 설치 중…",
+   "de": "NVDA-Stimme: installiere die SAPI2SR-Brücke…",
+   "fr": "Voix NVDA : installation de la passerelle SAPI2SR…",
+   "code": [
+    "Sapi2SrInstaller.cs:49: announce(Loc.Get(\"sapi2sr.installing\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.copied",
+   "file": "Loc.cs",
+   "key": "sapi2sr.copied",
+   "en": "NVDA voice: {0} file(s) installed.",
+   "ko": "NVDA 음성: 파일 {0}개 설치함.",
+   "de": "NVDA-Stimme: {0} Datei(en) installiert.",
+   "fr": "Voix NVDA : {0} fichier(s) installé(s).",
+   "code": [
+    "Sapi2SrInstaller.cs:54: announce(Loc.Format(\"sapi2sr.copied\", copied));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.registering",
+   "file": "Loc.cs",
+   "key": "sapi2sr.registering",
+   "en": "NVDA voice: registering the SAPI voice…",
+   "ko": "NVDA 음성: SAPI 음성 등록 중…",
+   "de": "NVDA-Stimme: registriere die SAPI-Stimme…",
+   "fr": "Voix NVDA : enregistrement de la voix SAPI…",
+   "code": [
+    "Sapi2SrInstaller.cs:111: announce(Loc.Get(\"sapi2sr.registering\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.signing",
+   "file": "Loc.cs",
+   "key": "sapi2sr.signing",
+   "en": "NVDA voice: signing so WoW will load it…",
+   "ko": "NVDA 음성: WoW가 불러올 수 있도록 서명하는 중…",
+   "de": "NVDA-Stimme: signiere, damit WoW sie lädt…",
+   "fr": "Voix NVDA : signature pour que WoW la charge…",
+   "code": [
+    "Sapi2SrInstaller.cs:138: announce(Loc.Get(\"sapi2sr.signing\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.signFailed",
+   "file": "Loc.cs",
+   "key": "sapi2sr.signFailed",
+   "en": "NVDA voice: signing did not finish (code {0}); the voice may stay silent until repaired.",
+   "ko": "NVDA 음성: 서명이 끝나지 않음(코드 {0}); 복구할 때까지 음성이 나오지 않을 수 있음.",
+   "de": "NVDA-Stimme: Signierung nicht abgeschlossen (Code {0}); die Stimme bleibt evtl. stumm, bis das behoben ist.",
+   "fr": "Voix NVDA : la signature ne s'est pas terminée (code {0}) ; la voix peut rester muette jusqu'à réparation.",
+   "code": [
+    "Sapi2SrInstaller.cs:147: if (!p.WaitForExit(180000)) { Logger.Warning(\"SAPI2SR signing timed out.\"); announce(Loc.Format(\"sapi2sr.signFailed\", -1)); return; }",
+    "Sapi2SrInstaller.cs:151: announce(Loc.Format(\"sapi2sr.signFailed\", p.ExitCode));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.done",
+   "file": "Loc.cs",
+   "key": "sapi2sr.done",
+   "en": "NVDA voice: ready. Start WoW fresh to use it.",
+   "ko": "NVDA 음성: 준비됨. 사용하려면 WoW를 새로 시작하십시오.",
+   "de": "NVDA-Stimme: bereit. Starte WoW neu, um sie zu nutzen.",
+   "fr": "Voix NVDA : prête. Relancez WoW pour l'utiliser.",
+   "code": [
+    "Sapi2SrInstaller.cs:59: announce(Loc.Get(\"sapi2sr.done\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.failed",
+   "file": "Loc.cs",
+   "key": "sapi2sr.failed",
+   "en": "NVDA voice install failed: {0}",
+   "ko": "NVDA 음성 설치 실패: {0}",
+   "de": "NVDA-Stimme-Installation fehlgeschlagen: {0}",
+   "fr": "Échec de l'installation de la voix NVDA : {0}",
+   "code": [
+    "Sapi2SrInstaller.cs:64: announce(Loc.Format(\"sapi2sr.failed\", ex.Message));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.none",
+   "file": "Loc.cs",
+   "key": "voices.none",
+   "en": "Windows voices: all were already available to WoW.",
+   "ko": "Windows 음성: 모두 이미 WoW에서 사용 가능.",
+   "de": "Windows-Stimmen: alle waren schon für WoW verfügbar.",
+   "fr": "Voix Windows : toutes étaient déjà disponibles pour WoW.",
+   "code": [
+    "WindowsVoicesInstaller.cs:55: announce(Loc.Get(\"voices.none\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.added",
+   "file": "Loc.cs",
+   "key": "voices.added",
+   "en": "Windows voices: added {0}.",
+   "ko": "Windows 음성: {0} 추가함.",
+   "de": "Windows-Stimmen: {0} hinzugefügt.",
+   "fr": "Voix Windows : {0} ajoutée.",
+   "code": [
+    "WindowsVoicesInstaller.cs:76: announce(Loc.Format(\"voices.added\", label));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.count",
+   "file": "Loc.cs",
+   "key": "voices.count",
+   "en": "Windows voices: {0} added. Start WoW fresh to use them; if a voice sounds different than before, choose it again.",
+   "ko": "Windows 음성: {0}개 추가함. 사용하려면 WoW를 새로 시작하십시오; 음성이 전과 다르게 들리면, 그 음성을 다시 고르십시오.",
+   "de": "Windows-Stimmen: {0} hinzugefügt. Starte WoW neu, um sie zu nutzen; klingt eine Stimme anders als vorher, wähle sie neu.",
+   "fr": "Voix Windows : {0} ajoutée(s). Relancez WoW pour les utiliser ; si une voix sonne autrement qu'avant, choisissez-la de nouveau.",
+   "code": [
+    "WindowsVoicesInstaller.cs:89: announce(Loc.Format(\"voices.count\", added));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.backupFailed",
+   "file": "Loc.cs",
+   "key": "voices.backupFailed",
+   "en": "Windows voices: the voice list could not be backed up, so nothing was changed.",
+   "ko": "Windows 음성: 음성 목록을 백업하지 못해서, 아무것도 바꾸지 않음.",
+   "de": "Windows-Stimmen: die Stimmenliste konnte nicht gesichert werden, deshalb wurde nichts geändert.",
+   "fr": "Voix Windows : la liste des voix n'a pas pu être sauvegardée ; rien n'a été modifié.",
+   "code": [
+    "WindowsVoicesInstaller.cs:61: announce(Loc.Get(\"voices.backupFailed\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.failedOne",
+   "file": "Loc.cs",
+   "key": "voices.failedOne",
+   "en": "Windows voices: {0} could not be added ({1}).",
+   "ko": "Windows 음성: {0} 추가하지 못함({1}).",
+   "de": "Windows-Stimmen: {0} konnte nicht hinzugefügt werden ({1}).",
+   "fr": "Voix Windows : {0} n'a pas pu être ajoutée ({1}).",
+   "code": [
+    "WindowsVoicesInstaller.cs:84: announce(Loc.Format(\"voices.failedOne\", label, ex.Message));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.failed",
+   "file": "Loc.cs",
+   "key": "voices.failed",
+   "en": "Windows voices failed: {0}",
+   "ko": "Windows 음성 실패: {0}",
+   "de": "Windows-Stimmen fehlgeschlagen: {0}",
+   "fr": "Échec des voix Windows : {0}",
+   "code": [
+    "WindowsVoicesInstaller.cs:95: announce(Loc.Format(\"voices.failed\", ex.Message));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::version.beta",
+   "file": "Loc.cs",
+   "key": "version.beta",
+   "en": "beta",
+   "ko": "베타",
+   "de": "Beta",
+   "fr": "bêta",
+   "code": [
+    "Config.cs:136: : Loc.Get(\"version.beta\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::version.betaDated",
+   "file": "Loc.cs",
+   "key": "version.betaDated",
+   "en": "beta of {0}",
+   "ko": "{0} 베타",
+   "de": "Beta vom {0}",
+   "fr": "bêta du {0}",
+   "code": [
+    "Config.cs:135: return betaDate.HasValue ? Loc.Format(\"version.betaDated\", betaDate.Value.ToString(\"yyyy-MM-dd\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::target.betaUnchecked",
+   "file": "Loc.cs",
+   "key": "target.betaUnchecked",
+   "en": "WowVision {0} is installed. Whether a newer beta is out could not be checked (no connection to GitHub).",
+   "ko": "WowVision {0} 설치됨. 더 새로운 베타가 나왔는지는 확인하지 못함(GitHub 연결 없음).",
+   "de": "WowVision {0} ist installiert. Ob es eine neuere Beta gibt, konnte nicht geprüft werden (keine Verbindung zu GitHub).",
+   "fr": "WowVision {0} est installé. Impossible de vérifier s'il existe une bêta plus récente (pas de connexion à GitHub).",
+   "code": [
+    "InstallTarget.cs:167: return Loc.Format(\"target.betaUnchecked\", installed);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.label",
+   "file": "Loc.cs",
+   "key": "channel.label",
+   "en": "Which WowVision (for all game versions):",
+   "ko": "설치할 WowVision(모든 게임 버전 공통):",
+   "de": "Welche WowVision (für alle Spielversionen):",
+   "fr": "Quel WowVision (pour toutes les versions du jeu) :",
+   "code": [
+    "ComponentsForm.cs:187: _channelLabel.Text = Loc.Get(\"channel.label\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.acc",
+   "file": "Loc.cs",
+   "key": "channel.acc",
+   "en": "Which WowVision, for all game versions",
+   "ko": "설치할 WowVision, 모든 게임 버전 공통",
+   "de": "Welche WowVision, für alle Spielversionen",
+   "fr": "Quel WowVision, pour toutes les versions du jeu",
+   "code": [
+    "ComponentsForm.cs:225: _channelCombo.AccessibleName = $\"{Loc.Get(\"channel.acc\")}. {_channelDesc.Text}\";"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.beta",
+   "file": "Loc.cs",
+   "key": "channel.beta",
+   "en": "Beta",
+   "ko": "베타",
+   "de": "Beta",
+   "fr": "Bêta",
+   "code": [
+    "ComponentsForm.cs:190: _channelCombo.Items[i] = Loc.Get(_channelOrder[i] == Channel.Beta ? \"channel.beta\" : \"channel.stable\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.stable",
+   "file": "Loc.cs",
+   "key": "channel.stable",
+   "en": "Stable release (recommended)",
+   "ko": "안정판(권장)",
+   "de": "Stabile Version (empfohlen)",
+   "fr": "Version stable (recommandée)",
+   "code": [
+    "ComponentsForm.cs:190: _channelCombo.Items[i] = Loc.Get(_channelOrder[i] == Channel.Beta ? \"channel.beta\" : \"channel.stable\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.betaDesc",
+   "file": "Loc.cs",
+   "key": "channel.betaDesc",
+   "en": "The newest build of WowVision, rebuilt with every change. It has the latest fixes and features, and can have new bugs.",
+   "ko": "최신 WowVision 빌드로, 변경이 있을 때마다 새로 만듭니다. 최신 수정 사항과 기능이 들어 있고, 새 버그가 있을 수 있습니다.",
+   "de": "Der neueste Stand von WowVision, bei jeder Änderung neu gebaut. Er hat die neuesten Korrekturen und Funktionen und kann neue Fehler enthalten.",
+   "fr": "La version la plus récente de WowVision, reconstruite à chaque changement. Elle a les dernières corrections et fonctions, et peut contenir de nouveaux bugs.",
+   "code": [
+    "ComponentsForm.cs:224: _channelDesc.Text = Loc.Get(SelectedChannel == Channel.Beta ? \"channel.betaDesc\" : \"channel.stableDesc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.stableDesc",
+   "file": "Loc.cs",
+   "key": "channel.stableDesc",
+   "en": "The last numbered release. Best for most players. Changes less often than the beta.",
+   "ko": "번호가 붙은 가장 최근 릴리스입니다. 대부분의 플레이어에게 가장 좋습니다. 베타보다 덜 자주 바뀝니다.",
+   "de": "Die letzte nummerierte Veröffentlichung. Für die meisten Spieler am besten. Ändert sich seltener als die Beta.",
+   "fr": "La dernière version numérotée. Idéale pour la plupart des joueurs. Change moins souvent que la bêta.",
+   "code": [
+    "ComponentsForm.cs:224: _channelDesc.Text = Loc.Get(SelectedChannel == Channel.Beta ? \"channel.betaDesc\" : \"channel.stableDesc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.channelBeta",
+   "file": "Loc.cs",
+   "key": "update.channelBeta",
+   "en": "Version: beta. The newest is the {0}.",
+   "ko": "버전: 베타. 최신 버전은 {0}.",
+   "de": "Version: Beta. Die neueste ist die {0}.",
+   "fr": "Version : bêta. La plus récente est la {0}.",
+   "code": [
+    "UpdatePromptForm.cs:223: sb.AppendLine(Loc.Format(Config.CurrentChannel == Channel.Beta ? \"update.channelBeta\" : \"update.channelStable\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.channelStable",
+   "file": "Loc.cs",
+   "key": "update.channelStable",
+   "en": "Version: stable release. The newest is {0}.",
+   "ko": "버전: 안정판. 최신 버전은 {0}.",
+   "de": "Version: stabile Version. Die neueste ist {0}.",
+   "fr": "Version : version stable. La plus récente est {0}.",
+   "code": [
+    "UpdatePromptForm.cs:223: sb.AppendLine(Loc.Format(Config.CurrentChannel == Channel.Beta ? \"update.channelBeta\" : \"update.channelStable\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.label",
+   "file": "Loc.cs",
+   "key": "managed.label",
+   "en": "Additional recommended addons",
+   "ko": "추가 권장 애드온",
+   "de": "Zusätzliche empfohlene AddOns",
+   "fr": "Addons supplémentaires recommandés",
+   "code": [
+    "ComponentsForm.cs:200: _managedLabel.Text = Loc.Get(\"managed.label\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.acc",
+   "file": "Loc.cs",
+   "key": "managed.acc",
+   "en": "Additional recommended addons. These well-known addons are installed and kept up to date together with WowVision; each game version gets the build that matches it, and an addon that does not exist for a game version is left out there. Space toggles the highlighted addon.",
+   "ko": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다. Space로 강조 표시된 애드온을 켜고 끕니다.",
+   "de": "Zusätzliche empfohlene AddOns. Diese bekannten AddOns werden zusammen mit WowVision installiert und aktuell gehalten; jede Spielversion erhält die zu ihr passende Fassung, und ein AddOn, das es für eine Spielversion nicht gibt, wird dort ausgelassen. Die Leertaste schaltet das markierte AddOn um.",
+   "fr": "Addons supplémentaires recommandés. Ces addons connus sont installés et maintenus à jour avec WowVision ; chaque version du jeu reçoit la version qui lui correspond, et un addon qui n'existe pas pour une version du jeu y est laissé de côté. La barre d'espace bascule l'addon en surbrillance.",
+   "code": [
+    "ComponentsForm.cs:201: _managedList.AccessibleName = Loc.Get(\"managed.acc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.notAvailable",
+   "file": "Loc.cs",
+   "key": "managed.notAvailable",
+   "en": "not available for: {0}",
+   "ko": "사용할 수 없는 게임 버전: {0}",
+   "de": "nicht verfügbar für: {0}",
+   "fr": "non disponible pour : {0}",
+   "code": [
+    "ComponentsForm.cs:148: text += \" (\" + Loc.Format(\"managed.notAvailable\", string.Join(\", \", missing)) + \")\";"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.notForClient",
+   "file": "Loc.cs",
+   "key": "managed.notForClient",
+   "en": "{0}: not available for {1}, skipped.",
+   "ko": "{0}: {1}용 없음, 건너뜀.",
+   "de": "{0}: für {1} nicht verfügbar, übersprungen.",
+   "fr": "{0} : non disponible pour {1}, ignoré.",
+   "code": [
+    "InstallRunner.cs:533: lines.Add(Loc.Format(\"managed.notForClient\", managed.Entry.DisplayName, r.Target.DisplayName));",
+    "ManagedAddons.cs:682: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });",
+    "ManagedAddons.cs:796: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.badHash",
+   "file": "Loc.cs",
+   "key": "managed.badHash",
+   "en": "{0}: the download failed its integrity check and was not installed.",
+   "ko": "{0}: 내려받은 파일이 무결성 검사를 통과하지 못해 설치하지 않음.",
+   "de": "{0}: Der Download hat die Integritätsprüfung nicht bestanden und wurde nicht installiert.",
+   "fr": "{0} : le téléchargement a échoué au contrôle d'intégrité et n'a pas été installé.",
+   "code": [
+    "ManagedAddons.cs:734: Percent = -1, Message = Loc.Format(\"managed.badHash\", entry.DisplayName) });",
+    "ManagedAddons.cs:742: Percent = -1, Message = Loc.Format(\"managed.badHash\", entry.DisplayName) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.obsoleteRemoved",
+   "file": "Loc.cs",
+   "key": "managed.obsoleteRemoved",
+   "en": "{0}: removed the old folder {1}, which would clash with the new version.",
+   "ko": "{0}: 예전 폴더 {1} 삭제함, 남겨 두면 새 버전과 충돌함.",
+   "de": "{0}: alten Ordner {1} entfernt, er würde mit der neuen Fassung kollidieren.",
+   "fr": "{0} : ancien dossier {1} supprimé, il entrerait en conflit avec la nouvelle version.",
+   "code": [
+    "ManagedAddons.cs:855: Message = Loc.Format(\"managed.obsoleteRemoved\", entry.DisplayName, root) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.managedUpdates",
+   "file": "Loc.cs",
+   "key": "update.managedUpdates",
+   "en": "{0}: updates available for additional addons: {1}.",
+   "ko": "{0}: 추가 애드온 업데이트 있음: {1}.",
+   "de": "{0}: Updates für zusätzliche AddOns verfügbar: {1}.",
+   "fr": "{0} : mises à jour disponibles pour les addons supplémentaires : {1}.",
+   "code": [
+    "UpdatePromptForm.cs:237: sb.AppendLine(Loc.Format(\"update.managedUpdates\", t.DisplayName, string.Join(\", \", managedUpdates)));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.managedInstalls",
+   "file": "Loc.cs",
+   "key": "update.managedInstalls",
+   "en": "{0}: additional addons that will be installed: {1}.",
+   "ko": "{0}: 설치할 추가 애드온: {1}.",
+   "de": "{0}: Zusätzliche AddOns, die neu installiert werden: {1}.",
+   "fr": "{0} : addons supplémentaires qui seront installés : {1}.",
+   "code": [
+    "UpdatePromptForm.cs:239: sb.AppendLine(Loc.Format(\"update.managedInstalls\", t.DisplayName, string.Join(\", \", managedInstalls)));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::ai.upToDate",
+   "file": "Loc.cs",
+   "key": "ai.upToDate",
+   "en": "{0}: up to date ({1}).",
+   "ko": "{0}: 최신 상태({1}).",
+   "de": "{0}: aktuell ({1}).",
+   "fr": "{0} : à jour ({1}).",
+   "code": [
+    "ManagedAddons.cs:690: Percent = 100, Message = Loc.Format(\"ai.upToDate\", entry.DisplayName, resolved.Version) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.loginTool.label",
+   "file": "Loc.cs",
+   "key": "opt.loginTool.label",
+   "en": "Install the WoW Login Tool (recommended)",
+   "ko": "WoW Login Tool 설치(권장)",
+   "de": "WoW Login Tool installieren (empfohlen)",
+   "fr": "Installer le WoW Login Tool (recommandé)",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.loginTool.desc",
+   "file": "Loc.cs",
+   "key": "opt.loginTool.desc",
+   "en": "A separate program giving the login, server and character screens an audio menu, for WoW Forever, Anniversary and Classic Era. Those screens are not accessible on their own.",
+   "ko": "로그인, 서버, 캐릭터 화면에 소리 메뉴를 붙여 주는 별도 프로그램으로, WoW Forever, Anniversary, Classic Era용입니다. 이 화면들은 그 자체로는 접근성이 없습니다.",
+   "de": "Ein eigenes Programm, das Login-, Server- und Charakterbildschirm ein Audiomenü gibt, für WoW Forever, Anniversary und Classic Era. Diese Bildschirme sind von sich aus nicht zugänglich.",
+   "fr": "Un programme séparé qui donne un menu audio aux écrans de connexion, de serveur et de personnage, pour WoW Forever, Anniversary et Classic Era. Ces écrans ne sont pas accessibles par eux-mêmes.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::status.loginTool",
+   "file": "Loc.cs",
+   "key": "status.loginTool",
+   "en": "Installing the WoW Login Tool for {0}…",
+   "ko": "{0}용 WoW Login Tool 설치 중…",
+   "de": "Installiere das WoW Login Tool für {0}…",
+   "fr": "Installation du WoW Login Tool pour {0}…",
+   "code": [
+    "InstallRunner.cs:312: SayScoped(Loc.Format(\"status.loginTool\", r.Target.DisplayName), true);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.loginTool",
+   "file": "Loc.cs",
+   "key": "summary.loginTool",
+   "en": "The WoW Login Tool is ready — start it from the \"WoW Login Tool\" shortcut on your desktop (also in the Start menu).",
+   "ko": "WoW Login Tool 준비됨 — 바탕 화면의 \"WoW Login Tool\" 바로 가기(시작 메뉴에도 있음)로 실행하십시오.",
+   "de": "Das WoW Login Tool ist bereit – starte es über die Verknüpfung „WoW Login Tool“ auf dem Desktop (auch im Startmenü).",
+   "fr": "Le WoW Login Tool est prêt — lancez-le depuis le raccourci « WoW Login Tool » sur votre bureau (également dans le menu Démarrer).",
+   "code": [
+    "InstallRunner.cs:550: lines.Add(Loc.Get(\"summary.loginTool\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.downloading",
+   "file": "Loc.cs",
+   "key": "lt.downloading",
+   "en": "WoW Login Tool: downloading {0}",
+   "ko": "WoW Login Tool: {0} 내려받는 중",
+   "de": "WoW Login Tool: lade herunter {0}",
+   "fr": "WoW Login Tool : téléchargement de {0}",
+   "code": [
+    "LoginToolInstaller.cs:200: announce(Loc.Format(\"lt.downloading\", size));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.extracting",
+   "file": "Loc.cs",
+   "key": "lt.extracting",
+   "en": "WoW Login Tool: extracting…",
+   "ko": "WoW Login Tool: 압축 푸는 중…",
+   "de": "WoW Login Tool: entpacke…",
+   "fr": "WoW Login Tool : extraction…",
+   "code": [
+    "LoginToolInstaller.cs:204: announce(Loc.Get(\"lt.extracting\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.deploying",
+   "file": "Loc.cs",
+   "key": "lt.deploying",
+   "en": "WoW Login Tool: copying program files…",
+   "ko": "WoW Login Tool: 프로그램 파일 복사 중…",
+   "de": "WoW Login Tool: kopiere Programmdateien…",
+   "fr": "WoW Login Tool : copie des fichiers du programme…",
+   "code": [
+    "LoginToolInstaller.cs:213: announce(Loc.Get(\"lt.deploying\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.textures",
+   "file": "Loc.cs",
+   "key": "lt.textures",
+   "en": "WoW Login Tool: installing login-screen textures…",
+   "ko": "WoW Login Tool: 로그인 화면 텍스처 설치 중…",
+   "de": "WoW Login Tool: installiere Login-Bildschirm-Texturen…",
+   "fr": "WoW Login Tool : installation des textures de l'écran de connexion…",
+   "code": [
+    "LoginToolInstaller.cs:228: announce(Loc.Get(\"lt.textures\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.fonts",
+   "file": "Loc.cs",
+   "key": "lt.fonts",
+   "en": "WoW Login Tool: installing the readable font override…",
+   "ko": "WoW Login Tool: 읽기 쉬운 대체 글꼴 설치 중…",
+   "de": "WoW Login Tool: installiere die besser lesbare Schriftart…",
+   "fr": "WoW Login Tool : installation de la police plus lisible…",
+   "code": [
+    "LoginToolInstaller.cs:292: announce(Loc.Get(\"lt.fonts\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.ahk",
+   "file": "Loc.cs",
+   "key": "lt.ahk",
+   "en": "WoW Login Tool: adding the AutoHotkey runtime…",
+   "ko": "WoW Login Tool: AutoHotkey 런타임 추가 중…",
+   "de": "WoW Login Tool: füge die AutoHotkey-Laufzeit hinzu…",
+   "fr": "WoW Login Tool : ajout du moteur AutoHotkey…",
+   "code": [
+    "LoginToolInstaller.cs:317: announce(Loc.Get(\"lt.ahk\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.shortcut",
+   "file": "Loc.cs",
+   "key": "lt.shortcut",
+   "en": "WoW Login Tool: creating the launcher shortcut…",
+   "ko": "WoW Login Tool: 실행용 바로 가기 만드는 중…",
+   "de": "WoW Login Tool: erstelle die Startverknüpfung…",
+   "fr": "WoW Login Tool : création du raccourci de lancement…",
+   "code": [
+    "LoginToolInstaller.cs:324: announce(Loc.Get(\"lt.shortcut\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.present",
+   "file": "Loc.cs",
+   "key": "lt.present",
+   "en": "WoW Login Tool: already installed, skipped.",
+   "ko": "WoW Login Tool: 이미 설치됨, 건너뜀.",
+   "de": "WoW Login Tool: bereits installiert, übersprungen.",
+   "fr": "WoW Login Tool : déjà installé, ignoré.",
+   "code": [
+    "LoginToolInstaller.cs:173: announce(Loc.Get(\"lt.present\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.noInterface",
+   "file": "Loc.cs",
+   "key": "lt.noInterface",
+   "en": "WoW Login Tool: could not find the Interface folder — login-screen textures were NOT installed.",
+   "ko": "WoW Login Tool: Interface 폴더를 찾지 못함 — 로그인 화면 텍스처를 설치하지 않음.",
+   "de": "WoW Login Tool: Interface-Ordner nicht gefunden – Login-Bildschirm-Texturen wurden NICHT installiert.",
+   "fr": "WoW Login Tool : dossier Interface introuvable — les textures de l'écran de connexion n'ont PAS été installées.",
+   "code": [
+    "LoginToolInstaller.cs:238: announce(Loc.Get(\"lt.noInterface\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.done",
+   "file": "Loc.cs",
+   "key": "lt.done",
+   "en": "WoW Login Tool: ready. Start it from the \"WoW Login Tool\" shortcut (desktop / Start menu).",
+   "ko": "WoW Login Tool: 준비됨. \"WoW Login Tool\" 바로 가기(바탕 화면 / 시작 메뉴)로 실행하십시오.",
+   "de": "WoW Login Tool: bereit. Starte es über die Verknüpfung „WoW Login Tool“ (Desktop / Startmenü).",
+   "fr": "WoW Login Tool : prêt. Lancez-le depuis le raccourci « WoW Login Tool » (bureau / menu Démarrer).",
+   "code": [
+    "LoginToolInstaller.cs:262: announce(Loc.Get(\"lt.done\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::lt.failed",
+   "file": "Loc.cs",
+   "key": "lt.failed",
+   "en": "WoW Login Tool install failed: {0}",
+   "ko": "WoW Login Tool 설치 실패: {0}",
+   "de": "WoW Login Tool-Installation fehlgeschlagen: {0}",
+   "fr": "Échec de l'installation du WoW Login Tool : {0}",
+   "code": [
+    "LoginToolInstaller.cs:268: announce(Loc.Format(\"lt.failed\", ex.Message));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

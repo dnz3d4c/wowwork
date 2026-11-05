@@ -1,0 +1,2394 @@
+{
+ "items": [
+  {
+   "id": "navigation.lua::Wind Bridge waiting point",
+   "file": "navigation.lua",
+   "key": "Wind Bridge waiting point",
+   "en": "Wind Bridge waiting point",
+   "ko": "Wind Bridge 대기 지점",
+   "code": [
+    "camelot/wownav/text.lua:137: wind_bridge_wait = L[\"Wind Bridge waiting point\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The waiting point proof is invalid; no boarding instruction",
+     "en": "The waiting point proof is invalid; no boarding instruction",
+     "ko": "대기 지점 근거가 유효하지 않음; 탑승 안내 없음"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Wind Bridge landing",
+     "en": "Wind Bridge landing",
+     "ko": "Wind Bridge 착지 지점"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Wind Bridge landing",
+   "file": "navigation.lua",
+   "key": "Wind Bridge landing",
+   "en": "Wind Bridge landing",
+   "ko": "Wind Bridge 착지 지점",
+   "code": [
+    "camelot/wownav/text.lua:138: wind_bridge_landing = L[\"Wind Bridge landing\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Wind Bridge waiting point",
+     "en": "Wind Bridge waiting point",
+     "ko": "Wind Bridge 대기 지점"
+    },
+    {
+     "id": "navigation.lua::the Wind Bridge",
+     "en": "the Wind Bridge",
+     "ko": "Wind Bridge"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Dungeon entrance: %s, %s",
+   "file": "navigation.lua",
+   "key": "Dungeon entrance: %s, %s",
+   "en": "Dungeon entrance: %s, %s",
+   "ko": "던전 입구: %s, %s",
+   "code": [
+    "camelot/wownav/text.lua:142: dungeon_entrance = L[\"Dungeon entrance: %s, %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Dungeon entrance: %s",
+     "en": "Dungeon entrance: %s",
+     "ko": "던전 입구: %s"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::the Wind Bridge",
+   "file": "navigation.lua",
+   "key": "the Wind Bridge",
+   "en": "the Wind Bridge",
+   "ko": "Wind Bridge",
+   "code": [
+    "camelot/wownav/module.lua:264: surface = L[\"surfacing\"], wind_bridge = L[\"the Wind Bridge\"] }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Wind Bridge landing",
+     "en": "Wind Bridge landing",
+     "ko": "Wind Bridge 착지 지점"
+    },
+    {
+     "id": "navigation.lua::Wind Bridge waiting point",
+     "en": "Wind Bridge waiting point",
+     "ko": "Wind Bridge 대기 지점"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다",
+   "code": [
+    "camelot/wownav/module.lua:269: wind_bridge = L[\"Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it\"] }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Use %s; the route goes on after it",
+     "en": "Use %s; the route goes on after it",
+     "ko": "%s 이용; 이후 경로 계속"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Target the portal with soft targeting and interact with it; the route goes on after it",
+   "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+   "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다",
+   "code": [
+    "camelot/wownav/module.lua:272: click = L[\"Target the portal with soft targeting and interact with it; the route goes on after it\"] }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Use %s; the route goes on after it",
+     "en": "Use %s; the route goes on after it",
+     "ko": "%s 이용; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::WowNav Route Status",
+   "file": "navigation.lua",
+   "key": "WowNav Route Status",
+   "en": "WowNav Route Status",
+   "ko": "WowNav 경로 상태",
+   "code": [
+    "camelot/wownav/module.lua:1187: label = L[\"WowNav Route Status\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::New WowNav Route Around a Blocked Spot",
+     "en": "New WowNav Route Around a Blocked Spot",
+     "ko": "막힌 지점을 피하는 새 WowNav 경로"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::switch",
+   "file": "navigation.lua",
+   "key": "switch",
+   "en": "switch",
+   "ko": "스위치",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "스위치 | 전환",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::trap",
+   "file": "navigation.lua",
+   "key": "trap",
+   "en": "trap",
+   "ko": "함정",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::spell focus",
+   "file": "navigation.lua",
+   "key": "spell focus",
+   "en": "spell focus",
+   "ko": "주문 초점",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::capture point",
+   "file": "navigation.lua",
+   "key": "capture point",
+   "en": "capture point",
+   "ko": "점령 지점",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::destructible building",
+   "file": "navigation.lua",
+   "key": "destructible building",
+   "en": "destructible building",
+   "ko": "파괴 가능한 건물",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::guild bank",
+   "file": "navigation.lua",
+   "key": "guild bank",
+   "en": "guild bank",
+   "ko": "길드 은행",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "길드 은행",
+   "related": [
+    {
+     "id": "windows.lua::Guild Bank Repair",
+     "en": "Guild Bank Repair",
+     "ko": "길드 자금으로 수리"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::trapdoor",
+   "file": "navigation.lua",
+   "key": "trapdoor",
+   "en": "trapdoor",
+   "ko": "바닥 문",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::orientation point",
+   "file": "navigation.lua",
+   "key": "orientation point",
+   "en": "orientation point",
+   "ko": "방향 기준점",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::transport",
+   "file": "navigation.lua",
+   "key": "transport",
+   "en": "transport",
+   "ko": "운송 수단",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::live target",
+   "file": "navigation.lua",
+   "key": "live target",
+   "en": "live target",
+   "ko": "실시간 대상",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::On the ship to %s",
+   "file": "navigation.lua",
+   "key": "On the ship to %s",
+   "en": "On the ship to %s",
+   "ko": "%s행 배에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:122: on_ship = L[\"On the ship to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the ship",
+     "en": "On the ship",
+     "ko": "배 탑승 지점"
+    },
+    {
+     "id": "navigation.lua::the ship",
+     "en": "the ship",
+     "ko": "배"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::In the tram toward %s",
+   "file": "navigation.lua",
+   "key": "In the tram toward %s",
+   "en": "In the tram toward %s",
+   "ko": "%s 방면 지하철에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:123: in_tram = L[\"In the tram toward %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Tram dock toward %s",
+     "en": "Tram dock toward %s",
+     "ko": "%s 방면 지하철 승강장"
+    },
+    {
+     "id": "navigation.lua::the tram",
+     "en": "the tram",
+     "ko": "지하철"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+   "file": "navigation.lua",
+   "key": "The boarding point proof or the map changed; guidance ended",
+   "en": "The boarding point proof or the map changed; guidance ended",
+   "ko": "탑승 지점 근거 또는 지도 변경; 안내 종료",
+   "code": [
+    "camelot/wownav/text.lua:37: stop_boarding_proof_changed = L[\"The boarding point proof or the map changed; guidance ended\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+     "en": "The boarding point has no valid direction proof on this map",
+     "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음"
+    },
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Boarding point %s reached",
+     "en": "Boarding point %s reached",
+     "ko": "%s 탑승 지점 도착"
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The waiting point proof is invalid; no boarding instruction",
+     "en": "The waiting point proof is invalid; no boarding instruction",
+     "ko": "대기 지점 근거가 유효하지 않음; 탑승 안내 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::height %d",
+   "file": "navigation.lua",
+   "key": "height %d",
+   "en": "height %d",
+   "ko": "높이 %d",
+   "code": [
+    "camelot/wownav/floorsUi.lua:50: text = text .. \", \" .. string.format(L[\"height %d\"], math.floor(floor.z + 0.5))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua:: (height %d)",
+     "en": " (height %d)",
+     "ko": " (높이 %d)"
+    },
+    {
+     "id": "navigation.lua::Auto, height %d",
+     "en": "Auto, height %d",
+     "ko": "자동, 높이 %d"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::waypoint",
+   "file": "navigation.lua",
+   "key": "waypoint",
+   "en": "waypoint",
+   "ko": "경유지",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Visited Waypoints",
+   "file": "navigation.lua",
+   "key": "Visited Waypoints",
+   "en": "Visited Waypoints",
+   "ko": "방문한 경유지",
+   "code": [
+    "core/navigation/visited.lua:14: module:setLabel(L[\"Visited Waypoints\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Forget Visited Waypoints",
+     "en": "Forget Visited Waypoints",
+     "ko": "방문한 경유지 기록 지우기"
+    },
+    {
+     "id": "navigation.lua::Visited waypoints forgotten",
+     "en": "Visited waypoints forgotten",
+     "ko": "방문한 경유지 기록 지움"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Visited For (Minutes)",
+   "file": "navigation.lua",
+   "key": "Visited For (Minutes)",
+   "en": "Visited For (Minutes)",
+   "ko": "방문 기록 유지 시간 (분)",
+   "code": [
+    "core/navigation/visited.lua:20: label = L[\"Visited For (Minutes)\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Visited",
+   "file": "navigation.lua",
+   "key": "Visited",
+   "en": "Visited",
+   "ko": "방문함",
+   "code": [
+    "core/navigation/maps/ui.lua:175: text = L[\"Visited\"] .. \", \" .. text"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Forget Visited Waypoints",
+   "file": "navigation.lua",
+   "key": "Forget Visited Waypoints",
+   "en": "Forget Visited Waypoints",
+   "ko": "방문한 경유지 기록 지우기",
+   "code": [
+    "core/navigation/visited.lua:80: label = L[\"Forget Visited Waypoints\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Visited Waypoints",
+     "en": "Visited Waypoints",
+     "ko": "방문한 경유지"
+    },
+    {
+     "id": "navigation.lua::Visited waypoints forgotten",
+     "en": "Visited waypoints forgotten",
+     "ko": "방문한 경유지 기록 지움"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Visited waypoints forgotten",
+   "file": "navigation.lua",
+   "key": "Visited waypoints forgotten",
+   "en": "Visited waypoints forgotten",
+   "ko": "방문한 경유지 기록 지움",
+   "code": [
+    "core/navigation/visited.lua:73: WowVision:speak(L[\"Visited waypoints forgotten\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Forget Visited Waypoints",
+     "en": "Forget Visited Waypoints",
+     "ko": "방문한 경유지 기록 지우기"
+    },
+    {
+     "id": "navigation.lua::Visited Waypoints",
+     "en": "Visited Waypoints",
+     "ko": "방문한 경유지"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+   "file": "navigation.lua",
+   "key": "Route to the Nearest Unvisited of the Same Name",
+   "en": "Route to the Nearest Unvisited of the Same Name",
+   "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로",
+   "code": [
+    "core/navigation/visited.lua:112: label = L[\"Route to the Nearest Unvisited of the Same Name\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Direct to the Nearest Unvisited of the Same Name",
+     "en": "Direct to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 직선"
+    },
+    {
+     "id": "navigation.lua::En route to %s, waypoint %d of %d",
+     "en": "En route to %s, waypoint %d of %d",
+     "ko": "%s까지 이동 중, 경유지 %d of %d"
+    },
+    {
+     "id": "navigation.lua::No route to start again",
+     "en": "No route to start again",
+     "ko": "다시 시작할 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No route to your target",
+     "en": "No route to your target",
+     "ko": "대상까지 경로 없음"
+    },
+    {
+     "id": "navigation.lua::Route to Your Target",
+     "en": "Route to Your Target",
+     "ko": "대상까지 경로"
+    },
+    {
+     "id": "navigation.lua::Searching the route to %s",
+     "en": "Searching the route to %s",
+     "ko": "%s까지 경로 검색 중"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Direct to the Nearest Unvisited of the Same Name",
+   "file": "navigation.lua",
+   "key": "Direct to the Nearest Unvisited of the Same Name",
+   "en": "Direct to the Nearest Unvisited of the Same Name",
+   "ko": "같은 이름의 가장 가까운 미방문 지점까지 직선",
+   "code": [
+    "core/navigation/visited.lua:120: label = L[\"Direct to the Nearest Unvisited of the Same Name\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+     "en": "Route to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로"
+    },
+    {
+     "id": "navigation.lua::The nearest %d of %d results",
+     "en": "The nearest %d of %d results",
+     "ko": "가장 가까운 결과 %d개 of %d개"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Choose a destination in the navigation window first",
+   "file": "navigation.lua",
+   "key": "Choose a destination in the navigation window first",
+   "en": "Choose a destination in the navigation window first",
+   "ko": "먼저 길 안내 창에서 목적지를 선택하십시오",
+   "code": [
+    "core/navigation/visited.lua:92: WowVision:speak(L[\"Choose a destination in the navigation window first\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "en": "This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "ko": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::No unvisited %s found",
+   "file": "navigation.lua",
+   "key": "No unvisited %s found",
+   "en": "No unvisited %s found",
+   "ko": "방문하지 않은 %s 없음",
+   "code": [
+    "core/navigation/visited.lua:103: WowVision:speak(string.format(L[\"No unvisited %s found\"], name or \"\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Route to Your Target",
+   "file": "navigation.lua",
+   "key": "Route to Your Target",
+   "en": "Route to Your Target",
+   "ko": "대상까지 경로",
+   "code": [
+    "core/navigation/targetRoute.lua:127: label = L[\"Route to Your Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::No route to your target",
+     "en": "No route to your target",
+     "ko": "대상까지 경로 없음"
+    },
+    {
+     "id": "navigation.lua::En route to %s, waypoint %d of %d",
+     "en": "En route to %s, waypoint %d of %d",
+     "ko": "%s까지 이동 중, 경유지 %d of %d"
+    },
+    {
+     "id": "navigation.lua::No route to start again",
+     "en": "No route to start again",
+     "ko": "다시 시작할 경로 없음"
+    },
+    {
+     "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+     "en": "Route to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로"
+    },
+    {
+     "id": "navigation.lua::Searching the route to %s",
+     "en": "Searching the route to %s",
+     "ko": "%s까지 경로 검색 중"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::You have no target",
+   "file": "navigation.lua",
+   "key": "You have no target",
+   "en": "You have no target",
+   "ko": "대상 없음",
+   "code": [
+    "core/navigation/targetFind.lua:70: return { say = L[\"You have no target\"] }",
+    "core/navigation/targetTests.lua:76: t:assertEqual(plan.say, L[\"You have no target\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::no target",
+     "en": "no target",
+     "ko": "대상 없음"
+    },
+    {
+     "id": "targeting.lua::No target. Use /focus%d <name> or target a unit.",
+     "en": "No target. Use /focus%d <name> or target a unit.",
+     "ko": "대상 없음. /focus%d <이름>을 사용하거나 유닛을 대상으로 지정하십시오."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::You are targeting yourself",
+   "file": "navigation.lua",
+   "key": "You are targeting yourself",
+   "en": "You are targeting yourself",
+   "ko": "자신을 대상으로 지정함",
+   "code": [
+    "core/navigation/targetFind.lua:73: return { say = L[\"You are targeting yourself\"] }",
+    "core/navigation/targetTests.lua:78: t:assertEqual(targetFind.plan(api({ isPlayer = true })).say, L[\"You are targeting yourself\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Your target's position is not known",
+   "file": "navigation.lua",
+   "key": "Your target's position is not known",
+   "en": "Your target's position is not known",
+   "ko": "대상의 위치를 알 수 없음",
+   "code": [
+    "core/navigation/targetFind.lua:81: return { say = L[\"Your target's position is not known\"] }",
+    "core/navigation/targetTests.lua:106: t:assertEqual(plan.say, L[\"Your target's position is not known\"])",
+    "core/navigation/targetTests.lua:120: t:assertEqual(plan.say, L[\"Your target's position is not known\"])",
+    "core/navigation/targetTests.lua:129: t:assertEqual(plan.say, L[\"Your target's position is not known\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The position is approximate.",
+     "en": "The position is approximate.",
+     "ko": "대략적인 위치."
+    },
+    {
+     "id": "navigation.lua::The target position is outdated",
+     "en": "The target position is outdated",
+     "ko": "대상 위치가 오래됨"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::No route to your target",
+   "file": "navigation.lua",
+   "key": "No route to your target",
+   "en": "No route to your target",
+   "ko": "대상까지 경로 없음",
+   "code": [
+    "core/navigation/targetFind.lua:91: return { say = L[\"No route to your target\"] }",
+    "core/navigation/targetFind.lua:94: return { say = L[\"No route to your target\"] }",
+    "core/navigation/targetRoute.lua:112: WowVision:speak(L[\"No route to your target\"])",
+    "core/navigation/targetTests.lua:102: t:assertEqual(plan.say, L[\"No route to your target\"])",
+    "core/navigation/targetTests.lua:131: t:assertEqual(plan.say, L[\"No route to your target\"], \"no route data and no engine\")"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Route to Your Target",
+     "en": "Route to Your Target",
+     "ko": "대상까지 경로"
+    },
+    {
+     "id": "navigation.lua::No route to start again",
+     "en": "No route to start again",
+     "ko": "다시 시작할 경로 없음"
+    },
+    {
+     "id": "navigation.lua::En route to %s, waypoint %d of %d",
+     "en": "En route to %s, waypoint %d of %d",
+     "ko": "%s까지 이동 중, 경유지 %d of %d"
+    },
+    {
+     "id": "navigation.lua::No route found",
+     "en": "No route found",
+     "ko": "경로 없음"
+    },
+    {
+     "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+     "en": "Route to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로"
+    },
+    {
+     "id": "navigation.lua::Searching the route to %s",
+     "en": "Searching the route to %s",
+     "ko": "%s까지 경로 검색 중"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Your floor is not clear here. Choose your start.",
+   "file": "navigation.lua",
+   "key": "Your floor is not clear here. Choose your start.",
+   "en": "Your floor is not clear here. Choose your start.",
+   "ko": "여기서는 현재 층이 불분명합니다. 시작 지점을 선택하십시오.",
+   "code": [
+    "core/navigation/targetFind.lua:89: return { say = L[\"Your floor is not clear here. Choose your start.\"], window = target }",
+    "core/navigation/targetTests.lua:95: t:assertEqual(plan.say, L[\"Your floor is not clear here. Choose your start.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Your floor is not clear here",
+     "en": "Your floor is not clear here",
+     "ko": "여기서는 현재 층이 불분명함"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::no entry",
+   "file": "navigation.lua",
+   "key": "no entry",
+   "en": "no entry",
+   "ko": "진입 지점 없음",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::unreachable",
+   "file": "navigation.lua",
+   "key": "unreachable",
+   "en": "unreachable",
+   "ko": "도달 불가",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::of",
+   "file": "objects.lua",
+   "key": "of",
+   "en": "of",
+   "ko": "of",
+   "code": [
+    "camelot/character.lua:468: .. L[\"of\"]",
+    "core/buffers/types/AuraBuffer.lua:241: return whenNonZero(duration, \", \" .. last .. \", \" .. L[\"of\"] .. \" \", \" \" .. L[\"seconds\"])",
+    "core/graph/Host.lua:816: return index .. \" \" .. L[\"of\"] .. \" \" .. count",
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\"",
+    "core/quests/scanner.lua:274: node.detail = string.format(\"%d %s %d\", #entry.objectives - unfinished, L[\"of\"], #entry.objectives)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Health",
+   "file": "objects.lua",
+   "key": "Health",
+   "en": "Health",
+   "ko": "생명력",
+   "code": [],
+   "game_term": "생명력",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Power",
+   "file": "objects.lua",
+   "key": "Power",
+   "en": "Power",
+   "ko": "자원",
+   "code": [],
+   "game_term": "능력 | 위력 | 전투력 | 힘",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::XP",
+   "file": "objects.lua",
+   "key": "XP",
+   "en": "XP",
+   "ko": "경험치",
+   "code": [
+    "core/objects/types/PlayerXP.lua:5: PlayerXP:setLabel(L[\"XP\"])",
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\""
+   ],
+   "game_term": "경험치",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Next Level",
+   "file": "objects.lua",
+   "key": "Next Level",
+   "en": "Next Level",
+   "ko": "다음 레벨",
+   "code": [
+    "core/objects/types/PlayerXP.lua:39: label = L[\"Next Level\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::to level",
+   "file": "objects.lua",
+   "key": "to level",
+   "en": "to level",
+   "ko": "다음 레벨",
+   "code": [
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Money",
+   "file": "objects.lua",
+   "key": "Money",
+   "en": "Money",
+   "ko": "돈",
+   "code": [
+    "classic/mail.lua:183: SendMailMoneyText ~= nil and SendMailMoneyText:GetText() or L[\"Money\"]",
+    "core/objects/types/PlayerMoney.lua:5: PlayerMoney:setLabel(L[\"Money\"])",
+    "core/windows/trade.lua:72: builder:pushContext(\"playerMoney\", L[\"Money\"])",
+    "core/windows/trade.lua:102: return L[\"Money\"] .. \" \" .. C_CurrencyInfo.GetCoinText(money)",
+    "core/windows/trade.lua:104: return L[\"Money\"] .. \" \" .. L[\"Empty\"]",
+    "retail/containers/Bank.lua:358: return COSTS_LABEL or L[\"Money\"]",
+    "retail/containers/containers.lua:52: return L[\"Money\"]",
+    "retail/containers/containers.lua:54: return L[\"Money\"] .. \", \" .. text"
+   ],
+   "game_term": "돈",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "windows.lua",
+     "ko": "돈"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::PVP",
+   "file": "objects.lua",
+   "key": "PVP",
+   "en": "PVP",
+   "ko": "PvP",
+   "code": [
+    "tbc/character/PVP.lua:24: builder:pushContext(\"pvp\", L[\"PVP\"])"
+   ],
+   "game_term": "PvP | 전쟁 | 전쟁 참여 중 | 전적 | 플레이어 간 전투",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "windows.lua",
+     "ko": "PvP"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::Rested",
+   "file": "objects.lua",
+   "key": "Rested",
+   "en": "Rested",
+   "ko": "휴식 경험치",
+   "code": [
+    "core/objects/types/PlayerXP.lua:54: label = L[\"Rested\"],"
+   ],
+   "game_term": "휴식 상태",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::rested",
+   "file": "objects.lua",
+   "key": "rested",
+   "en": "rested",
+   "ko": "휴식 경험치",
+   "code": [
+    "core/objects/types/tests.lua:170: t:assertEqual(line(\"PlayerXP\"), xpLine .. \", \" .. L[\"rested\"] .. \" 3000\")"
+   ],
+   "game_term": "휴식 상태",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Free Slots",
+   "file": "objects.lua",
+   "key": "Free Slots",
+   "en": "Free Slots",
+   "ko": "빈 칸",
+   "code": [
+    "core/objects/types/PlayerBags.lua:13: label = L[\"Free Slots\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Free Bag Slots",
+   "file": "objects.lua",
+   "key": "Free Bag Slots",
+   "en": "Free Bag Slots",
+   "ko": "비어 있는 가방 칸",
+   "code": [
+    "core/objects/types/tests.lua:82: t:assertEqual(line(\"PlayerBags\"), L[\"Free Bag Slots\"] .. \": 10\")"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Bag Slots",
+     "en": "Bag Slots",
+     "ko": "가방 보관함"
+    },
+    {
+     "id": "windows.lua::Bank Bag Slots",
+     "en": "Bank Bag Slots",
+     "ko": "은행 가방 보관함"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Unread",
+   "file": "objects.lua",
+   "key": "Unread",
+   "en": "Unread",
+   "ko": "읽지 않음",
+   "code": [
+    "core/objects/types/PlayerMail.lua:12: label = L[\"Unread\"],"
+   ],
+   "game_term": "읽지 않음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Senders",
+   "file": "objects.lua",
+   "key": "Senders",
+   "en": "Senders",
+   "ko": "보낸 사람",
+   "code": [
+    "core/objects/types/PlayerMail.lua:21: label = L[\"Senders\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::none",
+   "file": "objects.lua",
+   "key": "none",
+   "en": "none",
+   "ko": "없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:498: message = L[\"none\"]",
+    "core/objects/types/tests.lua:95: t:assertEqual(line(\"PlayerMail\"), L[\"Mail\"] .. \": \" .. L[\"none\"])"
+   ],
+   "game_term": "선택 해제 | 없음 | 조건 없음 | 표시하지 않음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Mail from",
+   "file": "objects.lua",
+   "key": "Mail from",
+   "en": "Mail from",
+   "ko": "보낸 사람",
+   "code": [
+    "core/objects/types/tests.lua:97: t:assertEqual(line(\"PlayerMail\"), L[\"Mail from\"] .. \" Thrall, Jaina\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::New mail",
+   "file": "objects.lua",
+   "key": "New mail",
+   "en": "New mail",
+   "ko": "새 편지",
+   "code": [
+    "core/objects/types/tests.lua:99: t:assertEqual(line(\"PlayerMail\"), L[\"New mail\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Durability",
+   "file": "objects.lua",
+   "key": "Durability",
+   "en": "Durability",
+   "ko": "내구도",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:7: PlayerDurability:setLabel(L[\"Durability\"])",
+    "core/objects/types/tests.lua:109: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"no items\"])",
+    "core/objects/types/tests.lua:112: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": 100%\")",
+    "core/objects/types/tests.lua:114: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 98%\")",
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "내구도",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Lowest Item",
+   "file": "objects.lua",
+   "key": "Lowest Item",
+   "en": "Lowest Item",
+   "ko": "최저 내구도 아이템",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:25: label = L[\"Lowest Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::lowest item",
+     "en": "lowest item",
+     "ko": "최저 내구도 아이템"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::lowest item",
+   "file": "objects.lua",
+   "key": "lowest item",
+   "en": "lowest item",
+   "ko": "최저 내구도 아이템",
+   "code": [
+    "core/objects/types/tests.lua:114: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 98%\")",
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::Lowest Item",
+     "en": "Lowest Item",
+     "ko": "최저 내구도 아이템"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Broken",
+   "file": "objects.lua",
+   "key": "Broken",
+   "en": "Broken",
+   "ko": "파손",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:41: label = L[\"Broken\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::broken",
+   "file": "objects.lua",
+   "key": "broken",
+   "en": "broken",
+   "ko": "개 파손",
+   "code": [
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::no items",
+   "file": "objects.lua",
+   "key": "no items",
+   "en": "no items",
+   "ko": "아이템 없음",
+   "code": [
+    "core/objects/types/tests.lua:109: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"no items\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Hearthstone",
+   "file": "objects.lua",
+   "key": "Hearthstone",
+   "en": "Hearthstone",
+   "ko": "귀환석",
+   "code": [
+    "core/objects/types/Hearthstone.lua:7: Hearthstone:setLabel(L[\"Hearthstone\"])",
+    "core/objects/types/tests.lua:142: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": \" .. L[\"ready\"] .. \", Goldshire\")",
+    "core/objects/types/tests.lua:144: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": 20 \" .. L[\"minutes\"] .. \", Goldshire\")",
+    "core/objects/types/tests.lua:146: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": Goldshire\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::ready",
+   "file": "objects.lua",
+   "key": "ready",
+   "en": "ready",
+   "ko": "준비 완료",
+   "code": [
+    "core/objects/types/tests.lua:142: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": \" .. L[\"ready\"] .. \", Goldshire\")"
+   ],
+   "game_term": "준비 | 준비 완료",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Bind Location",
+   "file": "objects.lua",
+   "key": "Bind Location",
+   "en": "Bind Location",
+   "ko": "귀환 장소",
+   "code": [
+    "core/objects/types/Hearthstone.lua:60: label = L[\"Bind Location\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Clock",
+   "file": "objects.lua",
+   "key": "Clock",
+   "en": "Clock",
+   "ko": "시계",
+   "code": [
+    "core/objects/types/GameClock.lua:5: GameClock:setLabel(L[\"Clock\"])"
+   ],
+   "game_term": "시계",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "objects.lua::Time",
+   "file": "objects.lua",
+   "key": "Time",
+   "en": "Time",
+   "ko": "시간",
+   "code": [
+    "core/objects/types/GameClock.lua:12: label = L[\"Time\"],",
+    "core/objects/types/tests.lua:156: t:assertEqual(line(\"GameClock\"), L[\"Time\"] .. \": 8:05 PM\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::equal to",
+   "file": "operators.lua",
+   "key": "equal to",
+   "en": "equal to",
+   "ko": "같음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::not equal to",
+   "file": "operators.lua",
+   "key": "not equal to",
+   "en": "not equal to",
+   "ko": "같지 않음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::less than",
+   "file": "operators.lua",
+   "key": "less than",
+   "en": "less than",
+   "ko": "미만",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::less than or equal to",
+   "file": "operators.lua",
+   "key": "less than or equal to",
+   "en": "less than or equal to",
+   "ko": "이하",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::less than",
+     "en": "less than",
+     "ko": "미만"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::greater than",
+   "file": "operators.lua",
+   "key": "greater than",
+   "en": "greater than",
+   "ko": "초과",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "operators.lua::greater than or equal to",
+   "file": "operators.lua",
+   "key": "greater than or equal to",
+   "en": "greater than or equal to",
+   "ko": "이상",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    },
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::greater than",
+     "en": "greater than",
+     "ko": "초과"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::alternate",
+   "file": "powers.lua",
+   "key": "alternate",
+   "en": "alternate",
+   "ko": "보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:32: { key = \"alternate\", id = Enum.PowerType.Alternate, label = L[\"alternate\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::alternate encounter",
+   "file": "powers.lua",
+   "key": "alternate encounter",
+   "en": "alternate encounter",
+   "ko": "우두머리 전투 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:33: { key = \"alternateencounter\", id = Enum.PowerType.AlternateEncounter, label = L[\"alternate encounter\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::alternate mount",
+   "file": "powers.lua",
+   "key": "alternate mount",
+   "en": "alternate mount",
+   "ko": "탈것 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:34: { key = \"alternatemount\", id = Enum.PowerType.AlternateMount, label = L[\"alternate mount\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::alternate quest",
+   "file": "powers.lua",
+   "key": "alternate quest",
+   "en": "alternate quest",
+   "ko": "퀘스트 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:35: { key = \"alternatequest\", id = Enum.PowerType.AlternateQuest, label = L[\"alternate quest\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::arcane charges",
+   "file": "powers.lua",
+   "key": "arcane charges",
+   "en": "arcane charges",
+   "ko": "비전 충전물",
+   "code": [
+    "core/gameDB/powers.lua:36: { key = \"arcanecharges\", id = Enum.PowerType.ArcaneCharges, label = L[\"arcane charges\"] },"
+   ],
+   "game_term": "비전 충전물",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::balance",
+   "file": "powers.lua",
+   "key": "balance",
+   "en": "balance",
+   "ko": "조화",
+   "code": [
+    "core/gameDB/powers.lua:37: { key = \"balance\", id = Enum.PowerType.Balance, minimum = -100, label = L[\"balance\"] },"
+   ],
+   "game_term": "조화",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::burning embers",
+   "file": "powers.lua",
+   "key": "burning embers",
+   "en": "burning embers",
+   "ko": "타오르는 불씨",
+   "code": [
+    "core/gameDB/powers.lua:38: { key = \"burningembers\", id = Enum.PowerType.BurningEmbers, label = L[\"burning embers\"] },"
+   ],
+   "game_term": "타오르는 불씨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::chi",
+   "file": "powers.lua",
+   "key": "chi",
+   "en": "chi",
+   "ko": "기",
+   "code": [
+    "core/gameDB/powers.lua:39: { key = \"chi\", id = Enum.PowerType.Chi, label = L[\"chi\"] },"
+   ],
+   "game_term": "기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::combo points",
+   "file": "powers.lua",
+   "key": "combo points",
+   "en": "combo points",
+   "ko": "연계 점수",
+   "code": [
+    "core/gameDB/powers.lua:40: { key = \"combopoints\", id = Enum.PowerType.ComboPoints, label = L[\"combo points\"] },"
+   ],
+   "game_term": "연계 점수",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::demonic fury",
+   "file": "powers.lua",
+   "key": "demonic fury",
+   "en": "demonic fury",
+   "ko": "악마의 분노",
+   "code": [
+    "core/gameDB/powers.lua:41: { key = \"demonicfury\", id = Enum.PowerType.DemonicFury, label = L[\"demonic fury\"] },"
+   ],
+   "game_term": "악마의 분노",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::energy",
+   "file": "powers.lua",
+   "key": "energy",
+   "en": "energy",
+   "ko": "기력",
+   "code": [
+    "core/gameDB/powers.lua:42: { key = \"energy\", id = Enum.PowerType.Energy, label = L[\"energy\"] },"
+   ],
+   "game_term": "기력",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::essence",
+   "file": "powers.lua",
+   "key": "essence",
+   "en": "essence",
+   "ko": "정수",
+   "code": [
+    "core/gameDB/powers.lua:43: { key = \"essence\", id = Enum.PowerType.Essence, label = L[\"essence\"] },"
+   ],
+   "game_term": "정수",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::focus",
+   "file": "powers.lua",
+   "key": "focus",
+   "en": "focus",
+   "ko": "집중",
+   "code": [
+    "core/gameDB/powers.lua:44: { key = \"focus\", id = Enum.PowerType.Focus, label = L[\"focus\"] },"
+   ],
+   "game_term": "주 활동 | 주시 | 집중",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::fury",
+   "file": "powers.lua",
+   "key": "fury",
+   "en": "fury",
+   "ko": "격노",
+   "code": [
+    "core/gameDB/powers.lua:45: { key = \"fury\", id = Enum.PowerType.Fury, label = L[\"fury\"] },"
+   ],
+   "game_term": "격노 | 분노",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::happiness",
+   "file": "powers.lua",
+   "key": "happiness",
+   "en": "happiness",
+   "ko": "만족도",
+   "code": [
+    "core/gameDB/powers.lua:46: { key = \"happiness\", id = Enum.PowerType.Happiness, label = L[\"happiness\"] },"
+   ],
+   "game_term": "만족도",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::holy power",
+   "file": "powers.lua",
+   "key": "holy power",
+   "en": "holy power",
+   "ko": "신성한 힘",
+   "code": [
+    "core/gameDB/powers.lua:47: { key = \"holypower\", id = Enum.PowerType.HolyPower, label = L[\"holy power\"] },"
+   ],
+   "game_term": "신성한 힘",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::insanity",
+   "file": "powers.lua",
+   "key": "insanity",
+   "en": "insanity",
+   "ko": "광기",
+   "code": [
+    "core/gameDB/powers.lua:48: { key = \"insanity\", id = Enum.PowerType.Insanity, label = L[\"insanity\"] },"
+   ],
+   "game_term": "광기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::lunar power",
+   "file": "powers.lua",
+   "key": "lunar power",
+   "en": "lunar power",
+   "ko": "천공의 힘",
+   "code": [
+    "core/gameDB/powers.lua:49: { key = \"lunarpower\", id = Enum.PowerType.LunarPower, label = L[\"lunar power\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::maelstrom",
+   "file": "powers.lua",
+   "key": "maelstrom",
+   "en": "maelstrom",
+   "ko": "소용돌이",
+   "code": [
+    "core/gameDB/powers.lua:50: { key = \"maelstrom\", id = Enum.PowerType.Maelstrom, label = L[\"maelstrom\"] },"
+   ],
+   "game_term": "소용돌이",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::mana",
+   "file": "powers.lua",
+   "key": "mana",
+   "en": "mana",
+   "ko": "마나",
+   "code": [
+    "core/gameDB/powers.lua:31: { key = \"mana\", id = Enum.PowerType.Mana, label = L[\"mana\"] },"
+   ],
+   "game_term": "마나",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::pain",
+   "file": "powers.lua",
+   "key": "pain",
+   "en": "pain",
+   "ko": "고통",
+   "code": [
+    "core/gameDB/powers.lua:51: { key = \"pain\", id = Enum.PowerType.Pain, label = L[\"pain\"] },"
+   ],
+   "game_term": "고통",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::rage",
+   "file": "powers.lua",
+   "key": "rage",
+   "en": "rage",
+   "ko": "분노",
+   "code": [
+    "core/gameDB/powers.lua:52: { key = \"rage\", id = Enum.PowerType.Rage, label = L[\"rage\"] },"
+   ],
+   "game_term": "분노",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::blood runes",
+   "file": "powers.lua",
+   "key": "blood runes",
+   "en": "blood runes",
+   "ko": "혈기 룬",
+   "code": [
+    "core/gameDB/powers.lua:53: { key = \"runeblood\", id = Enum.PowerType.RuneBlood, label = L[\"blood runes\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::death runes",
+   "file": "powers.lua",
+   "key": "death runes",
+   "en": "death runes",
+   "ko": "죽음 룬",
+   "code": [
+    "core/gameDB/powers.lua:54: { key = \"runechromatic\", id = Enum.PowerType.RuneChromatic, label = L[\"death runes\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::frost runes",
+   "file": "powers.lua",
+   "key": "frost runes",
+   "en": "frost runes",
+   "ko": "냉기 룬",
+   "code": [
+    "core/gameDB/powers.lua:55: { key = \"runefrost\", id = Enum.PowerType.RuneFrost, label = L[\"frost runes\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::unholy runes",
+   "file": "powers.lua",
+   "key": "unholy runes",
+   "en": "unholy runes",
+   "ko": "부정 룬",
+   "code": [
+    "core/gameDB/powers.lua:56: { key = \"runeunholy\", id = Enum.PowerType.RuneUnholy, label = L[\"unholy runes\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::runes",
+   "file": "powers.lua",
+   "key": "runes",
+   "en": "runes",
+   "ko": "룬",
+   "code": [
+    "core/gameDB/powers.lua:57: { key = \"runes\", id = Enum.PowerType.Runes, label = L[\"runes\"] },"
+   ],
+   "game_term": "룬",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::runic power",
+   "file": "powers.lua",
+   "key": "runic power",
+   "en": "runic power",
+   "ko": "룬 마력",
+   "code": [
+    "core/gameDB/powers.lua:58: { key = \"runicpower\", id = Enum.PowerType.RunicPower, label = L[\"runic power\"] },"
+   ],
+   "game_term": "룬 마력",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::shadow orbs",
+   "file": "powers.lua",
+   "key": "shadow orbs",
+   "en": "shadow orbs",
+   "ko": "어둠의 구슬",
+   "code": [
+    "core/gameDB/powers.lua:59: { key = \"shadoworbs\", id = Enum.PowerType.ShadowOrbs, label = L[\"shadow orbs\"] },"
+   ],
+   "game_term": "어둠의 구슬",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "powers.lua::soul shards",
+   "file": "powers.lua",
+   "key": "soul shards",
+   "en": "soul shards",
+   "ko": "영혼의 조각",
+   "code": [
+    "core/gameDB/powers.lua:60: { key = \"soulshards\", id = Enum.PowerType.SoulShards, label = L[\"soul shards\"] },"
+   ],
+   "game_term": "영혼의 조각",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Nearby Level Range",
+   "file": "quests.lua",
+   "key": "Nearby Level Range",
+   "en": "Nearby Level Range",
+   "ko": "주변 레벨 범위",
+   "code": [
+    "core/quests/module.lua:25: label = L[\"Nearby Level Range\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Include Repeatable Quests",
+   "file": "quests.lua",
+   "key": "Include Repeatable Quests",
+   "en": "Include Repeatable Quests",
+   "ko": "반복 가능 퀘스트 포함",
+   "code": [
+    "core/quests/module.lua:33: label = L[\"Include Repeatable Quests\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Questie is not loaded",
+   "file": "quests.lua",
+   "key": "Questie is not loaded",
+   "en": "Questie is not loaded",
+   "ko": "Questie 불러오지 않음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::Questie is still loading",
+     "en": "Questie is still loading",
+     "ko": "Questie 불러오는 중"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Questie is still loading",
+   "file": "quests.lua",
+   "key": "Questie is still loading",
+   "en": "Questie is still loading",
+   "ko": "Questie 불러오는 중",
+   "code": [
+    "core/quests/module.lua:469: tinsert(lines, L[\"Questie is still loading\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::Questie is not loaded",
+     "en": "Questie is not loaded",
+     "ko": "Questie 불러오지 않음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::No nearby quests",
+   "file": "quests.lua",
+   "key": "No nearby quests",
+   "en": "No nearby quests",
+   "ko": "주변 퀘스트 없음",
+   "code": [
+    "core/quests/module.lua:477: tinsert(lines, L[\"No nearby quests\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::No quests in progress",
+   "file": "quests.lua",
+   "key": "No quests in progress",
+   "en": "No quests in progress",
+   "ko": "진행 중인 퀘스트 없음",
+   "code": [
+    "core/quests/module.lua:507: tinsert(lines, L[\"No quests in progress\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::In Progress",
+     "en": "In Progress",
+     "ko": "진행 중"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::No targets",
+   "file": "quests.lua",
+   "key": "No targets",
+   "en": "No targets",
+   "ko": "대상 없음",
+   "code": [
+    "core/quests/module.lua:536: tinsert(lines, L[\"No targets\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::far",
+   "file": "quests.lua",
+   "key": "far",
+   "en": "far",
+   "ko": "멀리",
+   "code": [
+    "core/quests/module.lua:437: return L[\"far\"]"
+   ],
+   "game_term": "멀리",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::from",
+   "file": "quests.lua",
+   "key": "from",
+   "en": "from",
+   "ko": "출처",
+   "code": [
+    "core/quests/module.lua:445: name = target.item.name .. \" \" .. L[\"from\"] .. \" \" .. name",
+    "core/quests/scanner.lua:56: label = target.item.name .. \" \" .. L[\"from\"] .. \" \" .. label"
+   ],
+   "game_term": "보낸이",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::target",
+   "file": "quests.lua",
+   "key": "target",
+   "en": "target",
+   "ko": "대상",
+   "code": [
+    "core/quests/module.lua:519: local suffix = target ~= nil and (\" \" .. L[\"target\"] .. \" \" .. target) or \"\""
+   ],
+   "game_term": "대상",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Level",
+   "file": "quests.lua",
+   "key": "Level",
+   "en": "Level",
+   "ko": "레벨",
+   "code": [
+    "camelot/legacy/rewardTrack.lua:78: L[\"Level\"] .. \" \" .. level,",
+    "core/quests/module.lua:488: L[\"Level\"],",
+    "core/quests/scanner.lua:189: local detail = L[\"Level\"] .. \" \" .. tostring(entry.level)"
+   ],
+   "game_term": "레벨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Unknown",
+   "file": "quests.lua",
+   "key": "Unknown",
+   "en": "Unknown",
+   "ko": "알 수 없음",
+   "code": [
+    "core/quests/module.lua:92: title = L[\"Unknown\"]",
+    "core/quests/module.lua:443: local name = target.name or L[\"Unknown\"]",
+    "core/quests/scanner.lua:23: return L[\"Unknown\"]"
+   ],
+   "game_term": "무엇인가 | 알 수 없음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::NPCs",
+   "file": "quests.lua",
+   "key": "NPCs",
+   "en": "NPCs",
+   "ko": "NPC",
+   "code": [
+    "core/quests/scanner.lua:428: label = L[\"NPCs\"],"
+   ],
+   "game_term": "NPC",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Nearby",
+   "file": "quests.lua",
+   "key": "Nearby",
+   "en": "Nearby",
+   "ko": "주변",
+   "code": [
+    "core/quests/scanner.lua:310: label = L[\"Nearby\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::In Progress",
+   "file": "quests.lua",
+   "key": "In Progress",
+   "en": "In Progress",
+   "ko": "진행 중",
+   "code": [
+    "core/quests/scanner.lua:324: label = L[\"In Progress\"],"
+   ],
+   "game_term": "진행 중",
+   "related": [
+    {
+     "id": "quests.lua::No quests in progress",
+     "en": "No quests in progress",
+     "ko": "진행 중인 퀘스트 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Quest Givers",
+   "file": "quests.lua",
+   "key": "Quest Givers",
+   "en": "Quest Givers",
+   "ko": "퀘스트 NPC",
+   "code": [
+    "core/minimap/module.lua:164: questGiver = L[\"Quest Givers\"],",
+    "core/quests/scanner.lua:441: label = L[\"Quest Givers\"],"
+   ],
+   "game_term": "퀘스트 NPC",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Vendors",
+   "file": "quests.lua",
+   "key": "Vendors",
+   "en": "Vendors",
+   "ko": "상인",
+   "code": [
+    "core/minimap/module.lua:165: vendor = L[\"Vendors\"],",
+    "core/quests/scanner.lua:338: vendor = L[\"Vendors\"],"
+   ],
+   "game_term": "상인",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Trainers",
+   "file": "quests.lua",
+   "key": "Trainers",
+   "en": "Trainers",
+   "ko": "상급자",
+   "code": [
+    "core/minimap/module.lua:167: trainer = L[\"Trainers\"],",
+    "core/quests/scanner.lua:340: trainer = L[\"Trainers\"],"
+   ],
+   "game_term": "상급자",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Class Trainers",
+   "file": "quests.lua",
+   "key": "Class Trainers",
+   "en": "Class Trainers",
+   "ko": "직업 상급자",
+   "code": [
+    "core/minimap/module.lua:168: classTrainers = L[\"Class Trainers\"],",
+    "core/quests/scanner.lua:473: label = L[\"Class Trainers\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Flight Masters",
+   "file": "quests.lua",
+   "key": "Flight Masters",
+   "en": "Flight Masters",
+   "ko": "비행 조련사",
+   "code": [
+    "core/minimap/module.lua:169: flightMaster = L[\"Flight Masters\"],",
+    "core/quests/scanner.lua:341: flightMaster = L[\"Flight Masters\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Innkeepers",
+   "file": "quests.lua",
+   "key": "Innkeepers",
+   "en": "Innkeepers",
+   "ko": "여관주인",
+   "code": [
+    "core/minimap/module.lua:170: innkeeper = L[\"Innkeepers\"],",
+    "core/quests/scanner.lua:342: innkeeper = L[\"Innkeepers\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Bankers",
+   "file": "quests.lua",
+   "key": "Bankers",
+   "en": "Bankers",
+   "ko": "은행원",
+   "code": [
+    "core/minimap/module.lua:171: banker = L[\"Bankers\"],",
+    "core/quests/scanner.lua:343: banker = L[\"Bankers\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Auctioneers",
+   "file": "quests.lua",
+   "key": "Auctioneers",
+   "en": "Auctioneers",
+   "ko": "경매인",
+   "code": [
+    "core/minimap/module.lua:172: auctioneer = L[\"Auctioneers\"],",
+    "core/quests/scanner.lua:344: auctioneer = L[\"Auctioneers\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Stable Masters",
+   "file": "quests.lua",
+   "key": "Stable Masters",
+   "en": "Stable Masters",
+   "ko": "야수 관리인",
+   "code": [
+    "core/minimap/module.lua:173: stableMaster = L[\"Stable Masters\"],",
+    "core/quests/scanner.lua:345: stableMaster = L[\"Stable Masters\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Battlemasters",
+   "file": "quests.lua",
+   "key": "Battlemasters",
+   "en": "Battlemasters",
+   "ko": "전투모병관",
+   "code": [
+    "core/minimap/module.lua:174: battlemaster = L[\"Battlemasters\"],",
+    "core/quests/scanner.lua:346: battlemaster = L[\"Battlemasters\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Spirit Healers",
+   "file": "quests.lua",
+   "key": "Spirit Healers",
+   "en": "Spirit Healers",
+   "ko": "영혼의 치유사",
+   "code": [
+    "core/quests/scanner.lua:347: spiritHealer = L[\"Spirit Healers\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Mailboxes",
+   "file": "quests.lua",
+   "key": "Mailboxes",
+   "en": "Mailboxes",
+   "ko": "우체통",
+   "code": [
+    "core/minimap/module.lua:175: mailboxes = L[\"Mailboxes\"],",
+    "core/quests/scanner.lua:480: label = L[\"Mailboxes\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Rares",
+   "file": "quests.lua",
+   "key": "Rares",
+   "en": "Rares",
+   "ko": "희귀 몬스터",
+   "code": [
+    "core/quests/scanner.lua:488: label = L[\"Rares\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Start",
+   "file": "quests.lua",
+   "key": "Start",
+   "en": "Start",
+   "ko": "시작",
+   "code": [],
+   "game_term": "시작",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Turn In",
+   "file": "quests.lua",
+   "key": "Turn In",
+   "en": "Turn In",
+   "ko": "완료",
+   "code": [],
+   "game_term": "완료 | 제출",
+   "related": [
+    {
+     "id": "minimap.lua::turn in",
+     "en": "turn in",
+     "ko": "완료"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Objectives",
+   "file": "quests.lua",
+   "key": "Objectives",
+   "en": "Objectives",
+   "ko": "목표",
+   "code": [
+    "camelot/legacy/challenges.lua:180: builder:pushContext(\"objectives:\" .. id, L[\"Objectives\"])",
+    "camelot/legacy/challenges.lua:239: tooltip:AddLine(L[\"Objectives\"])"
+   ],
+   "game_term": "목표 | 임무",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "목표"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::quests",
+   "file": "quests.lua",
+   "key": "quests",
+   "en": "quests",
+   "ko": "퀘스트",
+   "code": [
+    "core/quests/scanner.lua:413: giver.detail = tostring(#entries) .. \" \" .. L[\"quests\"]"
+   ],
+   "game_term": "퀘스트",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::spawns",
+   "file": "quests.lua",
+   "key": "spawns",
+   "en": "spawns",
+   "ko": "출현 지점",
+   "code": [
+    "core/quests/scanner.lua:81: tinsert(detail, tostring(#target.spawns) .. \" \" .. L[\"spawns\"])",
+    "core/quests/scanner.lua:125: .. tostring(#target.spawns) .. \" \" .. L[\"spawns\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Loading",
+   "file": "quests.lua",
+   "key": "Loading",
+   "en": "Loading",
+   "ko": "불러오는 중",
+   "code": [
+    "core/quests/scanner.lua:293: return { key = \"loading\", label = L[\"Loading\"] }",
+    "retail/communities.lua:424: builder:addItem(ControlId.structural(\"membersLoading\"), nodes.text({ label = L[\"Loading\"] }))",
+    "retail/containers/containers.lua:15: local parts = { info.itemName ~= nil and WowVision.items.formatName(info.itemName, info.quality) or L[\"Loading\"] }",
+    "retail/socialUI.lua:364: builder:addItem(ControlId.structural(\"loading\"), nodes.text({ label = L[\"Loading\"] }))"
+   ],
+   "game_term": "불러오는 중",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::near",
+   "file": "quests.lua",
+   "key": "near",
+   "en": "near",
+   "ko": "근처",
+   "code": [
+    "core/quests/module.lua:225: tinsert(parts, string.format(\"%s %s, %d %s\", L[\"near\"], landmark, distance, L[\"yards\"]))",
+    "core/quests/module.lua:231: tinsert(parts, string.format(\"%s %s, %d %s\", L[\"near\"], landmark, distance, L[\"yards\"]))"
+   ],
+   "game_term": "가까이",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Repeatable",
+   "file": "quests.lua",
+   "key": "Repeatable",
+   "en": "Repeatable",
+   "ko": "반복 가능",
+   "code": [
+    "core/quests/scanner.lua:193: detail = detail .. \", \" .. L[\"Repeatable\"]"
+   ],
+   "game_term": "반복 가능",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::phased out",
+   "file": "quests.lua",
+   "key": "phased out",
+   "en": "phased out",
+   "ko": "다른 위상",
+   "code": [
+    "core/quests/scanner.lua:42: detail = spawn.phased and L[\"phased out\"] or nil,"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

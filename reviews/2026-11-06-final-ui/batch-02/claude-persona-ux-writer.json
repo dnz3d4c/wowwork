@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "errors.lua::Announce Errors",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 종류의 설정 이름(Announce X 켜기/끄기)은 제품 전체에서 'X 알림' 명사형인데 이 항목만 '알리기' 동사형이라 설정 목록을 들을 때 말투가 튄다.",
+   "evidence": "core/errors/module.lua:12-15 addAlert의 label(오류 알림 켜기/끄기 주 스위치). koKR의 다른 Announce 설정: groupHealth.lua:10 \"사망 알림\", navigation.lua:92 \"거리 알림\", targeting.lua:6 \"하드 대상 알림\", ui.lua:22 \"군중 제어 알림\", monitors.lua:57 \"대상 변경 시 알림\". 'Announce'를 '알리기'로 옮긴 곳은 이 키 하나뿐이다. 문체 규칙상 설정 이름은 짧은 명사형.",
+   "suggestion": "오류 알림"
+  },
+  {
+   "id": "chat.lua::Link %s in Chat",
+   "category": "style",
+   "severity": "minor",
+   "problem": "실행 항목(메뉴·버튼)인데 '링크'로 끝나 동작 이름으로 들리지 않는다. '대화창에 [아이템] 링크, Shift 클릭'을 들으면 '대화창에 있는 아이템 링크'라는 대상 설명으로도 들려, 누르면 링크를 대화 입력창에 넣는 동작이라는 것이 드러나지 않는다. 같은 메뉴의 이웃 항목은 '%s 툴팁 읽기', '%s에 쓰기'처럼 동작형이다.",
+   "evidence": "core/chat/ui.lua:283 shift = L[\"Link %s in Chat\"] → ui.lua:300-302 label = shift:format(part.display) .. \", \" .. L[\"Shift Click\"] (실행 항목). retail/talentTree.lua:348, camelot/legacy/challenges.lua:273에서도 버튼 label로 쓰여 어느 사용처에도 동작형이 맞는다. 한국어 게이머 관용 표현 '링크 걸기'를 기준으로 했고, 명사로 끝나는 메뉴 항목 자체는 허용되는 형태라 확신이 높지 않아 minor로 둔다.",
+   "suggestion": "대화창에 %s 링크 걸기"
+  }
+ ]
+}

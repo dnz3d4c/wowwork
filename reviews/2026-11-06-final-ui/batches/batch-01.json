@@ -1,0 +1,2604 @@
+{
+ "items": [
+  {
+   "id": "alerts.lua::alert",
+   "file": "alerts.lua",
+   "key": "alert",
+   "en": "alert",
+   "ko": "경보",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Alert",
+   "file": "alerts.lua",
+   "key": "Alert",
+   "en": "Alert",
+   "ko": "경보",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::TTS Alert",
+   "file": "alerts.lua",
+   "key": "TTS Alert",
+   "en": "TTS Alert",
+   "ko": "TTS 경보",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:5: { type = \"TTS\", key = \"tts\", label = L[\"TTS Alert\"], enabled = false },",
+    "classic/monitors/types/CooldownMonitor.lua:5: { type = \"TTS\", key = \"tts\", label = L[\"TTS Alert\"], enabled = false },",
+    "core/chat/module.lua:22: label = L[\"TTS Alert\"],",
+    "core/errors/module.lua:20: label = L[\"TTS Alert\"],",
+    "core/errors/module.lua:58: label = L[\"TTS Alert\"],",
+    "core/minimap/module.lua:95: label = L[\"TTS Alert\"],",
+    "core/navigation/compass.lua:24: label = L[\"TTS Alert\"],",
+    "core/navigation/compass.lua:39: label = L[\"TTS Alert\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Speech Alert",
+   "file": "alerts.lua",
+   "key": "Speech Alert",
+   "en": "Speech Alert",
+   "ko": "음성 경보",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Sound Alert",
+   "file": "alerts.lua",
+   "key": "Sound Alert",
+   "en": "Sound Alert",
+   "ko": "소리 경보",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:4: { type = \"Sound\", key = \"sound\", label = L[\"Sound Alert\"], enabled = false },",
+    "classic/monitors/types/CooldownMonitor.lua:4: { type = \"Sound\", key = \"sound\", label = L[\"Sound Alert\"], enabled = false },",
+    "core/chat/module.lua:30: label = L[\"Sound Alert\"],",
+    "core/chat/module.lua:66: label = L[\"Sound Alert\"],",
+    "core/chat/module.lua:78: label = L[\"Sound Alert\"],",
+    "core/errors/module.lua:66: label = L[\"Sound Alert\"],",
+    "core/minimap/module.lua:107: label = L[\"Sound Alert\"],",
+    "core/navigation/compass.lua:51: label = L[\"Sound Alert\"],"
+   ],
+   "game_term": "소리 경보",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Voice Alert",
+   "file": "alerts.lua",
+   "key": "Voice Alert",
+   "en": "Voice Alert",
+   "ko": "음성 팩 경보",
+   "code": [
+    "core/navigation/compass.lua:15: label = L[\"Voice Alert\"],",
+    "core/targeting/module.lua:145: label = L[\"Voice Alert\"],",
+    "core/targeting/range.lua:18: label = L[\"Voice Alert\"],",
+    "core/ui modules/combat.lua:62: label = L[\"Voice Alert\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Priority Message (interrupts)",
+   "file": "alerts.lua",
+   "key": "Priority Message (interrupts)",
+   "en": "Priority Message (interrupts)",
+   "ko": "우선 메시지 (말 끊기)",
+   "code": [
+    "core/alerts/outputs.lua:30: label = L[\"Priority Message (interrupts)\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Message",
+   "file": "alerts.lua",
+   "key": "Message",
+   "en": "Message",
+   "ko": "메시지",
+   "code": [
+    "core/alerts/outputs.lua:58: label = L[\"Message\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "alerts.lua::Voice",
+   "file": "alerts.lua",
+   "key": "Voice",
+   "en": "Voice",
+   "ko": "음성",
+   "code": [
+    "core/alerts/outputs.lua:40: label = L[\"Voice\"],",
+    "core/alerts/outputs.lua:50: label = L[\"Voice\"],",
+    "retail/groupHealth/module.lua:52: label = L[\"Voice\"],"
+   ],
+   "game_term": "음성 | 음성 대화",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auction House",
+   "file": "auction.lua",
+   "key": "Auction House",
+   "en": "Auction House",
+   "ko": "경매장",
+   "code": [
+    "mists/auction.lua:3: module:setLabel(L[\"Auction House\"])",
+    "mists/auction.lua:726: builder:pushContext(\"buyDialog\", L[\"Auction House\"])",
+    "tbc/auction/module.lua:3: module:setLabel(L[\"Auction House\"])",
+    "tbc/auction/module.lua:959: builder:pushContext(\"auction\", L[\"Auction House\"])"
+   ],
+   "game_term": "경매",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auctions",
+   "file": "auction.lua",
+   "key": "Auctions",
+   "en": "Auctions",
+   "ko": "경매",
+   "code": [
+    "mists/auction.lua:268: label = L[\"Auctions\"],",
+    "mists/auction.lua:316: label = L[\"Auctions\"],",
+    "mists/auction.lua:524: label = L[\"Auctions\"],",
+    "mists/auction.lua:635: label = L[\"Auctions\"],",
+    "tbc/auction/module.lua:931: label = L[\"Auctions\"],"
+   ],
+   "game_term": "경매",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Buyout Frame",
+   "file": "auction.lua",
+   "key": "Buyout Frame",
+   "en": "Buyout Frame",
+   "ko": "즉시 구입 창",
+   "code": [
+    "mists/auction.lua:351: builder:pushContext(\"buyout\", L[\"Buyout Frame\"])",
+    "mists/auction.lua:710: builder:pushContext(\"bidBuyout\", L[\"Buyout Frame\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Bid Frame",
+   "file": "auction.lua",
+   "key": "Bid Frame",
+   "en": "Bid Frame",
+   "ko": "입찰 창",
+   "code": [
+    "mists/auction.lua:360: moneyInputStops(builder, \"bid\", L[\"Bid Frame\"], bid.BidAmount)",
+    "mists/auction.lua:705: moneyInputStops(builder, \"rebid\", L[\"Bid Frame\"], auctionsFrame.BidFrame.BidAmount)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Ascending",
+   "file": "auction.lua",
+   "key": "Ascending",
+   "en": "Ascending",
+   "ko": "오름차순",
+   "code": [
+    "tbc/auction/module.lua:289: return pending[stateKey] and L[\"Descending\"] or L[\"Ascending\"]",
+    "tbc/auction/module.lua:327: WowVision:speak(L[\"Ascending\"])"
+   ],
+   "game_term": "오름차순",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Descending",
+   "file": "auction.lua",
+   "key": "Descending",
+   "en": "Descending",
+   "ko": "내림차순",
+   "code": [
+    "tbc/auction/module.lua:289: return pending[stateKey] and L[\"Descending\"] or L[\"Ascending\"]",
+    "tbc/auction/module.lua:336: WowVision:speak(L[\"Descending\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Sort Column",
+   "file": "auction.lua",
+   "key": "Sort Column",
+   "en": "Sort Column",
+   "ko": "정렬 기준 열",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Filters",
+   "file": "auction.lua",
+   "key": "Filters",
+   "en": "Filters",
+   "ko": "필터",
+   "code": [
+    "tbc/auction/module.lua:678: builder:pushContext(\"filters\", L[\"Filters\"])",
+    "tbc/auction/module.lua:774: label = L[\"Filters\"],"
+   ],
+   "game_term": "필터 | 필터 설정",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Unit Price",
+   "file": "auction.lua",
+   "key": "Unit Price",
+   "en": "Unit Price",
+   "ko": "개당 가격",
+   "code": [
+    "mists/auction.lua:283: tinsert(parts, L[\"Unit Price\"] .. \" \" .. coin(entry.unitPrice))",
+    "mists/auction.lua:571: tinsert(parts, L[\"Unit Price\"] .. \" \" .. coin(entry.unitPrice))"
+   ],
+   "game_term": "개당 가격",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Starting Bid",
+   "file": "auction.lua",
+   "key": "Starting Bid",
+   "en": "Starting Bid",
+   "ko": "경매 시작가",
+   "code": [
+    "tbc/auction/module.lua:872: label = L[\"Starting Bid\"],",
+    "tbc/auction/module.lua:875: innerBuilder:pushContext(\"startingBid\", L[\"Starting Bid\"])",
+    "tbc/auction/module.lua:876: moneyInputStops(innerBuilder, \"startPrice\", L[\"Starting Bid\"], StartPrice)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Buyout Price",
+   "file": "auction.lua",
+   "key": "Buyout Price",
+   "en": "Buyout Price",
+   "ko": "즉시 구입가",
+   "code": [
+    "mists/auction.lua:337: tinsert(parts, L[\"Buyout Price\"] .. \" \" .. coin(entry.buyoutAmount))",
+    "mists/auction.lua:550: tinsert(parts, L[\"Buyout Price\"] .. \" \" .. coin(entry.buyoutAmount))",
+    "mists/auction.lua:659: tinsert(parts, L[\"Buyout Price\"] .. \" \" .. coin(entry.buyoutAmount))",
+    "tbc/auction/module.lua:660: liveTextStop(builder, \"buyoutPrice\", moneyFrameText(BrowseBuyoutPrice, L[\"Buyout Price\"]))",
+    "tbc/auction/module.lua:868: moneyInputStops(builder, \"buyout\", L[\"Buyout Price\"], BuyoutPrice)"
+   ],
+   "game_term": "즉시 구입가",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::No Bids",
+   "file": "auction.lua",
+   "key": "No Bids",
+   "en": "No Bids",
+   "ko": "입찰 없음",
+   "code": [
+    "tbc/auction/module.lua:818: liveTextStop(builder, \"noBids\", L[\"No Bids\"])"
+   ],
+   "game_term": "입찰 없음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Bid Price",
+   "file": "auction.lua",
+   "key": "Bid Price",
+   "en": "Bid Price",
+   "ko": "입찰 가격",
+   "code": [
+    "mists/auction.lua:334: tinsert(parts, L[\"Bid Price\"] .. \" \" .. coin(entry.bidAmount))",
+    "mists/auction.lua:547: tinsert(parts, L[\"Bid Price\"] .. \" \" .. coin(entry.bidAmount))",
+    "mists/auction.lua:656: tinsert(parts, L[\"Bid Price\"] .. \" \" .. coin(entry.bidAmount))",
+    "tbc/auction/module.lua:663: moneyInputStops(builder, \"browseBid\", L[\"Bid Price\"], BrowseBidPrice)",
+    "tbc/auction/module.lua:832: moneyInputStops(builder, \"rebid\", L[\"Bid Price\"], BidBidPrice)"
+   ],
+   "game_term": "입찰 가격",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Seller",
+   "file": "auction.lua",
+   "key": "Seller",
+   "en": "Seller",
+   "ko": "판매자",
+   "code": [
+    "mists/auction.lua:573: tinsert(parts, L[\"Seller\"] .. \" \" .. table.concat(entry.owners, \", \"))",
+    "tbc/auction/module.lua:161: label = label .. \", \" .. L[\"Seller\"] .. \": \" .. item.owner"
+   ],
+   "game_term": "판매자",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Sold",
+   "file": "auction.lua",
+   "key": "Sold",
+   "en": "Sold",
+   "ko": "판매됨",
+   "code": [
+    "mists/auction.lua:649: tinsert(parts, L[\"Sold\"])",
+    "tbc/auction/module.lua:158: label = \"[\" .. L[\"Sold\"] .. \"] \" .. label"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Bids",
+   "file": "auction.lua",
+   "key": "Bids",
+   "en": "Bids",
+   "ko": "입찰건",
+   "code": [
+    "mists/auction.lua:675: label = L[\"Bids\"],",
+    "tbc/auction/module.lua:822: label = L[\"Bids\"],"
+   ],
+   "game_term": "입찰건",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Bid Amount",
+   "file": "auction.lua",
+   "key": "Bid Amount",
+   "en": "Bid Amount",
+   "ko": "입찰 금액",
+   "code": [
+    "mists/auction.lua:693: tinsert(parts, L[\"Bid Amount\"] .. \" \" .. coin(entry.bidAmount))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Minimum Bid",
+   "file": "auction.lua",
+   "key": "Minimum Bid",
+   "en": "Minimum Bid",
+   "ko": "최소 입찰가",
+   "code": [
+    "mists/auction.lua:696: tinsert(parts, L[\"Minimum Bid\"] .. \" \" .. coin(entry.minBid))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Bidder",
+   "file": "auction.lua",
+   "key": "Bidder",
+   "en": "Bidder",
+   "ko": "입찰자",
+   "code": [
+    "mists/auction.lua:690: tinsert(parts, L[\"Bidder\"] .. \" \" .. tostring(entry.bidder))",
+    "tbc/auction/module.lua:172: label = label .. \", \" .. L[\"Bidder\"] .. \": \" .. item.highBidder"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Time Left",
+   "file": "auction.lua",
+   "key": "Time Left",
+   "en": "Time Left",
+   "ko": "마감 시한",
+   "code": [
+    "mists/auction.lua:340: tinsert(parts, L[\"Time Left\"] .. \" \" .. getTimeLeftString(entry.timeLeft))",
+    "mists/auction.lua:662: tinsert(parts, L[\"Time Left\"] .. \" \" .. SecondsToTime(entry.timeLeftSeconds, false, true))",
+    "mists/auction.lua:699: tinsert(parts, L[\"Time Left\"] .. \" \" .. getTimeLeftString(entry.timeLeft))",
+    "tbc/auction/module.lua:175: label = label .. \", \" .. L[\"Time Left\"] .. \": \" .. getTimeLeftString(item.timeLeft)"
+   ],
+   "game_term": "마감 시한",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Short",
+   "file": "auction.lua",
+   "key": "Short",
+   "en": "Short",
+   "ko": "단기",
+   "code": [
+    "mists/auction.lua:23: return L[\"Short\"]",
+    "tbc/auction/module.lua:111: return L[\"Short\"]"
+   ],
+   "game_term": "단기 | 줄이기 | 짧음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Medium",
+   "file": "auction.lua",
+   "key": "Medium",
+   "en": "Medium",
+   "ko": "중기",
+   "code": [
+    "mists/auction.lua:25: return L[\"Medium\"]",
+    "tbc/auction/module.lua:113: return L[\"Medium\"]"
+   ],
+   "game_term": "보통 | 중기 | 중형",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Long",
+   "file": "auction.lua",
+   "key": "Long",
+   "en": "Long",
+   "ko": "장기",
+   "code": [
+    "mists/auction.lua:27: return L[\"Long\"]",
+    "tbc/auction/module.lua:115: return L[\"Long\"]"
+   ],
+   "game_term": "김 | 장기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Very Long",
+   "file": "auction.lua",
+   "key": "Very Long",
+   "en": "Very Long",
+   "ko": "최장기",
+   "code": [
+    "mists/auction.lua:29: return L[\"Very Long\"]",
+    "tbc/auction/module.lua:117: return L[\"Very Long\"]"
+   ],
+   "game_term": "최장기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Min Stack Size",
+   "file": "auction.lua",
+   "key": "Min Stack Size",
+   "en": "Min Stack Size",
+   "ko": "최소 묶음 크기",
+   "code": [
+    "tbc/auction/module.lua:683: label = L[\"Min Stack Size\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Stack Size",
+     "en": "Stack Size",
+     "ko": "묶음 크기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::No Results",
+   "file": "auction.lua",
+   "key": "No Results",
+   "en": "No Results",
+   "ko": "결과 없음",
+   "code": [
+    "tbc/auction/module.lua:518: builder:addItem(ControlId.structural(\"filteredEmpty\"), nodes.text({ label = L[\"No Results\"] }))",
+    "tbc/auction/module.lua:529: builder:addItem(ControlId.structural(\"scanEmpty\"), nodes.text({ label = L[\"No Results\"] }))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::No results",
+     "en": "No results",
+     "ko": "결과 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scan",
+   "file": "auction.lua",
+   "key": "Scan",
+   "en": "Scan",
+   "ko": "스캔",
+   "code": [
+    "tbc/auction/module.lua:625: label = L[\"Scan\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scanning",
+   "file": "auction.lua",
+   "key": "Scanning",
+   "en": "Scanning",
+   "ko": "스캔 중",
+   "code": [
+    "tbc/auction/module.lua:93: return L[\"Scanning\"] .. \", \" .. math.floor(ahPrices.getFullScanWaitElapsed()) .. \" sec\"",
+    "tbc/auction/module.lua:97: return L[\"Scanning\"] .. \", \" .. math.floor(p.processed * 100 / p.total) .. \"%\"",
+    "tbc/auction/module.lua:100: return L[\"Scanning\"]",
+    "tbc/auction/ScanSession.lua:137: WowVision:speak(self.L[\"Scanning\"] .. \", \" .. pages .. \" \" .. self.L[\"Page\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scan Results",
+   "file": "auction.lua",
+   "key": "Scan Results",
+   "en": "Scan Results",
+   "ko": "스캔 결과",
+   "code": [
+    "tbc/auction/module.lua:527: builder:pushContext(\"scanResults\", L[\"Scan Results\"])",
+    "tbc/auction/module.lua:650: label = L[\"Scan Results\"],",
+    "tbc/auction/module.lua:667: label = L[\"Scan Results\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scan complete",
+   "file": "auction.lua",
+   "key": "Scan complete",
+   "en": "Scan complete",
+   "ko": "스캔 완료",
+   "code": [
+    "tbc/auction/ScanSession.lua:147: WowVision:speak(self.L[\"Scan complete\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"] .. \" in \" .. progress.total .. \" \" .. self.L[\"scanned\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full scan complete",
+     "en": "Full scan complete",
+     "ko": "전체 스캔 완료"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scan aborted",
+   "file": "auction.lua",
+   "key": "Scan aborted",
+   "en": "Scan aborted",
+   "ko": "스캔 중단됨",
+   "code": [
+    "tbc/auction/ScanSession.lua:152: WowVision:speak(self.L[\"Scan aborted\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full scan aborted",
+     "en": "Full scan aborted",
+     "ko": "전체 스캔 중단됨"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Scan failed",
+   "file": "auction.lua",
+   "key": "Scan failed",
+   "en": "Scan failed",
+   "ko": "스캔 실패",
+   "code": [
+    "tbc/auction/ScanSession.lua:157: WowVision:speak(self.L[\"Scan failed\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    },
+    {
+     "id": "minimap.lua::Minimap scan failed",
+     "en": "Minimap scan failed",
+     "ko": "미니맵 스캔 실패"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Abort Scan",
+   "file": "auction.lua",
+   "key": "Abort Scan",
+   "en": "Abort Scan",
+   "ko": "스캔 중단",
+   "code": [
+    "tbc/auction/module.lua:559: return L[\"Abort Scan\"] .. \" (\" .. progress.page .. \"/\" .. progress.totalPages .. \")\""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auto Scan",
+   "file": "auction.lua",
+   "key": "Auto Scan",
+   "en": "Auto Scan",
+   "ko": "자동 스캔",
+   "code": [
+    "tbc/auction/prices.lua:16: settings:add({ type = \"Bool\", key = \"autoScan\", label = L[\"Auto Scan\"], default = false })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Full Scan",
+   "file": "auction.lua",
+   "key": "Full Scan",
+   "en": "Full Scan",
+   "ko": "전체 스캔",
+   "code": [
+    "tbc/auction/module.lua:786: return L[\"Full Scan\"]",
+    "tbc/auction/module.lua:788: return L[\"Full Scan\"] .. \", \" .. L[\"Cooldown active\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full scan aborted",
+     "en": "Full scan aborted",
+     "ko": "전체 스캔 중단됨"
+    },
+    {
+     "id": "auction.lua::Full scan complete",
+     "en": "Full scan complete",
+     "ko": "전체 스캔 완료"
+    },
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    },
+    {
+     "id": "auction.lua::Full scan started",
+     "en": "Full scan started",
+     "ko": "전체 스캔 시작"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Full scan started",
+   "file": "auction.lua",
+   "key": "Full scan started",
+   "en": "Full scan started",
+   "ko": "전체 스캔 시작",
+   "code": [
+    "tbc/auction/prices.lua:169: WowVision:speak(L[\"Full scan started\"] .. \", \" .. totalAuctions .. \" \" .. L[\"auctions\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full Scan",
+     "en": "Full Scan",
+     "ko": "전체 스캔"
+    },
+    {
+     "id": "auction.lua::Full scan aborted",
+     "en": "Full scan aborted",
+     "ko": "전체 스캔 중단됨"
+    },
+    {
+     "id": "auction.lua::Full scan complete",
+     "en": "Full scan complete",
+     "ko": "전체 스캔 완료"
+    },
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Full scan complete",
+   "file": "auction.lua",
+   "key": "Full scan complete",
+   "en": "Full scan complete",
+   "ko": "전체 스캔 완료",
+   "code": [
+    "tbc/auction/prices.lua:180: WowVision:speak(L[\"Full scan complete\"] .. \", \" .. count .. \" \" .. L[\"items updated\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full Scan",
+     "en": "Full Scan",
+     "ko": "전체 스캔"
+    },
+    {
+     "id": "auction.lua::Full scan aborted",
+     "en": "Full scan aborted",
+     "ko": "전체 스캔 중단됨"
+    },
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    },
+    {
+     "id": "auction.lua::Full scan started",
+     "en": "Full scan started",
+     "ko": "전체 스캔 시작"
+    },
+    {
+     "id": "auction.lua::Scan complete",
+     "en": "Scan complete",
+     "ko": "스캔 완료"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Full scan aborted",
+   "file": "auction.lua",
+   "key": "Full scan aborted",
+   "en": "Full scan aborted",
+   "ko": "전체 스캔 중단됨",
+   "code": [
+    "tbc/auction/prices.lua:185: WowVision:speak(L[\"Full scan aborted\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full Scan",
+     "en": "Full Scan",
+     "ko": "전체 스캔"
+    },
+    {
+     "id": "auction.lua::Full scan complete",
+     "en": "Full scan complete",
+     "ko": "전체 스캔 완료"
+    },
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    },
+    {
+     "id": "auction.lua::Full scan started",
+     "en": "Full scan started",
+     "ko": "전체 스캔 시작"
+    },
+    {
+     "id": "auction.lua::Scan aborted",
+     "en": "Scan aborted",
+     "ko": "스캔 중단됨"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Full scan failed",
+   "file": "auction.lua",
+   "key": "Full scan failed",
+   "en": "Full scan failed",
+   "ko": "전체 스캔 실패",
+   "code": [
+    "tbc/auction/prices.lua:191: WowVision:speak(L[\"Full scan failed\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full Scan",
+     "en": "Full Scan",
+     "ko": "전체 스캔"
+    },
+    {
+     "id": "auction.lua::Full scan aborted",
+     "en": "Full scan aborted",
+     "ko": "전체 스캔 중단됨"
+    },
+    {
+     "id": "auction.lua::Full scan complete",
+     "en": "Full scan complete",
+     "ko": "전체 스캔 완료"
+    },
+    {
+     "id": "auction.lua::Full scan started",
+     "en": "Full scan started",
+     "ko": "전체 스캔 시작"
+    },
+    {
+     "id": "auction.lua::Scan failed",
+     "en": "Scan failed",
+     "ko": "스캔 실패"
+    },
+    {
+     "id": "minimap.lua::Minimap scan failed",
+     "en": "Minimap scan failed",
+     "ko": "미니맵 스캔 실패"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Load More",
+   "file": "auction.lua",
+   "key": "Load More",
+   "en": "Load More",
+   "ko": "더 불러오기",
+   "code": [
+    "tbc/auction/module.lua:606: label = L[\"Load More\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::scanned",
+   "file": "auction.lua",
+   "key": "scanned",
+   "en": "scanned",
+   "ko": "개 항목 스캔",
+   "code": [
+    "tbc/auction/ScanSession.lua:147: WowVision:speak(self.L[\"Scan complete\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"] .. \" in \" .. progress.total .. \" \" .. self.L[\"scanned\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::auctions",
+   "file": "auction.lua",
+   "key": "auctions",
+   "en": "auctions",
+   "ko": "건의 경매",
+   "code": [
+    "tbc/auction/prices.lua:169: WowVision:speak(L[\"Full scan started\"] .. \", \" .. totalAuctions .. \" \" .. L[\"auctions\"])"
+   ],
+   "game_term": "경매",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::items updated",
+   "file": "auction.lua",
+   "key": "items updated",
+   "en": "items updated",
+   "ko": "개 아이템 갱신",
+   "code": [
+    "tbc/auction/prices.lua:180: WowVision:speak(L[\"Full scan complete\"] .. \", \" .. count .. \" \" .. L[\"items updated\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auction Price",
+   "file": "auction.lua",
+   "key": "Auction Price",
+   "en": "Auction Price",
+   "ko": "경매 가격",
+   "code": [
+    "tbc/auction/prices.lua:229: local line = L[\"Auction Price\"] .. \": \" .. priceText"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auction Prices",
+   "file": "auction.lua",
+   "key": "Auction Prices",
+   "en": "Auction Prices",
+   "ko": "경매 가격",
+   "code": [
+    "tbc/auction/prices.lua:10: module:setLabel(L[\"Auction Prices\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Tooltip Prices",
+   "file": "auction.lua",
+   "key": "Tooltip Prices",
+   "en": "Tooltip Prices",
+   "ko": "툴팁 가격",
+   "code": [
+    "tbc/auction/prices.lua:15: settings:add({ type = \"Bool\", key = \"tooltipPrices\", label = L[\"Tooltip Prices\"], default = true })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Price Options",
+   "file": "auction.lua",
+   "key": "Price Options",
+   "en": "Price Options",
+   "ko": "가격 설정",
+   "code": [
+    "tbc/auction/module.lua:759: builder:pushContext(\"priceOptions\", L[\"Price Options\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Vendor Buy",
+   "file": "auction.lua",
+   "key": "Vendor Buy",
+   "en": "Vendor Buy",
+   "ko": "상인에게서 구입",
+   "code": [
+    "tbc/auction/prices.lua:261: tooltip:AddLine(L[\"Vendor Buy\"] .. \": \" .. buyText, 1, 1, 1)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Vendor Sell",
+   "file": "auction.lua",
+   "key": "Vendor Sell",
+   "en": "Vendor Sell",
+   "ko": "상인에게 판매",
+   "code": [
+    "tbc/auction/prices.lua:252: tooltip:AddLine(L[\"Vendor Sell\"] .. \": \" .. sellText, 1, 1, 1)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Day Mean",
+   "file": "auction.lua",
+   "key": "Day Mean",
+   "en": "Day Mean",
+   "ko": "일간 평균",
+   "code": [
+    "tbc/auction/prices.lua:242: tooltip:AddLine(meanDays .. \"-\" .. L[\"Day Mean\"] .. \": \" .. meanText, 1, 1, 1)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Mean Days",
+   "file": "auction.lua",
+   "key": "Mean Days",
+   "en": "Mean Days",
+   "ko": "평균 일수",
+   "code": [
+    "tbc/auction/prices.lua:14: settings:add({ type = \"Number\", key = \"meanDays\", label = L[\"Mean Days\"], default = 7 })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::History Days",
+   "file": "auction.lua",
+   "key": "History Days",
+   "en": "History Days",
+   "ko": "기록 일수",
+   "code": [
+    "tbc/auction/prices.lua:13: settings:add({ type = \"Number\", key = \"historyDays\", label = L[\"History Days\"], default = 21 })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::days ago",
+   "file": "auction.lua",
+   "key": "days ago",
+   "en": "days ago",
+   "ko": "일 전",
+   "code": [
+    "tbc/auction/prices.lua:232: line = line .. \" (\" .. age .. \" \" .. L[\"days ago\"] .. \")\""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Auction not open",
+   "file": "auction.lua",
+   "key": "Auction not open",
+   "en": "Auction not open",
+   "ko": "경매장 열리지 않음",
+   "code": [
+    "tbc/auction/prices.lua:189: WowVision:speak(L[\"Auction not open\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Cooldown active",
+   "file": "auction.lua",
+   "key": "Cooldown active",
+   "en": "Cooldown active",
+   "ko": "재사용 대기 중",
+   "code": [
+    "tbc/auction/module.lua:788: return L[\"Full Scan\"] .. \", \" .. L[\"Cooldown active\"]",
+    "tbc/auction/prices.lua:187: WowVision:speak(L[\"Cooldown active\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Item not found",
+   "file": "auction.lua",
+   "key": "Item not found",
+   "en": "Item not found",
+   "ko": "아이템을 찾을 수 없음",
+   "code": [
+    "tbc/auction/ScanSession.lua:229: WowVision:speak(self.L[\"Item not found\"])",
+    "tbc/auction/ScanSession.lua:256: WowVision:speak(self.L[\"Item not found\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Not Found",
+     "en": "Not Found",
+     "ko": "찾을 수 없음"
+    },
+    {
+     "id": "ui.lua::Buffer Not Found",
+     "en": "Buffer Not Found",
+     "ko": "버퍼를 찾을 수 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Item purchased",
+   "file": "auction.lua",
+   "key": "Item purchased",
+   "en": "Item purchased",
+   "ko": "아이템 구입함",
+   "code": [
+    "tbc/auction/ScanSession.lua:249: WowVision:speak(self.L[\"Item purchased\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::12 Hours",
+   "file": "auction.lua",
+   "key": "12 Hours",
+   "en": "12 Hours",
+   "ko": "12시간",
+   "code": [
+    "tbc/auction/module.lua:885: { frame = AuctionsShortAuctionButton, label = L[\"12 Hours\"] },"
+   ],
+   "game_term": "12시간",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::24 Hours",
+   "file": "auction.lua",
+   "key": "24 Hours",
+   "en": "24 Hours",
+   "ko": "24시간",
+   "code": [
+    "tbc/auction/module.lua:886: { frame = AuctionsMediumAuctionButton, label = L[\"24 Hours\"] },"
+   ],
+   "game_term": "24시간",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::48 Hours",
+   "file": "auction.lua",
+   "key": "48 Hours",
+   "en": "48 Hours",
+   "ko": "48시간",
+   "code": [
+    "tbc/auction/module.lua:887: { frame = AuctionsLongAuctionButton, label = L[\"48 Hours\"] },"
+   ],
+   "game_term": "48시간",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Buyout",
+   "file": "auction.lua",
+   "key": "Buyout",
+   "en": "Buyout",
+   "ko": "즉시 구입",
+   "code": [
+    "tbc/auction/module.lua:164: label = label .. \", \" .. L[\"Buyout\"] .. \": \" .. formatMoney(item.buyoutPrice)"
+   ],
+   "game_term": "즉시 구입 | 즉시 구입가: | 즉시구입",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Current Bid",
+   "file": "auction.lua",
+   "key": "Current Bid",
+   "en": "Current Bid",
+   "ko": "현재 입찰가",
+   "code": [
+    "tbc/auction/module.lua:169: label = label .. \", \" .. L[\"Current Bid\"] .. \": \" .. bidText"
+   ],
+   "game_term": "현재 입찰가",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Stack Size",
+   "file": "auction.lua",
+   "key": "Stack Size",
+   "en": "Stack Size",
+   "ko": "묶음 크기",
+   "code": [
+    "tbc/auction/module.lua:857: nodes.proxyEditBox({ editBox = AuctionsStackSizeEntry, label = L[\"Stack Size\"] })"
+   ],
+   "game_term": "묶음 크기",
+   "related": [
+    {
+     "id": "auction.lua::Min Stack Size",
+     "en": "Min Stack Size",
+     "ko": "최소 묶음 크기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Number of Stacks",
+   "file": "auction.lua",
+   "key": "Number of Stacks",
+   "en": "Number of Stacks",
+   "ko": "묶음 개수",
+   "code": [
+    "tbc/auction/module.lua:863: nodes.proxyEditBox({ editBox = AuctionsNumStacksEntry, label = L[\"Number of Stacks\"] })"
+   ],
+   "game_term": "묶음 개수",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Deposit",
+   "file": "auction.lua",
+   "key": "Deposit",
+   "en": "Deposit",
+   "ko": "보증금",
+   "code": [
+    "tbc/auction/module.lua:900: liveTextStop(builder, \"deposit\", moneyFrameText(AuctionsDepositMoneyFrame, L[\"Deposit\"]))"
+   ],
+   "game_term": "맡기기 | 보관 | 보증금",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Minimum Level",
+   "file": "auction.lua",
+   "key": "Minimum Level",
+   "en": "Minimum Level",
+   "ko": "최소 레벨",
+   "code": [
+    "tbc/auction/module.lua:695: nodes.proxyEditBox({ editBox = BrowseMinLevel, label = L[\"Minimum Level\"] })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Maximum Level",
+   "file": "auction.lua",
+   "key": "Maximum Level",
+   "en": "Maximum Level",
+   "ko": "최대 레벨",
+   "code": [
+    "tbc/auction/module.lua:700: nodes.proxyEditBox({ editBox = BrowseMaxLevel, label = L[\"Maximum Level\"] })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Sort",
+   "file": "auction.lua",
+   "key": "Sort",
+   "en": "Sort",
+   "ko": "정렬",
+   "code": [
+    "classic/guild.lua:185: builder:pushContext(\"sort\", L[\"Sort\"])",
+    "tbc/auction/module.lua:354: builder:pushContext(stopKey, L[\"Sort\"])"
+   ],
+   "game_term": "정렬",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Selected",
+   "file": "auction.lua",
+   "key": "Selected",
+   "en": "Selected",
+   "ko": "선택됨",
+   "code": [
+    "core/graph/nodes.lua:437: return L[\"Selected\"]",
+    "retail/talentTree.lua:270: return captured.isCurrentSelection and L[\"Selected\"] or nil",
+    "tbc/auction/module.lua:450: selectAlert:fire({ text = L[\"Selected\"] .. \": \" .. name })"
+   ],
+   "game_term": "선택됨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Create Auction",
+   "file": "auction.lua",
+   "key": "Create Auction",
+   "en": "Create Auction",
+   "ko": "경매 시작",
+   "code": [
+    "tbc/auction/module.lua:843: builder:pushContext(\"createAuction\", L[\"Create Auction\"])"
+   ],
+   "game_term": "경매 시작",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Item Selected",
+   "file": "auction.lua",
+   "key": "Item Selected",
+   "en": "Item Selected",
+   "ko": "아이템 선택됨",
+   "code": [
+    "tbc/auction/module.lua:44: local selectAlert = module:addAlert({ key = \"itemSelected\", label = L[\"Item Selected\"] })",
+    "tbc/auction/module.lua:45: selectAlert:addOutput({ type = \"TTS\", key = \"tts\", label = L[\"Item Selected\"] })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Bindings",
+   "file": "bindings.lua",
+   "key": "Bindings",
+   "en": "Bindings",
+   "ko": "단축키",
+   "code": [
+    "core/ui modules/graphBindings.lua:84: builder:pushContext(\"bindings\", L[\"Bindings\"])",
+    "core/ui modules/graphBindings.lua:163: label = L[\"Bindings\"],"
+   ],
+   "game_term": "단축키",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::This input already exists for this binding.",
+   "file": "bindings.lua",
+   "key": "This input already exists for this binding.",
+   "en": "This input already exists for this binding.",
+   "ko": "이 단축키에 이미 있는 입력.",
+   "code": [
+    "core/ui modules/graphBindings.lua:34: WowVision:speak(L[\"This input already exists for this binding.\"])",
+    "core/ui modules/graphBindings.lua:65: WowVision:speak(L[\"This input already exists for this binding.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Cannot replace this binding as it requires at least one input.",
+     "en": "Cannot replace this binding as it requires at least one input.",
+     "ko": "이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음."
+    },
+    {
+     "id": "bindings.lua::This input conflicts with",
+     "en": "This input conflicts with",
+     "ko": "이 입력과 충돌하는 단축키"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::This input conflicts with",
+   "file": "bindings.lua",
+   "key": "This input conflicts with",
+   "en": "This input conflicts with",
+   "ko": "이 입력과 충돌하는 단축키",
+   "code": [
+    "core/ui modules/graphBindings.lua:42: prompt = L[\"This input conflicts with\"] .. \" \" .. conflicting:getLabel() .. \". \" .. L[\"Replace?\"],",
+    "core/ui modules/graphBindings.lua:69: prompt = L[\"This input conflicts with\"] .. \" \" .. conflicting:getLabel() .. \". \" .. L[\"Replace?\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::This input already exists for this binding.",
+     "en": "This input already exists for this binding.",
+     "ko": "이 단축키에 이미 있는 입력."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Cannot remove; Binding must have at least one input.",
+   "file": "bindings.lua",
+   "key": "Cannot remove; Binding must have at least one input.",
+   "en": "Cannot remove; Binding must have at least one input.",
+   "ko": "제거 불가; 단축키에는 입력이 하나 이상 있어야 함.",
+   "code": [
+    "core/ui modules/graphBindings.lua:23: WowVision:speak(L[\"Cannot remove; Binding must have at least one input.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Cannot replace this binding as it requires at least one input.",
+     "en": "Cannot replace this binding as it requires at least one input.",
+     "ko": "이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Cannot replace this binding as it requires at least one input.",
+   "file": "bindings.lua",
+   "key": "Cannot replace this binding as it requires at least one input.",
+   "en": "Cannot replace this binding as it requires at least one input.",
+   "ko": "이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.",
+   "code": [
+    "core/ui modules/graphBindings.lua:38: WowVision:speak(L[\"Cannot replace this binding as it requires at least one input.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Cannot remove; Binding must have at least one input.",
+     "en": "Cannot remove; Binding must have at least one input.",
+     "ko": "제거 불가; 단축키에는 입력이 하나 이상 있어야 함."
+    },
+    {
+     "id": "bindings.lua::This input already exists for this binding.",
+     "en": "This input already exists for this binding.",
+     "ko": "이 단축키에 이미 있는 입력."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Up",
+   "file": "bindings.lua",
+   "key": "Up",
+   "en": "Up",
+   "ko": "위",
+   "code": [
+    "core/ui modules/module.lua:179: label = L[\"Up\"],"
+   ],
+   "game_term": "위 | 위로 | 위쪽 | 정상",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Down",
+   "file": "bindings.lua",
+   "key": "Down",
+   "en": "Down",
+   "ko": "아래",
+   "code": [
+    "core/ui modules/module.lua:188: label = L[\"Down\"],"
+   ],
+   "game_term": "서버 다운 | 아래 | 아래쪽",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Left",
+   "file": "bindings.lua",
+   "key": "Left",
+   "en": "Left",
+   "ko": "왼쪽",
+   "code": [
+    "core/ui modules/module.lua:197: label = L[\"Left\"],"
+   ],
+   "game_term": "왼쪽",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Right",
+   "file": "bindings.lua",
+   "key": "Right",
+   "en": "Right",
+   "ko": "오른쪽",
+   "code": [
+    "core/ui modules/module.lua:206: label = L[\"Right\"],"
+   ],
+   "game_term": "오른쪽",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Left Click",
+   "file": "bindings.lua",
+   "key": "Left Click",
+   "en": "Left Click",
+   "ko": "왼쪽 클릭",
+   "code": [
+    "core/chat/ui.lua:286: label = left:format(part.display) .. \", \" .. L[\"Left Click\"],",
+    "core/graph/nodes.lua:254: label = clickLabel(\"left\", L[\"Left Click\"]),",
+    "core/ui modules/module.lua:260: label = L[\"Left Click\"],",
+    "retail/socialUI.lua:470: add({ label = L[\"Left Click\"], click = { emulatedKey = \"LeftButton\", target = captured } })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Left Click",
+     "en": "Left Click",
+     "ko": "왼쪽 클릭"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "왼쪽 클릭"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Right Click",
+   "file": "bindings.lua",
+   "key": "Right Click",
+   "en": "Right Click",
+   "ko": "오른쪽 클릭",
+   "code": [
+    "core/chat/ui.lua:293: label = right:format(part.display) .. \", \" .. L[\"Right Click\"],",
+    "core/graph/nodes.lua:258: label = clickLabel(\"right\", L[\"Right Click\"]),",
+    "core/ui modules/module.lua:269: label = L[\"Right Click\"],",
+    "retail/socialUI.lua:471: add({ label = L[\"Right Click\"], click = { emulatedKey = \"RightButton\", target = captured } })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Jump to Beginning",
+   "file": "bindings.lua",
+   "key": "Jump to Beginning",
+   "en": "Jump to Beginning",
+   "ko": "처음으로 이동",
+   "code": [
+    "core/ui modules/module.lua:302: label = L[\"Jump to Beginning\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Jump to End",
+     "en": "Jump to End",
+     "ko": "끝으로 이동"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Jump to End",
+   "file": "bindings.lua",
+   "key": "Jump to End",
+   "en": "Jump to End",
+   "ko": "끝으로 이동",
+   "code": [
+    "core/ui modules/module.lua:310: label = L[\"Jump to End\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Jump to Beginning",
+     "en": "Jump to Beginning",
+     "ko": "처음으로 이동"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Drag",
+   "file": "bindings.lua",
+   "key": "Drag",
+   "en": "Drag",
+   "ko": "끌기",
+   "code": [
+    "core/graph/nodes.lua:262: label = L[\"Drag\"],",
+    "core/ui modules/module.lua:278: label = L[\"Drag\"],"
+   ],
+   "game_term": "끌기",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "끌기"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Next",
+   "file": "bindings.lua",
+   "key": "Next",
+   "en": "Next",
+   "ko": "다음",
+   "code": [
+    "core/ui modules/module.lua:215: label = L[\"Next\"],"
+   ],
+   "game_term": "다음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Previous",
+   "file": "bindings.lua",
+   "key": "Previous",
+   "en": "Previous",
+   "ko": "이전",
+   "code": [
+    "core/ui modules/module.lua:224: label = L[\"Previous\"],"
+   ],
+   "game_term": "이전",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Next Window",
+   "file": "bindings.lua",
+   "key": "Next Window",
+   "en": "Next Window",
+   "ko": "다음 창",
+   "code": [
+    "core/ui modules/module.lua:233: label = L[\"Next Window\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Previous Window",
+   "file": "bindings.lua",
+   "key": "Previous Window",
+   "en": "Previous Window",
+   "ko": "이전 창",
+   "code": [
+    "core/ui modules/module.lua:242: label = L[\"Previous Window\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Read Tooltip",
+   "file": "bindings.lua",
+   "key": "Read Tooltip",
+   "en": "Read Tooltip",
+   "ko": "툴팁 읽기",
+   "code": [
+    "core/ui modules/module.lua:318: label = L[\"Read Tooltip\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Read Tooltip Left",
+     "en": "Read Tooltip Left",
+     "ko": "툴팁 왼쪽 읽기"
+    },
+    {
+     "id": "bindings.lua::Read Tooltip Right",
+     "en": "Read Tooltip Right",
+     "ko": "툴팁 오른쪽 읽기"
+    },
+    {
+     "id": "chat.lua::Read Tooltip of %s",
+     "en": "Read Tooltip of %s",
+     "ko": "%s 툴팁 읽기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Context Menu",
+   "file": "bindings.lua",
+   "key": "Context Menu",
+   "en": "Context Menu",
+   "ko": "상황별 메뉴",
+   "code": [
+    "core/ui modules/module.lua:327: label = L[\"Context Menu\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Context Menu",
+     "en": "Context Menu",
+     "ko": "상황별 메뉴"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "상황별 메뉴"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Previous Tooltip Line",
+   "file": "bindings.lua",
+   "key": "Previous Tooltip Line",
+   "en": "Previous Tooltip Line",
+   "ko": "이전 툴팁 줄",
+   "code": [
+    "core/ui modules/tooltip.lua:9: label = L[\"Previous Tooltip Line\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Tooltip Line",
+     "en": "Next Tooltip Line",
+     "ko": "다음 툴팁 줄"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Next Tooltip Line",
+   "file": "bindings.lua",
+   "key": "Next Tooltip Line",
+   "en": "Next Tooltip Line",
+   "ko": "다음 툴팁 줄",
+   "code": [
+    "core/ui modules/tooltip.lua:21: label = L[\"Next Tooltip Line\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Previous Tooltip Line",
+     "en": "Previous Tooltip Line",
+     "ko": "이전 툴팁 줄"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Read Tooltip Left",
+   "file": "bindings.lua",
+   "key": "Read Tooltip Left",
+   "en": "Read Tooltip Left",
+   "ko": "툴팁 왼쪽 읽기",
+   "code": [
+    "core/ui modules/tooltip.lua:33: label = L[\"Read Tooltip Left\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Read Tooltip",
+     "en": "Read Tooltip",
+     "ko": "툴팁 읽기"
+    },
+    {
+     "id": "bindings.lua::Read Tooltip Right",
+     "en": "Read Tooltip Right",
+     "ko": "툴팁 오른쪽 읽기"
+    },
+    {
+     "id": "chat.lua::Read Tooltip of %s",
+     "en": "Read Tooltip of %s",
+     "ko": "%s 툴팁 읽기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Read Tooltip Right",
+   "file": "bindings.lua",
+   "key": "Read Tooltip Right",
+   "en": "Read Tooltip Right",
+   "ko": "툴팁 오른쪽 읽기",
+   "code": [
+    "core/ui modules/tooltip.lua:45: label = L[\"Read Tooltip Right\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Read Tooltip",
+     "en": "Read Tooltip",
+     "ko": "툴팁 읽기"
+    },
+    {
+     "id": "bindings.lua::Read Tooltip Left",
+     "en": "Read Tooltip Left",
+     "ko": "툴팁 왼쪽 읽기"
+    },
+    {
+     "id": "chat.lua::Read Tooltip of %s",
+     "en": "Read Tooltip of %s",
+     "ko": "%s 툴팁 읽기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Destroy Cursor Item",
+   "file": "bindings.lua",
+   "key": "Destroy Cursor Item",
+   "en": "Destroy Cursor Item",
+   "ko": "커서 아이템 파괴",
+   "code": [
+    "core/ui modules/cursor.lua:32: label = L[\"Destroy Cursor Item\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Previous Buffer Item",
+   "file": "bindings.lua",
+   "key": "Previous Buffer Item",
+   "en": "Previous Buffer Item",
+   "ko": "이전 버퍼 항목",
+   "code": [
+    "core/buffers/module.lua:143: label = L[\"Previous Buffer Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Group",
+     "en": "Previous Buffer Group",
+     "ko": "이전 버퍼 그룹"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "buffers.lua",
+     "ko": "이전 버퍼 항목"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Next Buffer Item",
+   "file": "bindings.lua",
+   "key": "Next Buffer Item",
+   "en": "Next Buffer Item",
+   "ko": "다음 버퍼 항목",
+   "code": [
+    "core/buffers/module.lua:158: label = L[\"Next Buffer Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Group",
+     "en": "Next Buffer Group",
+     "ko": "다음 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "buffers.lua",
+     "ko": "다음 버퍼 항목"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Previous Buffer",
+   "file": "bindings.lua",
+   "key": "Previous Buffer",
+   "en": "Previous Buffer",
+   "ko": "이전 버퍼",
+   "code": [
+    "core/buffers/module.lua:189: label = L[\"Previous Buffer\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Group",
+     "en": "Previous Buffer Group",
+     "ko": "이전 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "buffers.lua",
+     "ko": "이전 버퍼"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Next Buffer",
+   "file": "bindings.lua",
+   "key": "Next Buffer",
+   "en": "Next Buffer",
+   "ko": "다음 버퍼",
+   "code": [
+    "core/buffers/module.lua:174: label = L[\"Next Buffer\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Group",
+     "en": "Next Buffer Group",
+     "ko": "다음 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "buffers.lua",
+     "ko": "다음 버퍼"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Action Bars",
+   "file": "bindings.lua",
+   "key": "Action Bars",
+   "en": "Action Bars",
+   "ko": "행동 단축바",
+   "code": [
+    "core/windows/bars/bars.lua:195: label = L[\"Action Bars\"],"
+   ],
+   "game_term": "행동 단축바",
+   "related": [
+    {
+     "id": "windows.lua::WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+     "en": "WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+     "ko": "끌기가 작동하도록 WowVision이 행동 단축바 잠금을 해제했습니다. 게임 설정의 행동 단축바 항목에서 다시 잠글 수 있습니다."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Roll Tooltip",
+   "file": "bindings.lua",
+   "key": "Roll Tooltip",
+   "en": "Roll Tooltip",
+   "ko": "주사위 툴팁",
+   "code": [
+    "core/windows/loot.lua:28: label = L[\"Roll Tooltip\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Roll Need",
+   "file": "bindings.lua",
+   "key": "Roll Need",
+   "en": "Roll Need",
+   "ko": "주사위 입찰",
+   "code": [
+    "core/windows/loot.lua:39: label = L[\"Roll Need\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Roll Greed",
+   "file": "bindings.lua",
+   "key": "Roll Greed",
+   "en": "Roll Greed",
+   "ko": "주사위 차비",
+   "code": [
+    "core/windows/loot.lua:50: label = L[\"Roll Greed\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Roll Pass",
+   "file": "bindings.lua",
+   "key": "Roll Pass",
+   "en": "Roll Pass",
+   "ko": "주사위 포기",
+   "code": [
+    "core/windows/loot.lua:61: label = L[\"Roll Pass\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Roll Bonus",
+   "file": "bindings.lua",
+   "key": "Roll Bonus",
+   "en": "Roll Bonus",
+   "ko": "보너스 주사위",
+   "code": [
+    "core/windows/loot.lua:73: label = L[\"Roll Bonus\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Scroll Up",
+   "file": "bindings.lua",
+   "key": "Scroll Up",
+   "en": "Scroll Up",
+   "ko": "위로 스크롤",
+   "code": [
+    "core/ui modules/module.lua:287: label = L[\"Scroll Up\"],"
+   ],
+   "game_term": "위로 올라감",
+   "related": [
+    {
+     "id": "ui.lua::Scroll Up",
+     "en": "Scroll Up",
+     "ko": "위로 스크롤"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "위로 스크롤"
+    }
+   ]
+  },
+  {
+   "id": "bindings.lua::Scroll Down",
+   "file": "bindings.lua",
+   "key": "Scroll Down",
+   "en": "Scroll Down",
+   "ko": "아래로 스크롤",
+   "code": [
+    "core/ui modules/module.lua:295: label = L[\"Scroll Down\"],"
+   ],
+   "game_term": "아래로 내려감",
+   "related": [
+    {
+     "id": "ui.lua::Scroll Down",
+     "en": "Scroll Down",
+     "ko": "아래로 스크롤"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "ui.lua",
+     "ko": "아래로 스크롤"
+    }
+   ]
+  },
+  {
+   "id": "buffers.lua::Buffers",
+   "file": "buffers.lua",
+   "key": "Buffers",
+   "en": "Buffers",
+   "ko": "버퍼",
+   "code": [
+    "core/buffers/BufferGroup.lua:18: label = L[\"Buffers\"],",
+    "core/buffers/module.lua:3: module:setLabel(L[\"Buffers\"])",
+    "core/buffers/module.lua:27: root:setLabel(L[\"Buffers\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Previous Buffer Item",
+   "file": "buffers.lua",
+   "key": "Previous Buffer Item",
+   "en": "Previous Buffer Item",
+   "ko": "이전 버퍼 항목",
+   "code": [
+    "core/buffers/module.lua:143: label = L[\"Previous Buffer Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Group",
+     "en": "Previous Buffer Group",
+     "ko": "이전 버퍼 그룹"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "bindings.lua",
+     "ko": "이전 버퍼 항목"
+    }
+   ]
+  },
+  {
+   "id": "buffers.lua::Next Buffer Item",
+   "file": "buffers.lua",
+   "key": "Next Buffer Item",
+   "en": "Next Buffer Item",
+   "ko": "다음 버퍼 항목",
+   "code": [
+    "core/buffers/module.lua:158: label = L[\"Next Buffer Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "bindings.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Group",
+     "en": "Next Buffer Group",
+     "ko": "다음 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "bindings.lua",
+     "ko": "다음 버퍼 항목"
+    }
+   ]
+  },
+  {
+   "id": "buffers.lua::Previous Buffer",
+   "file": "buffers.lua",
+   "key": "Previous Buffer",
+   "en": "Previous Buffer",
+   "ko": "이전 버퍼",
+   "code": [
+    "core/buffers/module.lua:189: label = L[\"Previous Buffer\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Group",
+     "en": "Previous Buffer Group",
+     "ko": "이전 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "bindings.lua",
+     "ko": "이전 버퍼"
+    }
+   ]
+  },
+  {
+   "id": "buffers.lua::Next Buffer",
+   "file": "buffers.lua",
+   "key": "Next Buffer",
+   "en": "Next Buffer",
+   "ko": "다음 버퍼",
+   "code": [
+    "core/buffers/module.lua:174: label = L[\"Next Buffer\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Group",
+     "en": "Next Buffer Group",
+     "ko": "다음 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    }
+   ],
+   "shared_key": [
+    {
+     "file": "bindings.lua",
+     "ko": "다음 버퍼"
+    }
+   ]
+  },
+  {
+   "id": "buffers.lua::Previous Buffer Group",
+   "file": "buffers.lua",
+   "key": "Previous Buffer Group",
+   "en": "Previous Buffer Group",
+   "ko": "이전 버퍼 그룹",
+   "code": [
+    "core/buffers/module.lua:219: label = L[\"Previous Buffer Group\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "bindings.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Group",
+     "en": "Next Buffer Group",
+     "ko": "다음 버퍼 그룹"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer",
+     "en": "Previous Buffer",
+     "ko": "이전 버퍼"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Item",
+     "en": "Previous Buffer Item",
+     "ko": "이전 버퍼 항목"
+    },
+    {
+     "id": "ui.lua::Buffer Group",
+     "en": "Buffer Group",
+     "ko": "버퍼 그룹"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Next Buffer Group",
+   "file": "buffers.lua",
+   "key": "Next Buffer Group",
+   "en": "Next Buffer Group",
+   "ko": "다음 버퍼 그룹",
+   "code": [
+    "core/buffers/module.lua:205: label = L[\"Next Buffer Group\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "bindings.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Next Buffer",
+     "en": "Next Buffer",
+     "ko": "다음 버퍼"
+    },
+    {
+     "id": "buffers.lua::Next Buffer Item",
+     "en": "Next Buffer Item",
+     "ko": "다음 버퍼 항목"
+    },
+    {
+     "id": "buffers.lua::Previous Buffer Group",
+     "en": "Previous Buffer Group",
+     "ko": "이전 버퍼 그룹"
+    },
+    {
+     "id": "ui.lua::Buffer Group",
+     "en": "Buffer Group",
+     "ko": "버퍼 그룹"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Static Buffer",
+   "file": "buffers.lua",
+   "key": "Static Buffer",
+   "en": "Static Buffer",
+   "ko": "고정 버퍼",
+   "code": [
+    "core/buffers/BufferGroup.lua:8: { key = \"Static\", label = L[\"Static Buffer\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Tracked Buffer",
+   "file": "buffers.lua",
+   "key": "Tracked Buffer",
+   "en": "Tracked Buffer",
+   "ko": "추적 버퍼",
+   "code": [
+    "core/buffers/BufferGroup.lua:9: { key = \"Tracked\", label = L[\"Tracked Buffer\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Chat Tab Buffer",
+   "file": "buffers.lua",
+   "key": "Chat Tab Buffer",
+   "en": "Chat Tab Buffer",
+   "ko": "대화 탭 버퍼",
+   "code": [
+    "core/buffers/BufferGroup.lua:10: { key = \"ChatTab\", label = L[\"Chat Tab Buffer\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Chat Tab",
+     "en": "Chat Tab",
+     "ko": "대화 탭"
+    },
+    {
+     "id": "chat.lua::Chat Tab %d",
+     "en": "Chat Tab %d",
+     "ko": "대화 탭 %d"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Chat Tab",
+   "file": "buffers.lua",
+   "key": "Chat Tab",
+   "en": "Chat Tab",
+   "ko": "대화 탭",
+   "code": [
+    "core/buffers/types/ChatTabBuffer.lua:31: label = L[\"Chat Tab\"],",
+    "core/buffers/types/ChatTabBuffer.lua:61: return L[\"Chat Tab\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Chat Tab Buffer",
+     "en": "Chat Tab Buffer",
+     "ko": "대화 탭 버퍼"
+    },
+    {
+     "id": "chat.lua::Chat Tab %d",
+     "en": "Chat Tab %d",
+     "ko": "대화 탭 %d"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Aura Buffer",
+   "file": "buffers.lua",
+   "key": "Aura Buffer",
+   "en": "Aura Buffer",
+   "ko": "오라 버퍼",
+   "code": [
+    "core/buffers/BufferGroup.lua:11: { key = \"Aura\", label = L[\"Aura Buffer\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Auras",
+   "file": "buffers.lua",
+   "key": "Auras",
+   "en": "Auras",
+   "ko": "오라",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:525: return L[\"Auras\"]"
+   ],
+   "game_term": "오라",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Sources",
+   "file": "buffers.lua",
+   "key": "Sources",
+   "en": "Sources",
+   "ko": "출처",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:59: label = L[\"Sources\"],"
+   ],
+   "game_term": "획득 방법",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Only My Auras",
+   "file": "buffers.lua",
+   "key": "Only My Auras",
+   "en": "Only My Auras",
+   "ko": "내 오라만",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:73: label = L[\"Only My Auras\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Any",
+   "file": "buffers.lua",
+   "key": "Any",
+   "en": "Any",
+   "ko": "전체",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:130: local choices = { { value = \"any\", label = L[\"Any\"] }, { value = \"only\", label = L[\"Only\"] } }"
+   ],
+   "game_term": "아무 | 전체",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Only",
+   "file": "buffers.lua",
+   "key": "Only",
+   "en": "Only",
+   "ko": "해당만",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:130: local choices = { { value = \"any\", label = L[\"Any\"] }, { value = \"only\", label = L[\"Only\"] } }"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Not",
+   "file": "buffers.lua",
+   "key": "Not",
+   "en": "Not",
+   "ko": "제외",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:132: tinsert(choices, { value = \"not\", label = L[\"Not\"] })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Cast by Me",
+   "file": "buffers.lua",
+   "key": "Cast by Me",
+   "en": "Cast by Me",
+   "ko": "내가 시전",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:88: { token = \"PLAYER\", label = L[\"Cast by Me\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Castable or Dispellable by Me",
+     "en": "Castable or Dispellable by Me",
+     "ko": "내가 시전 또는 무효화 가능"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Castable or Dispellable by Me",
+   "file": "buffers.lua",
+   "key": "Castable or Dispellable by Me",
+   "en": "Castable or Dispellable by Me",
+   "ko": "내가 시전 또는 무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:89: { token = \"RAID\", label = L[\"Castable or Dispellable by Me\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Cast by Me",
+     "en": "Cast by Me",
+     "ko": "내가 시전"
+    },
+    {
+     "id": "buffers.lua::Dispellable by My Group",
+     "en": "Dispellable by My Group",
+     "ko": "내 파티 또는 공격대가 무효화 가능"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Cancelable",
+   "file": "buffers.lua",
+   "key": "Cancelable",
+   "en": "Cancelable",
+   "ko": "취소 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:90: { token = \"CANCELABLE\", label = L[\"Cancelable\"], negative = \"NOT_CANCELABLE\" },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Crowd Control",
+   "file": "buffers.lua",
+   "key": "Crowd Control",
+   "en": "Crowd Control",
+   "ko": "군중 제어",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:91: { token = \"CROWD_CONTROL\", label = L[\"Crowd Control\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Target Crowd Control",
+     "en": "Target Crowd Control",
+     "ko": "대상 군중 제어 상태"
+    },
+    {
+     "id": "ui.lua::Announce Crowd Control",
+     "en": "Announce Crowd Control",
+     "ko": "군중 제어 알림"
+    },
+    {
+     "id": "ui.lua::Crowd Control Ended Alert",
+     "en": "Crowd Control Ended Alert",
+     "ko": "군중 제어 종료 경보"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Dispellable by My Group",
+   "file": "buffers.lua",
+   "key": "Dispellable by My Group",
+   "en": "Dispellable by My Group",
+   "ko": "내 파티 또는 공격대가 무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:92: { token = \"RAID_PLAYER_DISPELLABLE\", label = L[\"Dispellable by My Group\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Castable or Dispellable by Me",
+     "en": "Castable or Dispellable by Me",
+     "ko": "내가 시전 또는 무효화 가능"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

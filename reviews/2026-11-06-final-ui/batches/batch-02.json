@@ -1,0 +1,2073 @@
+{
+ "items": [
+  {
+   "id": "buffers.lua::Dispellable",
+   "file": "buffers.lua",
+   "key": "Dispellable",
+   "en": "Dispellable",
+   "ko": "무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:93: { token = \"DISPELLABLE\", label = L[\"Dispellable\"] },"
+   ],
+   "game_term": "무효화 가능",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::External Defensive",
+   "file": "buffers.lua",
+   "key": "External Defensive",
+   "en": "External Defensive",
+   "ko": "외부 방어 능력",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:94: { token = \"EXTERNAL_DEFENSIVE\", label = L[\"External Defensive\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Big Defensive",
+   "file": "buffers.lua",
+   "key": "Big Defensive",
+   "en": "Big Defensive",
+   "ko": "강력한 방어 능력",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:95: { token = \"BIG_DEFENSIVE\", label = L[\"Big Defensive\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Shown on Raid Frames in Combat",
+   "file": "buffers.lua",
+   "key": "Shown on Raid Frames in Combat",
+   "en": "Shown on Raid Frames in Combat",
+   "ko": "전투 중 공격대창에 표시",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:96: { token = \"RAID_IN_COMBAT\", label = L[\"Shown on Raid Frames in Combat\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Not in combat",
+     "en": "Not in combat",
+     "ko": "전투 중에는 불가"
+    },
+    {
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "en": "Cannot set virtual focus while in combat.",
+     "ko": "전투 중에는 가상 주시 대상 설정 불가."
+    },
+    {
+     "id": "targeting.lua::Target in Combat Sound",
+     "en": "Target in Combat Sound",
+     "ko": "대상이 전투 중일 때 소리"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Important",
+   "file": "buffers.lua",
+   "key": "Important",
+   "en": "Important",
+   "ko": "중요",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:97: { token = \"IMPORTANT\", label = L[\"Important\"] },"
+   ],
+   "game_term": "중요",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Player Buffs",
+   "file": "buffers.lua",
+   "key": "Player Buffs",
+   "en": "Player Buffs",
+   "ko": "플레이어 강화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:39: { value = \"player:HELPFUL\", unit = \"player\", filter = \"HELPFUL\", label = L[\"Player Buffs\"], missing = L[\"no player\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Player Debuffs",
+   "file": "buffers.lua",
+   "key": "Player Debuffs",
+   "en": "Player Debuffs",
+   "ko": "플레이어 약화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:38: { value = \"player:HARMFUL\", unit = \"player\", filter = \"HARMFUL\", label = L[\"Player Debuffs\"], missing = L[\"no player\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Target Buffs",
+   "file": "buffers.lua",
+   "key": "Target Buffs",
+   "en": "Target Buffs",
+   "ko": "대상 강화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:41: { value = \"target:HELPFUL\", unit = \"target\", filter = \"HELPFUL\", label = L[\"Target Buffs\"], missing = L[\"no target\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Target Debuffs",
+   "file": "buffers.lua",
+   "key": "Target Debuffs",
+   "en": "Target Debuffs",
+   "ko": "대상 약화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:40: { value = \"target:HARMFUL\", unit = \"target\", filter = \"HARMFUL\", label = L[\"Target Debuffs\"], missing = L[\"no target\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Focus Buffs",
+   "file": "buffers.lua",
+   "key": "Focus Buffs",
+   "en": "Focus Buffs",
+   "ko": "주시 대상 강화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:43: { value = \"focus:HELPFUL\", unit = \"focus\", filter = \"HELPFUL\", label = L[\"Focus Buffs\"], missing = L[\"no focus\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Focus Debuffs",
+   "file": "buffers.lua",
+   "key": "Focus Debuffs",
+   "en": "Focus Debuffs",
+   "ko": "주시 대상 약화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:42: { value = \"focus:HARMFUL\", unit = \"focus\", filter = \"HARMFUL\", label = L[\"Focus Debuffs\"], missing = L[\"no focus\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Pet Buffs",
+   "file": "buffers.lua",
+   "key": "Pet Buffs",
+   "en": "Pet Buffs",
+   "ko": "소환수 강화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:45: { value = \"pet:HELPFUL\", unit = \"pet\", filter = \"HELPFUL\", label = L[\"Pet Buffs\"], missing = L[\"no pet\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Pet Debuffs",
+   "file": "buffers.lua",
+   "key": "Pet Debuffs",
+   "en": "Pet Debuffs",
+   "ko": "소환수 약화 효과",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:44: { value = \"pet:HARMFUL\", unit = \"pet\", filter = \"HARMFUL\", label = L[\"Pet Debuffs\"], missing = L[\"no pet\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::no player",
+   "file": "buffers.lua",
+   "key": "no player",
+   "en": "no player",
+   "ko": "플레이어 없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:38: { value = \"player:HARMFUL\", unit = \"player\", filter = \"HARMFUL\", label = L[\"Player Debuffs\"], missing = L[\"no player\"] },",
+    "core/buffers/types/AuraBuffer.lua:39: { value = \"player:HELPFUL\", unit = \"player\", filter = \"HELPFUL\", label = L[\"Player Buffs\"], missing = L[\"no player\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::no target",
+   "file": "buffers.lua",
+   "key": "no target",
+   "en": "no target",
+   "ko": "대상 없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:40: { value = \"target:HARMFUL\", unit = \"target\", filter = \"HARMFUL\", label = L[\"Target Debuffs\"], missing = L[\"no target\"] },",
+    "core/buffers/types/AuraBuffer.lua:41: { value = \"target:HELPFUL\", unit = \"target\", filter = \"HELPFUL\", label = L[\"Target Buffs\"], missing = L[\"no target\"] },"
+   ],
+   "game_term": "대상이 없습니다.",
+   "related": [
+    {
+     "id": "navigation.lua::You have no target",
+     "en": "You have no target",
+     "ko": "대상 없음"
+    },
+    {
+     "id": "targeting.lua::No target. Use /focus%d <name> or target a unit.",
+     "en": "No target. Use /focus%d <name> or target a unit.",
+     "ko": "대상 없음. /focus%d <이름>을 사용하거나 유닛을 대상으로 지정하십시오."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::no focus",
+   "file": "buffers.lua",
+   "key": "no focus",
+   "en": "no focus",
+   "ko": "주시 대상 없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:42: { value = \"focus:HARMFUL\", unit = \"focus\", filter = \"HARMFUL\", label = L[\"Focus Debuffs\"], missing = L[\"no focus\"] },",
+    "core/buffers/types/AuraBuffer.lua:43: { value = \"focus:HELPFUL\", unit = \"focus\", filter = \"HELPFUL\", label = L[\"Focus Buffs\"], missing = L[\"no focus\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::no pet",
+   "file": "buffers.lua",
+   "key": "no pet",
+   "en": "no pet",
+   "ko": "소환수 없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:44: { value = \"pet:HARMFUL\", unit = \"pet\", filter = \"HARMFUL\", label = L[\"Pet Debuffs\"], missing = L[\"no pet\"] },",
+    "core/buffers/types/AuraBuffer.lua:45: { value = \"pet:HELPFUL\", unit = \"pet\", filter = \"HELPFUL\", label = L[\"Pet Buffs\"], missing = L[\"no pet\"] },"
+   ],
+   "game_term": "애완동물 없음",
+   "related": [
+    {
+     "id": "windows.lua::No pet",
+     "en": "No pet",
+     "ko": "소환수 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::stacks",
+   "file": "buffers.lua",
+   "key": "stacks",
+   "en": "stacks",
+   "ko": "중첩",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:283: return whenText(button.Count:GetText(), \", \", \" \" .. L[\"stacks\"])",
+    "core/buffers/types/AuraBuffer.lua:333: text = text .. whenNonZero(aura.applications, \", \", \" \" .. L[\"stacks\"])",
+    "retail/monitors/CdmAuraMonitor.lua:641: text = text .. secrets.whenText(stacksText(frame), \", \", \" \" .. L[\"stacks\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Gone",
+   "file": "buffers.lua",
+   "key": "Gone",
+   "en": "Gone",
+   "ko": "사라짐",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:299: return L[\"Gone\"]",
+    "core/buffers/types/AuraBuffer.lua:330: return L[\"Gone\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::unavailable",
+   "file": "buffers.lua",
+   "key": "unavailable",
+   "en": "unavailable",
+   "ko": "확인 불가",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:295: return L[\"unavailable\"]",
+    "core/buffers/types/AuraBuffer.lua:303: text = L[\"unavailable\"]",
+    "core/buffers/types/AuraBuffer.lua:496: message = L[\"unavailable\"]"
+   ],
+   "game_term": "불가능 | 사용 불가 | 측정 불가",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::General",
+   "file": "buffers.lua",
+   "key": "General",
+   "en": "General",
+   "ko": "일반",
+   "code": [
+    "core/buffers/module.lua:31: generalGroup:setLabel(L[\"General\"])",
+    "core/buffers/module.lua:34: label = L[\"General\"],"
+   ],
+   "game_term": "일반 | 전투사령관",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "buffers.lua::Invert Item Direction",
+   "file": "buffers.lua",
+   "key": "Invert Item Direction",
+   "en": "Invert Item Direction",
+   "ko": "항목 방향 반전",
+   "code": [
+    "core/buffers/module.lua:13: label = L[\"Invert Item Direction\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat",
+   "file": "chat.lua",
+   "key": "Chat",
+   "en": "Chat",
+   "ko": "대화",
+   "code": [
+    "core/chat/module.lua:3: module:setLabel(L[\"Chat\"])",
+    "core/chat/ui.lua:423: builder:pushContext(\"chat\", L[\"Chat\"])",
+    "core/chat/ui.lua:428: SELECTED_CHAT_FRAME ~= nil and chatTabs.tabName(SELECTED_CHAT_FRAME) or L[\"Chat\"],",
+    "core/chat/ui.lua:477: label = L[\"Chat\"],",
+    "retail/communities.lua:650: local vtable = nodes.proxyEditBox({ editBox = editBox, label = L[\"Chat\"] })"
+   ],
+   "game_term": "대화 | 대화창 | 대화창 단축키",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Message Alert",
+   "file": "chat.lua",
+   "key": "Message Alert",
+   "en": "Message Alert",
+   "ko": "메시지 경보",
+   "code": [
+    "core/chat/module.lua:48: tabAlerts[index] = addMessageAlert(key, L[\"Message Alert\"], \"shown\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat Tab %d",
+   "file": "chat.lua",
+   "key": "Chat Tab %d",
+   "en": "Chat Tab %d",
+   "ko": "대화 탭 %d",
+   "code": [
+    "core/chat/tabs.lua:81: return L[\"Chat Tab %d\"]:format(frame:GetID())",
+    "core/chat/tabs.lua:90: return L[\"Chat Tab %d\"]:format(index)"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Chat Tab",
+     "en": "Chat Tab",
+     "ko": "대화 탭"
+    },
+    {
+     "id": "buffers.lua::Chat Tab Buffer",
+     "en": "Chat Tab Buffer",
+     "ko": "대화 탭 버퍼"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Whisper Tabs",
+   "file": "chat.lua",
+   "key": "Whisper Tabs",
+   "en": "Whisper Tabs",
+   "ko": "귓속말 탭",
+   "code": [
+    "core/buffers/types/ChatTabBuffer.lua:23: tinsert(choices, { value = chatTabs.WHISPERS_KEY, label = L[\"Whisper Tabs\"] })",
+    "core/buffers/types/ChatTabBuffer.lua:55: return L[\"Whisper Tabs\"]",
+    "core/chat/module.lua:54: local whisperAlert = addMessageAlert(\"whisperTabs\", L[\"Whisper Tabs\"], \"always\")",
+    "core/chat/module.lua:360: builder:addItem(ControlId.structural(\"whisperTabsAlert\"), alertButton(whisperAlert, L[\"Whisper Tabs\"]))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Speak Messages",
+   "file": "chat.lua",
+   "key": "Speak Messages",
+   "en": "Speak Messages",
+   "ko": "메시지 읽기",
+   "code": [
+    "core/chat/module.lua:36: label = L[\"Speak Messages\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::When the Tab Is Shown",
+   "file": "chat.lua",
+   "key": "When the Tab Is Shown",
+   "en": "When the Tab Is Shown",
+   "ko": "탭이 표시될 때",
+   "code": [
+    "core/chat/module.lua:8: { value = \"shown\", label = L[\"When the Tab Is Shown\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Board only when the vehicle is safely there.",
+     "en": "Board only when the vehicle is safely there.",
+     "ko": "운송 수단이 확실히 도착했을 때만 탑승하십시오."
+    },
+    {
+     "id": "windows.lua::This tab is not supported yet",
+     "en": "This tab is not supported yet",
+     "ko": "이 탭은 아직 지원하지 않습니다"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Previous Link in Message",
+   "file": "chat.lua",
+   "key": "Previous Link in Message",
+   "en": "Previous Link in Message",
+   "ko": "메시지의 이전 링크",
+   "code": [
+    "core/chat/ui.lua:33: label = L[\"Previous Link in Message\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Next Link in Message",
+     "en": "Next Link in Message",
+     "ko": "메시지의 다음 링크"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Next Link in Message",
+   "file": "chat.lua",
+   "key": "Next Link in Message",
+   "en": "Next Link in Message",
+   "ko": "메시지의 다음 링크",
+   "code": [
+    "core/chat/ui.lua:40: label = L[\"Next Link in Message\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Previous Link in Message",
+     "en": "Previous Link in Message",
+     "ko": "메시지의 이전 링크"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Shift Click",
+   "file": "chat.lua",
+   "key": "Shift Click",
+   "en": "Shift Click",
+   "ko": "Shift 클릭",
+   "code": [
+    "core/chat/ui.lua:47: label = L[\"Shift Click\"],",
+    "core/chat/ui.lua:301: label = shift:format(part.display) .. \", \" .. L[\"Shift Click\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Copy Line",
+   "file": "chat.lua",
+   "key": "Copy Line",
+   "en": "Copy Line",
+   "ko": "줄 복사",
+   "code": [
+    "core/chat/ui.lua:308: add({ label = L[\"Copy Line\"], onActivate = copyLine })"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Copy now",
+   "file": "chat.lua",
+   "key": "Copy now",
+   "en": "Copy now",
+   "ko": "지금 복사",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat Box Opened",
+   "file": "chat.lua",
+   "key": "Chat Box Opened",
+   "en": "Chat Box Opened",
+   "ko": "대화 입력창 열림",
+   "code": [
+    "core/chat/module.lua:61: label = L[\"Chat Box Opened\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Chat Box Closed",
+     "en": "Chat Box Closed",
+     "ko": "대화 입력창 닫힘"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat Box Closed",
+   "file": "chat.lua",
+   "key": "Chat Box Closed",
+   "en": "Chat Box Closed",
+   "ko": "대화 입력창 닫힘",
+   "code": [
+    "core/chat/module.lua:73: label = L[\"Chat Box Closed\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Chat Box Opened",
+     "en": "Chat Box Opened",
+     "ko": "대화 입력창 열림"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Links unavailable here",
+   "file": "chat.lua",
+   "key": "Links unavailable here",
+   "en": "Links unavailable here",
+   "ko": "여기서는 링크 사용 불가",
+   "code": [
+    "core/chat/ui.lua:145: WowVision:speak(L[\"Links unavailable here\"])",
+    "core/chat/ui.lua:160: WowVision:speak(L[\"Links unavailable here\"])",
+    "core/chat/ui.lua:197: WowVision:speak(L[\"Links unavailable here\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::Group health monitor unavailable here",
+     "en": "Group health monitor unavailable here",
+     "ko": "여기서는 파티 및 공격대 생명력 모니터 사용 불가"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Player",
+   "file": "chat.lua",
+   "key": "Player",
+   "en": "Player",
+   "ko": "플레이어",
+   "code": [
+    "core/chat/links.lua:132: kindLabel = L[\"Player\"]",
+    "core/scanner/providers.lua:49: label = L[\"Player\"],",
+    "retail/monitors/CdmAuraMonitor.lua:678: { value = \"player\", label = L[\"Player\"] },"
+   ],
+   "game_term": "플레이어",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "scanner.lua",
+     "ko": "플레이어"
+    }
+   ]
+  },
+  {
+   "id": "chat.lua::Channel",
+   "file": "chat.lua",
+   "key": "Channel",
+   "en": "Channel",
+   "ko": "채널",
+   "code": [
+    "core/chat/links.lua:134: kindLabel = L[\"Channel\"]"
+   ],
+   "game_term": "보내기 | 채널",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Link",
+   "file": "chat.lua",
+   "key": "Link",
+   "en": "Link",
+   "ko": "링크",
+   "code": [
+    "camelot/crafting.lua:132: nodes.proxyDropdown({ target = page.LinkButton, label = LINK_TRADESKILL_TOOLTIP or L[\"Link\"] })"
+   ],
+   "game_term": "링크 | 연결",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Item",
+   "file": "chat.lua",
+   "key": "Item",
+   "en": "Item",
+   "ko": "아이템",
+   "code": [],
+   "game_term": "아이템",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Quest",
+   "file": "chat.lua",
+   "key": "Quest",
+   "en": "Quest",
+   "ko": "퀘스트",
+   "code": [],
+   "game_term": "퀘스트",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "windows.lua",
+     "ko": "퀘스트"
+    }
+   ]
+  },
+  {
+   "id": "chat.lua::Spell",
+   "file": "chat.lua",
+   "key": "Spell",
+   "en": "Spell",
+   "ko": "주문",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:12: { key = \"spell\", type = \"Spell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "classic/monitors/types/CooldownMonitor.lua:12: { key = \"spell\", type = \"Spell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "retail/monitors/CdmAuraMonitor.lua:444: { key = \"spell\", type = \"CdmSpell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "retail/monitors/SpellCooldownMonitor.lua:286: { key = \"spell\", type = \"CooldownSpell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "retail/monitors/SpellCooldownMonitor.lua:438: { key = \"spell\", type = \"ProcSpell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },"
+   ],
+   "game_term": "주문",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "monitors.lua",
+     "ko": "주문"
+    }
+   ]
+  },
+  {
+   "id": "chat.lua::Talent",
+   "file": "chat.lua",
+   "key": "Talent",
+   "en": "Talent",
+   "ko": "특성",
+   "code": [],
+   "game_term": "특성",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Achievement",
+   "file": "chat.lua",
+   "key": "Achievement",
+   "en": "Achievement",
+   "ko": "업적",
+   "code": [],
+   "game_term": "업적",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Profession",
+   "file": "chat.lua",
+   "key": "Profession",
+   "en": "Profession",
+   "ko": "전문 기술",
+   "code": [],
+   "game_term": "전문 기술",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Currency",
+   "file": "chat.lua",
+   "key": "Currency",
+   "en": "Currency",
+   "ko": "화폐",
+   "code": [
+    "camelot/character.lua:872: label = CURRENCY or L[\"Currency\"],",
+    "camelot/character.lua:976: return CURRENCY or L[\"Currency\"]",
+    "mists/character.lua:341: label = CharacterFrameTab4 ~= nil and CharacterFrameTab4:GetText() or L[\"Currency\"],"
+   ],
+   "game_term": "재화 | 화폐",
+   "related": [],
+   "shared_key": [
+    {
+     "file": "windows.lua",
+     "ko": "화폐"
+    }
+   ]
+  },
+  {
+   "id": "chat.lua::Whisper %s",
+   "file": "chat.lua",
+   "key": "Whisper %s",
+   "en": "Whisper %s",
+   "ko": "%s에게 귓속말",
+   "code": [
+    "core/chat/ui.lua:272: left = L[\"Whisper %s\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Player Menu for %s",
+   "file": "chat.lua",
+   "key": "Player Menu for %s",
+   "en": "Player Menu for %s",
+   "ko": "%s 플레이어 메뉴",
+   "code": [
+    "core/chat/ui.lua:273: right = L[\"Player Menu for %s\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Channel Menu for %s",
+     "en": "Channel Menu for %s",
+     "ko": "%s 채널 메뉴"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Who %s",
+   "file": "chat.lua",
+   "key": "Who %s",
+   "en": "Who %s",
+   "ko": "%s 플레이어 검색",
+   "code": [
+    "core/chat/ui.lua:274: shift = L[\"Who %s\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Write to %s",
+   "file": "chat.lua",
+   "key": "Write to %s",
+   "en": "Write to %s",
+   "ko": "%s에 쓰기",
+   "code": [
+    "core/chat/ui.lua:276: left = L[\"Write to %s\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Channel Menu for %s",
+   "file": "chat.lua",
+   "key": "Channel Menu for %s",
+   "en": "Channel Menu for %s",
+   "ko": "%s 채널 메뉴",
+   "code": [
+    "core/chat/ui.lua:277: right = L[\"Channel Menu for %s\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::Player Menu for %s",
+     "en": "Player Menu for %s",
+     "ko": "%s 플레이어 메뉴"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat Channels Window",
+   "file": "chat.lua",
+   "key": "Chat Channels Window",
+   "en": "Chat Channels Window",
+   "ko": "대화 채널 창",
+   "code": [
+    "core/chat/ui.lua:279: shift = L[\"Chat Channels Window\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Chat Channels",
+     "en": "Chat Channels",
+     "ko": "대화 채널"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Read Tooltip of %s",
+   "file": "chat.lua",
+   "key": "Read Tooltip of %s",
+   "en": "Read Tooltip of %s",
+   "ko": "%s 툴팁 읽기",
+   "code": [
+    "core/chat/ui.lua:282: left = L[\"Read Tooltip of %s\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Read Tooltip",
+     "en": "Read Tooltip",
+     "ko": "툴팁 읽기"
+    },
+    {
+     "id": "bindings.lua::Read Tooltip Left",
+     "en": "Read Tooltip Left",
+     "ko": "툴팁 왼쪽 읽기"
+    },
+    {
+     "id": "bindings.lua::Read Tooltip Right",
+     "en": "Read Tooltip Right",
+     "ko": "툴팁 오른쪽 읽기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Link %s in Chat",
+   "file": "chat.lua",
+   "key": "Link %s in Chat",
+   "en": "Link %s in Chat",
+   "ko": "대화창에 %s 링크",
+   "code": [
+    "camelot/legacy/challenges.lua:273: label = L[\"Link %s in Chat\"]:format(challengeInfo(data).name),",
+    "core/chat/ui.lua:283: shift = L[\"Link %s in Chat\"]",
+    "retail/talentTree.lua:348: label = L[\"Link %s in Chat\"]:format(talentName(current)),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "chat.lua::Chat Settings",
+   "file": "chat.lua",
+   "key": "Chat Settings",
+   "en": "Chat Settings",
+   "ko": "대화 설정",
+   "code": [
+    "core/chat/ui.lua:515: builder:pushContext(\"chatConfig\", L[\"Chat Settings\"])"
+   ],
+   "game_term": "대화 설정",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::%s %s",
+   "file": "colors.lua",
+   "key": "%s %s",
+   "en": "%s %s",
+   "ko": "%s %s",
+   "code": [
+    "core/colors/colors.lua:171: return string.format(L[\"%s %s\"], L[modifier], L[hue])"
+   ],
+   "game_term": "%2$s %1$s | %2$s %1$s번지 | %s %s | (%s %s)",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::white",
+   "file": "colors.lua",
+   "key": "white",
+   "en": "white",
+   "ko": "흰색",
+   "code": [],
+   "game_term": "흰색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::light gray",
+   "file": "colors.lua",
+   "key": "light gray",
+   "en": "light gray",
+   "ko": "밝은 회색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::gray",
+   "file": "colors.lua",
+   "key": "gray",
+   "en": "gray",
+   "ko": "회색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::dark gray",
+   "file": "colors.lua",
+   "key": "dark gray",
+   "en": "dark gray",
+   "ko": "어두운 회색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::black",
+   "file": "colors.lua",
+   "key": "black",
+   "en": "black",
+   "ko": "검은색",
+   "code": [],
+   "game_term": "검은색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::vivid",
+   "file": "colors.lua",
+   "key": "vivid",
+   "en": "vivid",
+   "ko": "선명한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::brilliant",
+   "file": "colors.lua",
+   "key": "brilliant",
+   "en": "brilliant",
+   "ko": "화사한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::strong",
+   "file": "colors.lua",
+   "key": "strong",
+   "en": "strong",
+   "ko": "강한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::deep",
+   "file": "colors.lua",
+   "key": "deep",
+   "en": "deep",
+   "ko": "진한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::very deep",
+   "file": "colors.lua",
+   "key": "very deep",
+   "en": "very deep",
+   "ko": "아주 진한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::very light",
+   "file": "colors.lua",
+   "key": "very light",
+   "en": "very light",
+   "ko": "아주 밝은",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::light",
+   "file": "colors.lua",
+   "key": "light",
+   "en": "light",
+   "ko": "밝은",
+   "code": [],
+   "game_term": "밝음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::dark",
+   "file": "colors.lua",
+   "key": "dark",
+   "en": "dark",
+   "ko": "어두운",
+   "code": [],
+   "game_term": "어두움",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::very dark",
+   "file": "colors.lua",
+   "key": "very dark",
+   "en": "very dark",
+   "ko": "아주 어두운",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::very pale",
+   "file": "colors.lua",
+   "key": "very pale",
+   "en": "very pale",
+   "ko": "아주 연한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::pale",
+   "file": "colors.lua",
+   "key": "pale",
+   "en": "pale",
+   "ko": "연한",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::grayish",
+   "file": "colors.lua",
+   "key": "grayish",
+   "en": "grayish",
+   "ko": "회색빛",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::dark grayish",
+   "file": "colors.lua",
+   "key": "dark grayish",
+   "en": "dark grayish",
+   "ko": "어두운 회색빛",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::blackish",
+   "file": "colors.lua",
+   "key": "blackish",
+   "en": "blackish",
+   "ko": "검은빛",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::red",
+   "file": "colors.lua",
+   "key": "red",
+   "en": "red",
+   "ko": "빨간색",
+   "code": [],
+   "game_term": "붉은색 | 빨간색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::reddish orange",
+   "file": "colors.lua",
+   "key": "reddish orange",
+   "en": "reddish orange",
+   "ko": "붉은 주황색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::orange",
+   "file": "colors.lua",
+   "key": "orange",
+   "en": "orange",
+   "ko": "주황색",
+   "code": [],
+   "game_term": "주황색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::orange yellow",
+   "file": "colors.lua",
+   "key": "orange yellow",
+   "en": "orange yellow",
+   "ko": "주황빛 노란색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::yellow",
+   "file": "colors.lua",
+   "key": "yellow",
+   "en": "yellow",
+   "ko": "노란색",
+   "code": [],
+   "game_term": "노란색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::greenish yellow",
+   "file": "colors.lua",
+   "key": "greenish yellow",
+   "en": "greenish yellow",
+   "ko": "녹색빛 노란색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::yellow green",
+   "file": "colors.lua",
+   "key": "yellow green",
+   "en": "yellow green",
+   "ko": "황록색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::yellowish green",
+   "file": "colors.lua",
+   "key": "yellowish green",
+   "en": "yellowish green",
+   "ko": "노란빛 녹색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::green",
+   "file": "colors.lua",
+   "key": "green",
+   "en": "green",
+   "ko": "녹색",
+   "code": [],
+   "game_term": "녹색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::bluish green",
+   "file": "colors.lua",
+   "key": "bluish green",
+   "en": "bluish green",
+   "ko": "청록색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::greenish blue",
+   "file": "colors.lua",
+   "key": "greenish blue",
+   "en": "greenish blue",
+   "ko": "녹색빛 파란색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::blue",
+   "file": "colors.lua",
+   "key": "blue",
+   "en": "blue",
+   "ko": "파란색",
+   "code": [],
+   "game_term": "파란색 | 푸른색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::purplish blue",
+   "file": "colors.lua",
+   "key": "purplish blue",
+   "en": "purplish blue",
+   "ko": "보랏빛 파란색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::violet",
+   "file": "colors.lua",
+   "key": "violet",
+   "en": "violet",
+   "ko": "청보라색",
+   "code": [],
+   "game_term": "보라색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::purple",
+   "file": "colors.lua",
+   "key": "purple",
+   "en": "purple",
+   "ko": "보라색",
+   "code": [],
+   "game_term": "보라색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::reddish purple",
+   "file": "colors.lua",
+   "key": "reddish purple",
+   "en": "reddish purple",
+   "ko": "붉은 보라색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::purplish red",
+   "file": "colors.lua",
+   "key": "purplish red",
+   "en": "purplish red",
+   "ko": "보랏빛 빨간색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::pink",
+   "file": "colors.lua",
+   "key": "pink",
+   "en": "pink",
+   "ko": "분홍색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::purplish pink",
+   "file": "colors.lua",
+   "key": "purplish pink",
+   "en": "purplish pink",
+   "ko": "보랏빛 분홍색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::brown",
+   "file": "colors.lua",
+   "key": "brown",
+   "en": "brown",
+   "ko": "갈색",
+   "code": [],
+   "game_term": "갈색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::reddish brown",
+   "file": "colors.lua",
+   "key": "reddish brown",
+   "en": "reddish brown",
+   "ko": "적갈색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::yellowish brown",
+   "file": "colors.lua",
+   "key": "yellowish brown",
+   "en": "yellowish brown",
+   "ko": "황갈색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::olive",
+   "file": "colors.lua",
+   "key": "olive",
+   "en": "olive",
+   "ko": "올리브색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "colors.lua::olive green",
+   "file": "colors.lua",
+   "key": "olive green",
+   "en": "olive green",
+   "ko": "올리브 녹색",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::A button",
+   "file": "controller.lua",
+   "key": "A button",
+   "en": "A button",
+   "ko": "A 버튼",
+   "code": [
+    "core/ui/input/pad.lua:474: PAD1 = L[\"A button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::B button",
+   "file": "controller.lua",
+   "key": "B button",
+   "en": "B button",
+   "ko": "B 버튼",
+   "code": [
+    "core/ui/input/pad.lua:475: PAD2 = L[\"B button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::X button",
+   "file": "controller.lua",
+   "key": "X button",
+   "en": "X button",
+   "ko": "X 버튼",
+   "code": [
+    "core/ui/input/pad.lua:476: PAD3 = L[\"X button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Y button",
+   "file": "controller.lua",
+   "key": "Y button",
+   "en": "Y button",
+   "ko": "Y 버튼",
+   "code": [
+    "core/ui/input/pad.lua:477: PAD4 = L[\"Y button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::D-pad up",
+   "file": "controller.lua",
+   "key": "D-pad up",
+   "en": "D-pad up",
+   "ko": "방향 패드 위",
+   "code": [
+    "core/ui/input/pad.lua:478: PADDUP = L[\"D-pad up\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::D-pad down",
+   "file": "controller.lua",
+   "key": "D-pad down",
+   "en": "D-pad down",
+   "ko": "방향 패드 아래",
+   "code": [
+    "core/ui/input/pad.lua:479: PADDDOWN = L[\"D-pad down\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::D-pad left",
+   "file": "controller.lua",
+   "key": "D-pad left",
+   "en": "D-pad left",
+   "ko": "방향 패드 왼쪽",
+   "code": [
+    "core/ui/input/pad.lua:480: PADDLEFT = L[\"D-pad left\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::D-pad right",
+   "file": "controller.lua",
+   "key": "D-pad right",
+   "en": "D-pad right",
+   "ko": "방향 패드 오른쪽",
+   "code": [
+    "core/ui/input/pad.lua:481: PADDRIGHT = L[\"D-pad right\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Left shoulder",
+   "file": "controller.lua",
+   "key": "Left shoulder",
+   "en": "Left shoulder",
+   "ko": "왼쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:482: PADLSHOULDER = L[\"Left shoulder\"],",
+    "core/ui/input/pad.lua:493: ALT = L[\"Left shoulder\"],"
+   ],
+   "game_term": "왼쪽 어깨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Right shoulder",
+   "file": "controller.lua",
+   "key": "Right shoulder",
+   "en": "Right shoulder",
+   "ko": "오른쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:483: PADRSHOULDER = L[\"Right shoulder\"],"
+   ],
+   "game_term": "오른쪽 어깨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Left trigger",
+   "file": "controller.lua",
+   "key": "Left trigger",
+   "en": "Left trigger",
+   "ko": "왼쪽 트리거",
+   "code": [
+    "core/ui/input/pad.lua:484: PADLTRIGGER = L[\"Left trigger\"],",
+    "core/ui/input/pad.lua:494: SHIFT = L[\"Left trigger\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left Trigger Bar",
+     "en": "Left Trigger Bar",
+     "ko": "왼쪽 트리거 단축바"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Right trigger",
+   "file": "controller.lua",
+   "key": "Right trigger",
+   "en": "Right trigger",
+   "ko": "오른쪽 트리거",
+   "code": [
+    "core/ui/input/pad.lua:485: PADRTRIGGER = L[\"Right trigger\"],",
+    "core/ui/input/pad.lua:495: CTRL = L[\"Right trigger\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right Trigger Bar",
+     "en": "Right Trigger Bar",
+     "ko": "오른쪽 트리거 단축바"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Left stick press",
+   "file": "controller.lua",
+   "key": "Left stick press",
+   "en": "Left stick press",
+   "ko": "왼쪽 스틱 누르기",
+   "code": [
+    "core/ui/input/pad.lua:486: PADLSTICK = L[\"Left stick press\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press",
+     "en": "Right stick press",
+     "ko": "오른쪽 스틱 누르기"
+    },
+    {
+     "id": "controller.lua::Right stick press held",
+     "en": "Right stick press held",
+     "ko": "오른쪽 스틱 누른 채 유지"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Right stick press",
+   "file": "controller.lua",
+   "key": "Right stick press",
+   "en": "Right stick press",
+   "ko": "오른쪽 스틱 누르기",
+   "code": [
+    "core/ui/input/pad.lua:487: PADRSTICK = L[\"Right stick press\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press held",
+     "en": "Right stick press held",
+     "ko": "오른쪽 스틱 누른 채 유지"
+    },
+    {
+     "id": "controller.lua::Left stick press",
+     "en": "Left stick press",
+     "ko": "왼쪽 스틱 누르기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::View button",
+   "file": "controller.lua",
+   "key": "View button",
+   "en": "View button",
+   "ko": "보기 버튼",
+   "code": [
+    "core/ui/input/pad.lua:488: PADBACK = L[\"View button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Menu button",
+   "file": "controller.lua",
+   "key": "Menu button",
+   "en": "Menu button",
+   "ko": "메뉴 버튼",
+   "code": [
+    "core/ui/input/pad.lua:489: PADFORWARD = L[\"Menu button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Share button",
+   "file": "controller.lua",
+   "key": "Share button",
+   "en": "Share button",
+   "ko": "공유 버튼",
+   "code": [
+    "core/ui/input/pad.lua:490: PADSOCIAL = L[\"Share button\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Both shoulders",
+   "file": "controller.lua",
+   "key": "Both shoulders",
+   "en": "Both shoulders",
+   "ko": "양쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:496: LAYER = L[\"Both shoulders\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Right stick press held",
+   "file": "controller.lua",
+   "key": "Right stick press held",
+   "en": "Right stick press held",
+   "ko": "오른쪽 스틱 누른 채 유지",
+   "code": [
+    "core/ui/input/pad.lua:497: HOLD = L[\"Right stick press held\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press",
+     "en": "Right stick press",
+     "ko": "오른쪽 스틱 누르기"
+    },
+    {
+     "id": "controller.lua::Left stick press",
+     "en": "Left stick press",
+     "ko": "왼쪽 스틱 누르기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Add Controller Button",
+   "file": "controller.lua",
+   "key": "Add Controller Button",
+   "en": "Add Controller Button",
+   "ko": "컨트롤러 버튼 추가",
+   "code": [
+    "core/ui modules/graphBindings.lua:141: label = L[\"Add Controller Button\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Press a controller button",
+     "en": "Press a controller button",
+     "ko": "컨트롤러 버튼을 누르십시오"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Press a controller button",
+   "file": "controller.lua",
+   "key": "Press a controller button",
+   "en": "Press a controller button",
+   "ko": "컨트롤러 버튼을 누르십시오",
+   "code": [
+    "core/graph/keyCapture.lua:273: local prompt = L[\"Press a controller button\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Add Controller Button",
+     "en": "Add Controller Button",
+     "ko": "컨트롤러 버튼 추가"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Cancelled",
+   "file": "controller.lua",
+   "key": "Cancelled",
+   "en": "Cancelled",
+   "ko": "취소됨",
+   "code": [
+    "core/graph/keyCapture.lua:187: self:_speak(L[\"Cancelled\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Close (Controller)",
+   "file": "controller.lua",
+   "key": "Close (Controller)",
+   "en": "Close (Controller)",
+   "ko": "닫기 (컨트롤러)",
+   "code": [
+    "core/ui modules/module.lua:337: label = L[\"Close (Controller)\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::WowVision Menu",
+   "file": "controller.lua",
+   "key": "WowVision Menu",
+   "en": "WowVision Menu",
+   "ko": "WowVision 메뉴",
+   "code": [
+    "core/ui modules/module.lua:346: label = L[\"WowVision Menu\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Gamepad Bar",
+   "file": "controller.lua",
+   "key": "Gamepad Bar",
+   "en": "Gamepad Bar",
+   "ko": "게임패드 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:72: label = L[\"Gamepad Bar\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Left Trigger Bar",
+   "file": "controller.lua",
+   "key": "Left Trigger Bar",
+   "en": "Left Trigger Bar",
+   "ko": "왼쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:79: label = L[\"Left Trigger Bar\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left trigger",
+     "en": "Left trigger",
+     "ko": "왼쪽 트리거"
+    },
+    {
+     "id": "controller.lua::Right Trigger Bar",
+     "en": "Right Trigger Bar",
+     "ko": "오른쪽 트리거 단축바"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Right Trigger Bar",
+   "file": "controller.lua",
+   "key": "Right Trigger Bar",
+   "en": "Right Trigger Bar",
+   "ko": "오른쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:86: label = L[\"Right Trigger Bar\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left Trigger Bar",
+     "en": "Left Trigger Bar",
+     "ko": "왼쪽 트리거 단축바"
+    },
+    {
+     "id": "controller.lua::Right trigger",
+     "en": "Right trigger",
+     "ko": "오른쪽 트리거"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Both Triggers Bar",
+   "file": "controller.lua",
+   "key": "Both Triggers Bar",
+   "en": "Both Triggers Bar",
+   "ko": "양쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:93: label = L[\"Both Triggers Bar\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Gamepad Main Menu",
+   "file": "controller.lua",
+   "key": "Gamepad Main Menu",
+   "en": "Gamepad Main Menu",
+   "ko": "게임패드 주 메뉴",
+   "code": [
+    "camelot/gamepadRadial.lua:22: module:setLabel(L[\"Gamepad Main Menu\"])",
+    "camelot/gamepadRadial.lua:147: header = header or L[\"Gamepad Main Menu\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Page %d of %d",
+   "file": "controller.lua",
+   "key": "Page %d of %d",
+   "en": "Page %d of %d",
+   "ko": "페이지 %d of %d",
+   "code": [
+    "camelot/gamepadRadial.lua:150: return header .. \", \" .. string.format(L[\"Page %d of %d\"], index, #radial.mainMenuPages)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::opened",
+   "file": "controller.lua",
+   "key": "opened",
+   "en": "opened",
+   "ko": "열림",
+   "code": [
+    "camelot/gamepadRadial.lua:62: return text .. \", \" .. L[\"opened\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "controller.lua::Not supported yet",
+   "file": "controller.lua",
+   "key": "Not supported yet",
+   "en": "Not supported yet",
+   "ko": "아직 지원하지 않음",
+   "code": [
+    "camelot/gamepadRadial.lua:126: WowVision:speak(L[\"Not supported yet\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::This tab is not supported yet",
+     "en": "This tab is not supported yet",
+     "ko": "이 탭은 아직 지원하지 않습니다"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Errors",
+   "file": "errors.lua",
+   "key": "Errors",
+   "en": "Errors",
+   "ko": "오류",
+   "code": [
+    "core/errors/module.lua:3: module:setLabel(L[\"Errors\"])"
+   ],
+   "game_term": "오류",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Announce Errors",
+   "file": "errors.lua",
+   "key": "Announce Errors",
+   "en": "Announce Errors",
+   "ko": "오류 알리기",
+   "code": [
+    "core/errors/module.lua:14: label = L[\"Announce Errors\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Repeat Delay",
+   "file": "errors.lua",
+   "key": "Repeat Delay",
+   "en": "Repeat Delay",
+   "ko": "반복 지연",
+   "code": [
+    "core/errors/module.lua:28: label = L[\"Repeat Delay\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Per-Error Filter",
+   "file": "errors.lua",
+   "key": "Per-Error Filter",
+   "en": "Per-Error Filter",
+   "ko": "오류별 필터",
+   "code": [
+    "core/errors/module.lua:260: builder:pushContext(\"errorFilter\", L[\"Per-Error Filter\"])",
+    "core/errors/module.lua:301: label = L[\"Per-Error Filter\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Show All Known Errors",
+   "file": "errors.lua",
+   "key": "Show All Known Errors",
+   "en": "Show All Known Errors",
+   "ko": "알려진 오류 모두 보기",
+   "code": [
+    "core/errors/module.lua:264: label = L[\"Show All Known Errors\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Nameplate Show All",
+     "en": "Nameplate Show All",
+     "ko": "모든 이름표에 표시"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Speech and Sound",
+   "file": "errors.lua",
+   "key": "Speech and Sound",
+   "en": "Speech and Sound",
+   "ko": "음성 및 소리",
+   "code": [
+    "core/errors/module.lua:250: return L[\"Speech and Sound\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Muted",
+   "file": "errors.lua",
+   "key": "Muted",
+   "en": "Muted",
+   "ko": "음소거",
+   "code": [
+    "core/errors/module.lua:237: return L[\"Muted\"]",
+    "core/errors/module.lua:256: return L[\"Muted\"]"
+   ],
+   "game_term": "음성차단",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "errors.lua::Lua error",
+   "file": "errors.lua",
+   "key": "Lua error",
+   "en": "Lua error",
+   "ko": "Lua 오류",
+   "code": [
+    "core/errors/module.lua:356: alert:fire({ text = L[\"Lua error\"] .. \": \" .. message })"
+   ],
+   "game_term": "Lua 오류",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "groupHealth.lua::Group Health Monitor",
+   "file": "groupHealth.lua",
+   "key": "Group Health Monitor",
+   "en": "Group Health Monitor",
+   "ko": "파티 및 공격대 생명력 모니터",
+   "code": [
+    "retail/groupHealth/module.lua:5: module:setLabel(L[\"Group Health Monitor\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::Group health monitor unavailable here",
+     "en": "Group health monitor unavailable here",
+     "ko": "여기서는 파티 및 공격대 생명력 모니터 사용 불가"
+    },
+    {
+     "id": "groupHealth.lua::Speak Group Health",
+     "en": "Speak Group Health",
+     "ko": "파티 및 공격대 생명력 말하기"
+    },
+    {
+     "id": "targeting.lua::Health Monitor",
+     "en": "Health Monitor",
+     "ko": "생명력 모니터"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

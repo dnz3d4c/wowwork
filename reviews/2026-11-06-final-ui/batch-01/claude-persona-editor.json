@@ -1,0 +1,36 @@
+{
+  "findings": [
+    {
+      "id": "auction.lua::scanned",
+      "category": "context",
+      "severity": "major",
+      "problem": "조립된 완료 알림에 코드에 박힌 영어 \" in \"이 그대로 끼어 \"스캔 완료, 12 결과 in 300 개 항목 스캔\"으로 읽힌다. 한국어 문장 한가운데 영어 전치사가 들어가 문장 구조가 깨지고, 이 키의 번역만으로는 고칠 수 없다.",
+      "evidence": "wowvision-ko/WowVision/tbc/auction/ScanSession.lua:147: WowVision:speak(self.L[\"Scan complete\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"] .. \" in \" .. progress.total .. \" \" .. self.L[\"scanned\"]) — \" in \"은 L[] 밖 리터럴. koKR/ui.lua:69 L[\"Results\"] = \"결과\". 코드 수정이 필요한 사안이라 번역 값은 그대로 두고 지적만 한다.",
+      "suggestion": "개 항목 스캔"
+    },
+    {
+      "id": "auction.lua::Auction not open",
+      "category": "listening",
+      "severity": "minor",
+      "problem": "조사가 빠진 \"경매장 열리지 않음\"은 '경매장이 (열려고 했는데) 안 열린다'는 오류로도 들린다. 원문은 경매장 창이 열려 있지 않은 상태라서 전체 스캔을 못 한다는 뜻이다.",
+      "evidence": "tbc/auction/prices.lua:189: WowVision:speak(L[\"Auction not open\"]) — 전체 스캔 요청 시 경매장 창이 닫혀 있을 때의 상태 알림. '열리지 않음'은 동작 실패, '열려 있지 않음'은 상태를 뜻한다. 명사형 상태 문구 규칙(translation-guide.md ## 문체)은 그대로 지킨다.",
+      "suggestion": "경매장이 열려 있지 않음"
+    },
+    {
+      "id": "bindings.lua::This input already exists for this binding.",
+      "category": "style",
+      "severity": "minor",
+      "problem": "\"이 단축키에 이미 있는 입력.\"은 관형절에 명사만 붙은 구절이라 알림이 아니라 항목 이름처럼 들린다. 같은 단축키 편집 화면의 다른 거부 알림(\"…바꿀 수 없음.\", \"…있어야 함.\")은 서술어로 끝나는데 이것만 서술어가 없어 무엇이 일어났는지(추가가 거부됨) 바로 와닿지 않는다.",
+      "evidence": "core/ui modules/graphBindings.lua:34, 65: WowVision:speak(L[\"This input already exists for this binding.\"]) — 입력 추가가 거부될 때 말한다. related의 \"이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.\", \"제거 불가; 단축키에는 입력이 하나 이상 있어야 함.\"은 '~음/~함'으로 끝난다.",
+      "suggestion": "이 단축키에 이미 있는 입력임."
+    },
+    {
+      "id": "auction.lua::Scanning",
+      "category": "context",
+      "severity": "minor",
+      "problem": "전체 스캔 대기 중 진행 문구가 \"스캔 중, 5 sec\"로 읽힌다. 단위 \"sec\"가 코드에 영어로 박혀 있어 한국어 문구 뒤에 영어 약어가 붙는다. 번역 값 문제는 아니고 코드 리터럴 문제다.",
+      "evidence": "wowvision-ko/WowVision/tbc/auction/module.lua:93: return L[\"Scanning\"] .. \", \" .. math.floor(ahPrices.getFullScanWaitElapsed()) .. \" sec\" (같은 파일 82, 86줄에도 \" min \", \" sec\" 리터럴). 번역 값은 그대로 두고 코드 쪽 처리가 필요하다.",
+      "suggestion": "스캔 중"
+    }
+  ]
+}

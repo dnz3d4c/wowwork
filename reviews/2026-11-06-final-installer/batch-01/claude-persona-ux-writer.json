@@ -1,0 +1,52 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::update.heading.available",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 제목 라벨(_titleLabel)에 들어가는 4개 문구 중 이것만 합니다체다. 나머지 셋(최신 상태로 설치됨, 아직 설치 안 됨, 찾지 못함)은 짧은 명사형이라, 업데이트 창을 열 때마다 상태에 따라 제목 말투가 바뀐다. installer.md 문체 규칙도 제목은 짧게 쓰라고 한다.",
+   "evidence": "UpdatePromptForm.cs:154-160에서 update.heading.noClient/notInstalled/available/current가 같은 _titleLabel.Text에 들어간다. 다른 셋은 \"WowVision 최신 상태로 설치됨\", \"WowVision 아직 설치 안 됨\", \"설치된 World of Warcraft를 찾지 못함\". 같은 뜻의 대상 상태 문구 target.updateAvailable은 \"업데이트 있음\"이다(Loc.cs:891).",
+   "suggestion": "WowVision 업데이트 있음"
+  },
+  {
+   "id": "Loc.cs::versions.heading",
+   "category": "style",
+   "severity": "minor",
+   "problem": "\"설치할 게임 버전은 무엇입니까?\"는 영어 Which ... ? 구조를 그대로 옮긴 번역투로, 시험 문제처럼 딱딱하게 들린다. 한국어 설치 마법사의 단계 제목은 보통 \"어느 ...에 설치하시겠습니까?\" 꼴이다.",
+   "evidence": "원문 \"Which game versions should WowVision be installed into?\". 같은 설치 프로그램의 다른 질문 제목은 cancel.title \"설치 프로그램을 끝내시겠습니까?\"처럼 동사로 묻는다. 뜻과 질문 형태는 그대로 두고 어순만 고친다.",
+   "suggestion": "어느 게임 버전에 WowVision을 설치하시겠습니까?"
+  },
+  {
+   "id": "Loc.cs::selfupdate.cancelBtn",
+   "category": "style",
+   "severity": "minor",
+   "problem": "\"내려받기 취소하고\"에서 목적격 조사가 빠져 문장이 끊기듯 들린다. 같은 버튼의 접근 가능한 이름 selfupdate.cancelAcc는 \"내려받기를 취소하고\"라서, 화면 글자와 낭독이 조사 하나 차이로 어긋난다.",
+   "evidence": "SelfUpdatePromptForm.cs:153-154에서 같은 _skipButton에 cancelBtn(Text)과 cancelAcc(AccessibleName)가 함께 들어간다. cancelAcc ko: \"내려받기를 취소하고 현재 설치 프로그램 버전으로 계속\".",
+   "suggestion": "내려받기를 취소하고 현재 버전으로 계속(&D)"
+  },
+  {
+   "id": "Loc.cs::selfupdate.body",
+   "category": "style",
+   "severity": "minor",
+   "problem": "마지막 문단 한 문장 안에 \"그대로\"가 두 번 나온다(\"버전 {0} 그대로 계속할 수도 있습니다; ... 그대로 작동합니다\"). 반복이라 기계가 쓴 문장처럼 들리고, 두 번째 \"그대로\"는 원문 still(여전히 된다)의 뜻이 약하다.",
+   "evidence": "원문 \"You can also carry on with version {0}; installing and updating WowVision still works.\". 다른 문단과 자리표시자 {0}, {1}, 기호(:, —, ;)는 바꾸지 않았다.",
+   "suggestion": "지금 사용 중인 WowVision 설치 프로그램은 버전 {0}입니다. 버전 {1} 업데이트를 받을 수 있습니다.\n\n설치 프로그램을 먼저 업데이트하기를 강력히 권장합니다: 내려받는 양이 작고, 몇 초면 끝나며, 그 뒤의 WowVision 설치에 최신 수정 사항이 모두 적용됩니다. 설치 프로그램은 스스로 닫혔다가 다시 열립니다 — 컴퓨터의 다른 것은 바꾸지 않습니다.\n\n버전 {0} 그대로 계속할 수도 있습니다; 이 버전에서도 WowVision 설치와 업데이트는 됩니다."
+  },
+  {
+   "id": "Loc.cs::logs.btnAcc",
+   "category": "style",
+   "severity": "minor",
+   "problem": "\"..., 버그 보고용\"을 끝에 붙인 것은 영어 \", for a bug report\" 어순을 그대로 둔 것이라 낭독 끝에 덧붙인 꼬리처럼 들린다. 목적을 꾸밈말로 앞에 두면 같은 정보를 자연스러운 명사형 한 덩어리로 들을 수 있다.",
+   "evidence": "원문 \"Collect all logs of every detected game version into one zip file in your Downloads folder, for a bug report\". 정보(모든 게임 버전, 다운로드 폴더, zip 파일 하나, 버그 보고 목적)는 하나도 빼지 않았다. 버튼 글자 logs.btn \"모든 로그 모으기(&L)…\"보다 정보가 적지 않다.",
+   "suggestion": "버그 보고용으로, 찾은 모든 게임 버전의 로그를 다운로드 폴더의 zip 파일 하나로 모으기"
+  },
+  {
+   "id": "Loc.cs::update.explainCustomize",
+   "category": "style",
+   "severity": "minor",
+   "problem": "이 설명은 다른 설명(\"지금 업데이트:\", \"지금 설치:\", \"모든 로그 모으기:\")처럼 버튼 이름을 머리에 두는 형식인데, 여기만 버튼 글자와 다르게 쉼표가 빠졌다. 버튼은 \"WowVision 새로 설치, 또는 다른 게임 버전에 설치\"라서 설명을 듣고 버튼을 찾을 때 이름이 정확히 같지 않다.",
+   "evidence": "update.customizeBtn ko \"WowVision 새로 설치, 또는 다른 게임 버전에 설치(&F)\", update.customizeAcc도 쉼표 있음. 원문 둘 다 \"fresh, or for further game versions\"로 쉼표가 있다.",
+   "suggestion": "WowVision 새로 설치, 또는 다른 게임 버전에 설치: 게임 버전, 베타 또는 안정판, 선택 구성 요소를 직접 고릅니다."
+  }
+ ]
+}

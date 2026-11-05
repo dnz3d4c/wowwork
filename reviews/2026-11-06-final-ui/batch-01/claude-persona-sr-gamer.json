@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "auction.lua::scanned",
+   "category": "context",
+   "severity": "major",
+   "problem": "스캔 완료 알림이 코드에서 영어 \" in \"을 하드코딩해 조립되므로, 이 번역이 들어가면 \"스캔 완료, 5 결과 in 120 개 항목 스캔\"으로 발화된다. 한국어 문장 가운데 영어 in이 끼어 '인'처럼 들려서 한 번 듣고 결과 수와 스캔한 항목 수의 관계를 알아듣기 어렵다. 번역 값만으로는 고칠 수 없고 코드에서 \" in \"을 지역화 키로 빼야 한다.",
+   "evidence": "tbc/auction/ScanSession.lua:147: WowVision:speak(self.L[\"Scan complete\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"] .. \" in \" .. progress.total .. \" \" .. self.L[\"scanned\"]) / koKR ui.lua:69 L[\"Results\"] = \"결과\"",
+   "suggestion": "개 항목 스캔"
+  },
+  {
+   "id": "auction.lua::Scanning",
+   "category": "context",
+   "severity": "minor",
+   "problem": "전체 스캔 대기 중 진행 문구가 코드에서 영어 \" sec\"을 하드코딩해 \"스캔 중, 12 sec\"으로 발화된다. 대기 중 반복해서 듣는 문구인데 단위만 영어로 읽혀 어색하다. 번역 값으로는 고칠 수 없고 코드에서 단위를 지역화해야 한다.",
+   "evidence": "tbc/auction/module.lua:93: return L[\"Scanning\"] .. \", \" .. math.floor(ahPrices.getFullScanWaitElapsed()) .. \" sec\"",
+   "suggestion": "스캔 중"
+  }
+ ]
+}
