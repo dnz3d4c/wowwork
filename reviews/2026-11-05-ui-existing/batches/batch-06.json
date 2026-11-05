@@ -1,0 +1,2205 @@
+{
+ "items": [
+  {
+   "id": "navigation.lua::Searching a new route",
+   "file": "navigation.lua",
+   "key": "Searching a new route",
+   "en": "Searching a new route",
+   "ko": "새 경로 검색 중",
+   "code": [
+    "camelot/wownav/module.lua:1012: say(L[\"Searching a new route\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Searching the route again with the new road preference",
+   "file": "navigation.lua",
+   "key": "Searching the route again with the new road preference",
+   "en": "Searching the route again with the new road preference",
+   "ko": "새 도로 선호도로 경로 다시 검색 중",
+   "code": [
+    "camelot/wownav/module.lua:987: say(L[\"Searching the route again with the new road preference\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Searching the route to %s",
+     "en": "Searching the route to %s",
+     "ko": "%s까지 경로 검색 중"
+    },
+    {
+     "id": "navigation.lua::Start the Route Again From Here",
+     "en": "Start the Route Again From Here",
+     "ko": "여기서 경로 다시 시작"
+    },
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Back on the route",
+     "en": "Back on the route",
+     "ko": "경로 복귀"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Ship dock to %s",
+   "file": "navigation.lua",
+   "key": "Ship dock to %s",
+   "en": "Ship dock to %s",
+   "ko": "%s행 배 선착장",
+   "code": [
+    "camelot/wownav/text.lua:116: dock_ship = L[\"Ship dock to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Zeppelin dock to %s",
+     "en": "Zeppelin dock to %s",
+     "ko": "%s행 비행선 승강장"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Target position reached",
+   "file": "navigation.lua",
+   "key": "Target position reached",
+   "en": "Target position reached",
+   "ko": "대상 위치 도착",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Approximate target position.",
+     "en": "Approximate target position.",
+     "ko": "대략적인 대상 위치입니다."
+    },
+    {
+     "id": "navigation.lua::The target position is outdated",
+     "en": "The target position is outdated",
+     "ko": "대상 위치가 오래됨"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The route goes on",
+   "file": "navigation.lua",
+   "key": "The route goes on",
+   "en": "The route goes on",
+   "ko": "경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:900: say(L[\"The route goes on\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Use %s; the route goes on after it",
+     "en": "Use %s; the route goes on after it",
+     "ko": "%s 이용; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The target is on another map",
+   "file": "navigation.lua",
+   "key": "The target is on another map",
+   "en": "The target is on another map",
+   "ko": "대상이 다른 지도에 있음",
+   "code": [
+    "camelot/wownav/text.lua:15: res_no_native_map = L[\"The target is on another map\"],",
+    "camelot/wownav/text.lua:16: res_other_map = L[\"The target is on another map\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The target lies over several floors",
+     "en": "The target lies over several floors",
+     "ko": "대상이 여러 층에 걸쳐 있음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The target lies over several floors",
+   "file": "navigation.lua",
+   "key": "The target lies over several floors",
+   "en": "The target lies over several floors",
+   "ko": "대상이 여러 층에 걸쳐 있음",
+   "code": [
+    "camelot/wownav/text.lua:18: res_ambiguous = L[\"The target lies over several floors\"],",
+    "camelot/wownav/text.lua:20: res_level_unknown = L[\"The target lies over several floors\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Warning: the target lies in an enemy outpost.",
+     "en": "Warning: the target lies in an enemy outpost.",
+     "ko": "경고: 대상이 적 전초기지 안에 있습니다."
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The target position is outdated",
+   "file": "navigation.lua",
+   "key": "The target position is outdated",
+   "en": "The target position is outdated",
+   "ko": "대상 위치가 오래됨",
+   "code": [
+    "camelot/wownav/text.lua:14: res_stale = L[\"The target position is outdated\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Approximate target position.",
+     "en": "Approximate target position.",
+     "ko": "대략적인 대상 위치입니다."
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::Target position reached",
+     "en": "Target position reached",
+     "ko": "대상 위치 도착"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The target's height fits no floor of the network",
+   "file": "navigation.lua",
+   "key": "The target's height fits no floor of the network",
+   "en": "The target's height fits no floor of the network",
+   "ko": "대상의 높이에 맞는 네트워크 층 없음",
+   "code": [
+    "camelot/wownav/text.lua:19: res_z_conflict = L[\"The target's height fits no floor of the network\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Choose the target's floor",
+     "en": "Choose the target's floor",
+     "ko": "대상의 층 선택"
+    },
+    {
+     "id": "navigation.lua::Target Radius Around the Network (Yards)",
+     "en": "Target Radius Around the Network (Yards)",
+     "ko": "네트워크 주변 대상 반경 (야드)"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The transit took too long; route ended",
+   "file": "navigation.lua",
+   "key": "The transit took too long; route ended",
+   "en": "The transit took too long; route ended",
+   "ko": "이동 수단 이용이 너무 오래 걸림; 경로 종료",
+   "code": [
+    "camelot/wownav/module.lua:896: say(L[\"The transit took too long; route ended\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::Route ended",
+     "en": "Route ended",
+     "ko": "경로 종료"
+    },
+    {
+     "id": "navigation.lua::Route ended outside the network's zones.",
+     "en": "Route ended outside the network's zones.",
+     "ko": "네트워크 지역 밖에서 경로가 끝났습니다."
+    },
+    {
+     "id": "navigation.lua::the transit",
+     "en": "the transit",
+     "ko": "이동 수단"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::There is no such floor",
+   "file": "navigation.lua",
+   "key": "There is no such floor",
+   "en": "There is no such floor",
+   "ko": "해당 층 없음",
+   "code": [
+    "camelot/wownav/text.lua:17: res_band_invalid = L[\"There is no such floor\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Warning: there is no way around the enemy outpost, the route leads through it.",
+     "en": "Warning: there is no way around the enemy outpost, the route leads through it.",
+     "ko": "경고: 적 전초기지를 돌아갈 길이 없어, 경로가 그곳을 통과합니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Tram dock toward %s",
+   "file": "navigation.lua",
+   "key": "Tram dock toward %s",
+   "en": "Tram dock toward %s",
+   "ko": "%s 방면 지하철 승강장",
+   "code": [
+    "camelot/wownav/text.lua:119: tram_dock = L[\"Tram dock toward %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::In the tram toward %s",
+     "en": "In the tram toward %s",
+     "ko": "%s 방면 지하철에 탑승 중"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Turn off the WowVisionNavigation addon to use its routes here",
+   "file": "navigation.lua",
+   "key": "Turn off the WowVisionNavigation addon to use its routes here",
+   "en": "Turn off the WowVisionNavigation addon to use its routes here",
+   "ko": "여기서 이 경로를 사용하려면 WowVisionNavigation 애드온을 끄십시오",
+   "code": [
+    "camelot/wownav/module.lua:1220: say(L[\"Turn off the WowVisionNavigation addon to use its routes here\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Use %s; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Use %s; the route goes on after it",
+   "en": "Use %s; the route goes on after it",
+   "ko": "%s 이용; 이후 경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:279: or string.format(L[\"Use %s; the route goes on after it\"], TRANSIT_WORDS[action.kind] or L[\"the transit\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::The route goes on",
+     "en": "The route goes on",
+     "ko": "경로 계속"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::a dive",
+   "file": "navigation.lua",
+   "key": "a dive",
+   "en": "a dive",
+   "ko": "잠수",
+   "code": [
+    "camelot/wownav/module.lua:263: local TRANSIT_WORDS = { portal = L[\"the portal\"], tram = L[\"the tram\"], lift = L[\"the elevator\"], dive = L[\"a dive\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::surfacing",
+   "file": "navigation.lua",
+   "key": "surfacing",
+   "en": "surfacing",
+   "ko": "수면으로 상승",
+   "code": [
+    "camelot/wownav/module.lua:264: surface = L[\"surfacing\"], wind_bridge = L[\"the Wind Bridge\"] }"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Dive here; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Dive here; the route goes on after it",
+   "en": "Dive here; the route goes on after it",
+   "ko": "여기서 잠수; 이후 경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:267: local TRANSIT_TEXTS = { dive = L[\"Dive here; the route goes on after it\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Use %s; the route goes on after it",
+     "en": "Use %s; the route goes on after it",
+     "ko": "%s 이용; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Surface here; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Surface here; the route goes on after it",
+   "en": "Surface here; the route goes on after it",
+   "ko": "여기서 수면으로 상승; 이후 경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:268: surface = L[\"Surface here; the route goes on after it\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::Use %s; the route goes on after it",
+     "en": "Use %s; the route goes on after it",
+     "ko": "%s 이용; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+     "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "navigation.lua::The route goes on",
+     "en": "The route goes on",
+     "ko": "경로 계속"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::WowNav Routes",
+   "file": "navigation.lua",
+   "key": "WowNav Routes",
+   "en": "WowNav Routes",
+   "ko": "WowNav 경로",
+   "code": [
+    "camelot/wownav/module.lua:34: module:setLabel(L[\"WowNav Routes\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Your floor is not clear here",
+   "file": "navigation.lua",
+   "key": "Your floor is not clear here",
+   "en": "Your floor is not clear here",
+   "ko": "여기서는 현재 층이 불분명함",
+   "code": [
+    "camelot/wownav/module.lua:204: WowVision:speak(why == \"ambiguous\" and L[\"Your floor is not clear here\"] or L[\"No WowNav network here\"])",
+    "camelot/wownav/module.lua:320: floor_ambiguous = L[\"Your floor is not clear here\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Your floor is not clear here. Choose your start.",
+     "en": "Your floor is not clear here. Choose your start.",
+     "ko": "여기서는 현재 층이 불분명합니다. 시작 지점을 선택하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Zeppelin dock to %s",
+   "file": "navigation.lua",
+   "key": "Zeppelin dock to %s",
+   "en": "Zeppelin dock to %s",
+   "ko": "%s행 비행선 승강장",
+   "code": [
+    "camelot/wownav/text.lua:117: dock_zeppelin = L[\"Zeppelin dock to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ship dock to %s",
+     "en": "Ship dock to %s",
+     "ko": "%s행 배 선착장"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::anvil",
+   "file": "navigation.lua",
+   "key": "anvil",
+   "en": "anvil",
+   "ko": "모루",
+   "code": [
+    "camelot/wownav/text.lua:236: interaction_object = L[\"interaction object\"], mailbox = L[\"mailbox\"], anvil = L[\"anvil\"], forge = L[\"forge\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::approximate, %d yards",
+   "file": "navigation.lua",
+   "key": "approximate, %d yards",
+   "en": "approximate, %d yards",
+   "ko": "대략, %d야드",
+   "code": [
+    "camelot/wownav/module.lua:393: local text = string.format(L[\"approximate, %d yards\"], math.floor(yards + 0.5))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Direct: %s, %d yards",
+     "en": "Direct: %s, %d yards",
+     "ko": "직선: %s, %d야드"
+    },
+    {
+     "id": "navigation.lua::last %d yards direct",
+     "en": "last %d yards direct",
+     "ko": "마지막 %d야드 직선"
+    },
+    {
+     "id": "navigation.lua::water surface, diving depth %d yards",
+     "en": "water surface, diving depth %d yards",
+     "ko": "수면, 잠수 깊이 %d야드"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::auctioneer",
+   "file": "navigation.lua",
+   "key": "auctioneer",
+   "en": "auctioneer",
+   "ko": "경매인",
+   "code": [
+    "camelot/wownav/text.lua:233: stable_master = L[\"stable master\"], auctioneer = L[\"auctioneer\"], spirit_healer = L[\"spirit healer\"],"
+   ],
+   "game_term": "경매인",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::banker",
+   "file": "navigation.lua",
+   "key": "banker",
+   "en": "banker",
+   "ko": "은행원",
+   "code": [
+    "camelot/wownav/text.lua:232: flight_master = L[\"flight master\"], innkeeper = L[\"innkeeper\"], banker = L[\"banker\"],"
+   ],
+   "game_term": "은행원",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::book",
+   "file": "navigation.lua",
+   "key": "book",
+   "en": "book",
+   "ko": "책",
+   "code": [
+    "camelot/wownav/text.lua:237: door = L[\"door\"], book = L[\"book\"], chair = L[\"chair\"], sign = L[\"sign\"], fishing_spot = L[\"fishing spot\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::chair",
+   "file": "navigation.lua",
+   "key": "chair",
+   "en": "chair",
+   "ko": "의자",
+   "code": [
+    "camelot/wownav/text.lua:237: door = L[\"door\"], book = L[\"book\"], chair = L[\"chair\"], sign = L[\"sign\"], fishing_spot = L[\"fishing spot\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::chest",
+   "file": "navigation.lua",
+   "key": "chest",
+   "en": "chest",
+   "ko": "상자",
+   "code": [
+    "camelot/wownav/text.lua:234: spirit_guide = L[\"spirit guide\"], npc_or_mob = L[\"NPC or mob\"], chest = L[\"chest\"],"
+   ],
+   "game_term": "가슴",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::door",
+   "file": "navigation.lua",
+   "key": "door",
+   "en": "door",
+   "ko": "문",
+   "code": [
+    "camelot/wownav/text.lua:237: door = L[\"door\"], book = L[\"book\"], chair = L[\"chair\"], sign = L[\"sign\"], fishing_spot = L[\"fishing spot\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::dungeon",
+   "file": "navigation.lua",
+   "key": "dungeon",
+   "en": "dungeon",
+   "ko": "던전",
+   "code": [
+    "camelot/wownav/text.lua:242: dungeon = L[\"dungeon\"], portal = L[\"portal\"], zeppelin = L[\"zeppelin\"], lift = L[\"elevator\"], dive = L[\"dive\"],"
+   ],
+   "game_term": "던전",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::elevator",
+   "file": "navigation.lua",
+   "key": "elevator",
+   "en": "elevator",
+   "ko": "승강기",
+   "code": [
+    "camelot/wownav/text.lua:242: dungeon = L[\"dungeon\"], portal = L[\"portal\"], zeppelin = L[\"zeppelin\"], lift = L[\"elevator\"], dive = L[\"dive\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::dive",
+   "file": "navigation.lua",
+   "key": "dive",
+   "en": "dive",
+   "ko": "잠수",
+   "code": [
+    "camelot/wownav/text.lua:242: dungeon = L[\"dungeon\"], portal = L[\"portal\"], zeppelin = L[\"zeppelin\"], lift = L[\"elevator\"], dive = L[\"dive\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::fishing spot",
+   "file": "navigation.lua",
+   "key": "fishing spot",
+   "en": "fishing spot",
+   "ko": "낚시터",
+   "code": [
+    "camelot/wownav/text.lua:237: door = L[\"door\"], book = L[\"book\"], chair = L[\"chair\"], sign = L[\"sign\"], fishing_spot = L[\"fishing spot\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At a fishing spot",
+     "en": "At a fishing spot",
+     "ko": "낚시터에 있음"
+    },
+    {
+     "id": "navigation.lua::Fishing spot on pier or quay: %s",
+     "en": "Fishing spot on pier or quay: %s",
+     "ko": "부두 낚시터: %s"
+    },
+    {
+     "id": "navigation.lua::Fishing spot on the shore: %s",
+     "en": "Fishing spot on the shore: %s",
+     "ko": "물가 낚시터: %s"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::flight master",
+   "file": "navigation.lua",
+   "key": "flight master",
+   "en": "flight master",
+   "ko": "비행 조련사",
+   "code": [
+    "camelot/wownav/text.lua:232: flight_master = L[\"flight master\"], innkeeper = L[\"innkeeper\"], banker = L[\"banker\"],"
+   ],
+   "game_term": "비행 조련사",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::forge",
+   "file": "navigation.lua",
+   "key": "forge",
+   "en": "forge",
+   "ko": "가열로",
+   "code": [
+    "camelot/wownav/text.lua:236: interaction_object = L[\"interaction object\"], mailbox = L[\"mailbox\"], anvil = L[\"anvil\"], forge = L[\"forge\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::height unknown",
+   "file": "navigation.lua",
+   "key": "height unknown",
+   "en": "height unknown",
+   "ko": "높이 모름",
+   "code": [
+    "camelot/wownav/module.lua:395: text = text .. \", \" .. L[\"height unknown\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua:: horizontal, height unknown",
+     "en": " horizontal, height unknown",
+     "ko": " 수평, 높이 모름"
+    },
+    {
+     "id": "navigation.lua::Auto, height unknown",
+     "en": "Auto, height unknown",
+     "ko": "자동, 높이 모름"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::herb or ore",
+   "file": "navigation.lua",
+   "key": "herb or ore",
+   "en": "herb or ore",
+   "ko": "약초 또는 광석",
+   "code": [
+    "camelot/wownav/text.lua:235: herb_or_ore = L[\"herb or ore\"], object = L[\"object\"], quest_item = L[\"quest item\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::highest",
+   "file": "navigation.lua",
+   "key": "highest",
+   "en": "highest",
+   "ko": "가장 높음",
+   "code": [
+    "camelot/wownav/floorsUi.lua:47: text = text .. \", \" .. L[\"highest\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::innkeeper",
+   "file": "navigation.lua",
+   "key": "innkeeper",
+   "en": "innkeeper",
+   "ko": "여관주인",
+   "code": [
+    "camelot/wownav/text.lua:232: flight_master = L[\"flight master\"], innkeeper = L[\"innkeeper\"], banker = L[\"banker\"],"
+   ],
+   "game_term": "여관주인",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::interaction object",
+   "file": "navigation.lua",
+   "key": "interaction object",
+   "en": "interaction object",
+   "ko": "상호작용 물체",
+   "code": [
+    "camelot/wownav/text.lua:236: interaction_object = L[\"interaction object\"], mailbox = L[\"mailbox\"], anvil = L[\"anvil\"], forge = L[\"forge\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::lowest",
+   "file": "navigation.lua",
+   "key": "lowest",
+   "en": "lowest",
+   "ko": "가장 낮음",
+   "code": [
+    "camelot/wownav/floorsUi.lua:45: text = text .. \", \" .. L[\"lowest\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::mailbox",
+   "file": "navigation.lua",
+   "key": "mailbox",
+   "en": "mailbox",
+   "ko": "우체통",
+   "code": [
+    "camelot/wownav/text.lua:236: interaction_object = L[\"interaction object\"], mailbox = L[\"mailbox\"], anvil = L[\"anvil\"], forge = L[\"forge\"],"
+   ],
+   "game_term": "우체통",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::no path from here",
+   "file": "navigation.lua",
+   "key": "no path from here",
+   "en": "no path from here",
+   "ko": "여기서 경로 없음",
+   "code": [
+    "camelot/wownav/floorsUi.lua:53: text = text .. \", \" .. L[\"no path from here\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::Start the Route Again From Here",
+     "en": "Start the Route Again From Here",
+     "ko": "여기서 경로 다시 시작"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::object",
+   "file": "navigation.lua",
+   "key": "object",
+   "en": "object",
+   "ko": "물체",
+   "code": [
+    "camelot/wownav/text.lua:235: herb_or_ore = L[\"herb or ore\"], object = L[\"object\"], quest_item = L[\"quest item\"],"
+   ],
+   "game_term": "물체",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::object type %s",
+   "file": "navigation.lua",
+   "key": "object type %s",
+   "en": "object type %s",
+   "ko": "물체 유형 %s",
+   "code": [
+    "camelot/wownav/text.lua:292: name = number and string.format(L[\"object type %s\"], number) or nil"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::portal",
+   "file": "navigation.lua",
+   "key": "portal",
+   "en": "portal",
+   "ko": "차원문",
+   "code": [
+    "camelot/wownav/text.lua:242: dungeon = L[\"dungeon\"], portal = L[\"portal\"], zeppelin = L[\"zeppelin\"], lift = L[\"elevator\"], dive = L[\"dive\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::quest item",
+   "file": "navigation.lua",
+   "key": "quest item",
+   "en": "quest item",
+   "ko": "퀘스트 아이템",
+   "code": [
+    "camelot/wownav/text.lua:235: herb_or_ore = L[\"herb or ore\"], object = L[\"object\"], quest_item = L[\"quest item\"],"
+   ],
+   "game_term": "퀘스트 아이템",
+   "related": [
+    {
+     "id": "windows.lua::Quest Item",
+     "en": "Quest Item",
+     "ko": "퀘스트 아이템"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::ship",
+   "file": "navigation.lua",
+   "key": "ship",
+   "en": "ship",
+   "ko": "배",
+   "code": [
+    "camelot/wownav/text.lua:241: zone_transition = L[\"zone transition\"], transit = L[\"transit\"], boat = L[\"ship\"], tram = L[\"tram\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::sign",
+   "file": "navigation.lua",
+   "key": "sign",
+   "en": "sign",
+   "ko": "표지판",
+   "code": [
+    "camelot/wownav/text.lua:237: door = L[\"door\"], book = L[\"book\"], chair = L[\"chair\"], sign = L[\"sign\"], fishing_spot = L[\"fishing spot\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::spirit guide",
+   "file": "navigation.lua",
+   "key": "spirit guide",
+   "en": "spirit guide",
+   "ko": "영혼의 안내자",
+   "code": [
+    "camelot/wownav/text.lua:234: spirit_guide = L[\"spirit guide\"], npc_or_mob = L[\"NPC or mob\"], chest = L[\"chest\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::spirit healer",
+   "file": "navigation.lua",
+   "key": "spirit healer",
+   "en": "spirit healer",
+   "ko": "영혼의 치유사",
+   "code": [
+    "camelot/wownav/text.lua:233: stable_master = L[\"stable master\"], auctioneer = L[\"auctioneer\"], spirit_healer = L[\"spirit healer\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::stable master",
+   "file": "navigation.lua",
+   "key": "stable master",
+   "en": "stable master",
+   "ko": "야수 관리인",
+   "code": [
+    "camelot/wownav/text.lua:233: stable_master = L[\"stable master\"], auctioneer = L[\"auctioneer\"], spirit_healer = L[\"spirit healer\"],"
+   ],
+   "game_term": "야수 관리인",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::the elevator",
+   "file": "navigation.lua",
+   "key": "the elevator",
+   "en": "the elevator",
+   "ko": "승강기",
+   "code": [
+    "camelot/wownav/module.lua:263: local TRANSIT_WORDS = { portal = L[\"the portal\"], tram = L[\"the tram\"], lift = L[\"the elevator\"], dive = L[\"a dive\"],",
+    "camelot/wownav/text.lua:31: vehicle_lift = L[\"the elevator\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::the portal",
+   "file": "navigation.lua",
+   "key": "the portal",
+   "en": "the portal",
+   "ko": "차원문",
+   "code": [
+    "camelot/wownav/module.lua:263: local TRANSIT_WORDS = { portal = L[\"the portal\"], tram = L[\"the tram\"], lift = L[\"the elevator\"], dive = L[\"a dive\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "en": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "ko": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the tram",
+   "file": "navigation.lua",
+   "key": "the tram",
+   "en": "the tram",
+   "ko": "지하철",
+   "code": [
+    "camelot/wownav/module.lua:263: local TRANSIT_WORDS = { portal = L[\"the portal\"], tram = L[\"the tram\"], lift = L[\"the elevator\"], dive = L[\"a dive\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::In the tram toward %s",
+     "en": "In the tram toward %s",
+     "ko": "%s 방면 지하철에 탑승 중"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the transit",
+   "file": "navigation.lua",
+   "key": "the transit",
+   "en": "the transit",
+   "ko": "이동 수단",
+   "code": [
+    "camelot/wownav/module.lua:279: or string.format(L[\"Use %s; the route goes on after it\"], TRANSIT_WORDS[action.kind] or L[\"the transit\"])",
+    "camelot/wownav/module.lua:490: text = text .. \", \" .. string.format(L[\"then %s\"], TRANSIT_WORDS[route.pendingAction.kind] or L[\"the transit\"])",
+    "camelot/wownav/module.lua:861: TRANSIT_WORDS[event.action.kind] or L[\"the transit\"]))",
+    "camelot/wownav/module.lua:1172: TRANSIT_WORDS[route.action.action.kind] or L[\"the transit\"]))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The transit took too long; route ended",
+     "en": "The transit took too long; route ended",
+     "ko": "이동 수단 이용이 너무 오래 걸림; 경로 종료"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::then %s",
+   "file": "navigation.lua",
+   "key": "then %s",
+   "en": "then %s",
+   "ko": "이어서 %s",
+   "code": [
+    "camelot/wownav/module.lua:490: text = text .. \", \" .. string.format(L[\"then %s\"], TRANSIT_WORDS[route.pendingAction.kind] or L[\"the transit\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::trainer",
+   "file": "navigation.lua",
+   "key": "trainer",
+   "en": "trainer",
+   "ko": "상급자",
+   "code": [
+    "camelot/wownav/text.lua:231: quest_giver = L[\"quest giver\"], trainer = L[\"trainer\"], vendor = L[\"vendor\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::tram",
+   "file": "navigation.lua",
+   "key": "tram",
+   "en": "tram",
+   "ko": "지하철",
+   "code": [
+    "camelot/wownav/text.lua:241: zone_transition = L[\"zone transition\"], transit = L[\"transit\"], boat = L[\"ship\"], tram = L[\"tram\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::transit",
+   "file": "navigation.lua",
+   "key": "transit",
+   "en": "transit",
+   "ko": "이동 수단",
+   "code": [
+    "camelot/wownav/text.lua:241: zone_transition = L[\"zone transition\"], transit = L[\"transit\"], boat = L[\"ship\"], tram = L[\"tram\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::unknown destination",
+   "file": "navigation.lua",
+   "key": "unknown destination",
+   "en": "unknown destination",
+   "ko": "알 수 없는 목적지",
+   "code": [
+    "camelot/wownav/text.lua:207: return string.format(wingTemplate, placeName(target) or L[\"unknown destination\"], wing) .. nameSuffix(target)",
+    "camelot/wownav/text.lua:214: return string.format(template, placeName(target) or L[\"unknown destination\"]) .. nameSuffix(target)"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::vendor",
+   "file": "navigation.lua",
+   "key": "vendor",
+   "en": "vendor",
+   "ko": "상인",
+   "code": [
+    "camelot/wownav/text.lua:231: quest_giver = L[\"quest giver\"], trainer = L[\"trainer\"], vendor = L[\"vendor\"],"
+   ],
+   "game_term": "상인",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::water surface, diving depth %d yards",
+   "file": "navigation.lua",
+   "key": "water surface, diving depth %d yards",
+   "en": "water surface, diving depth %d yards",
+   "ko": "수면, 잠수 깊이 %d야드",
+   "code": [
+    "camelot/wownav/module.lua:387: return string.format(L[\"water surface, diving depth %d yards\"], math.floor((result.divingDepth or 0) + 0.5))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+     "en": " (water surface, diving depth %.1f yards)",
+     "ko": " (수면, 잠수 깊이 %.1f야드)"
+    },
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Direct: %s, %d yards",
+     "en": "Direct: %s, %d yards",
+     "ko": "직선: %s, %d야드"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::approximate, %d yards",
+     "en": "approximate, %d yards",
+     "ko": "대략, %d야드"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::zeppelin",
+   "file": "navigation.lua",
+   "key": "zeppelin",
+   "en": "zeppelin",
+   "ko": "비행선",
+   "code": [
+    "camelot/wownav/text.lua:242: dungeon = L[\"dungeon\"], portal = L[\"portal\"], zeppelin = L[\"zeppelin\"], lift = L[\"elevator\"], dive = L[\"dive\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::zone transition",
+   "file": "navigation.lua",
+   "key": "zone transition",
+   "en": "zone transition",
+   "ko": "지역 전환",
+   "code": [
+    "camelot/wownav/text.lua:241: zone_transition = L[\"zone transition\"], transit = L[\"transit\"], boat = L[\"ship\"], tram = L[\"tram\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Show Automatic Waypoints",
+   "file": "navigation.lua",
+   "key": "Show Automatic Waypoints",
+   "en": "Show Automatic Waypoints",
+   "ko": "자동 경유지 표시",
+   "code": [
+    "camelot/wownav/module.lua:45: settings:add({ key = \"showAuto\", type = \"Bool\", label = L[\"Show Automatic Waypoints\"], default = false })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::automatic",
+   "file": "navigation.lua",
+   "key": "automatic",
+   "en": "automatic",
+   "ko": "자동",
+   "code": [
+    "camelot/wownav/catalog.lua:336: id = \"wownav:node:\" .. p.id, n = name, search = lower(name .. \" \" .. L[\"automatic\"]),"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::The nearest %d of %d results",
+   "file": "navigation.lua",
+   "key": "The nearest %d of %d results",
+   "en": "The nearest %d of %d results",
+   "ko": "결과 %2$d개 중 가장 가까운 %1$d개",
+   "code": [
+    "core/navigation/maps/ui.lua:125: screen._notice = string.format(L[\"The nearest %d of %d results\"], info.shown, info.total)"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Direct to the Nearest Unvisited of the Same Name",
+     "en": "Direct to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 직선"
+    },
+    {
+     "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+     "en": "Route to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::WowNav catalogue not usable: %s",
+   "file": "navigation.lua",
+   "key": "WowNav catalogue not usable: %s",
+   "en": "WowNav catalogue not usable: %s",
+   "ko": "WowNav 목록 사용 불가: %s",
+   "code": [
+    "camelot/wownav/module.lua:343: say(string.format(L[\"WowNav catalogue not usable: %s\"], tostring(info.reason)))"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+   "file": "navigation.lua",
+   "key": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+   "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+   "ko": "%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오.",
+   "code": [
+    "camelot/wownav/text.lua:25: dock_reached = L[\"Dock %s reached. Wait here for %s. Board when you hear it arrive.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Boarding point %s reached",
+     "en": "Boarding point %s reached",
+     "ko": "%s 탑승 지점 도착"
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "en": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+   "file": "navigation.lua",
+   "key": " The beacon shows the boarding direction; I turns you toward it.",
+   "en": " The beacon shows the boarding direction; I turns you toward it.",
+   "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다.",
+   "code": [
+    "camelot/wownav/text.lua:26: dock_boarding_hint = L[\" The beacon shows the boarding direction; I turns you toward it.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s is near; I turns you toward it",
+     "en": "%s is near; I turns you toward it",
+     "ko": "%s 근처; I 키를 누르면 그쪽으로 돌아섭니다"
+    },
+    {
+     "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "en": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "en": "Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "ko": "사전 지점 도착. 비컨이 활성화 구역까지 검증된 길을 계속 따라갑니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "en": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "ko": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+   "file": "navigation.lua",
+   "key": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+   "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+   "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오.",
+   "code": [
+    "camelot/wownav/text.lua:27: dock_passive_set = L[\"Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "en": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua:: (choose the floor)",
+     "en": " (choose the floor)",
+     "ko": " (층 선택)"
+    },
+    {
+     "id": "navigation.lua::At the vehicle",
+     "en": "At the vehicle",
+     "ko": "운송 수단 앞"
+    },
+    {
+     "id": "navigation.lua::Board only when the vehicle is safely there.",
+     "en": "Board only when the vehicle is safely there.",
+     "ko": "운송 수단이 확실히 도착했을 때만 탑승하십시오."
+    },
+    {
+     "id": "navigation.lua::Choose the target's floor",
+     "en": "Choose the target's floor",
+     "ko": "대상의 층 선택"
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the Deeprun Tram",
+   "file": "navigation.lua",
+   "key": "the Deeprun Tram",
+   "en": "the Deeprun Tram",
+   "ko": "깊은굴 지하철",
+   "code": [
+    "camelot/wownav/text.lua:28: vehicle_tram = L[\"the Deeprun Tram\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Deeprun Tram entrance",
+     "en": "Deeprun Tram entrance",
+     "ko": "깊은굴 지하철 입구"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the ship",
+   "file": "navigation.lua",
+   "key": "the ship",
+   "en": "the ship",
+   "ko": "배",
+   "code": [
+    "camelot/wownav/text.lua:29: vehicle_boat = L[\"the ship\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the ship",
+     "en": "On the ship",
+     "ko": "배에 탑승 중"
+    },
+    {
+     "id": "navigation.lua::On the ship to %s",
+     "en": "On the ship to %s",
+     "ko": "%s행 배에 탑승 중"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the zeppelin",
+   "file": "navigation.lua",
+   "key": "the zeppelin",
+   "en": "the zeppelin",
+   "ko": "비행선",
+   "code": [
+    "camelot/wownav/text.lua:30: vehicle_zeppelin = L[\"the zeppelin\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the zeppelin",
+     "en": "On the zeppelin",
+     "ko": "비행선에 탑승 중"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::the vehicle",
+   "file": "navigation.lua",
+   "key": "the vehicle",
+   "en": "the vehicle",
+   "ko": "운송 수단",
+   "code": [
+    "camelot/wownav/text.lua:32: vehicle_other = L[\"the vehicle\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the vehicle",
+     "en": "At the vehicle",
+     "ko": "운송 수단 앞"
+    },
+    {
+     "id": "navigation.lua::Board only when the vehicle is safely there.",
+     "en": "Board only when the vehicle is safely there.",
+     "ko": "운송 수단이 확실히 도착했을 때만 탑승하십시오."
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Boarding point %s reached",
+   "file": "navigation.lua",
+   "key": "Boarding point %s reached",
+   "en": "Boarding point %s reached",
+   "ko": "%s 탑승 지점 도착",
+   "code": [
+    "camelot/wownav/text.lua:33: stop_boarding_point_reached = L[\"Boarding point %s reached\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    },
+    {
+     "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+     "en": "The boarding point has no valid direction proof on this map",
+     "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+     "en": "The boarding point proof or the map changed; guidance ended",
+     "ko": "탑승 지점 근거 또는 지도 변경; 안내 종료"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The dock has no valid waiting point proof",
+   "file": "navigation.lua",
+   "key": "The dock has no valid waiting point proof",
+   "en": "The dock has no valid waiting point proof",
+   "ko": "승강장에 유효한 대기 지점 근거 없음",
+   "code": [
+    "camelot/wownav/text.lua:34: dock_no_wait_proof = L[\"The dock has no valid waiting point proof\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+     "en": "The boarding point has no valid direction proof on this map",
+     "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The entrance has no valid proof.",
+     "en": "The entrance has no valid proof.",
+     "ko": "입구에 유효한 근거가 없습니다."
+    },
+    {
+     "id": "navigation.lua::The waiting point proof is invalid; no boarding instruction",
+     "en": "The waiting point proof is invalid; no boarding instruction",
+     "ko": "대기 지점 근거가 유효하지 않음; 탑승 안내 없음"
+    },
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+   "file": "navigation.lua",
+   "key": "The boarding point has no valid direction proof on this map",
+   "en": "The boarding point has no valid direction proof on this map",
+   "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음",
+   "code": [
+    "camelot/wownav/text.lua:35: boarding_no_direction_proof = L[\"The boarding point has no valid direction proof on this map\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+     "en": "The boarding point proof or the map changed; guidance ended",
+     "ko": "탑승 지점 근거 또는 지도 변경; 안내 종료"
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The entrance has no valid proof.",
+     "en": "The entrance has no valid proof.",
+     "ko": "입구에 유효한 근거가 없습니다."
+    },
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Boarding point %s reached",
+     "en": "Boarding point %s reached",
+     "ko": "%s 탑승 지점 도착"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The waiting point proof is invalid; no boarding instruction",
+   "file": "navigation.lua",
+   "key": "The waiting point proof is invalid; no boarding instruction",
+   "en": "The waiting point proof is invalid; no boarding instruction",
+   "ko": "대기 지점 근거가 유효하지 않음; 탑승 안내 없음",
+   "code": [
+    "camelot/wownav/text.lua:36: wait_proof_invalid = L[\"The waiting point proof is invalid; no boarding instruction\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "en": "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+     "ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+     "en": "The boarding point proof or the map changed; guidance ended",
+     "ko": "탑승 지점 근거 또는 지도 변경; 안내 종료"
+    },
+    {
+     "id": "navigation.lua::Wind Bridge waiting point",
+     "en": "Wind Bridge waiting point",
+     "ko": "Wind Bridge 대기 지점"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::On the ship",
+   "file": "navigation.lua",
+   "key": "On the ship",
+   "en": "On the ship",
+   "ko": "배에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:124: boarding_boat = L[\"On the ship\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the ship to %s",
+     "en": "On the ship to %s",
+     "ko": "%s행 배에 탑승 중"
+    },
+    {
+     "id": "navigation.lua::the ship",
+     "en": "the ship",
+     "ko": "배"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::On the zeppelin",
+   "file": "navigation.lua",
+   "key": "On the zeppelin",
+   "en": "On the zeppelin",
+   "ko": "비행선에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:125: boarding_zeppelin = L[\"On the zeppelin\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::the zeppelin",
+     "en": "the zeppelin",
+     "ko": "비행선"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::At the vehicle",
+   "file": "navigation.lua",
+   "key": "At the vehicle",
+   "en": "At the vehicle",
+   "ko": "운송 수단 앞",
+   "code": [
+    "camelot/wownav/text.lua:126: boarding_vehicle = L[\"At the vehicle\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Board only when the vehicle is safely there.",
+     "en": "Board only when the vehicle is safely there.",
+     "ko": "운송 수단이 확실히 도착했을 때만 탑승하십시오."
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::the vehicle",
+     "en": "the vehicle",
+     "ko": "운송 수단"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Dive here",
+   "file": "navigation.lua",
+   "key": "Dive here",
+   "en": "Dive here",
+   "ko": "여기서 잠수",
+   "code": [
+    "camelot/wownav/text.lua:127: dive_entry = L[\"Dive here\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Surface here",
+   "file": "navigation.lua",
+   "key": "Surface here",
+   "en": "Surface here",
+   "ko": "여기서 수면으로 상승",
+   "code": [
+    "camelot/wownav/text.lua:128: dive_exit = L[\"Surface here\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Surface here; the route goes on after it",
+     "en": "Surface here; the route goes on after it",
+     "ko": "여기서 수면으로 상승; 이후 경로 계속"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::%s is near; I turns you toward it",
+   "file": "navigation.lua",
+   "key": "%s is near; I turns you toward it",
+   "en": "%s is near; I turns you toward it",
+   "ko": "%s 근처; I 키를 누르면 그쪽으로 돌아섭니다",
+   "code": [
+    "camelot/wownav/module.lua:1093: say(string.format(L[\"%s is near; I turns you toward it\"], passive.name or \"\"))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "en": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+     "ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+   "file": "navigation.lua",
+   "key": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+   "en": "Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+   "ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다.",
+   "code": [
+    "camelot/wownav/dock.lua:315: return string.format(L[\"Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s is near; I turns you toward it",
+     "en": "%s is near; I turns you toward it",
+     "ko": "%s 근처; I 키를 누르면 그쪽으로 돌아섭니다"
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    },
+    {
+     "id": "navigation.lua::Last network point; the last stretch is unchecked, move carefully",
+     "en": "Last network point; the last stretch is unchecked, move carefully",
+     "ko": "네트워크 마지막 지점; 마지막 구간은 검증되지 않았으니, 조심해서 이동하십시오"
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)",
+   "file": "navigation.lua",
+   "key": "Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)",
+   "en": "Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)",
+   "ko": "WowNav 경유지 최소 도착 거리 (0 = 경유지 자체 값)",
+   "code": [
+    "camelot/wownav/module.lua:60: key = \"arrivalMin\", type = \"Number\", label = L[\"Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Arrival Distance",
+     "en": "Arrival Distance",
+     "ko": "도착 거리"
+    },
+    {
+     "id": "navigation.lua::Cycle Arrival Distance",
+     "en": "Cycle Arrival Distance",
+     "ko": "도착 거리 전환"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Group",
+   "file": "navigation.lua",
+   "key": "Group",
+   "en": "Group",
+   "ko": "파티",
+   "code": [
+    "core/scanner/providers.lua:25: label = L[\"Group\"],"
+   ],
+   "game_term": "파티",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::No position of the group member available",
+   "file": "navigation.lua",
+   "key": "No position of the group member available",
+   "en": "No position of the group member available",
+   "ko": "파티원 위치 확인 불가",
+   "code": [
+    "camelot/wownav/text.lua:71: no_live_coordinates = L[\"No position of the group member available\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "minimap.lua::No position here",
+     "en": "No position here",
+     "ko": "이곳은 위치 정보 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The target is no longer available; no new route",
+   "file": "navigation.lua",
+   "key": "The target is no longer available; no new route",
+   "en": "The target is no longer available; no new route",
+   "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음",
+   "code": [
+    "camelot/wownav/text.lua:72: target_source_gone = L[\"The target is no longer available; no new route\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The target is on another map",
+     "en": "The target is on another map",
+     "ko": "대상이 다른 지도에 있음"
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::Searching a new route",
+     "en": "Searching a new route",
+     "ko": "새 경로 검색 중"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: (inexact +%.1f yards%s)",
+   "file": "navigation.lua",
+   "key": " (inexact +%.1f yards%s)",
+   "en": " (inexact +%.1f yards%s)",
+   "ko": " (부정확 +%.1f야드%s)",
+   "code": [
+    "camelot/wownav/text.lua:39: desc_inexact = L[\" (inexact +%.1f yards%s)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+     "en": " (water surface, diving depth %.1f yards)",
+     "ko": " (수면, 잠수 깊이 %.1f야드)"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: horizontal, height unknown",
+   "file": "navigation.lua",
+   "key": " horizontal, height unknown",
+   "en": " horizontal, height unknown",
+   "ko": " 수평, 높이 모름",
+   "code": [
+    "camelot/wownav/text.lua:40: desc_horizontal_unknown = L[\" horizontal, height unknown\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Auto, height unknown",
+     "en": "Auto, height unknown",
+     "ko": "자동, 높이 모름"
+    },
+    {
+     "id": "navigation.lua::height unknown",
+     "en": "height unknown",
+     "ko": "높이 모름"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: vertical",
+   "file": "navigation.lua",
+   "key": " vertical",
+   "en": " vertical",
+   "ko": " 수직",
+   "code": [
+    "camelot/wownav/text.lua:41: desc_vertical = L[\" vertical\"],"
+   ],
+   "game_term": "수직",
+   "related": []
+  },
+  {
+   "id": "navigation.lua:: (choose the floor)",
+   "file": "navigation.lua",
+   "key": " (choose the floor)",
+   "en": " (choose the floor)",
+   "ko": " (층 선택)",
+   "code": [
+    "camelot/wownav/text.lua:42: desc_pick_height = L[\" (choose the floor)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Choose the target's floor",
+     "en": "Choose the target's floor",
+     "ko": "대상의 층 선택"
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: (floor unknown)",
+   "file": "navigation.lua",
+   "key": " (floor unknown)",
+   "en": " (floor unknown)",
+   "ko": " (층 모름)",
+   "code": [
+    "camelot/wownav/text.lua:43: desc_level_unknown = L[\" (floor unknown)\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua:: (no network point within the radius)",
+   "file": "navigation.lua",
+   "key": " (no network point within the radius)",
+   "en": " (no network point within the radius)",
+   "ko": " (반경 내 네트워크 지점 없음)",
+   "code": [
+    "camelot/wownav/text.lua:44: desc_no_point = L[\" (no network point within the radius)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::No network point at the chosen start",
+     "en": "No network point at the chosen start",
+     "ko": "선택한 시작점에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::Last network point; the last stretch is unchecked, move carefully",
+     "en": "Last network point; the last stretch is unchecked, move carefully",
+     "ko": "네트워크 마지막 지점; 마지막 구간은 검증되지 않았으니, 조심해서 이동하십시오"
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+   "file": "navigation.lua",
+   "key": " (water surface, diving depth %.1f yards)",
+   "en": " (water surface, diving depth %.1f yards)",
+   "ko": " (수면, 잠수 깊이 %.1f야드)",
+   "code": [
+    "camelot/wownav/text.lua:45: desc_water = L[\" (water surface, diving depth %.1f yards)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::water surface, diving depth %d yards",
+     "en": "water surface, diving depth %d yards",
+     "ko": "수면, 잠수 깊이 %d야드"
+    },
+    {
+     "id": "navigation.lua:: (inexact +%.1f yards%s)",
+     "en": " (inexact +%.1f yards%s)",
+     "ko": " (부정확 +%.1f야드%s)"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Approximate target position.",
+   "file": "navigation.lua",
+   "key": "Approximate target position.",
+   "en": "Approximate target position.",
+   "ko": "대략적인 대상 위치입니다.",
+   "code": [
+    "camelot/wownav/text.lua:46: approx_target = L[\"Approximate target position.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Target position reached",
+     "en": "Target position reached",
+     "ko": "대상 위치 도착"
+    },
+    {
+     "id": "navigation.lua::The target position is outdated",
+     "en": "The target position is outdated",
+     "ko": "대상 위치가 오래됨"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+   "file": "navigation.lua",
+   "key": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+   "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+   "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다.",
+   "code": [
+    "camelot/wownav/text.lua:47: stop_net_ends = L[\"The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Last network point; the last stretch is unchecked, move carefully",
+     "en": "Last network point; the last stretch is unchecked, move carefully",
+     "ko": "네트워크 마지막 지점; 마지막 구간은 검증되지 않았으니, 조심해서 이동하십시오"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua:: (inexact +%.1f yards%s)",
+     "en": " (inexact +%.1f yards%s)",
+     "ko": " (부정확 +%.1f야드%s)"
+    },
+    {
+     "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+     "en": " (water surface, diving depth %.1f yards)",
+     "ko": " (수면, 잠수 깊이 %.1f야드)"
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    }
+   ]
+  }
+ ]
+}

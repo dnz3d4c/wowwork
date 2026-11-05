@@ -1,0 +1,1811 @@
+{
+ "items": [
+  {
+   "id": "powers.lua::unholy runes",
+   "file": "powers.lua",
+   "key": "unholy runes",
+   "en": "unholy runes",
+   "ko": "부정 룬",
+   "code": [
+    "core/gameDB/powers.lua:56: { key = \"runeunholy\", id = Enum.PowerType.RuneUnholy, label = L[\"unholy runes\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::runes",
+   "file": "powers.lua",
+   "key": "runes",
+   "en": "runes",
+   "ko": "룬",
+   "code": [
+    "core/gameDB/powers.lua:57: { key = \"runes\", id = Enum.PowerType.Runes, label = L[\"runes\"] },"
+   ],
+   "game_term": "룬",
+   "related": []
+  },
+  {
+   "id": "powers.lua::runic power",
+   "file": "powers.lua",
+   "key": "runic power",
+   "en": "runic power",
+   "ko": "룬 마력",
+   "code": [
+    "core/gameDB/powers.lua:58: { key = \"runicpower\", id = Enum.PowerType.RunicPower, label = L[\"runic power\"] },"
+   ],
+   "game_term": "룬 마력",
+   "related": []
+  },
+  {
+   "id": "powers.lua::shadow orbs",
+   "file": "powers.lua",
+   "key": "shadow orbs",
+   "en": "shadow orbs",
+   "ko": "어둠의 구슬",
+   "code": [
+    "core/gameDB/powers.lua:59: { key = \"shadoworbs\", id = Enum.PowerType.ShadowOrbs, label = L[\"shadow orbs\"] },"
+   ],
+   "game_term": "어둠의 구슬",
+   "related": []
+  },
+  {
+   "id": "powers.lua::soul shards",
+   "file": "powers.lua",
+   "key": "soul shards",
+   "en": "soul shards",
+   "ko": "영혼의 조각",
+   "code": [
+    "core/gameDB/powers.lua:60: { key = \"soulshards\", id = Enum.PowerType.SoulShards, label = L[\"soul shards\"] },"
+   ],
+   "game_term": "영혼의 조각",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Nearby Level Range",
+   "file": "quests.lua",
+   "key": "Nearby Level Range",
+   "en": "Nearby Level Range",
+   "ko": "주변 레벨 범위",
+   "code": [
+    "core/quests/module.lua:25: label = L[\"Nearby Level Range\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Include Repeatable Quests",
+   "file": "quests.lua",
+   "key": "Include Repeatable Quests",
+   "en": "Include Repeatable Quests",
+   "ko": "반복 가능 퀘스트 포함",
+   "code": [
+    "core/quests/module.lua:33: label = L[\"Include Repeatable Quests\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Questie is not loaded",
+   "file": "quests.lua",
+   "key": "Questie is not loaded",
+   "en": "Questie is not loaded",
+   "ko": "Questie 불러오지 않음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::Questie is still loading",
+     "en": "Questie is still loading",
+     "ko": "Questie 불러오는 중"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::Questie is still loading",
+   "file": "quests.lua",
+   "key": "Questie is still loading",
+   "en": "Questie is still loading",
+   "ko": "Questie 불러오는 중",
+   "code": [
+    "core/quests/module.lua:469: tinsert(lines, L[\"Questie is still loading\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::Questie is not loaded",
+     "en": "Questie is not loaded",
+     "ko": "Questie 불러오지 않음"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::No nearby quests",
+   "file": "quests.lua",
+   "key": "No nearby quests",
+   "en": "No nearby quests",
+   "ko": "주변 퀘스트 없음",
+   "code": [
+    "core/quests/module.lua:477: tinsert(lines, L[\"No nearby quests\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::No quests in progress",
+   "file": "quests.lua",
+   "key": "No quests in progress",
+   "en": "No quests in progress",
+   "ko": "진행 중인 퀘스트 없음",
+   "code": [
+    "core/quests/module.lua:507: tinsert(lines, L[\"No quests in progress\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::In Progress",
+     "en": "In Progress",
+     "ko": "진행 중"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::No targets",
+   "file": "quests.lua",
+   "key": "No targets",
+   "en": "No targets",
+   "ko": "대상 없음",
+   "code": [
+    "core/quests/module.lua:536: tinsert(lines, L[\"No targets\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::far",
+   "file": "quests.lua",
+   "key": "far",
+   "en": "far",
+   "ko": "멀리",
+   "code": [
+    "core/quests/module.lua:437: return L[\"far\"]"
+   ],
+   "game_term": "멀리",
+   "related": []
+  },
+  {
+   "id": "quests.lua::from",
+   "file": "quests.lua",
+   "key": "from",
+   "en": "from",
+   "ko": "출처",
+   "code": [
+    "core/quests/module.lua:445: name = target.item.name .. \" \" .. L[\"from\"] .. \" \" .. name",
+    "core/quests/scanner.lua:56: label = target.item.name .. \" \" .. L[\"from\"] .. \" \" .. label"
+   ],
+   "game_term": "보낸이",
+   "related": []
+  },
+  {
+   "id": "quests.lua::target",
+   "file": "quests.lua",
+   "key": "target",
+   "en": "target",
+   "ko": "대상",
+   "code": [
+    "core/quests/module.lua:519: local suffix = target ~= nil and (\" \" .. L[\"target\"] .. \" \" .. target) or \"\""
+   ],
+   "game_term": "대상",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Level",
+   "file": "quests.lua",
+   "key": "Level",
+   "en": "Level",
+   "ko": "레벨",
+   "code": [
+    "camelot/legacy/rewardTrack.lua:78: L[\"Level\"] .. \" \" .. level,",
+    "core/quests/module.lua:488: L[\"Level\"],",
+    "core/quests/scanner.lua:189: local detail = L[\"Level\"] .. \" \" .. tostring(entry.level)"
+   ],
+   "game_term": "레벨",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Unknown",
+   "file": "quests.lua",
+   "key": "Unknown",
+   "en": "Unknown",
+   "ko": "알 수 없음",
+   "code": [
+    "core/quests/module.lua:92: title = L[\"Unknown\"]",
+    "core/quests/module.lua:443: local name = target.name or L[\"Unknown\"]",
+    "core/quests/scanner.lua:23: return L[\"Unknown\"]"
+   ],
+   "game_term": "무엇인가 | 알 수 없음",
+   "related": []
+  },
+  {
+   "id": "quests.lua::NPCs",
+   "file": "quests.lua",
+   "key": "NPCs",
+   "en": "NPCs",
+   "ko": "NPC",
+   "code": [
+    "core/quests/scanner.lua:428: label = L[\"NPCs\"],"
+   ],
+   "game_term": "NPC",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Nearby",
+   "file": "quests.lua",
+   "key": "Nearby",
+   "en": "Nearby",
+   "ko": "주변",
+   "code": [
+    "core/quests/scanner.lua:310: label = L[\"Nearby\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::In Progress",
+   "file": "quests.lua",
+   "key": "In Progress",
+   "en": "In Progress",
+   "ko": "진행 중",
+   "code": [
+    "core/quests/scanner.lua:324: label = L[\"In Progress\"],"
+   ],
+   "game_term": "진행 중",
+   "related": [
+    {
+     "id": "quests.lua::No quests in progress",
+     "en": "No quests in progress",
+     "ko": "진행 중인 퀘스트 없음"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::Quest Givers",
+   "file": "quests.lua",
+   "key": "Quest Givers",
+   "en": "Quest Givers",
+   "ko": "퀘스트 NPC",
+   "code": [
+    "core/minimap/module.lua:164: questGiver = L[\"Quest Givers\"],",
+    "core/quests/scanner.lua:441: label = L[\"Quest Givers\"],"
+   ],
+   "game_term": "퀘스트 NPC",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Vendors",
+   "file": "quests.lua",
+   "key": "Vendors",
+   "en": "Vendors",
+   "ko": "상인",
+   "code": [
+    "core/minimap/module.lua:165: vendor = L[\"Vendors\"],",
+    "core/quests/scanner.lua:338: vendor = L[\"Vendors\"],"
+   ],
+   "game_term": "상인",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Trainers",
+   "file": "quests.lua",
+   "key": "Trainers",
+   "en": "Trainers",
+   "ko": "상급자",
+   "code": [
+    "core/minimap/module.lua:167: trainer = L[\"Trainers\"],",
+    "core/quests/scanner.lua:340: trainer = L[\"Trainers\"],"
+   ],
+   "game_term": "상급자",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Class Trainers",
+   "file": "quests.lua",
+   "key": "Class Trainers",
+   "en": "Class Trainers",
+   "ko": "직업 상급자",
+   "code": [
+    "core/minimap/module.lua:168: classTrainers = L[\"Class Trainers\"],",
+    "core/quests/scanner.lua:473: label = L[\"Class Trainers\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Flight Masters",
+   "file": "quests.lua",
+   "key": "Flight Masters",
+   "en": "Flight Masters",
+   "ko": "비행 조련사",
+   "code": [
+    "core/minimap/module.lua:169: flightMaster = L[\"Flight Masters\"],",
+    "core/quests/scanner.lua:341: flightMaster = L[\"Flight Masters\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Innkeepers",
+   "file": "quests.lua",
+   "key": "Innkeepers",
+   "en": "Innkeepers",
+   "ko": "여관주인",
+   "code": [
+    "core/minimap/module.lua:170: innkeeper = L[\"Innkeepers\"],",
+    "core/quests/scanner.lua:342: innkeeper = L[\"Innkeepers\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Bankers",
+   "file": "quests.lua",
+   "key": "Bankers",
+   "en": "Bankers",
+   "ko": "은행원",
+   "code": [
+    "core/minimap/module.lua:171: banker = L[\"Bankers\"],",
+    "core/quests/scanner.lua:343: banker = L[\"Bankers\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Auctioneers",
+   "file": "quests.lua",
+   "key": "Auctioneers",
+   "en": "Auctioneers",
+   "ko": "경매인",
+   "code": [
+    "core/minimap/module.lua:172: auctioneer = L[\"Auctioneers\"],",
+    "core/quests/scanner.lua:344: auctioneer = L[\"Auctioneers\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Stable Masters",
+   "file": "quests.lua",
+   "key": "Stable Masters",
+   "en": "Stable Masters",
+   "ko": "야수 관리인",
+   "code": [
+    "core/minimap/module.lua:173: stableMaster = L[\"Stable Masters\"],",
+    "core/quests/scanner.lua:345: stableMaster = L[\"Stable Masters\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Battlemasters",
+   "file": "quests.lua",
+   "key": "Battlemasters",
+   "en": "Battlemasters",
+   "ko": "전투모병관",
+   "code": [
+    "core/minimap/module.lua:174: battlemaster = L[\"Battlemasters\"],",
+    "core/quests/scanner.lua:346: battlemaster = L[\"Battlemasters\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Spirit Healers",
+   "file": "quests.lua",
+   "key": "Spirit Healers",
+   "en": "Spirit Healers",
+   "ko": "영혼의 치유사",
+   "code": [
+    "core/quests/scanner.lua:347: spiritHealer = L[\"Spirit Healers\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Mailboxes",
+   "file": "quests.lua",
+   "key": "Mailboxes",
+   "en": "Mailboxes",
+   "ko": "우체통",
+   "code": [
+    "core/minimap/module.lua:175: mailboxes = L[\"Mailboxes\"],",
+    "core/quests/scanner.lua:480: label = L[\"Mailboxes\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Rares",
+   "file": "quests.lua",
+   "key": "Rares",
+   "en": "Rares",
+   "ko": "희귀",
+   "code": [
+    "core/quests/scanner.lua:488: label = L[\"Rares\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Start",
+   "file": "quests.lua",
+   "key": "Start",
+   "en": "Start",
+   "ko": "시작",
+   "code": [],
+   "game_term": "시작",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Turn In",
+   "file": "quests.lua",
+   "key": "Turn In",
+   "en": "Turn In",
+   "ko": "완료",
+   "code": [],
+   "game_term": "완료 | 제출",
+   "related": [
+    {
+     "id": "minimap.lua::turn in",
+     "en": "turn in",
+     "ko": "완료"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::Objectives",
+   "file": "quests.lua",
+   "key": "Objectives",
+   "en": "Objectives",
+   "ko": "목표",
+   "code": [
+    "camelot/legacy/challenges.lua:180: builder:pushContext(\"objectives:\" .. id, L[\"Objectives\"])",
+    "camelot/legacy/challenges.lua:239: tooltip:AddLine(L[\"Objectives\"])"
+   ],
+   "game_term": "목표 | 임무",
+   "related": []
+  },
+  {
+   "id": "quests.lua::quests",
+   "file": "quests.lua",
+   "key": "quests",
+   "en": "quests",
+   "ko": "퀘스트",
+   "code": [
+    "core/quests/scanner.lua:413: giver.detail = tostring(#entries) .. \" \" .. L[\"quests\"]"
+   ],
+   "game_term": "퀘스트",
+   "related": []
+  },
+  {
+   "id": "quests.lua::spawns",
+   "file": "quests.lua",
+   "key": "spawns",
+   "en": "spawns",
+   "ko": "출현 지점",
+   "code": [
+    "core/quests/scanner.lua:81: tinsert(detail, tostring(#target.spawns) .. \" \" .. L[\"spawns\"])",
+    "core/quests/scanner.lua:125: .. tostring(#target.spawns) .. \" \" .. L[\"spawns\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Loading",
+   "file": "quests.lua",
+   "key": "Loading",
+   "en": "Loading",
+   "ko": "불러오는 중",
+   "code": [
+    "core/quests/scanner.lua:293: return { key = \"loading\", label = L[\"Loading\"] }",
+    "retail/communities.lua:424: builder:addItem(ControlId.structural(\"membersLoading\"), nodes.text({ label = L[\"Loading\"] }))",
+    "retail/containers/containers.lua:15: local parts = { info.itemName ~= nil and WowVision.items.formatName(info.itemName, info.quality) or L[\"Loading\"] }",
+    "retail/socialUI.lua:364: builder:addItem(ControlId.structural(\"loading\"), nodes.text({ label = L[\"Loading\"] }))"
+   ],
+   "game_term": "불러오는 중",
+   "related": []
+  },
+  {
+   "id": "quests.lua::near",
+   "file": "quests.lua",
+   "key": "near",
+   "en": "near",
+   "ko": "근처",
+   "code": [
+    "core/quests/module.lua:225: tinsert(parts, string.format(\"%s %s, %d %s\", L[\"near\"], landmark, distance, L[\"yards\"]))",
+    "core/quests/module.lua:231: tinsert(parts, string.format(\"%s %s, %d %s\", L[\"near\"], landmark, distance, L[\"yards\"]))"
+   ],
+   "game_term": "가까이",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Repeatable",
+   "file": "quests.lua",
+   "key": "Repeatable",
+   "en": "Repeatable",
+   "ko": "반복 가능",
+   "code": [
+    "core/quests/scanner.lua:193: detail = detail .. \", \" .. L[\"Repeatable\"]"
+   ],
+   "game_term": "반복 가능",
+   "related": []
+  },
+  {
+   "id": "quests.lua::phased out",
+   "file": "quests.lua",
+   "key": "phased out",
+   "en": "phased out",
+   "ko": "다른 위상",
+   "code": [
+    "core/quests/scanner.lua:42: detail = spawn.phased and L[\"phased out\"] or nil,"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::No quest data source",
+   "file": "quests.lua",
+   "key": "No quest data source",
+   "en": "No quest data source",
+   "ko": "퀘스트 데이터 원본 없음",
+   "code": [
+    "core/quests/module.lua:464: tinsert(lines, L[\"No quest data source\"])",
+    "core/quests/scanner.lua:302: return { { key = \"missing\", label = L[\"No quest data source\"] } }",
+    "core/quests/scanner.lua:432: return { { key = \"missing\", label = L[\"No quest data source\"] } }"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Quest Giver",
+   "file": "quests.lua",
+   "key": "Quest Giver",
+   "en": "Quest Giver",
+   "ko": "퀘스트 NPC",
+   "code": [
+    "core/quests/native.lua:199: return singleTarget(\"giver\", positionKey(entry.mapId, entry.x, entry.y), L[\"Quest Giver\"], spawn, ctx)"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::quest giver",
+     "en": "quest giver",
+     "ko": "퀘스트 NPC"
+    }
+   ]
+  },
+  {
+   "id": "quests.lua::seen",
+   "file": "quests.lua",
+   "key": "seen",
+   "en": "seen",
+   "ko": "발견됨",
+   "code": [
+    "core/minimap/scanner.lua:26: detail = entry.indoors and (L[\"seen\"] .. \", \" .. L[\"indoors\"]) or L[\"seen\"],",
+    "core/quests/module.lua:481: tinsert(lines, string.format(\"%s, %s, %s\", tostring(entry.name), L[\"seen\"], formatDistance(entry.distance)))",
+    "core/quests/scanner.lua:75: tinsert(detail, L[\"seen\"])",
+    "core/quests/scanner.lua:173: local detail = { L[\"seen\"] }"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Quest Area Alert",
+   "file": "quests.lua",
+   "key": "Quest Area Alert",
+   "en": "Quest Area Alert",
+   "ko": "퀘스트 지역 경보",
+   "code": [
+    "core/quests/module.lua:42: label = L[\"Quest Area Alert\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Entering area",
+   "file": "quests.lua",
+   "key": "Entering area",
+   "en": "Entering area",
+   "ko": "지역 진입",
+   "code": [
+    "core/quests/module.lua:94: local prefix = isInside and L[\"Entering area\"] or L[\"Leaving area\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Leaving area",
+   "file": "quests.lua",
+   "key": "Leaving area",
+   "en": "Leaving area",
+   "ko": "지역 이탈",
+   "code": [
+    "core/quests/module.lua:94: local prefix = isInside and L[\"Entering area\"] or L[\"Leaving area\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Scanner",
+   "file": "scanner.lua",
+   "key": "Scanner",
+   "en": "Scanner",
+   "ko": "스캐너",
+   "code": [
+    "core/scanner/module.lua:3: module:setLabel(L[\"Scanner\"])",
+    "core/scanner/ui.lua:189: builder:pushContext(\"scanner\", L[\"Scanner\"])",
+    "core/scanner/ui.lua:218: label = L[\"Scanner\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Scan Radius",
+   "file": "scanner.lua",
+   "key": "Scan Radius",
+   "en": "Scan Radius",
+   "ko": "스캔 반경",
+   "code": [
+    "core/scanner/module.lua:35: label = L[\"Scan Radius\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Entries Per Category",
+   "file": "scanner.lua",
+   "key": "Entries Per Category",
+   "en": "Entries Per Category",
+   "ko": "범주별 항목 수",
+   "code": [
+    "core/scanner/module.lua:43: label = L[\"Entries Per Category\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Refresh",
+   "file": "scanner.lua",
+   "key": "Refresh",
+   "en": "Refresh",
+   "ko": "새로고침",
+   "code": [
+    "core/scanner/ui.lua:200: label = L[\"Refresh\"],"
+   ],
+   "game_term": "새로고침",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Refreshed",
+   "file": "scanner.lua",
+   "key": "Refreshed",
+   "en": "Refreshed",
+   "ko": "새로고침됨",
+   "code": [
+    "core/scanner/ui.lua:203: WowVision:speak(L[\"Refreshed\"])"
+   ],
+   "game_term": "지속시간 초기화",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Error",
+   "file": "scanner.lua",
+   "key": "Error",
+   "en": "Error",
+   "ko": "오류",
+   "code": [
+    "core/scanner/module.lua:85: children = { { key = \"error\", label = L[\"Error\"] .. \" \" .. tostring(children) } }",
+    "core/scanner/ui.lua:45: list = { { key = \"error\", label = L[\"Error\"] .. \" \" .. tostring(list) } }"
+   ],
+   "game_term": "오류",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Player",
+   "file": "scanner.lua",
+   "key": "Player",
+   "en": "Player",
+   "ko": "플레이어",
+   "code": [
+    "core/chat/links.lua:132: kindLabel = L[\"Player\"]",
+    "core/scanner/providers.lua:49: label = L[\"Player\"],",
+    "retail/monitors/CdmAuraMonitor.lua:678: { value = \"player\", label = L[\"Player\"] },"
+   ],
+   "game_term": "플레이어",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Corpse",
+   "file": "scanner.lua",
+   "key": "Corpse",
+   "en": "Corpse",
+   "ko": "시체",
+   "code": [
+    "core/navigation/corpse.lua:78: id = \"corpse\", n = L[\"Corpse\"], x = x, y = y, virtual = true,",
+    "core/scanner/providers.lua:61: local node = mapPositionNode(\"corpse\", L[\"Corpse\"], mapId, corpse)"
+   ],
+   "game_term": "시체",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Graveyards",
+   "file": "scanner.lua",
+   "key": "Graveyards",
+   "en": "Graveyards",
+   "ko": "무덤",
+   "code": [
+    "core/scanner/providers.lua:76: graveyard.name or L[\"Graveyards\"],",
+    "core/scanner/providers.lua:84: tinsert(out, { key = \"graveyards\", label = L[\"Graveyards\"], children = children })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Not dead",
+   "file": "scanner.lua",
+   "key": "Not dead",
+   "en": "Not dead",
+   "ko": "사망 상태 아님",
+   "code": [
+    "core/scanner/providers.lua:66: tinsert(out, { key = \"alive\", label = L[\"Not dead\"] })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech",
+   "file": "speech.lua",
+   "key": "Speech",
+   "en": "Speech",
+   "ko": "음성",
+   "code": [
+    "core/errors/module.lua:229: return L[\"Speech\"] -- never configured: the defaults",
+    "core/errors/module.lua:234: return L[\"Speech\"]",
+    "core/errors/module.lua:252: return L[\"Speech\"]",
+    "mists/speech.lua:3: module:setLabel(L[\"Speech\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Voice",
+   "file": "speech.lua",
+   "key": "Speech Voice",
+   "en": "Speech Voice",
+   "ko": "음성 목소리",
+   "code": [
+    "mists/speech.lua:66: label = L[\"Speech Voice\"],",
+    "retail/speech.lua:66: label = L[\"Speech Voice\"],",
+    "tbc/speech.lua:66: label = L[\"Speech Voice\"],",
+    "vanilla/speech.lua:46: label = L[\"Speech Voice\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Delay",
+   "file": "speech.lua",
+   "key": "Speech Delay",
+   "en": "Speech Delay",
+   "ko": "음성 지연",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Volume",
+   "file": "speech.lua",
+   "key": "Speech Volume",
+   "en": "Speech Volume",
+   "ko": "음성 음량",
+   "code": [
+    "mists/speech.lua:73: label = L[\"Speech Volume\"],",
+    "retail/groupHealth/module.lua:69: label = L[\"Speech Volume\"],",
+    "retail/speech.lua:73: label = L[\"Speech Volume\"],",
+    "tbc/speech.lua:73: label = L[\"Speech Volume\"],"
+   ],
+   "game_term": "음성 음량",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Rate",
+   "file": "speech.lua",
+   "key": "Speech Rate",
+   "en": "Speech Rate",
+   "ko": "음성 속도",
+   "code": [
+    "mists/speech.lua:82: label = L[\"Speech Rate\"],",
+    "retail/groupHealth/module.lua:59: label = L[\"Speech Rate\"],",
+    "retail/speech.lua:82: label = L[\"Speech Rate\"],",
+    "tbc/speech.lua:82: label = L[\"Speech Rate\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Screen Reader",
+   "file": "speech.lua",
+   "key": "Screen Reader",
+   "en": "Screen Reader",
+   "ko": "스크린 리더",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "en": "This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "ko": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+    }
+   ]
+  },
+  {
+   "id": "speech.lua::Speech Style",
+   "file": "speech.lua",
+   "key": "Speech Style",
+   "en": "Speech Style",
+   "ko": "음성 방식",
+   "code": [
+    "vanilla/speech.lua:80: label = L[\"Speech Style\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Direct",
+   "file": "speech.lua",
+   "key": "Direct",
+   "en": "Direct",
+   "ko": "직접",
+   "code": [
+    "core/navigation/maps/ui.lua:358: label = L[\"Direct\"],",
+    "vanilla/speech.lua:86: styleSetting:addChoice({ label = L[\"Direct\"], value = \"direct\" })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Buffered",
+   "file": "speech.lua",
+   "key": "Buffered",
+   "en": "Buffered",
+   "ko": "대기열",
+   "code": [
+    "vanilla/speech.lua:122: styleSetting:addChoice({ label = L[\"Buffered\"], value = \"queued\" })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Queue",
+   "file": "speech.lua",
+   "key": "Speech Queue",
+   "en": "Speech Queue",
+   "ko": "음성 대기열",
+   "code": [
+    "mists/speech.lua:92: label = L[\"Speech Queue\"],",
+    "retail/speech.lua:92: label = L[\"Speech Queue\"],",
+    "tbc/speech.lua:92: label = L[\"Speech Queue\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Sound Between Chat Lines",
+   "file": "speech.lua",
+   "key": "Sound Between Chat Lines",
+   "en": "Sound Between Chat Lines",
+   "ko": "대화 줄 사이 소리",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Activity Sound When Unfocused",
+   "file": "speech.lua",
+   "key": "Activity Sound When Unfocused",
+   "en": "Activity Sound When Unfocused",
+   "ko": "집중하지 않은 창의 활동 소리",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Targeting",
+   "file": "targeting.lua",
+   "key": "Targeting",
+   "en": "Targeting",
+   "ko": "대상 지정",
+   "code": [
+    "core/targeting/module.lua:3: module:setLabel(L[\"Targeting\"])"
+   ],
+   "game_term": "목표 선택 | 목표 선택 단축키",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Hard Target",
+   "file": "targeting.lua",
+   "key": "Hard Target",
+   "en": "Hard Target",
+   "ko": "하드 대상",
+   "code": [
+    "core/targeting/module.lua:200: label = L[\"Hard Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Announce Hard Target",
+   "file": "targeting.lua",
+   "key": "Announce Hard Target",
+   "en": "Announce Hard Target",
+   "ko": "하드 대상 알림",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Target Change",
+   "file": "targeting.lua",
+   "key": "Target Change",
+   "en": "Target Change",
+   "ko": "대상 변경",
+   "code": [
+    "core/targeting/module.lua:44: label = L[\"Target Change\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Announce on Target Change",
+     "en": "Announce on Target Change",
+     "ko": "대상 변경 시 알림"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Health Monitor",
+   "file": "targeting.lua",
+   "key": "Health Monitor",
+   "en": "Health Monitor",
+   "ko": "생명력 모니터",
+   "code": [
+    "core/targeting/module.lua:124: label = L[\"Health Monitor\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::Group Health Monitor",
+     "en": "Group Health Monitor",
+     "ko": "파티 및 공격대 생명력 모니터"
+    },
+    {
+     "id": "groupHealth.lua::Group health monitor unavailable here",
+     "en": "Group health monitor unavailable here",
+     "ko": "여기서는 파티 및 공격대 생명력 모니터 사용 불가"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+   "file": "targeting.lua",
+   "key": "Announce Raid Target Marker on Hard Target",
+   "en": "Announce Raid Target Marker on Hard Target",
+   "ko": "하드 대상의 대상 표시기 알림",
+   "code": [
+    "core/targeting/module.lua:71: label = L[\"Announce Raid Target Marker on Hard Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Star",
+   "file": "targeting.lua",
+   "key": "Star",
+   "en": "Star",
+   "ko": "별",
+   "code": [
+    "core/targeting/module.lua:14: L[\"Star\"],"
+   ],
+   "game_term": "별",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Circle",
+   "file": "targeting.lua",
+   "key": "Circle",
+   "en": "Circle",
+   "ko": "동그라미",
+   "code": [
+    "core/targeting/module.lua:15: L[\"Circle\"],"
+   ],
+   "game_term": "동그라미 | 원형",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Diamond",
+   "file": "targeting.lua",
+   "key": "Diamond",
+   "en": "Diamond",
+   "ko": "다이아몬드",
+   "code": [
+    "core/targeting/module.lua:16: L[\"Diamond\"],"
+   ],
+   "game_term": "다이아몬드",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Triangle",
+   "file": "targeting.lua",
+   "key": "Triangle",
+   "en": "Triangle",
+   "ko": "세모",
+   "code": [
+    "core/targeting/module.lua:17: L[\"Triangle\"],"
+   ],
+   "game_term": "세모 | 트라이앵글",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Moon",
+   "file": "targeting.lua",
+   "key": "Moon",
+   "en": "Moon",
+   "ko": "달",
+   "code": [
+    "core/targeting/module.lua:18: L[\"Moon\"],"
+   ],
+   "game_term": "달",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Square",
+   "file": "targeting.lua",
+   "key": "Square",
+   "en": "Square",
+   "ko": "네모",
+   "code": [
+    "core/targeting/module.lua:19: L[\"Square\"],"
+   ],
+   "game_term": "네모",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::X",
+   "file": "targeting.lua",
+   "key": "X",
+   "en": "X",
+   "ko": "가위표",
+   "code": [
+    "core/targeting/module.lua:20: L[\"X\"],"
+   ],
+   "game_term": "X",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Skull",
+   "file": "targeting.lua",
+   "key": "Skull",
+   "en": "Skull",
+   "ko": "해골",
+   "code": [
+    "core/targeting/module.lua:21: L[\"Skull\"],"
+   ],
+   "game_term": "해골",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Soft Target Enemy",
+   "file": "targeting.lua",
+   "key": "Soft Target Enemy",
+   "en": "Soft Target Enemy",
+   "ko": "적 소프트 대상",
+   "code": [
+    "core/targeting/module.lua:381: label = L[\"Soft Target Enemy\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend",
+     "en": "Soft Target Friend",
+     "ko": "아군 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Arc",
+     "en": "Soft Target Friend Arc",
+     "ko": "아군 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Range",
+     "en": "Soft Target Friend Range",
+     "ko": "아군 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Friend",
+   "file": "targeting.lua",
+   "key": "Soft Target Friend",
+   "en": "Soft Target Friend",
+   "ko": "아군 소프트 대상",
+   "code": [
+    "core/targeting/module.lua:394: label = L[\"Soft Target Friend\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Friend Arc",
+     "en": "Soft Target Friend Arc",
+     "ko": "아군 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Range",
+     "en": "Soft Target Friend Range",
+     "ko": "아군 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Interact",
+   "file": "targeting.lua",
+   "key": "Soft Target Interact",
+   "en": "Soft Target Interact",
+   "ko": "상호작용 소프트 대상",
+   "code": [
+    "core/targeting/module.lua:407: label = L[\"Soft Target Interact\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Interact Arc",
+     "en": "Soft Target Interact Arc",
+     "ko": "상호작용 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Interact Range",
+     "en": "Soft Target Interact Range",
+     "ko": "상호작용 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Target in Combat Sound",
+   "file": "targeting.lua",
+   "key": "Target in Combat Sound",
+   "en": "Target in Combat Sound",
+   "ko": "전투 중인 대상 소리",
+   "code": [
+    "core/targeting/module.lua:109: label = L[\"Target in Combat Sound\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Shown on Raid Frames in Combat",
+     "en": "Shown on Raid Frames in Combat",
+     "ko": "전투 중 공격대창에 표시"
+    },
+    {
+     "id": "minimap.lua::Not in combat",
+     "en": "Not in combat",
+     "ko": "전투 중에는 불가"
+    },
+    {
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "en": "Cannot set virtual focus while in combat.",
+     "ko": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Enemy Arc",
+   "file": "targeting.lua",
+   "key": "Soft Target Enemy Arc",
+   "en": "Soft Target Enemy Arc",
+   "ko": "적 소프트 대상 각도",
+   "code": [
+    "core/targeting/module.lua:387: arcLabel = L[\"Soft Target Enemy Arc\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend",
+     "en": "Soft Target Friend",
+     "ko": "아군 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Arc",
+     "en": "Soft Target Friend Arc",
+     "ko": "아군 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Range",
+     "en": "Soft Target Friend Range",
+     "ko": "아군 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Enemy Range",
+   "file": "targeting.lua",
+   "key": "Soft Target Enemy Range",
+   "en": "Soft Target Enemy Range",
+   "ko": "적 소프트 대상 거리",
+   "code": [
+    "core/targeting/module.lua:388: rangeLabel = L[\"Soft Target Enemy Range\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend",
+     "en": "Soft Target Friend",
+     "ko": "아군 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Arc",
+     "en": "Soft Target Friend Arc",
+     "ko": "아군 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Range",
+     "en": "Soft Target Friend Range",
+     "ko": "아군 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Friend Arc",
+   "file": "targeting.lua",
+   "key": "Soft Target Friend Arc",
+   "en": "Soft Target Friend Arc",
+   "ko": "아군 소프트 대상 각도",
+   "code": [
+    "core/targeting/module.lua:400: arcLabel = L[\"Soft Target Friend Arc\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Friend",
+     "en": "Soft Target Friend",
+     "ko": "아군 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Range",
+     "en": "Soft Target Friend Range",
+     "ko": "아군 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Friend Range",
+   "file": "targeting.lua",
+   "key": "Soft Target Friend Range",
+   "en": "Soft Target Friend Range",
+   "ko": "아군 소프트 대상 거리",
+   "code": [
+    "core/targeting/module.lua:401: rangeLabel = L[\"Soft Target Friend Range\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Friend",
+     "en": "Soft Target Friend",
+     "ko": "아군 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Friend Arc",
+     "en": "Soft Target Friend Arc",
+     "ko": "아군 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Interact Arc",
+   "file": "targeting.lua",
+   "key": "Soft Target Interact Arc",
+   "en": "Soft Target Interact Arc",
+   "ko": "상호작용 소프트 대상 각도",
+   "code": [
+    "core/targeting/module.lua:413: arcLabel = L[\"Soft Target Interact Arc\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Interact",
+     "en": "Soft Target Interact",
+     "ko": "상호작용 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Interact Range",
+     "en": "Soft Target Interact Range",
+     "ko": "상호작용 소프트 대상 거리"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Target Interact Range",
+   "file": "targeting.lua",
+   "key": "Soft Target Interact Range",
+   "en": "Soft Target Interact Range",
+   "ko": "상호작용 소프트 대상 거리",
+   "code": [
+    "core/targeting/module.lua:414: rangeLabel = L[\"Soft Target Interact Range\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Target Interact",
+     "en": "Soft Target Interact",
+     "ko": "상호작용 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Interact Arc",
+     "en": "Soft Target Interact Arc",
+     "ko": "상호작용 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy",
+     "en": "Soft Target Enemy",
+     "ko": "적 소프트 대상"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Arc",
+     "en": "Soft Target Enemy Arc",
+     "ko": "적 소프트 대상 각도"
+    },
+    {
+     "id": "targeting.lua::Soft Target Enemy Range",
+     "en": "Soft Target Enemy Range",
+     "ko": "적 소프트 대상 거리"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Directly in Front",
+   "file": "targeting.lua",
+   "key": "Directly in Front",
+   "en": "Directly in Front",
+   "ko": "정면",
+   "code": [
+    "core/targeting/module.lua:258: { label = L[\"Directly in Front\"], value = 0 },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::15 Degrees in Front",
+     "en": "15 Degrees in Front",
+     "ko": "전방 15도"
+    },
+    {
+     "id": "targeting.lua::180 Degrees in Front",
+     "en": "180 Degrees in Front",
+     "ko": "전방 180도"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::15 Degrees in Front",
+   "file": "targeting.lua",
+   "key": "15 Degrees in Front",
+   "en": "15 Degrees in Front",
+   "ko": "전방 15도",
+   "code": [
+    "core/targeting/module.lua:259: { label = L[\"15 Degrees in Front\"], value = 1 },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::180 Degrees in Front",
+     "en": "180 Degrees in Front",
+     "ko": "전방 180도"
+    },
+    {
+     "id": "targeting.lua::Directly in Front",
+     "en": "Directly in Front",
+     "ko": "정면"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::180 Degrees in Front",
+   "file": "targeting.lua",
+   "key": "180 Degrees in Front",
+   "en": "180 Degrees in Front",
+   "ko": "전방 180도",
+   "code": [
+    "core/targeting/module.lua:260: { label = L[\"180 Degrees in Front\"], value = 2 },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::15 Degrees in Front",
+     "en": "15 Degrees in Front",
+     "ko": "전방 15도"
+    },
+    {
+     "id": "targeting.lua::Directly in Front",
+     "en": "Directly in Front",
+     "ko": "정면"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Soft Targeting With a Hard Target",
+   "file": "targeting.lua",
+   "key": "Soft Targeting With a Hard Target",
+   "en": "Soft Targeting With a Hard Target",
+   "ko": "하드 대상이 있을 때 소프트 대상 지정",
+   "code": [
+    "core/targeting/module.lua:423: label = L[\"Soft Targeting With a Hard Target\"],",
+    "core/targeting/module.lua:630: L[\"Soft Targeting With a Hard Target\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Only Without an Attackable Hard Target",
+   "file": "targeting.lua",
+   "key": "Only Without an Attackable Hard Target",
+   "en": "Only Without an Attackable Hard Target",
+   "ko": "공격 가능한 하드 대상이 없을 때만",
+   "code": [
+    "core/targeting/module.lua:427: { label = L[\"Only Without an Attackable Hard Target\"], value = \"noAttackableHardTarget\" },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Only Without a Hard Target",
+   "file": "targeting.lua",
+   "key": "Only Without a Hard Target",
+   "en": "Only Without a Hard Target",
+   "ko": "하드 대상이 없을 때만",
+   "code": [
+    "core/targeting/module.lua:428: { label = L[\"Only Without a Hard Target\"], value = \"noHardTarget\" },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    },
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    }
+   ]
+  }
+ ]
+}

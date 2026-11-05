@@ -1,0 +1,1438 @@
+{
+ "items": [
+  {
+   "id": "minimap.lua::Tracking",
+   "file": "minimap.lua",
+   "key": "Tracking",
+   "en": "Tracking",
+   "ko": "추적",
+   "code": [
+    "core/minimap/tracking.lua:164: label = L[\"Tracking\"],"
+   ],
+   "game_term": "추적",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Minimap Tracking",
+   "file": "minimap.lua",
+   "key": "Minimap Tracking",
+   "en": "Minimap Tracking",
+   "ko": "미니맵 추적",
+   "code": [
+    "core/minimap/tracking.lua:173: { key = \"minimap\", label = L[\"Minimap Tracking\"], children = minimapNodes },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Map Filter",
+   "file": "minimap.lua",
+   "key": "Map Filter",
+   "en": "Map Filter",
+   "ko": "지도 필터",
+   "code": [
+    "core/minimap/tracking.lua:174: { key = \"worldMap\", label = L[\"Map Filter\"], children = mapFilterNodes },"
+   ],
+   "game_term": "지도 필터",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::above",
+   "file": "minimap.lua",
+   "key": "above",
+   "en": "above",
+   "ko": "위",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::below",
+   "file": "minimap.lua",
+   "key": "below",
+   "en": "below",
+   "ko": "아래",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "misc.lua::Mists",
+   "file": "misc.lua",
+   "key": "Mists",
+   "en": "Mists",
+   "ko": "판다리아의 안개",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "misc.lua::Miscellaneous",
+   "file": "misc.lua",
+   "key": "Miscellaneous",
+   "en": "Miscellaneous",
+   "ko": "기타",
+   "code": [],
+   "game_term": "기타 | 기타 단축키 | 기타 설정",
+   "related": []
+  },
+  {
+   "id": "misc.lua::Cursor",
+   "file": "misc.lua",
+   "key": "Cursor",
+   "en": "Cursor",
+   "ko": "커서",
+   "code": [
+    "core/ui modules/cursor.lua:3: module:setLabel(L[\"Cursor\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "misc.lua::Tooltip",
+   "file": "misc.lua",
+   "key": "Tooltip",
+   "en": "Tooltip",
+   "ko": "툴팁",
+   "code": [
+    "core/ui modules/tooltip.lua:3: module:setLabel(L[\"Tooltip\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "misc.lua::Quality",
+   "file": "misc.lua",
+   "key": "Quality",
+   "en": "Quality",
+   "ko": "품질",
+   "code": [
+    "core/ui modules/tooltipQuality.lua:3: module:setLabel(L[\"Quality\"])"
+   ],
+   "game_term": "등급 | 품질",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Monitors",
+   "file": "monitors.lua",
+   "key": "Monitors",
+   "en": "Monitors",
+   "ko": "모니터",
+   "code": [
+    "core/monitors/module.lua:3: module:setLabel(L[\"Monitors\"])",
+    "core/monitors/module.lua:8: label = L[\"Monitors\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Rules",
+   "file": "monitors.lua",
+   "key": "Rules",
+   "en": "Rules",
+   "ko": "규칙",
+   "code": [
+    "core/monitors/Monitor.lua:12: label = L[\"Rules\"],"
+   ],
+   "game_term": "규칙",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Stagger Sounds",
+   "file": "monitors.lua",
+   "key": "Stagger Sounds",
+   "en": "Stagger Sounds",
+   "ko": "소리 간격 두기",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Stagger Delay (seconds)",
+   "file": "monitors.lua",
+   "key": "Stagger Delay (seconds)",
+   "en": "Stagger Delay (seconds)",
+   "ko": "소리 간격 (초)",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Bundle Speech",
+   "file": "monitors.lua",
+   "key": "Bundle Speech",
+   "en": "Bundle Speech",
+   "ko": "음성 묶기",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Speech Separator",
+   "file": "monitors.lua",
+   "key": "Speech Separator",
+   "en": "Speech Separator",
+   "ko": "음성 구분자",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::State Rule",
+   "file": "monitors.lua",
+   "key": "State Rule",
+   "en": "State Rule",
+   "ko": "상태 규칙",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Aura State Rule",
+     "en": "Aura State Rule",
+     "ko": "오라 상태 규칙"
+    },
+    {
+     "id": "monitors.lua::Cooldown State Rule",
+     "en": "Cooldown State Rule",
+     "ko": "재사용 대기시간 상태 규칙"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Event Rule",
+   "file": "monitors.lua",
+   "key": "Event Rule",
+   "en": "Event Rule",
+   "ko": "이벤트 규칙",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Filter",
+   "file": "monitors.lua",
+   "key": "Filter",
+   "en": "Filter",
+   "ko": "필터",
+   "code": [
+    "camelot/collections/shared.lua:35: nodes.proxyDropdown({ target = filterDropdown, label = L[\"Filter\"] })",
+    "camelot/legacy/challenges.lua:98: nodes.proxyDropdown({ target = list.FilterDropdown, label = L[\"Filter\"] })",
+    "camelot/lfg.lua:157: nodes.proxyDropdown({ target = frame.FilterDropdown, label = L[\"Filter\"] })",
+    "core/windows/training.lua:254: nodes.proxyDropdown({ target = filter, label = L[\"Filter\"] })"
+   ],
+   "game_term": "필터",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Event",
+   "file": "monitors.lua",
+   "key": "Event",
+   "en": "Event",
+   "ko": "이벤트",
+   "code": [],
+   "game_term": "이벤트",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Outputs",
+   "file": "monitors.lua",
+   "key": "Outputs",
+   "en": "Outputs",
+   "ko": "출력",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Sound",
+   "file": "monitors.lua",
+   "key": "Sound",
+   "en": "Sound",
+   "ko": "소리",
+   "code": [
+    "core/alerts/outputs.lua:118: label = L[\"Sound\"],",
+    "core/errors/module.lua:254: return L[\"Sound\"]"
+   ],
+   "game_term": "sound | 소리",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Message Template",
+   "file": "monitors.lua",
+   "key": "Message Template",
+   "en": "Message Template",
+   "ko": "메시지 템플릿",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Interrupt",
+   "file": "monitors.lua",
+   "key": "Interrupt",
+   "en": "Interrupt",
+   "ko": "음성 중단",
+   "code": [],
+   "game_term": "방해를 받아 취소되었습니다 | 차단",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Voice Path",
+   "file": "monitors.lua",
+   "key": "Voice Path",
+   "en": "Voice Path",
+   "ko": "음성 경로",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Healthy",
+   "file": "monitors.lua",
+   "key": "Healthy",
+   "en": "Healthy",
+   "ko": "정상",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Low Health",
+   "file": "monitors.lua",
+   "key": "Low Health",
+   "en": "Low Health",
+   "ko": "생명력 낮음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Low Health (%)",
+     "en": "Low Health (%)",
+     "ko": "생명력 낮음 (%)"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Critical Health",
+   "file": "monitors.lua",
+   "key": "Critical Health",
+   "en": "Critical Health",
+   "ko": "생명력 위험",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Critical Health (%)",
+     "en": "Critical Health (%)",
+     "ko": "생명력 위험 (%)"
+    },
+    {
+     "id": "monitors.lua::Critical health",
+     "en": "Critical health",
+     "ko": "생명력 위험"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Dead",
+   "file": "monitors.lua",
+   "key": "Dead",
+   "en": "Dead",
+   "ko": "죽음",
+   "code": [],
+   "game_term": "죽은 캐릭터 | 죽음",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Health Changed",
+   "file": "monitors.lua",
+   "key": "Health Changed",
+   "en": "Health Changed",
+   "ko": "생명력 변화",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Low Health (%)",
+   "file": "monitors.lua",
+   "key": "Low Health (%)",
+   "en": "Low Health (%)",
+   "ko": "생명력 낮음 (%)",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Low Health",
+     "en": "Low Health",
+     "ko": "생명력 낮음"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Critical Health (%)",
+   "file": "monitors.lua",
+   "key": "Critical Health (%)",
+   "en": "Critical Health (%)",
+   "ko": "생명력 위험 (%)",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Critical Health",
+     "en": "Critical Health",
+     "ko": "생명력 위험"
+    },
+    {
+     "id": "monitors.lua::Critical health",
+     "en": "Critical health",
+     "ko": "생명력 위험"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Health States",
+   "file": "monitors.lua",
+   "key": "Health States",
+   "en": "Health States",
+   "ko": "생명력 상태",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Critical health",
+   "file": "monitors.lua",
+   "key": "Critical health",
+   "en": "Critical health",
+   "ko": "생명력 위험",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Critical Health",
+     "en": "Critical Health",
+     "ko": "생명력 위험"
+    },
+    {
+     "id": "monitors.lua::Critical Health (%)",
+     "en": "Critical Health (%)",
+     "ko": "생명력 위험 (%)"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Sufficient",
+   "file": "monitors.lua",
+   "key": "Sufficient",
+   "en": "Sufficient",
+   "ko": "충분",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Low Power",
+   "file": "monitors.lua",
+   "key": "Low Power",
+   "en": "Low Power",
+   "ko": "자원 낮음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Low Power (%)",
+     "en": "Low Power (%)",
+     "ko": "자원 낮음 (%)"
+    },
+    {
+     "id": "monitors.lua::Low power",
+     "en": "Low power",
+     "ko": "자원 낮음"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Power Changed",
+   "file": "monitors.lua",
+   "key": "Power Changed",
+   "en": "Power Changed",
+   "ko": "자원 변화",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Low Power (%)",
+   "file": "monitors.lua",
+   "key": "Low Power (%)",
+   "en": "Low Power (%)",
+   "ko": "자원 낮음 (%)",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Low Power",
+     "en": "Low Power",
+     "ko": "자원 낮음"
+    },
+    {
+     "id": "monitors.lua::Low power",
+     "en": "Low power",
+     "ko": "자원 낮음"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Power States",
+   "file": "monitors.lua",
+   "key": "Power States",
+   "en": "Power States",
+   "ko": "자원 상태",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Low power",
+   "file": "monitors.lua",
+   "key": "Low power",
+   "en": "Low power",
+   "ko": "자원 낮음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Low Power",
+     "en": "Low Power",
+     "ko": "자원 낮음"
+    },
+    {
+     "id": "monitors.lua::Low Power (%)",
+     "en": "Low Power (%)",
+     "ko": "자원 낮음 (%)"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Spell",
+   "file": "monitors.lua",
+   "key": "Spell",
+   "en": "Spell",
+   "ko": "주문",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:12: { key = \"spell\", type = \"Spell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "classic/monitors/types/CooldownMonitor.lua:12: { key = \"spell\", type = \"Spell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "retail/monitors/CdmAuraMonitor.lua:444: { key = \"spell\", type = \"CdmSpell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },",
+    "retail/monitors/SpellCooldownMonitor.lua:286: { key = \"spell\", type = \"CooldownSpell\", persist = true, label = L[\"Spell\"], sortPriority = 2 },"
+   ],
+   "game_term": "주문",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Spell Name",
+   "file": "monitors.lua",
+   "key": "Spell Name",
+   "en": "Spell Name",
+   "ko": "주문 이름",
+   "code": [
+    "core/graph/fieldControls.lua:91: label = L[\"Spell Name\"],"
+   ],
+   "game_term": "주문 이름",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Spell ID",
+   "file": "monitors.lua",
+   "key": "Spell ID",
+   "en": "Spell ID",
+   "ko": "주문 ID",
+   "code": [
+    "core/objects/types/Cooldown.lua:10: label = L[\"Spell ID\"],",
+    "core/objects/types/Cooldown.lua:109: label = L[\"Spell ID\"],",
+    "core/objects/types/unit/Aura.lua:169: { type = \"Number\", key = \"spellId\", label = L[\"Spell ID\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Spell ID",
+     "en": "Spell ID",
+     "ko": "주문 ID"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Aura Monitor",
+   "file": "monitors.lua",
+   "key": "Aura Monitor",
+   "en": "Aura Monitor",
+   "ko": "오라 모니터",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:226: return self.label or (L[\"Aura Monitor\"] .. \" (\" .. (self.unit or \"target\") .. \")\")"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Aura Name",
+   "file": "monitors.lua",
+   "key": "Aura Name",
+   "en": "Aura Name",
+   "ko": "오라 이름",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Aura State Rule",
+   "file": "monitors.lua",
+   "key": "Aura State Rule",
+   "en": "Aura State Rule",
+   "ko": "오라 상태 규칙",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:179: return L[\"Aura State Rule\"]",
+    "classic/monitors/types/AuraMonitor.lua:194: return { { key = \"AuraState\", label = L[\"Aura State Rule\"] } }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Cooldown State Rule",
+     "en": "Cooldown State Rule",
+     "ko": "재사용 대기시간 상태 규칙"
+    },
+    {
+     "id": "monitors.lua::State Rule",
+     "en": "State Rule",
+     "ko": "상태 규칙"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Applied by Player",
+   "file": "monitors.lua",
+   "key": "Applied by Player",
+   "en": "Applied by Player",
+   "ko": "플레이어가 적용함",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:13: { key = \"playerOnly\", type = \"Bool\", persist = true, default = true, label = L[\"Applied by Player\"], sortPriority = 2 },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Announce on Target Change",
+   "file": "monitors.lua",
+   "key": "Announce on Target Change",
+   "en": "Announce on Target Change",
+   "ko": "대상 변경 시 알림",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:187: { key = \"announceOnUnitChange\", type = \"Bool\", default = false, persist = true, label = L[\"Announce on Target Change\"], sortPriority = 2 },",
+    "retail/monitors/CdmAuraMonitor.lua:683: { key = \"announceOnUnitChange\", type = \"Bool\", default = false, persist = true, label = L[\"Announce on Target Change\"], sortPriority = 2 },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Target Change",
+     "en": "Target Change",
+     "ko": "대상 변경"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Missing",
+   "file": "monitors.lua",
+   "key": "Missing",
+   "en": "Missing",
+   "ko": "없음",
+   "code": [
+    "camelot/crafting.lua:166: part = part .. \" (\" .. L[\"Missing\"] .. \")\"",
+    "classic/monitors/types/AuraMonitor.lua:47: label = L[\"Missing\"],",
+    "classic/monitors/types/AuraMonitor.lua:49: alert = { key = \"missing\", label = L[\"Missing\"] },",
+    "retail/monitors/CdmAuraMonitor.lua:467: label = L[\"Missing\"],"
+   ],
+   "game_term": "결여",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Applied",
+   "file": "monitors.lua",
+   "key": "Applied",
+   "en": "Applied",
+   "ko": "효과 적용",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:20: label = L[\"Applied\"],",
+    "classic/monitors/types/AuraMonitor.lua:22: alert = { key = \"applied\", label = L[\"Applied\"] },",
+    "retail/monitors/CdmAuraMonitor.lua:449: label = L[\"Applied\"],",
+    "retail/monitors/CdmAuraMonitor.lua:451: alert = { key = \"applied\", label = L[\"Applied\"] },"
+   ],
+   "game_term": "사용 | 효과 적용",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Pandemic",
+   "file": "monitors.lua",
+   "key": "Pandemic",
+   "en": "Pandemic",
+   "ko": "확산",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:29: label = L[\"Pandemic\"],",
+    "classic/monitors/types/AuraMonitor.lua:31: alert = { key = \"pandemic\", label = L[\"Pandemic\"] },",
+    "retail/monitors/CdmAuraMonitor.lua:458: label = L[\"Pandemic\"],",
+    "retail/monitors/CdmAuraMonitor.lua:460: alert = { key = \"pandemic\", label = L[\"Pandemic\"] },"
+   ],
+   "game_term": "확산",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Pandemic Window",
+   "file": "monitors.lua",
+   "key": "Pandemic Window",
+   "en": "Pandemic Window",
+   "ko": "확산 구간",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Pandemic Window (%)",
+     "en": "Pandemic Window (%)",
+     "ko": "확산 구간 (%)"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Expiring",
+   "file": "monitors.lua",
+   "key": "Expiring",
+   "en": "Expiring",
+   "ko": "만료 임박",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:38: label = L[\"Expiring\"],",
+    "classic/monitors/types/AuraMonitor.lua:40: alert = { key = \"expiring\", label = L[\"Expiring\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Aura Applied",
+   "file": "monitors.lua",
+   "key": "Aura Applied",
+   "en": "Aura Applied",
+   "ko": "오라 부여",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Aura Removed",
+   "file": "monitors.lua",
+   "key": "Aura Removed",
+   "en": "Aura Removed",
+   "ko": "오라 제거",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Pandemic Window (%)",
+   "file": "monitors.lua",
+   "key": "Pandemic Window (%)",
+   "en": "Pandemic Window (%)",
+   "ko": "확산 구간 (%)",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:14: { key = \"pandemicThreshold\", type = \"Number\", persist = true, default = 30, label = L[\"Pandemic Window (%)\"], sortPriority = 2 },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Pandemic Window",
+     "en": "Pandemic Window",
+     "ko": "확산 구간"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Expiry Threshold (seconds)",
+   "file": "monitors.lua",
+   "key": "Expiry Threshold (seconds)",
+   "en": "Expiry Threshold (seconds)",
+   "ko": "만료 임박 기준 (초)",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:15: { key = \"expiringThreshold\", type = \"Number\", persist = true, default = 5, label = L[\"Expiry Threshold (seconds)\"], sortPriority = 2 },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::All Auras",
+   "file": "monitors.lua",
+   "key": "All Auras",
+   "en": "All Auras",
+   "ko": "모든 오라",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Units",
+   "file": "monitors.lua",
+   "key": "Units",
+   "en": "Units",
+   "ko": "유닛",
+   "code": [],
+   "game_term": "유닛",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Cooldown",
+   "file": "monitors.lua",
+   "key": "Cooldown",
+   "en": "Cooldown",
+   "ko": "재사용 대기시간",
+   "code": [
+    "core/objects/types/Cooldown.lua:5: Cooldown:setLabel(L[\"Cooldown\"])",
+    "core/objects/types/Cooldown.lua:222: local name = self:get(params, \"name\") or L[\"Cooldown\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Cooldown Monitor",
+   "file": "monitors.lua",
+   "key": "Cooldown Monitor",
+   "en": "Cooldown Monitor",
+   "ko": "재사용 대기시간 모니터",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:216: return self.label or L[\"Cooldown Monitor\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Cooldown State Rule",
+   "file": "monitors.lua",
+   "key": "Cooldown State Rule",
+   "en": "Cooldown State Rule",
+   "ko": "재사용 대기시간 상태 규칙",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:183: return L[\"Cooldown State Rule\"]",
+    "classic/monitors/types/CooldownMonitor.lua:193: return { { key = \"CooldownState\", label = L[\"Cooldown State Rule\"] } }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Aura State Rule",
+     "en": "Aura State Rule",
+     "ko": "오라 상태 규칙"
+    },
+    {
+     "id": "monitors.lua::State Rule",
+     "en": "State Rule",
+     "ko": "상태 규칙"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Ready",
+   "file": "monitors.lua",
+   "key": "Ready",
+   "en": "Ready",
+   "ko": "준비 완료",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:18: label = L[\"Ready\"],",
+    "classic/monitors/types/CooldownMonitor.lua:20: alert = { key = \"ready\", label = L[\"Ready\"] },",
+    "core/objects/types/Cooldown.lua:225: return name .. \": \" .. L[\"Ready\"]",
+    "core/objects/types/Hearthstone.lua:33: label = L[\"Ready\"],"
+   ],
+   "game_term": "준비 | 준비 완료",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Charging",
+   "file": "monitors.lua",
+   "key": "Charging",
+   "en": "Charging",
+   "ko": "충전 중",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:27: label = L[\"Charging\"],",
+    "classic/monitors/types/CooldownMonitor.lua:29: alert = { key = \"charging\", label = L[\"Charging\"] },",
+    "retail/monitors/SpellCooldownMonitor.lua:300: label = L[\"Charging\"],",
+    "retail/monitors/SpellCooldownMonitor.lua:302: alert = { key = \"charging\", label = L[\"Charging\"] },"
+   ],
+   "game_term": "충전 중",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::On Cooldown",
+   "file": "monitors.lua",
+   "key": "On Cooldown",
+   "en": "On Cooldown",
+   "ko": "대기 중",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:36: label = L[\"On Cooldown\"],",
+    "classic/monitors/types/CooldownMonitor.lua:38: alert = { key = \"on_cooldown\", label = L[\"On Cooldown\"] },",
+    "core/objects/types/Cooldown.lua:17: label = L[\"On Cooldown\"],",
+    "retail/monitors/SpellCooldownMonitor.lua:309: label = L[\"On Cooldown\"],"
+   ],
+   "game_term": "대기 중 | 등록 대기 중",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Charge Gained",
+   "file": "monitors.lua",
+   "key": "Charge Gained",
+   "en": "Charge Gained",
+   "ko": "사용 횟수 부여",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:46: label = L[\"Charge Gained\"],",
+    "classic/monitors/types/CooldownMonitor.lua:48: alert = { key = \"charge_gained\", label = L[\"Charge Gained\"] },"
+   ],
+   "game_term": "사용 횟수 부여",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Charge Lost",
+   "file": "monitors.lua",
+   "key": "Charge Lost",
+   "en": "Charge Lost",
+   "ko": "사용 횟수 감소",
+   "code": [
+    "classic/monitors/types/CooldownMonitor.lua:55: label = L[\"Charge Lost\"],",
+    "classic/monitors/types/CooldownMonitor.lua:57: alert = { key = \"charge_lost\", label = L[\"Charge Lost\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Remaining",
+   "file": "monitors.lua",
+   "key": "Remaining",
+   "en": "Remaining",
+   "ko": "남은 시간",
+   "code": [
+    "core/objects/types/Cooldown.lua:142: label = L[\"Remaining\"],",
+    "core/objects/types/Hearthstone.lua:47: label = L[\"Remaining\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Is Ready",
+   "file": "monitors.lua",
+   "key": "Is Ready",
+   "en": "Is Ready",
+   "ko": "준비됨",
+   "code": [
+    "core/objects/types/Cooldown.lua:155: label = L[\"Is Ready\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Charges",
+   "file": "monitors.lua",
+   "key": "Charges",
+   "en": "Charges",
+   "ko": "사용 횟수",
+   "code": [
+    "core/objects/types/Cooldown.lua:163: label = L[\"Charges\"],",
+    "core/objects/types/unit/Aura.lua:121: { type = \"Number\", key = \"charges\", label = L[\"Charges\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Max Charges",
+   "file": "monitors.lua",
+   "key": "Max Charges",
+   "en": "Max Charges",
+   "ko": "최대 사용 횟수",
+   "code": [
+    "core/objects/types/Cooldown.lua:174: label = L[\"Max Charges\"],",
+    "core/objects/types/unit/Aura.lua:163: { type = \"Number\", key = \"maxCharges\", label = L[\"Max Charges\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Max Charges",
+     "en": "Max Charges",
+     "ko": "최대 사용 횟수"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Has Charges",
+   "file": "monitors.lua",
+   "key": "Has Charges",
+   "en": "Has Charges",
+   "ko": "사용 횟수 있음",
+   "code": [
+    "core/objects/types/Cooldown.lua:185: label = L[\"Has Charges\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Start Time",
+   "file": "monitors.lua",
+   "key": "Start Time",
+   "en": "Start Time",
+   "ko": "시작 시간",
+   "code": [
+    "core/objects/types/Cooldown.lua:125: label = L[\"Start Time\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Cooldown Manager Auras",
+   "file": "monitors.lua",
+   "key": "Cooldown Manager Auras",
+   "en": "Cooldown Manager Auras",
+   "ko": "재사용 대기시간 관리자 오라",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:674: CdmAuraMonitor.label = L[\"Cooldown Manager Auras\"]",
+    "retail/monitors/CdmAuraMonitor.lua:852: return L[\"Cooldown Manager Auras\"] .. \" (\" .. self:unitLabel() .. \")\""
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Cooldown Manager Aura Rule",
+     "en": "Cooldown Manager Aura Rule",
+     "ko": "재사용 대기시간 관리자 오라 규칙"
+    },
+    {
+     "id": "windows.lua::Cooldown Manager",
+     "en": "Cooldown Manager",
+     "ko": "재사용 대기시간 관리자"
+    },
+    {
+     "id": "windows.lua::Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "en": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "ko": "재사용 대기시간 관리자 변경 사항은 UI를 재시작한 뒤 적용됩니다. 준비되면 /reload를 입력하십시오."
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Cooldown Manager Aura Rule",
+   "file": "monitors.lua",
+   "key": "Cooldown Manager Aura Rule",
+   "en": "Cooldown Manager Aura Rule",
+   "ko": "재사용 대기시간 관리자 오라 규칙",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:667: return L[\"Cooldown Manager Aura Rule\"]",
+    "retail/monitors/CdmAuraMonitor.lua:693: return { { key = \"CdmAuraState\", label = L[\"Cooldown Manager Aura Rule\"] } }"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Cooldown Manager Auras",
+     "en": "Cooldown Manager Auras",
+     "ko": "재사용 대기시간 관리자 오라"
+    },
+    {
+     "id": "windows.lua::Cooldown Manager",
+     "en": "Cooldown Manager",
+     "ko": "재사용 대기시간 관리자"
+    },
+    {
+     "id": "windows.lua::Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "en": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "ko": "재사용 대기시간 관리자 변경 사항은 UI를 재시작한 뒤 적용됩니다. 준비되면 /reload를 입력하십시오."
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Target",
+   "file": "monitors.lua",
+   "key": "Target",
+   "en": "Target",
+   "ko": "대상",
+   "code": [
+    "core/navigation/targetRoute.lua:52: return usable(name) and name or L[\"Target\"]",
+    "retail/monitors/CdmAuraMonitor.lua:677: { value = \"target\", label = L[\"Target\"] },"
+   ],
+   "game_term": "대상",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::One Decimal Timer",
+   "file": "monitors.lua",
+   "key": "One Decimal Timer",
+   "en": "One Decimal Timer",
+   "ko": "소수점 한 자리 타이머",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:686: { key = \"decimalTimer\", type = \"Bool\", default = false, persist = true, label = L[\"One Decimal Timer\"], sortPriority = 2 },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Speak Tracked Auras",
+   "file": "monitors.lua",
+   "key": "Speak Tracked Auras",
+   "en": "Speak Tracked Auras",
+   "ko": "추적 중인 오라 읽기",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:906: label = L[\"Speak Tracked Auras\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::No tracked auras",
+     "en": "No tracked auras",
+     "ko": "추적 중인 오라 없음"
+    },
+    {
+     "id": "monitors.lua::Speak Tracked Cooldowns",
+     "en": "Speak Tracked Cooldowns",
+     "ko": "추적 중인 재사용 대기시간 읽기"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::No tracked auras",
+   "file": "monitors.lua",
+   "key": "No tracked auras",
+   "en": "No tracked auras",
+   "ko": "추적 중인 오라 없음",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:918: WowVision:speak(L[\"No tracked auras\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::No tracked buffs or bars",
+     "en": "No tracked buffs or bars",
+     "ko": "추적 중인 강화 효과 또는 막대 없음"
+    },
+    {
+     "id": "monitors.lua::No tracked cooldowns",
+     "en": "No tracked cooldowns",
+     "ko": "추적 중인 재사용 대기시간 없음"
+    },
+    {
+     "id": "monitors.lua::Speak Tracked Auras",
+     "en": "Speak Tracked Auras",
+     "ko": "추적 중인 오라 읽기"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::No tracked buffs or bars",
+   "file": "monitors.lua",
+   "key": "No tracked buffs or bars",
+   "en": "No tracked buffs or bars",
+   "ko": "추적 중인 강화 효과 또는 막대 없음",
+   "code": [
+    "retail/monitors/CdmAuraMonitor.lua:320: return graph.settings.spellControl(field, owner, cdmSpells, L[\"No tracked buffs or bars\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::No tracked auras",
+     "en": "No tracked auras",
+     "ko": "추적 중인 오라 없음"
+    },
+    {
+     "id": "monitors.lua::No tracked cooldowns",
+     "en": "No tracked cooldowns",
+     "ko": "추적 중인 재사용 대기시간 없음"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Spell Cooldowns",
+   "file": "monitors.lua",
+   "key": "Spell Cooldowns",
+   "en": "Spell Cooldowns",
+   "ko": "주문 재사용 대기시간",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:549: SpellCooldownMonitor.label = L[\"Spell Cooldowns\"]",
+    "retail/monitors/SpellCooldownMonitor.lua:679: return L[\"Spell Cooldowns\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Spell Cooldown Rule",
+   "file": "monitors.lua",
+   "key": "Spell Cooldown Rule",
+   "en": "Spell Cooldown Rule",
+   "ko": "주문 재사용 대기시간 규칙",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:429: return L[\"Spell Cooldown Rule\"]",
+    "retail/monitors/SpellCooldownMonitor.lua:556: { key = \"SpellCooldownState\", label = L[\"Spell Cooldown Rule\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Spell Proc Rule",
+   "file": "monitors.lua",
+   "key": "Spell Proc Rule",
+   "en": "Spell Proc Rule",
+   "ko": "주문 발동 규칙",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:542: return L[\"Spell Proc Rule\"]",
+    "retail/monitors/SpellCooldownMonitor.lua:557: { key = \"SpellProc\", label = L[\"Spell Proc Rule\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Proc",
+   "file": "monitors.lua",
+   "key": "Proc",
+   "en": "Proc",
+   "ko": "발동",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:443: label = L[\"Proc\"],",
+    "retail/monitors/SpellCooldownMonitor.lua:445: alert = { key = \"active\", label = L[\"Proc\"] },",
+    "retail/monitors/SpellCooldownMonitor.lua:526: return name .. \", \" .. L[\"Proc\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Proc Ended",
+   "file": "monitors.lua",
+   "key": "Proc Ended",
+   "en": "Proc Ended",
+   "ko": "발동 종료",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:452: label = L[\"Proc Ended\"],",
+    "retail/monitors/SpellCooldownMonitor.lua:454: alert = { key = \"inactive\", label = L[\"Proc Ended\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::No proc",
+   "file": "monitors.lua",
+   "key": "No proc",
+   "en": "No proc",
+   "ko": "발동 없음",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:528: return name .. \", \" .. L[\"No proc\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::charges",
+   "file": "monitors.lua",
+   "key": "charges",
+   "en": "charges",
+   "ko": "회",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:406: text = text .. secrets.whenNonZero(charges.currentCharges, \", \", \" \" .. L[\"charges\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::%d seconds",
+   "file": "monitors.lua",
+   "key": "%d seconds",
+   "en": "%d seconds",
+   "ko": "%d초",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:101: formatter:AddBreakpoint({ threshold = 0, format = L[\"%d seconds\"], step = 1, rounding = up })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::%d minutes %d seconds",
+     "en": "%d minutes %d seconds",
+     "ko": "%d분 %d초"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::%d minutes %d seconds",
+   "file": "monitors.lua",
+   "key": "%d minutes %d seconds",
+   "en": "%d minutes %d seconds",
+   "ko": "%d분 %d초",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:104: format = L[\"%d minutes %d seconds\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::%d seconds",
+     "en": "%d seconds",
+     "ko": "%d초"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::No essential or utility spells",
+   "file": "monitors.lua",
+   "key": "No essential or utility spells",
+   "en": "No essential or utility spells",
+   "ko": "핵심 능력 또는 보조 능력 주문 없음",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:276: return graph.settings.spellControl(field, owner, procSpells, L[\"No essential or utility spells\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::No spells with cooldowns",
+   "file": "monitors.lua",
+   "key": "No spells with cooldowns",
+   "en": "No spells with cooldowns",
+   "ko": "재사용 대기시간이 있는 주문 없음",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:273: return graph.settings.spellControl(field, owner, cooldownSpells, L[\"No spells with cooldowns\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "monitors.lua::Speak Tracked Cooldowns",
+   "file": "monitors.lua",
+   "key": "Speak Tracked Cooldowns",
+   "en": "Speak Tracked Cooldowns",
+   "ko": "추적 중인 재사용 대기시간 읽기",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:700: label = L[\"Speak Tracked Cooldowns\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::No tracked cooldowns",
+     "en": "No tracked cooldowns",
+     "ko": "추적 중인 재사용 대기시간 없음"
+    },
+    {
+     "id": "monitors.lua::Speak Tracked Auras",
+     "en": "Speak Tracked Auras",
+     "ko": "추적 중인 오라 읽기"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::No tracked cooldowns",
+   "file": "monitors.lua",
+   "key": "No tracked cooldowns",
+   "en": "No tracked cooldowns",
+   "ko": "추적 중인 재사용 대기시간 없음",
+   "code": [
+    "retail/monitors/SpellCooldownMonitor.lua:712: WowVision:speak(L[\"No tracked cooldowns\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::No tracked auras",
+     "en": "No tracked auras",
+     "ko": "추적 중인 오라 없음"
+    },
+    {
+     "id": "monitors.lua::No tracked buffs or bars",
+     "en": "No tracked buffs or bars",
+     "ko": "추적 중인 강화 효과 또는 막대 없음"
+    },
+    {
+     "id": "monitors.lua::Speak Tracked Cooldowns",
+     "en": "Speak Tracked Cooldowns",
+     "ko": "추적 중인 재사용 대기시간 읽기"
+    }
+   ]
+  },
+  {
+   "id": "monitors.lua::Toggle All Monitors",
+   "file": "monitors.lua",
+   "key": "Toggle All Monitors",
+   "en": "Toggle All Monitors",
+   "ko": "모든 모니터 켜기 끄기",
+   "code": [
+    "core/monitors/module.lua:89: label = L[\"Toggle All Monitors\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Navigation",
+   "file": "navigation.lua",
+   "key": "Navigation",
+   "en": "Navigation",
+   "ko": "길 안내",
+   "code": [
+    "core/navigation/maps/ui.lua:354: builder:pushContext(\"navigation\", L[\"Navigation\"])",
+    "core/navigation/maps/ui.lua:409: label = L[\"Navigation\"],",
+    "core/navigation/module.lua:3: module:setLabel(L[\"Navigation\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Auto-move to Interact Target",
+   "file": "navigation.lua",
+   "key": "Auto-move to Interact Target",
+   "en": "Auto-move to Interact Target",
+   "ko": "상호작용 대상에게 자동 이동",
+   "code": [
+    "core/navigation/module.lua:13: label = L[\"Auto-move to Interact Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Move to Bags",
+     "en": "Move to Bags",
+     "ko": "가방으로 이동"
+    },
+    {
+     "id": "windows.lua::Move to Bank",
+     "en": "Move to Bank",
+     "ko": "은행으로 이동"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Compass",
+   "file": "navigation.lua",
+   "key": "Compass",
+   "en": "Compass",
+   "ko": "나침반",
+   "code": [
+    "core/navigation/compass.lua:3: module:setLabel(L[\"Compass\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Speak Compass Direction",
+   "file": "navigation.lua",
+   "key": "Speak Compass Direction",
+   "en": "Speak Compass Direction",
+   "ko": "나침반 방향 읽기",
+   "code": [
+    "core/navigation/compass.lua:9: label = L[\"Speak Compass Direction\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::north",
+   "file": "navigation.lua",
+   "key": "north",
+   "en": "north",
+   "ko": "북쪽",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::northeast",
+   "file": "navigation.lua",
+   "key": "northeast",
+   "en": "northeast",
+   "ko": "북동쪽",
+   "code": [],
+   "game_term": "",
+   "related": []
+  }
+ ]
+}

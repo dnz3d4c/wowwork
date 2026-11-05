@@ -1,0 +1,1458 @@
+{
+ "items": [
+  {
+   "id": "targeting.lua::Always",
+   "file": "targeting.lua",
+   "key": "Always",
+   "en": "Always",
+   "ko": "항상",
+   "code": [
+    "core/chat/module.lua:9: { value = \"always\", label = L[\"Always\"] },",
+    "core/targeting/module.lua:429: { label = L[\"Always\"], value = \"always\" },"
+   ],
+   "game_term": "항상",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Make Soft Target the Hard Target",
+   "file": "targeting.lua",
+   "key": "Make Soft Target the Hard Target",
+   "en": "Make Soft Target the Hard Target",
+   "ko": "소프트 대상을 하드 대상으로 지정",
+   "code": [
+    "core/targeting/module.lua:444: label = L[\"Make Soft Target the Hard Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+     "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+     "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다"
+    },
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+     "en": "Announce Raid Target Marker on Hard Target",
+     "ko": "하드 대상의 대상 표시기 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Off",
+   "file": "targeting.lua",
+   "key": "Off",
+   "en": "Off",
+   "ko": "끄기",
+   "code": [
+    "core/targeting/module.lua:448: { label = L[\"Off\"], value = 0 },",
+    "core/ui modules/combat.lua:117: { label = L[\"Off\"], value = \"off\" },"
+   ],
+   "game_term": "끄기",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Enemies",
+   "file": "targeting.lua",
+   "key": "Enemies",
+   "en": "Enemies",
+   "ko": "적",
+   "code": [
+    "core/targeting/module.lua:449: { label = L[\"Enemies\"], value = 1 },"
+   ],
+   "game_term": "다수의 적",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Friends",
+   "file": "targeting.lua",
+   "key": "Friends",
+   "en": "Friends",
+   "ko": "친구",
+   "code": [
+    "classic/friends.lua:3: module:setLabel(L[\"Friends\"])",
+    "classic/friends.lua:723: builder:pushContext(\"friends\", L[\"Friends\"])",
+    "core/targeting/module.lua:450: { label = L[\"Friends\"], value = 2 },"
+   ],
+   "game_term": "친구 | 친구 등록",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::after combat",
+   "file": "targeting.lua",
+   "key": "after combat",
+   "en": "after combat",
+   "ko": "전투 후",
+   "code": [
+    "core/targeting/module.lua:345: text = text .. \", \" .. L[\"after combat\"]",
+    "core/targeting/module.lua:645: line = line .. \", \" .. L[\"after combat\"] .. \" \" .. writer.pending[name]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::not available",
+   "file": "targeting.lua",
+   "key": "not available",
+   "en": "not available",
+   "ko": "사용 불가",
+   "code": [
+    "core/targeting/module.lua:638: line = name .. \" \" .. L[\"not available\"]"
+   ],
+   "game_term": "사용 불가",
+   "related": [
+    {
+     "id": "minimap.lua::Minimap scanner not available on this client",
+     "en": "Minimap scanner not available on this client",
+     "ko": "이 클라이언트에서는 미니맵 스캐너 사용 불가"
+    },
+    {
+     "id": "navigation.lua::Turning is not available here",
+     "en": "Turning is not available here",
+     "ko": "여기서는 회전 불가"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::default",
+   "file": "targeting.lua",
+   "key": "default",
+   "en": "default",
+   "ko": "기본",
+   "code": [
+    "core/targeting/module.lua:642: line = line .. \" (\" .. L[\"default\"] .. \" \" .. tostring(C_CVar.GetCVarDefault(name)) .. \")\""
+   ],
+   "game_term": "기본 | 기본 이름 | 원래대로",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Virtual Focus",
+   "file": "targeting.lua",
+   "key": "Virtual Focus",
+   "en": "Virtual Focus",
+   "ko": "가상 주시 대상",
+   "code": [
+    "core/targeting/focus.lua:3: module:setLabel(L[\"Virtual Focus\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "en": "Cannot set virtual focus while in combat.",
+     "ko": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Target Focus",
+   "file": "targeting.lua",
+   "key": "Target Focus",
+   "en": "Target Focus",
+   "ko": "주시 대상 선택",
+   "code": [
+    "core/targeting/focus.lua:45: label = L[\"Target Focus\"] .. \" \" .. i,"
+   ],
+   "game_term": "주시 대상 선택",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Game Default",
+   "file": "targeting.lua",
+   "key": "Game Default",
+   "en": "Game Default",
+   "ko": "게임 기본값",
+   "code": [
+    "core/targeting/module.lua:257: { label = L[\"Game Default\"], value = GAME_DEFAULT },",
+    "core/targeting/module.lua:426: { label = L[\"Game Default\"], value = GAME_DEFAULT },",
+    "core/targeting/module.lua:447: { label = L[\"Game Default\"], value = GAME_DEFAULT },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::WowVision",
+   "file": "ui.lua",
+   "key": "WowVision",
+   "en": "WowVision",
+   "ko": "WowVision",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::UI",
+   "file": "ui.lua",
+   "key": "UI",
+   "en": "UI",
+   "ko": "인터페이스",
+   "code": [
+    "core/ui modules/module.lua:3: module:setLabel(L[\"UI\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Interrupt Speech on Window Close",
+   "file": "ui.lua",
+   "key": "Interrupt Speech on Window Close",
+   "en": "Interrupt Speech on Window Close",
+   "ko": "창을 닫을 때 음성 중단",
+   "code": [
+    "core/ui modules/module.lua:11: label = L[\"Interrupt Speech on Window Close\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Combat",
+   "file": "ui.lua",
+   "key": "Combat",
+   "en": "Combat",
+   "ko": "전투",
+   "code": [
+    "core/ui modules/combat.lua:3: module:setLabel(L[\"Combat\"])"
+   ],
+   "game_term": "전투",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Combat Started Alert",
+   "file": "ui.lua",
+   "key": "Combat Started Alert",
+   "en": "Combat Started Alert",
+   "ko": "전투 시작 경보",
+   "code": [
+    "core/ui modules/combat.lua:8: label = L[\"Combat Started Alert\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Flying Started Alert",
+     "en": "Flying Started Alert",
+     "ko": "비행 시작 경보"
+    },
+    {
+     "id": "ui.lua::combat started",
+     "en": "combat started",
+     "ko": "전투 시작"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Combat Ended Alert",
+   "file": "ui.lua",
+   "key": "Combat Ended Alert",
+   "en": "Combat Ended Alert",
+   "ko": "전투 종료 경보",
+   "code": [
+    "core/ui modules/combat.lua:22: label = L[\"Combat Ended Alert\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Flying Ended Alert",
+     "en": "Flying Ended Alert",
+     "ko": "비행 종료 경보"
+    },
+    {
+     "id": "ui.lua::Crowd Control Ended Alert",
+     "en": "Crowd Control Ended Alert",
+     "ko": "군중 제어 종료 경보"
+    },
+    {
+     "id": "ui.lua::combat ended",
+     "en": "combat ended",
+     "ko": "전투 종료"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::combat started",
+   "file": "ui.lua",
+   "key": "combat started",
+   "en": "combat started",
+   "ko": "전투 시작",
+   "code": [
+    "core/ui modules/combat.lua:16: return L[\"combat started\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Combat Started Alert",
+     "en": "Combat Started Alert",
+     "ko": "전투 시작 경보"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::combat ended",
+   "file": "ui.lua",
+   "key": "combat ended",
+   "en": "combat ended",
+   "ko": "전투 종료",
+   "code": [
+    "core/ui modules/combat.lua:30: return L[\"combat ended\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Combat Ended Alert",
+     "en": "Combat Ended Alert",
+     "ko": "전투 종료 경보"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Enemy Count Alert",
+   "file": "ui.lua",
+   "key": "Enemy Count Alert",
+   "en": "Enemy Count Alert",
+   "ko": "적 수 경보",
+   "code": [
+    "core/ui modules/combat.lua:38: label = L[\"Enemy Count Alert\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Count Enemies",
+   "file": "ui.lua",
+   "key": "Count Enemies",
+   "en": "Count Enemies",
+   "ko": "적 세기",
+   "code": [
+    "core/ui modules/combat.lua:94: label = L[\"Count Enemies\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Turn on enemy nameplates to count enemies",
+     "en": "Turn on enemy nameplates to count enemies",
+     "ko": "적을 세려면 적 이름표를 켜십시오"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Attacking You or Your Group",
+   "file": "ui.lua",
+   "key": "Attacking You or Your Group",
+   "en": "Attacking You or Your Group",
+   "ko": "나 또는 내 파티를 공격 중",
+   "code": [
+    "core/ui modules/combat.lua:97: { label = L[\"Attacking You or Your Group\"], value = \"group\" },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Attacking You",
+     "en": "Attacking You",
+     "ko": "나를 공격 중"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Attacking You",
+   "file": "ui.lua",
+   "key": "Attacking You",
+   "en": "Attacking You",
+   "ko": "나를 공격 중",
+   "code": [
+    "core/ui modules/combat.lua:98: { label = L[\"Attacking You\"], value = \"player\" },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Attacking You or Your Group",
+     "en": "Attacking You or Your Group",
+     "ko": "나 또는 내 파티를 공격 중"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Count Elite Enemies Only",
+   "file": "ui.lua",
+   "key": "Count Elite Enemies Only",
+   "en": "Count Elite Enemies Only",
+   "ko": "정예 적만 세기",
+   "code": [
+    "core/ui modules/combat.lua:105: label = L[\"Count Elite Enemies Only\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Turn on enemy nameplates to count enemies",
+   "file": "ui.lua",
+   "key": "Turn on enemy nameplates to count enemies",
+   "en": "Turn on enemy nameplates to count enemies",
+   "ko": "적을 세려면 적 이름표를 켜십시오",
+   "code": [
+    "core/ui modules/combat.lua:396: WowVision:speak(L[\"Turn on enemy nameplates to count enemies\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Turn on friendly NPC nameplates to learn NPC names",
+     "en": "Turn on friendly NPC nameplates to learn NPC names",
+     "ko": "NPC 이름을 알아내려면 아군 NPC 이름표를 켜십시오"
+    },
+    {
+     "id": "ui.lua::Count Enemies",
+     "en": "Count Enemies",
+     "ko": "적 세기"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Game Menu",
+   "file": "ui.lua",
+   "key": "Game Menu",
+   "en": "Game Menu",
+   "ko": "게임 메뉴",
+   "code": [
+    "core/windows/GameMenu.lua:3: module:setLabel(L[\"Game Menu\"])"
+   ],
+   "game_term": "게임 메뉴",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Windows",
+   "file": "ui.lua",
+   "key": "Windows",
+   "en": "Windows",
+   "ko": "창",
+   "code": [
+    "core/windows/module.lua:3: module:setLabel(L[\"Windows\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Button",
+   "file": "ui.lua",
+   "key": "Button",
+   "en": "Button",
+   "ko": "버튼",
+   "code": [
+    "core/graph/ControlTypes.lua:39: graph.registerControlType(\"button\", L[\"Button\"])"
+   ],
+   "game_term": "버튼",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Checkbox",
+   "file": "ui.lua",
+   "key": "Checkbox",
+   "en": "Checkbox",
+   "ko": "체크 상자",
+   "code": [
+    "core/graph/ControlTypes.lua:40: graph.registerControlType(\"toggle\", L[\"Checkbox\"])"
+   ],
+   "game_term": "체크박스",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Dropdown",
+   "file": "ui.lua",
+   "key": "Dropdown",
+   "en": "Dropdown",
+   "ko": "드롭다운",
+   "code": [
+    "core/graph/ControlTypes.lua:42: graph.registerControlType(\"dropdown\", L[\"Dropdown\"])",
+    "core/graph/dropdownMenu.lua:716: builder:pushContext(\"menu:\" .. levelIndex, L[\"Dropdown\"])"
+   ],
+   "game_term": "드롭다운",
+   "related": []
+  },
+  {
+   "id": "ui.lua::EditBox",
+   "file": "ui.lua",
+   "key": "EditBox",
+   "en": "Edit",
+   "ko": "편집",
+   "code": [
+    "core/graph/ControlTypes.lua:44: graph.registerControlType(\"editBox\", L[\"EditBox\"])"
+   ],
+   "game_term": "편집",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Separator",
+   "file": "ui.lua",
+   "key": "Separator",
+   "en": "Separator",
+   "ko": "구분선",
+   "code": [
+    "core/windows/options/ui.lua:256: return name .. \", \" .. L[\"Separator\"]",
+    "core/windows/options/ui.lua:258: return L[\"Separator\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Text",
+   "file": "ui.lua",
+   "key": "Text",
+   "en": "Text",
+   "ko": "텍스트",
+   "code": [],
+   "game_term": "텍스트",
+   "related": []
+  },
+  {
+   "id": "ui.lua::ProxyButton",
+   "file": "ui.lua",
+   "key": "ProxyButton",
+   "en": "Button",
+   "ko": "버튼",
+   "code": [],
+   "game_term": "버튼",
+   "related": []
+  },
+  {
+   "id": "ui.lua::ProxyCheckButton",
+   "file": "ui.lua",
+   "key": "ProxyCheckButton",
+   "en": "Checkbox",
+   "ko": "체크 상자",
+   "code": [],
+   "game_term": "체크박스",
+   "related": []
+  },
+  {
+   "id": "ui.lua::ProxyDropdownButton",
+   "file": "ui.lua",
+   "key": "ProxyDropdownButton",
+   "en": "Dropdown",
+   "ko": "드롭다운",
+   "code": [],
+   "game_term": "드롭다운",
+   "related": []
+  },
+  {
+   "id": "ui.lua::ProxyEditBox",
+   "file": "ui.lua",
+   "key": "ProxyEditBox",
+   "en": "Edit",
+   "ko": "편집",
+   "code": [],
+   "game_term": "편집",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Panel",
+   "file": "ui.lua",
+   "key": "Panel",
+   "en": "Panel",
+   "ko": "패널",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::List",
+   "file": "ui.lua",
+   "key": "List",
+   "en": "List",
+   "ko": "목록",
+   "code": [
+    "core/windows/containers.lua:158: { label = L[\"List\"], value = \"list\" },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Bar",
+   "file": "ui.lua",
+   "key": "Bar",
+   "en": "Bar",
+   "ko": "막대",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Tabs",
+   "file": "ui.lua",
+   "key": "Tabs",
+   "en": "Tabs",
+   "ko": "탭",
+   "code": [
+    "camelot/character.lua:992: builder:pushContext(\"tabs\", L[\"Tabs\"])",
+    "camelot/collections/wardrobe.lua:19: builder:pushContext(\"wardrobeTabs\", L[\"Tabs\"])",
+    "camelot/crafting.lua:72: builder:pushContext(\"tabs\", L[\"Tabs\"])",
+    "camelot/legacy/legacy.lua:24: builder:pushContext(\"tabs\", L[\"Tabs\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Side Tabs",
+   "file": "ui.lua",
+   "key": "Side Tabs",
+   "en": "Side Tabs",
+   "ko": "측면 탭",
+   "code": [
+    "mists/spellbook/spellbook.lua:28: builder:pushContext(\"sideTabs\", L[\"Side Tabs\"])",
+    "tbc/spellbook.lua:85: builder:pushContext(\"sideTabs\", L[\"Side Tabs\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::selected",
+   "file": "ui.lua",
+   "key": "selected",
+   "en": "selected",
+   "ko": "선택됨",
+   "code": [
+    "camelot/character.lua:44: return L[\"selected\"]",
+    "camelot/collections/pets.lua:41: return L[\"selected\"]",
+    "camelot/collections/tabs.lua:68: return module.getSelectedTab() == tabIndex and L[\"selected\"] or nil",
+    "camelot/collections/tabs.lua:80: WowVision:speak(L[\"selected\"])"
+   ],
+   "game_term": "선택됨",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Checked",
+   "file": "ui.lua",
+   "key": "Checked",
+   "en": "Checked",
+   "ko": "체크됨",
+   "code": [
+    "camelot/legacy/challenges.lua:209: return isTracked(id) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/contextMenu.lua:98: return entry.isChecked() and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:414: return selectionState(captured) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:436: return capturedRegion:IsShown() and L[\"Checked\"] or L[\"Unchecked\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Unchecked",
+   "file": "ui.lua",
+   "key": "Unchecked",
+   "en": "Unchecked",
+   "ko": "체크 안 됨",
+   "code": [
+    "camelot/legacy/challenges.lua:209: return isTracked(id) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/contextMenu.lua:98: return entry.isChecked() and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:414: return selectionState(captured) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:436: return capturedRegion:IsShown() and L[\"Checked\"] or L[\"Unchecked\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Disable",
+   "file": "ui.lua",
+   "key": "Disable",
+   "en": "Disable",
+   "ko": "비활성화",
+   "code": [],
+   "game_term": "비활성 | 비활성화",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Disabled",
+   "file": "ui.lua",
+   "key": "Disabled",
+   "en": "Disabled",
+   "ko": "사용 안 함",
+   "code": [
+    "camelot/gamepadRadial.lua:59: return text .. \", \" .. L[\"Disabled\"]",
+    "core/graph/dropdownMenu.lua:423: return L[\"Disabled\"]",
+    "core/graph/nodes.lua:210: return L[\"Disabled\"]",
+    "core/graph/nodes.lua:563: return L[\"Disabled\"]"
+   ],
+   "game_term": "무력화 | 비활성화 | 사용 안 함",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Enable",
+   "file": "ui.lua",
+   "key": "Enable",
+   "en": "Enable",
+   "ko": "활성화",
+   "code": [],
+   "game_term": "보이기 | 활성 | 활성화",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Enabled",
+   "file": "ui.lua",
+   "key": "Enabled",
+   "en": "Enabled",
+   "ko": "사용함",
+   "code": [
+    "core/alerts/alerts.lua:21: label = L[\"Enabled\"],",
+    "core/alerts/alerts.lua:123: label = L[\"Enabled\"],",
+    "core/buffers/Buffer.lua:11: label = L[\"Enabled\"],",
+    "core/graph/settings.lua:473: label = L[\"Enabled\"],"
+   ],
+   "game_term": "사용함 | 활성화 | 활성화 중",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Menu",
+   "file": "ui.lua",
+   "key": "Menu",
+   "en": "Menu",
+   "ko": "메뉴",
+   "code": [
+    "core/graph/contextMenu.lua:146: builder:pushContext(\"contextMenu\", label or L[\"Menu\"])",
+    "core/graph/contextMenu.lua:168: WowVision:speak(L[\"Menu\"] .. \" \" .. L[\"Empty\"])",
+    "core/graph/contextMenu.lua:171: contextMenu.pushEntries(L[\"Menu\"], entries)",
+    "core/windows/GameMenu.lua:12: graph.nodes.proxyButtonMenu(builder, { label = L[\"Menu\"], frame = frame })"
+   ],
+   "game_term": "메뉴",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Context Menu",
+   "file": "ui.lua",
+   "key": "Context Menu",
+   "en": "Context Menu",
+   "ko": "상황별 메뉴",
+   "code": [
+    "core/ui modules/module.lua:327: label = L[\"Context Menu\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Context Menu",
+     "en": "Context Menu",
+     "ko": "상황별 메뉴"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Left Click",
+   "file": "ui.lua",
+   "key": "Left Click",
+   "en": "Left Click",
+   "ko": "왼쪽 클릭",
+   "code": [
+    "core/chat/ui.lua:286: label = left:format(part.display) .. \", \" .. L[\"Left Click\"],",
+    "core/graph/nodes.lua:254: label = clickLabel(\"left\", L[\"Left Click\"]),",
+    "core/ui modules/module.lua:260: label = L[\"Left Click\"],",
+    "retail/socialUI.lua:470: add({ label = L[\"Left Click\"], click = { emulatedKey = \"LeftButton\", target = captured } })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Left Click",
+     "en": "Left Click",
+     "ko": "왼쪽 클릭"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Drag",
+   "file": "ui.lua",
+   "key": "Drag",
+   "en": "Drag",
+   "ko": "끌기",
+   "code": [
+    "core/graph/nodes.lua:262: label = L[\"Drag\"],",
+    "core/ui modules/module.lua:278: label = L[\"Drag\"],"
+   ],
+   "game_term": "끌기",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Available",
+   "file": "ui.lua",
+   "key": "Available",
+   "en": "Available",
+   "ko": "사용 가능",
+   "code": [
+    "mists/auction.lua:253: tinsert(parts, L[\"Available\"] .. \" \" .. tostring(entry.totalQuantity or 0))",
+    "mists/auction.lua:284: tinsert(parts, L[\"Available\"] .. \" \" .. tostring(entry.quantity or 0))",
+    "retail/talentTree.lua:156: return L[\"Available\"]"
+   ],
+   "game_term": "구매 가능 수량 | 대화 가능 | 사용 가능 | 수행 가능 | 잔류",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Unavailable",
+   "file": "ui.lua",
+   "key": "Unavailable",
+   "en": "Unavailable",
+   "ko": "사용 불가",
+   "code": [
+    "core/windows/training.lua:90: label = label .. \", \" .. L[\"Unavailable\"]",
+    "core/windows/training.lua:295: builder:addItem(ControlId.structural(\"services:unsupported\"), nodes.text({ label = L[\"Unavailable\"] }))"
+   ],
+   "game_term": "불가능 | 사용 불가 | 측정 불가",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Collapsed",
+   "file": "ui.lua",
+   "key": "Collapsed",
+   "en": "Collapsed",
+   "ko": "접힘",
+   "code": [
+    "camelot/character.lua:55: return isCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "camelot/crafting.lua:279: return node:IsCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "camelot/legacy/challenges.lua:82: return node:IsCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "core/graph/Host.lua:819: return expanded and L[\"Expanded\"] or L[\"Collapsed\"]"
+   ],
+   "game_term": "접힘",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Expanded",
+   "file": "ui.lua",
+   "key": "Expanded",
+   "en": "Expanded",
+   "ko": "펼쳐짐",
+   "code": [
+    "camelot/character.lua:55: return isCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "camelot/crafting.lua:279: return node:IsCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "camelot/legacy/challenges.lua:82: return node:IsCollapsed() and L[\"Collapsed\"] or L[\"Expanded\"]",
+    "core/graph/Host.lua:819: return expanded and L[\"Expanded\"] or L[\"Collapsed\"]"
+   ],
+   "game_term": "펼쳐짐",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Expand/Collapse",
+   "file": "ui.lua",
+   "key": "Expand/Collapse",
+   "en": "Expand/Collapse",
+   "ko": "펼치기/접기",
+   "code": [
+    "retail/groupFinder.lua:253: add({ label = L[\"Expand/Collapse\"], click = { emulatedKey = \"LeftButton\", target = expandButton } })",
+    "tbc/lfg.lua:199: add({ label = L[\"Expand/Collapse\"], click = { emulatedKey = \"LeftButton\", target = expandButton } })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Known",
+   "file": "ui.lua",
+   "key": "Known",
+   "en": "Known",
+   "ko": "습득함",
+   "code": [
+    "core/windows/training.lua:88: label = label .. \", \" .. L[\"Known\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Search",
+   "file": "ui.lua",
+   "key": "Search",
+   "en": "Search",
+   "ko": "검색",
+   "code": [
+    "camelot/collections/shared.lua:28: nodes.proxyEditBox({ editBox = searchBox, label = L[\"Search\"] })",
+    "camelot/crafting.lua:321: nodes.proxyEditBox({ editBox = list.SearchBox, label = L[\"Search\"] })",
+    "camelot/legacy/challenges.lua:93: builder:addItem(ControlId.structural(\"search\"), nodes.proxyEditBox({ editBox = list.SearchBox, label = L[\"Search\"] }))",
+    "camelot/lfg.lua:151: nodes.proxyEditBox({ editBox = frame.EditBox, label = L[\"Search\"] })"
+   ],
+   "game_term": "검색",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Clear",
+   "file": "ui.lua",
+   "key": "Clear",
+   "en": "Clear",
+   "ko": "지우기",
+   "code": [
+    "mists/collections/MountJournal.lua:84: nodes.proxyButton({ target = MountJournalSearchBox.clearButton, label = L[\"Clear\"] })"
+   ],
+   "game_term": "Clear | clear | 지우기 | 해제",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Results",
+   "file": "ui.lua",
+   "key": "Results",
+   "en": "Results",
+   "ko": "결과",
+   "code": [
+    "mists/auction.lua:241: label = L[\"Results\"],",
+    "tbc/auction/module.lua:490: builder:pushContext(\"filteredResults\", L[\"Results\"])",
+    "tbc/auction/module.lua:586: label = L[\"Results\"],",
+    "tbc/auction/ScanSession.lua:147: WowVision:speak(self.L[\"Scan complete\"] .. \", \" .. #self.results .. \" \" .. self.L[\"Results\"] .. \" in \" .. progress.total .. \" \" .. self.L[\"scanned\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Categories",
+   "file": "ui.lua",
+   "key": "Categories",
+   "en": "Categories",
+   "ko": "범주",
+   "code": [
+    "camelot/legacy/challenges.lua:109: label = L[\"Categories\"],",
+    "core/chat/ui.lua:519: builder:pushContext(\"categories\", L[\"Categories\"])",
+    "core/windows/options/ui.lua:1309: label = L[\"Categories\"],",
+    "mists/auction.lua:180: label = L[\"Categories\"],"
+   ],
+   "game_term": "범주",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Page",
+   "file": "ui.lua",
+   "key": "Page",
+   "en": "Page",
+   "ko": "페이지",
+   "code": [
+    "camelot/gamepadBars.lua:48: label = label .. \", \" .. L[\"Page\"] .. \" \" .. page",
+    "retail/containers/Bank.lua:154: return current ~= nil and current.tooltipText or L[\"Page\"]",
+    "tbc/auction/ScanSession.lua:137: WowVision:speak(self.L[\"Scanning\"] .. \", \" .. pages .. \" \" .. self.L[\"Page\"])",
+    "tbc/auction/ScanSession.lua:141: WowVision:speak(self.L[\"Page\"] .. \" \" .. progress.page .. \" / \" .. progress.totalPages)"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Previous Page",
+   "file": "ui.lua",
+   "key": "Previous Page",
+   "en": "Previous Page",
+   "ko": "이전 페이지",
+   "code": [
+    "core/graph/nodes.lua:942: nodes.proxyButton({ target = paging.PrevPageButton, label = L[\"Previous Page\"] })",
+    "core/windows/itemText.lua:51: nodes.proxyButton({ target = ItemTextPrevPageButton, label = L[\"Previous Page\"] })",
+    "core/windows/mail.lua:98: nodes.proxyButton({ target = InboxPrevPageButton, label = L[\"Previous Page\"] })",
+    "core/windows/merchant.lua:190: nodes.proxyButton({ target = MerchantPrevPageButton, label = L[\"Previous Page\"] })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Previous Page",
+     "en": "Previous Page",
+     "ko": "이전 페이지"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Next Page",
+   "file": "ui.lua",
+   "key": "Next Page",
+   "en": "Next Page",
+   "ko": "다음 페이지",
+   "code": [
+    "core/graph/nodes.lua:956: nodes.proxyButton({ target = paging.NextPageButton, label = L[\"Next Page\"] })",
+    "core/windows/itemText.lua:58: nodes.proxyButton({ target = ItemTextNextPageButton, label = L[\"Next Page\"] })",
+    "core/windows/mail.lua:105: nodes.proxyButton({ target = InboxNextPageButton, label = L[\"Next Page\"] })",
+    "core/windows/merchant.lua:197: nodes.proxyButton({ target = MerchantNextPageButton, label = L[\"Next Page\"] })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Next Page",
+     "en": "Next Page",
+     "ko": "다음 페이지"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Add",
+   "file": "ui.lua",
+   "key": "Add",
+   "en": "Add",
+   "ko": "추가",
+   "code": [
+    "core/graph/fieldControls.lua:507: label = L[\"Add\"],",
+    "core/graph/settings.lua:422: label = L[\"Add\"],",
+    "core/ui modules/graphBindings.lua:109: label = L[\"Add\"],"
+   ],
+   "game_term": "전투 참여 | 추가",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Remove",
+   "file": "ui.lua",
+   "key": "Remove",
+   "en": "Remove",
+   "ko": "제거",
+   "code": [
+    "core/graph/fieldControls.lua:496: label = L[\"Remove\"],",
+    "core/graph/settings.lua:347: label = L[\"Remove\"],"
+   ],
+   "game_term": "내보내기 | 제거 | 지금제거 | 추방",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Unlearn",
+   "file": "ui.lua",
+   "key": "Unlearn",
+   "en": "Unlearn",
+   "ko": "습득 취소",
+   "code": [
+    "camelot/professions.lua:89: nodes.proxyButton({ target = card.UnlearnButton, label = L[\"Unlearn\"], hover = false })",
+    "mists/spellbook/professions.lua:84: nodes.proxyButton({ target = child.UnlearnButton, label = L[\"Unlearn\"] })",
+    "retail/talentTree.lua:258: clickLabels = { left = L[\"Learn\"], right = L[\"Unlearn\"] },",
+    "retail/talentTree.lua:314: clickLabels = { left = L[\"Learn\"], right = L[\"Unlearn\"] },"
+   ],
+   "game_term": "습득 취소 | 습득취소",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Empty",
+   "file": "ui.lua",
+   "key": "Empty",
+   "en": "Empty",
+   "ko": "없음",
+   "code": [
+    "camelot/character.lua:229: return SLOT_NAMES[slotId] or L[\"Empty\"]",
+    "camelot/character.lua:385: return L[\"Empty\"]",
+    "camelot/character.lua:613: builder:addItem(ControlId.structural(\"sidebarTabs:empty\"), nodes.text({ label = L[\"Empty\"] }))",
+    "camelot/character.lua:1019: builder:addItem(ControlId.structural(\"tabs:empty\"), nodes.text({ label = L[\"Empty\"] }))"
+   ],
+   "game_term": "빈 자리 | 없음",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Not implemented yet",
+   "file": "ui.lua",
+   "key": "Not implemented yet",
+   "en": "Not implemented yet",
+   "ko": "아직 구현되지 않음",
+   "code": [
+    "camelot/spellbook.lua:187: builder:addItem(ControlId.structural(\"unimplemented\"), nodes.text({ label = L[\"Not implemented yet\"] }))",
+    "mists/collections/module.lua:70: builder:addItem(ControlId.structural(\"unimplemented\"), nodes.text({ label = L[\"Not implemented yet\"] }))"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::None",
+   "file": "ui.lua",
+   "key": "None",
+   "en": "None",
+   "ko": "없음",
+   "code": [
+    "core/fieldTypes.lua:284: return L[\"None\"]",
+    "core/graph/fieldControls.lua:228: local result = { { label = L[\"None\"] } }",
+    "core/windows/options/ui.lua:167: return L[\"None\"]"
+   ],
+   "game_term": "선택 해제 | 없음 | 조건 없음 | 표시하지 않음",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Type",
+   "file": "ui.lua",
+   "key": "Type",
+   "en": "Type",
+   "ko": "종류",
+   "code": [
+    "camelot/collections/wardrobe.lua:188: builder:addItem(ControlId.forObject(items.WeaponDropdown), module.namedDropdown(items.WeaponDropdown, L[\"Type\"]))",
+    "core/graph/fieldControls.lua:246: label = L[\"Type\"],",
+    "core/graph/fieldControls.lua:363: label = L[\"Type\"],"
+   ],
+   "game_term": "유형 | 종류",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Select Type",
+   "file": "ui.lua",
+   "key": "Select Type",
+   "en": "Select Type",
+   "ko": "종류 선택",
+   "code": [
+    "core/graph/settings.lua:366: builder:pushContext(\"selectType\", L[\"Select Type\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Power Type",
+   "file": "ui.lua",
+   "key": "Power Type",
+   "en": "Power Type",
+   "ko": "자원 종류",
+   "code": [
+    "core/objects/types/unit/Power.lua:11: label = L[\"Power Type\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Unit",
+   "file": "ui.lua",
+   "key": "Unit",
+   "en": "Unit",
+   "ko": "유닛",
+   "code": [
+    "classic/monitors/types/AuraMonitor.lua:186: { key = \"unit\", type = \"String\", default = \"target\", persist = true, label = L[\"Unit\"], sortPriority = 2 },",
+    "core/graph/fieldControls.lua:307: label = L[\"Unit\"],",
+    "core/objects/types/type.lua:234: label = L[\"Unit\"],",
+    "retail/monitors/CdmAuraMonitor.lua:682: { key = \"unit\", type = \"Choice\", default = \"target\", persist = true, label = L[\"Unit\"], sortPriority = 2, choices = UNIT_CHOICES },"
+   ],
+   "game_term": "유닛",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Instance ID",
+   "file": "ui.lua",
+   "key": "Instance ID",
+   "en": "Instance ID",
+   "ko": "인스턴스 ID",
+   "code": [
+    "core/objects/types/unit/Aura.lua:9: label = L[\"Instance ID\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Aura Instance ID",
+     "en": "Aura Instance ID",
+     "ko": "오라 인스턴스 ID"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Parameters",
+   "file": "ui.lua",
+   "key": "Parameters",
+   "en": "Parameters",
+   "ko": "매개변수",
+   "code": [
+    "core/graph/fieldControls.lua:263: builder:pushContext(\"params\", L[\"Parameters\"])",
+    "core/graph/fieldControls.lua:301: builder:pushContext(\"params\", L[\"Parameters\"])",
+    "core/graph/fieldControls.lua:382: label = L[\"Parameters\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Items",
+   "file": "ui.lua",
+   "key": "Items",
+   "en": "Items",
+   "ko": "아이템",
+   "code": [
+    "camelot/collections/wardrobe.lua:63: builder:pushContext(\"wardrobeSlots\", L[\"Items\"])",
+    "core/windows/merchant.lua:165: builder:pushContext(\"items\", L[\"Items\"])"
+   ],
+   "game_term": "아이템",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Options",
+   "file": "ui.lua",
+   "key": "Options",
+   "en": "Options",
+   "ko": "설정",
+   "code": [
+    "camelot/spellbook.lua:165: nodes.proxyDropdown({ target = book.SettingsDropdown, label = L[\"Options\"] })",
+    "camelot/talents.lua:155: nodes.proxyDropdown({ target = talentsFrame.SearchOptionsDropdown, label = L[\"Options\"] })",
+    "core/windows/options/Module.lua:3: module:setLabel(L[\"Options\"])",
+    "core/windows/options/ui.lua:1342: label = title or L[\"Options\"],"
+   ],
+   "game_term": "설정 | 환경 설정",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Scroll Up",
+   "file": "ui.lua",
+   "key": "Scroll Up",
+   "en": "Scroll Up",
+   "ko": "위로 스크롤",
+   "code": [
+    "core/ui modules/module.lua:287: label = L[\"Scroll Up\"],"
+   ],
+   "game_term": "위로 올라감",
+   "related": [
+    {
+     "id": "bindings.lua::Scroll Up",
+     "en": "Scroll Up",
+     "ko": "위로 스크롤"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Scroll Down",
+   "file": "ui.lua",
+   "key": "Scroll Down",
+   "en": "Scroll Down",
+   "ko": "아래로 스크롤",
+   "code": [
+    "core/ui modules/module.lua:295: label = L[\"Scroll Down\"],"
+   ],
+   "game_term": "아래로 내려감",
+   "related": [
+    {
+     "id": "bindings.lua::Scroll Down",
+     "en": "Scroll Down",
+     "ko": "아래로 스크롤"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Minimum",
+   "file": "ui.lua",
+   "key": "Minimum",
+   "en": "Minimum",
+   "ko": "최소",
+   "code": [
+    "core/objects/types/unit/Health.lua:21: label = L[\"Minimum\"],",
+    "core/objects/types/unit/Power.lua:34: label = L[\"Minimum\"],",
+    "mists/auction.lua:795: nodes.proxyEditBox({ editBox = itemFrame.MinLevel, label = L[\"Minimum\"], autoInput = false })"
+   ],
+   "game_term": "최소",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Maximum",
+   "file": "ui.lua",
+   "key": "Maximum",
+   "en": "Maximum",
+   "ko": "최대",
+   "code": [
+    "core/objects/types/PlayerXP.lua:19: label = L[\"Maximum\"],",
+    "core/objects/types/unit/Health.lua:28: label = L[\"Maximum\"],",
+    "core/objects/types/unit/Power.lua:72: label = L[\"Maximum\"],",
+    "mists/auction.lua:801: nodes.proxyEditBox({ editBox = itemFrame.MaxLevel, label = L[\"Maximum\"], autoInput = false })"
+   ],
+   "game_term": "최대",
+   "related": []
+  },
+  {
+   "id": "ui.lua::in stock",
+   "file": "ui.lua",
+   "key": "in stock",
+   "en": "in stock",
+   "ko": "개 남음",
+   "code": [
+    "core/gameDB/items.lua:78: label = label .. \", \" .. numInStock .. \" \" .. L[\"in stock\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::in stock",
+     "en": "in stock",
+     "ko": "개 남음"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Gold",
+   "file": "ui.lua",
+   "key": "Gold",
+   "en": "Gold",
+   "ko": "골드",
+   "code": [
+    "classic/mail.lua:186: builder:addItem(ControlId.structural(\"gold\"), module.editBoxNode(SendMailMoneyGold, L[\"Gold\"]))",
+    "mists/auction.lua:156: nodes.proxyEditBox({ editBox = moneyFrame.GoldBox or moneyFrame.gold, label = L[\"Gold\"] })",
+    "tbc/auction/module.lua:240: nodes.proxyEditBox({ editBox = goldBox, label = L[\"Gold\"] })"
+   ],
+   "game_term": "골드 | 금색 | 황금",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Silver",
+   "file": "ui.lua",
+   "key": "Silver",
+   "en": "Silver",
+   "ko": "실버",
+   "code": [
+    "classic/mail.lua:188: builder:addItem(ControlId.structural(\"silver\"), module.editBoxNode(SendMailMoneySilver, L[\"Silver\"]))",
+    "mists/auction.lua:161: nodes.proxyEditBox({ editBox = moneyFrame.SilverBox or moneyFrame.silver, label = L[\"Silver\"] })",
+    "tbc/auction/module.lua:246: nodes.proxyEditBox({ editBox = silverBox, label = L[\"Silver\"] })"
+   ],
+   "game_term": "은색",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Copper",
+   "file": "ui.lua",
+   "key": "Copper",
+   "en": "Copper",
+   "ko": "코퍼",
+   "code": [
+    "classic/mail.lua:190: builder:addItem(ControlId.structural(\"copper\"), module.editBoxNode(SendMailMoneyCopper, L[\"Copper\"]))",
+    "mists/auction.lua:166: nodes.proxyEditBox({ editBox = moneyFrame.CopperBox or moneyFrame.copper, label = L[\"Copper\"] })",
+    "tbc/auction/module.lua:253: nodes.proxyEditBox({ editBox = copperBox, label = L[\"Copper\"] })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Price",
+   "file": "ui.lua",
+   "key": "Price",
+   "en": "Price",
+   "ko": "가격",
+   "code": [],
+   "game_term": "가격",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Quantity",
+   "file": "ui.lua",
+   "key": "Quantity",
+   "en": "Quantity",
+   "ko": "수량",
+   "code": [
+    "camelot/crafting.lua:457: nodes.proxyEditBox({ editBox = quantity, label = L[\"Quantity\"] })",
+    "mists/TradeSkill.lua:217: nodes.proxyEditBox({ editBox = TradeSkillInputBox, label = L[\"Quantity\"] })",
+    "tbc/tradeskill.lua:232: nodes.proxyEditBox({ editBox = TradeSkillInputBox, label = L[\"Quantity\"] })"
+   ],
+   "game_term": "수량",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Place Item Here",
+   "file": "ui.lua",
+   "key": "Place Item Here",
+   "en": "Place Item Here",
+   "ko": "여기에 아이템 놓기",
+   "code": [
+    "mists/auction.lua:452: return L[\"Place Item Here\"]",
+    "tbc/auction/module.lua:922: return L[\"Place Item Here\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Place Item",
+     "en": "Place Item",
+     "ko": "아이템 놓기"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Repair",
+   "file": "ui.lua",
+   "key": "Repair",
+   "en": "Repair",
+   "ko": "수리",
+   "code": [
+    "core/minimap/module.lua:166: repair = L[\"Repair\"],",
+    "core/quests/scanner.lua:339: repair = L[\"Repair\"],",
+    "core/windows/merchant.lua:203: builder:pushContext(\"repair\", L[\"Repair\"])"
+   ],
+   "game_term": "수리 | 장비 수리",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Replace",
+   "file": "ui.lua",
+   "key": "Replace",
+   "en": "Replace",
+   "ko": "바꾸기",
+   "code": [],
+   "game_term": "바꾸기",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Replace?",
+   "file": "ui.lua",
+   "key": "Replace?",
+   "en": "Replace?",
+   "ko": "바꾸시겠습니까?",
+   "code": [
+    "core/ui modules/graphBindings.lua:42: prompt = L[\"This input conflicts with\"] .. \" \" .. conflicting:getLabel() .. \". \" .. L[\"Replace?\"],",
+    "core/ui modules/graphBindings.lua:69: prompt = L[\"This input conflicts with\"] .. \" \" .. conflicting:getLabel() .. \". \" .. L[\"Replace?\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Voice Pack",
+   "file": "ui.lua",
+   "key": "Voice Pack",
+   "en": "Voice Pack",
+   "ko": "음성 팩",
+   "code": [
+    "core/alerts/outputs.lua:160: label = L[\"Voice Pack\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Socketing",
+   "file": "ui.lua",
+   "key": "Socketing",
+   "en": "Socketing",
+   "ko": "보석 장착",
+   "code": [
+    "mists/socketing.lua:3: module:setLabel(L[\"Socketing\"])",
+    "mists/socketing.lua:37: builder:pushContext(\"socketing\", L[\"Socketing\"])",
+    "mists/socketing.lua:40: builder:pushContext(\"sockets\", L[\"Socketing\"])",
+    "tbc/socketing.lua:3: module:setLabel(L[\"Socketing\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Interact",
+   "file": "ui.lua",
+   "key": "Interact",
+   "en": "Interact",
+   "ko": "상호작용",
+   "code": [],
+   "game_term": "상호작용",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Close",
+   "file": "ui.lua",
+   "key": "Close",
+   "en": "Close",
+   "ko": "닫기",
+   "code": [
+    "core/ui modules/module.lua:251: label = L[\"Close\"],",
+    "core/windows/itemText.lua:64: nodes.proxyButton({ target = ItemTextFrameCloseButton, label = L[\"Close\"] })",
+    "core/windows/RolePoll.lua:56: label = L[\"Close\"]",
+    "mists/character.lua:283: nodes.proxyButton({ target = ReputationDetailCloseButton, label = CLOSE or L[\"Close\"] })"
+   ],
+   "game_term": "닫기",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Goodbye",
+   "file": "ui.lua",
+   "key": "Goodbye",
+   "en": "Goodbye",
+   "ko": "작별",
+   "code": [
+    "core/windows/gossip.lua:215: label = L[\"Goodbye\"],"
+   ],
+   "game_term": "닫기 | 작별",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Available Quest",
+   "file": "ui.lua",
+   "key": "Available Quest",
+   "en": "Available Quest",
+   "ko": "가능한 퀘스트",
+   "code": [
+    "core/windows/gossip.lua:189: label = L[\"Available Quest\"] .. \": \" .. quest.title,",
+    "core/windows/questWindow.lua:189: return L[\"Available Quest\"] .. \": \" .. title"
+   ],
+   "game_term": "가능한 퀘스트",
+   "related": []
+  }
+ ]
+}

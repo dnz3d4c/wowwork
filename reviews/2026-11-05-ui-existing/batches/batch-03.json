@@ -1,0 +1,1411 @@
+{
+ "items": [
+  {
+   "id": "colors.lua::blackish",
+   "file": "colors.lua",
+   "key": "blackish",
+   "en": "blackish",
+   "ko": "검은빛",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::red",
+   "file": "colors.lua",
+   "key": "red",
+   "en": "red",
+   "ko": "빨간색",
+   "code": [],
+   "game_term": "붉은색 | 빨간색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::reddish orange",
+   "file": "colors.lua",
+   "key": "reddish orange",
+   "en": "reddish orange",
+   "ko": "붉은 주황색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::orange",
+   "file": "colors.lua",
+   "key": "orange",
+   "en": "orange",
+   "ko": "주황색",
+   "code": [],
+   "game_term": "주황색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::orange yellow",
+   "file": "colors.lua",
+   "key": "orange yellow",
+   "en": "orange yellow",
+   "ko": "주황빛 노란색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::yellow",
+   "file": "colors.lua",
+   "key": "yellow",
+   "en": "yellow",
+   "ko": "노란색",
+   "code": [],
+   "game_term": "노란색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::greenish yellow",
+   "file": "colors.lua",
+   "key": "greenish yellow",
+   "en": "greenish yellow",
+   "ko": "녹색빛 노란색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::yellow green",
+   "file": "colors.lua",
+   "key": "yellow green",
+   "en": "yellow green",
+   "ko": "황록색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::yellowish green",
+   "file": "colors.lua",
+   "key": "yellowish green",
+   "en": "yellowish green",
+   "ko": "노란빛 녹색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::green",
+   "file": "colors.lua",
+   "key": "green",
+   "en": "green",
+   "ko": "녹색",
+   "code": [],
+   "game_term": "녹색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::bluish green",
+   "file": "colors.lua",
+   "key": "bluish green",
+   "en": "bluish green",
+   "ko": "청록색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::greenish blue",
+   "file": "colors.lua",
+   "key": "greenish blue",
+   "en": "greenish blue",
+   "ko": "녹색빛 파란색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::blue",
+   "file": "colors.lua",
+   "key": "blue",
+   "en": "blue",
+   "ko": "파란색",
+   "code": [],
+   "game_term": "파란색 | 푸른색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::purplish blue",
+   "file": "colors.lua",
+   "key": "purplish blue",
+   "en": "purplish blue",
+   "ko": "보랏빛 파란색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::violet",
+   "file": "colors.lua",
+   "key": "violet",
+   "en": "violet",
+   "ko": "청보라색",
+   "code": [],
+   "game_term": "보라색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::purple",
+   "file": "colors.lua",
+   "key": "purple",
+   "en": "purple",
+   "ko": "보라색",
+   "code": [],
+   "game_term": "보라색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::reddish purple",
+   "file": "colors.lua",
+   "key": "reddish purple",
+   "en": "reddish purple",
+   "ko": "붉은 보라색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::purplish red",
+   "file": "colors.lua",
+   "key": "purplish red",
+   "en": "purplish red",
+   "ko": "보랏빛 빨간색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::pink",
+   "file": "colors.lua",
+   "key": "pink",
+   "en": "pink",
+   "ko": "분홍색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::purplish pink",
+   "file": "colors.lua",
+   "key": "purplish pink",
+   "en": "purplish pink",
+   "ko": "보랏빛 분홍색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::brown",
+   "file": "colors.lua",
+   "key": "brown",
+   "en": "brown",
+   "ko": "갈색",
+   "code": [],
+   "game_term": "갈색",
+   "related": []
+  },
+  {
+   "id": "colors.lua::reddish brown",
+   "file": "colors.lua",
+   "key": "reddish brown",
+   "en": "reddish brown",
+   "ko": "적갈색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::yellowish brown",
+   "file": "colors.lua",
+   "key": "yellowish brown",
+   "en": "yellowish brown",
+   "ko": "황갈색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::olive",
+   "file": "colors.lua",
+   "key": "olive",
+   "en": "olive",
+   "ko": "올리브색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "colors.lua::olive green",
+   "file": "colors.lua",
+   "key": "olive green",
+   "en": "olive green",
+   "ko": "올리브 녹색",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::A button",
+   "file": "controller.lua",
+   "key": "A button",
+   "en": "A button",
+   "ko": "A 버튼",
+   "code": [
+    "core/ui/input/pad.lua:474: PAD1 = L[\"A button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::B button",
+   "file": "controller.lua",
+   "key": "B button",
+   "en": "B button",
+   "ko": "B 버튼",
+   "code": [
+    "core/ui/input/pad.lua:475: PAD2 = L[\"B button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::X button",
+   "file": "controller.lua",
+   "key": "X button",
+   "en": "X button",
+   "ko": "X 버튼",
+   "code": [
+    "core/ui/input/pad.lua:476: PAD3 = L[\"X button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Y button",
+   "file": "controller.lua",
+   "key": "Y button",
+   "en": "Y button",
+   "ko": "Y 버튼",
+   "code": [
+    "core/ui/input/pad.lua:477: PAD4 = L[\"Y button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::D-pad up",
+   "file": "controller.lua",
+   "key": "D-pad up",
+   "en": "D-pad up",
+   "ko": "방향 패드 위",
+   "code": [
+    "core/ui/input/pad.lua:478: PADDUP = L[\"D-pad up\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::D-pad down",
+   "file": "controller.lua",
+   "key": "D-pad down",
+   "en": "D-pad down",
+   "ko": "방향 패드 아래",
+   "code": [
+    "core/ui/input/pad.lua:479: PADDDOWN = L[\"D-pad down\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::D-pad left",
+   "file": "controller.lua",
+   "key": "D-pad left",
+   "en": "D-pad left",
+   "ko": "방향 패드 왼쪽",
+   "code": [
+    "core/ui/input/pad.lua:480: PADDLEFT = L[\"D-pad left\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad right",
+     "en": "D-pad right",
+     "ko": "방향 패드 오른쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::D-pad right",
+   "file": "controller.lua",
+   "key": "D-pad right",
+   "en": "D-pad right",
+   "ko": "방향 패드 오른쪽",
+   "code": [
+    "core/ui/input/pad.lua:481: PADDRIGHT = L[\"D-pad right\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::D-pad down",
+     "en": "D-pad down",
+     "ko": "방향 패드 아래"
+    },
+    {
+     "id": "controller.lua::D-pad left",
+     "en": "D-pad left",
+     "ko": "방향 패드 왼쪽"
+    },
+    {
+     "id": "controller.lua::D-pad up",
+     "en": "D-pad up",
+     "ko": "방향 패드 위"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Left shoulder",
+   "file": "controller.lua",
+   "key": "Left shoulder",
+   "en": "Left shoulder",
+   "ko": "왼쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:482: PADLSHOULDER = L[\"Left shoulder\"],",
+    "core/ui/input/pad.lua:493: ALT = L[\"Left shoulder\"],"
+   ],
+   "game_term": "왼쪽 어깨",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Right shoulder",
+   "file": "controller.lua",
+   "key": "Right shoulder",
+   "en": "Right shoulder",
+   "ko": "오른쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:483: PADRSHOULDER = L[\"Right shoulder\"],"
+   ],
+   "game_term": "오른쪽 어깨",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Left trigger",
+   "file": "controller.lua",
+   "key": "Left trigger",
+   "en": "Left trigger",
+   "ko": "왼쪽 트리거",
+   "code": [
+    "core/ui/input/pad.lua:484: PADLTRIGGER = L[\"Left trigger\"],",
+    "core/ui/input/pad.lua:494: SHIFT = L[\"Left trigger\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left Trigger Bar",
+     "en": "Left Trigger Bar",
+     "ko": "왼쪽 트리거 단축바"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Right trigger",
+   "file": "controller.lua",
+   "key": "Right trigger",
+   "en": "Right trigger",
+   "ko": "오른쪽 트리거",
+   "code": [
+    "core/ui/input/pad.lua:485: PADRTRIGGER = L[\"Right trigger\"],",
+    "core/ui/input/pad.lua:495: CTRL = L[\"Right trigger\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right Trigger Bar",
+     "en": "Right Trigger Bar",
+     "ko": "오른쪽 트리거 단축바"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Left stick press",
+   "file": "controller.lua",
+   "key": "Left stick press",
+   "en": "Left stick press",
+   "ko": "왼쪽 스틱 누르기",
+   "code": [
+    "core/ui/input/pad.lua:486: PADLSTICK = L[\"Left stick press\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press",
+     "en": "Right stick press",
+     "ko": "오른쪽 스틱 누르기"
+    },
+    {
+     "id": "controller.lua::Right stick press held",
+     "en": "Right stick press held",
+     "ko": "오른쪽 스틱 누른 채 유지"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Right stick press",
+   "file": "controller.lua",
+   "key": "Right stick press",
+   "en": "Right stick press",
+   "ko": "오른쪽 스틱 누르기",
+   "code": [
+    "core/ui/input/pad.lua:487: PADRSTICK = L[\"Right stick press\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press held",
+     "en": "Right stick press held",
+     "ko": "오른쪽 스틱 누른 채 유지"
+    },
+    {
+     "id": "controller.lua::Left stick press",
+     "en": "Left stick press",
+     "ko": "왼쪽 스틱 누르기"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::View button",
+   "file": "controller.lua",
+   "key": "View button",
+   "en": "View button",
+   "ko": "보기 버튼",
+   "code": [
+    "core/ui/input/pad.lua:488: PADBACK = L[\"View button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Menu button",
+   "file": "controller.lua",
+   "key": "Menu button",
+   "en": "Menu button",
+   "ko": "메뉴 버튼",
+   "code": [
+    "core/ui/input/pad.lua:489: PADFORWARD = L[\"Menu button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Share button",
+   "file": "controller.lua",
+   "key": "Share button",
+   "en": "Share button",
+   "ko": "공유 버튼",
+   "code": [
+    "core/ui/input/pad.lua:490: PADSOCIAL = L[\"Share button\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Both shoulders",
+   "file": "controller.lua",
+   "key": "Both shoulders",
+   "en": "Both shoulders",
+   "ko": "양쪽 어깨",
+   "code": [
+    "core/ui/input/pad.lua:496: LAYER = L[\"Both shoulders\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Right stick press held",
+   "file": "controller.lua",
+   "key": "Right stick press held",
+   "en": "Right stick press held",
+   "ko": "오른쪽 스틱 누른 채 유지",
+   "code": [
+    "core/ui/input/pad.lua:497: HOLD = L[\"Right stick press held\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Right stick press",
+     "en": "Right stick press",
+     "ko": "오른쪽 스틱 누르기"
+    },
+    {
+     "id": "controller.lua::Left stick press",
+     "en": "Left stick press",
+     "ko": "왼쪽 스틱 누르기"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Add Controller Button",
+   "file": "controller.lua",
+   "key": "Add Controller Button",
+   "en": "Add Controller Button",
+   "ko": "컨트롤러 버튼 추가",
+   "code": [
+    "core/ui modules/graphBindings.lua:141: label = L[\"Add Controller Button\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Press a controller button",
+     "en": "Press a controller button",
+     "ko": "컨트롤러 버튼을 누르십시오"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Press a controller button",
+   "file": "controller.lua",
+   "key": "Press a controller button",
+   "en": "Press a controller button",
+   "ko": "컨트롤러 버튼을 누르십시오",
+   "code": [
+    "core/graph/keyCapture.lua:273: local prompt = L[\"Press a controller button\"]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Add Controller Button",
+     "en": "Add Controller Button",
+     "ko": "컨트롤러 버튼 추가"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Cancelled",
+   "file": "controller.lua",
+   "key": "Cancelled",
+   "en": "Cancelled",
+   "ko": "취소됨",
+   "code": [
+    "core/graph/keyCapture.lua:187: self:_speak(L[\"Cancelled\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Close (Controller)",
+   "file": "controller.lua",
+   "key": "Close (Controller)",
+   "en": "Close (Controller)",
+   "ko": "닫기 (컨트롤러)",
+   "code": [
+    "core/ui modules/module.lua:337: label = L[\"Close (Controller)\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::WowVision Menu",
+   "file": "controller.lua",
+   "key": "WowVision Menu",
+   "en": "WowVision Menu",
+   "ko": "WowVision 메뉴",
+   "code": [
+    "core/ui modules/module.lua:346: label = L[\"WowVision Menu\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Gamepad Bar",
+   "file": "controller.lua",
+   "key": "Gamepad Bar",
+   "en": "Gamepad Bar",
+   "ko": "게임패드 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:72: label = L[\"Gamepad Bar\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Left Trigger Bar",
+   "file": "controller.lua",
+   "key": "Left Trigger Bar",
+   "en": "Left Trigger Bar",
+   "ko": "왼쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:79: label = L[\"Left Trigger Bar\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left trigger",
+     "en": "Left trigger",
+     "ko": "왼쪽 트리거"
+    },
+    {
+     "id": "controller.lua::Right Trigger Bar",
+     "en": "Right Trigger Bar",
+     "ko": "오른쪽 트리거 단축바"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Right Trigger Bar",
+   "file": "controller.lua",
+   "key": "Right Trigger Bar",
+   "en": "Right Trigger Bar",
+   "ko": "오른쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:86: label = L[\"Right Trigger Bar\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "controller.lua::Left Trigger Bar",
+     "en": "Left Trigger Bar",
+     "ko": "왼쪽 트리거 단축바"
+    },
+    {
+     "id": "controller.lua::Right trigger",
+     "en": "Right trigger",
+     "ko": "오른쪽 트리거"
+    }
+   ]
+  },
+  {
+   "id": "controller.lua::Both Triggers Bar",
+   "file": "controller.lua",
+   "key": "Both Triggers Bar",
+   "en": "Both Triggers Bar",
+   "ko": "양쪽 트리거 단축바",
+   "code": [
+    "camelot/gamepadBars.lua:93: label = L[\"Both Triggers Bar\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Gamepad Main Menu",
+   "file": "controller.lua",
+   "key": "Gamepad Main Menu",
+   "en": "Gamepad Main Menu",
+   "ko": "게임패드 주 메뉴",
+   "code": [
+    "camelot/gamepadRadial.lua:22: module:setLabel(L[\"Gamepad Main Menu\"])",
+    "camelot/gamepadRadial.lua:147: header = header or L[\"Gamepad Main Menu\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Page %d of %d",
+   "file": "controller.lua",
+   "key": "Page %d of %d",
+   "en": "Page %d of %d",
+   "ko": "%2$d페이지 중 %1$d페이지",
+   "code": [
+    "camelot/gamepadRadial.lua:150: return header .. \", \" .. string.format(L[\"Page %d of %d\"], index, #radial.mainMenuPages)"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::opened",
+   "file": "controller.lua",
+   "key": "opened",
+   "en": "opened",
+   "ko": "열림",
+   "code": [
+    "camelot/gamepadRadial.lua:62: return text .. \", \" .. L[\"opened\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "controller.lua::Not supported yet",
+   "file": "controller.lua",
+   "key": "Not supported yet",
+   "en": "Not supported yet",
+   "ko": "아직 지원하지 않음",
+   "code": [
+    "camelot/gamepadRadial.lua:126: WowVision:speak(L[\"Not supported yet\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::This tab is not supported yet",
+     "en": "This tab is not supported yet",
+     "ko": "이 탭은 아직 지원하지 않습니다"
+    }
+   ]
+  },
+  {
+   "id": "errors.lua::Errors",
+   "file": "errors.lua",
+   "key": "Errors",
+   "en": "Errors",
+   "ko": "오류",
+   "code": [
+    "core/errors/module.lua:3: module:setLabel(L[\"Errors\"])"
+   ],
+   "game_term": "오류",
+   "related": []
+  },
+  {
+   "id": "errors.lua::Announce Errors",
+   "file": "errors.lua",
+   "key": "Announce Errors",
+   "en": "Announce Errors",
+   "ko": "오류 알리기",
+   "code": [
+    "core/errors/module.lua:14: label = L[\"Announce Errors\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "errors.lua::Repeat Delay",
+   "file": "errors.lua",
+   "key": "Repeat Delay",
+   "en": "Repeat Delay",
+   "ko": "반복 지연",
+   "code": [
+    "core/errors/module.lua:28: label = L[\"Repeat Delay\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "errors.lua::Per-Error Filter",
+   "file": "errors.lua",
+   "key": "Per-Error Filter",
+   "en": "Per-Error Filter",
+   "ko": "오류별 필터",
+   "code": [
+    "core/errors/module.lua:260: builder:pushContext(\"errorFilter\", L[\"Per-Error Filter\"])",
+    "core/errors/module.lua:301: label = L[\"Per-Error Filter\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "errors.lua::Show All Known Errors",
+   "file": "errors.lua",
+   "key": "Show All Known Errors",
+   "en": "Show All Known Errors",
+   "ko": "알려진 오류 모두 보기",
+   "code": [
+    "core/errors/module.lua:264: label = L[\"Show All Known Errors\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Nameplate Show All",
+     "en": "Nameplate Show All",
+     "ko": "이름표에 모두 표시"
+    }
+   ]
+  },
+  {
+   "id": "errors.lua::Speech and Sound",
+   "file": "errors.lua",
+   "key": "Speech and Sound",
+   "en": "Speech and Sound",
+   "ko": "음성 및 소리",
+   "code": [
+    "core/errors/module.lua:250: return L[\"Speech and Sound\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "errors.lua::Muted",
+   "file": "errors.lua",
+   "key": "Muted",
+   "en": "Muted",
+   "ko": "음소거",
+   "code": [
+    "core/errors/module.lua:237: return L[\"Muted\"]",
+    "core/errors/module.lua:256: return L[\"Muted\"]"
+   ],
+   "game_term": "음성차단",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Minimap Scanner",
+   "file": "minimap.lua",
+   "key": "Minimap Scanner",
+   "en": "Minimap Scanner",
+   "ko": "미니맵 스캐너",
+   "code": [
+    "core/minimap/module.lua:6: module:setLabel(L[\"Minimap Scanner\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Minimap scanner not available on this client",
+     "en": "Minimap scanner not available on this client",
+     "ko": "이 클라이언트에서는 미니맵 스캐너 사용 불가"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Scan Minimap",
+   "file": "minimap.lua",
+   "key": "Scan Minimap",
+   "en": "Scan Minimap",
+   "ko": "미니맵 스캔",
+   "code": [
+    "core/minimap/module.lua:1498: label = L[\"Scan Minimap\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Announce Tracked Dots While Walking",
+   "file": "minimap.lua",
+   "key": "Announce Tracked Dots While Walking",
+   "en": "Announce Tracked Dots While Walking",
+   "ko": "걷는 중 추적 점 알림",
+   "code": [
+    "core/minimap/module.lua:38: label = L[\"Announce Tracked Dots While Walking\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Centre Mouse Cursor Before Scanning",
+   "file": "minimap.lua",
+   "key": "Centre Mouse Cursor Before Scanning",
+   "en": "Centre Mouse Cursor Before Scanning",
+   "ko": "스캔 전 마우스 커서 가운데로 이동",
+   "code": [
+    "core/minimap/module.lua:45: label = L[\"Centre Mouse Cursor Before Scanning\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::New Minimap Dot Alert",
+   "file": "minimap.lua",
+   "key": "New Minimap Dot Alert",
+   "en": "New Minimap Dot Alert",
+   "ko": "새 미니맵 점 경보",
+   "code": [
+    "core/minimap/module.lua:86: label = L[\"New Minimap Dot Alert\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Other NPCs",
+   "file": "minimap.lua",
+   "key": "Other NPCs",
+   "en": "Other NPCs",
+   "ko": "기타 NPC",
+   "code": [
+    "core/minimap/module.lua:176: other = L[\"Other NPCs\"],",
+    "core/quests/scanner.lua:485: tinsert(roles, { key = \"other\", label = L[\"Other NPCs\"] })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Unsorted",
+   "file": "minimap.lua",
+   "key": "Unsorted",
+   "en": "Unsorted",
+   "ko": "미분류",
+   "code": [
+    "core/minimap/module.lua:178: unsorted = L[\"Unsorted\"],"
+   ],
+   "game_term": "미분류",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Gathering",
+   "file": "minimap.lua",
+   "key": "Gathering",
+   "en": "Gathering",
+   "ko": "채집",
+   "code": [
+    "core/minimap/scanner.lua:39: label = L[\"Gathering\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::quest giver",
+   "file": "minimap.lua",
+   "key": "quest giver",
+   "en": "quest giver",
+   "ko": "퀘스트 NPC",
+   "code": [
+    "camelot/wownav/text.lua:231: quest_giver = L[\"quest giver\"], trainer = L[\"trainer\"], vendor = L[\"vendor\"],",
+    "core/minimap/module.lua:287: module.kinds[item.name] = item.category == \"questGiver\" and L[\"quest giver\"] or labels[item.category]"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "quests.lua::Quest Giver",
+     "en": "Quest Giver",
+     "ko": "퀘스트 NPC"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::quest available",
+   "file": "minimap.lua",
+   "key": "quest available",
+   "en": "quest available",
+   "ko": "퀘스트 수락 가능",
+   "code": [
+    "core/minimap/module.lua:1215: local statusText = { available = L[\"quest available\"], turnIn = L[\"turn in\"] }",
+    "core/quests/scanner.lua:167: available = L[\"quest available\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::turn in",
+   "file": "minimap.lua",
+   "key": "turn in",
+   "en": "turn in",
+   "ko": "완료",
+   "code": [
+    "core/minimap/module.lua:1215: local statusText = { available = L[\"quest available\"], turnIn = L[\"turn in\"] }",
+    "core/quests/scanner.lua:168: turnIn = L[\"turn in\"],",
+    "core/quests/scanner.lua:230: node.detail = node.detail ~= nil and (L[\"turn in\"] .. \", \" .. node.detail) or L[\"turn in\"]"
+   ],
+   "game_term": "완료 | 제출",
+   "related": [
+    {
+     "id": "quests.lua::Turn In",
+     "en": "Turn In",
+     "ko": "완료"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::low level",
+   "file": "minimap.lua",
+   "key": "low level",
+   "en": "low level",
+   "ko": "저레벨",
+   "code": [
+    "core/quests/scanner.lua:178: tinsert(detail, L[\"low level\"])"
+   ],
+   "game_term": "저레벨",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Scanning minimap",
+   "file": "minimap.lua",
+   "key": "Scanning minimap",
+   "en": "Scanning minimap",
+   "ko": "미니맵 스캔 중",
+   "code": [
+    "core/minimap/module.lua:646: speak(L[\"Scanning minimap\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Scan done",
+   "file": "minimap.lua",
+   "key": "Scan done",
+   "en": "Scan done",
+   "ko": "스캔 완료",
+   "code": [
+    "core/minimap/module.lua:476: text = string.format(\"%s, %d %s: %s\", L[\"Scan done\"], total, L[\"new\"], table.concat(parts, \", \"))"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::new",
+   "file": "minimap.lua",
+   "key": "new",
+   "en": "new",
+   "ko": "신규",
+   "code": [
+    "core/minimap/module.lua:476: text = string.format(\"%s, %d %s: %s\", L[\"Scan done\"], total, L[\"new\"], table.concat(parts, \", \"))"
+   ],
+   "game_term": "만들기 | 신규",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::gone",
+   "file": "minimap.lua",
+   "key": "gone",
+   "en": "gone",
+   "ko": "사라짐",
+   "code": [
+    "core/minimap/module.lua:479: text = text .. \", \" .. dropped .. \" \" .. L[\"gone\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Nothing new nearby",
+   "file": "minimap.lua",
+   "key": "Nothing new nearby",
+   "en": "Nothing new nearby",
+   "ko": "주변에 새 항목 없음",
+   "code": [
+    "core/minimap/module.lua:474: text = L[\"Nothing new nearby\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Scan already running",
+   "file": "minimap.lua",
+   "key": "Scan already running",
+   "en": "Scan already running",
+   "ko": "이미 스캔 중",
+   "code": [
+    "core/minimap/module.lua:603: speak(L[\"Scan already running\"])",
+    "core/minimap/module.lua:1329: speak(L[\"Scan already running\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Minimap scanner not available on this client",
+   "file": "minimap.lua",
+   "key": "Minimap scanner not available on this client",
+   "en": "Minimap scanner not available on this client",
+   "ko": "이 클라이언트에서는 미니맵 스캐너 사용 불가",
+   "code": [
+    "core/minimap/module.lua:614: speak(L[\"Minimap scanner not available on this client\"])",
+    "core/minimap/module.lua:1333: speak(L[\"Minimap scanner not available on this client\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Minimap Scanner",
+     "en": "Minimap Scanner",
+     "ko": "미니맵 스캐너"
+    },
+    {
+     "id": "navigation.lua::Turning is not available here",
+     "en": "Turning is not available here",
+     "ko": "여기서는 회전 불가"
+    },
+    {
+     "id": "targeting.lua::not available",
+     "en": "not available",
+     "ko": "사용 불가"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Not in combat",
+   "file": "minimap.lua",
+   "key": "Not in combat",
+   "en": "Not in combat",
+   "ko": "전투 중에는 불가",
+   "code": [
+    "core/graph/keyCapture.lua:258: self:_speak(L[\"Not in combat\"])",
+    "core/minimap/module.lua:618: speak(L[\"Not in combat\"])",
+    "core/minimap/module.lua:1337: speak(L[\"Not in combat\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Shown on Raid Frames in Combat",
+     "en": "Shown on Raid Frames in Combat",
+     "ko": "전투 중 공격대창에 표시"
+    },
+    {
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "en": "Cannot set virtual focus while in combat.",
+     "ko": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    },
+    {
+     "id": "targeting.lua::Target in Combat Sound",
+     "en": "Target in Combat Sound",
+     "ko": "전투 중인 대상 소리"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Stand still to scan",
+   "file": "minimap.lua",
+   "key": "Stand still to scan",
+   "en": "Stand still to scan",
+   "ko": "멈춰 서야 스캔 가능",
+   "code": [
+    "core/minimap/module.lua:622: speak(L[\"Stand still to scan\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Stop mouselook to scan",
+     "en": "Stop mouselook to scan",
+     "ko": "마우스 시점을 꺼야 스캔 가능"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Stop mouselook to scan",
+   "file": "minimap.lua",
+   "key": "Stop mouselook to scan",
+   "en": "Stop mouselook to scan",
+   "ko": "마우스 시점을 꺼야 스캔 가능",
+   "code": [
+    "core/minimap/module.lua:626: speak(L[\"Stop mouselook to scan\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Stand still to scan",
+     "en": "Stand still to scan",
+     "ko": "멈춰 서야 스캔 가능"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::No position here",
+   "file": "minimap.lua",
+   "key": "No position here",
+   "en": "No position here",
+   "ko": "이곳은 위치 정보 없음",
+   "code": [
+    "core/minimap/module.lua:630: speak(L[\"No position here\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::No position of the group member available",
+     "en": "No position of the group member available",
+     "ko": "파티원 위치 확인 불가"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Minimap scan failed",
+   "file": "minimap.lua",
+   "key": "Minimap scan failed",
+   "en": "Minimap scan failed",
+   "ko": "미니맵 스캔 실패",
+   "code": [
+    "core/minimap/module.lua:691: speak(L[\"Minimap scan failed\"])",
+    "core/minimap/module.lua:1422: speak(tostring(reason or L[\"Minimap scan failed\"]))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "auction.lua::Full scan failed",
+     "en": "Full scan failed",
+     "ko": "전체 스캔 실패"
+    },
+    {
+     "id": "auction.lua::Scan failed",
+     "en": "Scan failed",
+     "ko": "스캔 실패"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Tracking not restored",
+   "file": "minimap.lua",
+   "key": "Tracking not restored",
+   "en": "Tracking not restored",
+   "ko": "추적 복원 안 됨",
+   "code": [
+    "core/minimap/module.lua:682: speak(L[\"Tracking not restored\"] .. \": \" .. tostring(name))"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Seen entries cleared",
+   "file": "minimap.lua",
+   "key": "Seen entries cleared",
+   "en": "Seen entries cleared",
+   "ko": "발견 항목 지움",
+   "code": [
+    "core/minimap/module.lua:1467: speak(L[\"Seen entries cleared\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::indoors, this building only",
+   "file": "minimap.lua",
+   "key": "indoors, this building only",
+   "en": "indoors, this building only",
+   "ko": "실내, 이 건물만",
+   "code": [
+    "core/minimap/module.lua:482: text = text .. \", \" .. L[\"indoors, this building only\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Scan canceled",
+   "file": "minimap.lua",
+   "key": "Scan canceled",
+   "en": "Scan canceled",
+   "ko": "스캔 취소",
+   "code": [
+    "core/minimap/module.lua:191: return L[\"Scan canceled\"] .. \", \" .. reason"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::moved",
+   "file": "minimap.lua",
+   "key": "moved",
+   "en": "moved",
+   "ko": "이동",
+   "code": [
+    "core/minimap/module.lua:655: return canceled(L[\"moved\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::turned",
+   "file": "minimap.lua",
+   "key": "turned",
+   "en": "turned",
+   "ko": "회전",
+   "code": [
+    "core/minimap/module.lua:666: return canceled(L[\"turned\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::combat",
+   "file": "minimap.lua",
+   "key": "combat",
+   "en": "combat",
+   "ko": "전투",
+   "code": [
+    "core/minimap/module.lua:652: return canceled(L[\"combat\"])"
+   ],
+   "game_term": "전투",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::mouse",
+   "file": "minimap.lua",
+   "key": "mouse",
+   "en": "mouse",
+   "ko": "마우스",
+   "code": [
+    "core/minimap/module.lua:663: return canceled(L[\"mouse\"])"
+   ],
+   "game_term": "마우스",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::mouselook",
+   "file": "minimap.lua",
+   "key": "mouselook",
+   "en": "mouselook",
+   "ko": "마우스 시점",
+   "code": [
+    "core/minimap/module.lua:659: return canceled(L[\"mouselook\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::window",
+   "file": "minimap.lua",
+   "key": "window",
+   "en": "window",
+   "ko": "창",
+   "code": [
+    "core/minimap/module.lua:495: Engine.abort(canceled(L[\"window\"]) .. \": \" .. blocker)"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "minimap.lua::Turn on friendly NPC nameplates to learn NPC names",
+   "file": "minimap.lua",
+   "key": "Turn on friendly NPC nameplates to learn NPC names",
+   "en": "Turn on friendly NPC nameplates to learn NPC names",
+   "ko": "NPC 이름을 알아내려면 아군 NPC 이름표를 켜십시오",
+   "code": [
+    "core/minimap/module.lua:1080: speak(L[\"Turn on friendly NPC nameplates to learn NPC names\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Turn on enemy nameplates to count enemies",
+     "en": "Turn on enemy nameplates to count enemies",
+     "ko": "적을 세려면 적 이름표를 켜십시오"
+    }
+   ]
+  },
+  {
+   "id": "minimap.lua::Points of Interest",
+   "file": "minimap.lua",
+   "key": "Points of Interest",
+   "en": "Points of Interest",
+   "ko": "주요 관심 지점",
+   "code": [
+    "core/minimap/module.lua:177: poi = L[\"Points of Interest\"],",
+    "core/minimap/scanner.lua:69: label = L[\"Points of Interest\"],"
+   ],
+   "game_term": "주요 관심 지점",
+   "related": []
+  }
+ ]
+}

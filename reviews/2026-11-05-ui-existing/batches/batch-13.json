@@ -1,0 +1,484 @@
+{
+ "items": [
+  {
+   "id": "windows.lua::Attach to Mail",
+   "file": "windows.lua",
+   "key": "Attach to Mail",
+   "en": "Attach to Mail",
+   "ko": "우편에 첨부",
+   "code": [
+    "core/windows/containers.lua:120: return L[\"Attach to Mail\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Add to Trade",
+   "file": "windows.lua",
+   "key": "Add to Trade",
+   "en": "Add to Trade",
+   "ko": "거래에 추가",
+   "code": [
+    "core/windows/containers.lua:123: return L[\"Add to Trade\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Put up for Auction",
+   "file": "windows.lua",
+   "key": "Put up for Auction",
+   "en": "Put up for Auction",
+   "ko": "경매에 올리기",
+   "code": [
+    "core/windows/containers.lua:126: return L[\"Put up for Auction\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Open",
+   "file": "windows.lua",
+   "key": "Open",
+   "en": "Open",
+   "ko": "열기",
+   "code": [
+    "core/windows/containers.lua:129: return L[\"Open\"]"
+   ],
+   "game_term": "공개 | 열기",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Equip",
+   "file": "windows.lua",
+   "key": "Equip",
+   "en": "Equip",
+   "ko": "장착",
+   "code": [
+    "core/windows/containers.lua:134: return L[\"Equip\"]"
+   ],
+   "game_term": "장비 | 장착",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Read",
+   "file": "windows.lua",
+   "key": "Read",
+   "en": "Read",
+   "ko": "읽기",
+   "code": [
+    "core/windows/containers.lua:137: return L[\"Read\"]"
+   ],
+   "game_term": "읽기",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Use",
+   "file": "windows.lua",
+   "key": "Use",
+   "en": "Use",
+   "ko": "사용",
+   "code": [
+    "core/windows/containers.lua:141: return L[\"Use\"]"
+   ],
+   "game_term": "사용",
+   "related": []
+  },
+  {
+   "id": "windows.lua::WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+   "file": "windows.lua",
+   "key": "WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+   "en": "WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+   "ko": "끌기가 작동하도록 WowVision이 행동 단축바 잠금을 해제했습니다. 게임 설정의 행동 단축바 항목에서 다시 잠글 수 있습니다.",
+   "code": [
+    "core/windows/bars/bars.lua:222: print(L[\"WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+     "en": "WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+     "ko": "WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 경유지로 회전하려면 이 설정이 필요합니다. 시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."
+    },
+    {
+     "id": "bindings.lua::Action Bars",
+     "en": "Action Bars",
+     "ko": "행동 단축바"
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Cooldown Manager",
+   "file": "windows.lua",
+   "key": "Cooldown Manager",
+   "en": "Cooldown Manager",
+   "ko": "재사용 대기시간 관리자",
+   "code": [
+    "retail/cooldownManager.lua:3: module:setLabel(L[\"Cooldown Manager\"])",
+    "retail/cooldownManager.lua:525: builder:pushContext(\"cooldownManager\", L[\"Cooldown Manager\"])"
+   ],
+   "game_term": "재사용 대기시간 관리자",
+   "related": [
+    {
+     "id": "monitors.lua::Cooldown Manager Aura Rule",
+     "en": "Cooldown Manager Aura Rule",
+     "ko": "재사용 대기시간 관리자 오라 규칙"
+    },
+    {
+     "id": "monitors.lua::Cooldown Manager Auras",
+     "en": "Cooldown Manager Auras",
+     "ko": "재사용 대기시간 관리자 오라"
+    },
+    {
+     "id": "windows.lua::Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "en": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "ko": "재사용 대기시간 관리자 변경 사항은 UI를 재시작한 뒤 적용됩니다. 준비되면 /reload를 입력하십시오."
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Settings",
+   "file": "windows.lua",
+   "key": "Settings",
+   "en": "Settings",
+   "ko": "설정",
+   "code": [
+    "retail/cooldownManager.lua:165: nodes.proxyDropdown({ target = frame.SettingsDropdown, label = L[\"Settings\"] })"
+   ],
+   "game_term": "설정",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Layout",
+   "file": "windows.lua",
+   "key": "Layout",
+   "en": "Layout",
+   "ko": "구성",
+   "code": [
+    "retail/cooldownManager.lua:495: return nodes.joinLabel(L[\"Layout\"], current())"
+   ],
+   "game_term": "구성",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Unlearned",
+   "file": "windows.lua",
+   "key": "Unlearned",
+   "en": "Unlearned",
+   "ko": "배우지 않음",
+   "code": [
+    "retail/cooldownManager.lua:263: tinsert(parts, L[\"Unlearned\"])",
+    "retail/cooldownManager.lua:404: tinsert(parts, L[\"Unlearned\"])"
+   ],
+   "game_term": "배우지 않음",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Picked up",
+   "file": "windows.lua",
+   "key": "Picked up",
+   "en": "Picked up",
+   "ko": "집음",
+   "code": [
+    "retail/cooldownManager.lua:221: speak(L[\"Picked up\"])",
+    "retail/cooldownManager.lua:270: tinsert(parts, L[\"Picked up\"])",
+    "retail/cooldownManager.lua:373: speak(L[\"Picked up\"])",
+    "retail/cooldownManager.lua:410: tinsert(parts, L[\"Picked up\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Pickup cancelled",
+   "file": "windows.lua",
+   "key": "Pickup cancelled",
+   "en": "Pickup cancelled",
+   "ko": "집기 취소",
+   "code": [
+    "retail/cooldownManager.lua:191: speak(L[\"Pickup cancelled\"])",
+    "retail/cooldownManager.lua:366: speak(L[\"Pickup cancelled\"])",
+    "retail/cooldownManager.lua:380: speak(L[\"Pickup cancelled\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Moved",
+   "file": "windows.lua",
+   "key": "Moved",
+   "en": "Moved",
+   "ko": "이동함",
+   "code": [
+    "retail/cooldownManager.lua:211: speak(L[\"Moved\"])",
+    "retail/cooldownManager.lua:362: speak(L[\"Moved\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::1 alert",
+   "file": "windows.lua",
+   "key": "1 alert",
+   "en": "1 alert",
+   "ko": "경보 1개",
+   "code": [
+    "retail/cooldownManager.lua:89: return L[\"1 alert\"]",
+    "retail/cooldownManager.lua:407: tinsert(parts, L[\"1 alert\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::%d alerts",
+   "file": "windows.lua",
+   "key": "%d alerts",
+   "en": "%d alerts",
+   "ko": "경보 %d개",
+   "code": [
+    "retail/cooldownManager.lua:91: return format(L[\"%d alerts\"], count)"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Alert Editor",
+   "file": "windows.lua",
+   "key": "Alert Editor",
+   "en": "Alert Editor",
+   "ko": "경보 편집기",
+   "code": [
+    "retail/cooldownManager.lua:571: builder:pushContext(\"alertEditor\", L[\"Alert Editor\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Reload Interface",
+   "file": "windows.lua",
+   "key": "Reload Interface",
+   "en": "Reload Interface",
+   "ko": "UI 재시작",
+   "code": [
+    "retail/cooldownManager.lua:514: nodes.button({ label = L[\"Reload Interface\"], onActivate = reloadInterface })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+   "file": "windows.lua",
+   "key": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+   "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+   "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다.",
+   "code": [
+    "retail/cooldownManager.lua:50: speak(L[\"Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::End of route",
+     "en": "End of route",
+     "ko": "경로 끝"
+    },
+    {
+     "id": "navigation.lua::Waiting for the far end of %s",
+     "en": "Waiting for the far end of %s",
+     "ko": "%s 반대편 끝 대기 중"
+    },
+    {
+     "id": "windows.lua::Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "en": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+     "ko": "재사용 대기시간 관리자 변경 사항은 UI를 재시작한 뒤 적용됩니다. 준비되면 /reload를 입력하십시오."
+    },
+    {
+     "id": "windows.lua::Reload Interface",
+     "en": "Reload Interface",
+     "ko": "UI 재시작"
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+   "file": "windows.lua",
+   "key": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+   "en": "Cooldown manager changes apply after you reload the interface. Type /reload when ready.",
+   "ko": "재사용 대기시간 관리자 변경 사항은 UI를 재시작한 뒤 적용됩니다. 준비되면 /reload를 입력하십시오.",
+   "code": [
+    "retail/cooldownManager.lua:554: speak(L[\"Cooldown manager changes apply after you reload the interface. Type /reload when ready.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "monitors.lua::Cooldown Manager Aura Rule",
+     "en": "Cooldown Manager Aura Rule",
+     "ko": "재사용 대기시간 관리자 오라 규칙"
+    },
+    {
+     "id": "monitors.lua::Cooldown Manager Auras",
+     "en": "Cooldown Manager Auras",
+     "ko": "재사용 대기시간 관리자 오라"
+    },
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    },
+    {
+     "id": "windows.lua::Cooldown Manager",
+     "en": "Cooldown Manager",
+     "ko": "재사용 대기시간 관리자"
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Questie Setup",
+   "file": "windows.lua",
+   "key": "Questie Setup",
+   "en": "Questie Setup",
+   "ko": "Questie 설정",
+   "code": [
+    "core/windows/questieSetup.lua:3: module:setLabel(L[\"Questie Setup\"])",
+    "core/windows/questieSetup.lua:32: builder:pushContext(\"questieSetup\", L[\"Questie Setup\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Chat Channels",
+   "file": "windows.lua",
+   "key": "Chat Channels",
+   "en": "Chat Channels",
+   "ko": "대화 채널",
+   "code": [
+    "retail/channels.lua:3: module:setLabel(L[\"Chat Channels\"])",
+    "retail/channels.lua:224: builder:pushContext(\"channelFrame\", CHAT_CHANNELS or L[\"Chat Channels\"])",
+    "retail/channels.lua:249: builder:pushContext(\"createChannel\", CHANNEL_NEW_CHANNEL or L[\"Chat Channels\"])"
+   ],
+   "game_term": "대화 채널",
+   "related": [
+    {
+     "id": "chat.lua::Chat Channels Window",
+     "en": "Chat Channels Window",
+     "ko": "대화 채널 창"
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Channels",
+   "file": "windows.lua",
+   "key": "Channels",
+   "en": "Channels",
+   "ko": "채널",
+   "code": [
+    "retail/channels.lua:65: builder:pushContext(\"channelList\", L[\"Channels\"])"
+   ],
+   "game_term": "채널 | 채널 표시",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Owner",
+   "file": "windows.lua",
+   "key": "Owner",
+   "en": "Owner",
+   "ko": "소유자",
+   "code": [
+    "retail/channels.lua:186: tinsert(parts, L[\"Owner\"])"
+   ],
+   "game_term": "소유자",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Moderator",
+   "file": "windows.lua",
+   "key": "Moderator",
+   "en": "Moderator",
+   "ko": "관리자",
+   "code": [
+    "retail/channels.lua:188: tinsert(parts, L[\"Moderator\"])"
+   ],
+   "game_term": "관리자",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Offline",
+   "file": "windows.lua",
+   "key": "Offline",
+   "en": "Offline",
+   "ko": "오프라인",
+   "code": [
+    "retail/channels.lua:191: tinsert(parts, L[\"Offline\"])",
+    "retail/communities.lua:185: return L[\"Offline\"]"
+   ],
+   "game_term": "오프라인 | 점검 중 | 접속 종료",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Battle.net",
+   "file": "windows.lua",
+   "key": "Battle.net",
+   "en": "Battle.net",
+   "ko": "Battle.net",
+   "code": [
+    "retail/socialUI.lua:510: builder:pushContext(\"battlenet\", L[\"Battle.net\"])",
+    "retail/socialUI.lua:727: builder:pushContext(\"broadcast\", title or L[\"Battle.net\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Summon",
+   "file": "windows.lua",
+   "key": "Summon",
+   "en": "Summon",
+   "ko": "소환",
+   "code": [
+    "retail/socialUI.lua:188: return L[\"Summon\"]"
+   ],
+   "game_term": "소환",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Extended",
+   "file": "windows.lua",
+   "key": "Extended",
+   "en": "Extended",
+   "ko": "확장",
+   "code": [
+    "retail/socialUI.lua:778: tinsert(parts, EXTENDED or L[\"Extended\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Social",
+   "file": "windows.lua",
+   "key": "Social",
+   "en": "Social",
+   "ko": "소셜",
+   "code": [
+    "retail/socialUI.lua:3: module:setLabel(L[\"Social\"])",
+    "retail/socialUI.lua:612: builder:pushContext(\"social\", title or L[\"Social\"])"
+   ],
+   "game_term": "소셜",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Copy BattleTag",
+   "file": "windows.lua",
+   "key": "Copy BattleTag",
+   "en": "Copy BattleTag",
+   "ko": "BattleTag 복사",
+   "code": [
+    "retail/socialUI.lua:517: addProxy(builder, display.CopyBattleTagToClipboardButton, nil, L[\"Copy BattleTag\"])"
+   ],
+   "game_term": "BattleTag 복사",
+   "related": []
+  }
+ ]
+}

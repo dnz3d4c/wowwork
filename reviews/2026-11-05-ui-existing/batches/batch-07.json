@@ -1,0 +1,1889 @@
+{
+ "items": [
+  {
+   "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "file": "navigation.lua",
+   "key": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다.",
+   "code": [
+    "camelot/wownav/text.lua:48: stop_water_net_ends = L[\"The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Last network point; the last stretch is unchecked, move carefully",
+     "en": "Last network point; the last stretch is unchecked, move carefully",
+     "ko": "네트워크 마지막 지점; 마지막 구간은 검증되지 않았으니, 조심해서 이동하십시오"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+     "en": " (water surface, diving depth %.1f yards)",
+     "ko": " (수면, 잠수 깊이 %.1f야드)"
+    },
+    {
+     "id": "navigation.lua:: (inexact +%.1f yards%s)",
+     "en": " (inexact +%.1f yards%s)",
+     "ko": " (부정확 +%.1f야드%s)"
+    },
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua:: horizontally",
+   "file": "navigation.lua",
+   "key": " horizontally",
+   "en": " horizontally",
+   "ko": " 수평으로",
+   "code": [
+    "camelot/wownav/text.lua:49: suffix_horizontal = L[\" horizontally\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+   "file": "navigation.lua",
+   "key": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+   "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+   "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:50: prepoint_reached_go_through = L[\"Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "en": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "ko": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Prepoint reached. The beacon keeps following the checked way to the activation area.",
+   "file": "navigation.lua",
+   "key": "Prepoint reached. The beacon keeps following the checked way to the activation area.",
+   "en": "Prepoint reached. The beacon keeps following the checked way to the activation area.",
+   "ko": "사전 지점 도착. 비컨이 활성화 구역까지 검증된 길을 계속 따라갑니다.",
+   "code": [
+    "camelot/wownav/text.lua:51: prepoint_reached_unresolved = L[\"Prepoint reached. The beacon keeps following the checked way to the activation area.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+   "file": "navigation.lua",
+   "key": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+   "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+   "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다.",
+   "code": [
+    "camelot/wownav/text.lua:52: activation_area_entered = L[\"In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+   "file": "navigation.lua",
+   "key": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+   "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+   "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다.",
+   "code": [
+    "camelot/wownav/text.lua:53: activation_position_reached = L[\"Position of the activation area reached. %sA journey is not confirmed here; the route stays on.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::No position of the group member available",
+     "en": "No position of the group member available",
+     "ko": "파티원 위치 확인 불가"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The height is not confirmed. ",
+   "file": "navigation.lua",
+   "key": "The height is not confirmed. ",
+   "en": "The height is not confirmed. ",
+   "ko": "높이가 확인되지 않았습니다. ",
+   "code": [
+    "camelot/wownav/text.lua:54: height_not_confirmed = L[\"The height is not confirmed. \"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+   "file": "navigation.lua",
+   "key": "Map change after the activation area; route ended. The destination is not confirmed.",
+   "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+   "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다.",
+   "code": [
+    "camelot/wownav/text.lua:55: reason_activation_map_changed = L[\"Map change after the activation area; route ended. The destination is not confirmed.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "en": "Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "ko": "사전 지점 도착. 비컨이 활성화 구역까지 검증된 길을 계속 따라갑니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::The height is not confirmed. ",
+     "en": "The height is not confirmed. ",
+     "ko": "높이가 확인되지 않았습니다. "
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Map change; the activation guidance is finished.",
+   "file": "navigation.lua",
+   "key": "Map change; the activation guidance is finished.",
+   "en": "Map change; the activation guidance is finished.",
+   "ko": "지도 변경; 활성화 안내 종료.",
+   "code": [
+    "camelot/wownav/text.lua:56: reason_map_changed_guidance_done = L[\"Map change; the activation guidance is finished.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "en": "Prepoint reached. The beacon keeps following the checked way to the activation area.",
+     "ko": "사전 지점 도착. 비컨이 활성화 구역까지 검증된 길을 계속 따라갑니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+     "en": "WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+     "ko": "WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 경유지로 회전하려면 이 설정이 필요합니다. 시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The entrance has no valid proof.",
+   "file": "navigation.lua",
+   "key": "The entrance has no valid proof.",
+   "en": "The entrance has no valid proof.",
+   "ko": "입구에 유효한 근거가 없습니다.",
+   "code": [
+    "camelot/wownav/text.lua:57: activation_proof_invalid = L[\"The entrance has no valid proof.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+     "en": "The boarding point has no valid direction proof on this map",
+     "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Board only when the vehicle is safely there.",
+   "file": "navigation.lua",
+   "key": "Board only when the vehicle is safely there.",
+   "en": "Board only when the vehicle is safely there.",
+   "ko": "운송 수단이 확실히 도착했을 때만 탑승하십시오.",
+   "code": [
+    "camelot/wownav/text.lua:58: action_boarding = L[\"Board only when the vehicle is safely there.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "chat.lua::When the Tab Is Shown",
+     "en": "When the Tab Is Shown",
+     "ko": "탭이 표시될 때"
+    },
+    {
+     "id": "navigation.lua::At the vehicle",
+     "en": "At the vehicle",
+     "ko": "운송 수단 앞"
+    },
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::the vehicle",
+     "en": "the vehicle",
+     "ko": "운송 수단"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+   "file": "navigation.lua",
+   "key": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+   "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+   "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:59: prepoint_reached_dive = L[\"Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "en": "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+     "ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "en": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+     "ko": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+   "file": "navigation.lua",
+   "key": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+   "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+   "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다.",
+   "code": [
+    "camelot/wownav/text.lua:60: activation_area_dive = L[\"At the dive point. Dive here; the route stays on until the dive is confirmed.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "en": "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.",
+     "ko": "활성화 구역 안. 계속 곧장 앞으로 걸어가십시오; 지도가 바뀌어야만 전환이 확인됩니다. 그때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "en": "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.",
+     "ko": "사전 지점 도착. 입구나 차원문을 지나 곧장 앞으로 걸어가십시오; 활성화 구역까지 비컨이 계속 켜져 있습니다."
+    },
+    {
+     "id": "navigation.lua::Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "en": "Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.",
+     "ko": "사전 지점 도착. 여기서 잠수: 잠수 지점까지 곧장 앞으로 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Warning: there is no way around the enemy outpost, the route leads through it.",
+   "file": "navigation.lua",
+   "key": "Warning: there is no way around the enemy outpost, the route leads through it.",
+   "en": "Warning: there is no way around the enemy outpost, the route leads through it.",
+   "ko": "경고: 적 전초기지를 돌아갈 길이 없어, 경로가 그곳을 통과합니다.",
+   "code": [
+    "camelot/wownav/text.lua:68: outpost_through = L[\"Warning: there is no way around the enemy outpost, the route leads through it.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::There is no such floor",
+     "en": "There is no such floor",
+     "ko": "해당 층 없음"
+    },
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Back on the route",
+     "en": "Back on the route",
+     "ko": "경로 복귀"
+    },
+    {
+     "id": "navigation.lua::Dive here; the route goes on after it",
+     "en": "Dive here; the route goes on after it",
+     "ko": "여기서 잠수; 이후 경로 계속"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Warning: the target lies in an enemy outpost.",
+   "file": "navigation.lua",
+   "key": "Warning: the target lies in an enemy outpost.",
+   "en": "Warning: the target lies in an enemy outpost.",
+   "ko": "경고: 대상이 적 전초기지 안에 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:69: outpost_target = L[\"Warning: the target lies in an enemy outpost.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The target lies over several floors",
+     "en": "The target lies over several floors",
+     "ko": "대상이 여러 층에 걸쳐 있음"
+    },
+    {
+     "id": "navigation.lua::No network path from here to the target",
+     "en": "No network path from here to the target",
+     "ko": "여기서 대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network path to the target",
+     "en": "No network path to the target",
+     "ko": "대상까지 네트워크 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No network point near the target",
+     "en": "No network point near the target",
+     "ko": "대상 근처에 네트워크 지점 없음"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Route ended outside the network's zones.",
+   "file": "navigation.lua",
+   "key": "Route ended outside the network's zones.",
+   "en": "Route ended outside the network's zones.",
+   "ko": "네트워크 지역 밖에서 경로가 끝났습니다.",
+   "code": [
+    "camelot/wownav/text.lua:70: stop_outside_zones = L[\"Route ended outside the network's zones.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+     "en": "Map change after the activation area; route ended. The destination is not confirmed.",
+     "ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::Route ended",
+     "en": "Route ended",
+     "ko": "경로 종료"
+    },
+    {
+     "id": "navigation.lua::The transit took too long; route ended",
+     "en": "The transit took too long; route ended",
+     "ko": "이동 수단 이용이 너무 오래 걸림; 경로 종료"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Target Radius Around the Network (Yards)",
+   "file": "navigation.lua",
+   "key": "Target Radius Around the Network (Yards)",
+   "en": "Target Radius Around the Network (Yards)",
+   "ko": "네트워크 주변 대상 반경 (야드)",
+   "code": [
+    "camelot/wownav/module.lua:48: key = \"targetRadius\", type = \"Number\", label = L[\"Target Radius Around the Network (Yards)\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+     "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua::The target's height fits no floor of the network",
+     "en": "The target's height fits no floor of the network",
+     "ko": "대상의 높이에 맞는 네트워크 층 없음"
+    },
+    {
+     "id": "navigation.lua::Warning: there is no way around the enemy outpost, the route leads through it.",
+     "en": "Warning: there is no way around the enemy outpost, the route leads through it.",
+     "ko": "경고: 적 전초기지를 돌아갈 길이 없어, 경로가 그곳을 통과합니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Height Tolerance of a Floor (Yards)",
+   "file": "navigation.lua",
+   "key": "Height Tolerance of a Floor (Yards)",
+   "en": "Height Tolerance of a Floor (Yards)",
+   "ko": "층 높이 허용 오차 (야드)",
+   "code": [
+    "camelot/wownav/module.lua:51: settings:add({ key = \"targetTolerance\", type = \"Number\", label = L[\"Height Tolerance of a Floor (Yards)\"], default = 3,"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Step Back at Gates",
+   "file": "navigation.lua",
+   "key": "Step Back at Gates",
+   "en": "Step Back at Gates",
+   "ko": "관문에서 물러나기",
+   "code": [
+    "camelot/wownav/module.lua:54: settings:add({ key = \"chokeFallback\", type = \"Bool\", label = L[\"Step Back at Gates\"], default = true })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Prepare Neighbouring Zones",
+   "file": "navigation.lua",
+   "key": "Prepare Neighbouring Zones",
+   "en": "Prepare Neighbouring Zones",
+   "ko": "인접 지역 미리 불러오기",
+   "code": [
+    "camelot/wownav/module.lua:56: settings:add({ key = \"preload\", type = \"Bool\", label = L[\"Prepare Neighbouring Zones\"], default = true })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::Searching the route to %s",
+   "file": "navigation.lua",
+   "key": "Searching the route to %s",
+   "en": "Searching the route to %s",
+   "ko": "%s까지 경로 검색 중",
+   "code": [
+    "camelot/wownav/module.lua:1166: say(string.format(L[\"Searching the route to %s\"], tostring(job.request.label or \"\")))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::En route to %s, waypoint %d of %d",
+     "en": "En route to %s, waypoint %d of %d",
+     "ko": "%1$s까지 이동 중, 경유지 %3$d개 중 %2$d번째"
+    },
+    {
+     "id": "navigation.lua::Searching the route again with the new road preference",
+     "en": "Searching the route again with the new road preference",
+     "ko": "새 도로 선호도로 경로 다시 검색 중"
+    },
+    {
+     "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+     "en": "Ahead: walk into %s; the route goes on after it",
+     "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+     "id": "navigation.lua::At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "en": "At the dive point. Dive here; the route stays on until the dive is confirmed.",
+     "ko": "잠수 지점. 여기서 잠수하십시오; 잠수가 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+     "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다."
+    },
+    {
+     "id": "navigation.lua::Back on the route",
+     "en": "Back on the route",
+     "ko": "경로 복귀"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::En route to %s, waypoint %d of %d",
+   "file": "navigation.lua",
+   "key": "En route to %s, waypoint %d of %d",
+   "en": "En route to %s, waypoint %d of %d",
+   "ko": "%1$s까지 이동 중, 경유지 %3$d개 중 %2$d번째",
+   "code": [
+    "camelot/wownav/module.lua:1168: say(string.format(L[\"En route to %s, waypoint %d of %d\"], tostring(self.request and self.request.label or \"\"),"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Searching the route to %s",
+     "en": "Searching the route to %s",
+     "ko": "%s까지 경로 검색 중"
+    },
+    {
+     "id": "navigation.lua::No route to start again",
+     "en": "No route to start again",
+     "ko": "다시 시작할 경로 없음"
+    },
+    {
+     "id": "navigation.lua::No route to your target",
+     "en": "No route to your target",
+     "ko": "대상까지 경로 없음"
+    },
+    {
+     "id": "navigation.lua::Route to Your Target",
+     "en": "Route to Your Target",
+     "ko": "대상까지 경로"
+    },
+    {
+     "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+     "en": "Route to the Nearest Unvisited of the Same Name",
+     "ko": "같은 이름의 가장 가까운 미방문 지점까지 경로"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Waiting for the far end of %s",
+   "file": "navigation.lua",
+   "key": "Waiting for the far end of %s",
+   "en": "Waiting for the far end of %s",
+   "ko": "%s 반대편 끝 대기 중",
+   "code": [
+    "camelot/wownav/module.lua:1171: say(string.format(L[\"Waiting for the far end of %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::End of route",
+     "en": "End of route",
+     "ko": "경로 끝"
+    },
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Riding to the noted dock %s",
+   "file": "navigation.lua",
+   "key": "Riding to the noted dock %s",
+   "en": "Riding to the noted dock %s",
+   "ko": "기록한 승강장 %s까지 이동 중",
+   "code": [
+    "camelot/wownav/module.lua:1174: say(string.format(L[\"Riding to the noted dock %s\"], tostring(passive.name or \"\")))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::At a dock, waiting",
+   "file": "navigation.lua",
+   "key": "At a dock, waiting",
+   "en": "At a dock, waiting",
+   "ko": "승강장에서 대기 중",
+   "code": [
+    "camelot/wownav/module.lua:1176: say(L[\"At a dock, waiting\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::WowNav Route Status",
+   "file": "navigation.lua",
+   "key": "WowNav Route Status",
+   "en": "WowNav Route Status",
+   "ko": "WowNav 경로 상태",
+   "code": [
+    "camelot/wownav/module.lua:1187: label = L[\"WowNav Route Status\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::New WowNav Route Around a Blocked Spot",
+     "en": "New WowNav Route Around a Blocked Spot",
+     "ko": "막힌 지점을 피하는 새 WowNav 경로"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::switch",
+   "file": "navigation.lua",
+   "key": "switch",
+   "en": "switch",
+   "ko": "스위치",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "스위치 | 전환",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::trap",
+   "file": "navigation.lua",
+   "key": "trap",
+   "en": "trap",
+   "ko": "함정",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::spell focus",
+   "file": "navigation.lua",
+   "key": "spell focus",
+   "en": "spell focus",
+   "ko": "주문 초점",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::capture point",
+   "file": "navigation.lua",
+   "key": "capture point",
+   "en": "capture point",
+   "ko": "점령 지점",
+   "code": [
+    "camelot/wownav/text.lua:238: switch = L[\"switch\"], trap = L[\"trap\"], spell_focus = L[\"spell focus\"], capture_point = L[\"capture point\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::destructible building",
+   "file": "navigation.lua",
+   "key": "destructible building",
+   "en": "destructible building",
+   "ko": "파괴 가능한 건물",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::guild bank",
+   "file": "navigation.lua",
+   "key": "guild bank",
+   "en": "guild bank",
+   "ko": "길드 은행",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "길드 은행",
+   "related": [
+    {
+     "id": "windows.lua::Guild Bank Repair",
+     "en": "Guild Bank Repair",
+     "ko": "길드 자금으로 수리"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::trapdoor",
+   "file": "navigation.lua",
+   "key": "trapdoor",
+   "en": "trapdoor",
+   "ko": "바닥 문",
+   "code": [
+    "camelot/wownav/text.lua:239: destructible_building = L[\"destructible building\"], guild_bank = L[\"guild bank\"], trapdoor = L[\"trapdoor\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::orientation point",
+   "file": "navigation.lua",
+   "key": "orientation point",
+   "en": "orientation point",
+   "ko": "방향 기준점",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::transport",
+   "file": "navigation.lua",
+   "key": "transport",
+   "en": "transport",
+   "ko": "운송 수단",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::live target",
+   "file": "navigation.lua",
+   "key": "live target",
+   "en": "live target",
+   "ko": "실시간 대상",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "navigation.lua::On the ship to %s",
+   "file": "navigation.lua",
+   "key": "On the ship to %s",
+   "en": "On the ship to %s",
+   "ko": "%s행 배에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:122: on_ship = L[\"On the ship to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the ship",
+     "en": "On the ship",
+     "ko": "배에 탑승 중"
+    },
+    {
+     "id": "navigation.lua::the ship",
+     "en": "the ship",
+     "ko": "배"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::In the tram toward %s",
+   "file": "navigation.lua",
+   "key": "In the tram toward %s",
+   "en": "In the tram toward %s",
+   "ko": "%s 방면 지하철에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:123: in_tram = L[\"In the tram toward %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Tram dock toward %s",
+     "en": "Tram dock toward %s",
+     "ko": "%s 방면 지하철 승강장"
+    },
+    {
+     "id": "navigation.lua::the tram",
+     "en": "the tram",
+     "ko": "지하철"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+   "file": "navigation.lua",
+   "key": "The boarding point proof or the map changed; guidance ended",
+   "en": "The boarding point proof or the map changed; guidance ended",
+   "ko": "탑승 지점 근거 또는 지도 변경; 안내 종료",
+   "code": [
+    "camelot/wownav/text.lua:37: stop_boarding_proof_changed = L[\"The boarding point proof or the map changed; guidance ended\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::The boarding point has no valid direction proof on this map",
+     "en": "The boarding point has no valid direction proof on this map",
+     "ko": "이 지도에서 탑승 지점의 유효한 방향 근거 없음"
+    },
+    {
+     "id": "navigation.lua:: The beacon shows the boarding direction; I turns you toward it.",
+     "en": " The beacon shows the boarding direction; I turns you toward it.",
+     "ko": " 비컨이 탑승 방향을 알려 줍니다; I 키를 누르면 그쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Boarding point %s reached",
+     "en": "Boarding point %s reached",
+     "ko": "%s 탑승 지점 도착"
+    },
+    {
+     "id": "navigation.lua::The dock has no valid waiting point proof",
+     "en": "The dock has no valid waiting point proof",
+     "ko": "승강장에 유효한 대기 지점 근거 없음"
+    },
+    {
+     "id": "navigation.lua::The waiting point proof is invalid; no boarding instruction",
+     "en": "The waiting point proof is invalid; no boarding instruction",
+     "ko": "대기 지점 근거가 유효하지 않음; 탑승 안내 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::height %d",
+   "file": "navigation.lua",
+   "key": "height %d",
+   "en": "height %d",
+   "ko": "높이 %d",
+   "code": [
+    "camelot/wownav/floorsUi.lua:50: text = text .. \", \" .. string.format(L[\"height %d\"], math.floor(floor.z + 0.5))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua:: (height %d)",
+     "en": " (height %d)",
+     "ko": " (높이 %d)"
+    },
+    {
+     "id": "navigation.lua::Auto, height %d",
+     "en": "Auto, height %d",
+     "ko": "자동, 높이 %d"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::waypoint",
+   "file": "navigation.lua",
+   "key": "waypoint",
+   "en": "waypoint",
+   "ko": "경유지",
+   "code": [
+    "camelot/wownav/text.lua:240: waypoint = L[\"waypoint\"], orientation = L[\"orientation point\"], transport = L[\"transport\"], live = L[\"live target\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::of",
+   "file": "objects.lua",
+   "key": "of",
+   "en": "of",
+   "ko": "of",
+   "code": [
+    "camelot/character.lua:468: .. L[\"of\"]",
+    "core/buffers/types/AuraBuffer.lua:241: return whenNonZero(duration, \", \" .. last .. \", \" .. L[\"of\"] .. \" \", \" \" .. L[\"seconds\"])",
+    "core/graph/Host.lua:816: return index .. \" \" .. L[\"of\"] .. \" \" .. count",
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\""
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Health",
+   "file": "objects.lua",
+   "key": "Health",
+   "en": "Health",
+   "ko": "생명력",
+   "code": [],
+   "game_term": "생명력",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Power",
+   "file": "objects.lua",
+   "key": "Power",
+   "en": "Power",
+   "ko": "자원",
+   "code": [],
+   "game_term": "능력 | 위력 | 전투력 | 힘",
+   "related": []
+  },
+  {
+   "id": "objects.lua::XP",
+   "file": "objects.lua",
+   "key": "XP",
+   "en": "XP",
+   "ko": "경험치",
+   "code": [
+    "core/objects/types/PlayerXP.lua:5: PlayerXP:setLabel(L[\"XP\"])",
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\""
+   ],
+   "game_term": "경험치",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Next Level",
+   "file": "objects.lua",
+   "key": "Next Level",
+   "en": "Next Level",
+   "ko": "다음 레벨",
+   "code": [
+    "core/objects/types/PlayerXP.lua:39: label = L[\"Next Level\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::to level",
+   "file": "objects.lua",
+   "key": "to level",
+   "en": "to level",
+   "ko": "다음 레벨",
+   "code": [
+    "core/objects/types/tests.lua:51: local xpLine = L[\"XP\"] .. \": 50% (12500 \" .. L[\"of\"] .. \" 25000 \" .. L[\"to level\"] .. \" 31)\""
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Money",
+   "file": "objects.lua",
+   "key": "Money",
+   "en": "Money",
+   "ko": "돈",
+   "code": [
+    "classic/mail.lua:183: SendMailMoneyText ~= nil and SendMailMoneyText:GetText() or L[\"Money\"]",
+    "core/objects/types/PlayerMoney.lua:5: PlayerMoney:setLabel(L[\"Money\"])",
+    "core/windows/trade.lua:72: builder:pushContext(\"playerMoney\", L[\"Money\"])",
+    "core/windows/trade.lua:102: return L[\"Money\"] .. \" \" .. C_CurrencyInfo.GetCoinText(money)"
+   ],
+   "game_term": "돈",
+   "related": []
+  },
+  {
+   "id": "objects.lua::PVP",
+   "file": "objects.lua",
+   "key": "PVP",
+   "en": "PVP",
+   "ko": "PvP",
+   "code": [
+    "tbc/character/PVP.lua:24: builder:pushContext(\"pvp\", L[\"PVP\"])"
+   ],
+   "game_term": "PvP | 전쟁 | 전쟁 참여 중 | 전적 | 플레이어 간 전투",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Rested",
+   "file": "objects.lua",
+   "key": "Rested",
+   "en": "Rested",
+   "ko": "휴식 상태",
+   "code": [
+    "core/objects/types/PlayerXP.lua:54: label = L[\"Rested\"],"
+   ],
+   "game_term": "휴식 상태",
+   "related": []
+  },
+  {
+   "id": "objects.lua::rested",
+   "file": "objects.lua",
+   "key": "rested",
+   "en": "rested",
+   "ko": "휴식 상태",
+   "code": [
+    "core/objects/types/tests.lua:170: t:assertEqual(line(\"PlayerXP\"), xpLine .. \", \" .. L[\"rested\"] .. \" 3000\")"
+   ],
+   "game_term": "휴식 상태",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Free Slots",
+   "file": "objects.lua",
+   "key": "Free Slots",
+   "en": "Free Slots",
+   "ko": "빈 칸",
+   "code": [
+    "core/objects/types/PlayerBags.lua:13: label = L[\"Free Slots\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Free Bag Slots",
+   "file": "objects.lua",
+   "key": "Free Bag Slots",
+   "en": "Free Bag Slots",
+   "ko": "가방 빈 칸",
+   "code": [
+    "core/objects/types/tests.lua:82: t:assertEqual(line(\"PlayerBags\"), L[\"Free Bag Slots\"] .. \": 10\")"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Bag Slots",
+     "en": "Bag Slots",
+     "ko": "가방 보관함"
+    },
+    {
+     "id": "windows.lua::Bank Bag Slots",
+     "en": "Bank Bag Slots",
+     "ko": "은행 가방 보관함"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::Unread",
+   "file": "objects.lua",
+   "key": "Unread",
+   "en": "Unread",
+   "ko": "읽지 않음",
+   "code": [
+    "core/objects/types/PlayerMail.lua:12: label = L[\"Unread\"],"
+   ],
+   "game_term": "읽지 않음",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Senders",
+   "file": "objects.lua",
+   "key": "Senders",
+   "en": "Senders",
+   "ko": "보낸 사람",
+   "code": [
+    "core/objects/types/PlayerMail.lua:21: label = L[\"Senders\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::none",
+   "file": "objects.lua",
+   "key": "none",
+   "en": "none",
+   "ko": "없음",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:498: message = L[\"none\"]",
+    "core/objects/types/tests.lua:95: t:assertEqual(line(\"PlayerMail\"), L[\"Mail\"] .. \": \" .. L[\"none\"])"
+   ],
+   "game_term": "선택 해제 | 없음 | 조건 없음 | 표시하지 않음",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Mail from",
+   "file": "objects.lua",
+   "key": "Mail from",
+   "en": "Mail from",
+   "ko": "보낸 사람",
+   "code": [
+    "core/objects/types/tests.lua:97: t:assertEqual(line(\"PlayerMail\"), L[\"Mail from\"] .. \" Thrall, Jaina\")"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::New mail",
+   "file": "objects.lua",
+   "key": "New mail",
+   "en": "New mail",
+   "ko": "새 편지",
+   "code": [
+    "core/objects/types/tests.lua:99: t:assertEqual(line(\"PlayerMail\"), L[\"New mail\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Durability",
+   "file": "objects.lua",
+   "key": "Durability",
+   "en": "Durability",
+   "ko": "내구도",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:7: PlayerDurability:setLabel(L[\"Durability\"])",
+    "core/objects/types/tests.lua:109: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"no items\"])",
+    "core/objects/types/tests.lua:112: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": 100%\")",
+    "core/objects/types/tests.lua:114: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 98%\")"
+   ],
+   "game_term": "내구도",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Lowest Item",
+   "file": "objects.lua",
+   "key": "Lowest Item",
+   "en": "Lowest Item",
+   "ko": "가장 낮은 아이템",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:25: label = L[\"Lowest Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::lowest item",
+     "en": "lowest item",
+     "ko": "가장 낮은 아이템"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::lowest item",
+   "file": "objects.lua",
+   "key": "lowest item",
+   "en": "lowest item",
+   "ko": "가장 낮은 아이템",
+   "code": [
+    "core/objects/types/tests.lua:114: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 98%\")",
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::Lowest Item",
+     "en": "Lowest Item",
+     "ko": "가장 낮은 아이템"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::Broken",
+   "file": "objects.lua",
+   "key": "Broken",
+   "en": "Broken",
+   "ko": "파손",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:41: label = L[\"Broken\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::broken",
+   "file": "objects.lua",
+   "key": "broken",
+   "en": "broken",
+   "ko": "파손",
+   "code": [
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::no items",
+   "file": "objects.lua",
+   "key": "no items",
+   "en": "no items",
+   "ko": "아이템 없음",
+   "code": [
+    "core/objects/types/tests.lua:109: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"no items\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Hearthstone",
+   "file": "objects.lua",
+   "key": "Hearthstone",
+   "en": "Hearthstone",
+   "ko": "귀환석",
+   "code": [
+    "core/objects/types/Hearthstone.lua:7: Hearthstone:setLabel(L[\"Hearthstone\"])",
+    "core/objects/types/tests.lua:142: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": \" .. L[\"ready\"] .. \", Goldshire\")",
+    "core/objects/types/tests.lua:144: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": 20 \" .. L[\"minutes\"] .. \", Goldshire\")",
+    "core/objects/types/tests.lua:146: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": Goldshire\")"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::ready",
+   "file": "objects.lua",
+   "key": "ready",
+   "en": "ready",
+   "ko": "준비 완료",
+   "code": [
+    "core/objects/types/tests.lua:142: t:assertEqual(line(\"Hearthstone\"), L[\"Hearthstone\"] .. \": \" .. L[\"ready\"] .. \", Goldshire\")"
+   ],
+   "game_term": "준비 | 준비 완료",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Bind Location",
+   "file": "objects.lua",
+   "key": "Bind Location",
+   "en": "Bind Location",
+   "ko": "귀환 장소",
+   "code": [
+    "core/objects/types/Hearthstone.lua:60: label = L[\"Bind Location\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Clock",
+   "file": "objects.lua",
+   "key": "Clock",
+   "en": "Clock",
+   "ko": "시계",
+   "code": [
+    "core/objects/types/GameClock.lua:5: GameClock:setLabel(L[\"Clock\"])"
+   ],
+   "game_term": "시계",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Time",
+   "file": "objects.lua",
+   "key": "Time",
+   "en": "Time",
+   "ko": "시간",
+   "code": [
+    "core/objects/types/GameClock.lua:12: label = L[\"Time\"],",
+    "core/objects/types/tests.lua:156: t:assertEqual(line(\"GameClock\"), L[\"Time\"] .. \": 8:05 PM\")"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "operators.lua::equal to",
+   "file": "operators.lua",
+   "key": "equal to",
+   "en": "equal to",
+   "ko": "같음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ]
+  },
+  {
+   "id": "operators.lua::not equal to",
+   "file": "operators.lua",
+   "key": "not equal to",
+   "en": "not equal to",
+   "ko": "같지 않음",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    }
+   ]
+  },
+  {
+   "id": "operators.lua::less than",
+   "file": "operators.lua",
+   "key": "less than",
+   "en": "less than",
+   "ko": "미만",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    }
+   ]
+  },
+  {
+   "id": "operators.lua::less than or equal to",
+   "file": "operators.lua",
+   "key": "less than or equal to",
+   "en": "less than or equal to",
+   "ko": "이하",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    },
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::less than",
+     "en": "less than",
+     "ko": "미만"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ]
+  },
+  {
+   "id": "operators.lua::greater than",
+   "file": "operators.lua",
+   "key": "greater than",
+   "en": "greater than",
+   "ko": "초과",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::greater than or equal to",
+     "en": "greater than or equal to",
+     "ko": "이상"
+    }
+   ]
+  },
+  {
+   "id": "operators.lua::greater than or equal to",
+   "file": "operators.lua",
+   "key": "greater than or equal to",
+   "en": "greater than or equal to",
+   "ko": "이상",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "operators.lua::less than or equal to",
+     "en": "less than or equal to",
+     "ko": "이하"
+    },
+    {
+     "id": "operators.lua::equal to",
+     "en": "equal to",
+     "ko": "같음"
+    },
+    {
+     "id": "operators.lua::greater than",
+     "en": "greater than",
+     "ko": "초과"
+    },
+    {
+     "id": "operators.lua::not equal to",
+     "en": "not equal to",
+     "ko": "같지 않음"
+    }
+   ]
+  },
+  {
+   "id": "powers.lua::alternate",
+   "file": "powers.lua",
+   "key": "alternate",
+   "en": "alternate",
+   "ko": "보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:32: { key = \"alternate\", id = Enum.PowerType.Alternate, label = L[\"alternate\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::alternate encounter",
+   "file": "powers.lua",
+   "key": "alternate encounter",
+   "en": "alternate encounter",
+   "ko": "전투 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:33: { key = \"alternateencounter\", id = Enum.PowerType.AlternateEncounter, label = L[\"alternate encounter\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::alternate mount",
+   "file": "powers.lua",
+   "key": "alternate mount",
+   "en": "alternate mount",
+   "ko": "탈것 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:34: { key = \"alternatemount\", id = Enum.PowerType.AlternateMount, label = L[\"alternate mount\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::alternate quest",
+   "file": "powers.lua",
+   "key": "alternate quest",
+   "en": "alternate quest",
+   "ko": "퀘스트 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:35: { key = \"alternatequest\", id = Enum.PowerType.AlternateQuest, label = L[\"alternate quest\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::arcane charges",
+   "file": "powers.lua",
+   "key": "arcane charges",
+   "en": "arcane charges",
+   "ko": "비전 충전물",
+   "code": [
+    "core/gameDB/powers.lua:36: { key = \"arcanecharges\", id = Enum.PowerType.ArcaneCharges, label = L[\"arcane charges\"] },"
+   ],
+   "game_term": "비전 충전물",
+   "related": []
+  },
+  {
+   "id": "powers.lua::balance",
+   "file": "powers.lua",
+   "key": "balance",
+   "en": "balance",
+   "ko": "조화",
+   "code": [
+    "core/gameDB/powers.lua:37: { key = \"balance\", id = Enum.PowerType.Balance, minimum = -100, label = L[\"balance\"] },"
+   ],
+   "game_term": "조화",
+   "related": []
+  },
+  {
+   "id": "powers.lua::burning embers",
+   "file": "powers.lua",
+   "key": "burning embers",
+   "en": "burning embers",
+   "ko": "타오르는 불씨",
+   "code": [
+    "core/gameDB/powers.lua:38: { key = \"burningembers\", id = Enum.PowerType.BurningEmbers, label = L[\"burning embers\"] },"
+   ],
+   "game_term": "타오르는 불씨",
+   "related": []
+  },
+  {
+   "id": "powers.lua::chi",
+   "file": "powers.lua",
+   "key": "chi",
+   "en": "chi",
+   "ko": "기",
+   "code": [
+    "core/gameDB/powers.lua:39: { key = \"chi\", id = Enum.PowerType.Chi, label = L[\"chi\"] },"
+   ],
+   "game_term": "기",
+   "related": []
+  },
+  {
+   "id": "powers.lua::combo points",
+   "file": "powers.lua",
+   "key": "combo points",
+   "en": "combo points",
+   "ko": "연계 점수",
+   "code": [
+    "core/gameDB/powers.lua:40: { key = \"combopoints\", id = Enum.PowerType.ComboPoints, label = L[\"combo points\"] },"
+   ],
+   "game_term": "연계 점수",
+   "related": []
+  },
+  {
+   "id": "powers.lua::demonic fury",
+   "file": "powers.lua",
+   "key": "demonic fury",
+   "en": "demonic fury",
+   "ko": "악마의 분노",
+   "code": [
+    "core/gameDB/powers.lua:41: { key = \"demonicfury\", id = Enum.PowerType.DemonicFury, label = L[\"demonic fury\"] },"
+   ],
+   "game_term": "악마의 분노",
+   "related": []
+  },
+  {
+   "id": "powers.lua::energy",
+   "file": "powers.lua",
+   "key": "energy",
+   "en": "energy",
+   "ko": "기력",
+   "code": [
+    "core/gameDB/powers.lua:42: { key = \"energy\", id = Enum.PowerType.Energy, label = L[\"energy\"] },"
+   ],
+   "game_term": "기력",
+   "related": []
+  },
+  {
+   "id": "powers.lua::essence",
+   "file": "powers.lua",
+   "key": "essence",
+   "en": "essence",
+   "ko": "정수",
+   "code": [
+    "core/gameDB/powers.lua:43: { key = \"essence\", id = Enum.PowerType.Essence, label = L[\"essence\"] },"
+   ],
+   "game_term": "정수",
+   "related": []
+  },
+  {
+   "id": "powers.lua::focus",
+   "file": "powers.lua",
+   "key": "focus",
+   "en": "focus",
+   "ko": "집중",
+   "code": [
+    "core/gameDB/powers.lua:44: { key = \"focus\", id = Enum.PowerType.Focus, label = L[\"focus\"] },"
+   ],
+   "game_term": "주 활동 | 주시 | 집중",
+   "related": []
+  },
+  {
+   "id": "powers.lua::fury",
+   "file": "powers.lua",
+   "key": "fury",
+   "en": "fury",
+   "ko": "격노",
+   "code": [
+    "core/gameDB/powers.lua:45: { key = \"fury\", id = Enum.PowerType.Fury, label = L[\"fury\"] },"
+   ],
+   "game_term": "격노 | 분노",
+   "related": []
+  },
+  {
+   "id": "powers.lua::happiness",
+   "file": "powers.lua",
+   "key": "happiness",
+   "en": "happiness",
+   "ko": "만족도",
+   "code": [
+    "core/gameDB/powers.lua:46: { key = \"happiness\", id = Enum.PowerType.Happiness, label = L[\"happiness\"] },"
+   ],
+   "game_term": "만족도",
+   "related": []
+  },
+  {
+   "id": "powers.lua::holy power",
+   "file": "powers.lua",
+   "key": "holy power",
+   "en": "holy power",
+   "ko": "신성한 힘",
+   "code": [
+    "core/gameDB/powers.lua:47: { key = \"holypower\", id = Enum.PowerType.HolyPower, label = L[\"holy power\"] },"
+   ],
+   "game_term": "신성한 힘",
+   "related": []
+  },
+  {
+   "id": "powers.lua::insanity",
+   "file": "powers.lua",
+   "key": "insanity",
+   "en": "insanity",
+   "ko": "광기",
+   "code": [
+    "core/gameDB/powers.lua:48: { key = \"insanity\", id = Enum.PowerType.Insanity, label = L[\"insanity\"] },"
+   ],
+   "game_term": "광기",
+   "related": []
+  },
+  {
+   "id": "powers.lua::lunar power",
+   "file": "powers.lua",
+   "key": "lunar power",
+   "en": "lunar power",
+   "ko": "천공의 힘",
+   "code": [
+    "core/gameDB/powers.lua:49: { key = \"lunarpower\", id = Enum.PowerType.LunarPower, label = L[\"lunar power\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::maelstrom",
+   "file": "powers.lua",
+   "key": "maelstrom",
+   "en": "maelstrom",
+   "ko": "소용돌이",
+   "code": [
+    "core/gameDB/powers.lua:50: { key = \"maelstrom\", id = Enum.PowerType.Maelstrom, label = L[\"maelstrom\"] },"
+   ],
+   "game_term": "소용돌이",
+   "related": []
+  },
+  {
+   "id": "powers.lua::mana",
+   "file": "powers.lua",
+   "key": "mana",
+   "en": "mana",
+   "ko": "마나",
+   "code": [
+    "core/gameDB/powers.lua:31: { key = \"mana\", id = Enum.PowerType.Mana, label = L[\"mana\"] },"
+   ],
+   "game_term": "마나",
+   "related": []
+  },
+  {
+   "id": "powers.lua::pain",
+   "file": "powers.lua",
+   "key": "pain",
+   "en": "pain",
+   "ko": "고통",
+   "code": [
+    "core/gameDB/powers.lua:51: { key = \"pain\", id = Enum.PowerType.Pain, label = L[\"pain\"] },"
+   ],
+   "game_term": "고통",
+   "related": []
+  },
+  {
+   "id": "powers.lua::rage",
+   "file": "powers.lua",
+   "key": "rage",
+   "en": "rage",
+   "ko": "분노",
+   "code": [
+    "core/gameDB/powers.lua:52: { key = \"rage\", id = Enum.PowerType.Rage, label = L[\"rage\"] },"
+   ],
+   "game_term": "분노",
+   "related": []
+  },
+  {
+   "id": "powers.lua::blood runes",
+   "file": "powers.lua",
+   "key": "blood runes",
+   "en": "blood runes",
+   "ko": "혈기 룬",
+   "code": [
+    "core/gameDB/powers.lua:53: { key = \"runeblood\", id = Enum.PowerType.RuneBlood, label = L[\"blood runes\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::death runes",
+   "file": "powers.lua",
+   "key": "death runes",
+   "en": "death runes",
+   "ko": "죽음 룬",
+   "code": [
+    "core/gameDB/powers.lua:54: { key = \"runechromatic\", id = Enum.PowerType.RuneChromatic, label = L[\"death runes\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::frost runes",
+   "file": "powers.lua",
+   "key": "frost runes",
+   "en": "frost runes",
+   "ko": "냉기 룬",
+   "code": [
+    "core/gameDB/powers.lua:55: { key = \"runefrost\", id = Enum.PowerType.RuneFrost, label = L[\"frost runes\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  }
+ ]
+}
