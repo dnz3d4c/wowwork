@@ -90,3 +90,21 @@ def test_build_payload_zips_kokr_folder_deterministically(tmp_path) -> None:  # 
     with zipfile.ZipFile(a) as z:
         assert sorted(z.namelist()) == ["koKR/modules.xml", "koKR/ui.lua"]
         assert z.read("koKR/ui.lua") == b"L = 1"
+
+
+def test_installer_payload_matches_current_kokr() -> None:
+    """설치 프로그램에 넣은 payload 가 vision-locale 의 koKR 과 같아야 한다(낡은 번역 배포 방지).
+
+    다르면: uv run python -m tools.installer_loc payload 후 설치 프로그램을 다시 빌드한다.
+    """
+    import zipfile
+
+    from tools.installer_loc import PAYLOAD
+    from tools.locale_lib import KOKR_DIR
+
+    with zipfile.ZipFile(PAYLOAD) as z:
+        packed = {n.removeprefix("koKR/"): z.read(n) for n in z.namelist()}
+    current = {p.name: p.read_bytes() for p in KOKR_DIR.iterdir() if p.is_file()}
+    assert sorted(packed) == sorted(current), "payload 의 파일 목록이 koKR 과 다르다"
+    stale = [name for name in current if packed[name] != current[name]]
+    assert stale == [], f"payload 가 낡았다: {stale}"
