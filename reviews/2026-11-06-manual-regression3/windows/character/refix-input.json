@@ -1,0 +1,62 @@
+[
+ {
+  "by": "claude",
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "3. 구성을 선택하면 장착, 저장, 세트 편집, 삭제가 정지점 하나씩 나옵니다. 장착을 누르면 선택한 구성을 착용합니다. 저장을 누르면 지금 입은 장비를 그 구성에 저장합니다. 세트 편집을 누르면 이름과 아이콘 창이 열립니다.",
+  "suggestion": "3. 구성을 선택하면 장비, 저장, 이름/아이콘 변경, 삭제가 정지점 하나씩 나옵니다. 장비 버튼을 누르면 선택한 구성을 착용합니다. 저장을 누르면 지금 입은 장비를 그 구성에 저장합니다. 이름/아이콘 변경을 누르면 이름과 아이콘 창이 열립니다.",
+  "problem": "Equip 버튼과 Edit Set 버튼은 애드온 번역이 아니라 게임 전역 문자열로 읽힌다. 한국어 클라이언트에서 실제로 들리는 이름은 '장비'와 '이름/아이콘 변경'인데 설명서는 '장착'과 '세트 편집'으로 적어, 사용자가 들리지 않는 이름을 찾게 된다.",
+  "evidence": "WowVision/camelot/character.lua:547 Equip 정지점은 nodes.proxyButton({ target = pane.EquipSet })로 label 없이 게임 버튼 글자(EQUIPSET_EQUIP)를 읽음. character.lua:559 Edit 정지점 label = EQUIPMENT_SET_EDIT or L[\"Edit Set\"]로 전역 문자열이 우선, 애드온 locale(세트 편집)은 전역이 없을 때만 씀. wowwork/cache/gs_koKR.csv: 20051 EQUIPSET_EQUIP=장비, 21880 EQUIPMENT_SET_EDIT=이름/아이콘 변경. terms의 'Edit Set=세트 편집'은 애드온 fallback 값이다. 단 WoW: Forever 클라이언트가 이 전역 문자열을 갖는지는 게임 안에서 확인 필요.",
+  "ref": "windows/character.md#reg-claude-0",
+  "consensus": false
+ },
+ {
+  "by": "claude",
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "새 구성과 세트 편집은 구성 창을 독립된 창으로 엽니다.",
+  "suggestion": "새 구성과 이름/아이콘 변경은 구성 창을 독립된 창으로 엽니다.",
+  "problem": "위 지적과 같은 버튼(EQUIPMENT_SET_EDIT)을 '세트 편집'으로 적었다. 같은 단락 묶음에서 한 곳만 고치면 이름이 엇갈리므로 함께 고쳐야 한다.",
+  "evidence": "character.lua:559 label = EQUIPMENT_SET_EDIT or L[\"Edit Set\"]; wowwork/cache/gs_koKR.csv 21880 EQUIPMENT_SET_EDIT=이름/아이콘 변경. 새 구성은 gs_koKR.csv 21879 PAPERDOLL_NEWEQUIPMENTSET=새 구성으로 맞음.",
+  "ref": "windows/character.md#reg-claude-1",
+  "consensus": false
+ },
+ {
+  "by": "claude",
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "4. 장착이 들릴 때까지 Tab을 누르고 Enter를 누릅니다.",
+  "suggestion": "4. 장비가 들릴 때까지 Tab을 누르고 Enter를 누릅니다.",
+  "problem": "예시 절차의 마지막 단계에서 기다릴 버튼 이름을 '장착'으로 적었다. 실제로는 게임 버튼 글자 '장비'가 들리므로 사용자가 들릴 말을 기다리다 지나칠 수 있다.",
+  "evidence": "character.lua:547 proxyButton({ target = pane.EquipSet })는 게임 버튼 글자를 읽음; wowwork/cache/gs_koKR.csv 20051 EQUIPSET_EQUIP=장비. 애드온 locale의 L[\"Equip\"]=장착(vision-locale/koKR/windows.lua:265)은 이 버튼에 쓰이지 않는다.",
+  "ref": "windows/character.md#reg-claude-2",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "- 불타는 성전에서는 모두 접기 / 모두 펼치기 버튼이 먼저 나옵니다. 버튼 이름은 누르면 일어날 일을 나타냅니다.\n- 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다.",
+  "suggestion": "- 불타는 성전에서는 모두 접기 / 모두 펼치기 버튼이 먼저 나옵니다. 버튼 이름은 누르면 일어날 일을 나타냅니다.\n- 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter를 누르면 접거나 펼칩니다.",
+  "problem": "Enter가 펼쳐진 머리글을 접기만 하는 것처럼 설명해, 이미 접힌 숙련 범주를 같은 키로 다시 펼칠 수 있다는 동작이 누락됐다.",
+  "evidence": "원문은 \"Headers read \\\"Expanded\\\" or \\\"Collapsed\\\" and fold with Enter.\"이다. 실제로 TBC는 머리글의 펼침 상태를 양쪽 모두 읽고 머리글 버튼에 클릭 동작을 연결하며(wowvision-ko/WowVision/tbc/character/Skills.lua:68, wowvision-ko/WowVision/tbc/character/Skills.lua:91), WoW: Forever도 접기 전환 버튼을 사용한다(wowvision-ko/WowVision/camelot/character.lua:93, wowvision-ko/WowVision/camelot/character.lua:783).",
+  "ref": "windows/character.md#reg-gpt-3",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "화폐 목록이 담긴 정지점 하나입니다. 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다. 화폐는 이름과 보유량을 읽습니다.",
+  "suggestion": "화폐 목록이 담긴 정지점 하나입니다. 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter를 누르면 접거나 펼칩니다. 화폐는 이름과 보유량을 읽습니다.",
+  "problem": "화폐 머리글도 Enter로 접고 펼치는 전환 동작인데 접는 동작만 설명해, 접힌 범주를 다시 여는 방법을 빠뜨렸다.",
+  "evidence": "원문은 \"Headers read \\\"Expanded\\\" or \\\"Collapsed\\\" and fold with Enter.\"이다. 판다리아의 안개 구현은 머리글의 펼침 상태를 읽고 같은 행에 클릭 동작을 연결하며(wowvision-ko/WowVision/mists/character.lua:313, wowvision-ko/WowVision/mists/character.lua:323), WoW: Forever 구현도 접기 전환 버튼을 대상으로 삼는다(wowvision-ko/WowVision/camelot/character.lua:863, wowvision-ko/WowVision/camelot/character.lua:873).",
+  "ref": "windows/character.md#reg-gpt-4",
+  "consensus": false
+ }
+]

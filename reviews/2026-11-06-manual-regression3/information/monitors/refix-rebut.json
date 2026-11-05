@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "information/monitors.md#reg-gpt-0",
+      "action": "dispute",
+      "reason": "원문 en/information/monitors.md:311이 'For the Aura, Cooldown and Spell Cooldowns rules the list is the spells you have cast, or met as auras, on this character.'라고 Spell Cooldowns를 직접 나열하고, 번역은 이를 그대로 옮긴 것이다. 코드(SpellCooldownMonitor.lua:145-150, 262-276)가 이와 다른 것은 맞지만, decisions.tsv 13번(설명서: 원문이 실제 애드온 동작과 다를 때 원문에 충실하게 옮기고 차이는 upstream에 보고)에 따라 원문에 있는 '주문 재사용 대기'를 지우지 않는다. 문단 안의 모순도 원문 자체의 모순이다.",
+      "upstream": ""
+    }
+  ]
+}

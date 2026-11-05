@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {
+      "ref": "windows/action-bars.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "gs_enUS.csv:20656 HUD_EDIT_MODE_POSSESS_ACTION_BAR_LABEL='Possess Bar', gs_koKR.csv:20666 같은 키='행동 단축바 조정'으로 글자 그대로 확인. '지배 단축바'는 게임 문자열·용어집 어디에도 없음. '운송 수단 단축바나 행동 단축바 조정은'으로 교체.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/action-bars.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "camelot/gamepadBars.lua에서 칸 텍스트에 WowVision.pad.inputText(slotKey)를 붙이고, core/ui/input/pad.lua:474-477 names()가 PAD1/PAD3에 L['A button']/L['X button']을 쓰며, vision-locale/koKR/controller.lua:6,8 실제 값이 'A 버튼'/'X 버튼'. ko/controller.md:136도 같은 표기. 예시를 '얼음 화살, A 버튼', '비어 있음, X 버튼'으로 교체.",
+      "upstream": ""
+    }
+  ]
+}

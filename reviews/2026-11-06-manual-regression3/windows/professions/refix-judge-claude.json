@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/professions.md#reg-gpt-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "crafting.lua:467-470은 page.ViewGuildCraftersButton을 proxyButton으로 게임 버튼 문구 그대로 읽을 뿐, 어떤 전역 문자열이 붙는지는 로컬 자료로 확인되지 않는다. 지적이 근거로 든 GUILD_TRADE_SKILL_VIEW_CRAFTERS의 영문은 \"View Crafters\"(gs_enUS.csv:9193)로 원문 설명서의 \"View Guild Crafters\"와 글자가 다르고, 이 키가 그 버튼에 연결된다는 증거가 없다. 반면 GUILD_CRAFTERS \"Guild Crafters\" = \"길드 내 제작자\"(gs_koKR.csv:9382)가 있어 현재 번역 \"길드 내 제작자 보기\"는 원문을 공식 표기로 옮긴 것으로 성립한다. 지적 근거가 약하므로 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/camelot/crafting.lua:467",
+        "wowwork/cache/gs_enUS.csv:9193",
+        "wowwork/cache/gs_koKR.csv:9195",
+        "wowwork/cache/gs_enUS.csv:9380",
+        "wowwork/cache/gs_koKR.csv:9382"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+ {
+  "by": "claude",
+  "id": "getting-started/sku.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "퀘스트 제공자 창(퀘스트 수락과 완료 보고).",
+  "suggestion": "퀘스트 NPC 창(퀘스트 수락과 완료 보고).",
+  "problem": "Quest giver 창을 '퀘스트 제공자 창'으로 옮겨, 같은 창을 '퀘스트 NPC 창'이라 부르는 다른 설명서 파일과 애드온 화면 문구와 어긋난다. 같은 창이 페이지마다 다른 이름으로 들린다.",
+  "evidence": "원문 'Quest giver window'. vision-locale/koKR/quests.lua:45 L[\"Quest Giver\"] = \"퀘스트 NPC\", quests.lua:22 L[\"Quest Givers\"] = \"퀘스트 NPC\". 다른 파일 표기: windows/overview.md:56 '퀘스트 NPC 창', reference/versions.md:31 '퀘스트 NPC 창', world/index.md:13 '퀘스트 NPC 창과 Questie', getting-started/introduction.md:10 '퀘스트 NPC 창'.",
+  "ref": "getting-started/sku.md#reg-claude-0",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "getting-started/sku.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "- 대화와 그 밖의 NPC 대화창.\n- 상인.\n- 우체통.\n- 팝업(게임의 확인 대화상자).",
+  "suggestion": "- 대화와 그 밖의 NPC 대화창.\n- 상인.\n- 우편함.\n- 팝업(게임의 확인 대화상자).",
+  "problem": "창 목록에서 물리적인 우편 시설을 뜻하는 \"우체통\"을 사용했습니다. Sku가 맡는 대상은 우체통 오브젝트가 아니라 우편 창이므로 독자가 동작 범위를 잘못 이해할 수 있습니다.",
+  "evidence": "원문은 창 목록에서 \"Mailbox\"를 열거합니다. wowvision-ko/WowVision/docs/src/user/ko/windows/loot-trade-mail.md:71과 :150은 같은 창을 \"우편함\"으로 표기하고, :73은 물리적인 대상인 \"우체통\"과 열리는 \"우편 창\"을 구분합니다. 실제 창 이름도 wowvision-ko/vision-locale/koKR/windows.lua:97에서 \"Mail\"을 \"우편\"으로 번역합니다.",
+  "ref": "getting-started/sku.md#reg-gpt-1",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "getting-started/sku.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "- 상급자.\n- 전투 준비 확인과 던전 입장 준비 팝업.\n- 역할 투표(역할 확인 팝업).",
+  "suggestion": "- 상급자.\n- 전투 준비 확인과 던전 준비 팝업.\n- 역할 투표(역할 확인 팝업).",
+  "problem": "같은 게임 팝업을 다른 설명서와 다른 이름으로 표기했습니다. 스크린리더로 실제 팝업 제목을 들은 사용자가 이 항목과 같은 창인지 바로 식별하기 어렵습니다.",
+  "evidence": "원문은 \"the dungeon ready popup\"입니다. wowvision-ko/WowVision/docs/src/user/ko/windows/group-finder.md:158의 제목과 :160의 게임 화면 문구는 모두 \"던전 준비 팝업\"이며, :19에서도 Sku가 맡는 대상을 \"던전 준비\"로 표기합니다. 동작 대상은 wowvision-ko/WowVision/core/windows/ready.lua:61-68의 LFGDungeonReadyDialog입니다.",
+  "ref": "getting-started/sku.md#reg-gpt-2",
+  "consensus": false
+ }
+]
