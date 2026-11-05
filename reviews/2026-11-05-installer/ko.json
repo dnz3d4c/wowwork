@@ -202,5 +202,6 @@
  "lt.present": "WoW Login Tool: 이미 설치됨, 건너뜀.",
  "lt.noInterface": "WoW Login Tool: Interface 폴더를 찾지 못함 — 로그인 화면 텍스처를 설치하지 않음.",
  "lt.done": "WoW Login Tool: 준비됨. \"WoW Login Tool\" 바로 가기(바탕 화면 / 시작 메뉴)로 실행하십시오.",
- "lt.failed": "WoW Login Tool 설치 실패: {0}"
+ "lt.failed": "WoW Login Tool 설치 실패: {0}",
+ "status.koreanFailed": "한국어 문자열을 넣지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지 WowVision은 영어로 동작합니다."
 }
