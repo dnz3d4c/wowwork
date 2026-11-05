@@ -61,3 +61,11 @@ def test_build_command_is_read_only_with_schema(tmp_path: Path) -> None:
     assert "--output-schema" in cmd
     assert cmd[cmd.index("--sandbox") + 1] == "read-only"
     assert cmd[-1] == "-"
+
+
+def test_decisions_changes_only_differing_translations() -> None:
+    from tools.review.decisions import changes
+
+    decisions = [{"id": "a.lua::K", "final_ko": "새것"}, {"id": "a.lua::Same", "final_ko": "그대로"}]
+    current = {("a.lua", "K"): "옛것", ("a.lua", "Same"): "그대로"}
+    assert changes(decisions, current) == [["a.lua", "K", "옛것", "새것"]]

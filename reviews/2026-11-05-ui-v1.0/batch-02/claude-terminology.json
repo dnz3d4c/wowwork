@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "windows.lua::Stable",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "같은 야수 우리 창 제목인데 게임 공식 전역 문자열 STABLES는 '우리'다. petStable.lua:87은 STABLES가 있으면 '우리', 없을 때만 이 번역을 쓰므로 같은 창 이름이 상황에 따라 '우리'와 '야수 우리'로 갈린다.",
+      "evidence": "cache/gs_koKR.csv 13216 STABLES = '우리', game_term = '우리 이용'. code: tbc/petStable.lua:87 pushContext(\"petStable\", STABLES or L[\"Stable\"]). 다만 EMPTY_STABLE_SLOT = '빈 야수 우리'처럼 게임도 '야수 우리'를 쓰는 곳이 있어 확신하지 못해 minor로 낮췄다.",
+      "suggestion": "우리"
+    }
+  ]
+}

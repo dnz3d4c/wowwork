@@ -1,0 +1,28 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::Direct",
+      "category": "listening",
+      "severity": "minor",
+      "problem": "길찾기 화면의 토글 이름은 '직접'인데, 이 모드에서 나오는 알림은 '직선: %s, %d야드'라서 같은 모드가 귀로는 다른 두 낱말로 들린다. 또 '직접 켜짐'은 '수동 모드 켜짐'처럼 들릴 수 있다.",
+      "evidence": "core/navigation/maps/ui.lua:358 nodes.toggle({ label = L[\"Direct\"] ... }) 는 직선 경로 모드 토글이고, core/navigation/maps/module.lua:513 은 같은 모드에서 L[\"Direct: %s, %d yards\"] = '직선: ...' 을 말한다. 다만 같은 키를 vanilla/speech.lua:86 의 음성 스타일 선택지도 쓰므로(AceLocale 키 하나에 번역 하나), '직선'이 그쪽 문맥에도 맞는지는 확인하지 못했다. 그래서 심각도를 한 단계 낮췄다.",
+      "suggestion": "직선"
+    },
+    {
+      "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+      "category": "listening",
+      "severity": "minor",
+      "problem": "원문은 '안으로 걸어 들어가라'는 지시인데, '걸어 들어감'은 이미 들어갔다는 상태 보고로도 들려서 사용자가 지금 해야 할 행동인지 헷갈릴 수 있다.",
+      "evidence": "camelot/wownav/module.lua:860 say(...) 로 앞으로 할 행동을 미리 알리는 문구다. '-ㅁ' 명사형은 완료된 상태 알림('도착함')과 같은 형태라 들었을 때 시점이 갈릴 수 있다. 그렇게 오해할지는 듣는 사람마다 달라서 minor로 둔다.",
+      "suggestion": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속"
+    },
+    {
+      "id": "navigation.lua::No network point at the chosen start",
+      "category": "style",
+      "severity": "minor",
+      "problem": "짧은 알림 하나에 '지점'이 두 번 나와서 듣기에 겹치고 늘어진다.",
+      "evidence": "camelot/wownav/module.lua:511 say(...) 로 발화되는 음성 알림이다. 원문은 start와 point로 다른 낱말을 쓰는데, 번역에서 둘 다 '지점'이 됐다.",
+      "suggestion": "선택한 시작점에 네트워크 지점 없음"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{"findings": [
+  {
+    "id": "buffers.lua::External Defensive",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "게임 공식 용어 '외부 방어 능력'을 따르지 않고 '외부 생존기'라는 비공식 커뮤니티 용어를 썼다.",
+    "evidence": "cache/gs_koKR.csv 56267 HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_LABEL / 56812 EXTERNAL_DEFENSIVES_LABEL = '외부 방어 능력'(enUS 'External Defensives'). 이 항목은 AuraBuffer.lua:94의 EXTERNAL_DEFENSIVE 오라 필터 토큰으로, 게임의 같은 오라 분류(공격대창·편집 모드)와 같은 문맥이다. 공식 클라이언트에 '생존기'는 0건.",
+    "suggestion": "외부 방어 능력"
+  },
+  {
+    "id": "buffers.lua::Big Defensive",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "게임 공식 용어 '강력한 방어 능력'을 따르지 않고 '주요 생존기'로 옮겼다. 같은 묶음의 External Defensive와 함께 공식 '방어 능력' 계열로 맞춰야 한다.",
+    "evidence": "cache/gs_koKR.csv 57129 COMPACT_UNIT_FRAME_PROFILE_SHOW_BIG_DEFENSIVES 'Center Big Defensives' = '강력한 방어 능력 중앙 정렬'. AuraBuffer.lua:95의 BIG_DEFENSIVE 오라 필터 토큰과 같은 오라 분류다.",
+    "suggestion": "강력한 방어 능력"
+  },
+  {
+    "id": "navigation.lua::Direct",
+    "category": "terminology",
+    "severity": "minor",
+    "problem": "길 안내 화면의 'Direct' 토글(직선 이동 모드)을 '직접'으로 옮겨, 같은 기능의 다른 문자열이 쓰는 '직선'과 용어가 갈린다.",
+    "evidence": "navigation.lua:61 'Direct: %s, %d yards' = '직선: …', navigation.lua:312 'Direct to the Nearest Unvisited…' = '…직선'. core/navigation/maps/ui.lua:357-358에서 같은 모드 토글 라벨이 L[\"Direct\"]. 다만 같은 키가 vanilla/speech.lua:86 음성 출력 방식(Speech Style) 선택지에도 쓰여 AceLocale상 번역이 하나뿐이므로, '직선'으로 바꾸면 음성 방식 쪽이 어색해질 수 있다. 확신이 낮아 minor로 둔다.",
+    "suggestion": "직선"
+  }
+]}

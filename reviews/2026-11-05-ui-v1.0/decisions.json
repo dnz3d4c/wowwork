@@ -1,0 +1,357 @@
+[
+ {
+  "batch": "reviews/2026-11-05-ui-v1.0/batches/batch-01.json",
+  "failedReviewers": 0,
+  "findings": 25,
+  "decisions": [
+   {
+    "id": "groupHealth.lua::Repeat Below (percent)",
+    "final_ko": "미만일 때 반복 (퍼센트)",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Group Health Monitor",
+    "final_ko": "파티 및 공격대 생명력 모니터",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "buffers.lua::External Defensive",
+    "final_ko": "외부 방어 능력",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "buffers.lua::Big Defensive",
+    "final_ko": "중요 방어 능력",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Direct",
+    "final_ko": "직접",
+    "how": "dispute-won",
+    "reason": "이 키는 길 안내 토글뿐 아니라 음성 방식 선택지에도 공용되며, AceLocale 특성상 번역을 분리할 수 없다. \"직선\"은 음성 방식 문맥에서 성립하지 않으므로 두 문맥을 함께 만족시키는 현재 번역 \"직접\"을 유지하는 편이 타당하다.",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Direct: %s, %d yards",
+    "final_ko": "직선: %s, %d야드",
+    "how": "dispute-won",
+    "reason": "이 알림은 목적지까지의 직선 방향과 거리를 전달하므로 \"직선\"이 문맥상 정확하다. 토글과 표현이 다른 것은 공용 키의 제약 때문이며, 이를 맞추려고 \"직접: 여관, 30야드\"처럼 의미가 불명확한 표현으로 바꿀 근거는 부족하다.",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::full",
+    "final_ko": "생명력 최대",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+    "final_ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::No network point at the chosen start",
+    "final_ko": "선택한 시작점에 네트워크 지점 없음",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "buffers.lua::Dispellable by My Group",
+    "final_ko": "내 파티 또는 공격대가 무효화 가능",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Speak Group Health",
+    "final_ko": "파티 및 공격대 생명력 말하기",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Group health monitor unavailable here",
+    "final_ko": "여기서는 파티 및 공격대 생명력 모니터 사용 불가",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Raid Groups",
+    "final_ko": "공격대 구성",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::dead",
+    "final_ko": "사망",
+    "how": "dispute-won",
+    "reason": "번역자 반박이 맞다. WowVision/retail/groupHealth/module.lua:443 number = tostring(member.number)이고 :11-15 주석이 '플레이어 1, 파티원 2~5, 공격대는 Sku 번호'라고 밝히며 :27도 '\"<number> dead\" once'로 한 사람에 대한 알림이다. 숫자는 인원수가 아니라 파티원 번호이므로 '명 사망'으로 바꾸면 '3명 사망'(세 명이 죽음)으로 뜻이 틀어진다. 같은 패턴의 '<number> full'(:433, :480)과도 짝이 맞는 현재 '사망' 유지.",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-v1.0/batches/batch-02.json",
+  "failedReviewers": 0,
+  "findings": 32,
+  "decisions": [
+   {
+    "id": "windows.lua::Stable",
+    "final_ko": "우리",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Stable slot %d",
+    "final_ko": "야수 우리 %d",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Focus %d set to %s.",
+    "final_ko": "주시 대상 %d에 %s 설정.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+    "final_ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+    "final_ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.",
+    "final_ko": "사전 지점 도착. Wind Bridge 대기 지점까지 계속 걸어가십시오; 그때까지 비컨이 계속 켜져 있습니다.",
+    "how": "dispute-won",
+    "reason": "docs/manual-plan.md:111에 따르면 Wind Bridge는 리테일 AreaTable에 없는 WoW Forever 전용 지명이라 공식 한국어가 없다. '바람 다리'는 근거 없는 창작이고, 서버의 영어 이름과 대조할 수 없게 된다. 번역자 쪽 근거가 더 강하다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+    "final_ko": "Wind Bridge 대기 지점 도착. 다리 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오.",
+    "how": "dispute-won",
+    "reason": "같은 근거(manual-plan.md:111)다. 공식 한국어가 없는 서버 전용 지명이고, 관련 항목 전체가 영어 표기로 일관되어 있다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Portal to Rohashi Spires",
+    "final_ko": "Rohashi Spires행 차원문",
+    "how": "dispute-won",
+    "reason": "Rohashi Spires는 공식 한국어가 없는 WoW Forever 전용 지명이다(manual-plan.md:111). '로하시 첨탑'은 근거 없는 창작 표기다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Arrival at Rohashi Spires",
+    "final_ko": "Rohashi Spires 도착 지점",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이라 영어로 둔다(manual-plan.md:111). 차원문 항목과도 표기가 같다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Portal to Valanaar",
+    "final_ko": "Valanaar행 차원문",
+    "how": "dispute-won",
+    "reason": "Valanaar는 공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111). '발라나르'라는 음역은 근거가 없다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Horde arrival in Valanaar Sanctuary",
+    "final_ko": "Valanaar Sanctuary 호드 도착 지점",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111). 얼라이언스 항목과 표기가 같다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Alliance arrival in Valanaar Sanctuary",
+    "final_ko": "Valanaar Sanctuary 얼라이언스 도착 지점",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111). 호드 항목과 표기가 같다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wind Bridge waiting point",
+    "final_ko": "Wind Bridge 대기 지점",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111).",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wind Bridge landing",
+    "final_ko": "Wind Bridge 착지 지점",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111). 대기 지점 항목과 표기가 같다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::the Wind Bridge",
+    "final_ko": "Wind Bridge",
+    "how": "dispute-won",
+    "reason": "공식 한국어가 없는 서버 전용 지명이다(manual-plan.md:111). 이 이름을 쓰는 문장 전체가 영어 표기로 일관되어 있다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Leader",
+    "final_ko": "파티장",
+    "how": "dispute-won",
+    "reason": "cache/gs_koKR.csv:7919-7920에서 확인했다. LEADER=파티장이고, 바로 이어지는 LEADER_TOOLTIP이 '파티를 이끌고자 함을 알립니다.'다. 던전 찾기의 역할 버튼과 같은 문맥의 공식 번역이므로 '파티장'이 맞다. 평가자가 내세운 '지도자'는 다른 문맥에서 온 후보다.",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Target Crowd Control",
+    "final_ko": "대상 군중 제어 상태",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Controlled Sound",
+    "final_ko": "군중 제어 시 소리",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "targeting.lua::Free Sound",
+    "final_ko": "군중 제어 해제 시 소리",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Direct to the Nearest Unvisited of the Same Name",
+    "final_ko": "같은 이름의 가장 가까운 미방문 지점까지 직선",
+    "how": "dispute-won",
+    "reason": "짝 항목 Route(visited.lua:112)의 번역이 '...까지 경로'다. 두 항목이 '경로'와 '직선'으로 대칭을 이룬다. '직선'은 manual-plan.md:109에 기록된 결정이기도 하다. 지적은 minor 수준의 취향 차이에 가깝다.",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+    "final_ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다.",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The position is approximate.",
+    "final_ko": "대략적인 위치입니다.",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Letter Navigation in Menus",
+    "final_ko": "메뉴에서 글자로 이동",
+    "how": "dispute-won",
+    "reason": "현재 번역은 메뉴 안에서 글자를 눌러 항목으로 이동하는 기능을 그대로 설명한다. 제안된 '메뉴 글자 탐색'이 더 명확하다는 근거가 없다. 취향 차이라 현재 번역을 유지한다.",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Without Names",
+    "final_ko": "이름 미포함",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ }
+]
