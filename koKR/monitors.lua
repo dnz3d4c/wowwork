@@ -47,6 +47,7 @@ L["Low power"] = "자원 낮음"
 L["Spell"] = "주문"
 L["Spell Name"] = "주문 이름"
 L["Spell ID"] = "주문 ID"
+L["Not Found"] = "찾을 수 없음"
 
 -- Aura monitor
 L["Aura Monitor"] = "오라 모니터"
@@ -109,3 +110,5 @@ L["No tracked cooldowns"] = "추적 중인 재사용 대기시간 없음"
 
 -- Keybindings
 L["Toggle All Monitors"] = "모든 모니터 켜기 끄기"
+L["Monitors on"] = "모니터 켜짐"
+L["Monitors off"] = "모니터 꺼짐"

@@ -132,6 +132,8 @@ L["Role Poll"] = "역할 투표"
 L["Tank"] = "방어 전담"
 L["Healer"] = "치유 전담"
 L["Damage Dealer"] = "공격 전담"
+L["Leader"] = "파티장"
+L["Partially Checked"] = "일부 체크됨"
 
 --Quest
 L["Quest Window"] = "퀘스트 창"
@@ -195,6 +197,11 @@ L["Taxi"] = "비행 지도"
 --TradeSkill
 L["Trade Skill"] = "전문 기술"
 L["Recipes"] = "제조법"
+L["Craft"] = "제작"
+L["Stable"] = "야수 우리"
+L["Stable slot %d"] = "우리 칸 %d"
+L["Selected Pet"] = "선택한 야수"
+L["Slots"] = "칸"
 L["Favorite"] = "즐겨찾기"
 
 --Training
@@ -289,3 +296,16 @@ L["Summon"] = "소환"
 L["Extended"] = "확장"
 L["Social"] = "소셜"
 L["Copy BattleTag"] = "BattleTag 복사"
+
+-- Guild invitation, guild and communities window, guild control
+L["Guild Invitation"] = "길드 초대"
+L["Guild and Communities"] = "길드 및 커뮤니티"
+L["Guild Control"] = "길드 권한"
+L["Messages"] = "메시지"
+L["Sort By"] = "정렬 기준"
+L["Maximize"] = "최대화"
+L["Minimize"] = "최소화"
+
+-- Classic guild window (guild tab of the friends window, TBC Anniversary)
+L["Rank Name"] = "등급 이름"
+L["Permissions"] = "권한"

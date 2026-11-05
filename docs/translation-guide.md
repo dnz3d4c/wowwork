@@ -15,6 +15,14 @@ if not L then return end
 - 값은 항상 한국어 문자열입니다. `true`를 쓰지 않습니다. enUS가 `L["EditBox"] = "Edit"`처럼 값을 따로 가진 경우에는 키가 아니라 그 값을 번역합니다.
 - 큰따옴표와 백슬래시는 Lua 규칙대로 이스케이프합니다.
 - 검증: `uv run pytest -q`가 키 누락, 원문에 없는 키, 빈 값, 서식 지정자 불일치, Lua 문법 오류를 잡습니다.
+- 같은 키는 파일이 달라도 번역이 하나입니다. AceLocale은 키 하나에 값 하나만 가지므로, 다른 파일에 이미 있는 키는 그 번역을 따릅니다. 예: `Direct`는 음성 방식(`speech.lua`)과 길 안내 창(`navigation.lua`)이 함께 사용하므로 둘 다 "직접"입니다.
+
+## upstream 업데이트 절차
+
+1. upstream 클론을 최신으로 맞춥니다: `git -C ../wowvision/upstream/WowVision fetch --tags origin` 후 원하는 커밋이나 태그를 checkout합니다.
+2. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다.
+3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다.
+4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다.
 
 ## 서식 지정자
 
