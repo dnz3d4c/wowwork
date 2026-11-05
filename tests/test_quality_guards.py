@@ -62,6 +62,7 @@ def test_valid_evidence_accepts_only_primary_sources() -> None:
     assert valid_evidence(["wowvision-ko/WowVision/tbc/petStable.lua:87", "input"])
     assert valid_evidence(["wowwork/cache/gs_koKR.csv:7919", "wowwork/docs/decisions.tsv"])
     assert valid_evidence(["wowwork/docs/translation-guide.md"])
+    assert valid_evidence(["wowvision-ko/wowvision-installer/WowVisionInstaller/AddonInstaller.cs:383"])
     assert not valid_evidence([])
     assert not valid_evidence(["wowwork/docs/manual-plan.md:111"])
     assert not valid_evidence(["input", "wowwork/reviews/x/rebut.json"])

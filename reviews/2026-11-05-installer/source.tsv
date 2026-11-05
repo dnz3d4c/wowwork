@@ -1,0 +1,292 @@
+key	en	de	fr	ko
+app.title	WowVision Installer & Updater	WowVision Installer & Updater	WowVision Installer & Updater	
+nav.back	< &Back	< &Zurück	< &Retour	
+nav.next	&Next >	&Weiter >	&Suivant >	
+nav.install	&Install	&Installieren	&Installer	
+nav.close	&Close	&Schließen	&Fermer	
+cancel.title	Quit the installer?	Installer beenden?	Quitter l'installateur ?	
+cancel.text	The installation has not been carried out yet. Really quit?	Die Installation wurde noch nicht durchgeführt. Wirklich beenden?	L'installation n'a pas encore été effectuée. Voulez-vous vraiment quitter ?	
+update.heading.available	An update for WowVision is available	Eine Aktualisierung für WowVision ist verfügbar	Une mise à jour de WowVision est disponible	
+update.heading.current	WowVision is installed and up to date	WowVision ist installiert und aktuell	WowVision est installé et à jour	
+update.heading.notInstalled	WowVision is not installed yet	WowVision ist noch nicht installiert	WowVision n'est pas encore installé	
+update.heading.noClient	No World of Warcraft installation found	Keine World-of-Warcraft-Installation gefunden	Aucune installation de World of Warcraft trouvée	
+update.noClientBody	The installer could not find World of Warcraft automatically. Use Browse to select your World of Warcraft folder, a game version folder, or its Interface\AddOns folder.	Der Installer konnte World of Warcraft nicht automatisch finden. Wähle über „Durchsuchen“ deinen World-of-Warcraft-Ordner, einen Spielversions-Ordner oder dessen Ordner Interface\AddOns.	L'installateur n'a pas trouvé World of Warcraft automatiquement. Utilisez « Parcourir » pour choisir votre dossier World of Warcraft, un dossier de version du jeu, ou son dossier Interface\AddOns.	
+update.explainUpdate	Update now: updates WowVision in {0} and keeps your current settings.	Jetzt aktualisieren: aktualisiert WowVision in {0} und behält deine bisherigen Einstellungen bei.	Mettre à jour maintenant : met WowVision à jour dans {0} et conserve vos réglages actuels.	
+update.explainInstall	Install now: installs WowVision into {0} with the recommended setup.	Jetzt installieren: installiert WowVision in {0} mit der empfohlenen Einrichtung.	Installer maintenant : installe WowVision dans {0} avec la configuration recommandée.	
+update.explainCustomize	Install WowVision fresh, or for further game versions: pick the game versions, beta or stable, and the optional components yourself.	WowVision neu oder für weitere Spielversionen installieren: Spielversionen, Beta oder stabil und optionale Bestandteile selbst festlegen.	Installer WowVision à neuf, ou pour d'autres versions du jeu : choisissez vous-même les versions du jeu, bêta ou stable, et les composants facultatifs.	
+update.updateBtn	&Update now	&Jetzt aktualisieren	&Mettre à jour maintenant	
+update.installBtn	&Install now	&Jetzt installieren	&Installer maintenant	
+update.browseBtn	&Browse…	&Durchsuchen…	&Parcourir…	
+update.customizeBtn	Install WowVision &fresh, or for further game versions	WowVision &neu oder für weitere Spielversionen installieren	Installer WowVision à &neuf, ou pour d'autres versions du jeu	
+update.updateAcc	Update now, using the current settings	Jetzt aktualisieren, mit den bisherigen Einstellungen	Mettre à jour maintenant, avec les réglages actuels	
+update.installAcc	Install now, using the recommended setup	Jetzt installieren, mit der empfohlenen Einrichtung	Installer maintenant, avec la configuration recommandée	
+update.browseAcc	Browse for your World of Warcraft folder	Nach deinem World-of-Warcraft-Ordner suchen	Rechercher votre dossier World of Warcraft	
+update.customizeAcc	Install WowVision fresh, or for further game versions — choose versions and components yourself	WowVision neu oder für weitere Spielversionen installieren – Versionen und Bestandteile selbst wählen	Installer WowVision à neuf, ou pour d'autres versions du jeu — choisir soi-même les versions et les composants	
+update.closeAcc	Close the installer without changing anything	Installer schließen, ohne etwas zu ändern	Fermer l'installateur sans rien modifier	
+logs.btn	Collect all &logs…	Alle &Protokolle sammeln…	Collecter tous les &journaux…	
+logs.btnAcc	Collect all logs of every detected game version into one zip file in your Downloads folder, for a bug report	Alle Protokolle aller gefundenen Spielversionen in einer ZIP-Datei im Downloads-Ordner sammeln, für eine Fehlermeldung	Collecter tous les journaux de chaque version du jeu détectée dans un seul fichier zip du dossier Téléchargements, pour un rapport de bogue	
+logs.explain	Collect all logs: writes one zip file to your Downloads folder containing the logs of every detected game version — WowVision's saved data, BugGrabber, the game's own logs and this installer's log. Attach that file to a bug report.	Alle Protokolle sammeln: legt eine ZIP-Datei im Downloads-Ordner an, die die Protokolle aller gefundenen Spielversionen enthält – die gespeicherten Daten von WowVision, BugGrabber, die Protokolle des Spiels und das Protokoll dieses Installers. Diese Datei an eine Fehlermeldung anhängen.	Collecter tous les journaux : crée un fichier zip dans votre dossier Téléchargements contenant les journaux de chaque version du jeu détectée — les données enregistrées de WowVision, BugGrabber, les journaux du jeu et celui de cet installateur. Joignez ce fichier à un rapport de bogue.	
+logs.working	Collecting logs, please wait.	Protokolle werden gesammelt, bitte warten.	Collecte des journaux, veuillez patienter.	
+logs.doneTitle	Logs collected	Protokolle gesammelt	Journaux collectés	
+logs.done	"The logs were saved to:
+{0}
+
+{1} files from {2} game version(s), {3} in total.
+
+Attach this zip file to your bug report."	"Die Protokolle wurden gespeichert unter:
+{0}
+
+{1} Dateien aus {2} Spielversion(en), zusammen {3}.
+
+Hänge diese ZIP-Datei an deine Fehlermeldung an."	"Les journaux ont été enregistrés dans :
+{0}
+
+{1} fichiers de {2} version(s) du jeu, {3} au total.
+
+Joignez ce fichier zip à votre rapport de bogue."	
+logs.failedTitle	Logs could not be collected	Protokolle konnten nicht gesammelt werden	Impossible de collecter les journaux	
+logs.failed	"The logs could not be collected.
+
+{0}"	"Die Protokolle konnten nicht gesammelt werden.
+
+{0}"	"Les journaux n'ont pas pu être collectés.
+
+{0}"	
+selfupdate.heading	An update for the installer itself is available	Für den Installer selbst ist eine neue Version verfügbar	Une mise à jour de l'installateur lui-même est disponible	
+selfupdate.body	"You are using version {0} of the WowVision installer. Version {1} is available.
+
+Updating the installer first is strongly recommended: it is a small download, it takes a few seconds, and installing WowVision afterwards then runs with all the current fixes. The installer closes and reopens on its own — nothing else on your computer is changed.
+
+You can also carry on with version {0}; installing and updating WowVision still works."	"Du verwendest Version {0} des WowVision-Installers. Version {1} ist verfügbar.
+
+Es wird dringend empfohlen, zuerst den Installer zu aktualisieren: Der Download ist klein, dauert wenige Sekunden, und die Installation von WowVision läuft danach mit allen aktuellen Korrekturen. Der Installer schließt sich dabei selbst und öffnet sich neu — sonst wird nichts auf dem Computer verändert.
+
+Du kannst auch mit Version {0} weiterarbeiten; WowVision installieren und aktualisieren funktioniert weiterhin."	"Vous utilisez la version {0} de l'installateur WowVision. La version {1} est disponible.
+
+Il est fortement recommandé de mettre d'abord à jour l'installateur : le téléchargement est petit, il prend quelques secondes, et l'installation de WowVision bénéficiera ensuite de toutes les corrections récentes. L'installateur se ferme et se rouvre tout seul — rien d'autre n'est modifié sur votre ordinateur.
+
+Vous pouvez aussi continuer avec la version {0} ; installer et mettre à jour WowVision fonctionne toujours."	
+selfupdate.updateBtn	&Update the installer now (recommended)	&Installer jetzt aktualisieren (empfohlen)	&Mettre à jour l'installateur maintenant (recommandé)	
+selfupdate.updateAcc	Update the installer to version {0} now, recommended — it downloads the new version, restarts itself and then carries on	Den Installer jetzt auf Version {0} aktualisieren, empfohlen — er lädt die neue Version, startet sich neu und macht dann weiter	Mettre l'installateur à jour vers la version {0} maintenant, recommandé — il télécharge la nouvelle version, redémarre puis poursuit	
+selfupdate.skipBtn	&Continue with the current version	Mit der &vorhandenen Version fortfahren	&Continuer avec la version actuelle	
+selfupdate.skipAcc	Continue with the current installer version without updating it	Mit der vorhandenen Installer-Version fortfahren, ohne sie zu aktualisieren	Continuer avec la version actuelle de l'installateur sans la mettre à jour	
+selfupdate.cancelBtn	Cancel the &download and continue with the current version	&Download abbrechen und mit der vorhandenen Version fortfahren	Annuler le &téléchargement et continuer avec la version actuelle	
+selfupdate.cancelAcc	Cancel the download and continue with the current installer version	Den Download abbrechen und mit der vorhandenen Installer-Version fortfahren	Annuler le téléchargement et continuer avec la version actuelle de l'installateur	
+selfupdate.statusAcc	Update progress	Fortschritt der Aktualisierung	Progression de la mise à jour	
+selfupdate.working	Downloading the new installer version, please wait.	Die neue Installer-Version wird heruntergeladen, bitte warten.	Téléchargement de la nouvelle version de l'installateur, veuillez patienter.	
+selfupdate.progress	Downloading the new installer: {0} percent.	Der neue Installer wird heruntergeladen: {0} Prozent.	Téléchargement du nouvel installateur : {0} pour cent.	
+selfupdate.applying	Installing the new version…	Die neue Version wird eingerichtet…	Installation de la nouvelle version…	
+selfupdate.restarting	The installer is restarting as version {0}. The window reopens in a moment.	Der Installer startet als Version {0} neu. Das Fenster öffnet sich gleich wieder.	L'installateur redémarre en version {0}. La fenêtre se rouvre dans un instant.	
+selfupdate.failedTitle	The installer could not update itself	Der Installer konnte sich nicht selbst aktualisieren	L'installateur n'a pas pu se mettre à jour	
+selfupdate.failed	"The installer could not update itself.
+
+{0}
+
+It carries on with version {1}. Installing and updating WowVision works normally."	"Der Installer konnte sich nicht selbst aktualisieren.
+
+{0}
+
+Er arbeitet mit Version {1} weiter. WowVision installieren und aktualisieren funktioniert ganz normal."	"L'installateur n'a pas pu se mettre à jour.
+
+{0}
+
+Il poursuit avec la version {1}. Installer et mettre à jour WowVision fonctionne normalement."	
+selfupdate.badHash	The downloaded file does not match the published checksum and was discarded.	Die heruntergeladene Datei stimmt nicht mit der veröffentlichten Prüfsumme überein und wurde verworfen.	Le fichier téléchargé ne correspond pas à la somme de contrôle publiée ; il a été écarté.	
+selfupdate.done	The installer updated itself to version {0}.	Der Installer hat sich auf Version {0} aktualisiert.	L'installateur s'est mis à jour vers la version {0}.	
+done.heading.ok	Finished	Fertig	Terminé	
+done.heading.failed	Finished with problems	Mit Problemen beendet	Terminé avec des problèmes	
+done.heading.cancelled	Cancelled	Abgebrochen	Annulé	
+done.cancelledBody	The installation was cancelled. Anything already installed stays installed; the rest was skipped. You can run the installer again at any time.	Die Installation wurde abgebrochen. Bereits Installiertes bleibt installiert; der Rest wurde übersprungen. Du kannst den Installer jederzeit erneut starten.	L'installation a été annulée. Ce qui était déjà installé le reste ; le reste a été ignoré. Vous pouvez relancer l'installateur à tout moment.	
+done.summaryAcc	Result summary	Ergebnisübersicht	Récapitulatif du résultat	
+done.closeBtn	&Close installer	Installer &schließen	&Fermer l'installateur	
+done.closeAcc	Close the installer	Den Installer schließen	Fermer l'installateur	
+done.logBtn	View &event log	&Ereignisprotokoll anschauen	Afficher le &journal des événements	
+done.logAcc	View the event log — every step of this run, line by line	Ereignisprotokoll anschauen – jeder Schritt dieses Durchgangs, Zeile für Zeile	Afficher le journal des événements — chaque étape de cette exécution, ligne par ligne	
+done.logHint	Event log. Use the arrow keys to go through the steps; the Close button ends the installer.	Ereignisprotokoll. Mit den Pfeiltasten durch die Schritte gehen; die Schaltfläche „Schließen“ beendet den Installer.	Journal des événements. Utilisez les flèches pour parcourir les étapes ; le bouton Fermer quitte l'installateur.	
+target.notFound	Not found on this computer — tick it anyway and point to it in the next step.	Nicht gefunden auf diesem Computer – trotzdem ankreuzen und im nächsten Schritt den Ordner angeben.	Introuvable sur cet ordinateur — cochez-la quand même et indiquez le dossier à l'étape suivante.	
+target.freshInstall	New install — WowVision {0} will be installed here.	Neuinstallation – WowVision {0} wird hier installiert.	Nouvelle installation — WowVision {0} sera installé ici.	
+target.movedFromBeta	New folder since the beta ended — WowVision {0} will be installed here.	Neuer Ordner seit dem Ende der Beta – WowVision {0} wird hier installiert.	Nouveau dossier depuis la fin de la bêta — WowVision {0} sera installé ici.	
+target.upToDate	Up to date — WowVision {0} is installed.	Aktuell – WowVision {0} ist installiert.	À jour — WowVision {0} est installé.	
+target.updateAvailable	Update available — WowVision {0} is installed, {1} is available.	Aktualisierung verfügbar – WowVision {0} ist installiert, {1} ist verfügbar.	Mise à jour disponible — WowVision {0} est installé, {1} est disponible.	
+target.versionUnknown	(version unknown)	(Version unbekannt)	(version inconnue)	
+target.devSymlink	Developer symlink — WowVision {0}, managed outside the installer and left untouched.	Entwickler-Symlink – WowVision {0}, wird außerhalb des Installers verwaltet und bleibt unverändert.	Lien symbolique de développement — WowVision {0}, géré en dehors de l'installateur et laissé intact.	
+target.testBuild	"Test build — WowVision {0} is installed and is left as it is. To replace it with the release {1}, choose ""Install WowVision fresh"" and tick ""Reinstall everything""."	Testversion – WowVision {0} ist installiert und bleibt, wie sie ist. Um sie durch die Version {1} zu ersetzen, wähle „WowVision neu installieren“ und kreuze „Alles neu installieren“ an.	Version de test — WowVision {0} est installé et reste tel quel. Pour le remplacer par la version {1}, choisissez « Installer WowVision à neuf » et cochez « Tout réinstaller ».	
+versions.heading	Which game versions should WowVision be installed into?	In welche Spielversionen soll WowVision installiert werden?	Dans quelles versions du jeu faut-il installer WowVision ?	
+versions.body	Tick every World of Warcraft version you play — all of them can be done in one run. The next step confirms where each one lives.	Kreuze jede World-of-Warcraft-Version an, die du spielst – alle lassen sich in einem Durchgang erledigen. Im nächsten Schritt wird bestätigt, wo sie jeweils liegen.	Cochez chaque version de World of Warcraft à laquelle vous jouez — toutes peuvent être faites en une seule fois. L'étape suivante confirme où chacune se trouve.	
+versions.needOne.title	Nothing selected	Nichts ausgewählt	Aucune sélection	
+versions.needOne.text	Tick at least one game version before continuing, or use Back to leave the installer.	Kreuze mindestens eine Spielversion an, um fortzufahren, oder verlasse den Installer über „Zurück“.	Cochez au moins une version du jeu pour continuer, ou utilisez « Retour » pour quitter l'installateur.	
+folders.heading	Where is each version installed?	Wo ist welche Version installiert?	Où chaque version est-elle installée ?	
+folders.body	These are the folders WowVision will be written to. If one is wrong or missing, use the Browse button next to it.	In diese Ordner wird WowVision geschrieben. Ist einer falsch oder fehlt er, nutze die Schaltfläche „Durchsuchen“ daneben.	Voici les dossiers dans lesquels WowVision sera écrit. Si l'un est erroné ou manquant, utilisez le bouton « Parcourir » à côté.	
+folders.notFound	(not found — use Browse)	(nicht gefunden – bitte „Durchsuchen“)	(introuvable — utilisez « Parcourir »)	
+folders.pathAcc	{0}, AddOns folder: {1}	{0}, AddOns-Ordner: {1}	{0}, dossier AddOns : {1}	
+folders.browseAcc	Browse for the {0} folder	Ordner für {0} suchen	Rechercher le dossier de {0}	
+folders.browseDesc	Select the World of Warcraft folder for {0}, its game version folder, or its Interface\AddOns folder.	Wähle den World-of-Warcraft-Ordner für {0}, dessen Spielversions-Ordner oder dessen Ordner Interface\AddOns.	Sélectionnez le dossier World of Warcraft de {0}, son dossier de version du jeu, ou son dossier Interface\AddOns.	
+folders.picked	{0} set to {1}. {2}	{0} auf {1} gesetzt. {2}	{0} défini sur {1}. {2}	
+folders.alsoFound	Also found there: {0}. {1}	Dort ebenfalls gefunden: {0}. {1}	Également trouvé à cet endroit : {0}. {1}	
+folders.missing.title	Folder missing	Ordner fehlt	Dossier manquant	
+folders.missing.text	"No folder is set for: {0}.
+
+Use Browse to pick one, or go Back and untick that version."	"Für {0} ist kein Ordner festgelegt.
+
+Wähle einen über „Durchsuchen“, oder gehe zurück und entferne das Häkchen bei dieser Version."	"Aucun dossier n'est défini pour : {0}.
+
+Utilisez « Parcourir » pour en choisir un, ou revenez en arrière et décochez cette version."	
+folders.duplicate.title	Same folder twice	Ordner doppelt vergeben	Deux fois le même dossier	
+folders.duplicate.text	"{0} and {1} point at the same folder, so WowVision would be installed there twice.
+
+Correct one of them, or go Back and untick one."	"{0} und {1} zeigen auf denselben Ordner – WowVision würde dort zweimal installiert.
+
+Korrigiere einen davon, oder gehe zurück und entferne ein Häkchen."	"{0} et {1} pointent vers le même dossier, WowVision y serait donc installé deux fois.
+
+Corrigez l'un des deux, ou revenez en arrière et décochez-en un."	
+folders.wrongClient.title	Folder of another game version	Ordner einer anderen Spielversion	Dossier d'une autre version du jeu	
+folders.wrongClient.text	"{0} belongs to {1}, not to {2}.
+
+Pick the folder of {2}, or go Back and tick {1} instead."	"{0} gehört zu {1}, nicht zu {2}.
+
+Wähle den Ordner von {2}, oder gehe zurück und kreuze stattdessen {1} an."	"{0} appartient à {1}, pas à {2}.
+
+Choisissez le dossier de {2}, ou revenez en arrière et cochez {1} à la place."	
+components.heading	What should be installed?	Was soll installiert werden?	Que faut-il installer ?	
+components.body	These apply to every game version you selected. The defaults are the recommended setup — if in doubt, just continue.	Das gilt für alle ausgewählten Spielversionen. Die Voreinstellungen sind die empfohlene Einrichtung – im Zweifel einfach fortfahren.	Ces choix s'appliquent à toutes les versions du jeu sélectionnées. Les valeurs par défaut sont la configuration recommandée — en cas de doute, continuez simplement.	
+ui.installerLanguage	Language of this installer:	Sprache dieses Installers:	Langue de cet installateur :	
+ui.browse	&Browse…	&Durchsuchen…	&Parcourir…	
+acc.installerLanguage	Language of this installer	Sprache dieses Installers	Langue de cet installateur	
+acc.status	Status	Status	État	
+acc.progressLog	Progress history	Fortschrittsverlauf	Historique de progression	
+opt.shortcut.label	Create a desktop shortcut to the WowVision Updater	Desktop-Verknüpfung zum WowVision-Updater erstellen	Créer un raccourci vers WowVision Updater sur le bureau	
+opt.shortcut.desc	Puts a shortcut on the desktop and in the Start menu, so you can run this updater again later without downloading it.	Legt eine Verknüpfung auf dem Desktop und im Startmenü an, damit du diesen Updater später erneut starten kannst, ohne ihn neu herunterzuladen.	Place un raccourci sur le bureau et dans le menu Démarrer, pour relancer cet updater plus tard sans le retélécharger.	
+opt.sapi2sr.label	Enable NVDA as a voice in WoW	NVDA als Stimme in WoW aktivieren	Activer NVDA comme voix dans WoW	
+opt.sapi2sr.desc	Installs and signs the NVDA-SAPI bridge, so NVDA appears in the game's list of voices and WowVision can speak through it. Without it, WowVision speaks with a Windows voice.	Installiert und signiert die NVDA-SAPI-Brücke, damit NVDA in der Stimmenliste des Spiels erscheint und WowVision darüber sprechen kann. Ohne sie spricht WowVision mit einer Windows-Stimme.	Installe et signe la passerelle NVDA-SAPI, afin que NVDA apparaisse dans la liste des voix du jeu et que WowVision puisse parler par lui. Sans elle, WowVision parle avec une voix Windows.	
+opt.windowsVoices.label	Make all Windows voices available to WoW	Alle Windows-Stimmen für WoW verfügbar machen	Rendre toutes les voix Windows disponibles dans WoW	
+opt.windowsVoices.desc	Windows keeps its newer voices (for example Katja and Stefan) in a list the game cannot see. Copies them into the game's voice list, backed up first. The game's voice numbers can shift.	Windows führt neuere Stimmen (z. B. Katja, Stefan) in einer Liste, die das Spiel nicht sieht. Kopiert sie nach einer Sicherung in die Liste des Spiels. Stimmnummern können sich verschieben.	Windows range ses voix récentes (ex. Hortense, Paul) dans une liste que le jeu ne voit pas. Les copie dans la liste du jeu après sauvegarde. Les numéros des voix peuvent changer.	
+opt.force.label	Reinstall everything (repair)	Alles neu installieren (Reparatur)	Tout réinstaller (réparation)	
+opt.force.desc	Downloads WowVision and replaces it even when it is already current, and replaces a test build with the chosen version. Use this to repair a broken install.	Lädt WowVision erneut herunter und ersetzt es, auch wenn es bereits aktuell ist, und ersetzt eine Testversion durch die gewählte Version. Für die Reparatur einer defekten Installation.	Télécharge WowVision et le remplace même s'il est déjà à jour, et remplace une version de test par la version choisie. À utiliser pour réparer une installation défectueuse.	
+progress.heading	Installing WowVision	WowVision wird installiert	Installation de WowVision	
+progress.starting	Starting…	Starte…	Démarrage…	
+progress.historyLabel	Progress (use the arrow keys to review):	Fortschritt (zum Nachlesen die Pfeiltasten benutzen):	Progression (utilisez les flèches pour relire) :	
+progress.finishedHeading	Finished	Fertig	Terminé	
+progress.cannotClose	The installation is still running. Use the Cancel button to stop it safely — closing the window now could leave an addon half-written.	Die Installation läuft noch. Nutze die Schaltfläche „Abbrechen“, um sie sicher zu stoppen – das Fenster jetzt zu schließen könnte ein AddOn halb geschrieben zurücklassen.	L'installation est encore en cours. Utilisez le bouton « Annuler » pour l'arrêter proprement — fermer la fenêtre maintenant pourrait laisser un addon écrit à moitié.	
+progress.cannotCloseTitle	Installation running	Installation läuft	Installation en cours	
+progress.cancelBtn	&Cancel installation	Installation &abbrechen	&Annuler l'installation	
+progress.cancelAcc	Cancel the installation after the current step	Die Installation nach dem aktuellen Schritt abbrechen	Annuler l'installation après l'étape en cours	
+progress.cancelConfirm.title	Cancel the installation?	Installation abbrechen?	Annuler l'installation ?	
+progress.cancelConfirm.text	"Stop the installation?
+
+The running download is aborted immediately. A step already being written to disk is allowed to finish, so nothing is left half-installed. Everything not yet started is skipped.
+
+Already installed game versions stay installed. You can run the installer again at any time."	"Die Installation stoppen?
+
+Der laufende Download wird sofort abgebrochen. Ein Schritt, der bereits auf die Festplatte geschrieben wird, wird noch zu Ende geführt, damit nichts halb installiert zurückbleibt. Alles, was noch nicht begonnen hat, wird übersprungen.
+
+Bereits fertige Spielversionen bleiben installiert. Du kannst den Installer jederzeit erneut starten."	"Arrêter l'installation ?
+
+Le téléchargement en cours est interrompu immédiatement. Une étape déjà en train d'être écrite sur le disque va jusqu'au bout, afin que rien ne reste installé à moitié. Tout ce qui n'a pas encore commencé est ignoré.
+
+Les versions du jeu déjà terminées restent installées. Vous pouvez relancer l'installateur à tout moment."	
+progress.cancelling	Cancelling — finishing the current step…	Breche ab – der aktuelle Schritt wird noch beendet…	Annulation — l'étape en cours se termine…	
+status.checking	Checking for updates…	Suche nach Aktualisierungen…	Recherche de mises à jour…	
+status.checkingClient	Checking {0}…	Prüfe {0}…	Vérification de {0}…	
+status.downloading	Downloading {0} {1}…	Lade {0} {1} herunter…	Téléchargement de {0} {1}…	
+status.installingClient	Installing into {0}…	Installiere in {0}…	Installation dans {0}…	
+status.installingAddon	Installing {0}…	Installiere {0}…	Installation de {0}…	
+status.writingSettings	Adjusting required game settings…	Passe erforderliche Spieleinstellungen an…	Ajustement des réglages du jeu nécessaires…	
+status.syncingToc	Matching WowVision to your game client (interface {0})…	Passe WowVision an deinen Spielclient an (Interface {0})…	Adaptation de WowVision à votre client de jeu (interface {0})…	
+status.sapi2sr	Installing the NVDA voice bridge…	Installiere die NVDA-Sprachbrücke…	Installation de la passerelle vocale NVDA…	
+status.windowsVoices	Making the Windows voices available to WoW…	Mache die Windows-Stimmen für WoW verfügbar…	Mise à disposition des voix Windows pour WoW…	
+status.clientOk	Successful — {0} is done.	Erfolgreich – {0} ist fertig.	Réussi — {0} est terminé.	
+status.clientFailed	Failed — {0}: {1}	Fehlgeschlagen – {0}: {1}	Échec — {0} : {1}	
+status.done	Done.	Fertig.	Terminé.	
+status.cancelled	Cancelled.	Abgebrochen.	Annulé.	
+dlg.browse.desc	Select your World of Warcraft folder, a game version folder, or the Interface\AddOns folder.	Wähle deinen World-of-Warcraft-Ordner, einen Spielversions-Ordner oder den Ordner Interface\AddOns.	Sélectionnez votre dossier World of Warcraft, un dossier de version du jeu, ou le dossier Interface\AddOns.	
+dlg.notRecognized.text	That folder doesn't look like a World of Warcraft install. Pick the World of Warcraft folder, a game version folder (for example _forever_ for WoW Forever, _anniversary_, _classic_era_, _classic_ or _retail_), or its Interface\AddOns folder.	Dieser Ordner sieht nicht nach einer World-of-Warcraft-Installation aus. Wähle den World-of-Warcraft-Ordner, einen Spielversions-Ordner (zum Beispiel _forever_ für WoW Forever, _anniversary_, _classic_era_, _classic_ oder _retail_) oder dessen Ordner Interface\AddOns.	Ce dossier ne ressemble pas à une installation de World of Warcraft. Choisissez le dossier World of Warcraft, un dossier de version du jeu (par exemple _forever_ pour WoW Forever, _anniversary_, _classic_era_, _classic_ ou _retail_), ou son dossier Interface\AddOns.	
+dlg.notRecognized.title	Folder not recognized	Ordner nicht erkannt	Dossier non reconnu	
+dlg.closeGame.text	"World of Warcraft must be fully closed for this step (WowVision is installed into a game version for the first time, or required game settings are fixed).
+
+Close the game completely (all the way to the desktop), then choose Retry. Or Cancel to stop."	"World of Warcraft muss für diesen Schritt vollständig geschlossen sein (WowVision wird zum ersten Mal in eine Spielversion installiert, oder erforderliche Spieleinstellungen werden korrigiert).
+
+Schließe das Spiel vollständig (bis zum Desktop) und wähle dann „Wiederholen“. Oder „Abbrechen“ zum Beenden."	"World of Warcraft doit être entièrement fermé pour cette étape (WowVision est installé pour la première fois dans une version du jeu, ou des réglages du jeu nécessaires sont corrigés).
+
+Fermez complètement le jeu (jusqu'au bureau), puis choisissez « Réessayer ». Ou « Annuler » pour arrêter."	
+dlg.closeGame.title	Please close World of Warcraft	Bitte World of Warcraft schließen	Veuillez fermer World of Warcraft	
+dlg.error.text	Install failed: {0}	Installation fehlgeschlagen: {0}	Échec de l'installation : {0}	
+dlg.error.logSuffix	"
+
+A log was saved to: {0}"	"
+
+Ein Protokoll wurde gespeichert unter: {0}"	"
+
+Un journal a été enregistré dans : {0}"	
+summary.headline.done	WowVision installation complete.	WowVision-Installation abgeschlossen.	Installation de WowVision terminée.	
+summary.headline.upToDate	WowVision is already up to date.	WowVision ist bereits aktuell.	WowVision est déjà à jour.	
+summary.updated	Installed {0} ({1}).	{0} installiert ({1}).	{0} installé ({1}).	
+summary.addonsCurrent	WowVision was already current.	WowVision war bereits aktuell.	WowVision était déjà à jour.	
+summary.testBuildKept	The test build {0} was left in place.	Die Testversion {0} wurde belassen.	La version de test {0} a été laissée en place.	
+summary.settings	Required game settings were adjusted.	Erforderliche Spieleinstellungen wurden angepasst.	Les réglages du jeu nécessaires ont été ajustés.	
+summary.client	WowVision was matched to your game client (interface {0}).	WowVision wurde an deinen Spielclient angepasst (Interface {0}).	WowVision a été adapté à votre client de jeu (interface {0}).	
+summary.clientOk	Successful — {0}:	Erfolgreich – {0}:	Réussi — {0} :	
+summary.clientFailed	Failed — {0}: {1}	Fehlgeschlagen – {0}: {1}	Échec — {0} : {1}	
+summary.unknownError	unknown error	unbekannter Fehler	erreur inconnue	
+summary.reload	To use the update now, type /reload in the game. Otherwise just start it normally.	Um die Aktualisierung jetzt zu nutzen, gib im Spiel /reload ein. Andernfalls starte es einfach normal.	Pour utiliser la mise à jour tout de suite, tapez /reload dans le jeu. Sinon, lancez-le simplement normalement.	
+summary.battlenet	Start World of Warcraft from Battle.net (or restart it) to use the new version.	Starte World of Warcraft über Battle.net (oder starte es neu), um die neue Version zu nutzen.	Lancez World of Warcraft depuis Battle.net (ou redémarrez-le) pour utiliser la nouvelle version.	
+ai.symlink	{0}: symlink — left untouched.	{0}: Symlink – unverändert gelassen.	{0} : lien symbolique — laissé intact.	
+ai.downloading	{0}: downloading {1}	{0}: lade herunter {1}	{0} : téléchargement de {1}	
+ai.extracting	{0}: extracting…	{0}: entpacke…	{0} : extraction…	
+ai.packageReady	{0} {1} downloaded and unpacked: {2}.	{0} {1} heruntergeladen und entpackt: {2}.	{0} {1} téléchargé et décompressé : {2}.	
+ai.noPrimary	The release file {0} contains no {1} folder, so nothing was installed.	Die Veröffentlichung {0} enthält keinen Ordner {1}, darum wurde nichts installiert.	Le fichier de version {0} ne contient pas de dossier {1} ; rien n'a été installé.	
+ai.installing	{0}: installing files…	{0}: installiere Dateien…	{0} : installation des fichiers…	
+ai.locked	{0}: {1} file(s) were in use — close the game and run the updater again.	{0}: {1} Datei(en) waren in Benutzung – schließe das Spiel und starte den Updater erneut.	{0} : {1} fichier(s) étaient en cours d'utilisation — fermez le jeu et relancez l'updater.	
+ai.installed	{0}: installed {1}.	{0}: installiert ({1}).	{0} : installé ({1}).	
+toc.synced	{0}: interface version {1} -> {2} (matches your game client).	{0}: Interface-Version {1} -> {2} (passend zu deinem Spielclient).	{0} : version d'interface {1} -> {2} (correspond à votre client de jeu).	
+gs.setGlobal	Game setting: {0} = {1} (global).	Spieleinstellung: {0} = {1} (global).	Réglage du jeu : {0} = {1} (global).	
+gs.setAccount	Game setting: {0} = {1} (account).	Spieleinstellung: {0} = {1} (Account).	Réglage du jeu : {0} = {1} (compte).	
+gs.deferred	Game setting: {0} will be set after your first login (no account profile yet).	Spieleinstellung: {0} wird nach deinem ersten Login gesetzt (noch kein Account-Profil vorhanden).	Réglage du jeu : {0} sera défini après votre première connexion (pas encore de profil de compte).	
+gs.noWtf	Game settings: no WTF folder here; skipped.	Spieleinstellungen: kein WTF-Ordner hier; übersprungen.	Réglages du jeu : pas de dossier WTF ici ; ignoré.	
+sapi2sr.installing	NVDA voice: installing the SAPI2SR bridge…	NVDA-Stimme: installiere die SAPI2SR-Brücke…	Voix NVDA : installation de la passerelle SAPI2SR…	
+sapi2sr.copied	NVDA voice: {0} file(s) installed.	NVDA-Stimme: {0} Datei(en) installiert.	Voix NVDA : {0} fichier(s) installé(s).	
+sapi2sr.registering	NVDA voice: registering the SAPI voice…	NVDA-Stimme: registriere die SAPI-Stimme…	Voix NVDA : enregistrement de la voix SAPI…	
+sapi2sr.signing	NVDA voice: signing so WoW will load it…	NVDA-Stimme: signiere, damit WoW sie lädt…	Voix NVDA : signature pour que WoW la charge…	
+sapi2sr.signFailed	NVDA voice: signing did not finish (code {0}); the voice may stay silent until repaired.	NVDA-Stimme: Signierung nicht abgeschlossen (Code {0}); die Stimme bleibt evtl. stumm, bis das behoben ist.	Voix NVDA : la signature ne s'est pas terminée (code {0}) ; la voix peut rester muette jusqu'à réparation.	
+sapi2sr.done	NVDA voice: ready. Start WoW fresh to use it.	NVDA-Stimme: bereit. Starte WoW neu, um sie zu nutzen.	Voix NVDA : prête. Relancez WoW pour l'utiliser.	
+sapi2sr.failed	NVDA voice install failed: {0}	NVDA-Stimme-Installation fehlgeschlagen: {0}	Échec de l'installation de la voix NVDA : {0}	
+voices.none	Windows voices: all were already available to WoW.	Windows-Stimmen: alle waren schon für WoW verfügbar.	Voix Windows : toutes étaient déjà disponibles pour WoW.	
+voices.added	Windows voices: added {0}.	Windows-Stimmen: {0} hinzugefügt.	Voix Windows : {0} ajoutée.	
+voices.count	Windows voices: {0} added. Start WoW fresh to use them; if a voice sounds different than before, choose it again.	Windows-Stimmen: {0} hinzugefügt. Starte WoW neu, um sie zu nutzen; klingt eine Stimme anders als vorher, wähle sie neu.	Voix Windows : {0} ajoutée(s). Relancez WoW pour les utiliser ; si une voix sonne autrement qu'avant, choisissez-la de nouveau.	
+voices.backupFailed	Windows voices: the voice list could not be backed up, so nothing was changed.	Windows-Stimmen: die Stimmenliste konnte nicht gesichert werden, deshalb wurde nichts geändert.	Voix Windows : la liste des voix n'a pas pu être sauvegardée ; rien n'a été modifié.	
+voices.failedOne	Windows voices: {0} could not be added ({1}).	Windows-Stimmen: {0} konnte nicht hinzugefügt werden ({1}).	Voix Windows : {0} n'a pas pu être ajoutée ({1}).	
+voices.failed	Windows voices failed: {0}	Windows-Stimmen fehlgeschlagen: {0}	Échec des voix Windows : {0}	
+version.beta	beta	Beta	bêta	
+version.betaDated	beta of {0}	Beta vom {0}	bêta du {0}	
+target.betaUnchecked	WowVision {0} is installed. Whether a newer beta is out could not be checked (no connection to GitHub).	WowVision {0} ist installiert. Ob es eine neuere Beta gibt, konnte nicht geprüft werden (keine Verbindung zu GitHub).	WowVision {0} est installé. Impossible de vérifier s'il existe une bêta plus récente (pas de connexion à GitHub).	
+channel.label	Which WowVision (for all game versions):	Welche WowVision (für alle Spielversionen):	Quel WowVision (pour toutes les versions du jeu) :	
+channel.acc	Which WowVision, for all game versions	Welche WowVision, für alle Spielversionen	Quel WowVision, pour toutes les versions du jeu	
+channel.beta	Beta	Beta	Bêta	
+channel.stable	Stable release (recommended)	Stabile Version (empfohlen)	Version stable (recommandée)	
+channel.betaDesc	The newest build of WowVision, rebuilt with every change. It has the latest fixes and features, and can have new bugs.	Der neueste Stand von WowVision, bei jeder Änderung neu gebaut. Er hat die neuesten Korrekturen und Funktionen und kann neue Fehler enthalten.	La version la plus récente de WowVision, reconstruite à chaque changement. Elle a les dernières corrections et fonctions, et peut contenir de nouveaux bugs.	
+channel.stableDesc	The last numbered release. Best for most players. Changes less often than the beta.	Die letzte nummerierte Veröffentlichung. Für die meisten Spieler am besten. Ändert sich seltener als die Beta.	La dernière version numérotée. Idéale pour la plupart des joueurs. Change moins souvent que la bêta.	
+update.channelBeta	Version: beta. The newest is the {0}.	Version: Beta. Die neueste ist die {0}.	Version : bêta. La plus récente est la {0}.	
+update.channelStable	Version: stable release. The newest is {0}.	Version: stabile Version. Die neueste ist {0}.	Version : version stable. La plus récente est {0}.	
+managed.label	Additional recommended addons	Zusätzliche empfohlene AddOns	Addons supplémentaires recommandés	
+managed.acc	Additional recommended addons. These well-known addons are installed and kept up to date together with WowVision; each game version gets the build that matches it, and an addon that does not exist for a game version is left out there. Space toggles the highlighted addon.	Zusätzliche empfohlene AddOns. Diese bekannten AddOns werden zusammen mit WowVision installiert und aktuell gehalten; jede Spielversion erhält die zu ihr passende Fassung, und ein AddOn, das es für eine Spielversion nicht gibt, wird dort ausgelassen. Die Leertaste schaltet das markierte AddOn um.	Addons supplémentaires recommandés. Ces addons connus sont installés et maintenus à jour avec WowVision ; chaque version du jeu reçoit la version qui lui correspond, et un addon qui n'existe pas pour une version du jeu y est laissé de côté. La barre d'espace bascule l'addon en surbrillance.	
+managed.notAvailable	not available for: {0}	nicht verfügbar für: {0}	non disponible pour : {0}	
+managed.notForClient	{0}: not available for {1}, skipped.	{0}: für {1} nicht verfügbar, übersprungen.	{0} : non disponible pour {1}, ignoré.	
+managed.badHash	{0}: the download failed its integrity check and was not installed.	{0}: Der Download hat die Integritätsprüfung nicht bestanden und wurde nicht installiert.	{0} : le téléchargement a échoué au contrôle d'intégrité et n'a pas été installé.	
+managed.obsoleteRemoved	{0}: removed the old folder {1}, which would clash with the new version.	{0}: alten Ordner {1} entfernt, er würde mit der neuen Fassung kollidieren.	{0} : ancien dossier {1} supprimé, il entrerait en conflit avec la nouvelle version.	
+update.managedUpdates	{0}: updates available for additional addons: {1}.	{0}: Updates für zusätzliche AddOns verfügbar: {1}.	{0} : mises à jour disponibles pour les addons supplémentaires : {1}.	
+update.managedInstalls	{0}: additional addons that will be installed: {1}.	{0}: Zusätzliche AddOns, die neu installiert werden: {1}.	{0} : addons supplémentaires qui seront installés : {1}.	
+ai.upToDate	{0}: up to date ({1}).	{0}: aktuell ({1}).	{0} : à jour ({1}).	
+opt.loginTool.label	Install the WoW Login Tool (recommended)	WoW Login Tool installieren (empfohlen)	Installer le WoW Login Tool (recommandé)	
+opt.loginTool.desc	A separate program giving the login, server and character screens an audio menu, for WoW Forever, Anniversary and Classic Era. Those screens are not accessible on their own.	Ein eigenes Programm, das Login-, Server- und Charakterbildschirm ein Audiomenü gibt, für WoW Forever, Anniversary und Classic Era. Diese Bildschirme sind von sich aus nicht zugänglich.	Un programme séparé qui donne un menu audio aux écrans de connexion, de serveur et de personnage, pour WoW Forever, Anniversary et Classic Era. Ces écrans ne sont pas accessibles par eux-mêmes.	
+status.loginTool	Installing the WoW Login Tool for {0}…	Installiere das WoW Login Tool für {0}…	Installation du WoW Login Tool pour {0}…	
+summary.loginTool	"The WoW Login Tool is ready — start it from the ""WoW Login Tool"" shortcut on your desktop (also in the Start menu)."	Das WoW Login Tool ist bereit – starte es über die Verknüpfung „WoW Login Tool“ auf dem Desktop (auch im Startmenü).	Le WoW Login Tool est prêt — lancez-le depuis le raccourci « WoW Login Tool » sur votre bureau (également dans le menu Démarrer).	
+lt.downloading	WoW Login Tool: downloading {0}	WoW Login Tool: lade herunter {0}	WoW Login Tool : téléchargement de {0}	
+lt.extracting	WoW Login Tool: extracting…	WoW Login Tool: entpacke…	WoW Login Tool : extraction…	
+lt.deploying	WoW Login Tool: copying program files…	WoW Login Tool: kopiere Programmdateien…	WoW Login Tool : copie des fichiers du programme…	
+lt.textures	WoW Login Tool: installing login-screen textures…	WoW Login Tool: installiere Login-Bildschirm-Texturen…	WoW Login Tool : installation des textures de l'écran de connexion…	
+lt.fonts	WoW Login Tool: installing the readable font override…	WoW Login Tool: installiere die besser lesbare Schriftart…	WoW Login Tool : installation de la police plus lisible…	
+lt.ahk	WoW Login Tool: adding the AutoHotkey runtime…	WoW Login Tool: füge die AutoHotkey-Laufzeit hinzu…	WoW Login Tool : ajout du moteur AutoHotkey…	
+lt.shortcut	WoW Login Tool: creating the launcher shortcut…	WoW Login Tool: erstelle die Startverknüpfung…	WoW Login Tool : création du raccourci de lancement…	
+lt.present	WoW Login Tool: already installed, skipped.	WoW Login Tool: bereits installiert, übersprungen.	WoW Login Tool : déjà installé, ignoré.	
+lt.noInterface	WoW Login Tool: could not find the Interface folder — login-screen textures were NOT installed.	WoW Login Tool: Interface-Ordner nicht gefunden – Login-Bildschirm-Texturen wurden NICHT installiert.	WoW Login Tool : dossier Interface introuvable — les textures de l'écran de connexion n'ont PAS été installées.	
+lt.done	"WoW Login Tool: ready. Start it from the ""WoW Login Tool"" shortcut (desktop / Start menu)."	WoW Login Tool: bereit. Starte es über die Verknüpfung „WoW Login Tool“ (Desktop / Startmenü).	WoW Login Tool : prêt. Lancez-le depuis le raccourci « WoW Login Tool » (bureau / menu Démarrer).	
+lt.failed	WoW Login Tool install failed: {0}	WoW Login Tool-Installation fehlgeschlagen: {0}	Échec de l'installation du WoW Login Tool : {0}	

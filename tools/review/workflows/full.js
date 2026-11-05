@@ -11,6 +11,9 @@ export const meta = {
 const W = 'C:/project/games/wowwork'
 const P = `${W}/tools/review/prompts`
 const LENSES = ['accuracy', 'terminology', 'context', 'listening']
+// 대상별 추가 규칙(예: installer.md). 공통 규칙 다음에 읽는다. 평가자·번역자·판정자 모두 같은 파일을 받는다.
+const EXTRA = (args && args.extraPrompts) || []
+const EXTRA_READ = EXTRA.map(f => `${P}/${f}`).join(', ')
 const FINDINGS = {
   type: 'object', required: ['findings'],
   properties: { findings: { type: 'array', items: { type: 'object',
@@ -36,7 +39,8 @@ const VERDICTS = {
 function claudeReviewer(batch, out, lens) {
   return agent(
     `너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n` +
-    `1. ${P}/common.md (역할과 규칙)\n2. ${P}/lens-${lens}.md (네 관점)\n3. ${batch} (평가할 입력, items 배열)\n\n` +
+    `1. ${P}/common.md (역할과 규칙)\n` + EXTRA.map(f => `   + ${P}/${f} (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n`).join('') +
+    `2. ${P}/lens-${lens}.md (네 관점)\n3. ${batch} (평가할 입력, items 배열)\n\n` +
     `작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). ` +
     `reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n` +
     `평가가 끝나면 결과 JSON({"findings": [...]})을 ${out}/claude-${lens}.json 에 Write로 저장하고, 같은 내용을 구조화 출력으로 돌려준다.`,
@@ -67,7 +71,7 @@ async function runBatch(b) {
   const out = `${W}/${b.out}`
   const runs = (await parallel([
     ...LENSES.map(l => () => claudeReviewer(batch, out, l).then(r => r && { provider: 'claude', lens: l, findings: r.findings })),
-    ...LENSES.map(l => () => gptRun(['common.md', `lens-${l}.md`], batch, 'findings.schema.json', `${out}/gpt-${l}.json`,
+    ...LENSES.map(l => () => gptRun(['common.md', ...EXTRA, `lens-${l}.md`], batch, 'findings.schema.json', `${out}/gpt-${l}.json`,
       FINDINGS, `gpt:${l}`, 'Review', null).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
   ])).filter(Boolean)
   const failed = 8 - runs.length
@@ -83,7 +87,7 @@ async function runBatch(b) {
   if (!list.length) return { batch: b.path, failedReviewers: failed, decisions: [], escalations: [] }
 
   const rebut = await agent(
-    `너는 이 번역의 번역자다. ${P}/rebut.md 를 Read로 읽고 따른다. 번역 지침은 ${W}/docs/translation-guide.md, 원문·번역·코드 사용처는 ${batch} 에 있다.\n\n` +
+    `너는 이 번역의 번역자다. ${P}/rebut.md ${EXTRA_READ ? '와 ' + EXTRA_READ + ' ' : ''}를 Read로 읽고 따른다. 번역 지침은 ${W}/docs/translation-guide.md, 원문·번역·코드 사용처는 ${batch} 에 있다.\n\n` +
     `아래는 항목별로 묶은 평가자 지적이다. 항목(id)마다 응답 하나를 낸다. consensus=true인 항목은 두 회사 평가자가 모두 지적한 것이므로 반드시 accept하고, 지적들을 반영한 가장 좋은 번역을 final_ko로 확정한다. ` +
     `consensus=false인 항목은 지적이 맞으면 accept, 틀리면 dispute(final_ko는 현재 번역 그대로)한다. 같은 항목의 지적이 여럿이면 함께 고려해 최종 번역 하나로 정한다.\n\n` +
     `결과를 ${out}/rebut.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n` + JSON.stringify(list, null, 1),
@@ -101,10 +105,10 @@ async function runBatch(b) {
   const payload = gs => gs.map(g => ({ ref: g.id, findings: g.findings, translator: resp[g.id] }))
 
   const [gj, cj] = await parallel([
-    () => toGpt.length ? gptRun(['common.md', 'judge.md'], `${out}/judge-gpt-input.json`, 'verdicts.schema.json', `${out}/judge-gpt.json`,
+    () => toGpt.length ? gptRun(['common.md', ...EXTRA, 'judge.md'], `${out}/judge-gpt-input.json`, 'verdicts.schema.json', `${out}/judge-gpt.json`,
       VERDICTS, 'gpt:judge', 'Judge', JSON.stringify({ batch_file: b.path, items: payload(toGpt) }, null, 1)) : Promise.resolve({ verdicts: [] }),
     () => toClaude.length ? agent(
-      `${P}/common.md 와 ${P}/judge.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 ${batch}. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n` +
+      `${P}/common.md 와 ${P}/judge.md ${EXTRA_READ ? '와 ' + EXTRA_READ + ' ' : ''}를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 ${batch}. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n` +
       `결과를 ${out}/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n` + JSON.stringify(payload(toClaude), null, 1),
       { label: 'claude:judge', phase: 'Judge', schema: VERDICTS }) : Promise.resolve({ verdicts: [] }),
   ])
