@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "reference/versions.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "WowVision 창 사이 이동, 클릭, 상황 메뉴, 툴팁: [인터페이스 사용하기](../basics/interface.md)",
+   "suggestion": "WowVision 창 안에서 이동하기, 클릭, 상황 메뉴, 툴팁: [인터페이스 사용하기](../basics/interface.md)",
+   "problem": "원문 'Moving through WowVision windows'는 창 안의 항목을 훑어 이동하는 탐색 전반을 가리키는데, '창 사이 이동'은 창과 창을 오가는 것으로 뜻이 좁혀졌다.",
+   "evidence": "원문: \"Moving through WowVision windows, clicks, context menus, tooltips: [Using the Interface](../basics/interface.md)\" — 링크 대상이 인터페이스 사용 전반(창 안 탐색) 페이지다."
+  }
+ ]
+}

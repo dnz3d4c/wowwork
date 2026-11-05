@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "숄더 버튼, 트리거, 오른쪽 스틱 누르기는 보조 키처럼 누른 채로 쓸 수 있으므로",
+   "suggestion": "어깨 버튼, 트리거, 오른쪽 스틱 누르기는 보조 키처럼 누른 채로 쓸 수 있으므로",
+   "problem": "숄더 버튼은 애드온이 실제로 읽어 주는 이름과 다르다. 애드온은 이 버튼을 '왼쪽 어깨', '오른쪽 어깨'로 읽어서, 설명서의 '숄더'와 들리는 이름이 이어지지 않는다. 같은 문장의 '트리거', '오른쪽 스틱 누르기'는 실제 이름과 맞으니 이 말만 다르다.",
+   "evidence": "원문 'The shoulder buttons, the triggers and the right stick press'. vision-locale/koKR/controller.lua:14-15 L[\"Left shoulder\"] = \"왼쪽 어깨\", L[\"Right shoulder\"] = \"오른쪽 어깨\", :22 L[\"Both shoulders\"] = \"양쪽 어깨\"."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "\"오른쪽 트리거와 A\"는 그 자체로 하나의 조합입니다",
+   "suggestion": "\"오른쪽 트리거 + A 버튼\"은 그 자체로 하나의 조합입니다",
+   "problem": "따옴표 안의 말은 들리는 문구처럼 읽히지만, 애드온은 컨트롤러 조합을 이름 사이에 ' + '를 넣어 '오른쪽 트리거 + A 버튼'처럼 읽는다. '와'로 잇고 '버튼'을 뺀 형태는 실제로 들리지 않는다.",
+   "evidence": "원문 'so \"right trigger plus A\" is a combination of its own'. WowVision/core/ui/input/pad.lua:499 joiner = \" + \", vision-locale/koKR/controller.lua:6 L[\"A button\"] = \"A 버튼\", :17 L[\"Right trigger\"] = \"오른쪽 트리거\"."
+  }
+ ]
+}

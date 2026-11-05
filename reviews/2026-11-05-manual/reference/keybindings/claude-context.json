@@ -1,0 +1,49 @@
+{
+ "findings": [
+  {
+   "id": "reference/keybindings.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "두 애드온을 함께 쓰는 방법은 [설치](../getting-started/sku.md)에 더 자세히 나와 있습니다.",
+   "suggestion": "두 애드온을 함께 쓰는 방법은 [WowVision과 Sku 함께 쓰기](../getting-started/sku.md)에 더 자세히 나와 있습니다.",
+   "problem": "링크 글자 '설치'가 대상 페이지의 실제 제목과 다르다. 대상은 설치 안내가 아니라 Sku 병행 사용 페이지라서, 스크린리더 사용자가 링크 목록에서 '설치'를 듣고 다른 페이지를 기대하게 된다.",
+   "evidence": "ko/getting-started/sku.md 1행 제목 '# WowVision과 Sku 함께 쓰기'. 원문 링크 글자 'Installation'도 영어 제목 'Using WowVision together with Sku'와 어긋나는 원문 측 결함이지만 번역에서 대상 제목에 맞출 수 있다."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "키 바인딩 창을 쓰는 법은 [키 바인딩](../basics/keybindings.md)에서 설명합니다.",
+   "suggestion": "키 바인딩 창을 쓰는 법은 [단축키](../basics/keybindings.md)에서 설명합니다.",
+   "problem": "링크 글자 '키 바인딩'이 대상 페이지의 한국어 제목 '단축키'와 다르다. 영어는 링크 글자와 제목이 'Keybindings'로 일치하므로 번역에서 생긴 불일치다.",
+   "evidence": "ko/basics/keybindings.md 1행 '# 단축키', en/basics/keybindings.md 1행 '# Keybindings'. 메뉴 항목도 koKR/bindings.lua:4 L[\"Bindings\"] = \"단축키\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "기본값은 [컨트롤러](../controller.md)에 나와 있습니다.",
+   "suggestion": "기본값은 [게임패드로 플레이하기](../controller.md)에 나와 있습니다.",
+   "problem": "링크 글자 '컨트롤러'가 대상 페이지 실제 제목과 다르다.",
+   "evidence": "ko/controller.md 1행 '# 게임패드로 플레이하기'. 원문 링크 글자 'Controller'도 영어 제목 'Playing with a Gamepad'와 다른 원문 측 불일치."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "[툴팁](../basics/tooltips.md)을 참고하십시오.",
+   "suggestion": "[툴팁 읽기](../basics/tooltips.md)를 참고하십시오.",
+   "problem": "링크 글자 '툴팁'이 대상 페이지 실제 제목과 다르다.",
+   "evidence": "ko/basics/tooltips.md 1행 '# 툴팁 읽기'. 원문도 'Tooltips' 대 'Reading Tooltips'로 원문 측 불일치."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "[미니맵](../world/minimap.md)을 참고하십시오.",
+   "suggestion": "[미니맵 스캐너](../world/minimap.md)를 참고하십시오.",
+   "problem": "링크 글자 '미니맵'이 대상 페이지 실제 제목과 다르다.",
+   "evidence": "ko/world/minimap.md 1행 '# 미니맵 스캐너'. 원문도 'Minimap' 대 'Minimap Scanner'로 원문 측 불일치."
+  }
+ ]
+}

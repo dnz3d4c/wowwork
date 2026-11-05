@@ -1,0 +1,202 @@
+{
+  "findings": [
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "major",
+      "quote": "Mists에서는 전문 기술 탭(TBC에서는 일반 옆 탭)으로 가서",
+      "suggestion": "Mists에서는 전문 기술 탭(TBC에서는 옆쪽 탭 중 일반 탭)으로 가서",
+      "problem": "\"일반 옆 탭\"은 들었을 때 '일반 탭 옆에 있는 탭'으로 들려 다른 탭으로 가라는 뜻으로 갈린다.",
+      "evidence": "원문 \"the General side tab on TBC\"는 '일반'이라는 이름의 옆쪽 탭을 가리킨다. 지침 style 관점의 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "major",
+      "quote": "재연마사에게 말을 겁니다. 창이 아이템에서 열립니다.",
+      "suggestion": "재연마사에게 말을 겁니다. 창이 열리고 아이템 칸에 놓입니다.",
+      "problem": "\"창이 아이템에서 열립니다\"는 아이템을 써서 창이 열린다는 뜻으로 들릴 수 있다. 실제 뜻은 창이 열리면 처음 위치가 아이템 정거장이라는 것이다.",
+      "evidence": "원문 \"The window opens on Item.\" 같은 파일의 \"창이 열리면 여기에 놓이므로\" 표현과도 맞춘다."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "Sku 애드온이 불러와져 있으면",
+      "suggestion": "Sku 애드온이 켜져 있으면",
+      "problem": "\"불러와져 있으면\"은 이중 피동처럼 들리는 어색한 형태다.",
+      "evidence": "원문 \"If the Sku addon is loaded\". 번역투·어색한 활용."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "Escape를 누르면 이 창들 중 어느 것이든 닫힙니다.",
+      "suggestion": "이 창은 모두 Escape를 누르면 닫힙니다.",
+      "problem": "\"이 창들 중 어느 것이든\"은 any of these를 그대로 옮긴 번역투다.",
+      "evidence": "원문 \"Escape closes any of these windows.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "창이 열리면 여기에 놓이므로 바로 입력할 수 있습니다.",
+      "suggestion": "창이 열리면 초점이 여기에 놓이므로 바로 입력할 수 있습니다.",
+      "problem": "\"놓이므로\"의 주어가 없어 무엇이 놓이는지 문장만으로는 알기 어렵다.",
+      "evidence": "원문 \"When the window opens you land here\". 주어 생략으로 생긴 어색함."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "주황색은 아직 숙련도를 올리는 데 만들 가치가 있다는 뜻입니다.",
+      "suggestion": "주황색은 만들면 아직 숙련도가 오른다는 뜻입니다.",
+      "problem": "\"올리는 데 만들 가치가 있다\"는 worth making for skill을 직역해 문장이 꼬인다.",
+      "evidence": "원문 \"orange means it is still worth making for skill\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "정거장 하나, 세부 정보:",
+      "suggestion": "세부 정보는 정거장 하나입니다:",
+      "problem": "\"정거장 하나, 세부 정보:\"는 영어 구문 순서를 그대로 둔 조각 문장이라 본문 합니다체 흐름과 맞지 않는다.",
+      "evidence": "원문 \"One stop, Details:\". 문체 혼용·번역투."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "정거장 하나, 세부 정보. 결과 아이템과 개수",
+      "suggestion": "세부 정보는 정거장 하나입니다. 결과 아이템과 개수",
+      "problem": "위와 같은 조각 문장이 Forever 세부 정보 절에도 반복된다.",
+      "evidence": "원문 \"One stop, Details. It reads the output item...\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "게임의 재료 표시(\"재료:\")를 이름으로 한 묶음.",
+      "suggestion": "게임의 재료 표시(\"재료:\")가 이름인 묶음.",
+      "problem": "\"~를 이름으로 한 묶음\"은 named after를 직역한 어색한 표현이다.",
+      "evidence": "원문 \"A group named after the game's reagent label (\\\"Reagents:\\\")\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "모두 제작은 재료가 허락하는 만큼 만듭니다.",
+      "suggestion": "모두 제작은 재료가 되는 만큼 만듭니다.",
+      "problem": "\"재료가 허락하는 만큼\"은 as your materials allow를 직역한 번역투다.",
+      "evidence": "원문 \"Create All makes as many as your materials allow.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "그다음 게임이 평소의 시전 바와 함께 아이템을 만듭니다.",
+      "suggestion": "그러면 게임이 평소처럼 시전 바를 띄우며 아이템을 만듭니다.",
+      "problem": "\"평소의 시전 바와 함께\"는 with its normal cast bar를 직역한 번역투다.",
+      "evidence": "원문 \"The game then makes the items with its normal cast bar.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "전문 기술 창의 오래된 쌍둥이인 제작 창을 씁니다.",
+      "suggestion": "전문 기술 창과 거의 같은 옛 형식의 창인 제작 창을 씁니다.",
+      "problem": "\"오래된 쌍둥이\"는 영어 비유를 그대로 옮겨 한국어로 어색하다.",
+      "evidence": "원문 \"an older twin of the trade skill window, named Craft\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "소환수의 포인트를 담은 훈련 포인트, 야수 조련 전용.",
+      "suggestion": "훈련 포인트: 소환수의 포인트입니다. 야수 조련 전용.",
+      "problem": "\"포인트를 담은 훈련 포인트\"는 포인트가 겹치고 수식 관계가 꼬여 듣기 어렵다.",
+      "evidence": "원문 \"Training Points with your pet's points, for Beast Training only.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "야수 조련을 시전합니다. 제작 창이 들립니다.",
+      "suggestion": "야수 조련을 시전합니다. 제작 창이라고 읽습니다.",
+      "problem": "\"창이 들립니다\"는 You hear the Craft window를 직역한 표현이라 어색하다.",
+      "evidence": "원문 \"Cast Beast Training. You hear the Craft window.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "가지고 있거나 착용한 보석 홈 있는 아이템을 사용하면 열립니다",
+      "suggestion": "가지고 있거나 착용한 아이템 중 보석 홈이 있는 것을 사용하면 열립니다",
+      "problem": "관형어가 겹쳐(\"가지고 있거나 착용한 보석 홈 있는 아이템\") 들었을 때 '착용한 보석'으로 끊겨 들릴 수 있다.",
+      "evidence": "원문 \"an item with gem sockets that you carry or wear\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "보석 홈마다 항목 하나로, 홈의 색과 보석을 읽습니다",
+      "suggestion": "보석 홈마다 항목이 하나 있고, 홈의 색과 보석을 읽습니다",
+      "problem": "\"항목 하나로,\"는 조사 연결이 어색해 문장이 매끄럽지 않다.",
+      "evidence": "원문 \"one entry per socket, reading its colour and the gem\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "가방 창으로 돌아가서 보석까지 화살표로 가서 Enter를 누릅니다.",
+      "suggestion": "가방 창으로 돌아가 화살표로 보석까지 간 다음 Enter를 누릅니다.",
+      "problem": "\"~가서 ~가서\"가 반복돼 늘어진다.",
+      "evidence": "원문 \"go back to the bags window, arrow to the gem and press Enter\"."
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "보석이 다른 보석을 대체할 때처럼, 게임이 팝업에서 확인을 요청할 수 있습니다.",
+      "suggestion": "보석이 다른 보석을 대체할 때 등에는 게임이 팝업으로 확인을 요청할 수 있습니다.",
+      "problem": "\"~할 때처럼,\"은 for example when을 비교로 옮겨 어색하다.",
+      "evidence": "원문 \"The game may ask you to confirm in a popup, for example when a gem replaces another.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "아이템을 넣으면 능력치 열이 스스로 다시 쓰입니다.",
+      "suggestion": "아이템을 넣으면 능력치 열 내용이 곧바로 바뀝니다.",
+      "problem": "\"스스로 다시 쓰입니다\"는 rewrite themselves를 직역한 번역투다.",
+      "evidence": "원문 \"when you place an item the stat columns rewrite themselves.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "아이템 강화 상인에게서 열립니다.",
+      "suggestion": "아이템 강화 상인에게 말을 걸면 열립니다.",
+      "problem": "\"상인에게서 열립니다\"는 조사 연결이 어색하다. 같은 파일 재연마 절의 \"재연마사에게 말을 걸면 열립니다\"와도 어긋난다.",
+      "evidence": "원문 \"Opens at the item upgrade vendor.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "빈 칸은 게임의 머리글과 안내 문구를 읽습니다. 예를 들어 전문 기술을 배우는 방법입니다.",
+      "suggestion": "빈 칸은 게임의 머리글과 안내 문구(예: 전문 기술을 배우는 방법)를 읽습니다.",
+      "problem": "뒤 문장 \"예를 들어 ~방법입니다\"의 주어가 없어 무엇이 방법인지 붙지 않는다.",
+      "evidence": "원문 \"An empty slot reads the game's heading and hint, for example how to learn a profession.\""
+    },
+    {
+      "id": "windows/professions.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "가진 개수가 먼저이고 필요한 개수가 두 번째입니다.",
+      "suggestion": "가진 개수가 앞에, 필요한 개수가 뒤에 옵니다.",
+      "problem": "\"먼저이고 ~ 두 번째입니다\"는 first/second를 직역해 어색하다.",
+      "evidence": "원문 \"with the number you have first and the number needed second.\""
+    }
+  ]
+}

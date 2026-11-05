@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/tooltips.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "목록과 칸에서 아이템 이름에는 등급이 붙는데, 보는 플레이어에게 그 이름이 보이는 색으로 붙습니다.",
+   "suggestion": "목록과 칸에서 아이템 이름에는 등급이 붙는데, 앞을 보는 플레이어에게 그 이름이 보이는 색으로 붙습니다.",
+   "problem": "원문의 sighted(앞을 보는, 비장애인)를 '보는'으로만 옮겨 한정어의 뜻이 흐려졌다. '보는 플레이어'는 '화면을 보고 있는 플레이어' 정도로 읽혀, 시각장애인 독자에게 '앞을 보는 사람이 보는 색'이라는 대비가 전달되지 않는다.",
+   "evidence": "원문: \"item names carry the quality as the colour a sighted player sees the name in\""
+  }
+ ]
+}

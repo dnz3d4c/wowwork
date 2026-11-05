@@ -1,0 +1,31 @@
+{
+  "findings": [
+    {
+      "id": "basics/index.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "창 안에서 이동하기, 클릭하기, 드롭다운, 입력 칸, 상황 메뉴, 커서",
+      "suggestion": "창 안에서 이동하기, 클릭하기, 드롭다운, 입력 칸, 상황별 메뉴, 커서",
+      "problem": "context menu를 '상황 메뉴'로 옮겼으나 애드온이 실제로 읽어 주는 화면 문구와 연결 문서의 제목은 '상황별 메뉴'다. 들리는 이름과 설명서 이름이 달라 독자가 같은 기능인지 헷갈린다.",
+      "evidence": "vision-locale/koKR/ui.lua:58 L[\"Context Menu\"] = \"상황별 메뉴\", bindings.lua:24 동일. 연결 대상 ko/basics/interface.md:192 제목 '## 상황별 메뉴', 33행 단축키 표 'Shift+F10 | 상황별 메뉴'."
+    },
+    {
+      "id": "basics/index.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "- [단축키](keybindings.md) — 단축키 창",
+      "suggestion": "- [단축키](keybindings.md) — 단축키 화면",
+      "problem": "연결 대상 페이지는 이 기능을 일관되게 '단축키 화면'이라 부르고, '창'은 /wv bind로 별도로 열 때만 쓴다. 메뉴 안에서 여는 경우는 창이 아니므로 '단축키 창'은 대상 페이지 설명과 어긋난다.",
+      "evidence": "ko/basics/keybindings.md:4 '단축키 화면은 각 동작과…', 6행 '## 단축키 화면 열기', 14행 '같은 화면이 별도 창으로 바로 열리며'. ko/basics/interface.md:6 '[단축키 화면](./keybindings.md)'."
+    },
+    {
+      "id": "basics/index.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "- [툴팁](tooltips.md) — 툴팁을 한꺼번에 또는 한 줄씩 읽기",
+      "suggestion": "- [툴팁 읽기](tooltips.md) — 툴팁을 한꺼번에 또는 한 줄씩 읽기",
+      "problem": "링크 글자 '툴팁'이 대상 페이지의 실제 제목 '툴팁 읽기'와 다르다. 나머지 다섯 링크는 모두 대상 제목과 글자가 같아 이 항목만 어긋난다. 원문도 'Tooltips'와 'Reading Tooltips'로 어긋나 있어 원문 그대로 옮긴 결과이므로 고칠지는 판단이 필요하다.",
+      "evidence": "ko/basics/tooltips.md:2 '# 툴팁 읽기', en/basics/tooltips.md:1 '# Reading Tooltips'. 다른 링크: interface.md '# 인터페이스 사용하기', speech.md '# 음성 및 소리', menu-and-settings.md '# WowVision 메뉴와 설정', alerts.md '# 경보', keybindings.md '# 단축키' 모두 일치."
+    }
+  ]
+}

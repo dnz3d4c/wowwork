@@ -1,0 +1,74 @@
+[
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "홈의 색과 보석을 읽습니다: \"빨간색: Delicate Living Ruby\" 또는 \"파란색: 비어 있음\".",
+    "suggestion": "홈의 색과 보석을 읽습니다: \"붉은색: Delicate Living Ruby\" 또는 \"푸른색: 비어 있음\".",
+    "problem": "인용한 낭독 예시의 색 이름이 실제로 들리는 값과 다르다. 애드온은 게임의 RED_GEM/BLUE_GEM 문자열을 읽으므로 한국어 클라이언트에서는 \"붉은색\", \"푸른색\"이 들린다.",
+    "evidence": "WowVision tbc/socketing.lua:54, mists/socketing.lua:17 `color = _G[strupper(colorKey .. \"_GEM\")]`; wowwork/cache/gs_koKR.csv RED_GEM=붉은색, BLUE_GEM=푸른색. \"비어 있음\"은 vision-locale/koKR/ui.lua:78 L[\"Empty\"]와 일치."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "보석 장착에서 \"빨간색: 비어 있음\"으로 가서 Enter를 누릅니다.",
+    "suggestion": "보석 장착에서 \"붉은색: 비어 있음\"으로 가서 Enter를 누릅니다.",
+    "problem": "예시 절차에서 찾아갈 줄의 낭독 문구가 실제와 다르다. 사용자는 \"붉은색: 비어 있음\"을 듣게 되므로 안내된 문구를 찾지 못한다.",
+    "evidence": "mists/socketing.lua:17, tbc/socketing.lua:54 (게임 RED_GEM 문자열 사용); gs_koKR.csv RED_GEM=붉은색. 원문 \"Red: Empty\"."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "(얼개, 그리고 Mists에서는 톱니바퀴 홈과 샤에 물든 홈)",
+    "suggestion": "(얼개, 그리고 Mists에서는 맞물림톱니와 샤에 물듦)",
+    "problem": "원문은 \"게임 자체의 색 이름\"을 읽는다고 설명하는데, 번역이 든 이름이 실제 게임 낱말과 다르다. 톱니 홈은 \"맞물림톱니\", 샤 홈은 \"샤에 물듦\"으로 들린다.",
+    "evidence": "mists/socketing.lua:17 `_G[strupper(colorKey .. \"_GEM\")]`; gs_koKR.csv COGWHEEL_GEM=맞물림톱니, HYDRAULIC_GEM=샤에 물듦, META_GEM=얼개. 단 gs_koKR.csv가 Mists 클라이언트와 같은 빌드인지는 미확인."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "3. 훈련 포인트를 확인하고 Tab으로 훈련에 갑니다. Enter를 누릅니다.",
+    "suggestion": "3. 훈련 포인트를 확인하고 Tab으로 배우기에 갑니다. Enter를 누릅니다.",
+    "problem": "야수 조련 제작 창의 실행 버튼은 애드온이 게임 버튼 글자를 그대로 읽는데(라벨 지정 없음), 게임 TRAIN 문자열은 \"배우기\"다. \"훈련\" 버튼을 찾으라는 안내는 실제 들리는 이름과 다르다.",
+    "evidence": "tbc/craft.lua:249 CraftCreateButton을 nodes.proxyButton({ target = button })로 라벨 없이 읽음; Blizzard_CraftUI는 이 버튼에 GetCraftButtonToken()(\"TRAIN\"/\"ENSCRIBE\") 문자열을 넣음(미확인 추정, 클라이언트 소스로 확인 필요); gs_koKR.csv TRAIN=배우기, ENSCRIBE=마법부여. 용어표의 Training=훈련은 훈련 창 이름이지 Train 버튼이 아님."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "7. 마법부여(야수 조련이면 훈련)와 닫기.",
+    "suggestion": "7. 마법부여(야수 조련이면 배우기)와 닫기.",
+    "problem": "위 항목과 같은 버튼. 야수 조련일 때 들리는 버튼 이름은 게임 TRAIN 문자열 \"배우기\"다.",
+    "evidence": "tbc/craft.lua:249; gs_koKR.csv TRAIN=배우기. 닫기 버튼(CraftCancelButton)은 EXIT=닫기로 일치."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "필요한 도구(\"요구 사항: 대장장이 망치 (없음)\")",
+    "suggestion": "필요한 도구(\"필요: 대장장이 망치 (없음)\")",
+    "problem": "WoW: Forever 제조법 툴팁의 도구 줄은 게임 PROFESSIONS_REQUIRED_TOOLS 형식으로 만들어지며 한국어 값은 \"필요: %s\"다. \"요구 사항:\"은 TBC/Mists 세부 정보의 REQUIRES_LABEL이라 Forever 화면과 맞지 않는다.",
+    "evidence": "WowVision camelot/crafting.lua:170 `PROFESSIONS_REQUIRED_TOOLS:format(...)`; gs_koKR.csv PROFESSIONS_REQUIRED_TOOLS=\"|cnNORMAL_FONT_COLOR:필요:|r %s\". \"(없음)\"은 vision-locale/koKR/monitors.lua:59 L[\"Missing\"]=없음과 일치."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "각 열은 아이템 레벨(\"아이템 레벨: 463\")로 시작하고",
+    "suggestion": "각 열은 아이템 레벨(\"아이템 레벨 463\")로 시작하고",
+    "problem": "원문 인용 \"Item Level 463\"에 없는 쌍점이 들어갔다. 애드온은 열 머리의 아이템 레벨 글자와 숫자를 공백으로 이어 읽으므로 쌍점은 들리지 않을 가능성이 높다.",
+    "evidence": "mists/itemUpgrade.lua:34 `ItemLevelText:GetText() .. \" \" .. iLvlText:GetText()`; gs_koKR.csv ITEM_UPGRADE_STAT_AVERAGE_ITEM_LEVEL=\"아이템 레벨\"(쌍점 없음). ItemLevelText에 이 문자열이 들어가는지는 Mists 클라이언트 XML 미확인 — 원문이 쌍점 없이 적은 것이 방증."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "(예를 들어 최고 품질 재료 사용과 제조법 추적)",
+    "suggestion": "(예를 들어 최고 품질 재료 사용과 제작법 추적)",
+    "problem": "체크 상자 이름을 게임 문구로 옮겼는데 두 번째가 실제 문구와 다르다. 애드온은 체크 상자 자체 글자를 읽으며 게임 값은 \"제작법 추적\"이다.",
+    "evidence": "camelot/crafting.lua:412 TrackRecipeCheckbox의 Text를 라벨로 읽음; gs_koKR.csv PROFESSIONS_TRACK_RECIPE=\"제작법 추적\", PROFESSIONS_USE_BEST_QUALITY_REAGENTS=\"최고 품질 재료 사용\"."
+  }
+]

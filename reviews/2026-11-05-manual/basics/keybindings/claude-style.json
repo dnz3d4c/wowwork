@@ -1,0 +1,74 @@
+[
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "첫 단축키에 도착하며, 예를 들어 \"단축키, 목록, 위, 막대, Up Arrow, 버튼, 1 of 2\"라고 들립니다.",
+  "suggestion": "초점이 첫 단축키에 놓이고, 예를 들어 \"단축키, 목록, 위, 막대, Up Arrow, 버튼, 1 of 2\"라고 들립니다.",
+  "problem": "'You land on'을 '도착하며'로 직역해 주어 없이 화면 안 이동을 장소 도착처럼 표현했다. 한국어 화면 안내에서는 초점이 놓인다고 쓰는 편이 자연스럽다.",
+  "evidence": "원문 \"You land on the first binding and hear, for example, ...\". 같은 파일의 키 제거 절은 \"다음에 초점이 가는 곳이 들립니다\"로 초점 표현을 쓴다."
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "줄은 동작 이름, \"막대\", 도착한 버튼 순서로 읽힙니다.",
+  "suggestion": "줄은 동작 이름, \"막대\", 초점이 놓인 버튼 순서로 읽힙니다.",
+  "problem": "'the button you land on'을 '도착한 버튼'으로 직역해 어색하다. 들었을 때 버튼이 어디에 도착했다는 뜻처럼 들린다.",
+  "evidence": "원문 \"then the button you land on\". 같은 파일 키 제거 절의 '초점' 표현과도 맞추는 것이 일관적이다."
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "이것이 \"기본으로 지정되지 않은\" 동작입니다. 동작은 있지만 키를 지정해 주기를 기다리고 있습니다.",
+  "suggestion": "이것이 \"기본으로 지정되지 않은\" 동작입니다. 동작 자체는 있지만 키는 직접 지정해야 합니다.",
+  "problem": "'they exist but are waiting for you to give them a key'를 의인화 그대로 옮겨 번역투가 났고, 둘째 문장의 주어 '동작은'이 앞 문장과 이어지지 않아 어떤 동작을 가리키는지 흐려진다.",
+  "evidence": "원문 \"they exist but are waiting for you to give them a key\". manual-review.md style 관점의 '번역투'."
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "예: Space도 왼쪽 클릭으로 쓰고 싶다고 합시다. 왼쪽 클릭에서 추가를 열고 Space를 누릅니다.",
+  "suggestion": "예: Space도 왼쪽 클릭으로 쓰고 싶다고 합시다. 왼쪽 클릭 줄의 추가에서 Enter를 누르고 Space를 누릅니다.",
+  "problem": "'Open Add'를 '추가를 열고'로 직역했다. 추가는 버튼이라 '연다'는 동사가 어울리지 않고, 앞 절에서는 '추가에서 Enter'라고 써서 표현이 어긋난다.",
+  "evidence": "원문 \"Open Add on Left Click, press Space.\" 같은 파일 표 \"추가에서 Enter | 새 키 입력 받기를 시작합니다.\""
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "이제 Space로 클릭하고, 툴팁 읽기는 키를 잃었습니다.",
+  "suggestion": "이제 Space를 누르면 클릭이 되고, 툴팁 읽기에는 키가 없어졌습니다.",
+  "problem": "'has lost its key'를 '키를 잃었습니다'로 직역해 번역투이고, 'Space로 클릭하고'는 주어가 사용자인지 Space인지 모호하다.",
+  "evidence": "원문 \"Space now clicks, and Read Tooltip has lost its key\"."
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "게임 자체 단축키는 확인하지 않으며, WowVision의 키가 작동하는 동안에는 WowVision의 키가 우선합니다.",
+  "suggestion": "게임 자체 단축키는 확인하지 않으며, WowVision 키가 작동하는 동안에는 그 키가 게임 단축키보다 우선합니다.",
+  "problem": "한 문장 안에 'WowVision의 키'가 두 번 반복되어 스크린리더로 들을 때 늘어지고, 무엇보다 우선하는지 비교 대상이 빠져 있다.",
+  "evidence": "원문 \"while WowVision's key is active it takes precedence\" — 영어는 대명사 it으로 반복을 피한다."
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "위의 이동 키는 WowVision 창이 열려 있을 때만 작동합니다. 열린 창이 없으면 평소처럼 게임 키입니다.",
+  "suggestion": "위의 이동 키는 WowVision 창이 열려 있을 때만 작동합니다. 열린 창이 없으면 평소처럼 게임이 이 키를 씁니다.",
+  "problem": "'they belong to the game as usual'을 '게임 키입니다'로 줄여 서술이 어색하고 주어(이동 키)가 생략되어 뜻이 바로 들어오지 않는다.",
+  "evidence": "원문 \"With no window open, they belong to the game as usual.\""
+ },
+ {
+  "id": "basics/keybindings.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "키보드의 Escape, 10초 동안 버튼 입력 없음, 전투 시작 중 하나가 일어나면 \"취소됨\"과 함께 입력 받기가 취소됩니다.",
+  "suggestion": "키보드에서 Escape를 누르거나, 10초 동안 버튼을 누르지 않거나, 전투가 시작되면 \"취소됨\"이 들리고 입력 받기가 취소됩니다.",
+  "problem": "명사·명사형 '없음'·'시작'을 쉼표로 늘어놓아 개조식 문체가 본문 합니다체 문장에 섞였고, 들을 때 '버튼 입력 없음'이 안내 문구처럼 들려 혼동된다.",
+  "evidence": "원문 \"Escape on the keyboard, ten seconds with no button, or the start of combat cancels the capture with \\\"Cancelled\\\".\" manual-review.md style 관점의 '문체 혼용', '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+ }
+]

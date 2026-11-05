@@ -1,0 +1,146 @@
+[
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "어떤 상태에 켜진 출력이 없으면 대체되는 상태의 출력을 대신 쓰고",
+    "suggestion": "어떤 상태에 켜진 출력이 없으면 그 상태가 넘어가는 대체 상태의 출력을 대신 쓰고",
+    "problem": "'대체되는 상태'는 '다른 것으로 바뀌는 상태', 즉 출력이 없는 원래 상태로 들린다. 실제로 가리키는 것은 넘겨받는 쪽(확산이면 효과 적용)이라 들었을 때 방향이 뒤집혀 이해될 수 있다.",
+    "evidence": "원문 'the output of the state it falls back to is used instead'. 바로 앞 문장 '확산은 효과 적용으로 대체됩니다'에서 '대체되는' 쪽은 확산이므로, 같은 동사를 받는 '대체되는 상태'는 확산으로 읽힌다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "재사용 대기가 없는 태양섬광 같은 즉시 시전 주문은 나오지 않습니다. 없으면 \"재사용 대기가 있는 주문 없음\"이라고 말합니다",
+    "suggestion": "재사용 대기가 없는 태양섬광 같은 즉시 시전 주문은 나오지 않습니다. 해당하는 주문이 하나도 없으면 \"재사용 대기가 있는 주문 없음\"이라고 말합니다",
+    "problem": "'없으면'의 주어가 빠져 바로 앞 '재사용 대기가 없는'과 이어 들린다. 주문에 재사용 대기가 없으면 그 문구를 말한다는 뜻으로 오해할 수 있다.",
+    "evidence": "원문 '(...; or it says \"No spells with cooldowns\")'는 목록이 비었을 때를 말한다. 괄호 안 앞 문장이 '없는 ... 주문'으로 끝나 생략된 주어가 엉뚱하게 채워진다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "다른 주문 이름이나 번호를 입력할 수도 있지만, 이 두 범주에 있는 오라만 보입니다.",
+    "suggestion": "다른 주문 이름이나 번호를 입력할 수도 있지만, 규칙이 감지하는 것은 이 두 범주에 있는 오라뿐입니다.",
+    "problem": "'보입니다'는 선택 목록에 표시된다는 뜻으로 들려, 입력은 되지만 목록에 안 나온다는 말로 이해될 수 있다. 원문은 규칙이 그 오라를 감지할 수 없다는 경고다.",
+    "evidence": "원문 'only auras that are in those two categories will ever be seen'. 앞 문장이 '주문 선택에는 ... 오라가 나옵니다'라서 '보입니다'가 목록 표시로 이어 들린다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "창 끝에 UI 재시작 버튼을 둡니다(또는 `/reload`를 입력합니다)",
+    "suggestion": "창 끝에 UI 재시작 버튼을 둡니다(`/reload`를 입력해도 됩니다)",
+    "problem": "문장 주어가 '창'이라 괄호 안 '입력합니다'의 주체도 창으로 읽힌다. 사용자가 할 수 있는 대안이라는 점이 드러나지 않는다.",
+    "evidence": "원문 'offers a Reload Interface button at its end (or type `/reload`)'는 사용자에게 하는 명령형이다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임의 경보 편집기가 경보 편집기라는 별도 창으로 열립니다",
+    "suggestion": "게임의 경보 편집기가 별도 창으로 열립니다. 창 이름은 경보 편집기입니다",
+    "problem": "같은 말 '경보 편집기'가 한 문장에 연달아 두 번 나와 들을 때 말이 겹친 것처럼 들린다.",
+    "evidence": "원문 'opens the game's alert editor as a window of its own, called Alert Editor'. 한국어로 그대로 겹쳐 옮겨 번역투가 됐다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "각 규칙은 찾은 상태를 한 번 알립니다. 그 상태의 출력이 켜져 있을 때만입니다.",
+    "suggestion": "각 규칙은 찾은 상태의 출력이 켜져 있으면 그 상태를 한 번 알립니다.",
+    "problem": "조건을 '~때만입니다'로 따로 떼어 앞 문장이 무조건 알리는 것처럼 먼저 들리고, 뒷문장은 조각 문장이라 어색하다.",
+    "evidence": "원문 'each rule then announces the state it finds once, if the output for that state is on' — 조건이 한 문장 안에 있다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "그 상태의 출력을 켜도 규칙이 다음에 확인하는 즉시 말하거나 소리를 냅니다",
+    "suggestion": "그 상태의 출력을 켜면 규칙이 다음에 확인할 때 바로 말하거나 소리를 냅니다",
+    "problem": "'켜도'는 양보로 들려 '켜도 소리가 난다(막을 수 없다)'는 어색한 뉘앙스가 생긴다. 원문은 켜면 바로 울린다는 안내다.",
+    "evidence": "원문 'Turning an output on while its rule is already in that state also makes it speak (or play) at once, as soon as the rule next checks'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "추가한 모니터는 기본적으로 계정 전체에 저장되므로 모든 캐릭터가 함께 씁니다. 늘 그게 좋지는 않습니다.",
+    "suggestion": "추가한 모니터는 기본적으로 계정 전체에 저장되므로 모든 캐릭터가 함께 씁니다. 하지만 늘 그것이 바람직하지는 않습니다.",
+    "problem": "구어 축약 '그게'가 합니다체 본문에 섞여 문체가 흔들린다.",
+    "evidence": "지침 '문체 혼용(본문은 합니다체)'. 원문 'That is not always what you want'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "재사용 대기시간 관리자가 오라를 갱신 구간 안으로 표시함",
+    "suggestion": "재사용 대기시간 관리자가 오라를 갱신 구간 안에 있다고 표시함",
+    "problem": "'구간 안으로 표시함'은 오라를 구간 안으로 옮겨 표시한다는 뜻처럼 들리는 어색한 조사다.",
+    "evidence": "원문 'The cooldown manager marks the aura as inside its refresh window'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "리테일에서는 전투 중과 인스턴스 안에서 재사용 대기 정보가 비밀이지만",
+    "suggestion": "리테일에서는 전투 중과 인스턴스 안에서 재사용 대기 정보가 숨겨지지만",
+    "problem": "'secret'을 '비밀'로 직역한 번역투다. 같은 파일 앞부분에서는 같은 내용을 '숨기다'로 옮겼다.",
+    "evidence": "원문 'Cooldown information is secret in combat'. 같은 파일 '게임이 애드온에게 오라 정보를 숨기므로'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "남은 시간은 게임 자체의 표기를 따른 평범한 말이고, 전투 중에도 읽을 수 있습니다.",
+    "suggestion": "남은 시간은 게임이 쓰는 표기 그대로 일반 문장으로 나오며, 전투 중에도 읽을 수 있습니다.",
+    "problem": "'표기를 따른 평범한 말이고'는 직역이라 무엇이 평범하다는 것인지 분명하지 않다.",
+    "evidence": "원문 'The time left comes from the game's own formatting, in plain words, and can be spoken even in combat'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "주문 재사용 대기는 게임이 여전히 내주는 몇 가지 사실을 이용하고",
+    "suggestion": "주문 재사용 대기는 게임이 아직 알려 주는 몇 가지 정보를 이용하고",
+    "problem": "'사실을 내주다'는 'gives out facts'의 직역으로 어색하다.",
+    "evidence": "원문 'uses the few facts the game still gives out'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "규칙은 주문 이름으로 찾으므로 달빛섬광 같은 시전 주문은 그 약화 효과와 맞습니다.",
+    "suggestion": "규칙은 주문 이름으로 찾으므로 달빛섬광 같은 시전 주문을 고르면 그 주문이 거는 약화 효과도 찾습니다.",
+    "problem": "'약화 효과와 맞습니다'는 'matches'의 직역으로 무엇이 맞는다는 것인지 들어서 바로 알기 어렵다.",
+    "evidence": "원문 'The rule matches by the spell's name, so a cast spell like Moonfire matches its debuff'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "앞에서 설명한 대로 대신 재사용 대기시간 관리자의 항목을 보여 줍니다",
+    "suggestion": "앞에서 설명한 대로 이 목록 대신 재사용 대기시간 관리자의 항목을 보여 줍니다",
+    "problem": "'대로 대신'이 붙어 나와 들을 때 걸리고, 무엇을 대신하는지가 빠졌다.",
+    "evidence": "원문 'offer the cooldown manager's own entries instead, as described above'."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "모니터가 사용함인지, 규칙이 사용함인지, 주문이 정해져 있는지, 상태의 소리 경보나 TTS 경보가 사용함인지(기본값은 꺼짐입니다)",
+    "suggestion": "모니터의 사용함이 켜져 있는지, 규칙의 사용함이 켜져 있는지, 주문이 정해져 있는지, 상태의 소리 경보나 TTS 경보의 사용함이 켜져 있는지(기본값은 꺼짐입니다)",
+    "problem": "설정 이름 '사용함'을 서술어처럼 붙여 '모니터가 사용함인지'가 되어 문법이 어색하다.",
+    "evidence": "원문 'the monitor is Enabled; the rule is Enabled; ... is Enabled'. '사용함'은 설정 항목 이름이므로 '~의 사용함이 켜져 있는지'로 써야 자연스럽다."
+  },
+  {
+    "id": "information/monitors.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "파티나 공격대에서는 오라에 플레이어가 적용함을 써서 다른 플레이어가 건 오라를 세지 않게 하십시오.",
+    "suggestion": "파티나 공격대에서는 오라 규칙의 플레이어가 적용함을 켜서 다른 플레이어가 건 오라를 세지 않게 하십시오.",
+    "problem": "켜고 끄는 설정을 '써서'로 받아 어색하고, 바로 뒤 문장의 '끄십시오'와 짝이 맞지 않는다.",
+    "evidence": "원문 'Use Applied by Player for auras ... Turn it off for effects that have no caster'. 같은 파일 예시 5단계는 '켠 채로 둡니다'로 썼다."
+  }
+]

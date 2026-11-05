@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reference/glossary.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "[단축키 참조](keybindings.md)를 참고하십시오.",
+    "suggestion": "[키 바인딩 목록](keybindings.md)을 참고하십시오.",
+    "problem": "링크 글자가 대상 페이지의 실제 한국어 제목과 다르다. 원문 링크 글자 Keybinding Reference는 대상 제목과 같은데 번역에서만 어긋났다.",
+    "evidence": "대상 페이지 ko/reference/keybindings.md 1행 제목은 '# 키 바인딩 목록', 영어 원문 제목은 '# Keybinding Reference'로 원문 링크 글자와 일치."
+  },
+  {
+    "id": "reference/glossary.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "[단축키 참조](../reference/keybindings.md)에서 볼 수 있고",
+    "suggestion": "[키 바인딩 목록](../reference/keybindings.md)에서 볼 수 있고",
+    "problem": "자주 묻는 질문의 링크 글자도 대상 페이지 실제 제목과 다르다.",
+    "evidence": "ko/reference/keybindings.md 제목 '# 키 바인딩 목록'. 원문 'In the [Keybinding Reference]'는 영어 제목과 동일."
+  },
+  {
+    "id": "reference/glossary.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "[Sku 로그인 도구로 로그인하기](../getting-started/sku-login.md)를 참고하십시오.",
+    "suggestion": "[Sku Login Tool로 로그인하기](../getting-started/sku-login.md)를 참고하십시오.",
+    "problem": "링크 글자가 대상 페이지 실제 제목과 다르다. 대상 페이지와 설치 안내 페이지들은 도구 이름을 Sku Login Tool로 그대로 둔다.",
+    "evidence": "ko/getting-started/sku-login.md 제목 '# Sku Login Tool로 로그인하기'. installer.md 49행, installation.md 42행, first-login.md 17행도 'Sku Login Tool' 표기. 원문 링크 글자 'Logging In with the Sku Login Tool'은 영어 제목과 동일."
+  },
+  {
+    "id": "reference/glossary.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "[이동과 방향](../world/movement.md)을 참고하십시오.",
+    "suggestion": "[이동과 주변 환경](../world/movement.md)을 참고하십시오.",
+    "problem": "링크 글자가 대상 페이지 실제 제목과 다르다. 원문 링크 글자도 영어 제목(Movement and Surroundings)과 어긋나 있으나, 독자가 찾는 대상은 실제 페이지 제목이다.",
+    "evidence": "ko/world/movement.md 제목 '# 이동과 주변 환경', en/world/movement.md 제목 '# Movement and Surroundings'. 원문 링크 글자 'Movement and Orientation'."
+  }
+]

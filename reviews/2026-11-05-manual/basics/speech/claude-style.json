@@ -1,0 +1,67 @@
+{
+ "findings": [
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "직접은 각 줄을 바로 말합니다. 버퍼는 음성을 줄 세우고, 말이 끊길 때마다 잠시 기다린 뒤 다음 줄을 말합니다.",
+   "suggestion": "직접 방식은 각 줄을 바로 말합니다. 버퍼 방식은 음성을 대기열에 모아 두고, 말이 끊길 때마다 잠시 기다린 뒤 다음 줄을 말합니다.",
+   "problem": "선택지 이름 '직접'에 조사 '은'만 붙여 문장 첫머리에 두어, 들었을 때 부사 '직접'으로 들려 설정값 이름이라는 게 드러나지 않는다. '음성을 줄 세우고'도 번역투다.",
+   "evidence": "원문 'Direct speaks each line at once. Buffered lines the speech up and waits...'. 지침의 style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현, 번역투."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "걷는 동안 나오는 안내(미니맵의 새 점)는 음성 종류 대신 게임의 0번 음성이 음성 속도와 음성 음량으로 말합니다.",
+   "suggestion": "걷는 동안 나오는 안내(미니맵의 새 점)는 음성 종류 대신 게임의 0번 음성으로, 음성 속도와 음성 음량에 맞춰 나옵니다.",
+   "problem": "'안내는 ... 음성이 ... 말합니다'로 주어가 겹쳐 문장 구조가 어색하다.",
+   "evidence": "원문 'The announcements made while you walk ... are spoken by the game's voice number 0 at your Speech Rate and Speech Volume'. 수동태를 옮기며 이중 주어가 생겼다."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "게임과 다른 애드온에서 오는 음성을 포함한 나머지 줄은 차례로 세워 둡니다.",
+   "suggestion": "게임과 다른 애드온에서 오는 음성까지 포함해 나머지 줄은 차례로 기다리게 합니다.",
+   "problem": "'줄은 차례로 세워 둡니다'는 'lines up'을 직역한 번역투이고, 긴 관형절이 앞에 붙어 듣기 어렵다.",
+   "evidence": "원문 'lines up the rest, including speech from the game and from other addons'."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Retail과 WoW: Forever는 글자를 손대지 않고 그대로 넘깁니다.",
+   "suggestion": "Retail과 WoW: Forever는 글자에 손대지 않고 그대로 넘깁니다.",
+   "problem": "'손대다'는 '~에'를 취하는데 '~을'을 써서 조사가 어색하다.",
+   "evidence": "원문 'hand the text over untouched'. 한국어 동사 '손대다'의 격 지배."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "창을 떠난 뒤에도 이전 창의 글자를 계속 읽으면 켜십시오.",
+   "suggestion": "창을 떠난 뒤에도 이전 창의 내용이 계속 읽히면 켜십시오.",
+   "problem": "'읽으면'의 주어가 빠져 사용자가 읽는다는 뜻으로도 들린다. 'text'를 '글자'로 옮긴 것도 어색하다.",
+   "evidence": "원문 'Turn it on if the old window's text keeps talking after you have left it.' 말하는 주체는 음성이다."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "음성 종류, 음성 음량, 음성 속도, 그리고 대기열 또는 방식 설정은",
+   "suggestion": "음성 종류, 음성 음량, 음성 속도와 대기열 또는 방식 설정은",
+   "problem": "나열 마지막 항목 앞의 '그리고'는 영어 'and'를 옮긴 번역투다.",
+   "evidence": "원문 'Speech Voice, Speech Volume, Speech Rate and the queue or style setting'."
+  },
+  {
+   "id": "basics/speech.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "거기서 무언가를 고르기 전까지는 그냥 음성 종류를 따르며",
+   "suggestion": "거기서 따로 고르기 전까지는 음성 종류를 그대로 따르며",
+   "problem": "'무언가를', '그냥'은 'something', 'simply'를 직역한 말로 합니다체 본문에서 구어적이고 번역투다.",
+   "evidence": "원문 'Until you choose something there, it simply follows Speech Voice'."
+  }
+ ]
+}

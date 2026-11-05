@@ -1,0 +1,121 @@
+{
+ "findings": [
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "경보까지 아래로 이동합니다. 예를 들어 지역 변경 경보에서 Enter를 누릅니다.",
+   "suggestion": "경보(예: 지역 변경 경보)까지 아래로 이동해 Enter를 누릅니다.",
+   "problem": "Enter를 누르는 동작이 '예를 들어' 문장 안에 들어가, 들으면 예로 든 경보에서만 Enter를 누르는 것처럼 들린다. 어느 경보든 이동한 뒤 Enter를 누른다는 단계가 흐려진다.",
+   "evidence": "원문 \"Move down to the alert, for example Zone Changed Alert, and press Enter.\" - press Enter는 단계의 본동작이고 예시는 삽입구다."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "대상이 누군가에 의해 군중 제어(기절, 공포, 변이 등)되거나 군중 제어된 대상으로 바꿉니다.",
+   "suggestion": "누군가가 대상을 군중 제어(기절, 공포, 변이 등)하거나, 내가 군중 제어된 대상으로 바꿉니다.",
+   "problem": "앞 절의 주어는 '대상이'인데 뒤 절 '대상으로 바꿉니다'는 사용자가 주어라 주어가 어긋난다. 들으면 대상이 스스로 다른 대상으로 바꾸는 것처럼 들린다. '누군가에 의해 ~되거나'도 번역투 피동이다.",
+   "evidence": "원문 \"Your target becomes crowd controlled by anyone ..., or you switch to one that is\" - 두 절의 주어가 target과 you로 다르다."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "Lua 오류와 필터가 분류하지 못하는 메시지도 소리로 알립니다.",
+   "suggestion": "Lua 오류와 필터가 분류하지 못하는 메시지도 읽어 줍니다.",
+   "problem": "'소리로 알립니다'는 이 페이지에서 출력 종류인 '소리'(소리 경보)와 겹쳐, 들으면 효과음을 낸다는 뜻으로 갈린다. 이 경보의 출력은 TTS 경보뿐이다.",
+   "evidence": "원문 \"It also voices Lua errors\", 같은 행 출력 칸 \"TTS Alert\". 문서 앞부분 표에서 '소리'는 Sound 출력을 가리킨다."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "인스턴스 안에서는 게임이 바라보는 방향을 알려 주지 않으므로",
+   "suggestion": "인스턴스 안에서는 내가 바라보는 방향을 게임이 알려 주지 않으므로",
+   "problem": "'게임이 바라보는 방향'으로 붙어 들려, 게임이 무언가를 바라본다는 뜻으로 읽힌다. 바라보는 주체가 캐릭터라는 것이 드러나지 않는다.",
+   "evidence": "원문 \"the game does not report which way you face\" - face의 주어는 you."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "출력에서 Enter를 누르면 그 출력의 설정이 열립니다. 예를 들어 소리 경보입니다.",
+   "suggestion": "출력(예: 소리 경보)에서 Enter를 누르면 그 출력의 설정이 열립니다.",
+   "problem": "'예를 들어 소리 경보입니다'가 앞 문장과 떨어진 독립 문장이라 무엇의 예인지 이어 듣기 어렵다. 'for example'을 문장 하나로 떼어 낸 번역투다.",
+   "evidence": "원문 \"Press Enter on an output, for example Sound Alert, to open its settings.\" 지침 manual-translate.md 문체 \"한국어로 자연스럽게, 번역투 없이\"."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Shift+F1로 WowVision 메뉴를 열고 모듈로 들어갑니다. 예를 들어 길 안내, 그다음 나침반입니다.",
+   "suggestion": "Shift+F1로 WowVision 메뉴를 열고 모듈(예: 길 안내, 그다음 나침반)로 들어갑니다.",
+   "problem": "'예를 들어 X입니다'를 별도 문장으로 떼어 번역투가 되고, '길 안내, 그다음 나침반입니다'는 서술어가 어색하다.",
+   "evidence": "원문 \"go into the module, for example Navigation, then Compass.\" 지침 manual-translate.md 문체 \"번역투 없이\"."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "TTS 음성으로 글을 읽습니다. 예를 들어 \"전투 시작\"입니다.",
+   "suggestion": "TTS 음성으로 \"전투 시작\" 같은 글을 읽습니다.",
+   "problem": "'예를 들어 \"전투 시작\"입니다'는 무엇이 '전투 시작'인지 주어가 없는 번역투 문장이다. 같은 표의 다른 행도 같은 꼴이다.",
+   "evidence": "원문 \"Speaks text with your TTS voice, for example \\\"combat started\\\".\""
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "경보 전체를 조용히 하려면 경보를 끄고, 나머지는 그대로 두려면 출력 하나만 끕니다.",
+   "suggestion": "경보를 통째로 끄려면 경보를 끄고, 다른 출력은 남겨 두려면 그 출력 하나만 끕니다.",
+   "problem": "'경보 전체를 조용히 하려면'은 어색한 표현이고, '나머지는'이 무엇의 나머지인지 앞에 나오지 않아 들을 때 바로 잡히지 않는다.",
+   "evidence": "원문 \"Turn an alert off to silence all of it; turn one output off to keep the rest.\""
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "대상이 나나 내 파티와 전투 중이면 차임 소리를 재생",
+   "suggestion": "대상이 나 또는 내 파티와 전투 중이면 차임 소리를 재생",
+   "problem": "'나나'는 스크린리더로 들으면 한 낱말처럼 들려 '나 또는'으로 바로 들리지 않는다.",
+   "evidence": "원문 \"when your target is in combat with you or your group\". manual-review.md style 관점 \"스크린리더로 들었을 때 뜻이 갈리는 표현\"."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "새 미니맵 점 경보에는 없습니다. 이 경보는 자체 게임 음성으로 읽기 때문입니다.",
+   "suggestion": "새 미니맵 점 경보에는 없습니다. 이 경보는 게임 음성을 따로 써서 읽기 때문입니다.",
+   "problem": "'자체 게임 음성'은 'of its own'을 직역한 번역투로, 경보에 딸린 별도 음성이라는 뜻이 잘 전해지지 않는다.",
+   "evidence": "원문 \"which is spoken by a game voice of its own\"."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "반복 지연(2초, 0~30)은 키를 누르고 있는 동안 같은 오류를 다시 읽지 않게 합니다.",
+   "suggestion": "반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류를 다시 읽지 않게 합니다.",
+   "problem": "원문에 없는 물결표(~)를 넣었다. 스크린리더는 이를 '물결'로 읽거나 건너뛰어 범위라는 뜻이 들리지 않을 수 있다.",
+   "evidence": "원문 \"Repeat Delay (2 seconds, 0 to 30)\". manual-translate.md 문체 \"원문에 없는 기호를 더하지 않는다\"."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "경보가 어떤 소리인지 궁금합니까? 그 경보의 소리 경보 출력을 열고 화살표로 소리를 훑어 보십시오. 소리에 닿을 때마다 재생됩니다.",
+   "suggestion": "경보가 어떤 소리인지 궁금하면 그 경보의 소리 경보 출력을 열고 화살표로 소리를 훑어 보십시오. 소리로 이동할 때마다 그 소리가 재생됩니다.",
+   "problem": "'궁금합니까?'는 합니다체 의문문이라 딱딱하고 어색하며, '소리에 닿을 때마다'는 영어 land on을 직역한 표현이다.",
+   "evidence": "원문 \"Unsure what an alert sounds like? ... each one plays as you land on it.\""
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "경보는 경보가 속한 모듈 화면의 맨 아래, 설정 다음에 각각 버튼으로 있습니다.",
+   "suggestion": "경보는 각각 버튼으로, 그 경보가 속한 모듈 화면의 맨 아래 설정 다음에 있습니다.",
+   "problem": "'각각 버튼으로 있습니다'로 끝나는 서술이 어색하고, 문장 앞의 '경보는 경보가'가 겹친다.",
+   "evidence": "원문 \"Alerts sit at the bottom of the screen of the module they belong to, after its settings, each as a button.\""
+  }
+ ]
+}

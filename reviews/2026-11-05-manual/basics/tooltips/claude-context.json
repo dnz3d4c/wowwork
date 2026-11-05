@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/tooltips.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "[슬래시 명령 일람](../reference/commands.md)을 참고하십시오.",
+   "suggestion": "[슬래시 명령](../reference/commands.md)을 참고하십시오.",
+   "problem": "링크 글자 '슬래시 명령 일람'이 대상 페이지의 실제 제목 '슬래시 명령'과 다르다. 스크린리더 사용자가 링크 목록이나 페이지 제목으로 대상을 찾을 때 이름이 어긋난다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/reference/commands.md:2 제목 '# 슬래시 명령'(원문 en 제목 '# Slash Commands'), ko/reference/index.md:7도 '[슬래시 명령](commands.md)'으로 씀"
+  }
+ ]
+}

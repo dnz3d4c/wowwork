@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "reference/glossary.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "게임의 대화 설정(음성 합성)에서 끕니다. [대화](../windows/chat.md)를 참고하십시오.",
+      "suggestion": "게임의 대화 설정(텍스트 음성 변환)에서 끕니다. [대화](../windows/chat.md)를 참고하십시오.",
+      "problem": "괄호 안은 게임 설정 화면의 이름(Text to Speech)을 가리키는데, 게임 공식 한국어는 \"텍스트 음성 변환\"이다. \"음성 합성\"으로 쓰면 사용자가 게임 설정에서 그 이름을 찾지 못한다.",
+      "evidence": "원문 \"Turn it off in the game's chat settings (Text to Speech).\" / wowwork/cache/gs_koKR.csv:19621 TEXT_TO_SPEECH=\"텍스트 음성 변환\" (gs_enUS.csv:19636 \"Text To Speech\"), TEXT_TO_SPEECH_CONFIG=\"텍스트 음성 변환 환경 설정\"(gs_koKR.csv:19437). 참고: 게임의 대화창 설정 공식 이름은 CHAT_OPTIONS_LABEL=\"대화창 설정\"(gs_koKR.csv:4169)"
+    },
+    {
+      "id": "reference/glossary.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "계정 공통 설정 — 계정의 모든 캐릭터가 함께 쓰는 설정입니다. 캐릭터별로 바꾸지 않는 한 WowVision 설정은 대부분 계정 공통입니다.",
+      "suggestion": "계정 전체 설정 — 계정의 모든 캐릭터가 함께 쓰는 설정입니다. 캐릭터별로 바꾸지 않는 한 WowVision 설정은 대부분 계정 전체 설정입니다.",
+      "problem": "용어집이 \"Account-wide\"를 \"계정 공통\"으로 정의하지만, 이 항목이 링크하는 설명서 본문은 같은 말을 \"계정 전체\"로 쓴다(18회 대 4회, \"계정 공통\"은 사실상 이 파일에만 있음). 용어집 표제어가 본문 용어와 달라 찾아 읽을 때 같은 개념인지 헷갈린다. 같은 파일의 범위 항목(\"계정 공통으로 저장할지\")도 함께 맞춘다.",
+      "evidence": "원문 \"Account-wide setting\", \"Scope — Whether a setting is stored per character or account-wide\" / ko/basics/menu-and-settings.md:150 \"## 캐릭터별 설정과 계정 전체 설정\", :157, basics/alerts.md:26, basics/keybindings.md:109, information/buffers.md:294, information/monitors.md:59 모두 \"계정 전체\""
+    }
+  ]
+}

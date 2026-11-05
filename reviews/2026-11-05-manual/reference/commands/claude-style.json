@@ -1,0 +1,193 @@
+{
+ "findings": [
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "텍스트가 선택된 창에 표시됩니다. Ctrl+C를 누르면",
+   "suggestion": "텍스트가 모두 선택된 상태로 창에 표시됩니다. Ctrl+C를 누르면",
+   "problem": "\"텍스트가 선택된 창\"은 들었을 때 '선택된 창에 텍스트가 나온다'로도 읽혀, 창 안의 텍스트가 이미 선택돼 있어서 바로 복사할 수 있다는 뜻이 흐려진다.",
+   "evidence": "원문: \"Shown in a window of selected text. Press Ctrl+C to copy the text\" - 선택된 것은 창이 아니라 텍스트다."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "| /wv turnlog | 경유지 쪽으로 돈 최근 기록을 나열합니다",
+   "suggestion": "| /wv turnlog | 경유지 쪽으로 방향을 돌린 최근 기록을 나열합니다",
+   "problem": "\"돈\"이 단독으로 들리면 '돌다'의 관형형이 아니라 명사 '돈(money)'으로 들려 뜻이 갈린다.",
+   "evidence": "원문 표: \"/wv turnlog | Lists the last turns to a waypoint\". 관점 규칙: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "경유지 쪽으로 돌아서기로 돈 최근 기록을 한 줄에 하나씩",
+   "suggestion": "경유지 쪽으로 돌아서기로 방향을 돌린 최근 기록을 한 줄에 하나씩",
+   "problem": "\"돌아서기로 돈\"은 '돌아서기로 결정한 돈'처럼도 들리고 \"돈\"이 명사로 들려 뜻이 갈린다.",
+   "evidence": "원문: \"Lists the last turns made by Turn to Waypoint\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "명령마다 하는 일, 입력하는 법, 예, 그리고 어느 게임 버전에 있는지를 적습니다.",
+   "suggestion": "명령마다 하는 일, 입력하는 법, 사용 예, 그리고 어느 게임 버전에 있는지를 적습니다.",
+   "problem": "쉼표 사이에 \"예\" 한 글자만 있으면 들었을 때 대답 '예(yes)'로 들려 나열 항목인지 알기 어렵다.",
+   "evidence": "원문: \"what it does, how to type it, an example, and on which game versions it exists\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "/wv 명령은 /wv 뒤에 낱말 하나를 붙여 시작합니다.",
+   "suggestion": "/wv 명령은 /wv로 시작하고 그 뒤에 낱말 하나가 붙습니다.",
+   "problem": "\"뒤에 낱말 하나를 붙여 시작합니다\"는 시작 부분과 뒤에 붙는 부분이 뒤섞여 어색한 번역투다.",
+   "evidence": "원문: \"/wv commands start with /wv followed by a word\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "전역 명령은 그 자체가 슬래시 낱말입니다. 예: /beacon, /pquit.",
+   "suggestion": "전역 명령은 /wv 없이 자기 이름으로 바로 입력하는 슬래시 명령입니다. 예: /beacon, /pquit.",
+   "problem": "\"그 자체가 슬래시 낱말입니다\"는 직역이라 무슨 뜻인지 바로 와닿지 않는다.",
+   "evidence": "원문: \"Global commands are their own slash word\" - /wv 아래가 아니라 독립된 슬래시 명령이라는 뜻."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "명령 설명에 따로 적혀 있지 않으면 그 명령은 모든 게임 버전에 있습니다: 클래식 시대",
+   "suggestion": "명령 설명에 따로 적혀 있지 않으면 그 명령은 모든 게임 버전, 곧 클래식 시대",
+   "problem": "합니다체 문장을 끝낸 뒤 쌍점으로 목록을 잇는 것은 영어 구두점을 그대로 옮긴 번역투다. (끝부분은 \"…, WoW: Forever에 있습니다.\"로 맞춘다)",
+   "evidence": "원문: \"it exists on all game versions: Classic Era, ...\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "| /wv speech | 음성 목소리, 속도, 음량을 설정하거나 나열합니다 |",
+   "suggestion": "| /wv speech | 음성의 목소리, 속도, 음량을 설정하거나 나열합니다 |",
+   "problem": "\"음성 목소리\"는 같은 뜻의 낱말이 겹쳐 어색하다.",
+   "evidence": "원문: \"Sets or lists speech voice, rate and volume\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "음성 목소리, 속도, 음량을 한 번에 설정합니다. 로그인하거나",
+   "suggestion": "음성의 목소리, 속도, 음량을 한 번에 설정합니다. 로그인하거나",
+   "problem": "\"음성 목소리\"는 같은 뜻의 낱말이 겹쳐 어색하다.",
+   "evidence": "원문: \"Sets your speech voice, rate and volume in one go\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "| /focus1 ~ /focus5 | 가상 주시 대상을 설정합니다 | 전체, Sku와 함께는 불가 |",
+   "suggestion": "| /focus1부터 /focus5까지 | 가상 주시 대상을 설정합니다 | 전체, Sku와 함께 쓸 수 없음 |",
+   "problem": "원문의 \"to\"를 원문에 없는 기호 \"~\"로 바꿨고(제목 \"### /focus1 ~ /focus5\"도 같음), \"Sku와 함께는 불가\"는 조사 \"는\"이 붙어 어색하다.",
+   "evidence": "원문: \"| /focus1 to /focus5 | Sets a virtual focus target | all, not with Sku |\". 관점 규칙: 원문에 없는 기호."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "| /pquit | 파티를 떠납니다 | 전체, Sku와 함께는 불가 |",
+   "suggestion": "| /pquit | 파티를 떠납니다 | 전체, Sku와 함께 쓸 수 없음 |",
+   "problem": "\"Sku와 함께는 불가\"는 조사 \"는\"이 붙어 어색하다.",
+   "evidence": "원문: \"all, not with Sku\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "| /dquit | 던전 파티나 전장을 떠납니다 | 전체, Sku와 함께는 불가 |",
+   "suggestion": "| /dquit | 던전 파티나 전장을 떠납니다 | 전체, Sku와 함께 쓸 수 없음 |",
+   "problem": "\"Sku와 함께는 불가\"는 조사 \"는\"이 붙어 어색하다.",
+   "evidence": "원문: \"all, not with Sku\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "애드온을 켜거나 끄고 다시 불러옵니다 | 전체, BlindSlash와 함께는 불가 |",
+   "suggestion": "애드온을 켜거나 끄고 다시 불러옵니다 | 전체, BlindSlash와 함께 쓸 수 없음 |",
+   "problem": "\"BlindSlash와 함께는 불가\"는 조사 \"는\"이 붙어 어색하다.",
+   "evidence": "원문: \"all, not with BlindSlash\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision은 가상 주시 대상 다섯 개를 더하며, 이 대상은 주시 대상 선택 1부터 주시 대상 선택 5까지의 단축키(기본값은 지정 안 됨)로 대상으로 잡을 수 있습니다.",
+   "suggestion": "WowVision은 가상 주시 대상 다섯 개를 추가합니다. 이 다섯 대상은 주시 대상 선택 1부터 주시 대상 선택 5까지의 단축키(기본값은 지정 안 됨)로 선택할 수 있습니다.",
+   "problem": "\"더하며\"는 번역투이고, 한 문장에 \"대상\"이 세 번 겹쳐(\"이 대상은 … 대상으로 잡을\") 들었을 때 따라가기 어렵다.",
+   "evidence": "원문: \"WowVision adds five virtual ones, which you can then target with the Target Focus 1 to Target Focus 5 bindings\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "| /beacon x y | 현재 지역 지도의 지도 좌표에 비컨을 설정합니다.",
+   "suggestion": "| /beacon x y | 현재 지역 지도의 좌표에 비컨을 설정합니다.",
+   "problem": "\"지도의 지도 좌표\"로 같은 낱말이 겹친다.",
+   "evidence": "원문: \"Sets a beacon to map coordinates on the current zone map\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision 메뉴(Shift+F1), UI, 단축키로 여는 화면과 같습니다.",
+   "suggestion": "WowVision 메뉴(Shift+F1)에서 UI, 단축키 순서로 들어가는 화면과 같습니다.",
+   "problem": "쉼표로만 이어 들으면 메뉴·UI·단축키가 세 가지 다른 여는 방법처럼 들리고, 메뉴 안의 이동 경로라는 것이 드러나지 않는다.",
+   "evidence": "원문: \"the same screen as WowVision menu (Shift+F1), UI, Bindings\" - 메뉴 경로."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Sku 애드온과 함께 그 오디오 데이터 애드온과 비컨 애드온도 함께 전환해서",
+   "suggestion": "Sku 애드온과 그 오디오 데이터 애드온, 비컨 애드온을 함께 전환해서",
+   "problem": "\"함께\"가 한 구절에 두 번 나오고 \"과\"가 겹쳐 어색하다.",
+   "evidence": "원문: \"it switches the Sku addon together with its audio data and beacon addons\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "전투가 끝나기를 기다리는 값은 \"전투 후\"와 함께 적용될 값이 표시되고",
+   "suggestion": "전투가 끝나기를 기다리는 값에는 \"전투 후\" 표시와 함께 그때 적용될 값이 나오고",
+   "problem": "주어 \"값은\"과 \"값이 표시되고\"가 겹쳐 문장 구조가 꼬인다.",
+   "evidence": "원문: \"A value waiting for combat to end is marked \\\"after combat\\\" with the value it will get\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "기록은 /reload를 입력할 때 WowVisionDump 저장 변수에 기록됩니다.",
+   "suggestion": "/reload를 입력하면 이 기록이 WowVisionDump 저장 변수에 저장됩니다.",
+   "problem": "\"기록은 … 기록됩니다\"로 같은 낱말이 주어와 서술어에 겹친다.",
+   "evidence": "원문: \"The records are written to the WowVisionDump saved variable when you type /reload.\""
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "켜져 있는 동안 대화 창에는 창이 탐색 키를 넘겨받고, 기다리고, 돌려주는 시점과, 누르고 있는 키 점검이 본 내용이 나옵니다.",
+   "suggestion": "켜져 있는 동안 대화 창에는 각 창이 탐색 키를 넘겨받고, 기다리고, 돌려주는 시점과 누르고 있는 키를 점검한 결과가 나옵니다.",
+   "problem": "\"대화 창에는 창이\"로 창이 겹치고, \"키 점검이 본 내용이\"는 사물이 보는 것으로 옮긴 번역투라 들었을 때 따라가기 어렵다.",
+   "evidence": "원문: \"chat shows when windows take, wait for and release the navigation keys, and what the held-key check saw\"."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "게임패드 UI가 켜져 있을 때만 기록하며, 이는 리테일이나 WoW: Forever를 뜻합니다.",
+   "suggestion": "게임패드 UI가 켜져 있을 때만, 곧 리테일이나 WoW: Forever에서만 기록합니다.",
+   "problem": "\"이는 …을 뜻합니다\"는 영어 \"which means\"를 그대로 옮긴 번역투다.",
+   "evidence": "원문: \"it only logs with the gamepad interface on, which means Retail or WoW: Forever\"."
+  }
+ ]
+}

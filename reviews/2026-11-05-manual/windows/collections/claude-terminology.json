@@ -1,0 +1,58 @@
+{
+  "findings": [
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "상황 메뉴(Shift+F10)에는 도전 과제 링크를 대화창에 넣는 \"(도전 과제) 대화창에 링크\"가 있습니다.",
+      "suggestion": "상황 메뉴(Shift+F10)에는 도전 과제 링크를 대화창에 넣는 \"대화창에 (도전 과제) 링크\"가 있습니다.",
+      "problem": "인용한 메뉴 항목의 어순이 실제 화면 문구와 다르다. 실제로는 \"대화창에 <도전 과제 이름> 링크\"로 읽힌다.",
+      "evidence": "원문 \"Link (challenge) in Chat\". vision-locale/koKR/chat.lua:37 L[\"Link %s in Chat\"] = \"대화창에 %s 링크\", WowVision/camelot/legacy/challenges.lua:273 이 문자열을 도전 과제 이름으로 format."
+    },
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "| Shift+F10 | 상황 메뉴: 배우기, 습득 취소, 끌기, \"(특성) 대화창에 링크\" |",
+      "suggestion": "| Shift+F10 | 상황 메뉴: 배우기, 습득 취소, 끌기, \"대화창에 (특성) 링크\" |",
+      "problem": "특성 상황 메뉴 항목의 어순이 실제 화면 문구와 다르다.",
+      "evidence": "원문 \"Link (talent) in Chat\". vision-locale/koKR/chat.lua:37 \"대화창에 %s 링크\", WowVision/retail/talentTree.lua:348 L[\"Link %s in Chat\"]:format(talentName(current))."
+    },
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "특성은 이름, 단계(\"단계 1/2\"), 상태를 읽습니다. 상태는 \"사용 가능\"(단계를 살 수 있음)",
+      "suggestion": "특성은 이름, 등급(\"등급 1/2\"), 상태를 읽습니다. 상태는 \"사용 가능\"(등급을 살 수 있음)",
+      "problem": "실제로 읽히는 순위 문구는 \"등급 1/2\"인데 설명서는 \"단계 1/2\"로 인용한다. 같은 파일의 \"단계를 삽니다\", \"단계를 환불합니다\", 예시 5단계의 \"단계를 삽니다\"도 함께 맞춰야 한다(또는 로케일 값을 \"단계\"로 바꾸는 쪽으로 결정).",
+      "evidence": "원문 \"its rank (\\\"rank 1/2\\\")\". WowVision/retail/talentTree.lua:68-70 L[\"rank\"] .. \" \" .. currentRank .. \"/\" .. maxRanks, vision-locale/koKR/windows.lua:56 L[\"rank\"] = \"등급\"."
+    },
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "예를 들어 \"영예 레벨, 12\"(정확한 표현은 게임이 정함)이고",
+      "suggestion": "예를 들어 \"명성 레벨, 12\"(정확한 표현은 게임이 정함)이고",
+      "problem": "Renown의 게임 공식 한국어는 \"명성\"인데 \"영예\"로 옮겼다. 같은 문단의 \"영예가 도달한 레벨\"도 같이 맞춰야 한다.",
+      "evidence": "원문 \"Renown level, 12\", \"levels your renown has reached\". 코드는 C_MajorFactions 명성 API를 쓴다(WowVision/camelot/legacy/rewardTrack.lua:40,76). Renown=명성은 리테일 한국어 클라이언트 기억에 의존한 미확인 추정이며, koKR GlobalStrings의 RENOWN_LEVEL_LABEL 값으로 확인 필요."
+    },
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "이것은 형상변환기가 아니라 옷장 도감입니다. 멈춤 지점은 차례로 다음과 같습니다.",
+      "suggestion": "이것은 형상변환사가 아니라 옷장 도감입니다. 멈춤 지점은 차례로 다음과 같습니다.",
+      "problem": "transmogrifier(형상변환 NPC)의 게임 공식 명칭은 \"형상변환사\"인데 \"형상변환기\"로 옮겼다.",
+      "evidence": "원문 \"not the transmogrifier\". 한국어 클라이언트의 NPC 직함 <형상변환사> — 기억에 의존한 미확인 추정, 게임 내 NPC 직함으로 확인 필요."
+    },
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "멈춤 지점은 차례로 검색, 필터, 진행 줄(게임의 수집 개수 표시), 장난감 상자 목록, 페이지 넘김 줄입니다.",
+      "suggestion": "멈춤 지점은 차례로 검색, 필터, 진행 상태 줄(게임의 수집 개수 표시), 장난감 상자 목록, 페이지 넘김 줄입니다.",
+      "problem": "같은 파일에서 progress line을 장난감 상자는 \"진행 줄\", 계승품은 \"진행 상태 줄\"로 다르게 옮겼다.",
+      "evidence": "원문 Toy Box \"a progress line\", Heirlooms \"a Progress line\". terms: Progress=진행 상태 (vision-locale/koKR/ui.lua:111)."
+    }
+  ]
+}

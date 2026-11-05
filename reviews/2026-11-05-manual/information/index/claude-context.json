@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "information/index.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "어느 파티원이 얼마나 다쳤는지 숫자와 음 높이로 알려 줍니다",
+   "suggestion": "어느 파티나 공격대 구성원이 얼마나 다쳤는지 숫자와 음 높이로 알려 줍니다",
+   "problem": "'파티원'으로 옮겨 모니터가 파티에서만 동작하는 것처럼 읽힌다. 실제 모듈은 공격대 구성원(최대 40번)까지 알려 주며, 모듈 이름도 '파티 및 공격대 생명력 모니터'다.",
+   "evidence": "원문 'which group members are hurt'. vision-locale/koKR/navigation.lua:220 L[\"Group\"] = \"파티 및 공격대\", koKR/groupHealth.lua:5. 대상 페이지 ko/information/group-health.md '## 번호' 절: 11명 이상 공격대는 40번까지 번호를 매김, 본문 '파티나 공격대 구성원 중 누가 얼마나 다쳤는지'."
+  }
+ ]
+}

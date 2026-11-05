@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "windows/auction-house.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "창 안의 일반 키([인터페이스 기본](../basics/interface.md) 참고):",
+      "suggestion": "창 안의 일반 키([인터페이스 사용하기](../basics/interface.md) 참고):",
+      "problem": "링크 글자 '인터페이스 기본'이 대상 페이지의 실제 제목과 다르다. 스크린리더 사용자가 링크를 따라가면 다른 제목이 들려 같은 페이지인지 헷갈린다.",
+      "evidence": "대상 파일 docs/src/user/ko/basics/interface.md 1행 제목은 '# 인터페이스 사용하기'(영어 원본도 '# Using the Interface'). 다른 번역 페이지(getting-started/introduction.md 10행)는 '[인터페이스 사용하기](../basics/interface.md)'로 링크한다."
+    },
+    {
+      "id": "windows/auction-house.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "[창 개요](./overview.md), [경보](../basics/alerts.md), [툴팁](../basics/tooltips.md).",
+      "suggestion": "[게임 창](./overview.md), [경보](../basics/alerts.md), [툴팁 읽기](../basics/tooltips.md).",
+      "problem": "'함께 보기'의 링크 글자 '창 개요'와 '툴팁'이 대상 페이지의 실제 제목과 다르다.",
+      "evidence": "docs/src/user/ko/windows/overview.md 제목 '# 게임 창', docs/src/user/ko/basics/tooltips.md 제목 '# 툴팁 읽기'. getting-started/introduction.md 10행도 overview.md를 '[게임 창]'으로 링크한다. 나머지 링크(가방과 은행, 경보, 시스템 창)는 제목과 일치한다."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "information/index.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "는 어느 파티원이 얼마나 다쳤는지 숫자와 음 높이로 알려 줍니다",
+   "suggestion": "는 어느 파티원 또는 공격대원이 얼마나 다쳤는지 숫자와 음 높이로 알려 줍니다",
+   "problem": "원문 group members는 파티와 공격대 구성원을 모두 가리키는데 '파티원'으로 옮겨 공격대원이 빠진 것처럼 범위가 좁아졌습니다. 바로 앞 기능 이름이 '파티 및 공격대 생명력 모니터'인 것과도 어긋납니다.",
+   "evidence": "원문: \"tells you which group members are hurt and how badly\"; terms: Group Health Monitor = 파티 및 공격대 생명력 모니터"
+  }
+ ]
+}

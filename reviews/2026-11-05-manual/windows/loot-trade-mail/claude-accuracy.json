@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "windows/loot-trade-mail.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "주사위가 끝났거나 게임이 창을 보여 주지 않는 것입니다.",
+   "suggestion": "주사위가 끝났거나 게임이 창을 보여 주지 않는 것일 수 있습니다.",
+   "problem": "원문은 가능한 원인을 추정으로 제시하는데(may be), 번역은 두 원인으로 단정한다. 다른 원인 가능성을 지운다.",
+   "evidence": "원문 문제 해결: \"The roll may be over, or the game is not showing it.\""
+  },
+  {
+   "id": "windows/loot-trade-mail.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "다른 플레이어가 거래를 걸어 오면 거래 창이 열리고 WowVision이 읽습니다.",
+   "suggestion": "다른 플레이어와 거래하면 거래 창이 열리고 WowVision이 읽습니다.",
+   "problem": "원문 \"trades with you\"는 누가 거래를 시작하든 거래가 열리는 경우 전체를 가리키는데, 번역은 상대가 거래를 걸어 오는 경우로 좁힌다. 바로 다음 문장이 내가 거래를 시작하는 방법을 설명하므로 범위가 어긋난다.",
+   "evidence": "원문 거래 절 첫 문장: \"When another player trades with you, the trade window opens and WowVision reads it. Start a trade the way the game does.\""
+  }
+ ]
+}

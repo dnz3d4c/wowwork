@@ -1,0 +1,76 @@
+{
+  "findings": [
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "critical",
+      "quote": "1. Shift+F1, 그다음 T로 대상 지정, Enter.",
+      "suggestion": "1. Shift+F1을 누르고 아래로 대상 지정까지 가서 Enter.",
+      "problem": "한국어 클라이언트에서는 메뉴 항목 이름이 한글(대상 지정)이라 T 키 글자 이동으로 찾아지지 않는다. 독자가 T를 눌러도 아무 데도 가지 않는다.",
+      "evidence": "WowVision/core/graph/typeAhead.lua:36-47 matchText는 라벨의 실제 글자(접힌 소문자)로 비교하고, :85 labels[index]:sub(1,#text)==text로 앞글자 일치만 본다. 한글 자모 대응은 없다. koKR targeting.lua:4 L[\"Targeting\"]=\"대상 지정\"."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "critical",
+      "quote": "1. Shift+F1, N(길 안내), Enter, 그다음 C로 나침반, Enter.",
+      "suggestion": "1. Shift+F1을 누르고 아래로 길 안내까지 가서 Enter, 그다음 나침반까지 가서 Enter.",
+      "problem": "한국어 메뉴 이름이 길 안내·나침반이라 N, C 글자 이동이 동작하지 않는다.",
+      "evidence": "WowVision/core/graph/typeAhead.lua:36-47, :85 (라벨 앞글자 일치 비교). koKR navigation.lua:4 L[\"Navigation\"]=\"길 안내\", :9 L[\"Compass\"]=\"나침반\"."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "| 전투 시작 경보 | UI, 전투 | 전투에 들어갑니다. |",
+      "suggestion": "| 전투 시작 경보 | 인터페이스, 전투 | 전투에 들어갑니다. |",
+      "problem": "UI 모듈의 실제 메뉴 이름은 인터페이스다. 메뉴 경로에 UI라고 쓰면 화면에서 찾을 수 없다. 같은 표의 전투 종료 경보·적 수 경보 행의 메뉴 경로와 절 제목 ### UI도 인터페이스로 맞춰야 한다.",
+      "evidence": "koKR ui.lua:5 L[\"UI\"]=\"인터페이스\", WowVision/core/ui modules/module.lua:3 module:setLabel(L[\"UI\"]). 다른 번역 문서도 인터페이스 메뉴로 쓴다(ko/basics/keybindings.md:9, interface.md:188)."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "- 재사용 대기 규칙: 준비됨, 충전 중, 대기 중.",
+      "suggestion": "- 재사용 대기 규칙: 준비 완료, 충전 중, 대기 중.",
+      "problem": "Ready 상태 경보의 실제 화면 이름은 준비 완료다. 준비됨은 다른 설정(Is Ready)의 이름이라 헷갈린다.",
+      "evidence": "koKR monitors.lua:75 L[\"Ready\"]=\"준비 완료\", :81 L[\"Is Ready\"]=\"준비됨\". classic/monitors/types/CooldownMonitor.lua:20 alert = { key = \"ready\", label = L[\"Ready\"] }."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "- 주문 재사용 대기 규칙(리테일과 WoW: Forever): 준비됨, 충전 중, 대기 중.",
+      "suggestion": "- 주문 재사용 대기 규칙(리테일과 WoW: Forever): 준비 완료, 충전 중, 대기 중.",
+      "problem": "주문 재사용 대기 규칙의 Ready 경보도 화면에서는 준비 완료로 나온다.",
+      "evidence": "retail/monitors/SpellCooldownMonitor.lua:293 alert = { key = \"ready\", label = L[\"Ready\"] }, koKR monitors.lua:75 L[\"Ready\"]=\"준비 완료\"."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "- 효과 규칙: 효과 적용, 확산, 만료 임박, 없음.",
+      "suggestion": "- 오라 규칙: 효과 적용, 확산, 만료 임박, 없음.",
+      "problem": "규칙 종류가 화면에서는 오라 상태 규칙으로 나오고 확정 용어도 aura=오라다. 효과 규칙이라고 하면 화면에서 같은 항목을 찾기 어렵다.",
+      "evidence": "koKR monitors.lua:55 L[\"Aura State Rule\"]=\"오라 상태 규칙\". wowwork/docs/glossary.tsv:18 aura 오라."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "- 재사용 대기시간 관리자 효과 규칙(리테일과 WoW: Forever): 효과 적용, 확산(확산 구간이 없는 WoW: Forever에는 없음), 없음.",
+      "suggestion": "- 재사용 대기시간 관리자 오라 규칙(리테일과 WoW: Forever): 효과 적용, 확산(확산 구간이 없는 WoW: Forever에는 없음), 없음.",
+      "problem": "실제 규칙 이름은 재사용 대기시간 관리자 오라 규칙이다.",
+      "evidence": "koKR monitors.lua:89 L[\"Cooldown Manager Aura Rule\"]=\"재사용 대기시간 관리자 오라 규칙\". glossary.tsv:18 aura 오라."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "대상이 전투 중일 때 소리(대상이 나나 내 파티와 전투 중이면 차임 소리를 재생)",
+      "suggestion": "대상이 전투 중일 때 소리(대상이 나나 내 파티 또는 공격대와 전투 중이면 차임 소리를 재생)",
+      "problem": "원문 group은 파티와 공격대를 모두 가리키고 코드도 공격대 중일 때 공격대원 전원을 검사한다. 파티로만 옮기면 공격대에서는 안 울리는 것처럼 읽힌다.",
+      "evidence": "WowVision/core/targeting/module.lua:75-103 inCombatWith는 IsInRaid()이면 raid1~40과 그 펫을, IsInGroup()이면 party1~5를 검사한다. koKR ui.lua도 group을 \"내 파티나 공격대\"로 옮긴다(Attacking You or Your Group)."
+    }
+  ]
+}

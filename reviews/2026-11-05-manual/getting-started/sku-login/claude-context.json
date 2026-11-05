@@ -1,0 +1,11 @@
+[
+  {
+    "id": "getting-started/sku-login.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "예를 들어 주시 대상 키, 소프트 타기팅, 툴팁 줄 키(Shift+Up, Shift+Down, Shift+Left, Shift+Right)",
+    "suggestion": "예를 들어 주시 대상 키, 소프트 대상 지정, 툴팁 줄 키(Shift+Up, Shift+Down, Shift+Left, Shift+Right)",
+    "problem": "Sku와 겹쳐 꺼지는 기능 이름을 '소프트 타기팅'으로 옮겼는데, 애드온이 실제로 말하는 한국어와 링크한 sku.md 번역은 '소프트 대상'/'소프트 대상 지정'을 쓴다. 독자가 게임에서 듣는 말과 설명서의 말이 달라진다.",
+    "evidence": "원문 'soft targeting'. vision-locale/koKR/targeting.lua:20-37 'Soft Target Enemy' = '적 소프트 대상', 'Soft Targeting With a Hard Target' = '하드 대상이 있을 때 소프트 대상 지정'; vision-locale/koKR/navigation.lua:273 'soft targeting' = '소프트 대상 지정'. 같은 내용을 다루는 ko/getting-started/sku.md:63 '소프트 대상을 켜고 끄는 키'. 해당 기능은 WowVision/core/targeting/module.lua:349 conflictingAddons = { \"Sku\" }로 실제로 Sku 로드 시 꺼진다."
+  }
+]

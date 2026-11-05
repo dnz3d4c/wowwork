@@ -1,0 +1,47 @@
+[
+  {
+    "id": "windows/group-finder.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "다른 팝업처럼 답하면 됩니다([메뉴, 설정, 대화 상자](./system.md) 참고)",
+    "suggestion": "다른 팝업처럼 답하면 됩니다([시스템 창](./system.md) 참고)",
+    "problem": "링크 글자가 대상 페이지의 실제 제목과 다르다. 대상 페이지 제목은 '시스템 창'이고 원문 링크 글자도 'System windows'라서 '메뉴, 설정, 대화 상자'는 원문에도 대상 제목에도 없는 이름이다. 듣는 사람은 링크 이름으로 해당 페이지를 찾을 수 없다.",
+    "evidence": "원문 'see [System windows](./system.md)'; wowvision-ko/WowVision/docs/src/user/ko/windows/system.md:2 '# 시스템 창'"
+  },
+  {
+    "id": "windows/group-finder.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "게임이 레벨을 알려 주면 그 레벨(예: \"(레벨 60)\" 또는 \"(레벨 15 - 25)\"),",
+    "suggestion": "게임이 레벨을 알려 주면 그 레벨(예: \"(60)\" 또는 \"(15 ~ 25)\"),",
+    "problem": "던전 행의 레벨은 애드온이 게임 전역 문자열 LFD_LEVEL_FORMAT_SINGLE/RANGE로 만드는데, 한국어 게임 값은 '(%d)'와 '(%d ~ %d)'라서 '레벨'이라는 낱말이 없고 범위 구분자도 '~'다. 예시가 실제로 들리는 문구와 다르다. 단 캐시 영어 값도 '(%d)'라 원문의 '(Level 60)'과 어긋나므로, 캐시가 현재 Retail 빌드와 다를 가능성이 있다(게임 안에서 한 번 확인 필요).",
+    "evidence": "wowvision-ko/WowVision/retail/groupFinder.lua:167-169 format(LFD_LEVEL_FORMAT_SINGLE/RANGE); wowwork/cache/gs_koKR.csv:8360-8361 '(%d)', '(%d ~ %d)'; wowwork/cache/gs_enUS.csv:8354-8355"
+  },
+  {
+    "id": "windows/group-finder.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "내 역할(예: \"나의 역할: 방어 전담\"),",
+    "suggestion": "내 역할(예: \"나의 역할 방어 전담\"),",
+    "problem": "애드온은 역할 이름표와 역할 이름을 공백 하나로 이어 읽고, 한국어 게임 값 YOUR_ROLE은 '나의 역할'로 쌍점이 없다. 인용한 화면 문구에 실제로는 없는 쌍점이 들어가 있다(원문도 같은 문제).",
+    "evidence": "wowvision-ko/WowVision/core/windows/ready.lua:78 roleLabel:GetText() .. \" \" .. roleName:GetText(); wowwork/cache/gs_koKR.csv:8362 YOUR_ROLE '나의 역할'"
+  },
+  {
+    "id": "windows/group-finder.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "함께 보기: [소셜 창](./social.md), [창 개요](./overview.md), [대화](./chat.md).",
+    "suggestion": "함께 보기: [소셜 창](./social.md), [게임 창](./overview.md), [대화](./chat.md).",
+    "problem": "링크 글자 '창 개요'가 대상 페이지 실제 제목 '게임 창'과 다르다. 다른 설명서 페이지들도 이 링크를 '[게임 창]'으로 단다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/overview.md:2 '# 게임 창'; 원문 'Windows overview'(영어 제목 'Game Windows')"
+  },
+  {
+    "id": "windows/group-finder.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "두 명령은 [명령](../reference/commands.md)에도 나와 있습니다.",
+    "suggestion": "두 명령은 [슬래시 명령](../reference/commands.md)에도 나와 있습니다.",
+    "problem": "링크 글자 '명령'이 대상 페이지 실제 제목 '슬래시 명령'과 다르다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/reference/commands.md:2 '# 슬래시 명령'; 원문 '[Commands](../reference/commands.md)'(영어 제목 'Slash Commands')"
+  }
+]

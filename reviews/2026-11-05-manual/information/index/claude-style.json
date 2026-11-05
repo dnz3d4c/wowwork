@@ -1,0 +1,38 @@
+[
+  {
+    "id": "information/index.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "직접 확인하고 싶은 것은 버퍼로, 소식을 듣고 싶은 것은 모니터로 받으십시오.",
+    "suggestion": "직접 확인하고 싶은 것은 버퍼로 보고, 알림을 받고 싶은 것은 모니터로 받으십시오.",
+    "problem": "두 절이 동사 '받으십시오' 하나를 공유해 앞 절이 '확인하고 싶은 것은 버퍼로 받으십시오'로 읽힌다. 버퍼는 직접 찾아 읽는 목록이라 '받는다'와 어울리지 않고, '소식'도 원문 hear about보다 막연하다.",
+    "evidence": "원문: use a buffer for what you want to check, and a monitor for what you want to hear about. 원문은 use 하나를 공유하지만 한국어에서는 버퍼(직접 읽기)와 모니터(알림 받기)의 동사가 달라야 자연스럽다."
+  },
+  {
+    "id": "information/index.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "대상에게서 약화 효과가 사라질 때, 재사용 대기시간이 끝나 사용할 수 있게 될 때, 효과가 발동할 때 등입니다.",
+    "suggestion": "예를 들어 대상에게서 약화 효과가 사라질 때, 재사용 대기시간이 끝나 사용할 수 있게 될 때, 효과가 발동할 때 알려 줍니다.",
+    "problem": "'~할 때 등입니다'는 주어 없이 앞 문장에 기대는 조각 문장이라 어색하다. 무엇이 '등'인지 들으면서 바로 연결되지 않는다.",
+    "evidence": "원문은 콜론 뒤 예시 나열(a debuff falling off your target, a cooldown becoming ready, a proc). 번역 규칙의 합니다체 본문에서 예시를 독립 문장으로 뺄 때는 서술어를 갖춘 완결 문장이 자연스럽다."
+  },
+  {
+    "id": "information/index.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "숫자와 음 높이로 알려 줍니다(Retail과 WoW: Forever).",
+    "suggestion": "숫자와 음 높이로 알려 줍니다(Retail과 WoW: Forever 전용).",
+    "problem": "괄호 안에 판 이름만 있어 들었을 때 지원 판을 한정하는 말인지, 숫자와 음 높이의 부연인지 갈린다.",
+    "evidence": "원문: (Retail and WoW: Forever). 원문 맥락상 이 기능이 해당 판에서만 동작한다는 한정이므로 '전용' 등으로 한정 뜻을 드러내야 스크린리더로 들을 때 오해가 없다."
+  },
+  {
+    "id": "information/index.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "WowVision은 화면을 보지 않고도 게임 정보를 따라갈 수 있는 방법을 제공합니다.",
+    "suggestion": "WowVision에는 화면을 보지 않고도 게임 정보를 따라갈 수 있는 방법이 있습니다.",
+    "problem": "'방법을 제공합니다'는 gives you ways를 그대로 옮긴 번역투다.",
+    "evidence": "원문: WowVision gives you ways to follow game information without looking at the screen. 무생물 주어 + '제공하다'는 대표적 번역투 표현이다."
+  }
+]

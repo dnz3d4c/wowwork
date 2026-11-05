@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reference/index.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "[슬래시 명령](commands.md) — 대화창에 입력할 수 있는 모든 명령",
+    "suggestion": "[슬래시 명령](commands.md) — 대화 입력창에 입력할 수 있는 모든 명령",
+    "problem": "원문 chat box(명령을 입력하는 칸)를 '대화창'으로 옮겼다. 애드온 화면 문구는 Chat Box를 '대화 입력창'으로 쓰고, 설명서의 다른 파일은 '대화창'을 chat window(메시지가 출력되는 창)에 쓰고 있어 두 대상이 섞인다.",
+    "evidence": "원문 'every command you can type in the chat box'. vision-locale/koKR/chat.lua:17-18 L[\"Chat Box Opened\"] = \"대화 입력창 열림\", L[\"Chat Box Closed\"] = \"대화 입력창 닫힘\". ko/basics/alerts.md:112-113 '대화 입력창', ko/getting-started/quick-start.md:12 '대화 입력창에 /wv를 입력'. 반면 ko/basics/speech.md:46, first-login.md:26 등은 chat window를 '대화창'으로 옮김."
+  },
+  {
+    "id": "reference/index.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "[단축키 일람](keybindings.md) — WowVision의 모든 단축키와 기본 키",
+    "suggestion": "[단축키 참조](keybindings.md) — WowVision의 모든 단축키와 기본 키",
+    "problem": "같은 파일에서 Reference를 제목은 '참조'로, 링크 'Keybinding Reference'는 '일람'으로 다르게 옮겼다. 다른 설명서 파일도 이 페이지 링크를 대부분 '단축키 참조'로 부른다.",
+    "evidence": "원문 '# Reference', '[Keybinding Reference](keybindings.md)'. 번역 '# 참조'. ko/basics/keybindings.md:4·109·129, ko/getting-started/troubleshooting.md:63, ko/world/navigation.md:132, ko/reference/glossary.md:112 모두 '[단축키 참조](../reference/keybindings.md)'."
+  }
+]

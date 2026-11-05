@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "basics/alerts.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "quote": "Lua 오류와 필터가 분류하지 못하는 메시지도 소리로 알립니다.",
+      "suggestion": "Lua 오류와 필터가 분류하지 못하는 메시지도 읽어 줍니다.",
+      "problem": "원문 voices는 TTS로 말해 준다는 뜻인데 '소리로 알립니다'는 이 문서가 따로 구분하는 '소리' 출력(효과음)으로 들린다. 이 경보의 출력은 TTS 경보뿐이다.",
+      "evidence": "원문 \"It also voices Lua errors and messages the filter cannot sort.\" 같은 행 출력 칸 \"TTS Alert\". 문서 앞쪽 표에서 '소리'는 Sound 출력(소리 파일 재생)을 가리킨다."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "quote": "대상이 전투 중일 때 소리(대상이 나나 내 파티와 전투 중이면 차임 소리를 재생)",
+      "suggestion": "대상이 전투 중일 때 소리(대상이 나나 내 파티 또는 공격대와 전투 중이면 차임 소리를 재생)",
+      "problem": "원문 group은 파티와 공격대를 모두 포함하는데 '파티'로 옮겨 공격대에 있을 때의 경우가 빠졌다.",
+      "evidence": "원문 \"plays a chime when your target is in combat with you or your group\". WoW에서 group은 파티와 공격대를 함께 가리키는 말이다."
+    }
+  ]
+}

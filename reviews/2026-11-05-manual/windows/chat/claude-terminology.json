@@ -1,0 +1,58 @@
+{
+  "findings": [
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "| Shift+F10 | 메시지의 상황 메뉴를 엽니다(아래 참고). |",
+      "suggestion": "| Shift+F10 | 메시지의 상황별 메뉴를 엽니다(아래 참고). |",
+      "problem": "Shift+F10 기능의 화면 이름은 '상황별 메뉴'인데 이 파일은 전부 '상황 메뉴'로 씁니다. 단축키 창에서 찾는 이름과 달라집니다. 같은 파일의 '### 메시지의 상황 메뉴' 제목, '상황 메뉴가 열립니다', '상황 메뉴에서 줄 복사를', '메시지의 상황 메뉴에는' 도 함께 '상황별 메뉴'로 바꿔야 합니다.",
+      "evidence": "원문 'Open the context menu of the message'. vision-locale/koKR/bindings.lua:24, ui.lua:58 L[\"Context Menu\"] = \"상황별 메뉴\""
+    },
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "게임의 인터페이스 설정에서 새 귓속말: 새 탭 또는 둘 다",
+      "suggestion": "게임의 인터페이스 설정에서 새 귓속말: 새 탭 또는 모두",
+      "problem": "게임 설정 '새 귓속말'의 선택지 Both는 게임 화면에서 '모두'로 표시되는데 '둘 다'로 옮겼습니다. 독자가 설정 목록에서 찾을 값과 글자가 다릅니다.",
+      "evidence": "원문 'New Whispers: in a new tab, or both'. cache/gs_koKR.csv WHISPER_MODE=새 귓속말, CONVERSATION_MODE_POPOUT=새 탭, CONVERSATION_MODE_POPOUT_AND_INLINE=모두"
+    },
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "클래식 대화 방식(입력창이 쉬는 동안에도 화면에 남는 방식)에서도, 현대 방식에서도 마찬가지입니다",
+      "suggestion": "대화창 스타일이 고전 스타일(입력창이 쉬는 동안에도 화면에 남는 방식)일 때도, 메신저 스타일일 때도 마찬가지입니다",
+      "problem": "원문의 classic chat style과 modern style은 게임 설정 '대화창 스타일'의 두 값(고전 스타일, 메신저 스타일)을 가리키는데, 게임 공식 표기와 다른 '클래식 대화 방식', '현대 방식'으로 옮겨 설정에서 찾을 수 없습니다.",
+      "evidence": "원문 'in the classic chat style (...) as well as in the modern style'. cache/gs_koKR.csv CHAT_STYLE=대화창 스타일, CLASSIC_STYLE=고전 스타일, IM_STYLE=메신저 스타일"
+    },
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "게임 자체의 탭 메뉴(이름 바꾸기, 설정, 새 창, 닫기 등)를 엽니다",
+      "suggestion": "게임 자체의 탭 메뉴(창 이름 변경, 설정, 새 대화창 생성, 대화창 닫기 등)를 엽니다",
+      "problem": "게임 탭 메뉴의 실제 항목 이름과 글자가 다릅니다. 이 메뉴는 WowVision이 그대로 읽어 주므로 독자는 게임 표기를 듣습니다.",
+      "evidence": "원문 'rename, settings, new window, close'. cache/gs_koKR.csv RENAME_CHAT_WINDOW=창 이름 변경, CHAT_CONFIGURATION=설정, NEW_CHAT_WINDOW=새 대화창 생성, CLOSE_CHAT_WINDOW=대화창 닫기"
+    },
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "플레이어 검색(Shift 클릭, Battle.net 플레이어에는 없음)",
+      "suggestion": "플레이어 검색(Shift 클릭, 누구 검색. Battle.net 플레이어에는 없음)",
+      "problem": "같은 동작(who search)을 본문에서는 '누구 검색'으로, 상황별 메뉴 항목에서는 '플레이어 검색'으로 씁니다. 메뉴 이름은 화면 문구라 바꿀 수 없으니, 둘이 같은 동작임을 이어 주어야 독자가 혼동하지 않습니다.",
+      "evidence": "원문 'runs a who search' / 'Who (shift click, not for Battle.net players)'. koKR/chat.lua:32 L[\"Who %s\"] = \"%s 플레이어 검색\", gs_koKR WHO=누구"
+    },
+    {
+      "id": "windows/chat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "설정은 위와 같습니다. 기본은 항상 읽기입니다.",
+      "suggestion": "설정은 위와 같습니다. 메시지 읽기의 기본은 항상입니다.",
+      "problem": "설정값 이름은 '항상'인데 '항상 읽기'라는 화면에 없는 값처럼 썼습니다. 설정 요약 표('메시지 읽기의 기본이 항상입니다')와도 표기가 다릅니다.",
+      "evidence": "원문 'It speaks Always by default'. terms Always=항상, Speak Messages=메시지 읽기"
+    }
+  ]
+}

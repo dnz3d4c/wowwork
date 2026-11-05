@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "windows/bags-and-bank.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "| 아이템이 열 수 있는 가방류임 | 열기. |\n| 아이템이 장착 가능함 | 장착. |",
+   "suggestion": "| 아이템이 열 수 있는 용기임(상자, 조개 등) | 열기. |\n| 아이템이 장착 가능함 | 장착. |",
+   "problem": "원문의 'a container you can open'은 상자·조개·자루처럼 오른쪽 클릭으로 여는 아이템을 가리킨다. '가방류'로 옮기면 가방 아이템을 뜻하는 것으로 들려 의미가 좁아지고 바뀐다. 가방 아이템은 오른쪽 클릭하면 열리지 않고 장착된다. 설정 분류 이름 Containers의 번역어를 일반 명사 자리에 그대로 쓴 것으로 보인다.",
+   "evidence": "원문 표 행: 'The item is a container you can open | Open.' 용어표의 Containers=가방류는 WowVision 메뉴의 창 분류 이름(본문 'Windows, then Containers')에 대한 값이라 이 행의 일반 명사와는 다르다."
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "windows/auction-house.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "11. 초기화: 모든 필터를 되돌리는 게임의 버튼. 사용할 수 있을 때만 있습니다.",
+    "suggestion": "11. 새로고침: 모든 필터를 되돌리는 게임의 버튼. 사용할 수 있을 때만 있습니다.",
+    "problem": "원문 Reset은 게임 버튼 이름(\"the game's reset button\")을 가리킨다. WowVision은 이 버튼의 게임 글자를 그대로 읽는데, 한국어 게임 클라이언트의 RESET 값은 \"새로고침\"이라 사용자가 듣는 이름과 설명서의 \"초기화\"가 다르다.",
+    "evidence": "원문 \"11. Reset: the game's reset button for all filters, when enabled.\" / WowVision/tbc/auction/module.lua:800 actionStop(builder, \"resetButton\", BrowseResetButton)로 게임 버튼 글자를 읽음 / wowwork/cache/gs_koKR.csv:15901 RESET,새로고침 (gs_enUS.csv:15901 RESET,Reset). 덤프가 TBC 클래식 클라이언트와 같은 값인지는 게임 안에서 버튼을 직접 들어 확인 필요"
+  }
+]

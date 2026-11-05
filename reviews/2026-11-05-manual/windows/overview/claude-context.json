@@ -1,0 +1,29 @@
+[
+  {
+    "id": "windows/overview.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "Space는 툴팁 읽기, Shift+F10은 상황에 맞는 메뉴 열기입니다",
+    "suggestion": "Space는 툴팁 읽기, Shift+F10은 상황별 메뉴 열기입니다",
+    "problem": "Shift+F10 동작의 이름을 실제 애드온 문구와 다르게 옮겼다. 사용자가 단축키 설정에서 듣는 이름은 '상황별 메뉴'다.",
+    "evidence": "원문 'Shift+F10 opens the context menu'. vision-locale/koKR/bindings.lua:24 와 ui.lua:58 L[\"Context Menu\"] = \"상황별 메뉴\". 단축키 정의 WowVision/core/ui modules/module.lua:328 inputs = { \"SHIFT-F10\" }."
+  },
+  {
+    "id": "windows/overview.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "NPC 대화, 퀘스트 NPC 창, 비행 조련사, 기술 전문가, 거래",
+    "suggestion": "NPC 대화, 퀘스트 NPC 창, 비행 조련사, 상급자, 거래",
+    "problem": "trainer를 '기술 전문가'로 옮겼으나 애드온 문구와 대상 페이지는 '상급자'를 쓴다. 독자가 npcs.md나 퀘스트/길 안내 목록에서 같은 대상을 찾지 못한다.",
+    "evidence": "원문 'flight masters, trainers, trade'. vision-locale/koKR/quests.lua:24 L[\"Trainers\"] = \"상급자\", navigation.lua:186 L[\"trainer\"] = \"상급자\". 대상 페이지 ko/windows/npcs.md 제목 'NPC: 대화, 상인, 상급자, 비행 조련사, 책'과 '## 상급자' 절."
+  },
+  {
+    "id": "windows/overview.md",
+    "category": "context",
+    "severity": "major",
+    "quote": "대화, 상인, 기술 전문가, 비행 조련사, 책과 편지, 야수 우리",
+    "suggestion": "대화, 상인, 상급자, 비행 조련사, 책과 편지, 야수 우리",
+    "problem": "링크 대상 페이지(npcs.md)의 소개 문구인데 대상 페이지가 쓰는 '상급자' 대신 '기술 전문가'라고 적어 페이지 내용과 어긋난다.",
+    "evidence": "원문 'dialogs, merchants, trainers, flight masters, books and letters, pet stable'. ko/windows/npcs.md:2 제목과 :86 '## 상급자'. vision-locale/koKR/quests.lua:24 L[\"Trainers\"] = \"상급자\"."
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "\"빨간색: Delicate Living Ruby\" 또는 \"파란색: 비어 있음\"",
+    "suggestion": "\"붉은색: Delicate Living Ruby\" 또는 \"푸른색: 비어 있음\"",
+    "problem": "보석 홈 색은 애드온이 게임 전역 문자열 RED_GEM/BLUE_GEM을 그대로 읽으므로 실제로는 \"붉은색\", \"푸른색\"으로 들린다. 인용한 낭독 문구가 실제 발화와 글자가 다르다.",
+    "evidence": "원문 \"Red: Delicate Living Ruby\" or \"Blue: Empty\". wowvision-ko/WowVision/mists/socketing.lua:17, tbc/socketing.lua:54 `color = _G[strupper(colorKey .. \"_GEM\")]`. wowwork/cache/gs_koKR.csv: RED_GEM=붉은색, BLUE_GEM=푸른색."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "보석 장착에서 \"빨간색: 비어 있음\"으로 가서 Enter를 누릅니다",
+    "suggestion": "보석 장착에서 \"붉은색: 비어 있음\"으로 가서 Enter를 누릅니다",
+    "problem": "같은 홈 색 문구. 실제로는 RED_GEM 값 \"붉은색\"이 낭독되므로 예시의 인용이 들리는 말과 다르다.",
+    "evidence": "원문 move to \"Red: Empty\". mists/socketing.lua:17, tbc/socketing.lua:54. gs_koKR.csv RED_GEM=붉은색."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "얼개, 그리고 Mists에서는 톱니바퀴 홈과 샤에 물든 홈",
+    "suggestion": "얼개, 그리고 Mists에서는 맞물림톱니 홈과 샤에 물듦 홈",
+    "problem": "원문은 이 홈들이 '게임 자체의 색 이름'을 읽는다고 설명하는데, 게임 공식 한국어는 COGWHEEL_GEM=\"맞물림톱니\", HYDRAULIC_GEM=\"샤에 물듦\"이다. \"톱니바퀴\", \"샤에 물든\"은 들리는 말과 다르다.",
+    "evidence": "원문 \"(meta, and on Mists cogwheel and sha-touched sockets)\". gs_koKR.csv COGWHEEL_GEM=맞물림톱니, HYDRAULIC_GEM=샤에 물듦, EMPTY_SOCKET_COGWHEEL=맞물림톱니 홈. 낭독 경로 mists/socketing.lua:17."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "각 열은 아이템 레벨(\"아이템 레벨: 463\")로 시작하고",
+    "suggestion": "각 열은 아이템 레벨(\"아이템 레벨 463\")로 시작하고",
+    "problem": "애드온은 ItemLevelText와 iLvlText를 공백으로 이어 읽는다. ItemLevelText는 ITEM_UPGRADE_STAT_AVERAGE_ITEM_LEVEL(\"아이템 레벨\", 쌍점 없음)이므로 실제 발화에는 쌍점이 없다. 원문 인용도 \"Item Level 463\"으로 쌍점이 없다.",
+    "evidence": "mists/itemUpgrade.lua:34 `(ilevelFrame.ItemLevelText:GetText() or \"\") .. \" \" .. (ilevelFrame.iLvlText:GetText() or \"\")`. gs_koKR.csv ITEM_UPGRADE_STAT_AVERAGE_ITEM_LEVEL=아이템 레벨. (ItemLevelText가 이 전역 문자열을 쓴다는 것은 Mists ItemUpgradeUI XML 기준 추정 — 게임 안에서 확인 필요)"
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "훈련 포인트를 확인하고 Tab으로 훈련에 갑니다. Enter를 누릅니다.",
+    "suggestion": "훈련 포인트를 확인하고 Tab으로 배우기에 갑니다. Enter를 누릅니다.",
+    "problem": "야수 조련의 Train 버튼은 애드온 문자열이 아니라 게임 버튼 글자(proxyButton, 라벨 지정 없음)를 읽는다. 게임 전역 TRAIN의 공식 한국어는 \"배우기\"다. 용어표의 \"Training=훈련\"은 다른 화면 문구라 버튼 이름에 쓰면 들리는 말과 다르다.",
+    "evidence": "원문 \"Tab to Train\". tbc/craft.lua 버튼 루프 `nodes.proxyButton({ target = button })`(CraftCreateButton, 라벨 미지정). gs_koKR.csv TRAIN=배우기. 단 gs_koKR.csv는 리테일 기준이라 TBC 클래식 한국어 클라이언트의 버튼 글자는 게임 안에서 확인 필요."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "7. 마법부여(야수 조련이면 훈련)와 닫기.",
+    "suggestion": "7. 마법부여(야수 조련이면 배우기)와 닫기.",
+    "problem": "위와 같은 Train 버튼 이름. 게임 버튼 글자 TRAIN=\"배우기\"와 다르다.",
+    "evidence": "원문 \"Enchant (or Train for Beast Training) and Close.\" tbc/craft.lua CraftCreateButton proxyButton(라벨 미지정). gs_koKR.csv TRAIN=배우기 (리테일 기준, TBC 클라이언트 확인 필요)."
+  },
+  {
+    "id": "windows/professions.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "(예를 들어 최고 품질 재료 사용과 제조법 추적)",
+    "suggestion": "(예를 들어 최고 품질 재료 사용과 제작법 추적)",
+    "problem": "체크 상자 이름을 게임 문구 그대로 옮겼는데(\"최고 품질 재료 사용\"은 게임 값과 일치) 추적 체크 상자만 게임 값 \"제작법 추적\"과 다르다. 체크 상자는 게임 글자로 낭독되므로 한 표현 안에서 하나만 어긋난다.",
+    "evidence": "원문 \"the best reagents and tracking the recipe\". gs_koKR.csv PROFESSIONS_USE_BEST_QUALITY_REAGENTS=최고 품질 재료 사용, PROFESSIONS_TRACK_RECIPE=제작법 추적."
+  }
+]

@@ -1,0 +1,112 @@
+{
+ "findings": [
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "게임의 짧은 설명을 이 순서로 쉼표로 구분해 읽습니다. 끌 수 있는 것은 내 전문화가 배운 능력뿐입니다.",
+   "suggestion": "게임의 짧은 설명을 이 순서로 쉼표로 구분해 읽습니다. 끌기 키로 집어 들 수 있는 것은 내 전문화가 배운 능력뿐입니다.",
+   "problem": "'끌 수 있는'은 '끌다(드래그)'와 '끄다(켜고 끄기)' 두 뜻으로 들린다. 같은 파일에 사용함 토글을 끄는 설명이 있어 들었을 때 '꺼서 비활성화할 수 있는 능력'으로 오해할 수 있다.",
+   "evidence": "원문 'You can only drag the abilities your own specialization has learned.' 다른 곳은 '끌기 키'로 명확히 옮겼다. 관점 기준 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "마법책, 전문 기술, 핵심 능력, 무엇이 바뀌었나요? 그리고 게임이 보여 주는 다른 페이지 탭이 있습니다.",
+   "suggestion": "마법책, 전문 기술, 핵심 능력, \"무엇이 바뀌었나요?\" 탭과, 게임이 보여 주는 다른 페이지 탭이 있습니다.",
+   "problem": "탭 이름의 물음표가 문장 한가운데 그대로 놓여, 들으면 '무엇이 바뀌었나요?'에서 질문으로 끊기고 뒤의 '그리고...'가 새 문장처럼 들린다. 나열의 끝이 어디인지 구분되지 않는다.",
+   "evidence": "원문 'Spellbook, Professions, Core Abilities and What Has Changed, plus any other page tab the game shows.' 관점 기준 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "탭: 한 줄로, 마법책이 있는 소환수를 데리고 있을 때만 나옵니다. 마법책과 소환수가 있습니다.",
+   "suggestion": "탭: 마법책이 있는 소환수를 데리고 있을 때만 나오는 한 줄입니다. 마법책 탭과 소환수 탭이 있습니다.",
+   "problem": "'마법책과 소환수가 있습니다'는 들으면 탭 이름이 아니라 마법책과 소환수가 존재한다는 말로 들린다. '탭: 한 줄로,'도 서술어 없이 끊겨 번역투다.",
+   "evidence": "원문 'Tabs, a row, only while you have a pet with a spellbook: Spellbook and Pet.' 관점 기준 '번역투', '들었을 때 뜻이 갈리는 표현'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "각 주문은 이름과 등급이나 \"지속효과\" 같은 부가 글자를 읽고",
+   "suggestion": "각 주문은 이름과, 등급이나 \"지속효과\" 같은 부가 글자를 읽고",
+   "problem": "'이름과 등급이나'가 '이름과 등급' 또는 '지속효과'로 묶여 들려 수식 범위가 흐리다. 등급은 부가 글자의 예다.",
+   "evidence": "원문 'Each spell reads its name and its sub text such as the rank or \"Passive\"'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "판다리아의 안개에서 내 직업에 생긴 변경 사항을 변경마다 번호가 붙은 한 줄로 보여 줍니다.",
+   "suggestion": "판다리아의 안개에서 내 직업에 생긴 변경 사항을 하나에 한 줄씩 번호를 붙여 보여 줍니다.",
+   "problem": "'변경 사항을 변경마다'로 같은 말이 겹치고 '번호가 붙은 한 줄로'가 원문 구조를 그대로 옮긴 번역투다.",
+   "evidence": "원문 'The changes Mists made to your class, one numbered line per change'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "배운 전문 기술은 이름(전문화가 있으면 괄호 안에)을 읽고, 이어서 다음이 있습니다.",
+   "suggestion": "배운 전문 기술은 이름을 읽고(전문화가 있으면 괄호 안에 함께 읽습니다), 그 뒤에 다음 항목이 이어집니다.",
+   "problem": "'읽고, 이어서 다음이 있습니다'에서 앞뒤 서술어 호응이 어색하고, 괄호가 '이름'과 조사 '을' 사이에 끼어 들을 때 흐름이 끊긴다.",
+   "evidence": "원문 'A learned profession reads its name (with its specialization in brackets), then:'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Tab으로 이동하거나(또는 Enter를 누르고) 입력하십시오.",
+   "suggestion": "Tab으로 이동하거나 Enter를 누른 뒤 입력하십시오.",
+   "problem": "'-거나'와 괄호 속 '또는'이 겹쳐 선택 관계가 두 번 표시되고, '누르고'와 '입력하십시오'의 연결이 어색하다.",
+   "evidence": "원문 'Tab to it (or press Enter) and type.'"
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "여섯 단계가 들어 있는 특성이라는 정지점 하나가 있습니다.",
+   "suggestion": "특성이라는 정지점 하나에 여섯 단계가 모두 들어 있습니다.",
+   "problem": "들으면 '여섯 단계가 들어 있는 특성'이 하나의 특성(탤런트)을 꾸미는 말로 먼저 들려, 정지점 이름이 '특성'이라는 점이 늦게 드러난다.",
+   "evidence": "원문 'One stop named Talents with the six tiers.'"
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "전문화마다 정지점이 하나씩 있습니다. 그 맥락은 전문화 이름과 거기에 쓴 포인트입니다.",
+   "suggestion": "전문화마다 정지점이 하나씩 있습니다. 각 정지점은 전문화 이름과 거기에 쓴 포인트를 읽습니다.",
+   "problem": "'그 맥락은'은 'Its context is'를 직역한 번역투로, 독자에게 '맥락'이 무엇을 뜻하는지 전달되지 않는다.",
+   "evidence": "원문 'Its context is the specialization name and the points you spent in it'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "\"거인의 강타, 등급 0/1, 잠김, 필사의 일격 필요\": 기다리는 선행 특성입니다.",
+   "suggestion": "\"거인의 강타, 등급 0/1, 잠김, 필사의 일격 필요\": 이 특성이 기다리는 선행 특성을 알려 줍니다.",
+   "problem": "'기다리는 선행 특성입니다'는 주어가 없어 무엇이 무엇을 기다리는지 들어서는 알기 어렵다.",
+   "evidence": "원문 '\"Colossus Smash, rank 0/1, Locked, Requires Mortal Strike\": the talent it waits for.'"
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "끝에 붙는 \"일치하는 항목 검색\": 이 특성과 일치하는 검색을 한 뒤입니다.",
+   "suggestion": "끝에 붙는 \"일치하는 항목 검색\": 이 특성이 걸리는 검색을 한 뒤에 붙습니다.",
+   "problem": "'검색을 한 뒤입니다'로 끝나 무엇이 그때인지 서술어가 비어 있는 번역투다.",
+   "evidence": "원문 '\"Search Match\" at the end after a search that matches this talent.'"
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "이런 노드는 아무것도 고르지 않았을 때 \"선택: A, B\"를, 고른 뒤에는 고른 특성의 이름을 읽으며, 드롭다운입니다.",
+   "suggestion": "이런 노드는 드롭다운입니다. 아무것도 고르지 않았을 때는 \"선택: A, B\"를, 고른 뒤에는 고른 특성의 이름을 읽습니다.",
+   "problem": "'읽으며, 드롭다운입니다'로 동작과 성질이 한 문장에 억지로 이어져 어색하다. 원문 어순을 그대로 따른 번역투다.",
+   "evidence": "원문 'Such a node reads \"Choice: A, B\" while nothing is chosen, otherwise the name of the chosen one, and is a dropdown'."
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "basics/menu-and-settings.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "| 주문 | \"주문, 버튼, Starsurge (78674)\" | [주문 고르기](#주문-고르기)를 보십시오. |",
+    "suggestion": "| 주문 | \"주문, 버튼, 별빛쇄도 (78674)\" | [주문 고르기](#주문-고르기)를 보십시오. |",
+    "problem": "들리는 말 예시의 주문 이름을 영어로 남겼다. 주문 이름은 게임이 돌려주는 값이라 한국어 클라이언트에서는 공식 한국어 이름으로 낭독되므로, 예시가 실제로 듣는 말과 다르다.",
+    "evidence": "원문 \"Spell, Button, Starsurge (78674)\". 게임 공식 번역: cache/gs_koKR.csv 35197 BOOST2_DRUIDBALANCE_REMIND_STARSURGE \"별빛쇄도를 시전하십시오.\" (gs_enUS.csv 같은 키 \"Cast Starsurge.\"). manual-translate.md 용어 2항: 용어표에 없는 게임 용어는 게임 공식 한국어를 쓴다."
+  }
+]

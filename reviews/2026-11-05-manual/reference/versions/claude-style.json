@@ -1,0 +1,74 @@
+[
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "모든 창에는 WowVision 메뉴의 창 아래에 사용함 설정이 있습니다.",
+  "suggestion": "모든 창에는 WowVision 메뉴의 창 항목 아래에 사용함이라는 설정이 있습니다.",
+  "problem": "메뉴 이름 '창'과 설정 이름 '사용함'이 일반 낱말과 구분 없이 이어져, 스크린리더로 들으면 '창 아래에 사용함 설정'이 무엇을 가리키는지 갈린다. '창'이 일반 명사(각 창)인지 메뉴 항목인지 알기 어렵다.",
+  "evidence": "원문: Every window has an Enabled setting under Windows in the WowVision menu. 지침: 스크린리더로 들었을 때 뜻이 갈리는 표현(manual-review.md style 관점)."
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "지도 데이터가 없으면 길 안내 창은 경로를 만들 근거가 없지만",
+  "suggestion": "지도 데이터가 없으면 길 안내 창은 경로를 만들 수 없지만",
+  "problem": "'경로를 만들 근거가 없다'는 has nothing to route along을 옮긴 번역투로, 한국어에서 '근거'는 논리적 이유를 뜻해 어색하다.",
+  "evidence": "원문: without it the navigation window has nothing to route along"
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Classic Era, TBC, Mists에서는 이 키를 누르면 \"이 클라이언트에서는 미니맵 스캐너 사용 불가\"라고 답합니다.",
+  "suggestion": "Classic Era, TBC, Mists에서는 이 키를 누르면 \"이 클라이언트에서는 미니맵 스캐너 사용 불가\"라고 알립니다.",
+  "problem": "주어가 생략된 채 '답합니다'로 끝나 키가 대답하는 것처럼 들린다. 안내 문구를 낭독하는 동작은 '알립니다'가 자연스럽고, 같은 파일의 문양 행도 '알림'을 쓴다.",
+  "evidence": "원문: the key answers \"Minimap scanner not available on this client\". 같은 파일 표: \"문양은 아직 구현되지 않음\"이라고 알림"
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Classic Era와 TBC 클라이언트에는 이 필터가 없으므로 그곳에서는 이 알림이 없습니다.",
+  "suggestion": "Classic Era와 TBC 클라이언트에는 이 필터가 없으므로 이 두 버전에서는 이 알림을 쓸 수 없습니다.",
+  "problem": "'그곳에서는'은 there를 그대로 옮긴 번역투로, 클라이언트(버전)를 장소처럼 가리켜 어색하다.",
+  "evidence": "원문: The Classic Era and TBC clients do not have it, so the alert is missing there."
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "- 길 안내 창과 경로(F10), 지도 데이터가 있는 곳에서: [길 안내와 경로](../world/navigation.md)",
+  "suggestion": "- 길 안내 창과 경로(F10, 지도 데이터가 있는 곳에 한함): [길 안내와 경로](../world/navigation.md)",
+  "problem": "'지도 데이터가 있는 곳에서:'가 쉼표 뒤에 매달린 부사구로 끝나 문장이 끊긴 것처럼 들린다. 조건임이 드러나게 괄호 안에 넣는 편이 자연스럽다.",
+  "evidence": "원문: The navigation window and routes (F10), wherever map data exists: [Navigation and Routes]"
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Classic Era와 Retail은 모든 버전이 공유하는 기능은 전부 갖추지만, 그 버전만의 게임 창 지원은 더 적습니다.",
+  "suggestion": "Classic Era와 Retail도 모든 버전이 공유하는 기능은 전부 갖추고 있지만, 그 버전 전용 게임 창 지원은 다른 버전보다 적습니다.",
+  "problem": "주제 조사 '은'이 세 번 겹쳐 주어와 대조 대상이 흐려지고, '더 적습니다'는 비교 대상이 빠져 무엇보다 적은지 알 수 없다.",
+  "evidence": "원문: Classic Era and Retail get everything that is shared by all versions, but fewer game windows of their own."
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "가장 많이 작업하는 버전은 불타는 성전과 판다리아의 안개이고",
+  "suggestion": "가장 활발히 개발되는 버전은 불타는 성전과 판다리아의 안개이고",
+  "problem": "'작업하는'의 주체(개발자)가 빠져 독자가 작업하는 것처럼 읽힌다. are worked on을 능동으로 옮기며 생긴 어색함이다.",
+  "evidence": "원문: The Burning Crusade and Mists of Pandaria are the versions worked on most"
+ },
+ {
+  "id": "reference/versions.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "내 버전에 해당하는 기능은 모두 그냥 들어 있습니다.",
+  "suggestion": "내 버전에 해당하는 기능은 모두 처음부터 들어 있습니다.",
+  "problem": "'그냥'은 구어체 부사로 설명서 합니다체 본문에 어울리지 않는다.",
+  "evidence": "원문: everything listed for your version is simply there. 지침: 본문은 합니다체(manual-translate.md 22행)."
+ }
+]

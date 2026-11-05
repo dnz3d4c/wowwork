@@ -1,0 +1,40 @@
+{
+ "findings": [
+  {
+   "id": "basics/keybindings.md",
+   "category": "context",
+   "severity": "critical",
+   "quote": "2. U를 눌러 인터페이스로 가서 Enter를 누릅니다.",
+   "suggestion": "2. Down으로 인터페이스까지 내려가 Enter를 누릅니다.",
+   "problem": "한국어 클라이언트에서는 메뉴 항목 이름이 '인터페이스'라서 U를 눌러도 그 항목으로 건너뛰지 않는다. 글자 이동은 라벨 첫 글자와 누른 라틴 글자를 비교할 뿐 한글 라벨은 맞출 수 없으므로, 안내대로 U를 누르면 아무 일도 일어나지 않는다.",
+   "evidence": "원문 'Press U to reach UI'. vision-locale/koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"; WowVision/core/ui modules/module.lua:3 module:setLabel(L[\"UI\"]); WowVision/core/graph/Host.lua 글자 키는 A-Z와 독일어 움라우트만 등록; WowVision/core/graph/typeAhead.lua find()는 labels[index]:sub(1, #text) == text로 접두어 비교만 하고 FOLD 표에 한글 처리가 없다."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "전체 동작 목록과 기본 키는 [단축키 참조](../reference/keybindings.md)에 있습니다.",
+   "suggestion": "전체 동작 목록과 기본 키는 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+   "problem": "링크 글자 '단축키 참조'가 대상 페이지의 실제 제목 '키 바인딩 목록'과 다르다. 원문은 링크 글자 'keybinding reference'가 대상 제목 'Keybinding Reference'와 일치한다.",
+   "evidence": "WowVision/docs/src/user/ko/reference/keybindings.md 1행 '# 키 바인딩 목록'; en/reference/keybindings.md 1행 '# Keybinding Reference'. 같은 링크가 ko/world/targeting.md:18에서는 '키 바인딩 목록'으로 쓰였다. 대상 페이지 제목 쪽을 '단축키 참조'로 맞추는 방법도 있다."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "기본 키를 되돌리려면 [단축키 참조](../reference/keybindings.md)를 보고 다시 추가합니다.",
+   "suggestion": "기본 키를 되돌리려면 [키 바인딩 목록](../reference/keybindings.md)을 보고 다시 추가합니다.",
+   "problem": "링크 글자 '단축키 참조'가 대상 페이지의 실제 제목 '키 바인딩 목록'과 다르다.",
+   "evidence": "WowVision/docs/src/user/ko/reference/keybindings.md 1행 '# 키 바인딩 목록'. 원문 링크 글자 'keybinding reference'는 대상 제목 'Keybinding Reference'와 일치한다."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "- [단축키 참조](../reference/keybindings.md)\n- [인터페이스 사용하기](./interface.md)",
+   "suggestion": "- [키 바인딩 목록](../reference/keybindings.md)\n- [인터페이스 사용하기](./interface.md)",
+   "problem": "함께 보기의 링크 글자 '단축키 참조'가 대상 페이지 제목 '키 바인딩 목록'과 다르다. 같은 목록의 다른 두 링크는 대상 제목과 글자가 같다.",
+   "evidence": "WowVision/docs/src/user/ko/reference/keybindings.md 1행 '# 키 바인딩 목록'; ko/basics/interface.md 1행 '# 인터페이스 사용하기'; ko/basics/menu-and-settings.md 1행 '# WowVision 메뉴와 설정'."
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "findings": [
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- WowVision 창 사이 이동, 클릭, 상황 메뉴, 툴팁: [인터페이스 사용하기](../basics/interface.md)",
+   "suggestion": "- WowVision 창 사이 이동, 클릭, 상황별 메뉴, 툴팁: [인터페이스 사용하기](../basics/interface.md)",
+   "problem": "context menus를 '상황 메뉴'로 옮겼는데 애드온 화면 문구는 '상황별 메뉴'다.",
+   "evidence": "vision-locale/koKR: L[\"Context Menu\"] = \"상황별 메뉴\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 음성 설정, 알림, WowVision 메뉴, 단축키: [기본](../basics/index.md)",
+   "suggestion": "- 음성 설정, 경보, WowVision 메뉴, 단축키: [기본](../basics/index.md)",
+   "problem": "alerts를 '알림'으로 옮겼다. 확정 용어와 화면 문구는 '경보'이고, 로케일에서 '알림'은 Announce 계열에 쓰여 다른 기능으로 들린다.",
+   "evidence": "docs/glossary.tsv: alert=경보; koKR alerts.lua: L[\"Alert\"] = \"경보\", L[\"Announce Deaths\"] = \"사망 알림\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 전투 알림, 적 수, 게임 오류 메시지: [전투](../world/combat.md)",
+   "suggestion": "- 전투 경보, 적 수, 게임 오류 메시지: [전투](../world/combat.md)",
+   "problem": "Combat alerts를 '전투 알림'으로 옮겼다. 설정 화면의 해당 항목은 '전투 시작 경보', '적 수 경보'처럼 '경보'를 쓴다.",
+   "evidence": "docs/glossary.tsv: alert=경보; koKR: L[\"Combat Started Alert\"] = \"전투 시작 경보\", L[\"Enemy Count Alert\"] = \"적 수 경보\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 나침반, 지역 및 이동 알림, 낙하 및 벽 감지, 따라가기, 시체 찾기, 시선 각도 고정: [이동과 방향](../world/movement.md)",
+   "suggestion": "- 나침반, 지역 및 이동 경보, 낙하 및 벽 감지, 따르기, 시체 찾기, 상하 각도 고정: [이동과 방향](../world/movement.md)",
+   "problem": "화면 문구와 다른 용어가 세 개다. alerts=경보, follow=따르기, pitch lock=상하 각도 고정인데 각각 '알림', '따라가기', '시선 각도 고정'으로 옮겼다.",
+   "evidence": "koKR: L[\"Zone Changed Alert\"] = \"지역 변경 경보\", L[\"Follow\"] = \"따르기\", L[\"Pitch Lock\"] = \"상하 각도 고정\"; glossary.tsv alert=경보"
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- NPC 대화, 상인, 기술 전문가, 비행 조련사, 책과 편지: [NPC와 대화하기](../windows/npcs.md)",
+   "suggestion": "- NPC 대화, 상인, 상급자, 비행 조련사, 책과 편지: [NPC와 대화하기](../windows/npcs.md)",
+   "problem": "trainers를 '기술 전문가'로 옮겼는데 애드온 화면 문구는 '상급자'다.",
+   "evidence": "koKR: L[\"trainer\"] = \"상급자\", L[\"Trainers\"] = \"상급자\", L[\"Class Trainers\"] = \"직업 상급자\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 퀘스트 제공자 창: [퀘스트](../world/quests.md)",
+   "suggestion": "- 퀘스트 NPC 창: [퀘스트](../world/quests.md)",
+   "problem": "Quest giver를 '퀘스트 제공자'로 옮겼는데 애드온 화면 문구는 '퀘스트 NPC'다.",
+   "evidence": "koKR: L[\"Quest Giver\"] = \"퀘스트 NPC\", L[\"quest giver\"] = \"퀘스트 NPC\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 우편함 받은 편지함, 거래 창, 전리품 주사위 키: [전리품, 거래, 우편](../windows/loot-trade-mail.md)",
+   "suggestion": "- 우편함 받은 우편함, 거래 창, 전리품 주사위 키: [전리품, 거래, 우편](../windows/loot-trade-mail.md)",
+   "problem": "Mailbox inbox의 inbox를 '받은 편지함'으로 옮겼는데 화면 문구는 '받은 우편함'이다.",
+   "evidence": "koKR windows.lua: L[\"Inbox\"] = \"받은 우편함\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "- 게임 메뉴, 게임 설정, 팝업, 매크로, 색상 선택기: [메뉴, 설정, 대화 상자](../windows/system.md)",
+   "suggestion": "- 게임 메뉴, 게임 설정, 팝업, 매크로, 색 지정: [메뉴, 설정, 대화 상자](../windows/system.md)",
+   "problem": "color picker를 '색상 선택기'로 옮겼는데 화면 문구는 '색 지정'이다.",
+   "evidence": "koKR windows.lua: L[\"Color Picker\"] = \"색 지정\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 우편함: 편지 보내기 탭 | 예 | 예 | 예 | 아니요 | 아니요 |",
+   "suggestion": "| 우편함: 우편 발송 탭 | 예 | 예 | 예 | 아니요 | 아니요 |",
+   "problem": "send mail tab을 '편지 보내기 탭'으로 옮겼는데 화면 문구는 '우편 발송'이다.",
+   "evidence": "koKR windows.lua: L[\"Send Mail\"] = \"우편 발송\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 길드 및 커뮤니티 창, 길드 관리 | 아니요 | 아니요 | 아니요 | 예 | 예 |",
+   "suggestion": "| 길드 및 커뮤니티 창, 길드 권한 | 아니요 | 아니요 | 아니요 | 예 | 예 |",
+   "problem": "guild control을 '길드 관리'로 옮겼는데 화면 문구는 '길드 권한'이다.",
+   "evidence": "koKR windows.lua: L[\"Guild Control\"] = \"길드 권한\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "| 제작 기술 / 전문 기술 | 아니요 | 예 | 예 | 아니요 | 예 |",
+   "suggestion": "| 전문 기술 | 아니요 | 예 | 예 | 아니요 | 예 |",
+   "problem": "Trade skills를 '제작 기술'로 옮겼는데 화면에서 Trade Skill과 Professions는 둘 다 '전문 기술'이다. '제작 기술'은 화면에 없는 말이고, 바로 아래 행의 '제작 창'(Craft)과 겹쳐 다른 창처럼 들린다.",
+   "evidence": "koKR windows.lua: L[\"Trade Skill\"] = \"전문 기술\", L[\"Professions\"] = \"전문 기술\", L[\"Craft\"] = \"제작\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 보석 홈 장착 | 아니요 | 예 | 예 | 아니요 | 아니요 |",
+   "suggestion": "| 보석 장착 | 아니요 | 예 | 예 | 아니요 | 아니요 |",
+   "problem": "Gem socketing을 '보석 홈 장착'으로 옮겼는데 화면 문구는 '보석 장착'이다.",
+   "evidence": "koKR windows.lua: L[\"Socketing\"] = \"보석 장착\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 유산(보상 트랙, 도전 과제, 트리) | 아니요 | 아니요 | 아니요 | 아니요 | 예 |",
+   "suggestion": "| 유산(보상 트랙, 도전 과제, 계통도) | 아니요 | 아니요 | 아니요 | 아니요 | 예 |",
+   "problem": "Legacy 창의 trees를 '트리'로 음차했는데 화면 문구는 '계통도'다.",
+   "evidence": "koKR windows.lua: L[\"Trees\"] = \"계통도\", L[\"Challenges\"] = \"도전 과제\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 비행 중에도 시선 각도 고정 유지 | 예 | 예 | 예 | 아니요 | 아니요 |",
+   "suggestion": "| 비행 중에도 상하 각도 고정 유지 | 예 | 예 | 예 | 아니요 | 아니요 |",
+   "problem": "Pitch lock을 '시선 각도 고정'으로 옮겼는데 설정 화면 문구는 '상하 각도 고정'이다.",
+   "evidence": "koKR: L[\"Pitch Lock\"] = \"상하 각도 고정\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 대상 군중 제어 상태 알림(대상이 기절, 공포 등에 걸리면 소리) | 아니요 | 아니요 | 예 | 예 | 예 |",
+   "suggestion": "| 대상 군중 제어 상태 경보(대상이 기절, 공포 등에 걸리면 소리) | 아니요 | 아니요 | 예 | 예 | 예 |",
+   "problem": "Target Crowd Control alert의 alert를 '알림'으로 옮겼다. 확정 용어와 같은 계열 화면 문구는 '경보'다.",
+   "evidence": "docs/glossary.tsv: alert=경보; koKR: L[\"Target Crowd Control\"] = \"대상 군중 제어 상태\", L[\"Crowd Control Ended Alert\"] = \"군중 제어 종료 경보\""
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "Retail과 WoW: Forever에서는 하늘비행이 시선 각도로 방향을 잡기 때문에, 시선 각도 고정은 수영 중에만 유지됩니다. 대상 군중 제어 상태 알림에는 게임 오라 시스템의 군중 제어 필터가 필요합니다. Classic Era와 TBC 클라이언트에는 이 필터가 없으므로 그곳에서는 이 알림이 없습니다.",
+   "suggestion": "Retail과 WoW: Forever에서는 하늘비행이 상하 각도로 방향을 잡기 때문에, 상하 각도 고정은 수영 중에만 유지됩니다. 대상 군중 제어 상태 경보에는 게임 오라 시스템의 군중 제어 필터가 필요합니다. Classic Era와 TBC 클라이언트에는 이 필터가 없으므로 그곳에서는 이 경보가 없습니다.",
+   "problem": "pitch lock을 '시선 각도 고정', alert를 '알림'으로 옮겨 화면 문구('상하 각도 고정', '경보')와 다르다.",
+   "evidence": "koKR: L[\"Pitch Lock\"] = \"상하 각도 고정\", L[\"Alert\"] = \"경보\"; glossary.tsv alert=경보"
+  },
+  {
+   "id": "reference/versions.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "| 게임패드 주 메뉴와 게임패드 행동 단축바 | 아니요 | 아니요 | 아니요 | 아니요 | 예 |",
+   "suggestion": "| 게임패드 주 메뉴와 게임패드 단축바 | 아니요 | 아니요 | 아니요 | 아니요 | 예 |",
+   "problem": "gamepad action bars를 '게임패드 행동 단축바'로 옮겼는데 사용자 결정과 화면 문구는 '게임패드 단축바'다.",
+   "evidence": "docs/decisions.tsv 2026-11-03 행동 단축바 계열: 단축바로 통일 (태세 단축바, 게임패드 단축바); koKR: L[\"Gamepad Bar\"] = \"게임패드 단축바\""
+  }
+ ]
+}

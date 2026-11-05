@@ -1,0 +1,200 @@
+[
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "전체는 필터를 무시합니다. 해당만은 필터가 가리키는 오라만 남깁니다. 제외는 그 오라를 뺍니다.",
+    "suggestion": "전체로 두면 필터를 적용하지 않습니다. 해당만으로 두면 필터가 가리키는 오라만 남깁니다. 제외로 두면 그 오라를 뺍니다.",
+    "problem": "선택값 이름 '해당만'에 조사 '은'이 붙어 '해당만은'으로 들리면 보조사 '만은'과 겹쳐 무엇이 주어인지 갈린다. 선택값을 주어로 세운 문장 자체도 번역투다.",
+    "evidence": "원문: \"Any ignores the filter. Only keeps just the auras it describes. Not leaves those auras out.\" 리뷰 지침 style 관점의 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "취소 가능만 제외를 제공하고, 나머지는 전체와 해당만을 제공합니다.",
+    "suggestion": "취소 가능 필터만 제외를 제공하고, 나머지 필터는 전체와 해당만 두 가지를 제공합니다.",
+    "problem": "'해당만을 제공합니다'가 '해당만'이라는 값을 제공한다는 뜻인지 '해당'만 제공한다는 뜻인지 들어서는 갈린다. '나머지'가 무엇의 나머지인지도 흐리다.",
+    "evidence": "원문: \"only Cancelable offers Not; the others offer Any and Only.\" 선택값 이름 '해당만'이 보조사 '만'과 구별되지 않음."
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "한 번 켰다가 다시 끈 끔은 \"준비된 주문만\"을 뜻합니다.",
+    "suggestion": "한 번 켰다가 다시 끄면 \"준비된 주문만\"을 뜻합니다.",
+    "problem": "'끈 끔은'은 같은 말이 겹쳐 들려 귀로는 뜻을 잡기 어렵다. 영어 'Off, once you have switched it on and back off'를 구조 그대로 옮긴 번역투.",
+    "evidence": "원문: \"Off, once you have switched it on and back off, means \\\"only spells that are ready\\\".\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "추적 재사용 대기 버퍼를 저장하려면 주문 ID나 대기 중 중 적어도 하나가 있어야 하며",
+    "suggestion": "추적 재사용 대기 버퍼를 저장하려면 주문 ID와 대기 중 가운데 적어도 하나가 있어야 하며",
+    "problem": "설정 이름 '대기 중' 뒤에 '중'이 이어져 '대기 중 중'으로 들린다. 스크린리더로는 낱말이 반복된 오류처럼 들리고 구분이 안 된다.",
+    "evidence": "원문: \"needs at least a Spell ID or On Cooldown to be saved\". 용어표 On Cooldown=대기 중."
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "대화 탭은 지금 열려 있는 대화 탭(게임에서 정한 이름으로 표시) 중 하나 또는 모든 귓속말 탭의 줄을 함께 모으는 귓속말 탭 중에서 고릅니다.",
+    "suggestion": "대화 탭에서는 지금 열려 있는 대화 탭(게임에서 정한 이름으로 표시) 가운데 하나를 고르거나, 모든 귓속말 탭의 줄을 함께 모으는 귓속말 탭을 고릅니다.",
+    "problem": "'~ 중 하나 또는 ~ 귓속말 탭 중에서 고릅니다'로 이어져 귓속말 탭 여러 개 가운데 고르는 것처럼 들린다. 수식이 길게 겹쳐 선택지가 둘(열린 탭 하나 / 귓속말 탭 묶음)이라는 구조가 귀로 잡히지 않는다.",
+    "evidence": "원문: \"a choice among the chat tabs that are open right now ... plus Whisper Tabs, which gathers the lines of all your whisper tabs together.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "Retail의 전투 중과 인스턴스 안에서는 게임이 애드온에게 오라 목록을 닫습니다.",
+    "suggestion": "Retail에서 전투 중이거나 인스턴스 안에 있으면 게임이 애드온에 오라 목록을 공개하지 않습니다.",
+    "problem": "'목록을 닫습니다'는 'closes its aura list to addons'의 직역이고, 무정 명사 '애드온'에 '에게'를 붙였다. 'Retail의 전투 중과'도 어색한 조사 연결이다.",
+    "evidence": "원문: \"On Retail, in combat and in instances, the game closes its aura list to addons.\" 같은 '애드온에게' 표현이 '게임이 애드온에게 숨기기 때문입니다', '게임이 애드온에게 재사용 대기 수치를 숨기므로'에도 있다."
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "그곳에서는 추적 버퍼가 추적할 만한 거의 모든 정보를 게임이 애드온에게 숨기기 때문입니다.",
+    "suggestion": "이 버전들에서는 추적 버퍼가 추적할 만한 정보를 게임이 거의 모두 애드온에 숨기기 때문입니다.",
+    "problem": "게임 버전을 '그곳'이라는 장소 지시어로 받는 것은 'there'의 직역이고, '애드온에게'는 무정 명사에 '에게'를 쓴 어색한 조사다.",
+    "evidence": "원문: \"because the game hides nearly everything they could track from addons there.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "오라에는 전용 오라 버퍼(아래)가 더 낫습니다. 오라 버퍼는 Retail의 전투 중과 인스턴스 안에서도 작동합니다.",
+    "suggestion": "오라에는 전용 오라 버퍼(아래)가 더 낫습니다. 오라 버퍼는 Retail에서 전투 중이거나 인스턴스 안에 있을 때도 작동합니다.",
+    "problem": "'Retail의 전투 중과 인스턴스 안에서도'는 명사구를 '의', '과'로 억지로 이은 번역투다. 같은 표현이 필터 설명 문단에도 반복된다.",
+    "evidence": "원문: \"it also works on Retail in combat and in instances.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "마지막으로 들은 뒤에 항목이 바뀌었으면(예를 들어 생명력) 읽을 때마다 새로 읽으므로 언제나 현재 값을 듣습니다.",
+    "suggestion": "항목은 읽을 때마다 새로 가져오므로, 생명력처럼 마지막으로 들은 뒤에 바뀐 항목도 언제나 현재 값으로 듣습니다.",
+    "problem": "'읽을 때마다 새로 읽으므로'는 같은 동사가 겹쳐 어색하고, 조건절(바뀌었으면)과 결과절이 자연스럽게 이어지지 않는다.",
+    "evidence": "원문: \"When an item has changed since you last heard it (your health, say), it is read afresh each time, so you always hear the current value.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "항목은 처음부터 최신 순서로 나열되며, 가장 최신 항목이 마지막에 옵니다. 이것은 대화 탭처럼 늘어나는 버퍼에서 가장 중요합니다.",
+    "suggestion": "항목은 오래된 것부터 최신 순서로 나열되며, 가장 최신 항목이 마지막에 옵니다. 이 순서는 대화 탭처럼 늘어나는 버퍼에서 특히 중요합니다.",
+    "problem": "'처음부터 최신 순서로'는 짝이 맞지 않는 직역이고, '이것은 ... 가장 중요합니다'는 'This matters most'를 그대로 옮긴 번역투다.",
+    "evidence": "원문: \"Items are listed from first to newest, with the newest item last. This matters most for buffers that grow\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "그 방식에 익숙하다면 항목 방향 반전 설정을 켜십시오. 버퍼에서 Alt+Up과 Alt+Down을 서로 바꿉니다.",
+    "suggestion": "그 방식에 익숙하다면 항목 방향 반전 설정을 켜십시오. 이 설정은 버퍼에서 Alt+Up과 Alt+Down을 서로 바꿉니다.",
+    "problem": "둘째 문장에 주어가 없어 앞 문장의 명령을 이어받아 독자가 키를 바꾸라는 지시처럼 들린다.",
+    "evidence": "원문: \"turn on the Invert Item Direction setting: it swaps Alt+Up and Alt+Down for buffers.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임 시계 옵션에서 설정한 대로의 게임 시계(서버 시간 또는 지역 시간, 12시간 또는 24시간)",
+    "suggestion": "게임 시계 옵션에서 설정한 방식(서버 시간 또는 지역 시간, 12시간 또는 24시간)대로 표시한 게임 시계",
+    "problem": "'설정한 대로의'는 '대로'에 관형격 '의'를 붙인 번역투다.",
+    "evidence": "원문: \"The game clock, as you set it in the game's clock options (realm or local time, 12 or 24 hours)\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "고정 버퍼는 직접 고른 항목을 추가한 순서대로 고정 목록으로 담습니다.",
+    "suggestion": "고정 버퍼는 직접 고른 항목들을 추가한 순서대로 정해진 목록으로 담습니다.",
+    "problem": "'고정 버퍼는 ... 고정 목록으로'처럼 '고정'이 한 문장에 겹쳐 들리고 '목록으로 담습니다'가 어색하다.",
+    "evidence": "원문: \"A static buffer holds a fixed list of items that you choose, in the order you add them.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "이것은 전투 중에도 작동하며, 남은 시간은 키를 누를 때마다 현재 값입니다.",
+    "suggestion": "이것은 전투 중에도 작동하며, 남은 시간은 키를 누를 때마다 현재 값으로 새로 읽습니다.",
+    "problem": "'남은 시간은 ... 현재 값입니다'는 주어와 서술어가 맞지 않는 직역이라 무슨 뜻인지 한 번에 들어오지 않는다.",
+    "evidence": "원문: \"the time left is current each time you press a key.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "각 줄은 메시지 다음에 날짜와 시간을 읽습니다. 버퍼는 최대 5000줄까지",
+    "suggestion": "각 줄은 메시지, 그다음 날짜와 시간 순서로 읽습니다. 버퍼는 최대 5000줄까지",
+    "problem": "'줄은 ... 날짜와 시간을 읽습니다'는 줄이 읽는 주체가 된 어색한 주술 관계다.",
+    "evidence": "원문: \"Each line is read as the message followed by its date and time.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "재사용 대기 항목은 표준 문구(템플릿을 한 번도 설정하지 않았을 때)가 \"나무껍질: 준비 완료\" 또는 \"나무껍질: 12.3s\"로 읽지만",
+    "suggestion": "재사용 대기 항목은 템플릿을 한 번도 설정하지 않았을 때 표준 문구로 \"나무껍질: 준비 완료\" 또는 \"나무껍질: 12.3s\"라고 읽지만",
+    "problem": "'문구가 ... 로 읽지만'은 주어와 서술어가 맞지 않는다(문구는 읽히는 대상).",
+    "evidence": "원문: \"the standard wording (when the Template has never been set) reads \\\"Barkskin: Ready\\\" or \\\"Barkskin: 12.3s\\\"\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "아래 목록에서 빠져 있으며, 쓰면 그 줄이 말하는 대신 오류로 실패합니다.",
+    "suggestion": "아래 목록에서 빠져 있으며, 쓰면 그 줄은 읽히지 않고 오류가 납니다.",
+    "problem": "'말하는 대신 오류로 실패합니다'는 'fail with an error instead of speaking'의 직역이다.",
+    "evidence": "원문: \"using one would make that line fail with an error instead of speaking.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "그룹이 하나에 버튼 하나씩 나오고, 그 뒤에 추가 버튼이 있습니다.",
+    "suggestion": "그룹마다 버튼이 하나씩 나오고, 그 뒤에 추가 버튼이 있습니다.",
+    "problem": "'그룹이 하나에'는 조사가 잘못 붙어 '그룹이 하나'로 들릴 수 있다.",
+    "evidence": "원문: \"You see your groups, one button each, followed by an Add button.\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "\"신규 고정 버퍼\"(등)라는 이름의 새 버퍼가 열립니다.",
+    "suggestion": "\"신규 고정 버퍼\" 같은 이름의 새 버퍼가 열립니다.",
+    "problem": "'(등)'은 'and so on'을 괄호로 옮긴 것으로, 들으면 '괄호 등'처럼 읽혀 어색하다.",
+    "evidence": "원문: \"The new buffer opens, named \\\"New Static Buffer\\\" (and so on).\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "저장은 입력란에 직접 입력한 것만 알기 때문에, 입력란을 건드리지 않고 저장하면",
+    "suggestion": "저장할 때는 입력란에 직접 입력한 값만 반영되므로, 입력란을 건드리지 않고 저장하면",
+    "problem": "'저장은 ... 만 알기 때문에'는 'Save only knows'를 그대로 옮긴 의인화 번역투다.",
+    "evidence": "원문: \"but Save only knows what you typed into it\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "주문 재사용 대기 모니터와 그 추적 중인 재사용 대기 읽기 키를 쓰십시오. [모니터](monitors.md)를 보십시오.\n\n1.",
+    "suggestion": "주문 재사용 대기 모니터의 추적 중인 재사용 대기 읽기 키를 쓰십시오. [모니터](monitors.md)를 보십시오.\n\n1.",
+    "problem": "'그 추적 중인 ...'은 'its'를 지시어 '그'로 직역해, 들으면 '그'가 무엇을 가리키는지 끊긴다. 같은 표현이 종류별로 알아 둘 점 목록에도 있다.",
+    "evidence": "원문: \"use the Spell Cooldowns monitor and its Speak Tracked Cooldowns key instead\""
+  },
+  {
+    "id": "information/buffers.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "화면에 그려진 것만이 아니라 게임이 아는 것을 모두 나열합니다.",
+    "suggestion": "화면에 표시된 것만이 아니라 게임이 아는 것을 모두 나열합니다.",
+    "problem": "'그려진'은 'drawn on screen'의 직역으로 한국어 UI 설명에서 어색하다.",
+    "evidence": "원문: \"every one the game knows about, not just the ones drawn on screen.\""
+  }
+]
