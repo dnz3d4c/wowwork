@@ -1,0 +1,28 @@
+{
+  "responses": [
+    {
+      "ref": "getting-started/introduction.md#reg-claude-0",
+      "action": "applied",
+      "reason": "원문 링크 글자 \"In the World\"가 대상 페이지 제목과 같으므로 ko/world/index.md:2 제목 \"월드에서\"로 맞췄다. 두 회사 공통 지적.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/introduction.md#reg-claude-1",
+      "action": "applied",
+      "reason": "고유 이름 Sku Login Tool을 번역하지 않고, 링크 글자를 ko/getting-started/sku-login.md:2 제목 및 다른 파일의 같은 링크와 같은 \"Sku Login Tool로 로그인하기\"로 맞췄다. 본문 문장도 함께 고쳤다. 두 회사 공통 지적.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/introduction.md#reg-gpt-2",
+      "action": "applied",
+      "reason": "reg-claude-0과 같은 곳. \"[월드에서](../world/index.md)\"로 함께 반영했다.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/introduction.md#reg-gpt-3",
+      "action": "applied",
+      "reason": "reg-claude-1과 같은 곳. 본문과 링크 글자를 \"Sku Login Tool\"로 함께 반영했다.",
+      "upstream": ""
+    }
+  ]
+}

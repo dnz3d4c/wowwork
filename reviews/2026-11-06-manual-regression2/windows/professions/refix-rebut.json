@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "windows/professions.md#reg-claude-0",
+      "action": "applied",
+      "reason": "다른 설명서(basics/interface.md:86 '### 탭 정지점' 등)가 stop을 '정지점'으로 정의해 쓰므로 이 파일만 '정거장'이면 별개 개념으로 읽힌다. 파일 안 14곳을 모두 '정지점'으로 바꿨다(받침 같아 조사 변화 없음). 기계 검사 통과.",
+      "upstream": ""
+    }
+  ]
+}

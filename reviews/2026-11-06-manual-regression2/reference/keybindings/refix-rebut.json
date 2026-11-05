@@ -1,0 +1,10 @@
+{
+ "responses": [
+  {
+   "ref": "reference/keybindings.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문 \"Soft Target Enemy Enabled\" or \"Disabled\"는 앞 문구를 줄여 쓴 것이고, 코드(core/targeting/module.lua:339-341)는 끌 때도 info.label 뒤에 Disabled를 붙여 \"적 소프트 대상 비활성화\"라고 말한다. world/targeting.md:93도 전체 문구를 쓴다. 듣는 말과 같게 \"적 소프트 대상 비활성화\"로 고쳤다. 원문의 의미를 바꾸지 않고 생략된 부분을 채운 것이다.",
+   "upstream": ""
+  }
+ ]
+}

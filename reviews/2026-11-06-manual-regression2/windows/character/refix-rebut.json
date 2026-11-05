@@ -1,0 +1,16 @@
+{
+ "responses": [
+  {
+   "ref": "windows/character.md#reg-claude-0",
+   "action": "applied",
+   "reason": "원문 Equip은 구성을 입는 버튼이고 애드온 로캘이 L[\"Equip\"] = \"장착\"(WowVision/locale/koKR/windows.lua:265)이라 낭독되는 말과 맞춰 '장착'으로 바꿨다. '장비'는 L[\"Equipment\"](ui.lua:139)로 장비 목록 정지점과 겹친다.",
+   "upstream": ""
+  },
+  {
+   "ref": "windows/character.md#reg-claude-1",
+   "action": "applied",
+   "reason": "예시 4단계 'Press Tab until you hear Equip'도 같은 버튼이라 windows.lua:265 값 '장착'으로 맞췄다(조사도 '장착이'로).",
+   "upstream": ""
+  }
+ ]
+}

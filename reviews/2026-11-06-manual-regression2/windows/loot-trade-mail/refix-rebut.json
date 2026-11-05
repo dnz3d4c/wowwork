@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {
+      "ref": "windows/loot-trade-mail.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "따옴표 속 \"이 아이템은 당신에게 귀속됩니다\"는 게임에 없는 문구라 화면 낭독 인용으로 오해된다. 게임 공식 문구 LOOT_NO_DROP_ROLL_NEED(gs_koKR.csv:10160 \"입찰을 선택하면 %s|1은;는; 당신에게 귀속됩니다.\")의 표현을 살려 \"예를 들어 입찰을 선택하면 그 아이템이 당신에게 귀속된다는 확인입니다.\"로 풀어 썼다. 원문의 예시 성격(for example)은 유지했다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/loot-trade-mail.md#reg-gpt-1",
+      "action": "dispute",
+      "reason": "원문 en/windows/loot-trade-mail.md:54가 \"the number of items if the stack is more than one\"이라고 명시하므로 번역은 원문에 충실하다. 코드(core/windows/trade.lua:19, count > 0이면 항상 \" x\"..count)와 다른 것은 맞지만, decisions.tsv 2026-11-05 '설명서: 원문이 실제 애드온 동작과 다를 때' 결정은 원문대로 옮기고 차이는 upstream에 보고하도록 한다(한국어 사용자에게만 생기는 차이가 아님). 지운 덧붙임이 없으므로 upstream 칸은 비우고, 차이(trade.lua:19는 개수 1개일 때도 x1을 읽음)는 upstream 보고 목록 대상이다.",
+      "upstream": ""
+    }
+  ]
+}

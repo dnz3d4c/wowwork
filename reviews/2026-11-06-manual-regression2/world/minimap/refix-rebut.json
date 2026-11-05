@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "world/minimap.md#reg-claude-0",
+      "action": "applied",
+      "reason": "지적이 맞다. logic.lua:585-588에서 알아보지 못한 이름은 baselineCategory or \"questGiver\"로 분류되고, module.lua:287에서 questGiver는 L[\"quest giver\"](koKR \"퀘스트 NPC\", locale/koKR/minimap.lua:13)를, 다른 추적이 켜져 있어 unsorted가 되면 labels에 없어 nil(이름만)이 된다. module.lua:872-875가 이 kind를 걷는 중 알림에 붙인다. 한국어 클라이언트 전용 차이라 decisions.tsv(2026-11-05 원문이 실제 동작과 다를 때, 한국어 사용자에게만 생기는 차이 예외)에 따라 한국어판 안내를 유지하되 실제 동작대로 고쳤다.",
+      "upstream": ""
+    }
+  ]
+}

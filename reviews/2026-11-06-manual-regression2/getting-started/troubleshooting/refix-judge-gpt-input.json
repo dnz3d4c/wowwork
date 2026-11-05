@@ -1,0 +1,25 @@
+{
+ "file": "getting-started/troubleshooting.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/troubleshooting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/troubleshooting.md",
+ "items": [
+  {
+   "ref": "getting-started/troubleshooting.md#reg-claude-0",
+   "file": "getting-started/troubleshooting.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "위치는 [WowVision 설치하기](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+    "suggestion": "위치는 [WowVision 관리](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+    "problem": "링크 글자 'WowVision 설치하기'는 installation.md의 제목과 글자가 같아, 들은 독자는 설치 페이지에서 저장 위치를 찾게 된다. 실제 대상 managing.md의 제목은 'WowVision 관리'다.",
+    "evidence": "ko/getting-started/managing.md:2 '# WowVision 관리', ko/getting-started/installation.md:2 '# WowVision 설치하기', ko/getting-started/first-login.md:50 '[WowVision 관리](./managing.md)'. en/getting-started/managing.md 제목은 'Managing WowVision'인데 en 원문 링크 글자가 'Installing WowVision'이라 upstream 원문 오류를 그대로 옮긴 것(upstream 차이)."
+   },
+   "translator": {
+    "ref": "getting-started/troubleshooting.md#reg-claude-0",
+    "action": "dispute",
+    "reason": "사용자 결정 decisions.tsv:14(2026-11-05 '설명서: 링크 글자가 대상 페이지 제목과 다를 때 — 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)')에 따라 원문 en/getting-started/troubleshooting.md:145의 링크 글자 'Installing WowVision'을 'WowVision 설치하기'로 옮긴 것이다. 링크 대상 ./managing.md#설정이-저장되는-곳은 정확하다. 원문 링크 글자가 대상 제목 'Managing WowVision'과 다른 것은 upstream 원문 문제이므로 upstream 설명서에 보고할 사항이지 한국어판에서 고칠 사항이 아니다(decisions.tsv:13). consensus=false라 반영 의무도 없다.",
+    "upstream": ""
+   }
+  }
+ ]
+}

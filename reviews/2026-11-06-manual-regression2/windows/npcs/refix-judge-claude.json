@@ -1,0 +1,33 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/npcs.md#reg-claude-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "탭 노드는 nodes.proxyButton({ target = tab })로 게임의 MerchantFrameTab1 버튼을 그대로 대리하고 label을 따로 주지 않으므로(core/windows/merchant.lua:110-111, 159) 들리는 탭 글자는 게임 탭 버튼의 글자, 곧 전역 문자열 MERCHANT다. 한국어 클라이언트의 MERCHANT는 '상품 목록'이고(gs_koKR.csv:15958, 영어 Merchant), 짝인 BUYBACK도 '재매입'(gs_koKR.csv:15959)으로 현재 번역과 맞는다. L[\"Merchant\"]=\"상인\"은 창 맥락 이름(merchant.lua:154)이지 탭 글자가 아니다. decisions.tsv의 '같은 문맥의 게임 공식 번역은 따른다'에 따라 탭 문맥은 '상품 목록'이 맞다. 현재 번역 유지.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/windows/merchant.lua:110",
+        "wowvision-ko/WowVision/core/windows/merchant.lua:154",
+        "wowvision-ko/WowVision/core/windows/merchant.lua:159",
+        "wowwork/cache/gs_koKR.csv:15958",
+        "wowwork/cache/gs_koKR.csv:15959",
+        "wowwork/cache/gs_enUS.csv:15958",
+        "wowwork/docs/decisions.tsv",
+        "input"
+      ]
+    },
+    {
+      "ref": "windows/npcs.md#reg-claude-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 'Merchant tab'은 MerchantFrameTab1(core/windows/merchant.lua:159)이고 그 탭 글자는 게임 전역 문자열 MERCHANT='상품 목록'(gs_koKR.csv:15958)이다. 지적이 든 L[\"Merchant\"]=\"상인\"은 창 맥락 이름(merchant.lua:154)이라 탭에서 들리는 말이 아니다. 화면에서 듣는 탭 이름과 1번 항목의 탭 이름에 맞춰 '상품 목록 탭' 유지.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/windows/merchant.lua:110",
+        "wowvision-ko/WowVision/core/windows/merchant.lua:159",
+        "wowwork/cache/gs_koKR.csv:15958",
+        "wowwork/docs/decisions.tsv",
+        "input"
+      ]
+    }
+  ]
+}

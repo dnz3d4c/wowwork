@@ -1,0 +1,43 @@
+{
+ "file": "windows/npcs.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/npcs.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md",
+ "items": [
+  {
+   "ref": "windows/npcs.md#reg-claude-0",
+   "file": "windows/npcs.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "1. 탭: 상품 목록과 재매입이라는 두 탭이 있는 줄입니다.",
+    "suggestion": "1. 탭: 상인과 재매입이라는 두 탭이 있는 줄입니다.",
+    "problem": "첫 번째 탭을 \"상품 목록\"이라고 불렀지만 화면에서 들리는 탭 이름은 상인이다. 사용자는 Left/Right로 탭을 오가며 \"상품 목록\"을 찾게 되는데 그런 말은 들리지 않는다.",
+    "evidence": "원문 4번 항목 \"These are on the Merchant tab only\"가 첫 탭 이름을 Merchant로 밝힌다. terms: Merchant=상인. decisions.tsv 2026-11-03 용어 선택 기준 예시 \"Merchant=상인\". 탭 글자는 게임 MerchantFrame 탭에서 온다(core/windows/merchant.lua:157 L[\"Tabs\"] 아래 게임 탭 버튼)."
+   },
+   "translator": {
+    "ref": "windows/npcs.md#reg-claude-0",
+    "action": "dispute",
+    "reason": "화면에서 들리는 첫 탭 이름은 '상인'이 아니라 '상품 목록'이다. core/windows/merchant.lua:159는 탭을 tabNode(MerchantFrameTab1)로 게임 탭 버튼을 그대로 대리(proxyButton, merchant.lua:110)하므로 탭 글자는 게임 전역 문자열 MERCHANT에서 오고, 한국어 클라이언트의 MERCHANT는 '상품 목록'이다(cache/gs_koKR.csv:4612, 영어 gs_enUS.csv:4606 Merchant). L[\"Merchant\"]=\"상인\"(locale/koKR/windows.lua:113)은 창 이름(merchant.lua:3, 154)이지 탭 글자가 아니다. decisions.tsv 2026-11-03 '같은 문맥의 게임 공식 번역은 따른다'에 따라 탭 문맥의 공식 번역 '상품 목록'을 유지한다. 원문도 이 줄에서는 'the merchant's goods'라고 탭 내용을 풀어 쓴다.",
+    "upstream": ""
+   }
+  },
+  {
+   "ref": "windows/npcs.md#reg-claude-1",
+   "file": "windows/npcs.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "이것들은 상품 목록 탭에만 있습니다.",
+    "suggestion": "이것들은 상인 탭에만 있습니다.",
+    "problem": "원문의 탭 이름 Merchant를 \"상품 목록\"으로 바꿔 화면의 탭 이름과 다르다.",
+    "evidence": "원문 \"These are on the Merchant tab only.\" terms: Merchant=상인. vision-locale/koKR/windows.lua:113 L[\"Merchant\"] = \"상인\"."
+   },
+   "translator": {
+    "ref": "windows/npcs.md#reg-claude-1",
+    "action": "dispute",
+    "reason": "원문 'Merchant tab'은 MerchantFrameTab1(core/windows/merchant.lua:159)을 가리키고, 그 탭 글자는 게임 전역 문자열 MERCHANT로 한국어 클라이언트에서 '상품 목록'이다(cache/gs_koKR.csv:4612). 지적이 근거로 든 L[\"Merchant\"]=\"상인\"(locale/koKR/windows.lua:113)은 창 제목용 문자열이라 탭에서 들리는 말이 아니다. 듣는 말과 읽는 말을 맞추려면 '상품 목록 탭'이 맞고, 1번 항목의 탭 이름과도 일치한다.",
+    "upstream": ""
+   }
+  }
+ ]
+}

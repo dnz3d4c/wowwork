@@ -1,0 +1,16 @@
+{
+ "responses": [
+  {
+   "ref": "reference/commands.md#reg-claude-0",
+   "action": "applied",
+   "reason": "module.lua:642가 L[\"default\"]를 출력하고 koKR/targeting.lua:43에서 \"기본\"이므로 실제 낭독 문구에 맞춰 \"SoftTargetEnemy 3 (기본 0)\"으로 고쳤다. world/targeting.md:142 표기와도 일치.",
+   "upstream": ""
+  },
+  {
+   "ref": "reference/commands.md#reg-gpt-1",
+   "action": "applied",
+   "reason": "reg-claude-0과 같은 곳. 함께 반영했다.",
+   "upstream": ""
+  }
+ ]
+}
