@@ -1,0 +1,247 @@
+{
+ "items": [
+  {
+   "id": "buffers.lua::Dispellable by My Group",
+   "file": "buffers.lua",
+   "key": "Dispellable by My Group",
+   "en": "Dispellable by My Group",
+   "ko": "내 파티 또는 공격대가 무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:92: { token = \"RAID_PLAYER_DISPELLABLE\", label = L[\"Dispellable by My Group\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::External Defensive",
+   "file": "buffers.lua",
+   "key": "External Defensive",
+   "en": "External Defensive",
+   "ko": "외부 방어 능력",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:94: { token = \"EXTERNAL_DEFENSIVE\", label = L[\"External Defensive\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Big Defensive",
+   "file": "buffers.lua",
+   "key": "Big Defensive",
+   "en": "Big Defensive",
+   "ko": "중요 방어 능력",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:95: { token = \"BIG_DEFENSIVE\", label = L[\"Big Defensive\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Group Health Monitor",
+   "file": "groupHealth.lua",
+   "key": "Group Health Monitor",
+   "en": "Group Health Monitor",
+   "ko": "파티 및 공격대 생명력 모니터",
+   "code": [
+    "retail/groupHealth/module.lua:5: module:setLabel(L[\"Group Health Monitor\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Raid Groups",
+   "file": "groupHealth.lua",
+   "key": "Raid Groups",
+   "en": "Raid Groups",
+   "ko": "공격대 구성",
+   "code": [
+    "retail/groupHealth/module.lua:135: label = L[\"Raid Groups\"],"
+   ],
+   "game_term": "공격대 | 공격대 구성"
+  },
+  {
+   "id": "groupHealth.lua::Repeat Below (percent)",
+   "file": "groupHealth.lua",
+   "key": "Repeat Below (percent)",
+   "en": "Repeat Below (percent)",
+   "ko": "미만일 때 반복 (퍼센트)",
+   "code": [
+    "retail/groupHealth/module.lua:156: label = L[\"Repeat Below (percent)\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Speak Group Health",
+   "file": "groupHealth.lua",
+   "key": "Speak Group Health",
+   "en": "Speak Group Health",
+   "ko": "파티 및 공격대 생명력 말하기",
+   "code": [
+    "retail/groupHealth/module.lua:646: label = L[\"Speak Group Health\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Group health monitor unavailable here",
+   "file": "groupHealth.lua",
+   "key": "Group health monitor unavailable here",
+   "en": "Group health monitor unavailable here",
+   "ko": "여기서는 파티 및 공격대 생명력 모니터 사용 불가",
+   "code": [
+    "retail/groupHealth/module.lua:423: WowVision:speak(L[\"Group health monitor unavailable here\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::full",
+   "file": "groupHealth.lua",
+   "key": "full",
+   "en": "full",
+   "ko": "생명력 최대",
+   "code": [
+    "retail/groupHealth/module.lua:480: fullPart = GroupHealth.segment(full, profile.scale[#profile.scale], number .. \" \" .. L[\"full\"], fullRate)"
+   ],
+   "game_term": "모든 능력 상실 | 정원초과 | 최대"
+  },
+  {
+   "id": "navigation.lua::No network point at the chosen start",
+   "file": "navigation.lua",
+   "key": "No network point at the chosen start",
+   "en": "No network point at the chosen start",
+   "ko": "선택한 시작점에 네트워크 지점 없음",
+   "code": [
+    "camelot/wownav/module.lua:511: say(L[\"No network point at the chosen start\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Ahead: walk into %s; the route goes on after it",
+   "en": "Ahead: walk into %s; the route goes on after it",
+   "ko": "전방: %s 안으로 걸어 들어가기; 이후 경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:860: say(string.format(L[\"Ahead: walk into %s; the route goes on after it\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+   "file": "navigation.lua",
+   "key": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+   "en": "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.",
+   "ko": "차원문 도착. 소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 전환이 확인될 때까지 경로는 유지됩니다.",
+   "code": [
+    "camelot/wownav/text.lua:63: activation_area_click = L[\"At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::The position is approximate.",
+   "file": "navigation.lua",
+   "key": "The position is approximate.",
+   "en": "The position is approximate.",
+   "ko": "대략적인 위치입니다.",
+   "code": [
+    "camelot/wownav/text.lua:66: approximate_position = L[\"The position is approximate.\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "en": "Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+   "ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다",
+   "code": [
+    "camelot/wownav/module.lua:269: wind_bridge = L[\"Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it\"] }"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Target the portal with soft targeting and interact with it; the route goes on after it",
+   "en": "Target the portal with soft targeting and interact with it; the route goes on after it",
+   "ko": "소프트 대상 지정으로 차원문을 잡고 상호작용하십시오; 그 후 경로가 이어집니다",
+   "code": [
+    "camelot/wownav/module.lua:272: click = L[\"Target the portal with soft targeting and interact with it; the route goes on after it\"] }"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "targeting.lua::Target Crowd Control",
+   "file": "targeting.lua",
+   "key": "Target Crowd Control",
+   "en": "Target Crowd Control",
+   "ko": "대상 군중 제어 상태",
+   "code": [
+    "core/targeting/module.lua:163: label = L[\"Target Crowd Control\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "targeting.lua::Controlled Sound",
+   "file": "targeting.lua",
+   "key": "Controlled Sound",
+   "en": "Controlled Sound",
+   "ko": "군중 제어 시 소리",
+   "code": [
+    "core/targeting/module.lua:170: label = L[\"Controlled Sound\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "targeting.lua::Free Sound",
+   "file": "targeting.lua",
+   "key": "Free Sound",
+   "en": "Free Sound",
+   "ko": "군중 제어 해제 시 소리",
+   "code": [
+    "core/targeting/module.lua:180: label = L[\"Free Sound\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "targeting.lua::Focus %d set to %s.",
+   "file": "targeting.lua",
+   "key": "Focus %d set to %s.",
+   "en": "Focus %d set to %s.",
+   "ko": "주시 대상 %d에 %s 설정.",
+   "code": [
+    "core/targeting/focus.lua:39: print(L[\"Focus %d set to %s.\"]:format(i, id))"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "ui.lua::Without Names",
+   "file": "ui.lua",
+   "key": "Without Names",
+   "en": "Without Names",
+   "ko": "이름 미포함",
+   "code": [
+    "core/ui modules/combat.lua:119: { label = L[\"Without Names\"], value = \"word\" },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "windows.lua::Stable",
+   "file": "windows.lua",
+   "key": "Stable",
+   "en": "Stable",
+   "ko": "우리",
+   "code": [
+    "tbc/petStable.lua:3: module:setLabel(L[\"Stable\"])",
+    "tbc/petStable.lua:87: builder:pushContext(\"petStable\", STABLES or L[\"Stable\"])"
+   ],
+   "game_term": "우리 이용"
+  },
+  {
+   "id": "windows.lua::Stable slot %d",
+   "file": "windows.lua",
+   "key": "Stable slot %d",
+   "en": "Stable slot %d",
+   "ko": "야수 우리 %d",
+   "code": [
+    "tbc/petStable.lua:38: local heading = index == 1 and CURRENT_PET or format(L[\"Stable slot %d\"], index - 1)"
+   ],
+   "game_term": ""
+  }
+ ]
+}
