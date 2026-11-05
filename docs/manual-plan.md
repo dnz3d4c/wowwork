@@ -2,7 +2,8 @@
 
 ## 현재 상태
 
-- 상태: 계획 수립 완료, 번역 착수 전 (2026-11-05)
+- 상태: 51개 파일 번역, 평가, 회귀 확인 완료 (2026-11-06). 회귀는 3회차까지 돌렸고(중대 이상 167 → 38 → 21건), 남은 21건은 `docs/decisions.tsv` 2026-11-06 기준으로 처리했다. 기록은 `reviews/2026-11-05-manual-regression`, `reviews/2026-11-06-manual-regression2`, `reviews/2026-11-06-manual-regression3`. 원문과 실제 동작이 다른 곳은 `reviews/2026-11-05-manual-regression/upstream-raw.json`에 모았다(upstream 보고 전, 중복 정리 필요). 남은 일: 사용자 최종 확인(절차 6단계)
+- 설치 프로그램에 설명서는 넣지 않는다(`docs/decisions.tsv` 2026-11-06)
 - 기준 원문: upstream `397ffc3` (V1.0.0 태그 + 문서 커밋 2개)
 - 번역본 위치: 비공개 복제 저장소 `dnz3d4c/WowVision`의 `docs/src/user/ko` (2026-11-05 결정). 완성 후 공개한다.
 - 품질 평가: 모든 묶음이 `docs/review-process.md`를 통과해야 커밋한다(Claude 5명 + GPT 5명 블라인드 평가, 교차 판정).

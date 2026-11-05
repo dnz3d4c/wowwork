@@ -1,0 +1,24 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/character.md#reg-gpt-3",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 126행은 'fold with Enter'로 접는 동작만 적는다. 같은 원문이 98행 'folds or unfolds', 168행 'fold and unfold'로 양쪽 동작을 따로 쓰므로 126행의 fold를 펼치기까지로 늘려 옮길 근거가 원문 안에 없다. 코드가 전환 동작이라도 decisions.tsv:13(원문이 실제 동작과 다르면 원문에 충실, 차이는 upstream 보고, 한국어 전용 차이만 예외)에 따라 한국어판에 더하지 않는다. 이 차이는 한국어 사용자에게만 생기는 것이 아니다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowwork/docs/decisions.tsv:13"
+      ]
+    },
+    {
+      "ref": "windows/character.md#reg-gpt-4",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 162행도 'Headers read \"Expanded\" or \"Collapsed\" and fold with Enter.'로 접는 동작만 적고, 현재 번역 'Enter로 접습니다'는 원문 그대로다. 펼치기 동작 누락은 원문과 코드의 차이이며 한국어 전용 차이가 아니므로 decisions.tsv:13에 따라 upstream 보고 대상이지 번역 수정 대상이 아니다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowwork/docs/decisions.tsv:13"
+      ]
+    }
+  ]
+}
