@@ -1,0 +1,6 @@
+file	key	en	ko
+controller.lua	Page %d of %d	%2$d페이지 중 %1$d페이지	페이지 %d of %d
+navigation.lua	Floor %d of %d	%2$d개 층 중 %1$d층	층 %d of %d
+navigation.lua	The nearest %d of %d results	결과 %2$d개 중 가장 가까운 %1$d개	가장 가까운 결과 %d of %d
+navigation.lua	En route to %s, waypoint %d of %d	%1$s까지 이동 중, 경유지 %3$d개 중 %2$d번째	%s까지 이동 중, 경유지 %d of %d
+windows.lua	Picked up	집음	집어 듦

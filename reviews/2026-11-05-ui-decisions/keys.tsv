@@ -1,0 +1,38 @@
+file	key
+controller.lua	Page %d of %d
+navigation.lua	Floor %d of %d
+navigation.lua	The nearest %d of %d results
+navigation.lua	En route to %s, waypoint %d of %d
+windows.lua	Picked up
+bindings.lua	This input already exists for this binding.
+bindings.lua	Cannot remove; Binding must have at least one input.
+bindings.lua	Cannot replace this binding as it requires at least one input.
+navigation.lua	WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.
+navigation.lua	 The beacon shows the boarding direction; I turns you toward it.
+navigation.lua	Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.
+navigation.lua	Approximate target position.
+navigation.lua	The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.
+navigation.lua	The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.
+navigation.lua	Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.
+navigation.lua	Prepoint reached. The beacon keeps following the checked way to the activation area.
+navigation.lua	In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.
+navigation.lua	Position of the activation area reached. %sA journey is not confirmed here; the route stays on.
+navigation.lua	The height is not confirmed. 
+navigation.lua	Map change after the activation area; route ended. The destination is not confirmed.
+navigation.lua	The entrance has no valid proof.
+navigation.lua	Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.
+navigation.lua	At the dive point. Dive here; the route stays on until the dive is confirmed.
+navigation.lua	Warning: there is no way around the enemy outpost, the route leads through it.
+navigation.lua	Warning: the target lies in an enemy outpost.
+navigation.lua	Route ended outside the network's zones.
+navigation.lua	%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.
+navigation.lua	%s reached. Cast range about %d to %d yards. Press I to turn to the water.
+navigation.lua	Prepoint reached. Walk on to the portal; the beacon stays on until you are there.
+navigation.lua	At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.
+navigation.lua	Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.
+navigation.lua	The position is approximate.
+targeting.lua	Cannot set virtual focus while in combat.
+windows.lua	Sold %d poor quality items for %s.
+windows.lua	Repaired all items for %s.
+windows.lua	WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.
+windows.lua	Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.
