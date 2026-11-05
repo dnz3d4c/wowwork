@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::The nearest %d of %d results",
+      "category": "context",
+      "severity": "minor",
+      "problem": "첫 번째 %d에는 위치 번호가 아니라 개수(표시한 결과 수)가 들어간다. 그런데 번역 '가장 가까운 결과 %d of %d'는 '페이지 %d of %d', '층 %d of %d'처럼 몇 번째인지 말하는 문형과 같은 모양이라, 들으면 '120개 중 50번째 결과'로 오해할 수 있다. 영어는 'The nearest 50 of 120 results'처럼 results가 뒤에 와서 개수로 읽힌다.",
+      "evidence": "core/navigation/maps/ui.lua:124-125: if info ~= nil and info.capped then screen._notice = string.format(L[\"The nearest %d of %d results\"], info.shown, info.total) — 결과를 잘라서 보여 줄 때(capped) 표시 개수(shown)와 전체 개수(total)가 들어간다. of 유지는 decisions.tsv 2행 결정이라 건드리지 않고 개수 단위만 붙였다. 귀로 들었을 때 실제로 헷갈리는지는 확인하지 못해서 심각도를 major에서 한 단계 낮췄다.",
+      "suggestion": "가장 가까운 결과 %d개 of %d개"
+    }
+  ]
+}
