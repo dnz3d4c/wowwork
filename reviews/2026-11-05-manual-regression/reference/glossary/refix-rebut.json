@@ -1,0 +1,40 @@
+{
+  "responses": [
+    {
+      "ref": "reference/glossary.md#reg-claude-0",
+      "action": "applied",
+      "reason": "원문 \"while swimming or flying\"대로 '수영하거나 날 때'로 고치고 원문에 없는 버전별 비행 조건 문장을 지웠다. decisions.tsv:13(원문에 충실) 적용. 버전 차이는 ko/reference/versions.md에 원문대로 이미 있다.",
+      "upstream": "원문은 상하 각도 고정이 수영과 비행 모두에 걸린다고 쓰지만, 코드는 IsSwimming() or (pitchLock.lockWhileFlying and IsFlying())(core/navigation/pitchLock.lua:55)이고 retail/pitchLock.lua:3이 lockWhileFlying=false로 둬서 리테일 계열에서는 비행 중 고정되지 않는다."
+    },
+    {
+      "ref": "reference/glossary.md#reg-claude-1",
+      "action": "applied",
+      "reason": "원문 링크 글자 'Navigation and Routes'에 맞춰 다섯 곳 모두 '[길 안내와 경로]'로 바꿨다(decisions.tsv:14). 다른 파일(quick-start.md, windows/overview.md)의 표기와 같고, 링크 글자가 받침 없는 '경로'로 끝나 조사 '를'이 맞게 되어 '비컨를' 오류도 없어졌다.",
+      "upstream": ""
+    },
+    {
+      "ref": "reference/glossary.md#reg-claude-2",
+      "action": "applied",
+      "reason": "원문 링크 글자 'Movement and Orientation'을 대상 제목 번역이 아니라 원문대로 '[이동과 방향 파악]'으로 옮겼다(decisions.tsv:14).",
+      "upstream": ""
+    },
+    {
+      "ref": "reference/glossary.md#reg-claude-3",
+      "action": "applied",
+      "reason": "원문 링크 글자는 'WowNav'뿐이라 '(WoW: Forever)'를 뺐다(decisions.tsv:14). basics/menu-and-settings.md 등 다른 파일 표기와도 같다.",
+      "upstream": ""
+    },
+    {
+      "ref": "reference/glossary.md#reg-gpt-4",
+      "action": "applied",
+      "reason": "reg-claude-0, reg-claude-2와 같은 곳이라 함께 반영했다. 비행 조건 복원과 버전 문장 삭제, 링크 글자는 '이동과 방향 파악'으로 했다(Orientation을 살리되 '방향'만으로는 뜻이 좁아서 Claude 제안 쪽을 택함). 'dive'는 기존 '아래로 내려가지'를 유지했다.",
+      "upstream": "reg-claude-0과 같음: core/navigation/pitchLock.lua:55, retail/pitchLock.lua:3 기준 리테일 계열은 비행 중 고정하지 않는다."
+    },
+    {
+      "ref": "reference/glossary.md#reg-gpt-5",
+      "action": "applied",
+      "reason": "reg-claude-1과 같은 지적이라 함께 반영했다. 링크 다섯 곳을 '[길 안내와 경로]'로 통일해 '비컨를' 조사 오류도 없어졌다.",
+      "upstream": ""
+    }
+  ]
+}

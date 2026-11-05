@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {
+      "ref": "getting-started/first-login.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "원문 \"Right goes in, Up and Down choose, Enter confirms\"의 Right/Up/Down은 키 이름이다. manual-translate.md:17과 translation-guide.md:42가 키 이름을 영어 그대로 두라고 하고, 같은 문장의 Enter와 표기도 맞아야 한다. \"Right로 들어가고, Up과 Down으로 고른 다음 Enter로 확정합니다.\"로 고쳤다.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/first-login.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "원문 \"press Right, choose your character with Up and Down\"의 Right/Up/Down도 키 이름이라 같은 규칙(manual-translate.md:17)을 따른다. \"오른쪽\", \"위와 아래\"는 방향 일반 명사로 읽히고 13행 표기와도 어긋났다. \"Select character로 가서 Right를 누르고, Up과 Down으로 캐릭터를 고른 뒤\"로 고쳐 13행과 통일했다.",
+      "upstream": ""
+    }
+  ]
+}

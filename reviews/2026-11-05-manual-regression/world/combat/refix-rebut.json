@@ -1,0 +1,16 @@
+{
+ "responses": [
+  {
+   "ref": "world/combat.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문은 \"the context menu key\"다. 한국어 로캘 vision-locale/koKR/bindings.lua:24가 Context Menu를 \"상황별 메뉴\"로 옮기고, ko/reference/keybindings.md:10도 \"상황별 메뉴 키\"로 쓴다. \"메뉴 키\"는 context를 빠뜨린 표기라서 \"상황별 메뉴 키\"로 고쳤다.",
+   "upstream": ""
+  },
+  {
+   "ref": "world/combat.md#reg-gpt-1",
+   "action": "applied",
+   "reason": "게임 공식 문자열 RAID_INFO_WORLD_BOSS(gs_koKR.csv:11854)와 MAP_LEGEND_WORLDBOSS(gs_koKR.csv:22688)가 World Boss를 \"야외 우두머리\"로 옮긴다. 번역 지침상 용어표에 없는 게임 용어는 공식 한국어를 따라야 하므로 \"야외 우두머리\"로 고쳤다.",
+   "upstream": ""
+  }
+ ]
+}

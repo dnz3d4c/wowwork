@@ -1,0 +1,13 @@
+{
+ "responses": [
+  {"ref": "windows/loot-trade-mail.md#reg-claude-0", "action": "applied", "reason": "원문 \"For some items the game asks you to confirm, for example \\\"This item will bind to you\\\"\"에는 입찰 조건이 없다. 게임에는 입찰 전용 문구 LOOT_NO_DROP_ROLL_NEED(gs_koKR.csv:10160)도 있지만 원문은 조건 없는 일반 예시라 decisions.tsv 13행에 따라 원문대로 인용 형태로 옮겼다: 예를 들어 \"이 아이템은 당신에게 귀속됩니다\" 같은 확인입니다.", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-claude-1", "action": "applied", "reason": "원문의 한정어 'if the stack is more than one'을 살렸다(manual-translate.md 24행, decisions.tsv 13행). reg-gpt-4와 같은 곳이라 함께 반영.", "upstream": "원문은 개수를 두 개 이상일 때만 읽는다고 하지만 코드는 count > 0이면 항상 \" x\"..count를 붙인다(WowVision/core/windows/trade.lua:19-20)."},
+  {"ref": "windows/loot-trade-mail.md#reg-claude-2", "action": "applied", "reason": "Context Menu의 화면 문구는 \"상황별 메뉴\"(vision-locale/koKR/ui.lua:58). 59행을 \"상황별 메뉴\"로 고쳤다. reg-gpt-5와 같은 곳.", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-claude-3", "action": "applied", "reason": "142행도 \"상황별 메뉴\"로 고쳤다(ui.lua:58). reg-gpt-6과 같은 곳.", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-gpt-4", "action": "applied", "reason": "reg-claude-1과 같은 지적. 55행을 \"각 칸은 아이템 이름과 품질 색상 이름을 읽고, 아이템이 두 개 이상 겹쳐 있으면 개수도 읽습니다.\"로 고쳤다.", "upstream": "원문은 개수를 두 개 이상일 때만 읽는다고 하지만 코드는 count > 0이면 항상 개수를 붙인다(WowVision/core/windows/trade.lua:19-20)."},
+  {"ref": "windows/loot-trade-mail.md#reg-gpt-5", "action": "applied", "reason": "\"상황 메뉴\"를 \"상황별 메뉴\"로 고쳤다(ui.lua:58). \"거래가 열려 있으면\"은 원문 'With the trade open'에 맞아 그대로 두었다.", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-gpt-6", "action": "applied", "reason": "142행 \"상황별 메뉴\"로 고쳤다(ui.lua:58).", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-gpt-7", "action": "applied", "reason": "걸어가서 상호작용하는 물체는 게임 공식 MINIMAP_TRACKING_MAILBOX=\"우체통\"(gs_koKR.csv:6907)이고 bags-and-bank.md:10, overview.md:4도 \"우체통\"을 쓴다. 73행을 \"우체통으로 걸어가서\"로 고쳤다.", "upstream": ""},
+  {"ref": "windows/loot-trade-mail.md#reg-gpt-8", "action": "applied", "reason": "원문 110행 'Open the mailbox'도 플레이어가 여는 물체라 \"우체통\"(gs_koKR.csv:6907)으로 고쳤다.", "upstream": ""}
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "responses": [
+  {
+   "ref": "information/buffers.md#reg-claude-0",
+   "action": "applied",
+   "reason": "원문 링크 글자는 Controller(en buffers.md:54)이고, decisions.tsv 2026-11-05 결정은 링크 글자를 대상 제목이 아니라 원문 링크 글자대로 옮기라고 한다. [컨트롤러](../controller.md)로 고쳤다. 같은 문단의 절 제목도 '컨트롤러'라 표기가 맞는다.",
+   "upstream": ""
+  },
+  {
+   "ref": "information/buffers.md#reg-claude-1",
+   "action": "applied",
+   "reason": "원문 링크 글자는 Using WowVision windows(en buffers.md:237)로 대상 제목 Using the Interface와 다르다. 링크 글자 결정에 따라 [WowVision 창 사용하기](../basics/interface.md)로 고쳤다.",
+   "upstream": ""
+  },
+  {
+   "ref": "information/buffers.md#reg-claude-2",
+   "action": "applied",
+   "reason": "원문 링크 글자는 Versions(en buffers.md:373)다. 링크 글자 결정에 따라 [버전](../reference/versions.md)으로 고쳤고, getting-started/manual-installation.md의 같은 링크 표기와도 맞는다.",
+   "upstream": ""
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "responses": [
+  {
+   "ref": "windows/npcs.md#reg-claude-0",
+   "action": "applied",
+   "reason": "원문 링크 글자는 \"Navigating windows\"이고 decisions.tsv:14는 대상 제목이 아니라 원문 링크 글자를 옮기라고 정했다. reg-gpt-2와 같은 곳이라 함께 반영해 \"[창 안에서 이동하기](../basics/interface.md)를 참고하십시오.\"로 바꿨다. bags-and-bank.md의 \"창 사이 이동\"을 따르지 않은 이유: 여기서 가리키는 것은 Tab·화살표로 창 안을 다니는 법이라 'between'으로 읽히는 표현은 뜻이 다르다. \"창 안에서 이동하기\"는 ko/basics/index.md:6이 interface.md 내용을 소개할 때 쓰는 표현과도 같다.",
+   "upstream": ""
+  },
+  {
+   "ref": "windows/npcs.md#reg-gpt-1",
+   "action": "applied",
+   "reason": "게임 공식 한국어 이름을 확인했다. wowhead 툴팁 API(locale=1) 기준 리테일 아이템 137642 Mark of Honor = \"명예 훈장\", TBC 아이템 20560 Alterac Valley Mark of Honor = \"알터랙 계곡 명예 훈장\"이다. \"명예의 징표\"는 공식 이름이 아니라서 \"명예 훈장 20\"으로 바꿨다(manual-translate.md:15).",
+   "upstream": ""
+  },
+  {
+   "ref": "windows/npcs.md#reg-gpt-2",
+   "action": "applied",
+   "reason": "두 평가자가 모두 지적했다. 원문 링크 글자를 옮기라는 decisions.tsv:14에 따라 고쳤다. reg-claude-0과 같은 곳이라 \"[창 안에서 이동하기]\"로 함께 반영했다. 제안된 \"창 사이 이동\"은 bags-and-bank.md에 쓰인 표기지만, 이 문단은 창 안의 구역과 항목 사이를 이동하는 법을 안내하는 것이라 뜻에 맞는 쪽을 골랐다.",
+   "upstream": ""
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "responses": [
+  {
+   "ref": "getting-started/quick-start.md#reg-claude-0",
+   "action": "applied",
+   "reason": "두 평가자가 모두 지적했다(consensus). 원문은 \"Enter on an entry starts guiding you there.\"뿐이고, decisions.tsv 2026-11-05 결정에 따라 원문에 충실하게 \"항목에서 Enter를 누르면 그곳으로 안내가 시작됩니다.\"로 고쳤다.",
+   "upstream": "원문은 스캐너 항목에서 Enter를 누르면 바로 안내가 시작된다고 하지만, 실제로는 지도 데이터나 활성 경로 엔진이 있으면 그 항목을 목적지로 고른 길 안내 창이 열리고 거기서 Enter를 다시 눌러야 경로가 시작되며, 없을 때만 직선 비컨이 바로 시작된다(WowVision/core/navigation/maps/module.lua:574-582 openNavigationTo)."
+  },
+  {
+   "ref": "getting-started/quick-start.md#reg-gpt-1",
+   "action": "applied",
+   "reason": "reg-claude-0과 같은 곳을 가리키는 합의 지적이라 함께 반영했다. module.lua:575-578에서 지도 데이터와 경로 엔진이 없으면 창 없이 beaconTo를 바로 실행하므로 덧붙인 두 단계 절차는 조건 없이 단정하면 틀리기도 한다.",
+   "upstream": "원문은 스캐너 항목에서 Enter를 누르면 바로 안내가 시작된다고 하지만, 실제로는 지도 데이터나 활성 경로 엔진이 있으면 길 안내 창이 열리고 Enter를 한 번 더 눌러야 하며, 없을 때만 직선 비컨이 바로 시작된다(WowVision/core/navigation/maps/module.lua:574-582 openNavigationTo)."
+  },
+  {
+   "ref": "getting-started/quick-start.md#reg-gpt-2",
+   "action": "applied",
+   "reason": "game_terms.tsv:180에서 Quest Givers의 게임 공식 한국어가 \"퀘스트 NPC\"이고, 같은 스캐너 분류를 설명하는 world/index.md:12, world/minimap.md:12, installation.md:21도 \"퀘스트 NPC\"를 쓴다. 스캐너 목록의 분류 이름과 맞추려고 \"퀘스트 NPC\"로 고쳤다.",
+   "upstream": ""
+  },
+  {
+   "ref": "getting-started/quick-start.md#reg-gpt-3",
+   "action": "applied",
+   "reason": "일반 버퍼가 실제로 읽는 문구는 \"비어 있는 가방 칸\"이고(information/buffers.md:67, 168의 출력 예 \"비어 있는 가방 칸: 12\"), 설명서의 말과 듣는 말을 맞춰야 한다는 manual-translate.md 용어 규칙 1에 따라 \"비어 있는 가방 칸\"으로 고쳤다.",
+   "upstream": ""
+  }
+ ]
+}

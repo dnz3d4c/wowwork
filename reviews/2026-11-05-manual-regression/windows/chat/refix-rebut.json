@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {
+      "ref": "windows/chat.md#reg-claude-0",
+      "action": "applied",
+      "reason": "원문 type은 버퍼 추가 화면의 Type 항목이고 화면 문구는 vision-locale/koKR/ui.lua:81 L[\"Type\"] = \"종류\", ui.lua:215 \"버퍼 종류 선택\"이다. 용어표 규칙(화면 문구는 글자 그대로)에 따라 '유형'을 '종류'로 바꿨다. information/buffers.md 표기와도 맞는다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/chat.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "원문 en/windows/chat.md:65 \"from the tab you were in\"의 주체는 사용자인데 번역이 '게임이 있던 탭'으로 읽혀 출처가 바뀌었다. '게임이 사용자가 있던 탭에서 새 귓속말 탭으로 복사해 오는 줄'로 고쳤다. 제안의 '감지했을 때'는 같은 단락 앞 문장(60행)의 '잡아내므로'와 표기를 맞추려고 '잡아낼 때'로 두었다.",
+      "upstream": ""
+    }
+  ]
+}

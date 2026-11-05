@@ -1,0 +1,28 @@
+{
+  "responses": [
+    {
+      "ref": "windows/bags-and-bank.md#reg-claude-0",
+      "action": "applied",
+      "reason": "두 회사 합의 지적. 가방 이름은 C_Container.GetBagName에서 오고(classic/containers/Bag.lua:40) 한국어 기본 가방 이름은 BACKPACK_TOOLTIP=소지품(gs_koKR.csv:7)이다. 아이템의 한국어 이름이라 decisions.tsv 원문 충실 규칙의 예외에 해당한다. 인용 예를 \"소지품\"으로 바꿨다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/bags-and-bank.md#reg-claude-1",
+      "action": "applied",
+      "reason": "두 회사 합의 지적. 가방 보관함 항목은 L[\"Bag Slot\"] 뒤에 가방 이름을 붙인다(classic/containers/Bag.lua:54, koKR Bag Slot=가방 보관함). 인용을 \"가방 보관함 소지품\"으로 바꿨다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/bags-and-bank.md#reg-gpt-2",
+      "action": "applied",
+      "reason": "reg-claude-0과 같은 곳, 같은 수정으로 함께 반영했다(\"배낭\" -> \"소지품\"). 은행 가방 문장은 그대로다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/bags-and-bank.md#reg-gpt-3",
+      "action": "applied",
+      "reason": "reg-claude-1과 같은 곳, 같은 수정으로 함께 반영했다(\"가방 보관함 소지품\").",
+      "upstream": ""
+    }
+  ]
+}

@@ -51,7 +51,9 @@ def prepare(src: Path, out_dir: Path, args_path: Path) -> int:
 def judge(out_dir: Path, rel: str, refs: list[str]) -> int:
     d = out_dir / rel.removesuffix(".md")
     items = {f["ref"]: f for f in json.loads((d / "refix-input.json").read_text(encoding="utf-8"))}
-    rebut = {r["ref"]: r for r in json.loads((d / "refix-rebut.json").read_text(encoding="utf-8"))["responses"]}
+    raw = json.loads((d / "refix-rebut.json").read_text(encoding="utf-8"))
+    # 번역자 에이전트가 {"responses": [...]} 대신 배열만 저장하는 경우가 있다(2026-11-06 windows/character.md).
+    rebut = {r["ref"]: r for r in (raw["responses"] if isinstance(raw, dict) else raw)}
     keys = ("category", "severity", "quote", "suggestion", "problem", "evidence")
     payload = [{"ref": r, "file": rel, "finding": {k: items[r][k] for k in keys}, "translator": rebut.get(r)} for r in refs]
     data = {"file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",

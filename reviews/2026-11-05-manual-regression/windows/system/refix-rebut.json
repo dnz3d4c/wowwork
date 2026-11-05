@@ -1,0 +1,9 @@
+{
+ "responses": [
+  {"ref": "windows/system.md#reg-gpt-0", "action": "applied", "reason": "원문 범주 이름 Controls의 확정 값은 vision-locale/koKR/windows.lua:215의 L[\"Controls\"] = \"조작\"이다. 용어 규칙 1에 따라 화면 문구를 글자 그대로 \"조작\"으로 바꿨다.", "upstream": ""},
+  {"ref": "windows/system.md#reg-gpt-1", "action": "applied", "reason": "원문 탭 이름은 Base와 Raid and Battlegrounds다. 게임 문자열 BASE_SETTINGS=\"기본 설정\", RAID_SETTINGS=\"공격대 및 전장\"(gs_koKR.csv)이 탭 이름이고, 이전 번역의 \"기본 게임 품질\"(BASE_GRAPHICS_QUALITY)과 \"공격대 그래픽 품질\"(SETTINGS_RAID_GRAPHICS_QUALITY)은 슬라이더 이름이라 탭 이름으로 바꿨다.", "upstream": ""},
+  {"ref": "windows/system.md#reg-gpt-2", "action": "applied", "reason": "원문 링크 글자는 Menu and settings다. decisions.tsv:14(링크 글자는 원문대로)에 따라 \"WowVision\"을 빼고 \"메뉴와 설정\"으로 바꿨다.", "upstream": ""},
+  {"ref": "windows/system.md#reg-gpt-3", "action": "applied", "reason": "원문 링크 글자는 Speech다. decisions.tsv:14에 따라 대상 제목에 맞춘 \"음성 및 소리\"를 \"음성\"으로 바꾸고 조사도 \"을\"로 맞췄다.", "upstream": ""},
+  {"ref": "windows/system.md#reg-gpt-4", "action": "applied", "reason": "같은 링크의 두 번째 사용도 원문 링크 글자 Menu and settings에 맞춰 \"메뉴와 설정\"으로 바꿨다(decisions.tsv:14).", "upstream": ""}
+ ]
+}

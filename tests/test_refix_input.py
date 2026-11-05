@@ -35,3 +35,18 @@ def test_judge_builds_gpt_input_for_disputed_refs_only(tmp_path) -> None:
     out = json.loads((d / "refix-judge-gpt-input.json").read_text(encoding="utf-8"))
     assert [i["ref"] for i in out["items"]] == ["a/b.md#reg-gpt-1"]
     assert out["items"][0]["translator"]["action"] == "dispute"
+
+
+def test_judge_accepts_rebut_saved_as_bare_list(tmp_path) -> None:
+    import json
+
+    from tools.review.refix_input import judge
+
+    d = tmp_path / "a" / "b"
+    d.mkdir(parents=True)
+    finding = {"category": "accuracy", "severity": "major", "quote": "q", "suggestion": "s", "problem": "p", "evidence": "e"}
+    (d / "refix-input.json").write_text(json.dumps([{**finding, "ref": "r1", "by": "gpt"}]), encoding="utf-8")
+    (d / "refix-rebut.json").write_text(json.dumps([{"ref": "r1", "action": "dispute", "reason": "x", "upstream": ""}]), encoding="utf-8")
+    assert judge(tmp_path, "a/b.md", ["r1"]) == 0
+    out = json.loads((d / "refix-judge-gpt-input.json").read_text(encoding="utf-8"))
+    assert out["items"][0]["translator"]["reason"] == "x"

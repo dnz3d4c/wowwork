@@ -1,0 +1,10 @@
+{
+ "responses": [
+  {
+   "ref": "getting-started/sku.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문 \"When the game loads WowVision, it checks which addons are already loaded.\"의 it은 WowVision이다. 한국어 문장은 주어가 '게임' 하나뿐이라 게임이 확인하는 것으로 읽혔다. 주체 WowVision을 넣어 \"게임이 WowVision을 로드하면 WowVision은 이미 로드된 애드온을 확인합니다.\"로 고쳤다. 기계 검사 통과(문제 0개).",
+   "upstream": ""
+  }
+ ]
+}

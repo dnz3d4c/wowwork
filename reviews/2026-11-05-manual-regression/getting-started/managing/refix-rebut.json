@@ -1,0 +1,10 @@
+{
+ "responses": [
+  {
+   "ref": "getting-started/managing.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문 'the quest probe report'의 probe는 /wv quests probe 명령이 퀘스트·지도 데이터 출처를 3초 동안 시험하는 진단이다(en/world/quests.md, ko/world/quests.md:166). '탐색'은 퀘스트를 찾아가는 길 찾기로 읽혀 보고서 성격이 달라지므로 '퀘스트 점검 보고서'로 바꿨다. 제안의 '데이터'는 원문에 없는 말이라 넣지 않았다.",
+   "upstream": ""
+  }
+ ]
+}

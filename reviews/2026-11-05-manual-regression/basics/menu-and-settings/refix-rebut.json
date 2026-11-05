@@ -1,0 +1,10 @@
+{
+ "responses": [
+  {
+   "ref": "basics/menu-and-settings.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문은 \"an error you muted ... stays muted\"이고, 오류별 필터의 상태 이름 Muted는 vision-locale/koKR/errors.lua:11에서 \"음소거\"다. \"소리를 끈\"은 별도 상태인 Sound(소리)와 헷갈리므로 \"음소거한 오류는 모든 캐릭터에서 음소거된 채로 있습니다\"로 고쳤다(stays의 지속 의미 유지). 기계 검사 통과.",
+   "upstream": ""
+  }
+ ]
+}

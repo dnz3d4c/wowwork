@@ -1,0 +1,10 @@
+{
+ "responses": [
+  {"ref": "world/movement.md#reg-claude-0", "action": "applied", "reason": "원문 링크 글자는 [Navigation]이고 decisions.tsv 2026-11-05 링크 글자 결정에 따라 대상 제목이 아닌 원문 글자(terms: Navigation=길 안내)로 옮겨 [길 안내](navigation.md)로 고쳤다. 같은 파일의 다른 navigation.md 링크와도 맞춰진다.", "upstream": ""},
+  {"ref": "world/movement.md#reg-claude-1", "action": "applied", "reason": "원문 링크 글자 [Speech]를 terms Speech=음성으로 옮겨 [음성](../basics/speech.md)으로 고치고 조사를 '을'로 맞췄다(링크 글자 결정).", "upstream": ""},
+  {"ref": "world/movement.md#reg-claude-2", "action": "applied", "reason": "원문 링크 글자 [Controller]를 [컨트롤러](../controller.md)로 고쳤다(링크 글자 결정, 다른 설명서 표기와 일치).", "upstream": ""},
+  {"ref": "world/movement.md#reg-gpt-3", "action": "applied", "reason": "reg-claude-0과 같은 곳. [길 안내](navigation.md)로 함께 반영했다.", "upstream": ""},
+  {"ref": "world/movement.md#reg-gpt-4", "action": "applied", "reason": "reg-claude-1과 같은 곳. [음성](../basics/speech.md)을로 함께 반영했다.", "upstream": ""},
+  {"ref": "world/movement.md#reg-gpt-5", "action": "applied", "reason": "reg-claude-2와 같은 곳. [컨트롤러](../controller.md)로 함께 반영했다.", "upstream": ""}
+ ]
+}

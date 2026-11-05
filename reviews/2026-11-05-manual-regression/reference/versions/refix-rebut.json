@@ -1,0 +1,17 @@
+{
+ "responses": [
+  {"ref": "reference/versions.md#reg-claude-0", "action": "applied", "reason": "원문 링크 글자는 'Tooltips'이고 decisions.tsv:14(원문 링크 글자를 그대로 옮긴다)에 따라 '[툴팁](../basics/tooltips.md)'으로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-1", "action": "applied", "reason": "원문 'Navigation and Routes'를 대상 제목 대신 그대로 옮기라는 decisions.tsv:14에 따라 '[길 안내와 경로]'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-2", "action": "applied", "reason": "원문 'Talking to NPCs'를 decisions.tsv:14에 따라 '[NPC와 대화하기]'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-3", "action": "applied", "reason": "원문 'Menus, Options and Dialogs'를 decisions.tsv:14에 따라 '[메뉴, 설정, 대화 상자]'로 고쳤다. Options=설정, dialog=대화 상자는 이 파일의 기존 표기와 맞다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-4", "action": "applied", "reason": "원문 'Group Finder', 'Social'을 decisions.tsv:14에 따라 '[파티 찾기]', '[소셜]'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-5", "action": "applied", "reason": "원문 'See [Social]'을 decisions.tsv:14에 따라 '[소셜](../windows/social.md)을 참고하십시오.'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-6", "action": "applied", "reason": "원문 'Minimap'을 decisions.tsv:14에 따라 '[미니맵]'으로 고치고 조사도 '을'로 맞췄다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-7", "action": "applied", "reason": "원문 'Collections', 'Group Finder'를 decisions.tsv:14에 따라 '[수집품]', '[파티 찾기]'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-8", "action": "applied", "reason": "원문 'Controller'를 decisions.tsv:14에 따라 '[컨트롤러]'로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-9", "action": "applied", "reason": "원문 'Movement and Orientation'을 대상 제목(이동과 주변 환경) 대신 그대로 옮기라는 decisions.tsv:14에 따라 '[이동과 방향 파악]'으로 고쳤다. glossary.md:46의 같은 표기는 이 파일 범위 밖이라 손대지 않았다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-claude-10", "action": "applied", "reason": "reg-claude-9와 같은 링크라 함께 '[이동과 방향 파악]'으로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-gpt-11", "action": "applied", "reason": "원문 'your group's health'의 group은 파티와 공격대를 다 가리키고, ko/information/group-health.md:6도 '파티나 공격대 구성원'이라 쓴다. '파티나 공격대 구성원의 생명력'으로 고쳤다.", "upstream": ""},
+  {"ref": "reference/versions.md#reg-gpt-12", "action": "applied", "reason": "화면 문구 'Full Scan'의 한국어 값은 locale/koKR/auction.lua:43 '전체 스캔'이다. '전체 스캔 포함'으로 고쳤다.", "upstream": ""}
+ ]
+}

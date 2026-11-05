@@ -1,0 +1,43 @@
+{
+ "file": "windows/character.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/character.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/character.md",
+ "items": [
+  {
+   "ref": "windows/character.md#reg-gpt-3",
+   "file": "windows/character.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "- 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다.",
+    "suggestion": "- 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접거나 펼칩니다.",
+    "problem": "Enter가 머리글을 접기만 한다고 설명해, 접힌 머리글을 같은 키로 펼칠 수 있다는 동작을 누락했다.",
+    "evidence": "원문은 두 상태를 모두 제시하며 \"fold with Enter\"라고 설명한다. wowvision-ko/WowVision/tbc/character/Skills.lua:68-75는 펼침과 접힘 상태를 모두 읽고, 93-105는 같은 왼쪽 클릭 동작을 머리글에 연결한다."
+   },
+   "translator": {
+    "ref": "windows/character.md#reg-gpt-3",
+    "action": "dispute",
+    "reason": "원문 Skills 절은 \"fold with Enter\"로 접기만 적는다. 같은 문서의 평판 절은 \"folds or unfolds\"로 둘을 구분해 쓰므로 원문 작성자가 펼치기를 빼고 쓴 것이다. decisions.tsv 2026-11-05 '원문이 실제 애드온 동작과 다를 때: 원문에 충실하게 옮긴다'에 따라 '접습니다'를 유지한다. 코드(tbc/character/Skills.lua:93-105)가 토글한다는 차이는 upstream 설명서 보고 대상이다.",
+    "upstream": ""
+   }
+  },
+  {
+   "ref": "windows/character.md#reg-gpt-5",
+   "file": "windows/character.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "화폐 목록이 담긴 정지점 하나입니다. 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다.",
+    "suggestion": "화폐 목록이 담긴 정지점 하나입니다. 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접거나 펼칩니다.",
+    "problem": "화폐 머리글도 Enter로 접기와 펼치기를 모두 수행하지만 번역은 접기만 가능하다고 설명한다.",
+    "evidence": "원문은 펼침·접힘 상태를 모두 제시한다. Mists 구현은 wowvision-ko/WowVision/mists/character.lua:313-327에서 두 상태를 읽고 같은 클릭 동작을 연결한다. WoW: Forever 구현도 wowvision-ko/WowVision/camelot/character.lua:863-884에서 접힘 상태와 토글 대상을 함께 구성한다."
+   },
+   "translator": {
+    "ref": "windows/character.md#reg-gpt-5",
+    "action": "dispute",
+    "reason": "원문 Currency 절도 \"fold with Enter\"로 접기만 적는다(통계 절은 \"fold and unfold\", 평판 절은 \"folds or unfolds\"로 구분해 씀). decisions.tsv 2026-11-05 '원문에 충실하게 옮긴다'에 따라 '접습니다'를 유지한다. 코드(mists/character.lua:313-327, camelot/character.lua:863-884)가 토글한다는 차이는 upstream 설명서 보고 대상이다.",
+    "upstream": ""
+   }
+  }
+ ]
+}

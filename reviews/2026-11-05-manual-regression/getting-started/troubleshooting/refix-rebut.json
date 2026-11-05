@@ -1,0 +1,22 @@
+{
+  "responses": [
+    {
+      "ref": "getting-started/troubleshooting.md#reg-claude-0",
+      "action": "applied",
+      "reason": "두 회사 공통 지적. decisions.tsv 2026-11-05 결정(링크 글자는 원문 그대로)에 따라 원문 링크 글자 \"Installing WowVision\"을 \"WowVision 설치하기\"로 옮겼다. 대상 경로와 앵커는 그대로 둔다.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/troubleshooting.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "reg-claude-0과 같은 곳, 같은 수정으로 함께 반영했다.",
+      "upstream": ""
+    },
+    {
+      "ref": "getting-started/troubleshooting.md#reg-gpt-2",
+      "action": "applied",
+      "reason": "지적이 맞다. vision-locale/koKR/ui.lua:58과 bindings.lua:24가 L[\"Context Menu\"]를 \"상황별 메뉴\"로 번역하고, 같은 동작을 설명한 reference/keybindings.md:177도 \"상황별 메뉴\"다. 화면 문구는 글자 그대로 쓴다는 번역 지침에 따라 \"상황 메뉴\"를 \"상황별 메뉴\"로 바꿨다.",
+      "upstream": ""
+    }
+  ]
+}

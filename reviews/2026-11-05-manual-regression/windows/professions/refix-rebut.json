@@ -1,0 +1,6 @@
+[
+ {"ref": "windows/professions.md#reg-claude-0", "action": "applied", "reason": "consensus. 한국어 클라이언트는 /cast를 받지만(gs_koKR.csv SLASH_CAST3=/cast) 주문 이름은 한국어여야 하므로 decisions.tsv 예외(주문의 한국어 이름은 한국어판에 적는다)에 따라 반영. 인라인 코드 `/cast Tailoring`을 바꾸면 기계 검사(tools/manual.py:91-95 인라인 코드 일치)가 깨지므로 원문 예시는 두고 '한국어 클라이언트에서는 주문 이름을 한국어로 써서 /cast 재봉술처럼 입력합니다.'를 덧붙임. gpt-2와 함께 반영. system.md:125 `/cast Healing Touch`도 같은 문제(이 파일 범위 밖).", "upstream": ""},
+ {"ref": "windows/professions.md#reg-claude-1", "action": "applied", "reason": "socketing.lua가 GetExistingSocketInfo의 현지화된 이름을 읽으므로 한국어 이름으로 바꿈. 단 제안한 '섬세한 생명의 루비'는 리테일 데이터 이름이고, Wowhead 툴팁 API(nether.wowhead.com/tooltip/item/24028?dataEnv=5&locale=1, TBC Classic)의 koKR 이름은 '섬세하게 연마된 생명의 루비'라 TBC 보석인 이 예시는 TBC 이름을 씀(gpt-3과 함께 반영).", "upstream": ""},
+ {"ref": "windows/professions.md#reg-gpt-2", "action": "applied", "reason": "consensus. 반영하되 제안의 `/시전 재봉술`은 원문에 없는 인라인 코드가 생겨 기계 검사가 깨지고, /cast도 한국어 클라이언트에서 동작하므로(SLASH_CAST3=/cast) 명령은 /cast로 두고 주문 이름만 한국어로 쓴 '/cast 재봉술'을 코드 서식 없이 덧붙임(claude-0과 함께).", "upstream": ""},
+ {"ref": "windows/professions.md#reg-gpt-3", "action": "applied", "reason": "제안대로 '섬세하게 연마된 생명의 루비'로 바꿈. Wowhead 툴팁 API TBC Classic(dataEnv=5) koKR 이름으로 확인. 리테일 데이터(dataEnv=1)는 '섬세한 생명의 루비'라 Mists 클라이언트에서는 다르게 읽힐 수 있음(미확인).", "upstream": ""}
+]

@@ -1,0 +1,28 @@
+{
+  "responses": [
+    {
+      "ref": "windows/collections.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "한국어 클라이언트에서는 탈것 이름이 한국어라 \"wolf\"로는 걸러지지 않는다. decisions.tsv 2026-11-05 '원문이 실제 애드온 동작과 다를 때' 결정의 예외(주문·아이템의 한국어 이름은 한국어판에 적는다)에 해당하고, 같은 파일의 \"화염 늑대 (탑승 중)\"와도 맞다. 검색어를 \"늑대\"로 바꿨다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/collections.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "vision-locale/koKR/ui.lua:58, bindings.lua:24에서 Context Menu는 \"상황별 메뉴\"이고 spells-and-talents.md:28도 같은 표기다. \"상황별 메뉴\"로 바꿨다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/collections.md#reg-gpt-2",
+      "action": "applied",
+      "reason": "같은 근거(koKR/ui.lua:58 \"상황별 메뉴\"). 본문의 \"상황 메뉴(Shift+F10)\"를 \"상황별 메뉴(Shift+F10)\"로 바꿨다.",
+      "upstream": ""
+    },
+    {
+      "ref": "windows/collections.md#reg-gpt-3",
+      "action": "applied",
+      "reason": "같은 근거(koKR/bindings.lua:24 \"상황별 메뉴\", spells-and-talents.md:191 같은 표). 특성 키 표의 \"상황 메뉴\"를 \"상황별 메뉴\"로 바꿨다.",
+      "upstream": ""
+    }
+  ]
+}
