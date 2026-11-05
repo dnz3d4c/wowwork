@@ -18,7 +18,10 @@ def merge_seeds(sources: dict[str, Path]) -> Seeds:
     """출처 이름 → 심을 목록 파일. 같은 id 는 먼저 온 출처가 이긴다. 값 끝에 출처를 붙인다."""
     merged: Seeds = {}
     for origin, path in sources.items():
-        for item_id, (seeded, kind, lens, *_) in json.loads(path.read_text(encoding="utf-8")).items():
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(data.get("seeds"), list):  # 오류 제작자(seeds.schema.json) 출력 형식
+            data = {s["id"]: [s["seeded"], s["kind"], s["lens"]] for s in data["seeds"]}
+        for item_id, (seeded, kind, lens, *_) in data.items():
             merged.setdefault(item_id, [seeded, kind, lens, origin])
     return merged
 

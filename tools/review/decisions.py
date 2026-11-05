@@ -30,6 +30,11 @@ def changes(decisions: list[dict[str, str]], current: dict[tuple[str, str], str]
 JUDGED = ("upheld", "dispute-won")
 
 
+def incomplete_batches(result: list[dict[str, Any]]) -> list[str]:
+    """평가자가 하나라도 실패했거나 실패 수 기록이 없는 묶음. 이런 묶음의 판정은 반영하지 않는다."""
+    return [b["batch"] for b in result if b.get("failedReviewers", 1) != 0]
+
+
 def split_invalid(decisions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """판정자가 결정한 항목은 허용된 1차 자료를 근거로 댔을 때만 유효하다(guard.valid_evidence)."""
     valid: list[dict[str, Any]] = []
@@ -43,6 +48,9 @@ def split_invalid(decisions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
 def main() -> None:
     out_json, review_dir = Path(sys.argv[1]), Path(sys.argv[2])
     result = json.loads(out_json.read_text(encoding="utf-8"))["result"]
+    broken = incomplete_batches(result)
+    if broken:
+        raise SystemExit(f"평가자가 실패한 묶음이 있어 반영하지 않는다(다시 돌릴 것): {broken}")
     decisions, invalid = split_invalid([d for b in result for d in b["decisions"]])
     current = {(p.name, k): v for p in KOKR_DIR.glob("*.lua") for k, v in parse_locale_file(p).items()}
     rows = changes(decisions, current)

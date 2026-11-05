@@ -28,8 +28,10 @@ const [c, g] = await parallel([
     `다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\n` +
     `cd ${W} && uv run python -m tools.review.gpt_review ` + FILES.map(f => `--prompt tools/review/prompts/${f}`).join(' ') +
     ` --batch ${batch} --schema tools/review/findings.schema.json --out ${out}/gpt.json\n\n` +
-    `성공하면 ${out}/gpt.json 을 Read로 읽고 내용을 한 글자도 바꾸지 않고 구조화 출력으로 돌려준다. 실패하면 한 번만 다시 실행하고, 그래도 실패하면 findings를 빈 배열로 하되 label에 실패를 남기지 말고 그대로 끝낸다. 판단을 직접 하지 않는다.`,
-    { label: 'gpt:regression', phase: 'Regression', schema: FINDINGS, effort: 'low' }),
+    `성공하면 ${out}/gpt.json 을 Read로 읽고 내용을 한 글자도 바꾸지 않고 구조화 출력으로 돌려준다. 성공했으면 ok를 true로 한다. 실패하면 한 번만 다시 실행하고, 그래도 실패하면 ok를 false로 하고 배열은 비운다. 판단을 직접 하지 않는다.`,
+    { label: 'gpt:regression', phase: 'Regression', schema: { ...FINDINGS, required: ['findings', 'ok'], properties: { ...FINDINGS.properties, ok: { type: 'boolean' } } }, effort: 'low' })
+    .then(r => (r && r.ok === true ? r : null)),
 ])
 const all = [...((c && c.findings) || []).map(f => ({ by: 'claude', ...f })), ...((g && g.findings) || []).map(f => ({ by: 'gpt', ...f }))]
-return { claudeOk: !!c, gptOk: !!g, blocking: all.filter(f => f.severity !== 'minor'), minor: all.filter(f => f.severity === 'minor').map(f => `${f.by} ${f.id.split('::')[1].slice(0, 40)}: ${f.problem.slice(0, 120)}`) }
+// 평가자 하나라도 실패하면 통과가 아니다(passed=false).
+return { passed: !!c && !!g && all.every(f => f.severity === 'minor'), claudeOk: !!c, gptOk: !!g, blocking: all.filter(f => f.severity !== 'minor'), minor: all.filter(f => f.severity === 'minor').map(f => `${f.by} ${f.id.split('::')[1].slice(0, 40)}: ${f.problem.slice(0, 120)}`) }

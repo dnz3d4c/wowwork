@@ -229,3 +229,32 @@ def test_audit_claude_finds_reviewer_prompt_after_harness_relay() -> None:
         ),
     ]
     assert claude_tool_inputs(lines) == ["C:/project/games"]
+
+
+def test_valid_evidence_rejects_lookalike_paths() -> None:
+    assert not valid_evidence(["wowwork/docs/decisions.tsv.fake"])
+    assert not valid_evidence(["wowwork/reviews/rebut.json#wowwork/docs/decisions.tsv"])
+    assert not valid_evidence(["wowwork/cache/gs_fake.csv"])
+    assert not valid_evidence(["notwowwork/docs/decisions.tsv"])
+    assert valid_evidence(["C:/project/games/wowwork/docs/decisions.tsv"])
+    assert valid_evidence(["wowwork/cache/gs_koKR.csv:7919-7920"])
+    assert valid_evidence([r"C:\project\games\wowvision-ko\WowVision\tbc\petStable.lua:87"])
+
+
+def test_merge_seeds_accepts_generator_output_format(tmp_path: Path) -> None:
+    g = tmp_path / "g.json"
+    g.write_text(
+        json.dumps({"seeds": [{"id": "x::1", "seeded": "가", "kind": "누락", "lens": "accuracy"}]}), "utf-8"
+    )
+    assert merge_seeds({"gpt": g}) == {"x::1": ["가", "누락", "accuracy", "gpt"]}
+
+
+def test_decisions_refuse_incomplete_batches() -> None:
+    from tools.review.decisions import incomplete_batches
+
+    result: list[dict[str, Any]] = [
+        {"batch": "b1", "failedReviewers": 0},
+        {"batch": "b2", "failedReviewers": 1},
+        {"batch": "b3"},
+    ]
+    assert incomplete_batches(result) == ["b2", "b3"]

@@ -43,6 +43,11 @@ function claudeReviewer(batch, out, lens) {
     { label: `claude:${lens}`, phase: 'Review', schema: FINDINGS })
 }
 
+// GPT 실행 에이전트는 성공 여부를 따로 돌려준다. 빈 결과를 성공으로 오인하지 않기 위해서다.
+function withOk(schema) {
+  return { ...schema, required: [...schema.required, 'ok'], properties: { ...schema.properties, ok: { type: 'boolean' } } }
+}
+
 function gptRun(promptFiles, inputPath, schemaFile, outPath, schema, label, phaseName, writePayload) {
   const pre = writePayload
     ? `먼저 아래 JSON을 ${inputPath} 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n${writePayload}\n\n그다음 `
@@ -52,8 +57,9 @@ function gptRun(promptFiles, inputPath, schemaFile, outPath, schema, label, phas
     pre + `다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\n` +
     `cd ${W} && uv run python -m tools.review.gpt_review ${prompts} --batch ${inputPath} --schema tools/review/${schemaFile} --out ${outPath}\n\n` +
     `성공하면 ${outPath} 를 Read로 읽고 그 내용을 한 글자도 바꾸지 않고 구조화 출력으로 돌려준다. ` +
-    `실패하면 한 번만 다시 실행하고, 그래도 실패하면 배열을 비워서 돌려준다. 판단을 직접 하지 않는다.`,
-    { label, phase: phaseName, schema, effort: 'low' })
+    `성공했으면 ok를 true로 한다. 실패하면 한 번만 다시 실행하고, 그래도 실패하면 ok를 false로 하고 배열은 비운다. 판단을 직접 하지 않는다.`,
+    { label, phase: phaseName, schema: withOk(schema), effort: 'low' })
+    .then(r => (r && r.ok === true ? r : null)) // 실패는 빈 결과가 아니라 null(평가자 실패)
 }
 
 async function runBatch(b) {

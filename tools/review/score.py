@@ -50,6 +50,10 @@ def score(runs: list[dict[str, Any]], key: dict[str, dict[str, str]]) -> dict[st
 
 def main() -> None:
     runs = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))["result"]
+    if isinstance(runs, dict):  # calibrate.js: {"failedReviewers": n, "result": [...]}
+        if runs.get("failedReviewers", 1) != 0:
+            raise SystemExit(f"평가자 실패 {runs.get('failedReviewers')}명: 이 검증은 무효라 채점하지 않는다")
+        runs = runs["result"]
     key = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
     result = score(runs, key)
     text = json.dumps(result, ensure_ascii=False, indent=1)

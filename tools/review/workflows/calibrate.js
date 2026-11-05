@@ -23,12 +23,15 @@ const claude = lens => agent(
 const gpt = lens => agent(
   `다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\n` +
   `cd ${W} && uv run python -m tools.review.gpt_review --prompt "${SB}/wowwork/tools/review/prompts/common.md" --prompt "${SB}/wowwork/tools/review/prompts/lens-${lens}.md" --batch "${SB}/batch.json" --schema tools/review/findings.schema.json --out "${OUT}/gpt-${lens}.json" --cwd "${SB}" --events "${OUT}/gpt-${lens}.events.jsonl"\n\n` +
-  `성공하면 ${OUT}/gpt-${lens}.json 을 Read로 읽고 내용을 한 글자도 바꾸지 않고 구조화 출력으로 돌려준다. 실패하면 한 번만 다시 실행하고, 그래도 실패하면 findings를 빈 배열로 돌려준다. 판단을 직접 하지 않는다.`,
-  { label: `gpt:${lens}`, phase: 'Review', schema: FINDINGS, effort: 'low' })
+  `성공하면 ${OUT}/gpt-${lens}.json 을 Read로 읽고 내용을 한 글자도 바꾸지 않고 구조화 출력으로 돌려준다. 성공했으면 ok를 true로 한다. 실패하면 한 번만 다시 실행하고, 그래도 실패하면 ok를 false로 하고 배열은 비운다. 판단을 직접 하지 않는다.`,
+  { label: `gpt:${lens}`, phase: 'Review', schema: { ...FINDINGS, required: ['findings', 'ok'], properties: { ...FINDINGS.properties, ok: { type: 'boolean' } } }, effort: 'low' })
+  .then(r => (r && r.ok === true ? r : null))
 
 phase('Review')
 const runs = (await parallel([
   ...LENSES.map(l => () => claude(l).then(r => r && { provider: 'claude', lens: l, findings: r.findings })),
   ...LENSES.map(l => () => gpt(l).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
 ])).filter(Boolean)
-return runs
+const failed = 8 - runs.length
+if (failed) log(`평가자 실패 ${failed}명: 이 검증은 무효다`)
+return { failedReviewers: failed, result: runs }

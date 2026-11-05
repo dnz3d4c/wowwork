@@ -5,16 +5,19 @@ from __future__ import annotations
 import re
 
 # 판정 근거로 인정하는 자료. 번역 쪽이 쓴 문서(계획, 반박문, 평가 기록)는 근거가 아니다.
+# "/"로 끝나는 것은 그 폴더 안 파일, 나머지는 정확히 그 파일만.
 ALLOWED_EVIDENCE = (
     "wowvision-ko/WowVision/",
     "wowvision-ko/vision-locale/enUS/",
     "wowvision-ko/vision-locale/koKR/",
-    "wowwork/cache/gs_",
+    "wowwork/cache/gs_enUS.csv",
+    "wowwork/cache/gs_koKR.csv",
     "wowwork/cache/game_terms.tsv",
     "wowwork/docs/translation-guide.md",
     "wowwork/docs/decisions.tsv",
     "wowwork/docs/glossary.tsv",
 )
+_LINE_SUFFIX = re.compile(r":\d+(?:-\d+)?$")
 _ABS_PATH = re.compile(r"[A-Za-z]:[\\/][^\s\"'`;|<>,)]*")
 
 
@@ -27,13 +30,27 @@ def valid_evidence(sources: list[str]) -> bool:
     """비어 있지 않고 전부 허용 자료여야 한다. "input"은 평가 입력(원문·번역·코드 사용처)이다."""
     if not sources:
         return False
-    for src in sources:
-        s = _norm(src)
-        if s == "input":
+    return all(_norm(src) == "input" or _allowed_path(src) for src in sources)
+
+
+def _allowed_path(src: str) -> bool:
+    """줄 표시(:12, :12-15)를 뗀 경로가 허용 파일과 정확히 같거나 허용 폴더 안에 있어야 한다.
+
+    허용 항목은 경로 구분자 경계에서 시작해야 한다(notwowwork/... 불가). 절대 경로도 된다.
+    """
+    path = _LINE_SUFFIX.sub("", _norm(src)).lower()
+    if "#" in path or "?" in path or "/../" in f"/{path}/":
+        return False
+    for allowed in (a.lower() for a in ALLOWED_EVIDENCE):
+        idx = path.find(allowed)
+        if idx < 0 or (idx > 0 and path[idx - 1] != "/"):
             continue
-        if not any(allowed.lower() in s.lower() for allowed in ALLOWED_EVIDENCE):
-            return False
-    return True
+        rest = path[idx + len(allowed) :]
+        if allowed.endswith("/") and rest:
+            return True
+        if not allowed.endswith("/") and rest == "":
+            return True
+    return False
 
 
 def foreign_paths(text: str, root: str) -> list[str]:
