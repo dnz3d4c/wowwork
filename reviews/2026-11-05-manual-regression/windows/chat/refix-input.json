@@ -1,0 +1,26 @@
+[
+ {
+  "by": "claude",
+  "id": "windows/chat.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "추가하려면 WowVision 메뉴를 열고 버퍼로 가서 그룹에 버퍼를 추가하고 유형으로 대화 탭 버퍼를 고릅니다.",
+  "suggestion": "추가하려면 WowVision 메뉴를 열고 버퍼로 가서 그룹에 버퍼를 추가하고 종류로 대화 탭 버퍼를 고릅니다.",
+  "problem": "원문 type은 버퍼 추가 화면의 Type 항목을 가리키는데, 화면 문구는 '종류'(버퍼 종류 선택)라서 '유형'으로 들으면 화면에서 찾을 글자와 다르다. 다른 설명서 파일과도 표기가 다르다.",
+  "evidence": "원문: \"pick Chat Tab Buffer as its type\". vision-locale/koKR/ui.lua:81 L[\"Type\"] = \"종류\", ui.lua:215 L[\"Select Buffer Type\"] = \"버퍼 종류 선택\". 다른 파일: WowVision/docs/src/user/ko/information/buffers.md:263 \"종류를 고릅니다: 고정 버퍼, 추적 버퍼(...), 오라 버퍼, 대화 탭 버퍼.\"",
+  "ref": "windows/chat.md#reg-claude-0",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "windows/chat.md",
+  "category": "accuracy",
+  "severity": "major",
+  "quote": "WowVision이 탭을 잡아낼 때 이미 탭에 있던 줄(예: 게임이 있던 탭에서 새 귓속말 탭으로 복사해 오는 줄)은 다시 읽지 않습니다.",
+  "suggestion": "WowVision이 탭을 감지했을 때 이미 탭에 있던 줄(예: 게임이 사용자가 보고 있던 탭에서 새 귓속말 탭으로 복사한 줄)은 다시 읽지 않습니다.",
+  "problem": "원문의 ‘사용자가 있던 탭’이 ‘게임이 있던 탭’으로 바뀌어, 복사해 온 줄의 출처가 잘못 전달된다.",
+  "evidence": "원문 wowvision-ko/WowVision/docs/src/user/en/windows/chat.md:65는 “the tab you were in”이라고 명시한다. 번역문 wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md:66은 그 주체를 게임으로 바꿨다.",
+  "ref": "windows/chat.md#reg-gpt-1",
+  "consensus": false
+ }
+]

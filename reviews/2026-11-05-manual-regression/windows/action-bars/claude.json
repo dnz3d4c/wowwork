@@ -1,0 +1,58 @@
+{
+  "findings": [
+    {
+      "id": "windows/action-bars.md",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "행동 단축바에서는 끌기 키(\\\\ 또는 Ctrl+D)와 칸의 상황별 메뉴에 있는 끌기 항목이 똑같이 작동합니다. 어느 쪽으로 집어 들어도 WowVision은 커서에 올라온 것이 단축바 바로 가기일 뿐이라고 알게 되므로, Delete가 실제 아이템을 파괴하겠느냐고 묻는 일이 없습니다.",
+      "suggestion": "행동 단축바에서 무언가를 집어 들 때는 칸의 상황별 메뉴에 있는 끌기 항목 말고 끌기 키(\\\\ 또는 Ctrl+D)를 쓰십시오. 끌기 키를 쓰면 WowVision이 커서에 올라온 것이 단축바 바로 가기일 뿐이라고 알게 되므로, Delete가 실제 아이템을 파괴하겠느냐고 묻는 일이 없습니다. (이어지는 \"아이템 바로 가기를 집어 들었다면 Delete는 바로 가기만 지우고, 아이템은 가방에 그대로 남습니다.\"도 \"아이템 바로 가기를 상황별 메뉴로 집어 들면 WowVision은 그것을 가방의 실제 아이템으로 여기고, Delete를 누르면 그 아이템의 파괴 확인 창이 열립니다. 이 차이는 단축바의 아이템에만 해당합니다.\"로 바꾼다.)",
+      "problem": "원문은 상황별 메뉴의 Drag 대신 끌기 키를 쓰라고 하고, 메뉴로 집으면 Delete가 실제 아이템 파괴 확인을 연다고 경고한다. 번역은 두 방법이 똑같다고 뜻을 뒤집었고, 메뉴로 집었을 때의 경고와 '이 차이는 단축바의 아이템에만 해당한다'는 문장을 지웠다. 코드(bars.lua:163-164)는 실제로 메뉴 끌기도 같은 drag 함수를 써서 번역 쪽이 실제 동작과는 맞지만, 사용자 결정은 원문과 동작이 다르면 원문에 충실하게 옮기고 차이는 upstream에 보고하라는 것이다. 한국어 사용자에게만 생기는 차이도 아니므로 예외에 해당하지 않는다.",
+      "evidence": "원문: \"Use the Drag key (\\\\ or Ctrl+D) when you pick something up from an action bar, rather than the Drag entry in the slot's context menu. ... If you pick up an item shortcut through the context menu instead, WowVision treats it as a real bag item, and Delete then opens the destroy confirmation for that item. This matters only for items on a bar.\" / wowwork/docs/decisions.tsv 2026-11-05 '설명서: 원문이 실제 애드온 동작과 다를 때 — 원문에 충실하게 옮긴다 ... 예외: 한국어 사용자에게만 생기는 차이' / wowvision-ko/WowVision/core/windows/bars/bars.lua:163 '-- The context menu's Drag is the same pickup as the drag key.'"
+    },
+    {
+      "id": "windows/action-bars.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "양쪽 어깨 버튼을 누른 채 왼쪽 스틱을 누르십시오. [게임패드로 플레이하기](../controller.md)를 참고하십시오.",
+      "suggestion": "양쪽 어깨 버튼을 누른 채 왼쪽 스틱을 누르십시오. [컨트롤러](../controller.md)를 참고하십시오.",
+      "problem": "링크 글자를 원문(Controller)이 아니라 대상 페이지 제목으로 바꿨다. 사용자 결정 위반이다.",
+      "evidence": "원문: \"See [Controller](../controller.md).\" / wowwork/docs/decisions.tsv 2026-11-05 '설명서: 링크 글자가 대상 페이지 제목과 다를 때 — 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)' / 다른 파일은 [컨트롤러](../controller.md) 표기도 쓴다(ko 아래 Grep, 5곳)"
+    },
+    {
+      "id": "windows/action-bars.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "WowVision 자체의 컨트롤러 키는 [게임패드로 플레이하기](../controller.md)를 참고하십시오.",
+      "suggestion": "WowVision 자체의 컨트롤러 키는 [컨트롤러](../controller.md)를 참고하십시오.",
+      "problem": "링크 글자를 원문(Controller)이 아니라 대상 페이지 제목으로 바꿨다. 사용자 결정 위반이다.",
+      "evidence": "원문: \"See [Controller](../controller.md) for the controller keys of WowVision itself.\" / wowwork/docs/decisions.tsv 2026-11-05 링크 글자 결정"
+    },
+    {
+      "id": "windows/action-bars.md",
+      "category": "style",
+      "severity": "major",
+      "quote": "마우스를 올렸을 때 게임이 보여 줄 주문이나 아이템 툴팁입니다. [툴팁 읽기](../basics/tooltips.md)을 참고하십시오.",
+      "suggestion": "마우스를 올렸을 때 게임이 보여 줄 주문이나 아이템 툴팁입니다. [툴팁](../basics/tooltips.md)을 참고하십시오.",
+      "problem": "링크 글자를 원문(Tooltips)이 아닌 대상 페이지 제목 '툴팁 읽기'로 바꿔 사용자 결정을 어겼고, 바꾸면서 조사를 고치지 않아 '읽기을'이라는 틀린 조사가 남았다(수정 때문에 생긴 결함). 원문 링크 글자 '툴팁'으로 돌리면 조사 '을'도 맞는다.",
+      "evidence": "원문: \"See [Tooltips](../basics/tooltips.md).\" / wowwork/docs/decisions.tsv 2026-11-05 링크 글자 결정 / 받침 없는 '읽기' 뒤에는 '를'이 와야 한다"
+    },
+    {
+      "id": "windows/action-bars.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "[WowVision 메뉴와 설정](../basics/menu-and-settings.md)을 참고하십시오.",
+      "suggestion": "[메뉴와 설정](../basics/menu-and-settings.md)을 참고하십시오.",
+      "problem": "링크 글자에 원문에 없는 'WowVision'을 붙여 대상 페이지 제목에 맞췄다. 사용자 결정 위반이다.",
+      "evidence": "원문: \"See [Menu and settings](../basics/menu-and-settings.md).\" / wowwork/docs/decisions.tsv 2026-11-05 링크 글자 결정 / 다른 파일에 [메뉴와 설정](../basics/menu-and-settings.md) 표기도 있다(ko 아래 Grep, 3곳)"
+    },
+    {
+      "id": "windows/action-bars.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "주문, 아이템, 매크로, 탈것, 애완동물, 장비 구성, 펼침 메뉴는 모두 이름으로 읽습니다.",
+      "suggestion": "주문, 아이템, 매크로, 탈것, 전투 애완동물, 장비 구성, 펼침 메뉴는 모두 이름으로 읽습니다.",
+      "problem": "battle pets를 '애완동물'로 줄였다. 게임 공식 용어와 다른 설명서 파일은 '전투 애완동물'이다.",
+      "evidence": "원문: \"battle pets\" / wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:4 '탈것, 전투 애완동물, 장난감'"
+    }
+  ]
+}

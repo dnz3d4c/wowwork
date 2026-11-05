@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "world/quests.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "퀘스트 제목, 설명, 목표 글, 그리고 \"Kobold Vermin slain: 3/10\" 같은 각 목표가 들어 있습니다.",
+      "suggestion": "퀘스트 제목, 설명, 목표 글, 그리고 \"코볼트 졸개 처치: 3/10\" 같은 각 목표가 들어 있습니다.",
+      "problem": "같은 원문 예시(Kobold Vermin slain: 3/10)를 다른 설명서 파일은 한국어 게임 표기로 옮겼는데 이 파일만 영어 그대로 둬서, 설명서끼리 같은 목표 줄이 다르게 들린다. 한국어 클라이언트에서 목표 줄은 게임이 주는 한국어로 나온다.",
+      "evidence": "원문: such as \"Kobold Vermin slain: 3/10\". 다른 파일: wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:58 \"코볼트 졸개 처치: 3/10\". 같은 파일 안에서도 지명(엘윈 숲, 황금골, 언덕골)은 한국어로 옮겼다."
+    },
+    {
+      "id": "world/quests.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "둘 다 없는 곳에서는 스캐너의 퀘스트와 NPC 분류에 \"퀘스트 데이터 원본 없음\" 한 줄만 있습니다.",
+      "suggestion": "둘 다 없는 곳에서는 스캐너의 퀘스트와 NPC 범주에 \"퀘스트 데이터 원본 없음\" 한 줄만 있습니다.",
+      "problem": "스캐너의 category를 이 파일은 '분류'로, 스캐너 설명서와 애드온 설정 이름은 '범주'로 쓴다. 같은 파일 아래쪽 '스캐너 NPC 분류의 NPC 역할 그룹'도 '스캐너 NPC 범주의 NPC 역할 그룹'으로 함께 고쳐야 한다.",
+      "evidence": "원문: the Scanner's Quests and NPCs categories / the Scanner's NPCs category. wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:10, :34 \"## 범주\", :54 \"퀘스트 범주 전체에\". vision-locale/koKR/scanner.lua:7 L[\"Entries Per Category\"] = \"범주별 항목 수\"."
+    }
+  ]
+}

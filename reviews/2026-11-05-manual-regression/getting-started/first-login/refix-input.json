@@ -1,0 +1,26 @@
+[
+ {
+  "by": "gpt",
+  "id": "getting-started/first-login.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "맨 처음 실행할 때 음성, 언어, 지역, 게임 종류를 묻습니다. 오른쪽 화살표 키로 들어가고, 위아래 화살표 키로 고른 다음 Enter로 확정합니다.",
+  "suggestion": "맨 처음 실행할 때 음성, 언어, 지역, 게임 종류를 묻습니다. Right로 들어가고, Up과 Down으로 고른 다음 Enter로 확정합니다.",
+  "problem": "키 이름 Right, Up, Down을 한국어로 번역했습니다. 같은 문장에서 Enter는 원문대로 두어 표기도 일관되지 않습니다.",
+  "evidence": "원문은 \"Right goes in, Up and Down choose, Enter confirms.\"입니다. wowwork/tools/review/prompts/manual-translate.md:17과 wowwork/docs/translation-guide.md:42는 키 이름을 영어 그대로 두도록 규정합니다.",
+  "ref": "getting-started/first-login.md#reg-gpt-0",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "getting-started/first-login.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "Classic Era와 The Burning Crusade에서는 Select character로 가서 오른쪽을 누르고, 위와 아래로 캐릭터를 고른 뒤 Enter를 누르고, Login with selected character에서 Enter를 누릅니다.",
+  "suggestion": "Classic Era와 The Burning Crusade에서는 Select character로 가서 Right를 누르고, Up과 Down으로 캐릭터를 고른 뒤 Enter를 누르고, Login with selected character에서 Enter를 누릅니다.",
+  "problem": "키 이름 Right, Up, Down을 방향을 나타내는 일반 명사처럼 번역했습니다. 앞 항목의 \"오른쪽 화살표 키\", \"위아래 화살표 키\"와도 표기가 다릅니다.",
+  "evidence": "원문은 \"press Right, choose your character with Up and Down\"입니다. wowwork/tools/review/prompts/manual-translate.md:17과 wowwork/docs/translation-guide.md:42는 키 이름을 영어 그대로 두도록 규정합니다. 같은 파일 13행은 이를 각각 \"오른쪽 화살표 키\", \"위아래 화살표 키\"로 다르게 표기합니다.",
+  "ref": "getting-started/first-login.md#reg-gpt-1",
+  "consensus": false
+ }
+]

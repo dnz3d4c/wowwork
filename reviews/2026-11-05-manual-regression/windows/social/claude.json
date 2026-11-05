@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "id": "windows/social.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "이 창들은 모두 비장애인 플레이어이 여는 방법 그대로, 게임 자체의 키와 버튼으로 엽니다.",
+      "suggestion": "이 창들은 모두 비장애인 플레이어가 여는 방법 그대로, 게임 자체의 키와 버튼으로 엽니다.",
+      "problem": "주격 조사 오류. '플레이어' 뒤에는 '가'가 와야 하는데 '이'가 붙었다. sighted 표기를 '비장애인'으로 바꾸는 수정에서 앞 낱말(받침 있는 말)에 맞던 조사가 그대로 남은 회귀로 보인다.",
+      "evidence": "원문 'the way a sighted player opens them'. decisions.tsv 2026-11-05 '설명서: sighted ... 비장애인으로 옮긴다(이전 표기 23곳을 바꿨다)'. docs/src/user/ko 전체에서 '플레이어이'는 이 파일 6행 한 곳뿐(Grep)."
+    },
+    {
+      "id": "windows/social.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "3. Enter를 누르고 게임의 상자에 새 메모를 입력한 다음 Enter를 눌러 저장합니다.",
+      "suggestion": "3. Enter를 누르고 게임의 상자에 새 쪽지를 입력한 다음 Enter를 눌러 저장합니다.",
+      "problem": "같은 예시(길드관리자 쪽지 설정하기)의 2단계는 '길드관리자 쪽지 버튼', '쪽지의 현재 내용'으로 고쳤는데 3단계는 '새 메모'로 남아 한 예시 안에서 같은 대상을 두 이름으로 부른다.",
+      "evidence": "원문 2단계 'the Officer Note button. It says the note's current text', 3단계 'type the new note'. 게임 문구 GUILD_OFFICER_NOTE=길드관리자 쪽지 (cache/gs_koKR.csv)."
+    },
+    {
+      "id": "windows/social.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "승급과 강등 버튼(쓸 수 있는 길드관리자에게만), 개인 메모, 길드관리자라면 길드관리자 쪽지",
+      "suggestion": "승급과 강등 버튼(쓸 수 있는 길드관리자에게만), 공개 쪽지, 길드관리자라면 길드관리자 쪽지",
+      "problem": "WowVision은 이 항목을 게임 라벨(GuildMemberDetailNoteLabel)로 읽으므로 사용자는 '공개 쪽지'를 듣는다. '개인 메모'는 화면 문구와 다르고, 바로 뒤의 '길드관리자 쪽지'와도 '메모/쪽지'로 갈린다. 원문 personal note가 소문자 일반 서술이라 경미로 둔다.",
+      "evidence": "WowVision/classic/guild.lua:333 addNote(..., GuildMemberDetailNoteLabel, PersonalNoteText). 게임 문구 PUBLIC_NOTE=공개 쪽지, GUILD_OFFICER_NOTE=길드관리자 쪽지 (cache/gs_koKR.csv)."
+    },
+    {
+      "id": "windows/social.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "읽지 않은 메시지가 있으면 읽지 않음으로 건너뛰기가 뒤에 나옵니다.",
+      "suggestion": "읽지 않은 메시지가 있으면 그 뒤에 읽지 않음 버튼(읽지 않은 메시지로 건너뛰기)이 나옵니다.",
+      "problem": "버튼 이름처럼 쓴 '읽지 않음으로 건너뛰기'는 게임 버튼 글자 '읽지 않음'과 다르다. 사용자가 듣는 이름은 '읽지 않음'이다.",
+      "evidence": "원문 'Jump to Unread follows when there is one'. 게임 문구 COMMUNITIES_FRAME_JUMP_TO_UNREAD=읽지 않음 (cache/gs_koKR.csv:16814), terms Unread=읽지 않음."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "by": "gpt",
+  "id": "world/combat.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "WowVision이 창 탐색에 가져가 쓰던 키(화살표 키, Tab과 Ctrl+Tab, Home과 End, 메뉴 키, 메뉴의 글자 탐색, 그리고 머물던 요소의 키)는 게임에 돌려줍니다.",
+  "suggestion": "WowVision이 창 탐색에 가져가 쓰던 키(화살표 키, Tab과 Ctrl+Tab, Home과 End, 상황별 메뉴 키, 메뉴의 글자 탐색, 그리고 머물던 요소의 키)는 게임에 돌려줍니다.",
+  "problem": "원문의 \"context menu key\"를 \"메뉴 키\"로 줄여 실제 기능명과 다른 표현이 됐다. 다른 설명서의 같은 키 표기와도 일치하지 않아 어떤 키를 뜻하는지 혼동할 수 있다.",
+  "evidence": "원문은 \"the context menu key\"이다. 실제 한국어 로캘은 wowvision-ko/vision-locale/koKR/bindings.lua:24에서 \"Context Menu\"를 \"상황별 메뉴\"로 번역한다. 다른 한국어 설명서 wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:10도 같은 키를 \"상황별 메뉴 키\"로 표기한다.",
+  "ref": "world/combat.md#reg-gpt-0",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "world/combat.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "| 정예 적만 세기 | 끔 | 일반 몬스터를 뺍니다. 정예, 희귀 정예, 월드 보스는 그대로 셉니다 |",
+  "suggestion": "| 정예 적만 세기 | 끔 | 일반 몬스터를 뺍니다. 정예, 희귀 정예, 야외 우두머리는 그대로 셉니다 |",
+  "problem": "게임 공식 용어인 \"야외 우두머리\" 대신 비공식 표현 \"월드 보스\"를 사용했다.",
+  "evidence": "원문은 \"Elites, rare elites and world bosses still count\"이다. 게임 문자열은 wowwork/cache/gs_enUS.csv:22679의 MAP_LEGEND_WORLDBOSS \"World Boss\"와 대응하는 wowwork/cache/gs_koKR.csv:22688에서 \"야외 우두머리\"로 확정돼 있다. 번역 지침은 용어표에 없는 게임 용어에 공식 한국어를 사용하도록 규정한다.",
+  "ref": "world/combat.md#reg-gpt-1",
+  "consensus": false
+ }
+]

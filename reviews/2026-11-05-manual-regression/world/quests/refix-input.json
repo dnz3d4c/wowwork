@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "world/quests.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "퀘스트 제목, 설명, 목표 글, 그리고 \"Kobold Vermin slain: 3/10\" 같은 각 목표가 들어 있습니다.",
+  "suggestion": "퀘스트 제목, 설명, 목표 글, 그리고 \"코볼트 졸개 처치: 3/10\" 같은 각 목표가 들어 있습니다.",
+  "problem": "한국어 클라이언트에서 표시되는 퀘스트 목표 예시를 영어로 남겨 실제로 듣는 문구와 다르다. 같은 예시를 다루는 다른 설명서 파일과도 표기가 일치하지 않는다.",
+  "evidence": "wowwork/cache/gs_enUS.csv:3514와 gs_koKR.csv:3517에서 \"%s slain: %d/%d\"는 \"%s 처치: %d/%d\"로 대응한다. wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:58은 같은 예시를 \"코볼트 졸개 처치: 3/10\"으로 쓴다. manual-translate.md 용어 2항은 게임 용어에 공식 한국어를 쓰도록 정한다.",
+  "ref": "world/quests.md#reg-gpt-0",
+  "consensus": false
+ }
+]

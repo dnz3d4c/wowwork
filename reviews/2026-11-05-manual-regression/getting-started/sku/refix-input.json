@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "getting-started/sku.md",
+  "category": "accuracy",
+  "severity": "major",
+  "quote": "게임이 WowVision을 로드할 때 이미 로드된 애드온을 확인합니다.",
+  "suggestion": "게임이 WowVision을 로드하면 WowVision은 이미 로드된 애드온을 확인합니다.",
+  "problem": "한국어 문장에서는 앞의 주어인 ‘게임’이 애드온도 확인하는 것으로 읽힙니다. 실제 확인 주체인 WowVision이 빠져 원문의 동작 주체가 바뀌었습니다.",
+  "evidence": "원문은 “When the game loads WowVision, it checks which addons are already loaded.”이며, 두 번째 it은 WowVision을 가리킵니다. 실제 충돌 판정도 WowVision의 등록 로직에서 처리됩니다(wowvision-ko/WowVision/core/WowVision.lua:856, wowvision-ko/WowVision/core/windows/gossip.lua:228).",
+  "ref": "getting-started/sku.md#reg-gpt-0",
+  "consensus": false
+ }
+]

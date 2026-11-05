@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "동부 왕국 (지역 26곳, 수도 스톰윈드, 아이언포지, 언더시티와 Riverglades 포함)",
+   "suggestion": "동부 왕국 (지역 26곳, 수도인 스톰윈드, 아이언포지, 언더시티와 함께 Riverglades 포함)",
+   "problem": "\"수도 스톰윈드, 아이언포지, 언더시티와 Riverglades\"로 한 덩어리로 이어 놓아, 들었을 때 Riverglades도 수도 목록의 네 번째 항목처럼 들린다. 뜻은 크게 틀리지 않으므로 경미.",
+   "evidence": "원문 \"including the capitals Stormwind, Ironforge and Undercity, and Riverglades\"는 쉼표와 and로 수도 묶음과 Riverglades를 따로 떼어 놓는다. 칼림도어 항목은 원문에 capitals가 없어 해당 없음."
+  }
+ ]
+}

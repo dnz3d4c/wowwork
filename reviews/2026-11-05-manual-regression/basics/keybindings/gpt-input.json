@@ -1,0 +1,161 @@
+{
+ "file": "basics/keybindings.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md",
+ "en": "# Keybindings\n\nEvery key WowVision uses can be changed. The keybinding screen lists each action, the keys it has, and lets you add keys, remove keys and move a key from one action to another. This page explains how to use it and what the messages mean. The complete list of actions and their default keys is in the [keybinding reference](../reference/keybindings.md).\n\n## Opening the keybinding screen\n\n1. Press Shift+F1 (or type /wv) to open the [WowVision menu](./menu-and-settings.md).\n2. Press U to reach UI and press Enter.\n3. Press Down to Bindings and press Enter.\n\nYou land on the first binding and hear, for example, \"Bindings, List, Up, Bar, Up Arrow, Button, 1 of 2\". Escape goes back to the UI menu.\n\nFaster: type /wv bind. It opens the same screen directly as its own window; Escape then closes it.\n\n## What the screen looks like\n\nEach action has one row. A row holds, from left to right:\n\n- one button per key the action currently has, named after the key (\"Enter\", \"Up Arrow\", \"Ctrl-Tab\"),\n- an Add button,\n- with the game's gamepad interface on, one button per controller button and an Add Controller Button button (see [Controller buttons](#controller-buttons-retail-wow-forever)).\n\nThe row is announced by the action's name, then \"Bar\", then the button you land on, for example \"Left Click, Bar, Enter, Button, 1 of 2\". An action that has no key at all (and no controller buttons showing) has only Add in its row, and is announced as \"List\" instead of \"Bar\".\n\n| Key | What it does here |\n|---|---|\n| Down / Up | Move to the next or previous action. |\n| Right / Left | Move along the row of keys, Add and so on. |\n| Enter on a key | Removes that key from the action. |\n| Enter on Add | Starts capturing a new key. |\n| Escape | Leaves the screen. |\n\nThe actions are listed in the order the addon loaded them: the window navigation keys first, then the other modules. There are many of them and no search, so press Down repeatedly to run through the list. Letter keys only jump along the row you are on, not between actions.\n\nAn action that has no key shows only Add. These are the actions that are \"unbound by default\": they exist but are waiting for you to give them a key, for example Toggle All Monitors, Route to Your Target or Announce Distance.\n\n## Adding a key\n\n1. Move to the action's Add button and press Enter. WowVision says the action's name and captures the keyboard. While capturing, no key reaches the game or WowVision's own actions.\n2. Press the key combination you want, for example hold Alt and press D. As you press, WowVision reads the combination, such as \"ALT-D\".\n3. Let go of the main key. The combination is added to the action. Modifiers are always written in the order Alt, Ctrl, Shift, so \"ALT-CTRL-SHIFT-K\".\n\nThings to know while capturing:\n\n- Escape cancels the capture. For that reason Escape itself cannot be given to an action here.\n- A modifier on its own (just Shift, just Ctrl) cannot be bound. It only counts as part of a combination with another key.\n- The combination counts as the modifiers you were holding when the main key went down. It is fine to release Alt a moment before the letter.\n- You hear nothing more after the key is added. Press Left from Add to hear the new key's button.\n\nExample: give Announce Distance the key Alt+D.\n\n1. Open the keybinding screen as above.\n2. Press Down until you hear \"Announce Distance, List, Add, Button\".\n3. Press Enter. You hear \"Announce Distance\".\n4. Hold Alt, press D, release both. You hear \"ALT-D\" when the key goes down.\n5. Press Left to hear \"Alt-D, Button\". The key is saved and active at once.\n\nAn action can have several keys. Drag, for instance, ships with \\\\ and Ctrl+D. Add as many as you like.\n\n## Removing a key\n\nPress Enter on a key's button. It is removed immediately, without asking, and you hear where focus lands next. To change a key, add the new one and then remove the old one, or the other way around.\n\nYou can remove all keys from most actions; the action then simply has no key until you add one. The exceptions are the vital actions below.\n\n## Conflicts\n\nTwo actions cannot share one key. When the key you capture already belongs to another action, you hear one of these:\n\n| What you hear | What it means | What to do |\n|---|---|---|\n| \"This input already exists for this binding.\" | The action already has this key. | Nothing changed. |\n| \"This input conflicts with (action name). Replace?\" followed by Yes and No | Another action has this key. | Yes takes the key away from that action and gives it to this one. No, or Escape, changes nothing. |\n| \"Cannot replace this binding as it requires at least one input.\" | The other action is a vital one and this is its only key. | Give that action another key first, then try again. |\n\nExample: you want Space to act as Left Click as well. Open Add on Left Click, press Space. You hear \"This input conflicts with Read Tooltip. Replace?\". Press Down to Yes and Enter. Space now clicks, and Read Tooltip has lost its key; give it another one, for instance Shift+Space, if you still want it.\n\nWowVision only checks keys against its own actions. The game's own key bindings are not checked, and while WowVision's key is active it takes precedence. Pick keys you do not need for something else.\n\n## Vital actions\n\nVital actions keep at least one key at all times, so you can never lock yourself out of the interface. Trying to remove the last key of one gives \"Cannot remove; Binding must have at least one input.\" You can still add another key and then remove the old one.\n\n| Action | Default key |\n|---|---|\n| Up | Up |\n| Down | Down |\n| Left | Left |\n| Right | Right |\n| Next | Tab |\n| Previous | Shift+Tab |\n| Next Window | Ctrl+Tab |\n| Previous Window | Ctrl+Shift+Tab |\n| Close | Escape |\n| Left Click | Enter |\n| Right Click | Backspace |\n| Drag | \\\\ and Ctrl+D |\n| Scroll Up | Page Up |\n| Scroll Down | Page Down |\n| Context Menu | Shift+F10 |\n\nThe other actions, such as Jump to Beginning, Jump to End, Read Tooltip, WowVision Menu and Destroy Cursor Item, may have all their keys removed. If you ever remove every key from WowVision Menu, you can still open the menu by typing /wv.\n\nThe navigation keys above are only active while a WowVision window is open. With no window open, they belong to the game as usual. Other actions, such as the buffer keys, the scanner key (F9) and the navigation window key (F10), are active all the time. See [Using the interface](./interface.md).\n\n## Where your changes are kept\n\nKey bindings are account-wide, so a key you change on one character changes on all of them. To give one character its own keys, go to Bindings in the UI menu, press Shift+F10, choose Scope, then your character's name. That character gets a copy of the current keys, all of them at once; choose Global to go back to the shared keys. There is no \"reset to defaults\" button; to restore a default key, add it back from the [keybinding reference](../reference/keybindings.md).\n\n## Keys that stay off when Sku is loaded\n\nIf you run the addon Sku as well, WowVision does not take a few keys that Sku also uses, so the two do not fight. These are the four tooltip line keys (Shift+Up, Shift+Down, Shift+Left, Shift+Right), the soft targeting keys (Shift+I, Shift+P, Shift+O) and the five Target Focus keys. Other commands that Sku also has, such as /pquit, /dquit and /focus1 to /focus5, are likewise left to Sku. The keys still show in the keybinding screen, but they do nothing while Sku is loaded. In the same way, WowVision leaves many game windows (bags, merchant, gossip, mail, trade, quest and others) to Sku.\n\n## Controller buttons (Retail, WoW: Forever)\n\nWhen the game's gamepad options are on, each row of the keybinding screen also shows the controller buttons assigned to the action, followed by Add Controller Button. They work like keys:\n\n- Enter on a controller button removes it.\n- Enter on Add Controller Button says the action's name followed by \"Press a controller button\". Press the button you want. The shoulder buttons, the triggers and the right stick press can be held as modifiers, so \"right trigger plus A\" is a combination of its own. A modifier pressed and released on its own counts as the button itself.\n- The same conflict messages apply. Escape on the keyboard, ten seconds with no button, or the start of combat cancels the capture with \"Cancelled\". Capturing is not possible in combat: you hear \"Not in combat\".\n\nThe action Close (Controller) has no keyboard key by default. It lets the controller's close button run the game's own Escape on windows where Escape stays with the game.\n\nAll the details are on the [Controller page](../controller.md).\n\n## See also\n\n- [Keybinding reference](../reference/keybindings.md)\n- [Using the interface](./interface.md)\n- [The WowVision menu and settings](./menu-and-settings.md)\n",
+ "ko": "<!-- source: docs/src/user/en/basics/keybindings.md @ 397ffc3 -->\n# 단축키\n\nWowVision이 쓰는 키는 모두 바꿀 수 있습니다. 단축키 화면은 각 동작과 그 동작에 지정된 키를 보여 주고, 키를 추가하거나 제거하거나 한 동작에서 다른 동작으로 옮길 수 있게 합니다. 이 페이지는 그 화면을 쓰는 방법과 안내 문구의 뜻을 설명합니다. 전체 동작 목록과 기본 키는 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.\n\n## 단축키 화면 열기\n\n1. Shift+F1을 누르거나 /wv를 입력해 [WowVision 메뉴](./menu-and-settings.md)를 엽니다.\n2. Down으로 인터페이스까지 내려가 Enter를 누릅니다.\n3. Down으로 단축키까지 내려가 Enter를 누릅니다.\n\n초점이 첫 단축키에 놓이고, 예를 들어 \"단축키, 목록, 위, 막대, Up Arrow, 버튼, 1 of 2\"라고 들립니다. Escape를 누르면 인터페이스 메뉴로 돌아갑니다.\n\n더 빠른 방법: /wv bind를 입력합니다. 같은 화면이 별도 창으로 바로 열리며, 이때는 Escape를 누르면 닫힙니다.\n\n## 화면 구성\n\n동작마다 한 줄이 있습니다. 한 줄에는 왼쪽부터 다음이 들어 있습니다.\n\n- 그 동작에 현재 지정된 키마다 버튼 하나. 버튼 이름은 키 이름입니다(\"Enter\", \"Up Arrow\", \"Ctrl-Tab\").\n- 추가 버튼 하나.\n- 게임의 게임패드 인터페이스가 켜져 있으면 컨트롤러 버튼마다 버튼 하나와 컨트롤러 버튼 추가 버튼([컨트롤러 버튼](#컨트롤러-버튼-리테일-wow-forever) 참고).\n\n줄은 동작 이름, \"막대\", 초점이 놓인 버튼 순서로 읽힙니다. 예를 들어 \"왼쪽 클릭, 막대, Enter, 버튼, 1 of 2\"입니다. 키가 하나도 없는(그리고 표시되는 컨트롤러 버튼도 없는) 동작은 줄에 추가만 있고, \"막대\" 대신 \"목록\"으로 읽힙니다.\n\n| 키 | 이 화면에서 하는 일 |\n|---|---|\n| Down / Up | 다음 또는 이전 동작으로 이동합니다. |\n| Right / Left | 키, 추가 등이 있는 줄을 따라 이동합니다. |\n| 키에서 Enter | 그 키를 동작에서 제거합니다. |\n| 추가에서 Enter | 새 키 입력 받기를 시작합니다. |\n| Escape | 화면에서 나갑니다. |\n\n동작은 애드온이 불러온 순서로 나열됩니다. 창 이동 키가 먼저 나오고 그다음에 다른 모듈이 나옵니다. 동작이 많고 검색 기능이 없으므로 Down을 계속 눌러 목록을 훑습니다. 글자 키를 눌러도 현재 줄 안에서만 이동하며, 다른 동작으로는 넘어가지 않습니다.\n\n키가 없는 동작에는 추가만 표시됩니다. 이것이 \"기본으로 지정되지 않은\" 동작입니다. 동작 자체는 있지만 키는 직접 지정해야 합니다. 예로 모든 모니터 켜고 끄기, 대상까지 경로, 거리 알림이 있습니다.\n\n## 키 추가하기\n\n1. 동작의 추가 버튼으로 가서 Enter를 누릅니다. WowVision이 동작 이름을 말하고 키보드 입력을 받기 시작합니다. 입력을 받는 동안에는 어떤 키도 게임이나 WowVision 자체 동작에 전달되지 않습니다.\n2. 원하는 키 조합을 누릅니다. 예를 들어 Alt를 누른 채 D를 누릅니다. 누르는 대로 WowVision이 \"ALT-D\"처럼 조합을 읽습니다.\n3. 주 키에서 손을 뗍니다. 조합이 동작에 추가됩니다. 보조 키는 항상 Alt, Ctrl, Shift 순서로 적히므로 \"ALT-CTRL-SHIFT-K\"처럼 됩니다.\n\n입력을 받는 동안 알아 둘 점:\n\n- Escape는 입력 받기를 취소합니다. 그래서 여기서는 Escape 자체를 동작에 지정할 수 없습니다.\n- 보조 키 하나만(Shift만, Ctrl만) 지정할 수는 없습니다. 보조 키는 다른 키와 함께 누른 조합의 일부로만 인정됩니다.\n- 조합은 주 키를 누른 순간 누르고 있던 보조 키로 정해집니다. 글자 키보다 Alt를 조금 먼저 떼어도 괜찮습니다.\n- 키가 추가된 뒤에는 아무 소리도 나지 않습니다. 추가에서 Left를 누르면 새 키의 버튼을 들을 수 있습니다.\n\n예: 거리 알림에 Alt+D 키를 지정하기.\n\n1. 위에서처럼 단축키 화면을 엽니다.\n2. \"거리 알림, 목록, 추가, 버튼\"이 들릴 때까지 Down을 누릅니다.\n3. Enter를 누릅니다. \"거리 알림\"이 들립니다.\n4. Alt를 누른 채 D를 누르고 둘 다 뗍니다. 키를 누르는 순간 \"ALT-D\"가 들립니다.\n5. Left를 누르면 \"Alt-D, 버튼\"이 들립니다. 키는 즉시 저장되고 바로 작동합니다.\n\n한 동작에 키를 여러 개 둘 수 있습니다. 예를 들어 끌기는 처음부터 \\\\와 Ctrl+D가 지정되어 있습니다. 원하는 만큼 추가하십시오.\n\n## 키 제거하기\n\n키 버튼에서 Enter를 누르면 묻지 않고 즉시 제거되고, 초점이 옮겨 간 곳을 읽어 줍니다. 키를 바꾸려면 새 키를 추가한 뒤 이전 키를 제거하거나, 반대 순서로 합니다.\n\n대부분의 동작은 키를 모두 제거할 수 있습니다. 그러면 그 동작은 키를 추가할 때까지 키가 없는 상태가 됩니다. 예외는 아래의 필수 동작입니다.\n\n## 충돌\n\n두 동작이 한 키를 함께 쓸 수는 없습니다. 입력한 키가 이미 다른 동작에 지정되어 있으면 다음 중 하나가 들립니다.\n\n| 들리는 말 | 뜻 | 할 일 |\n|---|---|---|\n| \"이 단축키에 이미 있는 입력.\" | 이 동작에 이미 이 키가 있습니다. | 바뀐 것은 없습니다. |\n| \"이 입력과 충돌하는 단축키 (동작 이름). 바꾸시겠습니까?\" 다음에 예와 아니요 | 다른 동작에 이 키가 있습니다. | 예를 고르면 그 동작에서 키를 빼서 이 동작에 줍니다. 아니요나 Escape는 아무것도 바꾸지 않습니다. |\n| \"이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.\" | 다른 동작이 필수 동작이고 이 키가 그 동작의 유일한 키입니다. | 먼저 그 동작에 다른 키를 지정한 뒤 다시 시도합니다. |\n\n예: Space도 왼쪽 클릭으로 쓰고 싶다고 합시다. 왼쪽 클릭 줄의 추가에서 Enter를 누르고 Space를 누릅니다. \"이 입력과 충돌하는 단축키 툴팁 읽기. 바꾸시겠습니까?\"가 들립니다. Down으로 예까지 가서 Enter를 누릅니다. 이제 Space를 누르면 클릭이 되고, 툴팁 읽기에는 키가 없어졌습니다. 툴팁 읽기를 계속 쓰려면 Shift+Space 같은 다른 키를 지정하십시오.\n\nWowVision은 자체 동작끼리만 키를 확인합니다. 게임 자체 단축키는 확인하지 않으며, WowVision 키가 작동하는 동안에는 그 키가 게임 단축키보다 우선합니다. 다른 용도로 필요하지 않은 키를 고르십시오.\n\n## 필수 동작\n\n필수 동작에는 항상 키가 하나 이상 남아 있으므로 인터페이스를 쓸 수 없게 되는 일은 없습니다. 필수 동작의 마지막 키를 제거하려 하면 \"제거 불가; 단축키에는 입력이 하나 이상 있어야 함.\"이 들립니다. 그래도 다른 키를 추가한 뒤 이전 키를 제거할 수는 있습니다.\n\n| 동작 | 기본 키 |\n|---|---|\n| 위 | Up |\n| 아래 | Down |\n| 왼쪽 | Left |\n| 오른쪽 | Right |\n| 다음 | Tab |\n| 이전 | Shift+Tab |\n| 다음 창 | Ctrl+Tab |\n| 이전 창 | Ctrl+Shift+Tab |\n| 닫기 | Escape |\n| 왼쪽 클릭 | Enter |\n| 오른쪽 클릭 | Backspace |\n| 끌기 | \\\\와 Ctrl+D |\n| 위로 스크롤 | Page Up |\n| 아래로 스크롤 | Page Down |\n| 상황별 메뉴 | Shift+F10 |\n\n처음으로 이동, 끝으로 이동, 툴팁 읽기, WowVision 메뉴, 커서 아이템 파괴 같은 다른 동작은 키를 모두 제거해도 됩니다. WowVision 메뉴의 키를 모두 제거했더라도 /wv를 입력하면 메뉴를 열 수 있습니다.\n\n위의 이동 키는 WowVision 창이 열려 있을 때만 작동합니다. 열린 창이 없으면 평소처럼 게임이 이 키를 씁니다. 버퍼 키, 스캐너 키(F9), 길 안내 창 키(F10) 같은 다른 동작은 항상 작동합니다. [인터페이스 사용하기](./interface.md)를 참고하십시오.\n\n## 변경 내용이 저장되는 곳\n\n단축키는 계정 전체에 적용되므로, 한 캐릭터에서 바꾼 키는 모든 캐릭터에서 바뀝니다. 한 캐릭터에만 따로 키를 주려면 인터페이스 메뉴의 단축키로 가서 Shift+F10을 누르고 범위를 고른 뒤 캐릭터 이름을 고릅니다. 선택한 캐릭터에 현재 단축키 전체가 한꺼번에 복사됩니다. 공유 단축키로 돌아가려면 전역을 고릅니다. \"기본값으로 초기화\" 버튼은 없습니다. 기본 키를 되돌리려면 [키 바인딩 목록](../reference/keybindings.md)을 보고 다시 추가합니다.\n\n## Sku를 불러왔을 때 꺼지는 키\n\nSku 애드온도 함께 쓰면, WowVision은 두 애드온이 부딪치지 않도록 Sku도 쓰는 몇몇 키를 차지하지 않습니다. 툴팁 줄 키 네 개(Shift+Up, Shift+Down, Shift+Left, Shift+Right), 소프트 대상 지정 키(Shift+I, Shift+P, Shift+O), 주시 대상 선택 키 다섯 개입니다. /pquit, /dquit, /focus1부터 /focus5처럼 Sku에도 있는 다른 명령도 마찬가지로 Sku에 맡깁니다. 이 키들은 단축키 화면에 계속 표시되지만 Sku를 불러온 동안에는 아무 일도 하지 않습니다. 같은 방식으로 WowVision은 여러 게임 창(가방, 상인, 대화, 우편, 거래, 퀘스트 등)을 Sku에 맡깁니다.\n\n## 컨트롤러 버튼 (리테일, WoW: Forever)\n\n게임의 게임패드 옵션이 켜져 있으면 단축키 화면의 각 줄에 그 동작에 지정된 컨트롤러 버튼과 그 뒤에 컨트롤러 버튼 추가도 표시됩니다. 컨트롤러 버튼은 키와 같은 방식으로 작동합니다.\n\n- 컨트롤러 버튼에서 Enter를 누르면 그 버튼이 제거됩니다.\n- 컨트롤러 버튼 추가에서 Enter를 누르면 동작 이름에 이어 \"컨트롤러 버튼을 누르십시오\"라고 말합니다. 원하는 버튼을 누릅니다. 왼쪽 어깨와 두 트리거는 보조 키처럼 누른 채로 쓸 수 있으므로 \"오른쪽 트리거 + A 버튼\"은 그 자체로 하나의 조합입니다. 양쪽 어깨를 함께 누르면 게임의 바로 가기 층이 되고, 오른쪽 스틱 누르기는 방향 패드와만 조합됩니다. 보조 버튼을 단독으로 눌렀다 떼면 그 버튼 자체로 인정됩니다.\n- 충돌 안내 문구도 같습니다. 다만 필수 동작의 마지막 입력을 지키는 \"이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.\" 안내는 컨트롤러 버튼에는 나오지 않고, 바꾸겠느냐는 확인만 거쳐 버튼이 옮겨 갑니다. 키보드에서 Escape를 누르거나, 10초 동안 버튼을 누르지 않거나, 전투가 시작되면 \"취소됨\"이 들리고 입력 받기가 취소됩니다. 전투 중에는 입력을 받을 수 없으며 \"전투 중에는 불가\"가 들립니다.\n\n닫기 (컨트롤러) 동작에는 기본 키보드 키가 없습니다. 이 동작은 Escape를 게임에 맡기는 창에서 컨트롤러의 닫기 버튼으로 게임 자체의 Escape를 실행하게 합니다.\n\n자세한 내용은 모두 [컨트롤러 페이지](../controller.md)에 있습니다.\n\n## 함께 보기\n\n- [키 바인딩 목록](../reference/keybindings.md)\n- [인터페이스 사용하기](./interface.md)\n- [WowVision 메뉴와 설정](./menu-and-settings.md)\n",
+ "terms": [
+  {
+   "en": "Cannot replace this binding as it requires at least one input.",
+   "ko": "이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음."
+  },
+  {
+   "en": "Cannot remove; Binding must have at least one input.",
+   "ko": "제거 불가; 단축키에는 입력이 하나 이상 있어야 함."
+  },
+  {
+   "en": "This input already exists for this binding.",
+   "ko": "이 단축키에 이미 있는 입력."
+  },
+  {
+   "en": "This input conflicts with",
+   "ko": "이 입력과 충돌하는 단축키"
+  },
+  {
+   "en": "Press a controller button",
+   "ko": "컨트롤러 버튼을 누르십시오"
+  },
+  {
+   "en": "Add Controller Button",
+   "ko": "컨트롤러 버튼 추가"
+  },
+  {
+   "en": "Route to Your Target",
+   "ko": "대상까지 경로"
+  },
+  {
+   "en": "Destroy Cursor Item",
+   "ko": "커서 아이템 파괴"
+  },
+  {
+   "en": "Toggle All Monitors",
+   "ko": "모든 모니터 켜고 끄기"
+  },
+  {
+   "en": "Close (Controller)",
+   "ko": "닫기 (컨트롤러)"
+  },
+  {
+   "en": "Jump to Beginning",
+   "ko": "처음으로 이동"
+  },
+  {
+   "en": "Announce Distance",
+   "ko": "거리 알림"
+  },
+  {
+   "en": "Previous Window",
+   "ko": "이전 창"
+  },
+  {
+   "en": "WowVision Menu",
+   "ko": "WowVision 메뉴"
+  },
+  {
+   "en": "Not in combat",
+   "ko": "전투 중에는 불가"
+  },
+  {
+   "en": "Read Tooltip",
+   "ko": "툴팁 읽기"
+  },
+  {
+   "en": "Context Menu",
+   "ko": "상황별 메뉴"
+  },
+  {
+   "en": "Target Focus",
+   "ko": "주시 대상 선택"
+  },
+  {
+   "en": "Right Click",
+   "ko": "오른쪽 클릭"
+  },
+  {
+   "en": "Jump to End",
+   "ko": "끝으로 이동"
+  },
+  {
+   "en": "Next Window",
+   "ko": "다음 창"
+  },
+  {
+   "en": "Scroll Down",
+   "ko": "아래로 스크롤"
+  },
+  {
+   "en": "Left Click",
+   "ko": "왼쪽 클릭"
+  },
+  {
+   "en": "Scroll Up",
+   "ko": "위로 스크롤"
+  },
+  {
+   "en": "Cancelled",
+   "ko": "취소됨"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Bindings",
+   "ko": "단축키"
+  },
+  {
+   "en": "Previous",
+   "ko": "이전"
+  },
+  {
+   "en": "Monitors",
+   "ko": "모니터"
+  },
+  {
+   "en": "Replace?",
+   "ko": "바꾸시겠습니까?"
+  },
+  {
+   "en": "Tooltip",
+   "ko": "툴팁"
+  },
+  {
+   "en": "Replace",
+   "ko": "바꾸기"
+  },
+  {
+   "en": "Default",
+   "ko": "기본"
+  },
+  {
+   "en": "Cursor",
+   "ko": "커서"
+  },
+  {
+   "en": "Target",
+   "ko": "대상"
+  },
+  {
+   "en": "Button",
+   "ko": "버튼"
+  },
+  {
+   "en": "Global",
+   "ko": "전역"
+  },
+  {
+   "en": "Letter",
+   "ko": "편지"
+  }
+ ]
+}

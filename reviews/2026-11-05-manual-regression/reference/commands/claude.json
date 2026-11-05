@@ -1,0 +1,103 @@
+{
+  "findings": [
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "WowVision 자체가 차단되면 \"차단됨: ...\"도 들립니다.",
+      "suggestion": "WowVision 자체가 차단되면 \"Blocked: ...\"도 들립니다.",
+      "problem": "실제 발화는 번역되지 않은 영어 \"Blocked: <함수>\"인데 번역문은 한국어 \"차단됨: ...\"이 들린다고 안내한다. 독자는 들리지 않는 문구를 기다리게 된다. terms의 Blocked=차단됨은 길 안내의 다른 문자열(navigation.lua)이다.",
+      "evidence": "wowvision-ko/WowVision/core/taintWatch.lua:59 WowVision:speak(\"Blocked: \" .. tostring(func)) — L[] 없이 하드코딩. vision-locale/koKR/navigation.lua:68 L[\"Blocked\"]=\"차단됨\"은 별개 키. decisions.tsv 2026-11-05 원문 충실 결정의 예외(한국어 사용자에게만 생기는 차이)에 해당하므로 실제 표시값을 따른다."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "전체(기록은 게임패드 인터페이스를 켠 리테일, WoW: Forever에서만)",
+      "suggestion": "리테일, WoW: Forever(게임패드 인터페이스를 켰을 때)",
+      "problem": "원문 표의 버전 칸은 \"Retail and WoW: Forever (gamepad interface on)\"인데 번역은 \"전체\"로 바꾸고 설명을 덧붙였다. 원문과 다른 내용을 한국어판에만 적은 것이다.",
+      "evidence": "원문: \"| /wv padlog | Restarts the controller log | Retail and WoW: Forever (gamepad interface on) |\". decisions.tsv 2026-11-05 \"설명서: 원문이 실제 애드온 동작과 다를 때 — 원문에 충실하게 옮긴다. 차이는 upstream에 보고\". 한국어 사용자에게만 생기는 차이가 아니다."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "\"Syntax: `/enableaddon <name>`\"을 출력합니다(/disableaddon이면 \"Syntax: /disableaddon <name>\").",
+      "suggestion": "\"Syntax: `/enableaddon <name>`\"을 출력합니다.",
+      "problem": "원문에 없는 괄호 설명(/disableaddon일 때의 출력)을 추가했다. 코드상 사실이더라도 원문과 다른 내용을 한국어판에만 넣은 것이다.",
+      "evidence": "원문: \"Without a name they print \\\"Syntax: `/enableaddon <name>`\\\".\" 괄호 내용 없음. decisions.tsv 2026-11-05 원문 충실 결정(차이는 upstream 보고, 예외는 한국어 사용자에게만 생기는 차이). 실제 출력은 core/WowVision.lua:1139 print(\"Syntax: /disableaddon <name>\")로 upstream 보고 대상."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "버전: 전체. [음성 및 소리](../basics/speech.md)를 참고하십시오.",
+      "suggestion": "버전: 전체. [음성](../basics/speech.md)을 참고하십시오.",
+      "problem": "링크 글자를 원문(Speech)이 아니라 대상 페이지 제목(음성 및 소리)에 맞췄다. 사용자 결정과 어긋난다.",
+      "evidence": "원문: \"See [Speech](../basics/speech.md).\" decisions.tsv 2026-11-05 \"설명서: 링크 글자가 대상 페이지 제목과 다를 때 — 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)\". terms: Speech=음성. 다른 파일 표기: ko/getting-started/troubleshooting.md:46, ko/windows/chat.md:225는 [음성](../basics/speech.md)."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "길 안내 창이 사용하는 것과 같은 비컨입니다. [길 안내: 지도, 경로, 비컨](../world/navigation.md)을 참고하십시오.",
+      "suggestion": "길 안내 창이 사용하는 것과 같은 비컨입니다. [길 안내](../world/navigation.md)를 참고하십시오.",
+      "problem": "링크 글자를 원문(Navigation)이 아니라 대상 페이지 제목에 맞췄다. 사용자 결정 위반.",
+      "evidence": "원문: \"See [Navigation](../world/navigation.md).\" decisions.tsv 2026-11-05 링크 글자 결정. terms: Navigation=길 안내. 다른 파일 표기: ko/basics/alerts.md:92, ko/basics/menu-and-settings.md:62는 [길 안내](../world/navigation.md)."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "/beacon to는 현재 대륙의 지도 데이터가 있어야 합니다. [길 안내: 지도, 경로, 비컨](../world/navigation.md)을 참고하십시오.",
+      "suggestion": "/beacon to는 현재 대륙의 지도 데이터가 있어야 합니다. [길 안내](../world/navigation.md)를 참고하십시오.",
+      "problem": "같은 링크 글자 결정 위반(두 번째 위치). 원문 링크 글자는 Navigation이다.",
+      "evidence": "원문: \"/beacon to needs map data for the continent you are on; see [Navigation](../world/navigation.md).\" decisions.tsv 2026-11-05 링크 글자 결정."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "Ctrl+Shift+F와 같습니다. [미니맵 스캐너](../world/minimap.md)를 참고하십시오.",
+      "suggestion": "Ctrl+Shift+F와 같습니다. [미니맵](../world/minimap.md)을 참고하십시오.",
+      "problem": "링크 글자를 원문(Minimap)이 아니라 대상 페이지 제목(미니맵 스캐너)에 맞췄다. 사용자 결정 위반.",
+      "evidence": "원문: \"See [Minimap](../world/minimap.md).\" decisions.tsv 2026-11-05 링크 글자 결정. 다른 파일 표기: ko/basics/alerts.md:134, ko/getting-started/troubleshooting.md:103은 [미니맵](../world/minimap.md)."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "곧 리테일이나 WoW: Forever에서만 기록합니다. [게임패드로 플레이하기](../controller.md)를 참고하십시오.",
+      "suggestion": "곧 리테일이나 WoW: Forever에서만 기록합니다. [컨트롤러](../controller.md)를 참고하십시오.",
+      "problem": "링크 글자를 원문(Controller)이 아니라 대상 페이지 제목에 맞췄다. 사용자 결정 위반.",
+      "evidence": "원문: \"See [Controller](../controller.md).\" decisions.tsv 2026-11-05 링크 글자 결정. 다른 파일 표기: ko/getting-started/introduction.md:20, ko/getting-started/troubleshooting.md:68은 [컨트롤러](../controller.md)."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "이어서 \"SoftTargetEnemy 3 (default 0)\" 같은 줄을 읽습니다.",
+      "suggestion": "이어서 \"SoftTargetEnemy 3 (기본 0)\" 같은 줄을 읽습니다.",
+      "problem": "실제 줄의 \"default\"는 번역되어 \"기본\"으로 나오는데 예시는 영어 그대로다. 한국어 사용자에게만 생기는 차이다.",
+      "evidence": "core/targeting/module.lua:642 line .. \" (\" .. L[\"default\"] .. \" \" .. ...; vision-locale/koKR/targeting.lua:43 L[\"default\"]=\"기본\". decisions.tsv 원문 충실 결정의 예외(메뉴 글자 등 한국어 사용자에게만 생기는 차이)."
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "\"대상 없음. /focus1 <이름>을 사용하거나 유닛을 대상으로 지정하십시오.\"를 출력합니다(입력 형식은 `/focus1 <name>`).",
+      "suggestion": "\"대상 없음. /focus1 <이름>을 사용하거나 유닛을 대상으로 지정하십시오.\"를 출력합니다.",
+      "problem": "원문에 없는 괄호 \"(입력 형식은 `/focus1 <name>`)\"가 붙어, 바로 앞 인용의 <이름>과 다른 <name>이 한 번 더 읽힌다. 스크린리더로 들으면 형식이 두 가지인 것처럼 들린다.",
+      "evidence": "원문: \"prints \\\"No target. Use `/focus1 <name>` or target a unit.\\\"\" 괄호 설명 없음. vision-locale/koKR/targeting.lua:52 실제 값 \"대상 없음. /focus%d <이름>을 사용하거나 유닛을 대상으로 지정하십시오.\""
+    },
+    {
+      "id": "reference/commands.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "음성의 목소리, 속도, 음량을 한 번에 설정합니다.",
+      "suggestion": "음성 종류, 속도, 음량을 한 번에 설정합니다.",
+      "problem": "voice를 이 파일은 \"목소리\"로, 설정 이름과 음성 설명서는 \"음성 종류\"/\"음성\"으로 쓴다. 같은 설정을 가리키는데 표기가 다르다(한눈에 보기 표와 인수 표의 \"목소리\"도 같음).",
+      "evidence": "vision-locale/koKR/speech.lua:5 L[\"Speech Voice\"]=\"음성 종류\". ko/basics/speech.md:16,33 \"음성 종류\", 다른 음성."
+    }
+  ]
+}

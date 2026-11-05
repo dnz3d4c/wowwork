@@ -1,0 +1,20 @@
+[
+  {
+    "id": "basics/keybindings.md",
+    "category": "accuracy",
+    "severity": "major",
+    "quote": "왼쪽 어깨와 두 트리거는 보조 키처럼 누른 채로 쓸 수 있으므로 \"오른쪽 트리거 + A 버튼\"은 그 자체로 하나의 조합입니다. 양쪽 어깨를 함께 누르면 게임의 바로 가기 층이 되고, 오른쪽 스틱 누르기는 방향 패드와만 조합됩니다.",
+    "suggestion": "어깨 버튼, 트리거, 오른쪽 스틱 누르기는 보조 키처럼 누른 채로 쓸 수 있으므로 \"오른쪽 트리거 + A 버튼\"은 그 자체로 하나의 조합입니다.",
+    "problem": "원문은 어깨 버튼(양쪽), 트리거, 오른쪽 스틱 누르기를 모두 보조 키로 든다. 번역은 '왼쪽 어깨와 두 트리거'로 범위를 바꾸고, 원문에 없는 문장(양쪽 어깨=바로 가기 층, 오른쪽 스틱은 방향 패드와만 조합)을 덧붙였다. 실제 코드 동작에 맞춘 수정으로 보이지만 사용자 결정은 원문에 충실하게 옮기고 차이는 upstream 보고 목록으로 돌리는 것이다.",
+    "evidence": "원문: \"The shoulder buttons, the triggers and the right stick press can be held as modifiers, so \\\"right trigger plus A\\\" is a combination of its own.\" / wowwork/docs/decisions.tsv 2026-11-05 '설명서: 원문이 실제 애드온 동작과 다를 때 — 원문에 충실하게 옮긴다. 차이는 목록으로 모아 upstream 설명서에 보고한다' (예외는 메뉴 글자 이동, 한국어 이름, 지원 언어 목록뿐). 코드상 차이는 WowVision/core/graph/keyCapture.lua:136-142(PAD_MODIFIER_BUTTONS에 양쪽 어깨·트리거·PADRSTICK), core/ui/input/padLogic.lua:15-35(HOLD는 방향 패드 전용)로 upstream 보고 대상."
+  },
+  {
+    "id": "basics/keybindings.md",
+    "category": "accuracy",
+    "severity": "major",
+    "quote": "다만 필수 동작의 마지막 입력을 지키는 \"이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.\" 안내는 컨트롤러 버튼에는 나오지 않고, 바꾸겠느냐는 확인만 거쳐 버튼이 옮겨 갑니다.",
+    "suggestion": "(문장 삭제 — \"충돌 안내 문구도 같습니다.\" 다음에 바로 \"키보드에서 Escape를 누르거나, ...\"로 잇는다)",
+    "problem": "원문에 없는 문장을 추가했다. 원문은 '같은 충돌 안내가 적용된다'고만 하는데, 번역은 필수 동작 보호 안내가 컨트롤러에는 나오지 않는다는 예외를 새로 적었다. 한국어 사용자에게만 생기는 차이가 아니므로 사용자 결정상 번역에 넣지 않고 upstream 보고로 돌려야 한다.",
+    "evidence": "원문: \"The same conflict messages apply. Escape on the keyboard, ten seconds with no button, or the start of combat cancels the capture with \\\"Cancelled\\\".\" / wowwork/docs/decisions.tsv 2026-11-05 '설명서: 원문이 실제 애드온 동작과 다를 때 — 원문에 충실하게 옮긴다'"
+  }
+]

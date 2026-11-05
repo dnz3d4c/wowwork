@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "world/index.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "[길 안내: 지도, 경로, 비컨](navigation.md)",
+   "suggestion": "[길 안내와 경로](navigation.md)",
+   "problem": "링크 글자를 원문 링크 글자(Navigation and Routes)가 아니라 대상 페이지 제목(Navigation: Maps, Routes and Beacons)에 맞춰 옮겼다. 원문에 없는 '지도'가 들어갔다.",
+   "evidence": "원문 en/world/index.md:7 '[Navigation and Routes](navigation.md)'. decisions.tsv 2026-11-05 '설명서: 링크 글자가 대상 페이지 제목과 다를 때 — 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)'. 다른 파일 표기: ko/getting-started/introduction.md:18, ko/getting-started/quick-start.md:69 '[길 안내와 경로](../world/navigation.md)'."
+  },
+  {
+   "id": "world/index.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "[미니맵 스캐너](minimap.md) — 미니맵을 스캔해",
+   "suggestion": "[미니맵](minimap.md) — 미니맵을 스캔해",
+   "problem": "원문 링크 글자는 Minimap인데 대상 페이지 제목(Minimap Scanner)을 따라 '미니맵 스캐너'로 옮겼다. 바로 다음 항목의 '스캐너'(scanner.md)와 들었을 때 혼동될 여지도 커진다.",
+   "evidence": "원문 en/world/index.md '[Minimap](minimap.md)'. decisions.tsv 2026-11-05 링크 글자 결정. 다른 파일 표기: ko/basics/alerts.md:134, ko/basics/menu-and-settings.md:60, ko/getting-started/introduction.md:18, ko/getting-started/troubleshooting.md:103 모두 '[미니맵](../world/minimap.md)'."
+  },
+  {
+   "id": "world/index.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "[이동과 주변 환경](movement.md)",
+   "suggestion": "[이동과 방향](movement.md)",
+   "problem": "원문 링크 글자 Movement and Orientation의 Orientation(방향 파악)을 대상 페이지 제목(Movement and Surroundings)의 '주변 환경'으로 옮겼다. 링크 글자를 대상 제목에 맞춘 사례다.",
+   "evidence": "원문 en/world/index.md:7 '[Movement and Orientation](movement.md)', 대상 제목 en/world/movement.md:1 '# Movement and Surroundings'. decisions.tsv 2026-11-05 링크 글자 결정. 같은 원문 링크 글자를 쓰는 ko/reference/glossary.md:46, ko/reference/versions.md:25·117도 '이동과 주변 환경'이라 함께 고쳐야 일관된다."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/quick-start.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "항목에서 Enter를 누르면 그 항목이 목적지로 선택된 길 안내 창이 열리고, 거기서 Enter를 다시 누르면 그곳으로 안내가 시작됩니다.",
+   "suggestion": "항목에서 Enter를 누르면 그곳으로 안내가 시작됩니다.",
+   "problem": "원문에 없는 동작 설명(길 안내 창이 열리고 Enter를 한 번 더 눌러야 함)을 덧붙였다. 사용자 결정은 원문이 실제 동작과 달라도 원문에 충실하게 옮기고 차이는 upstream에 보고하는 것이다. 덧붙인 설명도 조건 없이 단정해서, 경로 데이터가 없으면 비컨으로 바로 안내한다는 scanner.md 설명과 어긋난다.",
+   "evidence": "원문 \"Enter on an entry starts guiding you there.\" / wowwork/docs/decisions.tsv 2026-11-05 \"설명서: 원문이 실제 애드온 동작과 다를 때 — 원문에 충실하게 옮긴다\" (한국어 사용자 전용 차이에 해당하지 않음) / ko/world/scanner.md:93, 132 \"경로 데이터가 있으면 길 안내 창이 열리고 ... 다른 곳에서는 대신 직선 비컨으로 안내합니다\""
+  },
+  {
+   "id": "getting-started/quick-start.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "모든 키는 [단축키 일람](../reference/keybindings.md)에 나와 있으며",
+   "suggestion": "모든 키는 [키 바인딩 목록](../reference/keybindings.md)에 나와 있으며",
+   "problem": "같은 원문 링크 글자 \"Keybinding Reference\"를 다른 설명서 파일은 모두 \"키 바인딩 목록\"으로 옮겼는데 이 파일만 \"단축키 일람\"이다.",
+   "evidence": "Grep: ko/reference/glossary.md, ko/reference/index.md 등 8곳이 [키 바인딩 목록](...keybindings.md), 대상 페이지 제목도 ko/reference/keybindings.md:2 \"# 키 바인딩 목록\". 원문 en/reference/glossary.md:61,111, en/reference/index.md:5도 같은 \"Keybinding Reference\""
+  },
+  {
+   "id": "getting-started/quick-start.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "2. Down Arrow로 음성을 찾아 Enter를 누릅니다.",
+   "suggestion": "2. 아래 화살표로 음성을 찾아 Enter를 누릅니다.",
+   "problem": "다른 설명서 파일은 Down Arrow를 \"아래 화살표\"로 옮기는데(13곳) 이 파일만 영어 \"Down Arrow\"를 남겼다. 같은 파일 표의 \"Up / Down Arrow\"도 같은 문제다(ko/getting-started/sku-login.md:219 \"위 / 아래 화살표\").",
+   "evidence": "Grep ko 전체: \"아래 화살표\" 13곳, \"Down Arrow\"는 quick-start.md:19, 32 두 곳뿐"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "responses": [
+  {
+   "ref": "getting-started/introduction.md#reg-gpt-0",
+   "action": "applied",
+   "reason": "원문 quest givers는 여기서 창 목록의 한 항목이다. 한국어판 windows/overview.md:56, world/index.md:13, reference/versions.md:31이 이 창을 \"퀘스트 NPC 창\"으로 부르므로 \"퀘스트 NPC 창\"으로 맞췄다.",
+   "upstream": ""
+  },
+  {
+   "ref": "getting-started/introduction.md#reg-gpt-1",
+   "action": "applied",
+   "reason": "스캐너가 낭독하는 분류 값이 vision-locale/koKR/minimap.lua:13 L[\"quest giver\"] = \"퀘스트 NPC\"이고 world/minimap.md, world/index.md:12도 같은 표기라 \"퀘스트 NPC\"로 바꿨다.",
+   "upstream": ""
+  },
+  {
+   "ref": "getting-started/introduction.md#reg-gpt-2",
+   "action": "applied",
+   "reason": "기능 이름이 vision-locale/koKR/minimap.lua:6 L[\"Scan Minimap\"] = \"미니맵 스캔\"이고 reference/keybindings.md:111, world/minimap.md:22, getting-started/sku.md:70도 \"미니맵 스캔\"이라 맞췄다.",
+   "upstream": ""
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+[
+ {
+  "by": "claude",
+  "id": "windows/spells-and-talents.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "직업 상급자에게서 새 주문을 배우는 것은 [NPC: 대화, 상인, 상급자, 비행 조련사, 책](npcs.md)에",
+  "suggestion": "직업 상급자에게서 새 주문을 배우는 것은 [NPC 창](npcs.md)에",
+  "problem": "링크 글자를 원문 링크 글자(NPC windows)가 아니라 대상 페이지 제목으로 바꿔 옮겼다. 사용자 결정 위반이다.",
+  "evidence": "원문: \"is in [NPC windows](npcs.md)\". wowwork/docs/decisions.tsv 2026-11-05 \"설명서: 링크 글자가 대상 페이지 제목과 다를 때 - 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)\". 다른 파일의 같은 원문 링크는 \"NPC 창\"으로 옮겼다: ko/world/quests.md:94, ko/world/quests.md:174, ko/windows/professions.md:205 \"[NPC 창](npcs.md)\".",
+  "ref": "windows/spells-and-talents.md#reg-claude-0",
+  "consensus": true
+ },
+ {
+  "by": "gpt",
+  "id": "windows/spells-and-talents.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "트리에 포인트를 더 써야 게임이 그 줄을 열어 주는 경우에는 묶음이 게임의 조건 줄(\"8포인트를 더 사용해야...\")도 읽습니다.",
+  "suggestion": "트리에 포인트를 더 써야 게임이 그 줄을 열어 주는 경우에는 묶음이 게임의 조건 줄(\"이 줄을 해제하려면 8 포인트를 더 소모해야...\")도 읽습니다.",
+  "problem": "게임에서 실제로 읽는 조건 문구와 단어·어순·띄어쓰기가 다릅니다.",
+  "evidence": "원문은 게임 문구 \"Spend 8 more points...\"를 인용합니다. wowwork/cache/gs_koKR.csv:20954의 TALENT_FRAME_GATE_TOOLTIP_FORMAT은 \"이 줄을 해제하려면 %d 포인트를 더 소모해야 합니다.\"이며, wowvision-ko/WowVision/retail/talentTree.lua:369에서 이 값을 조건 문구로 사용합니다.",
+  "ref": "windows/spells-and-talents.md#reg-gpt-1",
+  "consensus": false
+ },
+ {
+  "by": "gpt",
+  "id": "windows/spells-and-talents.md",
+  "category": "accuracy",
+  "severity": "major",
+  "quote": "- 직업 상급자에게서 새 주문을 배우는 것은 [NPC: 대화, 상인, 상급자, 비행 조련사, 책](npcs.md)에, 주문을 옮길 때의 단축바 쪽 내용은 [행동 단축바](action-bars.md)에 있습니다.",
+  "suggestion": "- 직업 상급자에게서 새 주문을 배우는 것은 [NPC 창](npcs.md)에, 주문을 옮길 때의 단축바 쪽 내용은 [행동 단축바](action-bars.md)에 있습니다.",
+  "problem": "원문의 링크 글자 \"NPC windows\" 대신 대상 문서 제목을 넣어 원문에 없는 창 종류를 추가했고, 링크 글자에 관한 사용자 결정을 위반했습니다.",
+  "evidence": "원문 wowvision-ko/WowVision/docs/src/user/en/windows/spells-and-talents.md:209는 [NPC windows]입니다. wowwork/docs/decisions.tsv의 2026-11-05 결정은 대상 제목이 아니라 원문 링크 글자를 옮기도록 규정합니다. 같은 링크는 wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:94와 wowvision-ko/WowVision/docs/src/user/ko/windows/professions.md:205에서 모두 \"NPC 창\"으로 표기합니다.",
+  "ref": "windows/spells-and-talents.md#reg-gpt-2",
+  "consensus": true
+ }
+]

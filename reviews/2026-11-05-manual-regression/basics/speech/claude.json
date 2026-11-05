@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "basics/speech.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "음성 종류가 스크린리더라면 키를 누를 때마다 이 안내를 끊어 버릴 것이기 때문입니다.",
+      "suggestion": "음성 종류가 스크린리더로 글자를 넘기는 음성이라면 키를 누를 때마다 스크린리더가 이 안내를 끊어 버리기 때문입니다.",
+      "problem": "원문에 없는 조건을 덧붙이면서 '음성 종류가 스크린리더'라고 써, 음성 설정 값 자체가 스크린리더인 것처럼 들린다. 실제로는 SAPI2SR 같은 음성이 글자를 스크린리더로 넘기는 경우다. 뜻은 통하지만 표현이 부정확하다.",
+      "evidence": "원문: \"because a screen reader would cut them off at every key press\". 코드 WowVision/core/minimap/module.lua:90 \"with an NVDA SAPI voice there they were cut off by the screen reader's\", core/speechInterrupt.lua:3 \"A voice that hands the text to a screen reader (SAPI2SR, NVDA's bridge)\". 같은 파일 '스크린리더 음성 사용하기' 절도 'TTS 음성이 SAPI2SR 음성을 통해 NVDA 같은 스크린리더로 글자를 넘기는 경우'로 쓴다."
+    }
+  ]
+}

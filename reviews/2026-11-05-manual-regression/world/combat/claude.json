@@ -1,0 +1,40 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "[게임패드로 플레이하기](../controller.md)를 참고하십시오.",
+   "suggestion": "[컨트롤러](../controller.md)를 참고하십시오.",
+   "problem": "원문 링크 글자 \"Controller\"를 옮기지 않고 대상 페이지 제목에 맞췄다. 사용자 결정 위반이다.",
+   "evidence": "en world/combat.md:14 \"[Controller](../controller.md)\". wowwork/docs/decisions.tsv 2026-11-05 \"설명서: 링크 글자가 대상 페이지 제목과 다를 때 - 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)\". 같은 원문 \"[Controller]\"를 ko getting-started/introduction.md:20·49, troubleshooting.md:68·121, world/navigation.md:33은 \"[컨트롤러]\"로 옮겼다. 같은 위반이 ko information/buffers.md:55, world/movement.md:155, world/scanner.md:133, windows/action-bars.md:13·146, reference/commands.md:200, reference/keybindings.md:158, reference/versions.md:126에도 있다."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "Home과 End, 메뉴 키, 메뉴의 글자 탐색",
+   "suggestion": "Home과 End, 상황별 메뉴 키, 메뉴에서 글자로 이동",
+   "problem": "\"context menu key\"와 \"letter navigation in menus\"를 다른 설명서 파일·화면 문구와 다르게 옮겼다. \"메뉴 키, 메뉴의\"가 연달아 들려 두 항목이 갈려 들리지 않는다.",
+   "evidence": "en world/combat.md:11 \"the context menu key, letter navigation in menus\". ko reference/keybindings.md:10 \"상황별 메뉴 키\". vision-locale/koKR/ui.lua:7 L[\"Letter Navigation in Menus\"] = \"메뉴에서 글자로 이동\", ui.lua L[\"Context Menu\"] = \"상황별 메뉴\". ko 다른 파일에서 \"메뉴에서 글자로 이동\" 6곳, \"메뉴의 글자 탐색\"은 이 파일 1곳뿐."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "공격대 대상 표시기는 숫자로 읽습니다.",
+   "suggestion": "대상 표시기는 숫자로 읽습니다.",
+   "problem": "raid marker를 확정 용어와 다른 \"공격대 대상 표시기\"로 옮겼다. 같은 내용을 다루는 대상 지정 페이지는 \"대상 표시기\"를 쓴다.",
+   "evidence": "wowwork/docs/glossary.tsv:22 \"Raid Target Marker=대상 표시기(공식)\". vision-locale/koKR/targeting.lua:9 \"하드 대상에 붙은 대상 표시기 알림\". ko world/targeting.md:25·32 \"대상 표시기\"."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "그래서 사정거리를 잠깐 벗어났다 돌아오는 적을 두 번 말하지 않습니다.",
+   "suggestion": "그래서 이름표 거리를 잠깐 벗어났다 돌아오는 적을 두 번 말하지 않습니다.",
+   "problem": "여기서 range는 바로 앞 항목의 이름표 거리다. \"사정거리\"는 주문·공격이 닿는 거리로 들려 기준이 달라진다.",
+   "evidence": "en world/combat.md \"an enemy that flickers out of range and back\", 같은 목록 첫 항목 \"within the game's nameplate range\" → ko \"게임의 이름표 거리 안\"."
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+[
+ {
+  "by": "claude",
+  "id": "getting-started/troubleshooting.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "위치는 [설정이 저장되는 곳](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+  "suggestion": "위치는 [WowVision 설치하기](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+  "problem": "원문 링크 글자는 \"Installing WowVision\"인데 번역은 대상 절 제목(설정이 저장되는 곳)으로 바꿨다. 사용자 결정은 링크 글자를 대상 제목에 맞추지 말고 원문 글자를 그대로 옮기라는 것이다.",
+  "evidence": "원문: \"Its location is described in [Installing WowVision](./managing.md#where-your-settings-are-saved).\" / wowwork/docs/decisions.tsv 2026-11-05 \"설명서: 링크 글자가 대상 페이지 제목과 다를 때 - 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)\". 원문과 대상 제목의 차이는 upstream 보고 목록으로 보낼 사안.",
+  "ref": "getting-started/troubleshooting.md#reg-claude-0",
+  "consensus": true
+ },
+ {
+  "by": "gpt",
+  "id": "getting-started/troubleshooting.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "위치는 [설정이 저장되는 곳](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+  "suggestion": "위치는 [WowVision 설치하기](./managing.md#설정이-저장되는-곳)에 설명되어 있습니다.",
+  "problem": "링크 글자를 대상 절 제목으로 바꾸면서 원문의 링크 글자 뜻을 대체했고, 사용자 결정을 위반했다.",
+  "evidence": "원문은 \"Its location is described in [Installing WowVision]\"이다. wowwork/docs/decisions.tsv의 2026-11-05 결정은 대상 제목이 달라도 원문 링크 글자를 그대로 옮기도록 규정한다.",
+  "ref": "getting-started/troubleshooting.md#reg-gpt-1",
+  "consensus": true
+ },
+ {
+  "by": "gpt",
+  "id": "getting-started/troubleshooting.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "WowVision 메뉴, 상황 메뉴, 드롭다운 목록에서 글자를 입력하면 그 글자로 시작하는 다음 항목으로 이동합니다.",
+  "suggestion": "WowVision 메뉴, 상황별 메뉴, 드롭다운 목록에서 글자를 입력하면 그 글자로 시작하는 다음 항목으로 이동합니다.",
+  "problem": "화면 기능명인 Context Menu를 실제 한국어 값과 다른 '상황 메뉴'로 썼다.",
+  "evidence": "wowvision-ko/vision-locale/koKR/ui.lua:58과 bindings.lua:24는 L[\"Context Menu\"]을 \"상황별 메뉴\"로 번역한다. 다른 설명서 wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:177도 같은 동작을 \"상황별 메뉴\"로 표기한다.",
+  "ref": "getting-started/troubleshooting.md#reg-gpt-2",
+  "consensus": false
+ }
+]

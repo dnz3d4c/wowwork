@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "id": "windows/group-finder.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "함께 보기: [소셜: 친구, 길드, 커뮤니티와 채널](./social.md), [게임 창](./overview.md), [대화](./chat.md).",
+      "suggestion": "함께 보기: [소셜 창](./social.md), [창 개요](./overview.md), [대화](./chat.md).",
+      "problem": "링크 글자를 원문 링크 글자(Social windows, Windows overview)가 아니라 대상 페이지 제목으로 바꿨다. 사용자 결정 위반이고, 소셜 링크는 원문에 없는 '친구, 길드, 커뮤니티와 채널'을 덧붙였다.",
+      "evidence": "원문: \"See also: [Social windows](./social.md), [Windows overview](./overview.md), [Chat](./chat.md).\" / docs/decisions.tsv 2026-11-05 '설명서: 링크 글자가 대상 페이지 제목과 다를 때 — 원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)' / 다른 파일 표기: ko/windows/collections.md:219 '[창 개요](./overview.md)'"
+    },
+    {
+      "id": "windows/group-finder.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "[인터페이스 사용하기](../basics/interface.md)를 참고하십시오.",
+      "suggestion": "[인터페이스 기본](../basics/interface.md)을 참고하십시오.",
+      "problem": "원문 링크 글자 'Interface basics' 대신 대상 페이지 제목 '인터페이스 사용하기'(원문 제목 Using the Interface)를 썼다. 사용자 결정 위반.",
+      "evidence": "원문: \"See [Interface basics](../basics/interface.md).\" / docs/decisions.tsv 2026-11-05 링크 글자 결정 / ko/basics/interface.md 제목 '# 인터페이스 사용하기'는 en 제목 'Using the Interface'의 번역이라 링크 글자와 다르다"
+    },
+    {
+      "id": "windows/group-finder.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "툴팁 키(기본값 Space, [툴팁 읽기](../basics/tooltips.md) 참고)",
+      "suggestion": "툴팁 키(기본값 Space, [툴팁](../basics/tooltips.md) 참고)",
+      "problem": "원문 링크 글자 'Tooltips' 대신 대상 페이지 제목 '툴팁 읽기'(en 제목 Reading Tooltips)를 썼다. 사용자 결정 위반이고, 같은 대상을 가리키는 다른 설명서 파일의 표기와도 다르다.",
+      "evidence": "원문: \"(Space by default; see [Tooltips](../basics/tooltips.md))\" / docs/decisions.tsv 2026-11-05 링크 글자 결정 / 다른 파일 표기: ko/basics/interface.md:248 '[툴팁](./tooltips.md)', ko/windows/chat.md:89 '[툴팁](../basics/tooltips.md)'"
+    },
+    {
+      "id": "windows/group-finder.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "두 명령은 [슬래시 명령](../reference/commands.md)에도 나와 있습니다.",
+      "suggestion": "두 명령은 [명령어](../reference/commands.md)에도 나와 있습니다.",
+      "problem": "원문 링크 글자 'Commands' 대신 대상 페이지 제목 '슬래시 명령'(en 제목 Slash Commands)을 썼다. 사용자 결정 위반.",
+      "evidence": "원문: \"Both commands are also listed in [Commands](../reference/commands.md).\" / docs/decisions.tsv 2026-11-05 링크 글자 결정 / 다른 파일 표기: ko/getting-started/first-login.md:53 '[명령어](../reference/commands.md)'"
+    }
+  ]
+}
