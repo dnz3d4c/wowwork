@@ -1,0 +1,36 @@
+{
+ "findings": [
+  {
+   "id": "navigation.lua::You are targeting yourself",
+   "category": "accuracy",
+   "severity": "critical",
+   "problem": "주어와 대상이 뒤바뀌었다. 원문은 '내가 나 자신을 대상으로 잡고 있다'인데 번역은 '대상이 당신을 지정함'이라 다른 유닛이 나를 노린다는 뜻이 된다.",
+   "evidence": "en: You are targeting yourself / ko: 대상이 당신을 지정함. targetFind.lua:73에서 isPlayer(대상이 플레이어 자신)일 때 발화된다.",
+   "suggestion": "자신을 대상으로 지정함"
+  },
+  {
+   "id": "targeting.lua::Focus %d set to %s.",
+   "category": "accuracy",
+   "severity": "critical",
+   "problem": "서식 지정자 순서를 위치 지정 없이 바꿔 각 지정자가 가리키는 값이 뒤바뀌었다. 첫 인자(i, 주시 번호)가 %s로, 두 번째 인자(id)가 %d로 들어가 번호와 대상이 뒤섞이고, id가 숫자가 아니면 format 오류가 난다.",
+   "evidence": "focus.lua:39: L[\"Focus %d set to %s.\"]:format(i, id). ko: 주시 대상 %s 설정: %d.",
+   "suggestion": "주시 대상 %d 설정: %s."
+  },
+  {
+   "id": "targeting.lua::Cannot set virtual focus while in combat.",
+   "category": "accuracy",
+   "severity": "major",
+   "problem": "조건절 'while in combat'이 빠졌다. 번역만 들으면 가상 주시 대상을 아예 설정할 수 없는 것처럼 들린다.",
+   "evidence": "en: Cannot set virtual focus while in combat. / ko: 가상 주시 대상을 설정할 수 없습니다.",
+   "suggestion": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+  },
+  {
+   "id": "navigation.lua::Your floor is not clear here. Choose your start.",
+   "category": "accuracy",
+   "severity": "major",
+   "problem": "두 번째 문장 'Choose your start.'가 통째로 빠졌다. 이 안내 뒤에 출발 지점 선택 창이 열리는데(window = target) 사용자는 무엇을 해야 하는지 듣지 못한다.",
+   "evidence": "targetFind.lua:89: return { say = L[...], window = target }. ko: 여기서는 현재 층이 불분명합니다.",
+   "suggestion": "여기서는 현재 층이 불분명합니다. 출발 지점을 선택하십시오."
+  }
+ ]
+}
