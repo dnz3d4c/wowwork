@@ -1,0 +1,28 @@
+{
+ "findings": [
+  {
+   "id": "targeting.lua::Friends",
+   "category": "accuracy",
+   "severity": "major",
+   "problem": "대상 지정 설정에서 'Friends'는 우호적 유닛 전체(아군)를 뜻하는데 '친구'(친구 목록의 친구)로 옮겨져 범주가 좁아졌다. 사용자는 이 선택지가 친구 목록에 등록된 플레이어에게만 적용된다고 오해할 수 있다.",
+   "evidence": "core/targeting/module.lua:441-452 SoftTargetForce 설정(\"Make Soft Target the Hard Target\")의 선택지가 Off=0, Enemies=1, Friends=2로 적/우호 대상 구분이다. 다만 같은 키를 classic/friends.lua:3,723의 친구 목록 창 이름도 쓰므로(AceLocale은 키당 번역 하나) 그 쪽에는 '친구'가 맞다. 한 번역으로 두 문맥을 다 맞출 수 없어 대상 지정 쪽 키를 분리하거나 공용 번역을 다시 정해야 한다.",
+   "suggestion": "아군"
+  },
+  {
+   "id": "ui.lua::Attacking You or Your Group",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "'Your Group'을 '내 파티'로 옮겨 범주가 좁아졌다. 실제로는 공격대원도 포함해 세는데, 듣는 사람은 공격대에 있을 때 파티원만 센다고 받아들일 수 있다.",
+   "evidence": "core/ui modules/combat.lua:148-154에서 party1..와 raid1.. 유닛 목록을 모두 만들고 enemyCountMode=\"group\"일 때 쓴다. 한국 WoW에서 group을 흔히 '파티'로 부르기도 해 확신이 덜하므로 한 단계 낮췄다.",
+   "suggestion": "나 또는 내 파티나 공격대를 공격 중"
+  },
+  {
+   "id": "ui.lua::Empty",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "'Empty'(비어 있음)를 '없음'으로 옮겨, 상황별 메뉴에 항목이 없을 때 나오는 \"Menu Empty\"가 '메뉴 없음'(메뉴가 존재하지 않음)으로 들린다. 같은 '없음'을 쓰는 None과도 구분되지 않는다.",
+   "evidence": "core/graph/contextMenu.lua:168 WowVision:speak(L[\"Menu\"] .. \" \" .. L[\"Empty\"]) — entries가 0개일 때 나온다. 장비 칸(camelot/character.lua:229,385)에서도 '비어 있음'이 원뜻에 더 가깝다. ui.lua::None도 '없음'.",
+   "suggestion": "비어 있음"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::Group",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "스캐너 제공자 \"Group\"은 공격대일 때 공격대원 전원을 담는데 \"파티\"로만 옮겨, 공격대 중에 들으면 파티원 4명만 있는 목록으로 오해할 수 있다. 같은 애드온의 다른 Group 번역(파티 및 공격대)과도 어긋난다.",
+      "evidence": "core/scanner/providers.lua:21-33: 주석 \"The party or raid members\", `local raid = IsInRaid()` 이면 `\"raid\" .. i`로 공격대원 전원을 순회. groupHealth.lua:5 `Group Health Monitor` = \"파티 및 공격대 생명력 모니터\", buffers.lua:31 `Dispellable by My Group` = \"내 파티 또는 공격대가 무효화 가능\". game_term \"파티\"는 영어만 같은 다른 문맥의 공식 번역이라 decisions.tsv 2026-11-03(문맥 우선)에 따라 따를 의무가 없다.",
+      "suggestion": "파티 및 공격대"
+    },
+    {
+      "id": "navigation.lua::No position of the group member available",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "\"group member\"를 \"파티원\"으로만 옮겼다. 이 대상은 공격대원일 수도 있어 \"Group\" 번역과 같은 범위 문제가 있다.",
+      "evidence": "camelot/wownav/module.lua:625에서 발화되며 대상은 core/scanner/providers.lua의 group 제공자(공격대 시 raid1..N 포함)에서 온다. 공격대원을 파티원이라 불러도 뜻이 크게 갈리지는 않아 한 단계 낮췄다.",
+      "suggestion": "파티원 또는 공격대원 위치 확인 불가"
+    },
+    {
+      "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "\"dock\"을 이 문장에서는 \"승강장\"으로, 배 선착장 이름(\"Ship dock to %s\")에서는 \"선착장\"으로 옮겨 같은 대상의 용어가 갈린다. 첫 %s에 선착장 이름이 그대로 들어가므로 배일 때 \"…행 배 선착장 승강장에 도착했습니다\"로 두 용어가 겹쳐 들린다.",
+      "evidence": "engine/DockNavigation.lua:75 `WowVisionNavigationText(\"dock_reached\", WowVisionNavigationTargetName(target), vehicle)` - 첫 %s는 대상 이름이고, text.lua:116 `dock_ship = L[\"Ship dock to %s\"]` = \"%s행 배 선착장\". 대상 이름이 항상 DYN 템플릿 이름인지는 확인하지 못해 minor로 둔다.",
+      "suggestion": "%s에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    }
+  ]
+}

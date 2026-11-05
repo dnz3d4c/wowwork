@@ -1,0 +1,1 @@
+{"findings":[{"id":"ui.lua::Attacking You or Your Group","category":"accuracy","severity":"major","problem":"`Your Group`을 `내 파티`로 한정해 공격대 등 파티 외 그룹 구성원이 빠졌다. 원문보다 대상 범주가 좁아진다.","evidence":"원문은 `Attacking You or Your Group`이며, `core/ui modules/combat.lua:97`에서 적 집계 범위를 나타내는 `value = \"group\"` 옵션으로 사용된다.","suggestion":"나 또는 내 파티나 공격대를 공격 중"}]}

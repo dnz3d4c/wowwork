@@ -1,0 +1,32 @@
+[
+ {
+  "id": "windows.lua::Note",
+  "action": "accept",
+  "final_ko": "메모",
+  "reason": "classic/friends.lua:139·191에서 친구 정보에 저장한 메모(info.notes, noteText)를 읽어 주는 접두어다. 같은 친구 기능의 공식 문자열 SET_FRIENDNOTE_LABEL이 \"%s: 메모 적기\"(cache/gs_koKR.csv)라서 \"메모\"가 같은 문맥의 공식 번역이다. \"쪽지\"는 보내는 메시지로 들릴 수 있다는 지적이 맞다."
+ },
+ {
+  "id": "windows.lua::Search Match",
+  "action": "accept",
+  "final_ko": "일치하는 항목 검색",
+  "reason": "retail/talentTree.lua:180의 특성 검색 결과 상태 문구이고, 같은 특성 검색 문맥의 공식 문자열 TALENT_FRAME_SEARCH_TOOLTIP_MATCH가 \"Search match\"를 \"일치하는 항목 검색\"으로 옮긴다(cache/gs_koKR.csv). decisions.tsv 2026-11-03 \"같은 문맥의 게임 공식 번역은 따른다\"에 따라 공식 표기를 택한다. 듣기 평가자의 \"검색어와 일치\" 제안도 \"검색 일치\"가 불분명하다는 점은 맞지만, 같은 문맥의 공식 번역이 있으므로 그쪽을 우선한다."
+ },
+ {
+  "id": "windows.lua::Point",
+  "action": "dispute",
+  "final_ko": "포인트",
+  "reason": "retail/talentTree.lua:23은 count .. \" \" .. Point/Points로 숫자 뒤에 단위만 붙인다. 짝인 ui.lua::Points는 camelot/legacy/challenges.lua:26(도전 점수)과 core/objects/types/unit/Aura.lua:167(오라 수치)에서도 쓰이는 공유 키라 \"특성 포인트\"로 바꿀 수 없고, Point만 \"특성 포인트\"로 바꾸면 \"1 특성 포인트\" / \"2 포인트\"처럼 단수·복수가 어긋난다. 특성 계통도 화면 안이라 \"특성\"은 문맥에서 이미 드러나며, 공식 문자열도 단위 자체는 \"포인트\"를 쓴다(TOOLTIP_TALENT_PREREQ \"%2$s %1$d 포인트 필요\")."
+ },
+ {
+  "id": "windows.lua::Legacy",
+  "action": "dispute",
+  "final_ko": "유산",
+  "reason": "평가자가 든 \"낭만\"은 LFG_LIST_LEGACY, LEGACY_RAID_DIFFICULTY, BAG_FILTER_LEGACY_EXPANSION 등 지난 확장팩 콘텐츠를 가리키는 공식 번역이다(cache/gs_koKR.csv). 여기는 camelot/legacy/legacy.lua:3·56의 WoW: Forever 전용 Legacy 창 이름이고, 같은 모듈의 challenges.lua:26은 도전과 점수를 다루는 별도 기능이다. 이 기능에 대한 공식 한국어 문자열은 gs_koKR.csv에 없다. decisions.tsv 2026-11-03 \"영어만 같고 문맥이 다른 공식 번역은 문맥에 맞게 옮긴다\"에 따라 지난 콘텐츠를 뜻하는 \"낭만\"을 가져오지 않는다. 또 legacy.lua:56은 창 제목 텍스트가 있으면 게임이 준 제목을 우선 쓰므로, 공식 현지화 제목이 있으면 그것이 자동으로 쓰인다."
+ },
+ {
+  "id": "windows.lua::Raid Frame Preview",
+  "action": "accept",
+  "final_ko": "공격대창 미리보기",
+  "reason": "공식 문자열 RAID_FRAMES_LABEL이 \"공격대창\"으로 붙여 쓰고(cache/gs_koKR.csv), 기존 번역 buffers.lua::Shown on Raid Frames in Combat도 \"전투 중 공격대창에 표시\"를 쓴다. 용어 통일을 위해 \"공격대창 미리보기\"로 고친다."
+ }
+]

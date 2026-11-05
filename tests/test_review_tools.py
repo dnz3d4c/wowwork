@@ -101,3 +101,15 @@ def test_judged_decisions_need_primary_evidence() -> None:
     valid, invalid = split_invalid(ds)
     assert [d["id"] for d in valid] == ["a::1", "a::2"]
     assert [d["id"] for d in invalid] == ["a::3", "a::4"]
+
+
+def test_shared_key_lists_other_files_using_same_key() -> None:
+    from tools.review.build_batch import shared_files
+
+    every = [
+        {"id": "a.lua::Friends", "file": "a.lua", "key": "Friends", "ko": "아군"},
+        {"id": "b.lua::Friends", "file": "b.lua", "key": "Friends", "ko": "친구"},
+        {"id": "b.lua::Other", "file": "b.lua", "key": "Other", "ko": "기타"},
+    ]
+    assert shared_files(every[0], every) == [{"file": "b.lua", "ko": "친구"}]
+    assert shared_files(every[2], every) == []

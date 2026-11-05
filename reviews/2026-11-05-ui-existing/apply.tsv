@@ -1,0 +1,91 @@
+file	key	en	ko
+auction.lua	Vendor Sell	상인 판매가	상인 판매 가격
+auction.lua	Vendor Buy	상인 구입가	상인 구입 가격
+alerts.lua	Voice	음성	목소리
+auction.lua	Starting Bid	시작 입찰가	경매 시작가
+alerts.lua	Voice Alert	목소리 경보	음성 팩 경보
+auction.lua	Item not found	아이템 없음	아이템을 찾을 수 없음
+auction.lua	auctions	경매	건의 경매
+auction.lua	Day Mean	일 평균	일간 평균
+auction.lua	scanned	개 스캔	개 항목 스캔
+chat.lua	Write to %s	%s에게 쓰기	%s에 쓰기
+chat.lua	Link %s in Chat	%s 대화창에 링크	대화창에 %s 링크
+buffers.lua	unavailable	사용 불가	확인 불가
+chat.lua	Who %s	%s 누구 검색	%s 플레이어 검색
+minimap.lua	turn in	완료	퀘스트 완료 가능
+minimap.lua	Scan canceled	스캔 취소	스캔 취소됨
+minimap.lua	new	신규	개 새로 발견
+minimap.lua	gone	사라짐	개 사라짐
+misc.lua	Quality	품질	등급
+monitors.lua	charges	회	회 사용 가능
+monitors.lua	Cooldown	재사용 대기시간	재사용 대기
+monitors.lua	Cooldown Monitor	재사용 대기시간 모니터	재사용 대기 모니터
+monitors.lua	Cooldown State Rule	재사용 대기시간 상태 규칙	재사용 대기 상태 규칙
+monitors.lua	Spell Cooldowns	주문 재사용 대기시간	주문 재사용 대기
+monitors.lua	Spell Cooldown Rule	주문 재사용 대기시간 규칙	주문 재사용 대기 규칙
+monitors.lua	No spells with cooldowns	재사용 대기시간이 있는 주문 없음	재사용 대기가 있는 주문 없음
+monitors.lua	Speak Tracked Cooldowns	추적 중인 재사용 대기시간 읽기	추적 중인 재사용 대기 읽기
+monitors.lua	No tracked cooldowns	추적 중인 재사용 대기시간 없음	추적 중인 재사용 대기 없음
+monitors.lua	Toggle All Monitors	모든 모니터 켜기 끄기	모든 모니터 켜고 끄기
+navigation.lua	Pitch Lock	시점 높이 고정	상하 각도 고정
+navigation.lua	Beacon set	비컨 설정	비컨 설정됨
+navigation.lua	Beacon Aligned	비컨 정렬	비컨 방향 일치
+navigation.lua	Floor %d of %d	%2$d개 층 중 %1$d층	층 %d of %d
+navigation.lua	Road Preference (Percent Longer)	도로 선호도 (더 긴 거리 비율)	도로 선호도 (더 긴 거리 퍼센트)
+navigation.lua	WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.	WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 경유지로 회전하려면 이 설정이 필요합니다. 시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.	경유지 쪽으로 돌아서는 데 필요하므로, WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.
+navigation.lua	Turn to Waypoint	경유지로 회전	경유지 쪽으로 돌아서기
+navigation.lua	Turning is not available here	여기서는 회전 불가	여기서는 돌아서기 사용 불가
+navigation.lua	waypoints	경유지	개의 경유지
+navigation.lua	Turn off the WowVisionNavigation addon to use its routes here	여기서 이 경로를 사용하려면 WowVisionNavigation 애드온을 끄십시오	여기서 WowVisionNavigation 애드온의 경로를 사용하려면 그 애드온을 끄십시오
+navigation.lua	Group	파티	파티 및 공격대
+navigation.lua	No position of the group member available	파티원 위치 확인 불가	파티원 또는 공격대원 위치 확인 불가
+navigation.lua	Dock %s reached. Wait here for %s. Board when you hear it arrive.	%s 승강장에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오.	%s에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오.
+navigation.lua	Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.	%s 승강장을 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오.	%s, 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오.
+navigation.lua	Searching the route again with the new road preference	새 도로 선호도로 경로 다시 검색 중	새 도로 선호도를 적용해 경로 다시 검색 중
+navigation.lua	The transit took too long; route ended	이동 수단 이용이 너무 오래 걸림; 경로 종료	이동이 너무 오래 걸림; 경로 종료
+navigation.lua	On the ship	배에 탑승 중	배 탑승 지점
+navigation.lua	On the zeppelin	비행선에 탑승 중	비행선 탑승 지점
+navigation.lua	At the vehicle	운송 수단 앞	운송 수단 탑승 지점
+powers.lua	alternate encounter	전투 보조 자원	우두머리 전투 보조 자원
+objects.lua	broken	파손	개 파손
+navigation.lua	The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.	네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길과 잠수는 직접 하십시오, 마지막 구간은 검증되지 않았습니다.	네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수하십시오, 마지막 구간은 검증되지 않았습니다.
+objects.lua	lowest item	가장 낮은 아이템	최저 내구도 아이템
+objects.lua	Free Bag Slots	가방 빈 칸	비어 있는 가방 칸
+navigation.lua	Waiting for the far end of %s	%s 반대편 끝 대기 중	%s 도착 지점 대기 중
+navigation.lua	Riding to the noted dock %s	기록한 승강장 %s까지 이동 중	기록한 %s 승강장까지 이동 중
+objects.lua	Rested	휴식 상태	휴식 경험치
+objects.lua	rested	휴식 상태	휴식 경험치
+objects.lua	Lowest Item	가장 낮은 아이템	최저 내구도 아이템
+speech.lua	Activity Sound When Unfocused	집중하지 않은 창의 활동 소리	대화창이 비활성일 때 활동 소리
+quests.lua	Rares	희귀	희귀 몹
+targeting.lua	Announce Raid Target Marker on Hard Target	하드 대상의 대상 표시기 알림	하드 대상에 붙은 대상 표시기 알림
+speech.lua	Speech Voice	음성 목소리	음성 종류
+speech.lua	Buffered	대기열	버퍼
+scanner.lua	Refreshed	새로고침됨	새로고침 완료
+speech.lua	Sound Between Chat Lines	대화 줄 사이 소리	대화 메시지 사이 소리
+targeting.lua	Target in Combat Sound	전투 중인 대상 소리	대상이 전투 중일 때 소리
+targeting.lua	Friends	친구	아군
+ui.lua	Attacking You or Your Group	나 또는 내 파티를 공격 중	나 또는 내 파티나 공격대를 공격 중
+ui.lua	Empty	없음	비어 있음
+ui.lua	Disabled	사용 안 함	비활성화
+ui.lua	Count Enemies	적 세기	적 수 세기
+ui.lua	Unchecked	체크 안 됨	체크되지 않음
+ui.lua	Percent	백분율	퍼센트
+ui.lua	Object	물체	개체
+ui.lua	Objects	물체	개체
+ui.lua	Empty Object	빈 물체	빈 개체
+ui.lua	No object configured	설정된 물체 없음	설정된 개체 없음
+ui.lua	Template	견본	템플릿
+ui.lua	Resistances	저항	저항력
+ui.lua	Active	활성화	활성
+ui.lua	Duration	지속시간	기간
+ui.lua	Nameplate Show All	이름표에 모두 표시	모든 이름표에 표시
+ui.lua	Is Raid	공격대 여부	공격대 관련 여부
+windows.lua	Watched	주시 중	경험치바에 표시
+ui.lua	Radio	라디오	라디오 버튼
+windows.lua	Skill Details	숙련 상세 정보	숙련 세부 정보
+windows.lua	Drag to pick up macro	끌어서 매크로 집기	매크로를 끌어서 집기
+windows.lua	Note	쪽지	메모
+windows.lua	Search Match	검색 일치	일치하는 항목 검색
+windows.lua	Raid Frame Preview	공격대 창 미리보기	공격대창 미리보기
+windows.lua	Extended	확장	연장

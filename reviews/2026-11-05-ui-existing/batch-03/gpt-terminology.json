@@ -1,0 +1,1 @@
+{"findings":[{"id":"colors.lua::violet","category":"terminology","severity":"major","problem":"색상 문맥의 공식 용어인 \"보라색\"을 따르지 않고 \"청보라색\"으로 옮겼다.","evidence":"입력의 game_term은 \"보라색\"이며, wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 BaseTag 56599에서도 Violet=보라색으로 확인된다.","suggestion":"보라색"}]}

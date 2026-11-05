@@ -1,0 +1,10 @@
+{"findings": [
+  {
+    "id": "speech.lua::Activity Sound When Unfocused",
+    "category": "accuracy",
+    "severity": "minor",
+    "problem": "Unfocused(창에 입력 포커스가 없음)를 '집중하지 않은'으로 옮겨 사람이 주의를 기울이지 않는다는 뜻으로 읽힌다. 원문은 창 포커스 상태를 말한다.",
+    "evidence": "WowVision/core/speechSounds.lua:5-6 'an activity sound when a message is spoken while the chat window is hidden', :37-38 label 'Activity Sound When Unfocused' -> option 'PlayActivitySoundWhenNotFocused'. 프랑스어판도 'quand la fenêtre n'a pas le focus'. 뜻은 대략 통해 minor로 둔다.",
+    "suggestion": "포커스 없을 때 활동 소리"
+  }
+]}

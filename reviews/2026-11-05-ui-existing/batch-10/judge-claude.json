@@ -1,0 +1,17 @@
+{
+ "verdicts": [
+  {
+   "ref": "ui.lua::Dispel Type",
+   "uphold": false,
+   "final_ko": "무효화 유형",
+   "reason": "확정 용어집 glossary.tsv:25가 dispellable → 무효화 가능(예외 열 비어 있음)으로 정했고, 기존 번역 buffers.lua의 Dispellable·Dispellable by My Group도 '무효화'를 쓴다. 게임 공식 문자열도 한쪽으로 통일돼 있지 않다: SHOW_DISPELLABLE_DEBUFFS_TEXT·ACTION_SPELL_DISPEL_DEBUFF는 '해제'지만 DISPELS·ACTION_SPELL_DISPEL·ACTION_SPELL_DISPEL_FAILED는 '무효화'다. 그래서 '해제'만이 공식 용어라는 지적의 전제가 성립하지 않는다. 용어집과 애드온 안의 일관성을 근거로 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "input",
+    "wowwork/docs/glossary.tsv:25",
+    "wowvision-ko/vision-locale/koKR/buffers.lua",
+    "wowwork/cache/gs_koKR.csv",
+    "wowwork/cache/game_terms.tsv:45"
+   ]
+  }
+ ]
+}

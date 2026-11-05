@@ -1,0 +1,18 @@
+{"findings": [
+  {
+    "id": "navigation.lua::Beacon set",
+    "category": "context",
+    "severity": "minor",
+    "problem": "비컨을 놓았다는 상태 알림인데 \"비컨 설정\"은 명사 단독이라 설정 메뉴 이름(비컨 설정 화면)으로도 들린다. 뒤에 거리가 붙으면 \"비컨 설정 30 야드\"가 되어 '비컨 거리를 30야드로 설정하라/설정 항목' 같은 뜻으로도 갈린다.",
+    "evidence": "core/navigation/maps/module.lua:342: WowVision:speak(string.format(\"%s %d %s\", L[\"Beacon set\"], distance, L[\"yards\"])) / :344 단독 발화. 같은 파일의 상태 문구는 \"차단됨\", \"느려짐\"처럼 완료형을 쓴다. 들었을 때의 혼동 정도는 판단이 갈릴 수 있어 minor로 둔다.",
+    "suggestion": "비컨 설정됨"
+  },
+  {
+    "id": "navigation.lua::Beacon Aligned",
+    "category": "context",
+    "severity": "minor",
+    "problem": "비컨 방향을 바라볼 때 나는 소리의 출력 라벨인데 \"정렬\"은 한국어에서 주로 '순서대로 정리(sort)'로 들려 무엇에 대한 소리인지 알기 어렵다. 짝인 \"비컨 경로 이탈\"(unaligned)과 대비도 안 된다.",
+    "evidence": "core/navigation/maps/module.lua:21-34: action = \"aligned\" 출력 label = L[\"Beacon Aligned\"], action = \"unaligned\" 출력 label = L[\"Beacon Off Course\"](비컨 경로 이탈). 정렬이 alignment 뜻도 있어 오해 정도는 확실치 않아 minor.",
+    "suggestion": "비컨 방향 일치"
+  }
+]}

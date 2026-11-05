@@ -1,0 +1,44 @@
+[
+  {
+    "id": "targeting.lua::Friends",
+    "action": "accept",
+    "final_ko": "아군",
+    "reason": "core/targeting/module.lua:444-450에서 Enemies(적)=1과 나란한 SoftTargetForce 선택지라 우호 대상을 뜻한다. 같은 파일의 Soft Target Friend = '아군 소프트 대상', Enemies = '적'과 짝이 맞는다. 친구 목록 창 이름은 windows.lua::Friends(친구)가 따로 있으니 그쪽에서 '친구'를 유지한다. 다만 AceLocale은 키당 값이 하나라 classic/friends.lua:3,723도 같은 L[\"Friends\"]를 쓴다. 대상 지정 선택지는 코드에서 별도 키로 나눠야 두 문맥이 모두 맞는다."
+  },
+  {
+    "id": "ui.lua::Attacking You or Your Group",
+    "action": "accept",
+    "final_ko": "나 또는 내 파티나 공격대를 공격 중",
+    "reason": "core/ui modules/combat.lua의 group 모드는 party 유닛과 raid 유닛을 모두 센다. '내 파티'만 쓰면 범위가 좁아진다. 짝 항목 '나를 공격 중'과 어미를 맞췄다."
+  },
+  {
+    "id": "ui.lua::Empty",
+    "action": "accept",
+    "final_ko": "비어 있음",
+    "reason": "Empty는 '비어 있음'이라는 상태다. 장비 칸(camelot/character.lua:229,385)이나 빈 탭 목록(613,1019)에서 '비어 있음'이 원뜻에 맞다. 'Menu Empty' 조립도 '메뉴 없음'이 아니라 '메뉴 비어 있음'으로 들린다. None('없음')과도 소리로 구별된다."
+  },
+  {
+    "id": "ui.lua::Disabled",
+    "action": "accept",
+    "final_ko": "비활성화",
+    "reason": "core/graph/nodes.lua:210,563과 dropdownMenu.lua:423은 IsEnabled()가 거짓인 컨트롤에 쓰고, gamepadRadial.lua:59는 흐린 칸에 붙인다. 모두 누를 수 없는 상태를 알린다. '사용 안 함'은 사용자가 끈 설정처럼 들린다. 공식 후보(game_term)에 있는 '비활성화'는 이 상태와 설정 꺼짐 상태 모두에 맞는다."
+  },
+  {
+    "id": "ui.lua::Available",
+    "action": "dispute",
+    "final_ko": "사용 가능",
+    "reason": "지적한 문제(경매장 수량 앞에서 쓸 수 있다는 뜻으로 들림)는 제안된 '이용 가능'으로도 그대로 남는다. '이용 가능 5'도 구매 가능 수량을 뜻하지 않는다. '이용 가능'은 game_term 후보에도 없다. 반면 '사용 가능'은 공식 후보이고 talentTree.lua:156의 선택 가능 상태에도 통한다. 경매장 수량 문제는 auction.lua 쪽 키를 분리해 '구매 가능 수량'으로 옮겨야 풀린다. 이 단어만 바꿔서는 해결되지 않는다."
+  },
+  {
+    "id": "ui.lua::Count Enemies",
+    "action": "accept",
+    "final_ko": "적 수 세기",
+    "reason": "'적 세기'는 음성으로 들으면 '적의 세기(강도)'로도 들린다는 지적이 맞다. 다만 제안된 '셀 적'은 설정 이름으로 어색하다. '수'를 넣어 '적 수 세기'로 하면 센다는 뜻이 분명해진다. 관련 안내문 '적을 세려면'과도 맞는다."
+  },
+  {
+    "id": "ui.lua::Unchecked",
+    "action": "accept",
+    "final_ko": "체크되지 않음",
+    "reason": "게임 공식 컨트롤 상태 낭독 문자열은 NARRATION_STATUS_UNCHECKED_FORMAT = '%s 체크되지 않음'(gs_koKR.csv:26422)이고, 짝인 CHECKED는 '%s 체크됨'(26421)이다. 같은 문맥(체크 상태 알림, contextMenu.lua:98 등)이므로 지침 1번에 따라 공식 표기를 쓴다. 기존 Checked '체크됨'과도 짝이 맞는다."
+  }
+]

@@ -133,6 +133,18 @@ def related_entries(
     return [{"id": oid, "en": en, "ko": ko} for _, oid, en, ko in scored[:limit]]
 
 
+def shared_files(item: dict[str, str], every: list[dict[str, str]]) -> list[dict[str, str]]:
+    """같은 키를 가진 다른 파일. AceLocale 은 키 하나에 값 하나라 번역을 바꾸면 그 파일들의 기능에도 적용된다.
+
+    `code` 필드가 이미 키의 모든 사용처를 담고 있지만, 다른 파일의 현재 번역은 여기서만 보인다.
+    """
+    return [
+        {"file": o["file"], "ko": o["ko"]}
+        for o in every
+        if o["key"] == item["key"] and o["file"] != item["file"]
+    ]
+
+
 def load_terms() -> dict[str, str]:
     path = REPO_ROOT / "cache" / "game_terms.tsv"
     if not path.exists():
@@ -152,13 +164,15 @@ def main() -> None:
         with a.keys.open(encoding="utf-8", newline="") as f:
             only = {(r["file"], r["key"]) for r in csv.DictReader(f, delimiter="\t")}
     items = collect_items(upstream_locale_dir(), only)
-    every = {i["id"]: (i["en"], i["ko"]) for i in collect_items(upstream_locale_dir())}
+    all_items = collect_items(upstream_locale_dir())
+    every = {i["id"]: (i["en"], i["ko"]) for i in all_items}
     idx = index_sources(WOWVISION_DIR)
     terms = load_terms()
     for item in items:
-        item["code"] = code_usages(idx, item["key"])  # type: ignore[assignment]
+        item["code"] = code_usages(idx, item["key"], limit=8)  # type: ignore[assignment]
         item["game_term"] = terms.get(item["key"], "")
         item["related"] = related_entries(item, every)  # type: ignore[assignment]
+        item["shared_key"] = shared_files(item, all_items)  # type: ignore[assignment]
     a.out.mkdir(parents=True, exist_ok=True)
     for n, part in enumerate(chunk(items, a.size), 1):
         (a.out / f"batch-{n:02d}.json").write_text(

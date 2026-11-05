@@ -1,0 +1,42 @@
+{"findings": [
+  {
+    "id": "auction.lua::Vendor Sell",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "'Vendor Sell'은 플레이어가 상인에게 팔 때 받는 값(GetItemInfo sellPrice)인데 '상인 판매가'는 '상인이 파는 값'으로 들려 뜻이 뒤집혀 들릴 수 있다. 게임 공식은 같은 값을 아이템 툴팁에서 '판매 가격'(SELL_PRICE)으로 쓴다.",
+    "evidence": "tbc/auction/prices.lua:247-252 '-- Vendor sell price from GetItemInfo ... tooltip:AddLine(L[\"Vendor Sell\"] .. \": \" .. sellText'. cache/gs_koKR.csv 19823,SELL_PRICE,\"판매 가격\". '상인 판매가'를 '상인에게 판매하는 가격'으로 읽을 여지도 있어 critical에서 한 단계 낮춤.",
+    "suggestion": "상인 판매 가격"
+  },
+  {
+    "id": "auction.lua::Vendor Buy",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "'Vendor Buy'는 플레이어가 상인에게서 살 때 내는 값(db.vendors 캐시)인데 '상인 구입가'는 '상인이 사들이는 값'으로 들려 Vendor Sell과 뜻이 뒤바뀌어 들릴 수 있다.",
+    "evidence": "tbc/auction/prices.lua:255-261 '-- Vendor buy price from cache ... tooltip:AddLine(L[\"Vendor Buy\"] .. \": \" .. buyText'. 같은 툴팁에 두 줄이 연달아 나오므로 '상인 판매가/상인 구입가' 쌍은 주체가 상인으로 읽히기 쉽다. 반대 해석도 가능해 한 단계 낮춤.",
+    "suggestion": "상인 구입 가격"
+  },
+  {
+    "id": "alerts.lua::Voice",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "TTS 목소리를 고르는 설정(TtsVoice)인데 '음성'으로 옮겨, 같은 종류 설정인 'Speech Voice'(음성 목소리)와 용어가 어긋나고 'Speech'(음성)와 같은 말이 되어 음성 켜기/끄기 설정으로 오해될 수 있다.",
+    "evidence": "core/alerts/outputs.lua:37-41, 47-51 type = \"TtsVoice\", label = L[\"Voice\"]; retail/groupHealth/module.lua:49-52 type = \"TtsVoice\", label = L[\"Voice\"]; mists/speech.lua:66 label = L[\"Speech Voice\"] 와 koKR/speech.lua:5 L[\"Speech Voice\"] = \"음성 목소리\", koKR/speech.lua:4 L[\"Speech\"] = \"음성\". game_term '음성|음성 대화'는 음성 대화(voice chat) 문맥이라 이 설정과 문맥이 다르다.",
+    "suggestion": "목소리"
+  },
+  {
+    "id": "auction.lua::Starting Bid",
+    "category": "terminology",
+    "severity": "minor",
+    "problem": "경매 등록 창의 시작가 입력란(StartPrice)인데 게임 공식 라벨 '경매 시작가'(STARTING_PRICE)와 다른 '시작 입찰가'를 썼다.",
+    "evidence": "tbc/auction/module.lua:872-876 moneyInputStops(innerBuilder, \"startPrice\", L[\"Starting Bid\"], StartPrice). cache/gs_koKR.csv 11859,STARTING_PRICE,\"경매 시작가\". 영어 원문이 'Starting Price'가 아닌 'Starting Bid'라 game_term에 잡히지 않았으므로 확신이 덜해 major에서 한 단계 낮춤.",
+    "suggestion": "경매 시작가"
+  },
+  {
+    "id": "alerts.lua::Voice Alert",
+    "category": "terminology",
+    "severity": "minor",
+    "problem": "음성 팩(mp3) 출력의 라벨인데 'voice'를 '목소리'로 옮겨, 같은 출력의 설정 'Voice Pack'(음성 팩)·'Voice Path'(음성 경로)와 용어가 어긋난다. 한편 '목소리'는 TTS 목소리(Speech Voice=음성 목소리)에 쓰이는 말이라 두 기능이 섞여 들린다.",
+    "evidence": "core/navigation/compass.lua:13-15 type = \"Voice\", label = L[\"Voice Alert\"], getPath ... \".mp3\"; core/alerts/outputs.lua:160 label = L[\"Voice Pack\"]; koKR/ui.lua:103 \"음성 팩\", koKR/monitors.lua:25 \"음성 경로\". 'Speech Alert'가 이미 '음성 경보'라 단순히 '음성 경보'로 바꿀 수 없어, 제안은 기능을 드러내는 형태다. 대안 선택은 판단 여지가 있어 minor.",
+    "suggestion": "음성 팩 경보"
+  }
+]}

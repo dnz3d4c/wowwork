@@ -1,0 +1,10 @@
+{"findings": [
+  {
+    "id": "quests.lua::Rares",
+    "category": "context",
+    "severity": "minor",
+    "problem": "스캐너 범주 목록의 라벨인데 형용사 '희귀'만 남아 무엇의 범주인지 드러나지 않는다. 같은 목록의 형제 라벨(상인, 상급자, 우체통, NPC)은 모두 대상 명사다.",
+    "evidence": "core/quests/scanner.lua:486-492에서 key = \"rares\", label = L[\"Rares\"]로 범주 노드를 만들고 bucket(\"rare\")로 희귀 몹을 모은다. 바로 앞 줄은 L[\"Other NPCs\"], L[\"Mailboxes\"]. 들었을 때 아이템 품질 '희귀'와도 겹칠 수 있으나 목록 맥락상 추측 가능해 확신이 낮아 minor로 둔다.",
+    "suggestion": "희귀 몹"
+  }
+]}

@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "powers.lua::alternate encounter",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "encounter(우두머리 전투·조우)를 '전투'로 옮겨 범주가 일반 전투 전체로 넓어졌다. 어떤 전투에서나 쓰는 자원으로 들릴 수 있다.",
+   "evidence": "core/gameDB/powers.lua:33: Enum.PowerType.AlternateEncounter. 이 자원은 특정 우두머리 전투(encounter) 전용 보조 자원이다. 다만 공식 번역 일치 항목(game_term)이 비어 있고 짧은 라벨이라 실사용 혼동 정도는 확신하지 못해 minor로 둔다.",
+   "suggestion": "우두머리 전투 보조 자원"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+  "verdicts": [
+    {
+      "ref": "navigation.lua::spirit guide",
+      "uphold": false,
+      "final_ko": "영혼의 안내자",
+      "reason": "평가자는 '영혼의 인도자'가 공식 표기라고 하지만 근거 자료에서 확인되지 않는다. gs_enUS.csv·game_terms.tsv에 'spirit guide' 항목이 없고, gs_koKR.csv·game_terms.tsv에 '영혼의 인도자'도 없다. glossary.tsv에도 없다. 확인되지 않은 주장이라 현재 번역을 유지한다.",
+      "evidence_sources": ["wowwork/cache/gs_enUS.csv", "wowwork/cache/gs_koKR.csv", "wowwork/cache/game_terms.tsv", "wowwork/docs/glossary.tsv", "wowvision-ko/WowVision/camelot/wownav/text.lua:234"]
+    },
+    {
+      "ref": "navigation.lua::approximate, %d yards",
+      "uphold": false,
+      "final_ko": "대략, %d야드",
+      "reason": "module.lua:381-392에서 값이 대상과 네트워크 사이 거리인 것은 맞지만, 영어 원문도 'approximate, %d yards'로 무엇과의 거리인지 밝히지 않고 module.lua:484-487에서 같은 위치에 붙는다. 번역이 원문보다 모호하지 않으며, '네트워크에서'는 원문에 없는 내용을 더하는 것이다. 현재 번역 유지.",
+      "evidence_sources": ["wowvision-ko/WowVision/camelot/wownav/module.lua:381-392", "wowvision-ko/WowVision/camelot/wownav/module.lua:484-487", "input"]
+    },
+    {
+      "ref": "navigation.lua::Use %s; the route goes on after it",
+      "uphold": false,
+      "final_ko": "%s 이용; 이후 경로 계속",
+      "reason": "module.lua:278-279에서 TRANSIT_TEXTS[action.kind]가 먼저 선택되고, dive·surface·wind_bridge는 TRANSIT_TEXTS(module.lua:267-269)에 전용 문장이 있어 이 문장의 %s로 들어가지 않는다. 실제로 들어가는 값은 portal·tram·lift 또는 'the transit'이라 '이용'이 자연스럽다. 평가자의 전제가 코드와 다르다. 문장 끝은 decisions.tsv 2026-11-05 결정과 일치.",
+      "evidence_sources": ["wowvision-ko/WowVision/camelot/wownav/module.lua:263-280", "wowwork/docs/decisions.tsv:6"]
+    },
+    {
+      "ref": "navigation.lua::Dive here; the route goes on after it",
+      "uphold": false,
+      "final_ko": "여기서 잠수; 이후 경로 계속",
+      "reason": "decisions.tsv:6(2026-11-05)이 '; the route goes on after it' 문장 끝을 현재 번역 유지로 결정했고, 앞 절이 명사형인 경우 '; 이후 경로 계속'과 짝을 이루는 현 상태를 명시한다. 결정을 따른 번역은 결함이 아니다.",
+      "evidence_sources": ["wowwork/docs/decisions.tsv:6", "wowvision-ko/WowVision/camelot/wownav/module.lua:267"]
+    },
+    {
+      "ref": "navigation.lua::Surface here; the route goes on after it",
+      "uphold": false,
+      "final_ko": "여기서 수면으로 상승; 이후 경로 계속",
+      "reason": "Dive here와 같은 근거. decisions.tsv:6이 이 문장 끝 형식(명사형 앞 절 + '; 이후 경로 계속')을 현재 번역 유지로 결정했다.",
+      "evidence_sources": ["wowwork/docs/decisions.tsv:6", "wowvision-ko/WowVision/camelot/wownav/module.lua:268"]
+    }
+  ]
+}

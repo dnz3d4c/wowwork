@@ -1,0 +1,1 @@
+{"findings":[{"id":"ui.lua::Nameplate Show All","category":"accuracy","severity":"major","problem":"‘모든 이름표에 표시’가 아니라 ‘이름표에 모든 것을 표시’한다는 뜻으로 해석되어, `All`이 가리키는 대상이 바뀌었다.","evidence":"`core/objects/types/unit/Aura.lua:165`의 필드 키가 `nameplateShowAll`이고, 관련 항목 `Nameplate Show Personal`이 ‘개인 이름표에 표시’이므로 `All`은 표시 내용이 아니라 이름표의 범위를 한정한다.","suggestion":"모든 이름표에 표시"}]}

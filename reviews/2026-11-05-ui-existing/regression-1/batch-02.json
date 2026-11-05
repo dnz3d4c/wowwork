@@ -1,0 +1,728 @@
+{
+ "items": [
+  {
+   "id": "navigation.lua::No position of the group member available",
+   "file": "navigation.lua",
+   "key": "No position of the group member available",
+   "en": "No position of the group member available",
+   "ko": "파티원 또는 공격대원 위치 확인 불가",
+   "code": [
+    "camelot/wownav/text.lua:71: no_live_coordinates = L[\"No position of the group member available\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "en": "Position of the activation area reached. %sA journey is not confirmed here; the route stays on.",
+     "ko": "활성화 구역 위치 도착. %s여기서는 이동이 확인되지 않습니다; 경로는 유지됩니다."
+    },
+    {
+     "id": "minimap.lua::No position here",
+     "en": "No position here",
+     "ko": "이곳은 위치 정보 없음"
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "file": "navigation.lua",
+   "key": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "en": "The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수하십시오, 마지막 구간은 검증되지 않았습니다.",
+   "code": [
+    "camelot/wownav/text.lua:48: stop_water_net_ends = L[\"The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Last network point; the last stretch is unchecked, move carefully",
+     "en": "Last network point; the last stretch is unchecked, move carefully",
+     "ko": "네트워크 마지막 지점; 마지막 구간은 검증되지 않았으니, 조심해서 이동하십시오"
+    },
+    {
+     "id": "navigation.lua::The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "en": "The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.",
+     "ko": "네트워크는 대상에서 %.1f야드%s 떨어진 곳에서 끝납니다; 주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다."
+    },
+    {
+     "id": "navigation.lua:: (water surface, diving depth %.1f yards)",
+     "en": " (water surface, diving depth %.1f yards)",
+     "ko": " (수면, 잠수 깊이 %.1f야드)"
+    },
+    {
+     "id": "navigation.lua:: (inexact +%.1f yards%s)",
+     "en": " (inexact +%.1f yards%s)",
+     "ko": " (부정확 +%.1f야드%s)"
+    },
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Waiting for the far end of %s",
+   "file": "navigation.lua",
+   "key": "Waiting for the far end of %s",
+   "en": "Waiting for the far end of %s",
+   "ko": "%s 도착 지점 대기 중",
+   "code": [
+    "camelot/wownav/module.lua:1171: say(string.format(L[\"Waiting for the far end of %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::End of route",
+     "en": "End of route",
+     "ko": "경로 끝"
+    },
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "navigation.lua::Riding to the noted dock %s",
+   "file": "navigation.lua",
+   "key": "Riding to the noted dock %s",
+   "en": "Riding to the noted dock %s",
+   "ko": "기록한 %s 승강장까지 이동 중",
+   "code": [
+    "camelot/wownav/module.lua:1174: say(string.format(L[\"Riding to the noted dock %s\"], tostring(passive.name or \"\")))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s, 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::Rested",
+   "file": "objects.lua",
+   "key": "Rested",
+   "en": "Rested",
+   "ko": "휴식 경험치",
+   "code": [
+    "core/objects/types/PlayerXP.lua:54: label = L[\"Rested\"],"
+   ],
+   "game_term": "휴식 상태",
+   "related": []
+  },
+  {
+   "id": "objects.lua::rested",
+   "file": "objects.lua",
+   "key": "rested",
+   "en": "rested",
+   "ko": "휴식 경험치",
+   "code": [
+    "core/objects/types/tests.lua:170: t:assertEqual(line(\"PlayerXP\"), xpLine .. \", \" .. L[\"rested\"] .. \" 3000\")"
+   ],
+   "game_term": "휴식 상태",
+   "related": []
+  },
+  {
+   "id": "objects.lua::Free Bag Slots",
+   "file": "objects.lua",
+   "key": "Free Bag Slots",
+   "en": "Free Bag Slots",
+   "ko": "비어 있는 가방 칸",
+   "code": [
+    "core/objects/types/tests.lua:82: t:assertEqual(line(\"PlayerBags\"), L[\"Free Bag Slots\"] .. \": 10\")"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Bag Slots",
+     "en": "Bag Slots",
+     "ko": "가방 보관함"
+    },
+    {
+     "id": "windows.lua::Bank Bag Slots",
+     "en": "Bank Bag Slots",
+     "ko": "은행 가방 보관함"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::Lowest Item",
+   "file": "objects.lua",
+   "key": "Lowest Item",
+   "en": "Lowest Item",
+   "ko": "최저 내구도 아이템",
+   "code": [
+    "core/objects/types/PlayerDurability.lua:25: label = L[\"Lowest Item\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::lowest item",
+     "en": "lowest item",
+     "ko": "최저 내구도 아이템"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::lowest item",
+   "file": "objects.lua",
+   "key": "lowest item",
+   "en": "lowest item",
+   "ko": "최저 내구도 아이템",
+   "code": [
+    "core/objects/types/tests.lua:114: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 98%\")",
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "objects.lua::Lowest Item",
+     "en": "Lowest Item",
+     "ko": "최저 내구도 아이템"
+    }
+   ]
+  },
+  {
+   "id": "objects.lua::broken",
+   "file": "objects.lua",
+   "key": "broken",
+   "en": "broken",
+   "ko": "개 파손",
+   "code": [
+    "core/objects/types/tests.lua:117: t:assertEqual(line(\"PlayerDurability\"), L[\"Durability\"] .. \": \" .. L[\"lowest item\"] .. \" 0%, 2 \" .. L[\"broken\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "powers.lua::alternate encounter",
+   "file": "powers.lua",
+   "key": "alternate encounter",
+   "en": "alternate encounter",
+   "ko": "우두머리 전투 보조 자원",
+   "code": [
+    "core/gameDB/powers.lua:33: { key = \"alternateencounter\", id = Enum.PowerType.AlternateEncounter, label = L[\"alternate encounter\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "quests.lua::Rares",
+   "file": "quests.lua",
+   "key": "Rares",
+   "en": "Rares",
+   "ko": "희귀 몹",
+   "code": [
+    "core/quests/scanner.lua:488: label = L[\"Rares\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "scanner.lua::Refreshed",
+   "file": "scanner.lua",
+   "key": "Refreshed",
+   "en": "Refreshed",
+   "ko": "새로고침 완료",
+   "code": [
+    "core/scanner/ui.lua:203: WowVision:speak(L[\"Refreshed\"])"
+   ],
+   "game_term": "지속시간 초기화",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Speech Voice",
+   "file": "speech.lua",
+   "key": "Speech Voice",
+   "en": "Speech Voice",
+   "ko": "음성 종류",
+   "code": [
+    "mists/speech.lua:66: label = L[\"Speech Voice\"],",
+    "retail/speech.lua:66: label = L[\"Speech Voice\"],",
+    "tbc/speech.lua:66: label = L[\"Speech Voice\"],",
+    "vanilla/speech.lua:46: label = L[\"Speech Voice\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Buffered",
+   "file": "speech.lua",
+   "key": "Buffered",
+   "en": "Buffered",
+   "ko": "버퍼",
+   "code": [
+    "vanilla/speech.lua:122: styleSetting:addChoice({ label = L[\"Buffered\"], value = \"queued\" })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Sound Between Chat Lines",
+   "file": "speech.lua",
+   "key": "Sound Between Chat Lines",
+   "en": "Sound Between Chat Lines",
+   "ko": "대화 메시지 사이 소리",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "speech.lua::Activity Sound When Unfocused",
+   "file": "speech.lua",
+   "key": "Activity Sound When Unfocused",
+   "en": "Activity Sound When Unfocused",
+   "ko": "대화창이 비활성일 때 활동 소리",
+   "code": [],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+   "file": "targeting.lua",
+   "key": "Announce Raid Target Marker on Hard Target",
+   "en": "Announce Raid Target Marker on Hard Target",
+   "ko": "하드 대상에 붙은 대상 표시기 알림",
+   "code": [
+    "core/targeting/module.lua:71: label = L[\"Announce Raid Target Marker on Hard Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "targeting.lua::Announce Hard Target",
+     "en": "Announce Hard Target",
+     "ko": "하드 대상 알림"
+    },
+    {
+     "id": "targeting.lua::Hard Target",
+     "en": "Hard Target",
+     "ko": "하드 대상"
+    },
+    {
+     "id": "targeting.lua::Make Soft Target the Hard Target",
+     "en": "Make Soft Target the Hard Target",
+     "ko": "소프트 대상을 하드 대상으로 지정"
+    },
+    {
+     "id": "targeting.lua::Only Without a Hard Target",
+     "en": "Only Without a Hard Target",
+     "ko": "하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Only Without an Attackable Hard Target",
+     "en": "Only Without an Attackable Hard Target",
+     "ko": "공격 가능한 하드 대상이 없을 때만"
+    },
+    {
+     "id": "targeting.lua::Soft Targeting With a Hard Target",
+     "en": "Soft Targeting With a Hard Target",
+     "ko": "하드 대상이 있을 때 소프트 대상 지정"
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Target in Combat Sound",
+   "file": "targeting.lua",
+   "key": "Target in Combat Sound",
+   "en": "Target in Combat Sound",
+   "ko": "대상이 전투 중일 때 소리",
+   "code": [
+    "core/targeting/module.lua:109: label = L[\"Target in Combat Sound\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::Shown on Raid Frames in Combat",
+     "en": "Shown on Raid Frames in Combat",
+     "ko": "전투 중 공격대창에 표시"
+    },
+    {
+     "id": "minimap.lua::Not in combat",
+     "en": "Not in combat",
+     "ko": "전투 중에는 불가"
+    },
+    {
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "en": "Cannot set virtual focus while in combat.",
+     "ko": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    }
+   ]
+  },
+  {
+   "id": "targeting.lua::Friends",
+   "file": "targeting.lua",
+   "key": "Friends",
+   "en": "Friends",
+   "ko": "친구",
+   "code": [
+    "classic/friends.lua:3: module:setLabel(L[\"Friends\"])",
+    "classic/friends.lua:723: builder:pushContext(\"friends\", L[\"Friends\"])",
+    "core/targeting/module.lua:450: { label = L[\"Friends\"], value = 2 },"
+   ],
+   "game_term": "친구 | 친구 등록",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Count Enemies",
+   "file": "ui.lua",
+   "key": "Count Enemies",
+   "en": "Count Enemies",
+   "ko": "적 수 세기",
+   "code": [
+    "core/ui modules/combat.lua:94: label = L[\"Count Enemies\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Turn on enemy nameplates to count enemies",
+     "en": "Turn on enemy nameplates to count enemies",
+     "ko": "적을 세려면 적 이름표를 켜십시오"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Attacking You or Your Group",
+   "file": "ui.lua",
+   "key": "Attacking You or Your Group",
+   "en": "Attacking You or Your Group",
+   "ko": "나 또는 내 파티나 공격대를 공격 중",
+   "code": [
+    "core/ui modules/combat.lua:97: { label = L[\"Attacking You or Your Group\"], value = \"group\" },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Attacking You",
+     "en": "Attacking You",
+     "ko": "나를 공격 중"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Unchecked",
+   "file": "ui.lua",
+   "key": "Unchecked",
+   "en": "Unchecked",
+   "ko": "체크되지 않음",
+   "code": [
+    "camelot/legacy/challenges.lua:209: return isTracked(id) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/contextMenu.lua:98: return entry.isChecked() and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:414: return selectionState(captured) and L[\"Checked\"] or L[\"Unchecked\"]",
+    "core/graph/dropdownMenu.lua:436: return capturedRegion:IsShown() and L[\"Checked\"] or L[\"Unchecked\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Disabled",
+   "file": "ui.lua",
+   "key": "Disabled",
+   "en": "Disabled",
+   "ko": "비활성화",
+   "code": [
+    "camelot/gamepadRadial.lua:59: return text .. \", \" .. L[\"Disabled\"]",
+    "core/graph/dropdownMenu.lua:423: return L[\"Disabled\"]",
+    "core/graph/nodes.lua:210: return L[\"Disabled\"]",
+    "core/graph/nodes.lua:563: return L[\"Disabled\"]"
+   ],
+   "game_term": "무력화 | 비활성화 | 사용 안 함",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Empty",
+   "file": "ui.lua",
+   "key": "Empty",
+   "en": "Empty",
+   "ko": "비어 있음",
+   "code": [
+    "camelot/character.lua:229: return SLOT_NAMES[slotId] or L[\"Empty\"]",
+    "camelot/character.lua:385: return L[\"Empty\"]",
+    "camelot/character.lua:613: builder:addItem(ControlId.structural(\"sidebarTabs:empty\"), nodes.text({ label = L[\"Empty\"] }))",
+    "camelot/character.lua:1019: builder:addItem(ControlId.structural(\"tabs:empty\"), nodes.text({ label = L[\"Empty\"] }))"
+   ],
+   "game_term": "빈 자리 | 없음",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Resistances",
+   "file": "ui.lua",
+   "key": "Resistances",
+   "en": "Resistances",
+   "ko": "저항력",
+   "code": [
+    "tbc/character/PaperDoll.lua:157: builder:pushContext(\"resistances\", L[\"Resistances\"])",
+    "tbc/character/Pet.lua:98: builder:pushContext(\"petResistances\", L[\"Resistances\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Percent",
+   "file": "ui.lua",
+   "key": "Percent",
+   "en": "Percent",
+   "ko": "퍼센트",
+   "code": [
+    "core/objects/types/PlayerXP.lua:28: label = L[\"Percent\"],",
+    "core/windows/colorPicker.lua:156: return tostring(get()) .. \" \" .. L[\"Percent\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Active",
+   "file": "ui.lua",
+   "key": "Active",
+   "en": "Active",
+   "ko": "활성",
+   "code": [
+    "camelot/talents.lua:58: return L[\"Active\"]",
+    "core/objects/types/unit/PVP.lua:11: label = L[\"Active\"],",
+    "tbc/auction/module.lua:297: return L[\"Active\"]"
+   ],
+   "game_term": "활성화",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Duration",
+   "file": "ui.lua",
+   "key": "Duration",
+   "en": "Duration",
+   "ko": "기간",
+   "code": [
+    "core/objects/types/Cooldown.lua:133: label = L[\"Duration\"],",
+    "core/objects/types/unit/Aura.lua:134: { type = \"Time\", key = \"duration\", timeType = \"duration\", label = L[\"Duration\"] },",
+    "tbc/auction/module.lua:883: builder:pushContext(\"duration\", L[\"Duration\"])"
+   ],
+   "game_term": "기간",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Is Raid",
+   "file": "ui.lua",
+   "key": "Is Raid",
+   "en": "Is Raid",
+   "ko": "공격대 관련 여부",
+   "code": [
+    "core/objects/types/unit/Aura.lua:161: { type = \"Bool\", key = \"isRaid\", label = L[\"Is Raid\"] },"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Nameplate Show All",
+   "file": "ui.lua",
+   "key": "Nameplate Show All",
+   "en": "Nameplate Show All",
+   "ko": "모든 이름표에 표시",
+   "code": [
+    "core/objects/types/unit/Aura.lua:165: { type = \"Bool\", key = \"nameplateShowAll\", label = L[\"Nameplate Show All\"] },"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "errors.lua::Show All Known Errors",
+     "en": "Show All Known Errors",
+     "ko": "알려진 오류 모두 보기"
+    },
+    {
+     "id": "ui.lua::Nameplate Show Personal",
+     "en": "Nameplate Show Personal",
+     "ko": "개인 이름표에 표시"
+    }
+   ]
+  },
+  {
+   "id": "ui.lua::Objects",
+   "file": "ui.lua",
+   "key": "Objects",
+   "en": "Objects",
+   "ko": "개체",
+   "code": [
+    "core/buffers/types/StaticBuffer.lua:8: label = L[\"Objects\"],"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Object",
+   "file": "ui.lua",
+   "key": "Object",
+   "en": "Object",
+   "ko": "개체",
+   "code": [
+    "core/buffers/items/ObjectItem.lua:8: label = L[\"Object\"],"
+   ],
+   "game_term": "물체",
+   "related": []
+  },
+  {
+   "id": "ui.lua::No object configured",
+   "file": "ui.lua",
+   "key": "No object configured",
+   "en": "No object configured",
+   "ko": "설정된 개체 없음",
+   "code": [
+    "core/buffers/items/ObjectItem.lua:72: return L[\"No object configured\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Empty Object",
+   "file": "ui.lua",
+   "key": "Empty Object",
+   "en": "Empty Object",
+   "ko": "빈 개체",
+   "code": [
+    "core/buffers/items/ObjectItem.lua:98: return L[\"Empty Object\"]",
+    "core/buffers/items/ObjectItem.lua:124: return L[\"Empty Object\"]"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Template",
+   "file": "ui.lua",
+   "key": "Template",
+   "en": "Template",
+   "ko": "템플릿",
+   "code": [
+    "core/buffers/items/ObjectItem.lua:15: label = L[\"Template\"],"
+   ],
+   "game_term": "견본",
+   "related": []
+  },
+  {
+   "id": "ui.lua::Radio",
+   "file": "ui.lua",
+   "key": "Radio",
+   "en": "Radio",
+   "ko": "라디오 버튼",
+   "code": [
+    "core/graph/ControlTypes.lua:41: graph.registerControlType(\"radio\", L[\"Radio\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Skill Details",
+   "file": "windows.lua",
+   "key": "Skill Details",
+   "en": "Skill Details",
+   "ko": "숙련 세부 정보",
+   "code": [
+    "tbc/character/Skills.lua:156: builder:pushContext(\"skillDetail\", L[\"Skill Details\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Watched",
+   "file": "windows.lua",
+   "key": "Watched",
+   "en": "Watched",
+   "ko": "경험치바에 표시",
+   "code": [
+    "mists/character.lua:277: nodes.proxyCheckButton({ target = ReputationDetailMainScreenCheckbox, label = L[\"Watched\"] })",
+    "tbc/character/Reputation.lua:173: nodes.proxyCheckButton({ target = ReputationDetailMainScreenCheckbox, label = L[\"Watched\"] })"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Resistances",
+   "file": "windows.lua",
+   "key": "Resistances",
+   "en": "Resistances",
+   "ko": "저항력",
+   "code": [
+    "tbc/character/PaperDoll.lua:157: builder:pushContext(\"resistances\", L[\"Resistances\"])",
+    "tbc/character/Pet.lua:98: builder:pushContext(\"petResistances\", L[\"Resistances\"])"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Drag to pick up macro",
+   "file": "windows.lua",
+   "key": "Drag to pick up macro",
+   "en": "Drag to pick up macro",
+   "ko": "매크로를 끌어서 집기",
+   "code": [
+    "core/windows/Macros.lua:107: label = L[\"Drag to pick up macro\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::Pick Up",
+     "en": "Pick Up",
+     "ko": "집기"
+    }
+   ]
+  },
+  {
+   "id": "windows.lua::Search Match",
+   "file": "windows.lua",
+   "key": "Search Match",
+   "en": "Search Match",
+   "ko": "일치하는 항목 검색",
+   "code": [
+    "retail/talentTree.lua:180: return L[\"Search Match\"]"
+   ],
+   "game_term": "일치하는 항목 검색",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Note",
+   "file": "windows.lua",
+   "key": "Note",
+   "en": "Note",
+   "ko": "메모",
+   "code": [
+    "classic/friends.lua:139: return L[\"Note\"] .. \" \" .. info.notes",
+    "classic/friends.lua:191: tinsert(parts, L[\"Note\"] .. \" \" .. noteText)"
+   ],
+   "game_term": "메모 | 쪽지",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Raid Frame Preview",
+   "file": "windows.lua",
+   "key": "Raid Frame Preview",
+   "en": "Raid Frame Preview",
+   "ko": "공격대창 미리보기",
+   "code": [
+    "core/windows/options/ui.lua:1094: builder:addItem(helpers.id, nodes.text({ label = L[\"Raid Frame Preview\"] }))"
+   ],
+   "game_term": "",
+   "related": []
+  },
+  {
+   "id": "windows.lua::Extended",
+   "file": "windows.lua",
+   "key": "Extended",
+   "en": "Extended",
+   "ko": "연장",
+   "code": [
+    "retail/socialUI.lua:778: tinsert(parts, EXTENDED or L[\"Extended\"])"
+   ],
+   "game_term": "",
+   "related": []
+  }
+ ]
+}

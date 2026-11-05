@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "objects.lua::broken",
+      "category": "context",
+      "severity": "minor",
+      "problem": "숫자 뒤에 붙는 꼬리말인데 명사 '파손'만 두어 조립 결과가 '2 파손'이 된다. 한국어로는 개수와 상태가 이어지지 않아 어색하게 들린다.",
+      "evidence": "WowVision/core/objects/types/PlayerDurability.lua 템플릿 \"[Durability]: [lowest item] {lowest}%, {broken} [broken]\" -> 한국어 결과 \"내구도: 가장 낮은 아이템 0%, 2 파손\". 소문자 키 broken은 이 템플릿에서만 쓰이고 라벨용 Broken은 별도 키라서 이 키만 고쳐도 다른 자리에 영향이 없다.",
+      "suggestion": "개 파손"
+    }
+  ]
+}

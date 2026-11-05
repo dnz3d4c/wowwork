@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::Searching the route again with the new road preference",
+      "category": "listening",
+      "severity": "minor",
+      "problem": "'새 도로 선호도로'는 귀로 들으면 '선호도+로'와 '선호 도로'가 구분되지 않아 '새 도로, 선호 도로로'처럼 들릴 수 있다. 앞의 '도로'와 조사 '로'가 붙은 '선호도로'의 '도로' 소리가 겹친다.",
+      "evidence": "module.lua:987에서 say()로 단독 발화된다. 같은 기능의 설정 이름은 koKR navigation.lua:124 \"Road Preference (Percent Longer)\" = \"도로 선호도 (더 긴 거리 비율)\"이므로 '선호도'가 설정 이름을 가리키는 것은 맞지만, 조사 '로'가 붙으면서 소리가 '도로'와 겹친다. 실제 NVDA 발화에서 혼동이 생기는지는 사용자 확인이 필요하다.",
+      "suggestion": "새 도로 선호도를 적용해 경로 다시 검색 중"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {"id": "ui.lua::Percent", "action": "accept", "final_ko": "퍼센트", "reason": "consensus. core/windows/colorPicker.lua:156이 숫자 뒤에 단위로 붙여 '50 백분율'이 된다. '퍼센트'는 단위로도, PlayerXP.lua:28 필드 이름으로도 성립한다."},
+    {"id": "ui.lua::Object", "action": "accept", "final_ko": "개체", "reason": "game_term '물체'는 게임 세계 오브젝트 문맥이다. ObjectItem.lua:8의 대상은 WowVision.objects.types(돈, 경험치, 재사용 대기시간 등) 데이터 객체라 문맥이 다르다. decisions.tsv '문맥이 다른 공식 번역은 문맥에 맞게 옮긴다'에 따라 '개체'로 바꾼다."},
+    {"id": "ui.lua::Objects", "action": "accept", "final_ko": "개체", "reason": "StaticBuffer.lua:8의 items 필드가 WowVision.objects 종류를 담는다. Object와 같은 근거로 '개체'로 맞춘다."},
+    {"id": "ui.lua::Empty Object", "action": "accept", "final_ko": "빈 개체", "reason": "ObjectItem.lua:98, 124에서 같은 object 필드를 가리킨다. Object를 '개체'로 바꿨으니 함께 맞춘다."},
+    {"id": "ui.lua::No object configured", "action": "accept", "final_ko": "설정된 개체 없음", "reason": "ObjectItem.lua:72. Object를 '개체'로 바꿨으니 함께 맞춘다."},
+    {"id": "ui.lua::Template", "action": "accept", "final_ko": "템플릿", "reason": "ObjectItem.lua:15에서 objectType.templates(발화 서식)를 고르는 필드다. game_term '견본'은 형상변환 등 다른 문맥이라 decisions.tsv 문맥 우선 결정에 따라 따르지 않는다. 같은 개념인 monitors.lua 'Message Template'='메시지 템플릿'과도 맞춘다."},
+    {"id": "ui.lua::Resistances", "action": "accept", "final_ko": "저항력", "reason": "consensus. PaperDoll.lua:157, Pet.lua:98의 캐릭터 창 저항 구역 머리말이고, 같은 창 공식 표기는 gs_koKR RESISTANCE1_NAME~6 '화염 저항력' 등 '저항력'이다."},
+    {"id": "ui.lua::Active", "action": "accept", "final_ko": "활성", "reason": "camelot/talents.lua:58(IsActive 상태 알림), tbc/auction/module.lua:297(현재 정렬 열 표시), PVP.lua:11(Bool 라벨) 모두 상태 표시다. '활성화'는 동작으로도 들려 상태어로는 '활성'이 정확하다. game_term '활성화'는 이 문맥과 같은 창의 것이 확인되지 않아 문맥 우선 결정을 적용한다."},
+    {"id": "ui.lua::Duration", "action": "accept", "final_ko": "기간", "reason": "consensus. game_term이 '기간'이고, tbc/auction/module.lua:883의 경매 등록 기간(12/24/48시간)에 '지속시간'은 맞지 않는다. 키가 하나라 오라·재사용 대기시간 문맥에서도 통하는 '기간'으로 정한다."},
+    {"id": "ui.lua::Nameplate Show All", "action": "accept", "final_ko": "모든 이름표에 표시", "reason": "Aura.lua:165 nameplateShowAll은 모든 이름표에 오라를 표시하는지의 Bool이고 짝인 nameplateShowPersonal='개인 이름표에 표시'와 이름표 범위로 구분된다. '이름표에 모두 표시'는 '모든 내용을 표시'로 들릴 수 있다."},
+    {"id": "ui.lua::Dispel Type", "action": "dispute", "final_ko": "무효화 유형", "reason": "확정 용어집 docs/glossary.tsv에 'dispellable → 무효화 가능'이 있다. Dispel을 '무효화'로 옮기는 것이 확정 용어라 '해제'로 바꾸면 같은 개념이 용어집과 갈린다. 평가자는 용어집 근거 없이 '게임 용어 해제'를 주장했다."},
+    {"id": "ui.lua::Is Raid", "action": "accept", "final_ko": "공격대 관련 여부", "reason": "Aura.lua:161 isRaid는 오라 속성 Bool이다. '공격대 여부'는 오라가 공격대인지 묻는 말로 들린다. '공격대 관련 여부'가 속성 뜻을 드러내고 같은 목록의 '훔치기 가능 여부' 형식과도 맞는다."}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "monitors.lua::charges",
+      "category": "context",
+      "severity": "minor",
+      "problem": "남은 충전 횟수를 숫자 뒤에 붙이는 접미사인데 '회'만 남아 '1 회'로 발화된다. 앞에 '충전 중'이 오기 때문에 몇 번 쓸 수 있다는 뜻인지, 몇 번째 충전인지 듣고 구분하기 어렵다.",
+      "evidence": "retail/monitors/SpellCooldownMonitor.lua:406 `text = text .. secrets.whenNonZero(charges.currentCharges, \", \", \" \" .. L[\"charges\"])`, core/secrets.lua:55 `return prefix .. whole .. suffix` 때문에 '<주문>, 충전 중, 1 회, 8초'가 된다(주석 예시: \"Fire Blast, Charging, 1 charges, 8 seconds\"). 관련 키 `Charges`는 '사용 횟수'로 옮겼다. 다만 '회'만으로도 뜻이 전달된다고 볼 여지가 있어 심각도를 minor로 낮췄다.",
+      "suggestion": "회 사용 가능"
+    }
+  ]
+}

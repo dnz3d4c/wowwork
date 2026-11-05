@@ -92,8 +92,12 @@ async function runBatch(b) {
 
   const disputed = list.filter(g => resp[g.id] && resp[g.id].action === 'dispute')
   const escalations = disputed.filter(g => g.consensus).map(g => ({ id: g.id, why: '두 회사가 모두 지적했는데 번역자가 반박', reason: resp[g.id].reason }))
-  const toGpt = disputed.filter(g => !g.consensus && g.providers[0] === 'claude')
-  const toClaude = disputed.filter(g => !g.consensus && g.providers[0] === 'gpt')
+  // 반박된 지적은 두 회사 판정자가 모두 판정한다. 번역자가 Claude라서, 한 회사만 판정하면
+  // GPT 지적은 "Claude 번역자의 반박 + Claude 판정"이 되어 교차 판정이 성립하지 않는다(2026-11-05 실측: 31건 전부 기각).
+  // 두 판정이 일치해야 확정하고, 갈리면 사용자 판단 목록으로 보낸다. 판정자는 서로의 결론을 보지 않는다.
+  const toJudge = disputed.filter(g => !g.consensus)
+  const toGpt = toJudge
+  const toClaude = toJudge
   const payload = gs => gs.map(g => ({ ref: g.id, findings: g.findings, translator: resp[g.id] }))
 
   const [gj, cj] = await parallel([
@@ -104,7 +108,8 @@ async function runBatch(b) {
       `결과를 ${out}/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n` + JSON.stringify(payload(toClaude), null, 1),
       { label: 'claude:judge', phase: 'Judge', schema: VERDICTS }) : Promise.resolve({ verdicts: [] }),
   ])
-  const verdict = Object.fromEntries([...((gj && gj.verdicts) || []), ...((cj && cj.verdicts) || [])].map(v => [v.ref, v]))
+  const gv = Object.fromEntries(((gj && gj.verdicts) || []).map(v => [v.ref, v]))
+  const cv = Object.fromEntries(((cj && cj.verdicts) || []).map(v => [v.ref, v]))
 
   const decisions = []
   for (const g of list) {
@@ -112,9 +117,15 @@ async function runBatch(b) {
     if (!r) { escalations.push({ id: g.id, why: '번역자 응답 없음' }); continue }
     if (r.action === 'accept') { decisions.push({ id: g.id, final_ko: r.final_ko, how: g.consensus ? 'consensus' : 'accepted', sev: g.findings.map(f => f.severity) }); continue }
     if (g.consensus) continue
-    const v = verdict[g.id]
-    if (!v) { escalations.push({ id: g.id, why: '판정 없음' }); continue }
-    decisions.push({ id: g.id, final_ko: v.uphold ? v.final_ko : r.final_ko, how: v.uphold ? `upheld-by-${g.providers[0] === 'claude' ? 'gpt' : 'claude'}` : 'dispute-won', reason: v.reason, evidence: v.evidence_sources || [], sev: g.findings.map(f => f.severity) })
+    const a = gv[g.id], c = cv[g.id]
+    if (!a || !c) { escalations.push({ id: g.id, why: `판정 누락 (gpt ${!!a}, claude ${!!c})` }); continue }
+    if (a.uphold !== c.uphold) {
+      escalations.push({ id: g.id, why: '두 판정자의 결론이 다름', gpt: { uphold: a.uphold, final_ko: a.final_ko, reason: a.reason }, claude: { uphold: c.uphold, final_ko: c.final_ko, reason: c.reason } })
+      continue
+    }
+    // 지적을 인정할 때 확정 번역은 지적한 회사가 아닌 쪽 판정자의 것을 쓴다.
+    const other = g.providers[0] === 'claude' ? a : c
+    decisions.push({ id: g.id, final_ko: a.uphold ? other.final_ko : r.final_ko, how: a.uphold ? 'upheld-by-both' : 'dispute-won', reason: `gpt: ${a.reason} / claude: ${c.reason}`, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])], sev: g.findings.map(f => f.severity) })
   }
   return { batch: b.path, failedReviewers: failed, findings: runs.reduce((n, r) => n + r.findings.length, 0), decisions, escalations }
 }

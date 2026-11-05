@@ -1,0 +1,30 @@
+{
+  "verdicts": [
+    {
+      "ref": "monitors.lua::No essential or utility spells",
+      "uphold": false,
+      "final_ko": "핵심 능력 또는 보조 능력 주문 없음",
+      "reason": "코드(SpellCooldownMonitor.lua:29)가 목록을 EssentialCooldownViewer/UtilityCooldownViewer에서 가져오므로 essential/utility는 재사용 대기시간 관리자의 범주 이름이다. 같은 문맥의 공식 번역은 COOLDOWN_VIEWER_SETTINGS_CATEGORY_ESSENTIAL='핵심 능력', _UTILITY='보조 능력'(gs_koKR.csv:23762-23763)이라 지침의 같은 문맥 공식 번역 우선 규칙에 맞는다. '핵심 주문/보조 주문'은 게임 범주와 연결이 끊긴다. 두 범주명을 '또는'으로 병렬하고 '주문'이 공통으로 붙는 구조라 청취 모호성도 결함 수준이 아니다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/retail/monitors/SpellCooldownMonitor.lua:29",
+        "wowvision-ko/WowVision/retail/monitors/SpellCooldownMonitor.lua:276",
+        "wowwork/cache/gs_koKR.csv:23762",
+        "wowwork/cache/gs_koKR.csv:23763",
+        "wowwork/cache/gs_enUS.csv:23752"
+      ]
+    },
+    {
+      "ref": "navigation.lua::Auto-move to Interact Target",
+      "uphold": false,
+      "final_ko": "상호작용 대상에게 자동 이동",
+      "reason": "Auto-move의 하이픈은 영어 복합어 철자 요소이고 문장 부호로서 의미를 지닌 기호가 아니다. 지침 51행의 기호 보존 규칙은 기호를 추가·삭제해 문구를 가공하지 말라는 것으로, 한국어 복합어 '자동 이동'에 하이픈을 넣으면 오히려 한국어에 없는 표기가 된다. 같은 애드온의 기존 번역도 'D-pad up'='방향 패드 위'(koKR/controller.lua:10)처럼 철자용 하이픈을 옮기지 않았다.",
+      "evidence_sources": [
+        "input",
+        "wowwork/docs/translation-guide.md:51",
+        "wowvision-ko/vision-locale/koKR/controller.lua:10",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:5"
+      ]
+    }
+  ]
+}

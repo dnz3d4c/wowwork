@@ -1,0 +1,46 @@
+{
+ "responses": [
+  {
+   "id": "minimap.lua::turn in",
+   "action": "accept",
+   "final_ko": "퀘스트 완료 가능",
+   "reason": "core/minimap/module.lua:1215와 core/quests/scanner.lua:167-168에서 이 문구는 '퀘스트 수락 가능'(minimap.lua koKR:14)과 짝을 이루는 퀘스트 NPC 상태다. scanner.lua:230에서는 퀘스트 제출 지점 노드 앞에 붙는다. 같은 모듈에 '스캔 완료'(Scan done)가 있어서 '완료'만 들으면 일이 끝났다는 뜻으로 들린다. 원문 뜻은 '여기서 제출할 수 있다'다. 게임 용어 '완료'는 그대로 두고 짝 문구와 형태를 맞췄다. 키는 minimap.lua에만 있어서 quests.lua의 'Turn In'(대문자, 별도 키)에는 영향이 없다."
+  },
+  {
+   "id": "minimap.lua::Scan canceled",
+   "action": "accept",
+   "final_ko": "스캔 취소됨",
+   "reason": "core/minimap/module.lua:191에서 스캔이 중단된 뒤 사유와 함께 발화하는 상태 알림이다. '스캔 취소'는 메뉴 명령으로도 들린다. 상태 알림 'Cancelled'는 이미 '취소됨'(controller.lua koKR:27)이라 같은 형태로 맞췄다."
+  },
+  {
+   "id": "controller.lua::Page %d of %d",
+   "action": "dispute",
+   "final_ko": "%2$d페이지 중 %1$d페이지",
+   "reason": "지침 31줄과 decisions.tsv 2줄의 'of 유지' 결정은 코드가 숫자 사이에 of를 끼워 이어 붙여서 어순을 바꿀 수 없는 경우가 대상이다. 이 키는 숫자 두 개와 of가 모두 들어 있는 서식 문자열 하나이고, camelot/gamepadRadial.lua:150이 string.format(L[...], index, #pages)로 쓴다. 이런 경우는 지침 30줄대로 %2$d 위치 지정으로 한국어 어순을 쓸 수 있다(WoW format이 지원한다). 기호도 추가하지 않는다. 제안한 '%d페이지 of %d페이지'는 어순 문제가 없는데도 영어를 남긴다."
+  },
+  {
+   "id": "minimap.lua::Not in combat",
+   "action": "dispute",
+   "final_ko": "전투 중에는 불가",
+   "reason": "세 사용처(core/graph/keyCapture.lua:257-258, core/minimap/module.lua:617-618, 1336-1337) 모두 'if InCombatLockdown() then speak(L[\"Not in combat\"]) return end'다. 플레이어가 전투 중일 때 기능을 거절하면서 내는 말이다. 원문 뜻은 '전투 중에는 안 된다'다. 제안한 '전투 중 아님'은 실제 상태(전투 중)와 정반대로 들린다."
+  },
+  {
+   "id": "colors.lua::violet",
+   "action": "dispute",
+   "final_ko": "청보라색",
+   "reason": "같은 파일에 'purple'이 따로 있고 이미 '보라색'이다(vision-locale koKR/colors.lua:45-47, violet 다음 줄이 purple, 그다음이 reddish purple). core/colors/colors.lua:104는 색상환 구간 { limit = 290, name = \"violet\" }으로 violet을 purple과 다른 색조로 나눈다. violet도 '보라색'이 되면 서로 다른 두 구간이 같은 말로 들려서 구분이 사라진다. 게임 용어 '보라색'은 다른 문맥에서 영어 문자열만 일치한 것이다. 지침 38줄(문맥 우선)에 따라 청보라색을 유지한다."
+  },
+  {
+   "id": "minimap.lua::new",
+   "action": "accept",
+   "final_ko": "개 새로 발견",
+   "reason": "core/minimap/module.lua:476의 '%s, %d %s: %s' 형식에서 숫자 바로 뒤에 온다. 지금은 '스캔 완료, 2 신규: ...'가 되어 단위가 없는 어색한 발화가 된다. '2 개 새로 발견'은 의존명사 띄어쓰기로도 맞다. 이 키는 이 한 곳에서만 쓴다(enUS minimap.lua:18)."
+  },
+  {
+   "id": "minimap.lua::gone",
+   "action": "accept",
+   "final_ko": "개 사라짐",
+   "reason": "core/minimap/module.lua:479에서 dropped .. \" \" .. L[\"gone\"]으로 숫자 뒤에 붙는다. '2 사라짐'보다 '2 개 사라짐'이 자연스럽다. 바로 앞 알림의 'new' 수정과도 형태가 맞는다. 이 키는 이 한 곳에서만 쓴다."
+  }
+ ]
+}

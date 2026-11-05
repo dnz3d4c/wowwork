@@ -1,0 +1,1365 @@
+[
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-01.json",
+  "failedReviewers": 0,
+  "findings": 14,
+  "decisions": [
+   {
+    "id": "auction.lua::Vendor Sell",
+    "final_ko": "상인 판매 가격",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Vendor Buy",
+    "final_ko": "상인 구입 가격",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "alerts.lua::Voice",
+    "final_ko": "목소리",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Starting Bid",
+    "final_ko": "경매 시작가",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "alerts.lua::Voice Alert",
+    "final_ko": "음성 팩 경보",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Auction House",
+    "final_ko": "경매장",
+    "how": "dispute-won",
+    "reason": "game_term '경매'는 BUTTON_LAG_AUCTIONHOUSE(지연 표시 버튼의 짧은 라벨)에서 온 일치라 문맥이 다르다. 게임은 경매장이라는 장소·창 자체를 '경매장'으로 부른다(ERR_AUCTION_HOUSE_UNAVAILABLE=\"지금은 경매장을 이용할 수 없습니다.\", ERR_AUCTION_HOUSE_BUSY=\"현재 경매장이 혼잡합니다.\", BLACK_MARKET_AUCTION_HOUSE=\"암시장 경매장\"). 이 키는 경매장 모듈 이름(mists/auction.lua:3, tbc/auction/module.lua:3)이므로 문맥 우선 결정(decisions.tsv 2026-11-03)에 따라 '경매장'이 맞다. 용어집 auction=경매도 '경매장'이 그 용어를 포함하므로 어긋나지 않는다.",
+    "evidence": [
+     "input",
+     "wowwork/cache/gs_koKR.csv:8515",
+     "wowwork/cache/gs_koKR.csv:8720",
+     "wowwork/cache/gs_koKR.csv:10776",
+     "wowwork/cache/gs_koKR.csv:17377",
+     "wowwork/cache/gs_koKR.csv:17378",
+     "wowwork/cache/gs_enUS.csv:17389",
+     "wowwork/docs/decisions.tsv",
+     "wowwork/docs/glossary.tsv:24"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Item not found",
+    "final_ko": "아이템을 찾을 수 없음",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::auctions",
+    "final_ko": "건의 경매",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::Day Mean",
+    "final_ko": "일간 평균",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "alerts.lua::Priority Message (interrupts)",
+    "final_ko": "우선 메시지 (말 끊기)",
+    "how": "dispute-won",
+    "reason": "core/alerts/outputs.lua:28-30에서 type=\"Bool\" 설정 라벨이고, 켜면 이 메시지가 진행 중인 음성을 끊고 바로 읽힌다는 뜻이다. 설정 이름 맥락에서 명사형 '말 끊기'는 기능 이름으로 읽히며 원문 interrupts의 뜻과 맞는다. 제안 '음성 중단'은 음성 출력 자체를 멈추는 기능으로 오해될 여지가 있어 근거상 더 낫다고 보기 어렵다. 양쪽 근거가 약하므로 현재 번역을 유지한다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/alerts/outputs.lua:12-34",
+     "wowvision-ko/vision-locale/koKR/alerts.lua:10"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::scanned",
+    "final_ko": "개 항목 스캔",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-02.json",
+  "failedReviewers": 0,
+  "findings": 5,
+  "decisions": [
+   {
+    "id": "chat.lua::Write to %s",
+    "final_ko": "%s에 쓰기",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "chat.lua::Link %s in Chat",
+    "final_ko": "대화창에 %s 링크",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "buffers.lua::unavailable",
+    "final_ko": "확인 불가",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "chat.lua::Who %s",
+    "final_ko": "%s 플레이어 검색",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-03.json",
+  "failedReviewers": 0,
+  "findings": 7,
+  "decisions": [
+   {
+    "id": "minimap.lua::turn in",
+    "final_ko": "퀘스트 완료 가능",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::Scan canceled",
+    "final_ko": "스캔 취소됨",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "controller.lua::Page %d of %d",
+    "final_ko": "%2$d페이지 중 %1$d페이지",
+    "how": "dispute-won",
+    "reason": "'of 유지' 결정은 근거를 '코드가 순서를 고정해서 한국어 어순으로 바꿀 수 없음'으로 적었다(translation-guide.md:31, decisions.tsv:2). 이 키는 두 숫자와 of가 한 서식 문자열 안에 다 들어 있고, string.format(L[...], index, #radial.mainMenuPages)로 쓰인다(gamepadRadial.lua:150). 그래서 지침 30줄의 위치 지정(%2$d)으로 어순을 바꿀 수 있어 결정의 전제가 성립하지 않는다. 지정자 개수와 종류도 같고 기호도 추가하지 않았다. 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/gamepadRadial.lua:150",
+     "wowwork/docs/translation-guide.md:30",
+     "wowwork/docs/translation-guide.md:31",
+     "wowwork/docs/decisions.tsv:2"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "minimap.lua::Not in combat",
+    "final_ko": "전투 중에는 불가",
+    "how": "dispute-won",
+    "reason": "세 사용처 모두 InCombatLockdown()이 참일 때, 즉 전투 중에 기능을 거절하며 발화한다(keyCapture.lua:257-258, minimap/module.lua:617-618, 1336-1337). 원문 뜻은 '전투 중에는 할 수 없음'이다. 제안한 '전투 중 아님'은 실제 상태와 반대로 들려 오히려 뜻이 뒤집힌다. 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/graph/keyCapture.lua:257",
+     "wowvision-ko/WowVision/core/minimap/module.lua:617",
+     "wowvision-ko/WowVision/core/minimap/module.lua:1336"
+    ],
+    "sev": [
+     "critical"
+    ]
+   },
+   {
+    "id": "colors.lua::violet",
+    "final_ko": "청보라색",
+    "how": "dispute-won",
+    "reason": "색상환 구간에서 violet(limit 290)과 purple(limit 320)은 별개 구간이다(core/colors/colors.lua:104-105). purple이 이미 '보라색'이라(koKR/colors.lua:46) violet도 '보라색'이 되면 두 구간이 같은 말로 들려 구분이 사라진다. 게임 공식 Violet=보라색은 이 색상환 구분 문맥이 아니므로 문맥 우선 결정(translation-guide.md:38, decisions.tsv:3)에 따라 청보라색 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/colors/colors.lua:104",
+     "wowvision-ko/vision-locale/koKR/colors.lua:45",
+     "wowvision-ko/vision-locale/koKR/colors.lua:46",
+     "wowwork/docs/translation-guide.md:38",
+     "wowwork/docs/decisions.tsv:3"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "minimap.lua::new",
+    "final_ko": "개 새로 발견",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::gone",
+    "final_ko": "개 사라짐",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-04.json",
+  "failedReviewers": 0,
+  "findings": 14,
+  "decisions": [
+   {
+    "id": "misc.lua::Quality",
+    "final_ko": "등급",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::charges",
+    "final_ko": "회 사용 가능",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "monitors.lua::No essential or utility spells",
+    "final_ko": "핵심 능력 또는 보조 능력 주문 없음",
+    "how": "dispute-won",
+    "reason": "코드(SpellCooldownMonitor.lua:29)가 목록을 EssentialCooldownViewer/UtilityCooldownViewer에서 가져오므로 essential/utility는 재사용 대기시간 관리자의 범주 이름이다. 같은 문맥의 공식 번역은 COOLDOWN_VIEWER_SETTINGS_CATEGORY_ESSENTIAL='핵심 능력', _UTILITY='보조 능력'(gs_koKR.csv:23762-23763)이라 지침의 같은 문맥 공식 번역 우선 규칙에 맞는다. '핵심 주문/보조 주문'은 게임 범주와 연결이 끊긴다. 두 범주명을 '또는'으로 병렬하고 '주문'이 공통으로 붙는 구조라 청취 모호성도 결함 수준이 아니다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/monitors/SpellCooldownMonitor.lua:29",
+     "wowvision-ko/WowVision/retail/monitors/SpellCooldownMonitor.lua:276",
+     "wowwork/cache/gs_koKR.csv:23762",
+     "wowwork/cache/gs_koKR.csv:23763",
+     "wowwork/cache/gs_enUS.csv:23752"
+    ],
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Cooldown",
+    "final_ko": "재사용 대기",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Cooldown Monitor",
+    "final_ko": "재사용 대기 모니터",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Cooldown State Rule",
+    "final_ko": "재사용 대기 상태 규칙",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Spell Cooldowns",
+    "final_ko": "주문 재사용 대기",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Spell Cooldown Rule",
+    "final_ko": "주문 재사용 대기 규칙",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::No spells with cooldowns",
+    "final_ko": "재사용 대기가 있는 주문 없음",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Speak Tracked Cooldowns",
+    "final_ko": "추적 중인 재사용 대기 읽기",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::No tracked cooldowns",
+    "final_ko": "추적 중인 재사용 대기 없음",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "monitors.lua::Toggle All Monitors",
+    "final_ko": "모든 모니터 켜고 끄기",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Auto-move to Interact Target",
+    "final_ko": "상호작용 대상에게 자동 이동",
+    "how": "dispute-won",
+    "reason": "Auto-move의 하이픈은 영어 복합어 철자 요소이고 문장 부호로서 의미를 지닌 기호가 아니다. 지침 51행의 기호 보존 규칙은 기호를 추가·삭제해 문구를 가공하지 말라는 것으로, 한국어 복합어 '자동 이동'에 하이픈을 넣으면 오히려 한국어에 없는 표기가 된다. 같은 애드온의 기존 번역도 'D-pad up'='방향 패드 위'(koKR/controller.lua:10)처럼 철자용 하이픈을 옮기지 않았다.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:51",
+     "wowvision-ko/vision-locale/koKR/controller.lua:10",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:5"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-05.json",
+  "failedReviewers": 0,
+  "findings": 18,
+  "decisions": [
+   {
+    "id": "navigation.lua::Pitch Lock",
+    "final_ko": "상하 각도 고정",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Beacon set",
+    "final_ko": "비컨 설정됨",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Beacon Aligned",
+    "final_ko": "비컨 방향 일치",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Floor %d of %d",
+    "final_ko": "층 %d of %d",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Road Preference (Percent Longer)",
+    "final_ko": "도로 선호도 (더 긴 거리 퍼센트)",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+    "final_ko": "경유지 쪽으로 돌아서는 데 필요하므로, WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Turn to Waypoint",
+    "final_ko": "경유지 쪽으로 돌아서기",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Turning is not available here",
+    "final_ko": "여기서는 돌아서기 사용 불가",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::waypoints",
+    "final_ko": "개의 경유지",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-06.json",
+  "failedReviewers": 0,
+  "findings": 20,
+  "decisions": [
+   {
+    "id": "navigation.lua::Turn off the WowVisionNavigation addon to use its routes here",
+    "final_ko": "여기서 WowVisionNavigation 애드온의 경로를 사용하려면 그 애드온을 끄십시오",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Group",
+    "final_ko": "파티 및 공격대",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::No position of the group member available",
+    "final_ko": "파티원 또는 공격대원 위치 확인 불가",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+    "final_ko": "%s에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+    "final_ko": "%s, 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Searching the route again with the new road preference",
+    "final_ko": "새 도로 선호도를 적용해 경로 다시 검색 중",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::spirit guide",
+    "final_ko": "영혼의 안내자",
+    "how": "dispute-won",
+    "reason": "평가자는 '영혼의 인도자'가 공식 표기라고 하지만 근거 자료에서 확인되지 않는다. gs_enUS.csv·game_terms.tsv에 'spirit guide' 항목이 없고, gs_koKR.csv·game_terms.tsv에 '영혼의 인도자'도 없다. glossary.tsv에도 없다. 확인되지 않은 주장이라 현재 번역을 유지한다.",
+    "evidence": [
+     "wowwork/cache/gs_enUS.csv",
+     "wowwork/cache/gs_koKR.csv",
+     "wowwork/cache/game_terms.tsv",
+     "wowwork/docs/glossary.tsv",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:234"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::The transit took too long; route ended",
+    "final_ko": "이동이 너무 오래 걸림; 경로 종료",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::approximate, %d yards",
+    "final_ko": "대략, %d야드",
+    "how": "dispute-won",
+    "reason": "module.lua:381-392에서 값이 대상과 네트워크 사이 거리인 것은 맞지만, 영어 원문도 'approximate, %d yards'로 무엇과의 거리인지 밝히지 않고 module.lua:484-487에서 같은 위치에 붙는다. 번역이 원문보다 모호하지 않으며, '네트워크에서'는 원문에 없는 내용을 더하는 것이다. 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:381-392",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:484-487",
+     "input"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::On the ship",
+    "final_ko": "배 탑승 지점",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::On the zeppelin",
+    "final_ko": "비행선 탑승 지점",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::At the vehicle",
+    "final_ko": "운송 수단 탑승 지점",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Use %s; the route goes on after it",
+    "final_ko": "%s 이용; 이후 경로 계속",
+    "how": "dispute-won",
+    "reason": "module.lua:278-279에서 TRANSIT_TEXTS[action.kind]가 먼저 선택되고, dive·surface·wind_bridge는 TRANSIT_TEXTS(module.lua:267-269)에 전용 문장이 있어 이 문장의 %s로 들어가지 않는다. 실제로 들어가는 값은 portal·tram·lift 또는 'the transit'이라 '이용'이 자연스럽다. 평가자의 전제가 코드와 다르다. 문장 끝은 decisions.tsv 2026-11-05 결정과 일치.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:263-280",
+     "wowwork/docs/decisions.tsv:6"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Dive here; the route goes on after it",
+    "final_ko": "여기서 잠수; 이후 경로 계속",
+    "how": "dispute-won",
+    "reason": "decisions.tsv:6(2026-11-05)이 '; the route goes on after it' 문장 끝을 현재 번역 유지로 결정했고, 앞 절이 명사형인 경우 '; 이후 경로 계속'과 짝을 이루는 현 상태를 명시한다. 결정을 따른 번역은 결함이 아니다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:6",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:267"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Surface here; the route goes on after it",
+    "final_ko": "여기서 수면으로 상승; 이후 경로 계속",
+    "how": "dispute-won",
+    "reason": "Dive here와 같은 근거. decisions.tsv:6이 이 문장 끝 형식(명사형 앞 절 + '; 이후 경로 계속')을 현재 번역 유지로 결정했다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:6",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:268"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-07.json",
+  "failedReviewers": 0,
+  "findings": 27,
+  "decisions": [
+   {
+    "id": "powers.lua::alternate encounter",
+    "final_ko": "우두머리 전투 보조 자원",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "objects.lua::broken",
+    "final_ko": "개 파손",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+    "final_ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수하십시오, 마지막 구간은 검증되지 않았습니다.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "objects.lua::lowest item",
+    "final_ko": "최저 내구도 아이템",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "objects.lua::to level",
+    "final_ko": "다음 레벨",
+    "how": "dispute-won",
+    "reason": "템플릿은 '{current} [of] {maximum} [to level] {nextLevel}'(PlayerXP.lua:69)이고 nextLevel은 UnitLevel+1(PlayerXP.lua:45)이라 '다음 레벨 31'은 사실과 맞는다. 어순이 코드로 고정돼 '31레벨까지' 형태는 불가능하다. '경험치가 필요하며 목표 레벨은'은 상태 문구 명사형 규칙(translation-guide.md:46)에 어긋나고 길며, '목표 레벨'은 '다음 레벨'보다 관계 전달이 낫다는 근거가 없다. 지적 근거가 약해 현재 번역 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/objects/types/PlayerXP.lua:37-45",
+     "wowvision-ko/WowVision/core/objects/types/PlayerXP.lua:69",
+     "wowwork/docs/translation-guide.md:46"
+    ],
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "objects.lua::Free Bag Slots",
+    "final_ko": "비어 있는 가방 칸",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua:: horizontally",
+    "final_ko": " 수평으로",
+    "how": "dispute-won",
+    "reason": "module.lua:820-821에서 '%.1f야드%s' 뒤에 붙는 접미사다. 제안 ' 수평 방향으로'도 '10야드 수평 방향으로 떨어진 곳'으로 같은 구조라 개선이 없다. 취향 차이로 판단해 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:820-821"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Waiting for the far end of %s",
+    "final_ko": "%s 도착 지점 대기 중",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Riding to the noted dock %s",
+    "final_ko": "기록한 %s 승강장까지 이동 중",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "objects.lua::Rested",
+    "final_ko": "휴식 경험치",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "objects.lua::rested",
+    "final_ko": "휴식 경험치",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "objects.lua::Lowest Item",
+    "final_ko": "최저 내구도 아이템",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::The height is not confirmed. ",
+    "final_ko": "높이가 확인되지 않았습니다. ",
+    "how": "dispute-won",
+    "reason": "module.lua:835-836에서 activation_position_reached의 %s에 끼워지고, 그 뒤는 '여기서는 이동이 확인되지 않습니다'라는 합니다체 문장이다(input related). 명사형으로 바꾸면 한 발화 안에서 문체가 섞인다. 조립 결과 기준으로 현재 번역이 더 일관되므로 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:835-836"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Map change after the activation area; route ended. The destination is not confirmed.",
+    "final_ko": "활성화 구역 이후 지도 변경; 경로 종료. 목적지는 확인되지 않았습니다.",
+    "how": "dispute-won",
+    "reason": "원문이 앞은 조각, 뒤는 완결 문장 구조이고, 같은 기능의 기존 번역('활성화 구역 안. ... 지도가 바뀌어야만 전환이 확인됩니다.')도 같은 혼합 형식이다. 규칙 위반이 분명하지 않은 minor 문체 지적이라 둘 다 근거가 약해 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46-48"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The entrance has no valid proof.",
+    "final_ko": "입구에 유효한 근거가 없습니다.",
+    "how": "dispute-won",
+    "reason": "평가자가 든 관련 문구들은 마침표 없는 조각이고 이 문구는 마침표로 끝나는 완결 문장이다. 기존 번역 전반이 조각=명사형, 완결 문장=합니다체 구분을 따르고 있어 이 항목만 바꾸면 일관성이 깨진다. 지침만으로 위반이 확정되지 않아 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46-48"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Warning: there is no way around the enemy outpost, the route leads through it.",
+    "final_ko": "경고: 적 전초기지를 돌아갈 길이 없어, 경로가 그곳을 통과합니다.",
+    "how": "dispute-won",
+    "reason": "원문은 두 절로 상황을 설명하는 완결 문장이라 안내 문장 합니다체(translation-guide.md:48)로도 볼 수 있다. 제안 '...통과함.'은 연결어미 '없어,'와 개조식 종결이 섞여 더 어색하다. 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46-48"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Warning: the target lies in an enemy outpost.",
+    "final_ko": "경고: 대상이 적 전초기지 안에 있습니다.",
+    "how": "dispute-won",
+    "reason": "짝을 이루는 outpost_through 경고(text.lua:68)를 합니다체로 유지했으므로 이 경고(text.lua:69)도 같은 문체가 일관된다. 마침표 없는 'The target lies over several floors'만 명사형인 기존 구분과도 맞는다. 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46-48"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Route ended outside the network's zones.",
+    "final_ko": "네트워크 지역 밖에서 경로가 끝났습니다.",
+    "how": "dispute-won",
+    "reason": "명사형 관련 문구('Route ended', 'The transit took too long; route ended')는 마침표 없는 조각이고 이 문구는 마침표 있는 완결 문장이다. 기존 번역의 문장/조각 구분을 따른 것이라 결함으로 확정할 근거가 약하다. 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46-48"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+    "final_ko": "탑승 지점 근거 또는 지도 변경; 안내 종료",
+    "how": "dispute-won",
+    "reason": "한국어 'A 또는 B 변경'은 '변경'이 두 명사에 함께 걸리는 일반 구조라 들었을 때 뜻이 갈리지 않는다. 마침표 없는 조각이므로 명사형(translation-guide.md:46)이 맞고, 제안문은 서술형·명사형이 섞이고 길어진다. 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md:46"
+    ],
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-08.json",
+  "failedReviewers": 0,
+  "findings": 21,
+  "decisions": [
+   {
+    "id": "speech.lua::Activity Sound When Unfocused",
+    "final_ko": "대화창이 비활성일 때 활동 소리",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "quests.lua::Rares",
+    "final_ko": "희귀 몹",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "targeting.lua::Announce Raid Target Marker on Hard Target",
+    "final_ko": "하드 대상에 붙은 대상 표시기 알림",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "speech.lua::Speech Voice",
+    "final_ko": "음성 종류",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "quests.lua::No quest data source",
+    "final_ko": "퀘스트 데이터 원본 없음",
+    "how": "dispute-won",
+    "reason": "코드와 문서상 data source는 Questie나 게임 자체 퀘스트 데이터 같은 공급처(native.lua:4 'The native quest data source')다. '데이터 원본'은 data source의 통용 IT 번역어로 공급처를 뜻해 원본 데이터로 뜻이 바뀌지 않는다. 제안 '소스'(음역)·'출처'가 더 정확하다는 근거가 약해 현재 번역 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/quests/native.lua:4",
+     "wowvision-ko/WowVision/docs/src/user/en/world/quests.md:15",
+     "wowvision-ko/WowVision/core/quests/scanner.lua:302"
+    ],
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "speech.lua::Buffered",
+    "final_ko": "버퍼",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Targeting",
+    "final_ko": "대상 지정",
+    "how": "dispute-won",
+    "reason": "TARGETING_HEADER='목표 선택'은 GROUP_TARGETING_CLOSE 등 게임패드 그룹 대상 UI 근처 문자열이고 BINDING_HEADER_TARGETING은 단축키 머리글이라 이 모듈(하드/소프트 대상 설정)과 문맥이 다르다. 게임은 대상 설정 문맥에서 '대상 지정'을 널리 쓴다(ACTION_TARGETING_OPTION, TARGETING_MODE='대상 지정 모드'). 2026-11-03 문맥 우선 결정에 따라 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/targeting/module.lua:3",
+     "wowwork/cache/gs_koKR.csv:25642",
+     "wowwork/cache/gs_koKR.csv:2721",
+     "wowwork/cache/gs_koKR.csv:20967",
+     "wowwork/cache/gs_koKR.csv:25824",
+     "wowwork/docs/decisions.tsv",
+     "wowwork/docs/translation-guide.md:38"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::X",
+    "final_ko": "가위표",
+    "how": "dispute-won",
+    "reason": "module.lua:13-22에서 공격대 대상 표시기 8종 이름 목록의 7번째다. 같은 문맥의 공식 문자열은 RAID_TARGET_7='가위표'다. game_term 'X'는 영어만 일치하는 다른 문맥이므로 문맥 우선 결정에 따라 현재 번역이 맞다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/targeting/module.lua:13",
+     "wowwork/cache/gs_koKR.csv:4799",
+     "wowwork/docs/decisions.tsv"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "quests.lua::from",
+    "final_ko": "출처",
+    "how": "dispute-won",
+    "reason": "코드가 '아이템 이름 from 대상 이름' 어순을 고정한다(module.lua:445, scanner.lua:56). '획득처'로 바꿔도 '아이템 획득처 NPC'로 같은 명사 나열 구조가 남아 개선 근거가 약하다. 둘 다 약하므로 현재 번역 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/quests/module.lua:445",
+     "wowvision-ko/WowVision/core/quests/scanner.lua:56"
+    ],
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "quests.lua::Questie is not loaded",
+    "final_ko": "Questie 불러오지 않음",
+    "how": "dispute-won",
+    "reason": "짧은 상태 명사형 규칙에 맞고 짝 항목 'Questie 불러오는 중'과 동사가 일치한다. 사용자가 일부러 안 불렀다는 오해 주장은 근거가 약하고, 제안 '불러오기 안 됨'이 더 명확하다는 근거도 없다. 취향 차이로 보아 유지.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "scanner.lua::Refreshed",
+    "final_ko": "새로고침 완료",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "speech.lua::Sound Between Chat Lines",
+    "final_ko": "대화 메시지 사이 소리",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "targeting.lua::Target in Combat Sound",
+    "final_ko": "대상이 전투 중일 때 소리",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-09.json",
+  "failedReviewers": 0,
+  "findings": 12,
+  "decisions": [
+   {
+    "id": "targeting.lua::Friends",
+    "final_ko": "아군",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Attacking You or Your Group",
+    "final_ko": "나 또는 내 파티나 공격대를 공격 중",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Empty",
+    "final_ko": "비어 있음",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Disabled",
+    "final_ko": "비활성화",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Available",
+    "final_ko": "사용 가능",
+    "how": "dispute-won",
+    "reason": "현재 번역은 공식 후보 중 하나이며 특성의 선택 가능 상태에 맞는다. 경매장에서는 \"구매 가능 수량\"이 더 정확하지만 같은 키가 두 기능에 공유되므로, 공식 후보에도 없고 \"이용 가능 5\"의 모호함도 해소하지 못하는 제안으로 바꿀 근거가 부족하다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/mists/auction.lua:253",
+     "wowvision-ko/WowVision/mists/auction.lua:284",
+     "wowvision-ko/WowVision/retail/talentTree.lua:147",
+     "wowvision-ko/WowVision/retail/talentTree.lua:156",
+     "wowvision-ko/vision-locale/koKR/ui.lua:61",
+     "wowwork/cache/game_terms.tsv:230",
+     "wowwork/docs/translation-guide.md:18",
+     "wowwork/docs/translation-guide.md:36",
+     "wowwork/docs/translation-guide.md:38"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Count Enemies",
+    "final_ko": "적 수 세기",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Unchecked",
+    "final_ko": "체크되지 않음",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-10.json",
+  "failedReviewers": 0,
+  "findings": 21,
+  "decisions": [
+   {
+    "id": "ui.lua::Percent",
+    "final_ko": "퍼센트",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Object",
+    "final_ko": "개체",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Objects",
+    "final_ko": "개체",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Empty Object",
+    "final_ko": "빈 개체",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::No object configured",
+    "final_ko": "설정된 개체 없음",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Template",
+    "final_ko": "템플릿",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Resistances",
+    "final_ko": "저항력",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Active",
+    "final_ko": "활성",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Duration",
+    "final_ko": "기간",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Nameplate Show All",
+    "final_ko": "모든 이름표에 표시",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Dispel Type",
+    "final_ko": "무효화 유형",
+    "how": "dispute-won",
+    "reason": "확정 용어집 glossary.tsv:25가 dispellable → 무효화 가능(예외 열 비어 있음)으로 정했고, 기존 번역 buffers.lua의 Dispellable·Dispellable by My Group도 '무효화'를 쓴다. 게임 공식 문자열도 한쪽으로 통일돼 있지 않다: SHOW_DISPELLABLE_DEBUFFS_TEXT·ACTION_SPELL_DISPEL_DEBUFF는 '해제'지만 DISPELS·ACTION_SPELL_DISPEL·ACTION_SPELL_DISPEL_FAILED는 '무효화'다. 그래서 '해제'만이 공식 용어라는 지적의 전제가 성립하지 않는다. 용어집과 애드온 안의 일관성을 근거로 현재 번역을 유지한다.",
+    "evidence": [
+     "input",
+     "wowwork/docs/glossary.tsv:25",
+     "wowvision-ko/vision-locale/koKR/buffers.lua",
+     "wowwork/cache/gs_koKR.csv",
+     "wowwork/cache/game_terms.tsv:45"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Is Raid",
+    "final_ko": "공격대 관련 여부",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-11.json",
+  "failedReviewers": 0,
+  "findings": 8,
+  "decisions": [
+   {
+    "id": "windows.lua::Watched",
+    "final_ko": "경험치바에 표시",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Radio",
+    "final_ko": "라디오 버튼",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Parameters must identify a single object",
+    "final_ko": "매개변수는 물체 하나를 가리켜야 합니다",
+    "how": "dispute-won",
+    "reason": "이 문장은 fieldControls.lua:339에서 버퍼 물체 편집 화면의 저장 버튼이 내는 오류다. 같은 화면 라벨인 ui.lua의 Object/Objects/No object configured/Empty Object가 모두 '물체'로 번역돼 있다(koKR/ui.lua:210-219). 사용자가 오류를 듣고 'Object' 설정 항목과 연결하려면 같은 낱말이 맞다. 여기만 '객체'로 바꾸면 화면 용어와 어긋난다. glossary.tsv와 decisions.tsv에는 object에 대한 항목이 없다. 그래서 평가자의 '물리적 사물로 좁혔다'는 지적은 기존 용어 통일보다 근거가 약하다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/graph/fieldControls.lua:339",
+     "wowvision-ko/vision-locale/koKR/ui.lua:210",
+     "wowvision-ko/vision-locale/koKR/ui.lua:218",
+     "wowvision-ko/vision-locale/koKR/ui.lua:226",
+     "wowwork/docs/glossary.tsv",
+     "wowwork/docs/decisions.tsv"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Skill Details",
+    "final_ko": "숙련 세부 정보",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Drag to pick up macro",
+    "final_ko": "매크로를 끌어서 집기",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-12.json",
+  "failedReviewers": 0,
+  "findings": 7,
+  "decisions": [
+   {
+    "id": "windows.lua::Note",
+    "final_ko": "메모",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Search Match",
+    "final_ko": "일치하는 항목 검색",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Point",
+    "final_ko": "포인트",
+    "how": "dispute-won",
+    "reason": "talentTree.lua:23은 숫자 뒤에 단위 Point/Points만 붙인다. 짝인 Points 키는 challenges.lua:26, Aura.lua:167에서도 쓰이는 공유 키라 koKR/ui.lua:204에서 \"포인트\"로 정해져 있다. Point만 \"특성 포인트\"로 바꾸면 1일 때와 2 이상일 때 표기가 어긋난다. 공식 문자열도 숫자 뒤 단위로는 \"포인트\"를 쓴다(TOOLTIP_TALENT_PREREQ \"%2$s %1$d 포인트 필요\"). 특성 화면 안이라 문맥으로 특성임이 드러난다. 번역자 반박이 더 강하다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/talentTree.lua:23",
+     "wowvision-ko/WowVision/camelot/legacy/challenges.lua:26",
+     "wowvision-ko/WowVision/core/objects/types/unit/Aura.lua:167",
+     "wowvision-ko/vision-locale/koKR/ui.lua:204",
+     "wowwork/cache/gs_koKR.csv:1943",
+     "wowwork/cache/gs_koKR.csv:7057"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Legacy",
+    "final_ko": "유산",
+    "how": "dispute-won",
+    "reason": "\"낭만\"은 LFG_LIST_LEGACY, RPE_TURNSTRAFE_LEGACY, HUD_EDIT_MODE_..._LEGACY 등 지난 콘텐츠나 예전 방식이라는 뜻의 Legacy를 옮긴 공식 번역이다. 이 항목은 legacy.lua:3, 9-15에 적힌 WoW: Forever의 Legacy 창(LegacySystemFrame, 명성 보상, 도전, 특성 트리) 이름으로 문맥이 다르다. gs_enUS.csv에서 이 기능을 가리키는 공식 문자열은 찾지 못했다. decisions.tsv:3(문맥이 다르면 문맥에 맞게 옮긴다)에 따라 \"낭만\"을 강제할 근거가 약하다. 또한 legacy.lua:56은 게임이 준 창 제목을 먼저 쓰므로 공식 현지화 제목이 있으면 그 제목이 발화된다. 현재 번역을 유지한다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/camelot/legacy/legacy.lua:3",
+     "wowvision-ko/WowVision/camelot/legacy/legacy.lua:56",
+     "wowwork/cache/gs_koKR.csv:12796",
+     "wowwork/cache/gs_koKR.csv:24029",
+     "wowwork/cache/gs_enUS.csv",
+     "wowwork/docs/decisions.tsv:3"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Raid Frame Preview",
+    "final_ko": "공격대창 미리보기",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-05-ui-existing/batches/batch-13.json",
+  "failedReviewers": 0,
+  "findings": 6,
+  "decisions": [
+   {
+    "id": "windows.lua::Extended",
+    "final_ko": "연장",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Picked up",
+    "final_ko": "집음",
+    "how": "dispute-won",
+    "reason": "코드를 확인하니 :221과 :373에서는 항목을 집는 동작(OnMouseUp 스크립트 실행)이 끝난 직후에 발화되고, :270과 :410에서는 이미 집어 든 항목의 상태 목록에 붙는다(frame:IsReordering()이고 원본이 이 항목일 때, 또는 filter.dragItem == item일 때). 제안된 '집기 시작'은 동작이 시작된다는 뜻이라 완료 알림과 맞지 않고, 상태 표시로 쓰이면 뜻이 틀린다. '집음'은 같은 흐름의 짝 문자열 'Moved'='이동함'과 형태가 같고 번역 지침의 짧은 명사형 규칙에도 맞는다. 다소 딱딱하게 들린다는 지적은 취향 차이 수준이라 결함으로 보지 않는다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:221",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:270",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:373",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:410",
+     "wowwork/docs/translation-guide.md:46"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ }
+]

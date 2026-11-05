@@ -1,0 +1,1 @@
+{"findings":[{"id":"windows.lua::Picked up","category":"style","severity":"minor","problem":"알림·상태 문구인 \"집음\"은 동사 \"집다\"를 부자연스럽게 명사화한 표현이라 음성으로 들을 때 어색하다.","evidence":"원문은 \"Picked up\"이며 `retail/cooldownManager.lua:221`, `:373`에서 단독 발화되고 `:270`, `:410`에서 상태 정보에 삽입된다. 짧은 명사형을 유지하면서 자연스럽게 들리는 표현이 필요하다.","suggestion":"집기 시작"}]}

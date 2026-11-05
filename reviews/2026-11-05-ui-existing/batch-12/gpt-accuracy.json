@@ -1,0 +1,1 @@
+{"findings":[{"id":"windows.lua::Note","category":"accuracy","severity":"major","problem":"친구에게 저장된 메모를 \"쪽지\"로 옮겨, 다른 사람에게 보내는 메시지로 오해할 수 있다.","evidence":"`classic/friends.lua:139`의 `info.notes`와 `classic/friends.lua:191`의 `noteText`는 친구 정보에 기록된 메모를 가리킨다. 같은 원문의 공식 용어 후보에도 문맥에 맞는 `메모`가 있다.","suggestion":"메모"}]}

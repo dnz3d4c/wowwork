@@ -1,0 +1,1 @@
+{"findings":[{"id":"ui.lua::Radio","category":"context","severity":"major","problem":"컨트롤 유형 이름으로 쓰이는데 \"라디오\"만 발화하면 방송·음향 기능으로 오해할 수 있어 실제 기능인 단일 선택 컨트롤을 식별하기 어렵다.","evidence":"core/graph/ControlTypes.lua:41에서 `graph.registerControlType(\"radio\", L[\"Radio\"])`로 등록되어 컨트롤 유형 라벨로 사용된다.","suggestion":"라디오 버튼"}]}
