@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "basics/interface.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "텍스트, 체크 상태, 사용 가능 상태가 저절로 바뀌면(예를 들어 양식을 다 채워서 경매 시작 버튼을 쓸 수 있게 되거나 퀘스트 내용이 새로 바뀌면) 아무 키도 누르지 않아도 새 값을 읽습니다.",
+  "suggestion": "텍스트, 체크 상태, 사용 가능 상태가 저절로 바뀌면(예를 들어 양식을 다 채워서 등록 버튼을 쓸 수 있게 되거나 퀘스트 내용이 새로 바뀌면) 아무 키도 누르지 않아도 새 값을 읽습니다.",
+  "problem": "파티 찾기 양식의 Post 버튼을 경매장 화면 문구인 “경매 시작”으로 바꿔, 서로 다른 창의 버튼으로 설명했다.",
+  "evidence": "원문은 “a Post button becoming usable once you filled in a form”이다. wowvision-ko/WowVision/docs/src/user/en/windows/group-finder.md:46,57도 같은 버튼을 Post button으로 부르며, 한국어판 wowvision-ko/WowVision/docs/src/user/ko/windows/group-finder.md:46,57은 이를 “등록 버튼”으로 옮겼다. 실제 컨트롤은 wowvision-ko/WowVision/tbc/lfg.lua:307-311의 LFGListingFramePostButton이다. 반면 게임 공식 문자열 AUCTION_HOUSE_POST_BUTTON은 wowwork/cache/gs_koKR.csv:17794에서 “경매 시작”이므로 현재 번역은 경매장 버튼을 가리킨다.",
+  "ref": "basics/interface.md#reg-gpt-0",
+  "consensus": false
+ }
+]

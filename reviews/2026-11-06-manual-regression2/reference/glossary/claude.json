@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "reference/glossary.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "[키 바인딩 목록](keybindings.md)를 참고하십시오.",
+   "suggestion": "[키 바인딩 목록](keybindings.md)을 참고하십시오.",
+   "problem": "링크 글자 '목록'은 받침으로 끝나므로 목적격 조사는 '을'이어야 한다. 스크린리더로 '목록를'로 읽혀 어색하다.",
+   "evidence": "같은 파일의 다른 링크는 받침에 맞춰 '을/를'을 고른다(예: '[모니터](../information/monitors.md)를', '[대상 지정](../world/targeting.md)을'). 대상 페이지 제목은 ko/reference/keybindings.md:2 '# 키 바인딩 목록'."
+  },
+  {
+   "id": "reference/glossary.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "지정 안 됨 — 단축키 동작은 있지만 단축키 창에서 키를 지정하기 전까지는 키가 없는 상태입니다.",
+   "suggestion": "지정 안 됨 — 단축키 동작은 있지만 단축키 창에서 키를 지정하기 전까지는 키가 없는 상태입니다. (용어집 정의 '단축키 동작'에 맞춰 ko/reference/keybindings.md:6의 '바인딩은 있지만'을 '단축키 동작은 있지만'으로 통일)",
+   "problem": "용어집은 Binding을 '단축키 동작'으로 정의하는데, 이 항목이 링크하는 키 바인딩 목록 페이지는 같은 개념을 '바인딩'으로 쓴다. 용어집 정의와 참조 페이지의 표기가 달라 같은 개념인지 헷갈릴 수 있다. 이 파일 자체 번역은 일관되므로 수정 대상은 다른 파일 쪽이다.",
+   "evidence": "en: 'Unbound — A binding that exists but has no key...'. ko/reference/glossary.md '단축키 동작 — 다음 버퍼 항목처럼 키에 지정할 수 있는 동작'. ko/reference/keybindings.md:6 '\"지정 안 됨\"은 바인딩은 있지만 직접 키를 정해 주기 전까지는 키가 없다는 뜻입니다.' ko/basics/keybindings.md:4는 '동작'을 쓴다."
+  }
+ ]
+}

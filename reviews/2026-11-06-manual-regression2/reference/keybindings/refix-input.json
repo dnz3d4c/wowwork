@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "reference/keybindings.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "적 소프트 대상 지정을 켜거나 끄고 \"적 소프트 대상 사용함\" 또는 \"비활성화\"라고 말합니다(전투 중에 누르면 \"전투 후\"가 붙습니다)",
+  "suggestion": "적 소프트 대상 지정을 켜거나 끄고 \"적 소프트 대상 사용함\" 또는 \"적 소프트 대상 비활성화\"라고 말합니다(전투 중에 누르면 \"전투 후\"가 붙습니다)",
+  "problem": "끄는 경우 실제 낭독 문구에서 동작 이름이 빠진 것처럼 설명합니다. 스크린리더 사용자가 실제로 들리는 전체 문구를 잘못 예상하게 됩니다.",
+  "evidence": "`wowvision-ko/WowVision/core/targeting/module.lua:339-341`은 `info.label` 뒤에 `Enabled` 또는 `Disabled`를 이어 붙입니다. 한국어 로케일 값은 각각 `적 소프트 대상`, `사용함`, `비활성화`이므로 끌 때 실제 문구는 `적 소프트 대상 비활성화`입니다. `wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:93`도 이 전체 문구를 사용합니다.",
+  "ref": "reference/keybindings.md#reg-gpt-0",
+  "consensus": false
+ }
+]

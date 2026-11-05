@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "입력하는 동안 게임이 상자 아래에 제안을 나열합니다. Up과 Down으로 제안을 오가면 WowVision이 강조된 제안과 그 위치를 말합니다.",
+   "suggestion": "입력하는 동안 게임이 상자 아래에 추천어를 나열합니다. Up과 Down으로 추천어를 오가면 WowVision이 강조된 추천어와 그 위치를 말합니다.",
+   "problem": "같은 검색 상자의 suggestions를 다른 설명서 파일은 '추천어'로 옮겼는데 이 파일은 '제안'으로 옮겨 파일 사이 용어가 갈린다. 이 파일 안의 '제안 목록', '강조된 제안', '제안은 초점이 상자에 있고' 등도 함께 맞춰야 한다. 화면 문구가 아닌 본문 설명이라 뜻은 통하므로 경미.",
+   "evidence": "원문 'the game lists suggestions under the box'. wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:158 '검색 상자는 입력하는 동안 추천어를 보여 줍니다. Up과 Down은 강조된 추천어와 그 위치를 읽고'. terms·koKR 로캘에 suggestion 항목 없음."
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "getting-started/installer.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "플레이하는 버전을 모두 체크합니다: WoW: Forever, The Burning Crusade anniversary, Classic Era, Mists of Pandaria Classic, Retail.",
+    "suggestion": "플레이하는 버전을 모두 체크합니다: WoW: Forever, 불타는 성전 기념 서버, Classic Era, Mists of Pandaria Classic, Retail.",
+    "problem": "\"The Burning Crusade anniversary\"를 영어 그대로 두었다. 소문자 일반어 anniversary까지 번역하지 않아 한국어 문장 안에서 영어로 읽히고, 다른 설명서 파일의 표기와도 다르다. 설치 프로그램 화면 문구(\"Anniversary (TBC)\")를 인용한 것도 아니다.",
+    "evidence": "다른 파일 표기: getting-started/sku-login.md:51 \"WoW: Forever, 불타는 성전 기념 서버, Classic Era용으로\", sku-login.md:31 \"불타는 성전 기념 서버(2.5.x)\", manual-installation.md:33 \"불타는 성전(TBC) 기념 서버\", introduction.md:26 \"불타는 성전 (기념 서버)\", first-login.md:8 \"The Burning Crusade 기념 서버\". 설치 프로그램 실제 라벨은 wowvision-installer/WowVisionInstaller/WowLocator.cs:107 Label = \"Anniversary (TBC)\"로, 문서 문구와 어느 쪽도 같지 않다. Classic Era는 다른 파일(sku-login.md:30)에서도 영어로 쓰므로 그대로 둔다."
+  },
+  {
+    "id": "getting-started/installer.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "로그인, 서버, 캐릭터 화면에 소리 메뉴를 제공하는 별도 프로그램이며, WoW: Forever, The Burning Crusade anniversary, Classic Era에서 쓸 수 있습니다.",
+    "suggestion": "로그인, 서버, 캐릭터 화면에 소리 메뉴를 제공하는 별도 프로그램이며, WoW: Forever, 불타는 성전 기념 서버, Classic Era에서 쓸 수 있습니다.",
+    "problem": "위와 같은 \"The Burning Crusade anniversary\" 영어 잔존. 같은 내용을 다루는 sku-login.md는 \"불타는 성전 기념 서버\"로 써서 파일 사이 표기가 갈린다.",
+    "evidence": "getting-started/sku-login.md:51 \"WoW: Forever, 불타는 성전 기념 서버, Classic Era용으로 도구를 설치하고\". 원문은 \"for WoW: Forever, The Burning Crusade anniversary and Classic Era\"."
+  }
+]

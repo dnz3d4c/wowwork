@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/managing.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "| WowVisionDB | \"이 캐릭터\"로 옮긴 설정과 주문 기록 | 캐릭터마다 파일 하나 |",
+   "suggestion": "| WowVisionDB | 범위를 캐릭터로 옮긴 설정과 주문 기록 | 캐릭터마다 파일 하나 |",
+   "problem": "따옴표로 감싼 \"이 캐릭터\"는 화면 문구처럼 들리지만, 범위 메뉴에는 그런 항목이 없고 라디오 항목은 '전역'과 캐릭터 이름이다. 스크린리더 사용자가 '이 캐릭터'라는 항목을 찾게 될 수 있다. 원문도 \"this character\"를 따옴표로 쓰고 있어 upstream 표현을 그대로 옮긴 것이다.",
+   "evidence": "원문: Settings you moved to \"this character\". vision-locale/koKR/ui.lua:240 L[\"Global\"] = \"전역\", L[\"Scope\"] = \"범위\"; WowVision/docs/src/user/ko/basics/menu-and-settings.md:163 '라디오 항목이 두 개 있습니다. 전역, 그리고 캐릭터 이름입니다.' koKR에 'This character' 문자열 없음."
+  }
+ ]
+}

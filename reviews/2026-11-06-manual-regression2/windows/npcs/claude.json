@@ -1,0 +1,31 @@
+{
+  "findings": [
+    {
+      "id": "windows/npcs.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "1. 탭: 상품 목록과 재매입이라는 두 탭이 있는 줄입니다.",
+      "suggestion": "1. 탭: 상인과 재매입이라는 두 탭이 있는 줄입니다.",
+      "problem": "첫 번째 탭을 \"상품 목록\"이라고 불렀지만 화면에서 들리는 탭 이름은 상인이다. 사용자는 Left/Right로 탭을 오가며 \"상품 목록\"을 찾게 되는데 그런 말은 들리지 않는다.",
+      "evidence": "원문 4번 항목 \"These are on the Merchant tab only\"가 첫 탭 이름을 Merchant로 밝힌다. terms: Merchant=상인. decisions.tsv 2026-11-03 용어 선택 기준 예시 \"Merchant=상인\". 탭 글자는 게임 MerchantFrame 탭에서 온다(core/windows/merchant.lua:157 L[\"Tabs\"] 아래 게임 탭 버튼)."
+    },
+    {
+      "id": "windows/npcs.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "이것들은 상품 목록 탭에만 있습니다.",
+      "suggestion": "이것들은 상인 탭에만 있습니다.",
+      "problem": "원문의 탭 이름 Merchant를 \"상품 목록\"으로 바꿔 화면의 탭 이름과 다르다.",
+      "evidence": "원문 \"These are on the Merchant tab only.\" terms: Merchant=상인. vision-locale/koKR/windows.lua:113 L[\"Merchant\"] = \"상인\"."
+    },
+    {
+      "id": "windows/npcs.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "WowVision은 대화창에 \"하급 아이템 N개를 X에 판매.\"라고 출력합니다.",
+      "suggestion": "WowVision은 대화창(채팅)에 \"하급 아이템 N개를 X에 판매.\"라고 출력합니다.",
+      "problem": "이 파일에서 \"대화 창\"은 NPC와의 대화(gossip) 창을 뜻하는데, 채팅을 가리키는 \"대화창\"과 들으면 구분되지 않는다. 같은 표의 \"X에 모든 장비 수리.\" 문장도 같다.",
+      "evidence": "이 파일 \"## 대화\" 절의 \"대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다.\" 원문 \"in the chat\". 다른 설명서는 채팅을 \"대화창\"으로 쓴다(windows/chat.md:105, basics/speech.md:22) — 표기는 유지하고 이 파일에서만 구분을 보탠다."
+    }
+  ]
+}

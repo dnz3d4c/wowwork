@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "- 공격대 대상 표시기는 숫자로 읽습니다.",
+      "suggestion": "- 대상 표시기는 숫자로 읽습니다.",
+      "problem": "raid marker를 '공격대 대상 표시기'로 옮겨 확정 용어 및 다른 설명서 파일의 표기 '대상 표시기'와 다릅니다. 뜻은 통하지만 같은 대상을 파일마다 다르게 부릅니다.",
+      "evidence": "원문 'Raid markers are spoken as numbers.' / wowwork/docs/glossary.tsv: 'Raid Target Marker=대상 표시기(공식)' / wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:26,33,45 와 ko/basics/alerts.md:98 은 모두 '대상 표시기'"
+    }
+  ]
+}

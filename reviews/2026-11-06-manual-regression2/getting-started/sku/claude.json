@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/sku.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "Sku가 로드되어 있으면 WowVision은 아래 목록의 창, 키, 명령에서 일부러 물러나 Sku에게 맡깁니다.",
+   "suggestion": "Sku를 불러온 상태이면 WowVision은 아래 목록의 창, 키, 명령에서 일부러 물러나 Sku에게 맡깁니다.",
+   "problem": "애드온 load를 이 파일은 '로드'로 옮겼는데(5곳: 로드되어 있으면, 로드하면, 로드된 애드온, 로드한 상태, 로드되어 있는 동안), 같은 내용을 다루는 다른 설명서 파일과 애드온 화면 문구는 '불러오다'를 쓴다. 뜻은 통하지만 파일 사이 표기가 갈린다. 이 문장을 고치면 같은 파일의 나머지 '로드' 표기도 함께 맞춰야 한다.",
+   "evidence": "원문 'when Sku is loaded'. 다른 파일: getting-started/installation.md:19 'Sku를 불러온 상태에서는', basics/keybindings.md:111 'Sku를 불러왔을 때 꺼지는 키', getting-started/introduction.md:40 '애드온을 불러오므로'. 화면 문구: vision-locale/koKR/quests.lua:7 'Questie is not loaded' = 'Questie 불러오지 않음'. ko 문서 전체에서 '불러*' 92회, '로드*' 18회(sku.md 5회 포함)."
+  }
+ ]
+}

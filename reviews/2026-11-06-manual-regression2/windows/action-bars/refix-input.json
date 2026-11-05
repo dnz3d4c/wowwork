@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "windows/action-bars.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "이 설정이 켜져 있으면 게임의 집기 키를 함께 누르지 않는 한 단축바에서 행동을 끌어내도 아무 일도 일어나지 않고, 왜 그런지 알려 주는 것도 없습니다.",
+  "suggestion": "이 설정이 켜져 있으면 게임의 행동 단축바 수정 키를 함께 누르지 않는 한 단축바에서 행동을 끌어내도 아무 일도 일어나지 않고, 왜 그런지 알려 주는 것도 없습니다.",
+  "problem": "게임 설정에서 실제로 표시되는 키 이름을 일반 표현인 ‘집기 키’로 옮겼다. 독자가 설정에서 같은 이름을 찾을 수 없으므로 공식 화면 문구로 통일해야 한다.",
+  "evidence": "원문은 “unless you also hold the game's pick-up key”이다. wowwork/cache/gs_enUS.csv:9944의 PICKUP_ACTION_KEY_TEXT는 “Pick Up Action Key”이고, 같은 항목의 공식 한국어는 wowwork/cache/gs_koKR.csv:9950에서 “행동 단축바 수정 키”이다. 다른 설명서 wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:36도 “행동 단축바 수정 키”로 쓴다.",
+  "ref": "windows/action-bars.md#reg-gpt-0",
+  "consensus": false
+ }
+]

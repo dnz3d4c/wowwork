@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "basics/alerts.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "반복 지연(2초, 0에서 30까지)은 같은 오류가 그 시간 안에 다시 나타나면 다시 읽지 않습니다. 키를 누르고 있을 때 같은 오류가 거듭 읽히지 않게 합니다.",
+      "suggestion": "반복 지연(2초, 0에서 30까지)은 키를 누르고 있을 때 같은 오류가 다시 읽히지 않게 합니다.",
+      "problem": "원문 한 문장을 두 문장으로 늘리면서 같은 내용을 되풀이했고, 첫 문장은 주어 '반복 지연은'이 서술어 '다시 읽지 않습니다'와 맞지 않는다(설정이 읽는 주체가 됨). 수정 과정에서 설명을 덧붙이다 생긴 중복으로 보인다.",
+      "evidence": "원문: \"Repeat Delay (2 seconds, 0 to 30) stops the same error from being spoken again while you hold a key.\" 한 문장. decisions.tsv 13행: 원문에 충실하게 옮긴다. 동작 설명 자체는 world/combat.md:126과 맞으므로 뜻 오류는 아니다."
+    },
+    {
+      "id": "basics/alerts.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "## 도움말\n\n- 경보가 어떤 소리인지 궁금하면 그 경보의 소리 경보 출력을 열고",
+      "suggestion": "## 팁\n\n- 경보가 어떤 소리인지 궁금하면 그 경보의 소리 경보 출력을 열고",
+      "problem": "같은 제목 \"## Tips\"를 다른 설명서 파일은 모두 '팁'으로 옮겼는데 이 파일만 '도움말'로 옮겼다. '도움말'은 Help에 가까워 절 성격도 조금 달라진다.",
+      "evidence": "en/basics/alerts.md:147, en/getting-started/sku-login.md:257, en/information/buffers.md:375, en/information/monitors.md:357 모두 \"## Tips\". ko/getting-started/sku-login.md:258, ko/information/buffers.md:376, ko/information/monitors.md:358은 \"## 팁\", ko/basics/alerts.md:148만 \"## 도움말\"."
+    }
+  ]
+}

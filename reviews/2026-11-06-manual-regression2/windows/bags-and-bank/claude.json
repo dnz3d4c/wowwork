@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "windows/bags-and-bank.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "[창 사이 이동](../basics/interface.md)을 보십시오.",
+      "suggestion": "[창 안에서 이동하기](../basics/interface.md)를 보십시오.",
+      "problem": "같은 원문 링크 글자 \"Navigating windows\"를 다른 설명서 파일에서는 다르게 옮겼다. 결정상 원문 링크 글자를 옮기는 것은 맞지만, 같은 말은 파일 사이에서 같은 표기로 맞춰야 한다. (어느 쪽으로 통일할지는 취향이라 어느 표기든 하나로 맞추면 된다.)",
+      "evidence": "원문 en/windows/bags-and-bank.md:9와 en/windows/npcs.md:5 둘 다 \"See [Navigating windows](../basics/interface.md)\". 한국어 ko/windows/npcs.md:6은 \"[창 안에서 이동하기](../basics/interface.md)\", 이 파일 10행은 \"[창 사이 이동]\". decisions.tsv 2026-11-05 \"링크 글자가 대상 페이지 제목과 다를 때 원문 링크 글자를 그대로 옮긴다\"."
+    }
+  ]
+}

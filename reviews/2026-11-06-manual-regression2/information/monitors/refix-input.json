@@ -1,0 +1,14 @@
+[
+ {
+  "by": "gpt",
+  "id": "information/monitors.md",
+  "category": "terminology",
+  "severity": "major",
+  "quote": "항목 메뉴에서 경보를 고르면(새 경보 추가 또는 기존 경보 편집) 게임의 경보 편집기가 별도 창으로 열립니다.",
+  "suggestion": "항목 메뉴에서 경보를 고르면(신규 경보 또는 기존 경보 편집) 게임의 경보 편집기가 별도 창으로 열립니다.",
+  "problem": "실제 게임 화면에 표시되는 메뉴 이름과 번역문의 글자가 다릅니다.",
+  "evidence": "원문은 화면 문구인 \"Add New Alert\"를 가리킵니다. 공식 한국어 값은 wowwork/cache/gs_koKR.csv:24151의 COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT=\"신규 경보\"입니다. wowvision-ko/WowVision/retail/cooldownManager.lua:234에서 게임의 상황별 메뉴를 그대로 엽니다. manual-translate.md의 용어 규칙은 화면 문구를 실제 한국어 값과 똑같이 쓰도록 요구합니다.",
+  "ref": "information/monitors.md#reg-gpt-0",
+  "consensus": false
+ }
+]

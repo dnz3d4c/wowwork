@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "windows/collections.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "입력하는 동안 Up과 Down으로 게임의 추천 항목을 위치와 함께 읽고, Enter로 강조된 항목을 고릅니다",
+      "suggestion": "입력하는 동안 Up과 Down으로 게임의 추천어를 위치와 함께 읽고, Enter로 강조된 추천어를 고릅니다",
+      "problem": "같은 유산 창 검색 상자의 추천(suggestions)을 다른 설명서 파일은 \"추천어\"로 옮겼는데 이 파일은 \"추천 항목\"으로 옮겨 표기가 갈린다. 뜻은 통한다.",
+      "evidence": "원문 \"Up and Down read the game's suggestions with their position\". wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:158 \"마법책, 특성 창, 유산 창(WoW: Forever 전용)의 검색 상자는 입력하는 동안 추천어를 보여 줍니다. Up과 Down은 강조된 추천어와 그 위치를 읽고\". 화면 문구가 아니라 설명 용어라 terms 기준은 없음."
+    }
+  ]
+}

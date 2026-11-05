@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "windows/action-bars.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "이 설정이 켜져 있으면 게임의 집기 키를 함께 누르지 않는 한 단축바에서 행동을 끌어내도 아무 일도 일어나지 않고",
+      "suggestion": "이 설정이 켜져 있으면 게임의 행동 단축바 수정 키를 함께 누르지 않는 한 단축바에서 행동을 끌어내도 아무 일도 일어나지 않고",
+      "problem": "같은 설정(행동 단축바 잠그기)을 설명하면서 잠금 상태에서 눌러야 하는 게임 키를 이 파일은 '집기 키', first-login.md는 '행동 단축바 수정 키'로 달리 적어 두 설명서 사이 표기가 갈린다. 뜻은 통하므로 경미.",
+      "evidence": "원문 'unless you also hold the game's pick-up key'. wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:36 '행동 단축바 수정 키를 누르고 있지 않는 한'. 게임 내 공식 한국어 키 이름은 terms·koKR에 없어 미확인 — 어느 쪽이든 한 표기로 맞추는 것이 목적."
+    }
+  ]
+}

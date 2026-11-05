@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/first-login.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "Classic Era, The Burning Crusade 기념 서버, WoW: Forever를 지원합니다.",
+   "suggestion": "Classic Era, 불타는 성전 기념 서버, WoW: Forever를 지원합니다.",
+   "problem": "같은 로그인 도구를 다루는 짝 페이지 sku-login.md는 \"불타는 성전 기념 서버\"로 쓰는데 이 파일은 영문 \"The Burning Crusade\"를 그대로 둬서 설명서 안에서 버전 이름이 갈린다. 같은 파일 4번 항목의 \"Classic Era와 The Burning Crusade에서는\"도 함께 맞춰야 한다.",
+   "evidence": "en: \"It supports Classic Era, The Burning Crusade anniversary and WoW: Forever\". 다른 파일 표기: getting-started/sku-login.md:23 \"불타는 성전(TBC) 기념 서버\", sku-login.md:51 \"불타는 성전 기념 서버\", reference/versions.md:9 \"불타는 성전(The Burning Crusade\", basics/alerts.md:77 \"불타는 성전 기념 서버\". 다수 파일이 공식 한국어 이름 \"불타는 성전\"을 쓴다. 뜻은 통하므로 minor."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "대화창에 /wv를 입력하고 Enter를 누릅니다. 이것도 메뉴를 엽니다.",
+   "suggestion": "대화 입력창에 /wv를 입력하고 Enter를 누릅니다. 이것도 메뉴를 엽니다.",
+   "problem": "원문은 입력하는 곳(chat box)과 출력되는 곳(chat window)을 구분하는데 번역은 둘 다 \"대화창\"으로 옮겨 같은 문단에서 구분이 사라졌고, 다른 설명서 파일의 \"대화 입력창\" 표기와도 다르다.",
+   "evidence": "en: \"Type /wv in the chat box and press Enter.\" / \"/wv version prints the installed version to your chat window.\" 다른 파일 표기: getting-started/quick-start.md:12 \"대화 입력창에 /wv를 입력하고\", getting-started/troubleshooting.md:6 \"슬래시 명령은 게임의 대화 입력창에 입력합니다\", basics/alerts.md:112 \"대화 입력창 열림\". 뜻은 통하므로 minor."
+  }
+ ]
+}
