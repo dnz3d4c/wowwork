@@ -84,3 +84,12 @@ def test_term_sheet_finds_ui_strings_with_korean_values() -> None:
     assert {"en": "Letter Navigation in Menus", "ko": "메뉴에서 글자로 이동"} in sheet
     assert {"en": "Navigation", "ko": "길 안내"} in sheet
     assert all(t["en"] != "Off" for t in sheet)
+
+
+def test_check_rejects_haeyo_style(tmp_path: Path) -> None:
+    ko = tmp_path / "interface.md"
+    bad = KO.replace("보십시오.", "보세요.")
+    ko.write_text(bad, "utf-8")
+    (tmp_path / "alerts.md").write_text(ALERTS_KO, "utf-8")
+    problems = "\n".join(check(EN, bad, ko))
+    assert "해요체" in problems and "보세요." in problems

@@ -24,6 +24,8 @@ _HEADING = re.compile(r"^(#{1,6}) +(.*?)\s*$", re.MULTILINE)
 _FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 _LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*)\)")
 _CODE = re.compile(r"`[^`\n]+`")
+# 설명서는 합니다체. 문장 끝의 해요체 어미는 기계 검사로 잡는다.
+_HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지요|죠)(?=[.!?)\s]|$)", re.MULTILINE)
 
 
 def slug(heading: str) -> str:
@@ -93,6 +95,11 @@ def check(en: str, ko: str, ko_path: Path) -> list[str]:
                 )
         elif a[key] != b[key]:
             problems.append(f"{label} 다름: 원문 {a[key]} / 번역 {b[key]}")
+    haeyo = [
+        m.group(0) + "." for m in _HAEYO.finditer(_CODE.sub("", _strip_fences(ko))) if len(m.group(0)) > 1
+    ]
+    if haeyo:
+        problems.append(f"해요체 어미 {len(haeyo)}곳(설명서는 합니다체): {', '.join(sorted(set(haeyo))[:8])}")
     for target in _LINK.findall(_strip_fences(ko)):
         if "#" not in target or target.startswith(("http://", "https://")):
             continue

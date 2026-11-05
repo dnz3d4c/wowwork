@@ -104,7 +104,7 @@ async function reviewAndFix(rel) {
   const byRef = Object.fromEntries(((resp && resp.responses) || []).map(r => [r.ref, r]))
   const disputed = all.filter(f => byRef[f.ref] && byRef[f.ref].action === 'dispute' && !f.consensus)
   const escalations = all.filter(f => (byRef[f.ref] && byRef[f.ref].action === 'dispute' && f.consensus) || !byRef[f.ref])
-    .map(f => ({ ref: f.ref, why: f.consensus ? '합의 지적을 번역자가 반박' : '번역자 응답 없음', quote: f.quote }))
+    .map(f => ({ ref: f.ref, why: !byRef[f.ref] ? '번역자 응답 없음' : '합의 지적을 번역자가 반박', quote: f.quote }))
   if (!disputed.length) return { file: rel, failedReviewers: failed, findings: all.length, applied: all.length - escalations.length, upheld: 0, disputeWon: 0, escalations }
 
   // 5. 두 회사 판정 (서로의 결론 비공개)
