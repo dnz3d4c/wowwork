@@ -1,0 +1,24 @@
+{
+ "file": "getting-started/troubleshooting.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/troubleshooting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/troubleshooting.md",
+ "items": [
+  {
+   "ref": "getting-started/troubleshooting.md#gpt-context-0",
+   "file": "getting-started/troubleshooting.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "그런 다음 문제에 맞는 기록을 추가합니다. 각 기록은 텍스트가 선택된 창입니다. Ctrl+C로 복사해 이슈에 붙여 넣습니다.",
+    "suggestion": "그런 다음 문제에 맞는 기록을 추가합니다. 명령마다 결과가 나오는 위치가 다릅니다. 선택된 텍스트 창이나 대화 기록에서 복사하고, WowVisionDump에만 저장되는 기록은 아래 설명대로 파일을 첨부합니다.",
+    "problem": "표의 모든 명령이 선택된 텍스트 창을 열지는 않습니다. 현재 안내대로는 일부 기록을 Ctrl+C로 복사할 수 없습니다.",
+    "evidence": "wowvision-ko/WowVision/core/WowVision.lua:268-298의 /wv dbcheck와 core/targeting/module.lua:653-663의 /wv soft는 대화 창에 출력합니다. core/ui modules/module.lua:24-34의 /wv keylog는 기록을 켜거나 끄며, core/ui/input/pad.lua:61-67은 /wv padlog 기록을 WowVisionDump에 저장하고 대화 창에는 출력하지 않는다고 명시합니다."
+   },
+   "translator": {
+    "ref": "getting-started/troubleshooting.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문 en:130이 'Each of these is a window with selected text'라고 쓰고 번역은 그대로 옮겼다. 제안문은 원문에 없는 내용을 더해 manual-translate.md '원문에 없는 내용을 더하지 않고'에 어긋난다. 코드와 원문의 불일치는 원문 결함으로 원문 쪽에 보고할 일이다."
+   }
+  }
+ ]
+}

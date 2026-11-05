@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/manual-installation.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "[애드온 켜기](./installation.md#애드온-켜기)와 [첫 접속](./first-login.md#월드에-들어간-뒤)",
+      "suggestion": "[애드온 켜기](./installation.md#애드온-켜기)와 [처음 로그인하기](./first-login.md#월드에-들어간-뒤)",
+      "problem": "링크 글자 '첫 접속'이 대상 페이지의 실제 한국어 제목 '처음 로그인하기'와 다르다. 링크 목록으로 탐색하는 스크린리더 사용자가 대상 페이지에 도착했을 때 듣는 제목과 링크 이름이 어긋난다.",
+      "evidence": "원문 링크 글자 'First login'은 대상 제목 'Your First Login'(docs/src/user/en/getting-started/first-login.md:1)을 줄인 것이다. 번역된 대상 페이지 제목은 '# 처음 로그인하기'(docs/src/user/ko/getting-started/first-login.md:2). 앵커 '#월드에-들어간-뒤'는 같은 파일 19행 '## 월드에 들어간 뒤'와 맞는다."
+    }
+  ]
+}

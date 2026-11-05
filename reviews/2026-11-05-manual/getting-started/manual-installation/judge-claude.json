@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/manual-installation.md#gpt-context-0",
+      "uphold": true,
+      "final_ko": "WowVision에는 영어, 독일어, 프랑스어, 한국어 문구가 들어 있습니다. 어느 것을 쓸지는 게임 클라이언트 언어가 정하고, 그 밖의 클라이언트 언어에서는 영어로 표시됩니다.",
+      "reason": "이 한국어 설명서가 들어 있는 ko 브랜치 빌드는 locale/modules.xml:7에서 koKR/modules.xml을 불러오고 core/modules.xml:9가 그 locale 모듈 전체를 포함한다. 즉 이 설명서를 읽는 한국어 사용자가 받는 빌드에서는 한국어 클라이언트가 한국어로 표시되는데, 현재 번역대로면 영어로 나온다고 잘못 알게 된다. 번역자 말대로 upstream의 locale 서브모듈(6153e7b)에는 koKR가 없지만, 이 설명서는 upstream이 아니라 ko 빌드와 함께 배포된다. 같은 설명서의 ko/getting-started/installer.md:22도 원문 'English, German or French'에 한국어를 넣어 ko 빌드를 기준으로 적었다. 번역자가 든 '원문에 없는 내용을 더하지 않는다'는 규칙은 문체 규칙이라 코드 동작과 다른 설명을 정당화하지 못한다. decisions.tsv에 이 문제를 다룬 결정은 없으니 판정은 코드 근거를 따른다. 지적의 수정안 중 '지원하지 않는'은 고칠 필요가 없어 원문에 더 가까운 '그 밖의'를 그대로 두었다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/locale/modules.xml:7",
+        "wowvision-ko/WowVision/core/modules.xml:9",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:22",
+        "wowwork/docs/decisions.tsv",
+        "wowwork/docs/translation-guide.md:3"
+      ]
+    }
+  ]
+}

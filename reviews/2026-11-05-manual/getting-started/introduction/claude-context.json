@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/introduction.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "\"Out of range\" 같은 게임 오류 메시지",
+   "suggestion": "\"목표가 사정거리를 벗어났습니다\" 같은 게임 오류 메시지",
+   "problem": "한국어 클라이언트에서 실제로 들리는 오류 문구는 영어 \"Out of range\"가 아니라 한국어다. 영어 그대로 두면 독자가 실제로 듣는 메시지와 맞지 않고, 같은 예를 든 빠른 시작 페이지와도 어긋난다.",
+   "evidence": "wowwork/cache/gs_koKR.csv 1073행 ERR_OUT_OF_RANGE = \"목표가 사정거리를 벗어났습니다.\" (SPELL_FAILED_OUT_OF_RANGE도 같음). 같은 예를 든 ko/getting-started/quick-start.md 58행은 \"목표가 사정거리를 벗어났습니다\"로 옮겼다."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "[WowVision을 Sku와 함께 사용하기](sku.md)를 참고하세요.",
+   "suggestion": "[WowVision과 Sku 함께 쓰기](sku.md)를 참고하세요.",
+   "problem": "원문 링크 글자는 대상 페이지 제목(Using WowVision together with Sku)을 그대로 쓰는데, 번역의 링크 글자는 한국어 대상 페이지의 실제 제목과 다르다. 링크 목록이나 제목 탐색으로 찾을 때 이름이 어긋난다.",
+   "evidence": "ko/getting-started/sku.md 1행 제목이 \"# WowVision과 Sku 함께 쓰기\". en/getting-started/sku.md 1행 \"# Using WowVision together with Sku\"와 원문 링크 글자가 일치한다."
+  }
+ ]
+}

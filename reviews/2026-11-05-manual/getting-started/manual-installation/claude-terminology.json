@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/manual-installation.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "| 판다리아의 안개 | `WowVision_Mists.toc` | 코어, 클래식 공통 모듈, 판다리아의 안개 모듈 |",
+   "suggestion": "| 판다리아의 안개 | `WowVision_Mists.toc` | 코어, 클래식 공통 모듈, Mists 모듈 |",
+   "problem": "같은 표에서 원문의 약칭 'TBC modules'는 'TBC 모듈'로 약칭을 살렸는데 같은 형식의 'Mists modules'는 '판다리아의 안개 모듈'로 풀어 써서, 같은 종류의 이름을 한 표 안에서 다르게 옮겼다.",
+   "evidence": "원문 표: 'the core, the shared Classic modules, and the TBC modules' / 'the core, the shared Classic modules, and the Mists modules'. 번역 표 바로 위 행은 '코어, 클래식 공통 모듈, TBC 모듈'. 앞쪽 게임 버전 표는 '불타는 성전(TBC)', '판다리아의 안개(Mists)'로 두 약칭을 같은 방식으로 다뤘다. 반대로 'TBC 모듈'을 '불타는 성전 모듈'로 풀어 맞춰도 된다."
+  }
+ ]
+}

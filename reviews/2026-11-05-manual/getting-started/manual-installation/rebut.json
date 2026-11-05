@@ -1,0 +1,21 @@
+{
+  "responses": [
+    {"ref": "getting-started/manual-installation.md#claude-accuracy-0", "action": "applied", "reason": "원문 'uses this folder only if you turn WowNav off'의 주어는 WoW: Forever다. 주어를 살려 'WoW: Forever는 WowNav를 끈 경우에만 이 폴더를 씁니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#claude-accuracy-1", "action": "applied", "reason": "원문은 'damaged or partial extraction'으로 zip 파일이 아니라 압축 풀기가 원인이다. '압축이 잘못 풀렸거나 일부만 풀린 것이 원인입니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#claude-terminology-0", "action": "applied", "reason": "같은 표에서 두 약칭을 다르게 다룬 것이 맞다. 표의 게임 버전 열이 '불타는 성전', '판다리아의 안개'로 풀어 쓰고 클래식 시대 행도 '클래식 시대 모듈'이므로, 'TBC 모듈'을 '불타는 성전 모듈'로 바꿔 세 행을 풀어 쓴 이름으로 맞췄다(지적이 허용한 반대 방향)."},
+    {"ref": "getting-started/manual-installation.md#claude-style-0", "action": "applied", "reason": "'그대로 교체'는 남는다/바뀐다가 함께 들린다. 원문 'simply replaces'에 맞춰 '기존 파일을 덮어쓸 뿐입니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#claude-style-1", "action": "applied", "reason": "'불러와지지'는 이중 피동이 맞다. 제안 문장('불러오지 않은 채로 남습니다')도 어색해, 게임을 주어로 이어 '게임은 애드온을 전혀 찾지 못해 WowVision을 아무 표시 없이 끝내 불러오지 않습니다.'로 고쳤다. silently(아무 표시 없이)와 never(끝내)는 원문에 있으므로 유지했다."},
+    {"ref": "getting-started/manual-installation.md#claude-style-2", "action": "applied", "reason": "consensus. gpt-style-4와 함께 반영: 'WowVision에는 게임 버전별 TOC 파일이 하나씩 들어 있고, 게임이 알맞은 파일을 스스로 고릅니다.'"},
+    {"ref": "getting-started/manual-installation.md#claude-style-3", "action": "applied", "reason": "consensus. gpt-style-5와 함께 반영: 반복을 '그 두 버전'으로 줄이고 공유 대상을 클라이언트로 밝혀 'Forever 모듈(Forever 클라이언트가 클래식·판다리아의 안개 클라이언트와 같이 쓰는 창을 위한, 그 두 버전의 부분 몇 개 포함)'으로 고쳤다. 제안의 '일부 부분'은 무엇의 부분인지 사라져 쓰지 않았다."},
+    {"ref": "getting-started/manual-installation.md#claude-style-4", "action": "applied", "reason": "'예:' 뒤 괄호가 끊겨 들린다. 원문 괄호는 그대로 두고(따옴표 추가 없이) '설명서에 (리테일과 WoW: Forever 전용)처럼 적혀 있습니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#claude-style-5", "action": "applied", "reason": "종결어미 뒤 쌍점은 번역투가 맞다. 제안 문장('주소는 늘 ...로 같습니다')은 어색해 '늘 같은 주소인 [베타 프리릴리스 페이지](...)에 있습니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#claude-context-0", "action": "applied", "reason": "대상 페이지 제목이 '# 처음 로그인하기'(ko/getting-started/first-login.md:2)이고 installer.md:66, installation.md:29 등 다른 번역 페이지도 같은 링크를 '처음 로그인하기'로 쓴다. 링크 글자를 맞췄다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-0", "action": "applied", "reason": "'둘 다 zip 파일 하나'는 하나인지 둘인지 헷갈린다. '게시됩니다', '제공됩니다'는 원문보다 딱딱해 쓰지 않고 '내려받을 수 있는 것은 두 종류이고, 어느 쪽이든 zip 파일 하나입니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-1", "action": "applied", "reason": "'그런 버전'의 지시가 흐리다. 대상을 같은 절 안에 두어 '다른 게임 버전에는 쓰이지 않으므로 그 버전들에서는 빼도 됩니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-2", "action": "applied", "reason": "'자기 폴더'는 무생물에 어색하다. '게임 버전마다 World of Warcraft 설치 폴더 안에 전용 폴더가 있습니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-3", "action": "applied", "reason": "목적어 주제화 사동 구조가 어색하다. '항상 AddOns 폴더에 바로 풀어서, 두 폴더가 zip에서 그대로 만들어지게 합니다.'로 고쳤다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-4", "action": "applied", "reason": "consensus. claude-style-2와 함께 반영. 'one'이 TOC 파일임을 밝히고 '알맞은 것'도 '알맞은 파일'로 바꿨다. '직접 고를 일은 없습니다.'는 뜻이 분명해 그대로 두었다."},
+    {"ref": "getting-started/manual-installation.md#gpt-style-5", "action": "applied", "reason": "consensus. claude-style-3과 함께 반영(문장은 claude-style-3 응답 참고). '클래식·판다리아의 안개 클라이언트와 같이 쓰는 창'으로 공유 주체를 밝혔고 '그 두 버전의 부분'으로 무엇의 부분인지 드러냈다."},
+    {"ref": "getting-started/manual-installation.md#gpt-context-0", "action": "dispute", "reason": "이 파일은 원문(397ffc3) 번역이고 지침(manual-translate.md 문체 3번)은 원문에 없는 내용을 더하지 않도록 한다. 원문은 'English, German and French'다. 지적이 근거로 든 locale/koKR는 비공개 복제 저장소 dnz3d4c/vision-locale에만 있는 이 프로젝트의 번역(translation-guide.md:3)이고 upstream 원문 애드온에는 없다. 설명서에 한국어 지원을 적을지는 배포 형태에 달린 사용자 결정이며 decisions.tsv에 해당 결정이 없다. 번역 단계에서 사실 서술을 바꾸지 않는다."}
+  ]
+}

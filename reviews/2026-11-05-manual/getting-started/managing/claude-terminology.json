@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/managing.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "WowVision Updater를 실행하고 Update now를 고릅니다",
+   "suggestion": "WowVision Updater를 실행하고 지금 업데이트를 고릅니다",
+   "problem": "설치 프로그램 화면의 버튼 이름을 영어 그대로 두었다. 설치 프로그램은 한국어 화면을 쓰고 같은 설명서의 설치 프로그램 문서는 이 버튼을 '지금 업데이트'로 부른다.",
+   "evidence": "원문 'choose Update now'. ko/getting-started/installer.md:31 '- 지금 업데이트: 설치된 곳의 WowVision을 업데이트하고', :70 '지금 업데이트를 고릅니다.'"
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "행동 단축바 잠금, 카메라 따라가기 방식, 대화 줄 소리",
+   "suggestion": "행동 단축바 잠그기, 시점 전환 방식, 대화 메시지 사이 소리",
+   "problem": "첫 로그인 때 바꾸는 세 가지 게임 옵션 이름이 화면 문구 및 링크한 첫 로그인 문서와 다르다. 독자가 게임 설정에서 '카메라 따라가기 방식'이나 '대화 줄 소리'를 찾으면 해당 항목이 없다.",
+   "evidence": "원문 'the action bar lock, the camera following style and the chat line sound'. vision-locale/koKR/navigation.lua:82 'camera following style' → '시점 전환 방식', koKR/speech.lua:14 'Sound Between Chat Lines' → '대화 메시지 사이 소리'. ko/getting-started/first-login.md:36 '행동 단축바 잠그기', :37 '시점 전환 방식', :38 '대화 메시지 사이 소리'."
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "마지막 로그아웃이나 재시작 이후의 변경 사항은 사라집니다",
+   "suggestion": "마지막 로그아웃이나 UI 재시작 이후의 변경 사항은 사라집니다",
+   "problem": "바로 앞 문장의 /reload를 가리키는 reload를 '재시작'으로만 옮겨 게임 재시작으로도 들린다. 애드온 화면 문구는 reload를 'UI 재시작'으로 통일해 쓴다.",
+   "evidence": "원문 'changes since the last logout or reload are lost'. vision-locale/koKR/windows.lua:281 'Reload Interface' → 'UI 재시작', :283 'reload the interface' → 'UI를 재시작한 뒤'."
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/manual-installation.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "그 데이터는 이미 WowVision 폴더 안에 있습니다([WowNav](../world/wownav.md) 참고). 이 폴더는 WowNav를 끈 경우에만 씁니다.",
+   "suggestion": "그 데이터는 이미 WowVision 폴더 안에 있습니다([WowNav](../world/wownav.md) 참고). WoW: Forever는 WowNav를 끈 경우에만 이 폴더를 씁니다.",
+   "problem": "원문에서 'WowNav를 끈 경우에만 쓴다'는 한정은 WoW: Forever에만 걸리는데, 번역은 문장을 끊으면서 주어를 빼서 이 폴더 자체가 모든 버전에서 WowNav를 끈 경우에만 쓰이는 것처럼 읽힌다. 바로 앞 문장의 불타는 성전 기념 서버 길 안내 설명과 어긋난다.",
+   "evidence": "원문: \"WoW: Forever routes with WowNav by default, whose data is already inside the WowVision folder (see [WowNav](../world/wownav.md)), and uses this folder only if you turn WowNav off.\" - 'uses'의 주어는 WoW: Forever."
+  },
+  {
+   "id": "getting-started/manual-installation.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "\"소리 없음\" 문제가 보이면 압축이 손상되었거나 일부만 풀린 것이 원인입니다.",
+   "suggestion": "\"소리 없음\" 문제가 보이면 압축이 잘못 풀렸거나 일부만 풀린 것이 원인입니다.",
+   "problem": "원문은 압축 풀기(extraction)가 손상되었거나 불완전하다고 하는데, '압축이 손상되었다'는 zip 파일 자체가 깨졌다는 뜻으로 읽혀 원인을 다르게 짚는다.",
+   "evidence": "원문: \"the cause is a damaged or partial extraction: delete the folder and extract the zip again.\" - 대응도 zip을 다시 받는 것이 아니라 다시 푸는 것이다."
+  }
+ ]
+}

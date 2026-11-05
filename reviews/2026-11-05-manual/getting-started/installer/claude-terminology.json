@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "major",
+      "quote": "진행 기록은 화살표 키로 훑어볼 수 있는 목록입니다.",
+      "suggestion": "진행 상황 목록은 화살표 키로 훑어볼 수 있습니다.",
+      "problem": "설치 중에 보이는 진행 목록(progress history)을 '진행 기록'으로 옮겼는데, 설치 프로그램 화면에서 이 목록의 이름은 '진행 상황'이다. 게다가 같은 파일의 '설치가 끝나면' 절에서는 '진행 기록 보기'(View event log, 완료 후 이벤트 로그)에 '진행 기록'을 쓴다. 서로 다른 두 화면 요소가 같은 한국어 이름을 갖게 되어 독자가 둘을 같은 것으로 오해한다.",
+      "evidence": "원문 'The progress history is a list you can go through with the arrow keys.' / 설치 프로그램 한국어 문구 wowvision-installer/WowVisionInstaller/Loc.cs 한국어 절 progress.historyLabel = \"진행 상황(화살표 키로 확인):\", done.logBtn = \"진행 기록 보기(&E)\". 번역문 같은 파일 '진행 기록 보기는 이번 실행의 모든 단계를 한 줄씩 보여 줍니다.'"
+    }
+  ]
+}

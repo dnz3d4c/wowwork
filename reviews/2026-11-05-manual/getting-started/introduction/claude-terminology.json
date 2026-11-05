@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/introduction.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "\"Out of range\" 같은 게임 오류 메시지",
+   "suggestion": "\"목표가 사정거리를 벗어났습니다\" 같은 게임 오류 메시지",
+   "problem": "인용한 게임 오류 메시지를 영어로 남겼다. 한국어 클라이언트에서 실제로 표시·낭독되는 문구는 한국어라 듣는 말과 읽는 말이 다르다.",
+   "evidence": "원문 game error messages like \"Out of range\". 게임 한국어 문자열 cache/gs_koKR.csv:1073 ERR_OUT_OF_RANGE = \"목표가 사정거리를 벗어났습니다.\" (ERR_SPELL_OUT_OF_RANGE, SPELL_FAILED_OUT_OF_RANGE도 같은 값, 1842·2267행). 번역 지침 manual-translate.md 14행: 따옴표로 인용된 안내 문구도 실제 표시·낭독되는 값을 글자 그대로 쓴다."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "모두 바꿀 수 있습니다. [키 설정](../basics/keybindings.md)을 참고하세요.",
+   "suggestion": "모두 바꿀 수 있습니다. [단축키](../basics/keybindings.md)를 참고하세요.",
+   "problem": "Keybindings를 '키 설정'으로 옮겼는데, WowVision 화면 문구와 게임 공식 용어 어느 쪽과도 글자가 다르다. 사용자가 메뉴에서 듣는 이름과 설명서의 이름이 어긋난다.",
+   "evidence": "wowvision-ko/vision-locale/koKR/bindings.lua:4 L[\"Bindings\"] = \"단축키\". 게임 공식 용어 cache/gs_koKR.csv:898 KEY_BINDINGS = \"단축키 설정\". 원문 see [Keybindings](../basics/keybindings.md)."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "인터페이스, 툴팁, 음성, 설정 메뉴, 경보, 키 설정. 이 부분을 먼저 읽으세요.",
+   "suggestion": "인터페이스, 툴팁, 음성, 설정 메뉴, 경보, 단축키. 이 부분을 먼저 읽으세요.",
+   "problem": "keybindings를 '키 설정'으로 옮겨 WowVision 메뉴 이름 '단축키'와 다르다. 위 링크와 함께 고쳐야 파일 안 표기가 맞는다.",
+   "evidence": "원문 alerts and keybindings. wowvision-ko/vision-locale/koKR/bindings.lua:4 L[\"Bindings\"] = \"단축키\"; cache/gs_koKR.csv:898 KEY_BINDINGS = \"단축키 설정\"."
+  }
+ ]
+}

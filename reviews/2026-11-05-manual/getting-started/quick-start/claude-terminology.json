@@ -1,0 +1,20 @@
+[
+  {
+    "id": "getting-started/quick-start.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "| Shift+F10 | 더 많은 동작이 있는 컨텍스트 메뉴 |",
+    "suggestion": "| Shift+F10 | 더 많은 동작이 있는 상황별 메뉴 |",
+    "problem": "Shift+F10으로 여는 메뉴는 애드온 화면 문구로 '상황별 메뉴'라고 표시·낭독되는데 설명서는 '컨텍스트 메뉴'라고 써서 듣는 말과 읽는 말이 다르다.",
+    "evidence": "원문 'Context menu with more actions'. vision-locale/koKR/bindings.lua:24 L[\"Context Menu\"] = \"상황별 메뉴\", koKR/ui.lua:58 동일. 키 설정 화면 라벨 출처 WowVision/core/ui modules/module.lua:327 label = L[\"Context Menu\"]. manual-translate.md 용어 1항(화면 문구는 한국어 값을 글자 그대로)."
+  },
+  {
+    "id": "getting-started/quick-start.md",
+    "category": "terminology",
+    "severity": "major",
+    "quote": "아무 일도 일어나지 않으면 대화창에 /wv를 입력하고 Enter를 누릅니다.",
+    "suggestion": "아무 일도 일어나지 않으면 대화 입력창에 /wv를 입력하고 Enter를 누릅니다.",
+    "problem": "원문 'chat box'는 글자를 입력하는 칸인데 '대화창'으로 옮겨 아래 2단계의 'chat window'(대화창, 메시지가 출력되는 곳)와 같은 말이 됐다. 애드온은 이 칸을 '대화 입력창'이라고 낭독하고, 같은 설명서의 문제 해결 페이지도 '대화 입력창'을 쓴다.",
+    "evidence": "원문 'type /wv in the chat box'. vision-locale/koKR/chat.lua:17-18 \"Chat Box Opened\" = \"대화 입력창 열림\", \"Chat Box Closed\" = \"대화 입력창 닫힘\". ko/getting-started/troubleshooting.md:59 '대화 입력창이나 다른 편집 상자에 입력하는 동안'. 같은 파일 2단계 '번호와 함께 대화창에 출력'(원문 chat window)."
+  }
+]

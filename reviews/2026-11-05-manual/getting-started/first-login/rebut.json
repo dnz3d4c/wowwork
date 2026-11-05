@@ -1,0 +1,129 @@
+{
+  "file": "getting-started/first-login.md",
+  "check": {
+    "passed": false,
+    "note": "남은 문제 2건은 반박 전부터 있던 것: ./sku-login.md#getting-and-installing-it, ./sku-login.md#using-the-tool-on-wow-forever. 대상 ko/getting-started/sku-login.md가 아직 번역되지 않아 manual-translate.md 규칙대로 원문 앵커를 그대로 뒀다. sku-login.md가 번역된 뒤 앵커를 바꾸면 통과한다. 반박에서 고친 곳으로 생긴 새 문제는 없다."
+  },
+  "responses": [
+    {
+      "ref": "getting-started/first-login.md#claude-terminology-0",
+      "action": "applied",
+      "final_ko": "(WoW Login Tool 설치(권장) 항목이 기본으로 체크되어 있습니다)",
+      "reason": "설치 프로그램 한국어 문자열 wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:1045 opt.loginTool.label = \"WoW Login Tool 설치(권장)\"을 확인했다. 화면 문구를 글자 그대로 쓰도록 '(권장)'까지 넣었다. claude-context-0과 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-terminology-1",
+      "action": "applied",
+      "final_ko": "WowVision은 로그인할 때마다 게임 설정을 이 설정에 맞추므로, 끄려면 게임 설정이 아니라 WowVision 설정을 쓰십시오.",
+      "reason": "같은 파일의 표에서 game options를 '게임 설정'으로 옮겼으므로 같은 대상을 한 이름으로 맞췄다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-0",
+      "action": "applied",
+      "final_ko": "WowVision 음성 메뉴의 대화 메시지 사이 소리 설정으로 바꾸거나",
+      "reason": "설정 이름(terms: 대화 메시지 사이 소리)을 수식어로 앞에 두면 괄호 없이 한 번에 들린다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-1",
+      "action": "applied",
+      "final_ko": "또 새 줄을 추가하는 업데이트 이후 기존 캐릭터로 처음 로그인하면, 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 생깁니다.",
+      "reason": "consensus. 원문처럼 한 문장으로 합쳐 '추가됩니다' 반복을 없앴다. 제안의 '이 줄들을'은 줄이 나오기 전에 가리켜서 '새 줄을'로 바꿨다. gpt-style-6과 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-2",
+      "action": "applied",
+      "final_ko": "경유지 쪽으로 돌 때는 먼저 카메라를 돌린 다음, 캐릭터를 카메라와 같은 방향으로 돌립니다. 이 동작은 시점 전환 방식이 항상 전환일 때만 안정적으로 작동합니다.",
+      "reason": "consensus. '이 방식'을 '이 동작'으로 바꾸고, 'that style'은 같은 행 첫 칸의 '항상 전환'을 이름으로 직접 불러 무엇을 가리키는지 분명히 했다. gpt-style-4와 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-3",
+      "action": "applied",
+      "final_ko": "딱 한 번만 바꾸므로, 나중에 설정을 되돌리면 WowVision은 그 선택을 건드리지 않습니다.",
+      "reason": "'다시 되돌리다'는 겹말이다. back은 '되-' 하나로 충분하다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-4",
+      "action": "applied",
+      "final_ko": "오른쪽 화살표 키로 들어가고, 위아래 화살표 키로 고른 다음 Enter로 확정합니다.",
+      "reason": "consensus. Right·Up·Down이 키 이름임을 '화살표 키'로 드러냈다. gpt-style-1과 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-5",
+      "action": "applied",
+      "final_ko": "소프트 대상 종류를 켜면 WowVision이 그 종류의 각도를 가장 넓게, 거리를 가장 길게 설정합니다.",
+      "reason": "원문 its는 켠 종류를 가리키고 arc와 range는 나란한 두 값이다. '그 범위 각도'는 range와 겹쳐 들린다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-style-6",
+      "action": "applied",
+      "final_ko": "[WowVision과 Sku 함께 쓰기](./sku.md): Sku도 설치되어 있을 때.",
+      "reason": "같은 목록의 문제 해결 항목 '...말하지 않을 때.'와 끝맺음을 맞췄다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-context-0",
+      "action": "applied",
+      "final_ko": "(WoW Login Tool 설치(권장) 항목이 기본으로 체크되어 있습니다)",
+      "reason": "Loc.cs:1045 확인. claude-terminology-0과 같은 곳이라 함께 반영했다. 괄호 안 괄호를 '항목이'로 이어 조사가 라벨 괄호에 바로 붙지 않게 했다."
+    },
+    {
+      "ref": "getting-started/first-login.md#claude-context-1",
+      "action": "applied",
+      "final_ko": "[WowVision 관리](./managing.md): 설정이 저장되는 위치",
+      "reason": "consensus. ko/getting-started/managing.md:2 제목이 '# WowVision 관리'임을 확인했다. gpt-context-0과 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-terminology-0",
+      "action": "dispute",
+      "final_ko": "게임 설정의 조작 설정에서 시점 전환 방식을 바꿉니다. 그러면 경유지 쪽으로 돌아서기가 불안정해집니다.",
+      "reason": "여기 Controls는 WowVision 화면이 아니라 게임 옵션 창의 분류다. 게임 공식 문자열 cache/gs_koKR.csv:4682 CONTROLS_LABEL = \"조작 설정\"(enUS 4676 Controls)이라 게임에서 실제로 표시·낭독되는 이름은 '조작 설정'이다. manual-translate.md 용어 2번(게임 용어는 게임 공식 한국어)에 따라 현재 번역이 맞다. terms의 '조작'은 WowVision 쪽 문자열 값이라 게임 옵션 창 이름에 쓰면 오히려 들리는 이름과 어긋난다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-0",
+      "action": "applied",
+      "final_ko": "Mists of Pandaria Classic과 Retail에서는 작동하지 않으므로, 이 두 버전에서는 눈이 보이는 사람에게 도움을 받으십시오.",
+      "reason": "게임 버전을 '그곳'으로 가리키는 것은 어색하다. sighted helper는 제안의 '볼 수 있는 사람'보다 뜻이 갈리지 않는 '눈이 보이는 사람'으로 옮겼다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-1",
+      "action": "applied",
+      "final_ko": "오른쪽 화살표 키로 들어가고, 위아래 화살표 키로 고른 다음 Enter로 확정합니다.",
+      "reason": "consensus. claude-style-4와 같은 곳이라 함께 반영했다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-2",
+      "action": "applied",
+      "final_ko": "도구가 자체 메뉴와 게임 사이를 저절로 전환하지 않으면 Alt+F1을 누르십시오.",
+      "reason": "프로그램을 가리킬 때는 '자체 메뉴'가 설명서 문체에 맞다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-3",
+      "action": "applied",
+      "final_ko": "그다음 몇 분을 들여 [빠른 시작](./quick-start.md)을 읽어 보십시오.",
+      "reason": "'들이다'의 목적어에 조사를 붙이는 편이 자연스럽다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-4",
+      "action": "applied",
+      "final_ko": "경유지 쪽으로 돌 때는 먼저 카메라를 돌린 다음, 캐릭터를 카메라와 같은 방향으로 돌립니다. 이 동작은 시점 전환 방식이 항상 전환일 때만 안정적으로 작동합니다.",
+      "reason": "consensus. '방향을 복사한다' 직역투를 풀었다. 제안의 '앞에서 설명한'보다 이름 '항상 전환'을 직접 쓰는 편이 소리로 더 분명하다. '이루어집니다'는 원문 works에 맞춰 '작동합니다'로 뒀다. claude-style-2와 함께 반영."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-5",
+      "action": "applied",
+      "final_ko": "게임은 대화를 소리 내어 읽을 때 두 줄 사이에 짧은 소리를 내는데, 그 소리가 WowVision의 모든 안내 사이에서도 나게 됩니다.",
+      "reason": "읽는 주체가 게임임을 드러내도록 수식 관계를 고쳤다. 원문 would play의 가정 뉘앙스는 '나게 됩니다'로 살렸다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-style-6",
+      "action": "applied",
+      "final_ko": "또 새 줄을 추가하는 업데이트 이후 기존 캐릭터로 처음 로그인하면, 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 생깁니다.",
+      "reason": "consensus. claude-style-1과 같은 곳이라 함께 반영했다."
+    },
+    {
+      "ref": "getting-started/first-login.md#gpt-context-0",
+      "action": "applied",
+      "final_ko": "- [WowVision 관리](./managing.md): 설정이 저장되는 위치, WowVision을 업데이트하고 제거하는 방법.",
+      "reason": "consensus. claude-context-1과 같은 곳이라 함께 반영했다."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/sku.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "- 전투 준비와 던전 입장 준비 팝업.\n- 역할 확인(역할 확인 팝업).",
+   "suggestion": "- 전투 준비 확인과 던전 입장 준비 팝업.\n- 역할 투표(역할 확인 팝업).",
+   "problem": "애드온이 실제로 쓰는 창 이름과 다르다. Role poll을 '역할 확인'으로 옮겨 괄호 속 '역할 확인 팝업'과 같은 말이 되어, 원문이 구분한 두 창(역할 투표 팝업과 던전 찾기 역할 확인 팝업)이 하나로 들린다. Ready check도 화면 이름 '전투 준비 확인'이 아니라 '전투 준비'로 줄였다.",
+   "evidence": "원문 'Ready check and the dungeon ready popup.', 'Role poll (the role check popups).' / vision-locale/koKR/windows.lua:128 L[\"Ready Check\"] = \"전투 준비 확인\", :131 L[\"Role Poll\"] = \"역할 투표\" / WowVision/core/windows/RolePoll.lua:68-80 RolePollPopup과 LFDRoleCheckPopup 두 창 모두 conflictingAddons = { \"Sku\" }"
+  },
+  {
+   "id": "getting-started/sku.md",
+   "category": "context",
+   "severity": "major",
+   "quote": "- 전문 기술과 제작(Craft) 창.\n- 야수 관리인.\n- 퀘스트 목록.",
+   "suggestion": "- 전문 기술과 제작(Craft) 창.\n- 야수 우리.\n- 퀘스트 목록.",
+   "problem": "Sku에 넘기는 것은 야수 우리 창(PetStableFrame)인데 번역은 NPC 이름 '야수 관리인'을 적어 창 목록에 사람이 들어간 것처럼 읽힌다. 애드온 화면 문구도 '우리'·'야수 우리 칸'이다.",
+   "evidence": "원문 'Pet stable.' / WowVision/tbc/petStable.lua:151-153 name = \"petStable\", frameName = \"PetStableFrame\", conflictingAddons = { \"Sku\" } / vision-locale/koKR/windows.lua:201 L[\"Stable\"] = \"우리\", :202 L[\"Stable slot %d\"] = \"야수 우리 칸 %d\""
+  },
+  {
+   "id": "getting-started/sku.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "- WoW: Forever에서만: 캐릭터 창과 장비 세트 팝업.",
+   "suggestion": "- WoW: Forever에서만: 캐릭터 창과 장비 구성 팝업.",
+   "problem": "장비 세트 기능의 애드온 화면 문구는 '장비 구성'이라 사용자가 듣는 이름과 다르다.",
+   "evidence": "원문 'Character pane and the gear set popup.' / WowVision/camelot/character.lua:490-492 name = \"gearSetPopup\", frameName = \"GearManagerPopupFrame\" / vision-locale/koKR/windows.lua:246 L[\"Equipment Sets\"] = \"장비 구성\""
+  },
+  {
+   "id": "getting-started/sku.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "Sku를 켜거나 끈 것을 반영하려면 재시작(/reload)하거나 다시 로그인해야 합니다.",
+   "suggestion": "Sku를 켜거나 끈 것을 반영하려면 UI를 다시 불러오거나(/reload) 다시 로그인해야 합니다.",
+   "problem": "/reload는 게임 재시작이 아니라 인터페이스 다시 불러오기인데 '재시작'만 쓰면 게임을 껐다 켜라는 뜻으로 들릴 수 있다. 같은 파일 아래 문단은 같은 동작을 '인터페이스를 다시 불러옵니다'로 옮겨 서로 다르게 들린다.",
+   "evidence": "원문 'needs a reload (/reload) or a new login' / WowVision/core/WowVision.lua:1126 setAddonStates 끝의 ReloadUI() (번역문 '인터페이스를 다시 불러옵니다') / vision-locale/koKR/windows.lua:283 '/reload'를 'UI를 재시작'으로 표기"
+  }
+ ]
+}

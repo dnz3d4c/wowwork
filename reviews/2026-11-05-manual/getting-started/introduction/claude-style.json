@@ -1,0 +1,58 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "새 대상, 들어간 지역, 떨어지기 시작할 때, 벽에 부딪혔을 때, 전투에 들어갔을 때, 나와 싸우는 적의 수, \"Out of range\" 같은 게임 오류 메시지, 들어오는 대화 메시지 등입니다.",
+   "suggestion": "새 대상, 들어간 지역, 떨어지기 시작하거나 벽에 부딪히거나 전투에 들어간 순간, 나와 싸우는 적의 수, \"Out of range\" 같은 게임 오류 메시지, 들어오는 대화 메시지 등을 알려 줍니다.",
+   "problem": "주어 없이 '등입니다'로 끝나는 문장에 명사(새 대상)와 '~할 때' 절이 섞여 나열되어, 들을 때 무엇이 무엇인지 연결이 끊긴다. 영어 나열 구조를 그대로 옮긴 번역투다.",
+   "evidence": "원문 'Your new target, the zone you enter, when you start falling, run into a wall, enter combat, ...'. 평가 지침 style 관점: 번역투, 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "이 경보는 하나하나 음성으로 말하거나, 소리로 재생하거나, 끌 수 있습니다.",
+   "suggestion": "이 경보는 하나하나 음성으로 읽게 하거나, 소리로 재생하거나, 끌 수 있습니다.",
+   "problem": "'경보는 ... 음성으로 말하거나 ... 끌 수 있습니다'에서 '말하다'의 주체가 경보처럼 읽히고, 뒤의 '재생하거나, 끌 수'는 사용자가 주체라 호응이 어긋난다.",
+   "evidence": "원문 'Every one of these alerts can be spoken, played as a sound, or turned off.' 수동 나열을 능동 동사로 옮기면서 주어 호응이 깨졌다."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "경유지 연결망을 따라 경로를 짜고 소리 비컨으로 그곳까지 이끕니다.",
+   "suggestion": "경유지 연결망을 따라 경로를 짜고 소리 비컨으로 목적지까지 이끕니다.",
+   "problem": "'그곳'이 가리킬 장소가 앞 문장에 없다. 귀로 들으면 '그곳'이 경유지인지 목적지인지 알 수 없다.",
+   "evidence": "원문 'leads you there'의 there를 지시어로 직역. 앞에 목적지를 나타내는 말이 없음."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision은 Sku 플레이어를 염두에 두고 만들었습니다.",
+   "suggestion": "WowVision은 Sku 플레이어를 염두에 두고 만든 애드온입니다.",
+   "problem": "주어 'WowVision은'과 서술어 '만들었습니다'가 호응하지 않는다. WowVision이 무언가를 만든 것처럼 읽힌다.",
+   "evidence": "원문 'WowVision was written with Sku players in mind'. 한국어 주술 호응 오류."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision이 말하는 그대로 굵게 씁니다. 예를 들어 항목 방향 반전 설정이 있습니다.",
+   "suggestion": "WowVision이 말하는 그대로 굵게 씁니다. 예: 항목 방향 반전 설정.",
+   "problem": "'예를 들어 ... 설정이 있습니다'는 표기 예시가 아니라 설정이 존재한다는 진술로 읽힌다. 같은 목록의 다른 항목은 '예:' 형식을 써서 문체도 통일되지 않는다.",
+   "evidence": "원문 'for example the Invert Item Direction setting'. 같은 목록 '예: (WoW: Forever 전용)'."
+  },
+  {
+   "id": "getting-started/introduction.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "음성 예시는 따옴표 안에 씁니다. \"250 / 500 생명력\".",
+   "suggestion": "음성 예시는 따옴표 안에 씁니다. 예: \"250 / 500 생명력\".",
+   "problem": "따옴표 인용만 홀로 문장처럼 놓여 있어 들을 때 그것이 예시라는 연결이 없다. 같은 목록의 '예:' 형식과도 다르다.",
+   "evidence": "원문 'Spoken examples are in quotation marks: \"250 / 500 Health\".' 원문의 콜론 연결을 마침표로 끊으면서 예시 표지가 사라졌다."
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/installation.md#gpt-context-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "ko/world/ 폴더가 지금 없는 것은 사실이지만 이는 번역이 진행 중이라 생긴 일시 상태다. 원문(en installation.md:22)의 링크 대상은 같은 언어 트리의 ../world/quests.md이고 번역문도 같은 상대 경로를 유지했다. 수정안은 링크 대상을 영어 트리로 바꾸고 원문에 없는 '영어 설명서의'를 더해 원문과 어긋난다. 지적의 근거가 일시 상태에 기대므로 현재 번역을 유지한다.",
+      "evidence_sources": ["input"]
+    },
+    {
+      "ref": "getting-started/installation.md#gpt-context-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "ko/getting-started/sku-login.md가 아직 없는 것은 번역 미완료 때문이다. 원문(en installation.md:41)과 같은 ./sku-login.md 경로를 유지한 현재 번역이 원문에 충실하고, 수정안은 대상 경로 변경과 원문에 없는 '영어 설명서의' 추가를 들여온다. 현재 번역 유지.",
+      "evidence_sources": ["input"]
+    },
+    {
+      "ref": "getting-started/installation.md#gpt-context-5",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 링크 글자 'Installing with the Installer'(en installation.md:7)는 대상 제목 'Installing with the Installer (recommended)'(en installer.md:1)에서 '(recommended)'를 뺐다. 번역문도 같은 방식이고, 같은 항목 첫머리에 이미 '(권장)'이 있어 넣으면 중복된다. 결함 아님.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/en/getting-started/installer.md:1", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:2"]
+    },
+    {
+      "ref": "getting-started/installation.md#gpt-context-7",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 링크 글자 'First login'(en installation.md:28)도 절 제목 'In the world'가 아니라 페이지 이름을 쓴다. 번역문은 페이지 제목 '처음 로그인하기'(ko first-login.md:2)로 옮겨 파일 안 다른 링크와 맞췄고 앵커 #월드에-들어간-뒤는 ko first-login.md:19 제목과 일치한다. ko installer.md:66도 같은 형태. 결함 아님.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:2", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:19", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:66"]
+    }
+  ]
+}

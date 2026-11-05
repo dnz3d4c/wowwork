@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/first-login.md",
+      "category": "context",
+      "severity": "major",
+      "quote": "(Install the WoW Login Tool이 기본으로 체크되어 있습니다)",
+      "suggestion": "(WoW Login Tool 설치(권장)가 기본으로 체크되어 있습니다)",
+      "problem": "설치 프로그램 체크 상자 이름을 영어 그대로 인용했지만, 한국어 Windows에서 설치 프로그램은 이 체크 상자를 한국어로 표시한다. 독자는 화면에서 \"Install the WoW Login Tool\"을 찾을 수 없다.",
+      "evidence": "wowvision-installer/WowVisionInstaller/Loc.cs:33 (UI 언어가 ko면 Lang.Ko 선택), Loc.cs:1045 [\"opt.loginTool.label\"] = \"WoW Login Tool 설치(권장)\". 같은 설명서의 ko/getting-started/installer.md:49도 \"WoW Login Tool 설치(권장, 체크됨)\"으로 적는다."
+    },
+    {
+      "id": "getting-started/first-login.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "[WowVision 관리하기](./managing.md): 설정이 저장되는 위치",
+      "suggestion": "[WowVision 관리](./managing.md): 설정이 저장되는 위치",
+      "problem": "링크 글자가 대상 페이지의 실제 한국어 제목과 다르다. 원문은 링크 글자와 제목이 \"Managing WowVision\"으로 같다.",
+      "evidence": "ko/getting-started/managing.md:2 제목 \"# WowVision 관리\", en/getting-started/managing.md:1 \"# Managing WowVision\"."
+    }
+  ]
+}

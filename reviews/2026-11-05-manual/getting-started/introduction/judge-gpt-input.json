@@ -1,0 +1,41 @@
+{
+ "file": "getting-started/introduction.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/introduction.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md",
+ "items": [
+  {
+   "ref": "getting-started/introduction.md#claude-style-3",
+   "file": "getting-started/introduction.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "WowVision은 Sku 플레이어를 염두에 두고 만들었습니다.",
+    "suggestion": "WowVision은 Sku 플레이어를 염두에 두고 만든 애드온입니다.",
+    "problem": "주어 'WowVision은'과 서술어 '만들었습니다'가 호응하지 않는다. WowVision이 무언가를 만든 것처럼 읽힌다.",
+    "evidence": "원문 'WowVision was written with Sku players in mind'. 한국어 주술 호응 오류."
+   },
+   "translator": {
+    "ref": "getting-started/introduction.md#claude-style-3",
+    "action": "dispute",
+    "reason": "'WowVision은'의 '은'은 주격이 아니라 화제 표지다. 그래서 '(누군가가) 염두에 두고 만들었다'로 자연스럽게 읽힌다('이 책은 아이들을 위해 썼습니다'와 같은 구조). 제안문 '만든 애드온입니다'는 4행 첫 문장의 '...애드온입니다'와 겹친다. 현행 유지."
+   }
+  },
+  {
+   "ref": "getting-started/introduction.md#gpt-context-0",
+   "file": "getting-started/introduction.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "스캐너(F9)는 근처의 퀘스트 제공자, 퀘스트 목표 등을 나열합니다. 미니맵 탐색은 약초와 광석을 찾습니다.",
+    "suggestion": "스캐너(F9)는 근처의 퀘스트 제공자, 퀘스트 목표 등을 나열합니다. 미니맵 탐색은 약초와 광석도 찾지만, 한국어 클라이언트에서는 채집물로 분류하지 못합니다.",
+    "problem": "한국어 클라이언트에서는 약초와 광석의 한국어 이름을 채집물로 인식하지 못하므로, 스캐너의 채집 범주에서 찾을 수 있다는 설명이 실제 동작과 맞지 않는다.",
+    "evidence": "wowvision-ko/WowVision/core/minimap/gatheringNames.lua:12-280에는 enUS, deDE, frFR 이름만 있고 koKR 목록이 없다. core/minimap/module.lua:268은 GetLocale()을 넘기며, core/minimap/logic.lua:521은 목록이 없는 언어에서 영어 이름으로 대체한다. 한국어 이름이 일치하지 않으면 core/minimap/logic.lua:585-588에서 questGiver로 분류되고, core/minimap/scanner.lua:37-59의 채집 범주에는 spell: 또는 unsorted 항목만 표시된다."
+   },
+   "translator": {
+    "ref": "getting-started/introduction.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "코드 사실은 맞다. gatheringNames.lua에 koKR 목록이 없고, logic.lua:521이 enUS로 대체한다. 하지만 이는 애드온 현지화 결함이지 번역 오류가 아니다. 원문을 그대로 옮겼고, manual-translate.md:24는 원문에 없는 내용을 더하지 못하게 한다. 또 점은 스캔되어 questGiver 범주로 나오므로(logic.lua:585-588) '찾는다'가 거짓도 아니다. gatheringNames.lua에 koKR을 추가하는 코드 작업으로 넘겨야 한다."
+   }
+  }
+ ]
+}

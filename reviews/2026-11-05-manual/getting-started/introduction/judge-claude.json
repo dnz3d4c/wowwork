@@ -1,0 +1,29 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/introduction.md#claude-style-3",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "'WowVision은'의 '은'은 화제를 드러내는 보조사라서 '(개발자가) WowVision을 Sku 플레이어를 염두에 두고 만들었다'로 읽힌다. 주어가 빠진 화제 구문은 합니다체 한국어에서 흔하고, WowVision이 무언가를 만든 주체로 오독될 여지는 바로 앞 문장(38행)의 맥락 때문에 작다. 뜻 오류가 아니라 문장 취향의 차이다. 제안문 '만든 애드온입니다'는 4행 첫 문장의 '...애드온입니다'와 겹쳐 더 나아지지도 않는다. 현행 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/getting-started/introduction.md:37",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:38"
+      ]
+    },
+    {
+      "ref": "getting-started/introduction.md#gpt-context-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "코드 사실은 직접 확인했다. gatheringNames.lua에는 enUS·deDE·frFR 목록만 있고 koKR이 없으며, logic.lua:521은 목록이 없는 언어에서 enUS로 대체한다. module.lua:268은 GetLocale()을 넘기고, 이름이 맞지 않는 점은 logic.lua:585-588에서 questGiver(또는 unsorted)로 들어간다. 그러나 이 문장은 소개 페이지의 개요로, 원문 'the minimap scan finds herbs and ore'를 그대로 옮겼을 뿐 채집 범주로 분류한다고 말하지 않는다. 점 자체는 스캔되어 목록에 오르므로 '찾습니다'가 거짓은 아니다. 분류 결함은 애드온 현지화(gatheringNames.lua에 koKR 추가) 문제이고, 소개 문장에 원문에 없는 제한 사항을 덧붙이는 것은 번역이 아니라 코드 쪽에서 고칠 일이다. 현행 유지하고 코드 작업으로 넘긴다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/core/minimap/gatheringNames.lua:8-280",
+        "wowvision-ko/WowVision/core/minimap/logic.lua:521",
+        "wowvision-ko/WowVision/core/minimap/logic.lua:575-588",
+        "wowvision-ko/WowVision/core/minimap/module.lua:268",
+        "wowvision-ko/WowVision/core/minimap/scanner.lua:37-59"
+      ]
+    }
+  ]
+}

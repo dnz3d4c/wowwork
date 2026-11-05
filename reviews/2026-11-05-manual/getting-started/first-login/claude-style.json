@@ -1,0 +1,67 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision 음성 메뉴의 설정(대화 메시지 사이 소리)으로 바꾸거나",
+   "suggestion": "WowVision 음성 메뉴의 대화 메시지 사이 소리 설정으로 바꾸거나",
+   "problem": "'설정(설정 이름)으로 바꾸거나'는 괄호 때문에 문장이 끊기고, 스크린리더로 들으면 '설정' 뒤에 이름이 덧붙는 구조라 어색하다.",
+   "evidence": "원문 'It is a setting in the Speech menu of WowVision (Sound Between Chat Lines)'의 괄호를 그대로 옮긴 번역투. 설정 이름을 수식어로 앞에 두면 괄호가 필요 없다."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "또 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 추가됩니다. 이 줄을 추가하는 업데이트 이후 기존 캐릭터가 처음 로그인할 때 추가됩니다.",
+   "suggestion": "또 이 줄들을 추가하는 업데이트 이후 기존 캐릭터가 처음 로그인하면, 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 생깁니다.",
+   "problem": "한 문장을 둘로 쪼개면서 '추가됩니다'가 연달아 두 번 나오고, 두 번째 문장은 주어 없이 같은 말을 반복해 군더더기가 된다.",
+   "evidence": "원문은 한 문장 'The General buffer also gains a few new lines (...) the first time an existing character logs in after an update that adds them.'"
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "그 방향을 캐릭터에 복사합니다. 이 방식은 그 시점 전환 방식에서만 안정적으로 작동합니다.",
+   "suggestion": "그 방향을 캐릭터에 복사합니다. 이 동작은 그 시점 전환 방식에서만 안정적으로 작동합니다.",
+   "problem": "'이 방식은 그 시점 전환 방식에서만'처럼 '방식'이 한 문장에 두 번 나와, 들을 때 '이 방식'이 무엇을 가리키는지(경유지 쪽으로 돌기인지 카메라 방식인지) 헷갈린다.",
+   "evidence": "원문 'This only works reliably with that style.'의 This는 앞 문장의 돌기 동작을 가리킨다. 지침의 '스크린리더로 들었을 때 뜻이 갈리는 표현'."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "딱 한 번만 바꾸므로, 나중에 설정을 다시 되돌리면 WowVision은 그 선택을 건드리지 않습니다.",
+   "suggestion": "딱 한 번만 바꾸므로, 나중에 설정을 되돌리면 WowVision은 그 선택을 건드리지 않습니다.",
+   "problem": "'다시 되돌리면'은 '되돌리다'에 이미 '다시'의 뜻이 있어 겹말이다.",
+   "evidence": "원문 'if you change a setting back afterward'. back 하나를 '다시'와 '되-'로 두 번 옮겼다."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "오른쪽으로 들어가고, 위와 아래로 고르고, Enter로 확정합니다.",
+   "suggestion": "오른쪽 화살표로 들어가고, 위아래 화살표로 고르고, Enter로 확정합니다.",
+   "problem": "'오른쪽으로 들어가고'는 들으면 키가 아니라 방향(오른쪽 방향으로 이동)으로 읽혀, 같은 문장의 'Enter로'와 달리 누를 키라는 것이 드러나지 않는다.",
+   "evidence": "원문 'Right goes in, Up and Down choose, Enter confirms.'에서 Right·Up·Down은 Enter와 나란히 놓인 키 이름이다."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "소프트 대상 종류를 켜면 WowVision이 그 범위 각도를 가장 넓게, 거리를 가장 길게 설정합니다.",
+   "suggestion": "소프트 대상 종류를 켜면 WowVision이 그 종류의 각도를 가장 넓게, 거리를 가장 길게 설정합니다.",
+   "problem": "'그 범위 각도'는 '범위'와 '각도'가 붙어 무엇의 각도인지 흐리고, 뒤의 '거리'와 짝이 맞지 않는다.",
+   "evidence": "원문 'WowVision sets its arc to the widest and its range to the longest.'에서 arc와 range는 나란한 두 값이고 its는 해당 종류를 가리킨다."
+  },
+  {
+   "id": "getting-started/first-login.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "[WowVision과 Sku 함께 쓰기](./sku.md): Sku도 설치되어 있다면.",
+   "suggestion": "[WowVision과 Sku 함께 쓰기](./sku.md): Sku도 설치되어 있을 때.",
+   "problem": "'있다면.'으로 끝나 문장이 끊긴 느낌이고, 바로 아래 항목의 '말하지 않을 때.'와 끝맺음이 어긋난다.",
+   "evidence": "원문 'if you also have Sku installed.' 같은 목록의 문제 해결 항목은 '...않을 때.'로 옮겼다."
+  }
+ ]
+}

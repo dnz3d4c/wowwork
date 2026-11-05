@@ -1,0 +1,20 @@
+[
+  {"ref": "getting-started/quick-start.md#claude-terminology-0", "action": "applied", "reason": "Shift+F10 메뉴의 화면 문구는 L[\"Context Menu\"] = \"상황별 메뉴\"(vision-locale/koKR/bindings.lua:24, ui.lua:58)이다. manual-translate.md 용어 1항대로 '상황별 메뉴'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#claude-terminology-1", "action": "applied", "reason": "원문 'chat box'는 입력하는 칸이고 애드온은 이를 '대화 입력창'으로 낭독한다(koKR/chat.lua:17-18). troubleshooting.md:59와도 맞춰 '대화 입력창'으로 바꿨다. 2단계의 'chat window'는 '대화창'으로 남겨 둘을 구분한다."},
+  {"ref": "getting-started/quick-start.md#claude-style-0", "action": "applied", "reason": "'새 대상과,' 뒤 쉼표 때문에 '새 대상과 5퍼센트'로 묶여 들릴 수 있다는 지적이 맞다. '대상을 바꿀 때 새 대상, 그리고 5퍼센트 단위로 바뀌는 그 대상의 생명력'으로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#claude-style-1", "action": "applied", "reason": "consensus. gpt-style-3, gpt-context-0과 함께 반영했다. '주변에 있는 퀘스트 제공자, 퀘스트, 그 밖의 대상을 보여 주는 스캐너가 열립니다.'"},
+  {"ref": "getting-started/quick-start.md#claude-style-2", "action": "applied", "reason": "consensus. gpt-style-2와 함께 반영해 '이 알림은 모두 WowVision 메뉴에서 바꾸거나 끌 수 있는 경보입니다.'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#claude-style-3", "action": "applied", "reason": "consensus. gpt-style-4와 함께 반영했다. 조건을 앞으로 옮겨 '지도 데이터가 있는 버전에서는 F10을 누르면 길 안내 창이 열리고 경로의 목적지를 고를 수 있습니다.'로 고쳤다. 괄호 속 끊긴 구절도 함께 없어진다."},
+  {"ref": "getting-started/quick-start.md#gpt-terminology-0", "action": "applied", "reason": "manual-translate.md 용어 4항과 translation-guide.md 용어 5항은 키 이름을 영어로 그대로 두라고 한다. 같은 표에 Shift+Down / Shift+Up이 영어로 남아 있어 '아래쪽 화살표'만 번역된 것은 일관성도 없다. 'Down Arrow로 음성을 찾아'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#gpt-terminology-1", "action": "applied", "reason": "gpt-terminology-0과 같은 근거로 표의 '위쪽 / 아래쪽 화살표'를 원문 키 이름 'Up / Down Arrow'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#gpt-terminology-2", "action": "dispute", "reason": "Shift+F4 바인딩의 화면 문구는 L[\"Action Bars\"](WowVision/core/windows/bars/bars.lua:195)이고, 2026-11-03 결정을 반영한 locale(f36a084)에서도 이 값은 \"행동 단축바\"다(vision-locale/koKR/bindings.lua:35, windows.lua:6). decisions.tsv의 '단축바로 통일'은 태세·게임패드 같은 파생 단축바(controller.lua:30-33 '게임패드 단축바' 등)에 적용된 것이다. manual-translate.md 용어 1항에 따라 키 설정 화면에서 듣는 '행동 단축바'를 유지한다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-0", "action": "applied", "reason": "범위를 목적어로 한 '받습니다'는 번역투가 맞다. '0이 보통이며, 게임 음성은 -10부터 10까지 설정할 수 있습니다'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-1", "action": "applied", "reason": "나열이 앞 문장과 끊겨 있고 '되돌아갑니다'의 대상이 없다는 지적이 맞다. 원문은 버퍼의 줄을 거슬러 가는 뜻이다. '일반 버퍼에서 ... PvP 상태를 한 줄씩 읽습니다. Alt+Up을 누르면 이전 줄로 돌아갑니다.'로 바꿨다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-2", "action": "applied", "reason": "consensus. claude-style-2와 같은 곳이라 함께 반영했다. '이 알림은 모두'로 써서 앞 목록(알려 주는 것들)을 분명히 가리키게 했다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-3", "action": "applied", "reason": "consensus. claude-style-1, gpt-context-0과 함께 반영했다. 스캐너가 무엇을 보여 주는지를 한 문장으로 묶고, Enter 뒤의 흐름은 gpt-context-0의 실제 동작대로 썼다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-4", "action": "applied", "reason": "consensus. claude-style-3과 함께 반영했다. 조건을 문장 앞으로 옮겨 괄호 속 끊긴 구절을 없앴다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-5", "action": "dispute", "reason": "'현재 경유지 쪽으로 돌아서고', '거리를 듣습니다'는 한국어 동작 설명으로 자연스럽다. 제안된 '방향으로 돌고'가 오히려 덜 자연스럽고, '거리 안내'와 '현재 경유지까지의'는 원문 'to hear the distance'에 없는 말을 더한다(manual-translate.md 문체 3항). 'Shift+F12는 경로를 멈춥니다'는 원문 'Shift+F12 stops the route'와 구조가 같고, 키를 주어로 한 서술은 같은 문서의 표 칸들과도 맞는다. 현재 번역을 유지한다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-6", "action": "applied", "reason": "'listed'의 뜻을 살려 '단축키 일람에 나와 있으며'로 바꿨다. 링크는 그대로다."},
+  {"ref": "getting-started/quick-start.md#gpt-style-7", "action": "applied", "reason": "'제대로 읽으십시오'는 나무라는 어조로 들릴 수 있다는 지적이 맞다. '한 번 꼼꼼히 읽어 보십시오'로 바꿨다. 합니다체를 유지한다."},
+  {"ref": "getting-started/quick-start.md#gpt-context-0", "action": "applied", "reason": "consensus. 코드로 확인했다. 스캐너 항목의 Enter는 목적지가 미리 선택된 길 안내 창을 연다(core/scanner/ui.lua:58 주석, core/navigation/maps/ui.lua:59-80 pendingTarget). 경로는 그 창에서 onActivate가 실행될 때 시작된다(maps/ui.lua:237-262). '항목에서 Enter를 누르면 그 항목이 목적지로 선택된 길 안내 창이 열리고, 거기서 Enter를 다시 누르면 그곳으로 안내가 시작됩니다.'로 고쳤다."}
+]

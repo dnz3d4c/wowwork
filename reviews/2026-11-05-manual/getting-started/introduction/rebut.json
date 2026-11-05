@@ -1,0 +1,23 @@
+[
+ {"ref": "getting-started/introduction.md#claude-accuracy-0", "action": "applied", "reason": "원문 switches는 켜고 끄는 조작이다(en/world/targeting.md:11-13 'Switches soft enemy targeting on or off', 80행 'switch the three kinds on and off'). '소프트 대상 지정 켜고 끄기'로 고쳤다. '소프트 대상 지정'은 vision-locale/koKR/navigation.lua:273 표기와 같다."},
+ {"ref": "getting-started/introduction.md#claude-terminology-0", "action": "applied", "reason": "합의 지적. gs_koKR.csv ERR_OUT_OF_RANGE 값과 quick-start.md:58 표기에 맞춰 \"목표가 사정거리를 벗어났습니다\"로 바꿨다."},
+ {"ref": "getting-started/introduction.md#claude-terminology-1", "action": "applied", "reason": "링크 대상 페이지명과 WowVision 메뉴(bindings.lua:4 \"단축키\")에 맞추고, 이미 번역된 managing.md:22·quick-start.md:81·troubleshooting.md:61의 같은 링크 글자 [단축키]와 통일했다. 조사도 '를'로 맞췄다."},
+ {"ref": "getting-started/introduction.md#claude-terminology-2", "action": "applied", "reason": "위 링크와 같은 이유로 목록의 '키 설정'도 '단축키'로 바꿔 파일 안 표기를 맞췄다."},
+ {"ref": "getting-started/introduction.md#claude-style-0", "action": "applied", "reason": "합의 지적. gpt-style-1과 함께 반영해 사건(새 대상·지역 진입, 낙하·벽·전투 시작)과 정보(적 수, 오류 메시지, 대화 메시지)를 나눠 '...을 알리고, ...하면 알리며, ...도 전합니다'로 고쳤다. 오류 메시지는 한국어 문구로 함께 바꿨다."},
+ {"ref": "getting-started/introduction.md#claude-style-1", "action": "applied", "reason": "합의 지적. gpt-style-2와 함께 '이 경보는 각각 음성으로 읽게 하거나, 소리로 재생하거나, 끌 수 있습니다'로 고쳐 사용자를 주체로 호응을 맞추고 '하나하나'를 '각각'으로 줄였다. 원문 Every one의 '각각' 의미는 살렸다."},
+ {"ref": "getting-started/introduction.md#claude-style-2", "action": "applied", "reason": "앞에 '그곳'이 가리킬 장소가 없어 '목적지'로 바꿨다. 원문 there는 경로의 끝을 가리킨다."},
+ {"ref": "getting-started/introduction.md#claude-style-3", "action": "dispute", "reason": "'WowVision은'의 '은'은 주격이 아니라 화제 표지라 '(누군가가) WowVision을 ...만들었다'로 자연스럽게 읽힌다('이 책은 아이들을 위해 썼습니다'와 같은 구조). 제안문 '만든 애드온입니다'는 바로 4행 첫 문장 '...애드온입니다'와 중복되고 원문에 없는 정의를 다시 붙인다. 현행 유지."},
+ {"ref": "getting-started/introduction.md#claude-style-4", "action": "applied", "reason": "같은 목록 57행의 '예:' 형식과 맞춰 '예: 항목 방향 반전 설정.'으로 고쳤다. '항목 방향 반전'은 vision-locale/koKR/buffers.lua:55 값과 같다."},
+ {"ref": "getting-started/introduction.md#claude-style-5", "action": "applied", "reason": "합의 지적. gpt-style-4의 문장형을 택해 '음성 예시는 \"250 / 500 생명력\"처럼 따옴표 안에 씁니다.'로 설명과 예시를 한 문장으로 이었다."},
+ {"ref": "getting-started/introduction.md#claude-context-0", "action": "applied", "reason": "합의 지적. claude-terminology-0과 같은 곳으로 함께 반영했다."},
+ {"ref": "getting-started/introduction.md#claude-context-1", "action": "applied", "reason": "합의 지적. ko/getting-started/sku.md:2 제목 'WowVision과 Sku 함께 쓰기'로 링크 글자를 맞췄다."},
+ {"ref": "getting-started/introduction.md#gpt-style-0", "action": "applied", "reason": "'음성을 사용하므로'로 바꾸고 '스크린리더와 함께'로 함께 쓰는 대상을 밝혔다. 원문 although you can use one alongside it의 one은 screen reader라 내용 추가가 아니다."},
+ {"ref": "getting-started/introduction.md#gpt-style-1", "action": "applied", "reason": "합의 지적. claude-style-0과 함께 반영했다. 제안문의 '새 대상이 지정되거나'처럼 원문에 없는 동작을 덧붙이지 않고 '새 대상과 들어간 지역을 알리고'로 썼고, 오류 메시지는 한국어 문구를 썼다."},
+ {"ref": "getting-started/introduction.md#gpt-style-2", "action": "applied", "reason": "합의 지적. claude-style-1과 함께 반영했다. 제안문 '음성으로 안내하거나'는 경보 설정의 '음성' 선택지와 조금 멀어져 '음성으로 읽게 하거나'를 택했다."},
+ {"ref": "getting-started/introduction.md#gpt-style-3", "action": "applied", "reason": "괄호 뒤 주제 표지 반복과 '모든/모두' 중복을 없앴다. 목록을 앞으로 빼 '...처럼 모든 버전에서 작동하는 기능은 다 있지만 그 버전의 일부 게임 창은 아직 읽지 못한다는 뜻입니다'로 한 문장을 유지했다(원문 but 대조를 살림)."},
+ {"ref": "getting-started/introduction.md#gpt-style-4", "action": "applied", "reason": "합의 지적. 제안문 그대로 반영했다."},
+ {"ref": "getting-started/introduction.md#gpt-context-0", "action": "dispute", "reason": "코드 사실관계는 맞다(core/minimap/gatheringNames.lua에 enUS/deDE/frFR만 있고 logic.lua:521이 kind.enUS로 대체). 그러나 이것은 번역 오류가 아니라 애드온 현지화 결함이다. 원문 'the minimap scan finds herbs and ore'를 그대로 옮긴 것이고, 번역 지침 manual-translate.md:24 '원문에 없는 내용을 더하지 않는다'에 따라 소개 페이지에 한계 문구를 덧붙일 수 없다. 또 점 자체는 스캔되어 questGiver 범주(logic.lua:585-588)로 나오므로 '찾는다'가 거짓도 아니다. 해결은 gatheringNames.lua에 koKR 목록을 추가하는 코드 작업으로 넘겨야 한다."},
+ {"ref": "getting-started/introduction.md#gpt-context-1", "action": "applied", "reason": "합의 지적. claude-context-1과 같은 곳으로 함께 반영했다."},
+ {"ref": "getting-started/introduction.md#gpt-context-2", "action": "applied", "reason": "ko/getting-started/installation.md:2 'WowVision 설치하기', first-login.md:2 '처음 로그인하기'로 링크 글자를 맞췄다. 조사도 '와'로 고쳤다. 링크 수·순서·대상은 그대로다."},
+ {"ref": "getting-started/introduction.md#gpt-context-3", "action": "applied", "reason": "managing.md:2 'WowVision 관리', sku.md:2 'WowVision과 Sku 함께 쓰기'로 링크 글자를 맞췄다."}
+]

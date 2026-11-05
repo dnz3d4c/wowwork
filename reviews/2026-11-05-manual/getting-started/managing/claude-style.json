@@ -1,0 +1,49 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/managing.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "이름은 WowVisionGlobalDB.lua, WowVisionDump.lua, 그리고 TBC에서는 WowVisionPriceDB.lua입니다.",
+   "suggestion": "이름은 WowVisionGlobalDB.lua와 WowVisionDump.lua이고, TBC에서는 WowVisionPriceDB.lua도 있습니다.",
+   "problem": "영어 나열식 'A, B, and C'를 '그리고'로 옮긴 번역투다. 조건(TBC에서는)이 붙은 항목이 같은 나열 안에 섞여 한 문장으로 들으면 흐름이 끊긴다.",
+   "evidence": "원문: with the names WowVisionGlobalDB.lua, WowVisionDump.lua and, on TBC, WowVisionPriceDB.lua. 평가 지침 style 관점의 번역투 항목."
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "무언가가 초기화될 때는 그렇다고 알려 줍니다.",
+   "suggestion": "초기화되는 항목이 있으면 그것도 알려 줍니다.",
+   "problem": "'say when something resets'를 직역해 '무언가가', '그렇다고'가 어색하게 남았다.",
+   "evidence": "원문: and say when something resets. 평가 지침 style 관점의 번역투 항목."
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "저장된 설정까지 없애려면 위에 나온 WowVision 저장 변수 파일도 지웁니다(선택).",
+   "suggestion": "저장된 설정까지 없애려면 위에 나온 WowVision 저장 변수 파일도 지웁니다.",
+   "problem": "'-려면'이 이미 선택 사항임을 나타내는데 원문에 없는 괄호 '(선택)'을 덧붙였다. 스크린리더로 들으면 문장 끝에 '괄호 선택'이 따로 읽혀 군더더기가 된다.",
+   "evidence": "원문: Optionally delete the WowVision saved variable files listed above to remove the stored settings. 평가 지침 style 관점의 '원문에 없는 기호' 항목."
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision 설정으로 켜거나 끈 경우의 마우스 이동은 애드온을 제거한 뒤에도",
+   "suggestion": "WowVision 설정으로 켜거나 끈 마우스 이동은 애드온을 제거한 뒤에도",
+   "problem": "'~한 경우의 마우스 이동'은 관형 구조가 겹쳐 어색하다. '경우의'를 빼도 뜻이 같다.",
+   "evidence": "원문: and Click to Move if you switched it with the WowVision setting. 평가 지침 style 관점의 어색한 조사 항목."
+  },
+  {
+   "id": "getting-started/managing.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "더 이상 필요 없는 것의 폴더와 WowVision Updater 바로 가기를 지웁니다.",
+   "suggestion": "이 중 더 이상 필요 없는 항목의 폴더를 지우고, WowVision Updater 바로 가기도 지웁니다.",
+   "problem": "'필요 없는 것의 폴더'가 어색하고, 들으면 'WowVision Updater 바로 가기'도 '필요 없는 것' 중 하나로 묶여 들린다. 원문은 바로 가기를 별도로 지우라는 뜻이다.",
+   "evidence": "원문: Delete the folders of those you no longer want, and the WowVision Updater shortcuts. 평가 지침 style 관점의 '스크린리더로 들었을 때 뜻이 갈리는 표현' 항목."
+  }
+ ]
+}

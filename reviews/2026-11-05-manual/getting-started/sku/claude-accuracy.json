@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/sku.md",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "Sku를 켜거나 끈 것을 반영하려면 재시작(/reload)하거나 다시 로그인해야 합니다",
+   "suggestion": "Sku를 켜거나 끈 것을 반영하려면 UI를 다시 불러오거나(/reload) 다시 로그인해야 합니다",
+   "problem": "원문 reload는 인터페이스를 다시 불러오는 것인데 '재시작'으로 옮겨 게임 자체를 다시 시작해야 하는 것처럼 읽힌다. 같은 파일의 다음 문단은 같은 동작을 '인터페이스를 다시 불러옵니다'로 옮겨 서로 다른 동작처럼 들린다.",
+   "evidence": "원문: \"enabling or disabling Sku needs a reload (/reload) or a new login to take effect\", 이어지는 문단 원문 \"reloads the interface\" → 번역 \"인터페이스를 다시 불러옵니다\""
+  }
+ ]
+}
