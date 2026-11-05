@@ -1,0 +1,1364 @@
+file	key	en
+alerts.lua	Alert	Alert
+alerts.lua	Message	Message
+alerts.lua	Priority Message (interrupts)	Priority Message (interrupts)
+alerts.lua	Sound Alert	Sound Alert
+alerts.lua	Speech Alert	Speech Alert
+alerts.lua	TTS Alert	TTS Alert
+alerts.lua	Voice	Voice
+alerts.lua	Voice Alert	Voice Alert
+alerts.lua	alert	alert
+auction.lua	12 Hours	12 Hours
+auction.lua	24 Hours	24 Hours
+auction.lua	48 Hours	48 Hours
+auction.lua	Abort Scan	Abort Scan
+auction.lua	Ascending	Ascending
+auction.lua	Auction House	Auction House
+auction.lua	Auction Price	Auction Price
+auction.lua	Auction Prices	Auction Prices
+auction.lua	Auction not open	Auction not open
+auction.lua	Auctions	Auctions
+auction.lua	Auto Scan	Auto Scan
+auction.lua	Bid Amount	Bid Amount
+auction.lua	Bid Frame	Bid Frame
+auction.lua	Bid Price	Bid Price
+auction.lua	Bidder	Bidder
+auction.lua	Bids	Bids
+auction.lua	Buyout	Buyout
+auction.lua	Buyout Frame	Buyout Frame
+auction.lua	Buyout Price	Buyout Price
+auction.lua	Cooldown active	Cooldown active
+auction.lua	Create Auction	Create Auction
+auction.lua	Current Bid	Current Bid
+auction.lua	Day Mean	Day Mean
+auction.lua	Deposit	Deposit
+auction.lua	Descending	Descending
+auction.lua	Filters	Filters
+auction.lua	Full Scan	Full Scan
+auction.lua	Full scan aborted	Full scan aborted
+auction.lua	Full scan complete	Full scan complete
+auction.lua	Full scan failed	Full scan failed
+auction.lua	Full scan started	Full scan started
+auction.lua	History Days	History Days
+auction.lua	Item Selected	Item Selected
+auction.lua	Item not found	Item not found
+auction.lua	Item purchased	Item purchased
+auction.lua	Load More	Load More
+auction.lua	Long	Long
+auction.lua	Maximum Level	Maximum Level
+auction.lua	Mean Days	Mean Days
+auction.lua	Medium	Medium
+auction.lua	Min Stack Size	Min Stack Size
+auction.lua	Minimum Bid	Minimum Bid
+auction.lua	Minimum Level	Minimum Level
+auction.lua	No Bids	No Bids
+auction.lua	No Results	No Results
+auction.lua	Number of Stacks	Number of Stacks
+auction.lua	Price Options	Price Options
+auction.lua	Scan	Scan
+auction.lua	Scan Results	Scan Results
+auction.lua	Scan aborted	Scan aborted
+auction.lua	Scan complete	Scan complete
+auction.lua	Scan failed	Scan failed
+auction.lua	Scanning	Scanning
+auction.lua	Selected	Selected
+auction.lua	Seller	Seller
+auction.lua	Short	Short
+auction.lua	Sold	Sold
+auction.lua	Sort	Sort
+auction.lua	Sort Column	Sort Column
+auction.lua	Stack Size	Stack Size
+auction.lua	Starting Bid	Starting Bid
+auction.lua	Time Left	Time Left
+auction.lua	Tooltip Prices	Tooltip Prices
+auction.lua	Unit Price	Unit Price
+auction.lua	Vendor Buy	Vendor Buy
+auction.lua	Vendor Sell	Vendor Sell
+auction.lua	Very Long	Very Long
+auction.lua	auctions	auctions
+auction.lua	days ago	days ago
+auction.lua	items updated	items updated
+auction.lua	scanned	scanned
+bindings.lua	Action Bars	Action Bars
+bindings.lua	Bindings	Bindings
+bindings.lua	Cannot remove; Binding must have at least one input.	Cannot remove; Binding must have at least one input.
+bindings.lua	Cannot replace this binding as it requires at least one input.	Cannot replace this binding as it requires at least one input.
+bindings.lua	Context Menu	Context Menu
+bindings.lua	Destroy Cursor Item	Destroy Cursor Item
+bindings.lua	Down	Down
+bindings.lua	Drag	Drag
+bindings.lua	Jump to Beginning	Jump to Beginning
+bindings.lua	Jump to End	Jump to End
+bindings.lua	Left	Left
+bindings.lua	Left Click	Left Click
+bindings.lua	Next	Next
+bindings.lua	Next Buffer	Next Buffer
+bindings.lua	Next Buffer Item	Next Buffer Item
+bindings.lua	Next Tooltip Line	Next Tooltip Line
+bindings.lua	Next Window	Next Window
+bindings.lua	Previous	Previous
+bindings.lua	Previous Buffer	Previous Buffer
+bindings.lua	Previous Buffer Item	Previous Buffer Item
+bindings.lua	Previous Tooltip Line	Previous Tooltip Line
+bindings.lua	Previous Window	Previous Window
+bindings.lua	Read Tooltip	Read Tooltip
+bindings.lua	Read Tooltip Left	Read Tooltip Left
+bindings.lua	Read Tooltip Right	Read Tooltip Right
+bindings.lua	Right	Right
+bindings.lua	Right Click	Right Click
+bindings.lua	Roll Bonus	Roll Bonus
+bindings.lua	Roll Greed	Roll Greed
+bindings.lua	Roll Need	Roll Need
+bindings.lua	Roll Pass	Roll Pass
+bindings.lua	Roll Tooltip	Roll Tooltip
+bindings.lua	Scroll Down	Scroll Down
+bindings.lua	Scroll Up	Scroll Up
+bindings.lua	This input already exists for this binding.	This input already exists for this binding.
+bindings.lua	This input conflicts with	This input conflicts with
+bindings.lua	Up	Up
+buffers.lua	Any	Any
+buffers.lua	Aura Buffer	Aura Buffer
+buffers.lua	Auras	Auras
+buffers.lua	Big Defensive	Big Defensive
+buffers.lua	Buffers	Buffers
+buffers.lua	Cancelable	Cancelable
+buffers.lua	Cast by Me	Cast by Me
+buffers.lua	Castable or Dispellable by Me	Castable or Dispellable by Me
+buffers.lua	Chat Tab	Chat Tab
+buffers.lua	Chat Tab Buffer	Chat Tab Buffer
+buffers.lua	Crowd Control	Crowd Control
+buffers.lua	Dispellable	Dispellable
+buffers.lua	Dispellable by My Group	Dispellable by My Group
+buffers.lua	External Defensive	External Defensive
+buffers.lua	Focus Buffs	Focus Buffs
+buffers.lua	Focus Debuffs	Focus Debuffs
+buffers.lua	General	General
+buffers.lua	Gone	Gone
+buffers.lua	Important	Important
+buffers.lua	Invert Item Direction	Invert Item Direction
+buffers.lua	Next Buffer	Next Buffer
+buffers.lua	Next Buffer Group	Next Buffer Group
+buffers.lua	Next Buffer Item	Next Buffer Item
+buffers.lua	Not	Not
+buffers.lua	Only	Only
+buffers.lua	Only My Auras	Only My Auras
+buffers.lua	Pet Buffs	Pet Buffs
+buffers.lua	Pet Debuffs	Pet Debuffs
+buffers.lua	Player Buffs	Player Buffs
+buffers.lua	Player Debuffs	Player Debuffs
+buffers.lua	Previous Buffer	Previous Buffer
+buffers.lua	Previous Buffer Group	Previous Buffer Group
+buffers.lua	Previous Buffer Item	Previous Buffer Item
+buffers.lua	Shown on Raid Frames in Combat	Shown on Raid Frames in Combat
+buffers.lua	Sources	Sources
+buffers.lua	Static Buffer	Static Buffer
+buffers.lua	Target Buffs	Target Buffs
+buffers.lua	Target Debuffs	Target Debuffs
+buffers.lua	Tracked Buffer	Tracked Buffer
+buffers.lua	no focus	no focus
+buffers.lua	no pet	no pet
+buffers.lua	no player	no player
+buffers.lua	no target	no target
+buffers.lua	stacks	stacks
+buffers.lua	unavailable	unavailable
+chat.lua	Achievement	Achievement
+chat.lua	Channel	Channel
+chat.lua	Channel Menu for %s	Channel Menu for %s
+chat.lua	Chat	Chat
+chat.lua	Chat Box Closed	Chat Box Closed
+chat.lua	Chat Box Opened	Chat Box Opened
+chat.lua	Chat Channels Window	Chat Channels Window
+chat.lua	Chat Settings	Chat Settings
+chat.lua	Chat Tab %d	Chat Tab %d
+chat.lua	Copy Line	Copy Line
+chat.lua	Copy now	Copy now
+chat.lua	Currency	Currency
+chat.lua	Item	Item
+chat.lua	Link	Link
+chat.lua	Link %s in Chat	Link %s in Chat
+chat.lua	Links unavailable here	Links unavailable here
+chat.lua	Message Alert	Message Alert
+chat.lua	Next Link in Message	Next Link in Message
+chat.lua	Player	Player
+chat.lua	Player Menu for %s	Player Menu for %s
+chat.lua	Previous Link in Message	Previous Link in Message
+chat.lua	Profession	Profession
+chat.lua	Quest	Quest
+chat.lua	Read Tooltip of %s	Read Tooltip of %s
+chat.lua	Shift Click	Shift Click
+chat.lua	Speak Messages	Speak Messages
+chat.lua	Spell	Spell
+chat.lua	Talent	Talent
+chat.lua	When the Tab Is Shown	When the Tab Is Shown
+chat.lua	Whisper %s	Whisper %s
+chat.lua	Whisper Tabs	Whisper Tabs
+chat.lua	Who %s	Who %s
+chat.lua	Write to %s	Write to %s
+colors.lua	%s %s	%s %s
+colors.lua	black	black
+colors.lua	blackish	blackish
+colors.lua	blue	blue
+colors.lua	bluish green	bluish green
+colors.lua	brilliant	brilliant
+colors.lua	brown	brown
+colors.lua	dark	dark
+colors.lua	dark gray	dark gray
+colors.lua	dark grayish	dark grayish
+colors.lua	deep	deep
+colors.lua	gray	gray
+colors.lua	grayish	grayish
+colors.lua	green	green
+colors.lua	greenish blue	greenish blue
+colors.lua	greenish yellow	greenish yellow
+colors.lua	light	light
+colors.lua	light gray	light gray
+colors.lua	olive	olive
+colors.lua	olive green	olive green
+colors.lua	orange	orange
+colors.lua	orange yellow	orange yellow
+colors.lua	pale	pale
+colors.lua	pink	pink
+colors.lua	purple	purple
+colors.lua	purplish blue	purplish blue
+colors.lua	purplish pink	purplish pink
+colors.lua	purplish red	purplish red
+colors.lua	red	red
+colors.lua	reddish brown	reddish brown
+colors.lua	reddish orange	reddish orange
+colors.lua	reddish purple	reddish purple
+colors.lua	strong	strong
+colors.lua	very dark	very dark
+colors.lua	very deep	very deep
+colors.lua	very light	very light
+colors.lua	very pale	very pale
+colors.lua	violet	violet
+colors.lua	vivid	vivid
+colors.lua	white	white
+colors.lua	yellow	yellow
+colors.lua	yellow green	yellow green
+colors.lua	yellowish brown	yellowish brown
+colors.lua	yellowish green	yellowish green
+controller.lua	A button	A button
+controller.lua	Add Controller Button	Add Controller Button
+controller.lua	B button	B button
+controller.lua	Both Triggers Bar	Both Triggers Bar
+controller.lua	Both shoulders	Both shoulders
+controller.lua	Cancelled	Cancelled
+controller.lua	Close (Controller)	Close (Controller)
+controller.lua	D-pad down	D-pad down
+controller.lua	D-pad left	D-pad left
+controller.lua	D-pad right	D-pad right
+controller.lua	D-pad up	D-pad up
+controller.lua	Gamepad Bar	Gamepad Bar
+controller.lua	Gamepad Main Menu	Gamepad Main Menu
+controller.lua	Left Trigger Bar	Left Trigger Bar
+controller.lua	Left shoulder	Left shoulder
+controller.lua	Left stick press	Left stick press
+controller.lua	Left trigger	Left trigger
+controller.lua	Menu button	Menu button
+controller.lua	Not supported yet	Not supported yet
+controller.lua	Page %d of %d	Page %d of %d
+controller.lua	Press a controller button	Press a controller button
+controller.lua	Right Trigger Bar	Right Trigger Bar
+controller.lua	Right shoulder	Right shoulder
+controller.lua	Right stick press	Right stick press
+controller.lua	Right stick press held	Right stick press held
+controller.lua	Right trigger	Right trigger
+controller.lua	Share button	Share button
+controller.lua	View button	View button
+controller.lua	WowVision Menu	WowVision Menu
+controller.lua	X button	X button
+controller.lua	Y button	Y button
+controller.lua	opened	opened
+errors.lua	Announce Errors	Announce Errors
+errors.lua	Errors	Errors
+errors.lua	Lua error	Lua error
+errors.lua	Muted	Muted
+errors.lua	Per-Error Filter	Per-Error Filter
+errors.lua	Repeat Delay	Repeat Delay
+errors.lua	Show All Known Errors	Show All Known Errors
+errors.lua	Speech and Sound	Speech and Sound
+groupHealth.lua	Announce Deaths	Announce Deaths
+groupHealth.lua	Announce Full Health	Announce Full Health
+groupHealth.lua	Damage Dealers	Damage Dealers
+groupHealth.lua	Group %d	Group %d
+groupHealth.lua	Group Health Monitor	Group Health Monitor
+groupHealth.lua	Group health monitor unavailable here	Group health monitor unavailable here
+groupHealth.lua	Healers	Healers
+groupHealth.lua	Include Yourself	Include Yourself
+groupHealth.lua	No Role	No Role
+groupHealth.lua	Nobody to watch	Nobody to watch
+groupHealth.lua	Raid Groups	Raid Groups
+groupHealth.lua	Repeat Below (percent)	Repeat Below (percent)
+groupHealth.lua	Repeat Every (seconds, 0 is off)	Repeat Every (seconds, 0 is off)
+groupHealth.lua	Repeat Only After a Change	Repeat Only After a Change
+groupHealth.lua	Silent Out of Combat	Silent Out of Combat
+groupHealth.lua	Speak Group Health	Speak Group Health
+groupHealth.lua	Tanks	Tanks
+groupHealth.lua	This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.	This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.
+groupHealth.lua	Watch Party	Watch Party
+groupHealth.lua	Watch Raid	Watch Raid
+groupHealth.lua	dead	dead
+groupHealth.lua	full	full
+minimap.lua	Announce Tracked Dots While Walking	Announce Tracked Dots While Walking
+minimap.lua	Centre Mouse Cursor Before Scanning	Centre Mouse Cursor Before Scanning
+minimap.lua	Gathering	Gathering
+minimap.lua	Map Filter	Map Filter
+minimap.lua	Minimap Scanner	Minimap Scanner
+minimap.lua	Minimap Tracking	Minimap Tracking
+minimap.lua	Minimap scan failed	Minimap scan failed
+minimap.lua	Minimap scanner not available on this client	Minimap scanner not available on this client
+minimap.lua	New Minimap Dot Alert	New Minimap Dot Alert
+minimap.lua	No position here	No position here
+minimap.lua	Not in combat	Not in combat
+minimap.lua	Nothing new nearby	Nothing new nearby
+minimap.lua	Other NPCs	Other NPCs
+minimap.lua	Points of Interest	Points of Interest
+minimap.lua	Scan Minimap	Scan Minimap
+minimap.lua	Scan already running	Scan already running
+minimap.lua	Scan canceled	Scan canceled
+minimap.lua	Scan done	Scan done
+minimap.lua	Scanning minimap	Scanning minimap
+minimap.lua	Seen entries cleared	Seen entries cleared
+minimap.lua	Stand still to scan	Stand still to scan
+minimap.lua	Stop mouselook to scan	Stop mouselook to scan
+minimap.lua	Tracking	Tracking
+minimap.lua	Tracking not restored	Tracking not restored
+minimap.lua	Turn on friendly NPC nameplates to learn NPC names	Turn on friendly NPC nameplates to learn NPC names
+minimap.lua	Unsorted	Unsorted
+minimap.lua	above	above
+minimap.lua	below	below
+minimap.lua	combat	combat
+minimap.lua	gone	gone
+minimap.lua	indoors, this building only	indoors, this building only
+minimap.lua	low level	low level
+minimap.lua	mouse	mouse
+minimap.lua	mouselook	mouselook
+minimap.lua	moved	moved
+minimap.lua	new	new
+minimap.lua	quest available	quest available
+minimap.lua	quest giver	quest giver
+minimap.lua	turn in	turn in
+minimap.lua	turned	turned
+minimap.lua	window	window
+misc.lua	Cursor	Cursor
+misc.lua	Miscellaneous	Miscellaneous
+misc.lua	Mists	Mists
+misc.lua	Quality	Quality
+misc.lua	Tooltip	Tooltip
+monitors.lua	%d minutes %d seconds	%d minutes %d seconds
+monitors.lua	%d seconds	%d seconds
+monitors.lua	All Auras	All Auras
+monitors.lua	Announce on Target Change	Announce on Target Change
+monitors.lua	Applied	Applied
+monitors.lua	Applied by Player	Applied by Player
+monitors.lua	Aura Applied	Aura Applied
+monitors.lua	Aura Monitor	Aura Monitor
+monitors.lua	Aura Name	Aura Name
+monitors.lua	Aura Removed	Aura Removed
+monitors.lua	Aura State Rule	Aura State Rule
+monitors.lua	Bundle Speech	Bundle Speech
+monitors.lua	Charge Gained	Charge Gained
+monitors.lua	Charge Lost	Charge Lost
+monitors.lua	Charges	Charges
+monitors.lua	Charging	Charging
+monitors.lua	Cooldown	Cooldown
+monitors.lua	Cooldown Manager Aura Rule	Cooldown Manager Aura Rule
+monitors.lua	Cooldown Manager Auras	Cooldown Manager Auras
+monitors.lua	Cooldown Monitor	Cooldown Monitor
+monitors.lua	Cooldown State Rule	Cooldown State Rule
+monitors.lua	Critical Health	Critical Health
+monitors.lua	Critical Health (%)	Critical Health (%)
+monitors.lua	Critical health	Critical health
+monitors.lua	Dead	Dead
+monitors.lua	Event	Event
+monitors.lua	Event Rule	Event Rule
+monitors.lua	Expiring	Expiring
+monitors.lua	Expiry Threshold (seconds)	Expiry Threshold (seconds)
+monitors.lua	Filter	Filter
+monitors.lua	Has Charges	Has Charges
+monitors.lua	Health Changed	Health Changed
+monitors.lua	Health States	Health States
+monitors.lua	Healthy	Healthy
+monitors.lua	Interrupt	Interrupt
+monitors.lua	Is Ready	Is Ready
+monitors.lua	Low Health	Low Health
+monitors.lua	Low Health (%)	Low Health (%)
+monitors.lua	Low Power	Low Power
+monitors.lua	Low Power (%)	Low Power (%)
+monitors.lua	Low power	Low power
+monitors.lua	Max Charges	Max Charges
+monitors.lua	Message Template	Message Template
+monitors.lua	Missing	Missing
+monitors.lua	Monitors	Monitors
+monitors.lua	Monitors off	Monitors off
+monitors.lua	Monitors on	Monitors on
+monitors.lua	No essential or utility spells	No essential or utility spells
+monitors.lua	No proc	No proc
+monitors.lua	No spells with cooldowns	No spells with cooldowns
+monitors.lua	No tracked auras	No tracked auras
+monitors.lua	No tracked buffs or bars	No tracked buffs or bars
+monitors.lua	No tracked cooldowns	No tracked cooldowns
+monitors.lua	Not Found	Not Found
+monitors.lua	On Cooldown	On Cooldown
+monitors.lua	One Decimal Timer	One Decimal Timer
+monitors.lua	Outputs	Outputs
+monitors.lua	Pandemic	Pandemic
+monitors.lua	Pandemic Window	Pandemic Window
+monitors.lua	Pandemic Window (%)	Pandemic Window (%)
+monitors.lua	Power Changed	Power Changed
+monitors.lua	Power States	Power States
+monitors.lua	Proc	Proc
+monitors.lua	Proc Ended	Proc Ended
+monitors.lua	Ready	Ready
+monitors.lua	Remaining	Remaining
+monitors.lua	Rules	Rules
+monitors.lua	Sound	Sound
+monitors.lua	Speak Tracked Auras	Speak Tracked Auras
+monitors.lua	Speak Tracked Cooldowns	Speak Tracked Cooldowns
+monitors.lua	Speech Separator	Speech Separator
+monitors.lua	Spell	Spell
+monitors.lua	Spell Cooldown Rule	Spell Cooldown Rule
+monitors.lua	Spell Cooldowns	Spell Cooldowns
+monitors.lua	Spell ID	Spell ID
+monitors.lua	Spell Name	Spell Name
+monitors.lua	Spell Proc Rule	Spell Proc Rule
+monitors.lua	Stagger Delay (seconds)	Stagger Delay (seconds)
+monitors.lua	Stagger Sounds	Stagger Sounds
+monitors.lua	Start Time	Start Time
+monitors.lua	State Rule	State Rule
+monitors.lua	Sufficient	Sufficient
+monitors.lua	Target	Target
+monitors.lua	Toggle All Monitors	Toggle All Monitors
+monitors.lua	Units	Units
+monitors.lua	Voice Path	Voice Path
+monitors.lua	charges	charges
+navigation.lua	 (%d)	 (%d)
+navigation.lua	 (choose the floor)	 (choose the floor)
+navigation.lua	 (floor unknown)	 (floor unknown)
+navigation.lua	 (height %d)	 (height %d)
+navigation.lua	 (inexact +%.1f yards%s)	 (inexact +%.1f yards%s)
+navigation.lua	 (lower)	 (lower)
+navigation.lua	 (no network point within the radius)	 (no network point within the radius)
+navigation.lua	 (upper)	 (upper)
+navigation.lua	 (water surface, diving depth %.1f yards)	 (water surface, diving depth %.1f yards)
+navigation.lua	 The beacon shows the boarding direction; I turns you toward it.	 The beacon shows the boarding direction; I turns you toward it.
+navigation.lua	 horizontal, height unknown	 horizontal, height unknown
+navigation.lua	 horizontally	 horizontally
+navigation.lua	 vertical	 vertical
+navigation.lua	%s is near; I turns you toward it	%s is near; I turns you toward it
+navigation.lua	%s reached. Cast range about %d to %d yards. Press I to turn to the water.	%s reached. Cast range about %d to %d yards. Press I to turn to the water.
+navigation.lua	%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.	%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.
+navigation.lua	Ahead: walk into %s; the route goes on after it	Ahead: walk into %s; the route goes on after it
+navigation.lua	Alliance arrival in Valanaar Sanctuary	Alliance arrival in Valanaar Sanctuary
+navigation.lua	Announce Distance	Announce Distance
+navigation.lua	Announce Distance with Alt Gr	Announce Distance with Alt Gr
+navigation.lua	Approximate target position.	Approximate target position.
+navigation.lua	Arrival Distance	Arrival Distance
+navigation.lua	Arrival Radius	Arrival Radius
+navigation.lua	Arrival at Rohashi Spires	Arrival at Rohashi Spires
+navigation.lua	Arrived	Arrived
+navigation.lua	At a dock, waiting	At a dock, waiting
+navigation.lua	At a fishing spot	At a fishing spot
+navigation.lua	At the dive point. Dive here; the route stays on until the dive is confirmed.	At the dive point. Dive here; the route stays on until the dive is confirmed.
+navigation.lua	At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.	At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.
+navigation.lua	At the vehicle	At the vehicle
+navigation.lua	At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.	At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.
+navigation.lua	Atlas	Atlas
+navigation.lua	Auto, height %d	Auto, height %d
+navigation.lua	Auto, height unknown	Auto, height unknown
+navigation.lua	Auto-move to Interact Target	Auto-move to Interact Target
+navigation.lua	Automatically Navigate to Corpse	Automatically Navigate to Corpse
+navigation.lua	Avoid Enemy Outposts	Avoid Enemy Outposts
+navigation.lua	Back on the route	Back on the route
+navigation.lua	Beacon	Beacon
+navigation.lua	Beacon Aligned	Beacon Aligned
+navigation.lua	Beacon Off Course	Beacon Off Course
+navigation.lua	Beacon Sound	Beacon Sound
+navigation.lua	Beacon set	Beacon set
+navigation.lua	Beacon stopped	Beacon stopped
+navigation.lua	Blocked	Blocked
+navigation.lua	Board only when the vehicle is safely there.	Board only when the vehicle is safely there.
+navigation.lua	Boarding point %s reached	Boarding point %s reached
+navigation.lua	Calculating route	Calculating route
+navigation.lua	Cancel Navigation	Cancel Navigation
+navigation.lua	Choose a destination in the navigation window first	Choose a destination in the navigation window first
+navigation.lua	Choose the target's floor	Choose the target's floor
+navigation.lua	Compass	Compass
+navigation.lua	Crossing to %s	Crossing to %s
+navigation.lua	Cycle Arrival Distance	Cycle Arrival Distance
+navigation.lua	Deeprun Tram entrance	Deeprun Tram entrance
+navigation.lua	Delay (milliseconds)	Delay (milliseconds)
+navigation.lua	Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.	Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.
+navigation.lua	Destinations	Destinations
+navigation.lua	Direct	Direct
+navigation.lua	Direct to the Nearest Unvisited of the Same Name	Direct to the Nearest Unvisited of the Same Name
+navigation.lua	Direct: %s, %d yards	Direct: %s, %d yards
+navigation.lua	Dive here	Dive here
+navigation.lua	Dive here; the route goes on after it	Dive here; the route goes on after it
+navigation.lua	Diving Alert	Diving Alert
+navigation.lua	Dock %s reached. Wait here for %s. Board when you hear it arrive.	Dock %s reached. Wait here for %s. Board when you hear it arrive.
+navigation.lua	Dungeon entrance: %s	Dungeon entrance: %s
+navigation.lua	Dungeon entrance: %s, %s	Dungeon entrance: %s, %s
+navigation.lua	Elevator: %s	Elevator: %s
+navigation.lua	En route to %s, waypoint %d of %d	En route to %s, waypoint %d of %d
+navigation.lua	End of route	End of route
+navigation.lua	Entry Points	Entry Points
+navigation.lua	Fall Detection	Fall Detection
+navigation.lua	Falling	Falling
+navigation.lua	Falling Announcement	Falling Announcement
+navigation.lua	Falling Sound	Falling Sound
+navigation.lua	Fishing spot on pier or quay: %s	Fishing spot on pier or quay: %s
+navigation.lua	Fishing spot on the shore: %s	Fishing spot on the shore: %s
+navigation.lua	Floor %d of %d	Floor %d of %d
+navigation.lua	Flying Ended Alert	Flying Ended Alert
+navigation.lua	Flying Started Alert	Flying Started Alert
+navigation.lua	Follow	Follow
+navigation.lua	Forget Visited Waypoints	Forget Visited Waypoints
+navigation.lua	Game Version	Game Version
+navigation.lua	Group	Group
+navigation.lua	Height Tolerance of a Floor (Yards)	Height Tolerance of a Floor (Yards)
+navigation.lua	Horde arrival in Valanaar Sanctuary	Horde arrival in Valanaar Sanctuary
+navigation.lua	Ignore Jumps	Ignore Jumps
+navigation.lua	Impeded	Impeded
+navigation.lua	In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.	In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then.
+navigation.lua	In the tram toward %s	In the tram toward %s
+navigation.lua	Indoors Alert	Indoors Alert
+navigation.lua	Key	Key
+navigation.lua	Last network point; the last stretch is unchecked, move carefully	Last network point; the last stretch is unchecked, move carefully
+navigation.lua	Long Range	Long Range
+navigation.lua	Map change after the activation area; route ended. The destination is not confirmed.	Map change after the activation area; route ended. The destination is not confirmed.
+navigation.lua	Map change; the activation guidance is finished.	Map change; the activation guidance is finished.
+navigation.lua	Maps	Maps
+navigation.lua	Medium Range	Medium Range
+navigation.lua	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)
+navigation.lua	Mostly Blocked	Mostly Blocked
+navigation.lua	NPC or mob	NPC or mob
+navigation.lua	Navigation	Navigation
+navigation.lua	New WowNav Route Around a Blocked Spot	New WowNav Route Around a Blocked Spot
+navigation.lua	Next Waypoint	Next Waypoint
+navigation.lua	No WowNav network here	No WowNav network here
+navigation.lua	No active route	No active route
+navigation.lua	No active waypoint	No active waypoint
+navigation.lua	No network path from here to the target	No network path from here to the target
+navigation.lua	No network path to the target	No network path to the target
+navigation.lua	No network point at the chosen start	No network point at the chosen start
+navigation.lua	No network point near the target	No network point near the target
+navigation.lua	No position of the group member available	No position of the group member available
+navigation.lua	No route found	No route found
+navigation.lua	No route to start again	No route to start again
+navigation.lua	No route to your target	No route to your target
+navigation.lua	No unvisited %s found	No unvisited %s found
+navigation.lua	No water point nearby	No water point nearby
+navigation.lua	On the ship	On the ship
+navigation.lua	On the ship to %s	On the ship to %s
+navigation.lua	On the zeppelin	On the zeppelin
+navigation.lua	One waypoint back	One waypoint back
+navigation.lua	Outdoors Alert	Outdoors Alert
+navigation.lua	Pitch Lock	Pitch Lock
+navigation.lua	Play Sound on Follow or Unfollow	Play Sound on Follow or Unfollow
+navigation.lua	Portal to %s	Portal to %s
+navigation.lua	Portal to Rohashi Spires	Portal to Rohashi Spires
+navigation.lua	Portal to Valanaar	Portal to Valanaar
+navigation.lua	Position of the activation area reached. %sA journey is not confirmed here; the route stays on.	Position of the activation area reached. %sA journey is not confirmed here; the route stays on.
+navigation.lua	Position unavailable	Position unavailable
+navigation.lua	Prepare Neighbouring Zones	Prepare Neighbouring Zones
+navigation.lua	Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.	Prepoint reached. Dive here: walk straight ahead to the dive point; the beacon stays on until then.
+navigation.lua	Prepoint reached. The beacon keeps following the checked way to the activation area.	Prepoint reached. The beacon keeps following the checked way to the activation area.
+navigation.lua	Prepoint reached. Walk on to the portal; the beacon stays on until you are there.	Prepoint reached. Walk on to the portal; the beacon stays on until you are there.
+navigation.lua	Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.	Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.
+navigation.lua	Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.	Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.
+navigation.lua	Previous Waypoint	Previous Waypoint
+navigation.lua	Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.	Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.
+navigation.lua	Riding to the noted dock %s	Riding to the noted dock %s
+navigation.lua	Road Preference (Percent Longer)	Road Preference (Percent Longer)
+navigation.lua	Route ended	Route ended
+navigation.lua	Route ended outside the network's zones.	Route ended outside the network's zones.
+navigation.lua	Route to Your Target	Route to Your Target
+navigation.lua	Route to the Nearest Unvisited of the Same Name	Route to the Nearest Unvisited of the Same Name
+navigation.lua	Routes from WowNav	Routes from WowNav
+navigation.lua	Searching a new route	Searching a new route
+navigation.lua	Searching the route again with the new road preference	Searching the route again with the new road preference
+navigation.lua	Searching the route to %s	Searching the route to %s
+navigation.lua	Ship dock to %s	Ship dock to %s
+navigation.lua	Short Range	Short Range
+navigation.lua	Show Automatic Waypoints	Show Automatic Waypoints
+navigation.lua	Slightly Slowed	Slightly Slowed
+navigation.lua	Slowed	Slowed
+navigation.lua	Speak Compass Direction	Speak Compass Direction
+navigation.lua	Start of route	Start of route
+navigation.lua	Start the Route Again From Here	Start the Route Again From Here
+navigation.lua	Step Back at Gates	Step Back at Gates
+navigation.lua	Subzone Changed Alert	Subzone Changed Alert
+navigation.lua	Surface here	Surface here
+navigation.lua	Surface here; the route goes on after it	Surface here; the route goes on after it
+navigation.lua	Swimming Alert	Swimming Alert
+navigation.lua	Target Radius Around the Network (Yards)	Target Radius Around the Network (Yards)
+navigation.lua	Target position reached	Target position reached
+navigation.lua	Target the portal with soft targeting and interact with it; the route goes on after it	Target the portal with soft targeting and interact with it; the route goes on after it
+navigation.lua	The boarding point has no valid direction proof on this map	The boarding point has no valid direction proof on this map
+navigation.lua	The boarding point proof or the map changed; guidance ended	The boarding point proof or the map changed; guidance ended
+navigation.lua	The dock has no valid waiting point proof	The dock has no valid waiting point proof
+navigation.lua	The entrance has no valid proof.	The entrance has no valid proof.
+navigation.lua	The height is not confirmed. 	The height is not confirmed. 
+navigation.lua	The nearest %d of %d results	The nearest %d of %d results
+navigation.lua	The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.	The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.
+navigation.lua	The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.	The network ends %.1f yards%s from the target; search the surroundings yourself. The last stretch is unchecked.
+navigation.lua	The position is approximate.	The position is approximate.
+navigation.lua	The route goes on	The route goes on
+navigation.lua	The target is no longer available; no new route	The target is no longer available; no new route
+navigation.lua	The target is on another map	The target is on another map
+navigation.lua	The target lies over several floors	The target lies over several floors
+navigation.lua	The target position is outdated	The target position is outdated
+navigation.lua	The target's height fits no floor of the network	The target's height fits no floor of the network
+navigation.lua	The transit took too long; route ended	The transit took too long; route ended
+navigation.lua	The waiting point proof is invalid; no boarding instruction	The waiting point proof is invalid; no boarding instruction
+navigation.lua	There is no such floor	There is no such floor
+navigation.lua	Tram dock toward %s	Tram dock toward %s
+navigation.lua	Turn off the WowVisionNavigation addon to use its routes here	Turn off the WowVisionNavigation addon to use its routes here
+navigation.lua	Turn to Waypoint	Turn to Waypoint
+navigation.lua	Turning is not available here	Turning is not available here
+navigation.lua	Use %s; the route goes on after it	Use %s; the route goes on after it
+navigation.lua	Visited	Visited
+navigation.lua	Visited For (Minutes)	Visited For (Minutes)
+navigation.lua	Visited Waypoints	Visited Waypoints
+navigation.lua	Visited waypoints forgotten	Visited waypoints forgotten
+navigation.lua	Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it	Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it
+navigation.lua	Waiting for the far end of %s	Waiting for the far end of %s
+navigation.lua	Wall Detection	Wall Detection
+navigation.lua	Warning: the target lies in an enemy outpost.	Warning: the target lies in an enemy outpost.
+navigation.lua	Warning: there is no way around the enemy outpost, the route leads through it.	Warning: there is no way around the enemy outpost, the route leads through it.
+navigation.lua	Waypoint Reached	Waypoint Reached
+navigation.lua	Wind Bridge landing	Wind Bridge landing
+navigation.lua	Wind Bridge waiting point	Wind Bridge waiting point
+navigation.lua	WowNav Route Status	WowNav Route Status
+navigation.lua	WowNav Routes	WowNav Routes
+navigation.lua	WowNav catalogue not usable: %s	WowNav catalogue not usable: %s
+navigation.lua	WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.	WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.
+navigation.lua	You are targeting yourself	You are targeting yourself
+navigation.lua	You have no target	You have no target
+navigation.lua	Your floor is not clear here	Your floor is not clear here
+navigation.lua	Your floor is not clear here. Choose your start.	Your floor is not clear here. Choose your start.
+navigation.lua	Your target's position is not known	Your target's position is not known
+navigation.lua	Zeppelin dock to %s	Zeppelin dock to %s
+navigation.lua	Zone Changed Alert	Zone Changed Alert
+navigation.lua	a dive	a dive
+navigation.lua	ahead	ahead
+navigation.lua	ahead to the left	ahead to the left
+navigation.lua	ahead to the right	ahead to the right
+navigation.lua	anvil	anvil
+navigation.lua	approximate, %d yards	approximate, %d yards
+navigation.lua	auctioneer	auctioneer
+navigation.lua	automatic	automatic
+navigation.lua	banker	banker
+navigation.lua	behind	behind
+navigation.lua	behind to the left	behind to the left
+navigation.lua	behind to the right	behind to the right
+navigation.lua	behind you	behind you
+navigation.lua	book	book
+navigation.lua	capture point	capture point
+navigation.lua	chair	chair
+navigation.lua	chest	chest
+navigation.lua	destructible building	destructible building
+navigation.lua	dive	dive
+navigation.lua	diving	diving
+navigation.lua	door	door
+navigation.lua	dungeon	dungeon
+navigation.lua	east	east
+navigation.lua	elevator	elevator
+navigation.lua	fishing spot	fishing spot
+navigation.lua	flight master	flight master
+navigation.lua	flying	flying
+navigation.lua	flying ended	flying ended
+navigation.lua	forge	forge
+navigation.lua	guild bank	guild bank
+navigation.lua	height %d	height %d
+navigation.lua	height unknown	height unknown
+navigation.lua	herb or ore	herb or ore
+navigation.lua	highest	highest
+navigation.lua	indoors	indoors
+navigation.lua	innkeeper	innkeeper
+navigation.lua	interaction object	interaction object
+navigation.lua	last %d yards direct	last %d yards direct
+navigation.lua	left	left
+navigation.lua	live target	live target
+navigation.lua	lowest	lowest
+navigation.lua	mailbox	mailbox
+navigation.lua	no entry	no entry
+navigation.lua	no path from here	no path from here
+navigation.lua	north	north
+navigation.lua	northeast	northeast
+navigation.lua	northwest	northwest
+navigation.lua	object	object
+navigation.lua	object type %s	object type %s
+navigation.lua	orientation point	orientation point
+navigation.lua	outdoors	outdoors
+navigation.lua	portal	portal
+navigation.lua	quest item	quest item
+navigation.lua	remaining	remaining
+navigation.lua	right	right
+navigation.lua	ship	ship
+navigation.lua	sign	sign
+navigation.lua	south	south
+navigation.lua	southeast	southeast
+navigation.lua	southwest	southwest
+navigation.lua	spell focus	spell focus
+navigation.lua	spirit guide	spirit guide
+navigation.lua	spirit healer	spirit healer
+navigation.lua	stable master	stable master
+navigation.lua	straight ahead	straight ahead
+navigation.lua	surfacing	surfacing
+navigation.lua	swimming	swimming
+navigation.lua	switch	switch
+navigation.lua	the Deeprun Tram	the Deeprun Tram
+navigation.lua	the Wind Bridge	the Wind Bridge
+navigation.lua	the elevator	the elevator
+navigation.lua	the portal	the portal
+navigation.lua	the ship	the ship
+navigation.lua	the tram	the tram
+navigation.lua	the transit	the transit
+navigation.lua	the vehicle	the vehicle
+navigation.lua	the zeppelin	the zeppelin
+navigation.lua	then %s	then %s
+navigation.lua	to the left	to the left
+navigation.lua	to the right	to the right
+navigation.lua	trainer	trainer
+navigation.lua	tram	tram
+navigation.lua	transit	transit
+navigation.lua	transport	transport
+navigation.lua	trap	trap
+navigation.lua	trapdoor	trapdoor
+navigation.lua	unknown destination	unknown destination
+navigation.lua	unreachable	unreachable
+navigation.lua	vendor	vendor
+navigation.lua	water surface, diving depth %d yards	water surface, diving depth %d yards
+navigation.lua	waypoint	waypoint
+navigation.lua	waypoints	waypoints
+navigation.lua	west	west
+navigation.lua	yards	yards
+navigation.lua	zeppelin	zeppelin
+navigation.lua	zone transition	zone transition
+objects.lua	Bind Location	Bind Location
+objects.lua	Broken	Broken
+objects.lua	Clock	Clock
+objects.lua	Durability	Durability
+objects.lua	Free Bag Slots	Free Bag Slots
+objects.lua	Free Slots	Free Slots
+objects.lua	Health	Health
+objects.lua	Hearthstone	Hearthstone
+objects.lua	Lowest Item	Lowest Item
+objects.lua	Mail from	Mail from
+objects.lua	Money	Money
+objects.lua	New mail	New mail
+objects.lua	Next Level	Next Level
+objects.lua	PVP	PVP
+objects.lua	Power	Power
+objects.lua	Rested	Rested
+objects.lua	Senders	Senders
+objects.lua	Time	Time
+objects.lua	Unread	Unread
+objects.lua	XP	XP
+objects.lua	broken	broken
+objects.lua	lowest item	lowest item
+objects.lua	no items	no items
+objects.lua	none	none
+objects.lua	of	of
+objects.lua	ready	ready
+objects.lua	rested	rested
+objects.lua	to level	to level
+operators.lua	equal to	equal to
+operators.lua	greater than	greater than
+operators.lua	greater than or equal to	greater than or equal to
+operators.lua	less than	less than
+operators.lua	less than or equal to	less than or equal to
+operators.lua	not equal to	not equal to
+powers.lua	alternate	alternate
+powers.lua	alternate encounter	alternate encounter
+powers.lua	alternate mount	alternate mount
+powers.lua	alternate quest	alternate quest
+powers.lua	arcane charges	arcane charges
+powers.lua	balance	balance
+powers.lua	blood runes	blood runes
+powers.lua	burning embers	burning embers
+powers.lua	chi	chi
+powers.lua	combo points	combo points
+powers.lua	death runes	death runes
+powers.lua	demonic fury	demonic fury
+powers.lua	energy	energy
+powers.lua	essence	essence
+powers.lua	focus	focus
+powers.lua	frost runes	frost runes
+powers.lua	fury	fury
+powers.lua	happiness	happiness
+powers.lua	holy power	holy power
+powers.lua	insanity	insanity
+powers.lua	lunar power	lunar power
+powers.lua	maelstrom	maelstrom
+powers.lua	mana	mana
+powers.lua	pain	pain
+powers.lua	rage	rage
+powers.lua	runes	runes
+powers.lua	runic power	runic power
+powers.lua	shadow orbs	shadow orbs
+powers.lua	soul shards	soul shards
+powers.lua	unholy runes	unholy runes
+quests.lua	Auctioneers	Auctioneers
+quests.lua	Bankers	Bankers
+quests.lua	Battlemasters	Battlemasters
+quests.lua	Class Trainers	Class Trainers
+quests.lua	Entering area	Entering area
+quests.lua	Flight Masters	Flight Masters
+quests.lua	In Progress	In Progress
+quests.lua	Include Repeatable Quests	Include Repeatable Quests
+quests.lua	Innkeepers	Innkeepers
+quests.lua	Leaving area	Leaving area
+quests.lua	Level	Level
+quests.lua	Loading	Loading
+quests.lua	Mailboxes	Mailboxes
+quests.lua	NPCs	NPCs
+quests.lua	Nearby	Nearby
+quests.lua	Nearby Level Range	Nearby Level Range
+quests.lua	No nearby quests	No nearby quests
+quests.lua	No quest data source	No quest data source
+quests.lua	No quests in progress	No quests in progress
+quests.lua	No targets	No targets
+quests.lua	Objectives	Objectives
+quests.lua	Quest Area Alert	Quest Area Alert
+quests.lua	Quest Giver	Quest Giver
+quests.lua	Quest Givers	Quest Givers
+quests.lua	Questie is not loaded	Questie is not loaded
+quests.lua	Questie is still loading	Questie is still loading
+quests.lua	Rares	Rares
+quests.lua	Repeatable	Repeatable
+quests.lua	Spirit Healers	Spirit Healers
+quests.lua	Stable Masters	Stable Masters
+quests.lua	Start	Start
+quests.lua	Trainers	Trainers
+quests.lua	Turn In	Turn In
+quests.lua	Unknown	Unknown
+quests.lua	Vendors	Vendors
+quests.lua	far	far
+quests.lua	from	from
+quests.lua	near	near
+quests.lua	phased out	phased out
+quests.lua	quests	quests
+quests.lua	seen	seen
+quests.lua	spawns	spawns
+quests.lua	target	target
+scanner.lua	Corpse	Corpse
+scanner.lua	Entries Per Category	Entries Per Category
+scanner.lua	Error	Error
+scanner.lua	Graveyards	Graveyards
+scanner.lua	Not dead	Not dead
+scanner.lua	Player	Player
+scanner.lua	Refresh	Refresh
+scanner.lua	Refreshed	Refreshed
+scanner.lua	Scan Radius	Scan Radius
+scanner.lua	Scanner	Scanner
+speech.lua	Activity Sound When Unfocused	Activity Sound When Unfocused
+speech.lua	Buffered	Buffered
+speech.lua	Direct	Direct
+speech.lua	Screen Reader	Screen Reader
+speech.lua	Sound Between Chat Lines	Sound Between Chat Lines
+speech.lua	Speech	Speech
+speech.lua	Speech Delay	Speech Delay
+speech.lua	Speech Queue	Speech Queue
+speech.lua	Speech Rate	Speech Rate
+speech.lua	Speech Style	Speech Style
+speech.lua	Speech Voice	Speech Voice
+speech.lua	Speech Volume	Speech Volume
+targeting.lua	15 Degrees in Front	15 Degrees in Front
+targeting.lua	180 Degrees in Front	180 Degrees in Front
+targeting.lua	Always	Always
+targeting.lua	Announce Hard Target	Announce Hard Target
+targeting.lua	Announce Raid Target Marker on Hard Target	Announce Raid Target Marker on Hard Target
+targeting.lua	Cannot set virtual focus while in combat.	Cannot set virtual focus while in combat.
+targeting.lua	Circle	Circle
+targeting.lua	Controlled	Controlled
+targeting.lua	Controlled Sound	Controlled Sound
+targeting.lua	Diamond	Diamond
+targeting.lua	Directly in Front	Directly in Front
+targeting.lua	Enemies	Enemies
+targeting.lua	Focus %d set to %s.	Focus %d set to %s.
+targeting.lua	Free	Free
+targeting.lua	Free Sound	Free Sound
+targeting.lua	Friends	Friends
+targeting.lua	Game Default	Game Default
+targeting.lua	Hard Target	Hard Target
+targeting.lua	Health Monitor	Health Monitor
+targeting.lua	Make Soft Target the Hard Target	Make Soft Target the Hard Target
+targeting.lua	Moon	Moon
+targeting.lua	No target. Use /focus%d <name> or target a unit.	No target. Use /focus%d <name> or target a unit.
+targeting.lua	Off	Off
+targeting.lua	Only Without a Hard Target	Only Without a Hard Target
+targeting.lua	Only Without an Attackable Hard Target	Only Without an Attackable Hard Target
+targeting.lua	Open Target Menu	Open Target Menu
+targeting.lua	Skull	Skull
+targeting.lua	Soft Target Enemy	Soft Target Enemy
+targeting.lua	Soft Target Enemy Arc	Soft Target Enemy Arc
+targeting.lua	Soft Target Enemy Range	Soft Target Enemy Range
+targeting.lua	Soft Target Friend	Soft Target Friend
+targeting.lua	Soft Target Friend Arc	Soft Target Friend Arc
+targeting.lua	Soft Target Friend Range	Soft Target Friend Range
+targeting.lua	Soft Target Interact	Soft Target Interact
+targeting.lua	Soft Target Interact Arc	Soft Target Interact Arc
+targeting.lua	Soft Target Interact Range	Soft Target Interact Range
+targeting.lua	Soft Targeting With a Hard Target	Soft Targeting With a Hard Target
+targeting.lua	Square	Square
+targeting.lua	Star	Star
+targeting.lua	Target Change	Target Change
+targeting.lua	Target Crowd Control	Target Crowd Control
+targeting.lua	Target Focus	Target Focus
+targeting.lua	Target in Combat Sound	Target in Combat Sound
+targeting.lua	Targeting	Targeting
+targeting.lua	Triangle	Triangle
+targeting.lua	Virtual Focus	Virtual Focus
+targeting.lua	X	X
+targeting.lua	after combat	after combat
+targeting.lua	default	default
+targeting.lua	not available	not available
+ui.lua	Accepted Quest	Accepted Quest
+ui.lua	Active	Active
+ui.lua	Add	Add
+ui.lua	Ammo	Ammo
+ui.lua	Announce Crowd Control	Announce Crowd Control
+ui.lua	Applications	Applications
+ui.lua	Attacking You	Attacking You
+ui.lua	Attacking You or Your Group	Attacking You or Your Group
+ui.lua	Aura Instance ID	Aura Instance ID
+ui.lua	Available	Available
+ui.lua	Available Quest	Available Quest
+ui.lua	Back	Back
+ui.lua	Bar	Bar
+ui.lua	Blue	Blue
+ui.lua	Buffer Group	Buffer Group
+ui.lua	Buffer Not Found	Buffer Not Found
+ui.lua	Button	Button
+ui.lua	Can Apply Aura	Can Apply Aura
+ui.lua	Categories	Categories
+ui.lua	Charges	Charges
+ui.lua	Checkbox	Checkbox
+ui.lua	Checked	Checked
+ui.lua	Chest	Chest
+ui.lua	Clear	Clear
+ui.lua	Close	Close
+ui.lua	Collapsed	Collapsed
+ui.lua	Combat	Combat
+ui.lua	Combat Ended Alert	Combat Ended Alert
+ui.lua	Combat Started Alert	Combat Started Alert
+ui.lua	Complete	Complete
+ui.lua	Context Menu	Context Menu
+ui.lua	Copper	Copper
+ui.lua	Count Elite Enemies Only	Count Elite Enemies Only
+ui.lua	Count Enemies	Count Enemies
+ui.lua	Crowd Control Ended Alert	Crowd Control Ended Alert
+ui.lua	Current	Current
+ui.lua	Curse	Curse
+ui.lua	Custom	Custom
+ui.lua	Default	Default
+ui.lua	Details	Details
+ui.lua	Disable	Disable
+ui.lua	Disabled	Disabled
+ui.lua	Disease	Disease
+ui.lua	Dispel Type	Dispel Type
+ui.lua	Drag	Drag
+ui.lua	Dropdown	Dropdown
+ui.lua	Duration	Duration
+ui.lua	EditBox	Edit
+ui.lua	Empty	Empty
+ui.lua	Empty Object	Empty Object
+ui.lua	Enable	Enable
+ui.lua	Enabled	Enabled
+ui.lua	Enchant	Enchant
+ui.lua	Enemy Count Alert	Enemy Count Alert
+ui.lua	Enrage	Enrage
+ui.lua	Equipment	Equipment
+ui.lua	Expand/Collapse	Expand/Collapse
+ui.lua	Expanded	Expanded
+ui.lua	Expiration Time	Expiration Time
+ui.lua	Failed	Failed
+ui.lua	Feet	Feet
+ui.lua	Finger	Finger
+ui.lua	Format	Format
+ui.lua	Formatted	Formatted
+ui.lua	Game Menu	Game Menu
+ui.lua	Global	Global
+ui.lua	Glyphs	Glyphs
+ui.lua	Glyphs not yet implemented	Glyphs not yet implemented
+ui.lua	Gold	Gold
+ui.lua	Goodbye	Goodbye
+ui.lua	Green	Green
+ui.lua	Grey	Grey
+ui.lua	Hands	Hands
+ui.lua	Head	Head
+ui.lua	Icon	Icon
+ui.lua	Instance ID	Instance ID
+ui.lua	Interact	Interact
+ui.lua	Interrupt Speech on Window Close	Interrupt Speech on Window Close
+ui.lua	Invalid parameters	Invalid parameters
+ui.lua	Is Boss Aura	Is Boss Aura
+ui.lua	Is From Player Or Pet	Is From Player Or Pet
+ui.lua	Is Harmful	Is Harmful
+ui.lua	Is Helpful	Is Helpful
+ui.lua	Is Nameplate Only	Is Nameplate Only
+ui.lua	Is Raid	Is Raid
+ui.lua	Is Stealable	Is Stealable
+ui.lua	Items	Items
+ui.lua	Known	Known
+ui.lua	Label	Label
+ui.lua	Left Click	Left Click
+ui.lua	Legs	Legs
+ui.lua	Letter Navigation in Menus	Letter Navigation in Menus
+ui.lua	Light Blue	Light Blue
+ui.lua	Light Gold	Light Gold
+ui.lua	List	List
+ui.lua	Magic	Magic
+ui.lua	Main Hand	Main Hand
+ui.lua	Max Charges	Max Charges
+ui.lua	Maximum	Maximum
+ui.lua	Menu	Menu
+ui.lua	Meta	Meta
+ui.lua	Minimum	Minimum
+ui.lua	Mounted	Mounted
+ui.lua	Name	Name
+ui.lua	Nameplate Show All	Nameplate Show All
+ui.lua	Nameplate Show Personal	Nameplate Show Personal
+ui.lua	Neck	Neck
+ui.lua	New	New
+ui.lua	New Buffer	New Buffer
+ui.lua	Next Page	Next Page
+ui.lua	No object configured	No object configured
+ui.lua	No results	No results
+ui.lua	None	None
+ui.lua	Not implemented yet	Not implemented yet
+ui.lua	Number	Number
+ui.lua	Object	Object
+ui.lua	Objectives	Objectives
+ui.lua	Objects	Objects
+ui.lua	Off Hand	Off Hand
+ui.lua	Options	Options
+ui.lua	Orange	Orange
+ui.lua	Page	Page
+ui.lua	Panel	Panel
+ui.lua	Parameters	Parameters
+ui.lua	Parameters must identify a single object	Parameters must identify a single object
+ui.lua	Percent	Percent
+ui.lua	Place Item Here	Place Item Here
+ui.lua	Points	Points
+ui.lua	Poison	Poison
+ui.lua	Power Type	Power Type
+ui.lua	Previous Page	Previous Page
+ui.lua	Price	Price
+ui.lua	Prismatic	Prismatic
+ui.lua	Progress	Progress
+ui.lua	ProxyButton	Button
+ui.lua	ProxyCheckButton	Checkbox
+ui.lua	ProxyDropdownButton	Dropdown
+ui.lua	ProxyEditBox	Edit
+ui.lua	Purple	Purple
+ui.lua	Quantity	Quantity
+ui.lua	Radio	Radio
+ui.lua	Ranged	Ranged
+ui.lua	Red	Red
+ui.lua	Remaining Duration	Remaining Duration
+ui.lua	Remove	Remove
+ui.lua	Repair	Repair
+ui.lua	Replace	Replace
+ui.lua	Replace?	Replace?
+ui.lua	Resistances	Resistances
+ui.lua	Results	Results
+ui.lua	Reward	Reward
+ui.lua	Rewards	Rewards
+ui.lua	Save	Save
+ui.lua	Scope	Scope
+ui.lua	Scroll Down	Scroll Down
+ui.lua	Scroll Up	Scroll Up
+ui.lua	Search	Search
+ui.lua	Select Buffer Type	Select Buffer Type
+ui.lua	Select Type	Select Type
+ui.lua	Separator	Separator
+ui.lua	Shirt	Shirt
+ui.lua	Shoulders	Shoulders
+ui.lua	Side Tabs	Side Tabs
+ui.lua	Silver	Silver
+ui.lua	Socketing	Socketing
+ui.lua	Source	Source
+ui.lua	Source Unit	Source Unit
+ui.lua	Specialization Info	Specialization Info
+ui.lua	Specializations	Specializations
+ui.lua	Spell Flyout	Spell Flyout
+ui.lua	Spell ID	Spell ID
+ui.lua	Spells	Spells
+ui.lua	Stats	Stats
+ui.lua	Status	Status
+ui.lua	Tabard	Tabard
+ui.lua	Tabs	Tabs
+ui.lua	Talents	Talents
+ui.lua	Template	Template
+ui.lua	Text	Text
+ui.lua	Time Mod	Time Mod
+ui.lua	Trade	Trade
+ui.lua	Trinket	Trinket
+ui.lua	Turn on enemy nameplates to count enemies	Turn on enemy nameplates to count enemies
+ui.lua	Type	Type
+ui.lua	UI	UI
+ui.lua	Unavailable	Unavailable
+ui.lua	Unchecked	Unchecked
+ui.lua	Unit	Unit
+ui.lua	Unlearn	Unlearn
+ui.lua	Voice Pack	Voice Pack
+ui.lua	Waist	Waist
+ui.lua	White	White
+ui.lua	Windows	Windows
+ui.lua	With Spell Names	With Spell Names
+ui.lua	Without Names	Without Names
+ui.lua	WowVision	WowVision
+ui.lua	Wrist	Wrist
+ui.lua	Yellow	Yellow
+ui.lua	combat ended	combat ended
+ui.lua	combat started	combat started
+ui.lua	controlled	controlled
+ui.lua	day	day
+ui.lua	days	days
+ui.lua	hour	hour
+ui.lua	hours	hours
+ui.lua	in stock	in stock
+ui.lua	minute	minute
+ui.lua	minutes	minutes
+ui.lua	second	second
+ui.lua	seconds	seconds
+ui.lua	selected	selected
+windows.lua	%d alerts	%d alerts
+windows.lua	%d items missing	%d items missing
+windows.lua	1 alert	1 alert
+windows.lua	Action Bar	Action Bar
+windows.lua	Activities	Activities
+windows.lua	Add Slots	Add Slots
+windows.lua	Add to Trade	Add to Trade
+windows.lua	Alert Editor	Alert Editor
+windows.lua	Appearances	Appearances
+windows.lua	At War	At War
+windows.lua	Attach to Mail	Attach to Mail
+windows.lua	Attachments	Attachments
+windows.lua	Auto Casting	Auto Casting
+windows.lua	Automatically Repair If Possible	Automatically Repair If Possible
+windows.lua	Automatically Sell Poor Items	Automatically Sell Poor Items
+windows.lua	Away	Away
+windows.lua	Bag Controls	Bag Controls
+windows.lua	Bag Menu	Bag Menu
+windows.lua	Bag Shape	Bag Shape
+windows.lua	Bag Slot	Bag Slot
+windows.lua	Bag Slots	Bag Slots
+windows.lua	Bags	Bags
+windows.lua	Bank Bag Slots	Bank Bag Slots
+windows.lua	Bank Controls	Bank Controls
+windows.lua	Bank Tabs	Bank Tabs
+windows.lua	Bars	Bars
+windows.lua	Battle.net	Battle.net
+windows.lua	Body	Body
+windows.lua	Bottom Left Bar	Bottom Left Bar
+windows.lua	Bottom Right Bar	Bottom Right Bar
+windows.lua	Browse Groups	Browse Groups
+windows.lua	Busy	Busy
+windows.lua	COD	COD
+windows.lua	Challenges	Challenges
+windows.lua	Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.	Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.
+windows.lua	Channels	Channels
+windows.lua	Character	Character
+windows.lua	Chat Channels	Chat Channels
+windows.lua	Choice	Choice
+windows.lua	Close Bag	Close Bag
+windows.lua	Collapse All	Collapse All
+windows.lua	Collections	Collections
+windows.lua	Color	Color
+windows.lua	Color Picker	Color Picker
+windows.lua	Column	Column
+windows.lua	Comment	Comment
+windows.lua	Completed	Completed
+windows.lua	Containers	Containers
+windows.lua	Controls	Controls
+windows.lua	Cooldown Manager	Cooldown Manager
+windows.lua	Cooldown manager changes apply after you reload the interface. Type /reload when ready.	Cooldown manager changes apply after you reload the interface. Type /reload when ready.
+windows.lua	Copy BattleTag	Copy BattleTag
+windows.lua	Craft	Craft
+windows.lua	Currency	Currency
+windows.lua	Current Color	Current Color
+windows.lua	Daily	Daily
+windows.lua	Damage Dealer	Damage Dealer
+windows.lua	Delete Set	Delete Set
+windows.lua	Diet	Diet
+windows.lua	Drag to pick up macro	Drag to pick up macro
+windows.lua	Drop Item	Drop Item
+windows.lua	Earned	Earned
+windows.lua	Edit Set	Edit Set
+windows.lua	Equip	Equip
+windows.lua	Equipment Sets	Equipment Sets
+windows.lua	Equipped	Equipped
+windows.lua	Expand All	Expand All
+windows.lua	Extended	Extended
+windows.lua	Favorite	Favorite
+windows.lua	Filtered	Filtered
+windows.lua	Friend request	Friend request
+windows.lua	Friends	Friends
+windows.lua	From	From
+windows.lua	Gossip	Gossip
+windows.lua	Green	Green
+windows.lua	Grey	Grey
+windows.lua	Grid	Grid
+windows.lua	Group search blocked, reload to search again	Group search blocked, reload to search again
+windows.lua	Guild Bank Repair	Guild Bank Repair
+windows.lua	Guild Control	Guild Control
+windows.lua	Guild Invitation	Guild Invitation
+windows.lua	Guild and Communities	Guild and Communities
+windows.lua	Healer	Healer
+windows.lua	Heirlooms	Heirlooms
+windows.lua	Hex Color	Hex Color
+windows.lua	Honorable Kills	Honorable Kills
+windows.lua	Inbox	Inbox
+windows.lua	Invalid	Invalid
+windows.lua	Invite	Invite
+windows.lua	Item Quality Colors	Item Quality Colors
+windows.lua	Item Text	Item Text
+windows.lua	Item Upgrade	Item Upgrade
+windows.lua	Junk	Junk
+windows.lua	Keyring	Keyring
+windows.lua	Layout	Layout
+windows.lua	Leader	Leader
+windows.lua	Learn	Learn
+windows.lua	Legacy	Legacy
+windows.lua	Letter	Letter
+windows.lua	Lifetime	Lifetime
+windows.lua	Locked	Locked
+windows.lua	Looking for Group	Looking for Group
+windows.lua	Loot	Loot
+windows.lua	Macro Text	Macro Text
+windows.lua	Macros	Macros
+windows.lua	Mail	Mail
+windows.lua	Maximize	Maximize
+windows.lua	Members	Members
+windows.lua	Merchant	Merchant
+windows.lua	Messages	Messages
+windows.lua	Minimize	Minimize
+windows.lua	Moderator	Moderator
+windows.lua	Money	Money
+windows.lua	Mounts	Mounts
+windows.lua	Move to Bags	Move to Bags
+windows.lua	Move to Bank	Move to Bank
+windows.lua	Moved	Moved
+windows.lua	Nameplate Preview	Nameplate Preview
+windows.lua	New Player Friendly	New Player Friendly
+windows.lua	Next Page	Next Page
+windows.lua	Next Reward	Next Reward
+windows.lua	No loot.	No loot.
+windows.lua	No pet	No pet
+windows.lua	Not Auto Casting	Not Auto Casting
+windows.lua	Note	Note
+windows.lua	Offline	Offline
+windows.lua	Opacity	Opacity
+windows.lua	Open	Open
+windows.lua	Orange	Orange
+windows.lua	Original Color	Original Color
+windows.lua	Owner	Owner
+windows.lua	PVP	PVP
+windows.lua	Partially Checked	Partially Checked
+windows.lua	Permissions	Permissions
+windows.lua	Pet	Pet
+windows.lua	Pet Bar	Pet Bar
+windows.lua	Pet Journal	Pet Journal
+windows.lua	Pick Up	Pick Up
+windows.lua	Picked up	Picked up
+windows.lua	Pickup cancelled	Pickup cancelled
+windows.lua	Place Item	Place Item
+windows.lua	Play Style	Play Style
+windows.lua	Point	Point
+windows.lua	Popup	Popup
+windows.lua	Popups	Popups
+windows.lua	Postage	Postage
+windows.lua	Previous Page	Previous Page
+windows.lua	Professions	Professions
+windows.lua	Purchase	Purchase
+windows.lua	Put up for Auction	Put up for Auction
+windows.lua	PvP	PvP
+windows.lua	Quest	Quest
+windows.lua	Quest Choice	Quest Choice
+windows.lua	Quest Item	Quest Item
+windows.lua	Quest List	Quest List
+windows.lua	Quest Log	Quest Log
+windows.lua	Quest Window	Quest Window
+windows.lua	Questie Setup	Questie Setup
+windows.lua	Quests	Quests
+windows.lua	Raid Frame Preview	Raid Frame Preview
+windows.lua	Range	Range
+windows.lua	Range Changed	Range Changed
+windows.lua	Rank Name	Rank Name
+windows.lua	Read	Read
+windows.lua	Ready Check	Ready Check
+windows.lua	Recipes	Recipes
+windows.lua	Red	Red
+windows.lua	Reforging	Reforging
+windows.lua	Reload Interface	Reload Interface
+windows.lua	Repair All	Repair All
+windows.lua	Repair Item	Repair Item
+windows.lua	Repaired all items for %s.	Repaired all items for %s.
+windows.lua	Reputation	Reputation
+windows.lua	Requires %s	Requires %s
+windows.lua	Reset Tree	Reset Tree
+windows.lua	Resistances	Resistances
+windows.lua	Right Bar	Right Bar
+windows.lua	Right Bar 2	Right Bar 2
+windows.lua	Role Poll	Role Poll
+windows.lua	Roles	Roles
+windows.lua	Row	Row
+windows.lua	Search Match	Search Match
+windows.lua	Selected Pet	Selected Pet
+windows.lua	Sell	Sell
+windows.lua	Send Mail	Send Mail
+windows.lua	Send Money	Send Money
+windows.lua	Send To	Send To
+windows.lua	Settings	Settings
+windows.lua	Sidebar Tabs	Sidebar Tabs
+windows.lua	Skill Details	Skill Details
+windows.lua	Skills	Skills
+windows.lua	Slots	Slots
+windows.lua	Social	Social
+windows.lua	Sold %d poor quality items for %s.	Sold %d poor quality items for %s.
+windows.lua	Sort Bags	Sort Bags
+windows.lua	Sort Bank	Sort Bank
+windows.lua	Sort By	Sort By
+windows.lua	Specialization	Specialization
+windows.lua	Spellbook	Spellbook
+windows.lua	Spells	Spells
+windows.lua	Stable	Stable
+windows.lua	Stable slot %d	Stable slot %d
+windows.lua	Stance Bar	Stance Bar
+windows.lua	Statistics	Statistics
+windows.lua	Stats	Stats
+windows.lua	Subject	Subject
+windows.lua	Summon	Summon
+windows.lua	Talent Grid	Talent Grid
+windows.lua	Talents	Talents
+windows.lua	Tank	Tank
+windows.lua	Taxi	Taxi
+windows.lua	This tab is not supported yet	This tab is not supported yet
+windows.lua	Today	Today
+windows.lua	Toy Box	Toy Box
+windows.lua	Track	Track
+windows.lua	Tracked	Tracked
+windows.lua	Trade Skill	Trade Skill
+windows.lua	Training	Training
+windows.lua	Trees	Trees
+windows.lua	Undo Changes	Undo Changes
+windows.lua	Unlearn	Unlearn
+windows.lua	Unlearned	Unlearned
+windows.lua	Unsaved Changes	Unsaved Changes
+windows.lua	Use	Use
+windows.lua	Warband Scenes	Warband Scenes
+windows.lua	Watched	Watched
+windows.lua	Weekly	Weekly
+windows.lua	WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.	WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.
+windows.lua	Yellow	Yellow
+windows.lua	Yesterday	Yesterday
+windows.lua	in stock	in stock
+windows.lua	or	or
+windows.lua	rank	rank
+windows.lua	tracked	tracked

@@ -1,6 +1,6 @@
 # WowVision 한국어 번역 지침
 
-WowVision 원문(`wowvision/upstream/WowVision/locale/enUS/*.lua`)을 `koKR/*.lua`로 번역할 때 따르는 규칙입니다.
+WowVision 원문(`../wowvision-ko/vision-locale/enUS/*.lua`)을 같은 저장소의 `koKR/*.lua`로 번역할 때 따르는 규칙입니다. 번역 파일은 비공개 복제 저장소 `dnz3d4c/vision-locale`에 커밋하고, 이 저장소(wowwork)는 도구와 기록만 둡니다.
 
 ## 파일 형식
 
@@ -19,9 +19,9 @@ if not L then return end
 
 ## upstream 업데이트 절차
 
-1. upstream 클론을 최신으로 맞춥니다: `git -C ../wowvision/upstream/WowVision fetch --tags origin` 후 원하는 커밋이나 태그를 checkout합니다.
+1. 원본 변경을 병합합니다: `git -C ../wowvision-ko/vision-locale pull upstream main`. 앱 코드 확인용으로 `git -C ../wowvision-ko/WowVision pull upstream main`도 실행합니다.
 2. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다.
-3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다.
+3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
 4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다.
 
 ## 서식 지정자
@@ -37,7 +37,7 @@ if not L then return end
 2. 정확히 일치하지 않는 문구도 그 안의 게임 용어(창 이름, 직업, 자원, 아이템 품질, 경매 용어 등)는 공식 한국어를 사용합니다. 필요하면 `cache/gs_enUS.csv`와 `cache/gs_koKR.csv`를 `BaseTag`로 대조해서 찾습니다.
    **문맥이 우선입니다(2026-11-03 사용자 결정).** 같은 문맥(같은 창, 같은 기능)의 공식 번역이면 그대로 따릅니다. 영어 문자열만 같고 다른 문맥에서 온 일치 항목이면 문맥에 맞게 번역합니다. 예: Comment는 공식 "하실 말씀"이 아니라 "의견", Merchant는 "상품 목록"이 아니라 "상인"으로 옮깁니다.
    행동 단축바 계열은 모두 "단축바"로 통일합니다(태세 단축바, 게임패드 단축바).
-3. 뜻이 애매하면 원본 코드에서 키가 어떻게 쓰이는지 확인합니다: `wowvision/upstream/WowVision` 아래에서 `L["키"]`를 검색합니다.
+3. 뜻이 애매하면 원본 코드에서 키가 어떻게 쓰이는지 확인합니다: `../wowvision-ko/WowVision` 아래에서 `L["키"]`를 검색합니다.
 4. 고유 이름은 그대로 둡니다: WowVision, WowNav, WoW Forever, Battle.net, BattleTag.
 5. 키보드 키 이름(Shift, Ctrl, Alt, Enter, Tab, Space 등)은 영어 그대로 둡니다.
 

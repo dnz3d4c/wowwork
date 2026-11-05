@@ -1,7 +1,19 @@
 from __future__ import annotations
 
+from pathlib import Path
+
+import pytest
+
 from tools.locale_lib import parse_locale_file
-from tools.sync_locale import HEADER, read_tsv, rebuild
+from tools.sync_locale import (
+    HEADER,
+    changed_keys,
+    load_snapshot,
+    read_tsv,
+    rebuild,
+    save_snapshot,
+    write_all,
+)
 
 EN = 'local L = WowVision:translate("enUS")\n\n-- 묶음\nL["A"] = true\nL["Gone"] = true\n\nL["B"] = "Bee"\nL["New"] = true\n'
 KO = HEADER + '\nL["A"] = "가"\nL["Old"] = "옛것"\nL["B"] = "비"\nL["Gone2"] = "x"\n'
@@ -37,6 +49,39 @@ def test_existing_escaped_line_is_kept_verbatim() -> None:
     text, missing = rebuild('local L = WowVision:translate("enUS")\n\nL["Q \\"x\\""] = true\n', ko, {})
     assert missing == []
     assert text == ko
+
+
+def test_changed_english_value_forces_retranslation() -> None:
+    en = 'local L = WowVision:translate("enUS")\n\nL["EditBox"] = "Edit box"\n'
+    ko = HEADER + '\nL["EditBox"] = "편집"\n'
+    _, missing = rebuild(en, ko, {}, changed={"EditBox"})
+    assert missing == ["EditBox"]
+    text, missing = rebuild(en, ko, {"EditBox": "편집 상자"}, changed={"EditBox"})
+    assert missing == []
+    assert 'L["EditBox"] = "편집 상자"' in text
+
+
+def test_changed_keys_compares_snapshot() -> None:
+    snap = {("a.lua", "K"): "Edit", ("a.lua", "S"): "Same"}
+    assert changed_keys(snap, "a.lua", {"K": "Edit box", "S": "Same", "New": "New"}) == {"K"}
+
+
+def test_snapshot_round_trip(tmp_path: Path) -> None:
+    f = tmp_path / "snap.tsv"
+    data = {("a.lua", 'Q "x"'): "tab\there\nline"}
+    save_snapshot(f, data)
+    assert load_snapshot(f) == data
+    assert load_snapshot(tmp_path / "none.tsv") == {}
+
+
+def test_write_all_leaves_targets_untouched_when_one_fails(tmp_path: Path) -> None:
+    ok = tmp_path / "ok.lua"
+    ok.write_text("old", encoding="utf-8")
+    bad = tmp_path / "no_such_dir" / "bad.lua"
+    with pytest.raises(OSError):
+        write_all({ok: "new", bad: "x"})
+    assert ok.read_text(encoding="utf-8") == "old"
+    assert list(tmp_path.glob("*.tmp")) == []
 
 
 def test_read_tsv(tmp_path) -> None:  # type: ignore[no-untyped-def]

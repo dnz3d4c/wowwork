@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["findings"],
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "severity", "problem", "evidence", "suggestion"],
+        "properties": {
+          "id": {"type": "string", "description": "입력 항목의 id 그대로"},
+          "category": {"type": "string", "enum": ["accuracy", "terminology", "context", "listening", "style"]},
+          "severity": {"type": "string", "enum": ["critical", "major", "minor"]},
+          "problem": {"type": "string", "description": "무엇이 틀렸는지 한국어 1-2문장"},
+          "evidence": {"type": "string", "description": "근거: 원문 구절, 코드 위치, 공식 용어, 지침 조항"},
+          "suggestion": {"type": "string", "description": "수정된 번역 전체(그 항목의 ko 값 전체)"}
+        }
+      }
+    }
+  }
+}

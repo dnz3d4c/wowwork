@@ -7,7 +7,10 @@ import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-KOKR_DIR = REPO_ROOT / "koKR"
+# 비공개 복제 저장소들(dnz3d4c/vision-locale, WowVision, wowvision-installer)이 모인 폴더
+KO_WORK_ROOT = REPO_ROOT.parent / "wowvision-ko"
+# 원본 앱 코드. 키가 어떻게 쓰이는지 확인할 때 검색한다.
+WOWVISION_DIR = KO_WORK_ROOT / "WowVision"
 
 # L["key"] = true  /  L["key"] = "value"  (뒤에 -- 주석 허용)
 _ENTRY = re.compile(r'^L\["((?:[^"\\]|\\.)*)"\] = (true|"((?:[^"\\]|\\.)*)")\s*(?:--.*)?$')
@@ -16,11 +19,14 @@ _FORMAT = re.compile(r"%(?:\d+\$)?[-+ #0]*\d*(?:\.\d+)?[sdifgxXcqeE]")
 
 
 def upstream_locale_dir() -> Path:
-    """원문(enUS)이 있는 locale 서브모듈 경로. WOWVISION_LOCALE 로 덮어쓸 수 있다."""
+    """vision-locale 복제 저장소 경로(enUS 원문과 koKR 번역이 함께 있다). WOWVISION_LOCALE 로 덮어쓸 수 있다."""
     env = os.environ.get("WOWVISION_LOCALE")
     if env:
         return Path(env)
-    return REPO_ROOT.parent / "wowvision" / "upstream" / "WowVision" / "locale"
+    return KO_WORK_ROOT / "vision-locale"
+
+
+KOKR_DIR = upstream_locale_dir() / "koKR"
 
 
 def unescape(s: str) -> str:

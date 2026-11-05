@@ -1,0 +1,731 @@
+{
+ "items": [
+  {
+   "id": "buffers.lua::Any",
+   "file": "buffers.lua",
+   "key": "Any",
+   "en": "Any",
+   "ko": "전체",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:130: local choices = { { value = \"any\", label = L[\"Any\"] }, { value = \"only\", label = L[\"Only\"] } }"
+   ],
+   "game_term": "아무 | 전체"
+  },
+  {
+   "id": "buffers.lua::Only",
+   "file": "buffers.lua",
+   "key": "Only",
+   "en": "Only",
+   "ko": "해당만",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:130: local choices = { { value = \"any\", label = L[\"Any\"] }, { value = \"only\", label = L[\"Only\"] } }"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Not",
+   "file": "buffers.lua",
+   "key": "Not",
+   "en": "Not",
+   "ko": "제외",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:132: tinsert(choices, { value = \"not\", label = L[\"Not\"] })"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Cast by Me",
+   "file": "buffers.lua",
+   "key": "Cast by Me",
+   "en": "Cast by Me",
+   "ko": "내가 시전",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:88: { token = \"PLAYER\", label = L[\"Cast by Me\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Castable or Dispellable by Me",
+   "file": "buffers.lua",
+   "key": "Castable or Dispellable by Me",
+   "en": "Castable or Dispellable by Me",
+   "ko": "내가 시전 또는 무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:89: { token = \"RAID\", label = L[\"Castable or Dispellable by Me\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Cancelable",
+   "file": "buffers.lua",
+   "key": "Cancelable",
+   "en": "Cancelable",
+   "ko": "취소 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:90: { token = \"CANCELABLE\", label = L[\"Cancelable\"], negative = \"NOT_CANCELABLE\" },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Crowd Control",
+   "file": "buffers.lua",
+   "key": "Crowd Control",
+   "en": "Crowd Control",
+   "ko": "군중 제어",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:91: { token = \"CROWD_CONTROL\", label = L[\"Crowd Control\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Dispellable by My Group",
+   "file": "buffers.lua",
+   "key": "Dispellable by My Group",
+   "en": "Dispellable by My Group",
+   "ko": "내 파티가 무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:92: { token = \"RAID_PLAYER_DISPELLABLE\", label = L[\"Dispellable by My Group\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Dispellable",
+   "file": "buffers.lua",
+   "key": "Dispellable",
+   "en": "Dispellable",
+   "ko": "무효화 가능",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:93: { token = \"DISPELLABLE\", label = L[\"Dispellable\"] },"
+   ],
+   "game_term": "무효화 가능"
+  },
+  {
+   "id": "buffers.lua::External Defensive",
+   "file": "buffers.lua",
+   "key": "External Defensive",
+   "en": "External Defensive",
+   "ko": "외부 생존기",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:94: { token = \"EXTERNAL_DEFENSIVE\", label = L[\"External Defensive\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Big Defensive",
+   "file": "buffers.lua",
+   "key": "Big Defensive",
+   "en": "Big Defensive",
+   "ko": "주요 생존기",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:95: { token = \"BIG_DEFENSIVE\", label = L[\"Big Defensive\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Shown on Raid Frames in Combat",
+   "file": "buffers.lua",
+   "key": "Shown on Raid Frames in Combat",
+   "en": "Shown on Raid Frames in Combat",
+   "ko": "전투 중 공격대창에 표시",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:96: { token = \"RAID_IN_COMBAT\", label = L[\"Shown on Raid Frames in Combat\"] },"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "buffers.lua::Important",
+   "file": "buffers.lua",
+   "key": "Important",
+   "en": "Important",
+   "ko": "중요",
+   "code": [
+    "core/buffers/types/AuraBuffer.lua:97: { token = \"IMPORTANT\", label = L[\"Important\"] },"
+   ],
+   "game_term": "중요"
+  },
+  {
+   "id": "chat.lua::Chat Settings",
+   "file": "chat.lua",
+   "key": "Chat Settings",
+   "en": "Chat Settings",
+   "ko": "대화 설정",
+   "code": [
+    "core/chat/ui.lua:515: builder:pushContext(\"chatConfig\", L[\"Chat Settings\"])"
+   ],
+   "game_term": "대화 설정"
+  },
+  {
+   "id": "errors.lua::Lua error",
+   "file": "errors.lua",
+   "key": "Lua error",
+   "en": "Lua error",
+   "ko": "Lua 오류",
+   "code": [
+    "core/errors/module.lua:356: alert:fire({ text = L[\"Lua error\"] .. \": \" .. message })"
+   ],
+   "game_term": "Lua 오류"
+  },
+  {
+   "id": "groupHealth.lua::Group Health Monitor",
+   "file": "groupHealth.lua",
+   "key": "Group Health Monitor",
+   "en": "Group Health Monitor",
+   "ko": "파티 생명력 모니터",
+   "code": [
+    "retail/groupHealth/module.lua:5: module:setLabel(L[\"Group Health Monitor\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Include Yourself",
+   "file": "groupHealth.lua",
+   "key": "Include Yourself",
+   "en": "Include Yourself",
+   "ko": "자신 포함",
+   "code": [
+    "retail/groupHealth/module.lua:77: label = L[\"Include Yourself\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Watch Party",
+   "file": "groupHealth.lua",
+   "key": "Watch Party",
+   "en": "Watch Party",
+   "ko": "파티 감시",
+   "code": [
+    "retail/groupHealth/module.lua:83: label = L[\"Watch Party\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Watch Raid",
+   "file": "groupHealth.lua",
+   "key": "Watch Raid",
+   "en": "Watch Raid",
+   "ko": "공격대 감시",
+   "code": [
+    "retail/groupHealth/module.lua:89: label = L[\"Watch Raid\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Announce Full Health",
+   "file": "groupHealth.lua",
+   "key": "Announce Full Health",
+   "en": "Announce Full Health",
+   "ko": "생명력 최대 알림",
+   "code": [
+    "retail/groupHealth/module.lua:95: label = L[\"Announce Full Health\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Announce Deaths",
+   "file": "groupHealth.lua",
+   "key": "Announce Deaths",
+   "en": "Announce Deaths",
+   "ko": "사망 알림",
+   "code": [
+    "retail/groupHealth/module.lua:101: label = L[\"Announce Deaths\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Silent Out of Combat",
+   "file": "groupHealth.lua",
+   "key": "Silent Out of Combat",
+   "en": "Silent Out of Combat",
+   "ko": "비전투 중 무음",
+   "code": [
+    "retail/groupHealth/module.lua:107: label = L[\"Silent Out of Combat\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Repeat Only After a Change",
+   "file": "groupHealth.lua",
+   "key": "Repeat Only After a Change",
+   "en": "Repeat Only After a Change",
+   "ko": "변화가 있을 때만 반복",
+   "code": [
+    "retail/groupHealth/module.lua:119: label = L[\"Repeat Only After a Change\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Raid Groups",
+   "file": "groupHealth.lua",
+   "key": "Raid Groups",
+   "en": "Raid Groups",
+   "ko": "공격대 파티",
+   "code": [
+    "retail/groupHealth/module.lua:135: label = L[\"Raid Groups\"],"
+   ],
+   "game_term": "공격대 | 공격대 구성"
+  },
+  {
+   "id": "groupHealth.lua::Group %d",
+   "file": "groupHealth.lua",
+   "key": "Group %d",
+   "en": "Group %d",
+   "ko": "%d 파티",
+   "code": [
+    "retail/groupHealth/module.lua:128: label = string.format(L[\"Group %d\"], group),"
+   ],
+   "game_term": "%d 파티"
+  },
+  {
+   "id": "groupHealth.lua::Tanks",
+   "file": "groupHealth.lua",
+   "key": "Tanks",
+   "en": "Tanks",
+   "ko": "방어 전담",
+   "code": [
+    "retail/groupHealth/module.lua:140: TANK = L[\"Tanks\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Healers",
+   "file": "groupHealth.lua",
+   "key": "Healers",
+   "en": "Healers",
+   "ko": "치유 전담",
+   "code": [
+    "retail/groupHealth/module.lua:141: HEALER = L[\"Healers\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Damage Dealers",
+   "file": "groupHealth.lua",
+   "key": "Damage Dealers",
+   "en": "Damage Dealers",
+   "ko": "공격 전담",
+   "code": [
+    "retail/groupHealth/module.lua:142: DAMAGER = L[\"Damage Dealers\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::No Role",
+   "file": "groupHealth.lua",
+   "key": "No Role",
+   "en": "No Role",
+   "ko": "역할 없음",
+   "code": [
+    "retail/groupHealth/module.lua:143: NONE = L[\"No Role\"],"
+   ],
+   "game_term": "역할 없음"
+  },
+  {
+   "id": "groupHealth.lua::Repeat Below (percent)",
+   "file": "groupHealth.lua",
+   "key": "Repeat Below (percent)",
+   "en": "Repeat Below (percent)",
+   "ko": "반복 상한 (퍼센트)",
+   "code": [
+    "retail/groupHealth/module.lua:156: label = L[\"Repeat Below (percent)\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Repeat Every (seconds, 0 is off)",
+   "file": "groupHealth.lua",
+   "key": "Repeat Every (seconds, 0 is off)",
+   "en": "Repeat Every (seconds, 0 is off)",
+   "ko": "반복 간격 (초, 0은 끔)",
+   "code": [
+    "retail/groupHealth/module.lua:164: label = L[\"Repeat Every (seconds, 0 is off)\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Speak Group Health",
+   "file": "groupHealth.lua",
+   "key": "Speak Group Health",
+   "en": "Speak Group Health",
+   "ko": "파티 생명력 말하기",
+   "code": [
+    "retail/groupHealth/module.lua:646: label = L[\"Speak Group Health\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Group health monitor unavailable here",
+   "file": "groupHealth.lua",
+   "key": "Group health monitor unavailable here",
+   "en": "Group health monitor unavailable here",
+   "ko": "여기서는 파티 생명력 모니터 사용 불가",
+   "code": [
+    "retail/groupHealth/module.lua:423: WowVision:speak(L[\"Group health monitor unavailable here\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::Nobody to watch",
+   "file": "groupHealth.lua",
+   "key": "Nobody to watch",
+   "en": "Nobody to watch",
+   "ko": "감시할 대상 없음",
+   "code": [
+    "retail/groupHealth/module.lua:561: WowVision:speak(L[\"Nobody to watch\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+   "file": "groupHealth.lua",
+   "key": "This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+   "en": "This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+   "ko": "이 스크린 리더 음성은 생명력 음높이를 재생하지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오.",
+   "code": [
+    "retail/groupHealth/module.lua:622: WowVision:speak(L[\"This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "groupHealth.lua::dead",
+   "file": "groupHealth.lua",
+   "key": "dead",
+   "en": "dead",
+   "ko": "사망",
+   "code": [
+    "retail/groupHealth/module.lua:445: self:speak(number .. \" \" .. L[\"dead\"])"
+   ],
+   "game_term": "죽은 캐릭터 | 죽음"
+  },
+  {
+   "id": "groupHealth.lua::full",
+   "file": "groupHealth.lua",
+   "key": "full",
+   "en": "full",
+   "ko": "최대",
+   "code": [
+    "retail/groupHealth/module.lua:480: fullPart = GroupHealth.segment(full, profile.scale[#profile.scale], number .. \" \" .. L[\"full\"], fullRate)"
+   ],
+   "game_term": "모든 능력 상실 | 정원초과 | 최대"
+  },
+  {
+   "id": "monitors.lua::Not Found",
+   "file": "monitors.lua",
+   "key": "Not Found",
+   "en": "Not Found",
+   "ko": "찾을 수 없음",
+   "code": [
+    "core/graph/fieldControls.lua:104: WowVision:speak(L[\"Not Found\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "monitors.lua::Monitors on",
+   "file": "monitors.lua",
+   "key": "Monitors on",
+   "en": "Monitors on",
+   "ko": "모니터 켜짐",
+   "code": [
+    "core/monitors/module.lua:105: WowVision:speak(anyOn and L[\"Monitors off\"] or L[\"Monitors on\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "monitors.lua::Monitors off",
+   "file": "monitors.lua",
+   "key": "Monitors off",
+   "en": "Monitors off",
+   "ko": "모니터 꺼짐",
+   "code": [
+    "core/monitors/module.lua:105: WowVision:speak(anyOn and L[\"Monitors off\"] or L[\"Monitors on\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Automatically Navigate to Corpse",
+   "file": "navigation.lua",
+   "key": "Automatically Navigate to Corpse",
+   "en": "Automatically Navigate to Corpse",
+   "ko": "시체로 자동 길 안내",
+   "code": [
+    "core/navigation/module.lua:25: label = L[\"Automatically Navigate to Corpse\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Start the Route Again From Here",
+   "file": "navigation.lua",
+   "key": "Start the Route Again From Here",
+   "en": "Start the Route Again From Here",
+   "ko": "여기서 경로 다시 시작",
+   "code": [
+    "core/navigation/maps/module.lua:488: label = L[\"Start the Route Again From Here\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::No route to start again",
+   "file": "navigation.lua",
+   "key": "No route to start again",
+   "en": "No route to start again",
+   "ko": "다시 시작할 경로 없음",
+   "code": [
+    "core/navigation/maps/module.lua:450: WowVision:speak(L[\"No route to start again\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Direct",
+   "file": "navigation.lua",
+   "key": "Direct",
+   "en": "Direct",
+   "ko": "직접",
+   "code": [
+    "core/navigation/maps/ui.lua:358: label = L[\"Direct\"],",
+    "vanilla/speech.lua:86: styleSetting:addChoice({ label = L[\"Direct\"], value = \"direct\" })"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Direct: %s, %d yards",
+   "file": "navigation.lua",
+   "key": "Direct: %s, %d yards",
+   "en": "Direct: %s, %d yards",
+   "ko": "직선: %s, %d야드",
+   "code": [
+    "core/navigation/maps/module.lua:513: WowVision:speak(string.format(L[\"Direct: %s, %d yards\"], label or \"\", self:distanceTo(wx, wy) or 0))"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Announce Distance",
+   "file": "navigation.lua",
+   "key": "Announce Distance",
+   "en": "Announce Distance",
+   "ko": "거리 알림",
+   "code": [
+    "core/navigation/maps/module.lua:213: label = L[\"Announce Distance\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Announce Distance with Alt Gr",
+   "file": "navigation.lua",
+   "key": "Announce Distance with Alt Gr",
+   "en": "Announce Distance with Alt Gr",
+   "ko": "Alt Gr로 거리 알림",
+   "code": [
+    "core/navigation/maps/module.lua:187: label = L[\"Announce Distance with Alt Gr\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::No network point at the chosen start",
+   "file": "navigation.lua",
+   "key": "No network point at the chosen start",
+   "en": "No network point at the chosen start",
+   "ko": "선택한 시작 지점에 네트워크 지점 없음",
+   "code": [
+    "camelot/wownav/module.lua:511: say(L[\"No network point at the chosen start\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Ahead: walk into %s; the route goes on after it",
+   "file": "navigation.lua",
+   "key": "Ahead: walk into %s; the route goes on after it",
+   "en": "Ahead: walk into %s; the route goes on after it",
+   "ko": "전방: %s 안으로 걸어 들어감; 이후 경로 계속",
+   "code": [
+    "camelot/wownav/module.lua:860: say(string.format(L[\"Ahead: walk into %s; the route goes on after it\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Auto, height %d",
+   "file": "navigation.lua",
+   "key": "Auto, height %d",
+   "en": "Auto, height %d",
+   "ko": "자동, 높이 %d",
+   "code": [
+    "camelot/wownav/text.lua:252: return string.format(L[\"Auto, height %d\"], math.floor(z + 0.5))"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Auto, height unknown",
+   "file": "navigation.lua",
+   "key": "Auto, height unknown",
+   "en": "Auto, height unknown",
+   "ko": "자동, 높이 모름",
+   "code": [
+    "camelot/wownav/text.lua:250: return L[\"Auto, height unknown\"]"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::No water point nearby",
+   "file": "navigation.lua",
+   "key": "No water point nearby",
+   "en": "No water point nearby",
+   "ko": "근처에 물 지점 없음",
+   "code": [
+    "core/navigation/maps/ui.lua:71: WowVision:speak(L[\"No water point nearby\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Fishing spot on the shore: %s",
+   "file": "navigation.lua",
+   "key": "Fishing spot on the shore: %s",
+   "en": "Fishing spot on the shore: %s",
+   "ko": "물가 낚시터: %s",
+   "code": [
+    "camelot/wownav/text.lua:129: fishing_spot_shore = L[\"Fishing spot on the shore: %s\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Fishing spot on pier or quay: %s",
+   "file": "navigation.lua",
+   "key": "Fishing spot on pier or quay: %s",
+   "en": "Fishing spot on pier or quay: %s",
+   "ko": "부두 낚시터: %s",
+   "code": [
+    "camelot/wownav/text.lua:130: fishing_spot_structure = L[\"Fishing spot on pier or quay: %s\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+   "file": "navigation.lua",
+   "key": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+   "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+   "ko": "%s에 도착했습니다. 물은 %s에 있습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다.",
+   "code": [
+    "camelot/wownav/text.lua:74: fishing_arrival = L[\"%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+   "file": "navigation.lua",
+   "key": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+   "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+   "ko": "%s에 도착했습니다. 시전 거리는 약 %d에서 %d야드입니다. I 키를 누르면 물 쪽으로 돌아섭니다.",
+   "code": [
+    "camelot/wownav/text.lua:75: fishing_arrival_no_facing = L[\"%s reached. Cast range about %d to %d yards. Press I to turn to the water.\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::straight ahead",
+   "file": "navigation.lua",
+   "key": "straight ahead",
+   "en": "straight ahead",
+   "ko": "정면",
+   "code": [
+    "camelot/wownav/text.lua:76: fishing_sector_1 = L[\"straight ahead\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::ahead to the left",
+   "file": "navigation.lua",
+   "key": "ahead to the left",
+   "en": "ahead to the left",
+   "ko": "왼쪽 앞",
+   "code": [
+    "camelot/wownav/text.lua:77: fishing_sector_2 = L[\"ahead to the left\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::to the left",
+   "file": "navigation.lua",
+   "key": "to the left",
+   "en": "to the left",
+   "ko": "왼쪽",
+   "code": [
+    "camelot/wownav/text.lua:78: fishing_sector_3 = L[\"to the left\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::behind to the left",
+   "file": "navigation.lua",
+   "key": "behind to the left",
+   "en": "behind to the left",
+   "ko": "왼쪽 뒤",
+   "code": [
+    "camelot/wownav/text.lua:79: fishing_sector_4 = L[\"behind to the left\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::behind you",
+   "file": "navigation.lua",
+   "key": "behind you",
+   "en": "behind you",
+   "ko": "뒤쪽",
+   "code": [
+    "camelot/wownav/text.lua:80: fishing_sector_5 = L[\"behind you\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::behind to the right",
+   "file": "navigation.lua",
+   "key": "behind to the right",
+   "en": "behind to the right",
+   "ko": "오른쪽 뒤",
+   "code": [
+    "camelot/wownav/text.lua:81: fishing_sector_6 = L[\"behind to the right\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::to the right",
+   "file": "navigation.lua",
+   "key": "to the right",
+   "en": "to the right",
+   "ko": "오른쪽",
+   "code": [
+    "camelot/wownav/text.lua:82: fishing_sector_7 = L[\"to the right\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::ahead to the right",
+   "file": "navigation.lua",
+   "key": "ahead to the right",
+   "en": "ahead to the right",
+   "ko": "오른쪽 앞",
+   "code": [
+    "camelot/wownav/text.lua:83: fishing_sector_8 = L[\"ahead to the right\"],"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::At a fishing spot",
+   "file": "navigation.lua",
+   "key": "At a fishing spot",
+   "en": "At a fishing spot",
+   "ko": "낚시터에 있음",
+   "code": [
+    "camelot/wownav/module.lua:1178: say(L[\"At a fishing spot\"])"
+   ],
+   "game_term": ""
+  },
+  {
+   "id": "navigation.lua::Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+   "file": "navigation.lua",
+   "key": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+   "en": "Prepoint reached. Walk on to the portal; the beacon stays on until you are there.",
+   "ko": "사전 지점 도착. 차원문까지 계속 걸어가십시오; 도착할 때까지 비컨이 계속 켜져 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:62: prepoint_reached_click = L[\"Prepoint reached. Walk on to the portal; the beacon stays on until you are there.\"],"
+   ],
+   "game_term": ""
+  }
+ ]
+}
