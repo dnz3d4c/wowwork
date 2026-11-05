@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "id": "alerts.lua::Voice",
+   "file": "alerts.lua",
+   "key": "Voice",
+   "en": "Voice",
+   "ko": "음성",
+   "code": [
+    "core/alerts/outputs.lua:40: label = L[\"Voice\"],",
+    "core/alerts/outputs.lua:50: label = L[\"Voice\"],",
+    "retail/groupHealth/module.lua:52: label = L[\"Voice\"],"
+   ],
+   "game_term": "음성 | 음성 대화",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Vendor Buy",
+   "file": "auction.lua",
+   "key": "Vendor Buy",
+   "en": "Vendor Buy",
+   "ko": "상인에게서 구입",
+   "code": [
+    "tbc/auction/prices.lua:261: tooltip:AddLine(L[\"Vendor Buy\"] .. \": \" .. buyText, 1, 1, 1)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Vendor Sell",
+   "file": "auction.lua",
+   "key": "Vendor Sell",
+   "en": "Vendor Sell",
+   "ko": "상인에게 판매",
+   "code": [
+    "tbc/auction/prices.lua:252: tooltip:AddLine(L[\"Vendor Sell\"] .. \": \" .. sellText, 1, 1, 1)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "minimap.lua::turn in",
+   "file": "minimap.lua",
+   "key": "turn in",
+   "en": "turn in",
+   "ko": "완료",
+   "code": [
+    "core/minimap/module.lua:1215: local statusText = { available = L[\"quest available\"], turnIn = L[\"turn in\"] }",
+    "core/quests/scanner.lua:168: turnIn = L[\"turn in\"],",
+    "core/quests/scanner.lua:230: node.detail = node.detail ~= nil and (L[\"turn in\"] .. \", \" .. node.detail) or L[\"turn in\"]"
+   ],
+   "game_term": "완료 | 제출",
+   "related": [
+    {
+     "id": "quests.lua::Turn In",
+     "en": "Turn In",
+     "ko": "완료"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+   "file": "navigation.lua",
+   "key": "WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+   "en": "WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+   "ko": "경유지 쪽으로 돌아서는 데 필요하므로, WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 카메라 따라가기 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.",
+   "code": [
+    "core/navigation/module.lua:46: print(L[\"WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "windows.lua::WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+     "en": "WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+     "ko": "끌기가 작동하도록 WowVision이 행동 단축바 잠금을 해제했습니다. 게임 설정의 행동 단축바 항목에서 다시 잠글 수 있습니다."
+    },
+    {
+     "id": "navigation.lua::Map change; the activation guidance is finished.",
+     "en": "Map change; the activation guidance is finished.",
+     "ko": "지도 변경; 활성화 안내 종료."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Waiting for the far end of %s",
+   "file": "navigation.lua",
+   "key": "Waiting for the far end of %s",
+   "en": "Waiting for the far end of %s",
+   "ko": "%s 구간 완료 대기 중",
+   "code": [
+    "camelot/wownav/module.lua:1171: say(string.format(L[\"Waiting for the far end of %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::End of route",
+     "en": "End of route",
+     "ko": "경로 끝"
+    },
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Riding to the noted dock %s",
+   "file": "navigation.lua",
+   "key": "Riding to the noted dock %s",
+   "en": "Riding to the noted dock %s",
+   "ko": "기록한 %s까지 탑승 중",
+   "code": [
+    "camelot/wownav/module.lua:1174: say(string.format(L[\"Riding to the noted dock %s\"], tostring(passive.name or \"\")))"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "en": "Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+     "ko": "%s, 목적지로 기록했습니다. 운송 수단을 기다렸다가 소리를 듣고 탑승하고, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "en": "Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+     "ko": "%s에 도착했습니다. 여기서 %s 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "quests.lua::Rares",
+   "file": "quests.lua",
+   "key": "Rares",
+   "en": "Rares",
+   "ko": "희귀 몬스터",
+   "code": [
+    "core/quests/scanner.lua:488: label = L[\"Rares\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

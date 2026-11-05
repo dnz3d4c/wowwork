@@ -1,0 +1,28 @@
+{
+  "findings": [
+    {
+      "id": "auction.lua::Vendor Buy",
+      "category": "listening",
+      "severity": "major",
+      "problem": "\"상인 구입 가격\"은 '상인이 사들이는 가격'(즉 상인에게 팔 때 받는 값)으로 들려 원문 Vendor Buy(상인에게서 살 때 값)와 반대로 이해될 수 있다. 같은 툴팁에 Vendor Sell \"상인 판매 가격\"이 나란히 나와 두 줄의 뜻이 서로 뒤바뀌어 들린다.",
+      "evidence": "tbc/auction/prices.lua:257-262 `local vendorPrice = db.vendors[itemId]` (상인 판매 목록에서 캐시한 구매가) -> `tooltip:AddLine(L[\"Vendor Buy\"] .. \": \" .. buyText)`. 'N 구입 가격'은 보통 N이 사는 값으로 읽힌다. 기존 번역 중 Vendor 계열은 auction.lua:56-57 두 키뿐이라 맞출 다른 문형은 없다. 게임 공식 SELL_PRICE=\"판매 가격\"은 플레이어가 상인에게 파는 값이라 혼동이 더 커진다.",
+      "suggestion": "상인에게서 구입"
+    },
+    {
+      "id": "auction.lua::Vendor Sell",
+      "category": "listening",
+      "severity": "major",
+      "problem": "\"상인 판매 가격\"은 '상인이 파는 가격'으로 들려, 원문 Vendor Sell(플레이어가 상인에게 팔 때 받는 값)과 반대로 이해될 수 있다. Vendor Buy와 짝으로 나와 듣는 사람이 두 값을 뒤바꿔 판단할 수 있다.",
+      "evidence": "tbc/auction/prices.lua:247-253 `GetItemInfo(itemId)`의 sellPrice(상인에게 팔 때 값) -> `tooltip:AddLine(L[\"Vendor Sell\"] .. \": \" .. sellText)`. 공식 SELL_PRICE=\"판매 가격\"(gs_koKR.csv 19823)과 맞추려는 의도로 보이나 앞에 '상인'이 붙으면서 주체가 상인으로 읽힌다.",
+      "suggestion": "상인에게 판매"
+    },
+    {
+      "id": "alerts.lua::Voice",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "같은 TTS 음성 선택 설정인데 \"Speech Voice\"는 \"음성 종류\", 이 키는 \"목소리\"로 옮겨져 용어가 갈린다. game_term도 \"음성\"이다.",
+      "evidence": "core/alerts/outputs.lua:34-45 `label = L[\"Voice\"]`, `type = \"TtsVoice\"`, 주석 'it follows the Speech Voice setting (and shows it)' - 같은 값을 따르는 설정이다. 기존 번역: speech.lua:5 L[\"Speech Voice\"] = \"음성 종류\", speech.lua:8 L[\"Speech Rate\"] = \"음성 속도\". retail/groupHealth/module.lua:52에서도 Voice 바로 뒤에 Speech Rate(음성 속도)가 나온다. 뜻은 통하므로 경미.",
+      "suggestion": "음성 종류"
+    }
+  ]
+}
