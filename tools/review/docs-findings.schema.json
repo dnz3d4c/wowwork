@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["findings"],
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "severity", "quote", "suggestion", "problem", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "category": {"type": "string", "enum": ["accuracy", "terminology", "style", "context"]},
+          "severity": {"type": "string", "enum": ["critical", "major", "minor"]},
+          "quote": {"type": "string", "description": "번역문에서 고칠 부분 그대로"},
+          "suggestion": {"type": "string", "description": "quote 를 대신할 한국어"},
+          "problem": {"type": "string"},
+          "evidence": {"type": "string"}
+        }
+      }
+    }
+  }
+}
