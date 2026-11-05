@@ -42,6 +42,12 @@ async function refix({ file: rel, by, agree }) {
     `${input} 을 Read로 읽는다. 회귀 확인에서 나온 중대 이상 지적이다. consensus=true인 것은 두 회사 평가자가 모두 지적한 것이므로 반드시 반영한다. ` +
     `나머지는 지적이 맞으면 반영하고(action=applied), 틀렸으면 고치지 않고 근거를 든다(action=dispute). ` +
     `반영은 Edit로 quote를 suggestion(또는 지적들을 반영한 더 나은 문장)으로 바꾼다. 같은 곳을 가리키는 지적이 여럿이면 함께 반영한다. ` +
+    (args.strict
+      ? `이번에는 기준이 더 엄격하다(2026-11-06 사용자 결정: 순환 상한 뒤에는 근거가 확인되는 것만 반영). consensus와 관계없이, ` +
+        `지적의 근거를 직접 열어 확인했을 때 koKR 실제 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, ${W}/docs/glossary.tsv, ` +
+        `게임 공식 문자열(${W}/cache/gs_koKR.csv, game_terms.tsv), 앱 코드, 다른 한국어 설명서 파일의 표기 중 하나로 글자 그대로 확인되는 것만 반영한다. ` +
+        `확인되지 않거나 취향 차이면 반영하지 않고 dispute로 근거를 적는다.\n`
+      : '') +
     `원문에 없는 동작 설명을 지웠다면 그 원문·코드 차이를 upstream에 한 문장으로 적고(코드 위치 포함), 아니면 빈 문자열로 둔다.\n` +
     `끝나면 \`${CHECK(rel)}\` 로 기계 검사를 통과하는지 확인하고, 깨졌으면 고친다. ` +
     `responses에는 지적마다 하나씩, 입력의 ref를 그대로 적는다. 결과를 ${dirOf(rel)}/refix-rebut.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.`,
@@ -83,13 +89,20 @@ async function refix({ file: rel, by, agree }) {
     if (a.uphold) upheld.push({ ref: f.ref, final_ko: (f.provider === 'claude' ? a : c).final_ko })
     else disputeWon++
   }
+  let fixFailed = []
   if (upheld.length) {
-    await agent(
+    const done = await agent(
       `${KO}/${rel} 에서 아래 각 항목의 quote(${input} 에서 같은 ref의 quote)를 final_ko로 Edit로 바꾼다. quote가 정확히 보이지 않으면 가장 가까운 부분을 찾아 같은 뜻으로 고친다. ` +
       `끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ok와 remaining을 돌려준다.\n\n` + JSON.stringify(upheld, null, 1),
       { label: `fixer:${rel}`, phase: 'Fix', schema: DONE })
+    // 수정 단계가 실패하거나 검사를 통과하지 못하면 반영으로 세지 않고 사용자 판단으로 넘긴다.
+    if (!done || !done.ok) {
+      fixFailed = upheld
+      for (const u of upheld) escalations.push({ ref: u.ref, why: `판정 반영 실패: ${done ? done.remaining.join('; ') : '응답 없음'}` })
+    }
   }
-  return { ...base, upheld: upheld.length, disputeWon, upheldItems: upheld }
+  const applied = fixFailed.length ? [] : upheld
+  return { ...base, upheld: applied.length, disputeWon, upheldItems: applied }
 }
 
 phase('Fix')

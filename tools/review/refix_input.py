@@ -43,22 +43,48 @@ def prepare(src: Path, out_dir: Path, args_path: Path) -> int:
         # by: 지적마다 c(claude)/g(gpt), agree: 지적마다 1(두 회사 합의)/0. ref는 Workflow가 파일과 순번으로 다시 만든다.
         files.append({"file": rel, "by": "".join(f["by"][0] for f in items),
                       "agree": "".join("1" if f["consensus"] else "0" for f in items)})  # fmt: skip
-    args_path.write_text(json.dumps({"outDir": out_dir.as_posix(), "items": files}, ensure_ascii=False), encoding="utf-8")
+    args_path.write_text(
+        json.dumps({"outDir": out_dir.as_posix(), "items": files}, ensure_ascii=False), encoding="utf-8"
+    )
     print(f"파일 {len(files)}개, 지적 {sum(len(f['by']) for f in files)}건")
     return 0
+
+
+def load_rebut(path: Path) -> dict[str, dict]:
+    """번역자 반박 파일을 ref별로 읽는다. 형식이 틀리거나 ref가 겹치면 ValueError."""
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    # 번역자 에이전트가 {"responses": [...]} 대신 배열만 저장하는 경우가 있다(2026-11-06 windows/character.md).
+    entries = raw.get("responses") if isinstance(raw, dict) else raw
+    if not isinstance(entries, list):
+        raise ValueError(f"{path}: responses 배열이 없음")  # noqa: TRY004 - 인자 타입이 아니라 파일 내용 형식 오류
+    out: dict[str, dict] = {}
+    for e in entries:
+        if not (
+            isinstance(e, dict)
+            and isinstance(e.get("ref"), str)
+            and e.get("action") in ("applied", "dispute")
+        ):
+            raise ValueError(f"{path}: 형식이 틀린 응답 {e!r}")
+        if e["ref"] in out:
+            raise ValueError(f"{path}: ref 중복 {e['ref']}")
+        out[e["ref"]] = e
+    return out
 
 
 def judge(out_dir: Path, rel: str, refs: list[str]) -> int:
     d = out_dir / rel.removesuffix(".md")
     items = {f["ref"]: f for f in json.loads((d / "refix-input.json").read_text(encoding="utf-8"))}
-    raw = json.loads((d / "refix-rebut.json").read_text(encoding="utf-8"))
-    # 번역자 에이전트가 {"responses": [...]} 대신 배열만 저장하는 경우가 있다(2026-11-06 windows/character.md).
-    rebut = {r["ref"]: r for r in (raw["responses"] if isinstance(raw, dict) else raw)}
+    rebut = load_rebut(d / "refix-rebut.json")
     keys = ("category", "severity", "quote", "suggestion", "problem", "evidence")
-    payload = [{"ref": r, "file": rel, "finding": {k: items[r][k] for k in keys}, "translator": rebut.get(r)} for r in refs]
+    payload = [
+        {"ref": r, "file": rel, "finding": {k: items[r][k] for k in keys}, "translator": rebut.get(r)}
+        for r in refs
+    ]
     data = {"file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",
             "ko_path": f"wowvision-ko/WowVision/docs/src/user/ko/{rel}", "items": payload}  # fmt: skip
-    (d / "refix-judge-gpt-input.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    (d / "refix-judge-gpt-input.json").write_text(
+        json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8"
+    )
     print(d / "refix-judge-gpt-input.json")
     return 0
 
