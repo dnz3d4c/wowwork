@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/sku.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "퀘스트 제공자 창(퀘스트 수락과 완료 보고).",
+   "suggestion": "퀘스트 NPC 창(퀘스트 수락과 완료 보고).",
+   "problem": "Quest giver 창을 '퀘스트 제공자 창'으로 옮겨, 같은 창을 '퀘스트 NPC 창'이라 부르는 다른 설명서 파일과 애드온 화면 문구와 어긋난다. 같은 창이 페이지마다 다른 이름으로 들린다.",
+   "evidence": "원문 'Quest giver window'. vision-locale/koKR/quests.lua:45 L[\"Quest Giver\"] = \"퀘스트 NPC\", quests.lua:22 L[\"Quest Givers\"] = \"퀘스트 NPC\". 다른 파일 표기: windows/overview.md:56 '퀘스트 NPC 창', reference/versions.md:31 '퀘스트 NPC 창', world/index.md:13 '퀘스트 NPC 창과 Questie', getting-started/introduction.md:10 '퀘스트 NPC 창'."
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "information/buffers.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "| 기능 | 클래식 시대 | 불타는 성전 | 판다리아의 안개 | Retail | WoW: Forever |",
+      "suggestion": "| 기능 | 클래식 시대 | 불타는 성전 | 판다리아의 안개 | 리테일 | WoW: Forever |",
+      "problem": "같은 파일에서 Classic Era·The Burning Crusade·Mists of Pandaria는 한국어(클래식 시대, 불타는 성전, 판다리아의 안개)로 옮기면서 Retail만 영어로 남겼다. 파일 전체 12곳이 Retail이다. 다른 설명서 파일 다수는 리테일로 적는다.",
+      "evidence": "ko 설명서 Grep: 리테일은 24개 파일(reference/glossary.md:16,24,32, information/monitors.md:303, controller.md 등), Retail은 information/buffers.md 12곳과 reference/versions.md 등 일부. 용어집 페이지(reference/glossary.md)가 리테일을 쓴다. vision-locale/koKR에는 버전 이름 문자열이 없어 화면 문구 기준은 없다. 파일 전체(12곳) 일괄 정리 대상."
+    }
+  ]
+}

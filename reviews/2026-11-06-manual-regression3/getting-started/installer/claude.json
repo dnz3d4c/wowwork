@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/installer.md",
+   "category": "terminology",
+   "severity": "major",
+   "quote": "게임의 음성 번호가 바뀔 수 있으니, 설치 후 말하기 음성을 확인하십시오.",
+   "suggestion": "게임의 음성 번호가 바뀔 수 있으니, 설치 후 음성 종류 설정을 확인하십시오.",
+   "problem": "원문 \"check your speech voice afterward\"는 WowVision의 Speech Voice 설정을 가리키는데, 번역의 \"말하기 음성\"은 실제 설정 이름과 다르다. 독자가 존재하지 않는 \"말하기 음성\" 설정을 찾게 된다.",
+   "evidence": "vision-locale/koKR/speech.lua:5 L[\"Speech Voice\"] = \"음성 종류\"; en/basics/speech.md 설정 표 'Speech Voice' ↔ ko/basics/speech.md:16 '음성 종류'. 설명서 다른 파일에 '말하기 음성' 표기는 없음(Grep 결과 installer.md:48 한 곳)."
+  }
+ ]
+}

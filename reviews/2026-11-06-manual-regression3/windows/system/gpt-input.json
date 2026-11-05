@@ -1,0 +1,193 @@
+{
+ "file": "windows/system.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/system.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/system.md",
+ "en": "# System Windows\n\nThis page covers the windows that belong to the game itself rather than to the world: the game menu, the game options, popups and confirmation dialogs, the macro window and the color picker. It also describes the range readout, a small helper that tells you how far away your target is.\n\nIf you need the WowVision menu instead, which holds WowVision's own settings, see [Menu and settings](../basics/menu-and-settings.md).\n\n## The game menu\n\nPress Escape when no window is open and the game opens its game menu. WowVision reads it as a window called Menu.\n\n- Every button is its own stop, from top to bottom. Use Tab and Shift+Tab to move between them. The arrow keys do not move between buttons here.\n- Press Enter to use the one you are on.\n- Press Escape again to close the menu and go back to the game.\n\nThe buttons are the game's own and depend on the version. They normally include Options, Macros, Logout, Exit Game and Return to Game, and on some versions Help, Store, Interface and Edit Mode. Each is read with its game label.\n\nWhen another WowVision window is open, Escape closes that window first. The game menu opens on the next press.\n\n## The game options window\n\nOptions in the game menu opens the game's settings window. The WowVision reader covers almost all of it: its tabs, the category list, the search box and nearly every kind of setting row. Open it from the game menu.\n\n### The parts of the window\n\nThe stops, in order:\n\n1. Tabs: Game and AddOns, as a row. The tabs are only there when the game shows them. A fresh WoW: Forever install has no tabs until an addon registers settings.\n2. Search: a text box. Tabbing into it makes it ready for typing at once. Type part of a setting's name and the list shows matching settings from every category. Tab leaves the box.\n3. Categories: the category list, such as Gameplay, Controls, Graphics, Audio, Interface, Social and Keybindings. Group headers are read as \"Name, Separator\". Enter on a category shows its settings.\n4. Settings: the settings of the chosen category. This stop is named for the category, for example \"Audio\".\n5. Defaults: the game's button that resets the current category to its defaults. The game asks you to confirm in a popup.\n\nWhen you choose another category, the settings stop starts at its top again.\n\n### The settings\n\nHow each kind of row sounds and works:\n\n| Setting | What you hear | How to change it |\n|---------|---------------|------------------|\n| Checkbox | The name and \"Checked\" or \"Unchecked\". | Enter toggles it. The new state is spoken. |\n| Slider | The name and the value. | Left and Right change the value by one step. Enter opens a box where you can type the exact number. |\n| Dropdown | The name and the current choice. | Enter opens the game's dropdown menu as a WowVision menu. Pick with Enter. Dropdowns with several ticks, such as which chat types to show, list the chosen entries, or \"None\". |\n| Button | The name and the button's caption, such as \"Cooldown Manager, Open Edit Mode\". | Enter presses it. |\n| Color swatch | The name and the current color. | Enter opens the color picker. See [The color picker](#the-color-picker). |\n| Section header | The name and \"Separator\". | Nothing to press. |\n\nSome rows hold two controls, such as a checkbox and a slider, or a checkbox and a color swatch. They are read as a pair: the name, then the first control and its position, for example \"1 of 2\". Use Down (or Right) to reach the second control and Up (or Left) to come back. The second control reads Disabled while its checkbox is off, as the game greys it out.\n\nA control that the game has greyed out says \"Disabled\", and pressing Enter on it does nothing. A setting row also has a tooltip. Press Space to read the explanation the game gives for it.\n\nSpecial rows:\n\n- Graphics Quality has two tabs, Base and Raid and Battlegrounds. Each has a quality slider from 1 to 10, then a list of detail dropdowns (shadows, liquid, particles, textures and so on). The raid tab has its own Enabled checkbox. View distance, environment detail and ground clutter are sliders from 1 to 10 as well.\n- Item Quality Colors (the Colorblind category): one swatch for each item quality, named for the quality, such as Poor, Common and Rare.\n- Raid Frame Preview and Nameplate Preview are spoken only as text, because the preview is a picture.\n- Some rows put an explanation next to a checkbox. It is read as part of the checkbox.\n- The game's own text-to-speech voice row is a dropdown with a sample button beside it, read as a pair like the two-control rows above.\n- A row of a kind WowVision does not know yet is read as \"Setting type\", the game's name for the row type, and \"not implemented\". Please report these. See [Troubleshooting](../getting-started/troubleshooting.md).\n\n### Keybindings\n\nThe Keybindings category lists the game's own key bindings, in sections.\n\n- A section header says \"Expanded\" or \"Collapsed\". Enter folds or unfolds it.\n- Some sections start with a short explanation line, which is read like any other text.\n- Each binding is a pair of buttons, named for the action, for example \"Jump\". Each button reads the key it holds, or \"Not Bound\". Use Left and Right to choose between the two.\n- Enter on a button starts rebinding. Press the key (or key combination) you want. When it works, WowVision says \"Rebinding successful\".\n- Backspace removes the key from that button.\n\nThis changes the game's bindings. WowVision's own keys (the ones that move you through windows) are changed in WowVision's keybinding window instead. See [Keybindings](../basics/keybindings.md).\n\nExample: turn on Auto Loot.\n\n1. Press Escape, then Tab to Options and press Enter.\n2. Press Tab to Search and type \"auto loot\".\n3. Press Tab until the settings list and read down to Auto Loot.\n4. Press Enter to turn it on or open the choices, depending on your game version. The new state is spoken.\n5. Press Escape to close the window.\n\n## Popups and confirmation dialogs\n\nMany questions in the game appear as small boxes in the middle of the screen: a group invitation, a resurrection offer, a summon, a \"do you want to bind this item?\" check, and the \"delete this item?\" confirmation. WowVision opens a window called Popup for each box, and reads it. All the boxes that are open at the same moment are listed in one window, one after the other, each with its own Popup heading.\n\nA box has up to three parts, each its own stop:\n\n1. The text of the question. It is re-read when it changes, for example in a countdown such as \"You will be teleported in 30 seconds\". When the box is one where the game lets you press Enter to accept, pressing Enter on the text presses the first button for you.\n2. A text box, only when the dialog asks you to type something, such as a name or the word DELETE. It reads the box's hint, then what you typed. Enter puts the game's keyboard focus into it, so type your text, and then Enter again accepts the dialog (this is the game's own behavior), or Escape cancels it.\n3. The buttons, each a stop of its own, with the game's labels: Accept, Decline, Okay, Cancel, Yes, No and so on. Press Enter to use one.\n\nEscape cancels the box in the same way as the game does.\n\nExample: accept a group invitation.\n\n1. You hear the popup: the name of the player and \"invites you to a group\".\n2. Press Tab to Accept. Press Enter.\n\nIf the addon Sku is loaded, WowVision leaves popups to Sku.\n\n## Macros\n\nOpen the macro window with the game menu (Macros) or with the slash command `/macro`. The window reads in two modes.\n\n### The main window\n\nThe stops, in order:\n\n1. Tabs: the two tabs, general macros and your character's macros. The current one says \"selected\".\n2. Macros: your macros as a list, by name. Enter selects one, and the selected one says \"selected\". The list says \"Empty\" if the tab has no macros.\n3. Drag to pick up macro: the button that stands for the icon of the selected macro. Press \\\\ (the Drag key) here to pick the macro up onto your cursor.\n4. Edit: the button that opens the name and icon box. It reads with the game's own caption, normally Change Name/Icon.\n5. Macro Text: a text box with the macro's commands. Tab into it and type. Tab out again to leave.\n6. The buttons the game shows right now, each its own stop: Cancel, Save, Delete and New.\n\n### The name box\n\nAfter New or Edit, the window shows a smaller box. It has the name text box, Okay and Cancel. WowVision does not read the icon list, so you cannot choose an icon. A new macro gets whatever icon the game starts with.\n\nExample: make a macro and put it on your action bar.\n\n1. Type `/macro` in the chat box and press Enter.\n2. Tab to the New button (press Shift+Tab from the top to wrap around to it) and press Enter.\n3. In the name box type \"Heal\", then Tab to Okay and press Enter.\n4. Tab to Macro Text. Type `/cast Healing Touch` and press Tab.\n5. Tab to Save and press Enter.\n6. Shift+Tab back to Drag to pick up macro, and press \\\\. The macro is on your cursor.\n7. Open the bars window with Shift+F4, walk to an empty slot and press \\\\. The slot now reads \"Heal\". See [Action bars](./action-bars.md).\n\n## The color picker\n\nColor swatches in the options, and in some addon windows, open the game's color picker. The wheel itself needs a mouse, so WowVision reads the same colors as numbers instead.\n\nThe stops, in order:\n\n1. Current Color: a spoken description of the color, for example \"Current Color: dark grayish blue, Slate Gray\". It updates as you change the sliders.\n2. Original Color: the color you started with (only when the game knows it).\n3. Red, Green and Blue: each a number from 0 to 255, followed by the description of the whole color, so you hear what the color has become. Left and Right change it by one. Enter lets you type an exact value.\n4. Opacity: only when the color has transparency, as a percentage. Left and Right change it by 5 percent, and Enter lets you type a value.\n5. Hex Color: a text box with the color as hex, where the game has one. Type a code and the sliders follow.\n6. Okay and Cancel, in a row.\n\nExample: set a color to pure red.\n\n1. Enter on a color swatch in the options. The color picker opens.\n2. Tab to Red. Press Enter, type 255, and press Enter.\n3. Tab to Green, type 0. Tab to Blue, type 0.\n4. Tab to Current Color to hear the description, then Tab to Okay and press Enter.\n\n## The range readout\n\n(Available on all versions.) While you have a target, WowVision tells you its distance in yards, so you know whether you are in range for a spell. It plays a recorded voice saying the number, for example \"thirty\". It speaks when you target something and whenever the distance changes to a different step. It says nothing while you have no target.\n\nThe distances come from the same range checks the game's own spells and items use, so you hear steps such as 5, 8, 10, 20, 30, 35 or 40. The number is an upper limit, not an exact measurement: \"thirty\" means your target is within thirty yards. Some steps are missing on some versions because the game gives no check for them. In combat the range to a friendly target is not available.\n\nWhen the target is farther away than the longest check the game offers, nothing is said, and the readout speaks again when you come back into range.\n\nTo change it, open Targeting, then Hard Target, in the WowVision menu, and choose Range Changed:\n\n| Setting | Default | What it does |\n|---------|---------|--------------|\n| Range Changed, Enabled | On | Switches the whole readout on or off. |\n| Voice Alert inside it, Enabled | On | The recorded voice. |\n| Voice Alert inside it, Voice Pack | Matthew | Says whose recorded voice reads the numbers. |\n\nThe range alert has no text-to-speech and no sound output, only the voice. For how alerts and voice packs work, see [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md).\n\n## Settings and alerts\n\n| Window | Settings | Alerts |\n|--------|----------|--------|\n| Game menu | None | None |\n| Game options | None | None |\n| Popups | None | None |\n| Macros | None | None |\n| Color picker | None | None |\n| Range | Range Changed, in Targeting, Hard Target (above) | Range Changed |\n\nEach of these windows is a module under Windows in the WowVision menu, and each has an Enabled switch that stops WowVision from reading it. Range has no entry of its own: its Enabled switch is on the Range Changed alert. See [Menu and settings](../basics/menu-and-settings.md).\n\n## Troubleshooting\n\n- Escape opens the game menu instead of closing my window. The window already closed. Press Escape again to leave the game menu.\n- A popup seems to be missing. Press Ctrl+Tab to cycle to it. A popup and another window can be open together.\n- I cannot set a color to a color name. The color picker only takes numbers or a hex code.\n",
+ "ko": "<!-- source: docs/src/user/en/windows/system.md @ 397ffc3 -->\n# 시스템 창\n\n이 페이지는 게임 세계가 아니라 게임 자체에 속한 창을 다룹니다. 게임 메뉴, 게임 설정, 팝업과 확인 대화 상자, 매크로 창, 색 지정 창입니다. 대상이 얼마나 멀리 있는지 알려 주는 작은 보조 기능인 거리 안내도 설명합니다.\n\nWowVision 자체 설정이 들어 있는 WowVision 메뉴가 필요하면 [메뉴와 설정](../basics/menu-and-settings.md)을 참고하십시오.\n\n## 게임 메뉴\n\n열린 창이 없을 때 Escape를 누르면 게임이 게임 메뉴를 엽니다. WowVision은 이 메뉴를 메뉴라는 창으로 읽습니다.\n\n- 위에서 아래로 각 버튼이 하나의 정지점입니다. Tab과 Shift+Tab으로 버튼 사이를 이동합니다. 여기서는 화살표 키로 버튼 사이를 이동할 수 없습니다.\n- Enter를 누르면 지금 있는 버튼을 사용합니다.\n- Escape를 다시 누르면 메뉴를 닫고 게임으로 돌아갑니다.\n\n버튼은 게임 자체의 버튼이며 버전에 따라 다릅니다. 보통 설정, 매크로 설정, 접속 종료, 게임 종료, 게임으로 돌아가기가 있고, 일부 버전에는 고객지원, 블리자드 샵, 인터페이스 설정, 편집 모드도 있습니다. 각 버튼은 게임의 이름표대로 읽힙니다.\n\n다른 WowVision 창이 열려 있으면 Escape는 그 창부터 닫습니다. 게임 메뉴는 그다음에 누를 때 열립니다.\n\n## 게임 설정 창\n\n게임 메뉴의 설정은 게임의 설정 창을 엽니다. WowVision 읽기 기능은 이 창의 거의 전부를 다룹니다. 탭, 범주 목록, 검색 상자, 그리고 거의 모든 종류의 설정 줄입니다. 게임 메뉴에서 여십시오.\n\n### 창의 구성\n\n정지점은 다음 순서입니다.\n\n1. 탭: 게임과 애드온이 한 줄로 있습니다. 탭은 게임이 탭을 표시할 때만 있습니다. WoW: Forever를 새로 설치하면 애드온이 설정을 등록하기 전까지 탭이 없습니다.\n2. 검색: 텍스트 상자입니다. Tab으로 들어가면 바로 입력할 수 있는 상태가 됩니다. 설정 이름의 일부를 입력하면 모든 범주에서 일치하는 설정이 목록에 나옵니다. Tab을 누르면 상자를 벗어납니다.\n3. 범주: 게임 플레이, 조작 설정, 그래픽, 음성, 인터페이스 설정, 소셜, 단축키 설정 같은 범주 목록입니다. 그룹 머리글은 \"이름, 구분선\"으로 읽힙니다. 범주에서 Enter를 누르면 그 범주의 설정이 나옵니다.\n4. 설정: 고른 범주의 설정입니다. 이 정지점의 이름은 범주 이름을 따릅니다. 예: \"음성\".\n5. 기본 설정: 현재 범주를 기본값으로 되돌리는 게임의 버튼입니다. 게임이 팝업으로 확인을 요청합니다.\n\n다른 범주를 고르면 설정 정지점은 다시 맨 위에서 시작합니다.\n\n### 설정\n\n줄 종류별로 들리는 내용과 작동 방식은 다음과 같습니다.\n\n| 설정 | 들리는 내용 | 바꾸는 방법 |\n|---------|---------------|------------------|\n| 체크 상자 | 이름과 \"체크됨\" 또는 \"체크되지 않음\". | Enter를 누르면 전환됩니다. 바뀐 상태를 말합니다. |\n| 슬라이더 | 이름과 값. | Left와 Right로 값을 한 단계씩 바꿉니다. Enter를 누르면 정확한 숫자를 입력할 수 있는 상자가 열립니다. |\n| 드롭다운 | 이름과 현재 선택값. | Enter를 누르면 게임의 드롭다운 메뉴가 WowVision 메뉴로 열립니다. Enter로 고르십시오. 표시할 대화 종류처럼 여러 개를 체크할 수 있는 드롭다운은 선택한 항목을 나열하거나 \"없음\"이라고 말합니다. |\n| 버튼 | 이름과 버튼의 글자. 예: \"재사용 대기시간 관리자, 편집 모드 열기\". | Enter를 누르면 버튼이 눌립니다. |\n| 색 견본 | 이름과 현재 색상. | Enter를 누르면 색 지정 창이 열립니다. [색 지정 창](#색-지정-창)을 참고하십시오. |\n| 구역 머리글 | 이름과 \"구분선\". | 누를 것이 없습니다. |\n\n어떤 줄에는 체크 상자와 슬라이더, 또는 체크 상자와 색 견본처럼 조작 요소가 두 개 있습니다. 이런 줄은 한 쌍으로 읽힙니다. 이름을 말한 뒤 첫 번째 조작 요소와 그 위치를 말합니다. 예: \"1 of 2\". Down(또는 Right)으로 두 번째 조작 요소로 가고 Up(또는 Left)으로 돌아옵니다. 체크 상자가 꺼져 있는 동안에는 게임이 두 번째 조작 요소를 회색으로 비활성화하므로 이 요소는 비활성화라고 읽힙니다.\n\n게임이 회색으로 비활성화한 조작 요소는 \"비활성화\"라고 말하며, 거기서 Enter를 눌러도 아무 일도 일어나지 않습니다. 설정 줄에는 툴팁도 있습니다. Space를 누르면 게임이 그 설정에 붙인 설명을 읽습니다.\n\n특별한 줄:\n\n- 그래픽 품질에는 기본 탭과 공격대 및 전장 탭, 두 탭이 있습니다. 각 탭에는 1부터 10까지의 품질 슬라이더가 있고, 그 뒤에 세부 드롭다운 목록(그림자, 액체, 입자, 텍스처 등)이 이어집니다. 공격대 탭에는 자체 사용함 체크 상자가 있습니다. 가시 거리, 원거리 사물 표현, 지면 사물도 1부터 10까지의 슬라이더입니다.\n- 아이템 등급 색상(색각 보정 모드 범주): 아이템 등급마다 색 견본이 하나씩 있으며, 하급, 일반, 희귀처럼 등급 이름이 붙어 있습니다.\n- 공격대창 미리보기와 이름표 미리보기는 미리보기가 그림이므로 글자로만 읽힙니다.\n- 어떤 줄은 체크 상자 옆에 설명을 둡니다. 이 설명은 체크 상자의 일부로 읽힙니다.\n- 게임 자체의 음성 합성 목소리 줄은 옆에 샘플 버튼이 있는 드롭다운이며, 위의 조작 요소 두 개짜리 줄처럼 한 쌍으로 읽힙니다.\n- WowVision이 아직 모르는 종류의 줄은 \"Setting type\", 그 줄 종류의 게임 내부 이름, \"not implemented\"로 읽힙니다. 이런 줄은 알려 주십시오. [문제 해결](../getting-started/troubleshooting.md)을 참고하십시오.\n\n### 단축키 설정\n\n단축키 설정 범주에는 게임 자체의 단축키가 구역별로 나열됩니다.\n\n- 구역 머리글은 \"펼쳐짐\" 또는 \"접힘\"이라고 말합니다. Enter를 누르면 접거나 펼칩니다.\n- 어떤 구역은 짧은 설명 줄로 시작하며, 다른 글처럼 읽힙니다.\n- 각 단축키는 동작 이름이 붙은 버튼 한 쌍입니다. 예: \"위로 뛰기\". 각 버튼은 지정된 키를 읽거나 \"지정 안 됨\"이라고 말합니다. Left와 Right로 두 버튼 중 하나를 고릅니다.\n- 버튼에서 Enter를 누르면 키 지정을 시작합니다. 원하는 키(또는 키 조합)를 누르십시오. 지정되면 WowVision이 \"Rebinding successful\"이라고 말합니다.\n- Backspace를 누르면 그 버튼의 키를 지웁니다.\n\n여기서는 게임의 단축키가 바뀝니다. WowVision 자체의 키(창 안을 이동하는 키)는 WowVision의 단축키 창에서 바꿉니다. [단축키](../basics/keybindings.md)를 참고하십시오.\n\n예: 자동 전리품 획득 켜기.\n\n1. Escape를 누르고 Tab으로 설정까지 간 뒤 Enter를 누르십시오.\n2. Tab으로 검색까지 가서 \"자동 전리품\"을 입력하십시오.\n3. 설정 목록이 나올 때까지 Tab을 누르고 아래로 읽어 자동 전리품 획득까지 가십시오.\n4. Enter를 눌러 설정을 켜거나 선택지를 여십시오. 게임 버전에 따라 다릅니다. 바뀐 상태가 들립니다.\n5. Escape를 눌러 창을 닫으십시오.\n\n## 팝업과 확인 대화 상자\n\n게임의 많은 질문은 화면 가운데에 작은 상자로 나타납니다. 파티 초대, 부활 제안, 소환, \"이 아이템을 귀속하시겠습니까?\" 확인, \"이 아이템을 완전히 파괴하시겠습니까?\" 확인 같은 것입니다. WowVision은 상자마다 팝업이라는 창을 열어 읽습니다. 동시에 열려 있는 상자는 모두 한 창에 차례로 나열되며, 상자마다 팝업이라는 제목이 붙습니다.\n\n상자에는 최대 세 부분이 있으며, 각 부분이 하나의 정지점입니다.\n\n1. 질문 내용. 내용이 바뀌면 다시 읽습니다. 예를 들어 \"30초 후에 순간이동됩니다\" 같은 카운트다운이 그렇습니다. 게임이 Enter로 수락하게 해 주는 상자라면, 질문 내용에서 Enter를 누르면 첫 번째 버튼이 대신 눌립니다.\n2. 텍스트 상자. 대화 상자가 이름이나 단어 지금파괴 같은 입력을 요구할 때만 있습니다. 상자의 힌트를 읽은 뒤 입력한 내용을 읽습니다. Enter를 누르면 게임의 키보드 초점이 상자 안으로 들어가므로 글을 입력하십시오. 그다음 Enter를 다시 누르면 대화 상자를 수락하고(게임 자체의 동작입니다), Escape를 누르면 취소합니다.\n3. 버튼. 버튼마다 하나의 정지점이며, 게임의 이름표대로 수락, 거절, 확인, 취소, 예, 아니요 등이 있습니다. Enter를 눌러 사용하십시오.\n\nEscape는 게임과 같은 방식으로 상자를 취소합니다.\n\n예: 파티 초대 수락하기.\n\n1. 팝업을 읽어 줍니다. 플레이어 이름과 \"님이 당신을 파티에 초대했습니다\"가 들립니다.\n2. Tab으로 수락까지 가서 Enter를 누르십시오.\n\nSku 애드온을 불러온 상태라면 WowVision은 팝업을 Sku에 맡깁니다.\n\n## 매크로\n\n게임 메뉴(매크로 설정)나 슬래시 명령 `/macro`로 매크로 창을 엽니다. 이 창은 두 가지 방식으로 읽힙니다.\n\n### 기본 창\n\n정지점은 다음 순서입니다.\n\n1. 탭: 공통 매크로와 캐릭터 전용 매크로, 두 탭입니다. 현재 탭은 \"선택됨\"이라고 말합니다.\n2. 매크로: 매크로가 이름별 목록으로 나옵니다. Enter를 누르면 매크로를 선택하며, 선택된 매크로는 \"선택됨\"이라고 말합니다. 탭에 매크로가 없으면 목록은 \"비어 있음\"이라고 말합니다.\n3. 매크로를 끌어서 집기: 선택한 매크로의 아이콘을 나타내는 버튼입니다. 여기서 \\\\(끌기 키)를 누르면 매크로를 커서에 집어 듭니다.\n4. 편집: 이름과 아이콘 상자를 여는 버튼입니다. 게임 자체의 글자로 읽히며, 보통 이름/아이콘 변경입니다.\n5. 매크로 내용: 매크로 명령이 들어 있는 텍스트 상자입니다. Tab으로 들어가서 입력합니다. 다시 Tab을 누르면 벗어납니다.\n6. 게임이 지금 표시하는 버튼: 취소, 저장, 삭제, 만들기. 버튼마다 하나의 정지점입니다.\n\n### 이름 상자\n\n만들기나 편집을 누르면 창에 더 작은 상자가 나타납니다. 이름 텍스트 상자, 확인, 취소가 있습니다. WowVision은 아이콘 목록을 읽지 않으므로 아이콘을 고를 수 없습니다. 새 매크로에는 게임이 처음 정해 주는 아이콘이 붙습니다.\n\n예: 매크로를 만들어 행동 단축바에 놓기.\n\n1. 대화창에 `/macro`를 입력하고 Enter를 누르십시오.\n2. Tab으로 만들기 버튼까지 가서(맨 위에서 Shift+Tab을 누르면 끝으로 돌아가 그 버튼에 닿습니다) Enter를 누르십시오.\n3. 이름 상자에 \"Heal\"을 입력하고 Tab으로 확인까지 가서 Enter를 누르십시오.\n4. Tab으로 매크로 내용까지 가십시오. `/cast Healing Touch`를 입력하고 Tab을 누르십시오.\n5. Tab으로 저장까지 가서 Enter를 누르십시오.\n6. Shift+Tab으로 매크로를 끌어서 집기까지 돌아가 \\\\를 누르십시오. 매크로가 커서에 있습니다.\n7. Shift+F4로 단축바 창을 열고 빈 칸까지 가서 \\\\를 누르십시오. 이제 그 칸은 \"Heal\"이라고 읽힙니다. [행동 단축바](./action-bars.md)를 참고하십시오.\n\n## 색 지정 창\n\n설정과 일부 애드온 창의 색 견본은 게임의 색 지정 창을 엽니다. 색상환 자체는 마우스가 있어야 쓸 수 있으므로, WowVision은 같은 색을 대신 숫자로 읽습니다.\n\n정지점은 다음 순서입니다.\n\n1. 현재 색상: 색을 말로 설명합니다. 예: \"현재 색상: 어두운 회색빛 파란색, Slate Gray\". 슬라이더를 바꾸면 갱신됩니다.\n2. 원래 색상: 처음 색입니다(게임이 그 색을 알 때만).\n3. 빨간색, 녹색, 파란색: 각각 0부터 255까지의 숫자이며, 뒤에 색 전체의 설명이 이어지므로 색이 어떻게 바뀌었는지 들을 수 있습니다. Left와 Right로 1씩 바꿉니다. Enter를 누르면 정확한 값을 입력할 수 있습니다.\n4. 투명도: 색에 투명도가 있을 때만 있으며, 백분율로 나옵니다. Left와 Right로 5퍼센트씩 바꾸고, Enter를 누르면 값을 입력할 수 있습니다.\n5. 16진수 색상: 색을 16진수로 보여 주는 텍스트 상자입니다. 게임에 이 상자가 있을 때만 나옵니다. 코드를 입력하면 슬라이더가 따라 바뀝니다.\n6. 확인과 취소가 한 줄로 있습니다.\n\n예: 색을 순수한 빨간색으로 정하기.\n\n1. 설정의 색 견본에서 Enter를 누르십시오. 색 지정 창이 열립니다.\n2. Tab으로 빨간색까지 가십시오. Enter를 누르고 255를 입력한 뒤 Enter를 누르십시오.\n3. Tab으로 녹색까지 가서 0을 입력하십시오. Tab으로 파란색까지 가서 0을 입력하십시오.\n4. Tab으로 현재 색상까지 가서 설명을 듣고, Tab으로 확인까지 가서 Enter를 누르십시오.\n\n## 거리 안내\n\n(모든 버전에서 사용 가능합니다.) 대상이 있는 동안 WowVision은 대상까지의 거리를 야드 단위로 알려 주므로 주문 사거리 안에 있는지 알 수 있습니다. 숫자를 말하는 녹음된 음성을 재생합니다. 예: \"thirty\". 무언가를 대상으로 잡을 때와 거리가 다른 단계로 바뀔 때마다 말합니다. 대상이 없는 동안에는 아무 말도 하지 않습니다.\n\n거리는 게임 자체의 주문과 아이템이 쓰는 것과 같은 사거리 검사에서 나오므로 5, 8, 10, 20, 30, 35, 40 같은 단계가 들립니다. 이 숫자는 정확한 측정값이 아니라 상한입니다. \"thirty\"는 대상이 30야드 안에 있다는 뜻입니다. 게임이 검사를 제공하지 않아서 일부 버전에서는 몇몇 단계가 빠집니다. 전투 중에는 우호적 대상까지의 거리를 알 수 없습니다.\n\n게임이 검사할 수 있는 가장 먼 거리보다 대상이 멀리 있으면 아무 말도 하지 않으며, 다시 사거리 안으로 들어오면 거리를 다시 알려 줍니다.\n\n바꾸려면 WowVision 메뉴에서 대상 지정, 하드 대상을 차례로 열고 거리 변경을 고르십시오.\n\n| 설정 | 기본값 | 하는 일 |\n|---------|---------|--------------|\n| 거리 변경, 사용함 | 켜기 | 거리 안내 전체를 켜거나 끕니다. |\n| 그 안의 음성 팩 경보, 사용함 | 켜기 | 녹음된 음성입니다. |\n| 그 안의 음성 팩 경보, 음성 팩 | Matthew | 누구의 녹음된 음성으로 숫자를 읽을지 정합니다. |\n\n거리 경보에는 음성 합성과 소리 출력이 없고 녹음된 음성만 있습니다. 경보와 음성 팩의 작동 방식은 [경보](../basics/alerts.md)와 [음성](../basics/speech.md)을 참고하십시오.\n\n## 설정과 경보\n\n| 창 | 설정 | 경보 |\n|--------|----------|--------|\n| 게임 메뉴 | 없음 | 없음 |\n| 설정 | 없음 | 없음 |\n| 팝업 | 없음 | 없음 |\n| 매크로 설정 | 없음 | 없음 |\n| 색 지정 | 없음 | 없음 |\n| 거리 | 대상 지정, 하드 대상의 거리 변경(위 참고) | 거리 변경 |\n\n이 창들은 각각 WowVision 메뉴의 창 항목 아래에 있는 모듈이며, 각 모듈에는 WowVision이 그 창을 읽지 않게 하는 사용함 스위치가 있습니다. 거리에는 자체 항목이 없습니다. 거리의 사용함 스위치는 거리 변경 경보에 있습니다. [메뉴와 설정](../basics/menu-and-settings.md)을 참고하십시오.\n\n## 문제 해결\n\n- Escape를 누르면 창이 닫히지 않고 게임 메뉴가 열립니다. 창은 이미 닫혔습니다. Escape를 다시 누르면 게임 메뉴에서 나갑니다.\n- 팝업이 없는 것 같습니다. Ctrl+Tab을 눌러 팝업이 나올 때까지 창을 차례로 넘기십시오. 팝업과 다른 창이 함께 열려 있을 수 있습니다.\n- 색 이름으로 색을 정할 수 없습니다. 색 지정 창은 숫자나 16진수 코드만 받습니다.\n",
+ "terms": [
+  {
+   "en": "Drag to pick up macro",
+   "ko": "매크로를 끌어서 집기"
+  },
+  {
+   "en": "Item Quality Colors",
+   "ko": "아이템 등급 색상"
+  },
+  {
+   "en": "Raid Frame Preview",
+   "ko": "공격대창 미리보기"
+  },
+  {
+   "en": "Nameplate Preview",
+   "ko": "이름표 미리보기"
+  },
+  {
+   "en": "Cooldown Manager",
+   "ko": "재사용 대기시간 관리자"
+  },
+  {
+   "en": "Original Color",
+   "ko": "원래 색상"
+  },
+  {
+   "en": "not available",
+   "ko": "사용 불가"
+  },
+  {
+   "en": "Range Changed",
+   "ko": "거리 변경"
+  },
+  {
+   "en": "Current Color",
+   "ko": "현재 색상"
+  },
+  {
+   "en": "dark grayish",
+   "ko": "어두운 회색빛"
+  },
+  {
+   "en": "Voice Alert",
+   "ko": "음성 팩 경보"
+  },
+  {
+   "en": "Hard Target",
+   "ko": "하드 대상"
+  },
+  {
+   "en": "Categories",
+   "ko": "범주"
+  },
+  {
+   "en": "Voice Pack",
+   "ko": "음성 팩"
+  },
+  {
+   "en": "Macro Text",
+   "ko": "매크로 내용"
+  },
+  {
+   "en": "no target",
+   "ko": "대상 없음"
+  },
+  {
+   "en": "Targeting",
+   "ko": "대상 지정"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Separator",
+   "ko": "구분선"
+  },
+  {
+   "en": "Unchecked",
+   "ko": "체크되지 않음"
+  },
+  {
+   "en": "Available",
+   "ko": "사용 가능"
+  },
+  {
+   "en": "Collapsed",
+   "ko": "접힘"
+  },
+  {
+   "en": "Hex Color",
+   "ko": "16진수 색상"
+  },
+  {
+   "en": "Cooldown",
+   "ko": "재사용 대기"
+  },
+  {
+   "en": "no entry",
+   "ko": "진입 지점 없음"
+  },
+  {
+   "en": "Checkbox",
+   "ko": "체크 상자"
+  },
+  {
+   "en": "Dropdown",
+   "ko": "드롭다운"
+  },
+  {
+   "en": "Disabled",
+   "ko": "비활성화"
+  },
+  {
+   "en": "Expanded",
+   "ko": "펼쳐짐"
+  },
+  {
+   "en": "Controls",
+   "ko": "조작"
+  },
+  {
+   "en": "Settings",
+   "ko": "설정"
+  },
+  {
+   "en": "Quality",
+   "ko": "등급"
+  },
+  {
+   "en": "Windows",
+   "ko": "창"
+  },
+  {
+   "en": "Checked",
+   "ko": "체크됨"
+  },
+  {
+   "en": "Enabled",
+   "ko": "사용함"
+  },
+  {
+   "en": "Options",
+   "ko": "설정"
+  },
+  {
+   "en": "Current",
+   "ko": "현재"
+  },
+  {
+   "en": "Default",
+   "ko": "기본"
+  },
+  {
+   "en": "Opacity",
+   "ko": "투명도"
+  },
+  {
+   "en": "Target",
+   "ko": "대상"
+  },
+  {
+   "en": "Speech",
+   "ko": "음성"
+  },
+  {
+   "en": "Button",
+   "ko": "버튼"
+  },
+  {
+   "en": "Search",
+   "ko": "검색"
+  },
+  {
+   "en": "Macros",
+   "ko": "매크로 설정"
+  },
+  {
+   "en": "Popups",
+   "ko": "팝업"
+  },
+  {
+   "en": "Social",
+   "ko": "소셜"
+  }
+ ]
+}

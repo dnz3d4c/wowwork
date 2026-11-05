@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "reference/commands.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "유닛을 대상으로 지정하십시오.\"를 출력합니다(입력 형식은 `/focus1 <name>`).",
+   "suggestion": "유닛을 대상으로 지정하십시오.\"를 출력합니다.",
+   "problem": "원문에 없는 괄호 설명 \"(입력 형식은 `/focus1 <name>`)\"이 덧붙었다. 바로 앞에 인용한 실제 메시지는 \"/focus1 <이름>\"이라고 말하므로, 같은 문장 안에서 자리 표시자가 <이름>과 <name> 두 가지로 들려 오히려 헷갈린다. 입력 형식은 바로 아래 목록(/focus1 party1)이 이미 설명한다.",
+   "evidence": "원문: Without a target it keeps the old focus and prints \"No target. Use `/focus1 <name>` or target a unit.\" (괄호 설명 없음). 실제 메시지: vision-locale/koKR/targeting.lua:52 \"대상 없음. /focus%d <이름>을 사용하거나 유닛을 대상으로 지정하십시오.\""
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "발견한 항목과 걷는 중 기억을 모두 지우고 \"발견 항목 지움\"이라고 말합니다",
+   "suggestion": "발견한 항목과 걷기 기억을 모두 지우고 \"발견 항목 지움\"이라고 말합니다",
+   "problem": "같은 명령(/wv mscan clear)의 walking memory를 미니맵 설명서는 \"걷기 기억\"으로, 이 파일은 \"걷는 중 기억\"으로 옮겼다. 화면 문구는 아니지만 두 설명서가 같은 명령표를 다르게 부른다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:159 \"`/wv mscan clear` | 발견된 모든 항목과 걷기 기억을 지웁니다.\" 원문 commands.md: \"Forgets every seen entry and the walking memory\""
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "| /wv mscan walk | 걷는 중 점검이 기억하는 내용을 보여 줍니다 |",
+   "suggestion": "| /wv mscan walk | 걷기 확인이 기억하는 내용을 보여 줍니다 |",
+   "problem": "walking check를 이 파일은 \"걷는 중 점검\"(mscan log 행과 walk 행 두 곳), 미니맵 설명서는 \"걷기 확인\"으로 옮겼다. 고칠 때 바로 위 mscan log 행의 \"걷는 중 점검\"도 함께 맞춰야 한다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:161 \"`/wv mscan walk` | 걷기 확인이 지금 기억하는 것을 보여 줍니다.\" 원문: \"Shows what the walking check remembers\""
+  }
+ ]
+}
