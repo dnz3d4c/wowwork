@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::folders.alsoFound",
+   "category": "context",
+   "severity": "minor",
+   "problem": "이 문구는 함께 찾은 클라이언트마다 반복해서 이어 붙는데, 매번 '같은 World of Warcraft 폴더에 있는'이라는 긴 수식어가 앞에 붙는다. 한 번에 듣는 안내가 불필요하게 길어지고, 정작 새로운 정보인 클라이언트 이름({0})은 문장 뒤쪽에 묻힌다. 영어 원문은 짧은 머리말 'Also found there:' 뒤에 이름이 바로 온다.",
+   "evidence": "UpdatePromptForm.cs:360-363: said = Loc.Format(\"folders.picked\", ...); foreach (var t in others) said += \" \" + Loc.Format(\"folders.alsoFound\", t.DisplayName, t.StatusLine()); 그 뒤 ScreenReaderAnnouncer.Announce로 한 번에 읽는다. 클라이언트 2개를 함께 찾으면 이렇게 들린다: 'Classic Era 폴더 지정: D:\\Games\\World of Warcraft\\_classic_era_\\Interface\\AddOns. 새로 설치 — 여기에 WowVision 1.2 설치 예정. 같은 World of Warcraft 폴더에 있는 Anniversary도 찾음. 최신 상태 — WowVision 1.2 설치됨. 같은 World of Warcraft 폴더에 있는 WoW Forever도 찾음. ...'. {0}은 WowLocator.ProductLabel(영어 이름)이고 바로 뒤 '도'는 받침과 무관해 조사 문제는 없다. 바로 앞에서 경로를 읽었으므로 '도'만으로 '거기서 함께'라는 뜻이 이어진다. 다만 '어느 폴더에서'라는 정보를 줄이는 쪽이라 취향 차이일 수 있어 minor로 둔다. baseDir는 사용자가 고른 AddOns 폴더의 세 단계 위(UpdatePromptForm.cs:344)라서 실제 폴더 이름이 World of Warcraft가 아닐 수도 있다는 점도 이 수식어가 꼭 맞지는 않는 이유다.",
+   "suggestion": "{0}도 찾음. {1}"
+  }
+ ]
+}

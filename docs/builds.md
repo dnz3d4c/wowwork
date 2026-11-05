@@ -3,7 +3,7 @@
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
 | WowVision-V1.0.0-ko1.zip | 2026-11-05 | wow-vision/WowVision 397ffc3 (V1.0.0 + 문서 커밋 2개) | dnz3d4c/WowVision ko dcab996, dnz3d4c/vision-locale main f36a084 | ed157b9455d5cc69229954e89bc625e66184c4427c31acb5de9069875fa0a67f |
-| WowVisionInstaller.exe 1.6 (한국어 추가) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 6ee4711 | 463bbd1e99b45f34c6460c750f45ec97b34abf74749b3d177f0e873efd79fbf9 |
+| WowVisionInstaller.exe 1.6 (한국어 추가) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 1806745 | fa6340df9cc9280bb292939a31365f77336d49e7d32d5139506b437579700465 |
 
 ## 만든 방법 (원본 절차와 같게)
 

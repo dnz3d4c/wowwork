@@ -1,0 +1,14 @@
+[
+ {
+  "id": "Loc.cs::folders.alsoFound",
+  "action": "accept",
+  "final_ko": "함께 지정된 버전: {0}. {1}",
+  "reason": "세 지적을 모두 반영한다. (1) 현재 번역은 '같은 World of Warcraft 폴더에 있는'이라는 긴 수식어가 버전마다 반복되고 버전 이름이 뒤에 묻힌다. 게다가 baseDir는 고른 AddOns 폴더의 세 단계 위(UpdatePromptForm.cs:344)라 실제 이름이 World of Warcraft가 아닐 수 있어 수식어가 틀릴 수도 있다. (2) 'there(그곳에서)'를 살린 '그곳에서 함께 찾음', '추가 발견'은 한국어로 어색하다. 코드상 실제로 일어나는 일은 발견이 아니라 그 버전의 폴더를 함께 지정하는 것이다(UpdatePromptForm.cs:352 t.AddOnsPath = candidate). 바로 앞 folders.picked가 경로를 읽고 '지정'으로 끝나므로 '함께 지정된'만으로 같은 곳에서 함께 처리됐다는 뜻이 이어진다. (3) 원문의 쌍점을 없앤 것은 지침 53행(원문 기호를 없애지 않는다) 위반이므로 쌍점을 되살린다. '폴더가 지정되지 않은 버전: {0}.'(folders.missing.text)과 같은 '…버전: {0}' 구조라 화면 문구끼리 일관되고, 버전 이름이 쌍점 바로 뒤에 와서 먼저 들린다. {0} 뒤에 조사가 없어 받침 문제도 없다."
+ },
+ {
+  "id": "Loc.cs::folders.picked",
+  "action": "accept",
+  "final_ko": "{0} 폴더를 {1} 위치로 지정. {2}",
+  "reason": "원문 '{0} set to {1}. {2}'에 없는 쌍점을 더한 것은 지침 53행 위반이라 두 지적이 맞다. 다만 제안된 '{0} 폴더 위치 지정 {1}', '{0} 폴더 지정 위치 {1}'은 경로가 문장 끝에 조사 없이 매달려 어순이 어색하다. 'set to {1}'를 '{1} 위치로 지정'으로 옮기면 조사 '로'가 자리표시자가 아니라 '위치' 뒤에 붙어 받침 규칙(installer.md 6행)을 지키고, 기호를 더하지 않고도 자연스러운 문장이 된다. 상태 문구라 명사형 '지정'으로 끝낸다(지침 46행). 낭독 예: 'Classic Era 폴더를 D:\\Games\\World of Warcraft\\_classic_era_\\Interface\\AddOns 위치로 지정. 새로 설치 — … 함께 지정된 버전: Anniversary. 최신 상태 — …'. FolderConfirmForm.cs:160에서 단독으로 쓰일 때도 문장이 완결된다."
+ }
+]

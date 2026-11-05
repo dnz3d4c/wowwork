@@ -91,8 +91,8 @@ folders.notFound	(찾지 못함 — 찾아보기 사용)
 folders.pathAcc	{0}, AddOns 폴더: {1}
 folders.browseAcc	{0} 폴더 찾아보기
 folders.browseDesc	{0}의 World of Warcraft 폴더, 게임 버전 폴더, 또는 그 안의 Interface\AddOns 폴더를 선택하십시오.
-folders.picked	{0} 폴더 지정: {1}. {2}
-folders.alsoFound	그곳에서 함께 찾음: {0}. {1}
+folders.picked	{0} 폴더를 {1} 위치로 지정. {2}
+folders.alsoFound	같은 World of Warcraft 폴더에서 찾은 버전: {0}. {1}
 folders.missing.title	폴더 없음
 folders.missing.text	"폴더가 지정되지 않은 버전: {0}.
 

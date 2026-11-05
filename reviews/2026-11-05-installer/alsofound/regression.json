@@ -1,0 +1,35 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::folders.picked",
+   "file": "Loc.cs",
+   "key": "folders.picked",
+   "en": "{0} set to {1}. {2}",
+   "ko": "{0} 폴더를 {1} 위치로 지정. {2}",
+   "de": "{0} auf {1} gesetzt. {2}",
+   "fr": "{0} défini sur {1}. {2}",
+   "code": [
+    "FolderConfirmForm.cs:160: Loc.Format(\"folders.picked\", target.DisplayName, resolved, target.StatusLine()));",
+    "UpdatePromptForm.cs:360: string said = Loc.Format(\"folders.picked\", target.DisplayName, resolved, target.StatusLine());"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.alsoFound",
+   "file": "Loc.cs",
+   "key": "folders.alsoFound",
+   "en": "Also found there: {0}. {1}",
+   "ko": "함께 지정된 버전: {0}. {1}",
+   "de": "Dort ebenfalls gefunden: {0}. {1}",
+   "fr": "Également trouvé à cet endroit : {0}. {1}",
+   "code": [
+    "UpdatePromptForm.cs:362: said += \" \" + Loc.Format(\"folders.alsoFound\", t.DisplayName, t.StatusLine());"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}
