@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::opt.windowsVoices.desc",
+   "category": "accuracy",
+   "severity": "major",
+   "problem": "백업 대상이 바뀌었다. 원문의 \"backed up first\"는 복사해 넣을 게임의 음성 목록(SAPI 목록)을 먼저 백업한다는 뜻인데, 번역은 \"이 음성들을 먼저 백업한 뒤\"로 옮겨 Windows 음성 자체를 백업하는 것처럼 들린다.",
+   "evidence": "en: \"Copies them into the game's voice list, backed up first.\" / ko: \"이 음성들을 먼저 백업한 뒤 게임의 음성 목록에 복사합니다.\" 코드 근거: WindowsVoicesInstaller.cs:23 \"2. back up the SAPI list (reg export to %ProgramData%\\WowVision)\", 같은 파일 :133 \"voice list backup failed\", 한국어 voices.backupFailed(Loc.cs:1014)도 \"음성 목록을 백업하지 못해서\"로 되어 있다.",
+   "suggestion": "Windows는 새로운 음성(예: Katja, Stefan)을 게임이 보지 못하는 목록에 둡니다. 게임의 음성 목록을 먼저 백업한 뒤 이 음성들을 그 목록에 복사합니다. 게임의 음성 번호가 바뀔 수 있습니다."
+  },
+  {
+   "id": "Loc.cs::folders.duplicate.text",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "원문의 가정(would be installed)이 단정으로 바뀌었다. 이 대화 상자는 설치를 막고 돌아가므로 실제로 두 번 설치되지 않는데, \"두 번 설치됩니다\"는 이미 그렇게 진행되는 것처럼 들린다.",
+   "evidence": "en: \"so WowVision would be installed there twice\" / ko: \"WowVision이 그곳에 두 번 설치됩니다\". FolderConfirmForm.cs:186-191에서 MessageBox를 띄운 뒤 return 해서 다음 단계로 넘어가지 않는다. 문맥상 오해 여지가 크지 않아 minor로 둔다.",
+   "suggestion": "{0}, {1} 두 버전이 같은 폴더를 가리켜서, 이대로라면 WowVision이 그곳에 두 번 설치됩니다.\n\n둘 중 하나를 고치거나, 뒤로 가서 하나의 체크를 해제하십시오."
+  }
+ ]
+}

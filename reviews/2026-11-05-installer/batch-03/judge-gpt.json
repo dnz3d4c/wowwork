@@ -1,0 +1,1 @@
+{"verdicts":[{"ref":"Loc.cs::ai.locked","uphold":false,"final_ko":"{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.","reason":"updater의 확정 번역은 규칙에 없고, 제목의 설명형 표현인 ‘업데이트 프로그램’과 실행 대상을 가리키는 ‘업데이터’가 반드시 같아야 한다는 근거도 없다. 기존 번역은 원문의 의미와 자리표시자를 정확히 유지하므로 결함으로 볼 수 없다.","evidence_sources":["input","wowvision-ko/WowVision/docs/src/user/en/getting-started/installer.md:69"]}]}

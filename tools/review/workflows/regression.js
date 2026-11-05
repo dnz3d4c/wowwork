@@ -5,7 +5,8 @@ export const meta = {
 }
 const W = 'C:/project/games/wowwork'
 const P = `${W}/tools/review/prompts`
-const FILES = ['common.md', 'lens-accuracy.md', 'lens-terminology.md', 'lens-context.md', 'lens-listening.md', 'regression.md']
+// 대상별 추가 규칙(예: installer.md)은 공통 규칙 바로 다음에 읽는다.
+const FILES = ['common.md', ...((args && args.extraPrompts) || []), 'lens-accuracy.md', 'lens-terminology.md', 'lens-context.md', 'lens-listening.md', 'regression.md']
 const FINDINGS = {
   type: 'object', required: ['findings'],
   properties: { findings: { type: 'array', items: { type: 'object',

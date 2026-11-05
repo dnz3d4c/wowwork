@@ -1,0 +1,92 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::folders.picked",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"{0} 설정: {1}\"은 들으면 \"Classic Era 설정\"(그 버전의 설정 항목)이라는 명사구로 들려, 폴더가 그 경로로 지정되었다는 알림인지 바로 알기 어렵다.",
+   "evidence": "en \"{0} set to {1}. {2}\". 발화 위치 FolderConfirmForm.cs:160, UpdatePromptForm.cs:360에서 {0}=버전 이름, {1}=경로라서 \"Classic Era 설정: C:\\...\"로 읽힌다. 다른 문구로 대체할 근거는 화면 문맥(폴더 선택 직후)뿐이라 심각도를 낮게 둔다.",
+   "suggestion": "{0} 폴더 지정: {1}. {2}"
+  },
+  {
+   "id": "Loc.cs::versions.needOne.text",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"뒤로를 사용하십시오\"는 들으면 \"뒤로\"가 버튼 이름이라는 단서가 없어 말이 끊긴 것처럼 들린다.",
+   "evidence": "ko \"설치 프로그램을 나가려면 뒤로를 사용하십시오.\" 같은 묶음의 folders.body는 \"찾아보기 버튼을 사용하십시오\"처럼 버튼임을 밝힌다. de/fr는 „Zurück“/« Retour »로 버튼 이름을 따옴표로 구분했다.",
+   "suggestion": "계속하려면 게임 버전을 하나 이상 체크하십시오. 설치 프로그램을 나가려면 뒤로 버튼을 사용하십시오."
+  },
+  {
+   "id": "Loc.cs::progress.cannotClose",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "원문의 줄표(—)를 없애고 마침표로 문장을 나눴다.",
+   "evidence": "en \"Use the Cancel button to stop it safely — closing the window now could leave...\" / ko \"...취소 버튼을 사용하십시오. 지금 창을 닫으면...\". 공통 규칙: 원문 기호를 없애지 않는다.",
+   "suggestion": "아직 설치 중입니다. 안전하게 멈추려면 취소 버튼을 사용하십시오 — 지금 창을 닫으면 애드온이 반쯤 기록된 채로 남을 수 있습니다."
+  },
+  {
+   "id": "Loc.cs::components.body",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "원문의 줄표(—)를 없애고 \"~이므로,\"로 이었다.",
+   "evidence": "en \"The defaults are the recommended setup — if in doubt, just continue.\" / ko \"기본값이 권장 구성이므로, 잘 모르겠으면 그대로 계속하십시오.\" 공통 규칙: 원문 기호를 없애지 않는다.",
+   "suggestion": "선택한 모든 게임 버전에 적용됩니다. 기본값이 권장 구성입니다 — 잘 모르겠으면 그대로 계속하십시오."
+  },
+  {
+   "id": "Loc.cs::components.heading",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 마법사의 다른 제목·안내는 합니다체(\"설치되어 있습니까?\", \"~하십시오\")인데 이 제목만 해요체(\"할까요?\")라 문체가 섞인다.",
+   "evidence": "folders.heading \"각 버전은 어디에 설치되어 있습니까?\" / components.heading \"무엇을 설치할까요?\". installer.md: 설명과 안내 문장은 합니다체.",
+   "suggestion": "무엇을 설치하시겠습니까?"
+  },
+  {
+   "id": "Loc.cs::progress.cancelConfirm.title",
+   "category": "style",
+   "severity": "minor",
+   "problem": "확인 대화 상자 제목이 해요체(\"할까요?\")라, 본문의 합니다체 안내와 문체가 섞인다.",
+   "evidence": "ko \"설치를 취소할까요?\" / 같은 대화 상자 본문은 \"~중단합니다\", \"~건너뜁니다\" 합니다체. installer.md: 안내 문장은 합니다체.",
+   "suggestion": "설치를 취소하시겠습니까?"
+  },
+  {
+   "id": "Loc.cs::progress.cancelConfirm.text",
+   "category": "style",
+   "severity": "minor",
+   "problem": "첫 질문만 해요체(\"멈출까요?\")이고 나머지 문장은 합니다체라 한 대화 상자 안에서 문체가 바뀐다.",
+   "evidence": "ko \"설치를 멈출까요?\\n\\n진행 중인 내려받기는 바로 중단합니다. ...\". installer.md: 설명과 안내 문장은 합니다체.",
+   "suggestion": "설치를 멈추시겠습니까?\n\n진행 중인 내려받기는 바로 중단합니다. 디스크에 기록 중인 단계는 끝까지 마치게 해서, 반쯤 설치된 채로 남는 것이 없습니다. 아직 시작하지 않은 것은 모두 건너뜁니다.\n\n이미 설치된 게임 버전은 그대로 남습니다. 설치 프로그램은 언제든 다시 실행할 수 있습니다."
+  },
+  {
+   "id": "Loc.cs::summary.settings",
+   "category": "style",
+   "severity": "minor",
+   "problem": "설치 요약의 결과 줄인데 합니다체로 늘렸다. 같은 요약 블록의 다른 줄(\"{0} 설치함({1}).\", \"테스트 빌드 {0} 그대로 둠.\", \"성공 — {0}:\")은 간결형이라 한 번에 읽힐 때 문체가 섞인다.",
+   "evidence": "InstallRunner.cs:485-535 ComposeSummary가 이 줄들을 한 메시지로 모아 스크린리더가 한 번에 읽는다(주석 \"a screen reader reads it top to bottom in one pass\"). decisions.tsv 9행: 상태 알림은 원문이 완결 문장이어도 합니다체로 늘리지 않고 간결하게. 요약 줄을 상태 알림으로 볼지는 해석 여지가 있어 minor로 둔다.",
+   "suggestion": "필요한 게임 설정 조정함."
+  },
+  {
+   "id": "Loc.cs::summary.client",
+   "category": "style",
+   "severity": "minor",
+   "problem": "설치 요약의 결과 줄인데 합니다체로 늘려, 같은 블록의 간결형 줄들과 문체가 섞인다.",
+   "evidence": "InstallRunner.cs:535에서 summary.updated(\"{0} 설치함({1}).\")와 같은 블록에 들어간다. decisions.tsv 9행 상태 알림 간결 결정. 요약 줄을 상태 알림으로 볼지는 해석 여지가 있어 minor.",
+   "suggestion": "WowVision을 게임 클라이언트에 맞춤(인터페이스 {0})."
+  },
+  {
+   "id": "Loc.cs::summary.addonsCurrent",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 조건 분기의 짝인 summary.testBuildKept(\"테스트 빌드 {0} 그대로 둠.\")은 간결형인데 이 줄만 합니다체 과거형이다.",
+   "evidence": "InstallRunner.cs:529-531에서 testBuildKept와 addonsCurrent 중 하나가 같은 자리에 들어간다. decisions.tsv 9행 상태 알림 간결 결정. 해석 여지가 있어 minor.",
+   "suggestion": "WowVision 이미 최신."
+  },
+  {
+   "id": "Loc.cs::summary.headline.upToDate",
+   "category": "style",
+   "severity": "minor",
+   "problem": "짝이 되는 머리줄 summary.headline.done은 \"WowVision 설치 완료.\" 간결형인데 이 머리줄만 합니다체다.",
+   "evidence": "InstallRunner.cs:489-490에서 두 키가 같은 머리줄 자리에 번갈아 들어간다. decisions.tsv 9행: 상태 알림은 합니다체로 늘리지 않고 간결하게. 해석 여지가 있어 minor.",
+   "suggestion": "WowVision 이미 최신 상태."
+  }
+ ]
+}

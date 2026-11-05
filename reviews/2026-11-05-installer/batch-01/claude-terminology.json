@@ -1,0 +1,20 @@
+{
+  "findings": [
+    {
+      "id": "Loc.cs::selfupdate.updateAcc",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "같은 영어 동사 \"Update the installer\"를 짝이 되는 버튼 글(selfupdate.updateBtn)에서는 \"업데이트\"로, 접근 가능한 이름에서는 \"받기\"로 옮겨 용어가 어긋난다. 스크린리더 사용자는 화면의 \"업데이트\" 버튼을 \"버전 받기\"로 듣게 된다.",
+      "evidence": "en: \"Update the installer to version {0} now, recommended — ...\" / ko: \"지금 설치 프로그램 버전 {0} 받기, 권장 — ...\". 짝 키 selfupdate.updateBtn ko: \"지금 설치 프로그램 업데이트(권장)(&U)\", 같은 창 selfupdate.heading·selfupdate.body·selfupdate.failed 모두 \"업데이트\". 뜻이 크게 갈리지는 않아 minor.",
+      "suggestion": "지금 설치 프로그램 업데이트(버전 {0}), 권장 — 새 버전을 내려받아 스스로 다시 시작한 뒤 계속합니다"
+    },
+    {
+      "id": "Loc.cs::app.title",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "\"Updater\"를 창 제목에서는 \"업데이트 프로그램\"으로, 같은 설치 프로그램의 다른 문자열 세 곳에서는 \"업데이터\"로 옮겨 같은 프로그램을 두 이름으로 부른다.",
+      "evidence": "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:924 opt.shortcut.label \"WowVision 업데이터 바탕 화면 바로 가기 만들기\", :925 opt.shortcut.desc \"이 업데이터를 실행\", :991 ai.locked \"업데이터를 다시 실행하십시오\". 바로 가기 파일 이름도 \"WowVision Updater.lnk\"(Shortcut.cs:24). installer.md 낱말 목록에 updater가 없으므로 어느 쪽으로 맞출지는 사용자 결정 사항이다. 다수 사용처(3곳)에 맞춘 안을 제안하며, 반대로 세 곳을 \"업데이트 프로그램\"으로 바꾸는 것도 가능하다.",
+      "suggestion": "WowVision 설치 프로그램 & 업데이터"
+    }
+  ]
+}

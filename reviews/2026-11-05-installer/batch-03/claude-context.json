@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::managed.notAvailable",
+   "category": "context",
+   "severity": "minor",
+   "problem": "목록 줄에서 이 문구는 애드온 버전 번호 바로 뒤에 붙는다. '사용할 수 없는 버전'이라고 하면 앞의 애드온 버전 번호를 쓸 수 없다는 뜻으로 들릴 수 있다. 실제로 {0}에 들어가는 값은 애드온 버전이 아니라 게임 버전(클라이언트 표시 이름) 목록이다.",
+   "evidence": "ComponentsForm.cs:145-148: text = $\"{entry.DisplayName} — {ManagedAddons.DisplayVersion(version)}\"; missing = _selected...Select(t => t.DisplayName); text += \" (\" + Loc.Format(\"managed.notAvailable\", ...) + \")\". 실제 낭독 예: \"AtlasLoot Continued — 12488 (사용할 수 없는 버전: Retail)\" (코드 주석에 나온 예). 오해가 실제로 생기는지는 청취 확인이 필요하다. 그래서 심각도를 minor로 둔다.",
+   "suggestion": "사용할 수 없는 게임 버전: {0}"
+  }
+ ]
+}

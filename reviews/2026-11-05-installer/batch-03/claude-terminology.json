@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::ai.locked",
+   "category": "terminology",
+   "severity": "minor",
+   "problem": "같은 프로그램을 가리키는 updater를 '업데이터'로 옮겼는데, 프로그램 제목(app.title)은 updater를 '업데이트 프로그램'으로 옮겼다. 한 설치 프로그램 안에서 updater 번역이 '업데이터'와 '업데이트 프로그램'으로 갈린다.",
+   "evidence": "Loc.cs Ko: [\"app.title\"] = \"WowVision 설치 & 업데이트 프로그램\" (en \"WowVision Installer & Updater\"), [\"opt.shortcut.label\"] = \"WowVision 업데이터 바탕 화면 바로 가기 만들기\", [\"ai.locked\"] = \"... 업데이터를 다시 실행하십시오.\". installer.md 낱말 목록은 installer=설치 프로그램만 정하고 updater는 정하지 않아서, 사용자가 창 제목으로 듣는 app.title 쪽('업데이트 프로그램')에 맞추는 것을 제안한다. opt.shortcut.label도 '업데이터'라서 어느 쪽에 맞출지는 판단 여지가 있어 심각도를 minor로 둔다.",
+   "suggestion": "{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이트 프로그램을 다시 실행하십시오."
+  }
+ ]
+}

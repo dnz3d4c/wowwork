@@ -1,0 +1,605 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::app.title",
+   "file": "Loc.cs",
+   "key": "app.title",
+   "en": "WowVision Installer & Updater",
+   "ko": "WowVision 설치 프로그램 & 업데이터",
+   "de": "WowVision Installer & Updater",
+   "fr": "WowVision Installer & Updater",
+   "code": [
+    "CompletionForm.cs:57: Text = Loc.Get(\"app.title\") + \" \" + WizardForm.InstallerVersion();",
+    "ComponentsForm.cs:178: Text = Loc.Get(\"app.title\") + \" \" + InstallerVersion();",
+    "ProgressForm.cs:66: Text = Loc.Get(\"app.title\") + \" \" + WizardForm.InstallerVersion();",
+    "SelfUpdatePromptForm.cs:60: Text = Loc.Get(\"app.title\") + \" \" + WizardForm.InstallerVersion();",
+    "UpdatePromptForm.cs:77: Text = Loc.Get(\"app.title\") + \" \" + WizardForm.InstallerVersion();",
+    "WizardForm.cs:63: Text = Loc.Get(\"app.title\") + \" \" + InstallerVersion();"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::cancel.title",
+   "file": "Loc.cs",
+   "key": "cancel.title",
+   "en": "Quit the installer?",
+   "ko": "설치 프로그램을 끝내시겠습니까?",
+   "de": "Installer beenden?",
+   "fr": "Quitter l'installateur ?",
+   "code": [
+    "CancelConfirm.cs:23: Loc.Get(\"cancel.title\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.heading.current",
+   "file": "Loc.cs",
+   "key": "update.heading.current",
+   "en": "WowVision is installed and up to date",
+   "ko": "WowVision 최신 상태로 설치됨",
+   "de": "WowVision ist installiert und aktuell",
+   "fr": "WowVision est installé et à jour",
+   "code": [
+    "UpdatePromptForm.cs:160: _titleLabel.Text = Loc.Get(\"update.heading.current\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.heading.notInstalled",
+   "file": "Loc.cs",
+   "key": "update.heading.notInstalled",
+   "en": "WowVision is not installed yet",
+   "ko": "WowVision 아직 설치 안 됨",
+   "de": "WowVision ist noch nicht installiert",
+   "fr": "WowVision n'est pas encore installé",
+   "code": [
+    "UpdatePromptForm.cs:156: _titleLabel.Text = Loc.Get(\"update.heading.notInstalled\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.heading.noClient",
+   "file": "Loc.cs",
+   "key": "update.heading.noClient",
+   "en": "No World of Warcraft installation found",
+   "ko": "설치된 World of Warcraft를 찾지 못함",
+   "de": "Keine World-of-Warcraft-Installation gefunden",
+   "fr": "Aucune installation de World of Warcraft trouvée",
+   "code": [
+    "UpdatePromptForm.cs:154: _titleLabel.Text = Loc.Get(\"update.heading.noClient\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.explainUpdate",
+   "file": "Loc.cs",
+   "key": "update.explainUpdate",
+   "en": "Update now: updates WowVision in {0} and keeps your current settings.",
+   "ko": "지금 업데이트: {0}의 WowVision을 업데이트하고 현재 설정을 유지합니다.",
+   "de": "Jetzt aktualisieren: aktualisiert WowVision in {0} und behält deine bisherigen Einstellungen bei.",
+   "fr": "Mettre à jour maintenant : met WowVision à jour dans {0} et conserve vos réglages actuels.",
+   "code": [
+    "UpdatePromptForm.cs:246: ? Loc.Format(\"update.explainUpdate\", names)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.explainInstall",
+   "file": "Loc.cs",
+   "key": "update.explainInstall",
+   "en": "Install now: installs WowVision into {0} with the recommended setup.",
+   "ko": "지금 설치: 권장 구성으로 {0}에 WowVision을 설치합니다.",
+   "de": "Jetzt installieren: installiert WowVision in {0} mit der empfohlenen Einrichtung.",
+   "fr": "Installer maintenant : installe WowVision dans {0} avec la configuration recommandée.",
+   "code": [
+    "UpdatePromptForm.cs:247: : Loc.Format(\"update.explainInstall\", names));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.customizeBtn",
+   "file": "Loc.cs",
+   "key": "update.customizeBtn",
+   "en": "Install WowVision &fresh, or for further game versions",
+   "ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치(&F)",
+   "de": "WowVision &neu oder für weitere Spielversionen installieren",
+   "fr": "Installer WowVision à &neuf, ou pour d'autres versions du jeu",
+   "code": [
+    "UpdatePromptForm.cs:176: _customizeButton.Text = Loc.Get(\"update.customizeBtn\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.updateAcc",
+   "file": "Loc.cs",
+   "key": "update.updateAcc",
+   "en": "Update now, using the current settings",
+   "ko": "지금 업데이트, 현재 설정 사용",
+   "de": "Jetzt aktualisieren, mit den bisherigen Einstellungen",
+   "fr": "Mettre à jour maintenant, avec les réglages actuels",
+   "code": [
+    "UpdatePromptForm.cs:182: ? Loc.Get(\"update.updateAcc\") : Loc.Get(\"update.installAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.installAcc",
+   "file": "Loc.cs",
+   "key": "update.installAcc",
+   "en": "Install now, using the recommended setup",
+   "ko": "지금 설치, 권장 구성 사용",
+   "de": "Jetzt installieren, mit der empfohlenen Einrichtung",
+   "fr": "Installer maintenant, avec la configuration recommandée",
+   "code": [
+    "UpdatePromptForm.cs:182: ? Loc.Get(\"update.updateAcc\") : Loc.Get(\"update.installAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.customizeAcc",
+   "file": "Loc.cs",
+   "key": "update.customizeAcc",
+   "en": "Install WowVision fresh, or for further game versions — choose versions and components yourself",
+   "ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치 — 버전과 구성 요소를 직접 고릅니다",
+   "de": "WowVision neu oder für weitere Spielversionen installieren – Versionen und Bestandteile selbst wählen",
+   "fr": "Installer WowVision à neuf, ou pour d'autres versions du jeu — choisir soi-même les versions et les composants",
+   "code": [
+    "UpdatePromptForm.cs:183: _customizeButton.AccessibleName = Loc.Get(\"update.customizeAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::logs.explain",
+   "file": "Loc.cs",
+   "key": "logs.explain",
+   "en": "Collect all logs: writes one zip file to your Downloads folder containing the logs of every detected game version — WowVision's saved data, BugGrabber, the game's own logs and this installer's log. Attach that file to a bug report.",
+   "ko": "모든 로그 모으기: 찾은 모든 게임 버전의 로그를 담은 zip 파일 하나를 다운로드 폴더에 만듭니다 — WowVision 저장 데이터, BugGrabber, 게임 자체 로그와 이 설치 프로그램의 로그가 들어갑니다. 이 파일을 버그 보고에 첨부하십시오.",
+   "de": "Alle Protokolle sammeln: legt eine ZIP-Datei im Downloads-Ordner an, die die Protokolle aller gefundenen Spielversionen enthält – die gespeicherten Daten von WowVision, BugGrabber, die Protokolle des Spiels und das Protokoll dieses Installers. Diese Datei an eine Fehlermeldung anhängen.",
+   "fr": "Collecter tous les journaux : crée un fichier zip dans votre dossier Téléchargements contenant les journaux de chaque version du jeu détectée — les données enregistrées de WowVision, BugGrabber, les journaux du jeu et celui de cet installateur. Joignez ce fichier à un rapport de bogue.",
+   "code": [
+    "UpdatePromptForm.cs:249: sb.AppendLine(Loc.Get(\"logs.explain\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::logs.working",
+   "file": "Loc.cs",
+   "key": "logs.working",
+   "en": "Collecting logs, please wait.",
+   "ko": "로그를 모으는 중, 잠시 기다리십시오.",
+   "de": "Protokolle werden gesammelt, bitte warten.",
+   "fr": "Collecte des journaux, veuillez patienter.",
+   "code": [
+    "UpdatePromptForm.cs:266: ScreenReaderAnnouncer.Announce(this, Loc.Get(\"logs.working\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::logs.done",
+   "file": "Loc.cs",
+   "key": "logs.done",
+   "en": "The logs were saved to:\n{0}\n\n{1} files from {2} game version(s), {3} in total.\n\nAttach this zip file to your bug report.",
+   "ko": "로그를 다음 위치에 저장했습니다:\n{0}\n\n게임 버전 {2}개에서 파일 {1}개, 총 {3}.\n\n이 zip 파일을 버그 보고에 첨부하십시오.",
+   "de": "Die Protokolle wurden gespeichert unter:\n{0}\n\n{1} Dateien aus {2} Spielversion(en), zusammen {3}.\n\nHänge diese ZIP-Datei an deine Fehlermeldung an.",
+   "fr": "Les journaux ont été enregistrés dans :\n{0}\n\n{1} fichiers de {2} version(s) du jeu, {3} au total.\n\nJoignez ce fichier zip à votre rapport de bogue.",
+   "code": [
+    "UpdatePromptForm.cs:298: string message = Loc.Format(\"logs.done\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::logs.failedTitle",
+   "file": "Loc.cs",
+   "key": "logs.failedTitle",
+   "en": "Logs could not be collected",
+   "ko": "로그 모으기 실패",
+   "de": "Protokolle konnten nicht gesammelt werden",
+   "fr": "Impossible de collecter les journaux",
+   "code": [
+    "UpdatePromptForm.cs:290: Loc.Get(\"logs.failedTitle\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.body",
+   "file": "Loc.cs",
+   "key": "selfupdate.body",
+   "en": "You are using version {0} of the WowVision installer. Version {1} is available.\n\nUpdating the installer first is strongly recommended: it is a small download, it takes a few seconds, and installing WowVision afterwards then runs with all the current fixes. The installer closes and reopens on its own — nothing else on your computer is changed.\n\nYou can also carry on with version {0}; installing and updating WowVision still works.",
+   "ko": "지금 사용 중인 WowVision 설치 프로그램은 버전 {0}입니다. 버전 {1} 업데이트를 받을 수 있습니다.\n\n설치 프로그램을 먼저 업데이트하기를 강력히 권장합니다: 내려받는 양이 작고, 몇 초면 끝나며, 그 뒤의 WowVision 설치에 최신 수정 사항이 모두 적용됩니다. 설치 프로그램은 스스로 닫혔다가 다시 열립니다 — 컴퓨터의 다른 것은 바꾸지 않습니다.\n\n버전 {0} 그대로 계속할 수도 있습니다; WowVision 설치와 업데이트는 그대로 작동합니다.",
+   "de": "Du verwendest Version {0} des WowVision-Installers. Version {1} ist verfügbar.\n\nEs wird dringend empfohlen, zuerst den Installer zu aktualisieren: Der Download ist klein, dauert wenige Sekunden, und die Installation von WowVision läuft danach mit allen aktuellen Korrekturen. Der Installer schließt sich dabei selbst und öffnet sich neu — sonst wird nichts auf dem Computer verändert.\n\nDu kannst auch mit Version {0} weiterarbeiten; WowVision installieren und aktualisieren funktioniert weiterhin.",
+   "fr": "Vous utilisez la version {0} de l'installateur WowVision. La version {1} est disponible.\n\nIl est fortement recommandé de mettre d'abord à jour l'installateur : le téléchargement est petit, il prend quelques secondes, et l'installation de WowVision bénéficiera ensuite de toutes les corrections récentes. L'installateur se ferme et se rouvre tout seul — rien d'autre n'est modifié sur votre ordinateur.\n\nVous pouvez aussi continuer avec la version {0} ; installer et mettre à jour WowVision fonctionne toujours.",
+   "code": [
+    "SelfUpdatePromptForm.cs:80: Text = Loc.Format(\"selfupdate.body\", _info.RunningVersion, _info.Version),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.updateBtn",
+   "file": "Loc.cs",
+   "key": "selfupdate.updateBtn",
+   "en": "&Update the installer now (recommended)",
+   "ko": "설치 프로그램 지금 업데이트(권장)(&U)",
+   "de": "&Installer jetzt aktualisieren (empfohlen)",
+   "fr": "&Mettre à jour l'installateur maintenant (recommandé)",
+   "code": [
+    "SelfUpdatePromptForm.cs:99: Text = Loc.Get(\"selfupdate.updateBtn\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.updateAcc",
+   "file": "Loc.cs",
+   "key": "selfupdate.updateAcc",
+   "en": "Update the installer to version {0} now, recommended — it downloads the new version, restarts itself and then carries on",
+   "ko": "버전 {0} 설치 프로그램으로 지금 업데이트, 권장 — 새 버전을 내려받아 스스로 다시 시작한 뒤 계속합니다",
+   "de": "Den Installer jetzt auf Version {0} aktualisieren, empfohlen — er lädt die neue Version, startet sich neu und macht dann weiter",
+   "fr": "Mettre l'installateur à jour vers la version {0} maintenant, recommandé — il télécharge la nouvelle version, redémarre puis poursuit",
+   "code": [
+    "SelfUpdatePromptForm.cs:100: AccessibleName = Loc.Format(\"selfupdate.updateAcc\", _info.Version),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.working",
+   "file": "Loc.cs",
+   "key": "selfupdate.working",
+   "en": "Downloading the new installer version, please wait.",
+   "ko": "새 설치 프로그램 버전을 내려받는 중, 잠시 기다리십시오.",
+   "de": "Die neue Installer-Version wird heruntergeladen, bitte warten.",
+   "fr": "Téléchargement de la nouvelle version de l'installateur, veuillez patienter.",
+   "code": [
+    "SelfUpdatePromptForm.cs:155: SetStatus(Loc.Get(\"selfupdate.working\"), announce: true);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.progress",
+   "file": "Loc.cs",
+   "key": "selfupdate.progress",
+   "en": "Downloading the new installer: {0} percent.",
+   "ko": "새 설치 프로그램을 내려받는 중: {0}퍼센트.",
+   "de": "Der neue Installer wird heruntergeladen: {0} Prozent.",
+   "fr": "Téléchargement du nouvel installateur : {0} pour cent.",
+   "code": [
+    "SelfUpdatePromptForm.cs:172: SetStatus(Loc.Format(\"selfupdate.progress\", pct), speak);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.restarting",
+   "file": "Loc.cs",
+   "key": "selfupdate.restarting",
+   "en": "The installer is restarting as version {0}. The window reopens in a moment.",
+   "ko": "버전 {0} 설치 프로그램으로 다시 시작 중. 잠시 후 창이 다시 열림.",
+   "de": "Der Installer startet als Version {0} neu. Das Fenster öffnet sich gleich wieder.",
+   "fr": "L'installateur redémarre en version {0}. La fenêtre se rouvre dans un instant.",
+   "code": [
+    "SelfUpdatePromptForm.cs:179: SetStatus(Loc.Format(\"selfupdate.restarting\", _info.Version), announce: true);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.failedTitle",
+   "file": "Loc.cs",
+   "key": "selfupdate.failedTitle",
+   "en": "The installer could not update itself",
+   "ko": "설치 프로그램 자체 업데이트 실패",
+   "de": "Der Installer konnte sich nicht selbst aktualisieren",
+   "fr": "L'installateur n'a pas pu se mettre à jour",
+   "code": [
+    "SelfUpdatePromptForm.cs:214: Loc.Get(\"selfupdate.failedTitle\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.badHash",
+   "file": "Loc.cs",
+   "key": "selfupdate.badHash",
+   "en": "The downloaded file does not match the published checksum and was discarded.",
+   "ko": "내려받은 파일이 공개된 체크섬과 맞지 않아 폐기했습니다.",
+   "de": "Die heruntergeladene Datei stimmt nicht mit der veröffentlichten Prüfsumme überein und wurde verworfen.",
+   "fr": "Le fichier téléchargé ne correspond pas à la somme de contrôle publiée ; il a été écarté.",
+   "code": [
+    "SelfUpdater.cs:313: throw new InvalidDataException(Loc.Get(\"selfupdate.badHash\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.done",
+   "file": "Loc.cs",
+   "key": "selfupdate.done",
+   "en": "The installer updated itself to version {0}.",
+   "ko": "버전 {0} 설치 프로그램으로 업데이트 완료.",
+   "de": "Der Installer hat sich auf Version {0} aktualisiert.",
+   "fr": "L'installateur s'est mis à jour vers la version {0}.",
+   "code": [
+    "SelfUpdater.cs:102: PostUpdateNotice = Loc.Format(\"selfupdate.done\", RunningVersion);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::done.heading.failed",
+   "file": "Loc.cs",
+   "key": "done.heading.failed",
+   "en": "Finished with problems",
+   "ko": "문제가 있는 채로 완료",
+   "de": "Mit Problemen beendet",
+   "fr": "Terminé avec des problèmes",
+   "code": [
+    "CompletionForm.cs:71: ?? Loc.Get(_failed ? \"done.heading.failed\" : \"done.heading.ok\"),",
+    "ProgressForm.cs:272: Finish(failed ? Loc.Get(\"done.heading.failed\") : Loc.Get(\"done.heading.ok\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::done.cancelledBody",
+   "file": "Loc.cs",
+   "key": "done.cancelledBody",
+   "en": "The installation was cancelled. Anything already installed stays installed; the rest was skipped. You can run the installer again at any time.",
+   "ko": "설치를 취소했습니다. 이미 설치된 것은 그대로 남습니다; 나머지는 건너뛰었습니다. 설치 프로그램은 언제든 다시 실행할 수 있습니다.",
+   "de": "Die Installation wurde abgebrochen. Bereits Installiertes bleibt installiert; der Rest wurde übersprungen. Du kannst den Installer jederzeit erneut starten.",
+   "fr": "L'installation a été annulée. Ce qui était déjà installé le reste ; le reste a été ignoré. Vous pouvez relancer l'installateur à tout moment.",
+   "code": [
+    "ProgressForm.cs:267: ShowCompletion(summary ?? Loc.Get(\"done.cancelledBody\"), false,"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::done.logAcc",
+   "file": "Loc.cs",
+   "key": "done.logAcc",
+   "en": "View the event log — every step of this run, line by line",
+   "ko": "진행 기록 보기 — 이번 실행의 모든 단계, 한 줄씩",
+   "de": "Ereignisprotokoll anschauen – jeder Schritt dieses Durchgangs, Zeile für Zeile",
+   "fr": "Afficher le journal des événements — chaque étape de cette exécution, ligne par ligne",
+   "code": [
+    "CompletionForm.cs:104: AccessibleName = Loc.Get(\"done.logAcc\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::done.logHint",
+   "file": "Loc.cs",
+   "key": "done.logHint",
+   "en": "Event log. Use the arrow keys to go through the steps; the Close button ends the installer.",
+   "ko": "진행 기록. 화살표 키로 단계를 하나씩 확인하십시오; 닫기 버튼을 누르면 설치 프로그램이 끝납니다.",
+   "de": "Ereignisprotokoll. Mit den Pfeiltasten durch die Schritte gehen; die Schaltfläche „Schließen“ beendet den Installer.",
+   "fr": "Journal des événements. Utilisez les flèches pour parcourir les étapes ; le bouton Fermer quitte l'installateur.",
+   "code": [
+    "ProgressForm.cs:299: ScreenReaderAnnouncer.Announce(this, Loc.Get(\"done.logHint\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::target.testBuild",
+   "file": "Loc.cs",
+   "key": "target.testBuild",
+   "en": "Test build — WowVision {0} is installed and is left as it is. To replace it with the release {1}, choose \"Install WowVision fresh\" and tick \"Reinstall everything\".",
+   "ko": "테스트 빌드 — 설치된 WowVision {0} 그대로 유지. 이것 대신 릴리스 {1} 버전을 설치하려면 \"WowVision 새로 설치\"를 고르고 \"모두 다시 설치\"를 체크하십시오.",
+   "de": "Testversion – WowVision {0} ist installiert und bleibt, wie sie ist. Um sie durch die Version {1} zu ersetzen, wähle „WowVision neu installieren“ und kreuze „Alles neu installieren“ an.",
+   "fr": "Version de test — WowVision {0} est installé et reste tel quel. Pour le remplacer par la version {1}, choisissez « Installer WowVision à neuf » et cochez « Tout réinstaller ».",
+   "code": [
+    "InstallTarget.cs:164: return Loc.Format(\"target.testBuild\", installed, Config.LatestVersion);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::versions.body",
+   "file": "Loc.cs",
+   "key": "versions.body",
+   "en": "Tick every World of Warcraft version you play — all of them can be done in one run. The next step confirms where each one lives.",
+   "ko": "플레이하는 World of Warcraft 버전을 모두 체크하십시오 — 한 번에 모두 설치할 수 있습니다. 다음 단계에서 각 버전의 위치를 확인합니다.",
+   "de": "Kreuze jede World-of-Warcraft-Version an, die du spielst – alle lassen sich in einem Durchgang erledigen. Im nächsten Schritt wird bestätigt, wo sie jeweils liegen.",
+   "fr": "Cochez chaque version de World of Warcraft à laquelle vous jouez — toutes peuvent être faites en une seule fois. L'étape suivante confirme où chacune se trouve.",
+   "code": [
+    "VersionSelectForm.cs:75: BodyLabel.Text = Loc.Get(\"versions.body\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::versions.needOne.text",
+   "file": "Loc.cs",
+   "key": "versions.needOne.text",
+   "en": "Tick at least one game version before continuing, or use Back to leave the installer.",
+   "ko": "계속하려면 게임 버전을 하나 이상 체크하거나, 설치 프로그램을 나가려면 뒤로 버튼을 사용하십시오.",
+   "de": "Kreuze mindestens eine Spielversion an, um fortzufahren, oder verlasse den Installer über „Zurück“.",
+   "fr": "Cochez au moins une version du jeu pour continuer, ou utilisez « Retour » pour quitter l'installateur.",
+   "code": [
+    "VersionSelectForm.cs:110: MessageBox.Show(this, Loc.Get(\"versions.needOne.text\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.body",
+   "file": "Loc.cs",
+   "key": "folders.body",
+   "en": "These are the folders WowVision will be written to. If one is wrong or missing, use the Browse button next to it.",
+   "ko": "WowVision을 기록할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.",
+   "de": "In diese Ordner wird WowVision geschrieben. Ist einer falsch oder fehlt er, nutze die Schaltfläche „Durchsuchen“ daneben.",
+   "fr": "Voici les dossiers dans lesquels WowVision sera écrit. Si l'un est erroné ou manquant, utilisez le bouton « Parcourir » à côté.",
+   "code": [
+    "FolderConfirmForm.cs:84: BodyLabel.Text = Loc.Get(\"folders.body\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.picked",
+   "file": "Loc.cs",
+   "key": "folders.picked",
+   "en": "{0} set to {1}. {2}",
+   "ko": "{0} 폴더 지정: {1}. {2}",
+   "de": "{0} auf {1} gesetzt. {2}",
+   "fr": "{0} défini sur {1}. {2}",
+   "code": [
+    "FolderConfirmForm.cs:160: Loc.Format(\"folders.picked\", target.DisplayName, resolved, target.StatusLine()));",
+    "UpdatePromptForm.cs:360: string said = Loc.Format(\"folders.picked\", target.DisplayName, resolved, target.StatusLine());"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.duplicate.text",
+   "file": "Loc.cs",
+   "key": "folders.duplicate.text",
+   "en": "{0} and {1} point at the same folder, so WowVision would be installed there twice.\n\nCorrect one of them, or go Back and untick one.",
+   "ko": "{0}, {1} 두 버전이 같은 폴더를 가리켜서, 이대로라면 WowVision이 그곳에 두 번 설치됩니다.\n\n둘 중 하나를 고치거나, 뒤로 가서 하나를 체크 해제하십시오.",
+   "de": "{0} und {1} zeigen auf denselben Ordner – WowVision würde dort zweimal installiert.\n\nKorrigiere einen davon, oder gehe zurück und entferne ein Häkchen.",
+   "fr": "{0} et {1} pointent vers le même dossier, WowVision y serait donc installé deux fois.\n\nCorrigez l'un des deux, ou revenez en arrière et décochez-en un.",
+   "code": [
+    "FolderConfirmForm.cs:187: Loc.Format(\"folders.duplicate.text\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.wrongClient.text",
+   "file": "Loc.cs",
+   "key": "folders.wrongClient.text",
+   "en": "{0} belongs to {1}, not to {2}.\n\nPick the folder of {2}, or go Back and tick {1} instead.",
+   "ko": "{0} 폴더는 {1}의 폴더이며, {2}의 폴더가 아닙니다.\n\n{2}의 폴더를 고르거나, 뒤로 가서 대신 {1} 항목을 체크하십시오.",
+   "de": "{0} gehört zu {1}, nicht zu {2}.\n\nWähle den Ordner von {2}, oder gehe zurück und kreuze stattdessen {1} an.",
+   "fr": "{0} appartient à {1}, pas à {2}.\n\nChoisissez le dossier de {2}, ou revenez en arrière et cochez {1} à la place.",
+   "code": [
+    "FolderConfirmForm.cs:144: Loc.Format(\"folders.wrongClient.text\", resolved,"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::components.heading",
+   "file": "Loc.cs",
+   "key": "components.heading",
+   "en": "What should be installed?",
+   "ko": "무엇을 설치하시겠습니까?",
+   "de": "Was soll installiert werden?",
+   "fr": "Que faut-il installer ?",
+   "code": [
+    "ComponentsForm.cs:179: HeadingLabel.Text = Loc.Get(\"components.heading\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::components.body",
+   "file": "Loc.cs",
+   "key": "components.body",
+   "en": "These apply to every game version you selected. The defaults are the recommended setup — if in doubt, just continue.",
+   "ko": "선택한 모든 게임 버전에 적용됩니다. 기본값이 권장 구성입니다 — 잘 모르겠으면 그대로 계속하십시오.",
+   "de": "Das gilt für alle ausgewählten Spielversionen. Die Voreinstellungen sind die empfohlene Einrichtung – im Zweifel einfach fortfahren.",
+   "fr": "Ces choix s'appliquent à toutes les versions du jeu sélectionnées. Les valeurs par défaut sont la configuration recommandée — en cas de doute, continuez simplement.",
+   "code": [
+    "ComponentsForm.cs:180: BodyLabel.Text = Loc.Get(\"components.body\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.shortcut.label",
+   "file": "Loc.cs",
+   "key": "opt.shortcut.label",
+   "en": "Create a desktop shortcut to the WowVision Updater",
+   "ko": "WowVision Updater의 바탕 화면 바로 가기 만들기",
+   "de": "Desktop-Verknüpfung zum WowVision-Updater erstellen",
+   "fr": "Créer un raccourci vers WowVision Updater sur le bureau",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.windowsVoices.desc",
+   "file": "Loc.cs",
+   "key": "opt.windowsVoices.desc",
+   "en": "Windows keeps its newer voices (for example Katja and Stefan) in a list the game cannot see. Copies them into the game's voice list, backed up first. The game's voice numbers can shift.",
+   "ko": "Windows는 새로운 음성(예: Katja, Stefan)을 게임이 보지 못하는 목록에 둡니다. 게임의 음성 목록을 먼저 백업한 뒤 이 음성들을 그 목록에 복사합니다. 게임의 음성 번호가 바뀔 수 있습니다.",
+   "de": "Windows führt neuere Stimmen (z. B. Katja, Stefan) in einer Liste, die das Spiel nicht sieht. Kopiert sie nach einer Sicherung in die Liste des Spiels. Stimmnummern können sich verschieben.",
+   "fr": "Windows range ses voix récentes (ex. Hortense, Paul) dans une liste que le jeu ne voit pas. Les copie dans la liste du jeu après sauvegarde. Les numéros des voix peuvent changer.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.force.desc",
+   "file": "Loc.cs",
+   "key": "opt.force.desc",
+   "en": "Downloads WowVision and replaces it even when it is already current, and replaces a test build with the chosen version. Use this to repair a broken install.",
+   "ko": "WowVision이 이미 최신이어도 내려받아 교체하고, 테스트 빌드도 선택한 버전으로 교체합니다. 설치가 손상되었을 때 복구에 사용하십시오.",
+   "de": "Lädt WowVision erneut herunter und ersetzt es, auch wenn es bereits aktuell ist, und ersetzt eine Testversion durch die gewählte Version. Für die Reparatur einer defekten Installation.",
+   "fr": "Télécharge WowVision et le remplace même s'il est déjà à jour, et remplace une version de test par la version choisie. À utiliser pour réparer une installation défectueuse.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

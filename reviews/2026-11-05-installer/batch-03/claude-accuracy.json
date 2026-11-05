@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::managed.acc",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "원문 \"the highlighted addon\"(목록에서 초점이 놓인 항목)을 \"선택한 애드온\"으로 옮겨서, 체크 목록에서는 '체크된(선택된) 애드온'으로 들릴 수 있다. Space가 체크된 항목 전체를 바꾸는 것처럼 오해할 여지가 있다.",
+   "evidence": "en: \"Space toggles the highlighted addon.\" / ko: \"Space로 선택한 애드온을 켜고 끕니다.\" / de: \"das markierte AddOn\", fr: \"l'addon en surbrillance\". 사용처 ComponentsForm.cs:201 _managedList(체크 목록)의 AccessibleName. 실제 혼동 가능성은 문맥상 크지 않아 minor.",
+   "suggestion": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다. 게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다. Space로 현재 항목의 애드온을 켜고 끕니다."
+  },
+  {
+   "id": "Loc.cs::channel.stableDesc",
+   "category": "accuracy",
+   "severity": "minor",
+   "problem": "\"The last numbered release\"의 last는 '가장 최근'이라는 뜻인데 \"마지막 릴리스\"는 '더 이상 나오지 않는 최종 릴리스'로도 들린다.",
+   "evidence": "en: \"The last numbered release.\" / ko: \"번호가 붙은 마지막 릴리스입니다.\" 뒤 문장 \"Changes less often than the beta\"가 계속 갱신됨을 전제하므로 latest 뜻. fr \"La dernière version numérotée\"도 같은 뜻. 영어에도 같은 중의성이 있어 minor.",
+   "suggestion": "번호가 붙은 가장 최근 릴리스입니다. 대부분의 플레이어에게 가장 좋습니다. 베타보다 덜 자주 바뀝니다."
+  }
+ ]
+}
