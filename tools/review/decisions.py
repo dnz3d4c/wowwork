@@ -11,8 +11,10 @@ import csv
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from tools.locale_lib import KOKR_DIR, parse_locale_file
+from tools.review.guard import valid_evidence
 
 
 def changes(decisions: list[dict[str, str]], current: dict[tuple[str, str], str]) -> list[list[str]]:
@@ -25,12 +27,32 @@ def changes(decisions: list[dict[str, str]], current: dict[tuple[str, str], str]
     return rows
 
 
+JUDGED = ("upheld", "dispute-won")
+
+
+def split_invalid(decisions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """판정자가 결정한 항목은 허용된 1차 자료를 근거로 댔을 때만 유효하다(guard.valid_evidence)."""
+    valid: list[dict[str, Any]] = []
+    invalid: list[dict[str, Any]] = []
+    for d in decisions:
+        judged = str(d.get("how", "")).startswith(JUDGED)
+        (invalid if judged and not valid_evidence(d.get("evidence") or []) else valid).append(d)
+    return valid, invalid
+
+
 def main() -> None:
     out_json, review_dir = Path(sys.argv[1]), Path(sys.argv[2])
     result = json.loads(out_json.read_text(encoding="utf-8"))["result"]
-    decisions = [d for b in result for d in b["decisions"]]
+    decisions, invalid = split_invalid([d for b in result for d in b["decisions"]])
     current = {(p.name, k): v for p in KOKR_DIR.glob("*.lua") for k, v in parse_locale_file(p).items()}
     rows = changes(decisions, current)
+    if invalid:
+        (review_dir / "invalid-judgments.json").write_text(
+            json.dumps(invalid, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        print(
+            f"근거가 무효인 판정 {len(invalid)}건은 반영하지 않음 -> 사용자 판단 목록 (invalid-judgments.json)"
+        )
     (review_dir / "decisions.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8"
     )

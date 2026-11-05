@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from pathlib import Path
 
 from tools.locale_lib import REPO_ROOT, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
@@ -59,6 +60,79 @@ def chunk(items: list, size: int) -> list[list]:  # type: ignore[type-arg]
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
+STOPWORDS = frozenset(
+    [
+        "a",
+        "an",
+        "the",
+        "of",
+        "to",
+        "in",
+        "on",
+        "at",
+        "for",
+        "and",
+        "or",
+        "is",
+        "are",
+        "be",
+        "it",
+        "its",
+        "you",
+        "your",
+        "with",
+        "by",
+        "from",
+        "after",
+        "before",
+        "this",
+        "that",
+        "not",
+        "no",
+        "s",
+        "d",
+    ]
+)
+_WORD = re.compile(r"[A-Za-z']+")
+
+
+def _words(text: str) -> list[str]:
+    return [w.lower() for w in _WORD.findall(text)]
+
+
+def _shared_len(a: list[str], b: list[str]) -> int:
+    """a 와 b 가 공유하는 가장 긴 연속 단어열의 길이. 불용어만으로 된 단어열은 세지 않는다."""
+    best = 0
+    joined_b = " " + " ".join(b) + " "
+    for n in range(min(len(a), 6), best, -1):
+        for i in range(len(a) - n + 1):
+            seq = a[i : i + n]
+            if all(w in STOPWORDS for w in seq):
+                continue
+            if " " + " ".join(seq) + " " in joined_b:
+                return n
+    return best
+
+
+def related_entries(
+    item: dict[str, str], others: dict[str, tuple[str, str]], limit: int = 6
+) -> list[dict[str, str]]:
+    """영어 구절을 공유하는 다른 항목(기존 번역). 공유 단어열이 긴 순서.
+
+    한 단어 용어의 일관성은 용어집 검사(tools/glossary.py)가 맡고, 여기서는 두 단어 이상 공유만 넣는다.
+    """
+    mine = _words(item["en"])
+    scored = []
+    for oid, (en, ko) in others.items():
+        if oid == item["id"] or not ko:
+            continue
+        n = _shared_len(mine, _words(en))
+        if n >= 2:
+            scored.append((-n, oid, en, ko))
+    scored.sort()
+    return [{"id": oid, "en": en, "ko": ko} for _, oid, en, ko in scored[:limit]]
+
+
 def load_terms() -> dict[str, str]:
     path = REPO_ROOT / "cache" / "game_terms.tsv"
     if not path.exists():
@@ -78,11 +152,13 @@ def main() -> None:
         with a.keys.open(encoding="utf-8", newline="") as f:
             only = {(r["file"], r["key"]) for r in csv.DictReader(f, delimiter="\t")}
     items = collect_items(upstream_locale_dir(), only)
+    every = {i["id"]: (i["en"], i["ko"]) for i in collect_items(upstream_locale_dir())}
     idx = index_sources(WOWVISION_DIR)
     terms = load_terms()
     for item in items:
         item["code"] = code_usages(idx, item["key"])  # type: ignore[assignment]
         item["game_term"] = terms.get(item["key"], "")
+        item["related"] = related_entries(item, every)  # type: ignore[assignment]
     a.out.mkdir(parents=True, exist_ok=True)
     for n, part in enumerate(chunk(items, a.size), 1):
         (a.out / f"batch-{n:02d}.json").write_text(

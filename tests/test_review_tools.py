@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 from tools.review.build_batch import chunk, code_usages, collect_items, index_sources
 from tools.review.gpt_review import build_command, build_prompt
@@ -69,3 +70,34 @@ def test_decisions_changes_only_differing_translations() -> None:
     decisions = [{"id": "a.lua::K", "final_ko": "새것"}, {"id": "a.lua::Same", "final_ko": "그대로"}]
     current = {("a.lua", "K"): "옛것", ("a.lua", "Same"): "그대로"}
     assert changes(decisions, current) == [["a.lua", "K", "옛것", "새것"]]
+
+
+def test_build_command_with_event_log(tmp_path: Path) -> None:
+    cmd = build_command(tmp_path / "out.json", tmp_path / "s.json", tmp_path / "sb", events=True)
+    assert "--json" in cmd
+    assert cmd[cmd.index("--cd") + 1] == str(tmp_path / "sb")
+    assert "--json" not in build_command(tmp_path / "o", tmp_path / "s", tmp_path)
+
+
+def test_judged_decisions_need_primary_evidence() -> None:
+    from tools.review.decisions import split_invalid
+
+    ds: list[dict[str, Any]] = [
+        {"id": "a::1", "final_ko": "x", "how": "consensus"},
+        {
+            "id": "a::2",
+            "final_ko": "y",
+            "how": "upheld-by-gpt",
+            "evidence": ["wowvision-ko/WowVision/a.lua:3"],
+        },
+        {
+            "id": "a::3",
+            "final_ko": "z",
+            "how": "dispute-won",
+            "evidence": ["wowwork/docs/manual-plan.md:111"],
+        },
+        {"id": "a::4", "final_ko": "w", "how": "dispute-won"},
+    ]
+    valid, invalid = split_invalid(ds)
+    assert [d["id"] for d in valid] == ["a::1", "a::2"]
+    assert [d["id"] for d in invalid] == ["a::3", "a::4"]

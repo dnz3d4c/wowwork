@@ -1,19 +1,46 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["verdicts"],
+  "required": [
+    "verdicts"
+  ],
   "properties": {
     "verdicts": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["ref", "uphold", "final_ko", "reason"],
+        "required": [
+          "ref",
+          "uphold",
+          "final_ko",
+          "reason",
+          "evidence_sources"
+        ],
         "properties": {
-          "ref": {"type": "string", "description": "지적의 ref 그대로"},
-          "uphold": {"type": "boolean", "description": "true면 지적이 맞다(번역을 고친다), false면 번역자 반박이 맞다"},
-          "final_ko": {"type": "string", "description": "확정 번역 전체. uphold=false면 현재 번역 그대로"},
-          "reason": {"type": "string", "description": "판정 근거 한국어 1-3문장"}
+          "ref": {
+            "type": "string",
+            "description": "지적의 ref 그대로"
+          },
+          "uphold": {
+            "type": "boolean",
+            "description": "true면 지적이 맞다(번역을 고친다), false면 번역자 반박이 맞다"
+          },
+          "final_ko": {
+            "type": "string",
+            "description": "확정 번역 전체. uphold=false면 현재 번역 그대로"
+          },
+          "reason": {
+            "type": "string",
+            "description": "판정 근거 한국어 1-3문장"
+          },
+          "evidence_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "판정에 실제로 쓴 자료 경로(judge.md의 허용 목록) 또는 input"
+          }
         }
       }
     }

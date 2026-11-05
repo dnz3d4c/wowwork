@@ -69,3 +69,15 @@ def test_lua_syntax(name: str, tmp_path: Path) -> None:
         ["luajit", "-b", str(KOKR_DIR / name), str(out)], capture_output=True, text=True, check=False
     )
     assert result.returncode == 0, result.stderr
+
+
+def test_glossary_terms_consistent() -> None:
+    """docs/glossary.tsv 의 확정 용어가 모든 번역에 지켜지는지(예외는 용어집의 except 열)."""
+    from tools.glossary import load_glossary, violations
+
+    entries = {}
+    for name in ENUS_FILES:
+        ko = parse_locale_file(KOKR_DIR / name)
+        for key, en in parse_locale_file(ENUS_DIR / name).items():
+            entries[(name, key)] = (en, ko.get(key, ""))
+    assert violations(load_glossary(), entries) == []

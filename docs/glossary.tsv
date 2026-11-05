@@ -1,0 +1,27 @@
+en	ko	except	note
+beacon	비컨		
+waypoint	경유지		
+crowd control	군중 제어		
+route	경로	navigation.lua::En route to %s, waypoint %d of %d	En route=이동 중(관용구)
+the route goes on after it	이후 경로 계속|그 후 경로가 이어집니다		decisions.tsv 2026-11-05
+soft target	소프트 대상		
+hard target	하드 대상		
+health	생명력		
+monitor	모니터		
+buffer	버퍼		
+alert	경보		
+portal	차원문		
+prepoint	사전 지점		
+network	네트워크		
+floor	층		
+yard	야드		
+aura	오라		
+focus	주시 대상|/focus	navigation.lua::spell focus;powers.lua::focus	spell focus=주문 초점, focus(자원)=집중은 다른 뜻
+healer	치유 전담|치유사		spirit healer=영혼의 치유사
+cooldown	재사용 대기|대기 중		On Cooldown=대기 중
+raid	공격대|대상 표시기		Raid Target Marker=대상 표시기(공식)
+quest	퀘스트		
+auction	경매		
+dispellable	무효화 가능		
+talent	특성		
+guild	길드		

@@ -22,12 +22,15 @@ def build_prompt(prompts: list[Path], batch: Path) -> str:
     return "\n\n".join(parts)
 
 
-def build_command(out: Path, schema: Path, cwd: Path) -> list[str]:
-    return [
+def build_command(out: Path, schema: Path, cwd: Path, events: bool = False) -> list[str]:
+    cmd = [
         "codex", "exec", "--profile", "review_strict", "--ephemeral", "--skip-git-repo-check",
         "--sandbox", "read-only", "--cd", str(cwd), "-c", "model_reasoning_effort=medium",
-        "--output-schema", str(schema), "-o", str(out), "-",
+        "--output-schema", str(schema), "-o", str(out),
     ]  # fmt: skip
+    if events:
+        cmd.append("--json")  # 실행한 명령을 포함한 이벤트를 stdout 으로 (접근 감사용)
+    return [*cmd, "-"]
 
 
 def main() -> int:
@@ -36,18 +39,25 @@ def main() -> int:
     ap.add_argument("--batch", type=Path, required=True)
     ap.add_argument("--schema", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument(
+        "--cwd", type=Path, default=REPO_ROOT.parent, help="codex 작업 폴더 (검증 때는 격리 폴더)"
+    )
+    ap.add_argument("--events", type=Path, help="codex 이벤트 기록(JSONL)을 저장할 곳")
     a = ap.parse_args()
     exe = shutil.which("codex")
     if exe is None:
         print("codex 를 찾지 못했다", file=sys.stderr)
         return 2
-    cmd = build_command(a.out, a.schema, REPO_ROOT.parent)
+    cmd = build_command(a.out, a.schema, a.cwd, events=a.events is not None)
     cmd[0] = exe
     a.out.parent.mkdir(parents=True, exist_ok=True)
     result = subprocess.run(
         cmd, input=build_prompt(a.prompt, a.batch), text=True, encoding="utf-8",
         capture_output=True, timeout=1800, check=False,
     )  # fmt: skip
+    if a.events is not None:
+        a.events.parent.mkdir(parents=True, exist_ok=True)
+        a.events.write_text(result.stdout, encoding="utf-8")
     if result.returncode != 0 or not a.out.exists():
         print(result.stderr[-3000:], file=sys.stderr)
         return 1
