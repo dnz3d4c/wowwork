@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "Loc.cs::folders.body",
+      "category": "style",
+      "severity": "minor",
+      "problem": "\"WowVision을 기록할 폴더\"는 \"written to\"를 글자대로 옮겨 \"WowVision을 녹음/기록한다\"처럼 들린다. 이 설치 프로그램에서 \"기록\"은 event log 번역(\"진행 기록\", done.logBtn·acc.progressLog)에도 쓰여서 들었을 때 더 헷갈린다.",
+      "evidence": "en: \"These are the folders WowVision will be written to.\" / 같은 Loc.cs Ko 사전의 done.logBtn = \"진행 기록 보기(&E)\", acc.progressLog = \"진행 기록\". 이 화면(FolderConfirmForm)은 설치 대상 폴더를 확인하는 단계이고 folders.heading도 \"각 버전은 어디에 설치되어 있습니까?\"라서 \"설치할\"이 문맥에 맞는다. 뜻 자체는 통하므로 경미.",
+      "suggestion": "WowVision을 설치할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오."
+    }
+  ]
+}

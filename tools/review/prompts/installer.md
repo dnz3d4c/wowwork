@@ -8,5 +8,6 @@
 - 접근성 원칙(원본의 집 규칙): 컨트롤의 접근 가능한 이름(`...Acc` 키)은 그 옆에 표시되는 글(`...Btn`, `...label`, `...desc`)보다 정보가 적으면 안 된다. 짝이 되는 키를 함께 비교한다.
 - 시스템 대화 상자의 버튼(Retry, Cancel 등)은 한국어판 Windows 표기(다시 시도, 취소)로 가리킨다.
 - 고유 이름은 그대로: WowVision, World of Warcraft, WoW Forever, Anniversary, Classic Era, Battle.net, NVDA, SAPI, SAPI2SR, WoW Login Tool, AutoHotkey, BugGrabber, GitHub, WTF(폴더 이름), Interface\AddOns(경로).
-- 낱말: installer = 설치 프로그램, Browse = 찾아보기, download = 내려받기, desktop shortcut = 바탕 화면 바로 가기, Start menu = 시작 메뉴, beta = 베타, stable release = 안정판.
+- Windows가 화면에 표시하는 이름(폴더, 메뉴, 버튼)은 한국어판 Windows 표기를 따른다. 예: Downloads 폴더 = 다운로드 폴더, Start menu = 시작 메뉴, desktop = 바탕 화면. 사용자가 탐색기에서 보는 이름과 같아야 한다.
+- 낱말: installer = 설치 프로그램, Browse = 찾아보기, download(동작) = 내려받기, desktop shortcut = 바탕 화면 바로 가기, Start menu = 시작 메뉴, beta = 베타, stable release = 안정판.
 - 문체: 제목·버튼·상태 줄은 짧게, 설명과 안내 문장은 합니다체.

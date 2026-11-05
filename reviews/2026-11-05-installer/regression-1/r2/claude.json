@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "Loc.cs::managed.acc",
+      "category": "style",
+      "severity": "minor",
+      "problem": "\"어떤 게임 버전용이 없는 애드온은\"은 '버전용'이라는 명사에 '이 없는'을 붙인 어색한 구문이라, 목록 접근 이름으로 들었을 때 한 번에 뜻이 잡히지 않는다. 뜻(원문 an addon that does not exist for a game version)은 맞다.",
+      "evidence": "en: \"... and an addon that does not exist for a game version is left out there.\" ko: \"... 어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다.\" 같은 파일의 managed.notForClient \"{0}: {1}용 없음, 건너뜀.\"은 상태 줄 명사형이라 자연스럽지만, managed.acc는 합니다체 설명 문장이라 같은 축약이 어색하게 들린다. 취향 경계라 경미로 둔다.",
+      "suggestion": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용으로 나오지 않은 애드온은 그 버전에서 빠집니다. Space로 강조 표시된 애드온을 켜고 끕니다."
+    }
+  ]
+}
