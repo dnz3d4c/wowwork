@@ -1,0 +1,1 @@
+{"findings":[{"id":"windows.lua::Stable slot %d","category":"style","severity":"minor","problem":"숫자가 명사 뒤에 놓여 실제 발화가 “야수 우리 칸 1”처럼 되어 한국어 어순이 어색하다.","evidence":"tbc/petStable.lua:38에서 format(L[\"Stable slot %d\"], index - 1)로 칸 번호를 넣는다. koKR/windows.lua의 같은 기능명 L[\"Stable\"] = \"우리\"와 의미상 충돌은 없다.","suggestion":"야수 우리 %d번 칸"}]}
