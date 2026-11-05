@@ -76,6 +76,23 @@ def apply_ko(text: str, ko: dict[str, str]) -> tuple[str, list[str]]:
     return text[: last[1]] + header + block + text[last[1] :], []
 
 
+PAYLOAD = KO_WORK_ROOT / "wowvision-installer" / "WowVisionInstaller" / "payload" / "koKR.zip"
+
+
+def build_payload(kokr_dir: Path, out: Path) -> int:
+    """koKR 폴더를 `koKR/<파일>` 항목으로 묶는다. 날짜를 고정해 같은 입력이면 같은 바이트가 나온다."""
+    import zipfile
+
+    files = sorted(p for p in kokr_dir.iterdir() if p.is_file())
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in files:
+            info = zipfile.ZipInfo(f"koKR/{p.name}", date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(info, p.read_bytes())
+    return len(files)
+
+
 def installer_items(src_dir: Path) -> list[dict[str, object]]:
     """평가 묶음 항목: 원문·번역·다른 언어 번역, 코드에서 키를 쓰는 줄(Loc.cs 제외)."""
     text = (src_dir / "Loc.cs").read_text(encoding="utf-8")
@@ -100,7 +117,14 @@ def installer_items(src_dir: Path) -> list[dict[str, object]]:
 
 
 def main() -> int:
-    cmd, path = sys.argv[1], Path(sys.argv[2])
+    cmd = sys.argv[1]
+    if cmd == "payload":  # vision-locale 의 koKR 을 설치 프로그램 payload 로
+        from tools.locale_lib import KOKR_DIR
+
+        n = build_payload(KOKR_DIR, PAYLOAD)
+        print(f"koKR 파일 {n}개 -> {PAYLOAD}")
+        return 0
+    path = Path(sys.argv[2])
     if cmd == "batch":
         import json
 

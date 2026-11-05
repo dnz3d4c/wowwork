@@ -72,3 +72,21 @@ def test_installer_items_include_code_usage_and_other_languages(tmp_path) -> Non
     assert nxt["id"] == "Loc.cs::nav.next"
     assert nxt["en"] == "&Next >" and nxt["ko"] == "다음(&N) >" and nxt["fr"] == "&Suivant >"
     assert nxt["code"] == ['Form.cs:1: btn.Text = Loc.Get("nav.next");']
+
+
+def test_build_payload_zips_kokr_folder_deterministically(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    import zipfile
+
+    from tools.installer_loc import build_payload
+
+    ko = tmp_path / "koKR"
+    ko.mkdir()
+    (ko / "modules.xml").write_text("<Ui/>", "utf-8")
+    (ko / "ui.lua").write_text("L = 1", "utf-8")
+    a, b = tmp_path / "a.zip", tmp_path / "b.zip"
+    build_payload(ko, a)
+    build_payload(ko, b)
+    assert a.read_bytes() == b.read_bytes()
+    with zipfile.ZipFile(a) as z:
+        assert sorted(z.namelist()) == ["koKR/modules.xml", "koKR/ui.lua"]
+        assert z.read("koKR/ui.lua") == b"L = 1"

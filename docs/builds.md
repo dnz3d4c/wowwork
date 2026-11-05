@@ -1,17 +1,28 @@
 # 테스터 배포 빌드 기록
 
+## 현재 배포 (테스터 폴더: games/wowvision-ko/tester)
+
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
-| WowVision-V1.0.0-ko1.zip | 2026-11-05 | wow-vision/WowVision 397ffc3 (V1.0.0 + 문서 커밋 2개) | dnz3d4c/WowVision ko dcab996, dnz3d4c/vision-locale main f36a084 | ed157b9455d5cc69229954e89bc625e66184c4427c31acb5de9069875fa0a67f |
-| WowVisionInstaller.exe 1.6 (한국어 추가) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 1806745 | fa6340df9cc9280bb292939a31365f77336d49e7d32d5139506b437579700465 |
+| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기) | 2026-11-05 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 1d22719, koKR은 dnz3d4c/vision-locale main f36a084 | a77f6c3ef0bd6d6aa8ba42d9c484b7024986272b01af41303c226a75a234b824 |
 
-## 만든 방법 (원본 절차와 같게)
+설치 프로그램은 원본 릴리스(wow-vision/WowVision)를 그대로 설치한 뒤, exe에 넣은 koKR(`payload/koKR.zip`)을 클라이언트마다 `WowVision/locale/koKR`에 쓰고 `locale/modules.xml`에 포함 줄을 한 번 더한다(`KoreanLocale.cs`). 매 실행마다 하므로 원본 업데이트로 폴더가 교체돼도 다시 들어간다.
 
-- 애드온: 원본 `.github/workflows/beta.yml`과 같은 순서. `luajit tools/wownav-pack.lua` → `git add -f mapdata/WowNavPacked`(커밋하지 않음) → 태그 `V1.0.0-ko1`(로컬, push하지 않음) → BigWigs packager v2 `release.sh -d`(업로드 생략). 비공개 서브모듈을 Actions가 읽을 수 없어서 이 PC에서 실행했다.
-- 원본 V1.0.0 릴리스 zip과 비교: 원본에만 있는 파일 0개, 추가 23개(전부 `locale/koKR/`), 바뀐 파일은 TOC의 `## Version` 줄, `locale/modules.xml`의 koKR 포함 줄, 기준 커밋 차이로 인한 문서 4개뿐.
-- 버전 `V1.0.0-ko1`은 릴리스 번호 형식이 아니라서 설치 프로그램이 테스트 빌드로 보고 교체하지 않는다(wowvision-installer `AddonInstaller.cs:242`).
-- 설치 프로그램: 원본 `build.ps1 -RunTests`(PowerShell 7, scoop .NET SDK). 오프라인 자체 검사 전부 통과(`loc`: Ko 키 집합·자리표시자 일치). 버전은 1.6 그대로.
+## 다시 만드는 법
+
+1. koKR이 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload`
+2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, PATH 앞에 scoop .NET SDK)
+3. 실제 흐름 검사(실제 릴리스를 내려받는다): `WowVisionSelfTest.exe fullinstall` — 안정판 설치 뒤와 베타 전환 뒤 모든 클라이언트에 koKR이 있는지 확인한다
+
+## 검증 이력
+
+- 2026-11-05: 원본 자체 검사 offline 전부 통과(kolocale 12개 포함). fullinstall 전부 통과(안정판 V1.0.0 5개 클라이언트, 베타 전환 뒤 5개 클라이언트 모두 koKR 있음).
+- fullinstall이 처음에는 실패했다: 릴리스 파일이 CRLF라서 포함 줄 정규식이 맞지 않았다. 부품 검사는 LF만 써서 못 잡았다. CRLF 사례를 검사에 넣고 고쳤다.
+
+## 이전 방식 (폐기)
+
+애드온 테스트 빌드 zip(WowVision-V1.0.0-ko1.zip, packager로 생성, 버전 V1.0.0-ko1)을 테스터가 손으로 덮어쓰는 방식이었다. 설치 프로그램이 직접 koKR을 넣게 되면서 쓰지 않는다. 그 빌드에 쓴 WowVision ko 브랜치(dcab996)는 남아 있다.
 
 ## 원본 워크플로 주의
 
-복제 저장소의 `main`에 push하면 원본 워크플로가 내 저장소에서 실행된다(2026-11-05 확인: WowVision `beta.yml`이 내 저장소에 beta 프리릴리스를 만들었고, 설치 프로그램 `Release`도 실행됐다). 그래서 한국어 작업은 `ko` 브랜치에 둔다. `V*` 태그를 push하면 `release.yml`이 돌다가 비공개 서브모듈에서 실패한다.
+복제 저장소의 `main`에 push하면 원본 워크플로가 내 저장소에서 실행된다(2026-11-05 확인). 그래서 한국어 작업은 `ko` 브랜치에 둔다.
