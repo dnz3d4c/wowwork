@@ -212,7 +212,7 @@ update.channelStable	버전: 안정판. 최신 버전: {0}.
 managed.label	추가 권장 애드온
 managed.acc	추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드가 설치되고, 해당 게임 버전용 빌드가 없는 애드온은 그 버전에는 설치되지 않습니다. Space로 강조 표시된 애드온을 켜고 끕니다.
 managed.notAvailable	사용할 수 없는 게임 버전: {0}
-managed.notForClient	{0}: 사용할 수 없는 게임 버전({1}), 건너뜀.
+managed.notForClient	{0}: {1}에서 사용할 수 없어 건너뜀.
 managed.badHash	{0}: 내려받은 파일이 무결성 검사를 통과하지 못해 설치하지 않음.
 managed.obsoleteRemoved	{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함.
 update.managedUpdates	{0}: 추가 애드온 업데이트 있음: {1}.

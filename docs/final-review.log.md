@@ -47,3 +47,9 @@
 - 주의 항목: `ui.lua::Disabled`가 "사용 안 함"으로 바뀌었다. 공식 근거는 애드온 목록 문맥(`ADDON_DISABLED`)인데 코드는 비활성 컨트롤 상태로 읽는다(`core/graph/nodes.lua:210`). 회귀 확인에서 판단한다.
 - 회귀 확인 시작: UI 54건 `wf_0a408d9f-d0d`, 설치 프로그램 38건 `wf_5c90d183-7bc` (Claude 1 + GPT 1, 네 관점).
 - `test_installer_payload_matches_current_kokr` 실패는 예상된 것(koKR이 바뀌어 payload가 낡음). 회귀 확인 뒤 payload를 다시 만든다.
+
+### 설치 프로그램 회귀 확인 1회차 (`wf_5c90d183-7bc`)
+
+- 중대 1건: `managed.notForClient` "{0}: 사용할 수 없는 게임 버전({1}), 건너뜀."이 "게임 버전 자체를 쓸 수 없다"로 들린다(GPT major, Claude 같은 항목 minor). 두 회사가 같은 항목을 지적했으므로 절차 2단계대로 반박 없이 수용: "{0}: {1}에서 사용할 수 없어 건너뜀." (`에서`는 받침과 무관한 조사)
+- 경미(보고만): `logs.btnAcc` 수식 관계, `opt.windowsVoices.desc`의 newer.
+- codex [자동수정] "낡은 payload": UI 회귀 확인 반영 뒤 payload를 다시 만들 때 처리한다(빌드 단계).

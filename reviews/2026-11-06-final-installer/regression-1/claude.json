@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::managed.notForClient",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"{0}: 사용할 수 없는 게임 버전({1}), 건너뜀.\"은 들었을 때 게임 버전 자체를 쓸 수 없다는 말로 들릴 수 있다. 원문은 애드온 {0}이 게임 버전 {1}용으로 나오지 않았다는 뜻이다.",
+   "evidence": "원문 \"{0}: not available for {1}, skipped.\", InstallRunner.cs:533에서 {0}=managed.Entry.DisplayName(애드온 이름), {1}=r.Target.DisplayName(게임 버전). 결과는 \"BugGrabber: 사용할 수 없는 게임 버전(Classic Era), 건너뜀.\"처럼 발화된다. 같은 문형의 기존 키 managed.notAvailable = \"사용할 수 없는 게임 버전: {0}\"(ComponentsForm.cs:148, 애드온 이름 뒤 괄호)와는 맞춰져 있어 의도된 통일일 수 있다. 그래서 확신이 낮아 한 단계 내려 minor로 둔다. 바꾸면 managed.notAvailable도 같이 맞춰야 한다.",
+   "suggestion": "{0}: {1}용 빌드 없음, 건너뜀."
+  },
+  {
+   "id": "Loc.cs::logs.btnAcc",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"버그 보고용으로 찾은 모든 게임 버전\"으로 이어져서 들으면 '버그 보고를 위해 찾은 게임 버전'으로 묶여 들린다. 원문의 for a bug report는 zip 파일을 만드는 목적에 걸린다.",
+   "evidence": "원문 \"Collect all logs of every detected game version into one zip file in your Downloads folder, for a bug report\". 수식어 위치 때문에 생기는 해석 갈림이다. 뜻은 문맥으로 복원되므로 minor로 둔다.",
+   "suggestion": "모든 로그 모으기, 찾은 모든 게임 버전의 로그를 버그 보고용으로 다운로드 폴더의 zip 파일 하나에 저장"
+  }
+ ]
+}
