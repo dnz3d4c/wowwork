@@ -4,7 +4,7 @@
 
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
-| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, 1.0 최종 검수 반영) | 2026-11-06 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko d7c6c7c, koKR은 dnz3d4c/vision-locale main bff9930 | 58051f1d64ba1ab70d9f3fcb98a322c1d330973dc3807912e5f7f8c454e41bfa |
+| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, 1.0 최종 검수 반영) | 2026-11-06 | wow-vision/wowvision-installer ef7bb8f (1.6) | dnz3d4c/wowvision-installer ko 702f903, koKR은 dnz3d4c/vision-locale main bff9930 | e4a73d96698b5fecf5059966acae4bbfa3ccc7ed6a854adf265e538164d16ecc |
 
 이전 배포: 2026-11-05, ko a948d1a, koKR f36a084, SHA-256 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47.
 
@@ -18,6 +18,8 @@
 4. 테스터 폴더에 exe와 함께 `docs/tester-guide.md`를 `설치_안내.txt`로 복사한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
 
 ## 검증 이력
+
+- 2026-11-06("찾지 못함" 상태 줄 수정): Loc.cs 문구 하나만 바뀌고 payload는 그대로라 `build.ps1 -RunTests`만 다시 돌려 통과. `fullinstall`은 다시 돌리지 않았다(koKR과 설치 흐름이 바뀌지 않음). 이전 판 ko d7c6c7c, SHA-256 58051f1d….
 
 - 2026-11-06(최종 검수 반영): payload 재생성 뒤 `build.ps1 -RunTests` 전부 통과(kolocale 포함), `fullinstall` 전부 통과(안정판과 베타 전환 뒤 5개 클라이언트 모두 koKR 덮어쓰기 확인). 새 exe 안에 "WoW에서 NVDA를 음성으로 사용"과 이번 검수의 새 문구가 들어 있는 것을 확인했다. 테스터 폴더에 exe와 `설치_안내.txt`(= `docs/tester-guide.md`)를 넣었다.
 
