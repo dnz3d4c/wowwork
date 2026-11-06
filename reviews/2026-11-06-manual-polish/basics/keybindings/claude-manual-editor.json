@@ -1,0 +1,92 @@
+{
+ "findings": [
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "예로 모든 모니터 켜고 끄기, 대상까지 경로, 거리 알림이 있습니다.",
+   "source_quote": "for example Toggle All Monitors, Route to Your Target or Announce Distance.",
+   "suggestion": "예로 모든 모니터 켜고 끄기, 대상까지 경로 안내, 거리 알림이 있습니다.",
+   "problem": "동작 이름 Route to Your Target의 화면 문구는 \"대상까지 경로 안내\"인데 설명서는 \"대상까지 경로\"로 줄여 적었다. 독자는 단축키 화면에서 Down으로 목록을 훑으며 이 이름을 찾아야 하는데, 들리는 이름과 설명서의 이름이 달라 찾기 어렵다. 같은 문장의 다른 두 동작은 화면 문구를 글자 그대로 인용한다.",
+   "evidence": "입력 terms: Route to Your Target = \"대상까지 경로 안내\". wowvision-ko/vision-locale/koKR/navigation.lua:317 L[\"Route to Your Target\"] = \"대상까지 경로 안내\"."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "게임의 게임패드 옵션이 켜져 있으면 단축키 화면의 각 줄에 그 동작에 지정된 컨트롤러 버튼과 그 뒤에 컨트롤러 버튼 추가도 표시됩니다.",
+   "source_quote": "When the game's gamepad options are on, each row of the keybinding screen also shows the controller buttons assigned to the action, followed by Add Controller Button.",
+   "suggestion": "게임의 게임패드 옵션이 켜져 있으면 단축키 화면의 각 줄에 그 줄의 동작에 지정된 컨트롤러 버튼이 표시되고, 그 뒤에 컨트롤러 버튼 추가가 표시됩니다.",
+   "problem": "\"그 동작\"의 선행사가 이 문장과 앞 문장 어디에도 없다(새 절의 첫 문장). 영어 정관사 the action을 지시어로 옮겨 독자가 어느 동작인지 되짚어야 한다. 또 \"컨트롤러 버튼과 그 뒤에 컨트롤러 버튼 추가도\"는 명사구 안에 \"그 뒤에\"가 끼어 조사 호응이 어색하다.",
+   "evidence": "같은 파일 \"## 컨트롤러 버튼 (리테일, WoW: Forever)\" 절의 첫 문장이며 앞에 동작을 가리키는 명사가 없다."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "예를 들어 끌기는 처음부터 \\\\와 Ctrl+D가 지정되어 있습니다.",
+   "source_quote": "Drag, for instance, ships with \\\\ and Ctrl+D.",
+   "suggestion": "예를 들어 끌기에는 처음부터 \\\\와 Ctrl+D가 지정되어 있습니다.",
+   "problem": "\"끌기는 ... 키가 지정되어 있습니다\"는 주제어 \"끌기는\"과 서술어 \"~가 지정되어 있다\"의 호응이 맞지 않는다. 키가 지정되는 곳이므로 \"끌기에는\"이어야 한다. 같은 파일의 다른 문장(\"닫기 (컨트롤러) 동작에는 기본 키보드 키가 없습니다\", \"툴팁 읽기에는 키가 없어졌습니다\")도 \"~에는\"을 쓴다.",
+   "evidence": "같은 파일 \"## 키 추가하기\" 마지막 문단."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이 페이지는 그 화면을 쓰는 방법과 안내 문구의 뜻을 설명합니다.",
+   "source_quote": "This page explains how to use it and what the messages mean.",
+   "suggestion": "이 페이지는 단축키 화면을 쓰는 방법과 안내 문구의 뜻을 설명합니다.",
+   "problem": "앞 문장이 \"단축키 화면\"과 \"각 동작\", \"키\"를 함께 말한 뒤라 \"그 화면\"이 무엇을 받는지 다시 찾아야 한다. 영어 대명사 it을 지시어로 옮긴 것이다. 구체적 명사 \"단축키 화면\"으로 바꾸면 바로 드러난다.",
+   "evidence": "같은 파일 첫 문단. polish-base.md 2번 항목의 지적 대상 예와 같은 구조."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "예를 고르면 그 동작에서 키를 빼서 이 동작에 줍니다.",
+   "source_quote": "Yes takes the key away from that action and gives it to this one.",
+   "suggestion": "예를 고르면 다른 동작에서 키를 빼서 지금 키를 추가하는 동작에 줍니다.",
+   "problem": "한 문장 안에서 \"그 동작\"과 \"이 동작\"이 서로 다른 두 동작을 가리켜, 독자는 어느 쪽이 키를 잃고 어느 쪽이 얻는지 앞 칸으로 돌아가 확인해야 한다. 영어 that/this를 그대로 옮긴 것이다. 같은 행의 \"뜻\" 칸이 쓴 \"다른 동작\"을 받아 쓰면 대상이 바로 드러난다.",
+   "evidence": "같은 파일 \"## 충돌\" 표 둘째 행. 같은 행 뜻 칸: \"다른 동작에 이 키가 있습니다.\""
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "전체 동작 목록과 기본 키는 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+   "source_quote": "The complete list of actions and their default keys is in the [keybinding reference](../reference/keybindings.md).",
+   "suggestion": "전체 동작 목록과 기본 키는 [단축키 목록](../reference/keybindings.md)에 있습니다.",
+   "problem": "같은 문단에서 keybinding을 \"단축키\"(단축키 화면, 제목 \"단축키\", 화면 문구 Bindings = \"단축키\")로 옮기고 링크 이름만 \"키 바인딩\"으로 옮겨, 같은 개념을 두 말로 부른다. 독자가 \"키 바인딩\"을 단축키와 다른 것으로 여길 수 있다. 다만 링크 대상 페이지 제목과 다른 여러 파일이 \"키 바인딩 목록\"을 쓰므로 이 파일만 바꾸면 파일 사이가 어긋난다. 참조 페이지 제목(reference/keybindings.md 2행)과 그 링크 이름 전체를 함께 정해야 하는 방침 문제다. 이 파일 109행, 129행(함께 보기)에도 같은 표기가 있다.",
+   "evidence": "ko/reference/keybindings.md:2 \"# 키 바인딩 목록\". 같은 링크 이름: getting-started/quick-start.md:81, reference/glossary.md:62·112, reference/index.md:6, world/navigation.md:132, world/targeting.md:18. 반면 getting-started/troubleshooting.md:63은 같은 페이지를 \"단축키 참조\"로 부른다. 화면 문구 Bindings = \"단축키\"(입력 terms)."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "기본 키를 되돌리려면 [키 바인딩 목록](../reference/keybindings.md)을 보고 다시 추가합니다.",
+   "source_quote": "to restore a default key, add it back from the [keybinding reference](../reference/keybindings.md).",
+   "suggestion": "기본 키를 되돌리려면 [단축키 목록](../reference/keybindings.md)을 보고 다시 추가합니다.",
+   "problem": "같은 문단이 \"단축키는 계정 전체에 적용되므로\", \"인터페이스 메뉴의 단축키\"로 keybinding을 \"단축키\"라 부르다가 링크만 \"키 바인딩\"으로 부른다. 첫 지적과 같은 방침 문제이며 함께 정해야 한다.",
+   "evidence": "같은 파일 \"## 변경 내용이 저장되는 곳\" 문단. ko/reference/keybindings.md:2 \"# 키 바인딩 목록\"."
+  },
+  {
+   "id": "basics/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "- [키 바인딩 목록](../reference/keybindings.md)",
+   "source_quote": "- [Keybinding reference](../reference/keybindings.md)",
+   "suggestion": "- [단축키 목록](../reference/keybindings.md)",
+   "problem": "함께 보기 목록의 링크 이름도 \"키 바인딩\"이라 이 파일 제목 \"단축키\"와 같은 개념을 다르게 부른다. 첫 지적과 같은 방침 문제이며 참조 페이지 제목과 함께 정해야 한다.",
+   "evidence": "같은 파일 \"## 함께 보기\". ko/reference/keybindings.md:2 \"# 키 바인딩 목록\"."
+  }
+ ]
+}

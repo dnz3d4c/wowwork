@@ -1,0 +1,46 @@
+[
+  {
+    "id": "basics/speech.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "kokr",
+    "quote": "버퍼 방식은 음성을 차례로 모아 두고",
+    "source_quote": "Buffered lines the speech up",
+    "suggestion": "모아 말하기 방식은 음성을 차례로 모아 두고",
+    "problem": "음성 방식의 선택값 Buffered를 설명서는 \"버퍼\"라고 부르지만 게임이 낭독하는 값은 koKR speech.lua L[\"Buffered\"] = \"대기열\"이라, Classic Era 사용자가 목록에서 \"버퍼\"를 찾지 못한다. 그렇다고 설명서를 \"대기열\"로 맞추면 다른 설정인 음성 대기열(Speech Queue)과 같은 말이 되고, \"버퍼\"를 유지하면 확정 용어 버퍼(WowVision 버퍼 모듈·버퍼 키)와 같은 말이 되어 다른 기능으로 오해한다. koKR 키 L[\"Buffered\"]를 두 용어와 겹치지 않는 값(예: \"모아 말하기\")으로 바꾸고 설명서 인용을 따라 바꿔야 한다.",
+    "evidence": "terms: Buffered=대기열, Speech Queue=음성 대기열 (vision-locale/koKR/speech.lua 12~13행). docs/glossary.tsv 11행 buffer=버퍼. 다른 설명서의 버퍼는 버퍼 모듈을 가리킴: basics/menu-and-settings.md 57행 \"| 버퍼 | 모두 | 버퍼 그룹과 버퍼...\", basics/keybindings.md 105행 \"버퍼 키\"."
+  },
+  {
+    "id": "basics/speech.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "kokr",
+    "quote": "말이 끊긴 뒤 첫 단어들이 묻히면 버퍼를 써 보십시오.",
+    "source_quote": "Try Buffered if the first words after an interruption get swallowed.",
+    "suggestion": "말이 끊긴 뒤 첫 단어들이 묻히면 모아 말하기를 써 보십시오.",
+    "problem": "같은 선택값 Buffered를 \"버퍼\"로 불러, 게임이 낭독하는 값 \"대기열\"(koKR L[\"Buffered\"])과 다르고 확정 용어 버퍼(버퍼 모듈)와 겹친다. 바꿀 koKR 키: L[\"Buffered\"].",
+    "evidence": "vision-locale/koKR/speech.lua 12행 L[\"Buffered\"] = \"대기열\"; docs/glossary.tsv 11행 buffer=버퍼."
+  },
+  {
+    "id": "basics/speech.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "kokr",
+    "quote": "| 음성 방식(직접 또는 버퍼) | 있음 |",
+    "source_quote": "| Speech Style (Direct or Buffered) | yes |",
+    "suggestion": "| 음성 방식(직접 또는 모아 말하기) | 있음 |",
+    "problem": "버전별 차이 표에서도 선택값 Buffered를 \"버퍼\"로 불러 화면 값 \"대기열\"과 다르고 버퍼 모듈과 겹친다. 바꿀 koKR 키: L[\"Buffered\"].",
+    "evidence": "vision-locale/koKR/speech.lua 12행 L[\"Buffered\"] = \"대기열\"; docs/glossary.tsv 11행 buffer=버퍼."
+  },
+  {
+    "id": "basics/speech.md",
+    "category": "accuracy",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "음성 종류가 스크린리더라면 키를 누를 때마다 이 안내를 끊어 버릴 것이기 때문입니다.",
+    "source_quote": "because a screen reader would cut them off at every key press",
+    "suggestion": "스크린리더가 키를 누를 때마다 이 안내를 끊어 버릴 것이기 때문입니다.",
+    "problem": "원문에 없는 조건 \"음성 종류가 스크린리더라면\"을 더했다. 원문은 스크린리더가 안내를 끊는다는 이유만 말하는데, 번역은 음성 종류 설정에서 스크린리더를 고른 경우로 범위를 좁혀 정보 단위를 추가했다.",
+    "evidence": "en: \"instead of your Speech Voice, because a screen reader would cut them off at every key press.\""
+  }
+]

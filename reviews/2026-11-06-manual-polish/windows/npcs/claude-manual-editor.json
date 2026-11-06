@@ -1,0 +1,48 @@
+{
+  "findings": [
+    {
+      "id": "windows/npcs.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "global",
+      "quote": "WowVision은 대화창에 \"하급 아이템 N개를 X에 판매.\"라고 출력합니다.",
+      "source_quote": "WowVision prints \"Sold N poor quality items for X.\" in the chat.",
+      "suggestion": "WowVision은 채팅 창에 \"하급 아이템 N개를 X에 판매.\"라고 출력합니다.",
+      "problem": "이 페이지는 NPC와 나누는 gossip 창을 처음부터 \"대화 창\"(koKR Gossip = \"대화\")이라고 부르는데, 같은 페이지의 상인 설정 표에서는 chat을 띄어쓰기만 다른 \"대화창\"이라고 부른다. 상인 창을 연 상태에서 이 문장을 읽으면 결과 메시지가 NPC 대화 창에 나온다고 오해할 수 있다. chat을 설명서 전체에서 \"대화창\"으로 쓰는 것이 관례이므로 이 파일만 고칠 일이 아니다. chat 표기를 바꿀지, 이 페이지의 gossip 창 표기를 \"NPC 대화 창\"처럼 구분할지 방침 결정이 필요하다.",
+      "evidence": "같은 파일의 gossip 표기: \"대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다\", \"최신 게임이 대화 창에 보여 주는\". chat 표기 관례: basics/interface.md:42 \"대화창에 아이템 링크를 넣습니다\", getting-started/first-login.md:26 \"대화창에 /wv를 입력하고\", getting-started/sku.md:17은 gossip 계열을 \"NPC 대화창\"으로 부른다."
+    },
+    {
+      "id": "windows/npcs.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "global",
+      "quote": "WowVision은 대화창에 \"X에 모든 장비 수리.\"라고 출력합니다.",
+      "source_quote": "WowVision prints \"Repaired all items for X.\" in the chat.",
+      "suggestion": "WowVision은 채팅 창에 \"X에 모든 장비 수리.\"라고 출력합니다.",
+      "problem": "바로 위 행과 같은 문제다. 이 페이지에서 \"대화 창\"은 NPC gossip 창인데 chat도 \"대화창\"이라 부르므로, 수리 결과가 NPC 대화 창에 나온다고 오해할 수 있다. 설명서 전체의 chat 표기 방침과 함께 결정해야 한다.",
+      "evidence": "같은 파일 \"## 대화\" 절의 \"대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다\"와 상인 설정 표의 \"대화창에\"가 한 페이지에 함께 있다. chat 관례 표기는 basics/speech.md:46 \"대화창에 출력하고\" 등."
+    },
+    {
+      "id": "windows/npcs.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "이 창들은 모두 게임이 해당 창을 열 때 함께 열립니다.",
+      "source_quote": "All of them open when the game opens them.",
+      "suggestion": "이 창들은 모두 게임이 열 때 열립니다.",
+      "problem": "\"해당 창\"과 \"함께\" 때문에 게임 창이 열릴 때 WowVision이 별도의 창을 하나 더 연다는 뜻으로 읽힌다. 원문은 이 창들이 게임 자신의 창이고 게임이 열 때 열린다는 말이다.",
+      "evidence": "원문 \"All of them open when the game opens them.\"에는 together에 해당하는 말이 없다. 바로 다음 문장 \"Walk up to the NPC and interact as usual\"도 별도 창이 아니라 평소 상호작용으로 게임 창이 열린다는 흐름이다."
+    },
+    {
+      "id": "windows/npcs.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "이것들은 상품 목록 탭에만 있습니다.",
+      "source_quote": "These are on the Merchant tab only.",
+      "suggestion": "이 수리 버튼들은 상품 목록 탭에만 있습니다.",
+      "problem": "영어 These를 \"이것들은\"으로 옮긴 번역투다. 앞 문장이 수리 버튼 세 개와 \"수리하는 상인\"을 함께 말하므로 \"이것들\"이 버튼을 가리키는지 바로 드러나지 않는다.",
+      "evidence": "앞 문장: \"수리(수리하는 상인에게만): 모든 장비 수리, 장비 수리, 그리고 가능한 곳에서는 길드 자금으로 수리.\""
+    }
+  ]
+}

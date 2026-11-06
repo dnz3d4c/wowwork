@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "windows/overview.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "창이 열렸는데 WowVision이 아무 말도 하지 않는다면 아마 이런 창일 것입니다.",
+   "source_quote": "If a window opens and WowVision says nothing, it is probably one of these.",
+   "suggestion": "창이 열렸는데 WowVision이 아무 말도 하지 않는다면 아마 아직 지원하지 않는 창일 것입니다.",
+   "problem": "\"이런 창\"이 받을 명사가 앞 문장에 없다. 앞 문장은 \"모든 게임 창을 지원하지는 않습니다\"로 서술어만 있어서, 독자는 \"이런\"이 무엇을 가리키는지 앞 문장을 다시 읽고 '지원하지 않는 창'으로 바꿔 이해해야 한다. 구체적인 명사로 쓰면 바로 드러난다.",
+   "evidence": "같은 문단 첫 문장 \"모든 버전에서 모든 게임 창을 지원하지는 않습니다.\"에는 \"이런\"이 받을 명사가 없다. 제목도 \"아직 읽지 않는 창\"이므로 \"아직 지원하지 않는 창\"과 맞는다."
+  }
+ ]
+}

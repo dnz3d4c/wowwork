@@ -1,0 +1,24 @@
+[
+  {
+    "id": "windows/chat.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "kokr",
+    "quote": "플레이어 검색(Shift 클릭, Battle.net 플레이어에는 없음)",
+    "source_quote": "Who (shift click, not for Battle.net players)",
+    "suggestion": "누구 검색(Shift 클릭, Battle.net 플레이어에는 없음)",
+    "problem": "같은 Shift 클릭 동작을 본문(Shift+Enter 설명, 플레이어의 레벨과 지역 확인 예시)은 \"누구 검색\"이라 부르고, 상황별 메뉴 항목은 \"플레이어 검색\"이라 부른다. 처음 쓰는 사람은 메뉴의 \"플레이어 검색\"이 본문의 누구 검색과 같은 것인지 알 수 없고 다른 기능으로 오해할 수 있다. 메뉴 문구는 koKR 값을 인용한 것이므로 koKR/chat.lua 키 \"Who %s\"의 값 \"%s 플레이어 검색\"을 게임 공식 용어 \"누구\"에 맞게(예: \"%s 누구 검색\") 바꾸고 이 인용을 따라 고쳐야 한다.",
+    "evidence": "vision-locale/koKR/chat.lua:32 L[\"Who %s\"] = \"%s 플레이어 검색\". 게임 공식: WHO \"Who\"=\"누구\", WHO_LIST \"Who List\"=\"누구 목록\"(cache/gs_koKR.csv 9687, 11795). 같은 파일 본문 127행 \"그 플레이어로 누구 검색을 합니다\", 147행 \"게임이 누구 검색을 보냅니다\", 다른 설명서 basics/interface.md:168 \"누구 목록\"."
+  },
+  {
+    "id": "windows/chat.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "탭과 똑같은 이름(예: 일반 또는 거래)의 항목이 하나씩 있고, 그 뒤에 귓속말 탭이 있습니다.",
+    "source_quote": "named exactly like the tab (for example General or Trade), followed by Whisper Tabs.",
+    "suggestion": "탭과 똑같은 이름(예: 일반 또는 거래)의 항목이 하나씩 있고, 그 뒤에 귓속말 탭 항목이 있습니다.",
+    "problem": "이 문장은 대화 메뉴 화면의 항목 목록을 설명하는데 \"그 뒤에 귓속말 탭이 있습니다\"라고만 해서, 메뉴 항목 \"귓속말 탭\"이 아니라 게임의 실제 귓속말 탭들이 화면에 나열된다고 읽힌다. 앞의 탭별 항목과 같은 메뉴 항목이라는 것이 드러나지 않아 처음 쓰는 사람은 무엇을 찾아야 하는지 헷갈린다.",
+    "evidence": "원문 \"followed by Whisper Tabs\"는 메뉴 항목 이름(terms: Whisper Tabs=귓속말 탭). 같은 파일 설정 요약 표는 \"귓속말 탭 | 위 참고 | 모든 귓속말 탭이 함께 쓰는 경보\"로 항목임을 밝힌다."
+  }
+]

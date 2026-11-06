@@ -1,0 +1,114 @@
+{
+ "findings": [
+  {
+   "id": "world/navigation.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "대상까지 경로 단축키는 대상으로 잡은 생물이나",
+   "source_quote": "The Route to Your Target binding takes the creature or group member you are targeting as the destination.",
+   "suggestion": "대상까지 경로 안내 단축키는 대상으로 잡은 생물이나",
+   "problem": "단축키 이름을 인용하는 자리인데 실제 단축키 창에 표시되는 이름 \"대상까지 경로 안내\"가 아니라 \"대상까지 경로\"로 적었다. 같은 페이지의 다른 단축키(\"같은 이름의 가장 가까운 미방문 지점까지 경로 안내 단축키\")는 화면 이름을 그대로 쓰므로, 독자는 단축키 창에서 \"대상까지 경로\"라는 항목을 찾다가 찾지 못한다.",
+   "evidence": "vision-locale/koKR/navigation.lua:317 L[\"Route to Your Target\"] = \"대상까지 경로 안내\" (입력 terms에도 같은 값). 참고: WowVision/docs/src/user/ko/reference/keybindings.md:99, basics/keybindings.md:36도 \"대상까지 경로\"로 적어 같은 문제가 있다(이 파일 범위 밖)."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "Ctrl+Alt를 쓰는 다른 바로 가기를 눌러도 거리 알림이 나옵니다.",
+   "source_quote": "Any other shortcut that uses Ctrl+Alt will also trigger the announcement.",
+   "suggestion": "Ctrl+Alt가 들어가는 다른 단축키를 눌러도 거리 알림이 나옵니다.",
+   "problem": "이 페이지는 키 조합을 모두 \"단축키\"라고 부르는데 여기만 \"바로 가기\"라고 썼다. 설명서의 다른 곳에서 \"바로 가기\"는 바탕 화면 바로 가기나 컨트롤러의 바로 가기 층을 가리키므로, 키 조합이 아니라 다른 대상으로 읽힐 수 있다.",
+   "evidence": "같은 파일의 \"단축키 창\", \"거리 알림 단축키\". 다른 파일의 \"바로 가기\": getting-started/installer.md:46 \"바탕 화면 바로 가기 만들기\", controller.md:73 \"## 바로 가기 층\"."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "그게 거슬리면 Alt Gr로 거리 알림 설정을 끄고",
+   "source_quote": "If that bothers you, turn off the Announce Distance with Alt Gr setting",
+   "suggestion": "이 알림이 거슬리면 Alt Gr로 거리 알림 설정을 끄고",
+   "problem": "\"그게\"는 구어 축약형이라 합니다체 설명서 문장에서 혼자 낮아진다. 또 \"그게\"가 앞 문장의 \"다른 바로 가기\"인지 \"거리 알림이 나오는 것\"인지 바로 드러나지 않는다.",
+   "evidence": "원문 that은 앞 문장 전체(다른 단축키로도 알림이 나오는 일)를 받는다. 이 파일의 다른 문장은 모두 축약형 없이 쓴다."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "방문한 장소 기능이 그것을 대신 기억합니다.",
+   "source_quote": "The visited places feature remembers it for you.",
+   "suggestion": "방문한 장소 기능이 이미 다녀온 곳을 대신 기억합니다.",
+   "problem": "앞 문장에 \"같은 종류의 것\", \"약초, 광맥, 생물의 생성 지점\", \"방금 확인한 곳\"이 모두 나와서 \"그것\"이 무엇을 기억한다는 말인지 다시 찾아야 한다. 구체적인 명사로 바꾸면 기능이 무엇을 하는지 바로 드러난다.",
+   "evidence": "바로 앞 문장: \"같은 종류의 것(약초, 광맥, 어떤 생물의 생성 지점)으로 계속 걸어갈 때는 방금 확인한 곳으로 다시 안내받고 싶지는 않을 것입니다.\""
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "WowVision은 그것을 다시 설정하지 않습니다.",
+   "source_quote": "WowVision does not set it again.",
+   "suggestion": "WowVision은 시점 전환 방식을 다시 설정하지 않습니다.",
+   "problem": "바로 앞 문장에 \"시점 전환 방식\"과 \"돌아서기\" 두 대상이 있어 \"그것\"이 무엇인지 다시 찾아야 한다. 다시 설정하지 않는 것이 시점 전환 방식이라는 점이 이 문단의 요지이므로 명사로 밝히는 편이 뜻이 바로 드러난다.",
+   "evidence": "앞 문장: \"나중에 시점 전환 방식을 되돌리면 돌아서기가 엉뚱한 곳을 향합니다.\" 원문 it = the following style."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "WowVision용 다른 지도 데이터 애드온도 함께 들어 있는 지도 데이터 애드온과 같이 계속 쓸 수 있습니다.",
+   "source_quote": "Other map data addons for WowVision keep working beside the bundled one.",
+   "suggestion": "WowVision용 다른 지도 데이터 애드온도 기본으로 들어 있는 이 애드온과 나란히 계속 쓸 수 있습니다.",
+   "problem": "\"함께 들어 있는\"과 \"같이\"가 한 문장에 겹치고 \"지도 데이터 애드온\"이 두 번 나와, 무엇과 무엇을 함께 쓴다는 말인지 한 번에 읽히지 않는다.",
+   "evidence": "같은 문단 앞 문장들이 이미 \"WowVision_MapData_TBC라는 별도 애드온 폴더\"를 말하고 있어 \"이 애드온\"으로 받을 수 있다."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "예: \"120야드\". Sku와 똑같습니다.",
+   "source_quote": "for example \"120 yards\", just like Sku.",
+   "suggestion": "예: \"120야드\". Sku와 같은 방식입니다.",
+   "problem": "\"Sku와 똑같습니다\"가 예시 뒤에 따로 떨어져 있어 Sku와 같은 것이 \"120야드\"라는 낭독인지 Alt Gr 키 동작인지 모호하다. 원문 just like Sku는 Alt Gr로 거리를 말하는 동작 전체를 가리킨다.",
+   "evidence": "원문: \"Alt Gr speaks the distance in yards to the waypoint you are walking to, for example \"120 yards\", just like Sku.\""
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Alt+P | 도착 거리 전환 | 짧은, 중간, 긴 도착 거리 사이를 전환합니다. |",
+   "source_quote": "| Alt+P | Cycle Arrival Distance | Switches between the short, medium and long arrival distance. |",
+   "suggestion": "| Alt+P | 도착 거리 전환 | 단거리, 중거리, 장거리 도착 거리 사이를 전환합니다. |",
+   "problem": "관형어 \"짧은, 중간, 긴\"이 쉼표로 나열되어 \"짧은,\"이 뒤 명사 없이 끊겨 읽힌다. 같은 페이지의 도착 거리 표와 Alt+P 설명은 이 세 값을 \"단거리, 중거리, 장거리\"라는 이름으로 부르므로, 이름을 쓰면 같은 값이라는 것이 바로 연결된다.",
+   "evidence": "같은 파일 도착 거리 절: \"경로를 따라가는 동안 Alt+P를 누르면 단거리, 중거리, 장거리, 다시 단거리 순으로 바뀝니다.\" koKR Short Range=단거리, Medium Range=중거리, Long Range=장거리 (입력 terms)."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| 소리 | 기본값 | 나는 때 |",
+   "source_quote": "| Sound | Default | When it plays |",
+   "suggestion": "| 소리 | 기본값 | 울리는 때 |",
+   "problem": "표 머리글 \"나는 때\"는 \"나다\"의 주어(소리)가 빠져 \"나(1인칭)는 때\"로도 읽혀 머리글로 뜻이 바로 잡히지 않는다.",
+   "evidence": "같은 파일 본문은 \"신호음을 냅니다\", \"약 0.7초마다 울립니다\"처럼 소리에 \"울리다\"를 쓴다."
+  },
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "[스캐너](./scanner.md)에서 퀘스트, NPC, 그 밖에 위치가 있는 항목에서 Enter를 누르면",
+   "source_quote": "In the scanner ([Scanner](./scanner.md)), Enter on a quest, an NPC or any other placed entry",
+   "suggestion": "[스캐너](./scanner.md)의 퀘스트, NPC, 그 밖에 위치가 있는 항목에서 Enter를 누르면",
+   "problem": "\"~에서\"가 한 문장 안에 두 번 겹쳐 Enter를 누르는 곳이 스캐너인지 항목인지 두 번 읽게 된다.",
+   "evidence": "링크 수와 대상은 그대로 두고 조사만 바꾼다."
+  }
+ ]
+}

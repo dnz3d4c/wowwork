@@ -1,0 +1,70 @@
+{
+  "findings": [
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기(경보), 사용함",
+      "source_quote": "Announce Errors (alert), Enabled",
+      "suggestion": "오류 알림(경보), 사용함",
+      "problem": "오류 메뉴에서 실제로 표시·낭독되는 설정 이름은 \"오류 알림\"인데 설명서는 \"오류 알리기\"라고 적어, 설명서의 이름으로 메뉴 항목을 찾을 수 없습니다. koKR 값이 최종 검토에서 바뀌었는데 설명서 인용이 따라 바뀌지 않았습니다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\" (입력 terms도 \"오류 알림\"). git log: 4ef3f3f에서 \"오류 알리기\"였다가 bff9930 \"koKR: final review\"에서 \"오류 알림\"으로 바뀜. WowVision/core/errors/module.lua:14 label = L[\"Announce Errors\"]. 같은 옛 표기가 basics/alerts.md:46,121,151, getting-started/troubleshooting.md:111에도 남아 있음."
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기, TTS 경보",
+      "source_quote": "Announce Errors, TTS Alert",
+      "suggestion": "오류 알림, TTS 경보",
+      "problem": "메뉴에 표시되는 설정 이름은 \"오류 알림\"이라 \"오류 알리기\"로는 항목을 찾을 수 없습니다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기 경보를 통해 그대로 말합니다",
+      "source_quote": "are spoken as they are through the Announce Errors alert",
+      "suggestion": "오류 알림 경보로 그대로 말합니다",
+      "problem": "경보 이름이 화면 문구 \"오류 알림\"과 달라, 이 메시지를 끄거나 설정하려는 독자가 어느 경보인지 찾지 못합니다. \"~를 통해\" 번역투도 함께 걸립니다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기가 켜져 있으면 애드온 오류가 났을 때",
+      "source_quote": "With Announce Errors on",
+      "suggestion": "오류 알림이 켜져 있으면 애드온 오류가 났을 때",
+      "problem": "Lua 오류 낭독을 켜고 끄는 설정 이름이 화면 문구 \"오류 알림\"과 달라 메뉴에서 찾을 수 없습니다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "공격대 대상 표시기는 숫자로 읽습니다.",
+      "source_quote": "Raid markers are spoken as numbers.",
+      "suggestion": "대상 표시기는 숫자로 읽습니다.",
+      "problem": "게임 공식 용어와 확정 용어집은 \"대상 표시기\"이고, 같은 내용을 자세히 설명하는 대상 지정 페이지도 \"대상 표시기\"라고 부릅니다. \"공격대 대상 표시기\"는 공식 용어에 없는 말이라 독자가 다른 기능으로 여길 수 있습니다.",
+      "evidence": "gs_koKR.csv 16190 BINDING_HEADER_RAID_TARGET \"대상 표시기\"(enUS \"Target Markers\"), 16176 RAID_TARGET_ICON \"대상 표시기 아이콘\". docs/glossary.tsv:22 raid→공격대, 예외 \"대상 표시기\", 비고 \"Raid Target Marker=대상 표시기(공식)\". world/targeting.md:33 \"게임이 유닛에 붙은 대상 표시기를 애드온에 숨깁니다 ... 이름 대신 번호를 말합니다\"."
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "단축키 창에서 새 키 입력받기",
+      "source_quote": "Capturing a new key in the keybinding window",
+      "suggestion": "단축키 화면에서 새 키 입력받기",
+      "problem": "다른 설명서는 모두 이 화면을 \"단축키 화면\"이라고 부르는데 이 파일만 \"단축키 창\"이라 해, 같은 화면인지 독자가 다시 확인해야 합니다.",
+      "evidence": "basics/keybindings.md:4,6 \"단축키 화면\"(제목 \"## 단축키 화면 열기\"), basics/interface.md:6,21,111, basics/index.md:11, basics/tooltips.md:16 모두 \"단축키 화면\". \"단축키 창\"은 ko 설명서 전체에서 world/combat.md에만 나옴."
+    }
+  ]
+}

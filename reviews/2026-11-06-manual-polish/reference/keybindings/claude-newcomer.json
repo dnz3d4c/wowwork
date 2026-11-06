@@ -1,0 +1,70 @@
+{
+ "findings": [
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "\"적 소프트 대상 사용함\" 또는 \"적 소프트 대상 비활성화\"라고 말합니다",
+   "source_quote": "says \"Soft Target Enemy Enabled\" or \"Disabled\"",
+   "suggestion": "\"적 소프트 대상 사용함\" 또는 \"적 소프트 대상 사용 안 함\"이라고 말합니다",
+   "problem": "실제로 낭독되는 문구는 \"적 소프트 대상 사용 안 함\"인데 설명서는 \"비활성화\"로 인용한다. 듣는 말과 설명서의 말이 달라 독자가 끈 상태 안내를 알아듣지 못하거나 다른 메시지로 여긴다.",
+   "evidence": "WowVision/core/targeting/module.lua:339-341 text = info.label .. \" \" .. L[\"Disabled\"]; vision-locale/koKR/ui.lua:54 L[\"Disabled\"] = \"사용 안 함\", ui.lua:56 L[\"Enabled\"] = \"사용함\""
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 이전 툴팁 줄 | Shift+Up |",
+   "source_quote": "| Previous Tooltip Line | Shift+Up |",
+   "suggestion": "| 툴팁 이전 줄 | Shift+Up |",
+   "problem": "단축키 창에 표시되는 동작 이름은 \"툴팁 이전 줄\"인데 표는 \"이전 툴팁 줄\"로 적었다. 처음 쓰는 독자가 단축키 창에서 이 이름으로 동작을 찾을 수 없다.",
+   "evidence": "vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\"; 입력 terms에도 \"툴팁 이전 줄\""
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 다음 툴팁 줄 | Shift+Down |",
+   "source_quote": "| Next Tooltip Line | Shift+Down |",
+   "suggestion": "| 툴팁 다음 줄 | Shift+Down |",
+   "problem": "단축키 창의 동작 이름은 \"툴팁 다음 줄\"인데 표는 \"다음 툴팁 줄\"로 적어 단축키 창에서 같은 이름으로 찾을 수 없다.",
+   "evidence": "vision-locale/koKR/bindings.lua:26 L[\"Next Tooltip Line\"] = \"툴팁 다음 줄\"; 입력 terms에도 \"툴팁 다음 줄\""
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 대상까지 경로 | 지정 안 됨 | 현재 대상까지 경로를 시작합니다 |",
+   "source_quote": "| Route to Your Target | Unbound | Starts a route to your current target |",
+   "suggestion": "| 대상까지 경로 안내 | 지정 안 됨 | 현재 대상까지 경로를 시작합니다 |",
+   "problem": "단축키 창의 동작 이름은 \"대상까지 경로 안내\"인데 표는 \"대상까지 경로\"로 줄여 적었다. 이 동작은 기본 키가 없어 독자가 단축키 창에서 이름으로 찾아 키를 지정해야 하는데, 이름이 달라 찾기 어렵다.",
+   "evidence": "vision-locale/koKR/navigation.lua:317 L[\"Route to Your Target\"] = \"대상까지 경로 안내\"; 입력 terms에도 같은 값"
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "추가 전리품 주사위가 있는 게임 버전에만 있습니다",
+   "source_quote": "Only exists on game versions that have bonus rolls",
+   "suggestion": "보너스 주사위가 있는 게임 버전에만 있습니다",
+   "problem": "같은 행의 동작 이름은 \"보너스 주사위\"인데 설명은 bonus rolls를 \"추가 전리품 주사위\"로 불러 서로 다른 기능처럼 보인다. 확정 용어집은 bonus roll을 \"보너스 주사위\"로 정했고 \"추가 전리품\"은 Bonus Loot의 번역이라 다른 말이라고 적고 있다.",
+   "evidence": "wowwork/docs/glossary.tsv:29-30 roll bonus/bonus roll = 보너스 주사위 ('추가 전리품'은 Bonus Loot의 번역이라 다른 말); vision-locale/koKR/bindings.lua:40 L[\"Roll Bonus\"] = \"보너스 주사위\""
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "kokr",
+   "quote": "[대상 지정](../world/targeting.md)을 참고하십시오.",
+   "source_quote": "See [Targeting](../world/targeting.md).",
+   "suggestion": "[대상 지정](../world/targeting.md)을 참고하십시오.",
+   "problem": "Targeting 모듈의 화면 이름은 \"목표 선택\"인데 이 파일의 제목·본문(\"## 대상 지정\", 전역 키 목록의 \"대상 지정\")과 연결된 설명서 페이지 제목은 \"대상 지정\"이다. 독자가 메뉴에서 \"대상 지정\"을 찾으면 \"목표 선택\"만 보여 같은 기능인지 알기 어렵다. 설명서 전체와 koKR의 다른 낱말(\"대상\")이 \"대상 지정\"으로 통일돼 있으므로 바꿀 쪽은 koKR 키 \"Targeting\"(\"목표 선택\" -> \"대상 지정\")이다. 설명서 문장은 그대로 둔다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; WowVision/core/targeting/module.lua:3 module:setLabel(L[\"Targeting\"]); wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2 \"# 대상 지정\""
+  }
+ ]
+}

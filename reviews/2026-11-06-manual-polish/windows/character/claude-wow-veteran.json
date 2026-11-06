@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "windows/character.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "다른 하나는 소지품 바에 보여 줍니다",
+   "source_quote": "one that shows it on your backpack bar",
+   "suggestion": "다른 하나는 소지품 가방에 보여 줍니다",
+   "problem": "\"소지품 바\"는 게임에 없는 말이라 독자가 행동 단축바 같은 별도 막대로 오해할 수 있다. 게임은 이 체크 상자의 대상을 \"소지품\"(소지품 가방)으로 부른다.",
+   "evidence": "gs_koKR.csv SHOW_ON_BACKPACK=\"소지품에 표시\"(enUS \"Show on Backpack\"), TOKEN_SHOW_ON_BACKPACK=\"이 항목을 활성화하면 소지품 가방에 이 종류의 화폐를 표시합니다.\", BACKPACK_TOOLTIP=\"소지품\". 설명서 windows/bags-and-bank.md도 backpack을 \"소지품\"으로 쓴다."
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+  "findings": [
+    {
+      "id": "information/buffers.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "키는 단축키 설정 창에서 바꿀 수 있습니다",
+      "source_quote": "You can change the keys in the keybinding window",
+      "suggestion": "키는 단축키 화면에서 바꿀 수 있습니다",
+      "problem": "링크한 단축키 페이지는 이 화면을 '단축키 화면'이라고 부르는데 여기서는 '단축키 설정 창'이라고 해서, 처음 쓰는 사람은 단축키 화면과 다른 설정 창이 따로 있는 것으로 생각하고 찾을 수 있다.",
+      "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4,6 '단축키 화면', '## 단축키 화면 열기'; basics/interface.md:6,21, information/monitors.md:226 모두 '단축키 화면'. '단축키 설정 창'은 information/buffers.md:31 한 곳뿐."
+    },
+    {
+      "id": "information/buffers.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "버퍼와 그룹은 처음으로 되돌아갑니다",
+      "source_quote": "Buffers and groups do wrap around.",
+      "suggestion": "버퍼와 그룹은 목록 끝에서 반대쪽 끝으로 넘어갑니다",
+      "problem": "wrap around는 양쪽 방향 모두를 뜻하는데 '처음으로 되돌아갑니다'는 마지막에서 처음으로 가는 경우만 말한다. 첫 버퍼에서 Alt+Left를 누르면 어떻게 되는지 번역만으로는 알 수 없다.",
+      "evidence": "원문 'Buffers and groups do wrap around.' 뒤 예시는 한 방향만 들지만 앞 문장 자체는 방향을 한정하지 않는다."
+    },
+    {
+      "id": "information/buffers.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "유닛 종류로 바꾸면",
+      "source_quote": "to a unit type",
+      "suggestion": "유닛을 쓰는 종류(생명력, 자원, PvP)로 바꾸면",
+      "problem": "'유닛 종류'는 player, target 같은 유닛의 종류로 읽힌다. 여기서는 유닛 매개변수를 받는 개체 종류(바로 앞 문장의 생명력, 자원, PvP)를 가리키므로, 독자가 무엇을 바꾸라는 것인지 다시 찾아야 한다.",
+      "evidence": "같은 문단 첫 문장 '생명력, 자원, PvP 항목은 ... 유닛을 직접 설정하십시오'가 유닛을 받는 종류를 열거한다. 개체 종류 표(157~174행)에서 매개변수가 '유닛'인 종류도 생명력, 자원, PvP, 오라다."
+    },
+    {
+      "id": "information/buffers.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "개체 목록, 출처, 출처 목록, 대화 탭",
+      "source_quote": "the Objects list, the Source, the Sources, or the Chat Tab",
+      "suggestion": "개체 목록, 추적 버퍼의 출처, 오라 버퍼의 출처, 대화 탭",
+      "problem": "화면에는 '출처 목록'이라는 설정이 없다. 오라 버퍼의 Sources도 화면 문구가 '출처'이고 같은 파일의 설정 표와 예시도 '출처', '출처 (2)'로 부른다. 처음 쓰는 사람은 '출처 목록'이라는 버튼을 찾게 된다.",
+      "evidence": "terms: Sources=출처, Source=출처. 같은 파일 117행 설정 표 '출처', 324행 '출처 (2)에서 Enter를 누릅니다'."
+    },
+    {
+      "id": "information/buffers.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "범위를 고른 뒤 전역 또는 캐릭터를 고릅니다",
+      "source_quote": "choose Scope, and pick Global or your character",
+      "suggestion": "범위를 고른 뒤 전역 또는 캐릭터 이름을 고릅니다",
+      "problem": "메뉴에는 '캐릭터'라는 선택지가 없고 캐릭터 이름이 나온다. 바로 앞 항목은 '캐릭터 이름(이 캐릭터만)'이라고 했는데 여기서 '캐릭터'라고만 해서 다른 선택지처럼 읽힌다.",
+      "evidence": "같은 파일 299행 '전역(모든 캐릭터) 또는 캐릭터 이름(이 캐릭터만)을 고릅니다'. 원문 앞 항목 'your character's name'."
+    }
+  ]
+}

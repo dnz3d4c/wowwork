@@ -1,0 +1,70 @@
+{
+ "findings": [
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| The Burning Crusade (TBC) | Classic Era의 창에 더해",
+   "source_quote": "| The Burning Crusade (TBC) | The Classic Era set, plus",
+   "suggestion": "| 불타는 성전(TBC) | 클래식 시대의 창에 더해",
+   "problem": "확장팩 이름과 버전 이름을 영어 그대로 두었다. 한국어 클라이언트의 공식 확장팩 이름은 '불타는 성전'이고, 다른 설명서 파일은 같은 원문 표의 같은 칸을 '불타는 성전(TBC)', 'Classic Era'는 '클래식 시대'로 옮겼다. 이 파일만 영어로 남아 다른 페이지 표와 같은 버전인지 대조하기 어렵다.",
+   "evidence": "gs_koKR.csv EXPANSION_NAME1 = \"불타는 성전\"(enUS \"The Burning Crusade\"). windows/character.md 11행 \"| 불타는 성전(TBC) |\"(원문 \"| The Burning Crusade (TBC) |\"), 10행 \"| 클래식 시대 |\"; windows/auction-house.md 16~17행 \"| 클래식 시대 |\", \"| 불타는 성전(TBC) |\"."
+  },
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| Mists of Pandaria (Mists) | Classic Era의 창에 더해",
+   "source_quote": "| Mists of Pandaria (Mists) | The Classic Era set, plus",
+   "suggestion": "| 판다리아의 안개(Mists) | 클래식 시대의 창에 더해",
+   "problem": "확장팩 이름을 영어 그대로 두었다. 공식 한국어 이름은 '판다리아의 안개'이고, 다른 설명서 파일은 같은 칸을 '판다리아의 안개(Mists)', 'Classic Era'는 '클래식 시대'로 옮겼다.",
+   "evidence": "gs_koKR.csv EXPANSION_NAME4 = \"판다리아의 안개\"(enUS \"Mists of Pandaria\"). windows/character.md 12행 \"| 판다리아의 안개(Mists) |\", windows/auction-house.md 18행 \"| 판다리아의 안개(Mists) |\"."
+  },
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Classic Era | 친구, 차단, 누구 목록",
+   "source_quote": "| Classic Era | Friends, ignore and who lists",
+   "suggestion": "| 클래식 시대 | 친구, 차단, 누구 목록",
+   "problem": "버전 이름 'Classic Era'를 영어로 두었다. 다른 설명서 파일은 같은 버전을 '클래식 시대'로 부른다. 같은 버전을 파일마다 다르게 불러 버전별 표를 서로 맞춰 보기 어렵다.",
+   "evidence": "windows/character.md 10행 \"| 클래식 시대 |\", windows/auction-house.md 16행 \"| 클래식 시대 |\", getting-started/introduction.md 29행 \"| 클래식 시대 |\". 용어집·결정에는 버전 이름 항목이 없다."
+  },
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Retail | 퀘스트 목록, 경매장",
+   "source_quote": "| Retail | Quest log, auction house",
+   "suggestion": "| 리테일 | 퀘스트 목록, 경매장",
+   "problem": "버전 이름 'Retail'을 영어로 두었다. 다른 설명서 파일은 같은 버전을 '리테일'로 부른다.",
+   "evidence": "windows/character.md 13행 \"| 리테일 |\", getting-started/introduction.md 30행 \"| 리테일 |\", getting-started/manual-installation.md 35행 \"| 리테일 |\"."
+  },
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| WoW: Forever | Retail의 창에 더해",
+   "source_quote": "| WoW: Forever | The Retail set, plus",
+   "suggestion": "| WoW: Forever | 리테일의 창에 더해",
+   "problem": "표 안에서 다시 가리키는 버전 이름 'Retail'도 다른 설명서 파일의 '리테일'과 다르다. 위 행 이름을 '리테일'로 바꾸면 여기도 맞춰야 한다.",
+   "evidence": "windows/character.md 13행 \"| 리테일 |\", getting-started/introduction.md 30행 \"| 리테일 |\"."
+  },
+  {
+   "id": "windows/overview.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "장비, 능력치, 평판, 기술, PvP, 장비 구성",
+   "source_quote": "equipment, stats, reputation, skills, PvP, equipment sets",
+   "suggestion": "장비, 능력치, 평판, 숙련, PvP, 장비 구성",
+   "problem": "캐릭터 창의 Skills 탭을 '기술'로 불렀다. 한국어 클라이언트와 링크 대상인 캐릭터 페이지는 이 탭을 '숙련'으로 부른다. 독자가 '기술'이라는 탭을 찾으면 캐릭터 창에서 찾지 못한다.",
+   "evidence": "gs_koKR.csv SKILLS = \"숙련\"(enUS \"Skills\"). windows/character.md 4행 \"평판, 숙련, PvP 현황\", 122행 \"## 숙련(불타는 성전과 WoW: Forever)\"(원문 \"## Skills (TBC and WoW: Forever)\")."
+  }
+ ]
+}

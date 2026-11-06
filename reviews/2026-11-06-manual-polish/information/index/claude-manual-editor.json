@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "information/index.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "(Retail과 WoW: Forever 전용)",
+   "source_quote": "(Retail and WoW: Forever)",
+   "suggestion": "(리테일과 WoW: Forever 전용)",
+   "problem": "같은 게임 버전 이름 Retail을 이 파일은 영어 'Retail'로, 같은 설명서의 다른 파일은 '리테일'로 적는다. 특히 설치 설명서가 버전 표기 규칙을 '(리테일과 WoW: Forever 전용)처럼 적혀 있습니다'라고 안내하는데, 이 파일은 바로 그 형식을 'Retail'로 써서 안내한 표기와 다르다. 독자가 버전 표기를 찾을 때 두 표기가 같은 버전인지 다시 확인해야 한다. information 폴더 안에서도 buffers.md·group-health.md는 'Retail', monitors.md는 '리테일'로 갈려 있어 파일 하나만 고칠 일이 아니므로 표기 방침(용어집 등재)을 정해야 한다. 용어집과 decisions.tsv에는 Retail 표기 결정이 없다.",
+   "evidence": "getting-started/manual-installation.md:77 '기능이 일부 버전에만 있으면 설명서에 (리테일과 WoW: Forever 전용)처럼 적혀 있습니다.' / information/monitors.md:27 '주문 재사용 대기(리테일, WoW: Forever)' / controller.md:4 '리테일과 WoW: Forever에서는' / basics/alerts.md:142 '(리테일과 WoW: Forever)' / 반대 사례: information/buffers.md:98 'Retail과 WoW: Forever에서는', information/group-health.md:4 'Retail과 WoW: Forever에서 사용 가능합니다.', basics/speech.md:36 'Retail과 WoW: Forever는'. docs/glossary.tsv·docs/decisions.tsv에 Retail 항목 없음(grep 확인)."
+  }
+ ]
+}

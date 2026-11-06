@@ -1,0 +1,37 @@
+{
+  "findings": [
+    {
+      "id": "controller.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "| 이전 툴팁 줄, 다음 툴팁 줄 | 왼쪽 트리거 + 방향 패드 위",
+      "source_quote": "| Previous Tooltip Line, Next Tooltip Line | Left trigger + D-pad up",
+      "suggestion": "| 툴팁 이전 줄, 툴팁 다음 줄 | 왼쪽 트리거 + 방향 패드 위",
+      "problem": "이 표의 첫째 칸은 '단축키 창에 표시되는 단축키 이름'이라고 앞에서 밝혔는데, 단축키 창이 실제로 표시·낭독하는 이름은 '툴팁 이전 줄', '툴팁 다음 줄'이다. 설명서의 '이전 툴팁 줄'로는 단축키 창에서 같은 이름을 찾을 수 없어 버튼을 바꾸려는 독자가 해당 단축키를 찾지 못한다.",
+      "evidence": "wowvision-ko/vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\", :26 L[\"Next Tooltip Line\"] = \"툴팁 다음 줄\". 입력 terms에도 Previous Tooltip Line=툴팁 이전 줄, Next Tooltip Line=툴팁 다음 줄. 같은 어긋남이 basics/tooltips.md:11-12, getting-started/sku.md:62, reference/keybindings.md:48에도 '이전 툴팁 줄'로 있다(이 파일 범위 밖)."
+    },
+    {
+      "id": "controller.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "키보드의 Shift+Up(이전 툴팁 줄)은",
+      "source_quote": "keyboard Shift+Up (previous tooltip line) becomes",
+      "suggestion": "키보드의 Shift+Up(툴팁 이전 줄)은",
+      "problem": "괄호 속 이름이 단축키 이름을 가리키는데, 단축키 창에 표시되는 이름 '툴팁 이전 줄'과 다르다. 아래 표를 고치면 같은 단축키를 한 파일 안에서 두 이름으로 부르게 된다.",
+      "evidence": "wowvision-ko/vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\"."
+    },
+    {
+      "id": "controller.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "게임에서 흐리게 표시된 칸은 \", 비활성화\"를 붙여 읽고",
+      "source_quote": "A slice that the game shows greyed out is read with \", Disabled\"",
+      "suggestion": "게임에서 흐리게 표시된 칸은 \", 사용 안 함\"을 붙여 읽고",
+      "problem": "설명서는 낭독 문구를 따옴표로 인용하는데, 흐린 칸에 실제로 붙여 읽는 말은 '사용 안 함'이다. '비활성화'는 다른 키(Disable)의 값이라 독자가 듣는 말과 설명서의 말이 다르다.",
+      "evidence": "wowvision-ko/WowVision/camelot/gamepadRadial.lua:59 return text .. \", \" .. L[\"Disabled\"]; wowvision-ko/vision-locale/koKR/ui.lua:54 L[\"Disabled\"] = \"사용 안 함\" (ui.lua:53 L[\"Disable\"] = \"비활성화\"는 다른 키). 입력 terms에도 Disabled=사용 안 함."
+    }
+  ]
+}

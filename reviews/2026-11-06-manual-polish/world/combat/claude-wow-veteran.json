@@ -1,0 +1,70 @@
+{
+  "findings": [
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "| 오류 알리기(경보), 사용함 | 켬 | 주 스위치입니다.",
+      "source_quote": "| Announce Errors (alert), Enabled | On | The master switch.",
+      "suggestion": "| 오류 알림(경보), 사용함 | 켬 | 주 스위치입니다.",
+      "problem": "WowVision 메뉴에 실제로 표시·낭독되는 경보 이름은 \"오류 알림\"인데 설명서는 \"오류 알리기\"라고 적었다. 메뉴에서 이 이름을 찾는 독자는 들리는 말과 설명서의 말이 달라 같은 설정인지 확인해야 한다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\", WowVision/core/errors/module.lua:14 label = L[\"Announce Errors\"]. 입력 terms에도 Announce Errors=오류 알림. 같은 어긋남이 ko/basics/alerts.md:121,151(\"오류 알리기\"), ko/getting-started/troubleshooting.md:111(\"오류 알리기\")에도 있다."
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "| 오류 알리기, TTS 경보 | 켬 |",
+      "source_quote": "| Announce Errors, TTS Alert | On |",
+      "suggestion": "| 오류 알림, TTS 경보 | 켬 |",
+      "problem": "화면 문구 \"오류 알림\"과 다른 이름 \"오류 알리기\"를 썼다. 메뉴에서 듣는 이름과 달라 찾기 어렵다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기 경보를 통해 그대로 말합니다",
+      "source_quote": "are spoken as they are through the Announce Errors alert",
+      "suggestion": "오류 알림 경보로 그대로 말합니다",
+      "problem": "화면 문구 \"오류 알림\"과 다른 이름 \"오류 알리기\"를 썼다. 앞의 설정 표와 함께 고쳐야 같은 경보로 읽힌다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "오류 알리기가 켜져 있으면 애드온 오류가 났을 때",
+      "source_quote": "With Announce Errors on, WowVision speaks \"Lua error:\"",
+      "suggestion": "오류 알림이 켜져 있으면 애드온 오류가 났을 때",
+      "problem": "화면 문구 \"오류 알림\"과 다른 이름 \"오류 알리기\"를 썼다.",
+      "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\""
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "탱커가 나머지 둘을 붙잡습니다.",
+      "source_quote": "Your tank grabs the other two",
+      "suggestion": "방어 전담이 나머지 둘을 붙잡습니다.",
+      "problem": "역할 이름을 커뮤니티 말 \"탱커\"로 썼다. 한국어 클라이언트의 공식 역할 이름은 \"방어 전담\"이고, 다른 설명서 파일은 모두 \"방어 전담\"을 쓴다. 이 파일만 다른 말이다.",
+      "evidence": "gs_enUS.csv 19686 TANK \"Tank\" = gs_koKR.csv TANK \"방어 전담\" (역할 이름 문맥 같음). ko/information/group-health.md:45,49, ko/windows/group-finder.md:44,118, ko/windows/character.md:88 모두 \"방어 전담\". \"탱커\"는 ko 설명서 전체에서 world/combat.md에만 있다(Grep)."
+    },
+    {
+      "id": "world/combat.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "공격대 대상 표시기는 숫자로 읽습니다.",
+      "source_quote": "Raid markers are spoken as numbers.",
+      "suggestion": "대상 표시기는 숫자로 읽습니다.",
+      "problem": "같은 raid marker를 이 파일은 \"공격대 대상 표시기\", 대상 지정 페이지는 \"대상 표시기\"로 부른다. 이 문장이 가리키는 제한(번호로 말함)은 targeting.md가 \"대상 표시기\"로 자세히 설명하는 바로 그 기능이라 이름을 맞춰야 연결된다. 게임 공식 이름도 \"대상 표시기\"다.",
+      "evidence": "gs_koKR.csv 16190 BINDING_HEADER_RAID_TARGET \"대상 표시기\", 16176 RAID_TARGET_ICON \"대상 표시기 아이콘\". glossary.tsv raid 행 note: Raid Target Marker=대상 표시기(공식). ko/world/targeting.md:26,33(\"대상 표시기\", 같은 '번호로 말함' 설명), ko/basics/alerts.md:98(\"대상 표시기\")."
+    }
+  ]
+}

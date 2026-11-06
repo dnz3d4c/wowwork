@@ -1,0 +1,92 @@
+{
+ "findings": [
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 평균 일수 | 7 | 평균 줄에서 며칠 치를 평균할지 정합니다.",
+   "source_quote": "| Mean Days | 7 | How many days the mean line averages.",
+   "suggestion": "| 평균 계산 일수 | 7 | 평균 줄에서 며칠 치를 평균할지 정합니다.",
+   "problem": "설정 이름을 \"평균 일수\"로 적었지만 WowVision 메뉴에서 들리는 이름은 \"평균 계산 일수\"다. 독자가 메뉴에서 설명서에 적힌 이름을 찾지 못한다. 같은 표의 \"기록 일수\" 등 다른 행은 화면 문구를 그대로 인용한다.",
+   "evidence": "vision-locale/koKR/auction.lua:59 L[\"Mean Days\"] = \"평균 계산 일수\"; 입력 terms에도 Mean Days -> 평균 계산 일수."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "kokr",
+   "quote": "> 구리 광석, 5 실버, 사용 가능 340",
+   "source_quote": "> Copper Ore, 5 Silver, Available 340",
+   "suggestion": "> 구리 광석, 5 실버, 구매 가능 수량 340",
+   "problem": "경매 결과 줄의 수량 표시 \"Available\"이 \"사용 가능\"으로 낭독된다. 같은 파일의 필터 화면에서 \"사용 가능\"은 Usable(사용할 수 있는 아이템) 필터를 가리키므로, 독자가 340을 사용 가능 여부나 다른 수치로 오해한다. 바꿀 koKR 키: ui.lua L[\"Available\"]. 단 이 키는 retail/talentTree.lua:156에서도 쓰이므로(특성 \"사용 가능\") 값만 바꾸면 그쪽 뜻이 깨진다. 경매장용 키를 따로 두는 코드 변경이 필요할 수 있어 사용자 결정이 필요하다. 같은 낭독을 인용한 예시 2단계(\"구리 광석, 5 실버, 사용 가능 340\"이 들립니다)와 상품 사기 2단계(\"사용 가능 200\")도 함께 바뀐다.",
+   "evidence": "koKR/ui.lua:61 L[\"Available\"] = \"사용 가능\"; WowVision/mists/auction.lua:253, 284에서 L[\"Available\"] .. 수량; 게임 공식 용어 cache/gs_koKR.csv 41396 AUCTION_HOUSE_BROWSE_HEADER_QUANTITY = \"구매 가능 수량\"(경매장 검색 결과 수량 열 머리글, 같은 문맥)."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "Ctrl+Tab으로 경매 창과 가방 사이를 오갑니다",
+   "source_quote": "Use Ctrl+Tab to switch between the auction window and the bags",
+   "suggestion": "Ctrl+Tab으로 경매장 창과 가방 사이를 오갑니다",
+   "problem": "같은 경매장 창을 첫 문단과 최신 경매장 절에서는 \"경매장 창\", 여기서는 \"경매 창\"으로 부른다. \"경매\"는 이 파일에서 탭 이름(경매 탭)과 목록 이름(\"경매\" 목록)이기도 해서, \"경매 창\"을 경매 탭으로 오해할 수 있다.",
+   "evidence": "같은 파일 4행 \"경매장 창에서는\", 243행 \"경매장 창 전체를 덮습니다\"; 탭 이름 \"경매\"(koKR auction.lua L[\"Auctions\"] = \"경매\")."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "WowVision은 경매 창이 열리자마자 읽기 시작하고",
+   "source_quote": "WowVision reads the auction window as soon as it opens",
+   "suggestion": "WowVision은 경매장 창이 열리자마자 읽기 시작하고",
+   "problem": "위와 같은 문제. 같은 창을 \"경매장 창\"과 \"경매 창\"으로 섞어 부르고, \"경매\"는 탭 이름이기도 하다.",
+   "evidence": "같은 파일 4행, 243행 \"경매장 창\"."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "결과에서 Enter를 누르면 구매 창이 열립니다.",
+   "source_quote": "Enter on a result opens its purchase pane.",
+   "suggestion": "결과에서 Enter를 누르면 구매 화면이 열립니다.",
+   "problem": "purchase pane(수량을 넣는 화면)을 \"구매 창\"으로, 게임의 buy confirmation을 \"구매 확인 창\"·\"확인 창\"으로 옮겨 서로 다른 두 화면 이름이 거의 같다. \"구매: Enter를 누르면 게임의 확인 창이 열립니다\"와 나란히 읽으면 구매 창과 확인 창이 같은 것인지 독자가 구분하기 어렵다. 이 파일은 필터 화면 등 WowVision이 보여 주는 하위 화면을 \"화면\"으로 부른다.",
+   "evidence": "같은 파일 \"#### 구매 확인 창\", \"구매: Enter를 누르면 게임의 확인 창이 열립니다\", \"필터에서 Enter를 누르면 별도의 작은 화면이 열립니다\"."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "결과가 구매 창으로 바뀝니다.",
+   "source_quote": "The result becomes a purchase pane.",
+   "suggestion": "결과가 구매 화면으로 바뀝니다.",
+   "problem": "바로 위 지적과 같은 문제. purchase pane을 \"구매 창\"으로 불러 \"구매 확인 창\"과 구분이 어렵다.",
+   "evidence": "같은 파일 \"#### 구매 확인 창\"."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"아이템 구입 완료\"이 들리고",
+   "source_quote": "you hear \"Item purchased\"",
+   "suggestion": "\"아이템 구입 완료\"가 들리고",
+   "problem": "인용한 말이 모음 \"료\"로 끝나므로 조사는 \"가\"여야 한다. \"완료\"이 들리고는 조사 호응이 틀렸다.",
+   "evidence": "같은 문단의 \"\\\"아이템을 찾을 수 없음\\\"이 들리고\"는 받침 있는 말이라 \"이\"가 맞다."
+  },
+  {
+   "id": "windows/auction-house.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "5. 선택한 경매에 대한 동작(경매를 선택한 동안에만)",
+   "source_quote": "5. The actions for the selected auction, only while one is selected",
+   "suggestion": "5. 선택한 경매로 할 수 있는 동작(경매를 선택한 동안에만)",
+   "problem": "\"~에 대한 동작\"은 for를 옮긴 번역투라 무엇이 동작의 대상인지 흐리다. 뒤 목록(즉시 구입, 입찰)이 선택한 경매로 하는 일임을 바로 드러내는 편이 정확하다.",
+   "evidence": "polish-base.md 무엇을 찾나 2항(\"~에 대한\" 번역투)."
+  }
+ ]
+}

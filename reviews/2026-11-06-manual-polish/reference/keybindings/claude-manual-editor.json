@@ -1,0 +1,81 @@
+{
+ "findings": [
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "\"적 소프트 대상 사용함\" 또는 \"적 소프트 대상 비활성화\"라고 말합니다",
+   "source_quote": "says \"Soft Target Enemy Enabled\" or \"Disabled\"",
+   "suggestion": "\"적 소프트 대상 사용함\" 또는 \"적 소프트 대상 사용 안 함\"이라고 말합니다",
+   "problem": "키를 눌렀을 때 실제로 들리는 말은 \"적 소프트 대상 사용 안 함\"인데 설명서는 \"비활성화\"라고 인용한다. 독자는 들은 말과 설명서의 말이 달라 같은 안내인지 확인할 수 없다. \"비활성화\"는 koKR에서 다른 키(Disable)의 값이다.",
+   "evidence": "WowVision/core/targeting/module.lua:338-342 가 info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"]를 말함. vision-locale/koKR/ui.lua:54 L[\"Disabled\"] = \"사용 안 함\", ui.lua:56 L[\"Enabled\"] = \"사용함\", ui.lua:53 L[\"Disable\"] = \"비활성화\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "추가 전리품 주사위가 있는 게임 버전에만 있습니다",
+   "source_quote": "Only exists on game versions that have bonus rolls",
+   "suggestion": "보너스 주사위가 있는 게임 버전에만 있습니다",
+   "problem": "bonus roll을 \"추가 전리품 주사위\"로 옮겼다. 같은 행의 동작 이름은 \"보너스 주사위\"라서, 독자는 \"추가 전리품 주사위\"를 다른 기능으로 오해할 수 있다. 확정 용어집이 bonus roll=보너스 주사위로 정했고 '추가 전리품'은 Bonus Loot의 번역이라 다른 말이라고 적었다.",
+   "evidence": "wowwork/docs/glossary.tsv: \"bonus roll\t보너스 주사위\", \"roll bonus\t보너스 주사위\t... '추가 전리품'은 Bonus Loot의 번역이라 다른 말\". gs_enUS.csv BONUS_ROLL_TOOLTIP_TITLE=\"Bonus Loot\"(문맥이 다름). 다른 파일: ko/windows/loot-trade-mail.md:38 \"보너스 주사위 키는 보너스 주사위 창이 있는 게임 버전에만 있습니다\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 이전 툴팁 줄 | Shift+Up |",
+   "source_quote": "| Previous Tooltip Line | Shift+Up |",
+   "suggestion": "| 툴팁 이전 줄 | Shift+Up |",
+   "problem": "단축키 창에 표시·낭독되는 동작 이름은 \"툴팁 이전 줄\"인데 설명서 표는 \"이전 툴팁 줄\"로 어순을 바꿔 적었다. 독자가 단축키 목록에서 이 이름으로 찾으면 같은 낱말 순서의 항목을 찾지 못한다. 다른 설명서 파일도 같은 표기를 쓰므로 함께 맞춰야 한다.",
+   "evidence": "vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\". 같은 표의 Shift+Left/Right는 koKR(툴팁 왼쪽 읽기, 툴팁 오른쪽 읽기)과 일치. 다른 파일의 같은 오기: ko/basics/tooltips.md:12, ko/controller.md:28, ko/controller.md:45, ko/getting-started/sku.md:62 \"이전 툴팁 줄\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 다음 툴팁 줄 | Shift+Down |",
+   "source_quote": "| Next Tooltip Line | Shift+Down |",
+   "suggestion": "| 툴팁 다음 줄 | Shift+Down |",
+   "problem": "단축키 창의 동작 이름은 \"툴팁 다음 줄\"인데 설명서는 \"다음 툴팁 줄\"로 적었다. 화면 문구와 설명서 인용이 달라 독자가 목록에서 같은 항목인지 확인하기 어렵다.",
+   "evidence": "vision-locale/koKR/bindings.lua:26 L[\"Next Tooltip Line\"] = \"툴팁 다음 줄\". 다른 파일의 같은 오기: ko/controller.md:45, ko/getting-started/sku.md:62 \"다음 툴팁 줄\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| 대상까지 경로 | 지정 안 됨 | 현재 대상까지 경로를 시작합니다 |",
+   "source_quote": "| Route to Your Target | Unbound | Starts a route to your current target |",
+   "suggestion": "| 대상까지 경로 안내 | 지정 안 됨 | 현재 대상까지 경로를 시작합니다 |",
+   "problem": "단축키 창에 표시되는 동작 이름은 \"대상까지 경로 안내\"인데 표는 \"대상까지 경로\"로 줄여 적었다. 같은 표의 다른 경로 동작(\"...미방문 지점까지 경로 안내\")은 koKR 이름을 그대로 썼으므로 이 행만 화면 문구와 다르다. 이 키는 기본으로 지정되지 않아 독자가 단축키 창에서 이름으로 찾아 지정해야 한다.",
+   "evidence": "vision-locale/koKR/navigation.lua:317 L[\"Route to Your Target\"] = \"대상까지 경로 안내\". 다른 파일의 같은 표기: ko/basics/keybindings.md:36, ko/world/navigation.md:174, 180, 182 \"대상까지 경로\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "(WoW: Forever) 걸려 있는 지점을 피하는 새 경로를 짭니다",
+   "source_quote": "(WoW: Forever) Plans a new route that avoids the spot where you are stuck",
+   "suggestion": "(WoW: Forever) 내가 막혀 있는 지점을 피하는 새 경로를 짭니다",
+   "problem": "원문 \"where you are stuck\"의 주어(you)가 빠지고 \"걸려 있는\"만 남아, 무엇이 어디에 걸려 있는지 알기 어렵다. 동작 이름 \"막힌 지점을 피하는 새 WowNav 경로\"와 낱말도 달라 같은 지점을 가리키는지 바로 연결되지 않는다.",
+   "evidence": "같은 행의 동작 이름(koKR New WowNav Route Around a Blocked Spot) = \"막힌 지점을 피하는 새 WowNav 경로\"."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "Sku를 켜거나 끈 것을 반영하려면 UI를 재시작해야 합니다",
+   "source_quote": "so switching Sku on or off needs a reload",
+   "suggestion": "Sku를 켜거나 끈 것을 반영하려면 인터페이스를 다시 불러와야 합니다",
+   "problem": "reload를 \"UI를 재시작\"으로 옮겨 게임을 다시 시작해야 하는 것처럼 읽힐 수 있고, 같은 페이지 첫 문단에서 WowVision 메뉴 항목 이름으로 쓴 \"인터페이스\"와 달리 \"UI\"라는 영어 약어를 쓴다. 다른 설명서는 같은 동작을 \"인터페이스를 다시 불러옵니다\"로 쓴다.",
+   "evidence": "ko/getting-started/installation.md:31 \"인터페이스를 다시 불러옵니다\", ko/getting-started/sku-login.md:275 \"인터페이스를 다시 불러옵니다\", ko/basics/menu-and-settings.md:188 \"인터페이스를 다시 불러오거나\". 반면 ko/getting-started/sku.md:8은 \"UI를 재시작(/reload)\"."
+  }
+ ]
+}

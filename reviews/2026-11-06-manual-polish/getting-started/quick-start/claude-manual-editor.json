@@ -1,0 +1,26 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/quick-start.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이 알림은 모두 WowVision 메뉴에서 바꾸거나 끌 수 있는 경보입니다.",
+   "source_quote": "Each of these is an alert you can change or turn off in the WowVision menu.",
+   "suggestion": "이 안내는 모두 WowVision 메뉴에서 바꾸거나 끌 수 있는 경보입니다.",
+   "problem": "원문은 alert 한 낱말인데 한 문장 안에서 앞은 '알림', 뒤는 '경보'로 불러, 독자가 '알림'과 '경보'를 다른 기능으로 여길 수 있다. 바로 뒤 링크와 메뉴 이름은 '경보'이므로 주어는 alert를 가리키지 않는 일반어(목록의 '안내')로 바꾼다.",
+   "evidence": "docs/glossary.tsv 12행 alert=경보. ko/basics/alerts.md 제목 '# 경보'. ko/basics/menu-and-settings.md 66행 '대상 알림'은 별도 모듈 문구라 alert 번역과 겹친다."
+  },
+  {
+   "id": "getting-started/quick-start.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "적, 상호작용, 아군에 대한 소프트 대상 지정을 켜거나 끄기",
+   "source_quote": "Switch soft targeting for enemies, interaction and friends on or off",
+   "suggestion": "적, 상호작용, 아군 소프트 대상 지정을 켜거나 끄기",
+   "problem": "'~에 대한'은 for를 옮긴 번역투다. 다른 설명서는 '적 소프트 대상', '아군 소프트 대상'처럼 바로 붙여 쓴다.",
+   "evidence": "ko/basics/alerts.md 101행 '적 소프트 대상, 아군 소프트 대상, 상호작용 소프트 대상'."
+  }
+ ]
+}

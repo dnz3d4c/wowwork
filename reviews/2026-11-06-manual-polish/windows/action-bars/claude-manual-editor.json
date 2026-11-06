@@ -1,0 +1,48 @@
+{
+ "findings": [
+  {
+   "id": "windows/action-bars.md",
+   "category": "accuracy",
+   "severity": "major",
+   "scope": "file",
+   "quote": "운송 수단 단축바나 행동 단축바 조정은 읽지 않습니다",
+   "source_quote": "and the vehicle or possess bars",
+   "suggestion": "운송 수단 단축바나 지배 단축바는 읽지 않습니다",
+   "problem": "원문 possess bar(다른 대상을 지배하거나 조종할 때 바뀌는 단축바)를 \"행동 단축바 조정\"으로 옮겨, 독자는 단축바를 조정(설정 변경)하는 기능을 읽지 않는다는 뜻으로 이해한다. 읽지 않는 대상이 특정 상황의 단축바라는 정보가 사라진다.",
+   "evidence": "gs_koKR.csv SPELL_FAILED_POSSESSED = \"다른 자에게 지배 당하고 있습니다.\"(영어 \"You are possessed\"). vision-locale/koKR과 docs/glossary.tsv에 possess 관련 확정 용어 없음. 설명서 ko 전체에서 \"조정\"을 이 뜻으로 쓴 곳은 이 문장뿐."
+  },
+  {
+   "id": "windows/action-bars.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "단축키 설정 창에서는 행동 단축바라는 이름으로 나오며",
+   "source_quote": "It is called Action Bars in the keybinding window and can be rebound there.",
+   "suggestion": "단축키 창에서는 행동 단축바라는 이름으로 나오며",
+   "problem": "WowVision의 단축키 화면을 다른 설명서 파일은 \"단축키 창\"으로 부르는데 여기서는 \"단축키 설정 창\"이라고 해서, 게임 자체의 단축키 설정(키 바인딩) 창을 찾아가야 하는 것으로 오해할 수 있다. 이 항목 이름 \"행동 단축바\"는 WowVision의 바인딩(koKR bindings.lua L[\"Action Bars\"])이다.",
+   "evidence": "ko/reference/commands.md:27 \"단축키 창을 엽니다\", ko/controller.md:125 \"단축키 창에는\", ko/controller.md:134 \"단축키 창의 나머지 내용\". 반대 사례로 ko/information/buffers.md:31은 \"단축키 설정 창\". vision-locale/koKR/bindings.lua:35 L[\"Action Bars\"] = \"행동 단축바\"."
+  },
+  {
+   "id": "windows/action-bars.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이름 뒤에 \"사용 안 함\"라고 말합니다",
+   "source_quote": "says \"Disabled\" after its name",
+   "suggestion": "이름 뒤에 \"사용 안 함\"이라고 말합니다",
+   "problem": "\"함\"은 받침이 있어 인용 조사는 \"이라고\"가 맞다. 조사 호응 오류.",
+   "evidence": "같은 파일의 \"\"화염구 (1)\"이라고 말합니다\", \"\"비어 있음\"이라고 읽습니다\"는 받침 뒤에 \"이라고\"를 쓴다."
+  },
+  {
+   "id": "windows/action-bars.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "다른 단축바로 옮기면 WowVision이 단축바 이름을 먼저 말하고",
+   "source_quote": "When you move to a different bar, WowVision says the bar's name first, then the slot.",
+   "suggestion": "다른 단축바로 이동하면 WowVision이 단축바 이름을 먼저 말하고",
+   "problem": "이 페이지는 \"옮기기와 없애기\"에서 주문·아이템을 다른 칸으로 \"옮기는\" 조작을 설명한다. 여기서 \"옮기면\"은 초점을 다른 단축바로 이동하는 것인데, 무언가를 다른 단축바로 옮겨 놓는 조작으로 읽힐 수 있다. 바로 앞 목록은 같은 동작을 \"넘어갑니다\", \"이동합니다\"로 쓴다.",
+   "evidence": "같은 파일: \"Left와 Right는 현재 단축바의 칸을 따라 이동합니다.\", \"## 옮기기와 없애기\", \"화염구를 다섯 번째 칸으로 옮기기\"."
+  }
+ ]
+}

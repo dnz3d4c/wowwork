@@ -1,0 +1,24 @@
+[
+  {
+    "id": "reference/glossary.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "[키 바인딩 목록](keybindings.md)를 참고하십시오.",
+    "source_quote": "See [Keybinding Reference](keybindings.md).",
+    "suggestion": "[키 바인딩 목록](keybindings.md)을 참고하십시오.",
+    "problem": "링크 글자 '목록'이 받침으로 끝나는데 목적격 조사가 '를'로 붙었습니다. 맞춤법 오류입니다. 같은 파일의 다른 링크는 받침에 맞춰 '을/를'을 고르고 있습니다.",
+    "evidence": "같은 파일의 '[대상 지정](../world/targeting.md)을 참고하십시오.', '[모니터](../information/monitors.md)를 참고하십시오.'는 받침에 맞게 조사를 붙였습니다."
+  },
+  {
+    "id": "reference/glossary.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "kokr",
+    "quote": "버퍼, 대화, 대상 지정이 그 예입니다.",
+    "source_quote": "for example Buffers, Chat or Targeting.",
+    "suggestion": "버퍼, 대화, 대상 지정이 그 예입니다.",
+    "problem": "이 문장은 WowVision 메뉴에 있는 모듈 항목 이름을 예로 듭니다. 그런데 게임 메뉴에 실제로 표시되는 Targeting 모듈 이름은 koKR 키 `Targeting`의 값 '목표 선택'이고, 설명서는 이 파일과 다른 파일 모두 '대상 지정'이라고 부릅니다. 독자가 메뉴에서 '대상 지정'을 찾으면 찾지 못합니다. 설명서는 전체가 '대상 지정'으로 일관되고 koKR의 다른 키(`Soft Targeting With a Hard Target` = '하드 대상이 있을 때 소프트 대상 지정')도 '대상 지정'을 쓰므로, koKR 키 `Targeting`의 값을 '대상 지정'으로 바꾸는 쪽을 제안합니다. 그러면 설명서는 그대로 둡니다.",
+    "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; WowVision/core/targeting/module.lua:3 module:setLabel(L[\"Targeting\"]) (모듈 메뉴 이름으로 쓰임). 설명서 표기: wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md:66 모듈 표의 '대상 지정', world/targeting.md 제목 '대상 지정'. ko 설명서 전체에서 '목표 선택'은 0건."
+  }
+]

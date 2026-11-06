@@ -1,0 +1,59 @@
+{
+  "findings": [
+    {
+      "id": "windows/loot-trade-mail.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "## 우편함",
+      "source_quote": "## The mailbox",
+      "suggestion": "## 우체통",
+      "problem": "같은 대상(mailbox)을 제목과 소개 문장에서는 '우편함', 바로 아래 본문(\"우체통으로 걸어가서\", \"우체통을 열고\")에서는 '우체통'으로 부른다. 게다가 같은 절의 Inbox 탭 이름이 '받은 우편함'이라, 제목 '우편함'을 받은 우편함 탭에 대한 절로 오해할 수 있다.",
+      "evidence": "cache/gs_koKR.csv MINIMAP_TRACKING_MAILBOX=\"우체통\", INBOX=\"받은 우편함\". 같은 파일 73행 \"우체통으로 걸어가서\", 111행 \"우체통을 열고\". 다른 파일: windows/overview.md 71행 이 페이지 링크 설명 \"전리품 주사위, 다른 플레이어와 거래, 우체통\", windows/bags-and-bank.md 10행 \"상인, 우체통, 은행, 거래 창\", getting-started/sku.md 19행 \"우체통.\". 이 페이지 앵커로 거는 링크는 Grep 결과 없음(loot-trade-mail.md# 0건)."
+    },
+    {
+      "id": "windows/loot-trade-mail.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "파티 전리품 주사위 굴림, 다른 플레이어와의 거래, 우편함입니다.",
+      "source_quote": "rolling for group loot, trading with another player, and the mailbox.",
+      "suggestion": "파티 전리품 주사위 굴림, 다른 플레이어와의 거래, 우체통입니다.",
+      "problem": "mailbox를 본문의 '우체통'과 다르게 '우편함'으로 불러, 같은 파일 안에서 한 대상이 두 이름을 가진다. Inbox 탭 '받은 우편함'과도 헷갈린다.",
+      "evidence": "cache/gs_koKR.csv MINIMAP_TRACKING_MAILBOX=\"우체통\". 같은 파일 73행 \"우체통으로 걸어가서\". windows/overview.md 71행 \"우체통\"."
+    },
+    {
+      "id": "windows/loot-trade-mail.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "WowVision은 거래 창과 우편함을 Sku에 맡깁니다.",
+      "source_quote": "WowVision leaves the trade window and the mailbox to Sku.",
+      "suggestion": "WowVision은 거래 창과 우체통을 Sku에 맡깁니다.",
+      "problem": "mailbox를 본문의 '우체통'과 다르게 '우편함'으로 부른다. Sku 안내 파일은 같은 항목을 '우체통'으로 적는다.",
+      "evidence": "getting-started/sku.md 19행 \"우체통.\", 같은 파일 73행 \"우체통으로 걸어가서\", cache/gs_koKR.csv MINIMAP_TRACKING_MAILBOX=\"우체통\"."
+    },
+    {
+      "id": "windows/loot-trade-mail.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "Esc로도 취소됩니다.",
+      "source_quote": "Escape also cancels it.",
+      "suggestion": "Escape로도 취소됩니다.",
+      "problem": "키 이름은 바꾸지 않는 규칙인데 원문 'Escape'를 'Esc'로 줄였다. 다른 설명서 파일은 모두 'Escape'로 적어 이 파일만 키 이름 표기가 다르다.",
+      "evidence": "basics/interface.md 35행 표 \"| Escape | 닫기 |\", basics/alerts.md 36행 \"Escape를 누르면\", getting-started/troubleshooting.md 68행 \"Escape는 두 가지 방식으로\". 'Esc' 표기는 Grep 결과 이 파일 69행 하나뿐."
+    },
+    {
+      "id": "windows/loot-trade-mail.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "마력 추출 주사위는 이 키들로 제공하지 않습니다.",
+      "source_quote": "Disenchant rolls are not offered with these keys.",
+      "suggestion": "이 키들로는 마력 추출 주사위를 굴릴 수 없습니다.",
+      "problem": "영어 수동태 'are not offered'를 옮기면서 '주사위는 ... 제공하지 않습니다'로 주어와 서술어가 맞지 않는다. 누가 무엇을 제공하지 않는지 흐려 독자가 마력 추출 선택지 자체가 없다는 뜻인지, 키로만 못 고른다는 뜻인지 다시 읽어야 한다.",
+      "evidence": "cache/gs_koKR.csv ROLL_DISENCHANT=\"마력 추출\"(용어는 맞음). 문장 구조만의 문제."
+    }
+  ]
+}

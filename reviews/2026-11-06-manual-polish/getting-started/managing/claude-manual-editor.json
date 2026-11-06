@@ -1,0 +1,15 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/managing.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "업데이트에 필요하면 WowVision이 저장된 설정을 스스로 옮깁니다.",
+      "source_quote": "WowVision migrates saved settings by itself when an update needs it.",
+      "suggestion": "업데이트에 필요하면 WowVision이 저장된 설정을 스스로 변환합니다.",
+      "problem": "원문 migrate는 저장된 설정을 새 버전 형식으로 바꾼다는 뜻인데, '옮깁니다'로 옮겼다. 같은 파일 표의 \"이 캐릭터\"로 옮긴 설정'과 menu-and-settings.md의 범위 설명이 '옮기다'를 설정의 저장 위치(전역/캐릭터)를 바꾸는 동작에 쓰고 있어, 독자는 업데이트가 설정의 저장 위치나 범위를 바꾼다고 오해할 수 있다.",
+      "evidence": "같은 파일 표: '\"이 캐릭터\"로 옮긴 설정과 주문 기록'. wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md:172-175 '그 모듈의 모든 설정과 경보를 한 번에 옮깁니다', '모든 단축키를 한 번에 옮깁니다'(범위 바꾸기 문맥)."
+    }
+  ]
+}

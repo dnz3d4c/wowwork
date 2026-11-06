@@ -1,0 +1,35 @@
+[
+  {
+    "id": "windows/loot-trade-mail.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "## 우편함",
+    "source_quote": "## The mailbox",
+    "suggestion": "## 우체통",
+    "problem": "같은 mailbox를 제목에서는 \"우편함\", 바로 아래 본문(\"우체통으로 걸어가서\")과 예시(\"우체통을 열고\")에서는 \"우체통\"이라고 부른다. 이 절 안에는 Inbox 탭 \"받은 우편함\"도 있어서, 처음 읽는 사용자는 제목 \"우편함\"이 우체통 창 전체가 아니라 받은 우편함 탭을 다루는 절로 오해할 수 있다. 제목에 걸린 다른 파일의 #우편함 링크는 없다(Grep 확인).",
+    "evidence": "vision-locale/koKR/quests.lua:33 L[\"Mailboxes\"] = \"우체통\"; vision-locale/koKR/windows.lua:98 L[\"Inbox\"] = \"받은 우편함\". 다른 설명서: windows/overview.md:71 \"전리품 주사위, 다른 플레이어와 거래, 우체통\", getting-started/sku.md:19 \"우체통.\", windows/bags-and-bank.md:10 \"상인, 우체통, 은행\". 같은 파일 73행 \"우체통으로 걸어가서\", 111행 \"우체통을 열고\"."
+  },
+  {
+    "id": "windows/loot-trade-mail.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "거래 창과 우편함을 Sku에 맡깁니다",
+    "source_quote": "WowVision leaves the trade window and the mailbox to Sku.",
+    "suggestion": "거래 창과 우체통을 Sku에 맡깁니다",
+    "problem": "\"우편함\"은 이 파일에서 Inbox 탭 \"받은 우편함\"과 겹친다. 이 문장을 받은 우편함만 Sku에 넘기고 우편 발송 탭은 WowVision이 계속 읽는다고 이해할 수 있다. 원문 mailbox는 우편 창 전체이고, 같은 파일 본문과 다른 설명서는 이를 \"우체통\"이라고 부른다.",
+    "evidence": "vision-locale/koKR/quests.lua:33 L[\"Mailboxes\"] = \"우체통\"; windows.lua:98 L[\"Inbox\"] = \"받은 우편함\". getting-started/sku.md:19 Sku가 맡는 창 목록에 \"우체통.\"으로 적혀 있다. 같은 파일 73행 \"우체통으로 걸어가서\"."
+  },
+  {
+    "id": "windows/loot-trade-mail.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "다른 플레이어와의 거래, 우편함입니다",
+    "source_quote": "trading with another player, and the mailbox",
+    "suggestion": "다른 플레이어와의 거래, 우체통입니다",
+    "problem": "도입부에서 세 번째 방법을 \"우편함\"이라고 부르지만, 본문과 다른 설명서는 같은 mailbox를 \"우체통\"이라고 부른다. \"우편함\"은 Inbox 탭 \"받은 우편함\"과도 겹쳐서, 같은 대상을 두 이름으로 부르게 된다.",
+    "evidence": "vision-locale/koKR/quests.lua:33 L[\"Mailboxes\"] = \"우체통\". windows/overview.md:71 이 페이지 소개가 \"전리품 주사위, 다른 플레이어와 거래, 우체통\"이다. 같은 파일 73행 \"우체통으로 걸어가서\"."
+  }
+]

@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "reference/versions.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "그 버전 전용 게임 창 지원은 다른 버전보다 적습니다",
+   "source_quote": "but fewer game windows of their own",
+   "suggestion": "각 버전 전용 게임 창 지원은 다른 버전보다 적습니다",
+   "problem": "앞 구절이 Classic Era와 Retail 두 버전을 함께 말한 뒤 '그 버전'이라고 받아서, 한 버전만 가리키는지 두 버전 각각을 가리키는지 다시 따져야 한다. 원문 'of their own'은 두 버전 각자의 전용 창을 뜻하므로 '각 버전'이 대상을 바로 드러낸다.",
+   "evidence": "en: \"Classic Era and Retail get everything that is shared by all versions, but fewer game windows of their own.\" / ko: \"Classic Era와 Retail도 모든 버전이 공유하는 기능은 전부 갖추지만, 그 버전 전용 게임 창 지원은 다른 버전보다 적습니다.\" 선행사가 둘(Classic Era, Retail)."
+  }
+ ]
+}

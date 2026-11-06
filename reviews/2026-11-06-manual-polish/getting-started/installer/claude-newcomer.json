@@ -1,0 +1,70 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "\"WowVision 업데이트가 있습니다\"",
+      "source_quote": "\"An update for WowVision is available\"",
+      "suggestion": "\"WowVision 업데이트 있음\"",
+      "problem": "첫 화면 제목 네 개 중 이것만 설치 프로그램이 실제로 표시·낭독하는 문구와 다르다. 나머지 세 개(\"WowVision 아직 설치 안 됨\" 등)는 화면 문구를 글자 그대로 옮겼는데 이것만 문장형이라, 처음 쓰는 사람은 들은 제목과 설명서 문구를 맞춰 볼 수 없다.",
+      "evidence": "wowvision-ko/wowvision-installer(ko 브랜치) WowVisionInstaller/Loc.cs:825 [\"update.heading.available\"] = \"WowVision 업데이트 있음\"; 영어 Loc.cs:74 \"An update for WowVision is available\"는 원문 인용과 같다. 같은 목록의 다른 제목은 Loc.cs:826-828과 일치."
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "게임 버전마다 그 이유와 함께 \"문제가 있는 채로 완료\"가 나옵니다",
+      "source_quote": "or \"Finished with problems\" with the reason for each game version",
+      "suggestion": "\"문제가 있었지만 완료\"와 함께 게임 버전마다 그 이유가 나옵니다",
+      "problem": "마지막 페이지 제목 인용이 실제 화면 문구 \"문제가 있었지만 완료\"와 달라 들은 제목을 설명서에서 찾을 수 없다. 또 \"게임 버전마다 ... 가 나옵니다\"라고 써서 제목이 게임 버전마다 반복되는 것처럼 읽힌다. 원문은 제목 하나에 게임 버전별 이유가 붙는다는 뜻이다.",
+      "evidence": "wowvision-installer WowVisionInstaller/Loc.cs:874 [\"done.heading.failed\"] = \"문제가 있었지만 완료\"; 영어 Loc.cs:123 \"Finished with problems\"."
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "1. WowVision을 설치할 게임 버전은 무엇입니까?",
+      "source_quote": "1. Which game versions should WowVision be installed into?",
+      "suggestion": "1. WowVision을 어느 게임 버전에 설치하시겠습니까?",
+      "problem": "원문은 세 페이지의 제목을 화면 문구 그대로 인용한다(영어 UI 제목과 글자까지 같다). 2·3번은 한국어 화면 제목과 같은데 1번만 다르게 옮겨, 처음 쓰는 사람이 지금 들은 페이지가 설명서의 몇 번인지 맞춰 보기 어렵다.",
+      "evidence": "wowvision-installer WowVisionInstaller/Loc.cs:897 [\"versions.heading\"] = \"WowVision을 어느 게임 버전에 설치하시겠습니까?\"; 영어 Loc.cs:146 \"Which game versions should WowVision be installed into?\". 2·3번은 Loc.cs:903 \"각 버전은 어디에 설치되어 있습니까?\", Loc.cs:919 \"무엇을 설치하시겠습니까?\"와 일치."
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "\"설치 프로그램 지금 업데이트(권장)\"",
+      "source_quote": "\"Update the installer now (recommended)\"",
+      "suggestion": "\"설치 프로그램을 지금 업데이트(권장)\"",
+      "problem": "따옴표로 인용한 버튼 이름이 실제 버튼 문구와 조사 하나가 다르다. 버튼 이름 인용은 화면 문구와 같아야 들은 말과 읽는 말이 맞는다.",
+      "evidence": "wowvision-installer WowVisionInstaller/Loc.cs:856 [\"selfupdate.updateBtn\"] = \"설치 프로그램을 지금 업데이트(&U) (권장)\"."
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "WowVision을 기록할 폴더입니다.",
+      "source_quote": "The folders WowVision will be written to.",
+      "suggestion": "WowVision을 설치할 폴더입니다.",
+      "problem": "이 페이지 본문 문장을 옮긴 부분인데, 화면에서는 \"WowVision을 설치할 폴더입니다\"라고 낭독된다. \"기록할\"은 화면 문구와 다르고, 폴더에 무엇을 기록하는지(로그인지 설정인지) 다시 생각하게 만든다. 뒤 문장(\"잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을...\")은 화면 문구와 같다.",
+      "evidence": "wowvision-installer WowVisionInstaller/Loc.cs:904 [\"folders.body\"] = \"WowVision을 설치할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.\""
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "직접 압축을 푼 베타나 그 밖의 테스트 빌드는 모두 다시 설치(복구) 항목을 고를 때까지 손대지 않습니다.",
+      "source_quote": "A beta you extracted by hand, or another test build, is left as it is until you choose Reinstall everything",
+      "suggestion": "직접 압축을 푼 베타나 그 밖의 테스트 빌드는, 모두 다시 설치(복구) 항목을 고르기 전까지 그대로 둡니다.",
+      "problem": "항목 이름 \"모두 다시 설치\"의 \"모두\"가 바로 앞 \"테스트 빌드는\"에 붙어 \"테스트 빌드는 모두 / 다시 설치 항목을\"로 읽힐 수 있다. 처음 쓰는 사람은 \"모두 다시 설치\"가 앞 절에서 본 구성 요소 항목 이름이라는 것을 알아채기 어렵다. 쉼표로 항목 이름 앞을 끊으면 이름이 한 덩어리로 읽힌다.",
+      "evidence": "같은 파일의 구성 요소 목록 \"모두 다시 설치(복구)(체크 안 됨)\"; wowvision-installer Loc.cs:933 [\"opt.force.label\"] = \"모두 다시 설치(복구)\"."
+    }
+  ]
+}

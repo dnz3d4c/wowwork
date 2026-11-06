@@ -1,0 +1,48 @@
+{
+ "findings": [
+  {
+   "id": "world/movement.md",
+   "category": "accuracy",
+   "severity": "major",
+   "scope": "file",
+   "quote": "시체가 지금 있는 대륙에 있을 때만 경로를 잡습니다.",
+   "source_quote": "The corpse is only routed to when it lies on the continent you are on.",
+   "suggestion": "시체가 지금 내가 있는 대륙과 같은 대륙에 있을 때만 경로를 잡습니다.",
+   "problem": "주어가 '시체'뿐이라 '지금 있는 대륙'이 시체가 있는 대륙으로 읽힌다. 그러면 '시체가 시체가 있는 대륙에 있을 때만'이 되어 조건이 사라지고, 원문의 '플레이어가 있는 대륙과 같을 때만'이라는 한정 조건을 독자가 알 수 없다.",
+   "evidence": "원문 'on the continent you are on'의 you(플레이어)가 번역에서 빠졌다."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "accuracy",
+   "severity": "major",
+   "scope": "file",
+   "quote": "이 옵션 중 하나를 바꾸면 WowVision이 대화창에 이 메시지를 출력합니다:",
+   "source_quote": "When it changes one of these options, WowVision prints this message in chat:",
+   "suggestion": "WowVision이 이 옵션 중 하나를 바꾸면 대화창에 이 메시지를 출력합니다:",
+   "problem": "'바꾸면'의 주어가 빠져 독자는 자기가 옵션을 바꿀 때 메시지가 나온다고 읽는다. 바로 다음 문장 '나중에 시점 전환 방식을 다시 바꾸면'은 사용자가 주어라서 이 오해가 더 굳어진다. 원문은 WowVision이 바꿀 때다.",
+   "evidence": "원문 주어 'it'은 WowVision. 다음 문장 원문 'If you change the following style back'은 you."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "켜 두면 상호작용 키 등으로 손이 닿지 않는 대상과 상호작용할 때",
+   "source_quote": "interacting with a target that is out of reach, for example with the interact key",
+   "suggestion": "켜 두면 손이 닿지 않는 대상과 상호작용 키 등으로 상호작용할 때",
+   "problem": "'상호작용 키 등으로 손이 닿지 않는 대상'이 '상호작용 키로는 닿지 않는 대상'으로 묶여 읽힌다. 원문에서 '상호작용 키'는 상호작용하는 수단의 예시다.",
+   "evidence": "원문 'for example with the interact key'는 interacting을 꾸민다."
+  },
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이동 명령을 따르므로, 이동에 어떤 키를 지정했든 상관없습니다.",
+   "source_quote": "It follows your movement commands, no matter which keys you have bound for moving.",
+   "suggestion": "키가 아니라 이동 명령을 보고 판단하므로, 이동에 어떤 키를 지정했든 상관없습니다.",
+   "problem": "'따르다'는 '복종한다'로 읽혀 벽 감지가 이동 명령에 따라 무엇을 한다는 뜻처럼 들린다. 원문 follows는 이동 명령을 추적한다는 뜻이라, 키 지정과 무관하다는 뒤 절과의 인과가 드러나지 않는다.",
+   "evidence": "같은 문단 다음 항목 '게임이 대신 걸어 주는 이동도 다룹니다'와 함께 감지 대상(추적 범위)을 설명하는 목록이다."
+  }
+ ]
+}

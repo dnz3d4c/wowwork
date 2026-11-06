@@ -1,0 +1,13 @@
+[
+  {
+    "id": "windows/action-bars.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "운송 수단 단축바나 행동 단축바 조정은 읽지 않습니다",
+    "source_quote": "and the vehicle or possess bars",
+    "suggestion": "차량 단축바나 행동 단축바 조정은 읽지 않습니다",
+    "problem": "여기서 vehicle은 공성 차량·탑승형 전투 장치처럼 플레이어가 올라타 조종하는 게임의 차량 메커니즘이다. '운송 수단'은 WowNav 설명서와 koKR(navigation.lua의 \"the vehicle\", \"transport\")에서 배·비행선·지하철 같은 이동 수단을 부르는 말이다. 그래서 독자는 배나 비행선을 탔을 때의 단축바로 오해하고, 게임 화면 편집이나 단축키 설정 창에서 쓰는 이름을 찾지 못한다. 이 문장만 바꾸면 되며, koKR \"the vehicle\" 값은 길 안내 문맥이라 바꾸지 않는다.",
+    "evidence": "gs_koKR.csv: BINDING_HEADER_VEHICLE \"차량 조종\", HUD_EDIT_MODE_VEHICLE_LEAVE_BUTTON_LABEL \"차량 내리기 단추\", HUD_EDIT_MODE_VEHICLE_SEAT_INDICATOR_LABEL \"차량 좌석\"(모두 UI 요소 이름, 이 구절과 같은 문맥). 반대 사례: BINDING_NAME_VEHICLEEXIT \"탈것 내리기\", ERR_MEETING_STONE_TARGET_IN_VEHICLE \"대상이 탈것을 타고 있습니다.\" — 그러나 '탈것'은 이 파일 59행에서 mounts의 번역으로 이미 쓰므로 vehicle에 쓰면 두 개념이 섞인다. '운송 수단' 사용처: vision-locale/koKR/navigation.lua:207 L[\"the vehicle\"]=\"운송 수단\", :297 L[\"transport\"]=\"운송 수단\"; docs/src/user/ko/world/wownav.md:145,153(배·비행선·지하철 대기)."
+  }
+]

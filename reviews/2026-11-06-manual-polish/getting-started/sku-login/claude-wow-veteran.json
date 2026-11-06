@@ -1,0 +1,70 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "7. 도구는 행동 강령(스스로 끝까지 스크롤하고 커서를 Accept에 둡니다)",
+   "source_quote": "The tool also knows the code of conduct (it scrolls to the end by itself and leaves the cursor on Accept)",
+   "suggestion": "7. 도구는 행동 규범(스스로 끝까지 스크롤하고 커서를 Accept에 둡니다)",
+   "problem": "Blizzard의 Code of Conduct를 한국어 클라이언트는 \"행동 규범\"이라고 부르는데 설명서는 \"행동 강령\"이라고 썼다. 게임 화면이나 안내문에서 \"행동 규범\"을 본 독자가 같은 문서인지 바로 연결하지 못한다.",
+   "evidence": "gs_enUS.csv ONLINE_SAFETY_NOTICE(57466) \"View our In-Game Code of Conduct\" = gs_koKR.csv \"게임 내 행동 규범을 참조하시길 바랍니다\". 같은 Blizzard 행동 규범 문서를 가리키는 문맥이다."
+  },
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "항목은 서버들(종류와 혼잡도 포함)",
+   "source_quote": "The entries are the realms (with their type and load)",
+   "suggestion": "항목은 서버들(종류와 서버 상태 포함)",
+   "problem": "서버 목록의 load 열은 한국어 클라이언트에서 \"서버 상태\"로 표시된다. \"혼잡도\"는 게임 화면에 없는 말이라, 도구가 읽어 주는 값(서버 목록의 그 열)과 설명서 표현이 연결되지 않는다.",
+   "evidence": "gs_enUS.csv REALM_LOAD(34518) \"Population\" = gs_koKR.csv \"서버 상태\". 키 이름 자체가 REALM_LOAD로 서버 목록의 부하(load) 열이다."
+  },
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "그리고 대화, 거래, 우편, 훈련 같은 창입니다.",
+   "source_quote": "and windows such as gossip, trade, mail and training",
+   "suggestion": "그리고 대화, 거래, 우편, 상급자 같은 창입니다.",
+   "problem": "training 창은 기술을 배우는 상급자(trainer) 창이다. 한국어 클라이언트와 다른 설명서 파일은 \"상급자\"로 부르는데 여기만 \"훈련\"이라고 해서, 독자가 다른 창으로 오해하거나 sku.md 목록에서 같은 창을 찾지 못한다.",
+   "evidence": "gs_koKR.csv MINIMAP_TRACKING_TRAINER_CLASS(17566) \"직업 상급자\", SPELLBOOK_TRAINABLE(20789) \"상급자 찾아가기\". ko/getting-started/sku.md:24 \"- 상급자.\", ko/windows/npcs.md:8 \"대화, 상인, 상급자, 비행 조련사, 야수 우리 창을 Sku에 맡깁니다\"."
+  },
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Mists of Pandaria Classic | 지원하지 않습니다.",
+   "source_quote": "| Mists of Pandaria Classic | Not supported.",
+   "suggestion": "| 판다리아의 안개 클래식 | 지원하지 않습니다.",
+   "problem": "같은 게임 버전을 표에서는 영어 \"Mists of Pandaria Classic\"으로, 같은 파일 아래 문단에서는 \"판다리아의 안개\"로 불러 서로 다른 버전처럼 읽힌다. 확장팩 공식 한국어 이름은 \"판다리아의 안개\"다. (Select game type 선택지처럼 도구가 영어로 말하는 항목은 해당 없음.)",
+   "evidence": "gs_koKR.csv EXPANSION_NAME4(23365) \"판다리아의 안개\" (enUS \"Mists of Pandaria\"). 같은 파일 78행 \"(예: 판다리아의 안개나 리치 왕의 분노)\". ko/getting-started/introduction.md:27 \"| 판다리아의 안개 클래식 | 활발히 개발 중 |\"."
+  },
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Retail과 Cataclysm Classic | 설정에서 고를 수는 있지만 지원하지 않습니다. |",
+   "source_quote": "| Retail and Cataclysm Classic | Selectable in the setup, but not supported. |",
+   "suggestion": "| 리테일과 대격변 클래식 | 설정에서 고를 수는 있지만 지원하지 않습니다. |",
+   "problem": "같은 표의 다른 확장팩(불타는 성전)은 공식 한국어로 옮겼는데 Cataclysm만 영어로 남아 표기 기준이 섞였다. 확장팩 공식 한국어 이름은 \"대격변\"이고, 다른 설명서는 Retail을 \"리테일\"로 쓴다.",
+   "evidence": "gs_koKR.csv EXPANSION_NAME3(20881) \"대격변\". ko/getting-started/troubleshooting.md:128 \"게임 버전(클래식 시대, TBC, 판다리아의 안개, 리테일, WoW: Forever)\"."
+  },
+  {
+   "id": "getting-started/sku-login.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "| Classic Era | 지원합니다. |",
+   "source_quote": "| Classic Era | Supported. |",
+   "suggestion": "| 클래식 시대 | 지원합니다. |",
+   "problem": "같은 게임 버전 Classic Era를 이 파일(본문 전체)과 sku.md는 \"Classic Era\"로, introduction.md·alerts.md·interface.md·troubleshooting.md는 \"클래식 시대\"로 부른다. 파일마다 이름이 달라 독자가 같은 버전인지 확신하지 못한다. 공식 한국어 값을 gs 파일에서 찾지 못했으므로 어느 쪽으로 통일할지 용어 결정이 필요하다(이 파일의 본문 문장들도 함께 바뀜). Select game type 선택지처럼 도구가 영어로 말하는 항목은 제외.",
+   "evidence": "ko/getting-started/introduction.md:29 \"| 클래식 시대 | 공통 기능만 |\", ko/basics/alerts.md:141 \"클래식 시대, 불타는 성전, 판다리아의 안개에서는\", ko/getting-started/troubleshooting.md:128 \"클래식 시대\"; 반대로 ko/getting-started/sku.md:29 \"Classic Era, 불타는 성전(TBC)\". gs_enUS.csv에서 \"Classic Era\" 문자열은 찾지 못함."
+  }
+ ]
+}

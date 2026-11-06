@@ -1,0 +1,134 @@
+[
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "탈것 도감에는 다음 순서로 네 개의 멈춤 지점이 있습니다.",
+  "source_quote": "The mount journal has four stops, in this order:",
+  "suggestion": "탈것 도감에는 다음 순서로 탭 정지점 네 개가 있습니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "멈춤 지점은 차례로 검색(편집 상자), 필터(드롭다운이며",
+  "source_quote": "Stops in order: Search (edit box), Filter (a dropdown;",
+  "suggestion": "탭 정지점은 차례로 검색(편집 상자), 필터(드롭다운이며",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "멈춤 지점은 차례로 검색, 필터, 진행 상태 줄(게임의 수집 개수 표시)",
+  "source_quote": "Stops in order: Search, Filter, a progress line (the game's collected counter)",
+  "suggestion": "탭 정지점은 차례로 검색, 필터, 진행 상태 줄(게임의 수집 개수 표시)",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "멈춤 지점은 차례로 검색, 필터, 직업(",
+  "source_quote": "Stops in order: Search, Filter, Class (",
+  "suggestion": "탭 정지점은 차례로 검색, 필터, 직업(",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "옷장 도감입니다. 멈춤 지점은 차례로 다음과 같습니다.",
+  "source_quote": "This is the wardrobe journal, not the transmogrifier. Stops in order:",
+  "suggestion": "옷장 도감입니다. 탭 정지점은 차례로 다음과 같습니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "첫 멈춤 지점은 탭 줄입니다.",
+  "source_quote": "The first stop is the Tabs row.",
+  "suggestion": "첫 탭 정지점은 탭 줄입니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "멈춤 지점은 차례로 요약, 보상 목록입니다.",
+  "source_quote": "Stops in order: a summary, then the Rewards list.",
+  "suggestion": "탭 정지점은 차례로 요약, 보상 목록입니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "유산 포인트를 줍니다. 멈춤 지점은 차례로 다음과 같습니다.",
+  "source_quote": "worth Legacy points. Stops in order:",
+  "suggestion": "유산 포인트를 줍니다. 탭 정지점은 차례로 다음과 같습니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "유산 포인트로 삽니다. 멈춤 지점은 차례로 다음과 같습니다.",
+  "source_quote": "are bought with Legacy points. Stops in order:",
+  "suggestion": "유산 포인트로 삽니다. 탭 정지점은 차례로 다음과 같습니다.",
+  "problem": "원문 \"stops\"는 interface.md에서 설명하는 탭 정지점이다. 이 파일은 \"멈춤 지점\"이라는, 설명서 다른 곳에 없는 말을 써서 독자가 용어집과 인터페이스 페이지에서 배운 \"탭 정지점\"과 같은 것인지 알아보기 어렵다.",
+  "evidence": "용어집 reference/glossary.md:58과 basics/interface.md:86-88은 Tab/Shift+Tab으로 건너뛰는 구역(en: tab stops, stops)을 \"탭 정지점\"으로 정의한다. 이 파일만 \"멈춤 지점\"을 쓴다(그 밖에 windows/group-finder.md는 \"정지 지점\"). 이 파일 24행은 같은 것을 \"구역\"이라고도 부른다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "세부 정보는 한 줄씩 애완동물의 이름(직접 붙인 이름이면 그 아래 종), 얻는 곳, 설명을 읽습니다.",
+  "source_quote": "the pet's name (and species under a custom name), where it comes from, and its description",
+  "suggestion": "세부 정보는 한 줄씩 애완동물의 이름(직접 붙인 이름이면 그 아래 종), 획득처, 설명을 읽습니다.",
+  "problem": "같은 파일 66행은 탈것의 source를 \"획득처\"라고 하는데, 애완동물 세부 정보에서는 같은 개념(수집품을 얻는 출처)을 \"얻는 곳\"이라고 불러, 같은 항목인지 독자가 따로 판단해야 한다.",
+  "evidence": "windows/collections.md:66 \"탈것 설명, 획득처, 미리보기 모델\"(en: description, source) / :87 \"얻는 곳\"(en: where it comes from). 두 원문 모두 도감의 출처(source) 항목을 가리킨다."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "style",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "오른쪽 클릭: 그 행에 대한 게임 메뉴(소환, 즐겨찾기 등)를 엽니다.",
+  "source_quote": "Right click: opens the game's menu for that row (summon, favorite, and so on).",
+  "suggestion": "오른쪽 클릭: 그 행의 게임 메뉴(소환, 즐겨찾기 등)를 엽니다.",
+  "problem": "\"~에 대한\"은 영어 for를 옮긴 번역투다. 메뉴는 그 행에 딸린 것이므로 \"그 행의\"로 충분하다.",
+  "evidence": "polish-base.md 2항 번역투 예시 \"~에 대한\". 뜻 변화 없음."
+ },
+ {
+  "id": "windows/collections.md",
+  "category": "style",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "탭에서 Enter를 누르면 그 탭에 대한 게임의 자체 키를 실행하며",
+  "source_quote": "Enter on a tab runs the game's own key for that tab",
+  "suggestion": "탭에서 Enter를 누르면 그 탭을 여는 게임 자체 키를 실행하며",
+  "problem": "\"그 탭에 대한 게임의 자체 키\"는 영어 for that tab을 그대로 옮긴 번역투라 어떤 키인지 한 번 더 생각해야 한다. 앞 문단에서 설명한 \"도감을 그 탭으로 바로 여는\" 키다.",
+  "evidence": "같은 파일 20행 \"각 키는 도감을 그 탭으로 바로 엽니다\"가 이 키를 설명한다."
+ }
+]

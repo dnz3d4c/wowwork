@@ -1,0 +1,101 @@
+[
+  {
+    "id": "windows/system.md",
+    "category": "terminology",
+    "severity": "critical",
+    "scope": "kokr",
+    "quote": "WowVision 메뉴에서 대상 지정, 하드 대상을 차례로 열고",
+    "source_quote": "open Targeting, then Hard Target, in the WowVision menu",
+    "suggestion": "WowVision 메뉴에서 목표 선택, 하드 대상을 차례로 열고",
+    "problem": "메뉴에서 실제로 들리는 항목 이름은 \"목표 선택\"인데 설명서는 \"대상 지정\"을 열라고 해서, 독자가 메뉴에서 없는 이름을 찾게 됩니다. koKR 키 Targeting(koKR/targeting.lua) 값과 설명서 전체(basics/alerts.md, basics/menu-and-settings.md 등)의 표기가 어긋나 있으므로 koKR 값을 유지할지 되돌릴지 결정한 뒤 manual_sync로 함께 맞춰야 합니다.",
+    "evidence": "vision-locale koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\" (커밋 bff9930에서 \"대상 지정\"→\"목표 선택\"으로 바뀜). 입력 terms에도 Targeting=목표 선택. 반면 ko/basics/alerts.md:98 \"대상 지정, 하드 대상\", ko/basics/menu-and-settings.md:66 \"| 대상 지정 | 모두 |\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "terminology",
+    "severity": "critical",
+    "scope": "kokr",
+    "quote": "| 거리 | 대상 지정, 하드 대상의 거리 변경(위 참고) | 거리 변경 |",
+    "source_quote": "| Range | Range Changed, in Targeting, Hard Target (above) | Range Changed |",
+    "suggestion": "| 거리 | 목표 선택, 하드 대상의 거리 변경(위 참고) | 거리 변경 |",
+    "problem": "위 지적과 같은 문제입니다. 메뉴 경로의 첫 항목이 koKR 키 Targeting의 실제 값 \"목표 선택\"과 달라 메뉴에서 찾을 수 없습니다.",
+    "evidence": "vision-locale koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "이 요소는 비활성화라고 읽힙니다",
+    "source_quote": "The second control reads Disabled while its checkbox is off",
+    "suggestion": "이 요소는 \"사용 안 함\"이라고 읽힙니다",
+    "problem": "실제로 낭독되는 말은 \"사용 안 함\"인데 이 문장은 \"비활성화\"라고 읽힌다고 해서, 바로 다음 문단의 \"사용 안 함\"과 같은 상태를 다른 말로 부릅니다. 독자는 \"비활성화\"라는 말을 기다리다 듣지 못합니다.",
+    "evidence": "vision-locale koKR/ui.lua:54 L[\"Disabled\"] = \"사용 안 함\". 같은 파일 다음 문단: \"게임이 회색으로 비활성화한 조작 요소는 \\\"사용 안 함\\\"라고 말하며\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "조작 요소는 \"사용 안 함\"라고 말하며",
+    "source_quote": "A control that the game has greyed out says \"Disabled\"",
+    "suggestion": "조작 요소는 \"사용 안 함\"이라고 말하며",
+    "problem": "받침 있는 말(함) 뒤에는 인용 조사 \"이라고\"를 써야 합니다. \"함\"라고는 조사 호응이 틀렸습니다.",
+    "evidence": "같은 파일의 \"\\\"펼쳐짐\\\" 또는 \\\"접힘\\\"이라고 말합니다\", \"\\\"선택됨\\\"이라고 말합니다\"는 받침 뒤에 \"이라고\"를 씀."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "| 거리 변경, 사용함 | 켜기 | 거리 안내 전체를 켜거나 끕니다. |",
+    "source_quote": "| Range Changed, Enabled | On | Switches the whole readout on or off. |",
+    "suggestion": "| 거리 변경, 사용함 | 켜짐 | 거리 안내 전체를 켜거나 끕니다. |",
+    "problem": "기본값 열의 \"켜기\"는 동작(켜는 일)을 뜻해 기본 상태가 켜져 있다는 뜻으로 바로 읽히지 않고, 다른 설명서 파일의 기본값 표기 \"켜짐\"과도 다릅니다.",
+    "evidence": "ko/information/group-health.md(5곳), ko/world/navigation.md(2곳), ko/world/wownav.md(5곳)는 기본값을 \"| 켜짐 |\"으로 씀. \"| 켜기 |\"는 이 파일 2곳뿐."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "| 그 안의 음성 팩 경보, 사용함 | 켜기 | 녹음된 음성입니다. |",
+    "source_quote": "| Voice Alert inside it, Enabled | On | The recorded voice. |",
+    "suggestion": "| 그 안의 음성 팩 경보, 사용함 | 켜짐 | 녹음된 음성입니다. |",
+    "problem": "위와 같습니다. 기본값을 동작어 \"켜기\"로 적어 다른 파일의 \"켜짐\"과 다릅니다.",
+    "evidence": "ko/information/group-health.md, ko/world/wownav.md의 기본값 표기 \"켜짐\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "대화 상자가 이름이나 단어 지금파괴 같은 입력을 요구할 때만 있습니다.",
+    "source_quote": "only when the dialog asks you to type something, such as a name or the word DELETE.",
+    "suggestion": "대화 상자가 이름이나 \"지금파괴\"라는 낱말 같은 입력을 요구할 때만 있습니다.",
+    "problem": "\"단어 지금파괴\"는 영어 \"the word DELETE\" 어순을 그대로 옮겨, 따옴표 없이 쓴 \"지금파괴\"가 입력할 글자인지 문장의 일부인지 바로 구분되지 않습니다. 다른 파일은 입력할 낱말을 따옴표로 묶어 \"~라는 낱말\"로 씁니다.",
+    "evidence": "ko/windows/bags-and-bank.md:94 \"입력 칸에 \\\"지금파괴\\\"라는 낱말을 입력하라고\", ko/basics/interface.md:229 \"게임 팝업에 \\\"지금파괴\\\"를 입력해야\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "1. 팝업을 읽어 줍니다. 플레이어 이름과",
+    "source_quote": "1. You hear the popup: the name of the player and \"invites you to a group\".",
+    "suggestion": "1. 팝업이 읽힙니다. 플레이어 이름과",
+    "problem": "\"읽어 줍니다\"의 주어가 없어 독자에게 팝업을 읽어 주라는 지시인지, 누가 읽는지 다시 따져야 합니다. 원문은 독자가 듣는 상황을 말합니다.",
+    "evidence": "원문 \"You hear the popup\"."
+  },
+  {
+    "id": "windows/system.md",
+    "category": "style",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "매크로: 매크로가 이름별 목록으로 나옵니다.",
+    "source_quote": "Macros: your macros as a list, by name.",
+    "suggestion": "매크로: 매크로가 이름으로 된 목록으로 나옵니다.",
+    "problem": "\"이름별\"은 이름에 따라 나눈 묶음이라는 뜻으로 읽혀, 목록이 이름별로 분류된다고 오해할 수 있습니다. 원문 \"by name\"은 각 매크로가 이름으로 읽힌다는 뜻입니다.",
+    "evidence": "원문 \"your macros as a list, by name\"; \"-별\"은 \"구역별\"처럼 나누는 기준을 뜻함(같은 파일 \"구역별로 나열됩니다\")."
+  }
+]

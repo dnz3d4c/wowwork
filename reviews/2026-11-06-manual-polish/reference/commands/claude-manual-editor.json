@@ -1,0 +1,70 @@
+{
+ "findings": [
+  {
+   "id": "reference/commands.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "발견한 항목과 걷는 중 기억을 모두 지우고",
+   "source_quote": "Forgets every seen entry and the walking memory",
+   "suggestion": "발견한 항목과 걷기 기억을 모두 지우고",
+   "problem": "같은 명령(/wv mscan clear)이 지우는 'walking memory'를 미니맵 설명서는 '걷기 기억'이라 부르는데 이 파일은 '걷는 중 기억'이라 부른다. 두 페이지를 오가는 독자는 서로 다른 기억이 있는 것으로 오해할 수 있다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:159 '발견된 모든 항목과 걷기 기억을 지웁니다.' (en minimap.md:158 'the walking memory')"
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "마지막 스캔과 걷는 중 점검이 어떻게 진행되었는지",
+   "source_quote": "Shows how the last scan and the walking check went",
+   "suggestion": "마지막 스캔과 걷기 확인이 어떻게 진행되었는지",
+   "problem": "'walking check'를 미니맵 설명서는 '걷기 확인'으로 부르는데 이 파일은 '걷는 중 점검'으로 부른다. 같은 기능을 다른 이름으로 불러 별개 기능으로 오해하게 한다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:119 '세션의 첫 걷기 확인 전에', :161 '걷기 확인이 지금 기억하는 것을 보여 줍니다.' (en minimap.md:118, :160 'walking check')"
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "걷는 중 점검이 기억하는 내용을 보여 줍니다",
+   "source_quote": "Shows what the walking check remembers",
+   "suggestion": "걷기 확인이 기억하는 내용을 보여 줍니다",
+   "problem": "같은 'walking check'를 미니맵 설명서는 '걷기 확인'으로 부르는데 이 파일은 '걷는 중 점검'으로 부른다. 같은 /wv mscan walk 행이 두 페이지에서 다른 이름을 쓴다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:161 '`/wv mscan walk` | 걷기 확인이 지금 기억하는 것을 보여 줍니다.'"
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "음성 합성 전후로 나는 게임 소리를 켜고 끕니다",
+   "source_quote": "switch the game's sounds around text to speech",
+   "suggestion": "음성 합성과 함께 나는 게임 소리를 켜고 끕니다",
+   "problem": "원문 'around'는 음성 합성에 딸린 소리라는 뜻인데 '전후로'는 말하기 직전과 직후에 나는 소리로 읽힌다. 실제 두 소리는 대화 메시지 줄 사이 소리와 대화창이 비활성일 때의 활동 소리라서 '전후'라는 시점 설명과 맞지 않는다. 음성 설명서는 같은 원문 'Game sounds around speech'를 '음성과 함께 나는 게임 소리'로 옮겼다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/speech.md:60 '## 음성과 함께 나는 게임 소리' (en speech.md:59 '## Game sounds around speech'), speech.md:64 '대화 메시지 사이 소리는 게임이 대화 메시지 줄 사이에 내는 짧은 소리입니다.'"
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "/focus1 party1은 주시 대상을 입력한 유닛이나 이름으로 설정합니다",
+   "source_quote": "/focus1 party1 sets it to the unit or name you give",
+   "suggestion": "/focus1 party1은 주시 대상 1을 입력한 유닛이나 이름으로 설정합니다",
+   "problem": "원문 'it'은 바로 앞 항목의 '주시 대상 1'인데, 앞 문단이 게임의 주시 대상(하나)과 WowVision의 가상 주시 대상 다섯 개를 함께 말해서 맨 '주시 대상'은 게임 기본 주시 대상으로도 읽힌다. 번호를 붙이면 앞 항목('현재 대상을 주시 대상 1로 설정합니다')과 대상이 바로 맞물린다.",
+   "evidence": "같은 파일 '### /focus1부터 /focus5까지' 절: 'WoW는 주시 대상을 하나만 지원합니다. WowVision은 가상 주시 대상 다섯 개를 추가합니다.' 다음 항목 '현재 대상을 주시 대상 1로 설정합니다'."
+  },
+  {
+   "id": "reference/commands.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이름이 없으면 \"Syntax: `/enableaddon <name>`\"을 출력합니다",
+   "source_quote": "Without a name they print \"Syntax: `/enableaddon <name>`\"",
+   "suggestion": "이름을 붙이지 않고 입력하면 \"Syntax: `/enableaddon <name>`\"을 출력합니다",
+   "problem": "'이름이 없으면'은 바로 다음 문장 '그 이름의 애드온이 없어도'와 겹쳐, 명령에 이름을 안 붙인 경우인지 그런 이름의 애드온이 없는 경우인지 다시 따져야 한다. 원문은 명령 뒤에 이름을 입력하지 않은 경우다.",
+   "evidence": "같은 문단 다음 문장: '그 이름의 애드온이 없어도 인터페이스는 다시 불러와집니다.' (원문 'The interface reloads even when no addon with that name exists.')"
+  }
+ ]
+}

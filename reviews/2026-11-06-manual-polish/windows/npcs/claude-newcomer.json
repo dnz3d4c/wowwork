@@ -1,0 +1,46 @@
+[
+  {
+    "id": "windows/npcs.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "global",
+    "quote": "대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다.",
+    "source_quote": "The gossip window is the conversation you get when you talk to most NPCs.",
+    "suggestion": "NPC 대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다.",
+    "problem": "NPC와의 대화(gossip) 창과 채팅(chat) 창을 모두 \"대화 창\"이라고 부른다. 다른 설명서는 \"대화 창(Shift+F3)\"을 WowVision 채팅 창 이름으로 쓰므로, 처음 쓰는 사람은 이 페이지의 \"대화 창\"을 Shift+F3 창으로 오해하고, 메뉴의 창 > 대화 설정도 어느 쪽인지 구분할 수 없다. 같은 파일 안에서도 상인 설정 표는 채팅을 \"대화창\"이라고 써서 띄어쓰기 하나로만 두 창이 갈린다. 원인은 koKR 값이라 설명서만 고칠 수 없다. 바꿀 키: windows.lua::Gossip(\"대화\"), 비교 대상 chat.lua::Chat(\"대화\"). Gossip 값을 바꾸면 이 파일의 제목, 첫 문단의 창 목록, Sku 문단, \"## 대화\" 절, getting-started/sku.md의 창 목록 등 인용을 따라 바꿔야 한다.",
+    "evidence": "vision-locale/koKR/windows.lua:68 L[\"Gossip\"] = \"대화\", vision-locale/koKR/chat.lua:4 L[\"Chat\"] = \"대화\". WowVision/core/windows/gossip.lua:3 module:setLabel(L[\"Gossip\"]). docs/src/user/ko/basics/interface.md:14 \"대화 창(Shift+F3), 길 안내 창(F10)...\", windows/chat.md:4 \"이 페이지는 알림, 대화 창, 대화 설정...\", reference/keybindings.md:82 \"대화 창에서 메시지 안의...\". 이 파일 상인 설정 표: \"WowVision은 대화창에 ... 출력합니다\". gs: CHAT=대화(17263)."
+  },
+  {
+    "id": "windows/npcs.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "해당하면 습득함이나 사용 불가를",
+    "source_quote": "then Known or Unavailable where that applies",
+    "suggestion": "해당하면 이미 습득이나 사용 불가를",
+    "problem": "실제로 낭독되는 말은 \"이미 습득\"인데 설명서는 \"습득함\"이라고 적어, 독자가 들은 말과 설명서의 말을 맞춰 볼 수 없다.",
+    "evidence": "WowVision/core/windows/training.lua:88 label .. \", \" .. L[\"Known\"]; vision-locale/koKR/ui.lua:66 L[\"Known\"] = \"이미 습득\". 필터 항목도 게임 공식 USED(10282) = \"이미 습득\"이라 같은 말로 맞춰진다."
+  },
+  {
+    "id": "windows/npcs.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "\"초급 요리, 습득함\"",
+    "source_quote": "\"Apprentice Cooking, Known\"",
+    "suggestion": "\"초급 요리, 이미 습득\"",
+    "problem": "낭독 예시가 실제 낭독과 다르다. 게임에서는 \"초급 요리, 이미 습득\"으로 들린다.",
+    "evidence": "WowVision/core/windows/training.lua:88 L[\"Known\"]; vision-locale/koKR/ui.lua:66 L[\"Known\"] = \"이미 습득\"."
+  },
+  {
+    "id": "windows/npcs.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "그다음 야수 우리 칸 1과 야수 우리 칸 2입니다",
+    "source_quote": "then Stable slot 1 and Stable slot 2",
+    "suggestion": "그다음 야수 우리 1번 칸과 야수 우리 2번 칸입니다",
+    "problem": "칸 머리글로 실제 낭독되는 말은 \"야수 우리 1번 칸\"인데 설명서는 \"야수 우리 칸 1\"이라고 적어 들은 말과 다르다.",
+    "evidence": "WowVision/tbc/petStable.lua:38 format(L[\"Stable slot %d\"], index - 1); vision-locale/koKR/windows.lua:202 L[\"Stable slot %d\"] = \"야수 우리 %d번 칸\"."
+  }
+]

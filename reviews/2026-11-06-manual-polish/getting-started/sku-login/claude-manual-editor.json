@@ -1,0 +1,136 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "보통 스크린리더 연결 음성을 쓰면 켜져 있고",
+      "source_quote": "This is normally on when you use the screen reader bridge voice",
+      "suggestion": "보통 스크린리더 브리지 음성을 쓰면 켜져 있고",
+      "problem": "원문 bridge를 이 문장은 '연결 음성', 같은 파일 음성과 낭독 절은 '연결 장치'로 옮겼고, 다른 설명서는 '브리지'로 씁니다. 독자는 이 '스크린리더 연결 음성'이 음성과 낭독 절의 SAPI2SR이나 설치 프로그램의 NVDA 음성 브리지와 같은 것인지 알 수 없어, repeatecho가 언제 켜지는지 판단하지 못합니다.",
+      "evidence": "information/group-health.md:31 \"NVDA SAPI 브리지 같은 스크린리더 브리지 음성\"(원문 \"A screen reader bridge voice, such as the NVDA SAPI bridge\"), getting-started/installer.md:47 \"NVDA 음성 브리지\", reference/glossary.md:76 \"SAPI 브리지 음성\". 같은 파일 240행 \"연결 장치\"."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "글을 NVDA에 넘겨주는 연결 장치라서",
+      "source_quote": "It is a bridge that hands the text to NVDA",
+      "suggestion": "글을 NVDA에 넘겨주는 브리지라서",
+      "problem": "SAPI2SR은 음성 목록의 소프트웨어 항목인데 '장치'라고 하면 하드웨어 기기처럼 읽힙니다. 같은 파일의 '스크린리더 연결 음성', 다른 설명서의 '브리지'와도 이름이 달라 같은 것으로 이어지지 않습니다.",
+      "evidence": "information/group-health.md:31 \"스크린리더 브리지 음성\", getting-started/installer.md:47 \"NVDA 음성 브리지\". 같은 파일 211행 \"스크린리더 연결 음성\"."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "| Mists of Pandaria Classic | 지원하지 않습니다.",
+      "source_quote": "| Mists of Pandaria Classic | Not supported.",
+      "suggestion": "| 판다리아의 안개 클래식 | 지원하지 않습니다.",
+      "problem": "같은 파일 78행은 같은 게임 버전을 '판다리아의 안개'라고 부르는데 표에서는 영어 'Mists of Pandaria Classic'으로 남아 있습니다. 표의 이 행은 도구 메뉴 문구가 아니라 게임 버전 이름이고(도구의 Select game type 선택지에는 없음), 같은 표의 '불타는 성전 기념 서버'는 한국어로 옮겼습니다.",
+      "evidence": "같은 파일 78행 \"(예: 판다리아의 안개나 리치 왕의 분노)\". getting-started/introduction.md:27 \"판다리아의 안개 클래식\", reference/versions.md:10 \"판다리아의 안개 클래식(Mists of Pandaria Classic)\"."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "시작할 때 Forever 게임이 실행 중이 아니면 도구가 게임 설정에서 화면 낭독을 켜고, 처음 시작할 때 나오는 내레이터 질문을 끄고",
+      "source_quote": "At start-up, while the Forever game is not running, the tool turns on the game's screen narration, switches off the first-start narrator question",
+      "suggestion": "도구를 시작할 때 Forever 게임이 실행 중이 아니면 도구가 게임 설정에서 화면 낭독을 켜고, 게임을 처음 시작할 때 나오는 내레이터 질문을 끄고",
+      "problem": "한 문장에 주어 없는 '시작할 때'가 두 번 나오는데, 앞은 도구의 시작이고 뒤는 게임의 첫 시작입니다. 독자는 내레이터 질문이 도구를 처음 시작할 때 나오는 것으로 오해할 수 있습니다.",
+      "evidence": "원문 \"At start-up\"은 도구의 시작, \"first-start narrator question\"은 게임이 처음 시작할 때 묻는 질문(Forever 절 1번 \"the screen reader question (switched off by the tool)\")."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "그다음 분류마다 항목 하나(게임 서버 목록의 탭으로, \"select category\"와 탭 이름으로 말합니다)",
+      "source_quote": "then one entry per category (the tabs of the game's realm list, spoken \"select category\" and the tab name)",
+      "suggestion": "그다음 분류마다 항목 하나(게임 서버 목록의 탭에 해당하며, \"select category\"와 탭 이름으로 말합니다)",
+      "problem": "괄호 안의 '탭으로'와 '이름으로'가 다른 뜻의 '으로'라서 '탭으로'가 '탭으로 이동한다'인지 '탭이다'인지 바로 읽히지 않습니다. 원문은 분류가 곧 게임 서버 목록의 탭이라는 뜻입니다.",
+      "evidence": "원문 괄호 \"the tabs of the game's realm list\"는 동격 설명."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "Escape로 여는 게임 메뉴도 압니다.",
+      "source_quote": "and the game menu you get with Escape.",
+      "suggestion": "Escape로 여는 게임 메뉴도 알아봅니다.",
+      "problem": "원문 \"The tool also knows\"를 '압니다'로 직역해, 도구가 이 화면들을 알아보고 다룰 수 있다는 뜻이 설명서 문장으로 바로 들어오지 않습니다. 이 파일은 같은 뜻(recognise)을 다른 곳에서 '알아보면', '알아보지 못함'으로 씁니다.",
+      "evidence": "같은 파일 \"도구가 게임 창을 보고 화면을 알아보면\", \"도구가 어떤 화면도 알아보지 못함\"."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "두 줄의 직업과 체형 모두로 이동할 수 있습니다.",
+      "source_quote": "Both rows of classes and the body type are reachable.",
+      "suggestion": "직업 두 줄과 체형으로 모두 이동할 수 있습니다.",
+      "problem": "'두 줄의 직업과 체형'은 '두 줄'이 직업과 체형 둘 다에 걸리는 것으로도 읽혀, 두 줄인 것이 직업 목록뿐이라는 원문 구조가 흐려집니다.",
+      "evidence": "원문 \"Both rows of classes and the body type\"에서 rows는 classes에만 걸린다."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "음성은 먼저 소리 없이 시험해 봅니다.",
+      "source_quote": "A voice is tested silently first.",
+      "suggestion": "도구는 음성을 먼저 소리 없이 시험해 봅니다.",
+      "problem": "영어 수동태를 주어 없이 능동으로 옮겨 '음성은 ... 시험해 봅니다'가 음성이 무언가를 시험하는 것처럼 읽힙니다. 시험하는 주체는 도구입니다.",
+      "evidence": "원문 수동태 \"A voice is tested\", 뒤 문장 \"your old voice stays\"는 도구 동작의 결과."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "이때 메뉴에는 로그인 없이 되는 항목만 있습니다",
+      "source_quote": "Its menu then offers only things that work without a login",
+      "suggestion": "이때 메뉴에는 로그인하지 않아도 쓸 수 있는 항목만 있습니다",
+      "problem": "'로그인 없이 되는'은 구어 표현이라 설명서 문장에서 무엇이 '되는'지(동작하는지) 흐립니다.",
+      "evidence": "원문 \"things that work without a login\"."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "Pause mode로 들어간 뒤, 스스로 다시 화면을 잡습니다.",
+      "source_quote": "drops into Pause mode, then picks the screen up again by itself.",
+      "suggestion": "Pause mode로 들어간 뒤, 스스로 화면을 다시 알아봅니다.",
+      "problem": "'화면을 잡습니다'는 같은 파일의 스크린샷(화면 캡처) 설명과 겹쳐 화면을 캡처한다는 뜻으로도 읽힙니다. 원문은 도구가 현재 화면을 다시 인식한다는 뜻입니다.",
+      "evidence": "같은 파일은 인식을 '알아보다'로 씀(\"게임 창을 알아본 뒤에만 동작합니다\"), 키 목록에 Ctrl+Alt+F2/F3 스크린샷 설명이 있음."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "1~2초 안에 그 화면을 다시 보고 Login mode로 돌아갑니다.",
+      "source_quote": "within a second or two it sees that screen again and goes back to Login mode.",
+      "suggestion": "도구가 1~2초 안에 그 화면을 다시 알아보고 Login mode로 돌아갑니다.",
+      "problem": "앞 문장 '...Alt+F1로 도구를 꺼 둘 수 없습니다'는 독자가 주어인 문장이라, 주어 없는 이 문장은 독자가 화면을 다시 보는 것으로 읽힐 수 있습니다. 원문 주어 it은 도구입니다.",
+      "evidence": "원문 \"it sees that screen again\"의 it = the tool."
+    },
+    {
+      "id": "getting-started/sku-login.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "게임이 이미 실행 중이었다면 Alt+Tab으로 게임으로 돌아가십시오.",
+      "source_quote": "If the game was already running, tab back into it.",
+      "suggestion": "게임이 이미 실행 중이었다면 Alt+Tab을 눌러 게임 창으로 돌아가십시오.",
+      "problem": "수단의 '으로'와 방향의 '으로'가 연달아 와서(Alt+Tab으로 게임으로) 조사 호응이 어색합니다. 이 파일의 다른 곳은 키를 '...을 눌러'로 씁니다.",
+      "evidence": "같은 파일 \"Alt+F1을 눌러 Login mode로 돌아가십시오\"."
+    }
+  ]
+}

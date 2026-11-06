@@ -1,0 +1,48 @@
+{
+ "findings": [
+  {
+   "id": "basics/tooltips.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| Shift+Down | 다음 툴팁 줄 |",
+   "source_quote": "| Shift+Down | Next Tooltip Line |",
+   "suggestion": "| Shift+Down | 툴팁 다음 줄 |",
+   "problem": "'단축키 이름' 열은 단축키 화면에 표시되는 이름을 인용하는 자리인데, 게임이 표시하는 값은 '툴팁 다음 줄'이고 설명서는 '다음 툴팁 줄'로 적었다. 단축키 화면에서 설명서의 이름으로 항목을 찾으면 같은 이름이 없다. koKR 값을 '다음 툴팁 줄'로 바꾸는 쪽으로 정할 수도 있으나, 그 경우 scope는 kokr가 된다.",
+   "evidence": "wowvision-ko/vision-locale/koKR/bindings.lua:26 L[\"Next Tooltip Line\"] = \"툴팁 다음 줄\". 다른 설명서도 '다음 툴팁 줄'을 쓴다: ko/controller.md:45, ko/reference/keybindings.md:49, ko/getting-started/sku.md:62. 함께 고쳐야 한다."
+  },
+  {
+   "id": "basics/tooltips.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "| Shift+Up | 이전 툴팁 줄 |",
+   "source_quote": "| Shift+Up | Previous Tooltip Line |",
+   "suggestion": "| Shift+Up | 툴팁 이전 줄 |",
+   "problem": "'단축키 이름' 열이 게임이 표시하는 이름 '툴팁 이전 줄'과 다르게 '이전 툴팁 줄'로 적혀 있다. 단축키 화면에서 이 이름으로 찾을 수 없다.",
+   "evidence": "wowvision-ko/vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\". 다른 설명서도 '이전 툴팁 줄'을 쓴다: ko/controller.md:28, ko/controller.md:45, ko/reference/keybindings.md:48, ko/getting-started/sku.md:62."
+  },
+  {
+   "id": "basics/tooltips.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "평균 일수(7)",
+   "source_quote": "Mean Days (7)",
+   "suggestion": "평균 계산 일수(7)",
+   "problem": "경매 가격 메뉴의 설정 이름을 인용한 곳인데 게임이 표시하는 이름은 '평균 계산 일수'다. 메뉴에서 '평균 일수'라는 항목을 찾으면 없다.",
+   "evidence": "wowvision-ko/vision-locale/koKR/auction.lua:59 L[\"Mean Days\"] = \"평균 계산 일수\". ko/windows/auction-house.md:231도 '평균 일수'로 적혀 있어 같이 고쳐야 한다."
+  },
+  {
+   "id": "basics/tooltips.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "Shift+Down과 Shift+Up은 그 이름, 설명, 남은 시간을 한 줄씩 읽습니다",
+   "source_quote": "Shift+Down and Shift+Up read its name, its description and the time left, line by line",
+   "suggestion": "Shift+Down과 Shift+Up은 그 효과의 이름, 설명, 남은 시간을 한 줄씩 읽습니다",
+   "problem": "앞 문장에 '버퍼의 오라', '오라 버퍼', '강화 효과나 약화 효과'가 이어 나와 '그 이름'이 오라 버퍼의 이름인지 효과의 이름인지 다시 찾아야 한다. 영어 'its'를 그대로 옮긴 지시어다.",
+   "evidence": "같은 문단 앞부분: '같은 키는 버퍼의 오라에서도 작동합니다. 오라 버퍼에서 강화 효과나 약화 효과에 초점이 있을 때'."
+  }
+ ]
+}

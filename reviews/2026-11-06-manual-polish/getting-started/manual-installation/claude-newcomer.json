@@ -1,0 +1,37 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/manual-installation.md",
+      "category": "accuracy",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "\"소리 없음\" 문제가 보이면",
+      "source_quote": "If you ever see a \"missing sound\" problem",
+      "suggestion": "\"소리 누락\" 문제가 보이면",
+      "problem": "원문 \"missing sound\"는 있어야 할 소리(파일)가 빠진 문제다. \"소리 없음\"은 소리가 전혀 나지 않는 상태로 읽혀, 일부 소리만 빠진 경우 독자가 이 절을 자기 문제로 알아보지 못한다. 바로 뒤 원인(일부만 풀린 압축)과도 \"누락\"이 맞는다.",
+      "evidence": "en getting-started/manual-installation.md:82 \"missing sound\". wowvision-ko/WowVision 코드에서 \"missing sound\" 문구를 찾지 못해 화면 문구 인용이 아니므로 file 범위."
+    },
+    {
+      "id": "getting-started/manual-installation.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "그러면 게임은 애드온을 전혀 찾지 못해 WowVision을 아무 표시 없이 끝내 불러오지 않습니다.",
+      "source_quote": "The game then finds no addon at all, and WowVision silently never loads.",
+      "suggestion": "그러면 게임이 애드온을 전혀 찾지 못하고, WowVision은 아무 알림 없이 불러와지지 않습니다.",
+      "problem": "\"never\"를 \"끝내\"로 옮겨 \"끝내 불러오지 않습니다\"가 한참 기다린 뒤 포기한다는 뜻처럼 읽힌다. 원문은 처음부터 아예 불러오지 않는다는 뜻이다. 주어도 \"게임은 ... WowVision을 불러오지 않습니다\"로 두 절이 한 주어에 묶여 원문의 두 사실(게임이 못 찾음, WowVision이 안 불러와짐)이 흐려진다.",
+      "evidence": "en getting-started/manual-installation.md:55"
+    },
+    {
+      "id": "getting-started/manual-installation.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "Forever 모듈(Forever 클라이언트가 클래식·판다리아의 안개 클라이언트와 같이 쓰는 창을 위한, 그 두 버전의 부분 몇 개 포함)",
+      "source_quote": "the Forever modules (with a few Classic and Mists parts for windows the Forever client shares with them)",
+      "suggestion": "Forever 모듈(Forever 클라이언트가 클래식·판다리아의 안개와 함께 쓰는 창을 위해, 그 두 버전의 부분도 몇 개 포함)",
+      "problem": "\"창을 위한, 그 두 버전의 부분\"처럼 관형절이 쉼표로 끊긴 채 명사에 걸려 영어 어순이 남았다. \"그 두 버전\"이 무엇을 받는지 다시 찾아야 한다.",
+      "evidence": "en getting-started/manual-installation.md 'The five TOC files' 표의 WoW: Forever 행"
+    }
+  ]
+}

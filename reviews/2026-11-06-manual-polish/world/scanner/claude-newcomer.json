@@ -1,0 +1,26 @@
+{
+ "findings": [
+  {
+   "id": "world/scanner.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "NPC 그룹에는 퀘스트 NPC만 나오는데, 이름이 아니라 위치에 있는 \"퀘스트 NPC\"로 나옵니다.",
+   "source_quote": "the NPC groups only list quest givers, who appear as \"Quest Giver\" at a place rather than by name.",
+   "suggestion": "NPC 그룹에는 퀘스트 NPC만 나오며, NPC 이름 대신 \"퀘스트 NPC\"라는 이름과 그 장소로 나옵니다.",
+   "problem": "\"위치에 있는 \\\"퀘스트 NPC\\\"\"는 영어 \"at a place\"를 수식어로 붙여 옮긴 것이라, 처음 쓰는 사용자는 항목 이름이 무엇으로 들리는지(실제 NPC 이름이 아니라 \"퀘스트 NPC\"라는 이름과 장소) 바로 알기 어렵다. 리테일에서 목록을 훑을 때 NPC 이름을 기대하다가 찾지 못한다.",
+   "evidence": "en 원문 Version notes의 Retail 항목. terms: \"Quest Giver\" = \"퀘스트 NPC\"."
+  },
+  {
+   "id": "world/scanner.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "목표에 포함되는 생물, 물체, 아이템 출처입니다.",
+   "source_quote": "the creatures, objects or item sources that count towards it.",
+   "suggestion": "목표 달성에 세어지는 생물, 물체, 아이템 출처입니다.",
+   "problem": "\"count towards it\"를 \"목표에 포함되는\"으로 옮겨, 이 하위 항목이 목표 달성 수에 들어가는 대상(처치할 생물, 사용할 물체, 아이템을 얻는 곳)이라는 뜻이 흐려진다. 처음 쓰는 사용자는 목표 문구에 이름이 들어 있는 것 정도로 읽을 수 있다.",
+   "evidence": "en 원문 In Progress 목록 2번 항목. 같은 목록 1번 예 \"코볼트 졸개 처치: 3/10\"처럼 목표는 수를 세는 구조다."
+  }
+ ]
+}

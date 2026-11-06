@@ -1,0 +1,59 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "오류를 말로 알리지 않게 하려면 오류 모듈의 오류 알리기를 끕니다.",
+   "source_quote": "To stop the spoken errors, switch off Announce Errors in the Errors module.",
+   "suggestion": "오류를 말로 알리지 않게 하려면 오류 모듈의 오류 알림을 끕니다.",
+   "problem": "설정 이름을 \"오류 알리기\"로 인용했지만 메뉴에서 실제로 낭독되는 이름은 \"오류 알림\"이다. 독자가 메뉴에서 \"오류 알리기\"를 찾으면 같은 항목인지 확신하지 못한다. (같은 표기가 basics/alerts.md 46, 121, 151행에도 있다.)",
+   "evidence": "vision-locale/koKR/errors.lua:6 L[\"Announce Errors\"] = \"오류 알림\"; WowVision/core/errors/module.lua:14 label = L[\"Announce Errors\"]; 입력 terms에도 Announce Errors = 오류 알림. 비교: WowVision/docs/src/user/ko/basics/alerts.md:121 \"오류 알리기\"."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "kokr",
+   "quote": "클래식 시대에서는 같은 역할을 하는 설정이 음성 방식이고, 선택지는 직접과 버퍼입니다.",
+   "source_quote": "On Classic Era the equivalent is Speech Style with the choices Direct and Buffered.",
+   "suggestion": "클래식 시대에서는 같은 역할을 하는 설정이 음성 방식이고, 선택지는 직접과 버퍼입니다.",
+   "problem": "설명서는 선택지를 \"버퍼\"로 인용하지만 게임은 koKR 키 \"Buffered\"를 \"대기열\"로 낭독한다. 독자는 \"버퍼\"를 찾지 못하고, 같은 문단의 \"음성 대기열\"(Speech Queue)과 이름이 겹쳐 두 설정을 같은 것으로 오해할 수 있다. 설명서(이 파일, basics/speech.md 20·95행)와 용어집(buffer=버퍼)이 \"버퍼\"로 일치하므로 koKR speech.lua의 \"Buffered\" 값을 \"버퍼\"로 바꾸는 쪽을 제안한다. 바꿀 koKR 키: Buffered.",
+   "evidence": "vision-locale/koKR/speech.lua:12 L[\"Buffered\"] = \"대기열\", 같은 파일 13행 L[\"Speech Queue\"] = \"음성 대기열\"; wowwork/docs/glossary.tsv:11 buffer 버퍼; WowVision/docs/src/user/ko/basics/speech.md:20 \"버퍼 방식은 ...\", 95행 \"음성 방식(직접 또는 버퍼)\"."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "문제는 GitHub에 신고해 주세요:",
+   "source_quote": "Please report problems on GitHub:",
+   "suggestion": "문제는 GitHub에 신고하십시오:",
+   "problem": "문서 전체가 합니다체(\"참고하십시오\", \"확인합니다\")인데 이 문장만 해요체 \"해 주세요\"로 바뀌어 문체가 섞인다.",
+   "evidence": "같은 파일의 다른 안내 문장은 모두 \"~하십시오\"/\"~합니다\"로 끝난다(예: \"[애드온 켜기](./installation.md#애드온-켜기)를 참고하십시오.\"). polish-base.md: 문체는 합니다체."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "그 기능에 대한 WowVision 설정과 단축키는 지워지지 않으며",
+   "source_quote": "Your WowVision settings and key bindings for those features are not deleted while Sku runs",
+   "suggestion": "그 기능의 WowVision 설정과 단축키는 지워지지 않으며",
+   "problem": "\"for those features\"를 \"~에 대한\"으로 옮긴 번역투다. 소유 관계라 \"~의\"로 충분하다.",
+   "evidence": "polish-base.md 무엇을 찾나 2항: 번역투 \"~에 대한\"."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이 명령은 저장된 설정에 대한 짧은 보고서를 대화 창에 출력합니다.",
+   "source_quote": "which prints a short report about your saved settings to the chat window.",
+   "suggestion": "이 명령은 저장된 설정을 짧게 정리한 보고서를 대화 창에 출력합니다.",
+   "problem": "\"about\"을 \"~에 대한\"으로 옮긴 번역투다.",
+   "evidence": "polish-base.md 무엇을 찾나 2항. 같은 문장이 WowVision/docs/src/user/ko/reference/commands.md:188에도 \"저장된 설정에 대한 짧은 보고서\"로 있다."
+  }
+ ]
+}

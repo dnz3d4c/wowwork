@@ -1,0 +1,26 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/installer.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "WoW: Forever, 불타는 성전 기념 서버, Classic Era, Mists of Pandaria Classic, Retail",
+   "source_quote": "WoW: Forever, The Burning Crusade anniversary, Classic Era, Mists of Pandaria Classic and Retail",
+   "suggestion": "WoW: Forever, 불타는 성전 기념 서버, 클래식 시대, 판다리아의 안개 클래식, 리테일",
+   "problem": "같은 목록에서 불타는 성전만 한국어로 옮기고 Classic Era, Mists of Pandaria Classic, Retail은 영어로 남겼다. 다른 설명서는 같은 게임 버전을 '클래식 시대', '판다리아의 안개 클래식', '리테일'로 불러서, 독자가 파일을 오가며 같은 게임 버전인지 다시 맞춰 봐야 한다. 설치 프로그램 화면의 체크 상자 이름도 영어('Anniversary (TBC)', 'Classic Era (Vanilla)')라 '불타는 성전 기념 서버'는 이미 화면 문구 인용이 아니므로, 영어로 남긴 나머지 셋도 화면 문구를 이유로 남길 근거가 없다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:26-30 '불타는 성전 (기념 서버)', '판다리아의 안개 클래식', '클래식 시대', '리테일'. manual-installation.md:32-34 '클래식 시대(Vanilla)', '판다리아의 안개(Mists)'. basics/interface.md:168, basics/alerts.md:141 '클래식 시대, 불타는 성전, 판다리아의 안개'. 공식 확장팩 이름: EXPANSION_NAME1 '불타는 성전', EXPANSION_NAME4 '판다리아의 안개'. 설치 프로그램 체크 상자 이름: wowvision-installer/WowVisionInstaller/WowLocator.cs:104-116 Label 'WoW Forever', 'Anniversary (TBC)', 'Classic Era (Vanilla)', 'Mists of Pandaria Classic', 'Retail'(한국어화되지 않음)."
+  },
+  {
+   "id": "getting-started/installer.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "WoW: Forever, 불타는 성전 기념 서버, Classic Era에서 쓸 수 있습니다",
+   "source_quote": "for WoW: Forever, The Burning Crusade anniversary and Classic Era",
+   "suggestion": "WoW: Forever, 불타는 성전 기념 서버, 클래식 시대에서 쓸 수 있습니다",
+   "problem": "같은 목록 안에서 불타는 성전은 한국어, Classic Era는 영어로 섞였고, 다른 설명서는 이 게임 버전을 '클래식 시대'로 부른다. 앞 지적과 같은 표기로 맞춰야 독자가 같은 게임 버전으로 알아본다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:29 '클래식 시대', manual-installation.md:32 '클래식 시대(Vanilla)', basics/interface.md:168 '클래식 시대'. 설치 프로그램 한국어 설명 문구 wowvision-installer/WowVisionInstaller/Loc.cs:1046 'WoW Forever, Anniversary, Classic Era의 로그인...'은 영어 이름을 쓰므로 화면 인용이 근거라면 '불타는 성전 기념 서버'도 맞지 않는다."
+  }
+ ]
+}

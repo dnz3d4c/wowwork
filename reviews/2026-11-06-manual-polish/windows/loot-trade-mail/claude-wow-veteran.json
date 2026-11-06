@@ -1,0 +1,13 @@
+[
+  {
+    "id": "windows/loot-trade-mail.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "WowVision은 거래 창과 우편함을 Sku에 맡깁니다",
+    "source_quote": "WowVision leaves the trade window and the mailbox to Sku",
+    "suggestion": "WowVision은 거래 창과 우체통을 Sku에 맡깁니다",
+    "problem": "같은 'mailbox'(우편 창 전체)를 이 파일 본문은 '우체통'(\"우체통으로 걸어가서\", \"우체통을 열고\")으로, 이 문장은 '우편함'으로 부릅니다. 이 파일에서 '받은 우편함'은 Inbox 탭 이름이므로, '우편함을 Sku에 맡긴다'는 받은 우편함만 Sku가 맡고 우편 발송 탭은 WowVision이 계속 읽는 것으로 오해할 수 있습니다. Sku가 맡는 창을 나열한 getting-started/sku.md도 같은 창을 '우체통'이라고 부릅니다.",
+    "evidence": "게임 공식 MINIMAP_TRACKING_MAILBOX(Mailbox)=\"우체통\"(gs_koKR.csv ID 18587). INBOX=\"받은 우편함\"(ID 11815). wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku.md:19 \"- 우체통.\"(Sku가 맡는 창 목록), windows/bags-and-bank.md:10 \"상인, 우체통, 은행, 거래 창\"."
+  }
+]

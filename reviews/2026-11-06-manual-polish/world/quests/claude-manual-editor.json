@@ -1,0 +1,103 @@
+{
+ "findings": [
+  {
+   "id": "world/quests.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "퀘스트 NPC가 대화 창에서 먼저 퀘스트를 제안할 수도 있습니다.",
+   "source_quote": "A quest giver may offer quests through the gossip window first",
+   "suggestion": "퀘스트 NPC가 먼저 NPC 대화 창에서 퀘스트를 제안할 수도 있습니다.",
+   "problem": "같은 파일의 진단 명령 절은 chat window를 \"결과는 대화 창에 나옵니다\"로 옮겼다. gossip window도 \"대화 창\"이라 부르면 독자는 NPC와 말할 때 뜨는 창과 Shift+F3 대화 창(채팅)을 같은 창으로 이해한다. gossip 쪽을 다른 설명서가 쓰는 \"NPC 대화\"로 구분하면 겹치지 않는다.",
+   "evidence": "quests.md 진단 명령 절: \"결과는 대화 창에 나옵니다.\"(Output goes to the chat window). ko/reference/commands.md:16 \"대화 창에 출력됩니다. ... WowVision 대화 창을 엽니다\", ko/getting-started/troubleshooting.md:6 \"대화 창에 출력합니다\"는 chat window. ko/windows/overview.md:56 \"NPC 대화, 퀘스트 NPC 창\", ko/reference/versions.md:30 \"NPC 대화\"는 gossip. 다만 ko/windows/npcs.md:11은 gossip을 \"대화 창\"이라 해서 파일 간 충돌도 있다."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "퀘스트 목록에서 Up과 Down은 머리글과 퀘스트 사이를 이동합니다.",
+   "source_quote": "In the quest list, Up and Down move between headers and quests.",
+   "suggestion": "목록에서 Up과 Down은 머리글과 퀘스트 사이를 이동합니다.",
+   "problem": "이 절에서 \"퀘스트 목록\"은 L로 여는 창 전체(quest log)의 이름으로 쓰였다(\"게임 자체 키(기본값 L)로 퀘스트 목록을 엽니다\"). 바로 앞 문장은 창 안의 탭 정지점을 \"목록\"과 \"세부 정보\"로 나눴으므로, 여기서 \"퀘스트 목록에서\"라고 하면 창 전체인지 목록 정지점인지 다시 따져야 한다. 앞 문장과 같은 \"목록\"으로 쓰면 대상이 바로 드러난다.",
+   "evidence": "같은 절 앞 문장: \"게임 자체 키(기본값 L)로 퀘스트 목록을 엽니다.\", \"목록과 세부 정보는 서로 다른 탭 정지점이므로\". gs_enUS.csv 10106 QUEST_LOG \"Quest Log\"가 창 이름이다."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "목록이 열려 있는 동안 목표 줄이 진행 상황을 따라 바뀝니다.",
+   "source_quote": "Objective lines follow your progress while the log is open.",
+   "suggestion": "퀘스트 목록 창이 열려 있는 동안 목표 줄이 진행 상황을 따라 바뀝니다.",
+   "problem": "원문은 the log(퀘스트 목록 창)가 열려 있는 동안이다. 이 절에서 \"목록\"만 쓰면 바로 앞에서 정지점 이름으로 쓴 \"목록\"(머리글과 퀘스트가 있는 부분)으로 읽혀, 목록 부분을 펼쳐야 한다는 뜻처럼 들린다. 절 제목과 같은 \"퀘스트 목록 창\"으로 쓰면 창 전체임이 드러난다.",
+   "evidence": "절 제목 \"## 퀘스트 목록 창\", 같은 절 \"목록과 세부 정보는 서로 다른 탭 정지점이므로\"."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "현재 지도에서 받을 수 있는 퀘스트와, 목록에 있는 퀘스트마다 지점 하나.",
+   "source_quote": "The quests offered on your current map and one point per quest in your log.",
+   "suggestion": "현재 지도에서 받을 수 있는 퀘스트와, 퀘스트 목록에 있는 퀘스트마다 지점 하나.",
+   "problem": "원문 your log는 퀘스트 목록(quest log)이다. \"목록\"만 쓰면 바로 앞의 \"현재 지도에서 받을 수 있는 퀘스트\" 목록을 받는 말로도 읽혀, 받은 퀘스트인지 받을 수 있는 퀘스트인지 다시 따져야 한다.",
+   "evidence": "같은 파일의 다른 곳은 log를 \"퀘스트 목록\"으로 옮겼다: \"퀘스트, 진행 중: 퀘스트 목록.\", \"`/wv quests log` | 퀘스트 목록을 ...\"."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "추적 중인 퀘스트에만 작동하며, 전투 중에도 작동합니다.",
+   "source_quote": "This works for quests you are tracking, and also in combat.",
+   "suggestion": "추적 중인 퀘스트에 작동하며, 전투 중에도 작동합니다.",
+   "problem": "원문에는 only가 없는데 번역에 한정어 \"만\"이 더해졌다. 원문의 이 문장은 적용 대상을 말할 뿐 다른 퀘스트를 배제한다고 말하지 않는다. 한정어를 더하지 않는다는 규칙에 걸린다.",
+   "evidence": "원문 \"This works for quests you are tracking, and also in combat.\"에 only/just 없음."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "추측이 틀릴 수도 있으므로 이런 지점은 목록 끝에 남겨 둡니다.",
+   "source_quote": "they are kept at the end of the list in case the guess is wrong.",
+   "suggestion": "위상 판단이 틀릴 수도 있으므로 이런 지점은 목록 끝에 남겨 둡니다.",
+   "problem": "앞 문장은 \"다른 위상으로 표시됩니다\"라고 사실처럼 말해서, 바로 이어지는 \"추측\"이 무엇을 추측한 것인지 받을 말이 없다. 독자는 무엇이 틀릴 수 있는지 다시 찾아야 한다. 원문 the guess가 가리키는 것은 숨겨진 위상이라는 판단이다.",
+   "evidence": "앞 문장: \"캐릭터가 있는 이야기 위상 때문에 숨겨진 출현 지점은 다른 위상으로 표시됩니다.\""
+  },
+  {
+   "id": "world/quests.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "캐릭터가 있는 이야기 위상 때문에 숨겨진 출현 지점은",
+   "source_quote": "Spawns hidden because of the story phase your character is in",
+   "suggestion": "캐릭터가 지금 속한 이야기 위상 때문에 숨겨진 출현 지점은",
+   "problem": "\"the phase your character is in\"을 그대로 옮긴 \"캐릭터가 있는 이야기 위상\"은 '캐릭터가 가진 위상'과 '캐릭터가 있는 곳의 위상' 중 어느 것인지 흐리다. 원문은 캐릭터가 현재 놓인 위상을 말한다.",
+   "evidence": "원문 \"the story phase your character is in\"."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "진행 상태 (미완료 또는 완료 상태로 돌아옴)",
+   "source_quote": "Progress (you come back unfinished or finished)",
+   "suggestion": "진행 상태 (퀘스트를 마치지 못했거나 마친 뒤 다시 찾아옴)",
+   "problem": "\"완료 상태로 돌아옴\"은 퀘스트가 어떤 상태로 되돌아간다는 뜻으로 읽힌다. 원문은 플레이어가 퀘스트를 마치지 못했거나 마친 채로 NPC에게 다시 온다는 뜻이다.",
+   "evidence": "원문 \"you come back unfinished or finished\"의 주어는 you(플레이어)."
+  },
+  {
+   "id": "world/quests.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "주변 목록은 레벨이나 선행 퀘스트 때문에 아직 받을 수 없는 퀘스트도 뺍니다.",
+   "source_quote": "The Nearby list also leaves out quests you cannot take yet, because of your level or a missing prerequisite.",
+   "suggestion": "주변 목록은 레벨이 모자라거나 선행 조건을 갖추지 못해 아직 받을 수 없는 퀘스트도 뺍니다.",
+   "problem": "원문 a missing prerequisite의 missing이 빠져 \"선행 퀘스트 때문에\"가 되었다. 선행 퀘스트가 있는 것 자체가 이유인 것처럼 읽혀, 선행 조건을 마치면 목록에 나온다는 점이 드러나지 않는다.",
+   "evidence": "원문 \"because of your level or a missing prerequisite\"."
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "findings": [
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "게임 필터에서 수집한 것만 표시를 켜 두면 빈 수집품의 탭이 빠질 수 있습니다.",
+   "source_quote": "Tabs for empty collections may be missing while the game's Only show collected filter is on.",
+   "suggestion": "게임의 \"수집한 것만 표시\" 필터를 켜 두면 빈 수집품의 탭이 빠질 수 있습니다.",
+   "problem": "필터 이름 \"수집한 것만 표시\"가 문장에 섞여 있어 \"필터에서 수집한 것만 표시를 켜 둔다\"가 필터 이름인지 동작 설명인지 갈리지 않는다. 처음 쓰는 사람은 필터 메뉴에서 어떤 항목을 찾아야 하는지 알기 어렵다. 원문은 Only show collected를 필터 이름으로 대문자 표기해 구분한다.",
+   "evidence": "원문 \"the game's Only show collected filter\"는 고유 항목 이름으로 쓰였다. 번역은 이름 경계 표시 없이 \"필터에서 ... 표시를 켜 두면\"으로 이어 붙였다. 실제 게임 표기는 캐시에서 Forever 수집품 필터 문자열을 찾지 못해 확인하지 못했다(참고: WARBAND_SCENE_COLLECTION_FILTER_OWNED \"수집한 항목만 표시\"는 전투부대 장면 필터라 문맥이 다르다)."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "요약은 게임의 유산 이름표와 레벨을 읽습니다.",
+   "source_quote": "The summary reads the game's Legacy label and level",
+   "suggestion": "요약은 게임이 표시하는 유산 레벨 이름과 레벨을 읽습니다.",
+   "problem": "\"유산 이름표\"는 게임에 있는 별도 물건이나 기능처럼 들린다. 원문 label은 레벨 앞에 붙는 표시 문구(바로 뒤 예시의 \"영예 레벨\")를 뜻한다. 처음 쓰는 사람은 \"이름표\"라는 항목을 찾으려 할 수 있다.",
+   "evidence": "바로 뒤 예시가 \"영예 레벨, 12\"로, label은 \"영예 레벨\" 같은 표시 문구다. 게임 문자열 RENOWN_LEVEL_LABEL = \"영예 %d\"(gs_koKR.csv 49466)도 레벨 표시 문구다."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "게임의 조건 글자(N포인트 더 사용)가 붙습니다",
+   "source_quote": "adds the game's gate text (spend N more points)",
+   "suggestion": "게임의 조건 글자(포인트를 N 더 소모해야 한다는 내용)가 붙습니다",
+   "problem": "괄호 안이 게임 조건 글자의 요지인데, 게임은 \"사용\"이 아니라 \"소모\"라고 표시한다. 들리는 말과 설명서의 말이 달라 같은 문구인지 바로 연결되지 않는다.",
+   "evidence": "gs_enUS.csv 49693 TALENT_FRAME_GATE_TOOLTIP_FORMAT \"Spend %d more |4point:points; to unlock this row\" = gs_koKR.csv 49693 \"이 줄을 해제하려면 %d 포인트를 더 소모해야 합니다.\" 원문 괄호는 이 문구의 요약이다."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "그 행에 대한 게임 메뉴(소환, 즐겨찾기 등)를 엽니다",
+   "source_quote": "opens the game's menu for that row (summon, favorite, and so on)",
+   "suggestion": "그 행의 게임 메뉴(소환, 즐겨찾기 등)를 엽니다",
+   "problem": "번역투 \"~에 대한\"이 메뉴와 행의 관계를 흐리게 한다. 메뉴는 그 행에 딸린 것이므로 \"그 행의\"면 된다.",
+   "evidence": "polish-base.md 무엇을 찾나 2번의 번역투 예 \"~에 대한\"."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "탭에서 Enter를 누르면 그 탭에 대한 게임의 자체 키를 실행하며",
+   "source_quote": "Enter on a tab runs the game's own key for that tab",
+   "suggestion": "탭에서 Enter를 누르면 그 탭을 여는 게임 자체 키를 실행하며",
+   "problem": "\"그 탭에 대한 게임의 자체 키\"는 번역투이고 어떤 키인지 흐리다. 앞 문단에서 말한 \"탭마다 있는 별도의 단축키\"(그 탭으로 도감을 여는 키)를 가리킨다는 것이 드러나지 않는다.",
+   "evidence": "같은 파일 앞 문단: \"WoW: Forever에서는 게임에 탭마다 별도의 단축키(...)가 있습니다. 각 키는 도감을 그 탭으로 바로 엽니다.\""
+  }
+ ]
+}

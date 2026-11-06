@@ -1,0 +1,59 @@
+{
+ "findings": [
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "global",
+   "quote": "세 특성 트리를 격자로 보여 주며, 한 번 눌러 포인트를 씁니다.",
+   "source_quote": "The three talent trees as a grid, spent with one press.",
+   "suggestion": "세 특성 계통도를 격자로 보여 주며, 한 번 눌러 포인트를 씁니다.",
+   "problem": "한국어 WoW 클라이언트는 talent tree를 '특성 계통도', tree를 '계통도'로 부르는데 이 파일은 '특성 트리'/'트리'로 씁니다. 같은 파일 안에서도 Legacy trees는 '유산 계통도'라고 해서, 같은 특성 엔진의 같은 개념이 '트리'와 '계통도'로 갈립니다. collections.md는 같은 엔진을 '특성 계통도'/'계통도'로 부릅니다. 이 파일의 다른 출현 위치: '전문화마다 정지점이 하나씩 있는 직업 특성 트리', '탭: 세 특성 트리이며', '열린 트리의 특성을', '### 예: 전사 트리에 처음 포인트 쓰기', '트리의 각 줄은', '트리에 포인트를 더 써야', '트리 전체를 초기화할지', '트리로 돌아가려면'. 다른 파일: getting-started/introduction.md:10 '특성 트리', windows/overview.md:4 '특성 트리'. 여러 파일에 걸친 방침이라 용어집(talent tree=특성 계통도) 등록 여부를 사용자 결정으로 올립니다. koKR 'Reset Tree'는 이미 '계통도 초기화'입니다.",
+   "evidence": "gs_koKR.csv TALENTS_INVOLUNTARILY_RESET(20141, 영어 'changes in the talent tree') = '특성 계통도 변화로 특성 일부가 초기화되었습니다.'; TALENT_FRAME_RESET_BUTTON_DROPDOWN_LEFT(50129, 'Left Tree') = '왼쪽 계통도'; TALENT_FRAME_RESET_BUTTON_TOOLTIP_LEFT_TREE(50028) = '왼쪽 계통도'. gs_koKR.csv에 '특성 트리'는 0건. vision-locale/koKR/windows.lua:171 L[\"Reset Tree\"] = \"계통도 초기화\". wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:4,182,186,202 '특성 계통도'/'계통도'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "게임이 전문화 탭(이중 특성)을 보여 줄 때만 나옵니다.",
+   "source_quote": "only if the game shows specialization tabs (dual talent specializations).",
+   "suggestion": "게임이 전문화 탭(이중 전문화)을 보여 줄 때만 나옵니다.",
+   "problem": "게임의 공식 이름은 '이중 전문화'인데 여기서는 '이중 특성'이라고 합니다. 같은 파일의 WoW: Forever 절은 같은 기능을 '이중 전문화를 배운 뒤에는'이라고 불러, 두 버전에서 다른 기능처럼 읽힙니다.",
+   "evidence": "gs_koKR.csv LEVEL_UP_DUALSPEC(20917, 영어 'Dual Specialization') = '이중 전문화'; LEVEL_UP_DUAL_SPEC_LINK(20928) = '[이중 전문화]'. gs_koKR.csv에 '이중 특성'은 0건. 같은 파일 'WoW: Forever: 특성' 절 1번 항목 '이중 전문화를 배운 뒤에는'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"유효하지 않음\": 환급하면서 이 특성에 필요한 것이 없어졌습니다.",
+   "source_quote": "\"Invalid\": a refund removed something this talent needs.",
+   "suggestion": "\"유효하지 않음\": 환불하면서 이 특성에 필요한 것이 없어졌습니다.",
+   "problem": "같은 특성 엔진의 같은 동작(Backspace로 등급 되돌리기, refund)을 이 파일은 '환급', collections.md는 '환불'로 부릅니다. 같은 설명서 안에서 표기를 하나로 맞춰야 합니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:192 '다른 특성을 환불해서', :197 '| Backspace | 등급을 환불합니다 |', :202 '계통도 전체를 환불합니다'. 이 파일 177, 184, 189행은 '환급'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "### 포인트 쓰기와 환급",
+   "source_quote": "### Spending and refunding",
+   "suggestion": "### 포인트 쓰기와 환불",
+   "problem": "같은 특성 엔진의 refund를 이 파일은 '환급', collections.md는 '환불'로 부릅니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:197 '| Backspace | 등급을 환불합니다 |'."
+  },
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| Backspace | 등급 하나를 환급합니다. |",
+   "source_quote": "| Backspace | Refunds one rank. |",
+   "suggestion": "| Backspace | 등급 하나를 환불합니다. |",
+   "problem": "같은 키, 같은 동작을 collections.md 표는 '등급을 환불합니다'라고 적습니다. 표기가 갈립니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/collections.md:197 '| Backspace | 등급을 환불합니다 |'."
+  }
+ ]
+}

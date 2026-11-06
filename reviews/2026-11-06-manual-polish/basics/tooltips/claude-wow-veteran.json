@@ -1,0 +1,37 @@
+{
+  "findings": [
+    {
+      "id": "basics/tooltips.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "| Shift+Down | 다음 툴팁 줄 |",
+      "source_quote": "| Shift+Down | Next Tooltip Line |",
+      "suggestion": "| Shift+Down | 툴팁 다음 줄 |",
+      "problem": "'단축키 이름' 열은 단축키 화면에 실제로 표시되는 바인딩 이름을 인용하는 칸인데, 게임이 표시하는 이름은 '툴팁 다음 줄'이고 설명서는 어순을 바꾼 '다음 툴팁 줄'로 적었다. 단축키 화면에서 이 이름으로 찾으면 일치하는 항목이 없다. 같은 어순 차이가 controller.md, reference/keybindings.md, getting-started/sku.md에도 있으므로, 설명서 쪽을 고치지 않고 koKR bindings.lua 키 'Next Tooltip Line'을 '다음 툴팁 줄'로 바꾸는 방향(kokr)도 사용자 결정 대상이다. 다른 바인딩('다음 버퍼 항목', '다음 버퍼')은 '다음'이 앞에 온다.",
+      "evidence": "vision-locale/koKR/bindings.lua:26 L[\"Next Tooltip Line\"] = \"툴팁 다음 줄\"; 입력 terms에도 Next Tooltip Line=툴팁 다음 줄. 다른 파일 표기: ko/reference/keybindings.md:49 '다음 툴팁 줄', ko/controller.md:45 '다음 툴팁 줄', ko/getting-started/sku.md:62 '다음 툴팁 줄'. 비교 사례: koKR/bindings.lua:32 'Next Buffer Item'=\"다음 버퍼 항목\"."
+    },
+    {
+      "id": "basics/tooltips.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "| Shift+Up | 이전 툴팁 줄 |",
+      "source_quote": "| Shift+Up | Previous Tooltip Line |",
+      "suggestion": "| Shift+Up | 툴팁 이전 줄 |",
+      "problem": "단축키 화면에 표시되는 바인딩 이름은 '툴팁 이전 줄'인데 설명서는 '이전 툴팁 줄'로 적어 단축키 화면에서 같은 이름을 찾을 수 없다. 위 '다음 툴팁 줄'과 같은 문제이며, koKR bindings.lua 키 'Previous Tooltip Line'을 '이전 툴팁 줄'로 바꾸는 방향도 사용자 결정 대상이다.",
+      "evidence": "vision-locale/koKR/bindings.lua:25 L[\"Previous Tooltip Line\"] = \"툴팁 이전 줄\"; 입력 terms에도 같은 값. 다른 파일 표기: ko/reference/keybindings.md:48, ko/controller.md:28·45, ko/getting-started/sku.md:62 모두 '이전 툴팁 줄'. 비교 사례: koKR/bindings.lua:31 'Previous Buffer Item'=\"이전 버퍼 항목\"."
+    },
+    {
+      "id": "basics/tooltips.md",
+      "category": "terminology",
+      "severity": "major",
+      "scope": "file",
+      "quote": "기록 일수(21), 평균 일수(7), 자동 스캔(끔)",
+      "source_quote": "History Days (21), Mean Days (7) and Auto Scan (off)",
+      "suggestion": "기록 일수(21), 평균 계산 일수(7), 자동 스캔(끔)",
+      "problem": "경매 가격 메뉴의 설정 이름을 인용한 자리인데, 게임 메뉴에 표시되는 이름은 '평균 계산 일수'이고 설명서는 '평균 일수'로 적었다. 메뉴에서 이 이름으로 항목을 찾을 수 없다. 같은 '평균 일수' 표기가 windows/auction-house.md:231 설정 표에도 있다.",
+      "evidence": "vision-locale/koKR/auction.lua:59 L[\"Mean Days\"] = \"평균 계산 일수\"; 입력 terms에도 Mean Days=평균 계산 일수. 다른 파일 표기: ko/windows/auction-house.md:231 '| 평균 일수 | 7 |'."
+    }
+  ]
+}
