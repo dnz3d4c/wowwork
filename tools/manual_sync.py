@@ -54,7 +54,11 @@ def sync_text(
         count = sum(p.count(needle) for p in parts)
         if not count or not _mentions(en_text, ch.en, short):
             continue
-        rivals = [e for e in others.get(ch.old, []) if _mentions(en_text, e, short)]
+        # 이번에 함께 바뀐 키 가운데 옛 값은 같고 새 값이 다른 키도 경쟁자다. 이 검사가 없으면
+        # 먼저 처리한 키가 다른 키의 인용까지 바꾸고, 뒤의 키는 옛 값이 사라져 아무 일도 안 한다
+        # (codex 2026-11-06). 새 값까지 같으면 어느 키로 바꿔도 결과가 같으므로 경쟁자가 아니다.
+        peers = [c.en for c in changes if c is not ch and c.old == ch.old and c.new != ch.new]
+        rivals = [e for e in [*others.get(ch.old, []), *peers] if _mentions(en_text, e, short)]
         if rivals:
             log.append(f"판단 필요: {ch.old!r} {count}곳, 원문이 {ch.en!r}와 {rivals}를 모두 인용")
             continue

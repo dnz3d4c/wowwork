@@ -71,3 +71,29 @@ def test_running_twice_changes_nothing_when_new_contains_old() -> None:
     twice, log = sync_text(ch, en, once, others={})
     assert once == twice == "키: 대상까지 경로까지 이어지는 길 안내."
     assert log == []
+
+
+def test_changed_keys_with_same_old_value_but_different_new_value_conflict() -> None:
+    """codex 2026-11-06: 같은 옛 값을 쓰던 두 키가 서로 다른 새 값으로 바뀌면, 먼저 처리한 키가
+    다른 키의 인용까지 바꿔 버린다. 영어 원문이 둘 다 인용하면 바꾸지 않고 판단 필요로 보고한다."""
+    ch = [
+        Change(en="Controlled", old="제어됨", new="군중 제어 중"),
+        Change(en="controlled", old="제어됨", new="제어됨 상태"),
+    ]
+    en = 'It says "Controlled" here and "controlled" there.'
+    ko = '여기서는 "제어됨", 저기서는 "제어됨".'
+    out, log = sync_text(ch, en, ko, others={})
+    assert out == ko
+    assert log and all("판단 필요" in line for line in log)
+
+
+def test_changed_keys_conflict_only_matters_when_both_are_quoted() -> None:
+    """한 파일이 그중 한 키만 인용하면 그 키의 새 값으로 바꾼다."""
+    ch = [
+        Change(en="Controlled", old="제어됨", new="군중 제어 중"),
+        Change(en="controlled", old="제어됨", new="제어됨 상태"),
+    ]
+    out, _ = sync_text(
+        ch, 'the count is followed by "controlled".', '숫자 뒤에 "제어됨"이 붙습니다.', others={}
+    )
+    assert out == '숫자 뒤에 "제어됨 상태"이 붙습니다.'
