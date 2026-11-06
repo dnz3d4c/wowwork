@@ -1,0 +1,133 @@
+{
+ "file": "windows/overview.md",
+ "en": "# Game Windows\n\nMost of World of Warcraft happens in windows: your bags, a merchant, the quest log, the talent tree, the mailbox. A sighted player clicks around in them with the mouse. WowVision reads these windows to you and lets you work them with the keyboard, like a desktop application with a screen reader.\n\nThis page explains how that works in general. The pages in this section then go through the windows one by one.\n\n## How it works\n\nYou open a game window the usual way: with the game's own key (B for bags, C for the character pane, L for the quest log and so on), by talking to an NPC, or by clicking something. WowVision notices that the window is open and turns it into a WowVision window:\n\n- It says the window's name and the element you are on, for example \"Merchant\" and then \"Linen Cloth, 1 silver, Button\".\n- The window keys now work: the arrow keys, Tab and Shift+Tab move between elements, Enter is a left click, Backspace a right click, Space reads the tooltip, Shift+F10 opens the context menu. All of this is explained in [Using the Interface](../basics/interface.md).\n- Escape closes the window, the same as closing it in the game.\n\nAs soon as the game window closes, the WowVision window closes too, and your keys go back to the game. While no WowVision window is open, the arrow keys, Tab, Enter and the other window keys do whatever you bound them to in the game, so they never get in the way of playing.\n\nWowVision does not replace the game's windows; it reads the real ones. Anything you do (buying, equipping, learning a talent) is a real click in the game's window.\n\n## Several windows at once\n\nYou can have more than one window open, for example a merchant and your bags. Ctrl+Tab and Ctrl+Shift+Tab switch between them. Each window remembers the element you were on.\n\nA typical case is selling: talk to a merchant, open your bags, find the item and right click it with Backspace to sell it.\n\n## Windows of WowVision itself\n\nSome windows belong to WowVision and have no counterpart in the game:\n\n| Window | Key | Page |\n|---|---|---|\n| WowVision menu (settings) | Shift+F1 or `/wv` | [The WowVision Menu and Settings](../basics/menu-and-settings.md) |\n| Chat window | Shift+F3 | [Chat](chat.md) |\n| Action bars window | Shift+F4 | [Action Bars](action-bars.md) |\n| Scanner | F9 | [Scanner](../world/scanner.md) |\n| Navigation window | F10 | [Navigation and Routes](../world/navigation.md) |\n\nThey work with the same keys as the game windows.\n\n## In combat\n\nThe game does not let addons take over keys during a fight. When combat starts, WowVision hands its window keys back to the game and stops reading windows; when combat ends, it takes them back and you are where you left off. See [Combat](../world/combat.md).\n\n## Turning a window off\n\nEvery supported window is a module under Windows in the WowVision menu. If you prefer to handle a window without WowVision, or another addon reads it for you, switch that module off there. See [The WowVision Menu and Settings](../basics/menu-and-settings.md).\n\n## When Sku is loaded\n\nIf you run Sku, the older accessibility addon, at the same time, WowVision leaves many windows to Sku and does not read them itself. Which ones is listed in [Using WowVision together with Sku](../getting-started/sku.md).\n\n## Windows that are not read yet\n\nNot every game window is supported on every version. If a window opens and WowVision says nothing, it is probably one of these. [Features by Game Version](../reference/versions.md) has the full table; the pages below mention what is missing in each window.\n\nWindows that every version reads: bags and bank, merchants, NPC dialogs, the quest giver window, flight masters, trainers, trade, the mailbox inbox, books and letters, the game's confirmation popups, ready check and role check, guild invitations, the game menu and options, macros and the color picker. Beyond that, each version has its own set:\n\n| Version | More windows |\n|---|---|\n| Classic Era | Friends, ignore and who lists, the classic guild windows, the Send Mail tab. Nothing else yet. |\n| The Burning Crusade (TBC) | The Classic Era set, plus character pane, spellbook, talents, trade skills, craft window, gem socketing, quest log, pet stable, group finder and auction house. |\n| Mists of Pandaria (Mists) | The Classic Era set, plus character pane, spellbook, talents, trade skills, gem socketing, reforging, item upgrade, quest log, quest choice, mount journal and auction house. |\n| Retail | Quest log, auction house, chat channels, the Social window, guild and communities, guild control and the cooldown manager window. |\n| WoW: Forever | The Retail set, plus character pane, spellbook with talents, professions, collections, Legacy, group finder, the gamepad windows and the WowNav floors list. |\n\n## The pages in this section\n\n- [Action Bars](action-bars.md) — the action bars window, dragging spells and items, gamepad bars\n- [Bags and Bank](bags-and-bank.md) — bags, bank, using and moving items, destroying items\n- [Talking to NPCs](npcs.md) — dialogs, merchants, trainers, flight masters, books and letters, pet stable\n- [Loot, Trade and Mail](loot-trade-mail.md) — loot rolls, trading with players, the mailbox\n- [Character](character.md) — equipment, stats, reputation, skills, PvP, equipment sets\n- [Spells and Talents](spells-and-talents.md) — spellbook, talents, glyphs, spell search\n- [Professions](professions.md) — trade skills, crafting, socketing, reforging, item upgrade\n- [Collections](collections.md) — mounts, pets, toys, heirlooms, appearances, Legacy\n- [Group Finder](group-finder.md) — group finder, ready check, role check\n- [Auction House](auction-house.md) — buying, selling, price scans\n- [Chat](chat.md) — chat announcements, the chat window, clicking links\n- [Social](social.md) — friends, guild, communities, channels\n- [Menus, Options and Dialogs](system.md) — game menu, game options, popups, macros and more\n",
+ "ko": "<!-- source: docs/src/user/en/windows/overview.md @ 397ffc3 -->\n# 게임 창\n\nWorld of Warcraft에서 하는 일은 대부분 창에서 이루어집니다. 가방, 상인, 퀘스트 목록, 특성 트리, 우체통 같은 창입니다. 비장애인 플레이어는 마우스로 이 창들 안을 클릭합니다. WowVision은 이 창들을 읽어 주고, 스크린리더로 데스크톱 프로그램을 쓰듯 키보드로 다룰 수 있게 합니다.\n\n이 페이지에서는 WowVision으로 창을 다루는 방식을 전반적으로 설명합니다. 이 장의 다른 페이지에서는 창을 하나씩 다룹니다.\n\n## 동작 방식\n\n게임 창은 평소처럼 엽니다. 게임 자체의 키(가방은 B, 캐릭터 창은 C, 퀘스트 목록은 L 등)를 누르거나, NPC에게 말을 걸거나, 무언가를 클릭합니다. WowVision은 창이 열린 것을 알아차리고 그 창을 WowVision 창으로 바꿉니다.\n\n- 창 이름과 현재 요소를 말합니다. 예를 들어 \"상인\"이라고 한 뒤 \"리넨 옷감, 1 실버, 버튼\"이라고 말합니다.\n- 이제 창 키가 동작합니다. 화살표 키, Tab, Shift+Tab은 요소 사이를 이동하고, Enter는 왼쪽 클릭, Backspace는 오른쪽 클릭, Space는 툴팁 읽기, Shift+F10은 상황별 메뉴 열기입니다. 이 모든 것은 [인터페이스 사용하기](../basics/interface.md)에서 설명합니다.\n- Escape를 누르면 창이 닫힙니다. 게임에서 창을 닫는 것과 같습니다.\n\n게임 창이 닫히면 WowVision 창도 바로 닫히고, 키는 다시 게임으로 돌아갑니다. WowVision 창이 열려 있지 않을 때는 화살표 키, Tab, Enter와 그 밖의 창 키가 게임에서 지정해 둔 대로 동작하므로 플레이에 방해가 되지 않습니다.\n\nWowVision은 게임 창을 대신하지 않고 실제 창을 읽습니다. 구매, 착용, 특성 배우기 등 무엇을 하든 게임 창에서 실제로 클릭하는 것입니다.\n\n## 여러 창을 한꺼번에\n\n창을 둘 이상 열어 둘 수 있습니다. 예를 들어 상인 창과 가방을 함께 열 수 있습니다. Ctrl+Tab과 Ctrl+Shift+Tab으로 창 사이를 전환합니다. 각 창은 마지막으로 머물렀던 요소를 기억합니다.\n\n전형적인 예는 판매입니다. 상인에게 말을 걸고, 가방을 열고, 아이템을 찾아 Backspace로 오른쪽 클릭하면 팔립니다.\n\n## WowVision 자체의 창\n\n일부 창은 WowVision에 속하며 게임에는 대응하는 창이 없습니다.\n\n| 창 | 키 | 페이지 |\n|---|---|---|\n| WowVision 메뉴(설정) | Shift+F1 또는 `/wv` | [WowVision 메뉴와 설정](../basics/menu-and-settings.md) |\n| 대화 창 | Shift+F3 | [대화](chat.md) |\n| 행동 단축바 창 | Shift+F4 | [행동 단축바](action-bars.md) |\n| 스캐너 | F9 | [스캐너](../world/scanner.md) |\n| 길 안내 창 | F10 | [길 안내와 경로](../world/navigation.md) |\n\n이 창들도 게임 창과 같은 키로 다룹니다.\n\n## 전투 중\n\n게임은 전투 중에 애드온이 키를 넘겨받지 못하게 합니다. 전투가 시작되면 WowVision은 창 키를 게임에 돌려주고 창 읽기를 멈춥니다. 전투가 끝나면 키를 다시 넘겨받고, 전투 전에 머물렀던 요소에서 그대로 이어집니다. [전투](../world/combat.md)를 참고하십시오.\n\n## 창 끄기\n\n지원하는 창은 모두 WowVision 메뉴의 창 항목 아래에 모듈로 들어 있습니다. WowVision 없이 창을 다루고 싶거나 다른 애드온이 그 창을 읽어 준다면 그곳에서 해당 모듈을 끄십시오. [WowVision 메뉴와 설정](../basics/menu-and-settings.md)을 참고하십시오.\n\n## Sku가 로드되어 있을 때\n\n예전부터 쓰이던 접근성 애드온인 Sku를 함께 실행하면 WowVision은 많은 창을 Sku에 맡기고 직접 읽지 않습니다. 어떤 창인지는 [WowVision과 Sku 함께 쓰기](../getting-started/sku.md)에 나와 있습니다.\n\n## 아직 읽지 않는 창\n\n모든 버전에서 모든 게임 창을 지원하지는 않습니다. 창이 열렸는데 WowVision이 아무 말도 하지 않는다면 아마 아직 지원하지 않는 창일 것입니다. 전체 표는 [게임 버전별 기능](../reference/versions.md)에 있고, 아래 페이지에서는 창마다 아직 지원하지 않는 부분을 알려 줍니다.\n\n모든 버전에서 읽는 창은 가방과 은행, 상인, NPC 대화, 퀘스트 NPC 창, 비행 조련사, 상급자, 거래, 우체통의 받은 우편함, 책과 편지, 게임의 확인 팝업, 전투 준비 확인과 역할 확인, 길드 초대, 게임 메뉴와 설정, 매크로, 색 지정 창입니다. 그 밖에는 버전마다 지원하는 창이 다릅니다.\n\n| 버전 | 추가로 읽는 창 |\n|---|---|\n| 클래식 시대 | 친구, 차단, 누구 목록, 클래식 길드 창, 우편 발송 탭. 그 밖에는 아직 없습니다. |\n| 불타는 성전(TBC) | 클래식 시대의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 제작 창, 보석 장착, 퀘스트 목록, 야수 우리, 파티 찾기, 경매장. |\n| 판다리아의 안개(Mists) | 클래식 시대의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 보석 장착, 재연마, 아이템 강화, 퀘스트 목록, 퀘스트 선택, 탈것 도감, 경매장. |\n| 리테일 | 퀘스트 목록, 경매장, 대화 채널, 소셜 창, 길드 및 커뮤니티, 길드 권한, 재사용 대기시간 관리자 창. |\n| WoW: Forever | 리테일의 창에 더해 캐릭터 창, 특성이 포함된 마법책, 전문 기술, 수집품, 유산, 파티 찾기, 게임패드 창, WowNav 층 목록. |\n\n## 이 장의 페이지\n\n- [행동 단축바](action-bars.md) — 행동 단축바 창, 주문과 아이템 끌어다 놓기, 게임패드 단축바\n- [가방과 은행](bags-and-bank.md) — 가방, 은행, 아이템 사용과 이동, 아이템 파괴\n- [NPC와 대화하기](npcs.md) — 대화, 상인, 상급자, 비행 조련사, 책과 편지, 야수 우리\n- [전리품, 거래, 우편](loot-trade-mail.md) — 전리품 주사위 굴림, 다른 플레이어와 거래, 우체통\n- [캐릭터](character.md) — 장비, 능력치, 평판, 숙련, PvP, 장비 구성\n- [주문과 특성](spells-and-talents.md) — 마법책, 특성, 문양, 주문 검색\n- [전문 기술](professions.md) — 전문 기술, 제작, 보석 장착, 재연마, 아이템 강화\n- [수집품](collections.md) — 탈것, 애완동물, 장난감, 계승품, 형상, 유산\n- [파티 찾기](group-finder.md) — 파티 찾기, 전투 준비 확인, 역할 확인\n- [경매장](auction-house.md) — 구매, 판매, 가격 스캔\n- [대화](chat.md) — 대화 알림, 대화 창, 링크 클릭\n- [소셜](social.md) — 친구, 길드, 커뮤니티, 채널\n- [메뉴, 설정, 대화 상자](system.md) — 게임 메뉴, 게임 설정, 팝업, 매크로 등\n",
+ "terms": [
+  {
+   "en": "WowVision Menu",
+   "ko": "WowVision 메뉴"
+  },
+  {
+   "en": "Auction House",
+   "ko": "경매장"
+  },
+  {
+   "en": "Game Version",
+   "ko": "게임 버전"
+  },
+  {
+   "en": "Action Bars",
+   "ko": "행동 단축바"
+  },
+  {
+   "en": "quest giver",
+   "ko": "퀘스트 NPC"
+  },
+  {
+   "en": "Collections",
+   "ko": "수집품"
+  },
+  {
+   "en": "Professions",
+   "ko": "전문 기술"
+  },
+  {
+   "en": "Navigation",
+   "ko": "길 안내"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Character",
+   "ko": "캐릭터"
+  },
+  {
+   "en": "Send Mail",
+   "ko": "우편 발송"
+  },
+  {
+   "en": "Merchant",
+   "ko": "상인"
+  },
+  {
+   "en": "Settings",
+   "ko": "설정"
+  },
+  {
+   "en": "Scanner",
+   "ko": "스캐너"
+  },
+  {
+   "en": "Friends",
+   "ko": "친구"
+  },
+  {
+   "en": "Windows",
+   "ko": "창"
+  },
+  {
+   "en": "Options",
+   "ko": "설정"
+  },
+  {
+   "en": "Talents",
+   "ko": "특성"
+  },
+  {
+   "en": "Combat",
+   "ko": "전투"
+  },
+  {
+   "en": "Button",
+   "ko": "버튼"
+  },
+  {
+   "en": "Spells",
+   "ko": "주문"
+  },
+  {
+   "en": "Legacy",
+   "ko": "유산"
+  },
+  {
+   "en": "Social",
+   "ko": "소셜"
+  }
+ ],
+ "changes": [
+  {
+   "before": "World of Warcraft에서 하는 일은 대부분 창에서 이루어집니다. 가방, 상인, 퀘스트 목록, 특성 트리, 우체통 같은 창입니다. 비장애인 플레이어는 마우스로 이 창들을 클릭합니다. WowVision은 이 창들을 읽어 주고, 스크린리더로 데스크톱 프로그램을 쓰듯 키보드로 다룰 수 있게 합니다.",
+   "after": "World of Warcraft에서 하는 일은 대부분 창에서 이루어집니다. 가방, 상인, 퀘스트 목록, 특성 트리, 우체통 같은 창입니다. 비장애인 플레이어는 마우스로 이 창들 안을 클릭합니다. WowVision은 이 창들을 읽어 주고, 스크린리더로 데스크톱 프로그램을 쓰듯 키보드로 다룰 수 있게 합니다."
+  },
+  {
+   "before": "이 페이지에서는 창이 대체로 어떻게 동작하는지 설명합니다. 이 장의 다른 페이지에서는 창을 하나씩 다룹니다.",
+   "after": "이 페이지에서는 WowVision으로 창을 다루는 방식을 전반적으로 설명합니다. 이 장의 다른 페이지에서는 창을 하나씩 다룹니다."
+  },
+  {
+   "before": "창을 둘 이상 열어 둘 수 있습니다. 예를 들어 상인 창과 가방을 함께 열 수 있습니다. Ctrl+Tab과 Ctrl+Shift+Tab으로 창 사이를 전환합니다. 각 창은 마지막으로 있던 요소를 기억합니다.",
+   "after": "창을 둘 이상 열어 둘 수 있습니다. 예를 들어 상인 창과 가방을 함께 열 수 있습니다. Ctrl+Tab과 Ctrl+Shift+Tab으로 창 사이를 전환합니다. 각 창은 마지막으로 머물렀던 요소를 기억합니다."
+  },
+  {
+   "before": "게임은 전투 중에 애드온이 키를 넘겨받지 못하게 합니다. 전투가 시작되면 WowVision은 창 키를 게임에 돌려주고 창 읽기를 멈춥니다. 전투가 끝나면 키를 다시 넘겨받고, 전투 전에 있던 요소에서 그대로 이어집니다. [전투](../world/combat.md)를 참고하십시오.",
+   "after": "게임은 전투 중에 애드온이 키를 넘겨받지 못하게 합니다. 전투가 시작되면 WowVision은 창 키를 게임에 돌려주고 창 읽기를 멈춥니다. 전투가 끝나면 키를 다시 넘겨받고, 전투 전에 머물렀던 요소에서 그대로 이어집니다. [전투](../world/combat.md)를 참고하십시오."
+  },
+  {
+   "before": "모든 버전에서 모든 게임 창을 지원하지는 않습니다. 창이 열렸는데 WowVision이 아무 말도 하지 않는다면 아마 이런 창일 것입니다. 전체 표는 [게임 버전별 기능](../reference/versions.md)에 있고, 각 창에서 아직 지원하지 않는 것은 아래 페이지에서 알려 줍니다.",
+   "after": "모든 버전에서 모든 게임 창을 지원하지는 않습니다. 창이 열렸는데 WowVision이 아무 말도 하지 않는다면 아마 아직 지원하지 않는 창일 것입니다. 전체 표는 [게임 버전별 기능](../reference/versions.md)에 있고, 아래 페이지에서는 창마다 아직 지원하지 않는 부분을 알려 줍니다."
+  },
+  {
+   "before": "모든 버전에서 읽는 창은 가방과 은행, 상인, NPC 대화, 퀘스트 NPC 창, 비행 조련사, 상급자, 거래, 우체통 받은 우편함, 책과 편지, 게임의 확인 팝업, 전투 준비 확인과 역할 확인, 길드 초대, 게임 메뉴와 설정, 매크로, 색 지정 창입니다. 그 밖에는 버전마다 지원하는 창이 다릅니다.",
+   "after": "모든 버전에서 읽는 창은 가방과 은행, 상인, NPC 대화, 퀘스트 NPC 창, 비행 조련사, 상급자, 거래, 우체통의 받은 우편함, 책과 편지, 게임의 확인 팝업, 전투 준비 확인과 역할 확인, 길드 초대, 게임 메뉴와 설정, 매크로, 색 지정 창입니다. 그 밖에는 버전마다 지원하는 창이 다릅니다."
+  },
+  {
+   "before": "| Classic Era | 친구, 차단, 누구 목록, 클래식 길드 창, 우편 발송 탭. 그 밖에는 아직 없습니다. |\n| The Burning Crusade (TBC) | Classic Era의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 제작 창, 보석 장착, 퀘스트 목록, 야수 우리, 파티 찾기, 경매장. |\n| Mists of Pandaria (Mists) | Classic Era의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 보석 장착, 재연마, 아이템 강화, 퀘스트 목록, 퀘스트 선택, 탈것 도감, 경매장. |\n| Retail | 퀘스트 목록, 경매장, 대화 채널, 소셜 창, 길드 및 커뮤니티, 길드 권한, 재사용 대기시간 관리자 창. |\n| WoW: Forever | Retail의 창에 더해 캐릭터 창, 특성이 포함된 마법책, 전문 기술, 수집품, 유산, 파티 찾기, 게임패드 창, WowNav 층 목록. |",
+   "after": "| 클래식 시대 | 친구, 차단, 누구 목록, 클래식 길드 창, 우편 발송 탭. 그 밖에는 아직 없습니다. |\n| 불타는 성전(TBC) | 클래식 시대의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 제작 창, 보석 장착, 퀘스트 목록, 야수 우리, 파티 찾기, 경매장. |\n| 판다리아의 안개(Mists) | 클래식 시대의 창에 더해 캐릭터 창, 마법책, 특성, 전문 기술, 보석 장착, 재연마, 아이템 강화, 퀘스트 목록, 퀘스트 선택, 탈것 도감, 경매장. |\n| 리테일 | 퀘스트 목록, 경매장, 대화 채널, 소셜 창, 길드 및 커뮤니티, 길드 권한, 재사용 대기시간 관리자 창. |\n| WoW: Forever | 리테일의 창에 더해 캐릭터 창, 특성이 포함된 마법책, 전문 기술, 수집품, 유산, 파티 찾기, 게임패드 창, WowNav 층 목록. |"
+  },
+  {
+   "before": "- [전리품, 거래, 우편](loot-trade-mail.md) — 전리품 주사위, 다른 플레이어와 거래, 우체통\n- [캐릭터](character.md) — 장비, 능력치, 평판, 기술, PvP, 장비 구성",
+   "after": "- [전리품, 거래, 우편](loot-trade-mail.md) — 전리품 주사위 굴림, 다른 플레이어와 거래, 우체통\n- [캐릭터](character.md) — 장비, 능력치, 평판, 숙련, PvP, 장비 구성"
+  }
+ ]
+}
