@@ -1,0 +1,26 @@
+{
+ "findings": [
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "global",
+   "quote": "어느 것이든 단축키 창에서 바꿀 수 있습니다.",
+   "source_quote": "You can change any of them in the keybinding window",
+   "suggestion": "어느 것이든 단축키 화면에서 바꿀 수 있습니다.",
+   "problem": "같은 키 바인딩 창(WowVision 메뉴 > 인터페이스 > 단축키)을 이 파일은 '단축키 창'으로, 링크로 안내하는 basics/keybindings.md는 '단축키 화면'으로 부른다. 독자가 링크를 따라가면 이름이 바뀐다. 다듬기 이전부터 있던 표기 분열이며 여러 파일에 걸쳐 있어 표기 방침을 정해야 한다. 이번 다듬기가 만든 회귀는 아니다.",
+   "evidence": "'단축키 화면' 사용: ko/basics/keybindings.md:4('단축키 화면은 각 동작과...'), basics/index.md, basics/interface.md, basics/menu-and-settings.md, basics/tooltips.md, information/buffers.md, information/monitors.md, windows/bags-and-bank.md, windows/social.md, world/scanner.md, world/targeting.md. '단축키 창' 사용: ko/reference/keybindings.md:4, reference/commands.md:27,74, reference/glossary.md:62,112, controller.md:15,32,125,134, windows/action-bars.md:10."
+  },
+  {
+   "id": "reference/keybindings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| 친구, 차단, 누구, 길드 목록(Classic Era, TBC, Mists) |",
+   "source_quote": "| Friends, ignore, who and guild lists (Classic Era, TBC and Mists) |",
+   "suggestion": "| 친구, 차단, 누구, 길드 목록(클래식 시대, 불타는 성전, 판다리아의 안개) |",
+   "problem": "같은 내용(Page Up/Page Down이 필요한 목록과 Home/End가 동작하지 않는 버전)을 설명하는 basics/interface.md는 게임 버전을 '클래식 시대, 불타는 성전, 판다리아의 안개'로 쓰는데 이 표는 'Classic Era, TBC, Mists'로 남겨 두어, 같은 버전을 두 파일이 다르게 부른다. 이번 다듬기가 만든 회귀는 아니다. 게임 버전 이름 표기는 설명서 전체에서 섞여 있어(speech.md는 영어 약칭) 방침 결정 대상일 수 있다.",
+   "evidence": "ko/basics/interface.md:168 '클래식 시대, 불타는 성전, 판다리아의 안개에서는 친구 목록, 차단 목록, 누구 목록, 길드 명단이 그런 목록입니다'. 반대 사례: ko/basics/speech.md:36 'Classic Era, TBC, Mists에서는'. decisions.tsv와 glossary.tsv에 게임 버전 이름 결정 없음."
+  }
+ ]
+}

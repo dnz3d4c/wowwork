@@ -1,0 +1,15 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/introduction.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "global",
+      "quote": "퀘스트 NPC 창, 특성 계통도, 우편함",
+      "source_quote": "quest givers, the talent tree, the mailbox",
+      "suggestion": "퀘스트 NPC 창, 특성 계통도, 우편함",
+      "problem": "다듬기에서 이 파일의 \"특성 트리\"만 게임 공식 용어 \"특성 계통도\"로 바꿨다. 이 파일의 바뀐 표기는 맞지만, 같은 talent tree를 가리키는 다른 설명서 파일은 여전히 \"특성 트리\"라서 설명서 전체에서 같은 것을 두 이름으로 부르게 됐다. 이 파일은 그대로 두고, 다른 파일의 \"특성 트리\"를 \"특성 계통도\"로 맞추고 용어집에 talent tree 항목을 추가할지 결정이 필요하다.",
+      "evidence": "공식 용어: TALENTS_INVOLUNTARILY_RESET (enUS \"...changes in the talent tree.\") = koKR \"특성 계통도 변화로 특성 일부가 초기화되었습니다.\" gs_koKR.csv에 \"특성 트리\"는 0건. 다른 파일 표기: wowvision-ko/WowVision/docs/src/user/ko/windows/overview.md:4 \"특성 트리\", windows/spells-and-talents.md:11 \"세 특성 트리\", :14 \"직업 특성 트리\", :109 \"세 특성 트리\". windows/collections.md는 \"특성 계통도\". docs/glossary.tsv에는 talent→특성만 있고 talent tree 항목은 없다."
+    }
+  ]
+}

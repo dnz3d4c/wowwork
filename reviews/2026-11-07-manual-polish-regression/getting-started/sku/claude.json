@@ -1,0 +1,15 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/sku.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "- NPC 대화와 그 밖의 NPC 대화 창.",
+      "source_quote": "- Gossip and other NPC dialogs.",
+      "suggestion": "- 대화 창과 그 밖의 NPC 대화 창.",
+      "problem": "다듬기에서 첫 항목에 \"NPC\"를 붙여 \"NPC 대화\"와 \"NPC 대화 창\"이 한 줄에 겹쳤다. 원문은 Gossip 창 하나와 그 밖의 NPC 대화 창을 나눠 말하는데, 두 이름이 거의 같아져 앞의 것이 어떤 특정 창인지 알아보기 어렵다. 뜻은 원문과 같다.",
+      "evidence": "terms: Gossip = \"대화\". WowVision/docs/src/user/ko/windows/npcs.md:4 \"대화 창, 상인, 상급자, ...\"가 Gossip 창을 \"대화 창\"으로 부른다. 다듬기 전 문장은 \"대화와 그 밖의 NPC 대화창\". 나머지 바뀐 줄은 확인 결과 문제 없음: 툴팁 이전 줄/툴팁 다음 줄은 terms와 일치, 길드 이벤트 기록은 social.md:219와 일치, 야수 우리는 npcs.md:137·windows.lua:202와 일치, 새 소식 필터는 GUILD_NEWS_FILTERS \"길드 새 소식 필터\"와 맞음, Trainer=상급자(TUTORIAL_TITLE14), Guild Control=길드 권한(GUILDCONTROL), Cooldown Manager=재사용 대기시간 관리자(COOLDOWN_VIEWER_LABEL), Role Poll=역할 투표(CRF_ROLE_POLL)."
+    }
+  ]
+}

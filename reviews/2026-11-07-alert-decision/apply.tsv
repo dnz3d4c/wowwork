@@ -1,0 +1,26 @@
+file	key	en	ko
+alerts.lua	Alert	경보	알림
+alerts.lua	Sound Alert	소리 경보	소리 알림
+alerts.lua	Speech Alert	음성 경보	음성 알림
+alerts.lua	TTS Alert	TTS 경보	TTS 알림
+alerts.lua	Voice Alert	음성 팩 경보	음성 팩 알림
+alerts.lua	alert	경보	알림
+chat.lua	Message Alert	메시지 경보	메시지 알림
+minimap.lua	New Minimap Dot Alert	새 미니맵 아이콘 경보	새 미니맵 아이콘 알림
+navigation.lua	Diving Alert	잠수 경보	잠수 알림
+navigation.lua	Flying Ended Alert	비행 종료 경보	비행 종료 알림
+navigation.lua	Flying Started Alert	비행 시작 경보	비행 시작 알림
+navigation.lua	Indoors Alert	실내 경보	실내 알림
+navigation.lua	Outdoors Alert	실외 경보	실외 알림
+navigation.lua	Subzone Changed Alert	하위 지역 변경 경보	하위 지역 변경 알림
+navigation.lua	Swimming Alert	수영 경보	수영 알림
+navigation.lua	Zone Changed Alert	지역 변경 경보	지역 변경 알림
+quests.lua	Quest Area Alert	퀘스트 지역 경보	퀘스트 지역 알림
+speech.lua	Buffered	대기열	모아 말하기
+ui.lua	Combat Ended Alert	전투 종료 경보	전투 종료 알림
+ui.lua	Combat Started Alert	전투 시작 경보	전투 시작 알림
+ui.lua	Crowd Control Ended Alert	군중 제어 종료 경보	군중 제어 종료 알림
+ui.lua	Enemy Count Alert	적 수 경보	적 수 알림
+windows.lua	%d alerts	경보 %d개	알림 %d개
+windows.lua	1 alert	경보 1개	알림 1개
+windows.lua	Alert Editor	경보 편집기	알림 편집기

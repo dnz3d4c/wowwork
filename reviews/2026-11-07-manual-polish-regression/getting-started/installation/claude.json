@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/installation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "이제는 게임의 애드온 목록에 있는 구버전 애드온 불러오기 확인란을 켜도 불러오게 되지 않습니다.",
+   "source_quote": "the Load out of date AddOns check box in the game's AddOns list no longer changes that",
+   "suggestion": "이제는 게임의 애드온 목록에 있는 구버전 애드온 불러오기 확인란을 켜도 게임이 그 애드온을 불러오지 않습니다.",
+   "problem": "다듬기 뒤 문장의 '불러오게 되지 않습니다'는 주어(게임)와 목적어(구버전 애드온)가 빠진 '~게 되지 않다' 구문이라, 확인란을 켜도 무엇이 어떻게 되지 않는지 앞 문장으로 돌아가 다시 맞춰야 한다. 뜻(no longer changes that)은 유지되어 경미로 둔다.",
+   "evidence": "changes의 before는 '켜도 이제는 이 동작이 달라지지 않습니다'였다. 확인란 이름 '구버전 애드온 불러오기'는 cache/gs_koKR.csv ADDON_FORCE_LOAD 값과 같아 문제없다. 회귀 확인의 나머지 변경: 게임 버전 이름(리테일, 판다리아의 안개, 클래식 시대, 불타는 성전)은 같은 폴더 introduction.md 26~30행과 manual-installation.md 32~35행 표기와 같아 일관성이 오히려 좋아졌다(speech.md 92행, first-login.md 8행, sku-login.md 30행은 여전히 Classic Era/Retail 영어 표기지만 이번 변경 전부터 있던 차이다)."
+  }
+ ]
+}
