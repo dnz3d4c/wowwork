@@ -27,3 +27,4 @@
 - `full.js`가 `lenses` 인자로 페르소나 목록을 받도록 고쳤다(평가자 실패 수 계산도 목록 길이 기준으로).
 - 묶음: UI 1,363개 → `reviews/2026-11-06-final-ui/batches` 10개(140개씩), 설치 프로그램 205개 → `reviews/2026-11-06-final-installer/batches` 3개.
 - Workflow: UI `wf_8b3afc4d-887`, 설치 프로그램 `wf_ebfe4c7f-b61`. 묶음마다 Claude 5 + GPT 5 → 번역자 반박 → 두 회사 판정.
+- 1차 실행이 사용량 한도(05:20 초기화)에 걸렸다. 설치 프로그램은 판정자 5명, UI는 평가자·번역자 55명이 실패했다(UI 묶음 7~10은 평가 전부 미실행). 10:23에 같은 Run ID로 이어서 실행했다(UI `wpupjxhvs`, 설치 프로그램 `wsegvmyj7`). 끝난 에이전트는 캐시를 쓴다.

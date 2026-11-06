@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "navigation.lua::Road Preference (Percent Longer)",
+   "category": "style",
+   "severity": "minor",
+   "problem": "숫자 설정 이름의 괄호 안 단위 설명 '더 긴 거리 퍼센트'가 영어 'Percent Longer'를 낱말 단위로 옮긴 명사 나열이라, 들었을 때 무엇이 몇 퍼센트인지(도로를 따르려고 감수할 추가 거리) 바로 잡히지 않는다. 같은 제품의 다른 숫자 설정은 '미만일 때 반복 (퍼센트)'처럼 괄호에 단위를 두고 앞말을 한국어 구로 짓는다.",
+   "evidence": "camelot/wownav/module.lua:40: type = \"Number\", label = L[\"Road Preference (Percent Longer)\"], default = 60, min = 0, max = 300 — 값은 경로가 얼마나 더 길어져도 도로를 택할지의 백분율이다. koKR 로캘의 이웃 숫자 설정 L[\"Repeat Below (percent)\"] = \"미만일 때 반복 (퍼센트)\". 원문 자체도 압축된 표현이라 확신이 완전하지 않아 minor로 둔다.",
+   "suggestion": "도로 선호도 (추가 거리 퍼센트)"
+  }
+ ]
+}

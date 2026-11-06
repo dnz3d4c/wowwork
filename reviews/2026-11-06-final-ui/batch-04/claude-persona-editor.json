@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::Road Preference (Percent Longer)",
+      "category": "style",
+      "severity": "minor",
+      "problem": "괄호 안 '더 긴 거리 퍼센트'는 명사를 늘어놓은 번역투라, 들어서는 이 숫자가 무엇의 퍼센트인지(도로를 타려고 경로가 얼마나 더 길어져도 되는지) 바로 잡히지 않는다. 숫자 설정(기본 60, 최대 300)이라 값의 뜻을 이름에서 알아야 한다.",
+      "evidence": "camelot/wownav/module.lua:40: settings:add({ key = \"comfort\", type = \"Number\", label = L[\"Road Preference (Percent Longer)\"], default = 60, min = 0, max = 300 }). 원문 'Percent Longer'는 도로 우선 경로가 최단 경로보다 길어져도 되는 비율이다. 뜻이 틀린 것은 아니고 어색함과 이해 지연이라 minor로 둔다.",
+      "suggestion": "도로 선호도 (허용할 추가 거리 퍼센트)"
+    }
+  ]
+}

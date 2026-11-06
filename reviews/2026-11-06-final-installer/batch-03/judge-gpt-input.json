@@ -1,0 +1,25 @@
+{
+ "batch_file": "reviews/2026-11-06-final-installer/batches/batch-03.json",
+ "items": [
+  {
+   "ref": "Loc.cs::ai.locked",
+   "findings": [
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "Loc.cs::ai.locked",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "다시 실행해야 할 대상을 \"업데이터\"라고만 해서 처음 쓰는 사용자는 현재 설치 프로그램을 뜻하는지 별도 프로그램을 뜻하는지 알기 어렵다.",
+     "evidence": "원문은 사용자가 수행할 조치인 \"run the updater again\"을 안내한다. 설치 프로그램 화면에서 쓰는 한국어 동작명으로는 \"업데이트 프로그램\"이 더 분명하다.",
+     "suggestion": "{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이트 프로그램을 다시 실행하십시오."
+    }
+   ],
+   "translator": {
+    "id": "Loc.cs::ai.locked",
+    "action": "dispute",
+    "final_ko": "{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.",
+    "reason": "'업데이터'는 이 프로그램 자신의 이름이다. 창 제목이 'WowVision 설치 프로그램 & 업데이터'이고 바로 가기 설명도 '이 업데이터를 실행할 수 있게'라 사용자는 이 이름으로 프로그램을 알고 있다. '업데이트 프로그램'으로 바꾸면 오히려 다른 이름이 생겨 일관성이 깨진다."
+   }
+  }
+ ]
+}

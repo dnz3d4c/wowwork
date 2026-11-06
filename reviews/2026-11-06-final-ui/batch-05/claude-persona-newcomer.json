@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+      "category": "style",
+      "severity": "minor",
+      "problem": "명령형 종결어미 '잠수하십시오' 바로 뒤에 쉼표를 찍고 다음 절을 이어 붙여 문장이 끝났는지 이어지는지 불분명하다. 처음 듣는 사용자는 '하십시오,'에서 한 번 끊긴 뒤 '마지막 구간은...'이 앞 지시의 조건인지 별개 정보인지 헷갈린다. 원문의 쉼표를 지키면서 연결어미로 이으면 문법과 흐름이 맞는다.",
+      "evidence": "현재 ko: '나머지 길은 직접 이동해 잠수하십시오, 마지막 구간은 검증되지 않았습니다.' 종결어미 뒤 쉼표 연결은 한국어 문법상 어색하다. 원문 기호(쉼표)는 그대로 두고 어미만 바꾼다(공통 규칙: 원문 기호 추가·삭제 금지). 같은 계열의 stop_net_ends 번역('주변은 직접 찾으십시오. 마지막 구간은 검증되지 않았습니다.')은 원문이 마침표라 문제없다.",
+      "suggestion": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수해야 하며, 마지막 구간은 검증되지 않았습니다."
+    }
+  ]
+}

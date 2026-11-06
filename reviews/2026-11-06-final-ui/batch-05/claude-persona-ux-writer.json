@@ -1,0 +1,20 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+      "category": "style",
+      "severity": "minor",
+      "problem": "첫 문장의 도착 알림만 합니다체(\"도착했습니다\")라서 같은 파일의 다른 도착 알림과 말투가 다르다. 또 한 알림 안에 '도착'이 세 번 나와(\"...승강장에 도착했습니다. 여기서 비행선 도착을 기다리십시오. 도착하는 소리가...\") 기계가 쓴 반복처럼 들린다.",
+      "evidence": "related의 같은 종류 알림은 모두 명사형이다: \"%s 도착. 시전 거리 약...\", \"%s 탑승 지점 도착\", \"Wind Bridge 대기 지점 도착.\". 번역 지침상 상태 알림은 짧은 명사형, 지시 문장만 합니다체. 실제 발화는 DockNavigation.lua:75에서 첫 %s=대상 이름(예: \"%s행 비행선 승강장\"), 둘째 %s=운송 수단(\"비행선\" 등)으로 조립된다.",
+      "suggestion": "%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오."
+    },
+    {
+      "id": "navigation.lua::Riding to the noted dock %s",
+      "category": "style",
+      "severity": "minor",
+      "problem": "'탑승 중'은 이미 타 있는 상태를 말하는데 앞에 '~까지'를 붙여 \"기록한 ...승강장까지 탑승 중\"이 되면 어색한 결합이다. 같은 진행 상태 알림(\"%s까지 이동 중\", \"%s 방면 지하철에 탑승 중\")과 견주면 '타고 가는 중'이라는 뜻이 자연스럽게 전달되지 않는다.",
+      "evidence": "module.lua:1174 say(string.format(L[\"Riding to the noted dock %s\"], passive.name)) — %s는 \"%s행 비행선 승강장\" 같은 승강장 이름이다. 이웃 키 \"En route to %s, waypoint %d of %d\" => \"%s까지 이동 중\", related \"In the tram toward %s\" => \"%s 방면 지하철에 탑승 중\". 뜻은 전달되므로 minor.",
+      "suggestion": "기록한 %s까지 타고 이동 중"
+    }
+  ]
+}

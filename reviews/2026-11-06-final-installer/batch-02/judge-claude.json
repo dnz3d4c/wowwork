@@ -1,0 +1,30 @@
+[
+ {
+  "ref": "Loc.cs::folders.picked",
+  "uphold": false,
+  "final_ko": "{0} 폴더를 {1} 위치로 지정. {2}",
+  "reason": "현재 번역은 자리표시자 {1}(경로) 뒤에 받침에 따라 달라지는 조사를 직접 붙이지 않으려고 '위치로'를 둔 구조로 installer.md 자리표시자 규칙에 맞고, 상태 문구 명사형('지정')도 문체 규칙에 맞는다. 제안 '{0} 폴더 위치: {1}'은 원문에 없는 콜론을 추가해 공통 규칙(원문에 없는 기호 추가 금지)을 어기고, '지정 위치는 {1}.'은 서술어가 빠져 더 어색하다. 지적이 실제 사용자 불편을 입증하지 못해 유지.",
+  "evidence_sources": ["input", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:909"]
+ },
+ {
+  "ref": "Loc.cs::folders.duplicate.text",
+  "uphold": false,
+  "final_ko": "{0}, {1} 두 버전이 같은 폴더를 가리켜서, 이대로라면 WowVision이 그곳에 두 번 설치됩니다.\n\n둘 중 하나를 고치거나, 뒤로 가서 하나를 체크 해제하십시오.",
+  "reason": "지적의 전제(목적격 조사 누락)가 사실과 다르다. '하나를'에 목적격 조사 '를'이 이미 있고 '체크 해제하다'는 한 동사로 목적어를 받는다. 제안 '하나의 체크를 해제하십시오'는 뜻이 같으면서 더 무겁다. 유지.",
+  "evidence_sources": ["input", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:914"]
+ },
+ {
+  "ref": "Loc.cs::opt.shortcut.desc",
+  "uphold": false,
+  "final_ko": "바탕 화면과 시작 메뉴에 바로 가기를 만들어서, 나중에 다시 내려받지 않고 이 업데이터를 실행할 수 있게 합니다.",
+  "reason": "현재 번역은 원문 so 인과 구조를 자연스러운 합니다체로 전하며 설명 문체 규칙에 맞다. '업데이터'는 같은 설치 프로그램의 app.title('WowVision 설치 프로그램 & 업데이터', Loc.cs:814)과 ai.locked('업데이터를 다시 실행하십시오', Loc.cs:995)와 통일된 표기라 이 항목만 바꾸면 불일치가 생긴다. 제안은 표현 취향 차이이고 사용자 불편이 제시되지 않았다. 유지.",
+  "evidence_sources": ["input", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:814", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:928", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:995"]
+ },
+ {
+  "ref": "Loc.cs::status.windowsVoices",
+  "uphold": false,
+  "final_ko": "Windows 음성을 WoW에서 사용할 수 있게 하는 중…",
+  "reason": "원문 'Making ... available'을 정확히 전하고 '~하는 중' 진행형은 같은 묶음 status.installingClient('{0}에 설치하는 중…', Loc.cs:953), status.syncingToc('게임 클라이언트에 맞추는 중', Loc.cs:956)과 같은 형태다. 제안 '사용하도록 설정 중'은 실제 동작(InstallRunner.cs:366-370의 WindowsVoicesInstaller.Install)을 '설정'으로 바꿔 부르는 것이라 뜻 정확도가 오히려 떨어질 수 있다. 길이만의 문제는 결함으로 보기 어렵다. 유지.",
+  "evidence_sources": ["input", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:953", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:956", "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:958", "wowvision-ko/wowvision-installer/WowVisionInstaller/InstallRunner.cs:366"]
+ }
+]

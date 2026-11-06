@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "objects.lua::Free Bag Slots",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 가방 정보 객체 안에서 같은 개념을 두 가지로 부른다. 세부 항목 이름은 \"빈 칸\"(Free Slots)인데 요약 줄은 \"비어 있는 가방 칸: 10\"이라, 같은 '빈' 칸을 한 번은 관형사 '빈', 한 번은 서술형 '비어 있는'으로 말한다. 상태 줄 라벨은 짧은 명사형이 규칙이라 '비어 있는'은 늘어진 서술형이고 번역투로 들린다.",
+   "evidence": "WowVision/core/objects/types/PlayerBags.lua:13 label = L[\"Free Slots\"] (\"빈 칸\"), PlayerBags.lua:29 format = \"[Free Bag Slots]: {free}\" — 같은 객체의 요약 줄. persona-base.md: 설정 이름·상태는 짧은 명사형, 같은 종류끼리 말투 일관. 원문 정보(Bag)는 유지한다.",
+   "suggestion": "빈 가방 칸"
+  }
+ ]
+}

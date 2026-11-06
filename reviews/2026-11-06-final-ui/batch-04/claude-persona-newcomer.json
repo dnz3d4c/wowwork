@@ -1,0 +1,20 @@
+{
+ "findings": [
+  {
+   "id": "navigation.lua::Road Preference (Percent Longer)",
+   "category": "style",
+   "severity": "minor",
+   "problem": "괄호 안 '더 긴 거리 퍼센트'가 명사를 늘어놓은 영어 어순 직역이라, 처음 듣는 사용자는 무엇이 더 길다는 것인지, 숫자가 무엇의 퍼센트인지 바로 알기 어렵다. 원문 'Percent Longer'는 도로를 따르느라 늘어나는 경로 길이의 비율이다.",
+   "evidence": "camelot/wownav/module.lua:40: settings:add({ key = \"comfort\", type = \"Number\", label = L[\"Road Preference (Percent Longer)\"], default = 60, min = 0, max = 300 }) - 숫자 설정(0~300)이므로 값은 경로가 길어지는 비율이다. 설명을 더하지 않고 낱말만 바꾸는 제안이다.",
+   "suggestion": "도로 선호도 (늘어나는 거리 퍼센트)"
+  },
+  {
+   "id": "navigation.lua::Key",
+   "category": "terminology",
+   "severity": "minor",
+   "problem": "지도 데이터 세트의 식별자 필드 이름인데 '키'만 들으면 처음 쓰는 사용자는 키보드 키나 단축키 지정으로 오해할 수 있다. 같은 앱에서 '키'는 키보드 키(Shift, Alt 등) 뜻으로 많이 쓰인다.",
+   "evidence": "core/navigation/atlas/MapDataset.lua:6: { key = \"key\", type = \"String\", required = true, once = true, label = L[\"Key\"] } - 문자열 필드이고 한 번만 정하는 필수 값이라 식별자다. 이 필드가 사용자 화면에 실제로 얼마나 노출되는지는 확인하지 못해 심각도를 낮게 둔다.",
+   "suggestion": "식별 키"
+  }
+ ]
+}
