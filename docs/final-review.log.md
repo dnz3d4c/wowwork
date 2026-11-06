@@ -176,3 +176,5 @@
 - GitHub Pages를 Actions 방식으로 켰다. github-pages 환경의 배포 허용 브랜치에 ko 추가. 원본 `docs.yml`을 ko에서 workflow_dispatch로 실행(run 42152145052): build·deploy 성공.
 - 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (계정 Pages에 개인 도메인 연결). HTTP·HTTPS 모두 200, 제목 "소개 - WowVision" 확인.
 - 테스터 안내 맨 앞에 설명서 주소 한 줄 추가(사실 한 줄이라 별도 평가 없음), 테스터 폴더 `설치_안내.txt` 교체. 다시 배포하는 법은 `docs/manual-plan.md` 현재 상태에 적었다.
+- codex [자동수정] "공개 저장소가 비공개 서브모듈을 참조": ko 브랜치의 `.gitmodules` locale 주소와 서브모듈 커밋을 원본 분기점 값(wow-vision/vision-locale, 6153e7b)으로 되돌렸다(WowVision ko `87c631c`). 이 연결은 폐기한 테스트 빌드 zip 방식에서만 썼고, 지금은 설치 프로그램과 도구가 vision-locale 복제 저장소를 직접 읽는다(`tools/locale_lib.py upstream_locale_dir`). 설명서 파일은 그대로라 사이트 재배포 불필요.
+- 사용자 질문(영어·독일어처럼 파일을 직접 주면 안 되나): 공개했으므로 GitHub에서 바로 볼 수 있다. https://github.com/dnz3d4c/WowVision/tree/ko/docs/src/user/ko (main이 아니라 ko 브랜치라 주소에 /tree/ko/가 필요).
