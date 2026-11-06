@@ -168,3 +168,11 @@
 - 중립 판단: 정보(찾지 못한 버전도 체크해서 다음 단계에서 폴더를 지정할 수 있음)는 원문 4개 언어 모두 담고 있고, 빼면 기본 위치 밖에 설치한 사용자가 설치할 수 없다고 오해하므로 필요하다. 문제는 명령형: 찾지 못한 버전마다 반복해서 들리므로 그 버전을 안 하는 사용자에게도 "체크하라"는 지시가 되고, 같은 자리의 다른 상태 줄(명사형)과도 다르다.
 - 판정(`reviews/2026-11-06-notfound/`, 프롬프트 `one-string.md`): Claude·GPT 모두 조건형으로 바꾸는 쪽 채택. 문구는 Claude 쪽 채택 — "그래도"는 en·de·fr 원문 모두에 있고(anyway/trotzdem/quand même) 조건문 안에서는 명령으로 읽히지 않는다. "고를 수 있음"은 같은 자리의 "받을 수 있음", 다음 페이지 "찾아보기로 폴더를 고르거나"와 맞는다. GPT 문구 "폴더 지정 가능"은 "그래도"를 뺐다.
 - 확정: "이 컴퓨터에서 찾지 못함 — 그래도 체크하면 다음 단계에서 폴더를 고를 수 있음." 설치 프로그램 ko `702f903`, 빌드·오프라인 자체 검사 통과, 테스터 폴더 exe 교체(SHA-256 e4a73d96…). 사용자가 인용한 "그래도 체크하고 다음 단계로 진행"은 설치 프로그램에 없는 문구다.
+
+## 2026-11-06 한국어 설명서 공개 (사용자 지시: "공개해라. 레포")
+
+- `dnz3d4c/WowVision`을 공개로 바꿨다. 공개 전 확인: 분기점(397ffc3) 이후 ko 브랜치에서 설명서 밖으로 바뀐 것은 `.gitmodules`(locale 주소를 dnz3d4c/vision-locale로), `locale` 서브모듈 커밋, `docs/src/SUMMARY.md`(한국어 목차)뿐이고 민감한 내용 없음.
+- vision-locale, wowvision-installer는 지시 범위 밖이라 비공개 그대로. 설명서 빌드는 서브모듈을 받지 않아(`actions/checkout` 기본값) 영향 없다. 다만 공개 저장소의 locale 서브모듈은 외부 사람이 받을 수 없다.
+- GitHub Pages를 Actions 방식으로 켰다. github-pages 환경의 배포 허용 브랜치에 ko 추가. 원본 `docs.yml`을 ko에서 workflow_dispatch로 실행(run 42152145052): build·deploy 성공.
+- 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (계정 Pages에 개인 도메인 연결). HTTP·HTTPS 모두 200, 제목 "소개 - WowVision" 확인.
+- 테스터 안내 맨 앞에 설명서 주소 한 줄 추가(사실 한 줄이라 별도 평가 없음), 테스터 폴더 `설치_안내.txt` 교체. 다시 배포하는 법은 `docs/manual-plan.md` 현재 상태에 적었다.

@@ -4,6 +4,7 @@
 
 - 상태: 51개 파일 번역, 평가, 회귀 확인 완료 (2026-11-06). 회귀는 3회차까지 돌렸고(중대 이상 167 → 38 → 21건), 남은 21건은 `docs/decisions.tsv` 2026-11-06 기준으로 처리했다. 기록은 `reviews/2026-11-05-manual-regression`, `reviews/2026-11-06-manual-regression2`, `reviews/2026-11-06-manual-regression3`. 원문과 실제 동작이 다른 곳은 `reviews/2026-11-05-manual-regression/upstream-raw.json`에 모았다(upstream 보고 전, 중복 정리 필요). 남은 일: 사용자 최종 확인(절차 6단계)
 - 설치 프로그램에 설명서는 넣지 않는다(`docs/decisions.tsv` 2026-11-06)
+- 공개 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (2026-11-06 사용자 지시로 `dnz3d4c/WowVision` 공개, GitHub Pages는 Actions 방식, 계정 개인 도메인 gong.aheu.org). ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다. main에는 push하지 않는다(원본 릴리스 Workflow가 돈다). 배포 허용 브랜치(github-pages 환경)에 ko를 추가해 두었다.
 - 기준 원문: upstream `397ffc3` (V1.0.0 태그 + 문서 커밋 2개)
 - 번역본 위치: 비공개 복제 저장소 `dnz3d4c/WowVision`의 `docs/src/user/ko` (2026-11-05 결정). 완성 후 공개한다.
 - 품질 평가: 모든 묶음이 `docs/review-process.md`를 통과해야 커밋한다(Claude 5명 + GPT 5명 블라인드 평가, 교차 판정).

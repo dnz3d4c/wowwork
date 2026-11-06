@@ -2,6 +2,8 @@ WowVision 한국어판 테스트 설치 안내
 
 테스터용 안내입니다. WowVisionInstaller.exe를 실행해서 설치하고, 업데이트도 같은 파일로 합니다. 이 설치 프로그램은 원본 WowVision 설치 프로그램 1.6과 같고, 두 가지를 더했습니다. 화면 문구를 한국어로 보여 주고, 설치나 업데이트를 마칠 때마다 WowVision에 한국어 문구를 덮어씁니다.
 
+한국어 설명서: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html
+
 
 시작하기 전에
 
