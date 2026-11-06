@@ -1,0 +1,17 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/character.md#gpt-manual-editor-9",
+      "uphold": false,
+      "final_ko": "능력치는 \"힘 142\"나 \"방어도 1500\"처럼 읽기만 하는 줄입니다.",
+      "reason": "strict 항목이다. 수정안 '값을 바꿀 수 없는 줄'을 뒷받침하는 글자 근거(koKR 값, Loc.cs, 용어집, 공식 문자열, 다른 한국어 설명서 표기)를 찾지 못했다. 한국어 설명서 전체를 Grep한 결과 '값을 바꿀 수 없는'이라는 표기는 없고, read-only는 menu-and-settings.md:106에서 '읽기 전용', scanner.md:18에서 '읽기 전용 목록'으로 옮겨져 있어 수정안의 표기를 지지하지 않는다. 원문 59행 'read-only lines'에 바로 이어 'Press Space to read what a stat means'가 있어(번역 60행도 같음) 현재 번역이 Space 동작을 막는 것처럼 오해시킨다는 주장도 글자 근거가 아니라 해석이다. 근거가 취향과 해석뿐이므로 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/character.md:59",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/character.md:60",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md:106",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:18"
+      ]
+    }
+  ]
+}

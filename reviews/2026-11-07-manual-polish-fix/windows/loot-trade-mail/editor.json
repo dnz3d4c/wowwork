@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "windows/loot-trade-mail.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "'품질 색상 이름'을 '등급 색 이름'으로 바꿈. 근거: gs_koKR.csv 25986 COLORBLIND_ITEM_QUALITY와 53737 COLORS_ITEM_QUALITY가 '아이템 등급'이고, ko/windows/bags-and-bank.md:30이 같은 칸 낭독을 '등급 색 이름'이라고 쓰며, basics/tooltips.md도 '아이템 등급'으로 통일되어 있음."
+    }
+  ],
+  "targeting_changes": 2
+}

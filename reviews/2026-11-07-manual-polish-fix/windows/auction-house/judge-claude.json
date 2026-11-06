@@ -1,0 +1,16 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/auction-house.md#gpt-manual-editor-10",
+      "uphold": false,
+      "final_ko": "옷감과 광석처럼 겹쳐지는 아이템은 \"상품\"입니다. 개당 가격을 기준으로 수량 단위로 사고팝니다.",
+      "reason": "strict 항목. 지적의 근거는 조사구가 겹친다는 문체 판단뿐이고, '겹쳐 쌓을 수 있는'이나 다른 표현을 요구하는 koKR 값·용어집·게임 공식 문자열·다른 한국어 설명서 표기를 확인하지 못했다. 다른 설명서(loot-trade-mail.md:55 '겹쳐 있으면')도 '겹쳐'를 쓰며 '겹쳐 쌓을'이라는 표기는 없다. 현재 번역은 원문 244행(stack, by quantity at a price per unit)의 정보를 모두 담고 있고, 제안의 '필요한 수량만큼'은 원문에 없는 뜻을 더한다. 취향만이 근거라 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:244",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/auction-house.md:245",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/loot-trade-mail.md:55"
+      ]
+    }
+  ]
+}

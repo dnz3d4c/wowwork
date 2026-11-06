@@ -1,0 +1,9 @@
+{
+  "responses": [
+    {"ref": "information/monitors.md#reg-claude-0", "action": "applied", "reason": "decisions.tsv:15가 sighted를 '비장애인'으로 확정했다. 198행 '앞을 보는 플레이어'를 '비장애인 플레이어'로 되돌렸다."},
+    {"ref": "information/monitors.md#reg-gpt-1", "action": "applied", "reason": "원문 3행 'a proc lights up'의 lights up이 빠져 범위가 넓어졌다. 4행을 '주문 발동을 알리는 빛이 켜질 때'로 고쳤다(264행 설명과 일치)."},
+    {"ref": "information/monitors.md#reg-gpt-2", "action": "applied", "reason": "reg-claude-0과 같은 줄, 같은 수정. decisions.tsv:15 '비장애인' 결정에 맞췄다."},
+    {"ref": "information/monitors.md#reg-gpt-4", "action": "applied", "reason": "koKR monitors.lua:49,58이 Spell ID를 '주문 ID'로 표시한다. 233행 '주문 번호'를 '주문 ID'로 고쳤다."}
+  ],
+  "targeting_changes": 0
+}

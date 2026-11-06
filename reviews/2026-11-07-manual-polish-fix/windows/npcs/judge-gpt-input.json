@@ -1,0 +1,34 @@
+{
+ "file": "windows/npcs.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/npcs.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md",
+ "items": [
+  {
+   "ref": "windows/npcs.md#gpt-manual-editor-4",
+   "strict": true,
+   "finding": {
+    "ref": "windows/npcs.md#gpt-manual-editor-4",
+    "kind": "split",
+    "quote": "### 아이템이 읽는 내용",
+    "suggestion": "### 아이템을 읽을 때 들리는 내용",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "원문은 아이템이 전달하는 내용을 의인화해 표현하지만, “아이템이 읽는”은 한국어에서 아이템이 읽기 행위를 한다는 뜻이 돼 어색해. 다른 설명서의 같은 형식도 기존 번역일 뿐 이 표현의 적절성을 입증하지 않으므로, 뜻을 유지하면서 주체 오해를 없애는 편이 맞아.",
+    "claude_reason": "원문 제목 \"What an item says\"(en/windows/npcs.md:44)가 아이템을 주어로 쓴 틀이고, 다른 설명서도 같은 형식이다(ko/windows/bags-and-bank.md:28 \"## 칸이 읽는 내용\"). 본문 \"각 아이템은 ... 읽습니다\"(ko/windows/npcs.md:47)와도 맞물린다. 이 파일만 바꾸면 설명서 간 표기가 갈린다. 현재 번역 유지."
+   }
+  },
+  {
+   "ref": "windows/npcs.md#gpt-manual-editor-7",
+   "strict": true,
+   "finding": {
+    "ref": "windows/npcs.md#gpt-manual-editor-7",
+    "kind": "split",
+    "quote": "### 항목이 읽는 내용",
+    "suggestion": "### 훈련 항목을 읽을 때 들리는 내용",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "상급자 절이라는 문맥만으로 대상은 어느 정도 드러나지만, “항목이 읽는”은 항목을 읽기 행위의 주체로 만들어 문장이 어색해. 바로 앞에서 같은 대상을 “훈련 항목”이라고 부르므로 이를 명시하면 뜻과 문맥이 모두 유지돼.",
+    "claude_reason": "원문 \"What a service says\"(en/windows/npcs.md:97)의 틀이고 bags-and-bank.md:28과 같은 제목 형식이다. 이 절은 \"## 상급자\" 아래에 있고 바로 앞 정지점 목록이 \"훈련 항목\"을 소개하므로(ko/windows/npcs.md:94) 대상이 드러난다. 제안은 원문에 없는 \"훈련\"을 제목에 더한다. 현재 번역 유지."
+   }
+  }
+ ]
+}

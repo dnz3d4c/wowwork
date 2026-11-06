@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "getting-started/manual-installation.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "원문 en/getting-started/manual-installation.md:87 \"Download the newer release or the beta zip.\"의 비교급 newer가 다듬기에서 빠졌다. ko 88행을 \"2. 더 새 릴리스나 베타 zip을 내려받습니다.\"로 되돌렸다. tools.manual check 통과(문제 있는 파일 0개)."
+    }
+  ],
+  "targeting_changes": 0
+}

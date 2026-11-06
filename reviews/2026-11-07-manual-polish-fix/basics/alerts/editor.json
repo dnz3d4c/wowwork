@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "basics/alerts.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "다듬기 전 문장(497f41b^ 124행)에는 '같은 오류가 그 시간 안에 다시 나타나면 다시 읽지 않습니다'가 있었고, 원문 'Repeat Delay (2 seconds, 0 to 30)'는 지연 시간 동안만 억제한다는 뜻이다. 앱 동작 설명인 en/world/combat.md:125,128('spoken at most once in this time', 'Holding a key down still repeats the message, once every Repeat Delay seconds')과 ko/world/combat.md:126,129도 같다. 현재 문장은 키를 누르는 동안 계속 억제하는 것으로 읽히므로 제안대로 되돌렸다."
+    }
+  ],
+  "targeting_changes": 3
+}
