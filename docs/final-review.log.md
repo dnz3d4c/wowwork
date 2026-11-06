@@ -122,3 +122,14 @@
 - 반박 1건 두 회사 판정: GPT·Claude 모두 기각(uphold=false). "다음", "뒤로" 유지.
 - 함께 바꾼 검사: 영어 화면 버튼 이름도 안내에 적게 되어 인용 검사가 Ko와 En 표를 모두 보게 했다(`installer_text`, 테스트 먼저). 절 이름은 작은따옴표로 바꿔 큰따옴표는 화면 문구에만 쓴다.
 - 회귀 확인(Claude 1 + GPT 1, `guide-lens-regression.md`) 실행 중: `wf_8d2d7e38-28e`.
+
+### 회귀 확인 1회차 (`regression-1`, `wf_8d2d7e38-28e`)
+
+- GPT: critical 3, major 1. Claude: minor 2. 모두 코드·원본 설명서로 확인되어 작성자가 수용(반박 없음, 판정 불필요).
+  - 실행 직후 Windows 관리자 권한 요청과 SmartScreen 경고 대처가 없었다(`app.manifest` requireAdministrator, 원본 `installer.md:18-19`). 1단계에 추가. Windows가 띄우는 버튼 이름은 작은따옴표로 구분.
+  - 독일어·프랑스어 화면에서 자체 업데이트 버튼을 못 찾음. 버튼을 기능으로 설명하고 한국어·영어 이름을 붙였다(독일어·프랑스어 이름 나열은 한국 테스터에게 잡음이라 하지 않음).
+  - WoW를 찾지 못하면 설치 버튼 대신 "찾아보기"만 나온다(`UpdatePromptForm.cs` `_browseButton.Visible = !anyClient`). 4단계에 추가.
+  - "지금 업데이트"가 지난번 선택을 따르는 범위는 안정판·베타와 추가 애드온뿐(`ComponentsForm.cs:241-260`). 문장 범위를 좁혔다.
+  - minor: 첫 화면에는 "지금 설치"/"지금 업데이트" 중 하나만 나옴, "다음"/"뒤로"의 영어 이름, "Update now" 앞 "영어 화면에서는" 누락. 모두 반영.
+- 단계가 하나 늘어 6단계가 되었고, 직접 고르기 뒤 돌아올 단계를 5단계로 고쳤다.
+- 회귀 확인 2회차(순환 2회째) 실행.
