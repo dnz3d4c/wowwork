@@ -1,0 +1,24 @@
+{
+  "verdicts": [
+    {
+      "ref": "navigation.lua::Key",
+      "uphold": false,
+      "final_ko": "키",
+      "reason": "MapDataset.lua:6에서 'Key'는 데이터 세트 필드 목록(Key, Label, Game Version, Enabled) 가운데 하나의 라벨이다. 같은 목록 안에서 '키'는 식별자 필드로 읽히고, 키보드 키로 오해한다는 근거는 지적자도 노출 범위를 확인하지 못해 약하다. '식별 키'는 원문에 없는 수식을 더한다. 근거가 약해 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/core/navigation/atlas/MapDataset.lua:6"
+      ]
+    },
+    {
+      "ref": "navigation.lua::Floor %d of %d",
+      "uphold": false,
+      "final_ko": "층 %d of %d",
+      "reason": "decisions.tsv:2 사용자 결정이 서식 문자열 안의 of 유지를 정하고 예시로 '층 %d of %d'를 그대로 적어 두었다. 지적의 '%d층 of %d'는 사용자 결정을 바꾸는 제안이라 받아들이지 않는다.",
+      "evidence_sources": [
+        "wowwork/docs/decisions.tsv:2",
+        "input"
+      ]
+    }
+  ]
+}

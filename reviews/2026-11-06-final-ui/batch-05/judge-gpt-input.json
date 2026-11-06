@@ -1,0 +1,143 @@
+{
+ "batch_file": "reviews/2026-11-06-final-ui/batches/batch-05.json",
+ "items": [
+  {
+   "ref": "navigation.lua::trainer",
+   "findings": [
+    {
+     "by": "claude-persona-wow-veteran",
+     "id": "navigation.lua::trainer",
+     "category": "terminology",
+     "severity": "minor",
+     "problem": "한국어 클라이언트는 trainer를 직업 쪽은 '직업 상급자', 전문 기술 쪽은 '기술 전문가'로 나눠 부른다. '상급자'만 들으면 오래 한 플레이어는 직업 상급자만 떠올리고, 전문 기술 NPC가 이 분류에 들어 있다는 것을 알아채지 못한다.",
+     "evidence": "cache/gs_koKR.csv: MINIMAP_TRACKING_TRAINER_CLASS=\"직업 상급자\", MINIMAP_TRACKING_TRAINER_PROFESSION=\"기술 전문가\". camelot/wownav/text.lua:231의 CATEGORY.trainer는 상급자를 직업과 전문 기술로 나누지 않는다. 다만 WowNav 데이터의 trainer 분류에 전문 기술 NPC가 실제로 들어 있는지는 데이터에서 확인하지 못했다(tests.lua:1438의 예는 차원문 상급자). 그래서 심각도를 한 단계 낮췄다.",
+     "suggestion": "상급자 또는 기술 전문가"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::trainer",
+    "action": "dispute",
+    "final_ko": "상급자",
+    "reason": "'상급자 또는 기술 전문가'는 원문 한 단어에 없는 범위를 덧붙이는 제안이다. 지적자도 WowNav trainer 분류에 전문 기술 NPC가 들어 있는지 확인하지 못했다고 밝혔고, 코드에서 확인되는 예는 차원문 상급자(tests.lua:1438)뿐이다. 이 문구는 text.categories에서 '퀘스트 제공자, 상급자'처럼 쉼표로 이어지는 분류 이름(text.lua:278, tests.lua:279)이라 '또는'을 넣으면 목록이 깨진다."
+   }
+  },
+  {
+   "ref": "navigation.lua::Group",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "navigation.lua::Group",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 게임 용어인 \"파티\" 대신 \"파티 및 공격대\"로 범위를 임의로 넓혔다. 짧은 분류 이름을 들을 때 게임 내 명칭과 달라 혼동될 수 있다.",
+     "evidence": "game_term에 \"파티\"가 명시되어 있으며, core/scanner/providers.lua:25에서 제공자 label로 사용된다. 확정된 게임 공식 용어는 같은 문맥에서 그대로 따라야 한다.",
+     "suggestion": "파티"
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "navigation.lua::Group",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 용어인 \"파티\" 대신 \"파티 및 공격대\"로 의미를 확대했다. 기능 이름을 게임 클라이언트와 다르게 들려 사용자가 다른 분류로 오해할 수 있다.",
+     "evidence": "game_term이 \"파티\"로 지정되어 있으며, core/scanner/providers.lua:25에서 제공자 label로 사용된다. 같은 문맥의 공식 번역을 따라야 한다는 규칙에 어긋난다.",
+     "suggestion": "파티"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "navigation.lua::Group",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 용어인 \"파티\" 대신 \"파티 및 공격대\"로 번역해 원문에 없는 범위를 덧붙였다. 처음 쓰는 사용자는 이 항목이 게임의 \"파티\" 항목과 다른 기능이라고 오해할 수 있다.",
+     "evidence": "game_term이 \"파티\"로 지정되어 있으며, core/scanner/providers.lua:25에서 기능 분류의 label로 사용된다. 공식 용어를 따라야 한다는 지침에 어긋난다.",
+     "suggestion": "파티"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::Group",
+    "action": "dispute",
+    "final_ko": "파티 및 공격대",
+    "reason": "이 분류는 파티만이 아니다. core/scanner/providers.lua:21-33에서 IsInRaid()이면 raid1..N, 아니면 party1..4를 훑어 공격대원까지 목록에 넣는다. '파티'라고만 하면 공격대에 있을 때 이 분류에 공격대원이 나온다는 것을 알 수 없다. 같은 파일의 짝 문구도 '파티원 또는 공격대원 위치 확인 불가'(koKR navigation.lua:221)로 옮겼다. game_term '파티'는 자동으로 붙은 참고값일 뿐, 코드가 정한 범위를 따르는 것이 원문의 뜻이다."
+   }
+  },
+  {
+   "ref": "navigation.lua::Waiting for the far end of %s",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "navigation.lua::Waiting for the far end of %s",
+     "category": "listening",
+     "severity": "major",
+     "problem": "\"구간 완료\"는 무엇이 완료되기를 기다리는지 모호하고, 원문의 반대편 도착 지점을 나타내지 않는다. 빠르게 들으면 이동 자체가 끝났다는 완료 알림으로 오해할 수 있다.",
+     "evidence": "camelot/wownav/module.lua:1171에서 이동 중 상태로 발화되며, 원문의 \"far end\"는 `%s` 이동 수단의 반대편 끝을 뜻한다.",
+     "suggestion": "%s 반대편 도착 대기 중"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::Waiting for the far end of %s",
+    "action": "dispute",
+    "final_ko": "%s 구간 완료 대기 중",
+    "reason": "module.lua:1171-1172에서 %s에는 TRANSIT_WORDS(module.lua:263)의 '잠수', '수면으로 상승', '차원문', '지하철', '승강기', 'Wind Bridge'가 들어간다. 제안한 '%s 반대편 도착 대기 중'은 '잠수 반대편 도착 대기 중', '수면으로 상승 반대편 도착 대기 중'처럼 뜻이 통하지 않는다. 지금 번역은 모든 값에 자연스럽고, 끝에 '대기 중'이 있어 이동이 끝났다는 알림으로 오해할 여지가 없다."
+   }
+  },
+  {
+   "ref": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+   "findings": [
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "category": "listening",
+     "severity": "minor",
+     "problem": "방향이 치환되면 \"물은 왼쪽 앞\", \"물은 정면\"처럼 서술어가 없는 어색한 문장이 발화된다. 뜻은 추론할 수 있지만 음성 안내를 즉시 이해하기 어렵다.",
+     "evidence": "camelot/wownav/text.lua:74에서 두 번째 %s에는 \"straight ahead\", \"ahead to the left\" 같은 방향 문구가 들어간다. 따라서 현재 번역은 실제로 \"물은 정면\"과 같이 조립된다.",
+     "suggestion": "%s 도착. 물 위치는 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "action": "dispute",
+    "final_ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다.",
+    "reason": "조립하면 '물은 정면.', '물은 왼쪽 앞.'(text.lua:76-81, koKR navigation.lua:262-263)이 된다. 같은 알림의 '%s 도착.', '시전 거리 약 ...야드.'와 같은 짧은 명사형 상태 문장이라 문체가 일관되고, 뜻을 바로 알 수 있다. 제안한 '물 위치는 %s'도 서술어가 없기는 마찬가지라 나아지는 점이 없다."
+   }
+  },
+  {
+   "ref": "navigation.lua::On the ship",
+   "findings": [
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "navigation.lua::On the ship",
+     "category": "accuracy",
+     "severity": "major",
+     "problem": "배에 타고 있는 위치를 \"탑승 지점\"으로 바꿔, 배에 승선하기 전의 장소처럼 들린다. 사용자가 현재 위치나 경유지를 잘못 이해할 수 있다.",
+     "evidence": "원문은 \"On the ship\"이고 camelot/wownav/text.lua:124의 항목이다. related의 \"On the ship to %s\"도 \"%s행 배에 탑승 중\"으로 번역되어 승선 상태를 뜻한다.",
+     "suggestion": "배 탑승 중"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::On the ship",
+    "action": "dispute",
+    "final_ko": "배 탑승 지점",
+    "reason": "이 문구는 배에 타 있는 상태가 아니라 탑승 지점 목록 항목의 이름이다. DockNavigation.lua:145-149의 BoardingNameKey가 boat 시설이면 boarding_boat를 쓰고, 이 값은 'dock-boarding:' 지점의 nameKey(같은 파일 160-163)로 들어간다. 주석의 독일어 원형도 'Am Schiff'(배에서/배 옆)이고, 짝 항목 'At the vehicle'은 '운송 수단 탑승 지점'으로 옮겼다. '배 탑승 중'으로 바꾸면 목록에서 고를 장소가 상태처럼 들린다."
+   }
+  },
+  {
+   "ref": "navigation.lua::On the zeppelin",
+   "findings": [
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "navigation.lua::On the zeppelin",
+     "category": "accuracy",
+     "severity": "major",
+     "problem": "비행선에 타고 있는 위치를 \"탑승 지점\"으로 바꿔, 비행선에 승선하기 전의 장소처럼 들린다. 처음 쓰는 사용자가 이동 단계나 현재 위치를 반대로 이해할 수 있다.",
+     "evidence": "원문은 \"On the zeppelin\"이며 camelot/wownav/text.lua:125에서 사용된다. \"On\"은 비행선에 올라 있는 상태를 나타내므로 탑승 장소를 뜻하는 \"탑승 지점\"과 다르다.",
+     "suggestion": "비행선 탑승 중"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::On the zeppelin",
+    "action": "dispute",
+    "final_ko": "비행선 탑승 지점",
+    "reason": "'On the ship'과 같은 근거다. boarding_zeppelin은 DockNavigation.lua:148에서 탑승 지점 목록 항목의 이름(nameKey)으로 쓰이고, 독일어 원형은 'Am Zeppelin'이다. 짝 항목 'At the vehicle'은 '운송 수단 탑승 지점'으로 옮겼다. 비행선에 올라 있는 상태를 뜻하는 말이 아니다."
+   }
+  }
+ ]
+}

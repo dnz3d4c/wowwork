@@ -1,0 +1,1903 @@
+[
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-01.json",
+  "failedReviewers": 0,
+  "findings": 52,
+  "decisions": [
+   {
+    "id": "auction.lua::scanned",
+    "final_ko": "개 항목 스캔",
+    "how": "dispute-won",
+    "reason": "gpt: 코드에 하드코딩된 \" in \" 때문에 발화가 깨지는 것은 맞지만, 현재 번역값의 결함은 아니며 제안도 현재 번역과 같다. 이 항목의 번역은 유지하고 코드 문제로 별도 처리해야 한다. / claude: ScanSession.lua:147에서 \" in \"은 L[] 밖의 코드 리터럴이라는 지적은 사실이다. 하지만 두 평가자의 수정안이 현재 번역과 같아 이 키의 번역 값으로는 고칠 것이 없다. 번역은 유지하고 코드 리터럴 문제로 따로 넘긴다.",
+    "evidence": [
+     "wowvision-ko/WowVision/tbc/auction/ScanSession.lua:147",
+     "wowvision-ko/vision-locale/koKR/auction.lua:49",
+     "input",
+     "wowvision-ko/WowVision/tbc/auction/ScanSession.lua:147"
+    ],
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Scanning",
+    "final_ko": "스캔 중",
+    "how": "dispute-won",
+    "reason": "gpt: 영어 단위 \" sec\"은 지역화 키 밖의 코드 리터럴이므로 현재 번역값으로 해결할 수 없다. \"스캔 중\" 자체는 문맥과 문체 규칙에 맞는다. / claude: module.lua:93의 \" sec\"(82, 86줄의 \" min \", \" sec\"도)은 코드 리터럴이다. 수정안이 현재 번역과 같아 번역 값은 그대로 두고 코드 쪽 문제로 넘긴다.",
+    "evidence": [
+     "wowvision-ko/WowVision/tbc/auction/module.lua:90",
+     "wowvision-ko/vision-locale/koKR/auction.lua:36",
+     "input",
+     "wowvision-ko/WowVision/tbc/auction/module.lua:80-93"
+    ],
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "bindings.lua::Roll Bonus",
+    "final_ko": "추가 전리품 주사위",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::Auction not open",
+    "final_ko": "경매장이 열려 있지 않음",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "bindings.lua::This input already exists for this binding.",
+    "final_ko": "이 입력은 이미 이 단축키에 있음.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "major",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "buffers.lua::Castable or Dispellable by Me",
+    "final_ko": "내가 시전 가능 또는 무효화 가능",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Auction House",
+    "final_ko": "경매장",
+    "how": "dispute-won",
+    "reason": "gpt: game_terms의 \"경매\"는 네트워크 지연 항목에서 나온 번역이지만, 이 키는 경매장 창 모듈 이름이다. 같은 시설 문맥의 공식 문자열들이 \"경매장\"을 사용하며, 사용자 결정도 영어만 같은 다른 문맥의 공식 번역보다 현재 문맥을 우선하도록 한다. / claude: game_term '경매'는 gs_koKR.csv의 BUTTON_LAG_AUCTIONHOUSE(지연 표시 항목, 툴팁 '경매 지연')에서 왔다. 경매장 창 자체를 가리키는 공식 문자열 ERR_AUCTION_HOUSE_UNAVAILABLE은 '지금은 경매장을 이용할 수 없습니다.'로 '경매장'을 쓴다. decisions.tsv 2026-11-03(영어만 같고 문맥이 다른 공식 번역은 문맥에 맞게)에 따라 현재 번역이 맞다.",
+    "evidence": [
+     "wowvision-ko/WowVision/tbc/auction/module.lua:3",
+     "wowwork/cache/game_terms.tsv:4",
+     "wowwork/cache/gs_enUS.csv:17389",
+     "wowwork/cache/gs_koKR.csv:17377",
+     "wowwork/docs/decisions.tsv:3",
+     "input",
+     "wowwork/cache/gs_koKR.csv:8515",
+     "wowwork/cache/gs_koKR.csv:17377",
+     "wowwork/docs/decisions.tsv:3"
+    ],
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "alerts.lua::Priority Message (interrupts)",
+    "final_ko": "우선 메시지 (현재 음성 중단)",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "auction.lua::Mean Days",
+    "final_ko": "평균 계산 일수",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "bindings.lua::Cannot remove; Binding must have at least one input.",
+    "final_ko": "제거 불가; 단축키에는 입력이 하나 이상 있어야 함.",
+    "how": "dispute-won",
+    "reason": "gpt: 이 문구는 제거 시도가 거부된 직후 발화되는 상태 알림이다. 상태 알림은 완결 문장이어도 합니다체로 늘리지 않고 간결하게 쓰라는 사용자 결정이 있으므로 현재 명사형이 규칙에 맞는다. / claude: graphBindings.lua:23에서 제거 요청이 거부됐다는, 무슨 일이 일어났는지 알리는 발화다. decisions.tsv 2026-11-05와 translation-guide.md:49는 상태 알림을 원문이 완결 문장이어도 합니다체로 늘리지 않도록 한다. 할 일 지시나 도움말이 아니므로 합니다체 제안은 사용자 결정에 어긋난다. 세미콜론과 마침표도 원문대로다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/ui modules/graphBindings.lua:18",
+     "wowwork/docs/translation-guide.md:49",
+     "wowwork/docs/decisions.tsv:9",
+     "input",
+     "wowvision-ko/WowVision/core/ui modules/graphBindings.lua:22-24",
+     "wowwork/docs/decisions.tsv:9",
+     "wowwork/docs/translation-guide.md:48-49"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "bindings.lua::Cannot replace this binding as it requires at least one input.",
+    "final_ko": "이 단축키는 입력이 하나 이상 필요해서 바꿀 수 없음.",
+    "how": "dispute-won",
+    "reason": "gpt: 입력 교체가 거부된 직후 결과와 원인을 알리는 상태 발화다. 현재 번역은 원인과 결과를 \"~해서\"로 잇는 간결한 상태 알림이라는 사용자 결정에 부합한다. / claude: graphBindings.lua:38에서 교체가 거부됐다는 상태 알림이다. 현재 번역은 decisions.tsv 2026-11-05의 '원인~해서 결과' 간결형을 그대로 따른다. 합니다체 제안은 이 사용자 결정에 어긋난다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/ui modules/graphBindings.lua:30",
+     "wowwork/docs/translation-guide.md:49",
+     "wowwork/docs/decisions.tsv:9",
+     "input",
+     "wowvision-ko/WowVision/core/ui modules/graphBindings.lua:37-39",
+     "wowwork/docs/decisions.tsv:9",
+     "wowwork/docs/translation-guide.md:49"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::Scan aborted",
+    "final_ko": "스캔 중단",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::Full scan aborted",
+    "final_ko": "전체 스캔 중단",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "auction.lua::Item purchased",
+    "final_ko": "아이템 구입 완료",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "bindings.lua::Previous Tooltip Line",
+    "final_ko": "툴팁 이전 줄",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "bindings.lua::Next Tooltip Line",
+    "final_ko": "툴팁 다음 줄",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "bindings.lua::Read Tooltip Left",
+    "final_ko": "툴팁 왼쪽 읽기",
+    "how": "dispute-won",
+    "reason": "gpt: 실제 동작은 별도의 왼쪽 툴팁이 아니라 현재 툴팁 줄의 왼쪽 내용을 읽는 것이다. 지적에서 문제라고 본 해석이 의도된 동작이며, 제안은 오히려 다른 위치의 툴팁을 뜻하는 것으로 들릴 수 있다. / claude: tooltip.lua:33-37은 UIHost.tooltip:speakCurrentLeft()를 부른다. 툴팁 현재 줄의 왼쪽 글을 읽는 동작이라 '툴팁 왼쪽 읽기'가 정확하다. 제안 '왼쪽 툴팁 읽기'는 왼쪽에 있는 다른 툴팁으로 뜻을 바꾼다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/ui modules/tooltip.lua:29",
+     "input",
+     "wowvision-ko/WowVision/core/ui modules/tooltip.lua:33-37"
+    ],
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "bindings.lua::Read Tooltip Right",
+    "final_ko": "툴팁 오른쪽 읽기",
+    "how": "dispute-won",
+    "reason": "gpt: 코드는 현재 툴팁 줄의 오른쪽 내용을 읽는 동작을 호출한다. 현재 번역이 그 동작에 맞고, 제안은 오른쪽에 있는 별도 툴팁을 읽는다는 잘못된 의미를 만들 수 있다. / claude: tooltip.lua:45-49는 UIHost.tooltip:speakCurrentRight()를 부른다. 툴팁 현재 줄의 오른쪽 글을 읽는 동작이라 현재 번역이 정확하고, 제안은 뜻을 바꾼다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/ui modules/tooltip.lua:41",
+     "input",
+     "wowvision-ko/WowVision/core/ui modules/tooltip.lua:45-49"
+    ],
+    "sev": [
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "alerts.lua::TTS Alert",
+    "final_ko": "TTS 경보",
+    "how": "dispute-won",
+    "reason": "gpt: 원문 자체가 TTS라는 약어를 사용하며, 인정된 규칙이나 용어집에는 이를 반드시 풀어 써야 한다는 근거가 없다. 현재 번역은 코드의 TTS 출력 유형을 직접 구별하므로 신규 사용자가 실제로 오해한다는 주장만으로 변경하기에는 근거가 부족하다. / claude: koKR/alerts.lua에 'Speech Alert'=\"음성 경보\", 'Voice Alert'=\"음성 팩 경보\"가 따로 있다. '음성 합성 경보'는 '음성 경보'와 더 비슷하게 들려 세 방식의 구분이 흐려진다. 원문도 약어 TTS를 쓰고, 현재 번역이 사용자를 잘못 행동하게 만든다는 근거가 약하다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/alerts/outputs.lua:3",
+     "wowvision-ko/vision-locale/koKR/alerts.lua:6",
+     "input",
+     "wowvision-ko/vision-locale/koKR/alerts.lua:6-9"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "bindings.lua::Destroy Cursor Item",
+    "final_ko": "커서에 든 아이템 파괴",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "buffers.lua::Only My Auras",
+    "final_ko": "내 오라만",
+    "how": "dispute-won",
+    "reason": "gpt: 이 필드는 Cast by Me 필터로 대체된 호환용 설정이며 showInUI가 false라 사용자에게 레이블로 노출되지 않는다. 최종 검수 기준에서 주장한 사용자 혼동이 실제로 발생하지 않으므로 현재 번역을 유지한다. / claude: AuraBuffer.lua:67-77에서 이 설정은 showInUI = false인 숨겨진 예전 설정이다(Cast by Me 필터로 대체, 저장된 버퍼 호환용). 사용자에게 노출되지 않아 지적한 혼동이 실제로 생기지 않는다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:67",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:427",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:469",
+     "input",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:67-77"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "buffers.lua::Dispellable by My Group",
+    "final_ko": "내 파티 또는 공격대가 무효화 가능",
+    "how": "dispute-won",
+    "reason": "gpt: 확정 용어집이 dispellable을 \"무효화 가능\"으로 지정하므로 현재 번역이 필수 용어를 따른다. 제안한 \"해제 가능\"은 이 확정 용어를 어긴다. / claude: glossary.tsv:25 확정 용어가 dispellable=무효화 가능이고 게임 공식 DISPELS=무효화다. 제안의 '해제'는 확정 용어를 바꾸는 새 결함이다.",
+    "evidence": [
+     "wowwork/docs/glossary.tsv:25",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:92",
+     "wowvision-ko/vision-locale/koKR/buffers.lua:31",
+     "input",
+     "wowwork/docs/glossary.tsv:25",
+     "wowwork/cache/gs_koKR.csv:5193"
+    ],
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-02.json",
+  "failedReviewers": 0,
+  "findings": 20,
+  "decisions": [
+   {
+    "id": "errors.lua::Announce Errors",
+    "final_ko": "오류 알림",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "chat.lua::Link %s in Chat",
+    "final_ko": "대화창에 %s 링크 걸기",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "buffers.lua::Shown on Raid Frames in Combat",
+    "final_ko": "전투 중 공격대창에 표시",
+    "how": "dispute-won",
+    "reason": "gpt: 필터 이름 뒤에 “전체/해당만/제외” 선택지가 붙으므로 동작 설정이 아니라 조건이라는 문맥이 드러난다. “표시”도 설정 이름에 맞는 명사형이며, 기존 번역에도 “모든 이름표에 표시” 같은 같은 문형이 사용된다. / claude: AuraBuffer.lua:87-98 FILTERS에서 이 라벨은 필터 목록 항목이고 선택지가 전체/해당만(koKR/buffers.lua:24-25)이라 거르는 조건임이 드러난다. 형제 항목도 '내가 시전', '무효화 가능', '취소 가능'처럼 짧은 명사형이라 '표시'가 일관된다. 오해가 실제로 생긴다는 근거는 지적자도 불확실하다고 했다. 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:87-138",
+     "wowvision-ko/vision-locale/koKR/buffers.lua:20-36",
+     "wowvision-ko/vision-locale/koKR/ui.lua:202-203",
+     "input",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:87",
+     "wowvision-ko/vision-locale/koKR/buffers.lua:24"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "chat.lua::Message Alert",
+    "final_ko": "메시지 경보",
+    "how": "dispute-won",
+    "reason": "gpt: 확정 용어집에서 alert를 “경보”로 지정했으므로 자연스러움만을 근거로 “알림”으로 바꿀 수 없다. 현재 번역은 같은 애드온의 다른 Alert 설정과도 일치한다. / claude: glossary.tsv:12에 alert = 경보가 확정 용어로 정해져 있고 예외 열이 비어 있다. koKR 전체에서 Alert는 '소리 경보', '전투 시작 경보', '지역 변경 경보' 등 모두 '경보'로 통일되어 있다. persona-base 규칙상 확정 용어를 바꾸는 제안은 새 결함이다. 다섯 평가자가 같은 의견이지만 용어집 변경은 사용자 결정 사항이라 판정으로 뒤집지 않는다. 현재 번역 유지.",
+    "evidence": [
+     "wowwork/docs/glossary.tsv:12",
+     "wowvision-ko/vision-locale/koKR/alerts.lua:4-9",
+     "wowvision-ko/vision-locale/koKR/chat.lua:5",
+     "wowwork/docs/glossary.tsv:12",
+     "wowvision-ko/vision-locale/koKR/alerts.lua:5",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:38",
+     "input"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "major",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "controller.lua::Right stick press held",
+    "final_ko": "오른쪽 스틱 누르고 있기",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "colors.lua::olive green",
+    "final_ko": "올리브 녹색",
+    "how": "dispute-won",
+    "reason": "gpt: “올리브 녹색”은 의미가 분명하며, “올리브빛”이 반드시 더 자연스럽다는 근거는 입력의 주관적 판단뿐이다. 양쪽 근거가 약한 경우 현재 번역을 유지한다. / claude: koKR/colors.lua에서 'X빛 Y'는 -ish 색상(greenish yellow 녹색빛 노란색, purplish blue 보랏빛 파란색)에만 쓰이고, -ish 없는 복합 색은 'orange yellow'처럼 별도 처리된다. olive green은 -ish가 없어 '올리브 녹색'이 체계에 맞고 '올리브색'과도 구분된다. 지적은 취향 차이에 가깝고 실제 불편이 제시되지 않았다. 현재 번역 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/colors/colors.lua:97",
+     "wowvision-ko/vision-locale/koKR/colors.lua:54-55",
+     "input",
+     "wowvision-ko/vision-locale/koKR/colors.lua"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "controller.lua::Cancelled",
+    "final_ko": "취소됨",
+    "how": "dispute-won",
+    "reason": "gpt: “취소됨”은 합니다체가 아니라 짧은 상태 명사형이므로 문체 규칙을 위반하지 않는다. 또한 실제 음성 상태 문구인 “스캔 취소됨”, “스캔 중단됨”, “비컨 설정됨”과 문형이 일치한다. / claude: koKR의 상태 알림은 '스캔 취소됨'(minimap.lua:32), '스캔 중단됨'(auction.lua:39), '비컨 설정됨'(navigation.lua:55)처럼 '~됨'으로 통일되어 있다. keyCapture.lua:187에서 단독 발화되는데 '취소'만 남기면 버튼 이름처럼 들릴 수 있고 같은 계열과 어긋난다. 현재 번역 유지.",
+    "evidence": [
+     "wowwork/docs/translation-guide.md:44-49",
+     "wowvision-ko/WowVision/core/graph/keyCapture.lua:187",
+     "wowvision-ko/vision-locale/koKR/controller.lua:27",
+     "wowvision-ko/vision-locale/koKR/minimap.lua:32",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:55",
+     "input",
+     "wowvision-ko/vision-locale/koKR/minimap.lua:32",
+     "wowvision-ko/vision-locale/koKR/auction.lua:39",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:55"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "buffers.lua::External Defensive",
+    "final_ko": "외부 방어 능력",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 클라이언트가 같은 기능 계열의 External Defensives를 공식적으로 “외부 방어 능력”이라고 번역한다. 현재 번역은 이 공식 용어와 정확히 일치하므로 초보자 대상의 풀어쓰기로 바꿀 수 없다. / claude: 게임 공식 문자열 EXTERNAL_DEFENSIVES_LABEL과 HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_LABEL의 한국어가 '외부 방어 능력'이다(gs_koKR.csv:24488, 24703). 같은 개념의 공식 용어를 따르고 있으므로 결함이 아니며, 제안안은 공식 용어에서 벗어난다. 현재 번역 유지.",
+    "evidence": [
+     "wowwork/cache/gs_enUS.csv:24478-24479",
+     "wowwork/cache/gs_koKR.csv:24487-24488",
+     "wowwork/cache/gs_enUS.csv:24693",
+     "wowwork/cache/gs_koKR.csv:24703",
+     "wowwork/docs/translation-guide.md:36-38",
+     "wowwork/cache/gs_koKR.csv:24488",
+     "wowwork/cache/gs_koKR.csv:24703",
+     "wowvision-ko/WowVision/core/buffers/types/AuraBuffer.lua:94"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "chat.lua::Write to %s",
+    "final_ko": "%s에 쓰기",
+    "how": "dispute-won",
+    "reason": "gpt: 코드는 채널 링크의 표시 이름을 %s에 넣고 이 문구를 동작 메뉴로 제공하므로, 실제 발화는 채널 이름과 함께 들린다. 이 문맥에서는 “쓰다”의 대상이 메시지임이 충분히 드러나며 원문에 없는 말을 보충할 필요가 없다. / claude: ui.lua:272-286에서 채널 링크의 컨텍스트 동작으로 쓰이고, %s에 채널 이름이 들어가며 뒤에 ', 왼쪽 클릭'이 붙는다. 대화 창의 채널 링크 메뉴라는 맥락에서 무엇을 쓰는지 분명하고, '메시지'는 원문에 없는 말을 더한다. 실제 불편 근거가 약해 현재 번역 유지.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/chat/ui.lua:264-284",
+     "wowvision-ko/vision-locale/koKR/chat.lua:33",
+     "input",
+     "wowvision-ko/WowVision/core/chat/ui.lua:276"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": [
+   {
+    "id": "colors.lua::grayish",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "회색을 띤",
+     "reason": "이 값은 모든 색조 앞에 결합되므로 현재 번역은 “회색빛 녹색빛 노란색”처럼 같은 말이 연달아 들린다. 다만 “탁한”은 회색 기운이라는 뜻을 잃으므로, 의미와 청취성을 함께 보존한 “회색을 띤”으로 확정한다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "회색빛",
+     "reason": "koKR/colors.lua에서 LOW_CHROMA 수식어는 '어두운 회색빛', '검은빛'으로 '~빛' 체계를 이룬다. '탁한'으로 바꾸면 회색 기운이라는 뜻이 빠지고 짝 수식어와도 어긋난다. colors.lua:163-167에서 수식어+색상 순서가 고정이라 '빛'이 겹쳐도 꾸밈 관계가 갈리지 않는다. 지적자도 제안어에 확신이 낮다고 밝혔다. 현재 번역 유지."
+    }
+   },
+   {
+    "id": "colors.lua::violet",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "보라색",
+     "reason": "game_terms.tsv에 violet의 정확한 공식 번역이 “보라색”으로 등록되어 있고, 번역 지침은 정확히 일치하는 공식 문자열을 사용하도록 정한다. purple과 이름이 겹치는 문제만으로 이 필수 규칙을 벗어날 수 없다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "청보라색",
+     "reason": "game_terms.tsv:73의 '보라색'은 gs_enUS.csv:24569 HOUSING_EXTERIOR_CUSTOMIZATION_COLOR_PURPLE(주택 외관 색상 이름, 키는 PURPLE)에서 온 것으로 색상 설명 어휘와 다른 문맥이다. 번역 규칙상 다른 문맥의 공식 번역은 문맥에 맞게 옮긴다. 같은 색상 어휘에서 purple이 이미 '보라색'(koKR/colors.lua, game_terms.tsv:74)이라 violet도 '보라색'이면 두 색이 같은 이름으로 들린다. 현재 번역 유지."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-03.json",
+  "failedReviewers": 0,
+  "findings": 32,
+  "decisions": [
+   {
+    "id": "groupHealth.lua::Speak Group Health",
+    "final_ko": "파티 및 공격대 생명력 읽기",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::No position here",
+    "final_ko": "여기서는 위치 정보 없음",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+    "final_ko": "이 스크린 리더 음성은 생명력을 음높이로 들려주지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Repeat Below (percent)",
+    "final_ko": "이 값 미만일 때 반복 (퍼센트)",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::Not in combat",
+    "final_ko": "전투 중에는 불가",
+    "how": "dispute-won",
+    "reason": "gpt: 영어만 직역하면 ‘전투 중 아님’이지만, 세 사용처 모두 `InCombatLockdown()`이 참일 때 기능을 거부하며 발화한다. 제안대로 바꾸면 실제 전투 중인 사용자에게 반대 상태를 알리므로 현재 번역을 유지한다. / claude: 세 사용처 모두 `if InCombatLockdown() then speak(L[\"Not in combat\"]) return end` 구조라 전투 중일 때 동작을 거부하며 발화된다. 원문 'Not in combat'은 '전투 중에는 안 됨'이라는 거부 사유이고 현재 번역이 정확하다. 제안 '전투 중 아님'은 전투 중인 사용자에게 반대 상태를 알리는 새 결함이다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/graph/keyCapture.lua:256",
+     "wowvision-ko/WowVision/core/minimap/module.lua:617",
+     "wowvision-ko/WowVision/core/minimap/module.lua:1336",
+     "wowvision-ko/WowVision/core/minimap/module.lua:617-618",
+     "wowvision-ko/WowVision/core/minimap/module.lua:1336-1337",
+     "wowvision-ko/WowVision/core/graph/keyCapture.lua:256-258"
+    ],
+    "sev": [
+     "critical",
+     "critical",
+     "critical",
+     "critical"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Watch Party",
+    "final_ko": "파티 감시",
+    "how": "dispute-won",
+    "reason": "gpt: 생명력 모니터 설정 안의 불리언 항목이므로 ‘파티 감시’만으로 대상과 동작을 파악할 수 있다. ‘모니터링’이 실제 불편을 줄인다는 근거가 없고, 현재 번역도 설정 이름에 요구되는 명사형을 지킨다. / claude: 생명력 모니터 모듈 설정 안의 켜고 끄기 항목(watchParty Bool)이라 무엇을 감시하는지는 부모 설정이 정한다. '감시'가 사람을 감시한다는 오해를 준다는 실제 불편 근거가 없고, '모니터링'은 외래어로 바꾸는 취향 차이다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:80",
+     "wowwork/docs/translation-guide.md:47",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:80-85",
+     "input"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::Watch Raid",
+    "final_ko": "공격대 감시",
+    "how": "dispute-won",
+    "reason": "gpt: 생명력 모니터 설정 안의 불리언 항목이며 `Watch Party`와 문형도 일치한다. ‘공격대 모니터링’으로 바꿔야 할 정도의 의미 혼동이나 문체 위반은 확인되지 않는다. / claude: Watch Party와 같은 판단. watchRaid Bool 설정이고 두 항목의 문형도 이미 '파티 감시'/'공격대 감시'로 맞다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:86",
+     "wowwork/docs/translation-guide.md:47",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:86-91",
+     "input"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::Announce Tracked Dots While Walking",
+    "final_ko": "걷는 중 추적 아이콘 알림",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "minimap.lua::New Minimap Dot Alert",
+    "final_ko": "새 미니맵 아이콘 경보",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "minimap.lua::Scan canceled",
+    "final_ko": "스캔 취소됨",
+    "how": "dispute-won",
+    "reason": "gpt: 이 문자열은 취소 사유와 결합되는 상태 알림이고, 현재 번역은 짧은 명사형이다. 기존 로캘의 `스캔 중단됨`, `취소됨`과도 문형이 일치하므로 ‘취소’를 더 자연스럽다고 보는 정도만으로는 결함이 성립하지 않는다. / claude: 로캘의 기존 상태 알림이 '~됨' 문형이다(auction.lua:39 '스캔 중단됨', :46 '전체 스캔 중단됨', controller.lua:27 '취소됨'). '취소됨'은 불필요한 피동이 아니라 상태를 짧게 알리는 형태이고, '스캔 취소'로 바꾸면 기존 문형과 갈린다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/minimap/module.lua:189",
+     "wowvision-ko/vision-locale/koKR/auction.lua:39",
+     "wowvision-ko/vision-locale/koKR/controller.lua:27",
+     "wowwork/docs/translation-guide.md:46",
+     "wowvision-ko/WowVision/core/minimap/module.lua:189-191",
+     "wowvision-ko/vision-locale/koKR/auction.lua:39",
+     "wowvision-ko/vision-locale/koKR/controller.lua:27"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "monitors.lua::Applied by Player",
+    "final_ko": "내가 적용함",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::dead",
+    "final_ko": "사망",
+    "how": "dispute-won",
+    "reason": "gpt: 앞의 숫자는 사망자 수가 아니라 파티 구성원을 구별하는 번호다. ‘명 사망’으로 바꾸면 `2명 사망`처럼 인원수로 잘못 전달되므로 현재 번역이 맞다. / claude: number는 인원수가 아니라 구성원 번호다(module.lua:443 `tostring(member.number)`, tests.lua:281-283 player=1, party1=2, party2=3). '2 사망'은 '2번 구성원 사망'이고, 제안 '명 사망'은 '2명 사망'으로 들려 뜻을 바꾸는 새 결함이다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:439",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:443",
+     "wowvision-ko/WowVision/retail/groupHealth/tests.lua:279",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:443-445",
+     "wowvision-ko/WowVision/retail/groupHealth/tests.lua:281-283"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "groupHealth.lua::full",
+    "final_ko": "생명력 최대",
+    "how": "dispute-won",
+    "reason": "gpt: 앞의 숫자는 생명력이 최대인 사람의 수가 아니라 개별 구성원 번호다. ‘명 생명력 최대’는 여러 명의 상태를 집계한 알림으로 뜻을 바꾸므로 현재 번역을 유지한다. / claude: dead와 같은 근거. 같은 함수에서 구성원 번호 number 뒤에 붙는 꼬리이고 구성원 한 명이 정확히 최대 생명력일 때 들린다. '명 생명력 최대'는 인원수로 오해시킨다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:472",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:477",
+     "wowvision-ko/WowVision/retail/groupHealth/tests.lua:279",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:443",
+     "wowvision-ko/WowVision/retail/groupHealth/module.lua:474-480",
+     "wowvision-ko/WowVision/retail/groupHealth/tests.lua:281-283"
+    ],
+    "sev": [
+     "major",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "minimap.lua::Seen entries cleared",
+    "final_ko": "발견 항목 지움",
+    "how": "dispute-won",
+    "reason": "gpt: 저장 내용을 지운 직후 단독으로 발화되며 ‘지움’은 작업 결과를 나타내는 짧은 명사형이다. 버튼 이름으로 오해해 실제 불편을 겪는다는 근거가 부족하므로 현재 번역을 유지한다. / claude: clear 명령 직후 단독 발화되는 완료 알림이고, 로캘에 같은 형태의 완료 알림이 이미 있다(navigation.lua:310 '방문한 경유지 기록 지움'). 버튼 이름으로 오해할 맥락이 없어 실제 불편 근거가 없다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/minimap/module.lua:1462",
+     "wowwork/docs/translation-guide.md:46",
+     "wowvision-ko/WowVision/core/minimap/module.lua:1462-1467",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:310"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "monitors.lua::One Decimal Timer",
+    "final_ko": "소수점 한 자리 타이머",
+    "how": "dispute-won",
+    "reason": "gpt: 소수점 한 자리로 표시되는 타이머라는 뜻이 현재 명사구에서 충분히 드러난다. 불리언 설정 이름에 요구되는 명사형도 지키며, ‘표시’를 추가하지 않아도 동작을 잘못 이해할 만한 근거가 없다. / claude: decimalTimer Bool 설정 레이블이라 켜고 끄기로 의미가 드러나고 원문도 같은 명사구다. 제안은 원문에 없는 '표시'를 더하는 표현 차이일 뿐 실제 불편 근거가 없다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/retail/monitors/CdmAuraMonitor.lua:684",
+     "wowwork/docs/translation-guide.md:47",
+     "wowvision-ko/WowVision/retail/monitors/CdmAuraMonitor.lua:686",
+     "input"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": [
+   {
+    "id": "minimap.lua::turned",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "방향 전환",
+     "reason": "코드는 플레이어의 바라보는 방향이 달라졌을 때 이 사유를 발화한다. ‘스캔 취소됨, 회전’은 무엇이 회전했는지 모호하지만 ‘방향 전환’은 플레이어의 동작을 더 분명하게 전달한다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "회전",
+     "reason": "'스캔 취소됨, <사유>'로만 쓰이고 같은 사유 묶음이 한 낱말(이동, 마우스, 마우스 시점)이다. 코드는 플레이어 방향(GetPlayerFacing) 변화를 검사하며, 이 문맥에서 '회전'은 플레이어가 돌았다는 뜻으로 충분히 들린다. 화면 회전으로 오해한다는 근거가 약하다."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-04.json",
+  "failedReviewers": 0,
+  "findings": 31,
+  "decisions": [
+   {
+    "id": "navigation.lua::Road Preference (Percent Longer)",
+    "final_ko": "도로 선호도 (허용할 추가 거리 퍼센트)",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor",
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Key",
+    "final_ko": "키",
+    "how": "dispute-won",
+    "reason": "gpt: 코드는 이 문구가 데이터 세트의 문자열 필드 이름임을 보여 주지만, 실제로 사용자가 키보드 키로 오해한다는 근거는 없다. 지적 근거가 약하면 현재 번역을 유지한다는 판정 원칙에 따라 반박을 인정한다. / claude: MapDataset.lua:6에서 'Key'는 데이터 세트 필드 목록(Key, Label, Game Version, Enabled) 가운데 하나의 라벨이다. 같은 목록 안에서 '키'는 식별자 필드로 읽히고, 키보드 키로 오해한다는 근거는 지적자도 노출 범위를 확인하지 못해 약하다. '식별 키'는 원문에 없는 수식을 더한다. 근거가 약해 현재 번역 유지.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/navigation/atlas/MapDataset.lua:6",
+     "wowvision-ko/vision-locale/enUS/navigation.lua:47",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:48",
+     "input",
+     "wowvision-ko/WowVision/core/navigation/atlas/MapDataset.lua:6"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "monitors.lua::No essential or utility spells",
+    "final_ko": "핵심 주문 또는 보조 주문 없음",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "major",
+     "minor",
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::WowVision set the camera to always follow behind your character, which turning to waypoints needs. You can change the camera following style in the game options under Controls.",
+    "final_ko": "경유지 쪽으로 돌아서는 데 필요하므로, WowVision이 카메라가 항상 캐릭터 뒤를 따라가도록 설정했습니다. 카메라 따라가기 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::The target lies over several floors",
+    "final_ko": "대상 위치가 여러 층에 해당함",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::The transit took too long; route ended",
+    "final_ko": "이동 수단 이용이 너무 오래 걸림; 경로 종료",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Auto-move to Interact Target",
+    "final_ko": "상호작용 대상으로 자동 이동",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Floor %d of %d",
+    "final_ko": "층 %d of %d",
+    "how": "dispute-won",
+    "reason": "gpt: 사용자 결정 목록이 이 서식의 번역 예시를 정확히 “층 %d of %d”로 명시한다. 자연스러움에 관한 지적보다 명시적인 사용자 결정이 우선하므로 현재 번역을 유지한다. / claude: decisions.tsv:2 사용자 결정이 서식 문자열 안의 of 유지를 정하고 예시로 '층 %d of %d'를 그대로 적어 두었다. 지적의 '%d층 of %d'는 사용자 결정을 바꾸는 제안이라 받아들이지 않는다.",
+    "evidence": [
+     "input",
+     "wowwork/docs/decisions.tsv:2",
+     "wowvision-ko/WowVision/camelot/wownav/floorsUi.lua:40",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:112",
+     "wowwork/docs/decisions.tsv:2",
+     "input"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The target position is outdated",
+    "final_ko": "대상 위치 정보가 오래됨",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-05.json",
+  "failedReviewers": 0,
+  "findings": 32,
+  "decisions": [
+   {
+    "id": "navigation.lua::Dock %s reached. Wait here for %s. Board when you hear it arrive.",
+    "final_ko": "%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Warning: there is no way around the enemy outpost, the route leads through it.",
+    "final_ko": "경고: 적 전초기지를 돌아갈 길이 없어, 경로가 전초기지를 통과함.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Riding to the noted dock %s",
+    "final_ko": "기록한 %s까지 타고 가는 중",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Destination dock %s noted. Wait for the vehicle, board by ear and get off at the destination stop. Then choose the dock again for the way on foot.",
+    "final_ko": "목적지 %s 기록. 운송 수단을 기다렸다가 소리를 듣고 탑승한 뒤, 목적지 정류장에서 내리십시오. 그다음 걸어서 갈 길을 안내받으려면 승강장을 다시 선택하십시오.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.",
+    "final_ko": "%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승한 뒤, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다.",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.",
+    "final_ko": "네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수해야 하며, 마지막 구간은 검증되지 않았습니다.",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Group",
+    "final_ko": "파티 및 공격대",
+    "how": "dispute-won",
+    "reason": "gpt: 이 제공자는 `IsInRaid()` 결과에 따라 `raid` 또는 `party` 유닛을 모두 열거하므로 실제 기능 범위가 파티와 공격대를 포함한다. 정확히 일치하는 공식 문자열보다 코드 문맥을 우선한다는 지침에 따라 현재 번역이 맞다. / claude: providers.lua:21-33에서 이 제공자는 IsInRaid()이면 raid1..N, 아니면 party1..4를 훑어 공격대원까지 목록에 넣는다. game_term '파티'는 영어 'Group'이 일치한 참고값일 뿐 이 기능의 범위와 맞지 않고, 같은 파일 짝 문구도 '파티원 또는 공격대원 위치 확인 불가'(koKR navigation.lua:221)다. '파티'로 줄이면 공격대 상태에서 범위가 빠진다. 번역자의 근거가 강하다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/scanner/providers.lua:21",
+     "wowvision-ko/WowVision/core/scanner/providers.lua:25",
+     "wowvision-ko/WowVision/core/scanner/providers.lua:30",
+     "wowvision-ko/WowVision/core/scanner/providers.lua:33",
+     "wowwork/cache/game_terms.tsv:136",
+     "wowwork/docs/translation-guide.md:38",
+     "input",
+     "wowvision-ko/WowVision/core/scanner/providers.lua:21-33",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:220-221"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Waiting for the far end of %s",
+    "final_ko": "%s 구간 완료 대기 중",
+    "how": "dispute-won",
+    "reason": "gpt: `%s`에는 차원문·지하철뿐 아니라 잠수와 수면으로 상승도 들어가므로 제안문의 \"반대편 도착\"은 일부 실제 발화에서 뜻이 통하지 않는다. 현재 번역은 모든 이동 동작에 적용되며 \"대기 중\"으로 진행 중 상태도 분명히 나타낸다. / claude: module.lua:1171-1172에서 %s에는 TRANSIT_WORDS(module.lua:263-264)의 '잠수', '수면으로 상승', '차원문', '지하철', '승강기' 등이 들어간다(koKR navigation.lua:143-144, 181-183). 제안안은 '잠수 반대편 도착 대기 중', '수면으로 상승 반대편 도착 대기 중'처럼 뜻이 깨진다. 현재 번역은 모든 값에 맞고 '대기 중'으로 끝나 완료 알림으로 오해할 여지도 작다.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:263",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:1171",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:254",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:263-264",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:1171-1172",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:143-144",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:181-183"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.",
+    "final_ko": "Wind Bridge 대기 지점 도착. Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오.",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+    "final_ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다.",
+    "how": "dispute-won",
+    "reason": "gpt: \"물은 정면\", \"물은 왼쪽 앞\"은 방향을 알려 주는 짧은 상태 발화로 뜻이 갈리지 않으며, 상태 문구를 간결한 명사형으로 쓰라는 지침에도 맞는다. 제안한 \"물 위치는 정면\" 역시 서술어를 추가하지 않아 지적된 불편을 실질적으로 개선하지 않는다. / claude: 조립 결과는 '물은 정면.', '물은 왼쪽 앞.'(text.lua:76-83, koKR navigation.lua:262-263)으로 같은 알림의 다른 명사형 상태 문장과 문체가 같고 뜻이 바로 통한다. 제안한 '물 위치는 %s'도 서술어 없는 명사형이라 지적한 문제를 해소하지 못한다. 취향 차이로 본다.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:73",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:76",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:260",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:262",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:263",
+     "wowwork/docs/translation-guide.md:46",
+     "input",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:74-83",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:262-263"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::On the ship",
+    "final_ko": "배 탑승 지점",
+    "how": "dispute-won",
+    "reason": "gpt: 이 문자열은 승선 상태가 아니라 `dock-boarding:` 방향 기준점의 `nameKey`로 사용된다. 코드도 해당 대상을 명시적으로 boarding point 및 orientation point로 정의하므로 현재 번역이 실제 기능을 정확히 나타낸다. / claude: DockNavigation.lua:146-149의 BoardingNameKey가 boat 시설이면 boarding_boat를 돌려주고, 이 값은 'dock-boarding:' 지점(category orientation)의 nameKey(160-167)로 쓰인다. 즉 배에 타 있는 상태가 아니라 탑승 지점이라는 장소 이름이다. 독일어 원형 'Am Schiff'(Localization.lua:1001)와 짝 항목 'At the vehicle'='운송 수단 탑승 지점'(koKR navigation.lua:214)도 이를 뒷받침한다. '배 탑승 중'은 장소를 상태로 오해하게 만든다.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:145",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:156",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:162",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:164",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:124",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:146-167",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:124-126",
+     "wowvision-ko/WowVision/mapdata/WoW_NavigationData/DemoAddon/WowVisionNavigation/Localization.lua:1001",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:214"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::On the zeppelin",
+    "final_ko": "비행선 탑승 지점",
+    "how": "dispute-won",
+    "reason": "gpt: 이 문자열도 비행선 탑승 상태가 아니라 `dock-boarding:` 방향 기준점의 이름으로 사용된다. `BoardingNameKey`가 시설 종류가 `zeppelin`일 때 이 키를 선택하므로 현재 번역을 유지하는 것이 맞다. / claude: 'On the ship'과 같은 경로다. boarding_zeppelin은 DockNavigation.lua:146-149에서 탑승 지점 항목의 nameKey로만 쓰이고(160-167), 독일어 원형은 'Am Zeppelin'(Localization.lua:1002)이다. 비행선에 올라 있는 상태를 뜻하지 않으므로 '비행선 탑승 중'은 오역이 된다.",
+    "evidence": [
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:145",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:148",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:162",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:164",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:125",
+     "wowvision-ko/WowVision/camelot/wownav/engine/DockNavigation.lua:146-167",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:125",
+     "wowvision-ko/WowVision/mapdata/WoW_NavigationData/DemoAddon/WowVisionNavigation/Localization.lua:1002",
+     "wowvision-ko/vision-locale/koKR/navigation.lua:214"
+    ],
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": [
+   {
+    "id": "navigation.lua::trainer",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "상급자 또는 기술 전문가",
+     "reason": "WowNav의 `trainer` 분류에는 직업 상급자뿐 아니라 약초채집·재봉술 같은 전문 기술 NPC도 실제로 포함된다. 공식 문자열은 둘을 각각 \"직업 상급자\"와 \"기술 전문가\"로 구분하므로, 현재 번역 \"상급자\"만으로는 분류 범위가 충분히 전달되지 않는다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "상급자",
+     "reason": "text.lua:231의 CATEGORY.trainer는 데이터 분류 키 하나에 붙는 이름이고, 이 분류에 전문 기술 NPC가 들어 있다는 근거는 지적자도 확인하지 못했다. text.lua:278의 text.categories가 분류 이름을 쉼표로 이어 읽으므로 '상급자 또는 기술 전문가'는 목록 안에서 한 분류를 두 분류처럼 들리게 한다. 근거가 약해 현재 번역을 유지한다."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-06.json",
+  "failedReviewers": 0,
+  "findings": 26,
+  "decisions": [
+   {
+    "id": "navigation.lua::The boarding point proof or the map changed; guidance ended",
+    "final_ko": "탑승 지점 근거나 지도가 바뀜; 안내 종료",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "objects.lua::Free Bag Slots",
+    "final_ko": "빈 가방 칸",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wait here until you hear the Wind Bridge, then step into the wind current; the route goes on after it",
+    "final_ko": "여기서 Wind Bridge 소리가 들릴 때까지 기다렸다가 바람 기류 안으로 들어가십시오; 그 후 경로가 이어집니다",
+    "how": "dispute-won",
+    "reason": "gpt: 앞 절이 합니다체 명령이면 이 문장 끝을 유지하고, Wind Bridge도 영어로 유지한다는 사용자 결정이 두 지적보다 우선한다. / claude: decisions.tsv 6행(2026-11-05)이 앞 절이 합니다체 명령이면 '; 그 후 경로가 이어집니다'로 쓰도록 정했고, 이 항목은 '들어가십시오'라 규칙대로다. 7행(2026-11-05)은 Wind Bridge를 영어 그대로 두기로 한 사용자 결정이다. 두 지적 모두 사용자 결정을 어기는 제안이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:6",
+     "wowwork/docs/decisions.tsv:7",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:269",
+     "wowwork/docs/decisions.tsv:6",
+     "wowwork/docs/decisions.tsv:7",
+     "input"
+    ],
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Target the portal with soft targeting and interact with it; the route goes on after it",
+    "final_ko": "소프트 대상 지정으로 차원문을 선택하고 상호작용하십시오; 그 후 경로가 이어집니다",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Route to the Nearest Unvisited of the Same Name",
+    "final_ko": "같은 이름의 가장 가까운 미방문 지점까지 경로 안내",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Direct to the Nearest Unvisited of the Same Name",
+    "final_ko": "같은 이름의 가장 가까운 미방문 지점까지 직선 안내",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Route to Your Target",
+    "final_ko": "대상까지 경로 안내",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "objects.lua::to level",
+    "final_ko": "다음 레벨",
+    "how": "dispute-won",
+    "reason": "gpt: 실제 조립 결과에서 “다음 레벨 31”은 다음 레벨의 수치를 전달한다. 제안한 “달성 시 레벨”은 원문에 없는 의미를 더하면서 관계를 더 명확하게 만들지도 않으므로 현재 번역을 유지한다. / claude: tests.lua:51에서 조립되는 문구는 '12500 of 25000 다음 레벨 31'이다. of는 decisions.tsv 2행 결정으로 영어 유지다. '다음 레벨 31'은 원문 'to level 31'의 뜻을 옮기고 있다. 제안한 '달성 시 레벨'은 원문에 없는 '달성'을 더하고 무엇을 달성하는지가 오히려 흐려진다. 지적의 근거가 약해 현재 번역을 유지한다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/WowVision/core/objects/types/tests.lua:51",
+     "wowwork/docs/decisions.tsv:2",
+     "wowvision-ko/WowVision/core/objects/types/tests.lua:51",
+     "wowwork/docs/decisions.tsv:2",
+     "input"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "quests.lua::from",
+    "final_ko": "출처",
+    "how": "dispute-won",
+    "reason": "gpt: “아이템명 출처 대상명”은 해당 아이템의 출처를 표시하는 조립 문구로 의미를 식별할 수 있다. 게임 공식 문자열에서도 획득·해금 원천을 “출처”로 쓰므로 “획득처”가 가능하다는 사실만으로 현재 표현을 결함으로 볼 근거는 부족하다. / claude: 게임 공식 문자열이 무언가를 얻는 곳을 '출처'로 부른다: RUNEFORGE_LEGENDARY_POWER_SOURCE_FORMAT, BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT가 '출처: %s', TALENT_FRAME_INCREASED_RANKS_TEXT에도 '출처: %s'가 있다. WoW 사용자에게 익숙한 표현이고, '획득처'는 대안일 뿐 현재 번역의 실제 불편이 입증되지 않았다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/quests/module.lua:445",
+     "wowvision-ko/WowVision/core/quests/scanner.lua:56",
+     "wowwork/cache/gs_koKR.csv:19368",
+     "wowwork/cache/gs_koKR.csv:21102",
+     "wowwork/cache/gs_koKR.csv:23666",
+     "wowwork/cache/gs_koKR.csv:19368",
+     "wowwork/cache/gs_koKR.csv:21102",
+     "wowwork/cache/gs_koKR.csv:23666"
+    ],
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "objects.lua::New mail",
+    "final_ko": "새 편지",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 공식 알림은 읽지 않은 mail을 “편지”라고 부른다. 이 문자열도 PlayerMail의 새 수신 상태 알림이므로 기능명 “우편”보다 현재 번역이 같은 문맥의 공식 표현에 가깝다. / claude: 공식 클라이언트는 기능 이름을 '우편'(MAIL_LABEL)으로, 새로 도착한 것을 알리는 문구는 '편지'로 쓴다(HAVE_MAIL '읽지 않은 편지가 있습니다.', HAVE_MAIL_FROM '읽지 않은 편지'). PlayerMail 상태 문구는 새 우편 도착 알림과 같은 문맥이라 '새 편지'가 공식 표현과 맞다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/objects/types/tests.lua:99",
+     "wowwork/cache/gs_enUS.csv:3621",
+     "wowwork/cache/gs_koKR.csv:3626",
+     "wowwork/cache/gs_enUS.csv:5850",
+     "wowwork/cache/gs_koKR.csv:5933",
+     "wowwork/cache/gs_koKR.csv:1897",
+     "wowwork/cache/gs_koKR.csv:3626",
+     "wowwork/cache/gs_koKR.csv:5933"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "powers.lua::death runes",
+    "final_ko": "죽음 룬",
+    "how": "dispute-won",
+    "reason": "gpt: 해당 키는 RuneChromatic 자원명이며, 같은 자원의 공식 한국어 문자열이 조사 없는 “죽음 룬 %s개”다. 현재 번역이 공식 표기와 일치한다. / claude: 같은 자원(RuneChromatic)의 공식 문자열 RUNE_COST_CHROMATIC이 '죽음 룬 %s개'다. gs_koKR.csv에 '죽음의 룬'은 한 건도 없다. 지적이 주장한 '죽음의 룬'은 근거가 없고 현재 번역이 공식 표기를 따른다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/gameDB/powers.lua:54",
+     "wowwork/cache/gs_enUS.csv:10552",
+     "wowwork/cache/gs_koKR.csv:10553",
+     "wowwork/cache/gs_koKR.csv:10553"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "quests.lua::spawns",
+    "final_ko": "개 출현 지점",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wind Bridge waiting point",
+    "final_ko": "Wind Bridge 대기 지점",
+    "how": "dispute-won",
+    "reason": "gpt: Wind Bridge는 WoW: Forever 전용 지명으로 영어 그대로 유지하기로 명시적으로 결정됐다. 따라서 “바람 다리”로 바꾸는 제안은 사용자 결정을 어긴다. / claude: decisions.tsv 7행(2026-11-05) 사용자 결정으로 Wind Bridge는 WoW: Forever 전용 지명이라 영어 그대로 둔다. 영어 유지 근거가 없다는 지적은 사실이 아니며 '바람 다리'는 결정을 어기는 제안이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:7",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:137",
+     "wowwork/docs/decisions.tsv:7"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::Wind Bridge landing",
+    "final_ko": "Wind Bridge 착지 지점",
+    "how": "dispute-won",
+    "reason": "gpt: Wind Bridge는 WoW: Forever 전용 지명으로 영어 그대로 유지하기로 명시적으로 결정됐다. 현재 번역이 그 결정과 일치한다. / claude: decisions.tsv 7행(2026-11-05) 사용자 결정으로 Wind Bridge는 영어 그대로 둔다. 지적은 결정을 어기는 제안이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:7",
+     "wowvision-ko/WowVision/camelot/wownav/text.lua:138",
+     "wowwork/docs/decisions.tsv:7"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "navigation.lua::the Wind Bridge",
+    "final_ko": "Wind Bridge",
+    "how": "dispute-won",
+    "reason": "gpt: 이 문자열은 경로 안내에 삽입되는 Wind Bridge의 이름이며, 해당 전용 지명을 영어로 유지한다는 사용자 결정이 있다. “바람 다리” 제안은 그 결정을 위반한다. / claude: decisions.tsv 7행(2026-11-05) 사용자 결정으로 Wind Bridge는 영어 그대로 둔다. 다른 Wind Bridge 문구들과도 일관된다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:7",
+     "wowvision-ko/WowVision/camelot/wownav/module.lua:264",
+     "wowwork/docs/decisions.tsv:7",
+     "input"
+    ],
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": [
+   {
+    "id": "quests.lua::Questie is not loaded",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "Questie가 로드되지 않음",
+     "reason": "“Questie 불러오지 않음”은 Questie가 목적어인지 행위 주체인지 갈려, 애드온 자체가 로드되지 않은 상태라는 원문의 피동 관계가 불분명하다. 상태 문구의 짧은 명사형을 유지하면서 주어와 상태를 명확히 해야 한다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "Questie 불러오지 않음",
+     "reason": "짝 항목 'Questie 불러오는 중'(koKR/quests.lua:8)과 같은 짧은 명사형 상태 문구이고, Questie는 애드온 이름이라 로드 대상이 문맥상 분명하다. 제안한 '불러와지지 않음'은 상태 문구를 길게 하고 불필요한 피동을 더한다."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-07.json",
+  "failedReviewers": 0,
+  "findings": 51,
+  "decisions": [
+   {
+    "id": "ui.lua::Enabled",
+    "final_ko": "사용함",
+    "how": "dispute-won",
+    "reason": "gpt: 현재 번역은 게임 설정에서 Enabled/Disabled를 짝지은 공식 번역의 ‘사용함’과 일치한다. 현재 짝이 어긋나는 원인은 Disabled 쪽 번역일 수도 있으므로 Enabled를 반드시 바꿔야 한다는 근거가 부족하다. / claude: 짝 불일치 지적은 맞지만 같은 배치에서 ui.lua::Disabled가 '사용 안 함'으로 수용되어 짝이 '사용함'/'사용 안 함'으로 맞는다. 게임 설정의 VIDEO_OPTIONS_ENABLED '사용함'/VIDEO_OPTIONS_DISABLED '사용 안 함'과 같고 game_term 후보에도 있다. 단 Disabled 변경이 실제로 반영된다는 전제의 판정이다.",
+    "evidence": [
+     "wowwork/cache/gs_enUS.csv:9609",
+     "wowwork/cache/gs_enUS.csv:9610",
+     "wowwork/cache/gs_koKR.csv:9613",
+     "wowwork/cache/gs_koKR.csv:9614",
+     "wowwork/cache/game_terms.tsv:227",
+     "wowvision-ko/WowVision/core/targeting/module.lua:338",
+     "input",
+     "wowwork/cache/gs_koKR.csv:9613",
+     "wowwork/cache/gs_koKR.csv:9614",
+     "wowwork/cache/game_terms.tsv:225",
+     "wowwork/cache/game_terms.tsv:227"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Known",
+    "final_ko": "이미 습득",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Disabled",
+    "final_ko": "사용 안 함",
+    "how": "consensus",
+    "sev": [
+     "minor",
+     "major",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Attacking You or Your Group",
+    "final_ko": "나 또는 내 파티나 공격대를 공격 중",
+    "how": "dispute-won",
+    "reason": "gpt: 현재 문구는 ‘나’와 ‘내 파티나 공격대’를 구분해 원문의 선택 관계를 보존한다. 수정안의 ‘파티 및 공격대’는 두 집단을 함께 가리키는 것으로 들릴 수 있어 현재 번역보다 정확하다고 보기 어렵다. / claude: Choice 선택지(combat.lua:97)이고 Group은 파티나 공격대 중 하나라 '파티나 공격대'가 원문 뜻에 맞다. '파티 및 공격대'는 둘 다를 뜻하는 접속이라 조건이 흐려진다. Group Health Monitor는 두 범주를 아우르는 기능 이름이라 문맥이 다르다. '나' 반복은 취향 수준이다.",
+    "evidence": [
+     "input",
+     "wowvision-ko/vision-locale/enUS/ui.lua:17",
+     "wowvision-ko/vision-locale/koKR/ui.lua:18",
+     "input",
+     "wowvision-ko/WowVision/core/ui modules/combat.lua:90-99",
+     "wowvision-ko/WowVision/locale/koKR/ui.lua:18",
+     "wowvision-ko/WowVision/locale/koKR/groupHealth.lua:5"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Available",
+    "final_ko": "사용 가능",
+    "how": "dispute-won",
+    "reason": "gpt: ‘사용 가능’은 경매 수량과 선택 가능한 특성 상태에 모두 적용할 수 있는 중립적인 공식 후보다. 지적의 수정안도 현재 값과 같으므로 번역 변경 사유가 없다. / claude: 지적의 제안이 현재 값과 같아 바꿀 것이 없다. 경매 수량과 특성 상태가 키를 공유해 단일 값으로 둘 다 맞출 수 없고 '사용 가능'은 game_term 후보다.",
+    "evidence": [
+     "wowvision-ko/WowVision/mists/auction.lua:253",
+     "wowvision-ko/WowVision/mists/auction.lua:284",
+     "wowvision-ko/WowVision/retail/talentTree.lua:156",
+     "wowwork/cache/game_terms.tsv:230",
+     "input",
+     "wowwork/cache/game_terms.tsv:230"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "quests.lua::No quest data source",
+    "final_ko": "퀘스트 데이터 원본 없음",
+    "how": "dispute-won",
+    "reason": "gpt: 코드에서 source는 퀘스트 데이터를 공급하는 어댑터나 백엔드를 가리키며 ‘데이터 원본’도 그 의미를 전달한다. ‘제공처’만이 정확하다고 정한 공식 문자열이나 번역 규칙이 없어 현재 번역을 유지한다. / claude: '데이터 원본'은 data source의 통용 번역으로 데이터를 가져오는 출처를 뜻한다. '제공처'가 실제로 더 잘 전달된다는 근거가 없고, scanner.lua:302,432와 module.lua:464의 상태 레이블로 현재 번역이 뜻을 전한다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/quests/module.lua:12",
+     "wowvision-ko/WowVision/core/quests/module.lua:464",
+     "wowvision-ko/WowVision/core/quests/scanner.lua:302",
+     "wowvision-ko/vision-locale/koKR/quests.lua:44",
+     "input",
+     "wowvision-ko/WowVision/core/quests/scanner.lua:302",
+     "wowvision-ko/WowVision/core/quests/module.lua:464"
+    ],
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "speech.lua::Sound Between Chat Lines",
+    "final_ko": "대화 메시지 사이 소리",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 공식 문자열은 같은 텍스트 음성 변환 기능에서 chat을 ‘대화’, chat line을 ‘대화 줄’로 번역한다. 따라서 ‘대화 메시지’는 NPC 대사로 범위를 잘못 바꾼 번역이 아니다. / claude: 게임 공식 CHAT='대화'이고, 같은 TTS 설정 계열의 공식 문자열 TEXT_TO_SPEECH_PLAY_ACTIVITY_SOUND도 chat window를 '대화창'으로 옮긴다. 같은 문맥 공식 용어를 따른 번역이다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/speechSounds.lua:3",
+     "wowwork/cache/gs_enUS.csv:19453",
+     "wowwork/cache/gs_enUS.csv:19672",
+     "wowwork/cache/gs_koKR.csv:19439",
+     "wowwork/cache/gs_koKR.csv:19672",
+     "wowwork/cache/gs_koKR.csv:5707",
+     "wowwork/cache/gs_koKR.csv:19442",
+     "wowvision-ko/WowVision/core/speechSounds.lua:29-40"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "speech.lua::Activity Sound When Unfocused",
+    "final_ko": "대화창이 비활성일 때 활동 소리",
+    "how": "dispute-won",
+    "reason": "gpt: 앱 코드가 이 설정을 대화창이 숨겨졌거나 초점을 받지 않은 동안 메시지가 발화될 때 나는 소리라고 명시한다. 게임 공식 설명도 초점을 받지 않은 대화창의 활동을 조건으로 삼으므로 ‘대화창’은 원문에 없는 잘못된 한정이 아니다. / claude: 이 설정은 게임 옵션 PlayActivitySoundWhenNotFocused를 그대로 켜고 끈다(speechSounds.lua:36-38). 같은 옵션의 게임 공식 문자열이 'Play a sound when a chat window has activity and is not focused' / '대화창에 집중하고 있지 않을 때 활동이 있을 경우 음향 재생'이라 초점 대상은 대화창이 맞고 '게임 창'은 틀린 조건이다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/speechSounds.lua:3",
+     "wowvision-ko/WowVision/core/speechSounds.lua:37",
+     "wowwork/cache/gs_enUS.csv:19456",
+     "wowwork/cache/gs_koKR.csv:19442",
+     "wowvision-ko/WowVision/core/speechSounds.lua:36-38",
+     "wowwork/cache/gs_enUS.csv:19456",
+     "wowwork/cache/gs_koKR.csv:19442"
+    ],
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "targeting.lua::X",
+    "final_ko": "가위표",
+    "how": "dispute-won",
+    "reason": "gpt: 이 키는 공격대 대상 표시기 목록의 일곱 번째 표시기에 쓰인다. 같은 문맥의 공식 RAID_TARGET_7 번역이 ‘가위표’이므로, 다른 문맥에서 수집된 game_term의 ‘X’보다 현재 번역이 우선한다. / claude: module.lua:13-22는 공격대 대상 표시기 이름 목록이고 같은 문맥 공식 이름은 RAID_TARGET_7='가위표'다. game_term 'X'는 채팅 아이콘 태그 별칭 ICON_TAG_RAID_TARGET_CROSS2에서 온 것이라 표시기 이름 문맥이 아니다. 2026-11-03 문맥 우선 결정에 따라 유지한다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/targeting/module.lua:13",
+     "wowwork/cache/gs_enUS.csv:4795",
+     "wowwork/cache/gs_koKR.csv:4799",
+     "wowwork/docs/translation-guide.md:29",
+     "wowvision-ko/WowVision/core/targeting/module.lua:13-22",
+     "wowwork/cache/gs_koKR.csv:4799",
+     "wowwork/cache/gs_koKR.csv:6915",
+     "wowwork/docs/decisions.tsv"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Friends",
+    "final_ko": "친구",
+    "how": "dispute-won",
+    "reason": "gpt: 공유 키의 문맥 충돌 자체는 코드에서 확인되지만, decisions.tsv가 Friends를 포함한 공유 키는 현재 번역을 유지하고 재지적하지 않도록 명시했다. 사용자 결정을 따라 현재 값을 유지한다. / claude: decisions.tsv 2026-11-05 사용자 결정: Friends 등 공유 키는 현재 번역을 유지하고 평가자는 다시 지적하지 않는다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:10",
+     "wowvision-ko/WowVision/classic/friends.lua:3",
+     "wowvision-ko/WowVision/core/targeting/module.lua:450",
+     "wowvision-ko/vision-locale/koKR/targeting.lua:40",
+     "wowwork/docs/decisions.tsv"
+    ],
+    "sev": [
+     "major",
+     "critical",
+     "major",
+     "critical",
+     "critical"
+    ]
+   },
+   {
+    "id": "targeting.lua::Cannot set virtual focus while in combat.",
+    "final_ko": "전투 중에는 가상 주시 대상 설정 불가.",
+    "how": "dispute-won",
+    "reason": "gpt: 전투 중 명령이 거부됐음을 즉시 알리는 상태 문구이며, 사용자 결정은 이런 상태 알림을 완결 문장이어도 합니다체로 늘리지 않도록 한다. 현재 번역은 실패 원인과 결과를 간결하게 전달한다. / claude: focus.lua:27에서 동작이 거부됐음을 즉시 알리는 출력으로, 할 일 지시나 도움말이 아니라 상태 알림이다. 2026-11-05 결정(완결 문장이어도 간결하게)과 translation-guide 문체 규칙에 맞고, koKR minimap 'Not in combat'='전투 중에는 불가'와도 일관된다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/targeting/focus.lua:27",
+     "wowwork/docs/decisions.tsv:8",
+     "wowwork/docs/translation-guide.md:48",
+     "wowvision-ko/WowVision/core/targeting/focus.lua:27",
+     "wowwork/docs/decisions.tsv",
+     "wowwork/docs/translation-guide.md:48",
+     "wowvision-ko/WowVision/locale/koKR/minimap.lua:24"
+    ],
+    "sev": [
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "ui.lua::Checkbox",
+    "final_ko": "체크 상자",
+    "how": "dispute-won",
+    "reason": "gpt: 번역 지침이 컨트롤 종류 이름 Checkbox를 ‘체크 상자’로 옮기라고 직접 명시한다. 이 항목은 실제 컨트롤 종류 이름이므로 공식 문자열 후보보다 해당 지침을 적용한 현재 번역이 맞다. / claude: translation-guide.md:51이 컨트롤 종류 이름 'Checkbox → 체크 상자'를 명시했다. 게임 내레이션 NARRATION_OBJECT_CHECKBOX='체크박스'가 있으나 같은 지침이 Edit도 공식 '편집란' 대신 '편집'으로 정해 컨트롤 종류 이름은 지침 표기를 의도적으로 택했음을 보여 준다. 명시 규칙이 있어 현재 번역을 유지한다.",
+    "evidence": [
+     "wowwork/docs/translation-guide.md:51",
+     "wowvision-ko/WowVision/core/graph/ControlTypes.lua:40",
+     "wowvision-ko/vision-locale/koKR/ui.lua:33",
+     "wowwork/docs/translation-guide.md:51",
+     "wowwork/cache/gs_koKR.csv:26411",
+     "wowwork/cache/gs_koKR.csv:26412",
+     "wowvision-ko/WowVision/core/graph/ControlTypes.lua:40"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::ProxyCheckButton",
+    "final_ko": "체크 상자",
+    "how": "dispute-won",
+    "reason": "gpt: 원문 값이 Checkbox이고 번역 지침은 컨트롤 종류 이름을 ‘체크 상자’로 옮기도록 명시한다. 같은 종류를 나타내는 ui.lua::Checkbox와도 현재 번역이 일치한다. / claude: ui.lua::Checkbox와 같은 컨트롤 종류 이름이라 translation-guide.md:51 규칙과 일관성에 따라 유지한다.",
+    "evidence": [
+     "wowwork/docs/translation-guide.md:51",
+     "wowvision-ko/vision-locale/enUS/ui.lua:38",
+     "wowvision-ko/vision-locale/koKR/ui.lua:33",
+     "wowvision-ko/vision-locale/koKR/ui.lua:39",
+     "wowwork/docs/translation-guide.md:51",
+     "wowvision-ko/WowVision/locale/koKR/ui.lua:33",
+     "wowvision-ko/WowVision/locale/koKR/ui.lua:39"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "speech.lua::Buffered",
+    "final_ko": "대기열",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Targeting",
+    "final_ko": "목표 선택",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Controlled",
+    "final_ko": "군중 제어 중",
+    "how": "accepted",
+    "sev": [
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Free",
+    "final_ko": "군중 제어 해제",
+    "how": "accepted",
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "targeting.lua::Target Crowd Control",
+    "final_ko": "대상의 군중 제어 상태",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "quests.lua::Quest Giver",
+    "final_ko": "퀘스트 NPC",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 공식 문자열은 같은 퀘스트 제공자 문맥의 Quest Givers와 quest giver를 반복해서 ‘퀘스트 NPC’로 번역한다. 관련 기존 번역도 동일하므로 현재 번역이 공식 용어와 일관된다. / claude: 같은 대상을 가리키는 기존 번역 minimap 'quest giver'와 quests 'Quest Givers'가 모두 '퀘스트 NPC'라 이 키만 바꾸면 같은 대상이 두 이름이 된다. 공식 일치 문자열이 없고 지적은 한 평가자뿐이다.",
+    "evidence": [
+     "wowwork/cache/gs_enUS.csv:870",
+     "wowwork/cache/gs_koKR.csv:871",
+     "wowwork/cache/gs_enUS.csv:4039",
+     "wowwork/cache/gs_koKR.csv:4051",
+     "wowvision-ko/vision-locale/koKR/minimap.lua:13",
+     "wowvision-ko/vision-locale/koKR/quests.lua:22",
+     "wowvision-ko/WowVision/locale/koKR/minimap.lua:13",
+     "wowvision-ko/WowVision/locale/koKR/quests.lua:22",
+     "wowvision-ko/WowVision/core/quests/native.lua:199"
+    ],
+    "sev": [
+     "major"
+    ]
+   }
+  ],
+  "escalations": [
+   {
+    "id": "ui.lua::controlled",
+    "why": "두 판정자의 결론이 다름",
+    "gpt": {
+     "uphold": true,
+     "final_ko": "군중 제어 중",
+     "reason": "이 문구는 군중 제어 이름을 생략한 모드에서 숫자 뒤에 붙어 단독 발화되므로 ‘제어됨’만으로는 제어의 종류가 불분명하다. 코드가 의미를 군중 제어로 명시하고 용어집도 crowd control을 ‘군중 제어’로 확정하므로 이를 드러내는 편이 정확하다."
+    },
+    "claude": {
+     "uphold": false,
+     "final_ko": "제어됨",
+     "reason": "combat.lua:51에서 적 수 경보의 군중 제어 단어 모드 안에서 noText로 쓰여 숫자·이름 뒤에 자주 발화된다(enemyCount.lua:281). 경보 설정 자체가 군중 제어 모드라 문맥이 분명하고 짧은 상태어가 빈번한 발화에 맞다. 원문 'controlled'에 '군중'을 더하는 것은 뜻 추가다."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-08.json",
+  "failedReviewers": 0,
+  "findings": 15,
+  "decisions": [
+   {
+    "id": "ui.lua::Parameters must identify a single object",
+    "final_ko": "매개변수는 개체 하나를 가리켜야 합니다",
+    "how": "consensus",
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Dispel Type",
+    "final_ko": "무효화 유형",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 공식 문자열 `Show Dispel Type`이 같은 오라 표시 문맥에서 `무효화 유형 표시`로 번역되어 있다. 확정 용어집도 `dispellable`을 `무효화 가능`으로 정하므로 현재 번역을 유지한다. / claude: 게임 공식 문자열 HUD_EDIT_MODE_SETTING_AURA_FRAME_SHOW_DISPEL_TYPE가 '무효화 유형 표시'로, 같은 오라 해제 분류 문맥에서 dispel type을 '무효화 유형'으로 옮긴다(gs_koKR.csv:24895, 24817도 '무효화 유형'). 확정 용어집도 dispellable=무효화 가능(glossary.tsv:25). '해제 유형'으로 바꾸면 공식 용어와 확정 용어를 어기므로 지적을 받아들이지 않는다.",
+    "evidence": [
+     "wowwork/cache/gs_enUS.csv:24885",
+     "wowwork/cache/gs_koKR.csv:24895",
+     "wowwork/docs/glossary.tsv:25",
+     "input",
+     "wowwork/cache/gs_koKR.csv:24895",
+     "wowwork/cache/gs_koKR.csv:24817",
+     "wowwork/docs/glossary.tsv:25",
+     "wowwork/cache/game_terms.tsv:45"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "ui.lua::Remaining Duration",
+    "final_ko": "남은 지속시간",
+    "how": "dispute-won",
+    "reason": "gpt: 게임 공식 문자열은 `지속시간: %d초`, `마법효과 지속시간`처럼 `지속시간`을 붙여 쓴다. 번역자의 기존 `Duration`, `Refreshed` 인용은 현재 번역과 다르지만, 공식 표기 근거로 현재 번역을 유지할 수 있다. / claude: 번역자가 든 Duration='지속시간'은 사실과 다르다(이 배치의 Duration 번역은 '기간'). 다만 게임 공식 한국어는 '지속시간'을 붙여 쓴다: gs_koKR.csv에 '지속시간'이 37건, '지속 시간'은 0건이고, 공식 용어 Refreshed='지속시간 초기화'(game_terms.tsv:191)도 붙여 쓴다. 게임 표기를 따른 것이라 결함이 아니고, 지적은 minor 띄어쓰기뿐이라 현재 번역을 유지한다.",
+    "evidence": [
+     "wowwork/cache/gs_koKR.csv:406",
+     "wowwork/cache/gs_koKR.csv:4424",
+     "wowvision-ko/vision-locale/koKR/ui.lua:190",
+     "wowvision-ko/vision-locale/koKR/scanner.lua:9",
+     "input",
+     "wowwork/cache/gs_koKR.csv",
+     "wowwork/cache/game_terms.tsv:191",
+     "wowvision-ko/vision-locale/koKR/ui.lua:192"
+    ],
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-09.json",
+  "failedReviewers": 0,
+  "findings": 26,
+  "decisions": [
+   {
+    "id": "windows.lua::Search Match",
+    "final_ko": "일치하는 항목 검색",
+    "how": "dispute-won",
+    "reason": "gpt: 코드는 특성 검색 일치 상태에 이 문자열을 사용하며, 게임 공식 문자열도 같은 특성 검색 기능의 `TALENT_FRAME_SEARCH_TOOLTIP_MATCH`다. 같은 창·같은 기능의 공식 번역을 따라야 하므로 현재 번역을 유지한다. / claude: game_term의 출처는 gs_koKR.csv:20955 TALENT_FRAME_SEARCH_TOOLTIP_MATCH(enUS 'Search match')로, 특성 창 검색에서 일치를 알리는 문구다. 앱 코드 talentTree.lua:172-185도 특성 노드의 검색 일치 상태로 이 키를 쓴다. 같은 창·같은 기능의 공식 번역이므로 translation-guide.md ## 용어 2(문맥 우선)에 따라 공식 번역을 따른다. 평가자의 '다른 문맥' 추정은 이 대조로 반증된다.",
+    "evidence": [
+     "wowvision-ko/WowVision/retail/talentTree.lua:172",
+     "wowwork/cache/gs_enUS.csv:20943",
+     "wowwork/cache/gs_koKR.csv:20955",
+     "wowwork/docs/translation-guide.md:36",
+     "wowwork/cache/gs_koKR.csv:20955",
+     "wowwork/cache/gs_enUS.csv:20943",
+     "wowvision-ko/WowVision/retail/talentTree.lua:172-185",
+     "wowwork/docs/translation-guide.md:38"
+    ],
+    "sev": [
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Stance Bar",
+    "final_ko": "태세 단축바",
+    "how": "dispute-won",
+    "reason": "gpt: 공식 문자열은 \"태세 막대\"지만, 사용자 결정에서 행동 단축바 계열을 \"단축바\"로 통일하고 \"태세 단축바\"를 명시했다. 결정 목록이 직접 적용되므로 현재 번역이 맞다. / claude: decisions.tsv:4 사용자 결정 '행동 단축바 계열은 단축바로 통일 (태세 단축바, 게임패드 단축바)'이 이 문구를 직접 지목한다. 사용자 결정을 따른 번역은 결함이 아니다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:4",
+     "wowwork/docs/translation-guide.md:39",
+     "wowvision-ko/WowVision/core/windows/bars/instances.lua:19",
+     "wowwork/docs/decisions.tsv:4",
+     "wowwork/docs/translation-guide.md:39"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Not Auto Casting",
+    "final_ko": "자동 시전 안 함",
+    "how": "dispute-won",
+    "reason": "gpt: 코드에서 자동 시전 가능 기술의 비활성 상태를 \"자동 시전\"과 대조해 알리는 문구로, 현재 번역이 원문의 부정을 정확히 보존한다. \"수동 시전\"은 실제 시전 방식이라는 원문에 없는 뜻을 더하며, 끝부분을 놓칠 가능성만으로 문구를 가공할 수도 없다. / claude: PetActionBar.lua:26-31에서 자동 시전 가능한 기술(autoCastAllowed)의 자동 시전 꺼짐 상태다. '수동 시전'은 원문에 없는 뜻을 더하고, 끝부분을 놓칠 수 있다는 근거는 스크린리더 발음을 이유로 한 가공이라 지침상 받아들일 수 없다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/windows/bars/PetActionBar.lua:24",
+     "wowwork/docs/translation-guide.md:53",
+     "wowvision-ko/vision-locale/koKR/windows.lua:14",
+     "wowvision-ko/WowVision/core/windows/bars/PetActionBar.lua:24-32",
+     "wowwork/docs/translation-guide.md:53"
+    ],
+    "sev": [
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Comment",
+    "final_ko": "의견",
+    "how": "dispute-won",
+    "reason": "gpt: 사용자 결정이 문맥 우선의 구체적 예로 `Comment=의견`을 명시한다. 공식 문자열의 다른 번역보다 이 결정을 적용해야 하므로 현재 번역을 유지한다. / claude: decisions.tsv:3 사용자 결정의 예시가 'Comment=의견'이고 translation-guide.md:38도 '하실 말씀이 아니라 의견'이라고 명시한다. 사용자 결정을 따른 번역이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:3",
+     "wowwork/docs/translation-guide.md:38",
+     "wowvision-ko/WowVision/tbc/lfg.lua:301",
+     "wowwork/docs/decisions.tsv:3",
+     "wowwork/docs/translation-guide.md:38"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Merchant",
+    "final_ko": "상인",
+    "how": "dispute-won",
+    "reason": "gpt: 사용자 결정이 문맥 우선의 구체적 예로 `Merchant=상인`을 명시한다. 해당 키는 상인 상호작용 창 전체의 모듈·문맥 이름이므로 현재 번역이 결정과 코드 용도에 맞다. / claude: decisions.tsv:3 사용자 결정의 예시가 'Merchant=상인'이고 translation-guide.md:38도 '상품 목록이 아니라 상인'이라고 명시한다. 사용자 결정을 따른 번역이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:3",
+     "wowwork/docs/translation-guide.md:38",
+     "wowvision-ko/WowVision/core/windows/merchant.lua:3",
+     "wowvision-ko/WowVision/core/windows/merchant.lua:154",
+     "wowwork/docs/decisions.tsv:3",
+     "wowwork/docs/translation-guide.md:38"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Group search blocked, reload to search again",
+    "final_ko": "파티 검색 차단됨, 다시 검색하려면 UI를 재시작하십시오",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Item Text",
+    "final_ko": "아이템 글",
+    "how": "dispute-won",
+    "reason": "gpt: 이 키는 글이 담긴 아이템을 읽는 창의 이름과 대체 문맥 이름으로 쓰인다. \"아이템 글\"은 짧은 명사형으로 의미가 통하며, \"아이템 내용\"이 명백히 더 정확하다는 근거가 없어 현재 번역을 유지한다. / claude: itemText.lua:3·27에서 글이 적힌 아이템을 읽는 창의 이름이다. '아이템 글'은 뜻이 정확하고, 지적은 사용자가 겪는 구체적 불편을 제시하지 못한 표현 취향 차이다. '아이템 내용'은 내용물로도 읽힐 여지가 있어 더 낫다고 보기 어렵다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/windows/itemText.lua:3",
+     "wowvision-ko/WowVision/core/windows/itemText.lua:27",
+     "wowwork/docs/translation-guide.md:47",
+     "wowvision-ko/WowVision/core/windows/itemText.lua:3",
+     "wowvision-ko/WowVision/core/windows/itemText.lua:27"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Drag to pick up macro",
+    "final_ko": "매크로를 끌어서 집기",
+    "how": "dispute-won",
+    "reason": "gpt: 코드에서 `drag` 동작으로 매크로의 `OnDragStart`를 실행하는 버튼 이름이므로 \"끌어서 집기\"가 실제 동작과 맞는다. 제안들은 표현 선택의 차이일 뿐 현재 번역 때문에 의미가 흐려진다는 근거가 부족하다. / claude: Macros.lua:105-108 프록시 버튼의 동작 이름이다. '매크로를 끌어서 집기'는 원문 뜻을 그대로 담은 자연스러운 동작 이름이고 related Pick Up=집기와 맞다. 두 수정안은 외래어 치환이거나 조사 생략일 뿐 구체적 불편을 해소하지 않는 취향 차이다.",
+    "evidence": [
+     "wowvision-ko/WowVision/core/windows/Macros.lua:103",
+     "wowvision-ko/vision-locale/koKR/windows.lua:94",
+     "wowwork/docs/translation-guide.md:47",
+     "wowvision-ko/WowVision/core/windows/Macros.lua:105-108",
+     "input"
+    ],
+    "sev": [
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Partially Checked",
+    "final_ko": "일부 체크됨",
+    "how": "dispute-won",
+    "reason": "gpt: 코드는 같은 체크 상태 집합에서 `Partially Checked`, `Checked`, `Unchecked`를 구분한다. 기존의 \"체크됨\", \"체크되지 않음\"과 맞춘 \"일부 체크됨\"이 일관되며, \"일부 선택됨\"은 별도 상태인 `Selected`와 용어가 겹친다. / claude: groupFinder.lua:172-181 던전 목록 체크 상태다. 같은 계열 상태 문구가 ui.lua:51 Checked=체크됨, ui.lua:52 Unchecked=체크되지 않음이고 Selected=선택됨(auction.lua:77)은 별도 상태로 쓰인다. '일부 선택됨'은 체크 상태 셋 중 하나만 용어를 바꿔 일관성을 깨뜨린다. 번역자가 인용한 파일명(windows.lua)은 틀렸으나 내용은 ui.lua에서 확인했다.",
+    "evidence": [
+     "wowvision-ko/WowVision/retail/groupFinder.lua:172",
+     "wowvision-ko/vision-locale/koKR/ui.lua:51",
+     "wowvision-ko/vision-locale/koKR/auction.lua:77",
+     "wowvision-ko/vision-locale/koKR/windows.lua:136",
+     "wowvision-ko/WowVision/retail/groupFinder.lua:172-181",
+     "wowvision-ko/vision-locale/koKR/ui.lua:51",
+     "wowvision-ko/vision-locale/koKR/ui.lua:52",
+     "wowvision-ko/vision-locale/koKR/auction.lua:77"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ },
+ {
+  "batch": "reviews/2026-11-06-final-ui/batches/batch-10.json",
+  "failedReviewers": 0,
+  "findings": 12,
+  "decisions": [
+   {
+    "id": "windows.lua::Bank Tabs",
+    "final_ko": "은행 보관함",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+    "final_ko": "끌 수 있도록 WowVision이 행동 단축바 잠금을 해제했습니다. 게임 설정의 행동 단축바 항목에서 다시 잠글 수 있습니다.",
+    "how": "accepted",
+    "sev": [
+     "minor",
+     "minor",
+     "minor",
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Stable",
+    "final_ko": "우리",
+    "how": "dispute-won",
+    "reason": "gpt: 사용자 결정 목록에서 이 항목은 명시적으로 \"우리\" 유지로 확정됐다. 실제 코드도 창 문맥에는 공식 문자열 STABLES를 우선 사용하며, 공식 한국어 값은 \"우리\"다. / claude: decisions.tsv 5행(2026-11-05, 사용자 승인)이 바로 이 '우리 이용' 지적을 종결하고 '우리' 유지로 결정했다. 게임 공식 STABLES=우리(gs_koKR.csv:3085)이고 tbc/petStable.lua:87은 STABLES가 있으면 그것을 쓰고 L[\"Stable\"]은 폴백이라 같은 창 이름으로 일치해야 한다. '야수 우리' 제안도 사용자 결정과 공식 창 제목을 벗어난다. 대명사와의 혼동 우려는 사용자 결정에서 이미 감수된 사항이다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:5",
+     "wowvision-ko/WowVision/tbc/petStable.lua:3",
+     "wowvision-ko/WowVision/tbc/petStable.lua:87",
+     "wowwork/cache/gs_enUS.csv:3087",
+     "wowwork/cache/gs_koKR.csv:3085",
+     "wowwork/docs/decisions.tsv:5",
+     "wowwork/cache/gs_koKR.csv:3085",
+     "wowvision-ko/WowVision/tbc/petStable.lua:3",
+     "wowvision-ko/WowVision/tbc/petStable.lua:87"
+    ],
+    "sev": [
+     "major",
+     "major",
+     "major",
+     "major"
+    ]
+   },
+   {
+    "id": "windows.lua::Stable slot %d",
+    "final_ko": "야수 우리 %d번 칸",
+    "how": "accepted",
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Picked up",
+    "final_ko": "집어 듦",
+    "how": "dispute-won",
+    "reason": "gpt: 사용자 결정 목록에서 \"집어 듦\"으로 확정된 항목이다. 코드상 즉시 알림뿐 아니라 집어 든 상태를 나타내는 값으로도 쓰이므로, \"집기 완료\"가 더 정확하다는 근거도 부족하다. / claude: decisions.tsv 10행(2026-11-05, 사용자)이 '집어 듦'으로 결정했다. 사용자 결정을 따른 번역은 결함이 아니다. 또 retail/cooldownManager.lua:270에서 재정렬 중 상태 정보에 들어가므로 '집기 완료'는 상태 표시로 맞지 않는다.",
+    "evidence": [
+     "wowwork/docs/decisions.tsv:10",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:221",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:270",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:373",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:410",
+     "wowwork/docs/decisions.tsv:10",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:221",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:270"
+    ],
+    "sev": [
+     "minor"
+    ]
+   },
+   {
+    "id": "windows.lua::Moved",
+    "final_ko": "이동함",
+    "how": "dispute-won",
+    "reason": "gpt: \"이동함\"은 이동 결과를 간결한 명사형으로 알리므로 문체 지침에 어긋나지 않는다. 같은 기능의 \"집어 듦\"과도 문형이 일치하며, 현재 표현이 실제 이해를 방해한다는 근거가 없다. / claude: translation-guide.md ## 문체는 음성 알림을 짧은 명사형으로 쓰라고만 하며 '이동함'은 이를 만족한다. 같은 기능(retail/cooldownManager.lua)의 'Picked up'이 사용자 결정으로 '집어 듦'(-ㅁ형)이라 '이동함'이 문체가 맞는다. 지적은 문체 취향 차이일 뿐 구체적 사용자 불편 근거가 없어 현재 번역을 유지한다.",
+    "evidence": [
+     "input",
+     "wowwork/docs/translation-guide.md",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:211",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:362",
+     "wowvision-ko/vision-locale/koKR/windows.lua:275",
+     "wowvision-ko/vision-locale/koKR/windows.lua:277",
+     "wowwork/docs/translation-guide.md:46",
+     "wowwork/docs/decisions.tsv:10",
+     "wowvision-ko/vision-locale/koKR/windows.lua:275",
+     "wowvision-ko/WowVision/retail/cooldownManager.lua:211"
+    ],
+    "sev": [
+     "minor"
+    ]
+   }
+  ],
+  "escalations": []
+ }
+]

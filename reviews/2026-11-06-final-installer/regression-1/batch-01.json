@@ -1,0 +1,577 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::update.heading.available",
+   "file": "Loc.cs",
+   "key": "update.heading.available",
+   "en": "An update for WowVision is available",
+   "ko": "WowVision 업데이트 있음",
+   "de": "Eine Aktualisierung für WowVision ist verfügbar",
+   "fr": "Une mise à jour de WowVision est disponible",
+   "code": [
+    "UpdatePromptForm.cs:158: _titleLabel.Text = Loc.Get(\"update.heading.available\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.explainCustomize",
+   "file": "Loc.cs",
+   "key": "update.explainCustomize",
+   "en": "Install WowVision fresh, or for further game versions: pick the game versions, beta or stable, and the optional components yourself.",
+   "ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치: 게임 버전, 베타 또는 안정판, 선택 구성 요소를 직접 고릅니다.",
+   "de": "WowVision neu oder für weitere Spielversionen installieren: Spielversionen, Beta oder stabil und optionale Bestandteile selbst festlegen.",
+   "fr": "Installer WowVision à neuf, ou pour d'autres versions du jeu : choisissez vous-même les versions du jeu, bêta ou stable, et les composants facultatifs.",
+   "code": [
+    "UpdatePromptForm.cs:248: sb.AppendLine(Loc.Get(\"update.explainCustomize\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.customizeAcc",
+   "file": "Loc.cs",
+   "key": "update.customizeAcc",
+   "en": "Install WowVision fresh, or for further game versions — choose versions and components yourself",
+   "ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치 — 버전과 구성 요소 직접 고르기",
+   "de": "WowVision neu oder für weitere Spielversionen installieren – Versionen und Bestandteile selbst wählen",
+   "fr": "Installer WowVision à neuf, ou pour d'autres versions du jeu — choisir soi-même les versions et les composants",
+   "code": [
+    "UpdatePromptForm.cs:183: _customizeButton.AccessibleName = Loc.Get(\"update.customizeAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::logs.btnAcc",
+   "file": "Loc.cs",
+   "key": "logs.btnAcc",
+   "en": "Collect all logs of every detected game version into one zip file in your Downloads folder, for a bug report",
+   "ko": "모든 로그 모으기, 버그 보고용으로 찾은 모든 게임 버전의 로그를 다운로드 폴더의 zip 파일 하나에 저장",
+   "de": "Alle Protokolle aller gefundenen Spielversionen in einer ZIP-Datei im Downloads-Ordner sammeln, für eine Fehlermeldung",
+   "fr": "Collecter tous les journaux de chaque version du jeu détectée dans un seul fichier zip du dossier Téléchargements, pour un rapport de bogue",
+   "code": [
+    "UpdatePromptForm.cs:184: _collectLogsButton.AccessibleName = Loc.Get(\"logs.btnAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.body",
+   "file": "Loc.cs",
+   "key": "selfupdate.body",
+   "en": "You are using version {0} of the WowVision installer. Version {1} is available.\n\nUpdating the installer first is strongly recommended: it is a small download, it takes a few seconds, and installing WowVision afterwards then runs with all the current fixes. The installer closes and reopens on its own — nothing else on your computer is changed.\n\nYou can also carry on with version {0}; installing and updating WowVision still works.",
+   "ko": "지금 사용 중인 WowVision 설치 프로그램은 버전 {0}입니다. 버전 {1} 업데이트가 있습니다.\n\n설치 프로그램을 먼저 업데이트하기를 강력히 권장합니다: 내려받을 파일이 작고, 몇 초면 끝나며, 그 뒤 WowVision을 설치할 때 최신 수정 사항이 모두 적용됩니다. 설치 프로그램은 스스로 닫혔다가 다시 열립니다 — 컴퓨터의 다른 항목은 바뀌지 않습니다.\n\n버전 {0} 그대로 계속할 수도 있습니다; 이 경우에도 WowVision 설치와 업데이트는 여전히 작동합니다.",
+   "de": "Du verwendest Version {0} des WowVision-Installers. Version {1} ist verfügbar.\n\nEs wird dringend empfohlen, zuerst den Installer zu aktualisieren: Der Download ist klein, dauert wenige Sekunden, und die Installation von WowVision läuft danach mit allen aktuellen Korrekturen. Der Installer schließt sich dabei selbst und öffnet sich neu — sonst wird nichts auf dem Computer verändert.\n\nDu kannst auch mit Version {0} weiterarbeiten; WowVision installieren und aktualisieren funktioniert weiterhin.",
+   "fr": "Vous utilisez la version {0} de l'installateur WowVision. La version {1} est disponible.\n\nIl est fortement recommandé de mettre d'abord à jour l'installateur : le téléchargement est petit, il prend quelques secondes, et l'installation de WowVision bénéficiera ensuite de toutes les corrections récentes. L'installateur se ferme et se rouvre tout seul — rien d'autre n'est modifié sur votre ordinateur.\n\nVous pouvez aussi continuer avec la version {0} ; installer et mettre à jour WowVision fonctionne toujours.",
+   "code": [
+    "SelfUpdatePromptForm.cs:80: Text = Loc.Format(\"selfupdate.body\", _info.RunningVersion, _info.Version),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.updateBtn",
+   "file": "Loc.cs",
+   "key": "selfupdate.updateBtn",
+   "en": "&Update the installer now (recommended)",
+   "ko": "설치 프로그램을 지금 업데이트(&U) (권장)",
+   "de": "&Installer jetzt aktualisieren (empfohlen)",
+   "fr": "&Mettre à jour l'installateur maintenant (recommandé)",
+   "code": [
+    "SelfUpdatePromptForm.cs:99: Text = Loc.Get(\"selfupdate.updateBtn\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.updateAcc",
+   "file": "Loc.cs",
+   "key": "selfupdate.updateAcc",
+   "en": "Update the installer to version {0} now, recommended — it downloads the new version, restarts itself and then carries on",
+   "ko": "설치 프로그램을 지금 업데이트, 권장 — 새 버전 {0} 파일을 내려받아 스스로 다시 시작한 뒤 계속",
+   "de": "Den Installer jetzt auf Version {0} aktualisieren, empfohlen — er lädt die neue Version, startet sich neu und macht dann weiter",
+   "fr": "Mettre l'installateur à jour vers la version {0} maintenant, recommandé — il télécharge la nouvelle version, redémarre puis poursuit",
+   "code": [
+    "SelfUpdatePromptForm.cs:100: AccessibleName = Loc.Format(\"selfupdate.updateAcc\", _info.Version),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.skipAcc",
+   "file": "Loc.cs",
+   "key": "selfupdate.skipAcc",
+   "en": "Continue with the current installer version without updating it",
+   "ko": "현재 설치 프로그램 버전으로 업데이트 없이 계속",
+   "de": "Mit der vorhandenen Installer-Version fortfahren, ohne sie zu aktualisieren",
+   "fr": "Continuer avec la version actuelle de l'installateur sans la mettre à jour",
+   "code": [
+    "SelfUpdatePromptForm.cs:110: AccessibleName = Loc.Get(\"selfupdate.skipAcc\"),",
+    "SelfUpdatePromptForm.cs:205: _skipButton.AccessibleName = Loc.Get(\"selfupdate.skipAcc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::selfupdate.cancelBtn",
+   "file": "Loc.cs",
+   "key": "selfupdate.cancelBtn",
+   "en": "Cancel the &download and continue with the current version",
+   "ko": "내려받기를 취소하고 현재 버전으로 계속(&D)",
+   "de": "&Download abbrechen und mit der vorhandenen Version fortfahren",
+   "fr": "Annuler le &téléchargement et continuer avec la version actuelle",
+   "code": [
+    "SelfUpdatePromptForm.cs:153: _skipButton.Text = Loc.Get(\"selfupdate.cancelBtn\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::done.heading.failed",
+   "file": "Loc.cs",
+   "key": "done.heading.failed",
+   "en": "Finished with problems",
+   "ko": "문제가 있었지만 완료",
+   "de": "Mit Problemen beendet",
+   "fr": "Terminé avec des problèmes",
+   "code": [
+    "CompletionForm.cs:71: ?? Loc.Get(_failed ? \"done.heading.failed\" : \"done.heading.ok\"),",
+    "ProgressForm.cs:272: Finish(failed ? Loc.Get(\"done.heading.failed\") : Loc.Get(\"done.heading.ok\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::target.testBuild",
+   "file": "Loc.cs",
+   "key": "target.testBuild",
+   "en": "Test build — WowVision {0} is installed and is left as it is. To replace it with the release {1}, choose \"Install WowVision fresh\" and tick \"Reinstall everything\".",
+   "ko": "테스트 빌드 — 설치된 WowVision {0} 그대로 유지. 테스트 빌드 대신 릴리스 {1} 버전을 설치하려면 \"WowVision 새로 설치\"를 고르고 \"모두 다시 설치\"를 체크하십시오.",
+   "de": "Testversion – WowVision {0} ist installiert und bleibt, wie sie ist. Um sie durch die Version {1} zu ersetzen, wähle „WowVision neu installieren“ und kreuze „Alles neu installieren“ an.",
+   "fr": "Version de test — WowVision {0} est installé et reste tel quel. Pour le remplacer par la version {1}, choisissez « Installer WowVision à neuf » et cochez « Tout réinstaller ».",
+   "code": [
+    "InstallTarget.cs:164: return Loc.Format(\"target.testBuild\", installed, Config.LatestVersion);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::versions.heading",
+   "file": "Loc.cs",
+   "key": "versions.heading",
+   "en": "Which game versions should WowVision be installed into?",
+   "ko": "WowVision을 어느 게임 버전에 설치하시겠습니까?",
+   "de": "In welche Spielversionen soll WowVision installiert werden?",
+   "fr": "Dans quelles versions du jeu faut-il installer WowVision ?",
+   "code": [
+    "VersionSelectForm.cs:74: HeadingLabel.Text = Loc.Get(\"versions.heading\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::versions.needOne.text",
+   "file": "Loc.cs",
+   "key": "versions.needOne.text",
+   "en": "Tick at least one game version before continuing, or use Back to leave the installer.",
+   "ko": "계속하려면 게임 버전을 하나 이상 체크하십시오. 설치 프로그램을 종료하려면 뒤로 버튼을 사용하십시오.",
+   "de": "Kreuze mindestens eine Spielversion an, um fortzufahren, oder verlasse den Installer über „Zurück“.",
+   "fr": "Cochez au moins une version du jeu pour continuer, ou utilisez « Retour » pour quitter l'installateur.",
+   "code": [
+    "VersionSelectForm.cs:110: MessageBox.Show(this, Loc.Get(\"versions.needOne.text\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.body",
+   "file": "Loc.cs",
+   "key": "folders.body",
+   "en": "These are the folders WowVision will be written to. If one is wrong or missing, use the Browse button next to it.",
+   "ko": "WowVision을 설치할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.",
+   "de": "In diese Ordner wird WowVision geschrieben. Ist einer falsch oder fehlt er, nutze die Schaltfläche „Durchsuchen“ daneben.",
+   "fr": "Voici les dossiers dans lesquels WowVision sera écrit. Si l'un est erroné ou manquant, utilisez le bouton « Parcourir » à côté.",
+   "code": [
+    "FolderConfirmForm.cs:84: BodyLabel.Text = Loc.Get(\"folders.body\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::folders.missing.text",
+   "file": "Loc.cs",
+   "key": "folders.missing.text",
+   "en": "No folder is set for: {0}.\n\nUse Browse to pick one, or go Back and untick that version.",
+   "ko": "다음 버전에는 폴더가 지정되지 않았습니다: {0}.\n\n찾아보기로 폴더를 고르거나, 뒤로 가서 그 버전의 체크를 해제하십시오.",
+   "de": "Für {0} ist kein Ordner festgelegt.\n\nWähle einen über „Durchsuchen“, oder gehe zurück und entferne das Häkchen bei dieser Version.",
+   "fr": "Aucun dossier n'est défini pour : {0}.\n\nUtilisez « Parcourir » pour en choisir un, ou revenez en arrière et décochez cette version.",
+   "code": [
+    "FolderConfirmForm.cs:173: Loc.Format(\"folders.missing.text\", string.Join(\", \", missing)),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.windowsVoices.desc",
+   "file": "Loc.cs",
+   "key": "opt.windowsVoices.desc",
+   "en": "Windows keeps its newer voices (for example Katja and Stefan) in a list the game cannot see. Copies them into the game's voice list, backed up first. The game's voice numbers can shift.",
+   "ko": "Windows는 새로운 음성(예: Katja, Stefan)을 게임에서 인식하지 못하는 목록에 둡니다. 이 항목은 게임의 음성 목록을 먼저 백업한 뒤 이 음성들을 그 목록에 복사합니다. 게임의 음성 번호가 바뀔 수 있습니다.",
+   "de": "Windows führt neuere Stimmen (z. B. Katja, Stefan) in einer Liste, die das Spiel nicht sieht. Kopiert sie nach einer Sicherung in die Liste des Spiels. Stimmnummern können sich verschieben.",
+   "fr": "Windows range ses voix récentes (ex. Hortense, Paul) dans une liste que le jeu ne voit pas. Les copie dans la liste du jeu après sauvegarde. Les numéros des voix peuvent changer.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::progress.cancelConfirm.text",
+   "file": "Loc.cs",
+   "key": "progress.cancelConfirm.text",
+   "en": "Stop the installation?\n\nThe running download is aborted immediately. A step already being written to disk is allowed to finish, so nothing is left half-installed. Everything not yet started is skipped.\n\nAlready installed game versions stay installed. You can run the installer again at any time.",
+   "ko": "설치를 멈추시겠습니까?\n\n진행 중인 내려받기는 바로 중단합니다. 디스크에 파일을 기록하고 있는 단계는 끝까지 마치므로, 반쯤 설치된 채로 남는 것은 없습니다. 아직 시작하지 않은 것은 모두 건너뜁니다.\n\n설치를 이미 마친 게임 버전은 그대로 남습니다. 설치 프로그램은 언제든 다시 실행할 수 있습니다.",
+   "de": "Die Installation stoppen?\n\nDer laufende Download wird sofort abgebrochen. Ein Schritt, der bereits auf die Festplatte geschrieben wird, wird noch zu Ende geführt, damit nichts halb installiert zurückbleibt. Alles, was noch nicht begonnen hat, wird übersprungen.\n\nBereits fertige Spielversionen bleiben installiert. Du kannst den Installer jederzeit erneut starten.",
+   "fr": "Arrêter l'installation ?\n\nLe téléchargement en cours est interrompu immédiatement. Une étape déjà en train d'être écrite sur le disque va jusqu'au bout, afin que rien ne reste installé à moitié. Tout ce qui n'a pas encore commencé est ignoré.\n\nLes versions du jeu déjà terminées restent installées. Vous pouvez relancer l'installateur à tout moment.",
+   "code": [
+    "ProgressForm.cs:155: var answer = MessageBox.Show(this, Loc.Get(\"progress.cancelConfirm.text\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::status.koreanFailed",
+   "file": "Loc.cs",
+   "key": "status.koreanFailed",
+   "en": "The Korean strings could not be added: {0}. WowVision works in English until the installer runs again.",
+   "ko": "한국어 문구를 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지 WowVision은 영어로 동작합니다.",
+   "de": "Die koreanischen Texte konnten nicht hinzugefügt werden: {0}. WowVision läuft auf Englisch, bis der Installer erneut läuft.",
+   "fr": "Les textes coréens n'ont pas pu être ajoutés : {0}. WowVision fonctionne en anglais jusqu'à la prochaine exécution de l'installateur.",
+   "code": [
+    "InstallRunner.cs:307: SayScoped(Loc.Format(\"status.koreanFailed\", ex.Message), true);"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::dlg.notRecognized.title",
+   "file": "Loc.cs",
+   "key": "dlg.notRecognized.title",
+   "en": "Folder not recognized",
+   "ko": "인식할 수 없는 폴더",
+   "de": "Ordner nicht erkannt",
+   "fr": "Dossier non reconnu",
+   "code": [
+    "FolderConfirmForm.cs:131: Loc.Get(\"dlg.notRecognized.title\"),",
+    "UpdatePromptForm.cs:323: Loc.Get(\"dlg.notRecognized.title\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::dlg.closeGame.text",
+   "file": "Loc.cs",
+   "key": "dlg.closeGame.text",
+   "en": "World of Warcraft must be fully closed for this step (WowVision is installed into a game version for the first time, or required game settings are fixed).\n\nClose the game completely (all the way to the desktop), then choose Retry. Or Cancel to stop.",
+   "ko": "이 단계에서는 World of Warcraft를 완전히 닫아야 합니다(게임 버전에 WowVision을 처음 설치하거나, 필요한 게임 설정을 고치는 단계입니다).\n\n게임을 완전히(바탕 화면이 나올 때까지) 닫은 다음 다시 시도 버튼을 선택하십시오. 멈추려면 취소 버튼을 선택하십시오.",
+   "de": "World of Warcraft muss für diesen Schritt vollständig geschlossen sein (WowVision wird zum ersten Mal in eine Spielversion installiert, oder erforderliche Spieleinstellungen werden korrigiert).\n\nSchließe das Spiel vollständig (bis zum Desktop) und wähle dann „Wiederholen“. Oder „Abbrechen“ zum Beenden.",
+   "fr": "World of Warcraft doit être entièrement fermé pour cette étape (WowVision est installé pour la première fois dans une version du jeu, ou des réglages du jeu nécessaires sont corrigés).\n\nFermez complètement le jeu (jusqu'au bureau), puis choisissez « Réessayer ». Ou « Annuler » pour arrêter.",
+   "code": [
+    "ProgressForm.cs:223: ScreenReaderAnnouncer.Announce(this, Loc.Get(\"dlg.closeGame.text\"));",
+    "ProgressForm.cs:224: var r = MessageBox.Show(this, Loc.Get(\"dlg.closeGame.text\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.headline.upToDate",
+   "file": "Loc.cs",
+   "key": "summary.headline.upToDate",
+   "en": "WowVision is already up to date.",
+   "ko": "WowVision은 이미 최신 상태.",
+   "de": "WowVision ist bereits aktuell.",
+   "fr": "WowVision est déjà à jour.",
+   "code": [
+    "InstallRunner.cs:502: : Loc.Get(\"summary.headline.upToDate\"),"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.updated",
+   "file": "Loc.cs",
+   "key": "summary.updated",
+   "en": "Installed {0} ({1}).",
+   "ko": "{0} 설치 완료({1}).",
+   "de": "{0} installiert ({1}).",
+   "fr": "{0} installé ({1}).",
+   "code": [
+    "InstallRunner.cs:525: lines.Add(Loc.Format(\"summary.updated\", item.FolderName,",
+    "InstallRunner.cs:537: lines.Add(Loc.Format(\"summary.updated\", managed.Entry.DisplayName,"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.addonsCurrent",
+   "file": "Loc.cs",
+   "key": "summary.addonsCurrent",
+   "en": "WowVision was already current.",
+   "ko": "WowVision은 이미 최신 상태.",
+   "de": "WowVision war bereits aktuell.",
+   "fr": "WowVision était déjà à jour.",
+   "code": [
+    "InstallRunner.cs:543: : Loc.Get(\"summary.addonsCurrent\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.testBuildKept",
+   "file": "Loc.cs",
+   "key": "summary.testBuildKept",
+   "en": "The test build {0} was left in place.",
+   "ko": "테스트 빌드 {0} 유지.",
+   "de": "Die Testversion {0} wurde belassen.",
+   "fr": "La version de test {0} a été laissée en place.",
+   "code": [
+    "InstallRunner.cs:542: ? Loc.Format(\"summary.testBuildKept\", InstallTarget.Spoken(r.Target.InstalledVersion))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.settings",
+   "file": "Loc.cs",
+   "key": "summary.settings",
+   "en": "Required game settings were adjusted.",
+   "ko": "필요한 게임 설정 조정 완료.",
+   "de": "Erforderliche Spieleinstellungen wurden angepasst.",
+   "fr": "Les réglages du jeu nécessaires ont été ajustés.",
+   "code": [
+    "InstallRunner.cs:545: lines.Add(Loc.Get(\"summary.settings\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::summary.client",
+   "file": "Loc.cs",
+   "key": "summary.client",
+   "en": "WowVision was matched to your game client (interface {0}).",
+   "ko": "게임 클라이언트에 맞게 WowVision 조정 완료(인터페이스 {0}).",
+   "de": "WowVision wurde an deinen Spielclient angepasst (Interface {0}).",
+   "fr": "WowVision a été adapté à votre client de jeu (interface {0}).",
+   "code": [
+    "InstallRunner.cs:547: lines.Add(Loc.Format(\"summary.client\", r.Plan.ClientInterface));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::toc.synced",
+   "file": "Loc.cs",
+   "key": "toc.synced",
+   "en": "{0}: interface version {1} -> {2} (matches your game client).",
+   "ko": "{0}: 인터페이스 버전 {1} -> {2} (게임 클라이언트와 일치).",
+   "de": "{0}: Interface-Version {1} -> {2} (passend zu deinem Spielclient).",
+   "fr": "{0} : version d'interface {1} -> {2} (correspond à votre client de jeu).",
+   "code": [
+    "TocSync.cs:136: report?.Invoke(Loc.Format(\"toc.synced\", Path.GetFileName(toc), current, desired));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::sapi2sr.done",
+   "file": "Loc.cs",
+   "key": "sapi2sr.done",
+   "en": "NVDA voice: ready. Start WoW fresh to use it.",
+   "ko": "NVDA 음성: 준비됨. 사용하려면 WoW를 다시 시작하십시오.",
+   "de": "NVDA-Stimme: bereit. Starte WoW neu, um sie zu nutzen.",
+   "fr": "Voix NVDA : prête. Relancez WoW pour l'utiliser.",
+   "code": [
+    "Sapi2SrInstaller.cs:59: announce(Loc.Get(\"sapi2sr.done\"));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.count",
+   "file": "Loc.cs",
+   "key": "voices.count",
+   "en": "Windows voices: {0} added. Start WoW fresh to use them; if a voice sounds different than before, choose it again.",
+   "ko": "Windows 음성: {0}개 추가함. 사용하려면 WoW를 다시 시작하십시오; 음성이 전과 다르게 들리면, 그 음성을 다시 고르십시오.",
+   "de": "Windows-Stimmen: {0} hinzugefügt. Starte WoW neu, um sie zu nutzen; klingt eine Stimme anders als vorher, wähle sie neu.",
+   "fr": "Voix Windows : {0} ajoutée(s). Relancez WoW pour les utiliser ; si une voix sonne autrement qu'avant, choisissez-la de nouveau.",
+   "code": [
+    "WindowsVoicesInstaller.cs:89: announce(Loc.Format(\"voices.count\", added));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::voices.failed",
+   "file": "Loc.cs",
+   "key": "voices.failed",
+   "en": "Windows voices failed: {0}",
+   "ko": "Windows 음성 추가 실패: {0}",
+   "de": "Windows-Stimmen fehlgeschlagen: {0}",
+   "fr": "Échec des voix Windows : {0}",
+   "code": [
+    "WindowsVoicesInstaller.cs:95: announce(Loc.Format(\"voices.failed\", ex.Message));"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.betaDesc",
+   "file": "Loc.cs",
+   "key": "channel.betaDesc",
+   "en": "The newest build of WowVision, rebuilt with every change. It has the latest fixes and features, and can have new bugs.",
+   "ko": "변경이 있을 때마다 새로 만드는 WowVision 최신 빌드입니다. 최신 수정 사항과 기능이 들어 있고, 새 버그가 있을 수 있습니다.",
+   "de": "Der neueste Stand von WowVision, bei jeder Änderung neu gebaut. Er hat die neuesten Korrekturen und Funktionen und kann neue Fehler enthalten.",
+   "fr": "La version la plus récente de WowVision, reconstruite à chaque changement. Elle a les dernières corrections et fonctions, et peut contenir de nouveaux bugs.",
+   "code": [
+    "ComponentsForm.cs:224: _channelDesc.Text = Loc.Get(SelectedChannel == Channel.Beta ? \"channel.betaDesc\" : \"channel.stableDesc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::channel.stableDesc",
+   "file": "Loc.cs",
+   "key": "channel.stableDesc",
+   "en": "The last numbered release. Best for most players. Changes less often than the beta.",
+   "ko": "번호를 붙여 낸 가장 최근 버전입니다. 대부분의 플레이어에게 알맞습니다. 베타보다 바뀌는 일이 적습니다.",
+   "de": "Die letzte nummerierte Veröffentlichung. Für die meisten Spieler am besten. Ändert sich seltener als die Beta.",
+   "fr": "La dernière version numérotée. Idéale pour la plupart des joueurs. Change moins souvent que la bêta.",
+   "code": [
+    "ComponentsForm.cs:224: _channelDesc.Text = Loc.Get(SelectedChannel == Channel.Beta ? \"channel.betaDesc\" : \"channel.stableDesc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.channelBeta",
+   "file": "Loc.cs",
+   "key": "update.channelBeta",
+   "en": "Version: beta. The newest is the {0}.",
+   "ko": "버전: 베타. 최신 버전: {0}.",
+   "de": "Version: Beta. Die neueste ist die {0}.",
+   "fr": "Version : bêta. La plus récente est la {0}.",
+   "code": [
+    "UpdatePromptForm.cs:223: sb.AppendLine(Loc.Format(Config.CurrentChannel == Channel.Beta ? \"update.channelBeta\" : \"update.channelStable\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::update.channelStable",
+   "file": "Loc.cs",
+   "key": "update.channelStable",
+   "en": "Version: stable release. The newest is {0}.",
+   "ko": "버전: 안정판. 최신 버전: {0}.",
+   "de": "Version: stabile Version. Die neueste ist {0}.",
+   "fr": "Version : version stable. La plus récente est {0}.",
+   "code": [
+    "UpdatePromptForm.cs:223: sb.AppendLine(Loc.Format(Config.CurrentChannel == Channel.Beta ? \"update.channelBeta\" : \"update.channelStable\","
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.acc",
+   "file": "Loc.cs",
+   "key": "managed.acc",
+   "en": "Additional recommended addons. These well-known addons are installed and kept up to date together with WowVision; each game version gets the build that matches it, and an addon that does not exist for a game version is left out there. Space toggles the highlighted addon.",
+   "ko": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드가 설치되고, 해당 게임 버전용 빌드가 없는 애드온은 그 버전에는 설치되지 않습니다. Space로 강조 표시된 애드온을 켜고 끕니다.",
+   "de": "Zusätzliche empfohlene AddOns. Diese bekannten AddOns werden zusammen mit WowVision installiert und aktuell gehalten; jede Spielversion erhält die zu ihr passende Fassung, und ein AddOn, das es für eine Spielversion nicht gibt, wird dort ausgelassen. Die Leertaste schaltet das markierte AddOn um.",
+   "fr": "Addons supplémentaires recommandés. Ces addons connus sont installés et maintenus à jour avec WowVision ; chaque version du jeu reçoit la version qui lui correspond, et un addon qui n'existe pas pour une version du jeu y est laissé de côté. La barre d'espace bascule l'addon en surbrillance.",
+   "code": [
+    "ComponentsForm.cs:201: _managedList.AccessibleName = Loc.Get(\"managed.acc\");"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.notForClient",
+   "file": "Loc.cs",
+   "key": "managed.notForClient",
+   "en": "{0}: not available for {1}, skipped.",
+   "ko": "{0}: 사용할 수 없는 게임 버전({1}), 건너뜀.",
+   "de": "{0}: für {1} nicht verfügbar, übersprungen.",
+   "fr": "{0} : non disponible pour {1}, ignoré.",
+   "code": [
+    "InstallRunner.cs:533: lines.Add(Loc.Format(\"managed.notForClient\", managed.Entry.DisplayName, r.Target.DisplayName));",
+    "ManagedAddons.cs:682: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });",
+    "ManagedAddons.cs:796: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::managed.obsoleteRemoved",
+   "file": "Loc.cs",
+   "key": "managed.obsoleteRemoved",
+   "en": "{0}: removed the old folder {1}, which would clash with the new version.",
+   "ko": "{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함.",
+   "de": "{0}: alten Ordner {1} entfernt, er würde mit der neuen Fassung kollidieren.",
+   "fr": "{0} : ancien dossier {1} supprimé, il entrerait en conflit avec la nouvelle version.",
+   "code": [
+    "ManagedAddons.cs:855: Message = Loc.Format(\"managed.obsoleteRemoved\", entry.DisplayName, root) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "Loc.cs::opt.loginTool.desc",
+   "file": "Loc.cs",
+   "key": "opt.loginTool.desc",
+   "en": "A separate program giving the login, server and character screens an audio menu, for WoW Forever, Anniversary and Classic Era. Those screens are not accessible on their own.",
+   "ko": "WoW Forever, Anniversary, Classic Era의 로그인, 서버, 캐릭터 화면에 소리 메뉴를 더해 주는 별도 프로그램입니다. 이 화면들은 자체로는 접근성을 지원하지 않습니다.",
+   "de": "Ein eigenes Programm, das Login-, Server- und Charakterbildschirm ein Audiomenü gibt, für WoW Forever, Anniversary und Classic Era. Diese Bildschirme sind von sich aus nicht zugänglich.",
+   "fr": "Un programme séparé qui donne un menu audio aux écrans de connexion, de serveur et de personnage, pour WoW Forever, Anniversary et Classic Era. Ces écrans ne sont pas accessibles par eux-mêmes.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

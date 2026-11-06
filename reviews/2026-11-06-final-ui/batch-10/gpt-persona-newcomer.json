@@ -1,0 +1,1 @@
+{"findings":[{"id":"windows.lua::Stable","category":"terminology","severity":"major","problem":"스크린리더로 들으면 \"우리\"가 1인칭 대명사로도 해석되어, 처음 쓰는 사용자는 야수 보관 기능이라는 뜻을 바로 알기 어렵다. 같은 문맥의 공식 용어인 \"우리 이용\"과도 다르다.","evidence":"game_term에 \"우리 이용\"이 제시되어 있으며, tbc/petStable.lua:3의 창 이름과 tbc/petStable.lua:87의 야수 우리 문맥에 함께 사용된다.","suggestion":"우리 이용"}]}

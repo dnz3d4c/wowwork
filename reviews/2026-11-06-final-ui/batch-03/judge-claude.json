@@ -1,0 +1,67 @@
+{
+  "verdicts": [
+    {
+      "ref": "minimap.lua::Not in combat",
+      "uphold": false,
+      "final_ko": "전투 중에는 불가",
+      "reason": "세 사용처 모두 `if InCombatLockdown() then speak(L[\"Not in combat\"]) return end` 구조라 전투 중일 때 동작을 거부하며 발화된다. 원문 'Not in combat'은 '전투 중에는 안 됨'이라는 거부 사유이고 현재 번역이 정확하다. 제안 '전투 중 아님'은 전투 중인 사용자에게 반대 상태를 알리는 새 결함이다.",
+      "evidence_sources": ["wowvision-ko/WowVision/core/minimap/module.lua:617-618", "wowvision-ko/WowVision/core/minimap/module.lua:1336-1337", "wowvision-ko/WowVision/core/graph/keyCapture.lua:256-258"]
+    },
+    {
+      "ref": "groupHealth.lua::Watch Party",
+      "uphold": false,
+      "final_ko": "파티 감시",
+      "reason": "생명력 모니터 모듈 설정 안의 켜고 끄기 항목(watchParty Bool)이라 무엇을 감시하는지는 부모 설정이 정한다. '감시'가 사람을 감시한다는 오해를 준다는 실제 불편 근거가 없고, '모니터링'은 외래어로 바꾸는 취향 차이다.",
+      "evidence_sources": ["wowvision-ko/WowVision/retail/groupHealth/module.lua:80-85", "input"]
+    },
+    {
+      "ref": "groupHealth.lua::Watch Raid",
+      "uphold": false,
+      "final_ko": "공격대 감시",
+      "reason": "Watch Party와 같은 판단. watchRaid Bool 설정이고 두 항목의 문형도 이미 '파티 감시'/'공격대 감시'로 맞다.",
+      "evidence_sources": ["wowvision-ko/WowVision/retail/groupHealth/module.lua:86-91", "input"]
+    },
+    {
+      "ref": "minimap.lua::Scan canceled",
+      "uphold": false,
+      "final_ko": "스캔 취소됨",
+      "reason": "로캘의 기존 상태 알림이 '~됨' 문형이다(auction.lua:39 '스캔 중단됨', :46 '전체 스캔 중단됨', controller.lua:27 '취소됨'). '취소됨'은 불필요한 피동이 아니라 상태를 짧게 알리는 형태이고, '스캔 취소'로 바꾸면 기존 문형과 갈린다.",
+      "evidence_sources": ["wowvision-ko/WowVision/core/minimap/module.lua:189-191", "wowvision-ko/vision-locale/koKR/auction.lua:39", "wowvision-ko/vision-locale/koKR/controller.lua:27"]
+    },
+    {
+      "ref": "minimap.lua::turned",
+      "uphold": false,
+      "final_ko": "회전",
+      "reason": "'스캔 취소됨, <사유>'로만 쓰이고 같은 사유 묶음이 한 낱말(이동, 마우스, 마우스 시점)이다. 코드는 플레이어 방향(GetPlayerFacing) 변화를 검사하며, 이 문맥에서 '회전'은 플레이어가 돌았다는 뜻으로 충분히 들린다. 화면 회전으로 오해한다는 근거가 약하다.",
+      "evidence_sources": ["wowvision-ko/WowVision/core/minimap/module.lua:188-191", "wowvision-ko/WowVision/core/minimap/module.lua:655-666", "wowvision-ko/vision-locale/koKR/minimap.lua:33-37"]
+    },
+    {
+      "ref": "groupHealth.lua::dead",
+      "uphold": false,
+      "final_ko": "사망",
+      "reason": "number는 인원수가 아니라 구성원 번호다(module.lua:443 `tostring(member.number)`, tests.lua:281-283 player=1, party1=2, party2=3). '2 사망'은 '2번 구성원 사망'이고, 제안 '명 사망'은 '2명 사망'으로 들려 뜻을 바꾸는 새 결함이다.",
+      "evidence_sources": ["wowvision-ko/WowVision/retail/groupHealth/module.lua:443-445", "wowvision-ko/WowVision/retail/groupHealth/tests.lua:281-283"]
+    },
+    {
+      "ref": "groupHealth.lua::full",
+      "uphold": false,
+      "final_ko": "생명력 최대",
+      "reason": "dead와 같은 근거. 같은 함수에서 구성원 번호 number 뒤에 붙는 꼬리이고 구성원 한 명이 정확히 최대 생명력일 때 들린다. '명 생명력 최대'는 인원수로 오해시킨다.",
+      "evidence_sources": ["wowvision-ko/WowVision/retail/groupHealth/module.lua:443", "wowvision-ko/WowVision/retail/groupHealth/module.lua:474-480", "wowvision-ko/WowVision/retail/groupHealth/tests.lua:281-283"]
+    },
+    {
+      "ref": "minimap.lua::Seen entries cleared",
+      "uphold": false,
+      "final_ko": "발견 항목 지움",
+      "reason": "clear 명령 직후 단독 발화되는 완료 알림이고, 로캘에 같은 형태의 완료 알림이 이미 있다(navigation.lua:310 '방문한 경유지 기록 지움'). 버튼 이름으로 오해할 맥락이 없어 실제 불편 근거가 없다.",
+      "evidence_sources": ["wowvision-ko/WowVision/core/minimap/module.lua:1462-1467", "wowvision-ko/vision-locale/koKR/navigation.lua:310"]
+    },
+    {
+      "ref": "monitors.lua::One Decimal Timer",
+      "uphold": false,
+      "final_ko": "소수점 한 자리 타이머",
+      "reason": "decimalTimer Bool 설정 레이블이라 켜고 끄기로 의미가 드러나고 원문도 같은 명사구다. 제안은 원문에 없는 '표시'를 더하는 표현 차이일 뿐 실제 불편 근거가 없다.",
+      "evidence_sources": ["wowvision-ko/WowVision/retail/monitors/CdmAuraMonitor.lua:686", "input"]
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+ "batch_file": "reviews/2026-11-06-final-ui/batches/batch-07.json",
+ "items": [
+  {
+   "ref": "ui.lua::Enabled",
+   "findings": [
+    {
+     "by": "claude-persona-sr-gamer",
+     "id": "ui.lua::Enabled",
+     "category": "listening",
+     "severity": "minor",
+     "problem": "Enabled와 Disabled가 한 쌍으로 번갈아 발화되는 곳에서 한쪽은 '사용함', 다른 쪽은 '비활성화'로 낱말 계열이 다르다. 대상 지정 토글을 누를 때마다 '하드 대상 알림 사용함' / '하드 대상 알림 비활성화', PvP 상태도 '사용함' / '비활성화'로 들린다. 하루 수백 번 듣는 켜짐/꺼짐 피드백이 짝이 맞지 않아 두 어휘를 따로 익혀야 한다. 뜻은 구별되므로 minor.",
+     "evidence": "core/targeting/module.lua:341 text = info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"] 분기, core/objects/types/unit/PVP.lua:26-28 Enabled/Disabled 반환. Disabled는 core/graph/nodes.lua:210, core/windows/options/ui.lua:323 등 비활성 컨트롤 상태에도 쓰여 '비활성화'를 바꾸기 어렵고, Enabled 쪽을 맞추는 편이 영향이 작다. Enabled의 game_term에 '활성화'가 있다. 설정 이름으로 쓰일 때도 '활성화, 체크됨'으로 자연스럽다. 기존 결정이나 용어집에 Enabled 항목은 없음(glossary.tsv, decisions.tsv 확인).",
+     "suggestion": "활성화"
+    },
+    {
+     "by": "claude-persona-wow-veteran",
+     "id": "ui.lua::Enabled",
+     "category": "listening",
+     "severity": "minor",
+     "problem": "켜기/끄기 상태를 한 쌍으로 말하는 곳에서 Enabled는 \"사용함\", Disabled는 \"비활성화\"라서 짝이 맞지 않는다. 대상 지정 단축키로 설정을 켜고 끄면 \"적 소프트 대상 사용함\"과 \"적 소프트 대상 비활성화\"가 번갈아 들리고, PvP 상태도 \"사용함\"과 \"비활성화\"로 갈린다. 뜻은 알아들을 수 있지만 같은 스위치의 두 상태가 다른 말 계열로 들린다. Disabled는 비활성 버튼 상태(nodes.lua 등)에도 쓰여서 \"사용 안 함\"으로 바꾸면 \"게시 버튼 사용 안 함\"처럼 설정처럼 들리므로, Enabled를 game_term 후보인 \"활성화\"로 맞추는 쪽이 모든 사용처에 맞는다. 다만 게임 설정 화면의 짝은 VIDEO_OPTIONS_ENABLED \"사용함\" / VIDEO_OPTIONS_DISABLED \"사용 안 함\"이라 어느 쪽에 맞출지는 판단이 갈릴 수 있어 minor로 둔다.",
+     "evidence": "core/targeting/module.lua:338-341: text = info.label .. \" \" .. L[\"Enabled\"] / text = info.label .. \" \" .. L[\"Disabled\"]. core/objects/types/unit/PVP.lua:26,28: return L[\"Enabled\"] / return L[\"Disabled\"]. Disabled 번역은 \"비활성화\"(같은 배치의 ui.lua::Disabled). Disabled의 다른 사용처는 비활성 컨트롤 상태(core/graph/nodes.lua:210,563,644, core/graph/dropdownMenu.lua:423). Enabled game_term: 사용함 | 활성화 | 활성화 중.",
+     "suggestion": "활성화"
+    },
+    {
+     "by": "claude-persona-ux-writer",
+     "id": "ui.lua::Enabled",
+     "category": "style",
+     "severity": "minor",
+     "problem": "켜짐/꺼짐 짝을 이루는 상태 문구인데 Enabled만 '사용함'이고 짝인 Disabled는 '비활성화'라서 낱말 계열이 어긋난다. 같은 파일의 이웃 키도 Enable '활성화', Disable '비활성화'로 활성화 계열이다. 사용자는 같은 설정을 켜고 끌 때 '하드 대상 사용함'과 '하드 대상 비활성화'처럼 계열이 다른 두 낱말을 듣게 된다.",
+     "evidence": "core/targeting/module.lua:339-341에서 토글 결과를 info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"]로 발화하고, core/objects/types/unit/PVP.lua:26-28은 PvP 상태 값으로 Enabled/Disabled를 짝지어 돌려준다. locale/koKR/ui.lua:53-56 기준 Disable·Disabled=비활성화, Enable=활성화, Enabled=사용함. '활성화'는 game_term 후보에 있고, 체크 상자 이름(core/alerts/alerts.lua:21 등)으로 써도 '활성화, 체크 상자, 체크됨'처럼 자연스럽다. decisions.tsv·glossary.tsv에 '사용함'을 정한 항목은 없다.",
+     "suggestion": "활성화"
+    },
+    {
+     "by": "claude-persona-newcomer",
+     "id": "ui.lua::Enabled",
+     "category": "terminology",
+     "severity": "minor",
+     "problem": "켜짐/꺼짐 짝으로 함께 발화되는 곳에서 Enabled는 \"사용함\", Disabled는 \"비활성화\"로 낱말 계열이 달라, 처음 듣는 사용자는 두 말이 서로 반대 상태라는 것을 바로 잇기 어렵다. 토글 직후 \"<설정> 사용함\" 다음에 \"<설정> 비활성화\"를 듣게 된다.",
+     "evidence": "core/targeting/module.lua:338-341에서 같은 토글의 결과를 info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"]로 말한다. core/objects/types/unit/PVP.lua:26/28도 PvP 상태를 L[\"Enabled\"]/L[\"Disabled\"] 짝으로 돌려준다. game_term에 \"활성화\"가 있어 \"비활성화\"와 짝이 맞는다. 설정 이름(core/alerts/alerts.lua:21 등)으로 쓰일 때도 \"활성화\"는 자연스럽다. 기존에 \"사용함\"을 고른 사용자 결정은 decisions.tsv에 없지만, 이전 평가에서 의도적으로 고른 것일 수 있어 심각도를 minor로 둔다.",
+     "suggestion": "활성화"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::Enabled",
+    "action": "dispute",
+    "final_ko": "사용함",
+    "reason": "짝 불일치 지적은 맞지만 합의 항목 Disabled를 '사용 안 함'으로 바꾸므로 짝이 '사용함'/'사용 안 함'으로 맞춰진다. 게임 설정의 VIDEO_OPTIONS_ENABLED/DISABLED 짝과 같고 game_term 첫 후보도 '사용함'이다."
+   }
+  },
+  {
+   "ref": "ui.lua::Attacking You or Your Group",
+   "findings": [
+    {
+     "by": "claude-persona-editor",
+     "id": "ui.lua::Attacking You or Your Group",
+     "category": "style",
+     "severity": "minor",
+     "problem": "\"또는\"과 \"~나\"를 한 구에 겹쳐 써서 \"나 또는 내 파티나\"로 \"나\"가 연달아 들리고 선택지 경계가 흐리다. 같은 group 개념을 다른 항목은 \"파티 및 공격대\"로 옮겼다(Group Health Monitor → \"파티 및 공격대 생명력 모니터\").",
+     "evidence": "related: groupHealth.lua::Group Health Monitor = \"파티 및 공격대 생명력 모니터\". 드롭다운 선택지(core/ui modules/combat.lua:97)라 짧은 명사형이 맞고, 용어를 맞추면 이중 접속이 사라진다.",
+     "suggestion": "나 또는 내 파티 및 공격대를 공격 중"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::Attacking You or Your Group",
+    "action": "dispute",
+    "final_ko": "나 또는 내 파티나 공격대를 공격 중",
+    "reason": "Group은 파티나 공격대 중 하나라 '파티나 공격대'가 뜻에 맞다. '파티 및 공격대'는 둘 다를 뜻해 조건이 바뀐다. '나' 반복은 뜻을 흐리지 않는 minor 문체 문제."
+   }
+  },
+  {
+   "ref": "ui.lua::Available",
+   "findings": [
+    {
+     "by": "claude-persona-newcomer",
+     "id": "ui.lua::Available",
+     "category": "context",
+     "severity": "minor",
+     "problem": "경매장 목록에서 \"사용 가능 20\"으로 발화되어, 처음 듣는 사용자는 \"구매할 수 있는 수량 20\"이 아니라 \"사용할 수 있는 아이템\"으로 오해할 수 있다. 같은 키가 특성 트리의 \"선택 가능\" 상태에도 쓰여서 한 번역으로 두 사용처를 모두 맞추기 어렵다.",
+     "evidence": "mists/auction.lua:253, 284: tinsert(parts, L[\"Available\"] .. \" \" .. tostring(entry.totalQuantity or 0)) — 경매 수량. retail/talentTree.lua:156: state == states.Selectable이면 L[\"Available\"] — 특성 선택 가능 상태. game_term에 경매 문맥의 \"구매 가능 수량\"이 있다. AceLocale 키가 하나라 어느 사용처를 우선할지는 사용자 결정 사항이므로 suggestion은 현재 값을 그대로 둔다.",
+     "suggestion": "사용 가능"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::Available",
+    "action": "dispute",
+    "final_ko": "사용 가능",
+    "reason": "제안이 현재 값과 같다. 경매 수량과 특성 상태가 키를 공유해 한 값으로 둘 다 맞출 수 없고 '사용 가능'은 game_term 후보다."
+   }
+  },
+  {
+   "ref": "quests.lua::No quest data source",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "quests.lua::No quest data source",
+     "category": "accuracy",
+     "severity": "minor",
+     "problem": "'데이터 원본'은 원본 데이터 자체를 뜻하기 쉬워, 퀘스트 데이터를 제공할 출처가 없다는 상태를 한 번에 알아듣기 어렵다.",
+     "evidence": "원문은 \"No quest data source\"이며 `core/quests/module.lua:464`과 두 scanner 사용처에서 데이터 공급원이 없는 상태의 레이블로 쓰인다.",
+     "suggestion": "퀘스트 데이터 제공처 없음"
+    },
+    {
+     "by": "gpt-persona-wow-veteran",
+     "id": "quests.lua::No quest data source",
+     "category": "accuracy",
+     "severity": "major",
+     "problem": "`data source`를 `데이터 원본`으로 옮겨 데이터의 원본 자료가 없다는 뜻처럼 들린다. 실제로는 퀘스트 데이터를 가져올 제공처가 없다는 상태다.",
+     "evidence": "`core/quests/scanner.lua:302`, `core/quests/scanner.lua:432`에서 데이터가 없는 항목의 label로 사용된다. 영어 `source`는 여기서 원본 자체가 아니라 데이터 제공처를 뜻한다.",
+     "suggestion": "퀘스트 데이터 제공처 없음"
+    }
+   ],
+   "translator": {
+    "id": "quests.lua::No quest data source",
+    "action": "dispute",
+    "final_ko": "퀘스트 데이터 원본 없음",
+    "reason": "'데이터 원본'은 data source의 표준 한국어 IT 용어로 데이터를 가져오는 출처를 뜻한다. '제공처'가 더 낫다는 근거가 없다."
+   }
+  },
+  {
+   "ref": "speech.lua::Sound Between Chat Lines",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "speech.lua::Sound Between Chat Lines",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "'chat'을 '대화'로 옮겨 NPC 대사나 일반 대화 사이에 나는 소리로 오해할 수 있다. 채팅 메시지 사이의 소리라는 기능 범위가 드러나야 한다.",
+     "evidence": "원문은 \"Sound Between Chat Lines\"로 `Chat Lines`를 명시하지만 번역은 \"대화 메시지\"로 범위를 바꿨다.",
+     "suggestion": "채팅 메시지 사이 소리"
+    }
+   ],
+   "translator": {
+    "id": "speech.lua::Sound Between Chat Lines",
+    "action": "dispute",
+    "final_ko": "대화 메시지 사이 소리",
+    "reason": "게임 공식 gs_koKR 17263 CHAT='대화'. 한국어 클라이언트는 채팅을 '대화'로 부르므로 인게임 용어 우선 규칙에 맞다."
+   }
+  },
+  {
+   "ref": "speech.lua::Activity Sound When Unfocused",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "speech.lua::Activity Sound When Unfocused",
+     "category": "accuracy",
+     "severity": "minor",
+     "problem": "원문에 없는 '대화창'을 추가해 어떤 창이 비활성일 때 작동하는지 의미를 한정했다. 실제 사용처 코드가 없어 정확한 초점 대상을 확인할 수 있으므로 심각도를 낮췄다.",
+     "evidence": "원문은 \"Activity Sound When Unfocused\"일 뿐 chat 또는 대화창을 지정하지 않으며, 입력의 `code`도 비어 있다.",
+     "suggestion": "창이 비활성일 때 활동 소리"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "speech.lua::Activity Sound When Unfocused",
+     "category": "accuracy",
+     "severity": "minor",
+     "problem": "원문에는 비활성 상태인 대상이 명시되지 않았는데 번역은 이를 \"대화창\"으로 한정했다. 실제로 게임 창의 비활성 상태를 뜻한다면 사용자가 설정의 작동 조건을 잘못 이해한다.",
+     "evidence": "영어 원문은 \"Activity Sound When Unfocused\"이고 한국어만 \"대화창\"을 추가했다. code가 비어 있어 무엇이 초점을 잃는지 확정할 수 없으므로 심각도를 한 단계 낮췄다.",
+     "suggestion": "게임 창이 비활성일 때 활동 소리"
+    }
+   ],
+   "translator": {
+    "id": "speech.lua::Activity Sound When Unfocused",
+    "action": "dispute",
+    "final_ko": "대화창이 비활성일 때 활동 소리",
+    "reason": "원본 설명서 docs/src/user/en/basics/speech.md:21,64가 'while the chat window is hidden'으로 설명한다. 초점 대상은 대화창이 맞고 '게임 창'은 틀린 조건이다."
+   }
+  },
+  {
+   "ref": "targeting.lua::X",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "targeting.lua::X",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 대상 표시 이름인 'X'를 '가위표'로 바꿔, 다른 사용자의 공격대 징표 호출과 다르게 들린다.",
+     "evidence": "`game_term`이 \"X\"로 제시되어 있고 `core/targeting/module.lua:20`에서 다른 공식 대상 표시 이름들과 함께 사용된다.",
+     "suggestion": "X"
+    },
+    {
+     "by": "gpt-persona-wow-veteran",
+     "id": "targeting.lua::X",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공격대 대상 표시기의 공식 명칭 `X`를 `가위표`로 바꿨다. 다른 플레이어가 `X`라고 부를 때 같은 표시기임을 즉시 알아듣기 어렵다.",
+     "evidence": "`game_term`은 `X`이며 `core/targeting/module.lua:14-21`의 다른 값들과 함께 공격대 대상 표시기 이름을 구성한다.",
+     "suggestion": "X"
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "targeting.lua::X",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 대상 표시기 이름인 ‘X’를 ‘가위표’로 바꿨다. 사용자가 게임 안의 표시기 이름과 애드온 음성을 바로 대응하기 어렵다.",
+     "evidence": "`game_term`은 ‘X’이며 core/targeting/module.lua:20의 공격대 대상 표시기 목록에서 사용된다.",
+     "suggestion": "X"
+    },
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "targeting.lua::X",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 게임 용어인 `X`를 `가위표`로 바꿔 공격대 대상 표시기의 실제 이름과 어긋난다.",
+     "evidence": "`game_term`은 `X`이며, `core/targeting/module.lua:20`에서 별·동그라미·해골 등 공격대 대상 표시기 이름과 함께 사용된다.",
+     "suggestion": "X"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "targeting.lua::X",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "공식 대상 표시기 이름인 \"X\"를 \"가위표\"로 바꿔서, 게임이나 다른 플레이어가 X 표시기를 언급할 때 같은 표시기인지 알아보기 어렵다.",
+     "evidence": "game_term은 \"X\"이고 core/targeting/module.lua:20에서 다른 공식 대상 표시기 이름들과 함께 사용된다. 고유한 표시기 이름을 다른 명칭으로 바꾼 번역이다.",
+     "suggestion": "X"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::X",
+    "action": "dispute",
+    "final_ko": "가위표",
+    "reason": "module.lua:14-21은 공격대 대상 표시기 목록이고 gs_koKR 16172 RAID_TARGET_7='가위표'(Cross)가 공식 표시기 이름이다. game_term 'X'는 영어만 같은 다른 문맥 항목이라 2026-11-03 문맥 우선 결정에 따라 따르지 않는다."
+   }
+  },
+  {
+   "ref": "targeting.lua::Friends",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "targeting.lua::Friends",
+     "category": "context",
+     "severity": "major",
+     "problem": "같은 키가 친구 목록에서는 사람 관계인 '친구', 대상 지정 선택지에서는 우호 유닛인 '아군'을 뜻한다. 단일 번역 '친구'를 쓰면 대상 지정 설정에서 친구 등록된 플레이어만 가리키는 것처럼 들리며, 모든 사용처에 맞는 번역은 불가능하다.",
+     "evidence": "`classic/friends.lua:3`, `classic/friends.lua:723`은 친구 기능이지만 `core/targeting/module.lua:450`은 Enemies와 짝을 이루는 대상 유형이다. `shared_key`의 `windows.lua`도 \"친구\"를 사용하므로 AceLocale 키를 공유한 채 한쪽만 고칠 수 없다.",
+     "suggestion": "단일 ko 값으로 수정 불가. 키를 분리해 친구 기능은 \"친구\", 대상 지정 선택지는 \"아군\"으로 번역해야 함"
+    },
+    {
+     "by": "gpt-persona-wow-veteran",
+     "id": "targeting.lua::Friends",
+     "category": "context",
+     "severity": "critical",
+     "problem": "친구 목록에서는 `친구`가 맞지만 대상 지정 선택지에서는 적의 반대인 아군을 뜻하므로, 사용자가 친구로 등록한 캐릭터만 대상으로 삼는 기능으로 오해할 수 있다. 같은 키가 서로 다른 개념에 쓰여 단일 번역으로는 두 사용처를 모두 만족시킬 수 없다.",
+     "evidence": "`classic/friends.lua:3`, `classic/friends.lua:723`에서는 친구 목록 이름이지만, `core/targeting/module.lua:449-450`에서는 `Enemies`와 대칭되는 대상 유형이다. AceLocale의 동일 키 공유 때문에 어느 한쪽에 맞춘 번역은 다른 쪽을 깨뜨린다.",
+     "suggestion": "단일 ko 값으로 수정 불가(키를 분리한 뒤 친구 목록은 `친구`, 대상 유형은 `아군`)"
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "targeting.lua::Friends",
+     "category": "context",
+     "severity": "major",
+     "problem": "하나의 키가 친구 목록과 대상 지정 선택지에 함께 쓰여 단일 번역으로 두 문맥을 모두 정확히 표현할 수 없다. 현재 ‘친구’는 대상 지정 문맥에서 적과 대비되는 아군을 소셜 친구로 오해하게 한다.",
+     "evidence": "classic/friends.lua:3과 classic/friends.lua:723에서는 소셜 기능의 Friends지만, core/targeting/module.lua:450에서는 `Enemies`와 짝을 이루는 대상 유형이다. AceLocale의 같은 키를 공유하므로 번역만 바꾸면 다른 사용처가 깨진다.",
+     "suggestion": "단일 번역 불가(키 분리 후 친구 / 아군)"
+    },
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "targeting.lua::Friends",
+     "category": "context",
+     "severity": "critical",
+     "problem": "같은 키가 친구 목록 모듈과 대상 지정 옵션에 함께 쓰여, 현재 번역은 대상 지정 옵션에서 적의 반대인 아군을 소셜 친구로 잘못 안내한다. 사용자가 옵션의 적용 대상을 오해할 수 있다.",
+     "evidence": "`classic/friends.lua:3`과 `classic/friends.lua:723`에서는 `Friends`가 친구 목록을 뜻하지만, `core/targeting/module.lua:450`에서는 `Off`, `Enemies`와 나란히 있는 대상 유형이다. 모든 사용처에 맞는 단일 번역이 없으므로 키 분리가 필요하다.",
+     "suggestion": "친구(친구 목록) / 아군(대상 지정 옵션)"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "targeting.lua::Friends",
+     "category": "context",
+     "severity": "critical",
+     "problem": "친구 창에서는 \"친구\"가 맞지만 대상 지정 선택지에서 같은 번역을 쓰면 사회 관계의 친구만 대상으로 삼는 기능처럼 들린다. 실제 선택지는 \"Enemies\"와 짝을 이루는 아군 대상이므로 서로 다른 두 기능에 하나의 번역을 공유해 오해를 일으킨다.",
+     "evidence": "classic/friends.lua:3과 classic/friends.lua:723에서는 친구 기능 이름이지만, core/targeting/module.lua:449-450에서는 \"Enemies\"와 나란히 놓인 대상 종류 선택지다. AceLocale 키가 같아서 한 번역으로 두 문맥을 모두 정확히 표현할 수 없다.",
+     "suggestion": "단일 번역 불가"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Friends",
+    "action": "dispute",
+    "final_ko": "친구",
+    "reason": "decisions.tsv 2026-11-05: 공유 키(Friends 포함)는 현재 번역 유지, 평가자 재지적 대상 아님."
+   }
+  },
+  {
+   "ref": "targeting.lua::Cannot set virtual focus while in combat.",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "category": "style",
+     "severity": "minor",
+     "problem": "사용자에게 실패 원인을 설명하는 오류 문구인데 명사형인 '설정 불가'로 끝나 안내·오류 설명의 합니다체 규칙과 맞지 않는다.",
+     "evidence": "`core/targeting/focus.lua:27`에서 작업 실패 시 직접 출력하는 완결 문장이며, 원문도 마침표가 있는 \"Cannot set virtual focus while in combat.\"이다.",
+     "suggestion": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "category": "style",
+     "severity": "minor",
+     "problem": "사용할 수 없는 이유를 설명하는 오류 문구인데 ‘설정 불가’라는 명사형으로 끝나 안내 문장 말투와 맞지 않는다.",
+     "evidence": "core/targeting/focus.lua:27에서 사용자에게 직접 출력되는 오류 설명이다. 최종 검수 규칙은 오류 설명에 합니다체를 적용하도록 한다.",
+     "suggestion": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    },
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "targeting.lua::Cannot set virtual focus while in combat.",
+     "category": "style",
+     "severity": "minor",
+     "problem": "오류 설명을 `설정 불가`라는 상태형 문구로 끝내 안내·오류 문구의 합니다체 규칙과 맞지 않는다.",
+     "evidence": "`core/targeting/focus.lua:27`에서 사용자에게 출력하는 완결된 오류 문장이다. 원문도 마침표가 있는 완결 문장 `Cannot set virtual focus while in combat.`이다.",
+     "suggestion": "전투 중에는 가상 주시 대상을 설정할 수 없습니다."
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Cannot set virtual focus while in combat.",
+    "action": "dispute",
+    "final_ko": "전투 중에는 가상 주시 대상 설정 불가.",
+    "reason": "동작 거부를 알리는 즉시 발화로, 2026-11-05 결정(완결 문장이어도 상태 알림은 간결하게)에 해당한다. koKR 전체에 '수 없습니다'형이 없고 minimap 'Not in combat'='전투 중에는 불가'와 일관된다."
+   }
+  },
+  {
+   "ref": "ui.lua::Checkbox",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "ui.lua::Checkbox",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 공식 용어인 '체크박스' 대신 '체크 상자'를 사용해 기본 인터페이스에서 듣는 컨트롤 이름과 달라진다.",
+     "evidence": "`game_term`이 \"체크박스\"이며 `core/graph/ControlTypes.lua:40`에서 컨트롤 유형 이름으로 발화된다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-wow-veteran",
+     "id": "ui.lua::Checkbox",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 클라이언트의 공식 UI 용어 `체크박스` 대신 `체크 상자`를 사용했다. 스크린리더가 컨트롤 종류를 알릴 때 게임에서 익힌 명칭과 달라진다.",
+     "evidence": "`game_term`은 `체크박스`이며 `core/graph/ControlTypes.lua:40`에서 toggle 컨트롤의 종류 이름으로 사용된다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "ui.lua::Checkbox",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 공식 용어인 ‘체크박스’와 다른 이름을 사용해 게임 인터페이스 용어와 애드온 음성이 일치하지 않는다.",
+     "evidence": "`game_term`은 ‘체크박스’이며 core/graph/ControlTypes.lua:40에서 인터페이스 컨트롤 유형 이름으로 등록된다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "ui.lua::Checkbox",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 클라이언트의 공식 컨트롤 명칭인 `체크박스` 대신 `체크 상자`를 사용했다.",
+     "evidence": "`game_term`은 `체크박스`이며, `core/graph/ControlTypes.lua:40`에서 실제 토글 컨트롤 유형 이름으로 등록된다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "ui.lua::Checkbox",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임의 공식 컨트롤 이름과 다른 \"체크 상자\"를 사용해, 처음 쓰는 사용자가 게임에서 말하는 \"체크박스\"와 같은 요소인지 바로 연결하기 어렵다.",
+     "evidence": "game_term은 \"체크박스\"이며 core/graph/ControlTypes.lua:40에서 toggle 컨트롤 유형의 이름으로 사용된다.",
+     "suggestion": "체크박스"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::Checkbox",
+    "action": "dispute",
+    "final_ko": "체크 상자",
+    "reason": "translation-guide.md:51이 'Checkbox → 체크 상자'로 명시했다. 스크린리더식 컨트롤 종류 이름이며 한국어 스크린리더도 '체크 상자'로 읽는다."
+   }
+  },
+  {
+   "ref": "ui.lua::ProxyCheckButton",
+   "findings": [
+    {
+     "by": "gpt-persona-sr-gamer",
+     "id": "ui.lua::ProxyCheckButton",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 공식 용어인 '체크박스' 대신 '체크 상자'를 사용해 같은 컨트롤을 서로 다른 이름으로 듣게 된다.",
+     "evidence": "원문은 \"Checkbox\"이고 `game_term`이 \"체크박스\"로 제시되어 있다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-wow-veteran",
+     "id": "ui.lua::ProxyCheckButton",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 클라이언트의 공식 UI 용어 `체크박스` 대신 `체크 상자`를 사용했다. 같은 종류의 대리 컨트롤도 공식 명칭과 일치해야 한다.",
+     "evidence": "원문은 `Checkbox`, `game_term`은 `체크박스`이며 해당 항목은 체크박스를 나타내는 `ProxyCheckButton`의 음성 이름이다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-editor",
+     "id": "ui.lua::ProxyCheckButton",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 공식 용어인 ‘체크박스’ 대신 ‘체크 상자’를 사용했다.",
+     "evidence": "원문은 `Checkbox`이고 `game_term`에 공식 번역 ‘체크박스’가 제시되어 있다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-ux-writer",
+     "id": "ui.lua::ProxyCheckButton",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임 클라이언트의 공식 컨트롤 명칭인 `체크박스` 대신 `체크 상자`를 사용했다.",
+     "evidence": "원문은 `Checkbox`이고 `game_term`은 `체크박스`다. 같은 컨트롤 유형인 `ui.lua::Checkbox`와도 공식 명칭으로 통일해야 한다.",
+     "suggestion": "체크박스"
+    },
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "ui.lua::ProxyCheckButton",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임의 공식 컨트롤 이름과 다른 \"체크 상자\"를 사용해 같은 체크박스가 서로 다른 이름으로 들릴 수 있다.",
+     "evidence": "영어 원문은 \"Checkbox\"이고 game_term은 \"체크박스\"다. 같은 입력의 ui.lua::Checkbox도 동일한 컨트롤 유형을 가리킨다.",
+     "suggestion": "체크박스"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::ProxyCheckButton",
+    "action": "dispute",
+    "final_ko": "체크 상자",
+    "reason": "같은 컨트롤 종류 이름. translation-guide.md:51 규칙과 ui.lua::Checkbox 일관성 유지."
+   }
+  },
+  {
+   "ref": "ui.lua::controlled",
+   "findings": [
+    {
+     "by": "gpt-persona-editor",
+     "id": "ui.lua::controlled",
+     "category": "listening",
+     "severity": "major",
+     "problem": "‘제어됨’만 들으면 일반적인 조작·통제 상태로도 해석되어 군중 제어 알림이라는 뜻이 분명하지 않다.",
+     "evidence": "core/ui modules/combat.lua:51에서 군중 제어 알림의 상태 문구로 사용되며 related의 같은 기능은 ‘군중 제어’라고 명시한다.",
+     "suggestion": "군중 제어 중"
+    }
+   ],
+   "translator": {
+    "id": "ui.lua::controlled",
+    "action": "dispute",
+    "final_ko": "제어됨",
+    "reason": "combat.lua:51, enemyCount.lua:284-309에서 적 수 경보의 군중 제어 모드 안에서 '5, 2 제어됨'처럼 숫자 뒤에 붙어 자주 발화된다. 문맥상 군중 제어가 분명하고 짧은 상태어가 빈번한 발화에 맞다."
+   }
+  },
+  {
+   "ref": "quests.lua::Quest Giver",
+   "findings": [
+    {
+     "by": "gpt-persona-newcomer",
+     "id": "quests.lua::Quest Giver",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "WoW를 처음 하는 사용자는 약어인 \"NPC\"만 듣고 퀘스트를 주는 대상이라는 뜻을 바로 알기 어렵다. 또한 NPC는 퀘스트 제공자보다 범위가 넓어 기능을 모호하게 만든다.",
+     "evidence": "원문은 역할을 명시한 \"Quest Giver\"이며, core/quests/native.lua:199에서 해당 대상으로 이동하기 위한 이름으로 사용된다. related의 \"퀘스트 NPC\"도 같은 모호한 번역이므로 근거가 되지 않는다.",
+     "suggestion": "퀘스트 제공자"
+    }
+   ],
+   "translator": {
+    "id": "quests.lua::Quest Giver",
+    "action": "dispute",
+    "final_ko": "퀘스트 NPC",
+    "reason": "related minimap 'quest giver'도 '퀘스트 NPC'라 이 키만 바꾸면 같은 대상이 두 이름이 된다. 공식 일치 문자열이 없고 '퀘스트 NPC'는 한국 사용자가 실제로 쓰는 표현이다."
+   }
+  }
+ ]
+}

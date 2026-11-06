@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "ref": "ui.lua::Dispel Type",
+      "uphold": false,
+      "final_ko": "무효화 유형",
+      "reason": "게임 공식 문자열 HUD_EDIT_MODE_SETTING_AURA_FRAME_SHOW_DISPEL_TYPE가 '무효화 유형 표시'로, 같은 오라 해제 분류 문맥에서 dispel type을 '무효화 유형'으로 옮긴다(gs_koKR.csv:24895, 24817도 '무효화 유형'). 확정 용어집도 dispellable=무효화 가능(glossary.tsv:25). '해제 유형'으로 바꾸면 공식 용어와 확정 용어를 어기므로 지적을 받아들이지 않는다.",
+      "evidence_sources": ["input", "wowwork/cache/gs_koKR.csv:24895", "wowwork/cache/gs_koKR.csv:24817", "wowwork/docs/glossary.tsv:25", "wowwork/cache/game_terms.tsv:45"]
+    },
+    {
+      "ref": "ui.lua::Remaining Duration",
+      "uphold": false,
+      "final_ko": "남은 지속시간",
+      "reason": "번역자가 든 Duration='지속시간'은 사실과 다르다(이 배치의 Duration 번역은 '기간'). 다만 게임 공식 한국어는 '지속시간'을 붙여 쓴다: gs_koKR.csv에 '지속시간'이 37건, '지속 시간'은 0건이고, 공식 용어 Refreshed='지속시간 초기화'(game_terms.tsv:191)도 붙여 쓴다. 게임 표기를 따른 것이라 결함이 아니고, 지적은 minor 띄어쓰기뿐이라 현재 번역을 유지한다.",
+      "evidence_sources": ["input", "wowwork/cache/gs_koKR.csv", "wowwork/cache/game_terms.tsv:191", "wowvision-ko/vision-locale/koKR/ui.lua:192"]
+    }
+  ]
+}

@@ -37,3 +37,13 @@
 - 반영: `tools.installer_loc apply ko.tsv`, wowvision-installer ko 브랜치에 커밋.
 - 함께 발견: `status.koreanFailed` 문구가 바뀌어 테스터 안내의 인용이 옛 문구가 됐다. 안내를 고치고, 안내의 따옴표 인용이 설치 프로그램 Ko 표에 실제로 있는지 보는 검사(`test_guide_quotes_match_installer_text`)를 추가했다. 옛 문구로 실패하는 것을 확인했다.
 - 빌드는 UI 검수 반영 뒤 한 번에 한다(설치 프로그램에 koKR이 들어가므로).
+
+### UI 결과 (`reviews/2026-11-06-final-ui/result.json`)
+
+- 평가자 100명 모두 성공(묶음별 실패 0), 지적 297건. 항목 기준 확정 119건(합의 14, 수용 41, 반박 인정 64), 판정 갈림 7건.
+- 판정 갈림 7건(`colors.lua::grayish`, `violet`, `minimap.lua::turned`, `navigation.lua::trainer`, `quests.lua::Questie is not loaded`, `ui.lua::controlled` 등)은 2026-11-06 기준으로 현재 번역 유지. `violet`의 GPT 근거 "보라색"은 주택 외관 색상(다른 문맥)이고 같은 목록의 `purple`이 이미 "보라색"이라 두 색이 같아진다.
+- 번역 변경 55건(`apply.tsv`, 전·후 `changes.txt`). 직접 대조 결과 1건 제외: `navigation.lua` 카메라 안내의 "카메라 따라가기 방식"은 게임 공식 `CAMERA_FOLLOWING_STYLE`="시점 전환 방식"(`cache/gs_koKR.csv:4018`)과 다르다. `docs/review-process.md` 5단계에 이미 같은 회귀가 기록되어 있다. 54건만 `apply-final.tsv`로 반영(`tools.sync_locale`, koKR 17개 파일).
+- 코드 리터럴 문제(번역으로 못 고침, upstream 보고 대상): `tbc/auction/ScanSession.lua:147`의 `" in "`, `tbc/auction/module.lua:80-93`의 `" min "`, `" sec"`가 `L[]` 밖이라 한국어로 읽히지 않는다.
+- 주의 항목: `ui.lua::Disabled`가 "사용 안 함"으로 바뀌었다. 공식 근거는 애드온 목록 문맥(`ADDON_DISABLED`)인데 코드는 비활성 컨트롤 상태로 읽는다(`core/graph/nodes.lua:210`). 회귀 확인에서 판단한다.
+- 회귀 확인 시작: UI 54건 `wf_0a408d9f-d0d`, 설치 프로그램 38건 `wf_5c90d183-7bc` (Claude 1 + GPT 1, 네 관점).
+- `test_installer_payload_matches_current_kokr` 실패는 예상된 것(koKR이 바뀌어 payload가 낡음). 회귀 확인 뒤 payload를 다시 만든다.

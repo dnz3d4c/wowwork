@@ -1,0 +1,22 @@
+{
+  "responses": [
+    {
+      "id": "ui.lua::Parameters must identify a single object",
+      "action": "accept",
+      "final_ko": "매개변수는 개체 하나를 가리켜야 합니다",
+      "reason": "두 회사 평가자가 모두 지적했다(consensus). core/graph/fieldControls.lua:339에서 objectType:validParams가 unique가 아닐 때 말하는 오류이고, 대상은 애드온 개체 종류다. 같은 기능의 Object/Objects/No object configured/Empty Object가 모두 '개체'이므로 '물체'(navigation.lua의 게임 세계 사물 용어)는 다른 대상으로 들린다. '개체'로 맞춘다."
+    },
+    {
+      "id": "ui.lua::Dispel Type",
+      "action": "dispute",
+      "final_ko": "무효화 유형",
+      "reason": "확정 용어집 docs/glossary.tsv:25가 dispellable=무효화 가능으로 정해 두었다. 평가 기준상 확정 용어는 바꾸지 않는다. 'Dispel Type'만 '해제'로 바꾸면 같은 개념(dispel)이 '무효화 가능'과 '해제 유형'으로 갈라져 오히려 용어가 어긋난다. 한국어 WoW도 dispel을 '무효화'로 쓴다(마법 무효화 등)."
+    },
+    {
+      "id": "ui.lua::Remaining Duration",
+      "action": "dispute",
+      "final_ko": "남은 지속시간",
+      "reason": "같은 ui.lua의 기존 번역 Duration='지속시간', Refreshed='지속시간 초기화'가 모두 붙여 쓴다. 이 항목만 '지속 시간'으로 띄우면 같은 용어가 화면마다 다르게 표기된다. '지속시간'은 게임 용어로 붙여 쓰는 관행이 있고 들을 때 뜻이 갈리지도 않는다(지적 자체가 minor 말투 문제). 일관성을 위해 유지한다."
+    }
+  ]
+}

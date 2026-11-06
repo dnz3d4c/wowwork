@@ -1,0 +1,38 @@
+[
+  {
+    "id": "windows.lua::Bank Tabs",
+    "action": "accept",
+    "final_ko": "은행 보관함",
+    "reason": "게임 공식 문자열이 은행 탭을 일관되게 '보관함'으로 부른다(cache/gs_koKR.csv: BANK_TAB_NOT_UNLOCKED \"은행 보관함이 잠겨 있습니다.\", GUILDBANK_TAB_COLON \"길드 은행 보관함:\", ACCOUNT_BANK_TAB_NAME_PROMPT \"전투부대 은행 보관함 이름 입력:\"). 두 사용처(retail/containers/Bank.lua:208, classic/guild.lua:510) 모두 이 대상이라 게임에서 듣던 이름과 맞춘다. 같은 창의 'Bank Bag Slots'=\"은행 가방 보관함\"과는 '가방' 유무로 구분된다."
+  },
+  {
+    "id": "windows.lua::WowVision unlocked your action bars so that dragging works. You can lock them again in the game options under Action Bars.",
+    "action": "accept",
+    "final_ko": "끌 수 있도록 WowVision이 행동 단축바 잠금을 해제했습니다. 게임 설정의 행동 단축바 항목에서 다시 잠글 수 있습니다.",
+    "reason": "'끌기가 작동하도록'은 'dragging works'의 직역이라 어색하다는 네 지적이 일치한다. 뜻은 그대로 두고 '끌 수 있도록'으로만 바꾼다. 어순은 현재 문장과 두 평가자 제안처럼 목적절을 앞에 두어 관련 안내문(navigation.lua의 카메라 안내)과 같은 구조를 유지한다."
+  },
+  {
+    "id": "windows.lua::Stable",
+    "action": "dispute",
+    "final_ko": "우리",
+    "reason": "docs/decisions.tsv 5행(2026-11-05, 사용자 승인)이 '우리' 유지로 이미 결정했고, 바로 이 '우리 이용' 지적을 종결한 결정이다. 근거는 같은 창 제목의 게임 공식 표기 STABLES=우리이며 tbc/petStable.lua:87에서 STABLES가 있으면 그것을 쓰고 L[\"Stable\"]은 폴백이라 둘이 같아야 한다. '우리 이용'은 NPC 대화 선택지 성격이라 창 이름으로 맞지 않고, '야수 우리' 제안도 사용자 결정과 공식 창 제목을 벗어난다."
+  },
+  {
+    "id": "windows.lua::Stable slot %d",
+    "action": "accept",
+    "final_ko": "야수 우리 %d번 칸",
+    "reason": "'칸 %d'은 영어 어순을 그대로 둔 형태다. 게임 공식 문자열도 번호를 GUILDBANK_TAB_NUMBER \"%d번 보관함\"처럼 '%d번 + 명사'로 쓴다. 서식 지정자 %d는 하나 그대로 유지되고 tbc/petStable.lua:38의 format 호출과 맞는다."
+  },
+  {
+    "id": "windows.lua::Picked up",
+    "action": "dispute",
+    "final_ko": "집어 듦",
+    "reason": "docs/decisions.tsv 10행(2026-11-05, 사용자)이 '집어 듦'으로 결정했다. 또 '집기 완료'는 집은 상태를 알리는 원문(retail/cooldownManager.lua:270, :410에서 상태 정보에도 들어감)과 달리 동작이 끝났다는 뜻만 남아 상태 표시로 맞지 않는다."
+  },
+  {
+    "id": "windows.lua::Moved",
+    "action": "dispute",
+    "final_ko": "이동함",
+    "reason": "번역 지침 ## 문체는 음성 알림을 짧은 명사형으로 쓰라고만 하며 '이동함'도 짧은 명사형이다. 같은 기능(retail/cooldownManager.lua)의 'Picked up'이 사용자 결정으로 '집어 듦'(-ㅁ형)이라 '이동함'이 그와 문체가 맞는다. '이동 완료'로 바꾸면 같은 기능 안의 알림 문체가 오히려 갈린다. 사용자 불편의 구체 근거가 없다."
+  }
+]

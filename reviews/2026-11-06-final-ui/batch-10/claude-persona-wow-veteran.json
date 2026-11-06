@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "windows.lua::Bank Tabs",
+   "category": "terminology",
+   "severity": "minor",
+   "problem": "게임 한국어 클라이언트는 은행 탭(리테일 캐릭터·전투부대 은행 탭, 길드 은행 탭)을 일관되게 '보관함'이라고 부르는데, 이 번역만 '탭'이라고 해서 한국 클라이언트 사용자가 게임에서 보던 이름과 다르게 듣는다. 두 사용처(retail/containers/Bank.lua:208 은행 탭 목록, classic/guild.lua:510 길드 권한의 은행 탭 권한) 모두 게임이 '보관함'이라 부르는 대상이다.",
+   "evidence": "gs_koKR.csv: BANK_TAB_NOT_UNLOCKED \"은행 보관함이 잠겨 있습니다.\", BANK_TAB_IGNORE_IN_CLEANUP_CHECKBOX \"현재 보관함 무시\", GUILDBANK_TAB_COLON \"길드 은행 보관함:\", GUILDBANK_TAB_NUMBER \"%d번 보관함\", NO_GUILDBANK_TABS \"...길드 은행 보관함을 구매하지 않았습니다.\". game_term이 비어 있어 정확히 일치하는 공식 문자열은 없고, '탭'도 뜻은 통하므로 major에서 한 단계 낮췄다. 같은 배치의 'Bag Slots'=\"가방 보관함\", 'Bank Bag Slots'=\"은행 가방 보관함\"과는 '가방'이 있고 없음으로 구분된다.",
+   "suggestion": "은행 보관함"
+  }
+ ]
+}
