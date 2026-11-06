@@ -72,6 +72,38 @@ def test_score_counts_recall_and_non_seed_findings() -> None:
     assert s["combined"]["missed"] == ["b"]
 
 
+def test_runs_from_journal_pairs_labels_with_results(tmp_path: Path) -> None:
+    from tools.review.polish_calibrate import runs_from_journal
+
+    j = tmp_path / "journal.jsonl"
+    j.write_text(
+        '{"type":"launched"}\n'
+        '{"type":"started","key":"k1","label":"claude:newcomer"}\n'
+        '{"type":"started","key":"k2","label":"gpt:wow-veteran"}\n'
+        '{"type":"result","key":"k2","result":{"ok":true,"findings":[{"quote":"q"}]}}\n'
+        '{"type":"result","key":"k1","result":{"findings":[]}}\n',
+        encoding="utf-8",
+    )
+    out = runs_from_journal(j)
+    assert out["failedReviewers"] == 0
+    assert {(r["provider"], r["persona"], len(r["findings"])) for r in out["result"]} == {
+        ("claude", "newcomer", 0),
+        ("gpt", "wow-veteran", 1),
+    }
+
+
+def test_runs_from_journal_counts_failed_gpt(tmp_path: Path) -> None:
+    from tools.review.polish_calibrate import runs_from_journal
+
+    j = tmp_path / "journal.jsonl"
+    j.write_text(
+        '{"type":"started","key":"k1","label":"gpt:newcomer"}\n'
+        '{"type":"result","key":"k1","result":{"ok":false,"findings":[]}}\n',
+        encoding="utf-8",
+    )
+    assert runs_from_journal(j)["failedReviewers"] == 1
+
+
 def test_sandbox_holds_seeded_file_but_no_original_or_key(tmp_path: Path) -> None:
     work, app, loc = tmp_path / "wowwork", tmp_path / "WowVision", tmp_path / "vision-locale"
     (work / "tools/review/prompts").mkdir(parents=True)

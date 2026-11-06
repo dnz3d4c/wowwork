@@ -2,7 +2,8 @@
 
 사용:
   uv run python -m tools.review.polish_calibrate build <격리폴더> <상대경로> <정답표.json> <심을목록.json>...
-  uv run python -m tools.review.polish_calibrate score <workflow 출력.json> <정답표.json>
+  uv run python -m tools.review.polish_calibrate journal <journal.jsonl> <결과.json>
+  uv run python -m tools.review.polish_calibrate score <결과.json> <정답표.json>
 심을 목록: [{"id", "origin"(claude|gpt), "original"(번역문에 한 번만 있는 구절), "seeded", "type"}]
 격리 폴더에는 오류를 심은 번역문만 들어가고, 원래 문장과 정답표는 들어가지 않는다.
 """
@@ -136,8 +137,31 @@ def build_doc_sandbox(
         shutil.copytree(locale_dir / lang, root / "wowvision-ko/vision-locale" / lang)
 
 
+def runs_from_journal(path: Path) -> dict[str, Any]:
+    """Workflow 기록(journal.jsonl)에서 평가자별 결과를 모은다. 라벨은 '회사:페르소나'."""
+    labels: dict[str, str] = {}
+    runs, failed = [], 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        o = json.loads(line)
+        if o["type"] == "started":
+            labels[o["key"]] = o["label"]
+        elif o["type"] == "result":
+            provider, persona = labels[o["key"]].split(":", 1)
+            r = o.get("result")
+            if not r or r.get("ok") is False:
+                failed += 1
+                continue
+            runs.append({"provider": provider, "persona": persona, "findings": r["findings"]})
+    return {"failedReviewers": failed, "result": runs}
+
+
 def main() -> int:
     cmd, rest = sys.argv[1], sys.argv[2:]
+    if cmd == "journal":
+        Path(rest[1]).write_text(
+            json.dumps(runs_from_journal(Path(rest[0])), ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        return 0
     if cmd == "build":
         from tools.manual import EN_ROOT, KO_ROOT, locale_pairs, term_sheet
 
