@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "Windows 표시 언어가 한국어가 아니면 화면이 영어로 나옵니다. 이때는 구성 요소 페이지의 \"이 설치 프로그램의 언어\"에서 한국어를 고릅니다.",
+      "suggestion": "Windows 표시 언어가 한국어이면 처음부터 한국어로 나옵니다. 아니면 Windows 언어(영어, 독일어, 프랑스어 중 하나)로 나오고, 한국어로 바꾸는 곳은 \"WowVision 새로 설치, 또는 다른 게임 버전에 설치\"를 고른 뒤 나오는 구성 요소 페이지의 \"이 설치 프로그램의 언어\"뿐입니다. 그 전 화면은 Windows 언어로 나오므로, 영어 화면이라면 2단계의 \"현재 버전으로 계속\"은 \"Continue with the current version\", 3단계의 버튼은 \"Install now\", \"Update now\", \"Install WowVision fresh, or for further game versions\"입니다.",
+      "problem": "1단계 지시로 언어를 바꾸라고 했지만 언어 선택은 구성 요소 페이지에만 있고, 그 페이지는 2단계(자체 업데이트 확인)와 3단계(첫 화면)를 지나 직접 고르기 경로를 택해야만 나온다. \"지금 설치/지금 업데이트\" 경로로는 끝내 나오지 않는다. 한국어가 아닌 Windows의 테스터는 1단계를 그 자리에서 할 수 없고, 2·3단계에서 안내가 인용한 한국어 버튼 이름을 영어 화면에서 찾지 못한다. 특히 2단계에서 고를 버튼을 못 찾으면 권장 버튼인 설치 프로그램 업데이트를 눌러 한국어를 잃을 수 있다. 또 독일어·프랑스어 Windows에서는 영어가 아니라 그 언어로 나온다.",
+      "evidence": "Program.cs:16 Loc.Init(), 52-66 자체 업데이트 확인이 첫 화면보다 먼저, 93-106 첫 화면 뒤 RunWizard, 195-204 ComponentsForm은 마법사 3단계에서만; Loc.cs:29-35 de/fr/ko 자동 감지; ComponentsForm.cs:169-172 언어 변경은 이 폼에서만; Loc.cs En 표 82,83,85,107 영어 버튼 이름; installer.md:21 \"The installer speaks the language of Windows (English, German or French). You can switch it on the components page\""
+    },
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "게임이 켜져 있었다면 다시 시작합니다. 새로 설치한 애드온은 게임을 시작할 때만 인식되므로 /reload로는 부족합니다.",
+      "suggestion": "게임이 켜져 있었다면 설치 프로그램 마지막 화면의 안내를 따릅니다. \"Battle.net에서 World of Warcraft를 시작(또는 다시 시작)하십시오\"가 나오면 게임을 다시 시작하고, \"게임에서 /reload를 입력하십시오\"가 나오면 /reload로 됩니다.",
+      "problem": "안내는 게임이 켜져 있으면 언제나 다시 시작하라고 하지만, 이미 설치된 WowVision의 업데이트는 게임이 켜진 채로 복사되고 설치 프로그램 마지막 화면은 /reload를 입력하라고 말한다. 테스터는 마지막 화면에서 \"/reload\"를 듣고, 안내에서는 \"/reload로는 부족\"을 들어 어느 쪽을 따를지 헷갈린다. 다시 시작이 필요한 경우(새 애드온, 게임을 닫아야 하는 단계, 인터페이스 버전 맞춤)는 설치 프로그램이 직접 Battle.net 문구로 알려 준다.",
+      "evidence": "InstallRunner.cs:556-561 restart 여부에 따라 summary.battlenet 또는 summary.reload; Loc.cs:985-986 Ko summary.reload, summary.battlenet 문구; installer.md:59 \"An update of a WowVision that is already installed is copied even while the game runs; type /reload in the game afterward.\", installer.md:65 \"or type /reload if the game was running\""
+    },
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "minor",
+      "quote": "\"설치 프로그램을 지금 업데이트\"를 고르면",
+      "suggestion": "\"설치 프로그램을 지금 업데이트 (권장)\"을 고르면",
+      "problem": "실제 버튼 이름 끝에 \"(권장)\"이 붙어 있고 NVDA도 그렇게 읽는다. 안내가 피하라는 버튼이 화면에서는 권장으로 들리므로, 같은 이름으로 인용해야 테스터가 맞는 버튼이라는 것을 알아듣는다.",
+      "evidence": "Loc.cs:856 Ko selfupdate.updateBtn = \"설치 프로그램을 지금 업데이트(&U) (권장)\", 857 selfupdate.updateAcc \"설치 프로그램을 지금 업데이트, 권장 — ...\""
+    },
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "minor",
+      "quote": "설치 프로그램이 실행할 때마다 한국어 문구를 다시 넣습니다.",
+      "suggestion": "이 설치 프로그램으로 설치나 업데이트를 마칠 때마다 한국어 문구를 다시 넣습니다.",
+      "problem": "한국어 덮어쓰기는 설치 단계를 실행할 때 일어나며, 설치 프로그램을 열었다가 첫 화면에서 아무것도 하지 않고 닫으면 일어나지 않는다. 한국어가 빠졌을 때 설치 프로그램을 열기만 하면 된다고 오해할 수 있다. before에도 같은 표현이 있었다.",
+      "evidence": "InstallRunner.cs:298-308 KoreanLocale.Apply는 게임 버전별 설치 단계 안에서 호출; Program.cs:108-109 첫 화면을 그냥 닫으면 아무것도 하지 않고 종료; KoreanLocale.cs:14 \"written after every run's install steps\""
+    }
+  ]
+}
