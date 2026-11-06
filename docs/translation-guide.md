@@ -23,6 +23,8 @@ if not L then return end
 2. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다.
 3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
 4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다.
+5. 기존 번역을 고쳤으면(평가 반영 등) `uv run python -m tools.manual_sync <apply.tsv>`로 한국어 설명서의 화면 문구 인용을 새 값에 맞춥니다. "판단 필요"로 나온 곳은 영어 설명서와 대조해 직접 고칩니다. 그다음 `uv run python -m tools.manual check`를 실행합니다.
+6. 설치 프로그램에 넣는 koKR이 낡으면 `tests/test_installer_loc.py`가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 `docs/builds.md` `## 다시 만드는 법`대로 빌드합니다.
 
 ## 서식 지정자
 

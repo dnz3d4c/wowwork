@@ -88,3 +88,22 @@
 4. 기록: 이 파일과 `reviews/2026-11-06-final-*`. 완료.
 5. NVDA 브리지 누락: 원인 조사와 방지책 4가지. 완료.
 6. 확인 창: 안전 훅 수정은 분류기가 거부했다. 남은 설정은 사용자가 `/permissions`에서 해야 한다. 부분 완료.
+
+### 재발 방지 조치 (사용자 지시: 배운 것을 적용)
+
+| 배운 것 | 장치 | 종류 |
+|---------|------|------|
+| 원본 기능을 안내에서 빠뜨림(NVDA 브리지) | `tests/test_tester_guide.py` 옵션 대조, 프로젝트 `CLAUDE.md`, `docs/builds.md` 4단계, 메모리 `localized-fork-keep-upstream-features` | 기계 검사 + 규칙 |
+| 설치 프로그램 문구가 바뀌어 안내 인용이 낡음 | `test_guide_quotes_match_installer_text` | 기계 검사 |
+| 되돌린 번역이 다시 들어옴("카메라 따라가기 방식", "추가 전리품 주사위") | `docs/glossary.tsv`에 camera following style, roll bonus, bonus roll 추가, `test_glossary_blocks_reverted_translations`(넣기 전 실패 확인), `review-process.md` 원칙 6 | 기계 검사 |
+| 다른 영어의 공식 번역을 근거로 씀 | `common.md`, `rebut.md`, `judge.md`, `manual-review.md`에 "공식 문자열의 영어가 같아야 근거" 규칙 | 프롬프트 |
+| koKR 변경 뒤 설명서 인용 맞추기를 임시 스크립트로 하다 같은 값의 다른 키를 잘못 바꿈 | `tools/manual_sync.py` + `tests/test_manual_sync.py` 7개(키 충돌, 대소문자, 두 번 돌려도 같음). 이번 실제 사례를 맞추기 전 판에 돌려 확정 결과와 51개 파일 모두 같음을 확인. `translation-guide.md` 업데이트 절차 5·6단계, `review-process.md` 원칙 8 | 도구 + 기계 검사 |
+| 대량 작업 뒤에 방침이 정해져 다시 고침(원문 충실 113건) | `review-process.md` 원칙 7 | 절차 |
+| 순환 상한 뒤 처리 기준이 없었음 | `decisions.tsv` 2026-11-06, `review-process.md` 5단계 | 결정 기록 |
+| 재처리 도구 결함(반박 파일 형식, 반영 실패 집계) | `refix_input.py load_rebut` + 테스트, `manual-refix.js` | 도구 + 테스트 |
+| `cd`로 작업 폴더가 다른 저장소로 넘어감 | 메모리 `shell-cd-subshell` | 메모리 |
+| `python -I`가 `PYTHONIOENCODING`을 무시 | `~/.claude/CLAUDE.md` 환경 표 "Python 한글 출력" | 환경 사실 |
+| Workflow가 사용량 한도에 걸려 판정 누락 | 메모리 `workflow-usage-limit-resume` | 메모리 |
+| 번역으로 못 고치는 것이 흩어져 있음 | `docs/upstream-report.md`(설명서 차이 13건, 코드 문자열 2건) | 목록 |
+
+- codex [자동수정] 2건 처리: 위 표(UI·설명서 교훈의 재발 방지), `final-review.md` 상태를 "요구사항 6 부분 완료"로 정정.

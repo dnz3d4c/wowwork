@@ -44,3 +44,9 @@
 - `suggestion`에는 그 항목의 수정된 `ko` 값 전체를 적는다.
 - `problem`과 `evidence`는 한국어로 쓴다(코드와 인용은 원문 그대로).
 - 출력은 지정된 JSON 스키마만.
+
+## 게임 공식 용어를 근거로 들 때 (2026-11-06)
+
+- 공식 문자열의 **영어 원문**(`wowwork/cache/gs_enUS.csv`, 같은 ID)이 이 항목의 원문 구절과 같은 말이어야 근거가 된다. 한국어만 보고 고르지 않는다.
+- 근거(`evidence`)에는 공식 문자열의 키, 영어, 한국어를 함께 적는다. 예: `ERR_BONUS_ROLL_EMPTY` "bonus roll" → "보너스 주사위".
+- 실제 사례: "Roll Bonus"(보너스 주사위 굴림 버튼)를 `BONUS_ROLL_TOOLTIP_TITLE` "추가 전리품"으로 바꾸자는 제안이 반영됐다가 회귀 확인에서 되돌려졌다. 그 공식 문자열의 영어는 "Bonus Loot"였다.

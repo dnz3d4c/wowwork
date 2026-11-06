@@ -25,3 +25,6 @@ auction	경매
 dispellable	무효화 가능		
 talent	특성		
 guild	길드		
+camera following style	시점 전환 방식		게임 공식 CAMERA_FOLLOWING_STYLE(gs_koKR.csv:4018). 2026-11-05와 2026-11-06 두 번 '카메라 따라가기 방식'으로 바뀔 뻔해서 확정
+roll bonus	보너스 주사위		BonusRollFrame 굴림 버튼. 게임 공식 bonus roll=보너스 주사위(ERR_BONUS_ROLL_EMPTY 등). '추가 전리품'은 Bonus Loot의 번역이라 다른 말(2026-11-06 두 회사 판정)
+bonus roll	보너스 주사위		위와 같음

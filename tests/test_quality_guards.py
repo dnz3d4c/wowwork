@@ -259,3 +259,24 @@ def test_decisions_refuse_incomplete_batches() -> None:
         {"batch": "b3"},
     ]
     assert incomplete_batches(result) == ["b2", "b3"]
+
+
+def test_glossary_blocks_reverted_translations() -> None:
+    """2026-11-06 최종 검수에서 다시 들어올 뻔한 번역 두 개를 확정 용어집이 막는다.
+
+    - "카메라 따라가기 방식": 게임 공식 CAMERA_FOLLOWING_STYLE은 "시점 전환 방식". 2026-11-05에 한 번 되돌렸는데 다시 제안됐다.
+    - "추가 전리품 주사위": "추가 전리품"은 Bonus Loot의 공식 번역이다. bonus roll의 공식 번역은 "보너스 주사위".
+    """
+    from tools.glossary import load_glossary
+
+    camera_en = "You can change the camera following style in the game options under Controls."
+    entries = {
+        ("navigation.lua", "camera"): (camera_en, "카메라 따라가기 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."),
+        ("bindings.lua", "Roll Bonus"): ("Roll Bonus", "추가 전리품 주사위"),
+    }
+    assert len(violations(load_glossary(), entries)) == 2
+    ok = {
+        ("navigation.lua", "camera"): (camera_en, "시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."),
+        ("bindings.lua", "Roll Bonus"): ("Roll Bonus", "보너스 주사위"),
+    }
+    assert violations(load_glossary(), ok) == []
