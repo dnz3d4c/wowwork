@@ -13,6 +13,9 @@ const EN = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/en'
 const KO = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/ko'
 const PERSONAS = ['wow-veteran', 'manual-editor', 'newcomer']
 const OUT = args.outDir
+// 셸 명령에 그대로 들어가므로 형식을 검사한다
+if (!/^reviews\/[A-Za-z0-9._-]+$/.test(OUT)) throw new Error(`outDir 형식 오류: ${OUT}`)
+for (const f of args.files) if (!/^[a-z0-9][a-z0-9_-]*(\/[a-z0-9_-]+)*\.md$/.test(f)) throw new Error(`파일 형식 오류: ${f}`)
 const dirOf = rel => `${W}/${OUT}/${rel.replace(/\.md$/, '')}`
 const CHECK = rel => `cd ${W} && uv run python -m tools.manual check ${rel}`
 const BATCH = (rel, who) => `cd ${W} && uv run python -m tools.manual batch ${rel} ${dirOf(rel)}/${who}-input.json`
@@ -20,13 +23,13 @@ const BATCH = (rel, who) => `cd ${W} && uv run python -m tools.manual batch ${re
 const FINDINGS = {
   type: 'object', required: ['findings'],
   properties: { findings: { type: 'array', items: { type: 'object',
-    required: ['id', 'category', 'severity', 'scope', 'quote', 'suggestion', 'problem', 'evidence'],
+    required: ['id', 'category', 'severity', 'scope', 'quote', 'source_quote', 'suggestion', 'problem', 'evidence'],
     properties: { id: { type: 'string' }, category: { type: 'string', enum: ['accuracy', 'terminology', 'style', 'context'] },
       severity: { type: 'string', enum: ['critical', 'major', 'minor'] }, scope: { type: 'string', enum: ['file', 'kokr', 'global'] },
-      quote: { type: 'string' }, suggestion: { type: 'string' }, problem: { type: 'string' }, evidence: { type: 'string' } } } } },
+      quote: { type: 'string' }, source_quote: { type: 'string' }, suggestion: { type: 'string' }, problem: { type: 'string' }, evidence: { type: 'string' } } } } },
 }
 const withOk = s => ({ ...s, required: [...s.required, 'ok'], properties: { ...s.properties, ok: { type: 'boolean' } } })
-const DONE = { type: 'object', required: ['ok', 'remaining'], properties: { ok: { type: 'boolean' }, remaining: { type: 'array', items: { type: 'string' } } } }
+const DONE = { type: 'object', required: ['ok', 'remaining', 'not_found'], properties: { ok: { type: 'boolean' }, remaining: { type: 'array', items: { type: 'string' } }, not_found: { type: 'array', items: { type: 'string' } } } }
 const RESP = {
   type: 'object', required: ['responses'],
   properties: { responses: { type: 'array', items: { type: 'object', required: ['ref', 'action', 'reason'],
@@ -71,17 +74,21 @@ async function reviewAndFix(rel) {
     ...PERSONAS.map(p => () => gptReview(rel, p).then(r => r && { provider: 'gpt', persona: p, findings: r.findings })),
   ])).filter(Boolean)
   const failed = PERSONAS.length * 2 - runs.length
-  const every = runs.flatMap(r => r.findings.map((f, i) => ({ ...f, by: `${r.provider}-${r.persona}`, provider: r.provider, ref: `${rel}#${r.provider}-${r.persona}-${i}` })))
+  const every = runs.flatMap(r => r.findings.map((f, i) => ({ ...f, persona: r.persona, by: `${r.provider}-${r.persona}`, provider: r.provider, ref: `${rel}#${r.provider}-${r.persona}-${i}` })))
   // 화면 문구(koKR)·전체 용어 방침은 이 파일에서 고치지 않는다. 모아서 사용자 결정으로 넘긴다.
   const proposals = every.filter(f => f.scope !== 'file')
   const all = every.filter(f => f.scope === 'file')
-  for (const f of all) f.consensus = all.some(g => g.provider !== f.provider && overlaps(f.quote, g.quote))
-  const base = { file: rel, failedReviewers: failed, findings: all.length, proposals }
+  // 합의: 다른 회사, 같은 페르소나, 같은 범주, 같은 곳. 이유가 다른 지적은 합의가 아니다.
+  for (const f of all) f.consensus = all.some(g => g.provider !== f.provider && g.persona === f.persona && g.category === f.category && overlaps(f.quote, g.quote))
+  // 평가자가 하나라도 실패하면 이 파일은 미완료다. 지적이 0건이어도 통과로 치지 않는다.
+  const base = { file: rel, incomplete: failed > 0, failedReviewers: failed, findings: all.length, proposals }
+  if (!runs.length) return { ...base, applied: 0, upheld: 0, disputeWon: 0, escalations: [{ ref: rel, why: '평가자 전원 실패' }] }
   if (!all.length) return { ...base, applied: 0, upheld: 0, disputeWon: 0, escalations: [] }
 
   // 편집자: 두 회사 합의 지적은 반드시 반영, 나머지는 반영하거나 반박
   const resp = await agent(
-    `너는 이 설명서 파일의 편집자다. ${P}/polish-base.md 와 ${P}/rebut.md 를 Read로 읽는다. polish-base.md의 "바꾸지 않는 것"을 지킨다. ` +
+    `너는 이 설명서 파일의 편집자다. ${P}/polish-base.md 를 Read로 읽고 "바꾸지 않는 것"을 지킨다. ` +
+    `반박 근거는 원문, 앱 코드, koKR, 게임 공식 문자열, wowwork/docs의 translation-guide.md·decisions.tsv·glossary.tsv만 인정된다. 체면 때문에 반박하지 않는다. ` +
     `번역문은 ${KO}/${rel}, 원문은 ${EN}/${rel}.\n` +
     `아래 지적마다 판단한다. consensus=true인 것은 두 회사 평가자가 모두 지적한 곳이므로 반드시 반영한다(수정안은 지적들을 보고 가장 나은 것으로 정한다). ` +
     `나머지는 지적이 맞으면 반영하고(action=applied), 틀렸거나 취향 차이거나 뜻을 바꾸면 고치지 않고 근거를 든다(action=dispute). ` +
@@ -122,16 +129,23 @@ async function reviewAndFix(rel) {
     if (a.uphold) upheld.push({ ref: f.ref, quote: f.quote, final_ko: (f.provider === 'claude' ? a : c).final_ko, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])] })
     else disputeWon++
   }
+  let notFound = []
   if (upheld.length) {
-    await agent(
-      `${KO}/${rel} 에서 아래 각 항목의 quote를 final_ko로 Edit로 바꾼다. quote가 정확히 보이지 않으면 가장 가까운 부분을 찾아 같은 뜻으로 고친다. ` +
-      `끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ok와 remaining을 돌려준다.\n\n` + JSON.stringify(upheld, null, 1),
+    const fx = await agent(
+      `${KO}/${rel} 에서 아래 각 항목의 quote를 final_ko로 Edit로 바꾼다. quote가 파일에 글자 그대로 한 번만 있을 때만 고친다. ` +
+      `없거나 여러 번 있으면 고치지 않고 그 ref를 not_found에 넣는다(비슷한 곳을 대신 고치지 않는다). ` +
+      `끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ok, remaining, not_found를 돌려준다.\n\n` + JSON.stringify(upheld, null, 1),
       { label: `fixer:${rel}`, phase: 'Fix', schema: DONE })
+    notFound = fx ? fx.not_found : upheld.map(u => u.ref)
+    for (const ref of notFound) escalations.push({ ref, why: '판정 반영 실패: quote가 정확히 일치하지 않음' })
   }
-  return { ...base, applied, upheld: upheld.length, disputeWon, escalations, upheldItems: upheld }
+  return { ...base, applied, upheld: upheld.length - notFound.length, disputeWon, escalations, upheldItems: upheld.filter(u => !notFound.includes(u.ref)) }
 }
 
 phase('Review')
 const reviewed = (await pipeline(args.files, rel => reviewAndFix(rel))).filter(Boolean)
+const incomplete = reviewed.filter(r => r.incomplete).map(r => `${r.file}(평가자 ${r.failedReviewers}명 실패)`)
+if (incomplete.length) log(`미완료: ${incomplete.join(', ')}`)
+if (reviewed.length < args.files.length) log(`결과 없는 파일 ${args.files.length - reviewed.length}개`)
 log(`파일 ${reviewed.length}/${args.files.length}, 지적 ${reviewed.reduce((n, r) => n + r.findings, 0)}건, 사용자 결정 후보 ${reviewed.reduce((n, r) => n + r.proposals.length, 0)}건`)
-return { reviewed }
+return { incomplete, reviewed }

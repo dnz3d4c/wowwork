@@ -16,6 +16,7 @@
           "severity",
           "scope",
           "quote",
+          "source_quote",
           "suggestion",
           "problem",
           "evidence"
@@ -43,7 +44,9 @@
           },
           "quote": {
             "type": "string",
-            "description": "번역문에서 고칠 부분 그대로"
+            "description": "번역문에서 고칠 부분 그대로",
+            "minLength": 5,
+            "maxLength": 300
           },
           "suggestion": {
             "type": "string",
@@ -62,6 +65,10 @@
               "kokr",
               "global"
             ]
+          },
+          "source_quote": {
+            "type": "string",
+            "description": "대응하는 영어 원문 구절 그대로"
           }
         }
       }
