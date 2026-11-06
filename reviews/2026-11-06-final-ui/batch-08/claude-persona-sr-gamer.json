@@ -1,0 +1,10 @@
+{"findings": [
+  {
+    "id": "ui.lua::Parameters must identify a single object",
+    "category": "terminology",
+    "severity": "major",
+    "problem": "같은 설정 화면 흐름에서 WowVision 데이터 개체를 \"개체\"로 들어 왔는데(Object, Objects, 설정된 개체 없음, 빈 개체), 저장할 때 나오는 이 오류만 \"물체\"라고 말한다. 귀로만 듣는 사용자는 \"물체\"를 내비게이션에서 듣던 게임 세계 물체(navigation.lua의 object = 물체, 상호작용 물체)로 받아들여, 매개변수가 게임 속 물건 하나를 가리켜야 한다는 뜻으로 오해할 수 있다.",
+    "evidence": "core/graph/fieldControls.lua:333-339에서 objectType:validParams(params)의 unique 검사가 실패하면 이 문구를 speak한다. 즉 대상은 WowVision 개체 유형(objectType)이다. 같은 배치의 ui.lua::Object = \"개체\", ui.lua::Objects = \"개체\", ui.lua::No object configured = \"설정된 개체 없음\", ui.lua::Empty Object = \"빈 개체\". \"물체\"는 koKR/navigation.lua:168,172,173의 게임 세계 오브젝트에만 쓰인다. glossary.tsv와 decisions.tsv에는 object 항목이 없다.",
+    "suggestion": "매개변수는 개체 하나를 가리켜야 합니다"
+  }
+]}

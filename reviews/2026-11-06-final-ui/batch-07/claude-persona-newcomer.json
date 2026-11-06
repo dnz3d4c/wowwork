@@ -1,0 +1,20 @@
+{
+  "findings": [
+    {
+      "id": "ui.lua::Enabled",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "켜짐/꺼짐 짝으로 함께 발화되는 곳에서 Enabled는 \"사용함\", Disabled는 \"비활성화\"로 낱말 계열이 달라, 처음 듣는 사용자는 두 말이 서로 반대 상태라는 것을 바로 잇기 어렵다. 토글 직후 \"<설정> 사용함\" 다음에 \"<설정> 비활성화\"를 듣게 된다.",
+      "evidence": "core/targeting/module.lua:338-341에서 같은 토글의 결과를 info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"]로 말한다. core/objects/types/unit/PVP.lua:26/28도 PvP 상태를 L[\"Enabled\"]/L[\"Disabled\"] 짝으로 돌려준다. game_term에 \"활성화\"가 있어 \"비활성화\"와 짝이 맞는다. 설정 이름(core/alerts/alerts.lua:21 등)으로 쓰일 때도 \"활성화\"는 자연스럽다. 기존에 \"사용함\"을 고른 사용자 결정은 decisions.tsv에 없지만, 이전 평가에서 의도적으로 고른 것일 수 있어 심각도를 minor로 둔다.",
+      "suggestion": "활성화"
+    },
+    {
+      "id": "ui.lua::Available",
+      "category": "context",
+      "severity": "minor",
+      "problem": "경매장 목록에서 \"사용 가능 20\"으로 발화되어, 처음 듣는 사용자는 \"구매할 수 있는 수량 20\"이 아니라 \"사용할 수 있는 아이템\"으로 오해할 수 있다. 같은 키가 특성 트리의 \"선택 가능\" 상태에도 쓰여서 한 번역으로 두 사용처를 모두 맞추기 어렵다.",
+      "evidence": "mists/auction.lua:253, 284: tinsert(parts, L[\"Available\"] .. \" \" .. tostring(entry.totalQuantity or 0)) — 경매 수량. retail/talentTree.lua:156: state == states.Selectable이면 L[\"Available\"] — 특성 선택 가능 상태. game_term에 경매 문맥의 \"구매 가능 수량\"이 있다. AceLocale 키가 하나라 어느 사용처를 우선할지는 사용자 결정 사항이므로 suggestion은 현재 값을 그대로 둔다.",
+      "suggestion": "사용 가능"
+    }
+  ]
+}

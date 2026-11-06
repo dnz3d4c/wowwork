@@ -1,0 +1,1257 @@
+{
+  "summary": "번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 교차 회사 판정을 돌려 확정 번역을 만든다",
+  "agentCount": 39,
+  "logs": [],
+  "result": [
+    {
+      "batch": "reviews/2026-11-06-final-installer/batches/batch-01.json",
+      "failedReviewers": 0,
+      "findings": 60,
+      "decisions": [
+        {
+          "id": "Loc.cs::logs.btnAcc",
+          "final_ko": "모든 로그 모으기, 버그 보고용으로 찾은 모든 게임 버전의 로그를 다운로드 폴더의 zip 파일 하나에 저장",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.skipAcc",
+          "final_ko": "현재 설치 프로그램 버전으로 업데이트 없이 계속",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::done.heading.failed",
+          "final_ko": "문제가 있었지만 완료",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::update.heading.available",
+          "final_ko": "WowVision 업데이트 있음",
+          "how": "accepted",
+          "sev": [
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::versions.heading",
+          "final_ko": "WowVision을 어느 게임 버전에 설치하시겠습니까?",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.updateBtn",
+          "final_ko": "설치 프로그램을 지금 업데이트(&U) (권장)",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.body",
+          "final_ko": "지금 사용 중인 WowVision 설치 프로그램은 버전 {0}입니다. 버전 {1} 업데이트가 있습니다.\n\n설치 프로그램을 먼저 업데이트하기를 강력히 권장합니다: 내려받을 파일이 작고, 몇 초면 끝나며, 그 뒤 WowVision을 설치할 때 최신 수정 사항이 모두 적용됩니다. 설치 프로그램은 스스로 닫혔다가 다시 열립니다 — 컴퓨터의 다른 항목은 바뀌지 않습니다.\n\n버전 {0} 그대로 계속할 수도 있습니다; 이 경우에도 WowVision 설치와 업데이트는 여전히 작동합니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.updateAcc",
+          "final_ko": "설치 프로그램을 지금 업데이트, 권장 — 새 버전 {0} 파일을 내려받아 스스로 다시 시작한 뒤 계속",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::update.customizeAcc",
+          "final_ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치 — 버전과 구성 요소 직접 고르기",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.cancelBtn",
+          "final_ko": "내려받기를 취소하고 현재 버전으로 계속(&D)",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::update.explainCustomize",
+          "final_ko": "WowVision 새로 설치, 또는 다른 게임 버전에 설치: 게임 버전, 베타 또는 안정판, 선택 구성 요소를 직접 고릅니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::target.testBuild",
+          "final_ko": "테스트 빌드 — 설치된 WowVision {0} 그대로 유지. 테스트 빌드 대신 릴리스 {1} 버전을 설치하려면 \"WowVision 새로 설치\"를 고르고 \"모두 다시 설치\"를 체크하십시오.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "major",
+            "minor",
+            "major"
+          ]
+        },
+        {
+          "id": "Loc.cs::cancel.title",
+          "final_ko": "설치 프로그램을 끝내시겠습니까?",
+          "how": "dispute-won",
+          "reason": "gpt: ‘끝내다’도 프로그램을 닫는 동작을 분명하게 전달한다. 입력과 규칙에는 확인 대화 상자 제목에서 반드시 ‘종료’를 써야 한다는 근거가 없으므로 표현 선택만으로 결함이라고 볼 수 없다. / claude: '끝내다'와 '종료'를 정한 규칙(translation-guide, glossary, decisions, installer.md 낱말 목록)이 없다. '끝내시겠습니까'는 뜻이 분명하고 문법도 맞아 사용자가 겪는 불편이 드러나지 않는다. 다른 표현이 가능하다는 것만으로는 결함이 아니므로(persona-base) 현재 번역 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowwork/docs/translation-guide.md",
+            "wowwork/docs/glossary.tsv"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::cancel.text",
+          "final_ko": "아직 설치하지 않았습니다. 정말 끝내시겠습니까?",
+          "how": "dispute-won",
+          "reason": "gpt: 설치 전 단계라는 문맥에서 ‘아직 설치하지 않았습니다’는 설치가 수행되지 않았다는 뜻으로 이해된다. 제안문도 설치가 시작되지 않은 상태를 나타낼 뿐, 현재 번역이 실제 오해를 일으킨다는 더 강한 근거는 없다. / claude: '끝내다'는 cancel.title과 같은 판단. '아직 설치하지 않았습니다'는 원문 'has not been carried out yet'의 뜻을 그대로 전하며 de/fr도 같은 뜻이다. 제안 '진행되지 않았습니다'가 실제로 더 분명하다는 근거가 약하다. 현재 번역 유지.",
+          "evidence": [
+            "input",
+            "input"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::selfupdate.progress",
+          "final_ko": "새 설치 프로그램을 내려받는 중: {0}퍼센트.",
+          "how": "dispute-won",
+          "reason": "gpt: 입력과 적용 가능한 번역 규칙에는 숫자와 ‘퍼센트’를 반드시 띄어 써야 한다는 근거가 없다. 붙여 쓴 형태도 발화 결과와 의미가 분명하므로 결함으로 확정할 수 없다. / claude: {0}은 코드(SelfUpdatePromptForm.cs:172)에서 숫자 pct로 채워진다. 한글 맞춤법 제43항 단서는 아라비아 숫자 뒤 단위 명사를 붙여 쓰는 것을 허용하므로 '{0}퍼센트'는 띄어쓰기 오류가 아니다(맞춤법 조항은 근거 목록 밖 일반 지식이라 보조 근거로만 쓴다). 지적 근거가 약해 유지.",
+          "evidence": [
+            "input",
+            "wowwork/docs/decisions.tsv:18",
+            "input"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::logs.working",
+          "final_ko": "로그를 모으는 중, 잠시 기다리십시오.",
+          "how": "dispute-won",
+          "reason": "gpt: 앞부분은 간결한 진행 상태이고 뒷부분은 사용자 지시이므로 각각의 문체 규칙에 맞는다. 쉼표로 연결해도 의미가 분명하며, 제안은 가능한 다른 표현일 뿐 현재 문구로 인한 사용자 불편이 입증되지 않는다. / claude: 원문 'Collecting logs, please wait.'의 쉼표 구조를 그대로 따르며, 상태 부분은 짧은 명사형(decisions.tsv 9행)이고 지시 부분은 합니다체(translation-guide 문체 규칙)라 규칙에 맞는다. 제안은 길어질 뿐 사용자 불편을 해소하는 근거가 없다. 유지.",
+          "evidence": [
+            "input",
+            "wowwork/docs/translation-guide.md:46-49",
+            "wowwork/docs/decisions.tsv:9",
+            "input",
+            "wowwork/docs/decisions.tsv:9",
+            "wowwork/docs/translation-guide.md:46"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::app.title",
+          "final_ko": "WowVision 설치 프로그램 & 업데이터",
+          "how": "dispute-won",
+          "reason": "gpt: ‘업데이터’는 업데이트 기능을 수행하는 프로그램이라는 뜻을 전달하며, 입력의 설치 프로그램 전용 용어 규칙도 updater의 번역을 따로 정하지 않았다. 제안문이 더 풀어 쓴 표현이라는 사실만으로 현재 창 제목을 결함이라고 볼 수 없다. / claude: installer.md 낱말 목록은 installer만 '설치 프로그램'으로 정하고 updater는 정하지 않았다. 같은 Loc.cs의 다른 한국어 문자열도 '업데이터'를 쓴다(opt.shortcut.desc '이 업데이터를 실행', ai.locked '업데이터를 다시 실행'). 창 제목만 바꾸면 용어가 어긋난다. 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:928",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:995"
+          ],
+          "sev": [
+            "minor"
+          ]
+        }
+      ],
+      "escalations": [
+        {
+          "id": "Loc.cs::selfupdate.restarting",
+          "why": "두 판정자의 결론이 다름",
+          "gpt": {
+            "uphold": true,
+            "final_ko": "버전 {0}인 설치 프로그램으로 다시 시작 중. 잠시 후 창이 다시 열림.",
+            "reason": "현재 문구의 ‘버전 {0} 설치 프로그램으로’는 명사 관계가 매끄럽지 않아 발화 시 구조를 바로 파악하기 어렵다. ‘버전 {0}인’으로 관계를 명시하면 도착 버전의 뜻과 간결한 상태 문체를 모두 유지하며, 자리표시자 뒤에 받침에 따라 달라지는 조사도 붙지 않는다."
+          },
+          "claude": {
+            "uphold": false,
+            "final_ko": "버전 {0} 설치 프로그램으로 다시 시작 중. 잠시 후 창이 다시 열림.",
+            "reason": "newcomer 제안 '버전 {0}으로'는 자리표시자 바로 뒤에 받침 따라 바뀌는 조사를 붙여 installer.md 규칙을 어긴다. windows-user 제안 '설치 프로그램 버전 {0} 다시 시작 중'은 원문 'as version {0}'(새 버전으로 바뀌어 시작)의 뜻이 약해진다. 현재 번역은 뜻이 맞고 decisions.tsv 9행의 간결한 상태 문구 원칙에도 맞는다. 유지."
+          }
+        },
+        {
+          "id": "Loc.cs::selfupdate.done",
+          "why": "두 판정자의 결론이 다름",
+          "gpt": {
+            "uphold": true,
+            "final_ko": "설치 프로그램 버전 {0} 업데이트 완료.",
+            "reason": "‘버전 {0} 설치 프로그램으로 업데이트 완료’는 업데이트 대상과 결과의 관계가 어색하다. 제안문은 설치 프로그램의 업데이트가 버전 {0}으로 완료됐다는 상태를 더 자연스럽고 간결하게 전달한다."
+          },
+          "claude": {
+            "uphold": false,
+            "final_ko": "버전 {0} 설치 프로그램으로 업데이트 완료.",
+            "reason": "현재 번역은 도착 버전을 '~으로'가 아니라 '설치 프로그램으로'에 걸어 조사 규칙을 지키면서 원문 'updated itself to version {0}'의 뜻을 전한다. 제안 '설치 프로그램 버전 {0} 업데이트 완료'는 {0}이 업데이트 전 버전인지 후 버전인지 오히려 모호해진다. 들었을 때 뜻이 갈린다는 지적의 근거가 약하다. 유지."
+          }
+        },
+        {
+          "id": "Loc.cs::selfupdate.working",
+          "why": "두 판정자의 결론이 다름",
+          "gpt": {
+            "uphold": true,
+            "final_ko": "새 버전의 설치 프로그램을 내려받는 중, 잠시 기다리십시오.",
+            "reason": "‘새 설치 프로그램 버전’은 명사가 연달아 나와 ‘새 설치 프로그램의 버전’인지 ‘설치 프로그램의 새 버전’인지 발화만으로 즉시 구분하기 어렵다. ‘새 버전의 설치 프로그램’으로 관계를 밝히되, 상태와 지시를 간결하게 유지하는 것이 적절하다."
+          },
+          "claude": {
+            "uphold": false,
+            "final_ko": "새 설치 프로그램 버전을 내려받는 중, 잠시 기다리십시오.",
+            "reason": "logs.working과 같은 근거로 문형은 규칙에 맞다. '새 설치 프로그램 버전'은 원문 'the new installer version'과 같은 구조이고 내려받는 대상이 새 버전이라는 뜻이 분명해 들었을 때 뜻이 갈리지 않는다. 유지."
+          }
+        }
+      ]
+    },
+    {
+      "batch": "reviews/2026-11-06-final-installer/batches/batch-02.json",
+      "failedReviewers": 0,
+      "findings": 46,
+      "decisions": [
+        {
+          "id": "Loc.cs::folders.body",
+          "final_ko": "WowVision을 설치할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "major",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::versions.needOne.text",
+          "final_ko": "계속하려면 게임 버전을 하나 이상 체크하십시오. 설치 프로그램을 종료하려면 뒤로 버튼을 사용하십시오.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.headline.upToDate",
+          "final_ko": "WowVision은 이미 최신 상태.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.addonsCurrent",
+          "final_ko": "WowVision은 이미 최신 상태.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::dlg.closeGame.text",
+          "final_ko": "이 단계에서는 World of Warcraft를 완전히 닫아야 합니다(게임 버전에 WowVision을 처음 설치하거나, 필요한 게임 설정을 고치는 단계입니다).\n\n게임을 완전히(바탕 화면이 나올 때까지) 닫은 다음 다시 시도 버튼을 선택하십시오. 멈추려면 취소 버튼을 선택하십시오.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::opt.windowsVoices.desc",
+          "final_ko": "Windows는 새로운 음성(예: Katja, Stefan)을 게임에서 인식하지 못하는 목록에 둡니다. 이 항목은 게임의 음성 목록을 먼저 백업한 뒤 이 음성들을 그 목록에 복사합니다. 게임의 음성 번호가 바뀔 수 있습니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::progress.cancelConfirm.text",
+          "final_ko": "설치를 멈추시겠습니까?\n\n진행 중인 내려받기는 바로 중단합니다. 디스크에 파일을 기록하고 있는 단계는 끝까지 마치므로, 반쯤 설치된 채로 남는 것은 없습니다. 아직 시작하지 않은 것은 모두 건너뜁니다.\n\n설치를 이미 마친 게임 버전은 그대로 남습니다. 설치 프로그램은 언제든 다시 실행할 수 있습니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::status.koreanFailed",
+          "final_ko": "한국어 문구를 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지 WowVision은 영어로 동작합니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "major"
+          ]
+        },
+        {
+          "id": "Loc.cs::folders.picked",
+          "final_ko": "{0} 폴더를 {1} 위치로 지정. {2}",
+          "how": "dispute-won",
+          "reason": "gpt: 현재 번역은 자리표시자 뒤에 가변 조사를 붙이지 않으면서 폴더 지정 결과를 명확하게 전달한다. 제안문의 콜론은 원문에 없는 기호를 추가하며, 현재 표현이 청취를 방해할 정도로 어색하다는 근거도 부족하다. / claude: 현재 번역은 자리표시자 {1}(경로) 뒤에 받침에 따라 달라지는 조사를 직접 붙이지 않으려고 '위치로'를 둔 구조로 installer.md 자리표시자 규칙에 맞고, 상태 문구 명사형('지정')도 문체 규칙에 맞는다. 제안 '{0} 폴더 위치: {1}'은 원문에 없는 콜론을 추가해 공통 규칙(원문에 없는 기호 추가 금지)을 어기고, '지정 위치는 {1}.'은 서술어가 빠져 더 어색하다. 지적이 실제 사용자 불편을 입증하지 못해 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:909"
+          ],
+          "sev": [
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::folders.duplicate.text",
+          "final_ko": "{0}, {1} 두 버전이 같은 폴더를 가리켜서, 이대로라면 WowVision이 그곳에 두 번 설치됩니다.\n\n둘 중 하나를 고치거나, 뒤로 가서 하나를 체크 해제하십시오.",
+          "how": "dispute-won",
+          "reason": "gpt: “하나를”에 목적격 조사 ‘를’이 이미 있으므로 조사 누락이 아니다. “하나를 체크 해제하다”도 두 항목 중 하나의 선택을 해제하라는 뜻이 분명하며, 제안한 “하나의 체크”가 더 자연스럽다고 볼 근거가 없다. / claude: 지적의 전제(목적격 조사 누락)가 사실과 다르다. '하나를'에 목적격 조사 '를'이 이미 있고 '체크 해제하다'는 한 동사로 목적어를 받는다. 제안 '하나의 체크를 해제하십시오'는 뜻이 같으면서 더 무겁다. 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:914"
+          ],
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::folders.missing.text",
+          "final_ko": "다음 버전에는 폴더가 지정되지 않았습니다: {0}.\n\n찾아보기로 폴더를 고르거나, 뒤로 가서 그 버전의 체크를 해제하십시오.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::opt.shortcut.desc",
+          "final_ko": "바탕 화면과 시작 메뉴에 바로 가기를 만들어서, 나중에 다시 내려받지 않고 이 업데이터를 실행할 수 있게 합니다.",
+          "how": "dispute-won",
+          "reason": "gpt: 현재 문장은 바로 가기 생성과 재다운로드 없이 실행할 수 있다는 효과를 자연스러운 인과관계로 전달한다. 뜻이 갈리거나 실제 사용에 불편을 준다는 근거가 없으므로 문장 분리는 취향 차이에 가깝다. / claude: 현재 번역은 원문 so 인과 구조를 자연스러운 합니다체로 전하며 설명 문체 규칙에 맞다. '업데이터'는 같은 설치 프로그램의 app.title('WowVision 설치 프로그램 & 업데이터', Loc.cs:814)과 ai.locked('업데이터를 다시 실행하십시오', Loc.cs:995)와 통일된 표기라 이 항목만 바꾸면 불일치가 생긴다. 제안은 표현 취향 차이이고 사용자 불편이 제시되지 않았다. 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:814",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:928",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:995"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::status.windowsVoices",
+          "final_ko": "Windows 음성을 WoW에서 사용할 수 있게 하는 중…",
+          "how": "dispute-won",
+          "reason": "gpt: 현재 번역은 원문의 ‘사용 가능하게 만드는 중’이라는 진행 상태를 짧고 분명하게 전달한다. “설정 중”은 동작을 설정 변경으로 좁혀 이해하게 할 수 있어 현재 번역보다 정확하다고 보기 어렵다. / claude: 원문 'Making ... available'을 정확히 전하고 '~하는 중' 진행형은 같은 묶음 status.installingClient('{0}에 설치하는 중…', Loc.cs:953), status.syncingToc('게임 클라이언트에 맞추는 중', Loc.cs:956)과 같은 형태다. 제안 '사용하도록 설정 중'은 실제 동작(InstallRunner.cs:366-370의 WindowsVoicesInstaller.Install)을 '설정'으로 바꿔 부르는 것이라 뜻 정확도가 오히려 떨어질 수 있다. 길이만의 문제는 결함으로 보기 어렵다. 유지.",
+          "evidence": [
+            "input",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:953",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:956",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:958",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/InstallRunner.cs:366"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::dlg.notRecognized.title",
+          "final_ko": "인식할 수 없는 폴더",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.updated",
+          "final_ko": "{0} 설치 완료({1}).",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.testBuildKept",
+          "final_ko": "테스트 빌드 {0} 유지.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.settings",
+          "final_ko": "필요한 게임 설정 조정 완료.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::summary.client",
+          "final_ko": "게임 클라이언트에 맞게 WowVision 조정 완료(인터페이스 {0}).",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        }
+      ],
+      "escalations": []
+    },
+    {
+      "batch": "reviews/2026-11-06-final-installer/batches/batch-03.json",
+      "failedReviewers": 0,
+      "findings": 38,
+      "decisions": [
+        {
+          "id": "Loc.cs::managed.obsoleteRemoved",
+          "final_ko": "{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함.",
+          "how": "accepted",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::managed.acc",
+          "final_ko": "추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드가 설치되고, 해당 게임 버전용 빌드가 없는 애드온은 그 버전에는 설치되지 않습니다. Space로 강조 표시된 애드온을 켜고 끕니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::channel.stableDesc",
+          "final_ko": "번호를 붙여 낸 가장 최근 버전입니다. 대부분의 플레이어에게 알맞습니다. 베타보다 바뀌는 일이 적습니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::update.channelBeta",
+          "final_ko": "버전: 베타. 최신 버전: {0}.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::update.channelStable",
+          "final_ko": "버전: 안정판. 최신 버전: {0}.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::channel.betaDesc",
+          "final_ko": "변경이 있을 때마다 새로 만드는 WowVision 최신 빌드입니다. 최신 수정 사항과 기능이 들어 있고, 새 버그가 있을 수 있습니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::opt.loginTool.desc",
+          "final_ko": "WoW Forever, Anniversary, Classic Era의 로그인, 서버, 캐릭터 화면에 소리 메뉴를 더해 주는 별도 프로그램입니다. 이 화면들은 자체로는 접근성을 지원하지 않습니다.",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::managed.notForClient",
+          "final_ko": "{0}: 사용할 수 없는 게임 버전({1}), 건너뜀.",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::sapi2sr.done",
+          "final_ko": "NVDA 음성: 준비됨. 사용하려면 WoW를 다시 시작하십시오.",
+          "how": "accepted",
+          "sev": [
+            "major",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::voices.count",
+          "final_ko": "Windows 음성: {0}개 추가함. 사용하려면 WoW를 다시 시작하십시오; 음성이 전과 다르게 들리면, 그 음성을 다시 고르십시오.",
+          "how": "accepted",
+          "sev": [
+            "major",
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::toc.synced",
+          "final_ko": "{0}: 인터페이스 버전 {1} -> {2} (게임 클라이언트와 일치).",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "Loc.cs::voices.failed",
+          "final_ko": "Windows 음성 추가 실패: {0}",
+          "how": "accepted",
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "Loc.cs::ai.locked",
+          "final_ko": "{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.",
+          "how": "dispute-won",
+          "reason": "gpt: 기존 번역은 WowVision Updater와 내려받은 설치 프로그램이 같은 프로그램이라고 명시하고, 로컬 폴더의 실행 파일도 ‘업데이터’라고 부른다. 따라서 현재 표현은 제품 내 명칭과 일치하며, ‘업데이트 프로그램’으로 바꿔야 할 근거가 없다. / claude: Loc.cs:814 app.title이 'WowVision 설치 프로그램 & 업데이터', Loc.cs:928 opt.shortcut.desc가 '이 업데이터를 실행할 수 있게'로 이 프로그램을 '업데이터'라는 이름으로 이미 부르고 있다. 사용자가 창 제목과 바로 가기로 알고 있는 이름과 같으므로 다른 프로그램으로 오해할 근거가 약하고, '업데이트 프로그램'으로 바꾸면 같은 대상에 이름이 둘 생긴다. installer.md 낱말 목록에도 updater 지정 번역이 없다. 현재 번역 유지.",
+          "evidence": [
+            "input",
+            "wowvision-ko/WowVision/docs/src/user/en/getting-started/installer.md:69",
+            "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:70",
+            "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installer.md:82",
+            "input",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:814",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:928",
+            "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:995"
+          ],
+          "sev": [
+            "major"
+          ]
+        }
+      ],
+      "escalations": []
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Rebut"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Judge"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a0e43d51e67b0c48f",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::logs.btnAcc\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"버튼에 초점이 가면 접근 가능한 이름이 읽히는데, 화면에 보이는 버튼 글 \\\"모든 로그 모으기\\\"가 이름 안에 이어진 형태로 들어 있지 않고 동작 낱말 \\\"모으기\\\"가 맨 끝에 묻힌다. 같은 창의 다른 버튼 이름(update.updateAcc \\\"지금 업데이트, 현재 설정 사용\\\", update.customizeAcc, done.logAcc)은 모두 보이는 버튼 글로 시작하는데 이것만 \\\"찾은 모든 게임 버전의 로그를...\\\"로 시작해, 빠른 속도로 탭 이동하는 사용자는 이 버튼이 무엇인지 문장 끝까지 들어야 안다. 음성 명령 사용자가 보이는…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-sr-gamer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "acd7f30ccd4f7c580",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::done.heading.failed\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"문제가 있는 채로 완료\\\"는 설치 프로그램 완료 화면의 제목으로 어색하다. \\\"~한 채로\\\"는 상태를 유지한 채 다른 동작을 한다는 구어 표현이라, 설치가 끝났지만 일부 단계에 문제가 있었다는 결과 보고로 듣기에 부자연스럽다. 짝인 \\\"완료\\\", \\\"취소됨\\\"과 같은 짧은 결과 표현으로 맞추는 편이 설치 마법사 관례에 맞다.\",\"evidence\":\"en \\\"Finished with problems\\\". CompletionForm.cs:71과 ProgressForm.cs:272에서 done.heading.ok(\\\"완료\\\")와 번갈아 …",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-windows-user.md (네 관점)\n3. C:/project/games…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a1540ff4764157495",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::selfupdate.body\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"내려받는 양이 작고\\\"는 낱말 호응이 틀렸다. '양'은 많다/적다와 어울리고 크다/작다와는 어울리지 않는다. 또 마지막 문단에서 \\\"버전 {0} 그대로 계속할 수도 있습니다; WowVision 설치와 업데이트는 그대로 작동합니다\\\"처럼 '그대로'가 한 문장에 두 번 나오는데, 뒤의 것은 원문 still(여전히)의 뜻이라 앞의 '그대로'(현재 버전 유지)와 뜻이 달라 들을 때 걸린다.\",\"evidence\":\"ko: \\\"내려받는 양이 작고, 몇 초면 끝나며\\\" / \\\"버전 {0} 그대로 계속할 수도 있습니다; WowVision 설치와 업데이트…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-editor.md (네 관점)\n3. C:/project/games/wowwo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aad527d67b9701d61",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::update.heading.available\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"같은 제목 라벨(_titleLabel)에 들어가는 4개 문구 중 이것만 합니다체다. 나머지 셋(최신 상태로 설치됨, 아직 설치 안 됨, 찾지 못함)은 짧은 명사형이라, 업데이트 창을 열 때마다 상태에 따라 제목 말투가 바뀐다. installer.md 문체 규칙도 제목은 짧게 쓰라고 한다.\",\"evidence\":\"UpdatePromptForm.cs:154-160에서 update.heading.noClient/notInstalled/available/current가 같은 _titleLabel.Text에 들어간다. 다른 셋은 \\\"W…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-ux-writer.md (네 관점)\n3. C:/project/games/wo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "claude:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aa000c676c0703bab",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::target.testBuild\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"\\\"이것 대신\\\"의 \\\"이것\\\"이 무엇을 가리키는지 듣는 사람이 바로 알기 어렵다. 앞 문장이 \\\"설치된 WowVision {0} 그대로 유지\\\"로 끝나서 \\\"이것\\\"이 '유지하는 동작'인지 '테스트 빌드'인지 갈린다. 처음 쓰는 사용자는 무엇을 바꾸라는 안내인지 한 번 더 생각해야 한다.\",\"evidence\":\"원문 \\\"To replace it with the release {1}\\\"의 it은 앞의 Test build(설치된 WowVision {0})다. 공통 규칙의 신규 사용자 관점이 모호한 대명사(\\\"이것\\\")를 지목한다. 버튼…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-newcomer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a1471cb7f75374f7f",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195881,
+      "lastProgressAt": 1793928195881,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::update.explainCustomize\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"“WowVision 새로 설치 또는 다른 게임 버전에 설치”는 조사가 빠진 명사 나열이라 빠르게 들으면 문장 구조를 바로 파악하기 어렵다.\",\"evidence\":\"원문은 “Install WowVision fresh, or for further game versions”라는 두 동작을 연결한다. 한국어에서는 “새로 설치하거나 … 설치”로 연결해야 자연스럽다.\",\"suggestion\":\"WowVision을 새로 설치하거나 다른 게임 버전에 설치: 게임 버전과 베타 또는 안정판, 선택 구성 요소를 직접 고릅니다.\"}…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-sr-gamer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a9b2b91da414a1c20",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195882,
+      "lastProgressAt": 1793928195882,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::cancel.title\",\"category\":\"terminology\",\"severity\":\"minor\",\"problem\":\"프로그램을 닫는 동작을 “끝내다”라고 표현해 한국어판 Windows 대화 상자에서 흔히 쓰는 “종료”와 어긋난다.\",\"evidence\":\"원문은 “Quit the installer?”이며 CancelConfirm.cs:23에서 확인 대화 상자 제목으로 사용된다.\",\"suggestion\":\"설치 프로그램을 종료하시겠습니까?\"},{\"id\":\"Loc.cs::cancel.text\",\"category\":\"terminology\",\"severity\":\"minor\",\"problem\":\"확인 질문의 “끝내시겠습니까”가 한국어판 Wind…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-windows-user.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/b…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a083f42c05696e262",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195882,
+      "lastProgressAt": 1793928195882,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::update.explainCustomize\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"“WowVision 새로 설치 또는 다른 게임 버전에 설치”는 조사와 서술어가 생략된 명사 나열이라 문장 첫머리가 부자연스럽다.\",\"evidence\":\"원문은 “Install WowVision fresh, or for further game versions”로 두 설치 동작을 병렬로 설명한다. UpdatePromptForm.cs:248에서 안내문으로 표시되므로 자연스러운 설명 문장이 필요하다.\",\"suggestion\":\"WowVision을 새로 설치하거나 다른 게임 버전에 설치: 게임 버전, 베타 또는 안정판,…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-editor.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-0…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "gpt:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a022241eb7882c207",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195882,
+      "lastProgressAt": 1793928195882,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::update.explainCustomize\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"설명 문구인데 앞부분이 조사가 빠진 명사 나열이라 기계적으로 번역한 문장처럼 들린다. 원문의 첫 번째 쉼표도 빠졌다.\",\"evidence\":\"원문은 \\\"Install WowVision fresh, or for further game versions\\\"이며, `UpdatePromptForm.cs:248`에서 다른 선택지를 설명하는 문장으로 표시된다. 번역 지침의 설명 문구는 합니다체로 쓰고 원문의 기호를 유지한다는 규칙에도 어긋난다.\",\"suggestion\":\"WowVision 신규 설치, 또는 다른 게임 버전 …",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-ux-writer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batc…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 10,
+      "label": "gpt:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a39a2e41181471266",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195882,
+      "lastProgressAt": 1793928195882,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::app.title\",\"category\":\"terminology\",\"severity\":\"minor\",\"problem\":\"‘업데이터’는 처음 사용하는 사람이 기능을 바로 이해하기 어려운 음역어다. 창 제목만 들어도 업데이트 기능임을 알 수 있도록 풀어 쓰는 편이 명확하다.\",\"evidence\":\"원문은 \\\"WowVision Installer & Updater\\\"이며, 대상 규칙은 installer를 ‘설치 프로그램’으로 풀어 쓰도록 정한다. 이 문자열은 모든 주요 폼의 창 제목으로 사용된다.\",\"suggestion\":\"WowVision 설치 프로그램 & 업데이트 프로그램\"},{\"id\":\"Loc.cs::update.customizeAcc\",\"ca…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-newcomer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 11,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "ab5461b7d2c18bd1b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195882,
+      "lastProgressAt": 1793928195882,
+      "cached": true,
+      "resultPreview": "{\"responses\":[{\"id\":\"Loc.cs::logs.btnAcc\",\"action\":\"accept\",\"final_ko\":\"모든 로그 모으기, 버그 보고용으로 찾은 모든 게임 버전의 로그를 다운로드 폴더의 zip 파일 하나에 저장\",\"reason\":\"두 회사 공통 지적. 화면 버튼 글 logs.btn '모든 로그 모으기(&L)…'로 접근 가능한 이름을 시작해 같은 창의 update.updateAcc·done.logAcc처럼 보이는 글이 앞에 오게 했고, 끝에 붙던 꼬리 ', 버그 보고용'을 목적 꾸밈말로 앞당겼다. 원문 정보(모든 로그, 찾은 모든 게임 버전, zip 하나, 다운로드 폴더, 버그 보고)와 쉼표 1개는 그대로다.\"},{\"id\":\"Loc.cs::selfupdate.skipAcc\",\"acti…",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-01.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 12,
+      "label": "claude:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a2ea4c5709b7bbc80",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::folders.body\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"WowVision을 기록할 폴더\\\"는 영어 written to를 글자대로 옮긴 번역투다. 한국어에서 '기록'은 로그나 녹음을 먼저 떠올리게 해서, 듣는 사람이 설치 대상 폴더라는 걸 한 번에 알아듣지 못하고 멈칫한다.\",\"evidence\":\"en: \\\"These are the folders WowVision will be written to.\\\" 이 화면(FolderConfirmForm.cs:84)은 설치할 위치를 확인하는 단계이고, 같은 묶음의 다른 문구는 모두 '설치'라고 한다(folders.duplicate.text \\\"WowVision이…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-sr-gamer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 13,
+      "label": "claude:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aac71bf3feaa3b14f",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"findings\":[]}",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-windows-user.md (네 관점)\n3. C:/project/games…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 14,
+      "label": "claude:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a9bef91f7b7bd303c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::versions.needOne.text\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"목적절 두 개(\\\"계속하려면 ~\\\", \\\"나가려면 ~\\\")를 \\\"-거나\\\"로 한 문장에 묶어 앞 절의 서술어가 \\\"체크하거나\\\"로 끊긴다. \\\"A하려면 B하거나, C하려면 D하십시오\\\"는 어미 호응이 어색하고 영어 \\\"X, or use Back to Y\\\" 구조를 그대로 옮긴 번역투다. 듣는 사람은 두 선택지가 어디서 나뉘는지 한 번에 잡기 어렵다.\",\"evidence\":\"ko: \\\"계속하려면 게임 버전을 하나 이상 체크하거나, 설치 프로그램을 나가려면 뒤로 버튼을 사용하십시오.\\\" 오류 안내라 합니다체 두 문장으로 나눠도 문체 규…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-editor.md (네 관점)\n3. C:/project/games/wowwo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 15,
+      "label": "claude:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a88fb29b695d235a6",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::folders.body\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"WowVision을 기록할 폴더\\\"는 영어 \\\"be written to\\\"를 직역한 번역투다. 한국어 설치 프로그램에서 파일을 넣는 대상 폴더를 \\\"기록할 폴더\\\"라고 부르지 않아서, 사용자는 로그나 기록 파일이 저장되는 폴더로 잘못 들을 수 있다. 같은 화면 제목(folders.heading)이 \\\"설치되어 있습니까\\\"로 설치를 말하므로 본문도 설치로 맞는다.\",\"evidence\":\"en: \\\"These are the folders WowVision will be written to.\\\" / ko: \\\"WowVision을 기록할 폴더입니다.\\…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-ux-writer.md (네 관점)\n3. C:/project/games/wo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 16,
+      "label": "claude:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "af2ae06c5bfd94347",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::folders.body\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"WowVision을 기록할 폴더\\\"는 영어 \\\"be written to\\\"를 그대로 옮긴 번역투다. 애드온을 폴더에 '기록'한다는 말은 한국어 설치 프로그램에서 쓰지 않는 표현이라, 처음 쓰는 사용자는 로그 같은 것을 남기는 폴더인지 잠깐 헷갈린다. 이 화면은 설치할 위치를 확인하는 단계이므로 '설치할'이 뜻을 바꾸지 않고 정확하다.\",\"evidence\":\"en: \\\"These are the folders WowVision will be written to.\\\" / FolderConfirmForm.cs:84 폴더 확인 화면 본문. 같은 화면 제…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-newcomer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 17,
+      "label": "gpt:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a58e28a0f960dd970",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::folders.body\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"“WowVision을 기록할 폴더”는 빠르게 들으면 로그나 설정을 저장할 폴더처럼 받아들일 수 있다. 설치 프로그램에서 실제로 확인하는 대상이 설치 위치라는 점이 바로 드러나지 않는다.\",\"evidence\":\"원문은 “folders WowVision will be written to”이며, 바로 앞 제목 `folders.heading`과 `FolderConfirmForm.cs:84`의 사용 맥락은 설치 대상 폴더 확인이다.\",\"suggestion\":\"WowVision이 설치될 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-sr-gamer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 18,
+      "label": "gpt:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a01c9c0f92b393417",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::folders.body\",\"category\":\"terminology\",\"severity\":\"minor\",\"problem\":\"설치 대상 폴더를 “기록할 폴더”라고 표현해 파일 기록이나 로그 저장 위치처럼 들린다. 설치 프로그램 화면에서는 “설치될 폴더”가 용도를 더 분명하게 전달한다.\",\"evidence\":\"원문은 설치 위치를 확인하는 FolderConfirmForm.cs:84의 안내이며, 바로 앞 제목도 “Where is each version installed?”이다.\",\"suggestion\":\"WowVision이 설치될 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.\"},{\"id\":\"Loc.cs::fold…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-windows-user.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/b…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 19,
+      "label": "gpt:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a5848e0d78c897ecf",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::versions.needOne.text\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"“설치 프로그램을 나가려면”은 목적어 조사 ‘을’을 쓸 수 없는 서술어와 결합해 문법적으로 어색하다. 두 선택지를 설명하는 문장 구조도 번역투가 남아 있다.\",\"evidence\":\"원문은 “Tick ... before continuing, or use Back to leave the installer.”로, 계속하는 방법과 종료하는 방법을 나란히 제시한다. 현재 번역의 “설치 프로그램을 나가려면”은 자연스러운 한국어 호응이 아니다.\",\"suggestion\":\"게임 버전을 하나 이상 체크해서 계속하거나, 뒤로 버튼으…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-editor.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-0…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 20,
+      "label": "gpt:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aa81393e72477f4c2",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195883,
+      "lastProgressAt": 1793928195883,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::versions.needOne.text\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"“설치 프로그램을 나가다”는 한국어 소프트웨어 문구로 어색하고, 한 문장에 서로 다른 두 행동 조건을 억지로 연결해 듣기 어렵다.\",\"evidence\":\"원문은 계속하기 위한 조건과 설치 프로그램을 종료하는 방법을 구분한다. `VersionSelectForm.cs:110`의 오류 안내 문구이므로 사용자가 바로 행동할 수 있는 자연스러운 안내 문장이 필요하다.\",\"suggestion\":\"계속하려면 게임 버전을 하나 이상 선택해야 합니다. 설치 프로그램을 종료하려면 뒤로 버튼을 사용하십시오.\"},{\"id\":\"Loc.c…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-ux-writer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batc…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 21,
+      "label": "gpt:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aa6be80fed9fff71d",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::status.koreanFailed\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"처음 쓰는 사용자는 개발 용어인 “문자열”이 무엇을 가리키는지 알기 어렵다. 한국어 화면 문구를 추가하지 못했다는 오류임을 바로 이해할 수 있어야 한다.\",\"evidence\":\"원문 “The Korean strings could not be added”와 InstallRunner.cs:307의 사용자 대상 오류 알림이다. 페르소나 지침은 설명 없는 용어나 약어 때문에 기능을 이해하기 어려운 경우를 결함으로 본다.\",\"suggestion\":\"한국어 문구를 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-newcomer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 22,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "a87cb4a76f2bc637b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"responses\":[{\"id\":\"Loc.cs::folders.body\",\"action\":\"accept\",\"final_ko\":\"WowVision을 설치할 폴더입니다. 잘못되었거나 없는 폴더가 있으면 옆의 찾아보기 버튼을 사용하십시오.\",\"reason\":\"consensus. '기록할 폴더'는 written to 직역이라 로그 저장 폴더로 들린다. 같은 화면 제목(folders.heading '설치되어 있습니까')과 folders.duplicate.text '설치됩니다'에 맞춰 '설치할'로 바꾼다. 능동 '설치할'이 피동 '설치될'보다 짧고 다음 문장과 호응이 같다.\"},{\"id\":\"Loc.cs::versions.needOne.text\",\"action\":\"accept\",\"final_ko\":\"계속하려면 게임 …",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-02.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 23,
+      "label": "claude:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a856d02f2d6ce7fb6",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::managed.obsoleteRemoved\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"문장이 '새 버전과 충돌함'으로 끝나서, 빠른 속도로 들으면 마지막 낱말 '충돌함'만 귀에 남아 충돌이 실제로 일어났다(오류)는 상태 알림으로 들린다. 원문 'which would clash'는 지우지 않았다면 충돌했을 것이라는 이유이고, 실제 결과는 삭제다.\",\"evidence\":\"ko: \\\"{0}: 예전 폴더 {1} 삭제함, 남겨 두면 새 버전과 충돌함.\\\" / ManagedAddons.cs:855 진행 메시지로 발화. 같은 진행 메시지들(ai.installed '설치함', managed.notForClient '건너…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-sr-gamer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 24,
+      "label": "claude:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a57456a1f2a07ff69",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::managed.obsoleteRemoved\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"\\\"삭제함, 남겨 두면 새 버전과 충돌함\\\"으로 끝나서, 진행 상태를 듣는 사용자에게 마지막 낱말 \\\"충돌함\\\"이 오류 보고처럼 들린다. 실제로는 충돌을 막으려고 지웠다는 완료 알림이다. 삭제 이유를 앞의 꾸밈말로 옮기면 상태 문구가 \\\"삭제함\\\"으로 끝난다.\",\"evidence\":\"en: \\\"removed the old folder {1}, which would clash with the new version.\\\" — which절은 지운 이유다. 다른 진행 상태 문구는 ai.installed \\\"{1} 설치함.\\\", a…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-windows-user.md (네 관점)\n3. C:/project/games…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 25,
+      "label": "claude:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a8e5b35ca5cdb1116",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::managed.acc\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"둘째 절의 문법이 어색하다. \\\"어떤 게임 버전용이 없는 애드온은\\\"은 '용' 뒤에 꾸밈받을 명사(빌드)가 빠져 비문에 가깝고, 앞 절의 주제 '이 애드온들은'이 이어져 \\\"게임 버전마다 ... 빌드를 받고\\\"가 '애드온이 빌드를 받는다'로 읽혀 주어와 서술어가 맞지 않는다. 목록에 초점이 갈 때마다 듣는 접근 가능한 이름이라 한 번에 뜻이 잡히지 않으면 불편하다.\",\"evidence\":\"ko: \\\"...게임 버전마다 그 버전에 맞는 빌드를 받고, 어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다.\\\" / en: \\\"each game versi…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-editor.md (네 관점)\n3. C:/project/games/wowwo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 26,
+      "label": "claude:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "acfd84ddda563f184",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::channel.stableDesc\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"대부분의 플레이어에게 가장 좋습니다\\\"와 \\\"덜 자주 바뀝니다\\\"는 영어 \\\"Best for most players\\\", \\\"Changes less often\\\"을 낱말 그대로 옮긴 번역투다. 채널을 고르는 사용자가 듣는 설명문인데, 한국어 설치 프로그램 설명에서는 이런 표현을 쓰지 않아 기계 번역처럼 들린다.\",\"evidence\":\"ComponentsForm.cs:224에서 채널 드롭다운 아래 설명(_channelDesc)으로 표시되고, channel.acc와 이어 붙어 접근 가능한 이름으로도 읽힌다. 짝인 channel.betaD…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-ux-writer.md (네 관점)\n3. C:/project/games/wo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 27,
+      "label": "claude:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a4ed2f881acc04456",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195884,
+      "lastProgressAt": 1793928195884,
+      "cached": true,
+      "resultPreview": "{\"findings\":[{\"id\":\"Loc.cs::managed.acc\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"\\\"어떤 게임 버전용이 없는 애드온은 그 버전에서 빠집니다\\\"는 영어 'an addon that does not exist for a game version is left out there'를 어순대로 옮긴 번역투다. '어떤 게임 버전용이 없는'에서 무엇이 없는지 한 번에 안 잡히고, '빠집니다'가 목록에서 빠지는지 설치에서 빠지는지 처음 듣는 사람은 알기 어렵다. 이 문구는 목록의 접근 가능한 이름이라 목록에 들어갈 때마다 길게 들리므로 한 번에 이해돼야 한다.\",\"evidence\":\"ComponentsForm.cs:201 `_managedList…",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n   + C:/project/games/wowwork/tools/review/prompts/installer.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n   + C:/project/games/wowwork/tools/review/prompts/persona-base.md (이번 대상의 추가 규칙, 공통 규칙보다 우선)\n2. C:/project/games/wowwork/tools/review/prompts/lens-persona-newcomer.md (네 관점)\n3. C:/project/games/wow…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 28,
+      "label": "gpt:persona-sr-gamer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a7b7c70d3fa1c90f2",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::sapi2sr.done\",\"category\":\"accuracy\",\"severity\":\"major\",\"problem\":\"“WoW를 새로 시작”은 실행 중인 WoW를 종료해야 한다는 뜻이 분명하지 않아, 사용자가 기존 게임을 그대로 둔 채 새 창만 열 수 있습니다. 그러면 설치한 음성을 사용하지 못할 수 있습니다.\",\"evidence\":\"원문은 “Start WoW fresh”이며, Sapi2SrInstaller.cs:59에서 설치 완료 직후 발화됩니다. 독일어와 프랑스어 번역도 각각 “Starte WoW neu”, “Relancez WoW”로 재시작을 명시합니다.\",\"suggestion\":\"NVDA 음성: 준비됨. 사용하려면 WoW를 종료했다가…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-sr-gamer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 29,
+      "label": "gpt:persona-windows-user",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ab6c0990c5e0d6840",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::voices.failed\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"“Windows 음성 실패”는 음성 기능 자체가 고장 났다는 뜻으로도 들려, 음성을 추가하는 작업이 실패했다는 사실이 분명하지 않다.\",\"evidence\":\"WindowsVoicesInstaller.cs:95의 예외 처리에서 사용하는 문구이며, 같은 기능의 voices.added와 voices.failedOne은 음성을 “추가”하는 작업임을 명시한다.\",\"suggestion\":\"Windows 음성 추가 실패: {0}\"},{\"id\":\"Loc.cs::managed.acc\",\"category\":\"listening\",\"sever…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-windows-user.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/b…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 30,
+      "label": "gpt:persona-editor",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae2be1be544e87562",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::channel.betaDesc\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"“최신 WowVision 빌드로, … 새로 만듭니다”는 ‘빌드로’와 뒤의 서술어가 자연스럽게 호응하지 않아 번역투로 들린다.\",\"evidence\":\"원문은 “The newest build of WowVision, rebuilt with every change.”이며, ComponentsForm.cs:224에서 선택 항목의 설명 문장으로 표시된다.\",\"suggestion\":\"WowVision의 최신 빌드이며, 변경이 있을 때마다 새 빌드가 나옵니다. 최신 수정 사항과 기능이 들어 있고, 새 버그가 있을 수 있습니다.\"},{\"…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-editor.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-0…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 31,
+      "label": "gpt:persona-ux-writer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae042f684a6b5471c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::channel.betaDesc\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"첫 문장의 “최신 WowVision 빌드로”가 뒤 문장과 자연스럽게 이어지지 않고, “새로 만듭니다”도 빌드 설명으로는 번역투처럼 들린다.\",\"evidence\":\"설명 문구는 합니다체로 자연스럽게 이어져야 한다. 원문은 최신 빌드라는 정의와 변경 때마다 다시 빌드된다는 특성을 설명한다.\",\"suggestion\":\"WowVision의 최신 빌드이며, 변경이 있을 때마다 새로 빌드됩니다. 최신 수정 사항과 기능이 포함되어 있고, 새로운 버그가 생길 수 있습니다.\"},{\"id\":\"Loc.cs::channel.stableDesc\"…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-ux-writer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batc…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 32,
+      "label": "gpt:persona-newcomer",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a6fdfe42d851149ee",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"Loc.cs::ai.locked\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"다시 실행해야 할 대상을 \\\"업데이터\\\"라고만 해서 처음 쓰는 사용자는 현재 설치 프로그램을 뜻하는지 별도 프로그램을 뜻하는지 알기 어렵다.\",\"evidence\":\"원문은 사용자가 수행할 조치인 \\\"run the updater again\\\"을 안내한다. 설치 프로그램 화면에서 쓰는 한국어 동작명으로는 \\\"업데이트 프로그램\\\"이 더 분명하다.\",\"suggestion\":\"{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이트 프로그램을 다시 실행하십시오.\"},{\"id\":\"Loc.cs::channel.betaDesc\"…",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/installer.md --prompt tools/review/prompts/persona-base.md --prompt tools/review/prompts/lens-persona-newcomer.md --batch C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 33,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "ab4719294b41e5892",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195885,
+      "lastProgressAt": 1793928195885,
+      "cached": true,
+      "resultPreview": "{\"responses\":[{\"id\":\"Loc.cs::managed.obsoleteRemoved\",\"action\":\"accept\",\"final_ko\":\"{0}: 새 버전과 충돌할 예전 폴더 {1} 삭제함.\",\"reason\":\"원문 which절은 폴더를 꾸미는 삭제 이유인데, 지금 번역은 '충돌함'으로 끝나 실제 충돌 보고처럼 들린다. 관형절로 옮기면 뜻을 더하거나 빼지 않고 ai.installed('설치함')처럼 결과 낱말로 끝난다.\"},{\"id\":\"Loc.cs::managed.acc\",\"action\":\"accept\",\"final_ko\":\"추가 권장 애드온. 잘 알려진 이 애드온들은 WowVision과 함께 설치되고 업데이트됩니다; 게임 버전마다 그 버전에 맞는 빌드가 설치되고, 해당 게임 버전용 빌드가 없는…",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-03.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 34,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "aec5a65c74eba5a8f",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195912,
+      "queuedAt": 1793928195893,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batch-01/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-06-final-installer/batches/batch-01.json\",\n \"items\": [\n  {\n   \"ref\": \"Loc.cs::cancel.title\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-persona-windows-user\",\n     \"id\": \"Loc.cs::cancel.title\",\n     \"category\": \"terminology\",\n     \"s…",
+      "promptFramed": true,
+      "lastProgressAt": 1793928325052,
+      "tokens": 60867,
+      "toolCalls": 4,
+      "durationMs": 129140,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"Loc.cs::cancel.title\",\"uphold\":false,\"final_ko\":\"설치 프로그램을 끝내시겠습니까?\",\"reason\":\"‘끝내다’도 프로그램을 닫는 동작을 분명하게 전달한다. 입력과 규칙에는 확인 대화 상자 제목에서 반드시 ‘종료’를 써야 한다는 근거가 없으므로 표현 선택만으로 결함이라고 볼 수 없다.\",\"evidence_sources\":[\"input\"]},{\"ref\":\"Loc.cs::cancel.text\",\"uphold\":false,\"final_ko\":\"아직 설치하지 않았습니다. 정말 끝내시겠습니까?\",\"reason\":\"설치 전 단계라는 문맥에서 ‘아직 설치하지 않았습니다’는 설치가 수행되지 않았다는 뜻으로 이해된다. 제안문도 설치…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 35,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a0be3c529058075ee",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195912,
+      "queuedAt": 1793928195894,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-01.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/…",
+      "promptFramed": true,
+      "lastProgressAt": 1793928246216,
+      "tokens": 66763,
+      "toolCalls": 6,
+      "durationMs": 50303,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"Loc.cs::cancel.title\",\"uphold\":false,\"final_ko\":\"설치 프로그램을 끝내시겠습니까?\",\"reason\":\"'끝내다'와 '종료'를 정한 규칙(translation-guide, glossary, decisions, installer.md 낱말 목록)이 없다. '끝내시겠습니까'는 뜻이 분명하고 문법도 맞아 사용자가 겪는 불편이 드러나지 않는다. 다른 표현이 가능하다는 것만으로는 결함이 아니므로(persona-base) 현재 번역 유지.\",\"evidence_sources\":[\"input\",\"wowwork/docs/translation-guide.md\",\"wowwork/docs/glossary.tsv\"]},{\"ref\":\"Loc.cs::cancel…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 36,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a80247cd16d588f8e",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195926,
+      "queuedAt": 1793928195916,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batch-02/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-06-final-installer/batches/batch-02.json\",\n \"items\": [\n  {\n   \"ref\": \"Loc.cs::folders.picked\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-persona-sr-gamer\",\n     \"id\": \"Loc.cs::folders.picked\",\n     \"category\": \"style\",\n     \"severit…",
+      "promptFramed": true,
+      "lastProgressAt": 1793928301145,
+      "tokens": 56775,
+      "toolCalls": 5,
+      "durationMs": 103911,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"Loc.cs::folders.picked\",\"uphold\":false,\"final_ko\":\"{0} 폴더를 {1} 위치로 지정. {2}\",\"reason\":\"현재 번역은 자리표시자 뒤에 가변 조사를 붙이지 않으면서 폴더 지정 결과를 명확하게 전달한다. 제안문의 콜론은 원문에 없는 기호를 추가하며, 현재 표현이 청취를 방해할 정도로 어색하다는 근거도 부족하다.\",\"evidence_sources\":[\"input\"]},{\"ref\":\"Loc.cs::folders.duplicate.text\",\"uphold\":false,\"final_ko\":\"{0}, {1} 두 버전이 같은 폴더를 가리켜서, 이대로라면 WowVision이 그곳에 두 번 설치됩니다.\\n\\n둘 중 하나를 …"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 37,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a6856487f8269c68a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195917,
+      "lastProgressAt": 1793928195917,
+      "cached": true,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"Loc.cs::folders.picked\",\"uphold\":false,\"final_ko\":\"{0} 폴더를 {1} 위치로 지정. {2}\",\"reason\":\"현재 번역은 자리표시자 {1}(경로) 뒤에 받침에 따라 달라지는 조사를 직접 붙이지 않으려고 '위치로'를 둔 구조로 installer.md 자리표시자 규칙에 맞고, 상태 문구 명사형('지정')도 문체 규칙에 맞는다. 제안 '{0} 폴더 위치: {1}'은 원문에 없는 콜론을 추가해 공통 규칙(원문에 없는 기호 추가 금지)을 어기고, '지정 위치는 {1}.'은 서술어가 빠져 더 어색하다. 지적이 실제 사용자 불편을 입증하지 못해 유지.\",\"evidence_sources\":[\"input\",\"wowvision-ko/wowvis…",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-02.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 38,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "ac441d75270e9f68a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195938,
+      "queuedAt": 1793928195927,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batch-03/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-06-final-installer/batches/batch-03.json\",\n \"items\": [\n  {\n   \"ref\": \"Loc.cs::ai.locked\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-persona-newcomer\",\n     \"id\": \"Loc.cs::ai.locked\",\n     \"category\": \"terminology\",\n     \"severity\": …",
+      "promptFramed": true,
+      "lastProgressAt": 1793928256402,
+      "tokens": 50654,
+      "toolCalls": 4,
+      "durationMs": 59168,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"Loc.cs::ai.locked\",\"uphold\":false,\"final_ko\":\"{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.\",\"reason\":\"기존 번역은 WowVision Updater와 내려받은 설치 프로그램이 같은 프로그램이라고 명시하고, 로컬 폴더의 실행 파일도 ‘업데이터’라고 부른다. 따라서 현재 표현은 제품 내 명칭과 일치하며, ‘업데이트 프로그램’으로 바꿔야 할 근거가 없다.\",\"evidence_sources\":[\"input\",\"wowvision-ko/WowVision/docs/src/user/en/getting-started/installer.md:69\",\"wowvision-ko/WowVis…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 39,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a01e318ba17eb08fd",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1793928195938,
+      "queuedAt": 1793928195927,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 와 C:/project/games/wowwork/tools/review/prompts/installer.md, C:/project/games/wowwork/tools/review/prompts/persona-base.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-06-final-installer/batches/batch-03.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/…",
+      "promptFramed": true,
+      "lastProgressAt": 1793928217374,
+      "tokens": 55234,
+      "toolCalls": 4,
+      "durationMs": 20075,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"Loc.cs::ai.locked\",\"uphold\":false,\"final_ko\":\"{0}: 파일 {1}개가 사용 중이었습니다 — 게임을 닫고 업데이터를 다시 실행하십시오.\",\"reason\":\"Loc.cs:814 app.title이 'WowVision 설치 프로그램 & 업데이터', Loc.cs:928 opt.shortcut.desc가 '이 업데이터를 실행할 수 있게'로 이 프로그램을 '업데이터'라는 이름으로 이미 부르고 있다. 사용자가 창 제목과 바로 가기로 알고 있는 이름과 같으므로 다른 프로그램으로 오해할 근거가 약하고, '업데이트 프로그램'으로 바꾸면 같은 대상에 이름이 둘 생긴다. installer.md 낱말 목록에도 updater 지정 번역이 없다. 현재 번역 유…"
+    }
+  ],
+  "totalTokens": 290293,
+  "totalToolCalls": 23
+}

@@ -28,3 +28,12 @@
 - 묶음: UI 1,363개 → `reviews/2026-11-06-final-ui/batches` 10개(140개씩), 설치 프로그램 205개 → `reviews/2026-11-06-final-installer/batches` 3개.
 - Workflow: UI `wf_8b3afc4d-887`, 설치 프로그램 `wf_ebfe4c7f-b61`. 묶음마다 Claude 5 + GPT 5 → 번역자 반박 → 두 회사 판정.
 - 1차 실행이 사용량 한도(05:20 초기화)에 걸렸다. 설치 프로그램은 판정자 5명, UI는 평가자·번역자 55명이 실패했다(UI 묶음 7~10은 평가 전부 미실행). 10:23에 같은 Run ID로 이어서 실행했다(UI `wpupjxhvs`, 설치 프로그램 `wsegvmyj7`). 끝난 에이전트는 캐시를 쓴다.
+
+### 설치 프로그램 결과 (`reviews/2026-11-06-final-installer/result.json`)
+
+- 평가자 30명 모두 성공, 지적 144건. 항목 기준 확정 48건(두 회사 합의 22, 번역자 수용 16, 반박 인정 10), 판정 갈림 3건.
+- 판정 갈림 3건(`selfupdate.restarting`, `selfupdate.done`, `selfupdate.working`)은 모두 어순 문제다. `docs/decisions.tsv` 2026-11-06 기준(근거가 글자 그대로 확인되는 것만 반영)에 따라 현재 번역을 유지했다.
+- 실제로 바뀐 항목은 38개다. 원문과 전·후 대조는 `changes.md`. 직접 확인해서 뜻 변경과 자리표시자 오류가 없는 것을 확인했다. `update.heading.available`은 같은 화면의 다른 제목과 같은 명사형으로 맞춰졌다.
+- 반영: `tools.installer_loc apply ko.tsv`, wowvision-installer ko 브랜치에 커밋.
+- 함께 발견: `status.koreanFailed` 문구가 바뀌어 테스터 안내의 인용이 옛 문구가 됐다. 안내를 고치고, 안내의 따옴표 인용이 설치 프로그램 Ko 표에 실제로 있는지 보는 검사(`test_guide_quotes_match_installer_text`)를 추가했다. 옛 문구로 실패하는 것을 확인했다.
+- 빌드는 UI 검수 반영 뒤 한 번에 한다(설치 프로그램에 koKR이 들어가므로).

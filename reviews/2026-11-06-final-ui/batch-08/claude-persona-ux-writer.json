@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "ui.lua::Parameters must identify a single object",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "같은 버퍼·개체 설정 기능에서 object를 '개체'로 옮겼는데(Object, Objects, No object configured, Empty Object), 이 오류 안내만 '물체'라고 한다. '물체'는 navigation.lua에서 게임 세계의 사물(object, interaction object)을 가리키는 말이라, 매개변수 저장에 실패했을 때 이 안내를 들은 사용자는 화면 속 사물 하나를 골라야 한다고 받아들일 수 있다. 실제로 가리키는 것은 추적 대상 개체 종류(objectType)다.",
+      "evidence": "core/graph/fieldControls.lua:333-340에서 objectType:validParams(params) 결과의 unique가 false일 때 이 문자열을 speak한다. 같은 파일 묶음의 ui.lua 번역은 L[\"Object\"] = \"개체\", L[\"Objects\"] = \"개체\", L[\"No object configured\"] = \"설정된 개체 없음\", L[\"Empty Object\"] = \"빈 개체\". '물체'는 koKR/navigation.lua:168,172,173(상호작용 물체, 물체, 물체 유형 %s)에서만 쓰인다. glossary.tsv와 decisions.tsv에 object 항목은 없다.",
+      "suggestion": "매개변수는 개체 하나를 가리켜야 합니다"
+    }
+  ]
+}

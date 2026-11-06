@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "ui.lua::Enabled",
+      "category": "style",
+      "severity": "minor",
+      "problem": "켜짐/꺼짐 짝을 이루는 상태 문구인데 Enabled만 '사용함'이고 짝인 Disabled는 '비활성화'라서 낱말 계열이 어긋난다. 같은 파일의 이웃 키도 Enable '활성화', Disable '비활성화'로 활성화 계열이다. 사용자는 같은 설정을 켜고 끌 때 '하드 대상 사용함'과 '하드 대상 비활성화'처럼 계열이 다른 두 낱말을 듣게 된다.",
+      "evidence": "core/targeting/module.lua:339-341에서 토글 결과를 info.label .. \" \" .. L[\"Enabled\"] / L[\"Disabled\"]로 발화하고, core/objects/types/unit/PVP.lua:26-28은 PvP 상태 값으로 Enabled/Disabled를 짝지어 돌려준다. locale/koKR/ui.lua:53-56 기준 Disable·Disabled=비활성화, Enable=활성화, Enabled=사용함. '활성화'는 game_term 후보에 있고, 체크 상자 이름(core/alerts/alerts.lua:21 등)으로 써도 '활성화, 체크 상자, 체크됨'처럼 자연스럽다. decisions.tsv·glossary.tsv에 '사용함'을 정한 항목은 없다.",
+      "suggestion": "활성화"
+    }
+  ]
+}

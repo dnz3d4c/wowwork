@@ -25,7 +25,10 @@ def visible(label: str) -> str:
 
 def required_labels() -> dict[str, str]:
     ko = parse_table(LOC_CS.read_text(encoding="utf-8"), "Ko")
-    keys = [f"opt.{k}.label" for k in re.findall(r'SetOptionText\([^,]+,[^,]+,\s*"(\w+)"\)', FORM.read_text(encoding="utf-8"))]
+    keys = [
+        f"opt.{k}.label"
+        for k in re.findall(r'SetOptionText\([^,]+,[^,]+,\s*"(\w+)"\)', FORM.read_text(encoding="utf-8"))
+    ]
     keys += ["update.customizeBtn", "managed.label"]
     return {k: visible(ko[k]) for k in keys}
 
@@ -40,3 +43,14 @@ def test_guide_names_every_installer_option() -> None:
     guide = GUIDE.read_text(encoding="utf-8")
     missing = {k: v for k, v in required_labels().items() if v not in guide}
     assert not missing, f"테스터 안내에 없는 설치 프로그램 문구: {missing}"
+
+
+def test_guide_quotes_match_installer_text() -> None:
+    """안내가 따옴표로 인용한 화면 문구는 설치 프로그램 Ko 표에 실제로 있어야 한다.
+
+    2026-11-06 최종 검수에서 status.koreanFailed 문구가 바뀌었는데 안내는 옛 문구를 인용하고 있었다.
+    """
+    ko_text = " ".join(visible(v) for v in parse_table(LOC_CS.read_text(encoding="utf-8"), "Ko").values())
+    quotes = re.findall(r'"([^"]+)"', GUIDE.read_text(encoding="utf-8"))
+    stale = [q for q in quotes if q not in ko_text]
+    assert not stale, f"설치 프로그램에 없는 인용 문구: {stale}"
