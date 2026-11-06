@@ -35,15 +35,26 @@ def test_apply_rejects_overlapping_seeds() -> None:
 
 
 def test_hits_matches_overlapping_quote() -> None:
-    assert hits("이 페이지는 그 화면을 쓰는 방법을 설명합니다.", "그 화면을 쓰는 방법")
-    assert hits("그 화면을", "그 화면을 쓰는 방법")  # 평가자가 일부만 인용
-    assert not hits("단축키 화면은 키를 보여 줍니다.", "그 화면을 쓰는 방법")
+    seed = {"original": "단축키 화면 사용법을 설명합니다", "seeded": "그 화면을 쓰는 방법을 설명합니다"}
+    assert hits("이 페이지는 그 화면을 쓰는 방법을 설명합니다.", seed)
+    assert hits("그 화면을", seed)  # 평가자가 바뀐 부분만 인용
+    assert not hits("단축키 화면은 키를 보여 줍니다.", seed)
+
+
+def test_hits_ignores_overlap_only_in_unchanged_words() -> None:
+    """바뀐 부분이 아니라 흔한 구절('Enter를 누릅니다')만 겹치는 지적은 검출이 아니다."""
+    seed = {
+        "original": "음성 메뉴에서 음성 종류로 이동해 Enter를 누릅니다.",
+        "seeded": "말하기 설정에서 음성 종류로 이동해 Enter를 누릅니다.",
+    }
+    assert hits("말하기 설정에서 음성 종류로", seed)
+    assert not hits("음성 항목이 들릴 때까지 Down을 누른 다음 Enter를 누릅니다", seed)
 
 
 def test_score_counts_recall_and_non_seed_findings() -> None:
     key = [
-        {"id": "a", "origin": "claude", "seeded": "그 화면을 쓰는 방법"},
-        {"id": "b", "origin": "gpt", "seeded": "경보 편집기"},
+        {"id": "a", "origin": "claude", "original": "단축키 화면 사용법", "seeded": "그 화면을 쓰는 방법"},
+        {"id": "b", "origin": "gpt", "original": "TTS 경보 편집기", "seeded": "경보 편집기"},
     ]
     runs = [
         {

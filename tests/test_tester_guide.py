@@ -77,6 +77,8 @@ def test_guide_states_voice_bridge_default() -> None:
     """
     runner = (LOC_CS.parent / "InstallRunner.cs").read_text(encoding="utf-8")
     on = re.search(r"public bool InstallSapi2Sr = (true|false);", runner).group(1) == "true"
-    line = next(ln for ln in GUIDE.read_text(encoding="utf-8").splitlines() if "- WoW에서 NVDA를 음성으로 사용:" in ln)
+    line = next(
+        ln for ln in GUIDE.read_text(encoding="utf-8").splitlines() if "- WoW에서 NVDA를 음성으로 사용:" in ln
+    )
     assert ("기본으로 체크되어 있습니다" in line) == on, line
     assert ("기본으로 체크되어 있지 않습니다" in line) == (not on), line

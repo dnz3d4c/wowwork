@@ -1,0 +1,3 @@
+claude {"recall": "7/8", "by_origin": {"claude": "3/4", "gpt": "4/4"}, "missed": ["c-1"], "non_seed": 9, "by_persona": {"manual-editor": ["c-2", "c-6", "g-2", "g-3", "g-4", "g-6"], "newcomer": ["c-2", "c-5", "c-6", "g-2", "g-3", "g-4", "g-6"], "wow-veteran": ["c-2", "c-6", "g-3", "g-4", "g-6"]}}
+gpt {"recall": "6/8", "by_origin": {"claude": "2/4", "gpt": "4/4"}, "missed": ["c-1", "c-5"], "non_seed": 10, "by_persona": {"manual-editor": ["c-2", "c-6", "g-2", "g-3", "g-4", "g-6"], "newcomer": ["c-2", "c-6", "g-3", "g-4", "g-6"], "wow-veteran": ["c-2", "c-6", "g-3", "g-6"]}}
+combined {"recall": "7/8", "by_origin": {"claude": "3/4", "gpt": "4/4"}, "missed": ["c-1"], "non_seed": 19}

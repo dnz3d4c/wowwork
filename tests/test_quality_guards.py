@@ -271,12 +271,18 @@ def test_glossary_blocks_reverted_translations() -> None:
 
     camera_en = "You can change the camera following style in the game options under Controls."
     entries = {
-        ("navigation.lua", "camera"): (camera_en, "카메라 따라가기 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."),
+        ("navigation.lua", "camera"): (
+            camera_en,
+            "카메라 따라가기 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.",
+        ),
         ("bindings.lua", "Roll Bonus"): ("Roll Bonus", "추가 전리품 주사위"),
     }
     assert len(violations(load_glossary(), entries)) == 2
     ok = {
-        ("navigation.lua", "camera"): (camera_en, "시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다."),
+        ("navigation.lua", "camera"): (
+            camera_en,
+            "시점 전환 방식은 게임 설정의 조작 설정에서 바꿀 수 있습니다.",
+        ),
         ("bindings.lua", "Roll Bonus"): ("Roll Bonus", "보너스 주사위"),
     }
     assert violations(load_glossary(), ok) == []

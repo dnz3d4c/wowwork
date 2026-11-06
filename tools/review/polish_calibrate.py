@@ -56,14 +56,29 @@ def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def hits(quote: str, seeded: str) -> bool:
-    q, s = _norm(quote), _norm(seeded)
+def _changed(original: str, seeded: str) -> tuple[int, int]:
+    """seeded 안에서 원래 구절과 달라진 구간 [start, end). 지우기만 했으면 start == end."""
+    p = 0
+    while p < min(len(original), len(seeded)) and original[p] == seeded[p]:
+        p += 1
+    s = 0
+    while s < min(len(original), len(seeded)) - p and original[-1 - s] == seeded[-1 - s]:
+        s += 1
+    return p, len(seeded) - s
+
+
+def hits(quote: str, seed: dict[str, str]) -> bool:
+    """지적이 심은 오류를 잡았는가: 지적 인용이 심은 구절과 겹치고, 그 겹침이 바뀐 구간에 닿아야 한다."""
+    q, s = _norm(quote), _norm(seed["seeded"])
     if not q or not s:
         return False
-    if s in q or q in s:
-        return True
-    m = SequenceMatcher(None, q, s, autojunk=False).find_longest_match(0, len(q), 0, len(s))
-    return m.size >= min(MIN_SHARED, len(s))
+    start, end = _changed(_norm(seed["original"]), s)
+    lo, hi = (start, end) if end > start else (max(start - 1, 0), start + 1)
+    blocks = SequenceMatcher(None, q, s, autojunk=False).get_matching_blocks()
+    covered = [(b.b, b.b + b.size) for b in blocks if b.size >= min(4, len(s))]
+    shared = sum(e - b for b, e in covered)
+    touches = any(b < hi and lo < e for b, e in covered)
+    return touches and shared >= min(MIN_SHARED, len(s), len(q))
 
 
 def _summary(found: list[str], seeded_hit: dict[str, bool], key: list[dict[str, str]]) -> dict[str, Any]:
@@ -85,11 +100,11 @@ def score_doc(runs: list[dict[str, Any]], key: list[dict[str, str]]) -> dict[str
     every_non: list[str] = []
     for prov in sorted({r["provider"] for r in runs}):
         quotes = [(r["persona"], f["quote"]) for r in runs if r["provider"] == prov for f in r["findings"]]
-        hit = {k["id"]: any(hits(q, k["seeded"]) for _, q in quotes) for k in key}
-        non = [q for _, q in quotes if not any(hits(q, k["seeded"]) for k in key)]
+        hit = {k["id"]: any(hits(q, k) for _, q in quotes) for k in key}
+        non = [q for _, q in quotes if not any(hits(q, k) for k in key)]
         out[prov] = _summary(non, hit, key)
         out[prov]["by_persona"] = {
-            p: sorted(k["id"] for k in key if any(hits(q, k["seeded"]) for pp, q in quotes if pp == p))
+            p: sorted(k["id"] for k in key if any(hits(q, k) for pp, q in quotes if pp == p))
             for p in sorted({p for p, _ in quotes} | {r["persona"] for r in runs if r["provider"] == prov})
         }
         for i, v in hit.items():
