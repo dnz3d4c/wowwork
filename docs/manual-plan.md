@@ -3,6 +3,7 @@
 ## 현재 상태
 
 - 상태: 51개 파일 번역, 평가, 회귀 확인 완료 (2026-11-06). 회귀는 3회차까지 돌렸고(중대 이상 167 → 38 → 21건), 남은 21건은 `docs/decisions.tsv` 2026-11-06 기준으로 처리했다. 기록은 `reviews/2026-11-05-manual-regression`, `reviews/2026-11-06-manual-regression2`, `reviews/2026-11-06-manual-regression3`. 원문과 실제 동작이 다른 곳은 `reviews/2026-11-05-manual-regression/upstream-raw.json`에 모았다(upstream 보고 전, 중복 정리 필요). 남은 일: 사용자 최종 확인(절차 6단계)
+- 다듬기 (2026-11-06 사용자 지시, 진행 중): 게임 설명서 적합성 기준으로 51개 파일을 다시 본다. 사용자 예시는 "경보는 알림이 아닐까"(`basics/alerts.md`)와 "그 화면 같은 표현"(`basics/keybindings.md`)이다. 스크린리더 낭독은 사용자가 판단하므로 평가에서 뺐다. 페르소나 3명(한국어 WoW 용어·기능 검수자, 한국어 게임 설명서 편집자, WowVision을 처음 설치한 플레이어)을 Claude와 GPT가 따로 맡는다(`tools/review/prompts/polish-*.md`, `tools/review/workflows/manual-polish.js`). 페르소나 설계는 GPT 검토를 받아 고쳤다. 오류 심기 검증은 2회 했다: 1회차는 Claude 7/8, GPT 6/8로 GPT가 기준에 못 미쳐 프롬프트를 고쳤고, 2회차는 다른 파일에 새로 심어 Claude 13/15, GPT 14/15, 오탐 0건이었다(`reviews/2026-11-06-manual-polish-calibrate`). koKR 문구나 여러 파일에 걸친 용어를 바꾸자는 지적(alert=경보 포함)은 파일에서 고치지 않고 모아서 사용자 결정을 받는다. 기록: `reviews/2026-11-06-manual-polish`
 - 설치 프로그램에 설명서는 넣지 않는다(`docs/decisions.tsv` 2026-11-06)
 - 공개 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (2026-11-06 사용자 지시로 `dnz3d4c/WowVision` 공개, GitHub Pages는 Actions 방식, 계정 개인 도메인 gong.aheu.org). ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다. main에는 push하지 않는다(원본 릴리스 Workflow가 돈다). 배포 허용 브랜치(github-pages 환경)에 ko를 추가해 두었다.
 - 기준 원문: upstream `397ffc3` (V1.0.0 태그 + 문서 커밋 2개)
