@@ -1,0 +1,16 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/chat.md#claude-manual-editor-7",
+      "uphold": false,
+      "final_ko": "(게임의 대화 설정에서 텍스트 음성 변환 아래)",
+      "reason": "strict 항목. 지적의 근거는 '설정에서'와 '아래'의 연결이 어색하고 공간상 아래로 읽힐 수 있다는 자연스러움 판단뿐이며, koKR·용어집·공식 문자열·앱 코드에서 제안 표기를 뒷받침하는 글자는 제시되지 않았다. 반대로 같은 파일 ko/windows/chat.md:213이 원문 en/windows/chat.md의 'in the WowVision menu under Chat'을 'WowVision 메뉴의 대화 아래에 있습니다'로 옮겨, 설정·메뉴 안 위치를 'X 아래'로 쓰는 표기가 이미 있다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/chat.md:24",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md:25",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md:213"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "ref": "getting-started/sku-login.md#gpt-wow-veteran-4",
+    "uphold": false,
+    "final_ko": "Enter World 버튼을 누르면 도구가 Play mode로 바뀝니다.",
+    "reason": "gs_enUS.csv 34309 ENTER_WORLD 'Enter World'와 gs_koKR.csv 34309 '접속하기'는 직접 확인했고 같은 로그인 화면 문맥이다. 그러나 지적은 이 독자가 한국어 클라이언트로 Forever 로그인 화면을 듣는다는 전제에 기댄다. 그 전제는 글자로 확인되지 않는다. 번역문은 도구 지역을 Europe 또는 USA(74행), 언어를 영어·독일어·프랑스어·러시아어·스페인어(45행)로만 안내하고, 같은 Forever 목록은 Accept(193행)를 영어 화면 이름 그대로 인용한다. 이 항목만 공식 한국어로 바꾸면 같은 목록 안 표기가 갈린다. strict 기준(근거가 글자 그대로 확인될 때만)에 못 미쳐 현재 번역을 유지한다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:14875", "wowwork/cache/gs_koKR.csv:14877", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:45", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:74", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:193", "wowwork/docs/decisions.tsv:18"]
+  },
+  {
+    "ref": "getting-started/sku-login.md#gpt-wow-veteran-5",
+    "uphold": false,
+    "final_ko": "목록이 끝나면 Finish로 넘어갑니다.",
+    "reason": "gs_enUS.csv 34319 FINISH 'Finish'와 gs_koKR.csv 34319 '완료'는 직접 확인했다. 대응은 맞지만, 독자가 한국어 클라이언트에서 이 단추를 '완료'로 듣는다는 전제가 글자로 확인되지 않는다. 도구가 안내하는 지역·언어(번역문 45·74행)에 한국어가 없고, 같은 Forever 절은 화면 이름을 영어로 인용한다(193행 Accept). strict 기준에 못 미쳐 유지한다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:14884", "wowwork/cache/gs_koKR.csv:14887", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:45", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:74", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:193", "wowwork/docs/decisions.tsv:18"]
+  },
+  {
+    "ref": "getting-started/sku-login.md#gpt-newcomer-0",
+    "uphold": false,
+    "final_ko": "8. Enter World 버튼을 누르면 도구가 Play mode로 바뀝니다. Alt+F1을 누르면 Login mode로 돌아갑니다. 예를 들어 캐릭터 화면으로 돌아갈 때 씁니다.",
+    "reason": "gpt-wow-veteran-4와 같은 구절이다. ENTER_WORLD(34309) 영어·한국어 대응은 직접 확인했지만, 사용자가 '접속하기'를 듣는다는 전제가 확인되지 않고(번역문 45·74행) 같은 목록의 Accept(193행)도 영어로 인용되어 있다. 유지한다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:14875", "wowwork/cache/gs_koKR.csv:14877", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:45", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:74", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:193", "wowwork/docs/decisions.tsv:18"]
+  },
+  {
+    "ref": "getting-started/sku-login.md#gpt-newcomer-1",
+    "uphold": false,
+    "final_ko": "가장 아래 옵션에서 아래 화살표를 누르면 목록이 더 스크롤됩니다. 도구가 다음 옵션으로 건너뜁니다. 목록이 끝나면 Finish로 넘어갑니다.",
+    "reason": "gpt-wow-veteran-5와 같은 구절이다. FINISH(34319) 대응은 직접 확인했지만 한국어 클라이언트 전제가 글자로 확인되지 않는다(번역문 45·74행). 같은 Forever 절의 화면 이름 인용(193행 Accept)과도 표기가 맞는 현재 번역을 유지한다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:14884", "wowwork/cache/gs_koKR.csv:14887", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:45", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:74", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:193", "wowwork/docs/decisions.tsv:18"]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "world/minimap.md#reg-gpt-2",
+      "action": "applied",
+      "reason": "원문 en/world/minimap.md:79가 \"veins and deposits\"를 둘 다 적는데, 다듬기(497f41b)가 \"광맥과 광상\"을 \"광맥\"으로 줄여 deposits가 빠졌다. 다듬기 전 문구로 되돌렸다. 노드 이름(Mithril Deposit 등)은 gs_koKR.csv에 없어 '광상'을 반박할 공식 문자열 근거가 없다."
+    }
+  ],
+  "targeting_changes": 0
+}

@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/combat.md#gpt-manual-editor-0",
+      "uphold": false,
+      "final_ko": "전투가 끝나면 WowVision은 필요한 키가 하나도 눌려 있지 않게 되는 즉시 키를 되찾고, 하던 곳에서 이어 갑니다. 열려 있던 창은 그대로 열려 있고, 전과 같은 요소에 있게 됩니다.",
+      "reason": "strict 항목이다. 현재 번역은 원문 en/world/combat.md:16 \"as soon as none of the keys it needs is held down, and picks up where you were ... you are on the same element as before\"의 조건과 정보 단위를 빠짐없이 옮겼다. 지적 근거는 '부정 표현이 겹친다', '대상이 구체적이지 않다'는 문장 자연스러움뿐이고, koKR 값·용어집·게임 공식 문자열·앱 코드·다른 설명서 표기 같은 글자 근거가 없다. 제안은 원문에 없는 '전투 전에 멈춘 지점부터 창 탐색을'을 더하고 'you are on'을 '요소가 선택됩니다'로 바꿔 뜻을 바꾼다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/world/combat.md:16",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:17"
+      ]
+    }
+  ]
+}

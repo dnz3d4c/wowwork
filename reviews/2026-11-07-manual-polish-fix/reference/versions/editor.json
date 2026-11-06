@@ -1,0 +1,10 @@
+{
+  "responses": [
+    {
+      "ref": "reference/versions.md#reg-gpt-0",
+      "action": "applied",
+      "reason": "원문 \"fewer game windows of their own\"은 공통 기능 외에 그 버전이 지원하는 창을 말하고, 그 버전에만 있는 창으로 한정하지 않는다. 표에서도 캐릭터 창은 TBC·Mists·WoW: Forever가 함께 지원한다. \"각 버전 전용\"을 \"공통 기능 외에 지원하는 게임 창은\"으로 바꿨다."
+    }
+  ],
+  "targeting_changes": 2
+}

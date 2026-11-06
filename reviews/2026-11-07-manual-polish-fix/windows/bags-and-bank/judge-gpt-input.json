@@ -1,0 +1,21 @@
+{
+ "file": "windows/bags-and-bank.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/bags-and-bank.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/bags-and-bank.md",
+ "items": [
+  {
+   "ref": "windows/bags-and-bank.md#gpt-manual-editor-2",
+   "strict": true,
+   "finding": {
+    "ref": "windows/bags-and-bank.md#gpt-manual-editor-2",
+    "kind": "split",
+    "quote": "무언가를 집으면 내려놓을 때까지 게임이 그것을 커서에 들고 있습니다.",
+    "suggestion": "무언가를 집으면 내려놓을 때까지 커서에 든 상태로 유지됩니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "“게임이 그것을 커서에 들고 있습니다”는 영어의 행위 주체와 대명사를 그대로 옮겨, 아이템의 상태를 불필요하게 우회해 설명해. 수정안은 커서에 놓인 상태와 지속 조건을 빠짐없이 직접 전달해.",
+    "claude_reason": "원문 'the game holds it on the cursor until you put it down'에 충실하고 '그것'의 선행사는 바로 앞 '무언가' 하나뿐이라 대상을 다시 찾을 필요가 없다. 주어를 빼자는 것은 오해를 막는 수정이 아니라 취향 차이다."
+   }
+  }
+ ]
+}

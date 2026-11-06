@@ -1,0 +1,15 @@
+{
+  "responses": [
+    {
+      "ref": "world/index.md#reg-claude-0",
+      "action": "applied",
+      "reason": "원문 \"quest dialogs\"는 quests.md의 \"## 퀘스트 NPC 창\" 절을 가리킨다. 다른 설명서 파일(quests.md:73, windows/overview.md:56, getting-started/sku.md:21)과 같은 이름으로 되돌려 퀘스트 목록 창과 구분했다."
+    },
+    {
+      "ref": "world/index.md#reg-gpt-1",
+      "action": "applied",
+      "reason": "reg-claude-0과 같은 지적이다. \"퀘스트 창\"을 \"퀘스트 NPC 창\"으로 고쳤다."
+    }
+  ],
+  "targeting_changes": 1
+}

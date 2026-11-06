@@ -1,0 +1,15 @@
+{
+  "responses": [
+    {
+      "ref": "world/scanner.md#reg-gpt-0",
+      "action": "dispute",
+      "reason": "원문(en/world/scanner.md 50행)은 \"marked seen, quest available or turn in, low level when applicable, and indoors\"로, 조건(when applicable)을 저레벨에만 붙이고 indoors에는 조건을 두지 않았다. 번역은 이 구조를 그대로 옮겼다. core/quests/scanner.lua:180-181이 entry.indoors일 때만 붙이는 것은 원문과 동작의 차이이며, decisions.tsv 2026-11-05 \"원문에 충실\" 결정에 따라 한국어를 원문과 다르게 고치지 않고 upstream 보고 대상으로 둔다."
+    },
+    {
+      "ref": "world/scanner.md#reg-gpt-1",
+      "action": "dispute",
+      "reason": "미니맵 추적 목록의 이름은 애드온 koKR이 아니라 게임이 준다. core/minimap/tracking.lua:68에서 label = t.name이고, 이 값은 C_Minimap.GetTrackingInfo(engine.lua:107)가 돌려주는 게임 문자열이다. 게임 공식 문자열은 cache/gs_koKR.csv 5976행 MINIMAP_TRACKING_REPAIR=\"장비 수리\"(enUS 같은 ID 17557 = Repair)라서 화면에 나오는 말은 \"장비 수리\"다. 지적이 근거로 든 ui.lua:100 L[\"Repair\"]=\"수리\"는 원문 69행의 역할 그룹(Role groups) 이름이며 다른 화면이다."
+    }
+  ],
+  "targeting_changes": 0
+}

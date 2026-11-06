@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/manual-installation.md#gpt-manual-editor-2",
+      "uphold": false,
+      "final_ko": "압축 프로그램 중에는 \"zip 이름으로 새 폴더를 만들어 풀기\"를 권하는 것이 많습니다.",
+      "reason": "strict 항목. 원문 60행 'Many unzip programs offer to extract ... If you accept, ...'에서 offer는 다음 문장 'If you accept'가 받는 제안이고, 번역 61행 '권하는 것이 많습니다. 이를 받아들이면'은 그 구조를 그대로 옮겼다. 지적의 근거는 offer의 뉘앙스 해석뿐이고 koKR, Loc.cs, glossary.tsv, 게임 공식 문자열, 앱 코드, 다른 한국어 설명서 표기 가운데 글자 그대로 확인되는 근거가 없다. 수정안 '기능을 제공하는'은 '받아들이면'과도 잘 이어지지 않는다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/getting-started/manual-installation.md:60",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/manual-installation.md:61"
+      ]
+    }
+  ]
+}

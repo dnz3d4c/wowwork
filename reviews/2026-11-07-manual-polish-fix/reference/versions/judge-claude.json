@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "ref": "reference/versions.md#gpt-wow-veteran-0",
+      "uphold": false,
+      "final_ko": "| 길드 및 커뮤니티 창, 길드 권한 | 아니요 | 아니요 | 아니요 | 예 | 예 |",
+      "reason": "공식 창 제목이 '길드 & 커뮤니티'인 것은 맞다(gs_enUS 36117 COMMUNITIES_FRAME_TITLE 'Guild & Communities' = gs_koKR '길드 & 커뮤니티'). 그러나 WowVision은 이 창을 자기 문자열 L[\"Guild and Communities\"](retail/communities.lua:3, 511, 1004)로 낭독하고, 그 koKR 값은 '길드 및 커뮤니티'(vision-locale/koKR/windows.lua:302)다. 설명서는 화면 문구를 글자 그대로 인용하는 원칙이고, 다른 한국어 설명서(windows/social.md:15, 222, windows/overview.md:63, getting-started/sku.md:53)도 '길드 및 커뮤니티'로 쓴다. 이 파일만 바꾸면 듣는 말과 설명서, 다른 설명서와 어긋난다. 공식 표기로 맞추려면 koKR 키 'Guild and Communities'를 바꾸는 kokr 범위 결정이라 개별 파일에서 고치지 않는다. strict 기준에서 이 파일 수정의 근거는 글자로 확인되지 않는다.",
+      "evidence_sources": [
+        "wowwork/cache/gs_enUS.csv:16526",
+        "wowwork/cache/gs_koKR.csv:16515",
+        "wowvision-ko/vision-locale/koKR/windows.lua:302",
+        "wowvision-ko/WowVision/retail/communities.lua:3",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:15",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/overview.md:63"
+      ]
+    }
+  ]
+}

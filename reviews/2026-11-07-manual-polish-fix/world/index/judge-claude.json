@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/index.md#claude-wow-veteran-0",
+      "uphold": true,
+      "final_ko": "- [목표 선택](targeting.md) — 대상 알림",
+      "reason": "koKR targeting.lua:4 L[\"Targeting\"]=\"목표 선택\"을 직접 확인했다. 반박의 근거였던 페이지 제목 불일치는 사라졌다: world/targeting.md 2행 제목이 이미 \"# 목표 선택\"이고, ko 설명서 전체에서 \"[대상 지정](targeting\" 링크는 0건, \"[목표 선택](\" 링크는 alerts.md·menu-and-settings.md 등 10개 파일에 있다. 현재 index.md도 이미 목표 선택으로 되어 있으므로 이 값으로 확정한다.",
+      "evidence_sources": ["wowvision-ko/vision-locale/koKR/targeting.lua:4", "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2", "wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md", "input"]
+    },
+    {
+      "ref": "world/index.md#gpt-wow-veteran-0",
+      "uphold": true,
+      "final_ko": "[목표 선택](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+      "reason": "claude-wow-veteran-0과 같은 곳. koKR targeting.lua:4 값이 목표 선택이고, 대상 페이지 제목(world/targeting.md:2)과 다른 설명서의 링크 글도 모두 목표 선택으로 맞춰져 있어 반박 근거가 없어졌다.",
+      "evidence_sources": ["wowvision-ko/vision-locale/koKR/targeting.lua:4", "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2"]
+    },
+    {
+      "ref": "world/index.md#gpt-newcomer-0",
+      "uphold": true,
+      "final_ko": "[목표 선택](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+      "reason": "claude-wow-veteran-0과 같은 곳. 모듈 이름 koKR targeting.lua:4 = 목표 선택을 글자 그대로 확인했고, 페이지 제목도 목표 선택(world/targeting.md:2)이라 링크 글을 목표 선택으로 두는 것이 맞다.",
+      "evidence_sources": ["wowvision-ko/vision-locale/koKR/targeting.lua:4", "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2"]
+    }
+  ]
+}

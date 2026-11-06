@@ -1,0 +1,15 @@
+{
+  "responses": [
+    {
+      "ref": "windows/action-bars.md#reg-claude-0",
+      "action": "dispute",
+      "reason": "원문 'the extra action button'과 영어가 같은 공식 문자열은 cache/gs_enUS.csv ID 22293 BINDING_NAME_EXTRAACTIONBUTTON1 \"Extra Action Button 1\"이고, gs_koKR.csv 같은 ID 값은 \"기타 행동 단축키 1\"이다. 게임은 이 버튼의 extra를 '기타'로 옮긴다. 지적의 근거 HUD_EDIT_MODE_EXTRA_ABILITIES_LABEL(Extra Abilities), BINDING_HEADER_MULTIACTIONBAR(Extra Action Bars)는 영어가 다른 개념(추가 단축바)이라 polish-base.md '같은 ID의 영어가 같은 말' 기준에 맞지 않는다. '기타 행동 버튼'을 유지한다."
+    },
+    {
+      "ref": "windows/action-bars.md#reg-gpt-1",
+      "action": "dispute",
+      "reason": "원문은 'the vehicle or possess bars'로 전투 차량(vehicle)의 단축바다. 공식 문자열은 gs_koKR.csv BINDING_HEADER_VEHICLE(18826, \"Vehicle Controls\")=\"차량 조종\", HUD_EDIT_MODE_VEHICLE_LEAVE_BUTTON_LABEL(49528, \"Vehicle Exit Button\")이 '차량'으로 옮긴다. glossary.tsv·decisions.tsv·translation-guide.md에 vehicle=운송 수단 확정은 없다(grep 결과 없음). 설명서의 '운송 수단'은 world/wownav.md에서 배·비행선 같은 transport를 가리키는 다른 개념이므로 섞으면 오히려 혼동된다. '차량 단축바'를 유지한다."
+    }
+  ],
+  "targeting_changes": 0
+}

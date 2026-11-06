@@ -1,0 +1,16 @@
+[
+  {
+    "ref": "windows/action-bars.md#reg-claude-0",
+    "uphold": false,
+    "final_ko": "기타 행동 버튼, 지역 능력 버튼, 차량 단축바나",
+    "reason": "원문은 'the extra action button'(단일 버튼)이다. 같은 영어의 공식 문자열 gs_enUS.csv 22293 BINDING_NAME_EXTRAACTIONBUTTON1 \"Extra Action Button 1\"의 gs_koKR.csv 값은 \"기타 행동 단축키 1\"로, 게임은 이 버튼의 extra를 '기타'로 옮긴다. 지적의 근거 BINDING_HEADER_MULTIACTIONBAR(15110 \"Extra Action Bars\"=\"추가 행동 단축바\")와 Extra Abilities는 다른 개념(추가 단축바)이라 같은 말 기준에 맞지 않는다. glossary.tsv·decisions.tsv에 관련 결정 없음. 편집자 반박이 근거가 강하다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:10312", "wowwork/cache/gs_koKR.csv:10315", "wowwork/cache/gs_koKR.csv:4338", "wowwork/docs/glossary.tsv", "wowwork/docs/decisions.tsv"]
+  },
+  {
+    "ref": "windows/action-bars.md#reg-gpt-1",
+    "uphold": false,
+    "final_ko": "차량 단축바나 행동 단축바 조정",
+    "reason": "원문 'the vehicle or possess bars'의 vehicle은 탑승 전투 차량이다. 공식 문자열 gs_enUS.csv 18826 \"Vehicle Controls\"=gs_koKR.csv \"차량 조종\", 49528 \"Vehicle Exit Button\"=\"차량 내리기 단추\", 51276 \"Vehicle Seats\"=\"차량 좌석\"으로 게임은 vehicle을 '차량'으로 옮긴다. glossary.tsv·decisions.tsv에 vehicle=운송 수단 확정이 없고(grep 결과 없음), 설명서의 '운송 수단'은 world/wownav.md에서 배·비행선 같은 transport를 가리키는 다른 개념이다. 지적의 '확정 용어' 주장은 확인되지 않는다.",
+    "evidence_sources": ["wowwork/cache/gs_enUS.csv:7101", "wowwork/cache/gs_koKR.csv:7104", "wowwork/cache/gs_enUS.csv:20800", "wowwork/cache/gs_koKR.csv:20812", "wowwork/cache/gs_koKR.csv:21833", "wowwork/docs/glossary.tsv", "wowwork/docs/decisions.tsv"]
+  }
+]

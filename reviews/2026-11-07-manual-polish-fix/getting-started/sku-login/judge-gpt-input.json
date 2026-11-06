@@ -1,0 +1,60 @@
+{
+ "file": "getting-started/sku-login.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/sku-login.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md",
+ "items": [
+  {
+   "ref": "getting-started/sku-login.md#gpt-wow-veteran-4",
+   "strict": true,
+   "finding": {
+    "ref": "getting-started/sku-login.md#gpt-wow-veteran-4",
+    "kind": "split",
+    "quote": "Enter World 버튼을 누르면 도구가 Play mode로 바뀝니다.",
+    "suggestion": "접속하기 버튼을 누르면 도구가 Play mode로 바뀝니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "지적이 맞다. 지원 언어 다섯 개는 Windows 문자 인식에 관한 설명이고, Forever에서는 게임이 화면 항목을 직접 낭독한다고 원문과 번역문에 명시돼 있다. 같은 ID의 공식 문자열도 “Enter World”를 “접속하기”로 번역하므로 영어 버튼명을 유지할 근거가 없다.",
+    "claude_reason": "공식 문자열 ID 34309 ENTER_WORLD의 영어 'Enter World'는 원문 구절과 같은 말이고 같은 로그인 화면 문맥이므로 대응 자체는 맞다. 그러나 지적은 사용자가 한국어 클라이언트를 쓴다는 전제에 기대는데, 원문과 번역문은 도구의 지역을 Europe 또는 USA(번역문 74행), 언어를 영어·독일어·프랑스어·러시아어·스페인어(45행)로만 안내한다. 한국어 클라이언트에서 이 도구의 Forever 모드가 동작한다는 근거가 없고, 같은 Forever 목록의 Accept(193행)·Cancel(155행)도 영어 화면 이름 그대로 인용하고 있다. 결정 2026-11-05 'WoW: Forever 전용 지명'도 Forever 쪽에 공식 한국어가 없어 영어를 유지했다. 지적의 전제가 입증되지 않아 현재 번역을 유지한다."
+   }
+  },
+  {
+   "ref": "getting-started/sku-login.md#gpt-wow-veteran-5",
+   "strict": true,
+   "finding": {
+    "ref": "getting-started/sku-login.md#gpt-wow-veteran-5",
+    "kind": "split",
+    "quote": "목록이 끝나면 Finish로 넘어갑니다.",
+    "suggestion": "목록이 끝나면 완료로 넘어갑니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "지적이 맞다. Forever에서는 게임이 항목을 직접 낭독하며, 공식 문자열의 같은 ID에서 “Finish”는 “완료”로 대응한다. 도구의 문자 인식 지원 언어 목록은 이 게임 항목을 영어로 적어야 한다는 근거가 아니다.",
+    "claude_reason": "ID 34319 FINISH의 영어 'Finish'는 원문 구절과 같은 말이지만, 사용자가 한국어 클라이언트로 캐릭터 만들기 화면을 듣는다는 전제가 입증되지 않는다. 도구 지원 지역은 Europe·USA(번역문 74행), 언어는 영어·독일어·프랑스어·러시아어·스페인어(45행)이며, 같은 파일은 Forever 화면 이름(Accept 193행 등)을 영어로 인용한다. 근거가 약해 현재 번역을 유지한다."
+   }
+  },
+  {
+   "ref": "getting-started/sku-login.md#gpt-newcomer-0",
+   "strict": true,
+   "finding": {
+    "ref": "getting-started/sku-login.md#gpt-newcomer-0",
+    "kind": "split",
+    "quote": "8. Enter World 버튼을 누르면 도구가 Play mode로 바뀝니다. Alt+F1을 누르면 Login mode로 돌아갑니다. 예를 들어 캐릭터 화면으로 돌아갈 때 씁니다.",
+    "suggestion": "8. 접속하기 버튼을 누르면 도구가 Play mode로 바뀝니다. Alt+F1을 누르면 Login mode로 돌아갑니다. 예를 들어 캐릭터 화면으로 돌아갈 때 씁니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "지적이 맞다. 원문 “Enter World”와 정확히 대응하는 공식 한국어 문자열은 “접속하기”다. Forever에서는 게임 자체가 화면을 낭독하므로 문자 인식용 언어 목록을 이유로 영어 버튼명을 유지할 수 없다.",
+    "claude_reason": "gpt-wow-veteran-4와 같은 지적이다. ENTER_WORLD(ID 34309)의 영어·한국어 대응은 맞지만, 도구가 Europe·USA 지역과 다섯 언어만 안내하므로(번역문 45·74행) 사용자가 '접속하기'를 듣는다는 전제가 입증되지 않는다. 같은 목록의 Accept도 영어로 인용되어 있어 이 항목만 한국어로 바꾸면 표기가 갈린다. 현재 번역을 유지한다."
+   }
+  },
+  {
+   "ref": "getting-started/sku-login.md#gpt-newcomer-1",
+   "strict": true,
+   "finding": {
+    "ref": "getting-started/sku-login.md#gpt-newcomer-1",
+    "kind": "split",
+    "quote": "가장 아래 옵션에서 아래 화살표를 누르면 목록이 더 스크롤됩니다. 도구가 다음 옵션으로 건너뜁니다. 목록이 끝나면 Finish로 넘어갑니다.",
+    "suggestion": "가장 아래 옵션에서 아래 화살표를 누르면 목록이 더 스크롤됩니다. 도구가 다음 옵션으로 건너뜁니다. 목록이 끝나면 완료로 넘어갑니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "지적이 맞다. 공식 문자열에서 원문의 “Finish”와 같은 ID에 대응하는 한국어는 “완료”다. 입력 내용상 Forever 화면은 게임이 직접 낭독하므로, 도구가 제공하는 문자 인식 언어에 한국어가 없다는 반박은 이 항목에 적용되지 않는다.",
+    "claude_reason": "gpt-wow-veteran-5와 같은 지적이다. FINISH(ID 34319)의 대응은 맞지만, 한국어 클라이언트에서 도구가 동작한다는 근거가 입력에 없고 도구는 Europe·USA 지역과 다섯 언어만 안내한다(번역문 45·74행). 게임이 '완료'를 낭독한다는 지적의 전제가 입증되지 않아 현재 번역을 유지한다."
+   }
+  }
+ ]
+}

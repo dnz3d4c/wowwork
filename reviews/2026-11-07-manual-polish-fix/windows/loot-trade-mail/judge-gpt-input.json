@@ -1,0 +1,21 @@
+{
+ "file": "windows/loot-trade-mail.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/loot-trade-mail.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/loot-trade-mail.md",
+ "items": [
+  {
+   "ref": "windows/loot-trade-mail.md#gpt-manual-editor-0",
+   "strict": true,
+   "finding": {
+    "ref": "windows/loot-trade-mail.md#gpt-manual-editor-0",
+    "kind": "split",
+    "quote": "그러면 전리품을 열자마자 모두 자동으로 챙깁니다.",
+    "suggestion": "그러면 전리품을 획득할 때 모두 자동으로 챙깁니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "공식 문자열의 같은 ID에서 영어 Auto Loot 설명을 한국어로 “전리품을 획득할 때”라고 옮긴다. “전리품을 열다”는 공식 동작명과 다르고 전리품 자체를 여는 것으로 읽히므로 지적을 받아들인다.",
+    "claude_reason": "원문 'everything is picked up as soon as you loot'의 즉시 조건을 '열자마자'가 살린다. 시체나 상자의 전리품을 여는 동작은 바로 앞 문장(10행 '시체나 상자에 든 아이템')이 받쳐 대상이 분명하다. 제안 '획득할 때 모두 자동으로 챙깁니다'는 즉시성을 흐리고 같은 말을 되풀이한다. 독자가 잘못 이해할 지점이 없어 유지."
+   }
+  }
+ ]
+}

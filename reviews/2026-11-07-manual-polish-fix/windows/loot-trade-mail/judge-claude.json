@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/loot-trade-mail.md#gpt-manual-editor-0",
+      "uphold": false,
+      "final_ko": "그러면 전리품을 열자마자 모두 자동으로 챙깁니다.",
+      "reason": "strict 항목. 지적의 근거인 공식 문자열 OPTION_TOOLTIP_AUTO_LOOT_DEFAULT(ID 16856)의 한국어는 '전리품을 획득할 때 자동으로 전리품을 획득하도록 합니다'이지만, 같은 ID의 영어는 'Sets Auto Looting as the default action when clicking on lootable things'로 원문 구절 'everything is picked up as soon as you loot'과 같은 말이 아니다. judge.md 공식 용어 근거 규칙상 영어가 다른 공식 문자열의 한국어를 끌어온 것이라 근거로 인정하지 않는다. glossary.tsv·koKR·다른 설명서 표기 등 글자 그대로 확인되는 다른 근거는 지적에 없다. 남는 것은 표현 선호뿐이라 현재 번역 유지.",
+      "evidence_sources": [
+        "wowwork/cache/gs_enUS.csv:5355",
+        "wowwork/cache/gs_koKR.csv:5360",
+        "input"
+      ]
+    }
+  ]
+}

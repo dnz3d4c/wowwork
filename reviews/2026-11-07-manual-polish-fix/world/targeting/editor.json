@@ -1,0 +1,11 @@
+{
+  "responses": [
+    {"ref": "world/targeting.md#reg-gpt-6", "action": "applied", "reason": "gs_koKR 49986 INTERACT_KEY_TUTORIAL, 49987, 49703 ENABLE_INTERACT_TEXT 모두 Interact Key를 '상호작용 단축키'로 쓴다. 81행을 '상호작용 단축키'로 고쳤다."},
+    {"ref": "world/targeting.md#reg-gpt-7", "action": "applied", "reason": "게임 옵션 이름이 ENABLE_INTERACT_TEXT '상호작용 단축키 활성화'이므로 97행을 '상호작용 단축키'로 고쳤다."},
+    {"ref": "world/targeting.md#reg-gpt-8", "action": "applied", "reason": "같은 공식 용어(49986). 125행 표 칸을 '상호작용 단축키'로 고쳤다."},
+    {"ref": "world/targeting.md#reg-gpt-9", "action": "applied", "reason": "같은 공식 용어(49986, 49987). 138행 첫 문장을 고쳤다."},
+    {"ref": "world/targeting.md#reg-gpt-10", "action": "applied", "reason": "같은 공식 용어(49986). 138행 마지막 문장을 고쳤다."}
+  ],
+  "targeting_changes": 2,
+  "targeting_notes": "2행 페이지 제목 '# 대상 지정' -> '# 목표 선택'(원문 '# Targeting'), 6행 '대상 지정은 Retail과...' -> '목표 선택은 Retail과...'(원문 'Targeting works the same'). 6행 '모든 대상 지정 설정'(원문 소문자 targeting settings)과 8행 제목 '대상 지정 키 한눈에 보기'(Targeting keys, 키 묶음을 뜻함)는 그대로 두었다. 메뉴 경로는 이미 '목표 선택'이었다. 기계 검사 통과."
+}

@@ -1,0 +1,47 @@
+{
+ "file": "world/index.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/index.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/index.md",
+ "items": [
+  {
+   "ref": "world/index.md#claude-wow-veteran-0",
+   "strict": true,
+   "finding": {
+    "ref": "world/index.md#claude-wow-veteran-0",
+    "kind": "split",
+    "quote": "- [대상 지정](targeting.md) — 대상 알림",
+    "suggestion": "- [목표 선택](targeting.md) — 대상 알림",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "원문의 링크명 `Targeting`은 코드에서 같은 문자열을 모듈 이름으로 사용하며, 실제 한국어 화면 문구는 `목표 선택`이다. 관련 문서도 함께 바꿔야 한다는 반박은 변경 범위에 관한 문제일 뿐, 현재 용어가 맞다는 근거가 되지 않는다.",
+    "claude_reason": "koKR targeting.lua:4 L[\"Targeting\"]=\"목표 선택\"과 공식 TARGETING_HEADER/TUTORIAL_TITLE4(영어 Targeting)=\"목표 선택\"은 직접 확인했다. 하지만 이 줄은 메뉴 인용이 아니라 world/targeting.md 페이지 제목(\"# 대상 지정\", 2행)을 가리키는 목차 링크이고, 설명서 다른 파일 20곳 가까이가 같은 [대상 지정](targeting.md) 링크 글을 쓴다. 이 파일만 바꾸면 페이지 제목과 목차가 어긋나는 새 불일치가 생긴다. 지적이 스스로 설명서 전체를 함께 고쳐야 한다고 했으므로 file 범위가 아니라 global 결정 대상이다. 개별 파일에서는 유지하고 사용자 결정으로 넘긴다."
+   }
+  },
+  {
+   "ref": "world/index.md#gpt-wow-veteran-0",
+   "strict": true,
+   "finding": {
+    "ref": "world/index.md#gpt-wow-veteran-0",
+    "kind": "split",
+    "quote": "[대상 지정](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+    "suggestion": "[목표 선택](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "`Targeting`은 실제 모듈 이름으로 쓰이며 한국어 화면에는 `목표 선택`으로 표시된다. 페이지 제목과 다른 링크도 함께 정리해야 하지만, 그 불일치는 이 지적을 기각할 이유가 아니다.",
+    "claude_reason": "claude-wow-veteran-0과 같은 곳이다. 공식 문자열 10654·12729·58427의 영어가 Targeting이고 한국어가 목표 선택인 것은 맞지만, 링크 글은 대상 페이지 제목 \"대상 지정\"(world/targeting.md:2)과 맞춰져 있다. 제목과 모든 링크를 함께 바꾸는 global 결정이므로 이 파일만 고치지 않는다."
+   }
+  },
+  {
+   "ref": "world/index.md#gpt-newcomer-0",
+   "strict": true,
+   "finding": {
+    "ref": "world/index.md#gpt-newcomer-0",
+    "kind": "split",
+    "quote": "[대상 지정](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+    "suggestion": "[목표 선택](targeting.md) — 대상 알림, 소프트 대상, 주시 대상, 대상 메뉴",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "코드는 `Targeting` 번역값을 모듈의 화면 이름으로 직접 사용하고 있으며 그 값은 `목표 선택`이다. 관련 페이지 제목과 링크가 오래된 `대상 지정`으로 통일되어 있다는 사실은 현재 표현의 정확성을 뒷받침하지 않는다.",
+    "claude_reason": "claude-wow-veteran-0과 같은 곳이다. 모듈 이름이 목표 선택(koKR targeting.lua:4)인 것은 맞지만, 모듈 이름을 인용하는 곳(basics/menu-and-settings.md:30·66, basics/alerts.md:94)은 이미 목표 선택이고, 여기 링크 글은 페이지 제목 \"대상 지정\"을 따른다. 페이지 제목 변경은 global 결정 대상이다."
+   }
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/bags-and-bank.md#gpt-manual-editor-2",
+      "uphold": false,
+      "final_ko": "무언가를 집으면 내려놓을 때까지 게임이 그것을 커서에 들고 있습니다.",
+      "reason": "strict 항목이다. 지적의 근거는 '우회적 설명'이라는 자연스러움 판단뿐이고, koKR 값·Loc.cs·용어집·게임 공식 문자열·앱 코드·다른 한국어 설명서 표기 같은 글자 근거가 없다. 원문 77줄 'the game holds it on the cursor until you put it down'과 번역 78줄은 뜻과 한정어(until)가 맞고, '그것'의 선행사는 같은 문장 앞의 '무언가' 하나뿐이라 polish-base.md 2항의 지시어 결함 기준(선행사가 둘 이상이거나 멀리 떨어짐)에도 해당하지 않는다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/bags-and-bank.md:77",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/bags-and-bank.md:78"
+      ]
+    }
+  ]
+}
