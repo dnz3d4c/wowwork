@@ -1,0 +1,28 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/scanner.md#reg-gpt-0",
+      "uphold": false,
+      "final_ko": "퀘스트 NPC를 [미니맵 스캐너](minimap.md)로 발견한 것뿐이면 항목에 퀘스트 이름 대신 NPC 이름이 표시되고, 발견됨, 퀘스트 수락 가능 또는 완료, 저레벨이면 저레벨, 그리고 실내가 붙습니다.",
+      "reason": "원문 en/world/scanner.md:51은 \"low level when applicable, and indoors\"로 조건을 저레벨에만 달았고, 번역은 그 구조를 그대로 옮겼다. scanner.lua:180-181이 entry.indoors일 때만 붙이는 것은 원문과 동작의 차이이며, decisions.tsv:13(2026-11-05 원문에 충실)에 따라 한국어를 원문과 다르게 고치지 않고 upstream 보고 대상으로 둔다. 편집자 반박이 강하다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/core/quests/scanner.lua:180-181",
+        "wowwork/docs/decisions.tsv:13"
+      ]
+    },
+    {
+      "ref": "world/scanner.md#reg-gpt-1",
+      "uphold": false,
+      "final_ko": "예: 약초 찾기, 광물 찾기, 경매인, 은행원, 비행 조련사, 여관주인, 우체통, 장비 수리, 상인.",
+      "reason": "미니맵 추적 항목 이름은 tracking.lua:68 label = t.name으로 게임의 C_Minimap.GetTrackingInfo(engine.lua:107) 값을 쓴다. 게임 공식 문자열 ID 17557 MINIMAP_TRACKING_REPAIR는 enUS \"Repair\", koKR \"장비 수리\"로 같은 문맥(미니맵 추적)이다. 지적이 든 koKR/ui.lua:100 L[\"Repair\"]=\"수리\"는 원문 69행 역할 그룹 이름이라 다른 화면이다. 현재 번역이 맞다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/minimap/tracking.lua:68",
+        "wowvision-ko/WowVision/core/minimap/engine.lua:107",
+        "wowwork/cache/gs_koKR.csv:5976",
+        "wowwork/cache/gs_enUS.csv:5968",
+        "wowvision-ko/vision-locale/koKR/ui.lua:100"
+      ]
+    }
+  ]
+}

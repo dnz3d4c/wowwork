@@ -1,0 +1,73 @@
+{
+ "file": "world/targeting.md",
+ "instruction": "strict=true인 항목: 이 항목들은 앞선 두 회사 판정이 갈린 지적이다. 사용자 결정(wowwork/docs/decisions.tsv 2026-11-06 \"판정이 갈린 건도 같은 기준\")에 따라, 지적의 근거가 글자 그대로 확인될 때만 uphold=true로 한다. 인정하는 근거: koKR 값(wowvision-ko/vision-locale/koKR), 설치 프로그램 Loc.cs, wowwork/docs/glossary.tsv, 게임 공식 문자열(같은 문맥, wowwork/cache/gs_*.csv), 앱 코드, 다른 한국어 설명서의 표기. 직접 열어 그 글자를 확인한 경우만이다. 자연스러움이나 취향만이 근거면 uphold=false다.\nstrict=false인 항목은 회귀 지적과 편집자 반박 가운데 근거가 강한 쪽을 고른다.\n",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/targeting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md",
+ "items": [
+  {
+   "ref": "world/targeting.md#gpt-manual-editor-1",
+   "strict": true,
+   "finding": {
+    "ref": "world/targeting.md#gpt-manual-editor-1",
+    "kind": "split",
+    "quote": "모든 키의 전체 목록은 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+    "suggestion": "전체 키 목록은 [키 바인딩 목록](../reference/keybindings.md)에 있습니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "“모든 키의 전체 목록”은 같은 범위를 “모든”과 “전체”로 중복해 나타낸다. “전체 키 목록”만으로 원문의 complete list of all keys가 뜻하는 누락 없는 목록을 그대로 전달한다.",
+    "claude_reason": "원문 \"The complete list of all keys\"를 그대로 옮겨 뜻이 정확하다. \"모든\"과 \"전체\"가 겹치는 것은 독자가 잘못 이해하거나 찾지 못하는 점이 없는 문체 취향이라 polish-base.md의 '보지 않는 것'에 해당한다."
+   }
+  },
+  {
+   "ref": "world/targeting.md#gpt-manual-editor-8",
+   "strict": true,
+   "finding": {
+    "ref": "world/targeting.md#gpt-manual-editor-8",
+    "kind": "split",
+    "quote": "이 모드는 대상이 바뀌거나 죽을 때마다 그에 맞춰 반영되며, 전투 중에도 작동합니다.",
+    "suggestion": "이 모드는 대상이 바뀌거나 현재 대상이 죽을 때마다 새 상태에 맞게 적용되며, 전투 중에도 작동합니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "원문은 every target change와 your target's death를 별도로 명시한다. 현재 번역의 “대상이 바뀌거나 죽을 때”도 뜻은 대체로 통하지만, “그에 맞춰 반영되며”는 무엇을 반영하는지 빠져 있어 문장 관계가 불명확하므로 구체화하는 편이 맞다.",
+    "claude_reason": "앞 표와 문단이 모두 내 하드 대상을 말하므로 \"대상이 죽을 때\"는 원문 your target's death로 읽힌다. 지적이 든 오해(아무 대상의 죽음)는 문맥상 생기지 않고, 수정안의 \"현재 대상\", \"새 상태에 맞게\"는 원문에 없는 말을 더한다. 양쪽 근거가 약하므로 현재 번역을 유지한다."
+   }
+  },
+  {
+   "ref": "world/targeting.md#gpt-manual-editor-10",
+   "strict": true,
+   "finding": {
+    "ref": "world/targeting.md#gpt-manual-editor-10",
+    "kind": "split",
+    "quote": "/wv soft는 현재 고정 모드와, 모든 소프트 대상 지정 게임 설정의 현재 값과 게임 기본값을 읽어 주고 대화창에도 출력합니다.",
+    "suggestion": "/wv soft는 현재 고정 모드와 모든 소프트 대상 지정 설정의 현재 값 및 게임 기본값을 읽어 주고 대화창에도 출력합니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "“와,”의 쉼표는 병렬 구조를 부자연스럽게 끊고, “소프트 대상 지정 게임 설정”은 명사 관계가 불분명하다. 다만 수정안처럼 “게임”을 삭제하면 원문의 game setting 한정이 약해지므로, “소프트 대상 지정에 관한 모든 게임 설정”으로 고친다.",
+    "claude_reason": "수정안은 원문 every soft targeting game setting의 \"game\"을 빼 WowVision 설정과 게임 설정의 구별을 잃는다. \"와\"가 두 번 겹치는 문장에서 쉼표는 바깥 병렬(고정 모드 / 게임 설정)을 가르는 역할을 해 오히려 수식 관계를 분명히 한다."
+   }
+  },
+  {
+   "ref": "world/targeting.md#gpt-manual-editor-11",
+   "strict": true,
+   "finding": {
+    "ref": "world/targeting.md#gpt-manual-editor-11",
+    "kind": "split",
+    "quote": "대상을 이름으로 최대 다섯 개까지 저장하고, 각각 자기 키로 다시 불러옵니다.",
+    "suggestion": "대상을 이름으로 최대 다섯 개까지 저장하고, 각각에 지정한 키로 다시 대상으로 잡습니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "원문에서 키는 저장된 각 대상을 다시 불러오기 위한 수단이며, 아래 절에서도 Target Focus 1~5에 키를 지정한다고 설명한다. “각각 자기 키”보다 “각각에 지정한 키”가 실제 관계를 정확히 드러낸다.",
+    "claude_reason": "원문 bring each back with its own key와 뜻이 같고, 바로 아래 '주시 대상 사용하기' 절이 주시 대상 선택 1~5에 키를 지정한다고 설명하므로 독자가 오해할 점이 없다. 문체 취향 차이다."
+   }
+  },
+  {
+   "ref": "world/targeting.md#gpt-newcomer-9",
+   "strict": true,
+   "finding": {
+    "ref": "world/targeting.md#gpt-newcomer-9",
+    "kind": "split",
+    "quote": "- /focus1 뒤에 아무것도 붙이지 않으면 현재 대상의 이름을 1번 칸에 저장합니다. 대상이 없으면 1번 칸은 이전 이름을 그대로 유지하고 WowVision이 \"대상 없음. /focus1 <이름>을 사용하거나 유닛을 대상으로 지정하십시오.\"를 출력합니다(영어 클라이언트에서는 `/focus1 <name>`).",
+    "suggestion": "- /focus1 뒤에 아무것도 붙이지 않으면 현재 대상의 이름을 1번 칸에 저장합니다. 대상이 없으면 1번 칸은 이전 이름을 그대로 유지하고 WowVision이 \"대상 없음. `/focus1 <이름>`을 사용하거나 유닛을 대상으로 지정하십시오.\"를 출력합니다.",
+    "why": "두 판정자의 결론이 다름",
+    "gpt_reason": "koKR의 실제 출력은 “/focus%d <이름>”이므로 설명서에서도 이 값을 그대로 인용하면서 해당 명령 부분에 인라인 코드 서식을 적용할 수 있다. 원문에 없는 “영어 클라이언트에서는”이라는 별도 조건을 덧붙일 근거는 없으며, 기계 검사 사정은 허용된 규칙이나 사용자 결정에 포함되지 않는다.",
+    "claude_reason": "tools/manual.py의 structure()가 인라인 코드를 목록으로 뽑아 원문과 비교하므로, 수정안처럼 `/focus1 <이름>`을 인라인 코드로 두면 원문의 `/focus1 <name>`과 글자가 달라 구조 검사가 깨진다. 한국어 출력은 koKR/targeting.lua:52 값을 그대로 인용하고 있고, 괄호는 원문 인라인 코드를 보존하기 위한 구조라 현재 번역을 유지한다."
+   }
+  }
+ ]
+}
