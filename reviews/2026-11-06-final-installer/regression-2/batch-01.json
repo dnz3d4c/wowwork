@@ -1,0 +1,21 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::managed.notForClient",
+   "file": "Loc.cs",
+   "key": "managed.notForClient",
+   "en": "{0}: not available for {1}, skipped.",
+   "ko": "{0}: {1}에서 사용할 수 없어 건너뜀.",
+   "de": "{0}: für {1} nicht verfügbar, übersprungen.",
+   "fr": "{0} : non disponible pour {1}, ignoré.",
+   "code": [
+    "InstallRunner.cs:533: lines.Add(Loc.Format(\"managed.notForClient\", managed.Entry.DisplayName, r.Target.DisplayName));",
+    "ManagedAddons.cs:682: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });",
+    "ManagedAddons.cs:796: Percent = 100, Message = Loc.Format(\"managed.notForClient\", entry.DisplayName, WowLocator.ProductLabel(product)) });"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

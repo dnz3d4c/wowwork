@@ -53,3 +53,21 @@
 - 중대 1건: `managed.notForClient` "{0}: 사용할 수 없는 게임 버전({1}), 건너뜀."이 "게임 버전 자체를 쓸 수 없다"로 들린다(GPT major, Claude 같은 항목 minor). 두 회사가 같은 항목을 지적했으므로 절차 2단계대로 반박 없이 수용: "{0}: {1}에서 사용할 수 없어 건너뜀." (`에서`는 받침과 무관한 조사)
 - 경미(보고만): `logs.btnAcc` 수식 관계, `opt.windowsVoices.desc`의 newer.
 - codex [자동수정] "낡은 payload": UI 회귀 확인 반영 뒤 payload를 다시 만들 때 처리한다(빌드 단계).
+
+### UI 회귀 확인 1회차 (`wf_0a408d9f-d0d`)
+
+- 중대 1건(GPT): `bindings.lua::Roll Bonus` "추가 전리품 주사위"는 공식 용어와 다르다. 한 회사 지적이라 반박과 두 회사 판정을 다시 거쳤다(`regression-1/judge-*.json`). 두 판정자 모두 지적 인정: 영어 bonus roll은 공식 문자열 세 곳(ERR_BONUS_ROLL_EMPTY, NO_TRADE_FROM_BONUS_ROLL, ORDER_HALL_MISSION_BONUS_ROLL)에서 "보너스 주사위"이고, "추가 전리품"은 Bonus Loot의 번역이다. 원래 번역 "보너스 주사위"로 되돌렸다. 최종 반영은 53건.
+- `ui.lua::Disabled` "사용 안 함"은 두 회귀 평가자 모두 지적하지 않았다.
+- 경미(보고만): `windows.lua` 행동 단축바 안내의 "끌 수 있도록"이 '끄다'로도 들림, 차원문 안내 두 키의 동사 불일치("선택하고"/"잡고"), "이동 수단 이용이 너무 오래 걸림; 경로 종료"의 인과 문형.
+- koKR은 vision-locale main에 커밋.
+
+### 설명서 인용 맞추기
+
+- 설명서는 이번 검수 범위가 아니지만, 설명서는 koKR 값을 화면 문구로 인용하므로(`docs/manual-plan.md` `### 용어` 1번) 바뀐 값을 따라야 한다.
+- 기준: 따옴표 안에 옛 값 전체가 인용된 곳, 또는 8자 이상인 옛 값이 나오는 곳만 바꾼다. 짧은 일반 낱말이 본문 문장에 쓰인 곳은 건드리지 않는다. 61곳 변경(`manual-sync.log`).
+- 같은 옛 값을 쓰는 다른 키가 남은 경우를 원문과 대조했다: `world/combat.md`의 "제어됨" 3곳은 원문이 `"controlled"`(`ui.lua` 키, 값 유지)라서 되돌렸다. "사용 안 함"으로 바꾼 곳은 원문이 모두 `"Disabled"`다.
+- 설명서 기계 검사 51/51 통과. WowVision ko 브랜치에 커밋.
+
+### 설치 프로그램 회귀 확인 2회차
+
+- `managed.notForClient` 1건만 다시 평가 중(`wf_7d160cc5-3af`). 순환 2회째.
