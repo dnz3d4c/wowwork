@@ -68,3 +68,15 @@ def test_installer_text_includes_english_screen_text() -> None:
     assert "Continue with the current version" in text
     assert "현재 버전으로 계속" in text
     assert "Mit der vorhandenen Version fortfahren" in text
+
+
+def test_guide_states_voice_bridge_default() -> None:
+    """안내가 말하는 NVDA 브리지 기본값은 InstallRunner.cs 의 InstallSapi2Sr 기본값과 같아야 한다.
+
+    2026-11-06: 한국어판은 모든 설치 경로에서 브리지를 기본으로 설치하도록 바꿨다.
+    """
+    runner = (LOC_CS.parent / "InstallRunner.cs").read_text(encoding="utf-8")
+    on = re.search(r"public bool InstallSapi2Sr = (true|false);", runner).group(1) == "true"
+    line = next(ln for ln in GUIDE.read_text(encoding="utf-8").splitlines() if "- WoW에서 NVDA를 음성으로 사용:" in ln)
+    assert ("기본으로 체크되어 있습니다" in line) == on, line
+    assert ("기본으로 체크되어 있지 않습니다" in line) == (not on), line
