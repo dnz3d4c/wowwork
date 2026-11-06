@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "windows/professions.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "창의 옆 탭은 읽지 않습니다: 제작 페이지를 열려면 전문 기술 주문을 사용하십시오.",
+   "source_quote": "The side tabs of the window are not read: use the profession's spell to open its crafting page.",
+   "suggestion": "창의 측면 탭은 읽지 않습니다: 제작 페이지를 열려면 전문 기술 주문을 사용하십시오.",
+   "problem": "다듬기에서 74줄의 \"옆 탭\"(side tab)만 \"측면 탭\"으로 바꿔, 같은 파일 안에서 같은 원문 낱말 side tabs가 \"측면 탭\"과 \"옆 탭\"으로 갈렸다. 가리키는 창은 다르지만(마법책, 전문 기술 창) 같은 종류의 UI 요소라, 독자가 \"옆 탭\"을 '바로 옆에 있는 탭'으로 읽을 수 있다. chat.md 94줄은 실제로 \"옆 탭\"을 '이웃한 탭' 뜻으로 쓴다. 경미한 표기 불일치다.",
+   "evidence": "ko/windows/professions.md 74줄 \"TBC에서는 측면 탭 중 일반 탭\", 169줄 \"창의 옆 탭은 읽지 않습니다\". ko/windows/spells-and-talents.md 11, 35, 51줄은 \"측면 탭\". ko/windows/bags-and-bank.md 158줄 \"측면 탭\". ko/windows/chat.md 94줄 \"옆 탭을 실제로 클릭\"은 이웃한 탭이라는 뜻."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "findings": [
+    {
+      "id": "windows/system.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "| 거리 변경, 사용함 | 켜짐 | 거리 안내 전체를 켜거나 끕니다. |",
+      "source_quote": "| Range Changed, Enabled | On | Switches the whole readout on or off. |",
+      "suggestion": "| 거리 변경, 사용함 | 켬 | 거리 안내 전체를 켜거나 끕니다. |",
+      "problem": "다듬기에서 기본값 \"켜기\"를 \"켜짐\"으로 바꿨는데, 같은 목표 선택 모듈의 경보 기본값을 적은 world/targeting.md 등 대부분의 설명서는 기본값 열의 On을 \"켬\"으로 적는다. 뜻은 통하지만 같은 기본값 On을 파일마다 다르게 부른다.",
+      "evidence": "ko/world/targeting.md:43 \"| 사용함(경보) | 켬 |\"; 기본값 열 \"| 켬 |\" 46곳(targeting.md 9, movement.md 8, combat.md 7 등), \"| 켜짐 |\" 10곳(group-health.md 5, wownav.md 1, navigation.md 2, system.md 2)."
+    },
+    {
+      "id": "windows/system.md",
+      "category": "terminology",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "| 그 안의 음성 팩 경보, 사용함 | 켜짐 | 녹음된 음성입니다. |",
+      "source_quote": "| Voice Alert inside it, Enabled | On | The recorded voice. |",
+      "suggestion": "| 그 안의 음성 팩 경보, 사용함 | 켬 | 녹음된 음성입니다. |",
+      "problem": "위와 같은 문제. 기본값 On을 대부분의 설명서는 \"켬\"으로 적는데 이 줄은 \"켜짐\"으로 바뀌었다.",
+      "evidence": "ko/world/targeting.md:43-45 기본값 \"켬\"; 기본값 열 \"| 켬 |\" 46곳 대 \"| 켜짐 |\" 10곳."
+    }
+  ]
+}

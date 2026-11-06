@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "world/movement.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "5번 시점 설정하기를 직접 쓰면 WowVision이 덮어쓰므로, 자신의 시점에는 다른 칸을 쓰십시오.",
+   "source_quote": "If you use Save View 5 yourself, WowVision will overwrite it; use another slot for your own views.",
+   "suggestion": "5번 시점 설정하기를 직접 쓰면 WowVision이 덮어쓰므로, 자신의 시점은 다른 번호에 저장하십시오.",
+   "problem": "다듬기에서 앞 문장의 \"5번 카메라 시점 칸\"과 \"이 칸\"을 \"5번 저장 카메라 시점\", \"이 시점\"으로 바꾸면서 문단에서 \"칸\"을 가리키는 말이 사라졌다. 마지막 문장의 \"다른 칸\"만 남아, 독자가 \"칸\"이 저장 시점 번호(1~5)를 뜻한다는 것을 다시 짐작해야 한다.",
+   "evidence": "changes의 before \"5번 카메라 시점 칸도 사용합니다. 이 칸을 초기화하고\" -> after \"5번 저장 카메라 시점도 사용합니다. 이 시점을 초기화하고\". 게임 키 이름은 gs_koKR BINDING_NAME_SAVEVIEW5 \"5번 시점 설정하기\", BINDING_NAME_SETVIEW5 \"5번 시점으로 전환\"으로 번호로 구분한다. 다른 설명서 world/navigation.md:146도 \"5번 저장 카메라 시점\"을 쓰고 \"칸\"은 쓰지 않는다."
+  }
+ ]
+}

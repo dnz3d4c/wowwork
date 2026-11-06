@@ -1,0 +1,13 @@
+[
+  {
+    "id": "world/index.md",
+    "category": "terminology",
+    "severity": "major",
+    "scope": "file",
+    "quote": "퀘스트 목록, 퀘스트 창과 Questie",
+    "source_quote": "the quest log, quest dialogs and Questie",
+    "suggestion": "퀘스트 목록, 퀘스트 NPC 창과 Questie",
+    "problem": "다듬기에서 before의 \"퀘스트 NPC 창\"을 \"퀘스트 창\"으로 줄였다. 이 목록은 quests.md의 절을 안내하는데, 그 절 제목은 \"퀘스트 NPC 창\"이고 다른 설명서 파일도 같은 창을 \"퀘스트 NPC 창\"이라 부른다. \"퀘스트 목록, 퀘스트 창\"으로 나란히 두면 독자는 \"퀘스트 창\"을 퀘스트 목록 창(quest log)과 같은 것이나 별도 기능으로 오해하고, 링크한 페이지에서 해당 절 제목을 찾지 못한다. before가 맞다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:73 \"## 퀘스트 NPC 창\", :4 \"퀘스트 NPC 창을 읽고 응답하기\"; windows/overview.md:56 \"퀘스트 NPC 창\"; reference/versions.md:31 \"퀘스트 NPC 창: [퀘스트](../world/quests.md)\"; getting-started/introduction.md:10, getting-started/sku.md:21 \"퀘스트 NPC 창\". 같은 파일 quests.md:35 \"## 퀘스트 목록 창\"과 나란히 있다."
+  }
+]

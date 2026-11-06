@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "windows/spells-and-talents.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "사용 기술을 집어 들어 단축바에 놓을 수 있게 합니다.",
+   "source_quote": "Picks up an active ability so you can put it on a bar.",
+   "suggestion": "사용 기술을 집어 들어 단축바에 놓을 수 있게 합니다.",
+   "problem": "다듬기에서 이 파일의 \"active ability\"를 \"사용 효과가 있는 능력/특성\"에서 \"사용 기술\"로 세 곳(114, 139, 190행) 모두 바꿨지만, 같은 영어 문구를 옮긴 collections.md 199행은 \"사용 효과가 있는 능력\"으로 남았다. 같은 끌기 키 설명이 파일마다 다른 말로 불려 독자가 다른 조건으로 오해할 수 있다. 이 파일은 그대로 두고 collections.md 199행의 \"사용 효과가 있는 능력을\"을 \"사용 기술을\"로 맞춘다(suggestion이 quote와 같은 것은 이 파일을 바꿀 필요가 없다는 뜻이다). \"사용 효과\"는 게임에서 아이템 사용 효과(ITEM_SPELL_TRIGGER_ONUSE)를 가리키므로 능력에는 \"사용 기술\" 쪽이 맞다.",
+   "evidence": "en/windows/collections.md:198 \"Picks up an active ability for an action bar\" -> ko/windows/collections.md:199 \"사용 효과가 있는 능력을 집어 행동 단축바에 놓을 수 있게 합니다\". 공식 문자열: TUTORIAL40 enUS \"The Spellbook is organized with passive spells after active ones.\" / koKR \"마법책의 항목들은 사용 기술이 먼저, 그리고 지속효과가 뒤에 나열되는 방식으로 정리되어 있습니다.\"; ITEM_SPELL_TRIGGER_ONUSE \"사용 효과:\"(아이템 문맥)."
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "world/minimap.md",
+    "category": "terminology",
+    "severity": "minor",
+    "scope": "file",
+    "quote": "비장애인 플레이어는 퀘스트 NPC, 상인, 약초, 광맥을 미니맵의 점으로 봅니다.",
+    "source_quote": "A sighted player sees quest givers, vendors, herbs and ore as dots on the minimap.",
+    "suggestion": "비장애인 플레이어는 퀘스트 NPC, 상인, 약초, 광맥을 미니맵의 점으로 봅니다.",
+    "problem": "다듬기에서 이 파일의 ore를 '광석'에서 '광맥'으로 바꿨지만(첫 문단, 채집 지점 절 두 곳), 같은 미니맵 스캔 기능을 소개하는 다른 설명서 파일은 여전히 '광석'으로 부른다. 같은 기능이 찾는 대상을 파일마다 다르게 부르는 것이다. 미니맵의 점은 광맥(채집 지점)이므로 이 파일의 '광맥'은 유지하고, 아래 세 파일의 미니맵 스캔 설명을 '광맥'으로 맞추는 것을 권한다(이 파일 문장은 바꿀 필요 없음). 뜻이 오해될 정도는 아니어서 경미로 둔다.",
+    "evidence": "Grep wowvision-ko/WowVision/docs/src/user/ko: getting-started/introduction.md:18 \"미니맵 스캔은 약초와 광석을 찾습니다\", getting-started/quick-start.md:79 \"미니맵에서 약초, 광석과 그 밖에 추적 중인 것 찾기\", world/index.md:11 \"미니맵을 스캔해 약초, 광석 등 추적 중인 것 찾기\". 이 파일은 다듬기 뒤 '약초, 광맥', '약초, 광맥, 보물'로 표기. 나머지 변경(상인 괄호의 '음식과 음료/탄약 상인/마법 재료 상인/독극물 재료 상인', '미용실', '황금골')은 gs_koKR.csv MINIMAP_TRACKING_VENDOR_FOOD=음식과 음료, VENDOR_AMMO=탄약 상인, VENDOR_REAGENT=마법 재료 상인, VENDOR_POISON=독극물 재료 상인, MINIMAP_TRACKING_BARBER=미용실 과 일치하고, 황금골은 다른 설명서(world/movement.md:45, information/buffers.md:70)와 일치해 결함 없음."
+  }
+]

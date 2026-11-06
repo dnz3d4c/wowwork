@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "나를 주 대상으로 삼은 적(내 위협 수준이 가장 높은 적)만 셉니다",
+   "source_quote": "Attacking You counts only enemies that have you as their main target (those whose aggro you hold)",
+   "suggestion": "나를 주 대상으로 삼은 적(그 적의 위협 수준이 내가 가장 높은 적)만 셉니다",
+   "problem": "다듬은 괄호 \"내 위협 수준이 가장 높은 적\"은 '여러 적 가운데 내 위협 수준이 가장 높게 쌓인 적 하나'로도 읽힌다. 원문 \"those whose aggro you hold\"는 각 적의 위협 목록에서 내가 1위인 적들(내가 어그로를 잡은 적)이라는 뜻이다. 앞의 \"나를 주 대상으로 삼은 적\"이 뜻을 받쳐 주므로 경미하다.",
+   "evidence": "changes 6번째 항목 after. 위협 수준 공식 표기: THREAT_TOOLTIP \"위협 수준 %d%%\" (cache/gs_koKR.csv ID 19231)."
+  }
+ ]
+}
