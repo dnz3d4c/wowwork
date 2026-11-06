@@ -46,9 +46,9 @@ def test_guide_names_every_installer_option() -> None:
 
 
 def installer_text() -> str:
-    """화면에 실제로 나오는 글자. Ko 표와, Windows가 한국어가 아닐 때 나오는 En 표."""
+    """화면에 실제로 나오는 글자. Windows 언어에 따라 Ko, En, De, Fr 표 가운데 하나가 나온다."""
     text = LOC_CS.read_text(encoding="utf-8")
-    return " ".join(visible(v) for lang in ("Ko", "En") for v in parse_table(text, lang).values())
+    return " ".join(visible(v) for lang in ("Ko", "En", "De", "Fr") for v in parse_table(text, lang).values())
 
 
 def test_guide_quotes_match_installer_text() -> None:
@@ -67,3 +67,4 @@ def test_installer_text_includes_english_screen_text() -> None:
     text = installer_text()
     assert "Continue with the current version" in text
     assert "현재 버전으로 계속" in text
+    assert "Mit der vorhandenen Version fortfahren" in text
