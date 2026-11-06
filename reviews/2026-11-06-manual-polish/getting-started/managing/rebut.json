@@ -1,0 +1,13 @@
+[
+ {"ref": "getting-started/managing.md#claude-manual-editor-0", "action": "applied", "reason": "같은 파일 13행이 '옮긴'을 범위 이동(moved to \"this character\")에 쓰므로 migrate를 '옮깁니다'로 두면 범위 이동으로 오해된다. '스스로 변환합니다'로 바꿨다."},
+ {"ref": "getting-started/managing.md#claude-newcomer-0", "action": "applied", "reason": "claude-manual-editor-0과 같은 곳. '스스로 변환합니다'로 함께 반영했다."},
+ {"ref": "getting-started/managing.md#claude-newcomer-1", "action": "applied", "reason": "원문 version folder는 게임 버전 폴더이고 installer.md도 '게임 버전 폴더'라고 부른다. gpt-newcomer-0과 합쳐 '파일은 WowVision을 설치한 게임 버전 폴더 안의 WTF 폴더에 있습니다.'로 바꿨다."},
+ {"ref": "getting-started/managing.md#gpt-wow-veteran-0", "action": "applied", "reason": "controller.md:15, reference/commands.md:43·200이 같은 controller log를 '컨트롤러 기록'이라 부른다. 이 파일만 '컨트롤러 로그'여서 '컨트롤러 기록'으로 맞췄다."},
+ {"ref": "getting-started/managing.md#gpt-manual-editor-0", "action": "dispute", "reason": "현재 문장은 뜻이 분명하고 독자가 잘못 이해할 곳이 없다. 제안문 '보관 위치와 백업 방법, 업데이트 방법과 제거 방법'은 polish-base.md가 번역투로 꼽는 명사 나열이 되므로 오히려 나빠진다. 병렬 구조만의 문제는 취향 차이다."},
+ {"ref": "getting-started/managing.md#gpt-manual-editor-1", "action": "applied", "reason": "목적어 뒤의 '플레이 중이 아니라'는 영어 어순이 남아 부정 대상을 끝까지 읽어야 안다. '게임은 플레이 중에는 이 파일을 기록하지 않고, 로그아웃하거나 /reload를 입력할 때 기록합니다.'로 바꿨다. 원문의 두 조건은 그대로다."},
+ {"ref": "getting-started/managing.md#gpt-manual-editor-2", "action": "applied", "reason": "'속하게 하다'는 belong to를 그대로 따른 말이라 범위를 바꾼다는 동작이 바로 드러나지 않는다. gpt-newcomer-1과 합쳐 '한 모듈의 설정을 한 캐릭터에서만 쓰도록 바꿀 수도 있습니다.'로 바꿨다. '전용'은 쓰지 않았다."},
+ {"ref": "getting-started/managing.md#gpt-manual-editor-3", "action": "dispute", "reason": "원문 'are shared the same way'를 그대로 옮긴 문장이고, 바로 앞 문장이 기본 공유와 범위 변경을 모두 설명하므로 '같은 방식'의 대상이 분명하다. 제안문의 '공유 범위를 정할 수 있으며'는 원문에 없는 동작 서술을 더하고, '별도의'는 '따로'보다 나을 근거가 없다."},
+ {"ref": "getting-started/managing.md#gpt-manual-editor-4", "action": "dispute", "reason": "동사 문제는 claude 지적과 함께 '변환합니다'로 해결했다. 제안문의 '이전'은 범위 이동의 '옮기다'와 다시 겹치고, '설정 이전이 필요하면 ... 이전합니다'는 같은 말을 되풀이한다. '업데이트에 필요하면'은 원문 when an update needs it을 그대로 옮긴 조건이라 바꾸지 않았다."},
+ {"ref": "getting-started/managing.md#gpt-newcomer-0", "action": "applied", "reason": "claude-newcomer-1과 같은 곳. '게임 WTF 폴더'의 명사 관계를 풀어 '파일은 WowVision을 설치한 게임 버전 폴더 안의 WTF 폴더에 있습니다.'로 바꿨다."},
+ {"ref": "getting-started/managing.md#gpt-newcomer-1", "action": "applied", "reason": "'모듈 하나의 설정'과 '속하게 한다'가 모호하다는 지적이 맞다. gpt-manual-editor-2와 합쳐 '한 모듈의 설정을 한 캐릭터에서만 쓰도록 바꿀 수도 있습니다.'로 바꿨다."}
+]

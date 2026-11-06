@@ -1,0 +1,41 @@
+{
+ "file": "windows/chat.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/chat.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/chat.md",
+ "items": [
+  {
+   "ref": "windows/chat.md#claude-manual-editor-7",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "(게임의 대화 설정에서 텍스트 음성 변환 아래)",
+    "suggestion": "(게임의 대화 설정 중 텍스트 음성 변환에 있습니다)",
+    "problem": "영어 \"under\"를 \"아래\"로 직역해, 텍스트 음성 변환 항목의 아래쪽에 있는 다른 항목을 가리키는 것처럼 읽힌다. 원문은 그 기능이 텍스트 음성 변환 부분에 들어 있다는 뜻이다.",
+    "evidence": "원문 \"under Text to Speech\""
+   },
+   "editor": {
+    "ref": "windows/chat.md#claude-manual-editor-7",
+    "action": "dispute",
+    "reason": "\"X 아래\"는 이 파일에서 메뉴·설정 안에 들어 있음을 나타내는 표기로 이미 쓰인다(\"WowVision 메뉴의 대화 아래에 있습니다\"). 원문 under를 같은 방식으로 옮긴 것이라 바꾸면 파일 안 표기가 갈린다. 독자가 다른 항목을 찾게 되는 오해 근거가 약한 취향 차이로 본다."
+   }
+  },
+  {
+   "ref": "windows/chat.md#gpt-manual-editor-4",
+   "file": "windows/chat.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "첫 부분과 마지막 부분은 경계입니다: 그 너머로 이동하려 하면 아무 말도 하지 않습니다.",
+    "suggestion": "첫 부분에서 더 앞으로 이동하거나 마지막 부분에서 더 뒤로 이동하려 해도 아무 말도 하지 않습니다.",
+    "problem": "'부분은 경계입니다'는 영어의 명사 구조를 그대로 옮긴 표현이라 어느 방향의 이동이 막히는지 독자가 다시 해석해야 한다.",
+    "evidence": "windows/chat.md:121. 원문 뒤 절은 첫 부분 앞이나 마지막 부분 뒤로 이동할 수 없다는 동작을 설명한다."
+   },
+   "editor": {
+    "ref": "windows/chat.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "뒤 절 \"그 너머로 이동하려 하면 아무 말도 하지 않습니다\"가 어느 방향 이동이 막히는지 바로 풀어 주므로 독자가 잘못 이해하는 것이 없다. 원문 boundaries 구조를 살린 것이라 바꾸는 이유가 자연스러움뿐인 취향 차이다."
+   }
+  }
+ ]
+}

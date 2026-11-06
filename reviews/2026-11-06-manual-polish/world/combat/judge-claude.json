@@ -1,0 +1,37 @@
+[
+  {
+    "ref": "world/combat.md#claude-manual-editor-7",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "현재 번역문 34줄은 이미 \"대상 표시기는 숫자로 읽습니다.\"로 바뀌어 quote가 남아 있지 않다. \"는\"은 화제 표지로 읽히며 생략된 주어(WowVision)가 읽는다는 구조로 오해 소지가 없고, 원문 \"Raid markers are spoken as numbers.\"에 없는 주어를 덧붙이는 것은 취향 차이에 가깝다.",
+    "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:34", "wowvision-ko/WowVision/docs/src/user/en/world/combat.md:33"]
+  },
+  {
+    "ref": "world/combat.md#claude-newcomer-5",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "지적의 전제(\"단축키 창\"은 이 파일에만 나온다)가 틀렸다. ko 설명서에서 \"단축키 창\"은 reference/commands.md:27,74, controller.md:125, windows/loot-trade-mail.md:28, world/navigation.md:132 등 여러 파일에 쓰이고, \"단축키 화면\"도 basics/keybindings.md 등에 쓰인다. 두 표기의 통일은 여러 파일에 걸친 방침 문제라 이 파일 한 곳만 바꿀 근거가 없다.",
+    "evidence_sources": ["wowvision-ko/WowVision/docs/src/user/ko/reference/commands.md:27", "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:132", "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:6", "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:25"]
+  },
+  {
+    "ref": "world/combat.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "현재 문장은 원문 \"as soon as none of the keys it needs is held down, and picks up where you were ... you are on the same element as before\"을 빠짐없이 옮겼다. 제안은 원문에 없는 \"전투 전에 멈춘 지점부터 창 탐색을\"을 더하고 \"요소에 있게 됩니다\"를 \"요소가 선택됩니다\"로 바꿔 뜻을 바꾼다.",
+    "evidence_sources": ["wowvision-ko/WowVision/docs/src/user/en/world/combat.md:16", "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:17"]
+  },
+  {
+    "ref": "world/combat.md#gpt-manual-editor-3",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "decisions.tsv 2026-11-05 사용자 결정이 설명서의 sighted를 \"비장애인\"으로 옮기도록 정했고(\"화면을 보는\" 등 23곳을 바꿈), 제안은 이 결정을 되돌린다.",
+    "evidence_sources": ["wowwork/docs/decisions.tsv:15", "wowvision-ko/WowVision/docs/src/user/en/world/combat.md:80"]
+  },
+  {
+    "ref": "world/combat.md#gpt-manual-editor-11",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "\"많아야 한 번\"은 원문 \"at most once\"를 정확히 옮긴 자연스러운 한국어 표현이고 독자가 잘못 이해할 부분이 없다. \"최대 한 번만\"과의 차이는 취향이다.",
+    "evidence_sources": ["wowvision-ko/WowVision/docs/src/user/en/world/combat.md:125", "wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:126"]
+  }
+]

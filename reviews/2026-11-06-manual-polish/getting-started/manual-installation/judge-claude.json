@@ -1,0 +1,11 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/manual-installation.md#gpt-manual-editor-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 60행 'Many unzip programs offer to extract \"into a new folder named after the zip\". If you accept, ...'에서 offer는 프로그램이 그 방식을 사용자에게 제안한다는 뜻이고, 다음 문장 'If you accept'가 그 제안을 받는 구조다. 번역 61행 '권하는 것이 많습니다. 이를 받아들이면'은 이 구조를 그대로 옮겼다. 수정안 '기능을 제공하는'으로 바꾸면 '받아들이면'의 대상이 제안이 아니라 기능이 되어 오히려 어색해진다. '권하다'가 권장 설정이라는 뜻을 더한다는 지적은 바로 다음 문장이 그렇게 하면 문제가 생긴다고 경고하므로 독자가 권장으로 오해할 위험도 낮다. 현재 번역 유지.",
+      "evidence_sources": ["input", "wowvision-ko/WowVision/docs/src/user/en/getting-started/manual-installation.md:60", "wowvision-ko/WowVision/docs/src/user/ko/getting-started/manual-installation.md:61"]
+    }
+  ]
+}

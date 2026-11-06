@@ -1,0 +1,24 @@
+{
+ "file": "information/monitors.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/information/monitors.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/information/monitors.md",
+ "items": [
+  {
+   "ref": "information/monitors.md#gpt-manual-editor-4",
+   "file": "information/monitors.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "대상을 바꾸면 규칙은 게임이 아이콘을 새로 고칠 때까지 잠시(몇 틱) 기다렸다가 읽습니다.",
+    "suggestion": "대상을 바꾸면 규칙은 게임이 아이콘을 두어 번 갱신할 때까지 잠시 기다렸다가 읽습니다.",
+    "problem": "“틱”을 설명 없이 음역해 시간이나 갱신 횟수 가운데 무엇을 뜻하는지 독자가 알기 어렵다. 원문의 “a couple of ticks”는 아이콘 갱신을 두어 번 기다린다는 뜻이다.",
+    "evidence": "information/monitors.md:220. 바로 앞뒤 문맥에서 기다리는 목적은 게임이 아이콘을 새로 고치는 것이다."
+   },
+   "editor": {
+    "ref": "information/monitors.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "원문 a couple of ticks는 규칙의 확인 주기(틱)를 기다린다는 뜻이지 게임이 아이콘을 두어 번 갱신한다는 뜻이 아니다. 제안은 기다리는 단위를 바꿔 뜻을 바꾼다. 현재 '잠시(몇 틱)'는 원문 구조와 뜻을 그대로 지킨다."
+   }
+  }
+ ]
+}

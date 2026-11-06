@@ -1,0 +1,24 @@
+{
+ "file": "getting-started/installation.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/installation.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installation.md",
+ "items": [
+  {
+   "ref": "getting-started/installation.md#gpt-manual-editor-6",
+   "file": "getting-started/installation.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임은 새 애드온을 스스로 켭니다.",
+    "suggestion": "게임은 새 애드온을 자동으로 켭니다.",
+    "problem": "프로그램의 자동 동작에 ‘스스로’를 써서 의인화된 표현이 되었다. 설정이나 개입 없이 켜진다는 뜻은 ‘자동으로’가 더 직접적이다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/installation.md:29. 원문의 ‘by itself’는 게임이 별도 조작 없이 새 애드온을 켠다는 자동 동작을 설명한다."
+   },
+   "editor": {
+    "ref": "getting-started/installation.md#gpt-manual-editor-6",
+    "action": "dispute",
+    "reason": "'스스로'는 원문 'by itself'를 정확히 옮긴 말이고 오해할 여지가 없다. '자동으로'와의 차이는 취향이다(polish-base.md '보지 않는 것')."
+   }
+  }
+ ]
+}

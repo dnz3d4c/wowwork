@@ -1,0 +1,58 @@
+{
+ "file": "basics/alerts.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md",
+ "items": [
+  {
+   "ref": "basics/alerts.md#gpt-manual-editor-0",
+   "file": "basics/alerts.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "경보는 묻지 않아도 WowVision이 알려 주는 것입니다. 지역이 바뀌었을 때, 전투가 시작되었을 때, 대상이 바뀌었을 때, 벽에 부딪혔을 때 등입니다.",
+    "suggestion": "경보는 사용자가 묻지 않아도 WowVision이 알려 주는 정보입니다. 지역 변경, 전투 시작, 대상 변경, 벽 충돌 등이 경보에 해당합니다.",
+    "problem": "둘째 문장은 주어인 ‘경보’가 생략된 채 ‘때 등입니다’로 끝나 경보가 시점을 뜻하는 것처럼 읽힌다.",
+    "evidence": "영어 원문은 지역 변경, 전투 시작 등의 사건을 경보의 예로 든다. 제안문은 예시를 그대로 유지하면서 ‘정보’와 ‘경보에 해당합니다’로 서술 관계를 분명히 한다."
+   },
+   "editor": {
+    "ref": "basics/alerts.md#gpt-manual-editor-0",
+    "action": "dispute",
+    "reason": "원문도 경보 정의 뒤 콜론으로 예를 나열한다. 첫 문장이 주어를 세웠고 둘째 문장은 그 예라 뜻을 잘못 읽을 여지가 없다. 제안은 \"대상이 바뀌었을 때\" 같은 예를 명사로 바꾸는 취향 차이다."
+   }
+  },
+  {
+   "ref": "basics/alerts.md#gpt-manual-editor-5",
+   "file": "basics/alerts.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "1. Shift+F1을 누르고 아래로 대상 지정까지 가서 Enter.\n2. 아래로 하드 대상까지 가서 Enter, 그다음 대상 변경으로 가서 Enter.\n3. 아래로 TTS 경보까지 가서 Enter, 그다음 아래로(우선 메시지 (현재 음성 중단)를 지나) 음성까지 가서 Enter.\n4. 목록에서 음성을 골라 Enter.",
+    "suggestion": "1. Shift+F1을 누르고 아래로 대상 지정까지 간 다음 Enter를 누릅니다.\n2. 아래로 하드 대상까지 가서 Enter를 누르고, 대상 변경으로 가서 Enter를 누릅니다.\n3. 아래로 TTS 경보까지 가서 Enter를 누르고, 우선 메시지 (현재 음성 중단)를 지나 음성까지 내려가 Enter를 누릅니다.\n4. 목록에서 음성을 고르고 Enter를 누릅니다.",
+    "problem": "네 단계 모두 ‘가서 Enter’처럼 조사와 서술어를 생략한 영어식 명령 나열이다. 같은 문서의 다른 절차 문장과 달리 합니다체도 유지되지 않는다.",
+    "evidence": "원문은 축약형 절차지만 한국어 문서의 앞 절차는 ‘Enter를 누릅니다’로 완결한다. 제안문은 단계와 동작을 추가하거나 빼지 않고 문장만 완결한다."
+   },
+   "editor": {
+    "ref": "basics/alerts.md#gpt-manual-editor-5",
+    "action": "dispute",
+    "reason": "원문 자체가 \"Shift+F1, then T for Targeting, Enter.\" 같은 축약 절차다. 단계·동작은 정확하고 독자가 잘못 행동할 여지가 없어 문체 취향 차이다. 1단계 메뉴 이름(목표 선택)은 다른 지적으로 고쳤다."
+   }
+  },
+  {
+   "ref": "basics/alerts.md#gpt-manual-editor-20",
+   "file": "basics/alerts.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임 오류 메시지와 정보 메시지(\"그 능력은 아직 사용할 준비가 되지 않았습니다\", \"목표가 사정거리를 벗어났습니다\")의 주 스위치입니다.",
+    "suggestion": "게임 오류 메시지와 정보 메시지(\"그 능력은 아직 사용할 준비가 되지 않았습니다\", \"목표가 사정거리를 벗어났습니다\") 전체를 켜고 끄는 스위치입니다.",
+    "problem": "‘주 스위치’는 영어 `master switch`를 그대로 옮긴 표현이라 무엇을 제어하는지 바로 드러나지 않는다.",
+    "evidence": "원문은 모든 게임 오류·정보 메시지를 제어하는 스위치라는 뜻이다. 제안문은 제어 대상을 명시하면서 정보 범위를 유지한다."
+   },
+   "editor": {
+    "ref": "basics/alerts.md#gpt-manual-editor-20",
+    "action": "dispute",
+    "reason": "\"주 스위치\"는 ko/world/combat.md:124에서도 같은 기능에 쓰는 말이고, 바로 앞 괄호의 메시지 예와 함께 무엇을 제어하는지 드러난다. 이 파일만 바꾸면 두 설명서 표기가 갈린다."
+   }
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "file": "windows/npcs.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/npcs.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md",
+ "items": [
+  {
+   "ref": "windows/npcs.md#gpt-manual-editor-3",
+   "file": "windows/npcs.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "선택지를 고르면 NPC가 대답하고 창 내용이 새로 바뀝니다.",
+    "suggestion": "선택지를 고르면 NPC가 대답하고 창이 새로 고쳐집니다.",
+    "problem": "“새로 바뀝니다”는 의미가 겹치며, 창의 갱신 동작을 번역한 문장으로도 부자연스럽습니다.",
+    "evidence": "windows/npcs.md:22. 원문은 창이 refresh된다는 동작을 간단히 서술합니다."
+   },
+   "editor": {
+    "ref": "windows/npcs.md#gpt-manual-editor-3",
+    "action": "dispute",
+    "reason": "\"창 내용이 새로 바뀝니다\"는 refresh의 뜻을 그대로 전하며 독자가 잘못 이해할 곳이 없다. 제안 \"창이 새로 고쳐집니다\"는 \"고치다\"가 수리로도 읽혀 오히려 모호하다. 취향 차이."
+   }
+  },
+  {
+   "ref": "windows/npcs.md#gpt-manual-editor-4",
+   "file": "windows/npcs.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "### 아이템이 읽는 내용",
+    "suggestion": "### 아이템을 읽을 때 들리는 내용",
+    "problem": "“아이템이 읽는”은 아이템이 내용을 읽는 주체라는 뜻이 됩니다. 실제로는 사용자가 아이템에 초점을 두었을 때 WowVision이 읽어 주는 내용입니다.",
+    "evidence": "windows/npcs.md:45. 바로 아래 문단은 아이템에서 들리는 이름, 등급, 가격 등의 출력 내용을 설명합니다."
+   },
+   "editor": {
+    "ref": "windows/npcs.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "원문 제목 \"What an item says\"도 아이템을 주어로 의인화했고, 다른 설명서도 같은 틀을 쓴다(windows/bags-and-bank.md:28 \"## 칸이 읽는 내용\"). 본문 \"각 아이템은 ... 읽습니다\"와도 맞물려 있어 한 파일만 바꾸면 설명서 간 표기가 갈린다."
+   }
+  },
+  {
+   "ref": "windows/npcs.md#gpt-manual-editor-7",
+   "file": "windows/npcs.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "### 항목이 읽는 내용",
+    "suggestion": "### 훈련 항목을 읽을 때 들리는 내용",
+    "problem": "“항목이 읽는”은 항목이 읽기의 주체라는 뜻이며, 어떤 항목인지도 제목만으로는 드러나지 않습니다. 이 절에서 설명하는 훈련 항목을 구체적으로 밝혀야 합니다.",
+    "evidence": "windows/npcs.md:98. 앞의 정지점 설명에서는 같은 대상을 “훈련 항목”이라고 부르고, 아래에서는 그 항목에서 들리는 이름·등급·가격을 설명합니다."
+   },
+   "editor": {
+    "ref": "windows/npcs.md#gpt-manual-editor-7",
+    "action": "dispute",
+    "reason": "gpt-manual-editor-4와 같은 근거. 원문 \"What a service says\"의 의인화 틀이고 bags-and-bank.md:28과 같은 제목 형식이다. 이 절은 상급자 절 아래 있어 대상이 훈련 항목임이 드러난다."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "getting-started/managing.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "WowVision이 설정을 어디에 보관하는지와 백업하는 법, WowVision을 업데이트하는 법, 제거하는 법을 설명합니다.",
+    "reason": "원문 3행 'Where WowVision keeps your settings and how to back them up, how to update WowVision, and how to remove it'도 간접의문절(where)과 how to 구를 섞어 열거하고, 번역은 이 구조와 정보 단위 넷을 그대로 옮겼다. 독자가 잘못 이해하거나 찾지 못하는 곳이 없어 지적은 병렬 구조에 대한 취향 차이다(polish-base.md '보지 않는 것'). 제안문 '보관 위치와 백업 방법, 업데이트 방법과 제거 방법'은 polish-base.md가 번역투로 꼽는 명사 나열에 가깝다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "getting-started/managing.md#gpt-manual-editor-3",
+    "uphold": false,
+    "final_ko": "단축키(컨트롤러 버튼 포함)도 같은 방식으로 공유되며, 단축키 버튼에 따로 범위 항목이 있습니다.",
+    "reason": "원문 21행 'are shared the same way, and have their own Scope entry'를 그대로 옮긴 문장이다. 바로 앞 두 문장(번역 22행)이 '기본적으로 모든 캐릭터가 함께 쓴다'와 '한 캐릭터에서만 쓰도록 바꿀 수 있다'를 함께 설명하므로 '같은 방식'은 이 공유 체계 전체를 받고, 이어지는 '따로 범위 항목'이 범위 변경을 뒷받침한다. 제안문 '공유 범위를 정할 수 있으며'는 원문에 없는 동작 서술을 더하고, '별도의'는 '따로'보다 나은 근거가 없다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "getting-started/managing.md#gpt-manual-editor-4",
+    "uphold": false,
+    "final_ko": "업데이트에 필요하면 WowVision이 저장된 설정을 스스로 변환합니다.",
+    "reason": "현재 번역 31행은 이미 '스스로 변환합니다'로 바뀌어 지적의 quote('옮깁니다')와 다르다. 남은 쟁점인 '업데이트에 필요하면'은 원문 30행 'when an update needs it'의 조건을 그대로 옮겨 문장 안에서 목적어(저장된 설정 변환)가 바로 드러난다. 제안문 '설정 이전이 필요하면 ... 이전합니다'는 같은 낱말을 되풀이하고, '이전'은 22행 범위 이동의 '옮기다'와 겹쳐 오히려 혼동 여지를 만든다. 둘 다 결함 근거가 약하므로 현재 번역을 유지한다.",
+    "evidence_sources": ["input"]
+  }
+]

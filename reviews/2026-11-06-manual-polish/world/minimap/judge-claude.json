@@ -1,0 +1,37 @@
+[
+  {
+    "ref": "world/minimap.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "클래식 시대, 불타는 성전, 판다리아의 안개에서는 스캔 키를 누르면 \"이 클라이언트에서는 미니맵 스캐너 사용 불가\"라고 답하며, 걷는 중 알림은 시작되지 않습니다.",
+    "reason": "원문 5행 'the scan key answers \"...\"'를 옮긴 '답하며'는 키 입력에 대한 응답 문구라는 뜻으로 읽히며, 독자가 잘못 행동하거나 대상을 놓칠 여지가 없다. 제안은 '더 자연스럽다' 수준의 취향 차이라 polish-base의 '보지 않는 것'에 해당한다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "world/minimap.md#gpt-manual-editor-3",
+    "uphold": false,
+    "final_ko": "스캔은 잠시 미니맵과 마우스 커서를 넘겨받으므로 몇 가지 조건을 갖춰야 합니다.",
+    "reason": "원문 32행 'temporarily takes over the minimap and the mouse cursor'와 뜻이 같고, 번역 38행에서 스캔이 커서를 가운데로 옮기고 43행에서 미니맵을 축소한다고 설명해 무엇을 넘겨받는지 바로 드러난다. 오해를 일으키는 표현이 아니다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "world/minimap.md#gpt-manual-editor-6",
+    "uphold": false,
+    "final_ko": "| 경매인, 은행원, 전투모병관, 비행 조련사, 상인, 여관주인, 우체통, 직업 상급자, 상급자, 수리, 야수 관리인, 기타 NPC | NPC 아래의 그 종류 이름 |",
+    "reason": "열 머리가 '스캐너에서 찾는 곳'이라 셀이 위치를 말한다는 것이 분명하고, 원문 53행 'NPCs, under the kind's name'을 그대로 옮겼다. 제안의 '그룹'은 원문에 없는 말을 더하며, 같은 표의 다른 행('퀘스트, 주변', '채집')과 형식도 어긋난다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "world/minimap.md#gpt-manual-editor-8",
+    "uphold": false,
+    "final_ko": "이 기능은 게임이 WowVision에게 읽도록 허용하는 NPC에만 작동합니다.",
+    "reason": "원문 72행 'NPCs the game lets WowVision read'는 허용 주체가 게임이다. 현재 문장은 문법상 성립하고 뜻도 맞다. 제안문 '게임에서 WowVision이 읽을 수 있는'은 게임이 제한한다는 의미를 흐려 뜻이 약해진다.",
+    "evidence_sources": ["input"]
+  },
+  {
+    "ref": "world/minimap.md#gpt-manual-editor-12",
+    "uphold": false,
+    "final_ko": "스크린리더는 키를 누를 때마다 자기 말을 끊으므로, 스크린리더 음성을 쓰면 걷는 동안 알림이 잘립니다.",
+    "reason": "원문 109행 'cut their own speech off at every key press'를 옮긴 '자기 말'은 주어 '스크린리더'를 받아 스크린리더 자신의 음성이라는 뜻이 분명하다. 독자가 오해할 대상이 없어 취향 차이다.",
+    "evidence_sources": ["input"]
+  }
+]

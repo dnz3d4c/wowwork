@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/scanner.md#gpt-manual-editor-6",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 'Enter switches the one you are on'을 '지금 있는 항목'으로 옮긴 것은 뜻이 정확하고, 바로 앞 문장이 추적 범주의 확인란을 말하므로 초점 위치라는 뜻이 분명하다. 같은 설명서 basics/interface.md:134, :186도 초점이 놓인 항목을 '지금 있는 항목'이라 부르므로 바꾸면 오히려 표기가 갈린다. 지적은 독자가 무엇을 잘못 이해하는지 보이지 못한 취향 차이다.",
+      "evidence_sources": ["input"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-manual-editor-10",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문이 'route network'와 'waypoint network'를 따로 쓰므로 번역도 '경로 네트워크'와 '경유지 네트워크'로 각각 옮긴 것은 원문에 충실한 것이다(decisions.tsv 2026-11-05 원문에 충실). 하나로 합치자는 제안은 원문 표기를 바꾸는 것이다. '끝납니다'의 주어는 바로 앞 문장의 경로(원문 'It')로 원문 구조와 같다.",
+      "evidence_sources": ["input", "wowwork/docs/decisions.tsv"]
+    },
+    {
+      "ref": "world/scanner.md#gpt-newcomer-5",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "추적 범주의 미니맵 추적 항목 이름은 게임이 주는 추적 종류 이름(C_Minimap.GetTrackingInfo의 info.name)이다. 공식 문자열 17557 MINIMAP_TRACKING_REPAIR는 enUS 'Repair', koKR '장비 수리'로 같은 미니맵 추적 문맥이므로 '장비 수리'가 실제 표시값이다. koKR ui.lua:100 L[\"Repair\"]=\"수리\"는 WowVision 역할 그룹 이름(scanner.md 역할 그룹 목록)으로 다른 대상이다.",
+      "evidence_sources": ["wowwork/cache/gs_enUS.csv:5968", "wowwork/cache/gs_koKR.csv:5976", "wowvision-ko/WowVision/core/minimap/engine.lua:107", "wowvision-ko/vision-locale/koKR/ui.lua:100"]
+    }
+  ]
+}

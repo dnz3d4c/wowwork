@@ -1,0 +1,107 @@
+[
+ {
+  "ref": "getting-started/sku.md#claude-wow-veteran-0",
+  "action": "applied",
+  "reason": "koKR bindings.lua:25-26 값 '툴팁 이전 줄', '툴팁 다음 줄'에 맞춰 바꿨다(consensus)."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-wow-veteran-1",
+  "action": "applied",
+  "reason": "'NPC 대화와 그 밖의 NPC 대화 창.'으로 바꿨다. 마지막 절의 '대화 창'(chat)과 구분되고 overview.md:56, versions.md:30의 'NPC 대화'와 맞는다. 원문도 Gossip을 NPC 창의 하나로 묶으므로 뜻이 늘지 않는다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-wow-veteran-2",
+  "action": "applied",
+  "reason": "원문 'Pet stable'의 Pet을 살려 '야수 우리.'로 바꿨다. npcs.md:8·137, versions.md:104와 같다. decisions.tsv 2026-11-05 'Stable 우리 유지'는 koKR 창 제목 결정이고 '우리'를 그대로 포함하므로 어긋나지 않는다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-wow-veteran-3",
+  "action": "applied",
+  "reason": "'길드 이벤트 기록'으로 바꿨다. 원문 'guild event log', social.md:219·269 표기와 같다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-wow-veteran-4",
+  "action": "applied",
+  "reason": "'이벤트 기록, 새 소식 필터'로 바꿨다. gs_koKR 21198 GUILD_NEWS_FILTERS='길드 새 소식 필터'(enUS 'Guild News Filters'), social.md:257 '새 소식'. 길드 및 커뮤니티 창에 딸린 항목이라 '길드'는 앞에서 이미 정해진다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-manual-editor-0",
+  "action": "applied",
+  "reason": "claude-wow-veteran-0과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-manual-editor-1",
+  "action": "applied",
+  "reason": "claude-wow-veteran-1과 함께 반영했다. '대화창' 띄어쓰기도 '대화 창'으로 맞췄다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-manual-editor-2",
+  "action": "applied",
+  "reason": "claude-wow-veteran-2와 함께 '야수 우리.'로 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-manual-editor-3",
+  "action": "applied",
+  "reason": "'이 기능들의 WowVision 설정과'로 바꿨다(consensus)."
+ },
+ {
+  "ref": "getting-started/sku.md#claude-newcomer-0",
+  "action": "applied",
+  "reason": "claude-wow-veteran-0과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-wow-veteran-0",
+  "action": "applied",
+  "reason": "claude-wow-veteran-0과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-wow-veteran-1",
+  "action": "applied",
+  "reason": "'/dquit(던전 파티나 전장 떠나기)'로 바꿨다. gs 20308 YOU_ARE_IN_DUNGEON_GROUP '던전 파티', 16668 LEAVE_BATTLEGROUND '전장 떠나기', commands.md:33 '던전 파티나 전장을 떠납니다'와 같다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-manual-editor-0",
+  "action": "applied",
+  "reason": "'창, 키, 명령을 일부러 처리하지 않고 Sku에게 맡깁니다'로 바꿨다. 원문 deliberately는 '일부러'로 유지했고, 다음 문단이 설명하는 실제 동작(열지 않음, 넘겨받지 않음, 등록하지 않음)과 바로 맞는다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-manual-editor-1",
+  "action": "applied",
+  "reason": "claude-manual-editor-3과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-manual-editor-2",
+  "action": "applied",
+  "reason": "'전문 기술 창과 제작 창.'으로 바꿨다. professions.md:19 'TBC의 전문 기술 창과 제작 창'과 같다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-manual-editor-3",
+  "action": "applied",
+  "reason": "'Sku에는 같은 기능이 없는'으로 바꿨다. 원문 'where Sku has no equivalent'의 관계(Sku 쪽에 없음)가 분명해진다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-newcomer-0",
+  "action": "applied",
+  "reason": "claude-wow-veteran-0과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-newcomer-1",
+  "action": "applied",
+  "reason": "claude-wow-veteran-0과 같은 곳, 함께 반영했다(consensus)."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-newcomer-2",
+  "action": "dispute",
+  "reason": "'전투 준비 확인'은 WowVision 창 이름 koKR windows.lua:128 L[\"Ready Check\"]=\"전투 준비 확인\"의 값이다. 설명서는 화면 문구를 글자 그대로 인용해야 하므로 설명서만 '전투 준비'로 바꿀 수 없고, group-finder.md:2·148·150, overview.md:56, interface.md:17도 같은 표기다. 게임 공식 READY_CHECK='전투 준비'에 맞추려면 koKR 키 Ready Check를 바꾸는 kokr 범위 지적으로 사용자 결정을 받아야 한다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-newcomer-3",
+  "action": "applied",
+  "reason": "claude-wow-veteran-3과 같은 곳, 함께 반영했다."
+ },
+ {
+  "ref": "getting-started/sku.md#gpt-newcomer-4",
+  "action": "applied",
+  "reason": "claude-wow-veteran-4와 함께 반영했다. 길드 및 커뮤니티 창에 딸린 항목이므로 '이벤트 기록'으로 적었다."
+ }
+]

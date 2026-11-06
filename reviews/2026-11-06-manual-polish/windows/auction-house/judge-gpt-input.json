@@ -1,0 +1,41 @@
+{
+ "file": "windows/auction-house.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/auction-house.md",
+ "items": [
+  {
+   "ref": "windows/auction-house.md#gpt-manual-editor-8",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "평균 줄에서 며칠 치를 평균할지 정합니다. 줄 이름도 이 값을 따릅니다(\"7-일간 평균\").",
+    "suggestion": "평균 줄에 며칠 치 가격의 평균을 낼지 정합니다. 줄 이름에도 이 값이 들어갑니다(\"7-일간 평균\").",
+    "problem": "\"며칠 치를 평균하다\"는 평균을 내는 대상인 가격이 빠져 있고, \"줄 이름도 이 값을 따릅니다\"는 설정값이 이름에 어떻게 반영되는지 모호합니다.",
+    "evidence": "원문은 평균의 대상이 일별 가격이며, 설정한 일수가 `7-Day Mean`처럼 줄 이름에도 사용된다고 설명합니다."
+   },
+   "editor": {
+    "ref": "windows/auction-house.md#gpt-manual-editor-8",
+    "action": "dispute",
+    "reason": "'며칠 치를 평균할지'는 앞 행 '일별 최고가와 최저가를 며칠 치'와 같은 구조이고 평균 대상(일별 최저가)은 220행에 명시돼 있다. '줄 이름도 이 값을 따릅니다(\"7-일간 평균\")'는 예시로 뜻이 드러난다. 독자가 오해할 지점이 없는 취향 차이."
+   }
+  },
+  {
+   "ref": "windows/auction-house.md#gpt-manual-editor-10",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "옷감과 광석처럼 겹쳐지는 아이템은 \"상품\"입니다. 개당 가격을 기준으로 수량 단위로 사고팝니다.",
+    "suggestion": "옷감과 광석처럼 겹쳐 쌓을 수 있는 아이템은 \"상품\"입니다. 개당 가격으로 필요한 수량만큼 사고팝니다.",
+    "problem": "\"겹쳐지는\"은 불필요한 피동 표현이고, \"개당 가격을 기준으로 수량 단위로\"는 비슷한 조사구가 연달아 나와 구매 방식이 번역투로 읽힙니다.",
+    "evidence": "원문은 `Items that stack`과 `by quantity at a price per unit`이라는 두 정보를 각각 아이템의 성질과 거래 방식으로 설명합니다. 제안문은 두 정보 단위를 모두 유지합니다."
+   },
+   "editor": {
+    "ref": "windows/auction-house.md#gpt-manual-editor-10",
+    "action": "dispute",
+    "reason": "'겹쳐지는'은 원문 Items that stack을 옮긴 말로 다른 설명서(loot-trade-mail.md:55 '겹쳐 있으면')와도 통하고 오해 소지가 없다. 제안의 '필요한 수량만큼'은 원문 by quantity에 없는 뜻을 더한다. 취향 차이라 유지."
+   }
+  }
+ ]
+}

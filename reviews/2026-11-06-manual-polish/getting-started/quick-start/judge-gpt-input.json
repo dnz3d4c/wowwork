@@ -1,0 +1,58 @@
+{
+ "file": "getting-started/quick-start.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/quick-start.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/quick-start.md",
+ "items": [
+  {
+   "ref": "getting-started/quick-start.md#gpt-manual-editor-1",
+   "file": "getting-started/quick-start.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "새 속도는 그때부터 WowVision이 말하는 모든 것에 적용됩니다.",
+    "suggestion": "새 속도는 그때부터 WowVision의 모든 음성에 적용됩니다.",
+    "problem": "“말하는 모든 것에 적용됩니다”는 영어 목적어 구조를 그대로 따른 표현이다. 속도가 적용되는 대상이 WowVision의 음성이라는 점을 명사로 밝히면 의미를 다시 조립할 필요가 없다.",
+    "evidence": "getting-started/quick-start.md:21. 같은 문단에서 설정 이름을 “음성 속도”로 쓰고 있으므로 “WowVision의 모든 음성”으로 받아도 정보가 달라지지 않는다."
+   },
+   "editor": {
+    "ref": "getting-started/quick-start.md#gpt-manual-editor-1",
+    "action": "dispute",
+    "reason": "'WowVision이 말하는 모든 것'은 원문 'everything WowVision says'와 같고 한국어로도 자연스럽다. 제안의 'WowVision의 모든 음성'은 같은 단계에서 '음성 종류'(Speech Voice)와 '음성 1'처럼 목소리 선택을 가리키는 '음성'과 겹쳐, 모든 목소리 종류에 적용된다는 뜻으로 읽힐 수 있다."
+   }
+  },
+  {
+   "ref": "getting-started/quick-start.md#gpt-manual-editor-3",
+   "file": "getting-started/quick-start.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "첫 음성은 보통 번호가 0입니다",
+    "suggestion": "첫 번째 음성의 번호는 보통 0입니다",
+    "problem": "현재 문장은 주제인 “첫 음성”과 서술어인 “번호가 0입니다”의 호응이 어색하다. 번호가 음성의 속성임을 조사로 밝혀야 한다.",
+    "evidence": "getting-started/quick-start.md:24. 원문도 번호 0의 주체를 첫 번째 음성이 아니라 그 음성에 붙은 번호로 표현한다."
+   },
+   "editor": {
+    "ref": "getting-started/quick-start.md#gpt-manual-editor-3",
+    "action": "dispute",
+    "reason": "'첫 음성은 보통 번호가 0입니다'는 한국어의 정상적인 이중 주어 구문(코끼리는 코가 길다)이라 호응 오류가 아니다. 제안은 취향 차이이고 독자가 오해할 지점이 없다."
+   }
+  },
+  {
+   "ref": "getting-started/quick-start.md#gpt-manual-editor-5",
+   "file": "getting-started/quick-start.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "Alt Gr(또는 Ctrl+Alt)를 누르면 거리를 듣습니다.",
+    "suggestion": "Alt Gr(또는 Ctrl+Alt)를 누르면 거리 안내를 듣습니다.",
+    "problem": "한국어에서는 수치나 길이인 “거리” 자체를 듣는다고 하지 않는다. 음성으로 제공되는 거리 안내를 듣는다고 밝혀야 동작이 바로 이해된다.",
+    "evidence": "getting-started/quick-start.md:67. wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:166과 :258에서는 같은 기능을 “거리 알림”이라고 설명한다."
+   },
+   "editor": {
+    "ref": "getting-started/quick-start.md#gpt-manual-editor-5",
+    "action": "dispute",
+    "reason": "원문은 'hear the distance'이고 '거리를 듣습니다'는 그대로 뜻이 통한다. '거리 안내'는 원문에 없는 말을 더하고, 독자가 잘못 이해할 지점이 없어 취향 차이다. navigation.md의 '거리 알림'은 기능 설명 문맥의 표현이지 이 문장과 다른 대상을 같은 이름으로 부르는 문제가 아니다."
+   }
+  }
+ ]
+}

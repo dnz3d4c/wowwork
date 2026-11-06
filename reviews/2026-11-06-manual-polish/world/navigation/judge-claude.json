@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/navigation.md#claude-newcomer-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "같은 화면을 두 이름으로 부르는 갈림은 사실이지만 이 파일만의 문제가 아니다. 설명서 ko 아래에서 \"단축키 창\"은 13개 파일(reference/keybindings.md:4, reference/glossary.md:62·112, world/scanner.md 등 21곳), \"단축키 화면\"은 basics/keybindings.md, basics/interface.md, basics/tooltips.md, information/monitors.md, world/targeting.md 등이 쓴다. navigation.md만 바꾸면 링크 대상 reference/keybindings.md:4와 새로 어긋나고 갈림은 그대로 남는다. 여러 파일 표기 통일은 개별 파일에서 고치지 않고 일괄 사용자 결정 대상이므로 이 파일에서는 유지한다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:132",
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:4",
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md:62",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:18"
+      ]
+    },
+    {
+      "ref": "world/navigation.md#claude-newcomer-3",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "claude-newcomer-2와 같은 판단. \"단축키 창\"과 \"단축키 화면\"이 설명서 전체에 비슷한 비중으로 갈려 있어, 이 한 곳만 바꾸면 같은 파일 132행이나 다른 파일과의 갈림이 해소되지 않는다. 일괄 결정 대상으로 넘기고 이 파일에서는 유지한다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:182",
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:4",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:6"
+      ]
+    },
+    {
+      "ref": "world/navigation.md#gpt-manual-editor-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "\"키 바인딩 목록\"은 링크 대상 페이지 reference/keybindings.md:2의 제목 그대로이고, reference/index.md:6, basics/keybindings.md:4·109·129, getting-started/quick-start.md:81, world/targeting.md:18도 같은 링크 글을 쓴다. 원문도 \"keybinding window\"(화면)와 \"binding reference\"(참고 목록 페이지)를 다른 대상으로 구분한다(en/world/navigation.md:131). 같은 기능을 다르게 부른 것이 아니라 다른 페이지 이름이므로 링크 글만 \"단축키 목록\"으로 바꾸면 페이지 제목과 어긋난다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:2",
+        "wowvision-ko/WowVision/docs/src/user/ko/reference/index.md:6",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4",
+        "wowvision-ko/WowVision/docs/src/user/en/world/navigation.md:131"
+      ]
+    }
+  ]
+}

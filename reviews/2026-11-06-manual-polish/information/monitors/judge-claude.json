@@ -1,0 +1,14 @@
+{
+  "verdicts": [
+    {
+      "ref": "information/monitors.md#gpt-manual-editor-4",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 'waits a moment (a couple of ticks) for the game to refresh its icons'에서 tick은 기다리는 시간의 단위이고, 게임의 아이콘 갱신 횟수가 아니다. 코드 CdmAuraMonitor.lua:797-804는 대상이 바뀌면 모니터 자신의 갱신 주기를 두 번 건너뛴다(self._skipTicks = 2). 주석에도 게임 화면은 한 틱 뒤에 아이콘을 새로 고친다고 적혀 있다. 그래서 제안 '아이콘을 두어 번 갱신할 때까지'는 기다리는 단위를 게임의 갱신 횟수로 바꿔 뜻이 달라진다. 현재 번역 '잠시(몇 틱)'는 원문의 괄호 구조와 뜻을 그대로 지킨다. 번역자의 반박이 맞다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/retail/monitors/CdmAuraMonitor.lua:797-804"
+      ]
+    }
+  ]
+}

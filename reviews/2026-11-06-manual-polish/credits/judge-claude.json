@@ -1,0 +1,11 @@
+[
+  {
+    "ref": "credits.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "현재 번역(ko/credits.md:4)은 이미 'Sku 덕분에 WoW를 즐기며 보낼 수 있었던 시간에 언제까지나 감사할 것입니다.'로 바뀌어 지적의 quote가 더는 없다. 남은 쟁점은 '시간에 감사하다'인데, '~에 감사하다'는 한국어에서 감사의 대상을 받는 정상적인 호응이고 독자가 뜻을 잘못 이해할 여지가 없다. polish-base.md 기준으로 취향 차이에 해당해 결함이 아니다. 원문 'grateful for the time ... thanks to Sku'와 뜻도 일치한다.",
+    "evidence_sources": [
+      "input"
+    ]
+  }
+]

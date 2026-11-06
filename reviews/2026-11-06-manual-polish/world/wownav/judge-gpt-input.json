@@ -1,0 +1,24 @@
+{
+ "file": "world/wownav.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/wownav.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/wownav.md",
+ "items": [
+  {
+   "ref": "world/wownav.md#claude-wow-veteran-5",
+   "file": "world/wownav.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "\"부두 낚시터: The Temple Gardens\"",
+    "suggestion": "\"부두 낚시터: (한국어 클라이언트가 표시하는 The Temple Gardens 지역 이름)\"",
+    "problem": "낚시터 이름의 물 이름은 클라이언트가 자기 언어의 지역 이름으로 채우므로 한국어 클라이언트에서는 영어 \"The Temple Gardens\"가 아니라 한국어 지역 이름이 들린다. 같은 목록의 \"수정 호수\"(Crystal Lake)는 한국어로 옮겼는데 이것만 영어로 남아, 독자가 실제로 듣는 이름과 다르다. 공식 한국어 지역 이름은 gs 캐시에 없어 확인하지 못했다(미확인). 게임에서 지역 1661의 이름을 확인해 넣어야 한다.",
+    "evidence": "WowVision/camelot/wownav/text.lua:156-171 placeName()이 nameAreaId로 C_Map.GetAreaInfo를 먼저 호출하고 nameParam(영어)은 폴백. WowVision/mapdata/WowNavPacked 데이터에서 The Temple Gardens 낚시터는 [\"nameAreaId\"]=1661을 가진다. 같은 방식인 Crystal Lake(nameAreaId=18)는 설명서에서 \"수정 호수\"로 적혀 있다."
+   },
+   "editor": {
+    "ref": "world/wownav.md#claude-wow-veteran-5",
+    "action": "dispute",
+    "reason": "지역 1661의 한국어 클라이언트 이름을 지적자도 확인하지 못했고(미확인) 제안은 자리표시다. 확인되지 않은 이름을 넣으면 틀린 인용이 된다. 게임에서 확인 후 따로 고칠 과제."
+   }
+  }
+ ]
+}

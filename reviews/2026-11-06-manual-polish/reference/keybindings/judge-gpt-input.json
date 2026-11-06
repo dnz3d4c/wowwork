@@ -1,0 +1,126 @@
+{
+ "file": "reference/keybindings.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md",
+ "items": [
+  {
+   "ref": "reference/keybindings.md#claude-manual-editor-6",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "Sku를 켜거나 끈 것을 반영하려면 UI를 재시작해야 합니다",
+    "suggestion": "Sku를 켜거나 끈 것을 반영하려면 인터페이스를 다시 불러와야 합니다",
+    "problem": "reload를 \"UI를 재시작\"으로 옮겨 게임을 다시 시작해야 하는 것처럼 읽힐 수 있고, 같은 페이지 첫 문단에서 WowVision 메뉴 항목 이름으로 쓴 \"인터페이스\"와 달리 \"UI\"라는 영어 약어를 쓴다. 다른 설명서는 같은 동작을 \"인터페이스를 다시 불러옵니다\"로 쓴다.",
+    "evidence": "ko/getting-started/installation.md:31 \"인터페이스를 다시 불러옵니다\", ko/getting-started/sku-login.md:275 \"인터페이스를 다시 불러옵니다\", ko/basics/menu-and-settings.md:188 \"인터페이스를 다시 불러오거나\". 반면 ko/getting-started/sku.md:8은 \"UI를 재시작(/reload)\"."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#claude-manual-editor-6",
+    "action": "dispute",
+    "reason": "이 문장은 링크된 getting-started/sku.md:8의 같은 문장이 'UI를 재시작(/reload)'을 쓰고 menu-and-settings.md:188도 'UI를 재시작'을 쓴다. 설명서 표기가 둘로 갈려 있어 결함 근거가 없고, 이 파일만 바꾸면 '더 자세히' 링크 대상과 오히려 달라진다. 이 페이지 4줄의 메뉴 항목 '인터페이스'와 겹쳐 새 혼동도 생길 수 있다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-manual-editor-4",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "| 메시지의 이전 링크 | Ctrl+Left | 대화 창에서 메시지 안의 클릭할 수 있는 이전 부분 |",
+    "suggestion": "| 메시지의 이전 링크 | Ctrl+Left | 대화 창에서 메시지 안의 이전 클릭 가능 부분 |",
+    "problem": "`메시지 안의 클릭할 수 있는 이전 부분`은 관형어가 길게 겹쳐 무엇이 ‘이전’인지 한 번에 파악하기 어렵습니다.",
+    "evidence": "원문의 `previous`는 클릭 가능한 부분의 순서를 꾸밉니다. `이전 클릭 가능 부분`으로 묶으면 같은 뜻을 바로 드러냅니다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "취향 차이. '메시지 안의 클릭할 수 있는 이전 부분'은 원문 'previous clickable part of a message'와 대응하고 뜻이 하나로 읽힌다. 다음 행 '클릭할 수 있는 다음 부분'과 짝도 맞는다. 독자가 무엇을 잘못 이해하는지가 지적에 없다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-manual-editor-5",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "| 도착 거리 전환 | Alt+P | 얼마나 가까이 가야 경유지에 도착한 것으로 칠지 바꿉니다 |",
+    "suggestion": "| 도착 거리 전환 | Alt+P | 얼마나 가까이 가야 경유지에 도착한 것으로 처리할지 바꿉니다 |",
+    "problem": "`도착한 것으로 칠지`는 설명서 문장에 비해 구어적입니다. 여기서는 시스템이 도착 여부를 판정하는 동작이므로 `처리할지`가 뜻을 더 정확히 드러냅니다.",
+    "evidence": "원문은 경유지가 `counts as reached`가 되는 판정 기준을 설명합니다. 제안은 거리 조건과 판정이라는 정보 단위를 그대로 유지합니다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-manual-editor-5",
+    "action": "dispute",
+    "reason": "취향 차이. '도착한 것으로 칠지'는 원문 'counts as reached'를 옮긴 표준 표현이고 뜻이 분명하다. 오해 지점을 지적이 들지 않았다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-manual-editor-7",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "이 키들은 따로 있는 바인딩이 아닙니다. 앞부분에서 설명한 창 키가 특정 창에서 그 창에 맞는 일을 하는 것입니다. 바인딩을 바꾸면 모든 곳에서 키가 바뀝니다.",
+    "suggestion": "이 키들은 따로 있는 바인딩이 아닙니다. 「두 종류의 키」에서 설명한 창 키가 특정 창에 맞는 일을 하는 것입니다. 바인딩을 바꾸면 모든 곳에서 키가 바뀝니다.",
+    "problem": "`앞부분`이 어느 절을 가리키는지 구체적이지 않습니다. 그 사이에 여러 절과 표가 있어 독자가 창 키의 정의를 다시 찾기 어렵습니다.",
+    "evidence": "창 키를 정의한 곳은 이 파일의 `두 종류의 키` 절입니다. 절 이름을 직접 쓰면 원문의 `first sections`가 가리키는 위치를 정보 추가 없이 명확히 할 수 있습니다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-manual-editor-7",
+    "action": "dispute",
+    "reason": "뜻이 바뀐다. 원문 'the first sections'는 복수다. 창 키는 '두 종류의 키'에서 정의하지만 그 동작은 '창 안에서 이동하기', '요소 조작하기' 절에 나온다. 한 절로 좁히면 원문의 범위가 줄어든다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-manual-editor-8",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "| 길 안내 창(F10), 목적지 목록 | Up, Down, Home, End | 긴 목적지 목록을 훑습니다. Enter를 누르면 경로를 시작합니다 |",
+    "suggestion": "| 길 안내 창(F10), 목적지 목록 | Up, Down, Home, End | 긴 목적지 목록에서 이동합니다. Enter를 누르면 경로를 시작합니다 |",
+    "problem": "`목록을 훑습니다`는 내용을 빠르게 읽어 본다는 뜻으로도 받아들일 수 있어, 이 키들이 목록 항목 사이를 이동한다는 조작 설명이 흐려집니다.",
+    "evidence": "원문의 `Walk the long destination list`는 Up, Down, Home, End로 목적지 항목 사이를 이동하는 동작을 가리킵니다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-manual-editor-8",
+    "action": "dispute",
+    "reason": "원문 'Walk the long destination list'는 목록을 차례로 훑어 가는 뜻이라 '훑습니다'가 맞다. 같은 행의 키 열(Up, Down, Home, End)로 조작임도 분명하다. 취향 차이다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-manual-editor-9",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "| 행동 단축바(Shift+F4), 가방과 그 밖의 칸 창 | \\\\ 또는 Ctrl+D, 다음에 Delete | 칸을 커서에 집어 든 다음 비우거나 파괴합니다 |",
+    "suggestion": "| 행동 단축바(Shift+F4), 가방과 그 밖의 칸 창 | \\\\ 또는 Ctrl+D, 그다음 Delete | 칸을 커서에 집어 든 다음 비우거나 파괴합니다 |",
+    "problem": "키 순서를 나열하면서 쓴 `다음에 Delete`는 영어의 `then Delete` 어순이 남은 표현입니다.",
+    "evidence": "앞뒤 동작의 순서를 이어 주는 말이므로 한국어에서는 `그다음 Delete`로 쓰면 같은 순서를 자연스럽게 나타냅니다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-manual-editor-9",
+    "action": "dispute",
+    "reason": "취향 차이. 'A 또는 B, 다음에 Delete'는 자연스러운 순서 표현이고 '그다음'과 뜻이 같다. 오해 지점이 없다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-newcomer-3",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "## 대상 지정\n\n| 동작 | 기본 키 | 참고 |",
+    "suggestion": "## 목표 선택\n\n| 동작 | 기본 키 | 참고 |",
+    "problem": "이 절은 단축키 창의 `Targeting` 그룹을 가리키지만 실제 화면의 그룹 이름은 `목표 선택`이다. 설명서의 `대상 지정`만 보고 단축키 창에서 같은 이름을 찾을 수 없다.",
+    "evidence": "입력된 화면 문구와 `wowvision-ko/vision-locale/koKR/targeting.lua:4`에서 `Targeting`은 `목표 선택`이다. 같은 단축키 문맥의 공식 게임 문자열도 `BINDING_HEADER_TARGETING`(ID 12729)=`목표 선택 단축키`이며, 일반 화면 머리글 `TARGETING_HEADER`(ID 58427)=`목표 선택`이다."
+   },
+   "editor": {
+    "ref": "reference/keybindings.md#gpt-newcomer-3",
+    "action": "dispute",
+    "reason": "이 제목은 화면 문구 인용이 아니라 주제 이름이다. 같은 절 끝 링크 '[대상 지정](../world/targeting.md)'과 그 페이지 제목(world/targeting.md:2 '# 대상 지정'), 이 파일 11줄 '대상 지정'과 맞춘 것이다. 모듈 이름 '목표 선택'(koKR/targeting.lua:4)으로 바꾸면 링크된 페이지 이름과 갈린다. 주제 이름을 모듈 이름으로 바꾸는 것은 설명서 전체 방침이라 개별 파일에서 정할 일이 아니다."
+   }
+  }
+ ]
+}

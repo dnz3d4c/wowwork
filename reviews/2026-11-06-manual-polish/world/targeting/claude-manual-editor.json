@@ -1,0 +1,136 @@
+{
+ "findings": [
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "WowVision 메뉴(/wv 입력)의 대상 지정 아래에 있습니다",
+   "source_quote": "All targeting settings live in the WowVision menu (type /wv) under Targeting.",
+   "suggestion": "WowVision 메뉴(/wv 입력)의 목표 선택 아래에 있습니다",
+   "problem": "메뉴 항목 이름을 \"대상 지정\"이라고 적었지만 실제 WowVision 메뉴에는 \"목표 선택\"으로 표시·낭독된다. 독자는 메뉴에서 \"대상 지정\"을 찾지 못한다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; WowVision/core/targeting/module.lua:3 module:setLabel(L[\"Targeting\"]). 다른 설명서는 메뉴를 \"목표 선택\"으로 부른다: basics/alerts.md:53 \"아래로 목표 선택까지 가서 Enter\", basics/menu-and-settings.md:66 \"| 목표 선택 | 모두 |\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "대상 지정을 열고 하드 대상으로 갑니다.",
+   "source_quote": "Open Targeting, then Hard Target.",
+   "suggestion": "목표 선택을 열고 하드 대상으로 갑니다.",
+   "problem": "열어야 할 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 다르다. 따라 하던 독자가 메뉴에서 항목을 찾지 못한다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; basics/alerts.md:98 위치 열 \"목표 선택, 하드 대상\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "메뉴를 열고 대상 지정, 하드 대상으로 갑니다",
+   "source_quote": "to open the menu and go to Targeting, then Hard Target.",
+   "suggestion": "메뉴를 열고 목표 선택, 하드 대상으로 갑니다",
+   "problem": "절차 예시의 메뉴 경로가 실제 메뉴 이름 \"목표 선택\"과 다르다. 단계대로 따라가도 \"대상 지정\" 항목이 없다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; basics/alerts.md:53 \"Shift+F1을 누르고 아래로 목표 선택까지 가서 Enter.\""
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "각 종류는 대상 지정 메뉴에 있는 경보이며",
+   "source_quote": "Each type is an alert in the Targeting menu named Soft Target Enemy, Soft Target Friend and Soft Target Interact.",
+   "suggestion": "각 종류는 목표 선택 메뉴에 있는 경보이며",
+   "problem": "경보가 있는 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 다르다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; basics/alerts.md:101 위치 열 \"목표 선택\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "소프트 대상 종류마다 대상 지정 메뉴의 해당 경보 안에",
+   "source_quote": "Every soft target type has two more settings, inside its alert in the Targeting menu",
+   "suggestion": "소프트 대상 종류마다 목표 선택 메뉴의 해당 경보 안에",
+   "problem": "각도·거리 설정을 찾을 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 다르다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "2. 대상 지정 메뉴에서 하드 대상이 있을 때",
+   "source_quote": "2. In the Targeting menu set Soft Targeting With a Hard Target to Only Without an Attackable Hard Target.",
+   "suggestion": "2. 목표 선택 메뉴에서 하드 대상이 있을 때",
+   "problem": "예시 절차의 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 달라 따라 할 수 없다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "메뉴의 대상 지정 아래에 있습니다. 자체 설정은 없습니다.",
+   "source_quote": "The module is called Virtual Focus and sits under Targeting in the menu. It has no settings of its own.",
+   "suggestion": "메뉴의 목표 선택 아래에 있습니다. 자체 설정은 없습니다.",
+   "problem": "가상 주시 대상 모듈이 있는 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 다르다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; basics/menu-and-settings.md:66 \"| 목표 선택 | 모두 | 대상 알림, 소프트 대상 지정, 주시 대상. |\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "critical",
+   "scope": "file",
+   "quote": "대상이 있는 동안에는 대상 지정 메뉴의 하드 대상 아래에",
+   "source_quote": "the Range Changed alert, under Hard Target in the Targeting menu",
+   "suggestion": "대상이 있는 동안에는 목표 선택 메뉴의 하드 대상 아래에",
+   "problem": "거리 변경 경보가 있는 메뉴 이름이 실제 화면 문구 \"목표 선택\"과 다르다.",
+   "evidence": "vision-locale/koKR/targeting.lua:4 L[\"Targeting\"] = \"목표 선택\"; basics/alerts.md:102 \"| 거리 변경 | 목표 선택, 하드 대상 |\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "\"적 소프트 대상 비활성화\"라고 말합니다",
+   "source_quote": "\"Soft Target Enemy Disabled\"",
+   "suggestion": "\"적 소프트 대상 사용 안 함\"이라고 말합니다",
+   "problem": "끌 때 실제로 낭독되는 말은 \"적 소프트 대상 사용 안 함\"인데 설명서는 \"비활성화\"로 인용한다. 독자가 들은 말과 설명서 인용이 달라 꺼졌는지 확인하기 어렵다. 켤 때 인용(\"사용함\")과도 짝이 맞지 않는다.",
+   "evidence": "WowVision/core/targeting/module.lua:341 text = info.label .. \" \" .. L[\"Disabled\"]; vision-locale/koKR/ui.lua:54 L[\"Disabled\"] = \"사용 안 함\" (\"비활성화\"는 ui.lua:53 L[\"Disable\"]의 값으로 다른 키)."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"군중 제어 해제\"을 읽습니다",
+   "source_quote": "Speaks \"Controlled\" or \"Free\" instead of, or in addition to, the sounds",
+   "suggestion": "\"군중 제어 해제\"를 읽습니다",
+   "problem": "받침 없는 \"해제\" 뒤에 목적격 조사 \"을\"을 붙여 조사 호응이 틀렸다.",
+   "evidence": "basics/alerts.md:100 같은 문구를 \"\"군중 제어 해제\"를 읽음\"으로 적는다."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| 기본값으로 지정되지 않음 |",
+   "source_quote": "| unbound by default |",
+   "suggestion": "| 기본으로는 키가 지정되지 않음 |",
+   "problem": "\"기본값으로 지정되지 않음\"은 \"기본값으로 설정되지 않았다\"로도 읽혀, 키가 처음부터 비어 있다는 뜻이 바로 드러나지 않는다. 같은 파일 뒤쪽은 \"기본값으로는 지정되어 있지 않습니다\"라고 써서 표현도 어긋난다.",
+   "evidence": "같은 파일 '주시 대상 사용하기' 절: \"(기본값으로는 지정되어 있지 않습니다. ...)\"; reference/glossary.md:62 \"지정 안 됨 — ... 키를 지정하기 전까지는 키가 없는 상태\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "주시 대상은 이름이므로, 게임은",
+   "source_quote": "Because the focus is a name, the game targets the nearest unit with that name.",
+   "suggestion": "주시 대상은 이름으로 저장되므로, 게임은",
+   "problem": "\"주시 대상은 이름이므로\"는 영어 \"the focus is a name\"을 그대로 옮긴 번역투로, 주시 대상이 곧 이름이라는 어색한 등식이 된다. 앞 절의 \"대상을 이름으로 ... 저장하고\"와 이어지도록 저장 방식으로 풀어야 뜻이 바로 읽힌다.",
+   "evidence": "같은 파일 '가상 주시 대상' 절: \"대상을 이름으로 최대 다섯 개까지 저장하고\"."
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "basics/keybindings.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "게임의 게임패드 인터페이스가 켜져 있으면 컨트롤러 버튼마다 버튼 하나와 컨트롤러 버튼 추가 버튼",
+    "reason": "원문 21행은 \"one button per controller button\"이고 the action currently has는 19행 키 항목에만 있다. 번역 22행은 원문과 같은 정도로만 말하며, 지정된 버튼이라는 한정은 원문 116행과 번역 117행이 이미 적는다. 한정어를 더하면 원문에 없는 정보를 덧붙이게 되므로 현재 번역을 유지한다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md:19",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md:21",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md:116",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:22",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:117"
+    ]
+  },
+  {
+    "ref": "basics/keybindings.md#gpt-manual-editor-3",
+    "uphold": false,
+    "final_ko": "\"이 입력과 충돌하는 단축키 (동작 이름). 바꾸시겠습니까?\" 다음에 예와 아니요",
+    "reason": "표의 첫 칸은 들리는 문구를 적는 명사구 칸이고, 원문 73행 \"followed by Yes and No\"의 순서를 그대로 옮겼다. 순서를 잘못 이해하게 할 표현이 없어 취향 차이에 그치며, 제안의 \"나옴\"은 합니다체도 아니다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md:73",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:74"
+    ]
+  },
+  {
+    "ref": "basics/keybindings.md#gpt-manual-editor-5",
+    "uphold": false,
+    "final_ko": "닫기 (컨트롤러) 동작에는 기본 키보드 키가 없습니다.",
+    "reason": "이 파일은 default key를 \"기본 키\"로 일관되게 쓴다(4행, 85행 표 머리, 109행). \"기본 키보드 키\"는 같은 용어에 키보드만 붙인 것이라 기본값 지정 키로 읽히며, 일반 키 종류로 오해할 근거가 약하다. 바꾸면 같은 개념을 파일 안에서 다르게 부르게 된다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/docs/src/user/en/basics/keybindings.md:122",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:85",
+      "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:123"
+    ]
+  }
+]

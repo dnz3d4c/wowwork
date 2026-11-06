@@ -1,0 +1,9 @@
+[
+  {
+    "ref": "basics/index.md#gpt-manual-editor-0",
+    "uphold": false,
+    "final_ko": "툴팁을 읽는 방식, 음성이 동작하는 방식, 설정이 있는 곳",
+    "reason": "원문 3행 'where the settings live'는 메뉴 위치만이 아니라 설정이 놓인 자리 전반을 가리키고, 같은 파일 8행 링크 설명이 'the settings menu, per-character and account settings'로 저장 범위까지 포함한다. 제안문 '설정 메뉴가 어디에 있는지'는 원문에 없는 '메뉴'를 더해 뜻을 좁힌다(polish-base.md '바꾸지 않는 것'). '설정이 있는 곳'의 넓은 뜻은 원문 'live'와 같은 수준이라 독자가 잘못 이해하는 결함이 아니다. '~하는 방식'을 '어떻게 ~하는지'로 바꾸는 부분은 뜻 차이가 없는 취향 문제다.",
+    "evidence_sources": ["input"]
+  }
+]

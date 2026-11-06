@@ -1,0 +1,28 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/installer.md#claude-wow-veteran-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "이 목록은 버전 선택 페이지의 체크 상자를 고르라는 안내다. 체크 상자 이름은 WowLocator.cs:104-116 Label에서 오며 한국어화되지 않은 영어('Classic Era (Vanilla)', 'Mists of Pandaria Classic', 'Retail')다. 영어로 남긴 셋은 화면에서 듣는 이름과 맞는다. '불타는 성전 기념 서버'가 'Anniversary (TBC)'와 다른 것은 별개 문제이며, 그것을 이유로 나머지까지 화면과 멀어지게 바꾸는 것은 근거가 약하다. 다른 설명서 표기도 하나로 통일되어 있지 않다(first-login.md:8 'Classic Era, ... Mists of Pandaria Classic과 Retail', speech.md:20,36,92 'Classic Era', 'Retail'). 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/wowvision-installer/WowVisionInstaller/WowLocator.cs:104-116",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:8",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/speech.md:20",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:29-30"
+      ]
+    },
+    {
+      "ref": "getting-started/installer.md#claude-wow-veteran-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "이 항목은 구성 요소 페이지의 WoW Login Tool 옵션 설명이며, 설치 프로그램 한국어 설명 문구(Loc.cs:1046 opt.loginTool.desc)가 'Classic Era'를 영어로 쓴다. 영어로 두면 화면에서 듣는 말과 같다. 다른 설명서도 같은 문맥에서 'Classic Era'를 쓴다(first-login.md:8). 앞 지적과 같은 이유로 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/wowvision-installer/WowVisionInstaller/Loc.cs:1046",
+        "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:8"
+      ]
+    }
+  ]
+}

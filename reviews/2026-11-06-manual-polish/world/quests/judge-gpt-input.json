@@ -1,0 +1,109 @@
+{
+ "file": "world/quests.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/quests.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/quests.md",
+ "items": [
+  {
+   "ref": "world/quests.md#gpt-manual-editor-0",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "이 페이지는 WowVision이 퀘스트와 관련해 해 주는 모든 일을 다룹니다. 퀘스트 목록 읽기, 퀘스트 NPC 창을 읽고 응답하기, 퀘스트 목표 지역에 들어갈 때 알림 듣기, [스캐너](scanner.md)로 퀘스트 NPC와 목표 찾기입니다.",
+    "suggestion": "이 페이지에서는 WowVision으로 퀘스트 목록 읽기, 퀘스트 NPC 창을 읽고 응답하기, 퀘스트 목표 지역에 들어갈 때 알림 듣기, [스캐너](scanner.md)로 퀘스트 NPC와 목표 찾기를 모두 설명합니다.",
+    "problem": "첫 문장에서 목적어를 포괄적으로 제시한 뒤 다음 문장을 명사구 나열로 분리해, 열거 항목이 앞 문장의 구체적인 내용이라는 관계를 독자가 다시 조합해야 합니다.",
+    "evidence": "world/quests.md:4. 원문은 콜론 뒤에 WowVision이 하는 네 가지 일을 한 문장 안에서 열거합니다. 제안문은 네 정보 단위를 그대로 두고 문장 관계만 명확히 합니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-manual-editor-0",
+    "action": "dispute",
+    "reason": "현재 문장은 '모든 일을 다룹니다' 뒤에 네 가지를 '~입니다'로 나열해 관계가 바로 드러난다. 독자가 잘못 이해할 곳이 없는 취향 차이다."
+   }
+  },
+  {
+   "ref": "world/quests.md#gpt-manual-editor-1",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "| 출처 | 쓰는 버전 | 아는 것 |",
+    "suggestion": "| 출처 | 사용하는 버전 | 제공하는 정보 |",
+    "problem": "표 머리글의 주체가 출처인데 이를 생략한 채 \"아는 것\"이라고 표현해, 데이터 출처를 사람처럼 서술하며 설명서 표의 의미도 바로 드러나지 않습니다.",
+    "evidence": "world/quests.md:10. 아래 각 행은 데이터 출처가 지원되는 게임 버전과 그 출처가 제공하는 정보를 설명합니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-manual-editor-1",
+    "action": "dispute",
+    "reason": "표 머리글은 원문 'Used on | What it knows'를 따른 것이고, 행 내용으로 의미가 바로 드러난다. 오해를 일으키는 표현이 아닌 취향 차이다."
+   }
+  },
+  {
+   "ref": "world/quests.md#gpt-manual-editor-2",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "Questie가 있으면 항상 작동합니다.",
+    "suggestion": "Questie가 있으면 스캐너로 장소를 찾는 기능은 항상 작동합니다.",
+    "problem": "생략된 주어가 스캐너, 퀘스트 목록 창, 퀘스트 NPC 창 가운데 무엇인지 바로 드러나지 않습니다. 바로 뒤에서 창 두 종류와 장소 찾기를 구분하므로 대상을 명시해야 합니다.",
+    "evidence": "world/quests.md:16. 앞 문장은 스캐너의 퀘스트·NPC 분류를 말하고, 뒤의 두 문장은 퀘스트 목록 창과 퀘스트 NPC 창은 출처가 없어도 작동하지만 장소 찾기에는 출처가 필요하다고 구분합니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-manual-editor-2",
+    "action": "dispute",
+    "reason": "원문 'With Questie it always works'도 it의 대상을 밝히지 않는다. 앞 문장의 스캐너 분류를 받는지 장소 찾기를 받는지 원문만으로 확정할 수 없어, '스캐너로 장소를 찾는 기능'을 넣으면 원문에 없는 해석을 더하게 된다."
+   }
+  },
+  {
+   "ref": "world/quests.md#gpt-manual-editor-6",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "### 퀘스트 선택 대화 상자",
+    "suggestion": "### 퀘스트 선택 창",
+    "problem": "같은 화면을 제목에서는 \"퀘스트 선택 대화 상자\", 바로 아래 본문에서는 \"퀘스트 선택 창\"이라고 달리 부릅니다. 한 화면의 이름은 한 가지로 통일해야 합니다.",
+    "evidence": "world/quests.md:98의 제목은 \"퀘스트 선택 대화 상자\"이고, world/quests.md:100은 같은 화면을 \"퀘스트 선택 창\"이라고 부릅니다. 입력 terms에서도 `Quest Choice`는 \"퀘스트 선택\"으로 확정되어 있습니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-manual-editor-6",
+    "action": "dispute",
+    "reason": "제목 '퀘스트 선택 대화 상자'는 reference/versions.md:91의 표기와 같고, 원문도 제목은 dialog, 본문은 window로 나눠 쓴다. 제목만 바꾸면 다른 파일과의 표기가 어긋난다."
+   }
+  },
+  {
+   "ref": "world/quests.md#gpt-manual-editor-8",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "[스캐너](scanner.md)는 퀘스트 데이터를 걸어갈 수 있는 장소로 바꿉니다.",
+    "suggestion": "[스캐너](scanner.md)는 퀘스트 데이터에서 걸어갈 수 있는 장소를 찾아 보여 줍니다.",
+    "problem": "데이터를 물리적인 장소로 \"바꾼다\"는 직역 표현 때문에 스캐너가 실제로 하는 일인 장소 제시가 바로 드러나지 않습니다.",
+    "evidence": "world/quests.md:126. 이어지는 목록은 스캐너가 퀘스트 NPC, 목표, 대상, 출현 지점의 위치를 계층적으로 보여 주고 그 장소로 안내한다고 설명합니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-manual-editor-8",
+    "action": "dispute",
+    "reason": "'퀘스트 데이터를 걸어갈 수 있는 장소로 바꿉니다'는 원문 turns ... into를 옮긴 것으로 뜻이 바로 전달되고 독자가 잘못 이해할 곳이 없다. 취향 차이다."
+   }
+  },
+  {
+   "ref": "world/quests.md#gpt-newcomer-0",
+   "file": "world/quests.md",
+   "finding": {
+    "category": "accuracy",
+    "severity": "major",
+    "quote": "비장애인 플레이어에게 보이는 색과 같습니다.",
+    "suggestion": "화면을 보는 플레이어에게 보이는 색과 같습니다.",
+    "problem": "원문의 \"sighted player\"를 \"비장애인 플레이어\"로 바꾸어 시각장애 여부와 장애 여부를 같은 개념처럼 설명합니다. 색을 화면으로 확인하는 플레이어를 가리키는 표현으로 고쳐야 합니다.",
+    "evidence": "영어 원문 wowvision-ko/WowVision/docs/src/user/en/world/quests.md:61은 \"as a sighted player sees it\"이라고 시각으로 색을 보는 상황만 한정합니다. 번역문 wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:62는 이를 장애가 없는 플레이어 전체로 넓혔습니다."
+   },
+   "editor": {
+    "ref": "world/quests.md#gpt-newcomer-0",
+    "action": "dispute",
+    "reason": "decisions.tsv 15행(2026-11-05) 사용자 결정이 sighted를 '비장애인'으로 옮기도록 정했고, '화면을 보는'은 그 결정으로 바꾼 이전 표기다. 제안은 결정과 어긋난다."
+   }
+  }
+ ]
+}

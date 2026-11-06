@@ -1,0 +1,24 @@
+{
+ "file": "reference/glossary.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/reference/glossary.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md",
+ "items": [
+  {
+   "ref": "reference/glossary.md#gpt-manual-editor-4",
+   "file": "reference/glossary.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "요소 — 창 안에서 초점을 둘 수 있는 것 하나입니다.",
+    "suggestion": "요소 — 창 안에서 초점을 둘 수 있는 하나의 항목입니다.",
+    "problem": "\"것 하나\"는 영어의 \"one thing\" 어순이 남은 표현이라 정의문이 부자연스럽습니다.",
+    "evidence": "뒤에서 버튼, 체크 상자, 목록 항목, 아이템 칸, 텍스트 상자를 예로 들므로 \"하나의 항목\"으로 바꿔도 원문의 범위나 정보는 달라지지 않습니다."
+   },
+   "editor": {
+    "ref": "reference/glossary.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "'하나의 항목'의 '하나의'도 번역투이고, '항목'은 바로 뒤 예시 '목록 항목'과 겹쳐 요소가 목록 항목의 한 종류처럼 읽힐 수 있다. 현재 문장은 뜻이 분명하고 독자가 잘못 이해할 곳이 없어 취향 차이다."
+   }
+  }
+ ]
+}

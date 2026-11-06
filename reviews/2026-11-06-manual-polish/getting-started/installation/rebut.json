@@ -1,0 +1,19 @@
+[
+  {"ref": "getting-started/installation.md#claude-manual-editor-0", "action": "applied", "reason": "합의 지적. '애드온과 애드온을 켜는 방법'이 두 갈래로 읽힌다. gpt-manual-editor-0과 함께 '어느 방법으로 설치하든 그다음에 할 일인 WowVision과 함께 쓰는 애드온, 그리고 애드온을 켜는 방법을 다룹니다'로 고쳐 두 항목을 쉼표와 '그리고'로 나눴다(원문 'the addons WowVision works with, and switching the addon on')."},
+  {"ref": "getting-started/installation.md#claude-newcomer-0", "action": "applied", "reason": "같은 파일 40행이 '불타는 성전'이라 부르는데 표만 'TBC'였다. ko/world/quests.md 12행의 같은 Questie 지원 버전 표기 '클래식 시대, 불타는 성전, 판다리아의 안개, WoW: Forever'로 맞췄다(gpt-wow-veteran-2와 함께 반영). 괄호 병기 대신 quests.md 표기를 따랐다."},
+  {"ref": "getting-started/installation.md#claude-newcomer-1", "action": "applied", "reason": "'Mists'를 '판다리아의 안개'로 바꿨다(gs_koKR EXPANSION_NAME4 '판다리아의 안개', quests.md·manual-installation.md 73행 표기). gpt-wow-veteran-1과 함께 반영."},
+  {"ref": "getting-started/installation.md#gpt-wow-veteran-0", "action": "applied", "reason": "introduction.md 30행, controller.md 4행, manual-installation.md 35행이 '리테일'로 쓴다. 'Retail에서 쓰는'을 '리테일에서 쓰는'으로 바꿨다."},
+  {"ref": "getting-started/installation.md#gpt-wow-veteran-1", "action": "applied", "reason": "'| 리테일, 판다리아의 안개, WoW: Forever |'로 바꿨다. '판다리아의 안개 클래식' 대신 같은 표 아래 행과 quests.md·manual-installation.md 표 표기 '판다리아의 안개'로 통일했다."},
+  {"ref": "getting-started/installation.md#gpt-wow-veteran-2", "action": "applied", "reason": "'| 클래식 시대, 불타는 성전, 판다리아의 안개, WoW: Forever |'로 바꿨다. '기념 서버'는 원문 'TBC'에 없는 정보라 붙이지 않았고, 같은 Questie 지원 버전을 적은 quests.md 12행 표기를 따랐다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-0", "action": "applied", "reason": "합의 지적. '할 일, 곧'의 콜론 번역투를 '그다음에 할 일인 ...'으로 풀었다. claude-manual-editor-0과 한 문장으로 함께 반영했고, 원문에 없는 '도'는 넣지 않았다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-1", "action": "applied", "reason": "'대신하다'의 활용이므로 '대신해 주는'으로 붙였다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-2", "action": "applied", "reason": "원문 'listed in WowVision's TOC files as optional'은 파일에 선언된 상태라 '등록되어 있으므로'로 바꿨다. gpt-newcomer-0과 함께 반영."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-3", "action": "applied", "reason": "'올라 있는 버전'은 애드온 자체 버전으로도 읽힌다. 행 값이 게임 버전이므로 '등록된 게임 버전'으로 바꿨다(앞 문장의 '등록되어'와 맞춤). 'TOC에'는 앞 문장이 이미 말하므로 표 머리글에 다시 넣지 않았다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-4", "action": "applied", "reason": "'정해진 목록의 창'은 수식 관계가 흐리다. 원문 'a list of windows, keys and commands'에 맞춰 '목록에 정해 둔 창, 키, 명령을'로 바꿨다. 'Sku를 불러온 상태에서는'(When Sku is loaded)은 문제가 없어 그대로 두었다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-5", "action": "applied", "reason": "'애드온은 ... 부족합니다'의 주술 호응이 어긋난다. 원문 'not enough for a brand new addon'에 맞춰 조사만 '애드온에는'으로 바꿨다. 제안문 '인식시키려면'은 원문에 없는 목적을 더해 쓰지 않았다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-6", "action": "dispute", "reason": "원문 'by itself'의 직역으로 뜻이 정확하고, 한국어에서 '게임이 스스로 켭니다'는 독자가 잘못 이해할 여지가 없다. '자동으로'와의 차이는 취향 차이라 고치지 않는다(polish-base.md '보지 않는 것: 취향 차이')."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-7", "action": "applied", "reason": "'이 동작'이 '경고가 나온다'와 '불러오지 않는다' 둘 중 어느 것인지 흐렸다. 원문 'that'은 'does not load them at all'을 받는다. 제안문 '불러오지 않습니다'는 앞 문장의 '대개'(usually)를 단정으로 바꾸므로, '이제는 ... 확인란을 켜도 불러오게 되지 않습니다'로 고쳐 선행사를 밝히고 '대개'는 앞 문장에 그대로 두었다. 화면 문구 '구버전 애드온 불러오기'는 그대로다."},
+  {"ref": "getting-started/installation.md#gpt-manual-editor-8", "action": "applied", "reason": "원문 'a newer WowVision'은 설치된 것보다 새로 나온 버전이므로 '새 버전의 WowVision을'로 바꿨다."},
+  {"ref": "getting-started/installation.md#gpt-newcomer-0", "action": "applied", "reason": "gpt-manual-editor-2와 같은 곳. '등록되어 있으므로'로 반영했다(같은 파일 표 머리글과 낱말을 맞추려고 '기재되어' 대신 '등록되어'를 골랐다)."},
+  {"ref": "getting-started/installation.md#gpt-newcomer-1", "action": "applied", "reason": "gpt-manual-editor-3과 같은 곳. '등록된 게임 버전'으로 반영해 마지막 열이 게임 버전임을 밝혔다."}
+]

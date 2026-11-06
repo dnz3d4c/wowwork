@@ -1,0 +1,22 @@
+[
+ {"ref": "reference/versions.md#claude-wow-veteran-0", "action": "applied", "reason": "Mailbox를 우체통으로 바꿨다(\"우체통 받은 우편함\"). koKR quests.lua L[\"Mailboxes\"]=\"우체통\", windows/overview.md:56 \"우체통 받은 우편함\"과 같다."},
+ {"ref": "reference/versions.md#claude-wow-veteran-1", "action": "applied", "reason": "\"| 우체통: 우편 발송 탭 |\"으로 바꿨다. 우편 발송은 koKR windows.lua:103 값 그대로 둔다."},
+ {"ref": "reference/versions.md#claude-manual-editor-0", "action": "applied", "reason": "consensus. \"단축 레이어\"를 controller.md:73 절 제목과 같은 \"바로 가기 층\"으로 바꿨다."},
+ {"ref": "reference/versions.md#claude-manual-editor-1", "action": "applied", "reason": "veteran-0과 같은 곳. \"우편함의 받은 우편함\"을 \"우체통 받은 우편함\"으로 바꿨다(overview.md:56 표기)."},
+ {"ref": "reference/versions.md#claude-manual-editor-2", "action": "applied", "reason": "veteran-1과 같은 곳. 우체통으로 바꿨다."},
+ {"ref": "reference/versions.md#claude-manual-editor-3", "action": "applied", "reason": "키 이름이 표 안에만 있어 \"이 키\"를 \"미니맵 스캔 키\"로 바꿨다. 원문 \"the key\"가 가리키는 대상 그대로라 뜻은 같다."},
+ {"ref": "reference/versions.md#claude-manual-editor-4", "action": "applied", "reason": "consensus. gpt-manual-editor-6과 함께 \"소리가 남\"으로 마쳤다. 원문 \"sound when ...\"이 소리가 나는 동작이라 \"소리가 남\"이 가장 가깝다."},
+ {"ref": "reference/versions.md#claude-newcomer-0", "action": "applied", "reason": "consensus. \"그 버전\"을 \"각 버전\"으로 바꿨다. 원문 \"of their own\"은 두 버전 각자."},
+ {"ref": "reference/versions.md#gpt-wow-veteran-0", "action": "dispute", "reason": "\"길드 및 커뮤니티\"는 이 파일만의 표기가 아니라 windows/social.md:15·222(절 제목), windows/overview.md:63, getting-started/sku.md:53이 모두 같은 표기를 쓴다. 이 파일만 \"길드 & 커뮤니티\"로 바꾸면 링크된 소셜 페이지 절 제목과 달라진다. 공식 창 제목(COMMUNITIES_FRAME_TITLE)에 맞추려면 여러 파일에 걸친 방침이라 global 결정 대상이며 개별 파일에서 고치지 않는다."},
+ {"ref": "reference/versions.md#gpt-manual-editor-0", "action": "applied", "reason": "consensus. claude-manual-editor-0과 같은 곳, \"바로 가기 층\"으로 바꿨다."},
+ {"ref": "reference/versions.md#gpt-manual-editor-1", "action": "applied", "reason": "\"WowVision에서 맞는 부분\"은 WowVision이 고르는 것처럼도 읽힌다. 원문 주체 \"The game itself\"를 살려 \"게임이 시작될 때 게임 스스로 WowVision 가운데 버전에 맞는 부분을 고르므로\"로 고쳤다. 원문 \"part\"에 없는 \"구성 요소\"라는 새 용어는 넣지 않았다."},
+ {"ref": "reference/versions.md#gpt-manual-editor-2", "action": "applied", "reason": "claude-newcomer-0과 같은 곳, \"각 버전\"으로 반영."},
+ {"ref": "reference/versions.md#gpt-manual-editor-3", "action": "applied", "reason": "이 목록의 chat window는 링크된 windows/chat.md:68 \"## 대화 창\"(Shift+F3 WowVision 창)이다. chat.md는 게임 자체 창을 \"대화창\", WowVision 창을 \"대화 창\"으로 구분하므로 \"대화 창\"으로 맞췄다."},
+ {"ref": "reference/versions.md#gpt-manual-editor-4", "action": "applied", "reason": "겹침 문제는 맞다. 다만 \"우편함의\"를 빼면 원문 Mailbox가 사라지므로 veteran-0 안대로 \"우체통 받은 우편함\"으로 반영했다(overview.md:56과 같은 표기)."},
+ {"ref": "reference/versions.md#gpt-manual-editor-5", "action": "applied", "reason": "\"음높이\"는 한 낱말(표준국어대사전 등재)이고 reference/glossary.md:32, reference/keybindings.md:148 표기와 같다. information/group-health.md의 \"음 높이\"는 이 파일 범위 밖이라 그대로 둔다."},
+ {"ref": "reference/versions.md#gpt-manual-editor-6", "action": "applied", "reason": "consensus. \"소리가 남\"으로 반영."},
+ {"ref": "reference/versions.md#gpt-newcomer-1", "action": "applied", "reason": "consensus. \"각 버전\"으로 반영."},
+ {"ref": "reference/versions.md#gpt-newcomer-2", "action": "applied", "reason": "같은 곳. Mailbox를 살려 \"우체통 받은 우편함\"으로 반영했다."},
+ {"ref": "reference/versions.md#gpt-newcomer-3", "action": "applied", "reason": "같은 페이지가 \"대상 지정\", \"대상 메뉴\"를 따로 설명해 \"대상\"이 현재 대상으로 읽힌다. 원문 \"things\"와 world/scanner.md:4·17 표기에 맞춰 \"항목\"으로 바꿨다."},
+ {"ref": "reference/versions.md#gpt-newcomer-4", "action": "applied", "reason": "consensus 지적과 같은 곳, \"바로 가기 층\"으로 반영."}
+]

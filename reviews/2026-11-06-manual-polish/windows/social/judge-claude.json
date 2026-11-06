@@ -1,0 +1,27 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/social.md#gpt-manual-editor-10",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "버튼 이름을 주어로 두고 '~ 창을 엽니다'로 쓰는 형식은 이 파일의 다른 곳에서도 같다(171줄 '공격대 정보는 ... 창을 엽니다', 291줄 '길드 권한 버튼은 등급 관리 창을 엽니다'). 앞 문단에서 친구 추가가 버튼으로 나왔으므로 독자가 누르면 창이 열린다는 것을 잘못 이해할 여지가 없다. 지적의 problem은 오해를 일으키는 지점을 짚지 못한 표현 취향이며, polish-base의 '취향 차이는 결함이 아니다'에 해당한다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:161",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:171",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:291"
+      ]
+    },
+    {
+      "ref": "windows/social.md#gpt-manual-editor-17",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "바로 위 제목이 '대화 채널 창 (리테일, WoW: Forever)'(307줄)이라 '게임 채널의 창'이 어떤 창인지 다시 찾을 필요가 없다. 원문 'The window of the game's channels'를 그대로 옮긴 것이고, 제안의 '다루는'은 원문에 없는 서술을 더한다. 독자가 잘못 이해하는 지점이 제시되지 않아 취향 차이로 본다. 현재 번역 유지.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:307",
+        "wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:309"
+      ]
+    }
+  ]
+}

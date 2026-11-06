@@ -1,0 +1,19 @@
+{
+  "verdicts": [
+    {
+      "ref": "basics/menu-and-settings.md#gpt-newcomer-0",
+      "uphold": false,
+      "final_ko": "\"WowVision, 목록, 길 안내, 버튼, 1 of 13\"",
+      "reason": "첫 화면 모듈 순서는 표시 이름(현지화된 라벨)의 문자열 비교로 정해진다(core/graph/settings.lua:446-448 moduleSortComp가 getLabel()로 비교, :490에서 정렬). koKR 라벨로 정렬하면 경매 가격(불타는 성전 전용)을 뺀 첫 항목은 '길 안내'(navigation.lua:4)이고 '버퍼'(buffers.lua:4)는 대화·모니터·미니맵 스캐너 뒤에 온다. 원문 'Buffers'는 영어 알파벳순 첫 항목이라 쓴 예시이므로, 한국어 메뉴에서 실제로 들리는 첫 항목은 '길 안내'가 맞다. 지적의 수정안 '버퍼'는 한국어 사용자가 실제로 듣는 말과 어긋난다. 현재 번역 유지.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/graph/settings.lua:446",
+        "wowvision-ko/WowVision/core/graph/settings.lua:490",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:4",
+        "wowvision-ko/vision-locale/koKR/buffers.lua:4",
+        "wowvision-ko/vision-locale/koKR/chat.lua:4",
+        "wowvision-ko/vision-locale/koKR/monitors.lua:5",
+        "input"
+      ]
+    }
+  ]
+}

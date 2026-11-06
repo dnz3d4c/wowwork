@@ -1,0 +1,24 @@
+{
+ "file": "basics/index.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/index.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/index.md",
+ "items": [
+  {
+   "ref": "basics/index.md#gpt-manual-editor-0",
+   "file": "basics/index.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "툴팁을 읽는 방식, 음성이 동작하는 방식, 설정이 있는 곳",
+    "suggestion": "툴팁을 어떻게 읽는지, 음성이 어떻게 작동하는지, 설정 메뉴가 어디에 있는지",
+    "problem": "영어 명사구의 구조를 반복해 옮겨 문장이 번역투로 이어집니다. 특히 \"설정이 있는 곳\"은 설정 메뉴의 위치인지 설정값이 저장되는 범위인지 바로 드러나지 않습니다.",
+    "evidence": "원문은 세 항목을 각각 \"how tooltips are read\", \"how speech works\", \"where the settings live\"로 설명합니다. 한국어에서는 각 항목을 \"어떻게 ~하는지\", \"어디에 있는지\"로 맞추면 대상과 의미가 분명해집니다."
+   },
+   "editor": {
+    "ref": "basics/index.md#gpt-manual-editor-0",
+    "action": "dispute",
+    "reason": "원문 \"where the settings live\"는 설정 메뉴 위치와 캐릭터별·계정 전체 설정(저장 범위)을 함께 가리킨다. 링크된 menu-and-settings 항목 설명도 '설정 메뉴, 캐릭터별 설정과 계정 전체 설정'이다. 제안문의 '설정 메뉴가 어디에 있는지'는 원문에 없는 '메뉴'를 더해 뜻을 좁힌다(polish-base.md '바꾸지 않는 것': 원문의 뜻). '설정이 있는 곳'의 중의성은 원문 'live'의 중의성 그대로다. 나머지 '어떻게 ~하는지' 구조는 뜻 차이 없는 취향 문제다."
+   }
+  }
+ ]
+}

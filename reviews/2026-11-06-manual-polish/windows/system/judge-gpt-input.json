@@ -1,0 +1,58 @@
+{
+ "file": "windows/system.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/system.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/system.md",
+ "items": [
+  {
+   "ref": "windows/system.md#gpt-manual-editor-8",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임이 Enter로 수락하게 해 주는 상자라면, 질문 내용에서 Enter를 누르면 첫 번째 버튼이 대신 눌립니다.",
+    "suggestion": "게임이 Enter로 수락하게 해 주는 상자라면, 질문 내용 정지점에서 Enter를 누르면 첫 번째 버튼이 대신 눌립니다.",
+    "problem": "\"질문 내용에서\"는 글의 어느 부분이나 어떤 조작 위치를 뜻하는지 불분명합니다. 앞에서 설명한 정지점을 구체적으로 밝혀야 Enter를 누를 위치가 드러납니다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/system.md:86에서 각 부분이 하나의 정지점이라고 설명하고, :88의 이 문장은 첫 번째 정지점에서의 동작을 설명합니다."
+   },
+   "editor": {
+    "ref": "windows/system.md#gpt-manual-editor-8",
+    "action": "dispute",
+    "reason": "이 문장은 1번 항목 \"질문 내용\" 안에 있다. 그래서 \"질문 내용에서\"가 그 정지점을 가리킨다는 것이 분명하다. 원문 \"on the text\"에도 stop은 없다. 취향 차이다."
+   }
+  },
+  {
+   "ref": "windows/system.md#gpt-manual-editor-13",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "색상환 자체는 마우스가 있어야 쓸 수 있으므로, WowVision은 같은 색을 대신 숫자로 읽습니다.",
+    "suggestion": "색상환은 마우스로만 조작할 수 있으므로, WowVision은 같은 색을 숫자로 대신 읽습니다.",
+    "problem": "\"마우스가 있어야\"는 입력 장치의 보유 여부를 말하는 듯하고, \"같은 색을 대신 숫자로\"는 \"대신\"이 무엇을 대신하는지 수식 관계가 불명확합니다.",
+    "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/system.md:132. 원문은 색상환의 조작 수단이 마우스뿐이며 WowVision이 색을 숫자로 표현한다는 두 정보를 전달합니다."
+   },
+   "editor": {
+    "ref": "windows/system.md#gpt-manual-editor-13",
+    "action": "dispute",
+    "reason": "\"마우스가 있어야 쓸 수 있으므로\"는 원문 \"needs a mouse\" 그대로다. \"마우스로만\"은 원문에 없는 only를 더한다. \"같은 색을 대신 숫자로\"도 원문 \"the same colors as numbers instead\"와 뜻이 같다."
+   }
+  },
+  {
+   "ref": "windows/system.md#gpt-newcomer-5",
+   "file": "windows/system.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "Enter를 누르면 지금 있는 버튼을 사용합니다.",
+    "suggestion": "Enter를 누르면 현재 선택한 버튼을 사용합니다.",
+    "problem": "\"지금 있는 버튼\"은 영어 `the one you are on`의 구조를 그대로 옮긴 표현이라 플레이어의 현재 위치인지 키보드로 선택한 버튼인지 명확하지 않습니다.",
+    "evidence": "앞 문장은 Tab과 Shift+Tab으로 버튼 사이를 이동한다고 설명하므로, 여기서 가리키는 대상은 현재 선택한 버튼입니다."
+   },
+   "editor": {
+    "ref": "windows/system.md#gpt-newcomer-5",
+    "action": "dispute",
+    "reason": "이 설명서에서 \"선택\"은 게임이 \"선택됨\"이라고 말하는 상태다(같은 파일 매크로 탭과 목록). \"현재 선택한 버튼\"은 그 상태와 헷갈린다. \"지금 있는 버튼\"은 원문 \"the one you are on\"과 뜻이 같다."
+   }
+  }
+ ]
+}

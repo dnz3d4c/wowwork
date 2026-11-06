@@ -1,0 +1,59 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"아우버다인행 배 선착장에 도착했습니다. 여기서 배 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오. 비컨이 탑승 방향을 알려 줍니다;",
+   "source_quote": "\"Dock Ship dock to Auberdine reached. Wait here for the ship. Board when you hear it arrive. The beacon shows the boarding direction;",
+   "suggestion": "\"아우버다인행 배 선착장 도착. 여기서 배 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오. 비컨이 탑승 방향을 알려 줍니다;",
+   "problem": "게임이 실제로 말하는 문구와 설명서 인용이 다르다. 독자는 \"선착장에 도착했습니다\", \"도착하는 소리가\"를 기다리지만 게임은 \"선착장 도착\", \"들어오는 소리가\"라고 말해, 들은 말을 설명서에서 찾아 맞춰 보기 어렵다.",
+   "evidence": "vision-locale/koKR/navigation.lua:201 L[\"Dock %s reached. Wait here for %s. Board when you hear it arrive.\"] = \"%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.\""
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"아우버다인행 배 선착장에 도착했습니다. 여기서 배 도착을 기다리십시오. 도착하는 소리가 들리면 탑승하십시오.\"가 들립니다",
+   "source_quote": "You hear \"Dock Ship dock to Auberdine reached. Wait here for the ship. Board when you hear it arrive.\"",
+   "suggestion": "\"아우버다인행 배 선착장 도착. 여기서 배 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.\"가 들립니다",
+   "problem": "예시 절의 같은 인용도 게임 문구와 다르다(\"도착했습니다\", \"도착하는 소리\"). 승강장 절과 함께 고치지 않으면 두 곳이 서로 다르게 남는다.",
+   "evidence": "vision-locale/koKR/navigation.lua:201 \"%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.\""
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "여기서 기다렸다가 소리를 듣고 탑승하고, 마지막 정류장에서 내리십시오.",
+   "source_quote": "wait here, board by ear and get off at the last stop.",
+   "suggestion": "여기서 기다렸다가 소리를 듣고 탑승한 뒤, 마지막 정류장에서 내리십시오.",
+   "problem": "게임이 말하는 문구(\"탑승한 뒤,\")와 설명서 인용(\"탑승하고,\")이 다르다. 들은 말과 읽는 말이 달라진다.",
+   "evidence": "vision-locale/koKR/navigation.lua:218 L[\"Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.\"] = \"%2$s 편으로 %1$s까지 이동: 여기서 기다렸다가 소리를 듣고 탑승한 뒤, 마지막 정류장에서 내리십시오. 그 근처에서는 I 키를 누르면 승강장 쪽으로 돌아섭니다.\""
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "\"기록한 아우버다인행 배 선착장까지 탑승 중\"",
+   "source_quote": "\"Riding to the noted dock Ship dock to Auberdine\"",
+   "suggestion": "\"기록한 아우버다인행 배 선착장까지 타고 가는 중\"",
+   "problem": "WowNav 경로 상태 키가 실제로 말하는 문구는 \"타고 가는 중\"인데 설명서는 \"탑승 중\"이라고 인용한다. 독자가 상태 키로 들은 말을 표의 예와 맞춰 볼 수 없다.",
+   "evidence": "vision-locale/koKR/navigation.lua:255 L[\"Riding to the noted dock %s\"] = \"기록한 %s까지 타고 가는 중\""
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "나머지 길은 직접 이동해 잠수하십시오, 마지막 구간은 검증되지 않았습니다.",
+   "source_quote": "The rest of the way and the diving are yours, the last stretch is unchecked.",
+   "suggestion": "나머지 길은 직접 이동해 잠수해야 하며, 마지막 구간은 검증되지 않았습니다.",
+   "problem": "물 대상 도착 때 게임이 말하는 문구(\"잠수해야 하며,\")와 설명서 인용(\"잠수하십시오,\")이 다르다.",
+   "evidence": "vision-locale/koKR/navigation.lua:232 L[\"The network ends %.1f yards from the water surface position; diving depth %.1f yards. The rest of the way and the diving are yours, the last stretch is unchecked.\"] = \"네트워크는 수면 위치에서 %.1f야드 떨어진 곳에서 끝납니다; 잠수 깊이 %.1f야드. 나머지 길은 직접 이동해 잠수해야 하며, 마지막 구간은 검증되지 않았습니다.\""
+  }
+ ]
+}

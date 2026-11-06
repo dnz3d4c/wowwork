@@ -1,0 +1,20 @@
+[
+ {"ref": "information/group-health.md#claude-wow-veteran-2", "action": "applied", "reason": "koKR groupHealth.lua:14 \"%d 파티\"와 같은 파일 설정 표 \"1 파티부터 8 파티까지\"에 맞춰 \"1 파티\", \"2 파티\"로 띄어 썼다."},
+ {"ref": "information/group-health.md#claude-manual-editor-0", "action": "applied", "reason": "합의 지적. koKR groupHealth.lua:19 설정 이름 \"이 값 미만일 때 반복\"을 온전히 쓰고 생명력을 앞으로 옮겨 \"생명력이 자기 역할의 이 값 미만일 때 반복 설정값보다 낮은 구성원은\"으로 고쳤다."},
+ {"ref": "information/group-health.md#claude-manual-editor-1", "action": "applied", "reason": "기본값 표 머리글을 koKR 설정 이름에서 괄호만 뺀 \"이 값 미만일 때 반복\"으로 맞췄다. 원문 \"Repeat Below\"도 괄호만 뺀 형태다."},
+ {"ref": "information/group-health.md#claude-manual-editor-2", "action": "applied", "reason": "claude-wow-veteran-2와 같은 곳. \"1 파티\", \"2 파티\"로 반영."},
+ {"ref": "information/group-health.md#claude-manual-editor-3", "action": "applied", "reason": "\"~에 대해 ~라고 말합니다\" 번역투를 \"구성원을 \\\"생명력 최대\\\"로 말합니다\"로 고쳤다. 뜻(says \"full\" for members at full health)은 그대로다."},
+ {"ref": "information/group-health.md#claude-newcomer-0", "action": "applied", "reason": "합의 지적(claude-manual-editor-0, gpt-manual-editor-1)과 함께 반영. 설정 이름 전체를 쓰고 어순을 바꿨다. 따옴표는 같은 파일의 다른 설정 이름 표기(따옴표 없음)에 맞춰 넣지 않았다."},
+ {"ref": "information/group-health.md#claude-newcomer-1", "action": "applied", "reason": "범위가 설정 이름 \"이 값\" 앞에 붙어 이름 경계가 흐려지던 것을 고쳐, 이름 두 개를 먼저 적고 범위를 다음 문장에 \"앞의 값은 0부터 100까지, 뒤의 값은 0부터 300까지\"로 옮겼다. 표 행 수는 그대로다."},
+ {"ref": "information/group-health.md#gpt-wow-veteran-0", "action": "applied", "reason": "gs_enUS/gs_koKR 21158 DISPLAY_INCOMING_HEALS, 22130 COMPACT_UNIT_FRAME_PROFILE_DISPLAYHEALPREDICTION \"Display Incoming Heals\" = \"시전 중 치유량 표시\", 21159 툴팁 \"현재 시전 중인 회복 주문의 치유량\"을 확인했다. 원문 \"count incoming heals\"와 같은 개념이라 \"시전 중 치유량을 계산할 수 없습니다\"로 고쳤다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-0", "action": "applied", "reason": "무엇이 맞춰졌는지 빠져 있어 \"단계가 맞춰져 있습니다\"로 대상을 되살렸다. 원문 \"are tuned\"의 뜻을 넘는 \"각각 조정\"은 넣지 않았다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-1", "action": "applied", "reason": "합의 지적. 생명력을 앞에 두는 어순 변경을 반영하되, 설정 이름은 claude-manual-editor-0 근거(koKR groupHealth.lua:19)에 따라 \"이 값 미만일 때 반복\" 전체로 썼다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-2", "action": "applied", "reason": "원문 \"takes a silent turn\"과 같은 파일 제한 사항(소리가 나든 안 나든 차례를 하나씩 쓴다)에 맞게 \"차례를 받지만 소리가 나지 않습니다\"로 고쳤다. \"넘깁니다\"는 건너뛴다로 읽힌다. \"차례를 받다\"는 같은 파일 변화가 있을 때만 반복 절의 표현과 같다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-3", "action": "applied", "reason": "서술어가 빠져 있던 괄호를 \"오른쪽 트리거와 오른쪽 스틱을 함께 누름\"으로 고쳤다. 원문 \"the right trigger together with the right stick press\"와 같은 뜻이다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-4", "action": "applied", "reason": "claude-newcomer-1과 같은 곳. 범위를 설정 이름 앞에서 떼어 다음 문장으로 옮겼다. 제안처럼 괄호 뒤에 괄호를 잇는 대신 문장으로 풀었다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-5", "action": "applied", "reason": "명사 나열과 어색한 조사를 \"치유를 받거나 피해를 입으면 변화로 치지만, 반복 간격마다 구성원 한 명이 받는 차례는 최대 한 번입니다\"로 고쳤다. at most one turn per member per interval 조건은 유지된다."},
+ {"ref": "information/group-health.md#gpt-manual-editor-6", "action": "applied", "reason": "원문 \"as its voice\"에 맞춰 \"모니터의 음성으로\"로 대상을 밝혔다."},
+ {"ref": "information/group-health.md#gpt-newcomer-0", "action": "applied", "reason": "gpt-manual-editor-2와 같은 곳. \"차례를 받지만 소리가 나지 않습니다\"로 반영."},
+ {"ref": "information/group-health.md#gpt-newcomer-1", "action": "applied", "reason": "gpt-manual-editor-3과 같은 곳. \"+\" 표기 대신 같은 파일의 문장체에 맞춰 \"오른쪽 트리거와 오른쪽 스틱을 함께 누름\"으로 반영."},
+ {"ref": "information/group-health.md#gpt-newcomer-2", "action": "applied", "reason": "gpt-wow-veteran-0과 같은 곳. 공식 기능명 \"시전 중 치유량\"(gs 21158, 22130)으로 반영."}
+]

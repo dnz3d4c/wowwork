@@ -1,0 +1,41 @@
+{
+ "file": "windows/action-bars.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/action-bars.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/action-bars.md",
+ "items": [
+  {
+   "ref": "windows/action-bars.md#gpt-manual-editor-0",
+   "file": "windows/action-bars.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "창 전체가 하나의 탭 정지점입니다. 각 단축바는 그 안에서 이름이 붙은 한 줄입니다.",
+    "suggestion": "창 전체가 하나의 탭 정지점이며, 그 안에서 각 단축바는 이름이 붙은 한 줄로 표시됩니다.",
+    "problem": "두 번째 문장은 단축바와 줄을 서술격 조사로 바로 연결한 영어식 구조라, 단축바가 실제로 한 줄이라는 뜻인지 한 줄로 표시된다는 뜻인지 바로 드러나지 않습니다.",
+    "evidence": "원문은 각 단축바가 창 안에서 labeled row로 배치된다는 표시 구조를 설명합니다. 제안은 탭 정지점과 이름 붙은 줄이라는 정보 단위를 모두 유지합니다."
+   },
+   "editor": {
+    "ref": "windows/action-bars.md#gpt-manual-editor-0",
+    "action": "dispute",
+    "reason": "원문 'Each bar is a labeled row inside it'을 그대로 옮긴 문장이고, 앞 문장의 '그 안'이 창을 받으며 뒤 목록이 줄 사이 이동을 설명하므로 뜻이 헷갈리지 않는다. '표시됩니다'로 바꾸는 것은 취향 차이다."
+   }
+  },
+  {
+   "ref": "windows/action-bars.md#gpt-manual-editor-6",
+   "file": "windows/action-bars.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "## 행동 단축바 잠그기는 자동으로 꺼집니다",
+    "suggestion": "## 행동 단축바 잠그기 설정은 자동으로 꺼집니다",
+    "problem": "설정 이름인 ‘행동 단축바 잠그기’에 곧바로 보조사 ‘는’을 붙여 동작을 주제로 삼은 것처럼 읽힙니다. ‘설정’을 밝혀야 무엇이 자동으로 꺼지는지 바로 드러납니다.",
+    "evidence": "원문 본문은 바로 다음 문장에서 Lock Action Bars를 게임의 setting이라고 명시합니다. 제안은 제목 수준과 설정 이름을 유지하면서 대상만 분명히 합니다."
+   },
+   "editor": {
+    "ref": "windows/action-bars.md#gpt-manual-editor-6",
+    "action": "dispute",
+    "reason": "제목은 원문 'Lock Action Bars is turned off for you'를 따른 것이고 바로 다음 문장이 '행동 단축바 잠그기라는 설정'이라고 밝힌다. 제목을 바꾸면 앵커가 바뀌어 다른 언어판과 링크 대응이 흔들린다. 독자가 잘못 이해하는 지점이 없어 취향 차이로 본다."
+   }
+  }
+ ]
+}

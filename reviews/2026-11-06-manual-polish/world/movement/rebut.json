@@ -1,0 +1,23 @@
+{
+  "responses": [
+    {"ref": "world/movement.md#claude-manual-editor-0", "action": "applied", "reason": "원문 'the continent you are on'의 you가 빠져 동어 반복으로 읽힌다. newcomer-0과 함께 '내가 지금 있는 대륙에 시체가 있을 때만 경로를 잡습니다.'로 고쳐 주어를 밝혔다."},
+    {"ref": "world/movement.md#claude-manual-editor-1", "action": "applied", "reason": "원문 'for example with the interact key'는 interacting을 꾸민다. newcomer-2와 같은 곳이라 '손이 닿지 않는 대상과 상호작용 키 등으로 상호작용할 때'로 어순을 바꿨다."},
+    {"ref": "world/movement.md#claude-manual-editor-2", "action": "applied", "reason": "선행사가 '경유지 쪽으로 돌아서기'와 '상하 각도 고정' 둘이다(polish-base 2항). '이 두 기능이'로 고쳤다."},
+    {"ref": "world/movement.md#claude-manual-editor-3", "action": "applied", "reason": "원문 주어 you와 back이 빠졌다. '나중에 직접 시점 전환 방식을 되돌려도'로 고쳤다. newcomer-1의 주어 보충과 함께 반영해 앞 문장은 WowVision, 이 문장은 사용자가 주어임이 드러난다."},
+    {"ref": "world/movement.md#claude-manual-editor-4", "action": "applied", "reason": "'~하기도 합니다'가 가끔 그런다로 읽힐 수 있고, 같은 파일 표의 낙하 안내 행은 단정한다. '한 번 말합니다'로 고쳤다. also는 앞 문장 음 설명에 이어 쓰는 것으로 충분하다."},
+    {"ref": "world/movement.md#claude-manual-editor-5", "action": "applied", "reason": "its는 Sound Alert를 가리킨다. '소리 경보의 소리 설정'으로 밝혔다. 설정 이름 '소리'(koKR monitors.lua L[\"Sound\"])는 그대로다."},
+    {"ref": "world/movement.md#claude-newcomer-0", "action": "applied", "reason": "manual-editor-0과 같은 곳. '내가 지금 있는 대륙에 시체가 있을 때만'으로 함께 반영했다."},
+    {"ref": "world/movement.md#claude-newcomer-1", "action": "applied", "reason": "원문 주어 it은 WowVision이다. 'WowVision이 이 옵션 중 하나를 바꾸면 대화창에 이 메시지를 출력합니다:'로 고쳤다. 인용된 메시지는 건드리지 않았다."},
+    {"ref": "world/movement.md#claude-newcomer-2", "action": "applied", "reason": "manual-editor-1과 같은 곳. 함께 반영했다."},
+    {"ref": "world/movement.md#claude-newcomer-3", "action": "applied", "reason": "'따르다'가 복종으로 읽힐 수 있다는 지적이 맞다. 다만 제안의 '키가 아니라'는 원문에 없는 대조를 덧붙이므로, follows의 뜻(추적)만 살려 '이동 명령을 기준으로 판단하므로'로 고쳤다."},
+    {"ref": "world/movement.md#gpt-manual-editor-0", "action": "applied", "reason": "'그 순간'이 앞의 '1초가 조금 안 되는 사이'(기간)와 맞지 않는다. '이 시간이 지나면'으로 고쳤다. 제안의 '경보가 울립니다'는 원문 still을 지우므로 '여전히 알립니다'는 유지했다."},
+    {"ref": "world/movement.md#gpt-manual-editor-1", "action": "applied", "reason": "주체가 빠져 누가 미는지 불분명하다. '캐릭터가 무언가에 막힌 채 밀고 있다는 것을'로 주체만 보충했다. 뒤 문단의 '계속 밀면'과 이어지도록 '밀고'는 남겼다."},
+    {"ref": "world/movement.md#gpt-manual-editor-2", "action": "applied", "reason": "'검사가 막히다'는 호응이 어긋난다. 원문 'three checks in a row are impeded'를 살려 '검사 세 번 연달아 이동이 막혔다고 나올 때만'으로 고쳤다."},
+    {"ref": "world/movement.md#gpt-manual-editor-3", "action": "applied", "reason": "'경로는 ~ 따라갑니다'가 경로를 주체로 읽히게 한다. '이 경로도 다른 경로와 똑같이 따라가면 됩니다.'로 고쳤다."},
+    {"ref": "world/movement.md#gpt-manual-editor-4", "action": "applied", "reason": "'수직 이동을 잃다'는 영어 표현 직역이다. '위아래로 움직이는 데 지장이 없습니다'로 고쳐도 정보는 같다."},
+    {"ref": "world/movement.md#gpt-manual-editor-5", "action": "applied", "reason": "'다음은 모두 수평으로 되돌립니다'는 목적어(캐릭터)가 빠져 있다. 목록에 키 누르기와 창 열림이 섞여 있어 '다음 동작이나 상황에서 모두 수평으로 돌아옵니다'로 고쳤다. 목록 항목은 그대로다."},
+    {"ref": "world/movement.md#gpt-newcomer-0", "action": "applied", "reason": "navigation.md:146은 같은 saved camera view 5를 '5번 저장 카메라 시점'이라고 부른다. '5번 저장 카메라 시점도 사용합니다. 이 시점을 초기화하고 바로 그 시점으로 전환해'로 맞췄다. 게임 단축키 이름 '5번 시점 설정하기'(gs_koKR BINDING_NAME_SAVEVIEW5)는 그대로다."},
+    {"ref": "world/movement.md#gpt-newcomer-1", "action": "applied", "reason": "같은 용어 통일. '5번 저장 카메라 시점에 의존합니다'로 고쳤다."}
+  ],
+  "check": "uv run python -m tools.manual check world/movement.md: 검사 1개, 문제 있는 파일 0개"
+}

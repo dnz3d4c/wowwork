@@ -1,0 +1,75 @@
+{
+ "file": "basics/tooltips.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/tooltips.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/tooltips.md",
+ "items": [
+  {
+   "ref": "basics/tooltips.md#gpt-manual-editor-2",
+   "file": "basics/tooltips.md",
+   "finding": {
+    "category": "accuracy",
+    "severity": "major",
+    "quote": "목록과 칸에서는 아이템 이름 뒤에 등급이 색으로 붙습니다. 비장애인 플레이어에게 그 이름이 보이는 색입니다. 그래서 \"털 장화, 흰색\"이나 \"우레폭풍, 주황색\"처럼 들립니다.",
+    "suggestion": "목록과 칸에서는 화면을 보는 플레이어에게 아이템 이름이 등급에 따른 색으로 보입니다. WowVision은 그 색을 이름 뒤에 붙여 읽으므로, \"털 장화, 흰색\"이나 \"우레폭풍, 주황색\"처럼 들립니다.",
+    "problem": "원문의 \"a sighted player\"를 \"비장애인 플레이어\"로 옮겨 시각을 사용하는지와 장애가 있는지를 같은 개념으로 만들었다. 시각을 사용하는 플레이어에게도 다른 장애가 있을 수 있으므로 원문보다 대상을 좁힌다.",
+    "evidence": "영어 원문은 아이템 이름의 색을 볼 수 있는 플레이어를 뜻하는 \"a sighted player\"라고 한정한다. 장애 유무 전체를 뜻하는 표현은 쓰지 않는다."
+   },
+   "editor": {
+    "ref": "basics/tooltips.md#gpt-manual-editor-2",
+    "action": "dispute",
+    "reason": "사용자 결정 위반. docs/decisions.tsv:15 (2026-11-05) 'sighted (player, helper 등)'는 '비장애인'으로 옮긴다고 정했고, 이전 표기 '화면을 보는'을 바꾼 결정이다. 수정안의 '화면을 보는 플레이어'는 이 결정을 되돌린다."
+   }
+  },
+  {
+   "ref": "basics/tooltips.md#gpt-manual-editor-3",
+   "file": "basics/tooltips.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "- 경매 가격: 경매장에서 마지막으로 본 가격과 며칠 전에 보았는지(오늘 보았으면 생략),",
+    "suggestion": "- 경매 가격: 경매장에서 마지막으로 본 가격과 그 가격을 본 지 며칠이 지났는지(오늘 보았으면 생략),",
+    "problem": "\"가격과 며칠 전에 보았는지\"는 명사와 절을 바로 병렬로 연결해 호응이 어색하고, 무엇을 보았는지도 생략되어 있다.",
+    "evidence": "원문은 마지막으로 확인한 가격에 그 가격을 확인한 지 며칠이 지났는지를 함께 표시한다는 뜻이다. 수정안은 두 정보 단위를 모두 유지하면서 두 번째 절의 목적어를 밝힌다."
+   },
+   "editor": {
+    "ref": "basics/tooltips.md#gpt-manual-editor-3",
+    "action": "dispute",
+    "reason": "취향 차이. '가격과 며칠 전에 보았는지'는 명사와 의문절을 '와'로 잇는 흔한 한국어 구조이고, 보았다는 대상은 바로 앞 '가격'이라 독자가 대상을 다시 찾을 일이 없다. 수정안은 같은 뜻을 길게 풀었을 뿐이다."
+   }
+  },
+  {
+   "ref": "basics/tooltips.md#gpt-manual-editor-4",
+   "file": "basics/tooltips.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "이 값은 경매장을 쓰는 동안 WowVision이 만드는 가격 데이터베이스에서 옵니다.",
+    "suggestion": "이 값은 WowVision이 경매장을 쓰는 동안 만드는 가격 데이터베이스에서 가져옵니다.",
+    "problem": "값이 데이터베이스에서 \"옵니다\"라는 서술은 영어 \"come from\"의 어순과 동사를 그대로 따른 번역투라서, 값을 어디에서 가져오는지 바로 드러나지 않는다.",
+    "evidence": "원문은 가격 정보의 출처가 WowVision이 구축하는 데이터베이스라는 뜻이다. \"가져옵니다\"로 바꾸면 정보의 출처와 사용 관계가 명확해진다."
+   },
+   "editor": {
+    "ref": "basics/tooltips.md#gpt-manual-editor-4",
+    "action": "dispute",
+    "reason": "수정안이 뜻을 바꾼다. 원문 'the price database WowVision builds as you use the auction house'에서 경매장을 쓰는 주체는 사용자(you)다. 수정안 'WowVision이 경매장을 쓰는 동안'은 WowVision을 경매장 사용 주체로 읽히게 한다. '옵니다'는 원문 come from과 같은 뜻이며 출처가 분명하다."
+   }
+  },
+  {
+   "ref": "basics/tooltips.md#gpt-manual-editor-6",
+   "file": "basics/tooltips.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "- 게임이 아직 불러오지 않은 아이템은 처음에 툴팁이 비어 있을 수 있습니다. Space를 누르면 WowVision이 다시 요청하며, 그때쯤이면 대개 정보가 도착해 있습니다. 아무것도 듣지 못했으면 Space를 한 번 더 누릅니다.",
+    "suggestion": "- 게임이 아직 불러오지 않은 아이템은 처음에 툴팁이 비어 있을 수 있습니다. Space를 누르면 WowVision이 툴팁을 다시 요청하며, 그때쯤이면 대개 정보가 도착해 있습니다. 아무것도 듣지 못했으면 Space를 한 번 더 누릅니다.",
+    "problem": "\"다시 요청하며\"에 목적어가 없어 WowVision이 아이템과 툴팁 중 무엇을 다시 요청하는지 앞 문장에서 추론해야 한다.",
+    "evidence": "원문의 \"asks again\"은 앞 문장의 빈 툴팁 정보를 다시 요청한다는 뜻이다. 수정안은 생략된 대상을 \"툴팁\"으로 명시하며 정보나 조건을 더하지 않는다."
+   },
+   "editor": {
+    "ref": "basics/tooltips.md#gpt-manual-editor-6",
+    "action": "dispute",
+    "reason": "원문 'WowVision asks again'은 목적어가 없고, 다음 절 'the information has usually arrived'가 다시 요청하는 대상이 아이템 정보임을 보여 준다. 툴팁이 빈 원인은 게임이 아이템을 불러오지 않은 것이므로 '툴팁을'로 특정하면 원문에 없는 대상을 정한다. 현재 문장은 앞 문장과 '정보'로 대상이 드러난다."
+   }
+  }
+ ]
+}
