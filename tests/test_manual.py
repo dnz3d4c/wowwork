@@ -93,3 +93,32 @@ def test_check_rejects_haeyo_style(tmp_path: Path) -> None:
     (tmp_path / "alerts.md").write_text(ALERTS_KO, "utf-8")
     problems = "\n".join(check(EN, bad, ko))
     assert "해요체" in problems and "보세요." in problems
+
+
+def test_korean_summary_titles_match_page_headings() -> None:
+    """목차(SUMMARY.md)의 한국어 항목은 그 페이지의 제목(# 줄)과 같아야 한다.
+
+    2026-11-07: 페이지 제목을 경보→알림, 대상 지정→목표 선택, 키 바인딩 목록→단축키 목록으로 바꿨는데
+    목차는 그대로 남았다. mdBook은 목차 글자를 탐색 메뉴에 쓰므로 페이지 제목과 갈라진다.
+    """
+    import re
+
+    from tools.manual import KO_ROOT
+
+    src = KO_ROOT.parents[1]
+    summary = (src / "SUMMARY.md").read_text(encoding="utf-8")
+    entries = re.findall(r"\[([^\]]+)\]\(\./(user/ko/[^)]+)\)", summary)
+    assert entries, "목차에 한국어 항목이 없다"
+    bad = []
+    for title, rel in entries:
+        heading = next(
+            (
+                ln[2:].strip()
+                for ln in (src / rel).read_text(encoding="utf-8").splitlines()
+                if ln.startswith("# ")
+            ),
+            "",
+        )
+        if title != heading:
+            bad.append(f"{rel}: 목차 '{title}' / 제목 '{heading}'")
+    assert bad == []
