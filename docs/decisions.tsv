@@ -21,3 +21,5 @@ date	scope	decision	source	note
 2026-11-07	설명서: 게임 버전 이름	영어로 쓴다(Classic Era, Retail). 클래식 시대, 리테일은 쓰지 않는다	사용자	설치 프로그램 한국어 문구와 같은 표기. World of Warcraft 영문 유지(2026-11-05)와 같은 방향
 2026-11-07	speech.lua::Buffered	"모아 말하기"	사용자	"대기열"은 음성 대기열(Speech Queue)과, "버퍼"는 버퍼 기능과 겹친다. Direct는 "직접" 유지
 2026-11-07	설명서: 채팅 창(chat)과 NPC 대화 창(gossip)의 이름	지금대로 둔다(대화 창·대화창 표기를 바꾸지 않는다)	사용자	선택지: 채팅=대화창·NPC=NPC 대화 창 / 지금대로 / 채팅 창. 평가자는 이 두 창의 같은 이름을 다시 지적하지 않는다
+2026-11-07	navigation.lua::Route reversed, back to %s	"경로 역방향 전환, %s까지 돌아감"	사용자	판정이 갈린 건(GPT: 돌림·돌아감 반복이 어색, Claude: 유지). 메뉴 이름 Reverse Route는 "경로 거꾸로 돌아가기" 그대로
+2026-11-07	targeting.lua::Dead or Ghost	"죽음 또는 유령"(지금대로)	사용자	판정이 갈린 건(GPT: "상태" 붙이기, Claude: 실제 발화값 죽음·유령과 일치). "상태"를 붙이지 않는다
