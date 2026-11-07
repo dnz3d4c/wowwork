@@ -1,0 +1,437 @@
+{
+  "summary": "번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 교차 회사 판정을 돌려 확정 번역을 만든다",
+  "agentCount": 11,
+  "logs": [],
+  "result": [
+    {
+      "batch": "reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json",
+      "failedReviewers": 0,
+      "findings": 14,
+      "decisions": [
+        {
+          "id": "targeting.lua::Away (AFK)",
+          "final_ko": "자리 비움 (AFK)",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "targeting.lua::Do Not Disturb (DND)",
+          "final_ko": "다른 용무 중 (DND)",
+          "how": "consensus",
+          "sev": [
+            "minor",
+            "minor"
+          ]
+        },
+        {
+          "id": "targeting.lua::Group Role",
+          "final_ko": "파티 역할",
+          "how": "dispute-won",
+          "reason": "gpt: 공식 문자열 GROUP의 영어 \"Group\"은 한국어에서 \"파티\"로 번역된다. 코드도 `UnitGroupRolesAssigned`가 반환한 역할을 표시할 뿐, 현재 번역이 공격대를 배제한다고 볼 근거는 없다. / claude: 공식 문자열 GROUP(10810) enUS 'Group' = koKR '파티'로 영어가 원문 구절과 같다. 게임이 Group을 파티로 부르므로 공식 용어 근거가 성립하고, 지적의 '그룹'은 공식 근거가 없다.",
+          "evidence": [
+            "wowwork/cache/gs_enUS.csv:1020",
+            "wowwork/cache/gs_koKR.csv:1019",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:493",
+            "wowwork/cache/gs_enUS.csv:1020",
+            "wowwork/cache/gs_koKR.csv:1019",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:493-502"
+          ],
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "targeting.lua::Free-for-All PvP",
+          "final_ko": "독립 전투",
+          "how": "dispute-won",
+          "reason": "gpt: PVPFFA와 SPELL_FAILED_TARGET_FREEFORALL에서 `Free for All PVP` 및 `free-for-all PvP combat`을 공식적으로 \"독립 전투\" 계열로 번역한다. 현재 문구는 이 공식 용어를 따르며, 코드에서도 해당 PvP 상태에만 사용된다. / claude: PVPFFA(14619) enUS 'Free for All PVP' = koKR '독립 전투 지역', SPELL_FAILED_TARGET_FREEFORALL(15721) 'free-for-all PvP combat' = '독립 전투 지역'. 영어가 같은 말이고 게임이 이 PvP 상태를 '독립 전투'로 부른다. 코드(targetNames.lua:505-510)는 PvP 상태 항목(L[\"PvP Status\"]) 안에서 발화하므로 PvP 맥락도 드러난다. '무차별 PvP'는 공식 근거가 없다.",
+          "evidence": [
+            "wowwork/cache/gs_enUS.csv:4214",
+            "wowwork/cache/gs_enUS.csv:4529",
+            "wowwork/cache/gs_koKR.csv:4227",
+            "wowwork/cache/gs_koKR.csv:4534",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:505",
+            "wowwork/cache/gs_enUS.csv:4214",
+            "wowwork/cache/gs_koKR.csv:4227",
+            "wowwork/cache/gs_enUS.csv:4529",
+            "wowwork/cache/gs_koKR.csv:4534",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:504-510"
+          ],
+          "sev": [
+            "critical"
+          ]
+        },
+        {
+          "id": "quests.lua::Questie marker",
+          "final_ko": "Questie 표시",
+          "how": "dispute-won",
+          "reason": "gpt: 인용된 공식 문자열은 방향과 거리를 나타내는 `in-world marker`이고, 이 항목은 Questie가 지도에 찍은 위치의 출처를 알리는 상세 정보다. 문맥이 달라 \"위치 표시기\"를 강제할 근거가 되지 않는다. / claude: 지적이 든 OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION(42365)의 영어는 'in-world marker'(화면 내 내비게이션 표시기)로, Questie가 지도에 찍은 퀘스트 위치(scanner.lua:268-277)와 다른 대상이다. 영어가 같은 대상을 가리키지 않아 공식 용어 근거로 인정하지 않는다.",
+          "evidence": [
+            "wowwork/cache/gs_enUS.csv:18612",
+            "wowwork/cache/gs_koKR.csv:18598",
+            "wowvision-ko/WowVision/core/quests/scanner.lua:267",
+            "wowwork/docs/translation-guide.md",
+            "wowwork/cache/gs_enUS.csv:18612",
+            "wowwork/cache/gs_koKR.csv:18598",
+            "wowvision-ko/WowVision/core/quests/scanner.lua:268-277"
+          ],
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "quests.lua::game quest marker",
+          "final_ko": "게임 퀘스트 표시",
+          "how": "dispute-won",
+          "reason": "gpt: 인용된 공식 문자열은 방향과 거리를 안내하는 `in-world marker`이며, 이 항목은 지도상의 퀘스트 위치 출처를 나타낸다. 공식 문자열의 대상과 문맥이 달라 현재 번역을 고칠 근거가 부족하다. / claude: 위 항목과 같다. 42365는 in-world 내비게이션 표시기이고 여기는 게임의 퀘스트 위치 표시(scanner.lua:280-290)다. 짝 항목과 형식도 맞는다.",
+          "evidence": [
+            "wowwork/cache/gs_enUS.csv:18612",
+            "wowwork/cache/gs_koKR.csv:18598",
+            "wowvision-ko/WowVision/core/quests/scanner.lua:280",
+            "wowwork/docs/translation-guide.md",
+            "wowwork/cache/gs_enUS.csv:18612",
+            "wowvision-ko/WowVision/core/quests/scanner.lua:280-290"
+          ],
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "navigation.lua::Reverse Route",
+          "final_ko": "경로 거꾸로 돌아가기",
+          "how": "dispute-won",
+          "reason": "gpt: 코드는 현재 경유지에서 이전 경로의 출발점까지 새 길안내를 시작한다. 따라서 현재 번역이 실제 사용자 동작을 나타내며, \"역순 전환\"은 단순한 경로 순서 변경으로 오해될 수 있다. / claude: module.lua:504-533 주석과 코드가 확인해 준다: reverseRoute는 현재 경유지에서 이전 경로의 출발점(route.start)으로 되돌아가는 길안내를 시작한다(navigateTo(start.id, ...)). 지적의 전제(경로 순서 전환)가 틀렸고 '거꾸로 돌아가기'가 실제 동작과 맞는다.",
+          "evidence": [
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:504",
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:518",
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:528",
+            "wowvision-ko/WowVision/camelot/wownav/module.lua:682",
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:504-541"
+          ],
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "navigation.lua::No route to reverse",
+          "final_ko": "거꾸로 돌아갈 경로 없음",
+          "how": "dispute-won",
+          "reason": "gpt: 이 문구는 진행 중인 경로와 출발점 등 되돌아갈 조건이 없을 때 발화된다. 현재 번역이 코드의 실패 조건을 직접 설명하므로 \"역순으로 전환할 경로\"로 바꿀 이유가 없다. / claude: module.lua:519-523에서 진행 중인 경로나 출발점이 없어 되돌아갈 수 없을 때 발화한다. '되돌아갈 경로가 없다'는 뜻이 정확하고 Reverse Route 번역과 일관된다.",
+          "evidence": [
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:518",
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:522",
+            "wowvision-ko/WowVision/core/navigation/maps/module.lua:516-523"
+          ],
+          "sev": [
+            "major"
+          ]
+        },
+        {
+          "id": "targeting.lua::Configured Target Announcement",
+          "final_ko": "설정한 항목으로 대상 알림",
+          "how": "dispute-won",
+          "reason": "gpt: 이 설정을 켜면 사용자가 구성한 항목들이 대상 알림의 내용으로 사용된다. \"항목으로\"는 그 구성 관계를 나타내며, 제안된 \"설정 항목 기반\"보다 뜻이 불명확하다고 볼 근거가 없다. / claude: targetNames.lua:1002-1006은 켜면 사용자가 설정한 항목으로 대상을 알리는 Bool 설정이다. 현재 번역이 뜻을 정확히 전하고, 제안 '설정 항목 기반 대상 알림'이 더 낫다는 근거가 없다. 취향 차이다.",
+          "evidence": [
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:995",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:1005",
+            "wowvision-ko/WowVision/core/targeting/targetNames.lua:1000-1007"
+          ],
+          "sev": [
+            "minor"
+          ]
+        },
+        {
+          "id": "ui.lua::Reload, then search settings for Discord, to use this",
+          "final_ko": "사용하려면, UI를 재시작한 뒤, 설정에서 Discord를 검색하십시오",
+          "how": "accepted",
+          "sev": [
+            "minor"
+          ]
+        }
+      ],
+      "escalations": [
+        {
+          "id": "navigation.lua::Route reversed, back to %s",
+          "why": "두 판정자의 결론이 다름",
+          "gpt": {
+            "uphold": true,
+            "final_ko": "경로 역방향 전환, %s까지 돌아감",
+            "reason": "현재 번역은 \"돌림\"과 \"돌아감\"이 연달아 나와 음성으로 들을 때 어색하다. 실제로 이전 출발점을 향하는 새 경로를 만드는 동작이므로 \"역방향 전환\"이 반복을 피하면서 의미도 보존한다."
+          },
+          "claude": {
+            "uphold": false,
+            "final_ko": "경로를 거꾸로 돌림, %s까지 돌아감",
+            "reason": "동작이 출발점(%s)까지 되돌아가는 길안내라(module.lua:525-528) 제안 '경로 역순 전환'은 동작을 잘못 전한다. 현재 번역은 지정자 1개 보존, 지정자 뒤 받침 조사 없음, 쉼표 구조 유지로 규칙에 맞고, 지적은 문체 취향 수준이다."
+          }
+        },
+        {
+          "id": "targeting.lua::Dead or Ghost",
+          "why": "두 판정자의 결론이 다름",
+          "gpt": {
+            "uphold": true,
+            "final_ko": "죽음 또는 유령 상태",
+            "reason": "현재 문구는 상태인 \"죽음\"과 존재를 나타내는 \"유령\"을 직접 병렬화해 어색하다. 실제 발화 값인 \"죽음\"과 \"유령\"은 유지하면서 \"상태\"를 붙이면 설정 범위가 명확해지고 기존 번역과도 일치한다."
+          },
+          "claude": {
+            "uphold": false,
+            "final_ko": "죽음 또는 유령",
+            "reason": "이 설정 이름(targetNames.lua:617)이 켜는 항목은 L[\"Ghost\"]='유령', L[\"Dead\"]='죽음'을 발화한다(620-623행). 설정 이름이 실제 발화값과 일치해 사용자가 무엇이 들릴지 알 수 있다. '사망'으로 바꾸면 발화값과 어긋난다."
+          }
+        }
+      ]
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Rebut"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Judge"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a664e1a80a7c67787",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935399,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-accuracy.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나…",
+      "promptFramed": true,
+      "lastProgressAt": 1794040956500,
+      "tokens": 70348,
+      "toolCalls": 6,
+      "durationMs": 21099,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a585579de18706544",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935399,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-terminology.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가…",
+      "promptFramed": true,
+      "lastProgressAt": 1794040977561,
+      "tokens": 76805,
+      "toolCalls": 11,
+      "durationMs": 40901,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "af1720e363c2d012d",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935399,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-context.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나면…",
+      "promptFramed": true,
+      "lastProgressAt": 1794041023325,
+      "tokens": 74158,
+      "toolCalls": 9,
+      "durationMs": 86665,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae42bced9c38b045b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935399,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-listening.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝…",
+      "promptFramed": true,
+      "lastProgressAt": 1794040985187,
+      "tokens": 78110,
+      "toolCalls": 9,
+      "durationMs": 48526,
+      "resultPreview": "{\"findings\":[{\"id\":\"targeting.lua::Away (AFK)\",\"category\":\"listening\",\"severity\":\"minor\",\"problem\":\"원문의 괄호 표기 \\\"(AFK)\\\"를 없앴다. 원문 기호를 없애지 않는다는 규칙 위반이고, 같은 koKR의 다른 괄호 설정 이름(\\\"닫기 (컨트롤러)\\\", \\\"지연 (밀리초)\\\" 등)은 괄호를 살렸다.\",\"evidence\":\"en \\\"Away (AFK)\\\" -> ko \\\"자리 비움\\\". 이 문자열은 설정 이름(core/targeting/targetNames.lua:520 label). 다른 언어판도 괄호를 유지한다: deDE \\\"Abwesend (AFK)\\\", frFR \\\"Absent (ABS)\\\". 단 \\\"자리 비움\\\"이 AFK의…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "gpt:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aa208018872536762",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935400,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-accuracy.md --batch C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-07-u…",
+      "promptFramed": true,
+      "lastProgressAt": 1794040984468,
+      "tokens": 50327,
+      "toolCalls": 3,
+      "durationMs": 49067,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"targeting.lua::Group Role\",\"category\":\"accuracy\",\"severity\":\"major\",\"problem\":\"원문의 `Group`은 파티와 공격대를 아우를 수 있지만, `파티`로 번역해 범위를 좁혔다.\",\"evidence\":\"`core/targeting/targetNames.lua:494`에서 대상 정보 항목의 레이블로 사용된다. `Group Role`은 일반적인 그룹 역할을 뜻하며 원문에는 파티로 한정하는 표현이 없다.\",\"suggestion\":\"그룹 역할\"},{\"id\":\"targeting.lua::Free-for-All PvP\",\"category\":\"accuracy\",\"severity\":\"critical\",\"proble…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "aa0a8d6b348eae7c8",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935400,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-terminology.md --batch C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-0…",
+      "promptFramed": true,
+      "lastProgressAt": 1794041068987,
+      "tokens": 50426,
+      "toolCalls": 3,
+      "durationMs": 132284,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"quests.lua::Questie marker\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"지도상의 marker를 공식 용어인 \\\"위치 표시기\\\"가 아니라 동작을 뜻하는 \\\"표시\\\"로 옮겼다.\",\"evidence\":\"core/quests/scanner.lua:276과 주변 주석에서 Questie의 map marker를 가리킨다. 공식 문자열 OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION의 \\\"an in-world marker indicating the direction and distance of a tracked quest or waypoint\\\"는 \\\"추적 중인 퀘스트나 …"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a408f9e3693edb5b6",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935400,
+      "queuedAt": 1794040935337,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-context.md --batch C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-07-ui…",
+      "promptFramed": true,
+      "lastProgressAt": 1794040977417,
+      "tokens": 49845,
+      "toolCalls": 3,
+      "durationMs": 40713,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "acb70c72fddfcd417",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794040935400,
+      "queuedAt": 1794040935338,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-listening.md --batch C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-07-…",
+      "promptFramed": true,
+      "lastProgressAt": 1794041016299,
+      "tokens": 51556,
+      "toolCalls": 3,
+      "durationMs": 79595,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"navigation.lua::Reverse Route\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"“경로 거꾸로 돌아가기”는 음성으로 들으면 경로의 순서를 뒤집는 기능이 아니라 현재 경로를 따라 되돌아가는 기능으로 오해할 수 있다.\",\"evidence\":\"`core/navigation/maps/module.lua:538`의 메뉴 레이블이며, 원문 `Reverse Route`는 경로 자체를 역순으로 전환하는 동작이다. “거꾸로 돌아가기”는 이동 방향을 되돌린다는 뜻으로도 들린다.\",\"suggestion\":\"경로 역순 전환\"},{\"id\":\"navigation.lua::No route to reverse\",\"…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "ab435591851f827a7",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794041071100,
+      "queuedAt": 1794041071062,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)마다 응답 하나를 낸다. consensus=true인 항목은 두 회사 평가자가 모두 지적한 것이므로 반드시 accept하고, 지적들을 반영한 가장 좋은 번역을 final_ko로 확정한다. consensus=false인 항목은 지적이 …",
+      "promptFramed": true,
+      "lastProgressAt": 1794041148271,
+      "tokens": 66938,
+      "toolCalls": 10,
+      "durationMs": 77170,
+      "resultPreview": "{\"responses\":[{\"id\":\"targeting.lua::Away (AFK)\",\"action\":\"accept\",\"final_ko\":\"자리 비움 (AFK)\",\"reason\":\"합의 지적. 번역 지침 55행(원문 기호를 없애지 않음)에 따라 괄호와 약칭을 살린다. '자리 비움'은 공식 DEFAULT_AFK_MESSAGE(11156) 번역이고, 약칭 AFK는 공식 enUS 값 그대로다.\"},{\"id\":\"targeting.lua::Do Not Disturb (DND)\",\"action\":\"accept\",\"final_ko\":\"다른 용무 중 (DND)\",\"reason\":\"합의 지적. 번역 지침 55행에 따라 괄호와 약칭을 살린다. '다른 용무 중'은 공식 DND(13131)/DEFAULT_DND_MESSAGE(1…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 10,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "ac4910c8513ca166b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794041150499,
+      "queuedAt": 1794041150468,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batch-01/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json\",\n \"items\": [\n  {\n   \"ref\": \"targeting.lua::Group Role\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-accuracy\",\n     \"id\": \"targeting.lua::Group Role\",\n     \"category\": \"accuracy\",\n     \"severity\": \"major\"…",
+      "promptFramed": true,
+      "lastProgressAt": 1794041310905,
+      "tokens": 62060,
+      "toolCalls": 4,
+      "durationMs": 160405,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"targeting.lua::Group Role\",\"uphold\":false,\"final_ko\":\"파티 역할\",\"reason\":\"공식 문자열 GROUP의 영어 \\\"Group\\\"은 한국어에서 \\\"파티\\\"로 번역된다. 코드도 `UnitGroupRolesAssigned`가 반환한 역할을 표시할 뿐, 현재 번역이 공격대를 배제한다고 볼 근거는 없다.\",\"evidence_sources\":[\"wowwork/cache/gs_enUS.csv:1020\",\"wowwork/cache/gs_koKR.csv:1019\",\"wowvision-ko/WowVision/core/targeting/targetNames.lua:493\"]},{\"ref\":\"targeting.lua::Free-…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 11,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "aca592e82cba7bd4f",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794041150499,
+      "queuedAt": 1794041150469,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/games/wowwork/reviews/2026-11-07-ui-v1.0.1/batch-01/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n[\n {\n  \"ref\": \"targeting.lua:…",
+      "promptFramed": true,
+      "lastProgressAt": 1794041201939,
+      "tokens": 65177,
+      "toolCalls": 6,
+      "durationMs": 51438,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"targeting.lua::Group Role\",\"uphold\":false,\"final_ko\":\"파티 역할\",\"reason\":\"공식 문자열 GROUP(10810) enUS 'Group' = koKR '파티'로 영어가 원문 구절과 같다. 게임이 Group을 파티로 부르므로 공식 용어 근거가 성립하고, 지적의 '그룹'은 공식 근거가 없다.\",\"evidence_sources\":[\"wowwork/cache/gs_enUS.csv:1020\",\"wowwork/cache/gs_koKR.csv:1019\",\"wowvision-ko/WowVision/core/targeting/targetNames.lua:493-502\"]},{\"ref\":\"targeting.lua::Free-for-All P…"
+    }
+  ],
+  "totalTokens": 695750,
+  "totalToolCalls": 67
+}

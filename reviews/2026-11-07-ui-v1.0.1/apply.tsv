@@ -1,0 +1,4 @@
+file	key	en	ko
+targeting.lua	Away (AFK)	자리 비움	자리 비움 (AFK)
+targeting.lua	Do Not Disturb (DND)	다른 용무 중	다른 용무 중 (DND)
+ui.lua	Reload, then search settings for Discord, to use this	사용하려면 UI를 재시작한 뒤 설정에서 Discord를 검색하십시오	사용하려면, UI를 재시작한 뒤, 설정에서 Discord를 검색하십시오

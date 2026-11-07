@@ -1,0 +1,185 @@
+{
+ "batch_file": "reviews/2026-11-07-ui-v1.0.1/batches/batch-01.json",
+ "items": [
+  {
+   "ref": "targeting.lua::Group Role",
+   "findings": [
+    {
+     "by": "gpt-accuracy",
+     "id": "targeting.lua::Group Role",
+     "category": "accuracy",
+     "severity": "major",
+     "problem": "원문의 `Group`은 파티와 공격대를 아우를 수 있지만, `파티`로 번역해 범위를 좁혔다.",
+     "evidence": "`core/targeting/targetNames.lua:494`에서 대상 정보 항목의 레이블로 사용된다. `Group Role`은 일반적인 그룹 역할을 뜻하며 원문에는 파티로 한정하는 표현이 없다.",
+     "suggestion": "그룹 역할"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Group Role",
+    "action": "dispute",
+    "final_ko": "파티 역할",
+    "reason": "게임 공식 문자열 GROUP(10810) enUS 'Group'의 koKR이 '파티'다. 영어가 같은 말이므로 공식 용어 근거가 성립한다. 코드(targetNames.lua:494)는 UnitGroupRolesAssigned 값을 읽을 뿐이고 공격대를 따로 가리키지 않는다."
+   }
+  },
+  {
+   "ref": "targeting.lua::Free-for-All PvP",
+   "findings": [
+    {
+     "by": "gpt-accuracy",
+     "id": "targeting.lua::Free-for-All PvP",
+     "category": "accuracy",
+     "severity": "critical",
+     "problem": "`Free-for-All PvP`의 모든 참가자가 서로 적대하는 PvP라는 뜻이 `독립 전투`로 바뀌었다. PvP 상태가 아닌 일반적인 단독 전투로 오해할 수 있다.",
+     "evidence": "`core/targeting/targetNames.lua:510`에서 `token(\"pvp\", L[\"Free-for-All PvP\"])`로 PvP 상태를 알린다. 번역에는 `PvP` 의미와 `Free-for-All`의 상호 적대 의미가 모두 명확히 드러나지 않는다.",
+     "suggestion": "무차별 PvP"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Free-for-All PvP",
+    "action": "dispute",
+    "final_ko": "독립 전투",
+    "reason": "게임 공식 문자열 PVPFFA(14619) enUS 'Free for All PVP'의 koKR이 '독립 전투 지역'이고, SPELL_FAILED_TARGET_FREEFORALL(15721) 'free-for-all PvP combat'도 '독립 전투'로 옮겼다. 게임이 이 PvP 상태를 '독립 전투'라고 부르므로 한국어 사용자가 듣는 용어와 맞춘다. 원문에 '지역'(Area)이 없어 '지역'은 붙이지 않는다."
+   }
+  },
+  {
+   "ref": "quests.lua::Questie marker",
+   "findings": [
+    {
+     "by": "gpt-terminology",
+     "id": "quests.lua::Questie marker",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "지도상의 marker를 공식 용어인 \"위치 표시기\"가 아니라 동작을 뜻하는 \"표시\"로 옮겼다.",
+     "evidence": "core/quests/scanner.lua:276과 주변 주석에서 Questie의 map marker를 가리킨다. 공식 문자열 OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION의 \"an in-world marker indicating the direction and distance of a tracked quest or waypoint\"는 \"추적 중인 퀘스트나 이동 지점의 방향과 거리를 나타내는 위치 표시기\"로 번역된다.",
+     "suggestion": "Questie 위치 표시기"
+    }
+   ],
+   "translator": {
+    "id": "quests.lua::Questie marker",
+    "action": "dispute",
+    "final_ko": "Questie 표시",
+    "reason": "근거로 든 OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION(42365)은 'in-world marker', 곧 화면 안에서 방향과 거리를 가리키는 내비게이션 표시기다. 여기 marker는 Questie가 지도에 찍은 퀘스트 위치 표시(scanner.lua:276)라 영어 구절이 같은 대상을 가리키지 않는다. 퀘스트 위치의 출처를 알리는 짧은 상세 정보라 '표시'로 충분하다."
+   }
+  },
+  {
+   "ref": "quests.lua::game quest marker",
+   "findings": [
+    {
+     "by": "gpt-terminology",
+     "id": "quests.lua::game quest marker",
+     "category": "terminology",
+     "severity": "major",
+     "problem": "게임이 제공하는 퀘스트 marker를 공식 용어인 \"위치 표시기\"가 아니라 \"표시\"로 옮겼다.",
+     "evidence": "core/quests/scanner.lua:289와 주변 주석에서 the game's own marker for the quest를 가리킨다. 공식 문자열 OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION의 \"an in-world marker indicating the direction and distance of a tracked quest or waypoint\"는 \"추적 중인 퀘스트나 이동 지점의 방향과 거리를 나타내는 위치 표시기\"로 번역된다.",
+     "suggestion": "게임 퀘스트 위치 표시기"
+    }
+   ],
+   "translator": {
+    "id": "quests.lua::game quest marker",
+    "action": "dispute",
+    "final_ko": "게임 퀘스트 표시",
+    "reason": "위 'Questie marker'와 같은 이유. 공식 문자열 42365는 in-world 내비게이션 표시기를 말하고, 여기는 게임이 지도에 표시한 퀘스트 위치(scanner.lua:289)다. 짝 항목 'Questie 표시'와 형식을 맞춘다."
+   }
+  },
+  {
+   "ref": "navigation.lua::Reverse Route",
+   "findings": [
+    {
+     "by": "gpt-listening",
+     "id": "navigation.lua::Reverse Route",
+     "category": "listening",
+     "severity": "major",
+     "problem": "“경로 거꾸로 돌아가기”는 음성으로 들으면 경로의 순서를 뒤집는 기능이 아니라 현재 경로를 따라 되돌아가는 기능으로 오해할 수 있다.",
+     "evidence": "`core/navigation/maps/module.lua:538`의 메뉴 레이블이며, 원문 `Reverse Route`는 경로 자체를 역순으로 전환하는 동작이다. “거꾸로 돌아가기”는 이동 방향을 되돌린다는 뜻으로도 들린다.",
+     "suggestion": "경로 역순 전환"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::Reverse Route",
+    "action": "dispute",
+    "final_ko": "경로 거꾸로 돌아가기",
+    "reason": "지적의 전제가 틀렸다. core/navigation/maps/module.lua:500-533의 reverseRoute는 경로 목록 순서를 바꾸는 기능이 아니라, 현재 경유지에서 이전 경로의 출발점(route.start)까지 되돌아가는 길안내를 시작한다(navigateTo(start.id, ...)). '거꾸로 돌아가기'가 실제 동작과 맞다. '역순 전환'은 오히려 목록 정렬로 오해된다."
+   }
+  },
+  {
+   "ref": "navigation.lua::No route to reverse",
+   "findings": [
+    {
+     "by": "gpt-listening",
+     "id": "navigation.lua::No route to reverse",
+     "category": "listening",
+     "severity": "major",
+     "problem": "“거꾸로 돌아갈 경로 없음”은 되돌아갈 길이 없다는 뜻으로 들려, 역순으로 전환할 경로가 없다는 원문의 상태와 구별되지 않는다.",
+     "evidence": "`core/navigation/maps/module.lua:522`에서 직접 발화된다. 같은 기능의 `Reverse Route`와 함께 경로 순서의 전환 여부를 알리는 문구다.",
+     "suggestion": "역순으로 전환할 경로 없음"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::No route to reverse",
+    "action": "dispute",
+    "final_ko": "거꾸로 돌아갈 경로 없음",
+    "reason": "module.lua:522는 진행 중인 경로가 없거나 출발점이 없어 되돌아갈 수 없을 때 발화한다. '되돌아갈 경로가 없다'는 바로 그 상태다. 'Reverse Route' 번역과 같은 말로 맞춰 둔다."
+   }
+  },
+  {
+   "ref": "navigation.lua::Route reversed, back to %s",
+   "findings": [
+    {
+     "by": "gpt-listening",
+     "id": "navigation.lua::Route reversed, back to %s",
+     "category": "style",
+     "severity": "minor",
+     "problem": "“경로를 거꾸로 돌림”은 번역투이고, 이어지는 “돌아감”과 같은 어근이 반복돼 음성으로 들을 때 어색하다.",
+     "evidence": "`camelot/wownav/module.lua:719`과 `core/navigation/maps/module.lua:526`에서 경로 전환 직후 발화된다. 상태 알림은 짧은 명사형이어야 한다.",
+     "suggestion": "경로 역순 전환, %s까지 돌아감"
+    }
+   ],
+   "translator": {
+    "id": "navigation.lua::Route reversed, back to %s",
+    "action": "dispute",
+    "final_ko": "경로를 거꾸로 돌림, %s까지 돌아감",
+    "reason": "실제 동작이 출발점(%s)까지 되돌아가는 것이라(module.lua:526-528) 제안 '경로 역순 전환'은 위 두 항목과 같은 오해를 만든다. 'Reverse Route'(경로 거꾸로 돌아가기)와 같은 말을 써서 단축키 이름과 결과 안내가 이어지게 한다. 원문의 쉼표 구조도 보존했다."
+   }
+  },
+  {
+   "ref": "targeting.lua::Configured Target Announcement",
+   "findings": [
+    {
+     "by": "gpt-listening",
+     "id": "targeting.lua::Configured Target Announcement",
+     "category": "style",
+     "severity": "minor",
+     "problem": "“설정한 항목으로”는 조사와 표현이 어색하며, 음성으로 들으면 어떤 항목을 수단으로 사용한다는 뜻처럼 들릴 수 있다.",
+     "evidence": "`core/targeting/targetNames.lua:1005`의 설정 레이블이다. 설정 이름은 짧은 명사형이 적합하다.",
+     "suggestion": "설정 항목 기반 대상 알림"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Configured Target Announcement",
+    "action": "dispute",
+    "final_ko": "설정한 항목으로 대상 알림",
+    "reason": "targetNames.lua:1005는 Bool 설정으로, 켜면 사용자가 설정한 항목들로 대상을 알린다. 항목이 알림의 구성 요소이므로 '항목으로'가 뜻에 맞다. 제안 '설정 항목 기반 대상 알림'은 '기반' 명사 나열 번역투라 더 낫지 않다."
+   }
+  },
+  {
+   "ref": "targeting.lua::Dead or Ghost",
+   "findings": [
+    {
+     "by": "gpt-listening",
+     "id": "targeting.lua::Dead or Ghost",
+     "category": "style",
+     "severity": "minor",
+     "problem": "“죽음 또는 유령”은 상태와 존재를 병렬로 나열해 음성으로 들을 때 문형이 어색하고 뜻이 바로 잡히지 않는다.",
+     "evidence": "`core/targeting/targetNames.lua:617`의 상태 레이블이다. `Dead`는 여기서 죽음이라는 개념이 아니라 대상의 사망 상태를 나타낸다.",
+     "suggestion": "사망 또는 유령 상태"
+    }
+   ],
+   "translator": {
+    "id": "targeting.lua::Dead or Ghost",
+    "action": "dispute",
+    "final_ko": "죽음 또는 유령",
+    "reason": "이 설정 이름(targetNames.lua:617)이 켜는 항목이 실제로 말하는 값은 L[\"Dead\"]='죽음'(koKR monitors.lua:31)과 L[\"Ghost\"]='유령'(koKR targeting.lua:89)이다(620-623행). 설정 이름을 발화되는 두 값으로 구성해야 사용자가 무엇이 들릴지 안다. '사망'으로 바꾸면 이름과 실제 발화가 어긋난다."
+   }
+  }
+ ]
+}
