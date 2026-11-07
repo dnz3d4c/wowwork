@@ -1,0 +1,1651 @@
+{
+ "items": [
+  {
+   "id": "koKR.txt::hardcore_rp",
+   "file": "koKR.txt",
+   "key": "hardcore_rp",
+   "en": "hardcore_rp",
+   "ko": "하드코어 역할 연기",
+   "de": "hardcore_rp",
+   "fr": "Extrême_rp",
+   "es": "hardcore_rp",
+   "ru": "хардкор_rp",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::addons",
+   "file": "koKR.txt",
+   "key": "addons",
+   "en": "Addons",
+   "ko": "애드온",
+   "de": "Addons",
+   "fr": "Modules complémentaires",
+   "es": "Complementos",
+   "ru": "Аддоны",
+   "code": [
+    "v2/includes/forever.ahk:314: \"gm_addons\", Map(\"de\", \"Addons\", \"en\", \"AddOns\", \"fr\", \"Add-ons\", \"ko\", \"애드온\"),"
+   ],
+   "game_term": "애드온",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::activate all addons",
+   "file": "koKR.txt",
+   "key": "activate all addons",
+   "en": "Activate all addons",
+   "ko": "모든 애드온 켜기",
+   "de": "Alle Addons aktivieren",
+   "fr": "Activer tous les modules",
+   "es": "Activar todos los complementos",
+   "ru": "Включить все аддоны",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::deactivate all addons",
+   "file": "koKR.txt",
+   "key": "deactivate all addons",
+   "en": "Deactivate all addons",
+   "ko": "모든 애드온 끄기",
+   "de": "Alle Addons deaktivieren",
+   "fr": "Désactiver tous les modules",
+   "es": "Desactivar todos los complementos",
+   "ru": "Отключить все аддоны",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::load out of date addons",
+   "file": "koKR.txt",
+   "key": "load out of date addons",
+   "en": "Load out of date addons",
+   "ko": "구버전 애드온 불러오기",
+   "de": "Veraltete Addons laden",
+   "fr": "Charger les modules obsolètes",
+   "es": "Cargar complementos obsoletos",
+   "ru": "Загружать устаревшие аддоны",
+   "code": [],
+   "game_term": "구버전 애드온 불러오기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::yes",
+   "file": "koKR.txt",
+   "key": "yes",
+   "en": "Yes",
+   "ko": "예",
+   "de": "Ja",
+   "fr": "Oui",
+   "es": "Sí",
+   "ru": "Да",
+   "code": [
+    "v2/includes/forever.ahk:302: \"yes\", Map(\"de\", \"Ja\", \"en\", \"Yes\", \"fr\", \"Oui\", \"ko\", \"예\"),",
+    "v2/includes/forever.ahk:1133: for key in [\"ok\", \"cancel\", \"yes\", \"no\", \"decline\", \"change_realm\", \"done\", \"continue\"] {"
+   ],
+   "game_term": "예",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::no",
+   "file": "koKR.txt",
+   "key": "no",
+   "en": "No",
+   "ko": "아니요",
+   "de": "Nein",
+   "fr": "Non",
+   "es": "No",
+   "ru": "Нет",
+   "code": [
+    "v2/includes/forever.ahk:303: \"no\", Map(\"de\", \"Nein\", \"en\", \"No\", \"fr\", \"Non\", \"ko\", \"아니요\"),",
+    "v2/includes/forever.ahk:1133: for key in [\"ok\", \"cancel\", \"yes\", \"no\", \"decline\", \"change_realm\", \"done\", \"continue\"] {"
+   ],
+   "game_term": "아니요 | 아뇨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::all addons activated",
+   "file": "koKR.txt",
+   "key": "all addons activated",
+   "en": "All addons activated",
+   "ko": "모든 애드온을 켰습니다.",
+   "de": "Alle Addons aktiviert",
+   "fr": "Tous les modules sont activés",
+   "es": "Todos los complementos activados",
+   "ru": "Все аддоны включены",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::all addons deactivated",
+   "file": "koKR.txt",
+   "key": "all addons deactivated",
+   "en": "All addons deactivated",
+   "ko": "모든 애드온을 껐습니다.",
+   "de": "Alle Addons deaktiviert",
+   "fr": "Tous les modules sont désactivés",
+   "es": "Todos los complementos desactivados",
+   "ru": "Все аддоны отключены",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::out of date addons will be loaded",
+   "file": "koKR.txt",
+   "key": "out of date addons will be loaded",
+   "en": "Out of date addons will be loaded",
+   "ko": "구버전 애드온을 불러옵니다.",
+   "de": "Veraltete Addons werden geladen",
+   "fr": "Les modules obsolètes seront chargés",
+   "es": "Los complementos obsoletos se cargarán",
+   "ru": "Устаревшие аддоны будут загружены",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::out of date addons will not be loaded",
+   "file": "koKR.txt",
+   "key": "out of date addons will not be loaded",
+   "en": "Out of date addons will not be loaded",
+   "ko": "구버전 애드온을 불러오지 않습니다.",
+   "de": "Veraltete Addons werden nicht geladen",
+   "fr": "Les modules obsolètes ne seront pas chargés",
+   "es": "Los complementos obsoletos no se cargarán",
+   "ru": "Устаревшие аддоны не будут загружены",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::addon menu only available on character selection screen",
+   "file": "koKR.txt",
+   "key": "addon menu only available on character selection screen",
+   "en": "The addon menu is only available on the character selection screen",
+   "ko": "애드온 메뉴는 캐릭터 선택 화면에서만 사용할 수 있습니다.",
+   "de": "Das Addon Menü ist nur auf dem Charakterauswahlbildschirm verfügbar",
+   "fr": "Le menu des modules n'est disponible que sur l'écran de sélection des personnages",
+   "es": "El menú de complementos solo está disponible en la pantalla de selección de personaje",
+   "ru": "Меню аддонов доступно только на экране выбора персонажа",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "file": "koKR.txt",
+   "key": "Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "en": "Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "ko": "알 수 없는 화면입니다. 게임에서 창을 닫은 뒤 Alt F1을 두 번 누르세요.",
+   "de": "Unbekannter Bildschirm. Schließe den Dialog im Spiel und drücke dann zweimal Alt F1.",
+   "fr": "Écran inconnu. Fermez la boîte de dialogue dans le jeu, puis appuyez deux fois sur Alt F1.",
+   "es": "Pantalla desconocida. Cierre el diálogo en el juego y luego presione dos veces Alt F1.",
+   "ru": "Неизвестный экран. Закройте диалог в игре, затем дважды нажмите Alt F1.",
+   "code": [
+    "v2/includes/detect.ahk:241: Say(T(\"Unknown screen. Close the dialog in the game, then press Alt F1 twice.\"))",
+    "v2/includes/flows.ahk:3036: SayQueued(T(\"Unknown screen. Close the dialog in the game, then press Alt F1 twice.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "file": "koKR.txt",
+   "key": "The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "en": "The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "ko": "게임 폴더에 화면 인식 파일이 없습니다. Sku 설치 프로그램으로 로그인 툴을 다시 설치하세요.",
+   "de": "Die Texturen für die Bildschirmerkennung fehlen im Spielordner. Bitte führe den Sku-Installer aus, um das Login-Tool neu zu installieren.",
+   "fr": "Les textures de reconnaissance d'écran sont absentes du dossier du jeu. Veuillez exécuter l'installateur Sku pour réinstaller l'outil de connexion.",
+   "es": "Faltan las texturas de reconocimiento de pantalla en la carpeta del juego. Ejecute el instalador de Sku para reinstalar la herramienta de inicio de sesión.",
+   "ru": "Текстуры распознавания экрана отсутствуют в папке игры. Запустите установщик Sku, чтобы переустановить инструмент входа.",
+   "code": [
+    "v2/includes/detect.ahk:239: Say(T(\"The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Login tool version",
+   "file": "koKR.txt",
+   "key": "Login tool version",
+   "en": "Login tool version",
+   "ko": "로그인 툴 버전",
+   "de": "Login-Tool Version",
+   "fr": "Outil de connexion version",
+   "es": "Herramienta de inicio de sesión, versión",
+   "ru": "Инструмент входа, версия",
+   "code": [
+    "v2/includes/menu.ahk:231: Say(T(\"Login tool version\") \" \" gToolVersion)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "file": "koKR.txt",
+   "key": "The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "en": "The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "ko": "캐릭터 목록이 불완전할 수 있습니다. Alt F1을 두 번 눌러 다시 읽으세요.",
+   "de": "Achtung, die Charakterliste ist möglicherweise unvollständig. Drücke zweimal Alt F1, um sie neu aufzubauen.",
+   "fr": "Attention, la liste des personnages est peut-être incomplète. Appuyez deux fois sur Alt F1 pour la reconstruire.",
+   "es": "Atención, la lista de personajes puede estar incompleta. Presione dos veces Alt F1 para reconstruirla.",
+   "ru": "Внимание, список персонажей может быть неполным. Дважды нажмите Alt F1, чтобы построить его заново.",
+   "code": [
+    "v2/includes/flows.ahk:1961: SayQueued(T(\"The character list may be incomplete. Press Alt F1 twice to rebuild it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The game has opened the server selection.",
+   "file": "koKR.txt",
+   "key": "The game has opened the server selection.",
+   "en": "The game has opened the server selection.",
+   "ko": "서버 선택 창이 열렸습니다.",
+   "de": "Das Spiel hat die Serverauswahl geöffnet.",
+   "fr": "Le jeu a ouvert la sélection de royaume.",
+   "es": "El juego ha abierto la selección de servidor.",
+   "ru": "Игра открыла выбор сервера.",
+   "code": [
+    "v2/includes/flows.ahk:3149: Say(T(\"The game has opened the server selection.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::close server selection",
+   "file": "koKR.txt",
+   "key": "close server selection",
+   "en": "close server selection",
+   "ko": "서버 선택 닫기",
+   "de": "Serverauswahl schließen",
+   "fr": "fermer la sélection de royaume",
+   "es": "cerrar la selección de servidor",
+   "ru": "закрыть выбор сервера",
+   "code": [
+    "v2/includes/flows.ahk:3612: node := DetachedNode(kids, menuItem, T(\"close server selection\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::server selection closed",
+   "file": "koKR.txt",
+   "key": "server selection closed",
+   "en": "server selection closed",
+   "ko": "서버 선택 창을 닫았습니다.",
+   "de": "Serverauswahl geschlossen",
+   "fr": "sélection de royaume fermée",
+   "es": "selección de servidor cerrada",
+   "ru": "выбор сервера закрыт",
+   "code": [
+    "v2/includes/flows.ahk:3169: Say(T(\"server selection closed\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The tool does not know this dialog yet. Answer it in the game.",
+   "file": "koKR.txt",
+   "key": "The tool does not know this dialog yet. Answer it in the game.",
+   "en": "The tool does not know this dialog yet. Answer it in the game.",
+   "ko": "아직 지원하지 않는 창입니다. 게임에서 직접 선택하세요.",
+   "de": "Das Tool kennt diesen Dialog noch nicht. Beantworte ihn im Spiel.",
+   "fr": "L'outil ne connaît pas encore ce dialogue. Répondez-y dans le jeu.",
+   "es": "La herramienta aún no conoce este diálogo. Respóndelo en el juego.",
+   "ru": "Инструмент ещё не знает этот диалог. Ответьте на него в игре.",
+   "code": [
+    "v2/includes/flows.ahk:3912: SayQueued(T(\"The tool does not know this dialog yet. Answer it in the game.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Press Enter to agree, or press Escape to decline.",
+   "file": "koKR.txt",
+   "key": "Press Enter to agree, or press Escape to decline.",
+   "en": "Press Enter to agree, or press Escape to decline.",
+   "ko": "Enter로 동의하고 Escape로 거절합니다.",
+   "de": "Drücke Enter um zuzustimmen, oder Escape um abzulehnen.",
+   "fr": "Appuyez sur Entrée pour accepter, ou sur Échap pour refuser.",
+   "es": "Pulsa Enter para aceptar, o Escape para rechazar.",
+   "ru": "Нажмите Enter, чтобы согласиться, или Escape, чтобы отказаться.",
+   "code": [
+    "v2/includes/flows.ahk:2584: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))",
+    "v2/includes/flows.ahk:2771: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))",
+    "v2/includes/flows.ahk:2783: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Agreed. Connecting to the server. Please wait.",
+   "file": "koKR.txt",
+   "key": "Agreed. Connecting to the server. Please wait.",
+   "en": "Agreed. Connecting to the server. Please wait.",
+   "ko": "동의했습니다. 서버에 연결합니다. 기다려 주세요.",
+   "de": "Zugestimmt. Verbindung zum Server wird hergestellt. Bitte warte.",
+   "fr": "Accepté. Connexion au serveur en cours. Veuillez patienter.",
+   "es": "Aceptado. Conectando con el servidor. Espera, por favor.",
+   "ru": "Принято. Подключение к серверу. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:2605: Say(T(\"Agreed. Connecting to the server. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Declined.",
+   "file": "koKR.txt",
+   "key": "Declined.",
+   "en": "Declined.",
+   "ko": "거절했습니다.",
+   "de": "Abgelehnt.",
+   "fr": "Refusé.",
+   "es": "Rechazado.",
+   "ru": "Отклонено.",
+   "code": [
+    "v2/includes/flows.ahk:2610: Say(T(\"Declined.\"))",
+    "v2/includes/flows.ahk:2832: Say(T(\"Declined.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select category",
+   "file": "koKR.txt",
+   "key": "select category",
+   "en": "select category",
+   "ko": "분류 선택",
+   "de": "Kategorie auswählen",
+   "fr": "Choisir une catégorie",
+   "es": "Seleccionar categoría",
+   "ru": "Выбрать категорию",
+   "code": [
+    "v2/includes/flows.ahk:3607: node := DetachedNode(kids, menuItem, T(\"select category\") \": \" tab[\"text\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::this category holds no servers",
+   "file": "koKR.txt",
+   "key": "this category holds no servers",
+   "en": "This category holds no servers.",
+   "ko": "이 분류에 서버가 없습니다.",
+   "de": "Diese Kategorie enthält keine Server.",
+   "fr": "Cette catégorie ne contient aucun serveur.",
+   "es": "Esta categoría no contiene servidores.",
+   "ru": "В этой категории нет серверов.",
+   "code": [
+    "v2/includes/flows.ahk:3637: Say(T(\"this category holds no servers\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::the server list did not load. please try again.",
+   "file": "koKR.txt",
+   "key": "the server list did not load. please try again.",
+   "en": "The server list did not load. Please try again.",
+   "ko": "서버 목록을 불러오지 못했습니다. 다시 시도하세요.",
+   "de": "Die Serverliste wurde nicht geladen. Bitte erneut versuchen.",
+   "fr": "La liste des serveurs n'a pas été chargée. Veuillez réessayer.",
+   "es": "La lista de servidores no se cargó. Inténtalo de nuevo.",
+   "ru": "Список серверов не загружен. Попробуйте ещё раз.",
+   "code": [
+    "v2/includes/flows.ahk:3640: Say(T(\"the server list did not load. please try again.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The game is still connecting. Press Escape to cancel.",
+   "file": "koKR.txt",
+   "key": "The game is still connecting. Press Escape to cancel.",
+   "en": "The game is still connecting. Press Escape to cancel.",
+   "ko": "연결 중입니다. Escape로 취소합니다.",
+   "de": "Das Spiel verbindet noch. Escape bricht ab.",
+   "fr": "Le jeu se connecte encore. Échap pour annuler.",
+   "es": "El juego sigue conectando. Pulsa Escape para cancelar.",
+   "ru": "Игра ещё подключается. Escape — отмена.",
+   "code": [
+    "v2/includes/flows.ahk:3001: Say(T(\"The game is still connecting. Press Escape to cancel.\"))",
+    "v2/includes/flows.ahk:3848: Say(T(\"The game is still connecting. Press Escape to cancel.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::the server list may be incomplete.",
+   "file": "koKR.txt",
+   "key": "the server list may be incomplete.",
+   "en": "The server list may be incomplete.",
+   "ko": "서버 목록이 불완전할 수 있습니다.",
+   "de": "Die Serverliste ist möglicherweise unvollständig.",
+   "fr": "La liste des serveurs est peut-être incomplète.",
+   "es": "La lista de servidores puede estar incompleta.",
+   "ru": "Список серверов может быть неполным.",
+   "code": [
+    "v2/includes/flows.ahk:3632: SayQueued(T(\"the server list may be incomplete.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::This game version is not supported yet.",
+   "file": "koKR.txt",
+   "key": "This game version is not supported yet.",
+   "en": "This game version is not supported yet.",
+   "ko": "아직 지원하지 않는 게임 버전입니다.",
+   "de": "Diese Spielversion wird noch nicht unterstützt.",
+   "fr": "Cette version du jeu n'est pas encore prise en charge.",
+   "es": "Esta versión del juego aún no es compatible.",
+   "ru": "Эта версия игры пока не поддерживается.",
+   "code": [
+    "v2/includes/detect.ahk:176: Say(T(\"This game version is not supported yet.\") \" \" info.version)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::game version detected",
+   "file": "koKR.txt",
+   "key": "game version detected",
+   "en": "game version detected",
+   "ko": "감지된 게임 버전",
+   "de": "Spielversion erkannt",
+   "fr": "version du jeu détectée",
+   "es": "versión del juego detectada",
+   "ru": "версия игры определена",
+   "code": [
+    "v2/includes/detect.ahk:196: Say(T(\"game version detected\") \": \" T(info.gametype))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::detect game type automatically",
+   "file": "koKR.txt",
+   "key": "detect game type automatically",
+   "en": "detect game type automatically",
+   "ko": "게임 종류 자동 감지",
+   "de": "Spieltyp automatisch erkennen",
+   "fr": "détecter le type de jeu automatiquement",
+   "es": "detectar el tipo de juego automáticamente",
+   "ru": "определять тип игры автоматически",
+   "code": [
+    "v2/includes/menu.ahk:593: autoItem := MenuNode(T(\"detect game type automatically\"), gametypeItem)",
+    "v2/includes/menu.ahk:652: autoItem := MenuNode(T(\"detect game type automatically\"), gametypeItem)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::game type is detected automatically now",
+   "file": "koKR.txt",
+   "key": "game type is detected automatically now",
+   "en": "Game type is detected automatically now.",
+   "ko": "이제 게임 종류를 자동으로 감지합니다.",
+   "de": "Spieltyp wird jetzt automatisch erkannt.",
+   "fr": "Le type de jeu est maintenant détecté automatiquement.",
+   "es": "El tipo de juego se detecta automáticamente ahora.",
+   "ru": "Тип игры теперь определяется автоматически.",
+   "code": [
+    "v2/includes/menu.ahk:760: Say(T(\"game type is detected automatically now\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::login screen, not logged in",
+   "file": "koKR.txt",
+   "key": "login screen, not logged in",
+   "en": "Login screen, not logged in",
+   "ko": "로그인 화면. 접속되지 않았습니다.",
+   "de": "Anmeldebildschirm, nicht angemeldet",
+   "fr": "Écran de connexion, non connecté",
+   "es": "Pantalla de acceso, sin sesión iniciada",
+   "ru": "Экран входа, вход не выполнен",
+   "code": [
+    "v2/includes/menu.ahk:619: global gLoginMenu := MenuNode(T(\"login screen, not logged in\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.",
+   "file": "koKR.txt",
+   "key": "Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.",
+   "en": "Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.",
+   "ko": "접속되지 않았습니다. 서버 연결을 확인하거나 게임에서 계정명과 비밀번호를 입력하세요.",
+   "de": "Nicht angemeldet. Entweder besteht keine Verbindung zum Server, oder Accountname und Passwort müssen im Spiel noch eingegeben werden.",
+   "fr": "Non connecté. Soit il n'y a pas de connexion au serveur, soit le nom de compte et le mot de passe doivent encore être saisis dans le jeu.",
+   "es": "Sin sesión iniciada. O no hay conexión con el servidor, o todavía hay que introducir el nombre de cuenta y la contraseña en el juego.",
+   "ru": "Вход не выполнен. Либо нет соединения с сервером, либо имя учётной записи и пароль ещё нужно ввести в игре.",
+   "code": [
+    "v2/includes/flows.ahk:363: SayQueued(T(\"Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::account name",
+   "file": "koKR.txt",
+   "key": "account name",
+   "en": "Account name",
+   "ko": "계정명",
+   "de": "Accountname",
+   "fr": "Nom de compte",
+   "es": "Nombre de cuenta",
+   "ru": "Имя учётной записи",
+   "code": [
+    "v2/includes/flows.ahk:465: Say(T(\"account name\") \": \" (current = \"\" ? T(\"empty\") : current))",
+    "v2/includes/menu.ahk:623: accountItem := MenuNode(T(\"account name\"), gLoginMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::password",
+   "file": "koKR.txt",
+   "key": "password",
+   "en": "Password",
+   "ko": "비밀번호",
+   "de": "Passwort",
+   "fr": "Mot de passe",
+   "es": "Contraseña",
+   "ru": "Пароль",
+   "code": [
+    "v2/includes/flows.ahk:486: Say(T(\"password\"))",
+    "v2/includes/forever.ahk:264: \"password_label\", Map(\"de\", \"Passwort\", \"en\", \"Password\", \"fr\", \"Mot de passe\", \"ko\", \"비밀번호\"),",
+    "v2/includes/menu.ahk:32: ; (\"\" | \"account\" | \"password\"). While it is set the menu keys are released to",
+    "v2/includes/menu.ahk:626: passwordItem := MenuNode(T(\"password\"), gLoginMenu)",
+    "v2/includes/menu.ahk:627: passwordItem.action := (item) => LoginFieldAction(\"password\")"
+   ],
+   "game_term": "비밀번호",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::log in",
+   "file": "koKR.txt",
+   "key": "log in",
+   "en": "Log in",
+   "ko": "로그인",
+   "de": "Anmelden",
+   "fr": "Se connecter",
+   "es": "Iniciar sesión",
+   "ru": "Войти",
+   "code": [
+    "v2/includes/forever.ahk:262: \"login_button\", Map(\"de\", \"Einloggen\", \"en\", \"Log In\", \"fr\", \"Connexion\", \"ko\", \"로그인\"),",
+    "v2/includes/menu.ahk:629: submitItem := MenuNode(T(\"log in\"), gLoginMenu)"
+   ],
+   "game_term": "접속",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::save account name",
+   "file": "koKR.txt",
+   "key": "save account name",
+   "en": "Save account name",
+   "ko": "계정명 저장",
+   "de": "Accountnamen speichern",
+   "fr": "Enregistrer le nom de compte",
+   "es": "Guardar el nombre de cuenta",
+   "ru": "Сохранить имя учётной записи",
+   "code": [
+    "v2/includes/flows.ahk:591: Say(T(\"save account name\") \": \" (LoginSaveNameChecked() ? T(\"on\") : T(\"off\")))",
+    "v2/includes/menu.ahk:632: saveNameItem := MenuNode(T(\"save account name\"), gLoginMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::empty",
+   "file": "koKR.txt",
+   "key": "empty",
+   "en": "empty",
+   "ko": "비어 있음",
+   "de": "leer",
+   "fr": "vide",
+   "es": "vacío",
+   "ru": "пусто",
+   "code": [
+    "v2/includes/flows.ahk:465: Say(T(\"account name\") \": \" (current = \"\" ? T(\"empty\") : current))"
+   ],
+   "game_term": "빈 자리 | 없음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::on",
+   "file": "koKR.txt",
+   "key": "on",
+   "en": "on",
+   "ko": "켜짐",
+   "de": "an",
+   "fr": "activé",
+   "es": "activado",
+   "ru": "включено",
+   "code": [
+    "v2/includes/flows.ahk:591: Say(T(\"save account name\") \": \" (LoginSaveNameChecked() ? T(\"on\") : T(\"off\")))"
+   ],
+   "game_term": "켜기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::off",
+   "file": "koKR.txt",
+   "key": "off",
+   "en": "off",
+   "ko": "꺼짐",
+   "de": "aus",
+   "fr": "désactivé",
+   "es": "desactivado",
+   "ru": "выключено",
+   "code": [
+    "v2/includes/config.ahk:98: L.CaseSense := \"Off\"",
+    "v2/includes/flows.ahk:591: Say(T(\"save account name\") \": \" (LoginSaveNameChecked() ? T(\"on\") : T(\"off\")))",
+    "v2/includes/forever.ahk:87: gFvIni.CaseSense := \"Off\"   ; \"Voice=\" worked with the old \"=\" compare too",
+    "v2/includes/forever.ahk:2509: Critical \"Off\"",
+    "v2/includes/forever.ahk:2518: Critical \"Off\""
+   ],
+   "game_term": "끄기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Type now. Enter ends the entry, Escape leaves it.",
+   "file": "koKR.txt",
+   "key": "Type now. Enter ends the entry, Escape leaves it.",
+   "en": "Type now. Enter ends the entry, Escape leaves it.",
+   "ko": "입력하세요. Enter로 마치고 Escape로 나갑니다.",
+   "de": "Tippe jetzt. Enter beendet die Eingabe, Escape verlässt sie.",
+   "fr": "Saisis maintenant. Entrée termine la saisie, Échap la quitte.",
+   "es": "Escribe ahora. Intro termina la entrada, Escape la abandona.",
+   "ru": "Печатай сейчас. Enter завершает ввод, Escape выходит из него.",
+   "code": [
+    "v2/includes/flows.ahk:484: SayQueued(T(\"Type now. Enter ends the entry, Escape leaves it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "file": "koKR.txt",
+   "key": "Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "en": "Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "ko": "비밀번호를 입력하세요. 비밀번호는 읽지 않습니다. Enter로 마치고 Escape로 나갑니다.",
+   "de": "Tippe jetzt. Das Passwort wird nie vorgelesen. Enter beendet die Eingabe, Escape verlässt sie.",
+   "fr": "Saisis maintenant. Le mot de passe n'est jamais lu à voix haute. Entrée termine la saisie, Échap la quitte.",
+   "es": "Escribe ahora. La contraseña nunca se lee en voz alta. Intro termina la entrada, Escape la abandona.",
+   "ru": "Печатай сейчас. Пароль никогда не зачитывается. Enter завершает ввод, Escape выходит из него.",
+   "code": [
+    "v2/includes/flows.ahk:487: SayQueued(T(\"Type now. The password is never read back. Enter ends the entry, Escape leaves it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Entry ended.",
+   "file": "koKR.txt",
+   "key": "Entry ended.",
+   "en": "Entry ended.",
+   "ko": "입력을 마쳤습니다.",
+   "de": "Eingabe beendet.",
+   "fr": "Saisie terminée.",
+   "es": "Entrada terminada.",
+   "ru": "Ввод завершён.",
+   "code": [
+    "v2/includes/flows.ahk:502: Say(T(\"Entry ended.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Logging in. Please wait.",
+   "file": "koKR.txt",
+   "key": "Logging in. Please wait.",
+   "en": "Logging in. Please wait.",
+   "ko": "로그인 중입니다. 기다려 주세요.",
+   "de": "Anmeldung läuft. Bitte warten.",
+   "fr": "Connexion en cours. Patiente.",
+   "es": "Iniciando sesión. Espera.",
+   "ru": "Выполняется вход. Подожди.",
+   "code": [
+    "v2/includes/flows.ahk:525: Say(T(\"Logging in. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The login did not go through.",
+   "file": "koKR.txt",
+   "key": "The login did not go through.",
+   "en": "The login did not go through.",
+   "ko": "로그인하지 못했습니다.",
+   "de": "Die Anmeldung hat nicht geklappt.",
+   "fr": "La connexion n'a pas abouti.",
+   "es": "El inicio de sesión no funcionó.",
+   "ru": "Войти не удалось.",
+   "code": [
+    "v2/includes/flows.ahk:562: SayQueued(T(\"The login did not go through.\"))",
+    "v2/includes/flows.ahk:572: Say(T(\"The login did not go through.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::This is not available on this screen.",
+   "file": "koKR.txt",
+   "key": "This is not available on this screen.",
+   "en": "This is not available on this screen.",
+   "ko": "이 화면에서는 사용할 수 없습니다.",
+   "de": "Das ist auf diesem Bildschirm nicht verfügbar.",
+   "fr": "Ceci n'est pas disponible sur cet écran.",
+   "es": "Esto no está disponible en esta pantalla.",
+   "ru": "На этом экране это недоступно.",
+   "code": [
+    "v2/includes/flows.ahk:476: Say(T(\"This is not available on this screen.\"))",
+    "v2/includes/flows.ahk:519: Say(T(\"This is not available on this screen.\"))",
+    "v2/includes/flows.ahk:586: Say(T(\"This is not available on this screen.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::No characters on this realm yet.",
+   "file": "koKR.txt",
+   "key": "No characters on this realm yet.",
+   "en": "No characters on this realm yet.",
+   "ko": "이 서버에 캐릭터가 없습니다.",
+   "de": "Auf diesem Server gibt es noch keine Charaktere.",
+   "fr": "Il n'y a encore aucun personnage sur ce royaume.",
+   "es": "Todavía no hay personajes en este reino.",
+   "ru": "На этом сервере пока нет персонажей.",
+   "code": [
+    "v2/includes/flows.ahk:2965: SayQueued(T(\"No characters on this realm yet.\"))",
+    "v2/includes/flows.ahk:3871: SayQueued(T(\"No characters on this realm yet.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The server was not found in the list. The list is being read again.",
+   "file": "koKR.txt",
+   "key": "The server was not found in the list. The list is being read again.",
+   "en": "The server was not found in the list. The list is being read again.",
+   "ko": "목록에서 서버를 찾지 못했습니다. 다시 읽습니다.",
+   "de": "Der Server wurde in der Liste nicht gefunden. Die Liste wird neu gelesen.",
+   "fr": "Le royaume n'a pas été trouvé dans la liste. La liste est relue.",
+   "es": "No se encontró el servidor en la lista. La lista se está leyendo de nuevo.",
+   "ru": "Сервер не найден в списке. Список считывается заново.",
+   "code": [
+    "v2/includes/flows.ahk:3769: Say(T(\"The server was not found in the list. The list is being read again.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Attention. The game is on a different server:",
+   "file": "koKR.txt",
+   "key": "Attention. The game is on a different server:",
+   "en": "Attention. The game is on a different server:",
+   "ko": "주의. 게임이 다른 서버에 있습니다:",
+   "de": "Achtung. Das Spiel ist auf einem anderen Server:",
+   "fr": "Attention. Le jeu est sur un autre royaume :",
+   "es": "Atención. El juego está en otro servidor:",
+   "ru": "Внимание. Игра находится на другом сервере:",
+   "code": [
+    "v2/includes/flows.ahk:3127: Say(T(\"Attention. The game is on a different server:\") \" \" v.name)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Change the server again before you play here.",
+   "file": "koKR.txt",
+   "key": "Change the server again before you play here.",
+   "en": "Change the server again before you play here.",
+   "ko": "플레이하기 전에 서버를 다시 변경하세요.",
+   "de": "Wechsle den Server erneut, bevor du hier spielst.",
+   "fr": "Changez de royaume avant de jouer ici.",
+   "es": "Cambia de servidor otra vez antes de jugar aquí.",
+   "ru": "Смените сервер, прежде чем играть здесь.",
+   "code": [
+    "v2/includes/flows.ahk:3128: SayQueued(T(\"Change the server again before you play here.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Agreed. Please wait.",
+   "file": "koKR.txt",
+   "key": "Agreed. Please wait.",
+   "en": "Agreed. Please wait.",
+   "ko": "동의했습니다. 기다려 주세요.",
+   "de": "Zugestimmt. Bitte warten.",
+   "fr": "Accepte. Veuillez patienter.",
+   "es": "Aceptado. Por favor espera.",
+   "ru": "Принято. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:2826: Say(T(\"Agreed. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The game is starting. Please wait.",
+   "file": "koKR.txt",
+   "key": "The game is starting. Please wait.",
+   "en": "The game is starting. Please wait.",
+   "ko": "게임을 시작합니다. 기다려 주세요.",
+   "de": "Das Spiel startet. Bitte warten.",
+   "fr": "Le jeu démarre. Veuillez patienter.",
+   "es": "El juego se está iniciando. Por favor espera.",
+   "ru": "Игра запускается. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/menu.ahk:324: Say(T(\"The game is starting. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The hardcore rules are still open.",
+   "file": "koKR.txt",
+   "key": "The hardcore rules are still open.",
+   "en": "The hardcore rules are still open.",
+   "ko": "하드코어 규칙 창이 아직 열려 있습니다.",
+   "de": "Die Hardcore-Regeln stehen noch offen.",
+   "fr": "Les règles hardcore sont toujours ouvertes.",
+   "es": "Las reglas hardcore siguen abiertas.",
+   "ru": "Правила хардкора всё ещё открыты.",
+   "code": [
+    "v2/includes/flows.ahk:2770: : T(\"The hardcore rules are still open.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Blizzard's social contract is open. Accepting it, please wait.",
+   "file": "koKR.txt",
+   "key": "Blizzard's social contract is open. Accepting it, please wait.",
+   "en": "Blizzard's social contract is open. Accepting it, please wait.",
+   "ko": "블리자드 소셜 규약에 동의합니다. 기다려 주세요.",
+   "de": "Blizzards Sozialvertrag ist offen. Er wird akzeptiert, bitte warten.",
+   "fr": "Le contrat social de Blizzard est ouvert. Acceptation en cours, veuillez patienter.",
+   "es": "El contrato social de Blizzard está abierto. Aceptándolo, espera por favor.",
+   "ru": "Открыт социальный договор Blizzard. Принимаю его, пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:757: Say(T(\"Blizzard's social contract is open. Accepting it, please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Social contract accepted.",
+   "file": "koKR.txt",
+   "key": "Social contract accepted.",
+   "en": "Social contract accepted.",
+   "ko": "소셜 규약에 동의했습니다.",
+   "de": "Sozialvertrag akzeptiert.",
+   "fr": "Contrat social accepté.",
+   "es": "Contrato social aceptado.",
+   "ru": "Социальный договор принят.",
+   "code": [
+    "v2/includes/flows.ahk:803: Say(T(\"Social contract accepted.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "file": "koKR.txt",
+   "key": "The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "en": "The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "ko": "소셜 규약에 동의하지 못했습니다. 본문을 끝까지 내린 뒤 확인을 눌러 주세요.",
+   "de": "Der Sozialvertrag konnte nicht akzeptiert werden. Dafür wird einmal sehende Hilfe gebraucht: den Text bis zum Ende scrollen und auf Akzeptieren klicken.",
+   "fr": "Le contrat social n'a pas pu être accepté. Il faut une fois l'aide d'une personne voyante : faire défiler le texte jusqu'à la fin et cliquer sur accepter.",
+   "es": "No se pudo aceptar el contrato social. Hace falta una vez la ayuda de una persona vidente: desplazar el texto hasta el final y pulsar aceptar.",
+   "ru": "Не удалось принять социальный договор. Один раз нужна помощь зрячего человека: прокрутить текст до конца и нажать «Принять».",
+   "code": [
+    "v2/includes/flows.ahk:810: Say(T(\"The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The PvP realm warning is still open.",
+   "file": "koKR.txt",
+   "key": "The PvP realm warning is still open.",
+   "en": "The PvP realm warning is still open.",
+   "ko": "PvP 서버 경고 창이 아직 열려 있습니다.",
+   "de": "Die Warnung zum PvP-Realm steht noch offen.",
+   "fr": "L'avertissement du royaume JcJ est toujours ouvert.",
+   "es": "El aviso del reino JcJ sigue abierto.",
+   "ru": "Предупреждение о PvP-мире всё ещё открыто.",
+   "code": [
+    "v2/includes/flows.ahk:2769: Say(CreateWarningHeight() = 360 ? T(\"The PvP realm warning is still open.\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::no voices found, press enter to keep the system voice",
+   "file": "koKR.txt",
+   "key": "no voices found, press enter to keep the system voice",
+   "en": "No voices found, press Enter to keep the system voice",
+   "ko": "음성을 찾지 못했습니다. Enter를 누르면 시스템 음성을 유지합니다.",
+   "de": "Keine Stimmen gefunden, Eingabe drücken, um die Systemstimme zu behalten",
+   "fr": "Aucune voix trouvée, appuyez sur Entrée pour garder la voix du système",
+   "es": "No se encontraron voces, pulse Intro para mantener la voz del sistema",
+   "ru": "Голоса не найдены, нажмите Enter, чтобы оставить системный голос",
+   "code": [
+    "v2/includes/menu.ahk:686: node := MenuNode(T(\"no voices found, press enter to keep the system voice\"), parent)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::keeping the system voice",
+   "file": "koKR.txt",
+   "key": "keeping the system voice",
+   "en": "Keeping the system voice",
+   "ko": "시스템 음성을 유지합니다.",
+   "de": "Die Systemstimme bleibt",
+   "fr": "La voix du système est conservée",
+   "es": "Se mantiene la voz del sistema",
+   "ru": "Системный голос сохранён",
+   "code": [
+    "v2/includes/menu.ahk:692: Say(T(\"keeping the system voice\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::this voice does not work, choose another one",
+   "file": "koKR.txt",
+   "key": "this voice does not work, choose another one",
+   "en": "This voice does not work, choose another one",
+   "ko": "이 음성이 작동하지 않습니다. 다른 음성을 선택하세요.",
+   "de": "Diese Stimme funktioniert nicht, bitte eine andere wählen",
+   "fr": "Cette voix ne fonctionne pas, choisissez-en une autre",
+   "es": "Esta voz no funciona, elija otra",
+   "ru": "Этот голос не работает, выберите другой",
+   "code": [
+    "v2/includes/menu.ahk:701: Say(T(\"this voice does not work, choose another one\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Forever",
+   "file": "koKR.txt",
+   "key": "Forever",
+   "en": "WoW Forever",
+   "ko": "와우 포에버",
+   "de": "WoW Forever",
+   "fr": "WoW Forever",
+   "es": "WoW Forever",
+   "ru": "WoW Forever",
+   "code": [
+    "v2/includes/detect.ahk:44: return \"Forever\"",
+    "v2/includes/detect.ahk:49: return \"Forever\"",
+    "v2/includes/detect.ahk:130: gametype := \"Forever\"",
+    "v2/includes/detect.ahk:231: if (gHasSetupGametype = \"Forever\") {",
+    "v2/includes/forever.ahk:373: return gHasSetupGametype = \"Forever\" && gMode = 1",
+    "v2/includes/forever.ahk:377: return gHasSetupGametype = \"Forever\" && gFv.typing"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "file": "koKR.txt",
+   "key": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "en": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "ko": "포에버 모드에서는 게임이 화면을 읽습니다. 인식 보정용 화면을 저장하려면 Control Alt F3을 누르세요.",
+   "de": "Forever-Modus: Das Spiel liest den Bildschirm selbst vor. Strg Alt F3 speichert einen Screenshot zur Kalibrierung.",
+   "fr": "Mode Forever : le jeu lit l'écran lui-même. Ctrl Alt F3 enregistre une capture d'écran pour le calibrage.",
+   "es": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "ru": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "code": [
+    "v2/includes/detect.ahk:234: Say(T(\"Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::screenshot saved",
+   "file": "koKR.txt",
+   "key": "screenshot saved",
+   "en": "screenshot saved",
+   "ko": "화면 저장됨",
+   "de": "Screenshot gespeichert",
+   "fr": "capture enregistrée",
+   "es": "screenshot saved",
+   "ru": "screenshot saved",
+   "code": [
+    "v2/includes/forever.ahk:251: Say(T(\"screenshot saved\") \" \" gForeverCaptureCount)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::narration settings written for Forever",
+   "file": "koKR.txt",
+   "key": "narration settings written for Forever",
+   "en": "narration settings written for Forever",
+   "ko": "포에버 화면 낭독 설정을 저장했습니다.",
+   "de": "Vorlese-Einstellungen für Forever geschrieben",
+   "fr": "réglages de lecture écrits pour Forever",
+   "es": "narration settings written for Forever",
+   "ru": "narration settings written for Forever",
+   "code": [
+    "v2/includes/forever.ahk:234: Say(T(\"narration settings written for Forever\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::nothing to select on this screen",
+   "file": "koKR.txt",
+   "key": "nothing to select on this screen",
+   "en": "nothing to select on this screen",
+   "ko": "이 화면에는 선택할 항목이 없습니다.",
+   "de": "Auf diesem Bildschirm gibt es nichts anzufahren",
+   "fr": "Rien à sélectionner sur cet écran",
+   "es": "nothing to select on this screen",
+   "ru": "nothing to select on this screen",
+   "code": [
+    "v2/includes/forever.ahk:1631: Say(T(\"nothing to select on this screen\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::typing mode, Enter or Escape to leave",
+   "file": "koKR.txt",
+   "key": "typing mode, Enter or Escape to leave",
+   "en": "typing mode, Enter or Escape to leave",
+   "ko": "입력 모드입니다. Enter 또는 Escape로 나갑니다.",
+   "de": "Eingabemodus. Enter oder Escape beendet ihn",
+   "fr": "Mode saisie. Entrée ou Échap pour quitter",
+   "es": "typing mode, Enter or Escape to leave",
+   "ru": "typing mode, Enter or Escape to leave",
+   "code": [
+    "v2/includes/forever.ahk:2223: FvEchoLater(T(\"typing mode, Enter or Escape to leave\"), 300)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Korean / 한국어",
+   "file": "koKR.txt",
+   "key": "Korean / 한국어",
+   "en": "Korean / 한국어",
+   "ko": "한국어",
+   "de": "",
+   "fr": "",
+   "es": "",
+   "ru": "",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Korea",
+   "file": "koKR.txt",
+   "key": "Korea",
+   "en": "Korea",
+   "ko": "한국",
+   "de": "",
+   "fr": "",
+   "es": "",
+   "ru": "",
+   "code": [],
+   "game_term": "한국",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::Dropdown",
+   "key": "Dropdown",
+   "en": "Dropdown",
+   "de": "Drop-down",
+   "fr": "Menu déroulant",
+   "ko": "드롭다운",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:768: return Map(\"de\", \"Drop-down\", \"en\", \"Dropdown\", \"fr\", \"Menu déroulant\", \"ko\", \"드롭다운\")[FvLangKey()]"
+   ],
+   "game_term": "드롭다운",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk:: of ",
+   "key": " of ",
+   "en": " of ",
+   "de": " von ",
+   "fr": " de ",
+   "ko": " / ",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/flows.ahk:1729: Log(\"CountAndReadCharacters: \" confirm.Length \" of \"",
+    "v2/includes/forever.ahk:852: return Map(\"de\", \" von \", \"en\", \" of \", \"fr\", \" de \", \"ko\", \" / \")[FvLangKey()]",
+    "v2/includes/sapi.ahk:117: Log(\"GetVoices: skipping unreadable voice token \" index \" of \" count \": \" e.Message)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::white",
+   "key": "white",
+   "en": "white",
+   "de": "weiß",
+   "fr": "blanc",
+   "ko": "흰색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:863: return Map(\"de\", \"weiß\", \"en\", \"white\", \"fr\", \"blanc\", \"ko\", \"흰색\")[L]"
+   ],
+   "game_term": "흰색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::black",
+   "key": "black",
+   "en": "black",
+   "de": "schwarz",
+   "fr": "noir",
+   "ko": "검은색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:865: return Map(\"de\", \"schwarz\", \"en\", \"black\", \"fr\", \"noir\", \"ko\", \"검은색\")[L]",
+    "v2/includes/forever.ahk:1470: ; the frame as \"black\" and the wheel scrolled the list instead of"
+   ],
+   "game_term": "검은색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::light",
+   "key": "light",
+   "en": "light",
+   "de": "hell",
+   "fr": "clair",
+   "ko": "밝은",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:866: lightWord := Map(\"de\", \"hell\", \"en\", \"light\", \"fr\", \"clair\", \"ko\", \"밝은\")[L]"
+   ],
+   "game_term": "밝음",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::dark",
+   "key": "dark",
+   "en": "dark",
+   "de": "dunkel",
+   "fr": "foncé",
+   "ko": "어두운",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:867: darkWord := Map(\"de\", \"dunkel\", \"en\", \"dark\", \"fr\", \"foncé\", \"ko\", \"어두운\")[L]"
+   ],
+   "game_term": "어두움",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::grey",
+   "key": "grey",
+   "en": "grey",
+   "de": "grau",
+   "fr": "gris",
+   "ko": "회색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:869: grey := Map(\"de\", \"grau\", \"en\", \"grey\", \"fr\", \"gris\", \"ko\", \"회색\")[L]"
+   ],
+   "game_term": "회색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::brown",
+   "key": "brown",
+   "en": "brown",
+   "de": "braun",
+   "fr": "brun",
+   "ko": "갈색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:878: brown := Map(\"de\", \"braun\", \"en\", \"brown\", \"fr\", \"brun\", \"ko\", \"갈색\")[L]"
+   ],
+   "game_term": "갈색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::pink",
+   "key": "pink",
+   "en": "pink",
+   "de": "rosa",
+   "fr": "rose",
+   "ko": "분홍색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:879: pink := Map(\"de\", \"rosa\", \"en\", \"pink\", \"fr\", \"rose\", \"ko\", \"분홍색\")[L]",
+    "v2/includes/forever.ahk:904: hue := Map(\"de\", \"rosa\", \"en\", \"pink\", \"fr\", \"rose\", \"ko\", \"분홍색\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::red",
+   "key": "red",
+   "en": "red",
+   "de": "rot",
+   "fr": "rouge",
+   "ko": "빨간색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:884: hue := (light > 0.6 && sat < 0.8) ? pink : Map(\"de\", \"rot\", \"en\", \"red\", \"fr\", \"rouge\", \"ko\", \"빨간색\")[L]",
+    "v2/includes/forever.ahk:1941: ; \"green\", \"red\", \"none\" (no icon), or \"\" when the reading proves nothing.",
+    "v2/includes/forever.ahk:1962: : (red >= 6 && red > 2 * green) ? \"red\"",
+    "v2/includes/forever.ahk:1983: case \"red\":",
+    "v2/includes/forever.ahk:1987: if (state = \"green\" || state = \"red\")",
+    "v2/includes/forever.ahk:1998: case \"red\":"
+   ],
+   "game_term": "붉은색 | 빨간색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::orange",
+   "key": "orange",
+   "en": "orange",
+   "de": "orange",
+   "fr": "orange",
+   "ko": "주황색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:886: hue := (light < 0.55 || sat < 0.55) ? brown : Map(\"de\", \"orange\", \"en\", \"orange\", \"fr\", \"orange\", \"ko\", \"주황색\")[L]"
+   ],
+   "game_term": "주황색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::yellow",
+   "key": "yellow",
+   "en": "yellow",
+   "de": "gelb",
+   "fr": "jaune",
+   "ko": "노란색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:888: hue := (light < 0.45) ? brown : Map(\"de\", \"gelb\", \"en\", \"yellow\", \"fr\", \"jaune\", \"ko\", \"노란색\")[L]"
+   ],
+   "game_term": "노란색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::yellow-green",
+   "key": "yellow-green",
+   "en": "yellow-green",
+   "de": "gelbgrün",
+   "fr": "vert-jaune",
+   "ko": "연두색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:890: hue := Map(\"de\", \"gelbgrün\", \"en\", \"yellow-green\", \"fr\", \"vert-jaune\", \"ko\", \"연두색\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::green",
+   "key": "green",
+   "en": "green",
+   "de": "grün",
+   "fr": "vert",
+   "ko": "녹색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:892: hue := Map(\"de\", \"grün\", \"en\", \"green\", \"fr\", \"vert\", \"ko\", \"녹색\")[L]",
+    "v2/includes/forever.ahk:1941: ; \"green\", \"red\", \"none\" (no icon), or \"\" when the reading proves nothing.",
+    "v2/includes/forever.ahk:1961: state := (green >= 6 && green > 2 * red) ? \"green\"",
+    "v2/includes/forever.ahk:1981: case \"green\":",
+    "v2/includes/forever.ahk:1987: if (state = \"green\" || state = \"red\")",
+    "v2/includes/forever.ahk:1995: case \"green\":"
+   ],
+   "game_term": "녹색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::turquoise",
+   "key": "turquoise",
+   "en": "turquoise",
+   "de": "türkis",
+   "fr": "turquoise",
+   "ko": "청록색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:894: hue := Map(\"de\", \"türkis\", \"en\", \"turquoise\", \"fr\", \"turquoise\", \"ko\", \"청록색\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::sky blue",
+   "key": "sky blue",
+   "en": "sky blue",
+   "de": "himmelblau",
+   "fr": "bleu ciel",
+   "ko": "하늘색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:896: hue := Map(\"de\", \"himmelblau\", \"en\", \"sky blue\", \"fr\", \"bleu ciel\", \"ko\", \"하늘색\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::blue",
+   "key": "blue",
+   "en": "blue",
+   "de": "blau",
+   "fr": "bleu",
+   "ko": "파란색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:898: hue := Map(\"de\", \"blau\", \"en\", \"blue\", \"fr\", \"bleu\", \"ko\", \"파란색\")[L]"
+   ],
+   "game_term": "푸른색 | 파란색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::purple",
+   "key": "purple",
+   "en": "purple",
+   "de": "violett",
+   "fr": "violet",
+   "ko": "보라색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:900: hue := Map(\"de\", \"violett\", \"en\", \"purple\", \"fr\", \"violet\", \"ko\", \"보라색\")[L]"
+   ],
+   "game_term": "보라색",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::magenta",
+   "key": "magenta",
+   "en": "magenta",
+   "de": "magenta",
+   "fr": "magenta",
+   "ko": "자홍색",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:902: hue := Map(\"de\", \"magenta\", \"en\", \"magenta\", \"fr\", \"magenta\", \"ko\", \"자홍색\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::very light",
+   "key": "very light",
+   "en": "very light",
+   "de": "sehr hell",
+   "fr": "très clair",
+   "ko": "매우 밝은",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:908: shade := Map(\"de\", \"sehr hell\", \"en\", \"very light\", \"fr\", \"très clair\", \"ko\", \"매우 밝은\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::medium",
+   "key": "medium",
+   "en": "medium",
+   "de": "mittel",
+   "fr": "moyen",
+   "ko": "중간",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:912: shade := Map(\"de\", \"mittel\", \"en\", \"medium\", \"fr\", \"moyen\", \"ko\", \"중간\")[L]"
+   ],
+   "game_term": "중기 | 보통 | 중형",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::very dark",
+   "key": "very dark",
+   "en": "very dark",
+   "de": "sehr dunkel",
+   "fr": "très foncé",
+   "ko": "매우 어두운",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:916: shade := Map(\"de\", \"sehr dunkel\", \"en\", \"very dark\", \"fr\", \"très foncé\", \"ko\", \"매우 어두운\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::pale",
+   "key": "pale",
+   "en": "pale",
+   "de": "blass",
+   "fr": "pâle",
+   "ko": "옅은",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:921: tone := Map(\"de\", \"blass\", \"en\", \"pale\", \"fr\", \"pâle\", \"ko\", \"옅은\")[L] \" \""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::muted",
+   "key": "muted",
+   "en": "muted",
+   "de": "matt",
+   "fr": "terne",
+   "ko": "탁한",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:923: tone := Map(\"de\", \"matt\", \"en\", \"muted\", \"fr\", \"terne\", \"ko\", \"탁한\")[L] \" \""
+   ],
+   "game_term": "음성차단",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::vivid",
+   "key": "vivid",
+   "en": "vivid",
+   "de": "leuchtend",
+   "fr": "éclatant",
+   "ko": "선명한",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:925: tone := Map(\"de\", \"leuchtend\", \"en\", \"vivid\", \"fr\", \"éclatant\", \"ko\", \"선명한\")[L] \" \""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::strong",
+   "key": "strong",
+   "en": "strong",
+   "de": "kräftig",
+   "fr": "vif",
+   "ko": "진한",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:927: tone := Map(\"de\", \"kräftig\", \"en\", \"strong\", \"fr\", \"vif\", \"ko\", \"진한\")[L] \" \""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::Name available",
+   "key": "Name available",
+   "en": "Name available",
+   "de": "Name verfügbar",
+   "fr": "Nom disponible",
+   "ko": "사용 가능한 이름",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:1997: : Map(\"de\", \"Name verfügbar\", \"en\", \"Name available\", \"fr\", \"Nom disponible\", \"ko\", \"사용 가능한 이름\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::Name not available",
+   "key": "Name not available",
+   "en": "Name not available",
+   "de": "Name nicht verfügbar",
+   "fr": "Nom indisponible",
+   "ko": "사용할 수 없는 이름",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:2001: return Map(\"de\", \"Name nicht verfügbar\", \"en\", \"Name not available\", \"fr\", \"Nom indisponible\", \"ko\", \"사용할 수 없는 이름\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::No name check result yet",
+   "key": "No name check result yet",
+   "en": "No name check result yet",
+   "de": "Noch kein Ergebnis der Namensprüfung",
+   "fr": "Pas encore de résultat pour le nom",
+   "ko": "이름 확인 결과 없음",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:2003: return Map(\"de\", \"Noch kein Ergebnis der Namensprüfung\", \"en\", \"No name check result yet\", \"fr\", \"Pas encore de résultat pour le nom\", \"ko\", \"이름 확인 결과 없음\")[L]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "forever.ahk::Button",
+   "key": "Button",
+   "en": "Button",
+   "de": "Knopf",
+   "fr": "Bouton",
+   "ko": "버튼",
+   "file": "forever.ahk",
+   "code": [
+    "v2/includes/forever.ahk:677: FvT(list, name, x, y, kind := \"button\", data := \"\", say := \"\") {",
+    "v2/includes/forever.ahk:1075: \"en_button\", \"Button\",",
+    "v2/includes/forever.ahk:1122: FvAddLine(s, list, key, kind := \"button\") {",
+    "v2/includes/forever.ahk:1138: FvT(list, line[\"text\"], cx, FvCy(line), \"button\")",
+    "v2/includes/forever.ahk:2033: return IsObject(t) && t.kind = \"button\" && t.name = \"name check\" && gFv.screen = \"charcreate2\""
+   ],
+   "game_term": "버튼",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

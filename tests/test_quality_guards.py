@@ -63,6 +63,10 @@ def test_valid_evidence_accepts_only_primary_sources() -> None:
     assert valid_evidence(["wowwork/cache/gs_koKR.csv:7919", "wowwork/docs/decisions.tsv"])
     assert valid_evidence(["wowwork/docs/translation-guide.md"])
     assert valid_evidence(["wowvision-ko/wowvision-installer/WowVisionInstaller/AddonInstaller.cs:383"])
+    # WoW Login Tool (2026-11-07): its code, data and the other languages' files are primary sources
+    assert valid_evidence(["wowvision-ko/Sku-WoW-Addon-TBC/logintool/v2/includes/menu.ahk:467"])
+    assert valid_evidence(["wowvision-ko/Sku-WoW-Addon-TBC/logintool/data/localization/deDE.txt"])
+    assert not valid_evidence(["wowvision-ko/Sku-WoW-Addon-TBC/dev/FOREVER-PRS.md"])
     assert not valid_evidence([])
     assert not valid_evidence(["wowwork/docs/manual-plan.md:111"])
     assert not valid_evidence(["input", "wowwork/reviews/x/rebut.json"])

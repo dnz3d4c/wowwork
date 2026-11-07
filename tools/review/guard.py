@@ -9,6 +9,7 @@ import re
 ALLOWED_EVIDENCE = (
     "wowvision-ko/WowVision/",
     "wowvision-ko/wowvision-installer/",
+    "wowvision-ko/Sku-WoW-Addon-TBC/logintool/",
     "wowvision-ko/vision-locale/enUS/",
     "wowvision-ko/vision-locale/koKR/",
     "wowwork/cache/gs_enUS.csv",

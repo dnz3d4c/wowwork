@@ -1,0 +1,2000 @@
+{
+ "items": [
+  {
+   "id": "koKR.txt::English",
+   "file": "koKR.txt",
+   "key": "English",
+   "en": "English",
+   "ko": "영어",
+   "de": "Englisch",
+   "fr": "Anglais",
+   "es": "Inglés",
+   "ru": "Английский",
+   "code": [
+    "data/data.ini:1223: gRealmLangs=1,english,427,635",
+    "data/data.ini:1247: gRealmLangs=1,english,427,635",
+    "data/data.ini:1323: gRealmLangs=1,English,437,640",
+    "data/data.ini:1351: gRealmLangs=1,English,437,640"
+   ],
+   "game_term": "영어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::German / Deutsch",
+   "file": "koKR.txt",
+   "key": "German / Deutsch",
+   "en": "German",
+   "ko": "독일어",
+   "de": "Deutsch",
+   "fr": "Allemand",
+   "es": "Alemán",
+   "ru": "Немецкий",
+   "code": [],
+   "game_term": "독일어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::French / Français",
+   "file": "koKR.txt",
+   "key": "French / Français",
+   "en": "French",
+   "ko": "프랑스어",
+   "de": "Französisch",
+   "fr": "Français",
+   "es": "Francés",
+   "ru": "Французский",
+   "code": [],
+   "game_term": "프랑스어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Russian / Русский",
+   "file": "koKR.txt",
+   "key": "Russian / Русский",
+   "en": "Russian",
+   "ko": "러시아어",
+   "de": "Russisch",
+   "fr": "Russe",
+   "es": "Ruso",
+   "ru": "Русский",
+   "code": [],
+   "game_term": "러시아어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Spanish / Español",
+   "file": "koKR.txt",
+   "key": "Spanish / Español",
+   "en": "Spanish",
+   "ko": "스페인어",
+   "de": "Spanisch",
+   "fr": "Espagnole",
+   "es": "Español",
+   "ru": "Испанский",
+   "code": [],
+   "game_term": "스페인어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Setup completed. Start the game now.",
+   "file": "koKR.txt",
+   "key": "Setup completed. Start the game now.",
+   "en": "Setup completed. Start the game now.",
+   "ko": "설정 완료. 이제 게임을 시작하세요.",
+   "de": "Einrichtung abgeschlossen. Starte jetzt das Spiel.",
+   "fr": "Configuration terminée, lancez le jeu maintenant.",
+   "es": "Configuración finalizada, inicie el juego ahora",
+   "ru": "Настройка завершена. Сейчас запустите игру.",
+   "code": [
+    "v2/includes/menu.ahk:780: Say(T(\"Setup completed. Start the game now.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::selected",
+   "file": "koKR.txt",
+   "key": "selected",
+   "en": "selected",
+   "ko": "선택됨",
+   "de": "ausgewählt",
+   "fr": "Séléctionné",
+   "es": "seleccionado",
+   "ru": "выбран",
+   "code": [
+    "v2/includes/flows.ahk:2035: Say(entry.name \" \" T(\"selected\"))",
+    "v2/includes/forever.ahk:2192: ; what the client says after the click (new page, \"selected\") belongs to",
+    "v2/includes/menu.ahk:705: Say(T(\"selected\"))",
+    "v2/includes/menu.ahk:710: Say(T(\"selected\"))",
+    "v2/includes/menu.ahk:724: Say(T(\"selected\"))",
+    "v2/includes/menu.ahk:742: Say(T(\"selected\"))"
+   ],
+   "game_term": "선택됨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a voice",
+   "file": "koKR.txt",
+   "key": "go right to select a voice",
+   "en": "Go right to select a voice",
+   "ko": "오른쪽 화살표로 음성을 선택하세요.",
+   "de": "Nach rechts gehen, um eine Stimme auszuwählen",
+   "fr": "Allez à droite",
+   "es": "Use flecha derecha para seleccionar la voz",
+   "ru": "Перейдите вправо, чтобы выбрать голос",
+   "code": [
+    "v2/includes/menu.ahk:794: global gMenuVoice := MenuNode(T(\"go right to select a voice\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a game type",
+   "file": "koKR.txt",
+   "key": "go right to select a game type",
+   "en": "Go right to select a game type",
+   "ko": "오른쪽 화살표로 게임 종류를 선택하세요.",
+   "de": "Nach rechts gehen, um einen Spieltyp auszuwählen",
+   "fr": "Aller à droite pour séléctionner un type de jeu",
+   "es": "Use flecha derecha para seleccionar tipo de juego",
+   "ru": "Перейдите вправо, чтобы выбрать версию игры",
+   "code": [
+    "v2/includes/menu.ahk:809: global gMenuGametype := MenuNode(T(\"go right to select a game type\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a language",
+   "file": "koKR.txt",
+   "key": "go right to select a language",
+   "en": "Go right to select a language",
+   "ko": "오른쪽 화살표로 언어를 선택하세요.",
+   "de": "Nach rechts gehen, um eine Sprache auszuwählen",
+   "fr": "Aller a droite pour séléctionner une langue",
+   "es": "Use flecha derecha para seleccionar idioma",
+   "ru": "Перейдите вправо, чтобы выбрать язык",
+   "code": [
+    "v2/includes/menu.ahk:797: global gMenuLanguage := MenuNode(T(\"go right to select a language\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::pause mode",
+   "file": "koKR.txt",
+   "key": "pause mode",
+   "en": "Pause mode",
+   "ko": "일시 정지 모드",
+   "de": "Pausen Modus",
+   "fr": "Mis en pause",
+   "es": "Modo en pausa",
+   "ru": "Режим паузы",
+   "code": [
+    "v2/includes/menu.ahk:449: Say(T(\"pause mode\"))",
+    "v2/includes/menu.ahk:538: ; only the seam before \"pause mode\", and four seconds of it is four seconds"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::play mode",
+   "file": "koKR.txt",
+   "key": "play mode",
+   "en": "Play mode",
+   "ko": "게임 모드",
+   "de": "Spiel Modus",
+   "fr": "Mode de jeu",
+   "es": "Modo de juego",
+   "ru": "Режим игры",
+   "code": [
+    "v2/includes/menu.ahk:458: Say(T(\"play mode\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::login mode",
+   "file": "koKR.txt",
+   "key": "login mode",
+   "en": "Login mode",
+   "ko": "로그인 모드",
+   "de": "Login Modus",
+   "fr": "Mode de connection",
+   "es": "Modo de log in",
+   "ru": "Режим входа",
+   "code": [
+    "v2/includes/flows.ahk:374: ; that builds the menu - never ran. The tool reached \"login mode\" and then"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::login mode for",
+   "file": "koKR.txt",
+   "key": "login mode for",
+   "en": "Login mode for",
+   "ko": "로그인 모드:",
+   "de": "Login Modus für:",
+   "fr": "Mode de connection pour",
+   "es": "Modo de log in para",
+   "ru": "Режим входа для",
+   "code": [
+    "v2/includes/menu.ahk:477: Say(T(\"login mode for\") \" \" T(gHasSetupGametype) \", \" regionName \", \" langName)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::script exited",
+   "file": "koKR.txt",
+   "key": "script exited",
+   "en": "Terminated",
+   "ko": "종료됨",
+   "de": "Beendet",
+   "fr": "Terminé",
+   "es": "Finalizado",
+   "ru": "Завершён",
+   "code": [
+    "v2/includes/keybinds.ahk:9: Say(T(\"script exited\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select language",
+   "file": "koKR.txt",
+   "key": "select language",
+   "en": "Select language",
+   "ko": "언어 선택",
+   "de": "Sprache auswählen",
+   "fr": "Choisir la langue",
+   "es": "Seleccionar idioma",
+   "ru": "Выберите язык",
+   "code": [
+    "v2/includes/menu.ahk:581: langItem := MenuNode(T(\"select language\"), gMainMenu)",
+    "v2/includes/menu.ahk:641: langItem := MenuNode(T(\"select language\"), gLoginMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::main menu",
+   "file": "koKR.txt",
+   "key": "main menu",
+   "en": "Main menu",
+   "ko": "주 메뉴",
+   "de": "Hauptmenü",
+   "fr": "Menu principale",
+   "es": "Menú principal",
+   "ru": "Главное меню",
+   "code": [
+    "v2/includes/menu.ahk:547: global gMainMenu := MenuNode(T(\"main menu\"))"
+   ],
+   "game_term": "주 메뉴",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::selected, restart script to apply",
+   "file": "koKR.txt",
+   "key": "selected, restart script to apply",
+   "en": "selected. Restarting script to apply. Please wait.",
+   "ko": "선택됨. 적용하려고 다시 시작합니다. 기다려 주세요.",
+   "de": "ausgewählt. Wird neu gestartet. Bitte warte.",
+   "fr": "Séléctionné, relancement du script pour appliquer les modifications, veuillez attendre",
+   "es": "seleccionado, reiniciando script, espere",
+   "ru": "выбран. Скрипт перезапускается для применения изменений.",
+   "code": [
+    "v2/includes/menu.ahk:730: Say(T(\"selected, restart script to apply\"))",
+    "v2/includes/menu.ahk:749: Say(T(\"selected, restart script to apply\"))",
+    "v2/includes/menu.ahk:786: Say(T(\"selected, restart script to apply\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::wait",
+   "file": "koKR.txt",
+   "key": "wait",
+   "en": "Wait",
+   "ko": "기다려 주세요.",
+   "de": "Warten",
+   "fr": "Veuillez attendre",
+   "es": "espere",
+   "ru": "подождите",
+   "code": [
+    "v2/includes/flows.ahk:1262: SayQueued(T(\"wait\"))",
+    "v2/includes/flows.ahk:2099: Say(T(\"wait\"))",
+    "v2/includes/flows.ahk:3021: ; Name the screen: this branch used to be a silent \"wait\".",
+    "v2/includes/flows.ahk:3033: ; of \"wait\" spoken over it.",
+    "v2/includes/flows.ahk:3040: Say(T(\"wait\"))",
+    "v2/includes/flows.ahk:3159: SayQueued(T(\"wait\"))"
+   ],
+   "game_term": "대기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a region",
+   "file": "koKR.txt",
+   "key": "go right to select a region",
+   "en": "Go right to select a region",
+   "ko": "오른쪽 화살표로 지역을 선택하세요.",
+   "de": "Gehe nach rechts, um eine Region auszuwählen",
+   "fr": "Aller a droite pour séléctionner une région",
+   "es": "use flecha derecha para seleccionar región",
+   "ru": "Перейдите вправо, чтобы выбрать регион",
+   "code": [
+    "v2/includes/menu.ahk:803: global gMenuRegion := MenuNode(T(\"go right to select a region\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Europe",
+   "file": "koKR.txt",
+   "key": "Europe",
+   "en": "Europe",
+   "ko": "유럽",
+   "de": "Europa",
+   "fr": "Europe",
+   "es": "Europa",
+   "ru": "Европа",
+   "code": [],
+   "game_term": "유럽",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::USA",
+   "file": "koKR.txt",
+   "key": "USA",
+   "en": "USA",
+   "ko": "미국",
+   "de": "USA",
+   "fr": "Etats-Unis",
+   "es": "Estados Unidos",
+   "ru": "США",
+   "code": [
+    "data/data.ini:566: [Cata-USA]",
+    "data/data.ini:648: [Classic-USA]",
+    "data/data.ini:972: [Retail-USA]",
+    "data/data.ini:1252: [Cata-USA-enEN]",
+    "data/data.ini:1256: [Cata-USA-deDE]",
+    "data/data.ini:1260: [Cata-USA-frFR]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Cata",
+   "file": "koKR.txt",
+   "key": "Cata",
+   "en": "Cataclysm",
+   "ko": "대격변",
+   "de": "Cataclysm",
+   "fr": "Cataclysm",
+   "es": "Cataclismo",
+   "ru": "Катаклизм",
+   "code": [
+    "v2/includes/detect.ahk:53: case 4: return \"Cata\""
+   ],
+   "game_term": "대격변",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Classic",
+   "file": "koKR.txt",
+   "key": "Classic",
+   "en": "Classic Era",
+   "ko": "클래식 시대",
+   "de": "Classic Ära",
+   "fr": "Classic ERA",
+   "es": "Era Clásica",
+   "ru": "Классическая эра",
+   "code": [
+    "v2/includes/detect.ahk:51: case 1: return \"Classic\"",
+    "v2/includes/detect.ahk:128: gametype := \"Classic\"",
+    "v2/includes/forever.ahk:1070: \"de\", [[\"Classic\", \"Eine traditionellere Darstellung mit vereinfachter Optik, Standardcharaktermodellen und weniger aktivierten modernen Anzeigefunktionen für eine klarere, mehr dem ursprünglichen Sti",
+    "v2/includes/forever.ahk:1073: \"en\", [[\"Classic\", \"A more traditional presentation with simpler visuals, standard character models, and fewer modern interface features enabled by default for a cleaner, more original-style experienc"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::BurningCrusade",
+   "file": "koKR.txt",
+   "key": "BurningCrusade",
+   "en": "Burning Crusade",
+   "ko": "불타는 성전",
+   "de": "Burning Crusade",
+   "fr": "Burning Crusade",
+   "es": "Burning Crusade",
+   "ru": "Burning Crusade",
+   "code": [
+    "v2/includes/detect.ahk:52: case 2: return \"BurningCrusade\""
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Retail",
+   "file": "koKR.txt",
+   "key": "Retail",
+   "en": "Retail",
+   "ko": "최신 확장팩",
+   "de": "Retail",
+   "fr": "Retail",
+   "es": "Retail",
+   "ru": "Актуальный",
+   "code": [
+    "v2/includes/detect.ahk:56: return \"Retail\"",
+    "v2/includes/flows.ahk:2123: if (gHasSetupGametype = \"Retail\" && gWidgets.Has(\"CharCreationRetailCustomizeButton\")) {",
+    "v2/includes/keybinds.ahk:158: #HotIf (gMode = 0 && gHasSetupGametype != \"Retail\")"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Not_available",
+   "file": "koKR.txt",
+   "key": "Not_available",
+   "en": "Not_available",
+   "ko": "사용 불가",
+   "de": "Nicht_verfügbar",
+   "fr": "Non_disponible",
+   "es": "No_disponible",
+   "ru": "Недоступен",
+   "code": [
+    "v2/includes/menu.ahk:560: if (className = T(\"Not_available\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Something went wrong. Please restart the game and try again.",
+   "file": "koKR.txt",
+   "key": "Something went wrong. Please restart the game and try again.",
+   "en": "Something went wrong. Please restart the game and try again.",
+   "ko": "오류가 발생했습니다. 게임을 다시 시작하고 시도하세요.",
+   "de": "Etwas ist schief gelaufen. Bitte starte das Spiel neu und versuche es noch einmal.",
+   "fr": "Quelque chose s’est mal passer, veuillez relancer le jeu et réessayer ",
+   "es": "Algo salió mal. Reinicie el juego e intente nuevamente",
+   "ru": "Что-то пошло не так. Пожалуйста, перезапустите игру и попробуйте снова.",
+   "code": [
+    "v2/includes/flows.ahk:2026: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:2599: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:2819: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3216: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3724: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3752: Say(T(\"Something went wrong. Please restart the game and try again.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::you don't have any characters on the selected server",
+   "file": "koKR.txt",
+   "key": "you don't have any characters on the selected server",
+   "en": "You don't have any characters on the selected server",
+   "ko": "선택한 서버에 캐릭터가 없습니다.",
+   "de": "Du hast keine Charaktere auf dem ausgewählten Server",
+   "fr": "Vous n’avez aucuns personnages sur le royaume séléctionné.",
+   "es": "No hay personajes en el servidor seleccionado",
+   "ru": "У вас нет персонажей на выбранном сервере.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::character",
+   "file": "koKR.txt",
+   "key": "character",
+   "en": "character",
+   "ko": "캐릭터",
+   "de": "Charakter",
+   "fr": "Personnage",
+   "es": "personaje",
+   "ru": "Персонаж",
+   "code": [
+    "v2/includes/flows.ahk:1559: entry := {name: T(\"character\") \" \" A_Index, details: \"\", detailLines: [], clickLine: \"\", lastY: 0}"
+   ],
+   "game_term": "캐릭터",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::this race is locked for your account. Try a different race.",
+   "file": "koKR.txt",
+   "key": "this race is locked for your account. Try a different race.",
+   "en": "This race is locked for your account. Try a different race.",
+   "ko": "이 종족은 잠겨 있습니다. 다른 종족을 선택하세요.",
+   "de": "Diese Rasse ist für deinen Account gesperrt. Versuche es mit einer anderen Rasse.",
+   "fr": "Cette race n’est pas disponible pour votre compte, essayez d’en séléctionner une autre",
+   "es": "Esta raza está bloqueada para su cuenta, elija una raza diferente",
+   "ru": "Эта раса заблокирована для вашего аккаунта. Пожалуйста, выберите другую расу.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::create new character",
+   "file": "koKR.txt",
+   "key": "create new character",
+   "en": "Create new character",
+   "ko": "새 캐릭터 생성",
+   "de": "Neuen Charakter erstellen",
+   "fr": "Créer un nouveau personnage",
+   "es": "Crear nuevo personaje",
+   "ru": "Создать нового персонажа",
+   "code": [
+    "v2/includes/menu.ahk:554: createItem := MenuNode(T(\"create new character\"), gMainMenu)"
+   ],
+   "game_term": "캐릭터 만들기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::login with selected character",
+   "file": "koKR.txt",
+   "key": "login with selected character",
+   "en": "Login with selected character",
+   "ko": "선택한 캐릭터로 접속",
+   "de": "Login mit ausgewähltem Charakter",
+   "fr": "Se connecter avec le personnage séléctionné",
+   "es": "Ingresar con el personaje seleccionado",
+   "ru": "Войти с выбранным персонажем",
+   "code": [
+    "v2/includes/flows.ahk:2036: ; Same UX as v1: jump to \"login with selected character\". Appended, so the",
+    "v2/includes/menu.ahk:551: loginItem := MenuNode(T(\"login with selected character\"), gMainMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select character",
+   "file": "koKR.txt",
+   "key": "select character",
+   "en": "Select character",
+   "ko": "캐릭터 선택",
+   "de": "Charakter auswählen",
+   "fr": "Séléctionner le personnage",
+   "es": "Elegir personaje",
+   "ru": "Выбрать персонажа",
+   "code": [
+    "v2/includes/flows.ahk:305: ; is \"select character\". So the one screen that proves there is no",
+    "v2/includes/menu.ahk:549: charSelect := MenuNode(T(\"select character\"), gMainMenu)",
+    "v2/includes/menu.ahk:609: ; with \"select character\", and offering that here was the actual bug: it told a"
+   ],
+   "game_term": "캐릭터 선택",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::enter the name for the new character and press enter, or escape to cancel character creation.",
+   "file": "koKR.txt",
+   "key": "enter the name for the new character and press enter, or escape to cancel character creation.",
+   "en": "Enter the name for the new character and press enter, or escape to cancel character creation.",
+   "ko": "캐릭터 이름을 입력하고 Enter를 누르세요. Escape로 취소합니다.",
+   "de": "Gib den Namen des neuen Charakters ein und drücke die Eingabetaste oder brich die Charaktererstellung mit Escape ab.",
+   "fr": "Entrez le nom pour votre nouveau personnage puis appuyez sur entrer ou échape pour annuler.",
+   "es": "Ingrese el nombre para el nuevo personaje y presione enter, o escape para cancelar",
+   "ru": "Введите имя нового персонажа и нажмите enter или нажмите escape для отмены создания персонажа.",
+   "code": [
+    "v2/includes/flows.ahk:290: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2131: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2172: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2842: SayQueued(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2890: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Failed You already have the maximum number of character on this server.",
+   "file": "koKR.txt",
+   "key": "Failed You already have the maximum number of character on this server.",
+   "en": "Failed. You already have the maximum number of character on this server.",
+   "ko": "실패. 이 서버의 캐릭터 수가 최대입니다.",
+   "de": "Fehlgeschlagen. Du hast bereits die maximale Anzahl Chars auf diesem Server.",
+   "fr": "La création de personnage a échouée, vous avez atteint le nombre maximum de personnage sur le serveur",
+   "es": "Error, alcanzó el límite de personajes para este servidor",
+   "ru": "Ошибка. У вас уже максимальное количество персонажей на этом сервере.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::switching to server. please wait.",
+   "file": "koKR.txt",
+   "key": "switching to server. please wait.",
+   "en": "Changing server. Please wait.",
+   "ko": "서버를 변경합니다. 기다려 주세요.",
+   "de": "Server wird gewechselt. Bitte warte.",
+   "fr": "Changement de royaume, veuillez patienter",
+   "es": "Cambiando servidor, espere",
+   "ru": "Идёт смена сервера, пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:3755: Say(T(\"switching to server. please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+   "file": "koKR.txt",
+   "key": "Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+   "en": "Deleting failed. Type the word DELETE in capital letters and press enter. Or press escape to cancel.",
+   "ko": "삭제하지 못했습니다. 게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.",
+   "de": "Löschen fehlgeschlagen. Schreibe das Wort LÖSCHEN in Großbuchstaben und drücke Enter. Oder drücke Escape, um abzubrechen.",
+   "fr": "La suppression a échoué. Écrivez le mot EFFACER en majuscules et appuyez sur Entrée. Ou appuyez sur Échap pour annuler.",
+   "es": "Error al eliminar. Escriba la palabra BORRAR en mayúsculas y presione enter. O presione escape para cancelar.",
+   "ru": "Произошла ошибка при удалении. Напечатайте слово УДАЛИТЬ заглавными буквами и нажмите Enter. Или нажмите Escape для отмены.",
+   "code": [
+    "v2/includes/flows.ahk:2316: Say(T(\"Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::character deleted",
+   "file": "koKR.txt",
+   "key": "character deleted",
+   "en": "Character deleted",
+   "ko": "캐릭터가 삭제되었습니다.",
+   "de": "Charakter gelöscht",
+   "fr": "Le personnage a bien été supprimé",
+   "es": "Personaje eliminado",
+   "ru": "Персонаж удалён",
+   "code": [
+    "v2/includes/flows.ahk:2304: Say(T(\"character deleted\"))"
+   ],
+   "game_term": "캐릭터 삭제됨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Please wait, the character list is being rebuilt.",
+   "file": "koKR.txt",
+   "key": "Please wait, the character list is being rebuilt.",
+   "en": "Please wait, the character list is being rebuilt.",
+   "ko": "캐릭터 목록을 다시 읽습니다. 기다려 주세요.",
+   "de": "Bitte warten, Charakterliste wird neu aufgebaut.",
+   "fr": "Veuillez patienter, la liste des personnages est en cours de reconstruction.",
+   "es": "Por favor espere, la lista de personajes se está reconstruyendo.",
+   "ru": "Пожалуйста, подождите, список персонажей строится заново.",
+   "code": [
+    "v2/includes/flows.ahk:1757: SayQueued(T(\"Please wait, the character list is being rebuilt.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Failed. The name is not available, or the names format is not allowed.",
+   "file": "koKR.txt",
+   "key": "Failed. The name is not available, or the names format is not allowed.",
+   "en": "Failed. The name is not available, or the name is not allowed.",
+   "ko": "이미 사용 중이거나 허용되지 않는 이름입니다.",
+   "de": "Fehlgeschlagen. Der Name ist nicht verfügbar, oder der Name ist nicht erlaubt.",
+   "fr": "Echec, le nom du personnage a déjà été pris ou n’est pas approprié.",
+   "es": "Error, el nombre no está disponible o no es válido",
+   "ru": "Ошибка. Выбранное имя недоступно или запрещено.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Character created",
+   "file": "koKR.txt",
+   "key": "Character created",
+   "en": "Character created",
+   "ko": "캐릭터가 생성되었습니다.",
+   "de": "Charakter erstellt",
+   "fr": "Le personnage a été créer.",
+   "es": "Personaje creado",
+   "ru": "Персонаж создан",
+   "code": [
+    "v2/includes/flows.ahk:2182: Say(T(\"Character created\"))",
+    "v2/includes/flows.ahk:2867: Say(T(\"Character created\"))"
+   ],
+   "game_term": "캐릭터 생성됨",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Empty - No characters on this server.",
+   "file": "koKR.txt",
+   "key": "Empty - No characters on this server.",
+   "en": "Empty. No characters on this server.",
+   "ko": "이 서버에 캐릭터가 없습니다.",
+   "de": "Leer. Keine Chars auf diesem Server.",
+   "fr": "Vide, il n’y a aucuns personnage sur ce royaume",
+   "es": "Vacío, no hay personajes en este servidor",
+   "ru": "Пусто. Нет персонажей на этом сервере.",
+   "code": [
+    "v2/includes/flows.ahk:1992: DetachedNode(kids, charNode, T(\"Empty - No characters on this server.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::switch server",
+   "file": "koKR.txt",
+   "key": "switch server",
+   "en": "Change server",
+   "ko": "서버 변경",
+   "de": "Server wechseln",
+   "fr": "Changer de royaume",
+   "es": "Cambiar servidor",
+   "ru": "Изменить сервер.",
+   "code": [
+    "v2/includes/menu.ahk:51: global gRealmMenuItem := \"\"       ; the \"switch server\" main-menu node; the realm menu builds into it",
+    "v2/includes/menu.ahk:571: realmItem := MenuNode(T(\"switch server\"), gMainMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select region",
+   "file": "koKR.txt",
+   "key": "select region",
+   "en": "Select region",
+   "ko": "지역 선택",
+   "de": "Region auswählen",
+   "fr": "Séléctionner la région",
+   "es": "Seleccionar región",
+   "ru": "Выберите регион",
+   "code": [
+    "v2/includes/menu.ahk:596: regionItem := MenuNode(T(\"select region\"), gMainMenu)",
+    "v2/includes/menu.ahk:655: regionItem := MenuNode(T(\"select region\"), gLoginMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select game type",
+   "file": "koKR.txt",
+   "key": "select game type",
+   "en": "Select game type",
+   "ko": "게임 종류 선택",
+   "de": "Spieltyp auswählen",
+   "fr": "Séléctionner le type de jeu",
+   "es": "Seleccionar tipo de juego",
+   "ru": "Выберите версию игры",
+   "code": [
+    "v2/includes/menu.ahk:587: gametypeItem := MenuNode(T(\"select game type\"), gMainMenu)",
+    "v2/includes/menu.ahk:617: ; \"select game type\" has to be reachable without getting past this screen.",
+    "v2/includes/menu.ahk:647: gametypeItem := MenuNode(T(\"select game type\"), gLoginMenu)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::select voice",
+   "file": "koKR.txt",
+   "key": "select voice",
+   "en": "Select voice",
+   "ko": "음성 선택",
+   "de": "Stimme auswählen",
+   "fr": "Séléctionner la voix",
+   "es": "Seleccionar voz",
+   "ru": "Выберите голос",
+   "code": [
+    "v2/includes/menu.ahk:578: voiceItem := MenuNode(T(\"select voice\"), gMainMenu)",
+    "v2/includes/menu.ahk:638: voiceItem := MenuNode(T(\"select voice\"), gLoginMenu)",
+    "v2/includes/menu.ahk:672: ; The children of a \"select voice\" node. A machine whose voice list cannot be"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.",
+   "file": "koKR.txt",
+   "key": "enter delete and press enter, or press escape to cancel the deleting process.",
+   "en": "Enter Delete and press enter, or press escape to cancel the deleting process.",
+   "ko": "게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.",
+   "de": "Gib Löschen ein und drücke die Eingabetaste, oder drücke Escape, um den Löschvorgang abzubrechen.",
+   "fr": "Ecrivez EFFACER puis appuyez sur ENTRER, sinon appuyez sur échape pour annuler la suppression du personnage.",
+   "es": "Escriba borrar y presione enter, o escape para cancelar",
+   "ru": "Напечатайте delete и нажмите enter или нажмите escape для отмены удаления.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::press enter to confirm the deletion, or press escape to cancel.",
+   "file": "koKR.txt",
+   "key": "press enter to confirm the deletion, or press escape to cancel.",
+   "en": "Type the word DELETE in capital letters and press enter. Or press escape to cancel.",
+   "ko": "게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.",
+   "de": "Schreibe das Wort LÖSCHEN in Großbuchstaben und drücke Enter. Oder drücke Escape, um abzubrechen.",
+   "fr": "Écrivez le mot EFFACER en majuscules et appuyez sur Entrée. Ou appuyez sur Échap pour annuler.",
+   "es": "Escriba la palabra BORRAR en mayúsculas y presione enter. O presione escape para cancelar.",
+   "ru": "Напечатайте слово УДАЛИТЬ заглавными буквами и нажмите Enter. Или нажмите Escape для отмены.",
+   "code": [
+    "v2/includes/flows.ahk:2291: SayQueued(T(\"press enter to confirm the deletion, or press escape to cancel.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::delete character",
+   "file": "koKR.txt",
+   "key": "delete character",
+   "en": "Delete character",
+   "ko": "캐릭터 삭제",
+   "de": "Charakter löschen",
+   "fr": "Supprimer le personnage",
+   "es": "Eliminar personaje",
+   "ru": "Удалить персонажа",
+   "code": [
+    "v2/includes/forever.ahk:1289: FvT(t, \"delete character\", FvCx(l) + 129 * k, FvCy(l))",
+    "v2/includes/menu.ahk:575: deleteItem := MenuNode(T(\"delete character\"), gMainMenu)"
+   ],
+   "game_term": "캐릭터 삭제",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::switched to Server",
+   "file": "koKR.txt",
+   "key": "switched to Server",
+   "en": "Server changed",
+   "ko": "변경된 서버:",
+   "de": "Server gewechselt",
+   "fr": "Le royaume a été changé",
+   "es": "Servidor cambiado",
+   "ru": "Сервер изменён",
+   "code": [
+    "v2/includes/flows.ahk:3035: Say(T(\"switched to Server\"))",
+    "v2/includes/flows.ahk:3131: Say(T(\"switched to Server\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Could not switch server.",
+   "file": "koKR.txt",
+   "key": "Could not switch server.",
+   "en": "Could not switch server.",
+   "ko": "서버를 변경하지 못했습니다.",
+   "de": "Server konnte nicht gewechselt werden.",
+   "fr": "Impossible de changer de royaume.",
+   "es": "No se pudo cambiar de servidor.",
+   "ru": "Не удалось сменить сервер.",
+   "code": [
+    "v2/includes/flows.ahk:3051: Say(T(\"Could not switch server.\"))",
+    "v2/includes/flows.ahk:3892: Say(T(\"Could not switch server.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The server is full. You are in queue.",
+   "file": "koKR.txt",
+   "key": "The server is full. You are in queue.",
+   "en": "The server is full. You are in the queue.",
+   "ko": "서버가 가득 찼습니다. 접속 대기 중입니다.",
+   "de": "Der Server ist voll. Du befindest dich in der Warteschlange.",
+   "fr": "Le royaume est plein, vous êtes dans la file d’attente",
+   "es": "Servidor lleno, esperando en la cola",
+   "ru": "Сервер переполнен. Вы в очереди",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Please wait.",
+   "file": "koKR.txt",
+   "key": "Please wait.",
+   "en": "Please wait.",
+   "ko": "기다려 주세요.",
+   "de": "Bitte warte.",
+   "fr": "Veuillez atendre",
+   "es": "Por favor espere",
+   "ru": "Пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:195: text := T(\"Please wait.\")",
+    "v2/includes/flows.ahk:2139: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:2777: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:2978: Say(text != \"\" ? text : T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:3019: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:3823: Say(text != \"\" ? text : T(\"Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Creation is canceled. Please wait.",
+   "file": "koKR.txt",
+   "key": "Creation is canceled. Please wait.",
+   "en": "Creation is canceled. Please wait.",
+   "ko": "생성이 취소되었습니다. 기다려 주세요.",
+   "de": "Die Erstellung wird abgebrochen. Bitte warte.",
+   "fr": "La création est annulée, veuillez patienter",
+   "es": "Creación cancelada, espere",
+   "ru": "Создание отменено, пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:2212: Say(T(\"Creation is canceled. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Deleting is canceled. Please wait",
+   "file": "koKR.txt",
+   "key": "Deleting is canceled. Please wait",
+   "en": "Deleting is canceled. Please wait",
+   "ko": "삭제가 취소되었습니다. 기다려 주세요.",
+   "de": "Das Löschen wird abgebrochen. Bitte warte.",
+   "fr": "La suppression est annulée, veuillez patienter",
+   "es": "Eliminación cancelada, espere",
+   "ru": "Удаление отменено, пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:2340: Say(T(\"Deleting is canceled. Please wait\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::setup mode",
+   "file": "koKR.txt",
+   "key": "setup mode",
+   "en": "Setup mode",
+   "ko": "초기 설정 모드",
+   "de": "Einrichtungs Modus",
+   "fr": "Mode de configuration",
+   "es": "Modo de configuración",
+   "ru": "Режим настройки",
+   "code": [
+    "v2/includes/menu.ahk:429: Say(T(\"setup mode\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::server full. Waiting in queue.",
+   "file": "koKR.txt",
+   "key": "server full. Waiting in queue.",
+   "en": "The server is full. You are in the queue.",
+   "ko": "서버가 가득 찼습니다. 접속 대기 중입니다.",
+   "de": "Der Server ist voll. Du befindest dich in der Warteschlange.",
+   "fr": "Le royaume est plein, vous êtes dans la file d’attente",
+   "es": "Servidor lleno, esperando en la cola",
+   "ru": "Сервер переполнен. Вы в очереди",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::character number:",
+   "file": "koKR.txt",
+   "key": "character number:",
+   "en": "Character number:",
+   "ko": "캐릭터 번호:",
+   "de": "Charakter Nummer:",
+   "fr": "Personnage numéro ",
+   "es": "Número de personaje",
+   "ru": "Номер персонажа:",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Fail. Client is reporting incorrect language.",
+   "file": "koKR.txt",
+   "key": "Fail. Client is reporting incorrect language.",
+   "en": "Failed. Client is reporting an incorrect client language for this server. Server not switched.",
+   "ko": "서버와 게임 언어가 맞지 않아 서버를 변경하지 못했습니다.",
+   "de": "Fehlgeschlagen. Der Client meldet eine falsche Client-Sprache für diesen Server. nicht gewechselt.",
+   "fr": "Echec, le royaume que vous avez séléctionner ne semble pas avoir la même langue que la langue définie sur votre jeu. Le serveur n’a pas été changé.",
+   "es": "Error, el idioma del cliente no está disponible para este servidor. No se cambió",
+   "ru": "Ошибка. Игра сообщает о некорректном языке клиента для этого сервера. Сервер не изменён.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Exile's_Reach",
+   "file": "koKR.txt",
+   "key": "Exile's_Reach",
+   "en": "Exile's Reach",
+   "ko": "추방자의 해안",
+   "de": "Insel des Verbannten",
+   "fr": "Confins de l’Exil",
+   "es": "Confín del Exilio",
+   "ru": "Остров изгнанников",
+   "code": [
+    "data/data.ini:417: gStartingZones=1,Exile's_Reach,428,370"
+   ],
+   "game_term": "추방자의 해안",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Race_starting_zone",
+   "file": "koKR.txt",
+   "key": "Race_starting_zone",
+   "en": "Race starting zone",
+   "ko": "종족 시작 지역",
+   "de": "Rassenstartgebiet",
+   "fr": "La zone de départ pour la race",
+   "es": "Zona inicial de la raza",
+   "ru": "Расовая стартовая зона",
+   "code": [
+    "data/data.ini:5: gStartingZones=1,Race_starting_zone,-423,370",
+    "data/data.ini:101: gStartingZones=1,Race_starting_zone,-423,370",
+    "data/data.ini:255: gStartingZones=1,Race_starting_zone,-423,370",
+    "data/data.ini:418: gStartingZones=2,Race_starting_zone,-423,370"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::male",
+   "file": "koKR.txt",
+   "key": "male",
+   "en": "male",
+   "ko": "남성",
+   "de": "männlich",
+   "fr": "Homme",
+   "es": "Masculino",
+   "ru": "Мужской",
+   "code": [
+    "data/data.ini:6: gGenders=1,male,118,524",
+    "data/data.ini:102: gGenders=1,male,107,399",
+    "data/data.ini:256: gGenders=1,male,103,420",
+    "data/data.ini:419: gGenders=1,male,9977,32"
+   ],
+   "game_term": "남성",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::female",
+   "file": "koKR.txt",
+   "key": "female",
+   "en": "female",
+   "ko": "여성",
+   "de": "weiblich",
+   "fr": "Femme",
+   "es": "Femenino",
+   "ru": "Женский",
+   "code": [
+    "data/data.ini:7: gGenders=2,female,162,524",
+    "data/data.ini:103: gGenders=2,female,156,399",
+    "data/data.ini:257: gGenders=2,female,147,420",
+    "data/data.ini:420: gGenders=2,female,10020,32"
+   ],
+   "game_term": "여성",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Alliance",
+   "file": "koKR.txt",
+   "key": "Alliance",
+   "en": "Alliance",
+   "ko": "얼라이언스",
+   "de": "Allianz",
+   "fr": "Alliance",
+   "es": "Alianza",
+   "ru": "Альянс",
+   "code": [
+    "v2/includes/forever.ahk:290: \"alliance\", Map(\"de\", \"ALLIANZ\", \"en\", \"ALLIANCE\", \"fr\", \"ALLIANCE\", \"ko\", \"얼라이언스\"),",
+    "v2/includes/forever.ahk:666: && (FvFind(s, \"back\") || FvFind(s, \"alliance\") || FvFind(s, \"horde\")))",
+    "v2/includes/forever.ahk:1315: for key in [\"alliance\", \"horde\"] {"
+   ],
+   "game_term": "얼라이언스",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Horde",
+   "file": "koKR.txt",
+   "key": "Horde",
+   "en": "Horde",
+   "ko": "호드",
+   "de": "Horde",
+   "fr": "Horde",
+   "es": "Horda",
+   "ru": "Орда",
+   "code": [
+    "v2/includes/forever.ahk:291: \"horde\", Map(\"de\", \"HORDE\", \"en\", \"HORDE\", \"fr\", \"HORDE\", \"ko\", \"호드\"),",
+    "v2/includes/forever.ahk:666: && (FvFind(s, \"back\") || FvFind(s, \"alliance\") || FvFind(s, \"horde\")))",
+    "v2/includes/forever.ahk:1315: for key in [\"alliance\", \"horde\"] {"
+   ],
+   "game_term": "호드",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Human",
+   "file": "koKR.txt",
+   "key": "Human",
+   "en": "Human",
+   "ko": "인간",
+   "de": "Mensch",
+   "fr": "Humain",
+   "es": "Humano",
+   "ru": "Люди",
+   "code": [
+    "v2/includes/config.ahk:93: ; asks for \"human\" and \"warrior\" while the localization files answer with"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Dwarf",
+   "file": "koKR.txt",
+   "key": "Dwarf",
+   "en": "Dwarf",
+   "ko": "드워프",
+   "de": "Zwerg",
+   "fr": "Nain",
+   "es": "Enano",
+   "ru": "Дворфы",
+   "code": [
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:105: gRaces=2,dwarf,85,215,warrior;paladin;hunter;rogue;priest;Not_available",
+    "data/data.ini:259: gRaces=2,dwarf,82,210,warrior;paladin;hunter;rogue;priest",
+    "data/data.ini:422: gRaces=2,Dwarf,66,150,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Night_Elf",
+   "file": "koKR.txt",
+   "key": "Night_Elf",
+   "en": "Night Elf",
+   "ko": "나이트 엘프",
+   "de": "Nachtelf",
+   "fr": "Elf de la nuit",
+   "es": "Elfo de la noche",
+   "ru": "Ночные Эльфы",
+   "code": [
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:106: gRaces=3,Night_Elf,85,275,warrior;hunter;rogue;priest;druid;Not_available",
+    "data/data.ini:260: gRaces=3,night_elf,82,260,warrior;hunter;rogue;priest;druid",
+    "data/data.ini:423: gRaces=3,Night_Elf,66,210,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Not_available;Monk;Demon_Hunter;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Gnome",
+   "file": "koKR.txt",
+   "key": "Gnome",
+   "en": "Gnome",
+   "ko": "노움",
+   "de": "Gnom",
+   "fr": "Gnome",
+   "es": "Gnomo",
+   "ru": "Гномы",
+   "code": [
+    "data/data.ini:11: gRaces=4,gnome,85,235,warrior;Not_available;Not_available;rogue;Not_available;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:107: gRaces=4,gnome,85,325,warrior;rogue;mage;warlock;Not_available;Not_available",
+    "data/data.ini:261: gRaces=4,gnome,82,310,warrior;rogue;mage;warlock",
+    "data/data.ini:424: gRaces=4,Gnome,66,273,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Draenei",
+   "file": "koKR.txt",
+   "key": "Draenei",
+   "en": "Draenei",
+   "ko": "드레나이",
+   "de": "Draenei",
+   "fr": "Draenei.",
+   "es": "Draenei",
+   "ru": "Дренеи",
+   "code": [
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:262: gRaces=5,draenei,82,360,warrior;paladin;hunter;priest;shaman;mage",
+    "data/data.ini:425: gRaces=5,Draenei,66,336,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Worgen",
+   "file": "koKR.txt",
+   "key": "Worgen",
+   "en": "Worgen",
+   "ko": "늑대인간",
+   "de": "Worgen",
+   "fr": "Worgen",
+   "es": "Huargen",
+   "ru": "Воргены",
+   "code": [
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:426: gRaces=6,Worgen,66,399,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Pandaren_(Alliance)",
+   "file": "koKR.txt",
+   "key": "Pandaren_(Alliance)",
+   "en": "Pandaren (Alliance)",
+   "ko": "판다렌 얼라이언스",
+   "de": "Pandaren (Allianz)",
+   "fr": "Pandaren (Alliance)",
+   "es": "Pandaren (Alianza)",
+   "ru": "Пандарены (Альянс)",
+   "code": [
+    "data/data.ini:427: gRaces=7,Pandaren_(Alliance),66,462,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Dracthyr_(Alliance)",
+   "file": "koKR.txt",
+   "key": "Dracthyr_(Alliance)",
+   "en": "Dracthyr (Alliance)",
+   "ko": "드랙티르 얼라이언스",
+   "de": "Dracthyr (Allianz)",
+   "fr": "Dracthyr (Alliance)",
+   "es": "Dracthyr (Alianza)",
+   "ru": "Драктиры (Альянс)",
+   "code": [
+    "data/data.ini:428: gRaces=8,Dracthyr_(Alliance),66,525,Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_availa"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Void_Elf",
+   "file": "koKR.txt",
+   "key": "Void_Elf",
+   "en": "Void Elf",
+   "ko": "공허 엘프",
+   "de": "Leerenelf",
+   "fr": "Elfe du Vide",
+   "es": "Elfo del vacío",
+   "ru": "Эльфы Бездны",
+   "code": [
+    "data/data.ini:429: gRaces=9,Void_Elf,127,137,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Light_Forge_Draenei",
+   "file": "koKR.txt",
+   "key": "Light_Forge_Draenei",
+   "en": "Light Forge Draenei",
+   "ko": "빛벼림 드레나이",
+   "de": "Lichgeschmiedete Draenei",
+   "fr": "Draeneï sancteforge",
+   "es": "Draenei forjado por la luz",
+   "ru": "Озарённые Дренеи",
+   "code": [
+    "data/data.ini:430: gRaces=10,Light_Forge_Draenei,127,200,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Dark_Iron_Dwarf",
+   "file": "koKR.txt",
+   "key": "Dark_Iron_Dwarf",
+   "en": "Dark Iron Dwarf",
+   "ko": "검은무쇠 드워프",
+   "de": "Dunkeleisenzwerg",
+   "fr": "Nain sombrefer",
+   "es": "Enano Hierro Negro",
+   "ru": "Дворфы Чёрного Железа",
+   "code": [
+    "data/data.ini:431: gRaces=11,Dark_Iron_Dwarf,127,263,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Kul_Tiran",
+   "file": "koKR.txt",
+   "key": "Kul_Tiran",
+   "en": "Kul Tiran",
+   "ko": "쿨 티란",
+   "de": "Kul Tiraner",
+   "fr": "Kultiran",
+   "es": "Ciudadano de Kul Tiras",
+   "ru": "Культирасцы",
+   "code": [
+    "data/data.ini:432: gRaces=12,Kul_Tiran,127,326,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Mecha_Gnome",
+   "file": "koKR.txt",
+   "key": "Mecha_Gnome",
+   "en": "Mecha Gnome",
+   "ko": "기계노움",
+   "de": "Mechangnom",
+   "fr": "Mécagnome",
+   "es": "Mecagnomo",
+   "ru": "Механогномы",
+   "code": [
+    "data/data.ini:433: gRaces=13,Mecha_Gnome,127,389,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Orc",
+   "file": "koKR.txt",
+   "key": "Orc",
+   "en": "Orc",
+   "ko": "오크",
+   "de": "Ork",
+   "fr": "Orc",
+   "es": "Orco",
+   "ru": "Орки",
+   "code": [
+    "data/data.ini:14: gRaces=7,orc,185,85,warrior;Not_available;hunter;rogue;Not_available;death_knight;shaman;Not_available;warlock;Not_available",
+    "data/data.ini:108: gRaces=5,orc,180,165,warrior;hunter;rogue;shaman;warlock;Not_available",
+    "data/data.ini:263: gRaces=6,orc,178,160,warrior;hunter;rogue;shaman;warlock",
+    "data/data.ini:434: gRaces=14,Orc,-70,90,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Undead",
+   "file": "koKR.txt",
+   "key": "Undead",
+   "en": "Undead",
+   "ko": "언데드",
+   "de": "Untoter",
+   "fr": "Mort-vivant",
+   "es": "No-muerto",
+   "ru": "Нежить",
+   "code": [
+    "v2/includes/detect.ahk:185: ; replaced. Era's \"undead\" is race 6; on BC the Draenei sit at 5, so 6"
+   ],
+   "game_term": "언데드",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Tauren",
+   "file": "koKR.txt",
+   "key": "Tauren",
+   "en": "Tauren",
+   "ko": "타우렌",
+   "de": "Tauren",
+   "fr": "Tauren",
+   "es": "Tauren",
+   "ru": "Таурены",
+   "code": [
+    "data/data.ini:16: gRaces=9,tauren,185,185,warrior;Not_available;hunter;Not_available;Not_available;death_knight;shaman;Not_available;Not_available;druid",
+    "data/data.ini:110: gRaces=7,tauren,180,275,warrior;hunter;shaman;druid;Not_available;Not_available",
+    "data/data.ini:265: gRaces=8,tauren,178,260,warrior;hunter;shaman;druid",
+    "data/data.ini:436: gRaces=16,Tauren,-70,210,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Druid;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Troll",
+   "file": "koKR.txt",
+   "key": "Troll",
+   "en": "Troll",
+   "ko": "트롤",
+   "de": "Troll",
+   "fr": "Troll",
+   "es": "Trol",
+   "ru": "Тролли",
+   "code": [
+    "data/data.ini:17: gRaces=10,troll,185,235,warrior;Not_available;hunter;rogue;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:111: gRaces=8,troll,180,325,warrior;hunter;rogue;priest;shaman;mage",
+    "data/data.ini:266: gRaces=9,troll,178,310,warrior;hunter;rogue;priest;shaman;mage",
+    "data/data.ini:437: gRaces=17,Troll,-70,273,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Blood_Elf",
+   "file": "koKR.txt",
+   "key": "Blood_Elf",
+   "en": "Blood Elf",
+   "ko": "블러드 엘프",
+   "de": "Blutelf",
+   "fr": "Elf de sang",
+   "es": "Elfo de sangre",
+   "ru": "Эльфы Крови",
+   "code": [
+    "data/data.ini:18: gRaces=11,blood_elf,185,285,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:267: gRaces=10,blood_elf,178,360,paladin;hunter;rogue;priest;mage;warlock",
+    "data/data.ini:438: gRaces=18,Blood_Elf,-70,336,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Not_available;Monk;Demon_Hunter;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Goblin",
+   "file": "koKR.txt",
+   "key": "Goblin",
+   "en": "Goblin",
+   "ko": "고블린",
+   "de": "Goblin",
+   "fr": "Gobelin",
+   "es": "Goblin",
+   "ru": "Гоблины",
+   "code": [
+    "data/data.ini:19: gRaces=12,goblin,185,335,warrior;Not_available;hunter;rogue;priest;death_knight;shaman;mage;warlock;Not_available",
+    "data/data.ini:439: gRaces=19,Goblin,-70,399,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Pandaren_(Horde)",
+   "file": "koKR.txt",
+   "key": "Pandaren_(Horde)",
+   "en": "Pandaren (Horde)",
+   "ko": "판다렌 호드",
+   "de": "Pandaren (Horde)",
+   "fr": "Pandaren (Horde)",
+   "es": "Pandaren (Horda)",
+   "ru": "Пандарены (Орда)",
+   "code": [
+    "data/data.ini:440: gRaces=20,Pandaren_(Horde),-70,462,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Dracthyr_(Horde)",
+   "file": "koKR.txt",
+   "key": "Dracthyr_(Horde)",
+   "en": "Dracthyr (Horde)",
+   "ko": "드랙티르 호드",
+   "de": "Dracthyr (Horde)",
+   "fr": "Dracthyr (Horde)",
+   "es": "Dracthyr (Horda)",
+   "ru": "Драктиры (Орда)",
+   "code": [
+    "data/data.ini:441: gRaces=21,Dracthyr_(Horde),-70,525,Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_availab"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Night_Borne",
+   "file": "koKR.txt",
+   "key": "Night_Borne",
+   "en": "Night Borne",
+   "ko": "나이트본",
+   "de": "Nachtgeborene",
+   "fr": "Sacrenuit",
+   "es": "Nocheterna",
+   "ru": "Ночнорождённые",
+   "code": [
+    "data/data.ini:442: gRaces=22,Night_Borne,-132,137,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::High_Mountain_Tauren",
+   "file": "koKR.txt",
+   "key": "High_Mountain_Tauren",
+   "en": "High Mountain Tauren",
+   "ko": "높은산 타우렌",
+   "de": "Hochbergtauren",
+   "fr": "Taurène de Haut-Roc",
+   "es": "Tauren Montealto",
+   "ru": "Таурены Крутогорья",
+   "code": [
+    "data/data.ini:443: gRaces=23,High_Mountain_Tauren,-132,200,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Mag_Har_Ork",
+   "file": "koKR.txt",
+   "key": "Mag_Har_Ork",
+   "en": "Mag Har Ork",
+   "ko": "마그하르 오크",
+   "de": "Orks der Mag Har",
+   "fr": "Orque mag'har",
+   "es": "Orco Mag'har",
+   "ru": "Маг'хары",
+   "code": [
+    "data/data.ini:444: gRaces=24,Mag_Har_Ork,-132,263,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Zandalari_Troll",
+   "file": "koKR.txt",
+   "key": "Zandalari_Troll",
+   "en": "Zandalari Troll",
+   "ko": "잔달라 트롤",
+   "de": "Zandalaritroll",
+   "fr": "Trolle zandalari",
+   "es": "Trol Zandalari",
+   "ru": "Зандалары",
+   "code": [
+    "data/data.ini:445: gRaces=25,Zandalari_Troll,-132,326,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Druid;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Vulpera",
+   "file": "koKR.txt",
+   "key": "Vulpera",
+   "en": "Vulpera",
+   "ko": "불페라",
+   "de": "Vulpera",
+   "fr": "Vulpérin",
+   "es": "Vulpera",
+   "ru": "Вульперы",
+   "code": [
+    "data/data.ini:446: gRaces=26,Vulpera,-132,389,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Warrior",
+   "file": "koKR.txt",
+   "key": "Warrior",
+   "en": "Warrior",
+   "ko": "전사",
+   "de": "Krieger",
+   "fr": "Guerrier",
+   "es": "Guerrero",
+   "ru": "Воин",
+   "code": [
+    "v2/includes/config.ahk:93: ; asks for \"human\" and \"warrior\" while the localization files answer with"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Hunter",
+   "file": "koKR.txt",
+   "key": "Hunter",
+   "en": "Hunter",
+   "ko": "사냥꾼",
+   "de": "Jäger",
+   "fr": "Chasseur",
+   "es": "Cazador",
+   "ru": "Охотник",
+   "code": [
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:14: gRaces=7,orc,185,85,warrior;Not_available;hunter;rogue;Not_available;death_knight;shaman;Not_available;warlock;Not_available",
+    "data/data.ini:16: gRaces=9,tauren,185,185,warrior;Not_available;hunter;Not_available;Not_available;death_knight;shaman;Not_available;Not_available;druid"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Mage",
+   "file": "koKR.txt",
+   "key": "Mage",
+   "en": "Mage",
+   "ko": "마법사",
+   "de": "Magier",
+   "fr": "Mage",
+   "es": "Mago",
+   "ru": "Маг",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:11: gRaces=4,gnome,85,235,warrior;Not_available;Not_available;rogue;Not_available;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:15: gRaces=8,undead,185,135,warrior;Not_available;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:17: gRaces=10,troll,185,235,warrior;Not_available;hunter;rogue;priest;death_knight;shaman;mage;Not_available;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Rogue",
+   "file": "koKR.txt",
+   "key": "Rogue",
+   "en": "Rogue",
+   "ko": "도적",
+   "de": "Schurke",
+   "fr": "Voleur",
+   "es": "Pícaro",
+   "ru": "Разбойник",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:11: gRaces=4,gnome,85,235,warrior;Not_available;Not_available;rogue;Not_available;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:14: gRaces=7,orc,185,85,warrior;Not_available;hunter;rogue;Not_available;death_knight;shaman;Not_available;warlock;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Priest",
+   "file": "koKR.txt",
+   "key": "Priest",
+   "en": "Priest",
+   "ko": "사제",
+   "de": "Priester",
+   "fr": "Prêtre",
+   "es": "Sacerdote",
+   "ru": "Жрец",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:15: gRaces=8,undead,185,135,warrior;Not_available;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Warlock",
+   "file": "koKR.txt",
+   "key": "Warlock",
+   "en": "Warlock",
+   "ko": "흑마법사",
+   "de": "Hexenmeister",
+   "fr": "Démoniste",
+   "es": "Brujo",
+   "ru": "Чернокнижник",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:11: gRaces=4,gnome,85,235,warrior;Not_available;Not_available;rogue;Not_available;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:14: gRaces=7,orc,185,85,warrior;Not_available;hunter;rogue;Not_available;death_knight;shaman;Not_available;warlock;Not_available",
+    "data/data.ini:15: gRaces=8,undead,185,135,warrior;Not_available;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:18: gRaces=11,blood_elf,185,285,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;mage;warlock;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Paladin",
+   "file": "koKR.txt",
+   "key": "Paladin",
+   "en": "Paladin",
+   "ko": "성기사",
+   "de": "Paladin",
+   "fr": "Paladin",
+   "es": "Paladín",
+   "ru": "Паладин",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:18: gRaces=11,blood_elf,185,285,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:104: gRaces=1,human,85,165,warrior;paladin;rogue;priest;mage;warlock",
+    "data/data.ini:105: gRaces=2,dwarf,85,215,warrior;paladin;hunter;rogue;priest;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Druid",
+   "file": "koKR.txt",
+   "key": "Druid",
+   "en": "Druid",
+   "ko": "드루이드",
+   "de": "Druide",
+   "fr": "Druide",
+   "es": "Druida",
+   "ru": "Друид",
+   "code": [
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid",
+    "data/data.ini:16: gRaces=9,tauren,185,185,warrior;Not_available;hunter;Not_available;Not_available;death_knight;shaman;Not_available;Not_available;druid",
+    "data/data.ini:106: gRaces=3,Night_Elf,85,275,warrior;hunter;rogue;priest;druid;Not_available",
+    "data/data.ini:110: gRaces=7,tauren,180,275,warrior;hunter;shaman;druid;Not_available;Not_available",
+    "data/data.ini:260: gRaces=3,night_elf,82,260,warrior;hunter;rogue;priest;druid"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Shaman",
+   "file": "koKR.txt",
+   "key": "Shaman",
+   "en": "Shaman",
+   "ko": "주술사",
+   "de": "Schamane",
+   "fr": "Chamane",
+   "es": "Chamán",
+   "ru": "Шаман",
+   "code": [
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:14: gRaces=7,orc,185,85,warrior;Not_available;hunter;rogue;Not_available;death_knight;shaman;Not_available;warlock;Not_available",
+    "data/data.ini:16: gRaces=9,tauren,185,185,warrior;Not_available;hunter;Not_available;Not_available;death_knight;shaman;Not_available;Not_available;druid",
+    "data/data.ini:17: gRaces=10,troll,185,235,warrior;Not_available;hunter;rogue;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:19: gRaces=12,goblin,185,335,warrior;Not_available;hunter;rogue;priest;death_knight;shaman;mage;warlock;Not_available",
+    "data/data.ini:108: gRaces=5,orc,180,165,warrior;hunter;rogue;shaman;warlock;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Monk",
+   "file": "koKR.txt",
+   "key": "Monk",
+   "en": "Monk",
+   "ko": "수도사",
+   "de": "Mönch",
+   "fr": "Moine",
+   "es": "Monje",
+   "ru": "Монах",
+   "code": [
+    "data/data.ini:421: gRaces=1,Human,66,90,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available",
+    "data/data.ini:422: gRaces=2,Dwarf,66,150,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available",
+    "data/data.ini:423: gRaces=3,Night_Elf,66,210,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Not_available;Monk;Demon_Hunter;Death_Knight;Not_available",
+    "data/data.ini:424: gRaces=4,Gnome,66,273,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Not_available;Not_available;Monk;Not_available;Death_Knight;Not_available",
+    "data/data.ini:425: gRaces=5,Draenei,66,336,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Shaman;Monk;Not_available;Death_Knight;Not_available",
+    "data/data.ini:426: gRaces=6,Worgen,66,399,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Not_available;Monk;Not_available;Death_Knight;Not_available"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Demon_Hunter",
+   "file": "koKR.txt",
+   "key": "Demon_Hunter",
+   "en": "Demon Hunter",
+   "ko": "악마사냥꾼",
+   "de": "Dämonenjäger",
+   "fr": "Chasseur de démons",
+   "es": "Cazador de demonios",
+   "ru": "Охотник на демонов",
+   "code": [
+    "data/data.ini:423: gRaces=3,Night_Elf,66,210,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Not_available;Druid;Not_available;Monk;Demon_Hunter;Death_Knight;Not_available",
+    "data/data.ini:438: gRaces=18,Blood_Elf,-70,336,Warrior;Hunter;Mage;Rogue;Priest;Warlock;Paladin;Not_available;Not_available;Monk;Demon_Hunter;Death_Knight;Not_available"
+   ],
+   "game_term": "악마사냥꾼",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Death_Knight",
+   "file": "koKR.txt",
+   "key": "Death_Knight",
+   "en": "Death Knight",
+   "ko": "죽음의 기사",
+   "de": "Todesritter",
+   "fr": "Chevalier de la mort",
+   "es": "Caballero de la muerte",
+   "ru": "Рыцарь Смерти",
+   "code": [
+    "data/data.ini:8: gRaces=1,human,85,85,warrior;paladin;Not_available;rogue;priest;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:9: gRaces=2,dwarf,85,135,warrior;paladin;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;Not_available",
+    "data/data.ini:10: gRaces=3,night_elf,85,185,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;Not_available;Not_available;druid",
+    "data/data.ini:11: gRaces=4,gnome,85,235,warrior;Not_available;Not_available;rogue;Not_available;death_knight;Not_available;mage;warlock;Not_available",
+    "data/data.ini:12: gRaces=5,draenei,85,285,warrior;paladin;hunter;Not_available;priest;death_knight;shaman;mage;Not_available;Not_available",
+    "data/data.ini:13: gRaces=6,worgen,85,335,warrior;Not_available;hunter;rogue;priest;death_knight;Not_available;mage;warlock;druid"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Evoker",
+   "file": "koKR.txt",
+   "key": "Evoker",
+   "en": "Evoker",
+   "ko": "기원사",
+   "de": "Rufer",
+   "fr": "Evocateur",
+   "es": "Evocador",
+   "ru": "Пробудитель",
+   "code": [
+    "data/data.ini:428: gRaces=8,Dracthyr_(Alliance),66,525,Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_availa",
+    "data/data.ini:441: gRaces=21,Dracthyr_(Horde),-70,525,Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_available;Not_availab"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Version",
+   "file": "koKR.txt",
+   "key": "Version",
+   "en": "Version",
+   "ko": "버전",
+   "de": "Version",
+   "fr": "Version",
+   "es": "Versión",
+   "ru": "Версия",
+   "code": [
+    "v2/includes/detect.ahk:88: if (name = \"Version\")",
+    "v2/includes/menu.ahk:602: MenuNode(\"WoW Logintool V\" gSettingsVersion \", \" T(\"Version\") \": V\" gSettingsVersion, gMainMenu)",
+    "v2/includes/menu.ahk:661: MenuNode(\"WoW Logintool V\" gSettingsVersion \", \" T(\"Version\") \": V\" gSettingsVersion, gLoginMenu)"
+   ],
+   "game_term": "Version | 버전",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Anniversary",
+   "file": "koKR.txt",
+   "key": "Anniversary",
+   "en": "Anniversary",
+   "ko": "기념 서버",
+   "de": "Jubiläum",
+   "fr": "Jubilé",
+   "es": "Aniversario",
+   "ru": "Юбилей",
+   "code": [
+    "data/data.ini:1274: gRealmLangs=2,Anniversary,9782,635",
+    "data/data.ini:1304: gRealmLangs=2,Anniversary,9785,635"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::hardcore",
+   "file": "koKR.txt",
+   "key": "hardcore",
+   "en": "hardcore",
+   "ko": "하드코어",
+   "de": "hardcore",
+   "fr": "Extrême",
+   "es": "hardcore",
+   "ru": "хардкор",
+   "code": [
+    "data/data.ini:131: --   (measured on a live 2880x1800 hardcore creation screen: 1 px of margin,",
+    "data/data.ini:188: --   The hardcore CHARACTER CREATION warning ('Willkommen zu WoW Classic",
+    "data/data.ini:189: --   Hardcore-Realms...'). Same HardcorePopUpFrame as the realm-select warning,",
+    "data/data.ini:221: --   hardcore rules dialog - NOT a DefaultScaleFrame, so plain glue units apply.",
+    "data/data.ini:287: --   (measured on a live 2880x1800 hardcore creation screen: 1 px of margin,",
+    "data/data.ini:348: --   The hardcore CHARACTER CREATION warning ('Willkommen zu WoW Classic"
+   ],
+   "game_term": "하드코어",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::hardcore_pve",
+   "file": "koKR.txt",
+   "key": "hardcore_pve",
+   "en": "hardcore_pve",
+   "ko": "하드코어 일반",
+   "de": "hardcore_pve",
+   "fr": "Extrême_pve",
+   "es": "hardcore_pve",
+   "ru": "хардкор_pve",
+   "code": [
+    "data/data.ini:597: gServerNames=2,Soulseeker,9795,192,hardcore_pve",
+    "data/data.ini:646: gServerNames=5,nek_rosh,9795,192,hardcore_pve",
+    "data/data.ini:647: gServerNames=5,stitches,9795,212,hardcore_pve",
+    "data/data.ini:657: gServerNames=2,Doomhowl,9795,192,hardcore_pve",
+    "data/data.ini:671: gServerNames=3,defias_pillager,9795,392,hardcore_pve",
+    "data/data.ini:693: gServerNames=3,skull_rock,9795,832,hardcore_pve"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::hardcore_pvp",
+   "file": "koKR.txt",
+   "key": "hardcore_pvp",
+   "en": "hardcore_pvp",
+   "ko": "하드코어 PvP",
+   "de": "hardcore_pvp",
+   "fr": "Extrême_pvp",
+   "es": "hardcore_pvp",
+   "ru": "хардкор_pvp",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}
