@@ -1,0 +1,173 @@
+{
+ "claude": {
+  "recall": "16/17",
+  "by_origin": {
+   "claude": "10/10",
+   "gpt": "6/7"
+  },
+  "missed": [
+   "koKR.txt::Worgen"
+  ],
+  "non_seed_flagged": [
+   "koKR.txt::Anniversary",
+   "koKR.txt::BurningCrusade",
+   "koKR.txt::Cata",
+   "koKR.txt::Character created",
+   "koKR.txt::Classic",
+   "koKR.txt::Dracthyr_(Alliance)",
+   "koKR.txt::Dracthyr_(Horde)",
+   "koKR.txt::Failed. The name is not available, or the names format is not allowed.",
+   "koKR.txt::Pandaren_(Alliance)",
+   "koKR.txt::Pandaren_(Horde)",
+   "koKR.txt::Something went wrong. Please restart the game and try again.",
+   "koKR.txt::character deleted",
+   "koKR.txt::switched to Server"
+  ],
+  "by_lens": {
+   "accuracy": [
+    "koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+    "koKR.txt::Deleting is canceled. Please wait",
+    "koKR.txt::Failed You already have the maximum number of character on this server.",
+    "koKR.txt::character number:",
+    "koKR.txt::enter the name for the new character and press enter, or escape to cancel character creation.",
+    "koKR.txt::go right to select a voice",
+    "koKR.txt::login mode for",
+    "koKR.txt::pause mode",
+    "koKR.txt::this race is locked for your account. Try a different race."
+   ],
+   "terminology": [
+    "koKR.txt::Alliance",
+    "koKR.txt::Exile's_Reach",
+    "koKR.txt::Retail",
+    "koKR.txt::server full. Waiting in queue."
+   ],
+   "context": [
+    "koKR.txt::login mode for",
+    "koKR.txt::select voice"
+   ],
+   "listening": [
+    "koKR.txt::Empty - No characters on this server.",
+    "koKR.txt::Please wait.",
+    "koKR.txt::login mode for",
+    "koKR.txt::pause mode",
+    "koKR.txt::select voice",
+    "koKR.txt::server full. Waiting in queue."
+   ]
+  }
+ },
+ "gpt": {
+  "recall": "15/17",
+  "by_origin": {
+   "claude": "9/10",
+   "gpt": "6/7"
+  },
+  "missed": [
+   "koKR.txt::pause mode",
+   "koKR.txt::Worgen"
+  ],
+  "non_seed_flagged": [
+   "koKR.txt::Anniversary",
+   "koKR.txt::BurningCrusade",
+   "koKR.txt::Cata",
+   "koKR.txt::Character created",
+   "koKR.txt::Classic",
+   "koKR.txt::Could not switch server.",
+   "koKR.txt::Creation is canceled. Please wait.",
+   "koKR.txt::Dracthyr_(Alliance)",
+   "koKR.txt::Dracthyr_(Horde)",
+   "koKR.txt::Fail. Client is reporting incorrect language.",
+   "koKR.txt::Failed. The name is not available, or the names format is not allowed.",
+   "koKR.txt::Not_available",
+   "koKR.txt::Pandaren_(Alliance)",
+   "koKR.txt::Pandaren_(Horde)",
+   "koKR.txt::Please wait, the character list is being rebuilt.",
+   "koKR.txt::character deleted",
+   "koKR.txt::create new character",
+   "koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.",
+   "koKR.txt::go right to select a game type",
+   "koKR.txt::go right to select a language",
+   "koKR.txt::go right to select a region",
+   "koKR.txt::hardcore_pve",
+   "koKR.txt::hardcore_pvp",
+   "koKR.txt::play mode",
+   "koKR.txt::press enter to confirm the deletion, or press escape to cancel.",
+   "koKR.txt::switched to Server",
+   "koKR.txt::switching to server. please wait.",
+   "koKR.txt::wait",
+   "koKR.txt::you don't have any characters on the selected server"
+  ],
+  "by_lens": {
+   "accuracy": [
+    "koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+    "koKR.txt::Deleting is canceled. Please wait",
+    "koKR.txt::Failed You already have the maximum number of character on this server.",
+    "koKR.txt::character number:",
+    "koKR.txt::enter the name for the new character and press enter, or escape to cancel character creation.",
+    "koKR.txt::go right to select a voice",
+    "koKR.txt::login mode for",
+    "koKR.txt::this race is locked for your account. Try a different race."
+   ],
+   "terminology": [
+    "koKR.txt::Alliance",
+    "koKR.txt::Exile's_Reach",
+    "koKR.txt::Retail",
+    "koKR.txt::this race is locked for your account. Try a different race."
+   ],
+   "context": [
+    "koKR.txt::login mode for",
+    "koKR.txt::select voice"
+   ],
+   "listening": [
+    "koKR.txt::Deleting is canceled. Please wait",
+    "koKR.txt::Empty - No characters on this server.",
+    "koKR.txt::Please wait.",
+    "koKR.txt::go right to select a voice",
+    "koKR.txt::login mode for",
+    "koKR.txt::select voice",
+    "koKR.txt::server full. Waiting in queue."
+   ]
+  }
+ },
+ "combined": {
+  "recall": "16/17",
+  "by_origin": {
+   "claude": "10/10",
+   "gpt": "6/7"
+  },
+  "missed": [
+   "koKR.txt::Worgen"
+  ],
+  "non_seed_flagged": [
+   "koKR.txt::Anniversary",
+   "koKR.txt::BurningCrusade",
+   "koKR.txt::Cata",
+   "koKR.txt::Character created",
+   "koKR.txt::Classic",
+   "koKR.txt::Could not switch server.",
+   "koKR.txt::Creation is canceled. Please wait.",
+   "koKR.txt::Dracthyr_(Alliance)",
+   "koKR.txt::Dracthyr_(Horde)",
+   "koKR.txt::Fail. Client is reporting incorrect language.",
+   "koKR.txt::Failed. The name is not available, or the names format is not allowed.",
+   "koKR.txt::Not_available",
+   "koKR.txt::Pandaren_(Alliance)",
+   "koKR.txt::Pandaren_(Horde)",
+   "koKR.txt::Please wait, the character list is being rebuilt.",
+   "koKR.txt::Something went wrong. Please restart the game and try again.",
+   "koKR.txt::character deleted",
+   "koKR.txt::create new character",
+   "koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.",
+   "koKR.txt::go right to select a game type",
+   "koKR.txt::go right to select a language",
+   "koKR.txt::go right to select a region",
+   "koKR.txt::hardcore_pve",
+   "koKR.txt::hardcore_pvp",
+   "koKR.txt::play mode",
+   "koKR.txt::press enter to confirm the deletion, or press escape to cancel.",
+   "koKR.txt::switched to Server",
+   "koKR.txt::switching to server. please wait.",
+   "koKR.txt::wait",
+   "koKR.txt::you don't have any characters on the selected server"
+  ]
+ }
+}
