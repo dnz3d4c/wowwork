@@ -78,7 +78,10 @@ def match_lines(item: dict[str, Any], lines: list[dict[str, Any]], dx: int = 0, 
 def run_helper(helper: Path, image: Path, extra: list[str]) -> dict[str, Any]:
     cmd = [str(helper), "sense", "--image", str(image), "--lang", "ko-KR",
            "--data", str(TOOL / "data" / "data.ini"), "--gametype", "Forever", *extra]
-    out = subprocess.run(cmd, capture_output=True, check=False, timeout=120)
+    try:
+        out = subprocess.run(cmd, capture_output=True, check=False, timeout=120)
+    except (OSError, subprocess.TimeoutExpired) as e:
+        return {"error": f"{type(e).__name__}: {e}"}
     text = out.stdout.decode("utf-8", errors="replace").strip().splitlines()
     if out.returncode != 0 or not text:
         return {"error": f"exit {out.returncode}: " + out.stderr.decode("utf-8", "replace").strip()}

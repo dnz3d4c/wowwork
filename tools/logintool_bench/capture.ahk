@@ -7,10 +7,10 @@ helper := A_Args[1]
 outDir := A_Args[2]
 pages := Integer(A_Args[3])
 DirCreate(outDir)
-log := FileOpen(outDir "\capture-log.txt", "w", "UTF-8")
+logf := FileOpen(outDir "\capture-log.txt", "w", "UTF-8")
 win := "ahk_exe Wow.exe"
 if !WinExist(win) {
-    log.WriteLine("no Wow.exe window")
+    logf.WriteLine("no Wow.exe window")
     ExitApp(1)
 }
 WinActivate(win)
@@ -18,15 +18,15 @@ WinWaitActive(win, , 5)
 Sleep(800)
 loop pages {
     if !WinActive(win) {
-        log.WriteLine("lost focus before page " A_Index " - stopped")
+        logf.WriteLine("lost focus before page " A_Index " - stopped")
         ExitApp(2)
     }
     file := outDir "\p_" Format("{:04}", A_Index) ".png"
     code := RunWait('"' helper '" save "' file '"', , "Hide")
-    log.WriteLine(A_Index " exit=" code)
+    logf.WriteLine(A_Index " exit=" code)
     Send("^+{F12}")
     Sleep(450)
 }
-log.WriteLine("done")
-log.Close()
+logf.WriteLine("done")
+logf.Close()
 ExitApp(0)
