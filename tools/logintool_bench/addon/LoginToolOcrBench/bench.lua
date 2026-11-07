@@ -195,10 +195,14 @@ nextButton:SetScript("OnClick", function()
     showPage(current + 1)
 end)
 
-local ticker
+local ticker, starter
 
 SLASH_LOGINTOOLOCRBENCH1 = "/otb"
 SlashCmdList.LOGINTOOLOCRBENCH = function(msg)
+    if starter then
+        starter:Cancel()
+        starter = nil
+    end
     if ticker then
         ticker:Cancel()
         ticker = nil
@@ -245,7 +249,8 @@ SlashCmdList.LOGINTOOLOCRBENCH = function(msg)
     root:Show()
     showPage(from)
     if every then
-        C_Timer.After(5, function()
+        starter = C_Timer.NewTimer(5, function()
+            starter = nil
             ticker = C_Timer.NewTicker(every, function()
                 if current > #pages then
                     ticker:Cancel()
