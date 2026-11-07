@@ -93,6 +93,26 @@ def build_payload(kokr_dir: Path, out: Path) -> int:
     return len(files)
 
 
+VOICE_PAYLOAD = PAYLOAD.with_name("koVoice.zip")
+VOICE_PACK = Path(__file__).resolve().parent.parent / "assets" / "voice" / "Yuna"
+
+
+def build_voice_payload(pack_dir: Path, out: Path) -> int:
+    """음성 팩 폴더를 `<팩 이름>/<하위폴더>/<파일>` 항목으로 묶는다. 날짜를 고정해 같은 입력이면 같은 바이트가 나온다."""
+    import zipfile
+
+    files = sorted(p for p in pack_dir.rglob("*") if p.is_file())
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in files:
+            info = zipfile.ZipInfo(
+                f"{pack_dir.name}/{p.relative_to(pack_dir).as_posix()}", date_time=(2026, 1, 1, 0, 0, 0)
+            )
+            info.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(info, p.read_bytes())
+    return len(files)
+
+
 def installer_items(src_dir: Path) -> list[dict[str, object]]:
     """평가 묶음 항목: 원문·번역·다른 언어 번역, 코드에서 키를 쓰는 줄(Loc.cs 제외)."""
     text = (src_dir / "Loc.cs").read_text(encoding="utf-8")
@@ -123,6 +143,8 @@ def main() -> int:
 
         n = build_payload(KOKR_DIR, PAYLOAD)
         print(f"koKR 파일 {n}개 -> {PAYLOAD}")
+        n = build_voice_payload(VOICE_PACK, VOICE_PAYLOAD)
+        print(f"음성 팩 파일 {n}개 -> {VOICE_PAYLOAD}")
         return 0
     path = Path(sys.argv[2])
     if cmd == "batch":

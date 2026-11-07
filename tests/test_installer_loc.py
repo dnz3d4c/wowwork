@@ -108,3 +108,40 @@ def test_installer_payload_matches_current_kokr() -> None:
     assert sorted(packed) == sorted(current), "payload 의 파일 목록이 koKR 과 다르다"
     stale = [name for name in current if packed[name] != current[name]]
     assert stale == [], f"payload 가 낡았다: {stale}"
+
+
+def test_build_voice_payload_keeps_subfolders(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """한국어 음성 팩(Yuna)은 `Yuna/directions/...`, `Yuna/numbers/...` 항목으로 묶는다(2026-11-07)."""
+    import zipfile
+
+    from tools.installer_loc import build_voice_payload
+
+    pack = tmp_path / "Yuna"
+    (pack / "directions").mkdir(parents=True)
+    (pack / "numbers").mkdir()
+    (pack / "directions" / "east.mp3").write_bytes(b"e")
+    (pack / "numbers" / "1.mp3").write_bytes(b"1")
+    a, b = tmp_path / "a.zip", tmp_path / "b.zip"
+    build_voice_payload(pack, a)
+    build_voice_payload(pack, b)
+    assert a.read_bytes() == b.read_bytes()
+    with zipfile.ZipFile(a) as z:
+        assert sorted(z.namelist()) == ["Yuna/directions/east.mp3", "Yuna/numbers/1.mp3"]
+
+
+def test_installer_voice_payload_matches_current_pack() -> None:
+    """설치 프로그램에 넣은 음성 payload 가 assets/voice/Yuna 와 같아야 한다.
+
+    다르면: uv run python -m tools.installer_loc payload 후 설치 프로그램을 다시 빌드한다.
+    """
+    import zipfile
+
+    from tools.installer_loc import VOICE_PACK, VOICE_PAYLOAD
+
+    with zipfile.ZipFile(VOICE_PAYLOAD) as z:
+        packed = {n: z.read(n) for n in z.namelist()}
+    current = {
+        f"Yuna/{p.relative_to(VOICE_PACK).as_posix()}": p.read_bytes() for p in VOICE_PACK.rglob("*.mp3")
+    }
+    assert len(current) == 108
+    assert packed == current, "음성 payload 가 낡았다"
