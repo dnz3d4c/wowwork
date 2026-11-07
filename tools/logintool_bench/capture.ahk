@@ -17,12 +17,20 @@ WinActivate(win)
 WinWaitActive(win, , 5)
 Sleep(800)
 loop pages {
-    if !WinActive(win) {
-        logf.WriteLine("lost focus before page " A_Index " - stopped")
-        ExitApp(2)
+    tries := 0
+    while !WinActive(win) {
+        ; the helper's start can take the focus for a moment - take it back
+        if (++tries > 3) {
+            logf.WriteLine("lost focus before page " A_Index " - stopped")
+            ExitApp(2)
+        }
+        logf.WriteLine("focus lost before page " A_Index ", re-activating")
+        WinActivate(win)
+        WinWaitActive(win, , 2)
+        Sleep(300)
     }
-    file := outDir "\p_" Format("{:04}", A_Index) ".png"
-    code := RunWait('"' helper '" save "' file '"', , "Hide")
+    shot := outDir "\p_" Format("{:04}", A_Index) ".png"
+    code := RunWait('"' helper '" save "' shot '"', , "Hide")
     logf.WriteLine(A_Index " exit=" code)
     Send("^+{F12}")
     Sleep(450)
