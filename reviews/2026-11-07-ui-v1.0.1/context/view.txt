@@ -1,0 +1,231 @@
+## buffers.lua::Speak Time Remaining
+EN: Speak Time Remaining
+  C: core/buffers/types/AuraBuffer.lua:82: label = L["Speak Time Remaining"],
+## buffers.lua::Speak Description
+EN: Speak Description
+  C: core/buffers/types/AuraBuffer.lua:89: label = L["Speak Description"],
+## navigation.lua::Announce Remaining Waypoints
+EN: Announce Remaining Waypoints
+  C: core/navigation/module.lua:34: label = L["Announce Remaining Waypoints"],
+## navigation.lua::%d remaining
+EN: %d remaining
+  C: core/navigation/maps/module.lua:775: WowVision:speak(string.format(L["%d remaining"], remaining))
+## navigation.lua::Reverse Route
+EN: Reverse Route
+  C: core/navigation/maps/module.lua:538: label = L["Reverse Route"],
+## navigation.lua::No route to reverse
+EN: No route to reverse
+  C: core/navigation/maps/module.lua:522: WowVision:speak(L["No route to reverse"])
+  R: {"id": "navigation.lua::No route to start again", "en": "No route to start again", "ko": "다시 시작할 경로 없음"}
+  R: {"id": "navigation.lua::No route to your target", "en": "No route to your target", "ko": "대상까지 경로 없음"}
+  R: {"id": "navigation.lua::En route to %s, waypoint %d of %d", "en": "En route to %s, waypoint %d of %d", "ko": "%s까지 이동 중, 경유지 %d of %d"}
+## navigation.lua::Route reversed, back to %s
+EN: Route reversed, back to %s
+  C: camelot/wownav/module.lua:719: local reversed = { text = string.format(L["Route reversed, back to %s"], label), destination = data }
+  C: core/navigation/maps/module.lua:526: local intro = string.format(L["Route reversed, back to %s"], start.n or L["the start of the previous route"])
+## navigation.lua::the start of the previous route
+EN: the start of the previous route
+  C: camelot/wownav/module.lua:714: local label = (type(start) == "table" and start.n) or L["the start of the previous route"]
+  C: core/navigation/maps/module.lua:526: local intro = string.format(L["Route reversed, back to %s"], start.n or L["the start of the previous route"])
+  R: {"id": "navigation.lua::Start of route", "en": "Start of route", "ko": "경로 시작"}
+## quests.lua::Questie marker
+EN: Questie marker
+  C: core/quests/scanner.lua:276: addDetail(node, L["Questie marker"])
+## quests.lua::game quest marker
+EN: game quest marker
+  C: core/quests/scanner.lua:289: addDetail(node, L["game quest marker"])
+## targeting.lua::Target of Target
+EN: Target of Target
+  C: core/targeting/targetOfTarget.lua:29: label = L["Target of Target"],
+## targeting.lua::No target
+EN: No target
+  C: core/targeting/names.lua:106: WowVision:speak(L["No target"])
+  C: core/targeting/targetOfTarget.lua:17: WowVision:speak(L["No target"])
+  R: {"id": "buffers.lua::no target", "en": "no target", "ko": "대상 없음"}
+  R: {"id": "navigation.lua::You have no target", "en": "You have no target", "ko": "대상 없음"}
+  R: {"id": "targeting.lua::No target. Use /focus%d <name> or target a unit.", "en": "No target. Use /focus%d <name> or target a unit.", "ko": "대상 없음. /focus%d <이름>을 사용하거나 유닛을 대상으로 지정하십시오."}
+## targeting.lua::Your target has no target
+EN: Your target has no target
+  C: core/targeting/targetOfTarget.lua:22: WowVision:speak(L["Your target has no target"])
+  R: {"id": "buffers.lua::no target", "en": "no target", "ko": "대상 없음"}
+  R: {"id": "navigation.lua::No route to your target", "en": "No route to your target", "ko": "대상까지 경로 없음"}
+  R: {"id": "navigation.lua::Route to Your Target", "en": "Route to Your Target", "ko": "대상까지 경로 안내"}
+## targeting.lua::Names
+EN: Names
+  C: core/targeting/targetNames.lua:1015: label = L["Names"],
+## targeting.lua::Configured Target Announcement
+EN: Configured Target Announcement
+  C: core/targeting/targetNames.lua:1005: label = L["Configured Target Announcement"],
+## targeting.lua::In Combat
+EN: In Combat
+  C: core/targeting/targetNames.lua:59: { key = "inCombat", label = L["In Combat"] },
+  C: core/targeting/targetNames.lua:611: return ctx:flag("UnitAffectingCombat") and token("combat", L["In Combat"]) or nil
+  R: {"id": "buffers.lua::Shown on Raid Frames in Combat", "en": "Shown on Raid Frames in Combat", "ko": "전투 중 공격대창에 표시"}
+  R: {"id": "minimap.lua::Not in combat", "en": "Not in combat", "ko": "전투 중에는 불가"}
+  R: {"id": "targeting.lua::Cannot set virtual focus while in combat.", "en": "Cannot set virtual focus while in combat.", "ko": "전투 중에는 가상 주시 대상 설정 불가."}
+## targeting.lua::Out of Combat
+EN: Out of Combat
+  C: core/targeting/targetNames.lua:60: { key = "outOfCombat", label = L["Out of Combat"] },
+  R: {"id": "groupHealth.lua::Silent Out of Combat", "en": "Silent Out of Combat", "ko": "비전투 중 무음"}
+## targeting.lua::Players
+EN: Players
+  C: core/targeting/targetNames.lua:64: { key = "player", label = L["Players"] },
+## targeting.lua::Mobs
+EN: Mobs
+  C: core/targeting/targetNames.lua:66: { key = "mob", label = L["Mobs"] },
+## targeting.lua::Pets
+EN: Pets
+  C: core/targeting/targetNames.lua:67: { key = "pet", label = L["Pets"] },
+## targeting.lua::Totems
+EN: Totems
+  C: core/targeting/targetNames.lua:68: { key = "totem", label = L["Totems"] },
+## targeting.lua::Reset to Defaults
+EN: Reset to Defaults
+  C: core/targeting/targetNames.lua:990: label = L["Reset to Defaults"],
+## targeting.lua::Defaults restored
+EN: Defaults restored
+  C: core/targeting/targetNames.lua:949: WowVision:speak(L["Defaults restored"])
+## targeting.lua::Title
+EN: Title
+  C: core/targeting/targetNames.lua:343: label = L["Title"],
+## targeting.lua::Realm
+EN: Realm
+  C: core/targeting/targetNames.lua:366: label = L["Realm"],
+  C: core/targeting/targetNames.lua:373: return token("realm", L["Realm"] .. " " .. realm)
+## targeting.lua::Guild
+EN: Guild
+  C: core/targeting/targetNames.lua:378: label = L["Guild"],
+  C: core/targeting/targetNames.lua:385: return token("guild", L["Guild"] .. " " .. guild)
+## targeting.lua::Race
+EN: Race
+  C: core/targeting/targetNames.lua:457: label = L["Race"],
+## targeting.lua::Class
+EN: Class
+  C: core/targeting/targetNames.lua:465: label = L["Class"],
+## targeting.lua::Gender
+EN: Gender
+  C: core/targeting/targetNames.lua:473: label = L["Gender"],
+## targeting.lua::Male
+EN: Male
+  C: core/targeting/targetNames.lua:312: [2] = L["Male"],
+## targeting.lua::Female
+EN: Female
+  C: core/targeting/targetNames.lua:313: [3] = L["Female"],
+## targeting.lua::Faction
+EN: Faction
+  C: core/targeting/targetNames.lua:485: label = L["Faction"],
+## targeting.lua::Group Role
+EN: Group Role
+  C: core/targeting/targetNames.lua:494: label = L["Group Role"],
+## targeting.lua::PvP Status
+EN: PvP Status
+  C: core/targeting/targetNames.lua:506: label = L["PvP Status"],
+## targeting.lua::Free-for-All PvP
+EN: Free-for-All PvP
+  C: core/targeting/targetNames.lua:510: return token("pvp", L["Free-for-All PvP"])
+## targeting.lua::Away (AFK)
+EN: Away (AFK)
+  C: core/targeting/targetNames.lua:520: label = L["Away (AFK)"],
+## targeting.lua::AFK
+EN: AFK
+  C: core/targeting/targetNames.lua:523: return ctx:flag("UnitIsAFK") and token("afk", L["AFK"]) or nil
+## targeting.lua::Do Not Disturb (DND)
+EN: Do Not Disturb (DND)
+  C: core/targeting/targetNames.lua:528: label = L["Do Not Disturb (DND)"],
+## targeting.lua::Do Not Disturb
+EN: Do Not Disturb
+  C: core/targeting/targetNames.lua:531: return ctx:flag("UnitIsDND") and token("dnd", L["Do Not Disturb"]) or nil
+## targeting.lua::Dead or Ghost
+EN: Dead or Ghost
+  C: core/targeting/targetNames.lua:617: playerLabel = L["Dead or Ghost"],
+## targeting.lua::Ghost
+EN: Ghost
+  C: core/targeting/targetNames.lua:621: return token("dead", L["Ghost"])
+## targeting.lua::Charmed
+EN: Charmed
+  C: core/targeting/targetNames.lua:600: label = L["Charmed"],
+  C: core/targeting/targetNames.lua:603: return ctx:flag("UnitIsCharmed") and token("charmed", L["Charmed"]) or nil
+## targeting.lua::Target in Combat
+EN: Target in Combat
+  C: core/targeting/targetNames.lua:608: label = L["Target in Combat"],
+  R: {"id": "targeting.lua::Target in Combat Sound", "en": "Target in Combat Sound", "ko": "대상이 전투 중일 때 소리"}
+  R: {"id": "buffers.lua::Shown on Raid Frames in Combat", "en": "Shown on Raid Frames in Combat", "ko": "전투 중 공격대창에 표시"}
+  R: {"id": "minimap.lua::Not in combat", "en": "Not in combat", "ko": "전투 중에는 불가"}
+## targeting.lua::Classification
+EN: Classification
+  C: core/targeting/targetNames.lua:398: label = L["Classification"],
+## targeting.lua::Elite
+EN: Elite
+  C: core/targeting/targetNames.lua:274: elite = { { "elite", L["Elite"] } },
+  C: core/targeting/targetNames.lua:276: rareelite = { { "rare", L["Rare"] }, { "elite", L["Elite"] } },
+  C: core/targeting/targetNames.lua:410: label = L["Elite"],
+## targeting.lua::Rare
+EN: Rare
+  C: core/targeting/targetNames.lua:275: rare = { { "rare", L["Rare"] } },
+  C: core/targeting/targetNames.lua:276: rareelite = { { "rare", L["Rare"] }, { "elite", L["Elite"] } },
+  C: core/targeting/targetNames.lua:418: label = L["Rare"],
+## targeting.lua::Boss
+EN: Boss
+  C: core/targeting/targetNames.lua:426: label = L["Boss"],
+  C: core/targeting/targetNames.lua:434: return token("boss", L["Boss"], "level")
+## targeting.lua::World Boss
+EN: World Boss
+  C: core/targeting/targetNames.lua:277: worldboss = { { "boss", L["World Boss"] } },
+## targeting.lua::Minor
+EN: Minor
+  C: core/targeting/targetNames.lua:278: minus = { { "minor", L["Minor"] } },
+## targeting.lua::Trivial
+EN: Trivial
+  C: core/targeting/targetNames.lua:279: trivial = { { "trivial", L["Trivial"] } },
+## targeting.lua::Skull Level
+EN: Skull Level
+  C: core/targeting/targetNames.lua:265: return L["Skull Level"]
+## targeting.lua::Creature Type
+EN: Creature Type
+  C: core/targeting/targetNames.lua:441: label = L["Creature Type"],
+## targeting.lua::Creature Family
+EN: Creature Family
+  C: core/targeting/targetNames.lua:449: label = L["Creature Family"],
+## targeting.lua::Reaction
+EN: Reaction
+  C: core/targeting/targetNames.lua:536: label = L["Reaction"],
+## targeting.lua::Hostile
+EN: Hostile
+  C: core/targeting/targetNames.lua:298: return L["Hostile"]
+## targeting.lua::Neutral
+EN: Neutral
+  C: core/targeting/targetNames.lua:300: return L["Neutral"]
+## targeting.lua::Friendly
+EN: Friendly
+  C: core/targeting/targetNames.lua:302: return L["Friendly"]
+## targeting.lua::Quest Boss
+EN: Quest Boss
+  C: core/targeting/targetNames.lua:560: label = L["Quest Boss"],
+  C: core/targeting/targetNames.lua:563: return ctx:flag("UnitIsQuestBoss") and token("questBoss", L["Quest Boss"]) or nil
+## targeting.lua::Quest Target
+EN: Quest Target
+  C: core/targeting/targetNames.lua:568: label = L["Quest Target"],
+  C: core/targeting/targetNames.lua:571: return ctx:flag("questRelated") and token("quest", L["Quest Target"]) or nil
+## targeting.lua::Quest Progress
+EN: Quest Progress
+  C: core/targeting/targetNames.lua:578: label = L["Quest Progress"],
+## targeting.lua::Tapped by Others
+EN: Tapped by Others
+  C: core/targeting/targetNames.lua:592: label = L["Tapped by Others"],
+  C: core/targeting/targetNames.lua:595: return ctx:flag("UnitIsTapDenied") and token("tapped", L["Tapped by Others"]) or nil
+## targeting.lua::Yours
+EN: Yours
+  C: core/targeting/targetNames.lua:553: return token("owner", L["Yours"])
+## ui.lua::Reload, then search settings for Discord, to use this
+EN: Reload, then search settings for Discord, to use this
+  C: core/windows/options/ui.lua:332: WowVision:speak(L["Reload, then search settings for Discord, to use this"])
+  R: {"id": "navigation.lua::Turn off the WowVisionNavigation addon to use its routes here", "en": "Turn off the WowVisionNavigation addon to use its routes here", "ko": "여기서 WowVisionNavigation 애드온의 경로를 사
+## windows.lua::Accept Group Invitation
+EN: Accept Group Invitation
+  C: core/windows/popups.lua:186: label = L["Accept Group Invitation"],
+## windows.lua::Group invitation accepted
+EN: Group invitation accepted
+  C: core/windows/popups.lua:170: WowVision:speak(L["Group invitation accepted"])
+## windows.lua::No group invitation
+EN: No group invitation
+  C: core/windows/popups.lua:166: WowVision:speak(L["No group invitation"])

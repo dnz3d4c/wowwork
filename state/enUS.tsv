@@ -151,6 +151,8 @@ buffers.lua	Previous Buffer Group	Previous Buffer Group
 buffers.lua	Previous Buffer Item	Previous Buffer Item
 buffers.lua	Shown on Raid Frames in Combat	Shown on Raid Frames in Combat
 buffers.lua	Sources	Sources
+buffers.lua	Speak Description	Speak Description
+buffers.lua	Speak Time Remaining	Speak Time Remaining
 buffers.lua	Static Buffer	Static Buffer
 buffers.lua	Target Buffs	Target Buffs
 buffers.lua	Target Debuffs	Target Debuffs
@@ -446,6 +448,7 @@ navigation.lua	 The beacon shows the boarding direction; I turns you toward it.	
 navigation.lua	 horizontal, height unknown	 horizontal, height unknown
 navigation.lua	 horizontally	 horizontally
 navigation.lua	 vertical	 vertical
+navigation.lua	%d remaining	%d remaining
 navigation.lua	%s is near; I turns you toward it	%s is near; I turns you toward it
 navigation.lua	%s reached. Cast range about %d to %d yards. Press I to turn to the water.	%s reached. Cast range about %d to %d yards. Press I to turn to the water.
 navigation.lua	%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.	%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.
@@ -453,6 +456,7 @@ navigation.lua	Ahead: walk into %s; the route goes on after it	Ahead: walk into 
 navigation.lua	Alliance arrival in Valanaar Sanctuary	Alliance arrival in Valanaar Sanctuary
 navigation.lua	Announce Distance	Announce Distance
 navigation.lua	Announce Distance with Alt Gr	Announce Distance with Alt Gr
+navigation.lua	Announce Remaining Waypoints	Announce Remaining Waypoints
 navigation.lua	Approximate target position.	Approximate target position.
 navigation.lua	Arrival Distance	Arrival Distance
 navigation.lua	Arrival Radius	Arrival Radius
@@ -546,6 +550,7 @@ navigation.lua	No network point at the chosen start	No network point at the chos
 navigation.lua	No network point near the target	No network point near the target
 navigation.lua	No position of the group member available	No position of the group member available
 navigation.lua	No route found	No route found
+navigation.lua	No route to reverse	No route to reverse
 navigation.lua	No route to start again	No route to start again
 navigation.lua	No route to your target	No route to your target
 navigation.lua	No unvisited %s found	No unvisited %s found
@@ -569,11 +574,13 @@ navigation.lua	Prepoint reached. Walk on to the portal; the beacon stays on unti
 navigation.lua	Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.	Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then.
 navigation.lua	Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.	Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area.
 navigation.lua	Previous Waypoint	Previous Waypoint
+navigation.lua	Reverse Route	Reverse Route
 navigation.lua	Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.	Ride to %s with %s: wait here, board by ear and get off at the last stop. Near it, I turns you toward the dock.
 navigation.lua	Riding to the noted dock %s	Riding to the noted dock %s
 navigation.lua	Road Preference (Percent Longer)	Road Preference (Percent Longer)
 navigation.lua	Route ended	Route ended
 navigation.lua	Route ended outside the network's zones.	Route ended outside the network's zones.
+navigation.lua	Route reversed, back to %s	Route reversed, back to %s
 navigation.lua	Route to Your Target	Route to Your Target
 navigation.lua	Route to the Nearest Unvisited of the Same Name	Route to the Nearest Unvisited of the Same Name
 navigation.lua	Routes from WowNav	Routes from WowNav
@@ -715,6 +722,7 @@ navigation.lua	the Wind Bridge	the Wind Bridge
 navigation.lua	the elevator	the elevator
 navigation.lua	the portal	the portal
 navigation.lua	the ship	the ship
+navigation.lua	the start of the previous route	the start of the previous route
 navigation.lua	the tram	the tram
 navigation.lua	the transit	the transit
 navigation.lua	the vehicle	the vehicle
@@ -828,6 +836,7 @@ quests.lua	Quest Giver	Quest Giver
 quests.lua	Quest Givers	Quest Givers
 quests.lua	Questie is not loaded	Questie is not loaded
 quests.lua	Questie is still loading	Questie is still loading
+quests.lua	Questie marker	Questie marker
 quests.lua	Rares	Rares
 quests.lua	Repeatable	Repeatable
 quests.lua	Spirit Healers	Spirit Healers
@@ -839,6 +848,7 @@ quests.lua	Unknown	Unknown
 quests.lua	Vendors	Vendors
 quests.lua	far	far
 quests.lua	from	from
+quests.lua	game quest marker	game quest marker
 quests.lua	near	near
 quests.lua	phased out	phased out
 quests.lua	quests	quests
@@ -869,31 +879,74 @@ speech.lua	Speech Voice	Speech Voice
 speech.lua	Speech Volume	Speech Volume
 targeting.lua	15 Degrees in Front	15 Degrees in Front
 targeting.lua	180 Degrees in Front	180 Degrees in Front
+targeting.lua	AFK	AFK
 targeting.lua	Always	Always
 targeting.lua	Announce Hard Target	Announce Hard Target
 targeting.lua	Announce Raid Target Marker on Hard Target	Announce Raid Target Marker on Hard Target
+targeting.lua	Away (AFK)	Away (AFK)
+targeting.lua	Boss	Boss
 targeting.lua	Cannot set virtual focus while in combat.	Cannot set virtual focus while in combat.
+targeting.lua	Charmed	Charmed
 targeting.lua	Circle	Circle
+targeting.lua	Class	Class
+targeting.lua	Classification	Classification
+targeting.lua	Configured Target Announcement	Configured Target Announcement
 targeting.lua	Controlled	Controlled
 targeting.lua	Controlled Sound	Controlled Sound
+targeting.lua	Creature Family	Creature Family
+targeting.lua	Creature Type	Creature Type
+targeting.lua	Dead or Ghost	Dead or Ghost
+targeting.lua	Defaults restored	Defaults restored
 targeting.lua	Diamond	Diamond
 targeting.lua	Directly in Front	Directly in Front
+targeting.lua	Do Not Disturb	Do Not Disturb
+targeting.lua	Do Not Disturb (DND)	Do Not Disturb (DND)
+targeting.lua	Elite	Elite
 targeting.lua	Enemies	Enemies
+targeting.lua	Faction	Faction
+targeting.lua	Female	Female
 targeting.lua	Focus %d set to %s.	Focus %d set to %s.
 targeting.lua	Free	Free
 targeting.lua	Free Sound	Free Sound
+targeting.lua	Free-for-All PvP	Free-for-All PvP
+targeting.lua	Friendly	Friendly
 targeting.lua	Friends	Friends
 targeting.lua	Game Default	Game Default
+targeting.lua	Gender	Gender
+targeting.lua	Ghost	Ghost
+targeting.lua	Group Role	Group Role
+targeting.lua	Guild	Guild
 targeting.lua	Hard Target	Hard Target
 targeting.lua	Health Monitor	Health Monitor
+targeting.lua	Hostile	Hostile
+targeting.lua	In Combat	In Combat
 targeting.lua	Make Soft Target the Hard Target	Make Soft Target the Hard Target
+targeting.lua	Male	Male
+targeting.lua	Minor	Minor
+targeting.lua	Mobs	Mobs
 targeting.lua	Moon	Moon
+targeting.lua	Names	Names
+targeting.lua	Neutral	Neutral
+targeting.lua	No target	No target
 targeting.lua	No target. Use /focus%d <name> or target a unit.	No target. Use /focus%d <name> or target a unit.
 targeting.lua	Off	Off
 targeting.lua	Only Without a Hard Target	Only Without a Hard Target
 targeting.lua	Only Without an Attackable Hard Target	Only Without an Attackable Hard Target
 targeting.lua	Open Target Menu	Open Target Menu
+targeting.lua	Out of Combat	Out of Combat
+targeting.lua	Pets	Pets
+targeting.lua	Players	Players
+targeting.lua	PvP Status	PvP Status
+targeting.lua	Quest Boss	Quest Boss
+targeting.lua	Quest Progress	Quest Progress
+targeting.lua	Quest Target	Quest Target
+targeting.lua	Race	Race
+targeting.lua	Rare	Rare
+targeting.lua	Reaction	Reaction
+targeting.lua	Realm	Realm
+targeting.lua	Reset to Defaults	Reset to Defaults
 targeting.lua	Skull	Skull
+targeting.lua	Skull Level	Skull Level
 targeting.lua	Soft Target Enemy	Soft Target Enemy
 targeting.lua	Soft Target Enemy Arc	Soft Target Enemy Arc
 targeting.lua	Soft Target Enemy Range	Soft Target Enemy Range
@@ -906,14 +959,23 @@ targeting.lua	Soft Target Interact Range	Soft Target Interact Range
 targeting.lua	Soft Targeting With a Hard Target	Soft Targeting With a Hard Target
 targeting.lua	Square	Square
 targeting.lua	Star	Star
+targeting.lua	Tapped by Others	Tapped by Others
 targeting.lua	Target Change	Target Change
 targeting.lua	Target Crowd Control	Target Crowd Control
 targeting.lua	Target Focus	Target Focus
+targeting.lua	Target in Combat	Target in Combat
 targeting.lua	Target in Combat Sound	Target in Combat Sound
+targeting.lua	Target of Target	Target of Target
 targeting.lua	Targeting	Targeting
+targeting.lua	Title	Title
+targeting.lua	Totems	Totems
 targeting.lua	Triangle	Triangle
+targeting.lua	Trivial	Trivial
 targeting.lua	Virtual Focus	Virtual Focus
+targeting.lua	World Boss	World Boss
 targeting.lua	X	X
+targeting.lua	Your target has no target	Your target has no target
+targeting.lua	Yours	Yours
 targeting.lua	after combat	after combat
 targeting.lua	default	default
 targeting.lua	not available	not available
@@ -1060,6 +1122,7 @@ ui.lua	Quantity	Quantity
 ui.lua	Radio	Radio
 ui.lua	Ranged	Ranged
 ui.lua	Red	Red
+ui.lua	Reload, then search settings for Discord, to use this	Reload, then search settings for Discord, to use this
 ui.lua	Remaining Duration	Remaining Duration
 ui.lua	Remove	Remove
 ui.lua	Repair	Repair
@@ -1131,6 +1194,7 @@ ui.lua	selected	selected
 windows.lua	%d alerts	%d alerts
 windows.lua	%d items missing	%d items missing
 windows.lua	1 alert	1 alert
+windows.lua	Accept Group Invitation	Accept Group Invitation
 windows.lua	Action Bar	Action Bar
 windows.lua	Activities	Activities
 windows.lua	Add Slots	Add Slots
@@ -1205,6 +1269,7 @@ windows.lua	Gossip	Gossip
 windows.lua	Green	Green
 windows.lua	Grey	Grey
 windows.lua	Grid	Grid
+windows.lua	Group invitation accepted	Group invitation accepted
 windows.lua	Group search blocked, reload to search again	Group search blocked, reload to search again
 windows.lua	Guild Bank Repair	Guild Bank Repair
 windows.lua	Guild Control	Guild Control
@@ -1249,6 +1314,7 @@ windows.lua	Nameplate Preview	Nameplate Preview
 windows.lua	New Player Friendly	New Player Friendly
 windows.lua	Next Page	Next Page
 windows.lua	Next Reward	Next Reward
+windows.lua	No group invitation	No group invitation
 windows.lua	No loot.	No loot.
 windows.lua	No pet	No pet
 windows.lua	Not Auto Casting	Not Auto Casting

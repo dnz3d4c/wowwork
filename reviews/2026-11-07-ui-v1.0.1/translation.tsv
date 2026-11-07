@@ -1,0 +1,67 @@
+file	key	en	ko	old_en
+buffers.lua	Speak Time Remaining	Speak Time Remaining	남은 시간 읽기	
+buffers.lua	Speak Description	Speak Description	설명 읽기	
+navigation.lua	Announce Remaining Waypoints	Announce Remaining Waypoints	남은 경유지 수 알림	
+navigation.lua	%d remaining	%d remaining	%d개 남음	
+navigation.lua	Reverse Route	Reverse Route	경로 거꾸로 돌아가기	
+navigation.lua	No route to reverse	No route to reverse	거꾸로 돌아갈 경로 없음	
+navigation.lua	Route reversed, back to %s	Route reversed, back to %s	경로를 거꾸로 돌림, %s까지 돌아감	
+navigation.lua	the start of the previous route	the start of the previous route	이전 경로의 시작 지점	
+quests.lua	Questie marker	Questie marker	Questie 표시	
+quests.lua	game quest marker	game quest marker	게임 퀘스트 표시	
+targeting.lua	Target of Target	Target of Target	대상의 대상	
+targeting.lua	No target	No target	대상 없음	
+targeting.lua	Your target has no target	Your target has no target	대상의 대상 없음	
+targeting.lua	Names	Names	이름	
+targeting.lua	Configured Target Announcement	Configured Target Announcement	설정한 항목으로 대상 알림	
+targeting.lua	In Combat	In Combat	전투 중	
+targeting.lua	Out of Combat	Out of Combat	비전투	
+targeting.lua	Players	Players	플레이어	
+targeting.lua	Mobs	Mobs	몬스터	
+targeting.lua	Pets	Pets	소환수	
+targeting.lua	Totems	Totems	토템	
+targeting.lua	Reset to Defaults	Reset to Defaults	기본 설정으로 초기화	
+targeting.lua	Defaults restored	Defaults restored	기본 설정 복원됨	
+targeting.lua	Title	Title	칭호	
+targeting.lua	Realm	Realm	서버	
+targeting.lua	Guild	Guild	길드	
+targeting.lua	Race	Race	종족	
+targeting.lua	Class	Class	직업	
+targeting.lua	Gender	Gender	성별	
+targeting.lua	Male	Male	남성	
+targeting.lua	Female	Female	여성	
+targeting.lua	Faction	Faction	진영	
+targeting.lua	Group Role	Group Role	파티 역할	
+targeting.lua	PvP Status	PvP Status	PvP 상태	
+targeting.lua	Free-for-All PvP	Free-for-All PvP	독립 전투	
+targeting.lua	Away (AFK)	Away (AFK)	자리 비움	
+targeting.lua	AFK	AFK	자리 비움	
+targeting.lua	Do Not Disturb (DND)	Do Not Disturb (DND)	다른 용무 중	
+targeting.lua	Do Not Disturb	Do Not Disturb	다른 용무 중	
+targeting.lua	Dead or Ghost	Dead or Ghost	죽음 또는 유령	
+targeting.lua	Ghost	Ghost	유령	
+targeting.lua	Charmed	Charmed	현혹	
+targeting.lua	Target in Combat	Target in Combat	대상이 전투 중	
+targeting.lua	Classification	Classification	등급	
+targeting.lua	Elite	Elite	정예	
+targeting.lua	Rare	Rare	희귀	
+targeting.lua	Boss	Boss	우두머리	
+targeting.lua	World Boss	World Boss	야외 우두머리	
+targeting.lua	Minor	Minor	하급	
+targeting.lua	Trivial	Trivial	하찮음	
+targeting.lua	Skull Level	Skull Level	해골 레벨	
+targeting.lua	Creature Type	Creature Type	생물 유형	
+targeting.lua	Creature Family	Creature Family	생물 계열	
+targeting.lua	Reaction	Reaction	관계	
+targeting.lua	Hostile	Hostile	적대적	
+targeting.lua	Neutral	Neutral	중립적	
+targeting.lua	Friendly	Friendly	우호적	
+targeting.lua	Quest Boss	Quest Boss	퀘스트 우두머리	
+targeting.lua	Quest Target	Quest Target	퀘스트 대상	
+targeting.lua	Quest Progress	Quest Progress	퀘스트 진행 상황	
+targeting.lua	Tapped by Others	Tapped by Others	다른 플레이어가 선점	
+targeting.lua	Yours	Yours	내 것	
+ui.lua	Reload, then search settings for Discord, to use this	Reload, then search settings for Discord, to use this	사용하려면 UI를 재시작한 뒤 설정에서 Discord를 검색하십시오	
+windows.lua	Accept Group Invitation	Accept Group Invitation	파티 초대 수락	
+windows.lua	Group invitation accepted	Group invitation accepted	파티 초대 수락함	
+windows.lua	No group invitation	No group invitation	파티 초대 없음	
