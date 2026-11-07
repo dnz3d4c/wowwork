@@ -51,3 +51,28 @@ def test_apply_txt_rewrites_only_named_keys(tmp_path: Path) -> None:
     raw = "﻿English==영어\r\nwait==기다려 주세요.\r\n".encode()
     out = apply_txt(raw, {"koKR.txt::wait": "잠시 기다리세요."})
     assert out == "﻿English==영어\r\nwait==잠시 기다리세요.\r\n".encode()
+
+
+def test_sandbox_holds_seeded_values_not_originals(tmp_path: Path) -> None:
+    from tools.logintool_loc import build_sandbox
+
+    lt = tmp_path / "lt"
+    (lt / "data" / "localization").mkdir(parents=True)
+    (lt / "v2" / "includes").mkdir(parents=True)
+    (lt / "data" / "localization" / "koKR.txt").write_bytes("﻿wait==기다려 주세요.\r\n".encode())
+    (lt / "v2" / "includes" / "forever.ahk").write_text(FOREVER, encoding="utf-8")
+    work = tmp_path / "work"
+    (work / "tools" / "review" / "prompts").mkdir(parents=True)
+    (work / "tools" / "review" / "prompts" / "common.md").write_text("x", encoding="utf-8")
+    (work / "reviews").mkdir()
+    (work / "reviews" / "secret.json").write_text("answer", encoding="utf-8")
+    root = tmp_path / "sb"
+    build_sandbox(root, {"items": []}, {"koKR.txt::wait": "기다리지 마세요.", "forever.ahk::pink": "초록색"},
+                  logintool_dir=lt, work_dir=work)
+    sb_lt = root / "wowvision-ko" / "Sku-WoW-Addon-TBC" / "logintool"
+    assert "wait==기다리지 마세요." in (sb_lt / "data" / "localization" / "koKR.txt").read_text(encoding="utf-8")
+    fv = (sb_lt / "v2" / "includes" / "forever.ahk").read_text(encoding="utf-8")
+    assert '"ko", "초록색"' in fv and '"ko", "분홍색"' not in fv
+    assert (root / "wowwork" / "tools" / "review" / "prompts" / "common.md").exists()
+    assert not (root / "wowwork" / "reviews").exists()
+    assert (root / "batch.json").exists()

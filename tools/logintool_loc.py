@@ -10,6 +10,7 @@
 사용:
   uv run python -m tools.logintool_loc export <출력 폴더> [--size 110]
   uv run python -m tools.logintool_loc apply <ko.tsv>      # id, ko 열
+  uv run python -m tools.logintool_loc sandbox <격리 폴더> <묶음.json> <정답표 출력.json> <출처=심을목록.json>...
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ import argparse
 import csv
 import json
 import re
+import shutil
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -164,6 +166,38 @@ def collect() -> list[dict[str, Any]]:
     return items
 
 
+def build_sandbox(root: Path, batch: dict[str, Any], seeded: dict[str, str], *,
+                  logintool_dir: Path, work_dir: Path) -> None:
+    """평가 구조 검증용 격리 폴더. 평가자는 이 폴더만 본다(tools/review/sandbox.py 의 로그인 툴판).
+
+    들어가는 것: 오류를 심은 묶음, 프롬프트·스키마, 번역 지침·결정·용어집, 게임 문자열, 오류를 심은
+    로그인 툴 사본(v2, data). 들어가지 않는 것: 원래 번역, 정답표, 평가 기록(reviews).
+    """
+    from tools.review.sandbox import WORK_FILES
+
+    if root.exists():
+        shutil.rmtree(root)
+    work = root / "wowwork"
+    for rel in WORK_FILES:
+        src = work_dir / rel
+        if src.exists():
+            (work / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, work / rel)
+    shutil.copytree(work_dir / "tools" / "review" / "prompts", work / "tools" / "review" / "prompts")
+    for schema in (work_dir / "tools" / "review").glob("*.schema.json"):
+        shutil.copy2(schema, work / "tools" / "review" / schema.name)
+    lt = root / "wowvision-ko" / "Sku-WoW-Addon-TBC" / "logintool"
+    for part in ("v2", "data"):
+        shutil.copytree(logintool_dir / part, lt / part, ignore=shutil.ignore_patterns("screenshots", "settings.ini"))
+    txt = lt / "data" / "localization" / "koKR.txt"
+    txt.write_bytes(apply_txt(txt.read_bytes(), {k: v for k, v in seeded.items() if k.startswith("koKR.txt::")}))
+    fv_seeds = {k: v for k, v in seeded.items() if k.startswith("forever.ahk::")}
+    if fv_seeds:
+        fv = lt / "v2" / "includes" / "forever.ahk"
+        fv.write_text(apply_forever(fv.read_text(encoding="utf-8"), fv_seeds), encoding="utf-8", newline="")
+    (root / "batch.json").write_text(json.dumps(batch, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -172,7 +206,22 @@ def main() -> None:
     e.add_argument("--size", type=int, default=110)
     a_ = sub.add_parser("apply")
     a_.add_argument("tsv", type=Path)
+    s = sub.add_parser("sandbox")
+    s.add_argument("root", type=Path)
+    s.add_argument("batch", type=Path)
+    s.add_argument("key_out", type=Path)
+    s.add_argument("sources", nargs="+")
     a = ap.parse_args()
+    if a.cmd == "sandbox":
+        from tools.review.seed import apply_seeds, merge_seeds
+
+        seeds = merge_seeds({n: Path(p) for n, p in (x.split("=", 1) for x in a.sources)})
+        batch = json.loads(a.batch.read_text(encoding="utf-8"))
+        answers = apply_seeds(batch, seeds)
+        build_sandbox(a.root, batch, {i: v[0] for i, v in seeds.items()}, logintool_dir=LOGINTOOL, work_dir=REPO_ROOT)
+        a.key_out.write_text(json.dumps(answers, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"{len(answers)}개 심음 -> {a.root}")
+        return
     if a.cmd == "export":
         items = collect()
         a.out.mkdir(parents=True, exist_ok=True)
