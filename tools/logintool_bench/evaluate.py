@@ -92,6 +92,16 @@ def run_helper(helper: Path, image: Path, extra: list[str]) -> dict[str, Any]:
     return res
 
 
+def pick_pages(marks: list[tuple[str, str]]) -> dict[int, str]:
+    """자동 넘김 캡처(c_*.png)에서 쪽마다 첫 캡처를 고른다. 표지가 정확히 "PAGE <숫자>"인 것만 쓴다."""
+    chosen: dict[int, str] = {}
+    for name, text in marks:
+        m = re.fullmatch(r"PAGE (\d+)", text.strip())
+        if m and int(m.group(1)) not in chosen:
+            chosen[int(m.group(1))] = name
+    return chosen
+
+
 def _offset(marker: dict[str, Any], lines: list[dict[str, Any]]) -> tuple[int, int] | None:
     want = norm(marker["text"])
     for ln in lines:
@@ -193,12 +203,21 @@ def main() -> None:
     cache = Path(a.out).with_suffix(".ocr.json")
     pages: dict[int, list[dict[str, Any]]] = {}
     failed: list[str] = []
-    for png in sorted(Path(a.captures).glob("p_*.png")):
+    shots = {int(p.stem.split("_")[1]): p for p in sorted(Path(a.captures).glob("p_*.png"))}
+    if not shots:
+        # auto-advance run: identify each capture by its PAGE marker (top-left corner only)
+        marks = []
+        for png in sorted(Path(a.captures).glob("c_*.png")):
+            res = run_helper(Path(a.helper), png, ["--region", "0,0,600,90"])
+            first = next((ln["text"] for ln in res.get("lines", []) if ln["text"].strip()), "")
+            marks.append((png.name, first))
+        shots = {page: Path(a.captures) / name for page, name in pick_pages(marks).items()}
+    for page, png in sorted(shots.items()):
         res = run_helper(Path(a.helper), png, a.extra.split())
         if "error" in res:
             failed.append(f"{png.name}: {res['error']}")
             continue
-        pages[int(png.stem.split("_")[1])] = res.get("lines", [])
+        pages[page] = res.get("lines", [])
     cache.write_text(json.dumps({str(k): v for k, v in pages.items()}, ensure_ascii=False), encoding="utf-8")
     result = evaluate(items, pages)
     result["failed"] = failed

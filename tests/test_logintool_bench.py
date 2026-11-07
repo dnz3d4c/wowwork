@@ -89,3 +89,11 @@ def test_match_lines_joins_split_lines_in_box() -> None:
         {"text": "다른 줄", "x": 102, "y": 230, "w": 50, "h": 18},
     ]
     assert match_lines(item, lines) == "까다로운 힐링"
+
+
+def test_pick_pages_keeps_first_capture_per_marker() -> None:
+    from tools.logintool_bench.evaluate import pick_pages
+
+    marks = [("c_00001", "PAGE 1"), ("c_00002", "PAGE 1"), ("c_00003", "PAGE 2"),
+             ("c_00004", ""), ("c_00005", "PAGE 4"), ("c_00006", "DONE"), ("c_00007", "PAGE 1O")]
+    assert pick_pages(marks) == {1: "c_00001", 2: "c_00003", 4: "c_00005"}

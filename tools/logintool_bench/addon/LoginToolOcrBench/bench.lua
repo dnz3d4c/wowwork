@@ -5,6 +5,7 @@
 -- at several pixel-per-unit scales, and records every string with its pixel
 -- rectangle in LoginToolOcrBenchDB for the evaluator.
 --   /otb start   show page 1 (CTRL-SHIFT-F12 = next page)
+--   /otb auto 2  same, but turn the page every 2 s by itself
 --   /otb stop    hide; /reload afterwards writes the SavedVariables
 local _, ns = ...
 
@@ -194,13 +195,22 @@ nextButton:SetScript("OnClick", function()
     showPage(current + 1)
 end)
 
+local ticker
+
 SLASH_LOGINTOOLOCRBENCH1 = "/otb"
 SlashCmdList.LOGINTOOLOCRBENCH = function(msg)
+    if ticker then
+        ticker:Cancel()
+        ticker = nil
+    end
     if msg == "stop" then
         ClearOverrideBindings(root)
         root:Hide()
         return
     end
+    -- "/otb auto 2": advance every 2 s on its own, so the capture needs no key
+    -- presses and the game window does not have to stay in front
+    local every = tonumber(msg:match("^auto%s+([%d%.]+)"))
     pw, ph = GetPhysicalScreenSize()
     if #classes == 0 then
         collectGameData()
@@ -210,5 +220,15 @@ SlashCmdList.LOGINTOOLOCRBENCH = function(msg)
     SetOverrideBindingClick(root, true, "CTRL-SHIFT-F12", "LoginToolOcrBenchNext")
     root:Show()
     showPage(1)
+    if every then
+        ticker = C_Timer.NewTicker(every, function()
+            if current > #pages then
+                ticker:Cancel()
+                ticker = nil
+                return
+            end
+            showPage(current + 1)
+        end)
+    end
     print("LoginToolOcrBench: " .. #pages .. " pages, " .. #classes .. " classes, " .. #zones .. " zones")
 end
