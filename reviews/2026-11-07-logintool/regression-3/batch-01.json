@@ -1,0 +1,637 @@
+{
+ "items": [
+  {
+   "id": "koKR.txt::Setup completed. Start the game now.",
+   "file": "koKR.txt",
+   "key": "Setup completed. Start the game now.",
+   "en": "Setup completed. Start the game now.",
+   "ko": "설정 완료. 이제 게임을 시작하십시오.",
+   "de": "Einrichtung abgeschlossen. Starte jetzt das Spiel.",
+   "fr": "Configuration terminée, lancez le jeu maintenant.",
+   "es": "Configuración finalizada, inicie el juego ahora",
+   "ru": "Настройка завершена. Сейчас запустите игру.",
+   "code": [
+    "v2/includes/menu.ahk:780: Say(T(\"Setup completed. Start the game now.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a voice",
+   "file": "koKR.txt",
+   "key": "go right to select a voice",
+   "en": "Go right to select a voice",
+   "ko": "오른쪽 화살표로 음성을 선택하십시오",
+   "de": "Nach rechts gehen, um eine Stimme auszuwählen",
+   "fr": "Allez à droite",
+   "es": "Use flecha derecha para seleccionar la voz",
+   "ru": "Перейдите вправо, чтобы выбрать голос",
+   "code": [
+    "v2/includes/menu.ahk:794: global gMenuVoice := MenuNode(T(\"go right to select a voice\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a game type",
+   "file": "koKR.txt",
+   "key": "go right to select a game type",
+   "en": "Go right to select a game type",
+   "ko": "오른쪽 화살표로 게임 종류를 선택하십시오",
+   "de": "Nach rechts gehen, um einen Spieltyp auszuwählen",
+   "fr": "Aller à droite pour séléctionner un type de jeu",
+   "es": "Use flecha derecha para seleccionar tipo de juego",
+   "ru": "Перейдите вправо, чтобы выбрать версию игры",
+   "code": [
+    "v2/includes/menu.ahk:809: global gMenuGametype := MenuNode(T(\"go right to select a game type\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a language",
+   "file": "koKR.txt",
+   "key": "go right to select a language",
+   "en": "Go right to select a language",
+   "ko": "오른쪽 화살표로 언어를 선택하십시오",
+   "de": "Nach rechts gehen, um eine Sprache auszuwählen",
+   "fr": "Aller a droite pour séléctionner une langue",
+   "es": "Use flecha derecha para seleccionar idioma",
+   "ru": "Перейдите вправо, чтобы выбрать язык",
+   "code": [
+    "v2/includes/menu.ahk:797: global gMenuLanguage := MenuNode(T(\"go right to select a language\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::selected, restart script to apply",
+   "file": "koKR.txt",
+   "key": "selected, restart script to apply",
+   "en": "selected. Restarting script to apply. Please wait.",
+   "ko": "선택됨. 적용하기 위해 스크립트를 다시 시작합니다. 기다려 주십시오.",
+   "de": "ausgewählt. Wird neu gestartet. Bitte warte.",
+   "fr": "Séléctionné, relancement du script pour appliquer les modifications, veuillez attendre",
+   "es": "seleccionado, reiniciando script, espere",
+   "ru": "выбран. Скрипт перезапускается для применения изменений.",
+   "code": [
+    "v2/includes/menu.ahk:730: Say(T(\"selected, restart script to apply\"))",
+    "v2/includes/menu.ahk:749: Say(T(\"selected, restart script to apply\"))",
+    "v2/includes/menu.ahk:786: Say(T(\"selected, restart script to apply\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::wait",
+   "file": "koKR.txt",
+   "key": "wait",
+   "en": "Wait",
+   "ko": "기다려 주십시오",
+   "de": "Warten",
+   "fr": "Veuillez attendre",
+   "es": "espere",
+   "ru": "подождите",
+   "code": [
+    "v2/includes/flows.ahk:1262: SayQueued(T(\"wait\"))",
+    "v2/includes/flows.ahk:2099: Say(T(\"wait\"))",
+    "v2/includes/flows.ahk:3021: ; Name the screen: this branch used to be a silent \"wait\".",
+    "v2/includes/flows.ahk:3033: ; of \"wait\" spoken over it.",
+    "v2/includes/flows.ahk:3040: Say(T(\"wait\"))",
+    "v2/includes/flows.ahk:3159: SayQueued(T(\"wait\"))"
+   ],
+   "game_term": "대기",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::go right to select a region",
+   "file": "koKR.txt",
+   "key": "go right to select a region",
+   "en": "Go right to select a region",
+   "ko": "오른쪽 화살표로 지역을 선택하십시오",
+   "de": "Gehe nach rechts, um eine Region auszuwählen",
+   "fr": "Aller a droite pour séléctionner une région",
+   "es": "use flecha derecha para seleccionar región",
+   "ru": "Перейдите вправо, чтобы выбрать регион",
+   "code": [
+    "v2/includes/menu.ahk:803: global gMenuRegion := MenuNode(T(\"go right to select a region\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Something went wrong. Please restart the game and try again.",
+   "file": "koKR.txt",
+   "key": "Something went wrong. Please restart the game and try again.",
+   "en": "Something went wrong. Please restart the game and try again.",
+   "ko": "오류가 발생했습니다. 게임을 다시 시작하고 시도하십시오.",
+   "de": "Etwas ist schief gelaufen. Bitte starte das Spiel neu und versuche es noch einmal.",
+   "fr": "Quelque chose s’est mal passer, veuillez relancer le jeu et réessayer ",
+   "es": "Algo salió mal. Reinicie el juego e intente nuevamente",
+   "ru": "Что-то пошло не так. Пожалуйста, перезапустите игру и попробуйте снова.",
+   "code": [
+    "v2/includes/flows.ahk:2026: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:2599: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:2819: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3216: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3724: Say(T(\"Something went wrong. Please restart the game and try again.\"))",
+    "v2/includes/flows.ahk:3752: Say(T(\"Something went wrong. Please restart the game and try again.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::this race is locked for your account. Try a different race.",
+   "file": "koKR.txt",
+   "key": "this race is locked for your account. Try a different race.",
+   "en": "This race is locked for your account. Try a different race.",
+   "ko": "이 계정에서는 이 종족이 잠겨 있습니다. 다른 종족을 선택하십시오.",
+   "de": "Diese Rasse ist für deinen Account gesperrt. Versuche es mit einer anderen Rasse.",
+   "fr": "Cette race n’est pas disponible pour votre compte, essayez d’en séléctionner une autre",
+   "es": "Esta raza está bloqueada para su cuenta, elija una raza diferente",
+   "ru": "Эта раса заблокирована для вашего аккаунта. Пожалуйста, выберите другую расу.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::enter the name for the new character and press enter, or escape to cancel character creation.",
+   "file": "koKR.txt",
+   "key": "enter the name for the new character and press enter, or escape to cancel character creation.",
+   "en": "Enter the name for the new character and press enter, or escape to cancel character creation.",
+   "ko": "새 캐릭터의 이름을 입력하고 Enter를 누르거나, Escape를 눌러 캐릭터 생성을 취소하십시오.",
+   "de": "Gib den Namen des neuen Charakters ein und drücke die Eingabetaste oder brich die Charaktererstellung mit Escape ab.",
+   "fr": "Entrez le nom pour votre nouveau personnage puis appuyez sur entrer ou échape pour annuler.",
+   "es": "Ingrese el nombre para el nuevo personaje y presione enter, o escape para cancelar",
+   "ru": "Введите имя нового персонажа и нажмите enter или нажмите escape для отмены создания персонажа.",
+   "code": [
+    "v2/includes/flows.ahk:290: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2131: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2172: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2842: SayQueued(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))",
+    "v2/includes/flows.ahk:2890: Say(T(\"enter the name for the new character and press enter, or escape to cancel character creation.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::switching to server. please wait.",
+   "file": "koKR.txt",
+   "key": "switching to server. please wait.",
+   "en": "Changing server. Please wait.",
+   "ko": "서버 변경 중. 기다려 주십시오.",
+   "de": "Server wird gewechselt. Bitte warte.",
+   "fr": "Changement de royaume, veuillez patienter",
+   "es": "Cambiando servidor, espere",
+   "ru": "Идёт смена сервера, пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:3755: Say(T(\"switching to server. please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+   "file": "koKR.txt",
+   "key": "Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+   "en": "Deleting failed. Type the word DELETE in capital letters and press enter. Or press escape to cancel.",
+   "ko": "삭제하지 못했습니다. 게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르십시오. 또는 Escape를 눌러 취소하십시오.",
+   "de": "Löschen fehlgeschlagen. Schreibe das Wort LÖSCHEN in Großbuchstaben und drücke Enter. Oder drücke Escape, um abzubrechen.",
+   "fr": "La suppression a échoué. Écrivez le mot EFFACER en majuscules et appuyez sur Entrée. Ou appuyez sur Échap pour annuler.",
+   "es": "Error al eliminar. Escriba la palabra BORRAR en mayúsculas y presione enter. O presione escape para cancelar.",
+   "ru": "Произошла ошибка при удалении. Напечатайте слово УДАЛИТЬ заглавными буквами и нажмите Enter. Или нажмите Escape для отмены.",
+   "code": [
+    "v2/includes/flows.ahk:2316: Say(T(\"Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Please wait, the character list is being rebuilt.",
+   "file": "koKR.txt",
+   "key": "Please wait, the character list is being rebuilt.",
+   "en": "Please wait, the character list is being rebuilt.",
+   "ko": "캐릭터 목록을 다시 읽습니다. 기다려 주십시오.",
+   "de": "Bitte warten, Charakterliste wird neu aufgebaut.",
+   "fr": "Veuillez patienter, la liste des personnages est en cours de reconstruction.",
+   "es": "Por favor espere, la lista de personajes se está reconstruyendo.",
+   "ru": "Пожалуйста, подождите, список персонажей строится заново.",
+   "code": [
+    "v2/includes/flows.ahk:1757: SayQueued(T(\"Please wait, the character list is being rebuilt.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.",
+   "file": "koKR.txt",
+   "key": "enter delete and press enter, or press escape to cancel the deleting process.",
+   "en": "Enter Delete and press enter, or press escape to cancel the deleting process.",
+   "ko": "게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 DELETE를 입력한 뒤 Enter를 누르거나, Escape를 눌러 삭제를 취소하십시오.",
+   "de": "Gib Löschen ein und drücke die Eingabetaste, oder drücke Escape, um den Löschvorgang abzubrechen.",
+   "fr": "Ecrivez EFFACER puis appuyez sur ENTRER, sinon appuyez sur échape pour annuler la suppression du personnage.",
+   "es": "Escriba borrar y presione enter, o escape para cancelar",
+   "ru": "Напечатайте delete и нажмите enter или нажмите escape для отмены удаления.",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::press enter to confirm the deletion, or press escape to cancel.",
+   "file": "koKR.txt",
+   "key": "press enter to confirm the deletion, or press escape to cancel.",
+   "en": "Type the word DELETE in capital letters and press enter. Or press escape to cancel.",
+   "ko": "게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르십시오. 또는 Escape를 눌러 취소하십시오.",
+   "de": "Schreibe das Wort LÖSCHEN in Großbuchstaben und drücke Enter. Oder drücke Escape, um abzubrechen.",
+   "fr": "Écrivez le mot EFFACER en majuscules et appuyez sur Entrée. Ou appuyez sur Échap pour annuler.",
+   "es": "Escriba la palabra BORRAR en mayúsculas y presione enter. O presione escape para cancelar.",
+   "ru": "Напечатайте слово УДАЛИТЬ заглавными буквами и нажмите Enter. Или нажмите Escape для отмены.",
+   "code": [
+    "v2/includes/flows.ahk:2291: SayQueued(T(\"press enter to confirm the deletion, or press escape to cancel.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Please wait.",
+   "file": "koKR.txt",
+   "key": "Please wait.",
+   "en": "Please wait.",
+   "ko": "기다려 주십시오.",
+   "de": "Bitte warte.",
+   "fr": "Veuillez atendre",
+   "es": "Por favor espere",
+   "ru": "Пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:195: text := T(\"Please wait.\")",
+    "v2/includes/flows.ahk:2139: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:2777: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:2978: Say(text != \"\" ? text : T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:3019: Say(T(\"Please wait.\"))",
+    "v2/includes/flows.ahk:3823: Say(text != \"\" ? text : T(\"Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Creation is canceled. Please wait.",
+   "file": "koKR.txt",
+   "key": "Creation is canceled. Please wait.",
+   "en": "Creation is canceled. Please wait.",
+   "ko": "생성 취소됨. 기다려 주십시오.",
+   "de": "Die Erstellung wird abgebrochen. Bitte warte.",
+   "fr": "La création est annulée, veuillez patienter",
+   "es": "Creación cancelada, espere",
+   "ru": "Создание отменено, пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:2212: Say(T(\"Creation is canceled. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Deleting is canceled. Please wait",
+   "file": "koKR.txt",
+   "key": "Deleting is canceled. Please wait",
+   "en": "Deleting is canceled. Please wait",
+   "ko": "삭제 취소됨. 기다려 주십시오",
+   "de": "Das Löschen wird abgebrochen. Bitte warte.",
+   "fr": "La suppression est annulée, veuillez patienter",
+   "es": "Eliminación cancelada, espere",
+   "ru": "Удаление отменено, пожалуйста, подождите",
+   "code": [
+    "v2/includes/flows.ahk:2340: Say(T(\"Deleting is canceled. Please wait\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "file": "koKR.txt",
+   "key": "Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "en": "Unknown screen. Close the dialog in the game, then press Alt F1 twice.",
+   "ko": "알 수 없는 화면입니다. 게임에서 창을 닫은 뒤 Alt F1을 두 번 누르십시오.",
+   "de": "Unbekannter Bildschirm. Schließe den Dialog im Spiel und drücke dann zweimal Alt F1.",
+   "fr": "Écran inconnu. Fermez la boîte de dialogue dans le jeu, puis appuyez deux fois sur Alt F1.",
+   "es": "Pantalla desconocida. Cierre el diálogo en el juego y luego presione dos veces Alt F1.",
+   "ru": "Неизвестный экран. Закройте диалог в игре, затем дважды нажмите Alt F1.",
+   "code": [
+    "v2/includes/detect.ahk:241: Say(T(\"Unknown screen. Close the dialog in the game, then press Alt F1 twice.\"))",
+    "v2/includes/flows.ahk:3036: SayQueued(T(\"Unknown screen. Close the dialog in the game, then press Alt F1 twice.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "file": "koKR.txt",
+   "key": "The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "en": "The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "ko": "게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 로그인 툴을 다시 설치하십시오.",
+   "de": "Die Texturen für die Bildschirmerkennung fehlen im Spielordner. Bitte führe den Sku-Installer aus, um das Login-Tool neu zu installieren.",
+   "fr": "Les textures de reconnaissance d'écran sont absentes du dossier du jeu. Veuillez exécuter l'installateur Sku pour réinstaller l'outil de connexion.",
+   "es": "Faltan las texturas de reconocimiento de pantalla en la carpeta del juego. Ejecute el instalador de Sku para reinstalar la herramienta de inicio de sesión.",
+   "ru": "Текстуры распознавания экрана отсутствуют в папке игры. Запустите установщик Sku, чтобы переустановить инструмент входа.",
+   "code": [
+    "v2/includes/detect.ahk:239: Say(T(\"The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "file": "koKR.txt",
+   "key": "The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "en": "The character list may be incomplete. Press Alt F1 twice to rebuild it.",
+   "ko": "캐릭터 목록이 불완전할 수 있습니다. Alt F1을 두 번 눌러 목록을 다시 만드십시오.",
+   "de": "Achtung, die Charakterliste ist möglicherweise unvollständig. Drücke zweimal Alt F1, um sie neu aufzubauen.",
+   "fr": "Attention, la liste des personnages est peut-être incomplète. Appuyez deux fois sur Alt F1 pour la reconstruire.",
+   "es": "Atención, la lista de personajes puede estar incompleta. Presione dos veces Alt F1 para reconstruirla.",
+   "ru": "Внимание, список персонажей может быть неполным. Дважды нажмите Alt F1, чтобы построить его заново.",
+   "code": [
+    "v2/includes/flows.ahk:1961: SayQueued(T(\"The character list may be incomplete. Press Alt F1 twice to rebuild it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The tool does not know this dialog yet. Answer it in the game.",
+   "file": "koKR.txt",
+   "key": "The tool does not know this dialog yet. Answer it in the game.",
+   "en": "The tool does not know this dialog yet. Answer it in the game.",
+   "ko": "아직 지원하지 않는 창입니다. 게임에서 직접 응답하십시오.",
+   "de": "Das Tool kennt diesen Dialog noch nicht. Beantworte ihn im Spiel.",
+   "fr": "L'outil ne connaît pas encore ce dialogue. Répondez-y dans le jeu.",
+   "es": "La herramienta aún no conoce este diálogo. Respóndelo en el juego.",
+   "ru": "Инструмент ещё не знает этот диалог. Ответьте на него в игре.",
+   "code": [
+    "v2/includes/flows.ahk:3912: SayQueued(T(\"The tool does not know this dialog yet. Answer it in the game.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Press Enter to agree, or press Escape to decline.",
+   "file": "koKR.txt",
+   "key": "Press Enter to agree, or press Escape to decline.",
+   "en": "Press Enter to agree, or press Escape to decline.",
+   "ko": "동의하려면 Enter를, 거절하려면 Escape를 누르십시오.",
+   "de": "Drücke Enter um zuzustimmen, oder Escape um abzulehnen.",
+   "fr": "Appuyez sur Entrée pour accepter, ou sur Échap pour refuser.",
+   "es": "Pulsa Enter para aceptar, o Escape para rechazar.",
+   "ru": "Нажмите Enter, чтобы согласиться, или Escape, чтобы отказаться.",
+   "code": [
+    "v2/includes/flows.ahk:2584: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))",
+    "v2/includes/flows.ahk:2771: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))",
+    "v2/includes/flows.ahk:2783: SayQueued(T(\"Press Enter to agree, or press Escape to decline.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Agreed. Connecting to the server. Please wait.",
+   "file": "koKR.txt",
+   "key": "Agreed. Connecting to the server. Please wait.",
+   "en": "Agreed. Connecting to the server. Please wait.",
+   "ko": "동의함. 서버에 연결 중. 기다려 주십시오.",
+   "de": "Zugestimmt. Verbindung zum Server wird hergestellt. Bitte warte.",
+   "fr": "Accepté. Connexion au serveur en cours. Veuillez patienter.",
+   "es": "Aceptado. Conectando con el servidor. Espera, por favor.",
+   "ru": "Принято. Подключение к серверу. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:2605: Say(T(\"Agreed. Connecting to the server. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::the server list did not load. please try again.",
+   "file": "koKR.txt",
+   "key": "the server list did not load. please try again.",
+   "en": "The server list did not load. Please try again.",
+   "ko": "서버 목록을 불러오지 못했습니다. 다시 시도하십시오.",
+   "de": "Die Serverliste wurde nicht geladen. Bitte erneut versuchen.",
+   "fr": "La liste des serveurs n'a pas été chargée. Veuillez réessayer.",
+   "es": "La lista de servidores no se cargó. Inténtalo de nuevo.",
+   "ru": "Список серверов не загружен. Попробуйте ещё раз.",
+   "code": [
+    "v2/includes/flows.ahk:3640: Say(T(\"the server list did not load. please try again.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The game is still connecting. Press Escape to cancel.",
+   "file": "koKR.txt",
+   "key": "The game is still connecting. Press Escape to cancel.",
+   "en": "The game is still connecting. Press Escape to cancel.",
+   "ko": "아직 연결 중. 취소하려면 Escape를 누르십시오.",
+   "de": "Das Spiel verbindet noch. Escape bricht ab.",
+   "fr": "Le jeu se connecte encore. Échap pour annuler.",
+   "es": "El juego sigue conectando. Pulsa Escape para cancelar.",
+   "ru": "Игра ещё подключается. Escape — отмена.",
+   "code": [
+    "v2/includes/flows.ahk:3001: Say(T(\"The game is still connecting. Press Escape to cancel.\"))",
+    "v2/includes/flows.ahk:3848: Say(T(\"The game is still connecting. Press Escape to cancel.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Type now. Enter ends the entry, Escape leaves it.",
+   "file": "koKR.txt",
+   "key": "Type now. Enter ends the entry, Escape leaves it.",
+   "en": "Type now. Enter ends the entry, Escape leaves it.",
+   "ko": "입력하십시오. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다.",
+   "de": "Tippe jetzt. Enter beendet die Eingabe, Escape verlässt sie.",
+   "fr": "Saisis maintenant. Entrée termine la saisie, Échap la quitte.",
+   "es": "Escribe ahora. Intro termina la entrada, Escape la abandona.",
+   "ru": "Печатай сейчас. Enter завершает ввод, Escape выходит из него.",
+   "code": [
+    "v2/includes/flows.ahk:484: SayQueued(T(\"Type now. Enter ends the entry, Escape leaves it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "file": "koKR.txt",
+   "key": "Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "en": "Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "ko": "비밀번호를 입력하십시오. 비밀번호는 소리 내어 읽지 않습니다. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다.",
+   "de": "Tippe jetzt. Das Passwort wird nie vorgelesen. Enter beendet die Eingabe, Escape verlässt sie.",
+   "fr": "Saisis maintenant. Le mot de passe n'est jamais lu à voix haute. Entrée termine la saisie, Échap la quitte.",
+   "es": "Escribe ahora. La contraseña nunca se lee en voz alta. Intro termina la entrada, Escape la abandona.",
+   "ru": "Печатай сейчас. Пароль никогда не зачитывается. Enter завершает ввод, Escape выходит из него.",
+   "code": [
+    "v2/includes/flows.ahk:487: SayQueued(T(\"Type now. The password is never read back. Enter ends the entry, Escape leaves it.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Logging in. Please wait.",
+   "file": "koKR.txt",
+   "key": "Logging in. Please wait.",
+   "en": "Logging in. Please wait.",
+   "ko": "로그인 중. 기다려 주십시오.",
+   "de": "Anmeldung läuft. Bitte warten.",
+   "fr": "Connexion en cours. Patiente.",
+   "es": "Iniciando sesión. Espera.",
+   "ru": "Выполняется вход. Подожди.",
+   "code": [
+    "v2/includes/flows.ahk:525: Say(T(\"Logging in. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Change the server again before you play here.",
+   "file": "koKR.txt",
+   "key": "Change the server again before you play here.",
+   "en": "Change the server again before you play here.",
+   "ko": "플레이하기 전에 서버를 다시 변경하십시오.",
+   "de": "Wechsle den Server erneut, bevor du hier spielst.",
+   "fr": "Changez de royaume avant de jouer ici.",
+   "es": "Cambia de servidor otra vez antes de jugar aquí.",
+   "ru": "Смените сервер, прежде чем играть здесь.",
+   "code": [
+    "v2/includes/flows.ahk:3128: SayQueued(T(\"Change the server again before you play here.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Agreed. Please wait.",
+   "file": "koKR.txt",
+   "key": "Agreed. Please wait.",
+   "en": "Agreed. Please wait.",
+   "ko": "동의함. 기다려 주십시오.",
+   "de": "Zugestimmt. Bitte warten.",
+   "fr": "Accepte. Veuillez patienter.",
+   "es": "Aceptado. Por favor espera.",
+   "ru": "Принято. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:2826: Say(T(\"Agreed. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The game is starting. Please wait.",
+   "file": "koKR.txt",
+   "key": "The game is starting. Please wait.",
+   "en": "The game is starting. Please wait.",
+   "ko": "게임 시작 중. 기다려 주십시오.",
+   "de": "Das Spiel startet. Bitte warten.",
+   "fr": "Le jeu démarre. Veuillez patienter.",
+   "es": "El juego se está iniciando. Por favor espera.",
+   "ru": "Игра запускается. Пожалуйста, подождите.",
+   "code": [
+    "v2/includes/menu.ahk:324: Say(T(\"The game is starting. Please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Blizzard's social contract is open. Accepting it, please wait.",
+   "file": "koKR.txt",
+   "key": "Blizzard's social contract is open. Accepting it, please wait.",
+   "en": "Blizzard's social contract is open. Accepting it, please wait.",
+   "ko": "블리자드 소셜 규약 열림. 동의하는 중, 기다려 주십시오.",
+   "de": "Blizzards Sozialvertrag ist offen. Er wird akzeptiert, bitte warten.",
+   "fr": "Le contrat social de Blizzard est ouvert. Acceptation en cours, veuillez patienter.",
+   "es": "El contrato social de Blizzard está abierto. Aceptándolo, espera por favor.",
+   "ru": "Открыт социальный договор Blizzard. Принимаю его, пожалуйста, подождите.",
+   "code": [
+    "v2/includes/flows.ahk:757: Say(T(\"Blizzard's social contract is open. Accepting it, please wait.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "file": "koKR.txt",
+   "key": "The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "en": "The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.",
+   "ko": "소셜 규약에 동의하지 못했습니다. 비장애인의 도움이 한 번 필요합니다: 본문을 끝까지 내린 뒤 수락을 눌러 주십시오.",
+   "de": "Der Sozialvertrag konnte nicht akzeptiert werden. Dafür wird einmal sehende Hilfe gebraucht: den Text bis zum Ende scrollen und auf Akzeptieren klicken.",
+   "fr": "Le contrat social n'a pas pu être accepté. Il faut une fois l'aide d'une personne voyante : faire défiler le texte jusqu'à la fin et cliquer sur accepter.",
+   "es": "No se pudo aceptar el contrato social. Hace falta una vez la ayuda de una persona vidente: desplazar el texto hasta el final y pulsar aceptar.",
+   "ru": "Не удалось принять социальный договор. Один раз нужна помощь зрячего человека: прокрутить текст до конца и нажать «Принять».",
+   "code": [
+    "v2/includes/flows.ahk:810: Say(T(\"The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::this voice does not work, choose another one",
+   "file": "koKR.txt",
+   "key": "this voice does not work, choose another one",
+   "en": "This voice does not work, choose another one",
+   "ko": "이 음성은 작동하지 않음, 다른 음성을 선택하십시오",
+   "de": "Diese Stimme funktioniert nicht, bitte eine andere wählen",
+   "fr": "Cette voix ne fonctionne pas, choisissez-en une autre",
+   "es": "Esta voz no funciona, elija otra",
+   "ru": "Этот голос не работает, выберите другой",
+   "code": [
+    "v2/includes/menu.ahk:701: Say(T(\"this voice does not work, choose another one\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "koKR.txt::Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "file": "koKR.txt",
+   "key": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "en": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "ko": "WoW Forever 모드: 게임이 직접 화면을 읽습니다. 인식 보정용 화면을 저장하려면 Control Alt F3을 누르십시오.",
+   "de": "Forever-Modus: Das Spiel liest den Bildschirm selbst vor. Strg Alt F3 speichert einen Screenshot zur Kalibrierung.",
+   "fr": "Mode Forever : le jeu lit l'écran lui-même. Ctrl Alt F3 enregistre une capture d'écran pour le calibrage.",
+   "es": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "ru": "Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.",
+   "code": [
+    "v2/includes/detect.ahk:234: Say(T(\"Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.\"))"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}
