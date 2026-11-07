@@ -1434,3 +1434,836 @@ index bcd2593..b587d99 100644
 +2. 두 번째 우두머리를 대상으로 잡고 /focus2를 입력한 다음, 세 번째 우두머리를 대상으로 잡고 /focus3을 입력합니다.
 
 hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command 'rg -n -i "TTS alert|repeat delay|emote wheel|beacon|alert editor|bindings?|Stables|own key bindings|spell flyouts?|Edit Set|Show on Backpack|Incoming Whisper|Buys one rank|talent purchase|inbox|Down to the money|talent grid|warrior tree|Combat Audio Alerts|virtual focus|focus2" docs/src/user/en' in C:\project\games\wowvision-ko\WowVision
+ succeeded in 231ms:
+docs/src/user/en\controller.md:3:On Retail and WoW: Forever, WowVision can be played with a gamepad next to the keyboard. Both work at the same time, and every WowVision binding can have controller buttons as well as keys. This page explains how to switch it on, what every button does, and how to change the buttons.
+docs/src/user/en\controller.md:14:WowVision then answers the controller in its windows and in the world. Several things only appear while Enable Gamepad UI is on: the controller buttons in the keybinding window, the four gamepad bars in the action bars window, and the controller log.
+docs/src/user/en\controller.md:31:While a WowVision window is open, WowVision takes the D-pad and the face buttons. These are the defaults. The names in the first column are the binding names shown in the keybinding window.
+docs/src/user/en\controller.md:38:| Close (Escape) | B. Where Escape belongs to the game, B runs the game's own Escape instead; this is the Close (Controller) binding. |
+docs/src/user/en\controller.md:91:The window is headed "Main Menu, Page 2 of 3", for example; the wheel has three pages and the emote wheel has none. A slice that the game shows greyed out is read with ", Disabled", and one that is currently open with ", opened". An empty slice is read as "Empty". The slice for the buffs is not supported yet and says "Not supported yet" when you press it.
+docs/src/user/en\controller.md:124:Every binding lists its controller buttons in the keybinding window, but only while the gamepad interface is on.
+docs/src/user/en\controller.md:126:1. Open the WowVision menu (Shift+F1, or both shoulders and A), then UI, then Bindings.
+docs/src/user/en\controller.md:127:2. Move to the binding you want. Its row holds its keys first, then Add (for a key), then its controller buttons, then Add Controller Button.
+docs/src/user/en\controller.md:129:4. To add one, activate Add Controller Button. You hear the binding's name and "Press a controller button". Hold the shoulders, triggers or right stick press you want to combine, and press the button. As you press, WowVision speaks the combination, for example "Left trigger + A button". The button is taken when you let go of it.
+docs/src/user/en\controller.md:131:6. If the button already belongs to another binding, you are asked "This input conflicts with ...  Replace?". Confirm to take it from the other binding.
+docs/src/user/en\controller.md:133:The capture gives up and says "Cancelled" if you press Escape on the keyboard, if ten seconds pass without a press, or if combat starts. In combat it does not open at all and says "Not in combat". See [Keybindings](./basics/keybindings.md) for the rest of the keybinding window.
+docs/src/user/en\basics\alerts.md:16:| Text to speech | TTS Alert | Speaks text with your TTS voice, for example "combat started". |
+docs/src/user/en\basics\alerts.md:19:| Beacon | Beacon Sound | A directional sound that tells you where a waypoint is. Only used by navigation. |
+docs/src/user/en\basics\alerts.md:23:Example: Zone Changed Alert has a TTS Alert (on) and a Sound Alert (off). Out of the box, you hear the zone's name. If you want a chime as well, switch on the Sound Alert. If you only want the chime, switch off the TTS Alert too.
+docs/src/user/en\basics\alerts.md:45:| Message | TTS | Only on TTS outputs that take their text from elsewhere, such as Announce Errors and the TTS Alert of a monitor rule. Alerts with wording of their own (combat started, a zone name, a chat message and so on) do not have it. When you type text here, it is spoken every time instead of the usual text. Leave it empty to hear the usual text. |
+docs/src/user/en\basics\alerts.md:48:| Beacon Sound | Beacon | A browser like the sound browser, for the beacon sounds. Moving onto one plays a sample. |
+docs/src/user/en\basics\alerts.md:54:3. Down to TTS Alert, Enter, then Down (past Priority Message (interrupts)) to Voice, Enter.
+docs/src/user/en\basics\alerts.md:60:2. Open Speak Compass Direction. Open Voice Alert and turn Enabled off. Go back and open TTS Alert, turn Enabled on.
+docs/src/user/en\basics\alerts.md:78:| Speak Compass Direction | Navigation, Compass | The direction you face changes (north, northeast, east and so on). | Voice Alert (on; recorded directions), TTS Alert (off) |
+docs/src/user/en\basics\alerts.md:89:| Beacon | Navigation, Maps | A route or beacon is active. | Beacon Sound (a directional ping that speeds up as you turn towards the target), Beacon Aligned (a click when you face it), Beacon Off Course (when you turn away), Waypoint Reached (when you arrive) |
+docs/src/user/en\basics\alerts.md:91:Inside instances the game does not report which way you face, so Speak Compass Direction stays silent there while the other compass alerts keep working. The settings of Fall Detection (Delay (milliseconds), Ignore Jumps) are in the module's screen, see [Movement](../world/movement.md). The arrival settings of Beacon are in [Navigation](../world/navigation.md).
+docs/src/user/en\basics\alerts.md:99:| Target Crowd Control | Targeting, Hard Target | Your target becomes crowd controlled by anyone (stunned, feared, polymorphed and the like), or you switch to one that is; and again when it is free, or when you switch from a crowd controlled target to a free one. Not available on The Burning Crusade Anniversary. | Controlled Sound, Free Sound, TTS Alert (off; speaks "Controlled" or "Free") |
+docs/src/user/en\basics\alerts.md:109:| One alert for each chat tab, named as the tab is named in the game (for example General) | Chat | A message arrives on that tab. | TTS Alert (speaks the message), Sound Alert (a chat sound), and the choice Speak Messages: When the Tab Is Shown (the default) or Always |
+docs/src/user/en\basics\alerts.md:120:| Announce Errors | Errors | The master switch for game error and info messages ("Ability is not ready yet", "Out of range"). It also voices Lua errors and messages the filter cannot sort. | TTS Alert |
+docs/src/user/en\basics\alerts.md:121:| One entry for each message you have seen | Errors, Per-Error Filter | That message appears. | TTS Alert (on), Sound Alert (off) |
+docs/src/user/en\basics\alerts.md:123:The Per-Error Filter lists each message with its state read after its name: "Speech", "Sound", "Speech and Sound" or "Muted". Open one to change it. The Show All Known Errors checkbox at the top lists every message the game knows, including ones you have not met yet. Repeat Delay (2 seconds, 0 to 30) stops the same error from being spoken again while you hold a key. See [Combat](../world/combat.md).
+docs/src/user/en\basics\alerts.md:145:Each alert has a Sound Alert and a TTS Alert, and both outputs start off, so a new monitor is silent until you switch them on. The monitors page explains how to set them up. See [Monitors](../information/monitors.md).
+docs/src/user/en\basics\alerts.md:151:- If a TTS alert is cut off too quickly by other speech, switch on Priority Message (interrupts) for it. If it keeps cutting off everything else, switch it off.
+docs/src/user/en\basics\index.md:10:- [Keybindings](keybindings.md) — the keybinding window
+docs/src/user/en\basics\interface.md:5:The same navigation keys also drive WowVision's own screens: the [WowVision menu and settings](./menu-and-settings.md), the [keybinding screen](./keybindings.md), context menus and the game's dropdown menus.
+docs/src/user/en\basics\interface.md:20:All of these can be changed in the [keybinding screen](./keybindings.md). Most are "vital": they can be moved to another key, but never removed completely.
+docs/src/user/en\basics\interface.md:22:| Key | Binding name | What it does |
+docs/src/user/en\basics\interface.md:39:| Ctrl | (not a binding) | Press Ctrl on its own at any time to stop the current speech. |
+docs/src/user/en\basics\interface.md:110:On WowVision's own screens (the menu, the keybinding screen), only Enter does anything; Backspace is not used.
+docs/src/user/en\basics\interface.md:248:- [Keybindings](./keybindings.md)
+docs/src/user/en\basics\menu-and-settings.md:9:| Shift+F1 | Opens the menu (the WowVision Menu binding). |
+docs/src/user/en\basics\menu-and-settings.md:43:3. Special entries some modules add. For example the UI module has a Bindings button, the Buffers module its list of buffer groups, and the Errors module a Per-Error Filter button.
+docs/src/user/en\basics\menu-and-settings.md:66:| UI | All | Window behaviour, bindings, combat, cursor, tooltips. | below |
+docs/src/user/en\basics\menu-and-settings.md:80:| Bindings | | The keybinding screen, see [Keybindings](./keybindings.md). |
+docs/src/user/en\basics\menu-and-settings.md:99:| Sound or beacon picker | "Sound, Button, chat.mp3" | See [Picking a sound](#picking-a-sound). |
+docs/src/user/en\basics\menu-and-settings.md:109:The Sound setting of an alert's sound output, and the Beacon Sound setting of a beacon, open a browser of audio files.
+docs/src/user/en\basics\menu-and-settings.md:116:Escape goes back one folder without choosing anything. The top of the browser also shows Voice and Beacon folders, which hold files for other kinds of output.
+docs/src/user/en\basics\menu-and-settings.md:118:Beacon pickers work the same way, but you pick one of the beacon sounds (Notification, Probe (Deep), Probe (Mid), Steel Gong, Beacon 6), and moving onto one plays a sample beacon.
+docs/src/user/en\basics\menu-and-settings.md:173:- On the Bindings button in the UI menu, it moves all your key bindings at once.
+docs/src/user/en\basics\menu-and-settings.md:200:- [Keybindings](./keybindings.md)
+docs/src/user/en\basics\tooltips.md:7:| Key | Binding name | What it does |
+docs/src/user/en\basics\tooltips.md:15:All five can be changed in the [keybinding screen](./keybindings.md). Press Ctrl at any time to stop the speech if a long tooltip is too much.
+docs/src/user/en\basics\tooltips.md:90:- [Keybindings](./keybindings.md)
+docs/src/user/en\basics\keybindings.md:1:# Keybindings
+docs/src/user/en\basics\keybindings.md:3:Every key WowVision uses can be changed. The keybinding screen lists each action, the keys it has, and lets you add keys, remove keys and move a key from one action to another. This page explains how to use it and what the messages mean. The complete list of actions and their default keys is in the [keybinding reference](../reference/keybindings.md).
+docs/src/user/en\basics\keybindings.md:5:## Opening the keybinding screen
+docs/src/user/en\basics\keybindings.md:9:3. Press Down to Bindings and press Enter.
+docs/src/user/en\basics\keybindings.md:11:You land on the first binding and hear, for example, "Bindings, List, Up, Bar, Up Arrow, Button, 1 of 2". Escape goes back to the UI menu.
+docs/src/user/en\basics\keybindings.md:52:1. Open the keybinding screen as above.
+docs/src/user/en\basics\keybindings.md:72:| "This input already exists for this binding." | The action already has this key. | Nothing changed. |
+docs/src/user/en\basics\keybindings.md:74:| "Cannot replace this binding as it requires at least one input." | The other action is a vital one and this is its only key. | Give that action another key first, then try again. |
+docs/src/user/en\basics\keybindings.md:78:WowVision only checks keys against its own actions. The game's own key bindings are not checked, and while WowVision's key is active it takes precedence. Pick keys you do not need for something else.
+docs/src/user/en\basics\keybindings.md:82:Vital actions keep at least one key at all times, so you can never lock yourself out of the interface. Trying to remove the last key of one gives "Cannot remove; Binding must have at least one input." You can still add another key and then remove the old one.
+docs/src/user/en\basics\keybindings.md:108:Key bindings are account-wide, so a key you change on one character changes on all of them. To give one character its own keys, go to Bindings in the UI menu, press Shift+F10, choose Scope, then your character's name. That character gets a copy of the current keys, all of them at once; choose Global to go back to the shared keys. There is no "reset to defaults" button; to restore a default key, add it back from the [keybinding reference](../reference/keybindings.md).
+docs/src/user/en\basics\keybindings.md:112:If you run the addon Sku as well, WowVision does not take a few keys that Sku also uses, so the two do not fight. These are the four tooltip line keys (Shift+Up, Shift+Down, Shift+Left, Shift+Right), the soft targeting keys (Shift+I, Shift+P, Shift+O) and the five Target Focus keys. Other commands that Sku also has, such as /pquit, /dquit and /focus1 to /focus5, are likewise left to Sku. The keys still show in the keybinding screen, but they do nothing while Sku is loaded. In the same way, WowVision leaves many game windows (bags, merchant, gossip, mail, trade, quest and others) to Sku.
+docs/src/user/en\basics\keybindings.md:116:When the game's gamepad options are on, each row of the keybinding screen also shows the controller buttons assigned to the action, followed by Add Controller Button. They work like keys:
+docs/src/user/en\basics\keybindings.md:128:- [Keybinding reference](../reference/keybindings.md)
+docs/src/user/en\basics\speech.md:57:- Alerts can interrupt too. A TTS alert with Priority Message (interrupts) switched on stops the current speech before it speaks, as the Target Change alert does. See [Alerts](./alerts.md).
+docs/src/user/en\basics\speech.md:79:Every TTS alert output has its own Voice setting. Until you choose something there, it simply follows Speech Voice, and it shows that voice as its value. Pick another voice and that alert always uses it. This lets you, for instance, hear target changes in one voice and chat in another.
+docs/src/user/en\world\index.md:8:- [Navigation and Routes](navigation.md) — the navigation window, routes, waypoints and beacons
+docs/src/user/en\world\combat.md:9:WoW does not let addons change key bindings or use many of its functions during combat. WowVision therefore steps aside the moment a fight begins:
+docs/src/user/en\world\combat.md:23:- Storing a virtual focus with /focus1 to /focus5: refused with the message "Cannot set virtual focus while in combat."
+docs/src/user/en\world\combat.md:24:- Capturing a new key in the keybinding window: WowVision says "Not in combat".
+docs/src/user/en\world\combat.md:31:- Your target's health cannot be read, so there is no target health monitor. Use the game's own Combat Audio Alerts instead, in its Accessibility options: they can say your target's health, in combat too. See [Targeting](targeting.md).
+docs/src/user/en\world\combat.md:58:Each has a TTS Alert output with the usual settings (see [Alerts](../basics/alerts.md)): you can turn the whole alert off with Enabled, turn off the spoken output, or choose a different voice for it. Only the spoken output exists for these two alerts.
+docs/src/user/en\world\combat.md:71:| Enemy Count Alert, TTS Alert | On | Speaks the number |
+docs/src/user/en\world\combat.md:124:| Announce Errors, TTS Alert | On | How the messages listed under "Always spoken" below are spoken |
+docs/src/user/en\world\combat.md:125:| Repeat Delay | 2 | Seconds, 0 to 30. The same message is spoken at most once in this time. This stops "Out of range" from stuttering while you keep a key pressed. 0 switches the delay off |
+docs/src/user/en\world\combat.md:128:Holding a key down still repeats the message, once every Repeat Delay seconds. The delay counts from the last time the message was actually spoken.
+docs/src/user/en\world\combat.md:139:| TTS Alert | On | Speaks the message. Has the usual Priority Message (interrupts) and Voice settings |
+docs/src/user/en\world\navigation.md:1:# Navigation: Maps, Routes and Beacons
+docs/src/user/en\world\navigation.md:3:WowVision can guide you to a place on foot. You pick where you start and where you want to go in the navigation window (F10), WowVision works out a route along known paths, and then an audio beacon leads you from waypoint to waypoint until you arrive. This page covers the navigation window, the beacon and all the keys you use while walking a route.
+docs/src/user/en\world\navigation.md:10:4. WowVision says how many waypoints the route has and how long it is, and a beacon starts to ping.
+docs/src/user/en\world\navigation.md:11:5. Turn towards the beacon, walk, and listen. Each waypoint you reach plays a short sound and the beacon moves on to the next one. At the end you hear "Arrived" and the name of the place.
+docs/src/user/en\world\navigation.md:13:You can also set a straight-line beacon with no route at all, from the Direct checkbox in the window, from the scanner, or with the /beacon command.
+docs/src/user/en\world\navigation.md:24:| Mists of Pandaria and Retail | No map data is included. The navigation window opens but its lists are empty. Straight-line beacons, /beacon, the distance announcement and every other key on this page still work. |
+docs/src/user/en\world\navigation.md:26:Both systems use the same window, the same keys and the same beacon, so this page applies to both, and says so where they differ. What is special about each one is in [Classic routes](#classic-routes) further down and on the [WowNav](./wownav.md) page.
+docs/src/user/en\world\navigation.md:59:Tick Direct (press Enter on the checkbox) if you do not want a route. The entry points disappear, and Enter on a destination sets a straight beacon to exactly that point. You hear, for example, "Direct: Innkeeper Allison (Innkeeper), 120 yards", and on arrival "Arrived" followed by the name. Use this when you are already close, when you are inside a building the network does not know, or when you want to go somewhere in a straight line.
+docs/src/user/en\world\navigation.md:80:| Enter | Close the window and start the route (or the straight beacon, if Direct is on). |
+docs/src/user/en\world\navigation.md:88:In the scanner ([Scanner](./scanner.md)), Enter on a quest, an NPC or any other placed entry opens the navigation window already aimed at it. The closest entry point and the scanner's entry as destination are both selected, and the focus lands on the destination. Press Enter to route there; if you want a different entry point, press Shift+Tab twice first. Without map data for the continent the scanner sets a straight beacon directly and does not open the window.
+docs/src/user/en\world\navigation.md:94:When the route starts, WowVision speaks the summary and the beacon begins to ping. Waypoints are not read out one by one. Instead you hear them:
+docs/src/user/en\world\navigation.md:96:- The beacon pings towards the current waypoint. The ping changes with the direction and the distance to the waypoint. It pings faster the more directly you face the waypoint, about every 0.7 seconds when off course and about every 0.3 seconds when you are aimed at it. Distance is heard in steps of about 6 yards and works out to roughly 180 yards.
+docs/src/user/en\world\navigation.md:100:- Beacon stopped is spoken when you cancel.
+docs/src/user/en\world\navigation.md:104:### Beacon sounds
+docs/src/user/en\world\navigation.md:106:All beacon sounds are one alert called Beacon in the Maps module (WowVision menu, Navigation, Maps, Beacon). The alert and each of its four sounds has its own Enabled switch and its own sound, so each cue can be turned off or changed on its own. See [Alerts](../basics/alerts.md) for how alerts work.
+docs/src/user/en\world\navigation.md:110:| Beacon Sound | Probe (Mid) | The directional ping towards the current waypoint. |
+docs/src/user/en\world\navigation.md:111:| Beacon Aligned | clack | You turned to face the waypoint. |
+docs/src/user/en\world\navigation.md:112:| Beacon Off Course | click | You turned away from the waypoint. |
+docs/src/user/en\world\navigation.md:115:For Beacon Sound you choose one of the beacon sets: Notification, Probe (Deep), Probe (Mid), Steel Gong and Beacon 6 (Sku's beacon 6). Moving onto an entry in the picker plays a sample. For the other three you pick any sound from the sound list.
+docs/src/user/en\world\navigation.md:119:| Key | Binding name | What it does |
+docs/src/user/en\world\navigation.md:128:| Shift+F12 | Cancel Navigation | Stops the route or beacon. |
+docs/src/user/en\world\navigation.md:131:All of these can be changed in the keybinding window (WowVision menu, UI, Bindings); see [Keybindings](../basics/keybindings.md). The full list is in the [binding reference](../reference/keybindings.md).
+docs/src/user/en\world\navigation.md:165:- Any other shortcut that uses Ctrl+Alt will also trigger the announcement. If that bothers you, turn off the Announce Distance with Alt Gr setting and bind the Announce Distance binding to a key you do not use otherwise.
+docs/src/user/en\world\navigation.md:169:When you have wandered off, or want to skip a waypoint you cannot reach, press Ctrl+W to move the beacon to the next waypoint or Ctrl+S to go back one. The step plays the waypoint-reached sound and speaks how many waypoints remain, current one included, for example "4 remaining". At the ends you hear End of route or Start of route; only walking to the last waypoint finishes the route. Without a route you hear No active waypoint.
+docs/src/user/en\world\navigation.md:177:Shift+F12 stops the route or straight beacon: you hear Beacon stopped and the pings end. If nothing is running you hear No active waypoint. /beacon stop does the same.
+docs/src/user/en\world\navigation.md:181:The Route to Your Target binding takes the creature or group member you are targeting as the destination. It is unbound by default; bind it in the keybinding window. See also [Targeting](./targeting.md).
+docs/src/user/en\world\navigation.md:203:Two bindings, both unbound by default, lead you to the nearest unvisited destination with the same name as the last one you picked:
+docs/src/user/en\world\navigation.md:205:| Binding | What it does |
+docs/src/user/en\world\navigation.md:208:| Direct to the Nearest Unvisited of the Same Name | Sets a straight beacon there. |
+docs/src/user/en\world\navigation.md:214:## Straight beacons and the /beacon command
+docs/src/user/en\world\navigation.md:216:You can set a beacon without the window. Type these commands in the chat box:
+docs/src/user/en\world\navigation.md:220:| /beacon | Speaks your position in map percentages, such as "50.5 30.4", and, if a beacon is active, its distance and angle. |
+docs/src/user/en\world\navigation.md:221:| /beacon 50.5 30.4 | Straight beacon to map coordinates on your current zone map: the numbers quest guides give you. You hear "Beacon set" and the distance. |
+docs/src/user/en\world\navigation.md:222:| /beacon to bank | Routes to the nearest known place whose name contains "bank". You hear its name, then the route summary. You do not choose an entry point: WowNav uses the one F10 would preselect, and with classic routes the router picks the best of the five nearest waypoints. |
+docs/src/user/en\world\navigation.md:223:| /beacon world x y | Straight beacon to raw world coordinates. |
+docs/src/user/en\world\navigation.md:224:| /beacon stop | Same as Shift+F12. |
+docs/src/user/en\world\navigation.md:226:With /beacon to, an unknown name gives "No route found" and the name. A beacon from /beacon with coordinates ends with "Arrived" when you get close enough, like any route.
+docs/src/user/en\world\navigation.md:252:| Enabled | On | Turns the whole Maps module off, including the keys and /beacon. |
+docs/src/user/en\world\navigation.md:257:| Announce Distance with Alt Gr | On | Whether Alt Gr and Ctrl+Alt speak the distance. The Announce Distance binding works either way. |
+docs/src/user/en\world\navigation.md:258:| Beacon | (see above) | The beacon alert and its four sounds: Beacon Sound, Beacon Aligned, Beacon Off Course, Waypoint Reached. Each has Enabled and a sound choice. |
+docs/src/user/en\world\navigation.md:282:5. Press I to turn to the first waypoint, and walk. When you hear the beacon ping faster, you are facing the right way. Press Alt Gr at any time to hear how far the current waypoint is.
+docs/src/user/en\world\navigation.md:291:4. Walk the route as above. If the NPC is not on the path network, the final stretch is not a known path, so use the beacon and Alt Gr. With classic routes the summary says so ("last 25 yards direct"), and WowNav tells you at the end of the network how far the NPC still is.
+docs/src/user/en\world\navigation.md:305:- [Alerts](../basics/alerts.md): how to change the beacon sounds.
+docs/src/user/en\world\wownav.md:11:WowNav is on by default. Every route request goes to it: the navigation window (F10), the scanner's Enter, /beacon to, the route to your target, the corpse run and the visited-places keys. The classic routes are not used while it is on.
+docs/src/user/en\world\wownav.md:39:On a map the data does not know, F10 lists nothing and /beacon to answers "No route found". The scanner's Enter then sets a straight beacon, as it does without map data. If the place list of a map cannot be read at all, you hear "WowNav catalogue not usable" followed by a reason; include it in a bug report.
+docs/src/user/en\world\wownav.md:78:- With Direct on, no destination is dropped as unreachable, because a straight beacon needs no route.
+docs/src/user/en\world\wownav.md:103:The beacon, its sounds, Ctrl+W, Ctrl+S, Shift+F12, Alt Gr and I all work as in [Navigation](./navigation.md). The differences:
+docs/src/user/en\world\wownav.md:108:- Shift+F12 ends everything WowNav does: the search, the route, a transit that waits for its far end, the dock guidance and the beacon at a fishing spot.
+docs/src/user/en\world\wownav.md:109:- /beacon to name takes the nearest place with that name, from WowNav's list, with the entry point F10 would preselect.
+docs/src/user/en\world\wownav.md:119:| "One waypoint back" | You were pushed off sideways at a narrow gate, so the beacon went back one waypoint. |
+docs/src/user/en\world\wownav.md:133:Two bindings are unbound by default; bind them in the keybinding window (WowVision menu, UI, Bindings), see [Keybindings](../basics/keybindings.md):
+docs/src/user/en\world\wownav.md:135:| Binding | What it does |
+docs/src/user/en\world\wownav.md:144:A dock is a waiting place for a ship, zeppelin or tram stop. Choosing one in F10 routes you to its waiting point on foot. When you arrive, you hear what to wait for, for example: "Dock Ship dock to Auberdine reached. Wait here for the ship. Board when you hear it arrive. The beacon shows the boarding direction; I turns you toward it." The beacon then leads to a boarding point a few yards ahead and ends there: "Boarding point Ship dock to Auberdine reached". WowNav cannot tell when the vehicle is there; you board by ear.
+docs/src/user/en\world\wownav.md:154:If you choose the portal or the tram entrance itself as your destination, you are guided to a point just before it and told: "Prepoint reached. Walk straight ahead through the entrance or portal; the beacon stays on until the activation area." Then: "In the activation area. Keep walking straight ahead; only a map change confirms the transition. The route stays on until then." After the map change you hear "Map change after the activation area; route ended. The destination is not confirmed."
+docs/src/user/en\world\wownav.md:170:If you choose one of these portals or the waiting point of the Wind Bridge itself as your destination, you hear at the prepoint "Prepoint reached. Walk on to the portal; the beacon stays on until you are there." (for the bridge "Prepoint reached. Walk on to the waiting point of the Wind Bridge; the beacon stays on until then."). At the portal you hear "At the portal. Target it with soft targeting and interact with it; the route stays on until the transition is confirmed.", at the bridge "At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current."
+docs/src/user/en\world\wownav.md:178:3. A beacon now sounds from the water, 15 yards out, in the middle of your cast range. Press I to face the water, then cast.
+docs/src/user/en\world\wownav.md:179:4. The beacon stops when you walk away from the spot (more than 20 yards), when you press Shift+F12 or when you start a new route.
+docs/src/user/en\world\wownav.md:181:The water point is only there to face. WowNav never routes you into the water. If the network ends farther from the spot than your cast range, you hear the usual "The network ends ... from the target" instead, and no beacon starts.
+docs/src/user/en\world\wownav.md:196:| Step Back at Gates | On | When you drift sideways at a gate, the beacon goes back one waypoint ("One waypoint back"). |
+docs/src/user/en\world\wownav.md:207:4. Press Enter. You hear the summary, such as "12 waypoints, 330 yards". Press I to turn and follow the beacon. At the end: "Arrived Einris Brightspear (Hunter Trainer)".
+docs/src/user/en\world\wownav.md:226:3. Follow the new beacon. The blocked link is avoided for the rest of this route.
+docs/src/user/en\world\wownav.md:230:- [Navigation](./navigation.md): the navigation window, beacons, arrival distance and all route keys.
+docs/src/user/en\world\movement.md:9:| Navigation | Two settings: Auto-move to Interact Target and Automatically Navigate to Corpse. The other entries under Navigation (maps, visited places, beacon and so on) are described on the [Navigation](navigation.md) page |
+docs/src/user/en\world\movement.md:20:The Compass module watches your character and speaks when something about your surroundings changes. Each of its entries is an alert (see [Alerts](../basics/alerts.md)): it has an Enabled switch and one or more outputs, usually TTS Alert (speech) and Sound Alert.
+docs/src/user/en\world\movement.md:24:| Speak Compass Direction | You turn to face a different one of the eight directions | Voice Alert on, TTS Alert off |
+docs/src/user/en\world\movement.md:25:| Zone Changed Alert | You enter a new zone | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:26:| Subzone Changed Alert | You enter a new subzone (an area within a zone) | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:27:| Outdoors Alert | You go from indoors to outdoors | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:28:| Indoors Alert | You go from outdoors to indoors | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:29:| Flying Started Alert | You take off on a flying mount | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:30:| Flying Ended Alert | You land | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:31:| Swimming Alert | You enter the water | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:32:| Diving Alert | Your character goes under the surface | TTS Alert on, Sound Alert off |
+docs/src/user/en\world\movement.md:38:By default the direction is played from a recorded voice pack (the Voice Alert output) rather than spoken by text to speech. If you prefer text to speech, turn TTS Alert on and Voice Alert off. In the Voice Alert settings you can also choose a different voice pack. See [Speech](../basics/speech.md).
+docs/src/user/en\world\movement.md:57:2. Turn TTS Alert off.
+docs/src/user/en\world\movement.md:135:Here is what happens: you release your spirit; WowVision looks up where your corpse is, first on your current map and then on the larger maps around it (this finds a corpse that lies in the next zone from the graveyard you woke up in), and says "Corpse". It then starts a route to it, just as if you had chosen the corpse in the navigation window. Where WowNav route data is available (WoW: Forever), a corpse that lies over several floors is routed to the lowest floor that can be reached. If no route can be found, a beacon points straight at the corpse instead. The route is followed like any other; see [Navigation](navigation.md) for how routes and the beacon sounds work.
+docs/src/user/en\world\movement.md:175:- [Navigation](navigation.md): routes, waypoints, the beacon and turning to waypoints.
+docs/src/user/en\windows\action-bars.md:9:| Shift+F4 | Opens the Action Bars window. Unlike most windows, it does not need a game frame to be open first. It is called Action Bars in the keybinding window and can be rebound there. |
+docs/src/user/en\windows\action-bars.md:14:You cannot navigate the window while you are in combat. WowVision gives its keys back to the game during combat so that your own key bindings keep working, and takes them again when combat ends. Use your normal bindings for abilities in a fight.
+docs/src/user/en\windows\action-bars.md:44:Not read: the bars that Retail added beyond the four above (Action Bars 5, 6 and 7), the extra action button, the zone ability button, and the vehicle or possess bars. Use your normal game key bindings for those.
+docs/src/user/en\windows\action-bars.md:86:Using abilities is faster with your normal game key bindings. The window is for checking and rearranging your bars.
+docs/src/user/en\world\scanner.md:5:Press F9 to open the Scanner. Press Escape to close it. The key is called Scanner in the keybinding window and can be changed there; see [Keybindings](../basics/keybindings.md). The Scanner works on every game version, but what it can list depends on the version and on the data available. See "Version notes" at the end.
+docs/src/user/en\world\scanner.md:93:- If there is no route data, you hear "Beacon set" followed by the distance in yards, for example "Beacon set 40 yards", and a sound beacon guides you in a straight line. When you arrive you hear "Arrived".
+docs/src/user/en\world\scanner.md:114:5. Press Enter. The Scanner closes and the navigation window opens, or you hear "Beacon set 40 yards" if there is no route data.
+docs/src/user/en\world\scanner.md:121:3. Press Enter to be guided. Follow the beacon or the route.
+docs/src/user/en\world\scanner.md:131:- Enter opens the [navigation window](navigation.md) where map data exists for the continent, and falls back to a straight beacon elsewhere.
+docs/src/user/en\world\minimap.md:21:Press Ctrl+Shift+F (Scan Minimap) to scan once. The binding can be changed in the keybinding window; see [Keybindings](../basics/keybindings.md). You can also type `/wv mscan`.
+docs/src/user/en\world\minimap.md:70:On the newer clients some NPCs show their title as the minimap name, for example "Skinning Trainer" instead of the person's name. When you arrive at a seen NPC by following a beacon from the Scanner, WowVision looks at the NPCs around you and, if one carries that title, says its real name followed by the name the minimap showed, for example "Olivia Burnside, Skinning Trainer". The real name is remembered for the session, and Enter on the same entry later speaks it again on arrival.
+docs/src/user/en\world\minimap.md:128:| TTS Alert, Enabled | On | Speaks the name with a text to speech voice. |
+docs/src/user/en\world\minimap.md:129:| TTS Alert, Voice | Game voice 0 | Which game voice speaks. It does not follow your Speech Voice setting. The first voice has the number 0. |
+docs/src/user/en\windows\character.md:81:3. Once a set is selected, one stop each for Equip, Save, Edit Set and Delete. Equip puts the selected set on. Save stores what you wear now into it. Edit Set opens the name and icon window. Delete asks the game for a confirmation popup, which you answer like any [popup](system.md).
+docs/src/user/en\windows\character.md:83:New Set and Edit Set open the set window as a window of its own: a name edit box, an icon type dropdown, an Icon number you change with Left and Right (it reads "3 of 120"; Enter lets you type a number) and the Okay and Cancel buttons. The window opens with the cursor in the name box cleared, so you can use the arrow keys at once; Enter on the name box puts you back into typing.
+docs/src/user/en\world\quests.md:117:| TTS Alert, Enabled | On | Speaks the announcement. |
+docs/src/user/en\world\quests.md:118:| TTS Alert, Priority Message (interrupts) | Off | When on, the announcement cuts off what is being spoken. |
+docs/src/user/en\world\quests.md:119:| TTS Alert, Voice | Follows your Speech Voice | Choose a voice for this alert alone. |
+docs/src/user/en\windows\bags-and-bank.md:175:The bags and the bank have one setting, Bag Shape, described above. Like every window, the bags have an Enabled switch in the WowVision menu, under Windows, then Containers. They have no alerts and no key bindings of their own. The keys on this page are the shared window keys, which can be changed in the keybinding window. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\windows\chat.md:35:| TTS Alert | On | A group with three settings: Enabled (speak the message), Priority Message (interrupts) (when on, the message interrupts whatever is being said instead of waiting its turn; off by default) and Voice (which voice speaks it; by default it follows your speech voice). |
+docs/src/user/en\windows\chat.md:217:| One entry per open chat tab, named like the tab | see above | The tab's alert: Enabled, TTS Alert, Sound Alert and Speak Messages (When the Tab Is Shown by default). |
+docs/src/user/en\windows\chat.md:238:The three chat-specific keys (Previous Link in Message, Next Link in Message, Shift Click) and Chat can be changed in the keybinding window (see [Keybindings](../basics/keybindings.md)). They only hold their keys while the message list has the focus.
+docs/src/user/en\world\targeting.md:3:WowVision tells you what you target, lets you keep up to five "virtual focus" targets on keys, can switch the game's soft targeting on and off, and opens the target's menu with a single key. This page covers all of it: the announcements, the keys, and the settings.
+docs/src/user/en\world\targeting.md:9:| Key | Binding name | What it does |
+docs/src/user/en\world\targeting.md:15:| unbound by default | Target Focus 1 to Target Focus 5 | Targets the unit you stored in that virtual focus slot |
+docs/src/user/en\world\targeting.md:17:You can change or add keys in the keybinding window (WowVision menu, UI, Bindings); see [Keybindings](../basics/keybindings.md). The complete list of all keys is in the [keybinding reference](../reference/keybindings.md).
+docs/src/user/en\world\targeting.md:43:| TTS Alert | On | Speaks the target. Its Priority Message (interrupts) setting is on by default, and Voice lets you pick a voice just for this alert |
+docs/src/user/en\world\targeting.md:52:| TTS Alert | On | Speaks the percentage, for example "85%" |
+docs/src/user/en\world\targeting.md:57:(Retail and WoW: Forever) There is no Health Monitor here, because the game hides a target's health from addons in combat, just when you need it. Use the game's own Combat Audio Alerts instead, in its Accessibility options: they can say your target's health, in combat too.
+docs/src/user/en\world\targeting.md:72:| TTS Alert | Off | Speaks "Controlled" or "Free" instead of, or in addition to, the sounds |
+docs/src/user/en\world\targeting.md:102:Each type is an alert in the Targeting menu named Soft Target Enemy, Soft Target Friend and Soft Target Interact. The alert is off by default; its Enabled setting is what the key flips. Under it you find TTS Alert (spoken, interrupting by default) and Sound Alert, both on by default once the alert is on. You can pick a different sound with the Sound setting of the sound output.
+docs/src/user/en\world\targeting.md:143:## Virtual focus: five stored targets
+docs/src/user/en\world\targeting.md:145:The virtual focus works like the Sku feature of the same name. You store up to five targets by name and bring each back with its own key. It is independent of the game's own focus target.
+docs/src/user/en\world\targeting.md:147:The module is called Virtual Focus and sits under Targeting in the menu. It has no settings of its own.
+docs/src/user/en\world\targeting.md:154:- /focus2 Some Name stores that name in slot 2, whether or not you target anything.
+docs/src/user/en\world\targeting.md:156:WowVision answers in chat, for example "Focus 1 set to Hogger.". Storing is not possible during combat; WowVision then prints "Cannot set virtual focus while in combat." Do it before the pull.
+docs/src/user/en\world\targeting.md:160:Bind a key to Target Focus 1 to Target Focus 5 (they are unbound by default; see [Keybindings](../basics/keybindings.md)). Pressing it targets the stored name, exactly like typing /target with that name. Pressing the key also works in combat.
+docs/src/user/en\world\targeting.md:162:Because the focus is a name, the game targets the nearest unit with that name. Two monsters with the same name cannot be told apart. Virtual focus slots are not saved: after /reload or a new login the slots are empty and must be set again.
+docs/src/user/en\world\targeting.md:167:2. Target the second boss and type /focus2, then the third and /focus3.
+docs/src/user/en\world\targeting.md:168:3. In the keybinding window assign Alt+1, Alt+2 and Alt+3 to Target Focus 1, 2 and 3.
+docs/src/user/en\windows\collections.md:19:On WoW: Forever the game has a separate key binding for each tab (mounts, pets, toy box, heirlooms, appearances). Each opens the journal directly on that tab. You can set them in the game's key bindings screen, outside WowVision.
+docs/src/user/en\reference\commands.md:10:- Global commands are their own slash word, for example /beacon or /pquit.
+docs/src/user/en\reference\commands.md:26:| /wv bind | Open the keybinding window | all |
+docs/src/user/en\reference\commands.md:29:| /beacon | Sets a beacon, routes to a named place, or reads your position | all |
+docs/src/user/en\reference\commands.md:30:| /focus1 to /focus5 | Sets a virtual focus target | all, not with Sku |
+docs/src/user/en\reference\commands.md:73:Opens the keybinding window directly, the same screen as WowVision menu (Shift+F1), UI, Bindings. Escape closes it. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\reference\commands.md:83:### /beacon
+docs/src/user/en\reference\commands.md:85:Sets a straight-line beacon, routes to a named place, or tells you where you are. The beacon then plays its sound and speaks as you walk. This is the same beacon the navigation window uses. See [Navigation](../world/navigation.md).
+docs/src/user/en\reference\commands.md:89:| /beacon | Speaks your position on the zone map (for example "50.5 30.4") and, if a beacon is active, its distance and the degrees to turn |
+docs/src/user/en\reference\commands.md:90:| /beacon x y | Sets a beacon to map coordinates on the current zone map: the percentages quest guides give, like 50.5 30.4 |
+docs/src/user/en\reference\commands.md:91:| /beacon world x y | Sets a beacon to raw world coordinates |
+docs/src/user/en\reference\commands.md:92:| /beacon to name | Routes to the nearest known place whose name contains the text, using the map data. Say a part of a name, such as "mailbox". |
+docs/src/user/en\reference\commands.md:93:| /beacon stop | Stops the beacon or route, the same as Shift+F12 |
+docs/src/user/en\reference\commands.md:95:Examples: /beacon 50.5 30.4 says "Beacon set 245 yards" and starts a straight-line beacon to that spot; it does not open the navigation window. /beacon to innkeeper speaks the place it found and starts a route to it, or says "No route found innkeeper". /beacon 12 with only one number says "Usage beacon x y".
+docs/src/user/en\reference\commands.md:97:Versions: all. /beacon to needs map data for the continent you are on; see [Navigation](../world/navigation.md).
+docs/src/user/en\reference\commands.md:101:WoW only supports one focus target. WowVision adds five virtual ones, which you can then target with the Target Focus 1 to Target Focus 5 bindings (unbound by default).
+docs/src/user/en\reference\commands.md:108:With a target, WowVision remembers the target's name, so two creatures with the same name cannot be told apart. It prints "Focus 1 set to Name." It does not work in combat and says "Cannot set virtual focus while in combat." Versions: all. When Sku is loaded, the command is not registered. See [Targeting](../world/targeting.md).
+docs/src/user/en\reference\commands.md:124:Example: /disableaddon sku. The name sku is special: it switches the Sku addon together with its audio data and beacon addons, so nothing is left half-loaded. /enableaddon sku turns them all back on.
+docs/src/user/en\windows\loot-trade-mail.md:19:| Key | Binding name | What it does |
+docs/src/user/en\windows\loot-trade-mail.md:27:All of these can be changed in the keybinding window. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\windows\loot-trade-mail.md:76:1. Tabs: Inbox and Send Mail. The one you are on says "selected". Left and Right move between them, and Enter switches.
+docs/src/user/en\windows\loot-trade-mail.md:77:2. Open All: a button that takes everything from your inbox, when the game shows it.
+docs/src/user/en\windows\loot-trade-mail.md:78:3. Inbox: your letters on this page.
+docs/src/user/en\windows\loot-trade-mail.md:83:### The inbox
+docs/src/user/en\windows\loot-trade-mail.md:90:The inbox does not say whether a letter has gold or items. You find that out when you open it. An empty inbox says "Empty".
+docs/src/user/en\windows\loot-trade-mail.md:112:3. Down to the money attachment and press Enter. The gold is in your purse.
+docs/src/user/en\windows\loot-trade-mail.md:147:None of these windows has settings or alerts of its own. The roll keys can be rebound in the keybinding window. See [Keybindings](../basics/keybindings.md). In the WowVision menu, under Windows, the Loot, Trade and Mail entries each have just an Enabled switch. Switching Loot off turns the roll keys off.
+docs/src/user/en\information\buffers.md:30:These keys work anywhere in the game. Each one interrupts whatever WowVision is saying, so you can press them quickly. You can change the keys in the keybinding window, see [Keybindings](../basics/keybindings.md).
+docs/src/user/en\information\group-health.md:65:To change the key, open the WowVision menu, go to UI, then Bindings, or type `/wv bind`. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\windows\overview.md:55:Windows that every version reads: bags and bank, merchants, NPC dialogs, the quest giver window, flight masters, trainers, trade, the mailbox inbox, books and letters, the game's confirmation popups, ready check and role check, guild invitations, the game menu and options, macros and the color picker. Beyond that, each version has its own set:
+docs/src/user/en\information\monitors.md:15:- Each state of a rule has an alert with a Sound Alert and a TTS Alert output.
+docs/src/user/en\information\monitors.md:52:8. Open the state you care about (Applied, Missing, Ready, and so on), then open Sound Alert or TTS Alert and turn it on. See [Alerts](#state-alerts-and-their-outputs) below.
+docs/src/user/en\information\monitors.md:85:| TTS Alert | Off | Speaks a message. Opens its own screen |
+docs/src/user/en\information\monitors.md:87:Turn on the output you want, and leave the state's own Enabled on. At the moment that switch does nothing for the states of any rule: only the Enabled switch of the Sound Alert or TTS Alert inside decides whether something plays. The only alerts that obey the state's own Enabled are Charge Gained and Charge Lost of the Cooldown rule.
+docs/src/user/en\information\monitors.md:96:The TTS Alert screen has:
+docs/src/user/en\information\monitors.md:187:You arrange the cooldown manager in its settings window, which WowVision makes accessible. Open it with `/cdm`. The window has the Spells, Auras and Group Buffs tabs, a Search box, a Settings menu, each category with its items, the Layout dropdown and a Revert Changes button. Press Enter on an item to pick it up and Enter on another item, or on the empty slot of a category, to drop it there. Press Backspace on an item for its menu (alerts, move to another category). Changes made with the keyboard take effect after the interface reloads, because the game rebuilds its on-screen cooldown data from them. The window tells you so the first time and offers a Reload Interface button at its end (or type `/reload`); when you close the window after such changes it reminds you again. The items are read with their name, "Unlearned" for spells you have not learned, and the number of alerts they have (for example "1 alert"). Categories can be collapsed and expanded with Enter on their heading. On the Group Buffs tab the buffs sit in a Shown and a Hidden section: Enter picks a buff up, and Enter on a buff in the other section moves it there. Choosing an alert in the item's menu (Add New Alert, or editing an existing one) opens the game's alert editor as a window of its own, called Alert Editor: the spell, one dropdown for each choice, and the button that adds or saves the alert, then Close.
+docs/src/user/en\information\monitors.md:189:You rarely need the game's alerts, though: WowVision's monitors do everything they do, and do it better. Each state of a rule has its own sound and its own spoken message, in your own speech settings, and you can change both at any time. Spell Cooldowns also works for any spell, not only those in the cooldown manager. The game's alert editor is there if you want it, but start with a monitor.
+docs/src/user/en\information\monitors.md:225:The key is unbound by default. You find it under Monitors in the keybinding window, see [Keybindings](../basics/keybindings.md).
+docs/src/user/en\information\monitors.md:280:The key is unbound by default. You find it under Monitors in the keybinding window.
+docs/src/user/en\information\monitors.md:304:Bind them in the keybinding window, see [Keybindings](../basics/keybindings.md). Toggle All Monitors works as a mute: press it once to silence all monitors and again to turn them all back on. Monitors you had switched off one by one are turned on as well.
+docs/src/user/en\information\monitors.md:326:6. Open Expiring, then TTS Alert. Turn Enabled on. Set Message to "Moonfire expiring".
+docs/src/user/en\information\monitors.md:327:7. Go back and open Missing, then TTS Alert. Turn Enabled on. Set Message to "Moonfire gone".
+docs/src/user/en\information\monitors.md:336:3. Open Ready, then TTS Alert, turn it on and set Message to "Starfire ready".
+docs/src/user/en\information\monitors.md:344:3. Open Ready, TTS Alert, turn on Enabled.
+docs/src/user/en\information\monitors.md:346:When Barkskin comes back you hear "Barkskin Ready", also in combat. Add the On Cooldown TTS alert if you also want "Barkskin On Cooldown" when you use it. Bind Speak Tracked Cooldowns to hear the state and the time left on demand.
+docs/src/user/en\information\monitors.md:353:4. Turn on the TTS Alert of Missing and Pandemic.
+docs/src/user/en\information\monitors.md:364:- If an alert never fires, check in this order: the monitor is Enabled; the rule is Enabled; the Spell is set; the state's Sound Alert or TTS Alert is Enabled (they are off by default); and for the sound, a Sound has been chosen.
+docs/src/user/en\getting-started\introduction.md:17:It guides you through the world. The navigation window (F10) plans routes along a network of waypoints and leads you there with sound beacons; the scanner (F9) lists quest givers, quest objectives and other things nearby; the minimap scan finds herbs and ore. See [Navigation and Routes](../world/navigation.md), [Scanner](../world/scanner.md) and [Minimap](../world/minimap.md).
+docs/src/user/en\getting-started\introduction.md:44:- [Basics](../basics/index.md) — the interface, tooltips, speech, the settings menu, alerts and keybindings. Read these first.
+docs/src/user/en\getting-started\introduction.md:57:- Every key mentioned here is the default. You can change all of them; see [Keybindings](../basics/keybindings.md).
+docs/src/user/en\reference\index.md:5:- [Keybinding Reference](keybindings.md) — every WowVision binding with its default key
+docs/src/user/en\getting-started\managing.md:11:| WowVisionGlobalDB | Most settings, alerts, key bindings, buffers and monitors by default | The whole account |
+docs/src/user/en\getting-started\managing.md:21:By default most settings are shared by all your characters. You can make one module's settings belong to a single character instead: in the WowVision menu, put the focus on the module, press Shift+F10 and choose Scope. The key bindings (including controller buttons) are shared the same way, and have their own Scope entry on the Bindings button. See [The WowVision Menu and Settings](../basics/menu-and-settings.md) and [Keybindings](../basics/keybindings.md).
+docs/src/user/en\reference\versions.md:20:- Speech settings, alerts, the WowVision menu, keybindings: [Basics](../basics/index.md)
+docs/src/user/en\reference\versions.md:31:- Mailbox inbox, trade window, loot roll keys: [Loot, Trade and Mail](../windows/loot-trade-mail.md)
+docs/src/user/en\reference\glossary.md:13:Beacon — A sound placed in the game world at a waypoint or destination. You hear where it is from its direction and pitch and walk towards it. See [Navigation and Routes](../world/navigation.md).
+docs/src/user/en\reference\glossary.md:15:Binding — An action that can be put on a key, such as Next Buffer Item. A binding can have several keys and, on Retail and WoW: Forever, controller buttons. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\reference\glossary.md:29:Focus target (virtual focus) — One of five targets WowVision stores by name (/focus1 to /focus5) that you can target again with a key. Independent of the game's own focus. See [Targeting](../world/targeting.md).
+docs/src/user/en\reference\glossary.md:41:Output — How an alert is delivered: TTS Alert (spoken by text to speech), Sound Alert (a sound file), Voice Alert (a recording from a voice pack). See [Alerts](../basics/alerts.md).
+docs/src/user/en\reference\glossary.md:61:Unbound — A binding that exists but has no key until you give it one in the keybinding window. See [Keybinding Reference](keybindings.md).
+docs/src/user/en\reference\glossary.md:111:In the [Keybinding Reference](../reference/keybindings.md), and in the game in the keybinding window: WowVision menu, UI, Bindings.
+docs/src/user/en\reference\keybindings.md:1:# Keybinding Reference
+docs/src/user/en\reference\keybindings.md:3:This page lists every WowVision keybinding with its default key. You can change any of them in the keybinding window: open the WowVision menu (Shift+F1), go to UI and choose Bindings. How the keybinding window works is explained in [Keybindings](../basics/keybindings.md).
+docs/src/user/en\reference\keybindings.md:5:"Unbound" means the binding exists but has no key until you give it one.
+docs/src/user/en\reference\keybindings.md:95:| Cancel Navigation | Shift+F12 | Stops the active route or beacon |
+docs/src/user/en\reference\keybindings.md:100:| Direct to the Nearest Unvisited of the Same Name | Unbound | The same as a straight beacon instead of a route |
+docs/src/user/en\reference\keybindings.md:104:Alt Gr is not a binding: it is read directly, stays silent while you type in an edit box, and can be turned off with the Announce Distance with Alt Gr setting in the Maps module. See [Navigation and Routes](../world/navigation.md) and [WowNav](../world/wownav.md).
+docs/src/user/en\reference\keybindings.md:157:On Retail and WoW: Forever every binding can also have controller buttons. The defaults are listed in [Controller](../controller.md).
+docs/src/user/en\reference\keybindings.md:161:These are not extra bindings. They are the window keys from the first sections, doing a job that belongs to one window. Changing the binding changes the key everywhere.
+docs/src/user/en\reference\keybindings.md:183:Some WowVision bindings do the same job as keys of Sku, the older accessibility addon. While Sku is loaded, WowVision does not activate these bindings at all and leaves the keys to Sku:
+docs/src/user/en\windows\social.md:347:Alt+T opens the menu of your current target, the one a right click on the target's portrait opens: whisper, invite and the rest. With yourself targeted it offers Reset All Instances, loot and dungeon difficulty. With no target nothing opens. It is bound by default and can be changed in the keybinding window. It is described with the other targeting keys in [Targeting](../world/targeting.md).
+docs/src/user/en\getting-started\manual-installation.md:82:The sounds, beacon tones and recorded voices (voice packs) are inside the WowVision folder too. If you ever see a "missing sound" problem, the cause is a damaged or partial extraction: delete the folder and extract the zip again.
+docs/src/user/en\getting-started\quick-start.md:80:All keys are listed in the [Keybinding Reference](../reference/keybindings.md), and you can change any of them: see [Keybindings](../basics/keybindings.md).
+docs/src/user/en\windows\spells-and-talents.md:11:| Mists of Pandaria (Mists) | Spell pages, Professions, Core Abilities and What Has Changed tabs. Spell flyouts. | Specialization and tier talents. The Glyphs page is not read yet. |
+docs/src/user/en\windows\spells-and-talents.md:13:| WoW: Forever | Category tabs, search, paged spell grid. Spell flyouts. | The class talent tree with one stop per specialization, apply, undo and reset. |
+docs/src/user/en\windows\spells-and-talents.md:25:| \\ or Ctrl+D | Drag: picks the spell or talent up onto your cursor so you can put it on an action bar (not on the TBC talent grid, see below). See [Action bars](action-bars.md). |
+docs/src/user/en\windows\spells-and-talents.md:72:### Spell flyouts
+docs/src/user/en\windows\spells-and-talents.md:74:Some abilities (mage teleports and portals, hunter pet calls, warlock summons) open a flyout. WowVision opens it as a window named Spell Flyout, one stop with a button per spell. Enter casts the spell, and Escape closes the flyout.
+docs/src/user/en\windows\spells-and-talents.md:110:4. Talent Grid: the talents of the open tree, read top to bottom and left to right. Each reads its name and rank: "Improved Heroic Strike rank 2/3". Only talents the game shows are listed.
+docs/src/user/en\windows\spells-and-talents.md:113:Enter on a talent spends a point on it at once and the new rank is spoken ("rank 3/3"). The game rules apply: you need the points spent above and the prerequisite talent. Press Space for the tooltip, which says what is missing and what the next rank does. To pick up a talent that is an active ability and put it on your bars, open the context menu with Shift+F10 and choose Drag; the drag key itself does not work on the TBC talent grid.
+docs/src/user/en\windows\spells-and-talents.md:115:### Example: spend your first points in a Warrior tree
+docs/src/user/en\windows\spells-and-talents.md:118:2. Press Tab past the tabs and the points line until you hear "Talent Grid".
+docs/src/user/en\windows\spells-and-talents.md:187:| Enter | Buys one rank. |
+docs/src/user/en\windows\system.md:29:3. Categories: the category list, such as Gameplay, Controls, Graphics, Audio, Interface, Social and Keybindings. Group headers are read as "Name, Separator". Enter on a category shows its settings.
+docs/src/user/en\windows\system.md:61:### Keybindings
+docs/src/user/en\windows\system.md:63:The Keybindings category lists the game's own key bindings, in sections.
+docs/src/user/en\windows\system.md:67:- Each binding is a pair of buttons, named for the action, for example "Jump". Each button reads the key it holds, or "Not Bound". Use Left and Right to choose between the two.
+docs/src/user/en\windows\system.md:68:- Enter on a button starts rebinding. Press the key (or key combination) you want. When it works, WowVision says "Rebinding successful".
+docs/src/user/en\windows\system.md:71:This changes the game's bindings. WowVision's own keys (the ones that move you through windows) are changed in WowVision's keybinding window instead. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\getting-started\sku.md:7:When the game loads WowVision, it checks which addons are already loaded. If Sku is among them, every window, key binding and command marked as "belongs to Sku" is switched off for that session: the window simply never opens in WowVision, the key is not taken over, the command is not registered. The decision is made once at login, so enabling or disabling Sku needs a reload (/reload) or a new login to take effect. Nothing is deleted: your WowVision settings and key bindings for these features stay as they are and come back as soon as Sku is off.
+docs/src/user/en\getting-started\sku.md:55:- Cooldown manager window and its alert editors.
+docs/src/user/en\getting-started\troubleshooting.md:56:1. You are in combat. Override bindings cannot change during combat, so WowVision hands all window keys back to the game when a fight starts and takes them again afterwards. Global keys keep working. See [Combat](../world/combat.md).
+docs/src/user/en\getting-started\troubleshooting.md:60:5. Another addon or a game binding has the same key. Open the WowVision menu (Shift+F1), then UI, then Bindings, and look at what the binding is set to. When you add a key that another WowVision binding already uses, you are asked "This input conflicts with ... Replace?". Keys held by other addons or by the game are not checked, so try a different key. See [Keybindings](../basics/keybindings.md).
+docs/src/user/en\getting-started\troubleshooting.md:62:7. You rebound or removed the key. Some bindings need at least one key and cannot be emptied, but most can. The [keybinding reference](../reference/keybindings.md) lists the defaults.
+docs/src/user/en\getting-started\troubleshooting.md:83:- Type /disableaddon sku. This turns off Sku and its audio and beacon helper addons and reloads the interface. /enableaddon sku turns them back on.
+docs/src/user/en\getting-started\troubleshooting.md:87:Your WowVision settings and key bindings for those features are not deleted while Sku runs; they come back as soon as Sku is off.
+docs/src/user/en\getting-started\troubleshooting.md:94:2. They belong to another scope. By default most settings are shared by all characters (account scope). If you moved a module to a single character, its settings only show on that character. Put the focus on the module in the WowVision menu, press Shift+F10 and look at Scope. Key bindings and a few other things are always per character. See [The WowVision Menu and Settings](../basics/menu-and-settings.md).
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$data = Get-Content -Raw -Encoding UTF8 '"'C:\\project\\games\\wowwork\\reviews\\2026-11-07-manual-polish-regression2\\final-apply.json' | ConvertFrom-Json; "'$data.applied | ForEach-Object { "REF=$($_.ref)`nEVIDENCE=$($_.evidence)`n" }' in C:\project\games
+ succeeded in 252ms:
+REF=
+EVIDENCE=
+
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$data = Get-Content -Raw -Encoding UTF8 '"'C:\\project\\games\\wowwork\\reviews\\2026-11-07-manual-polish-regression2\\final-apply.json' | ConvertFrom-Json; "'$data.PSObject.Properties.Name; $data.items.Count; $data.items | ForEach-Object { "REF=$($_.ref)`nEVIDENCE=$($_.evidence)`n" }' in C:\project\games
+ succeeded in 258ms:
+apply
+skipped
+0
+REF=
+EVIDENCE=
+
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$data = Get-Content -Raw -Encoding UTF8 '"'C:\\project\\games\\wowwork\\reviews\\2026-11-07-manual-polish-regression2\\final-apply.json' | ConvertFrom-Json; \"COUNT="'$($data.apply.Count)"; $data.apply | ForEach-Object { "REF=$($_.ref)`nEVIDENCE=$($_.evidence)`n" }' in C:\project\games
+ succeeded in 262ms:
+COUNT=32
+REF=basics/alerts.md#r2-0
+EVIDENCE=changes의 before: "반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다." 영어 원문 basics/alerts.md는 "while you hold a key" 한 가지 효과만 말한다. 더해진 내용의 출처로 보이는 문장: en/world/combat.md:125 "The same message is spoken at most once in this time." / ko/world/combat.md:126 "같은 메시지는 이 시간 안에 많아야 한 번 말합니다."
+
+REF=controller.md#r2-1
+EVIDENCE=wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID를 대조하면 58480 PAGE_LABEL_EMOTES는 "Emotes" → "감정표현"이다. 게임패드 메뉴의 페이지라는 문맥도 원문의 emote wheel과 일치한다.
+
+REF=controller.md#r2-2
+EVIDENCE=wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58480 PAGE_LABEL_EMOTES는 "Emotes" → "감정표현"이다. 원문도 같은 게임패드 휠의 emote pages를 가리킨다.
+
+REF=controller.md#r2-3
+EVIDENCE=wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58392 RADIAL_LABEL_TARGET_EMOTES는 "Emotes" → "감정표현"이다. RADIAL_LABEL이라는 BaseTag와 원문의 slice 목록이 같은 방사형 메뉴 문맥임을 확인했다.
+
+REF=getting-started/manual-installation.md#r2-4
+EVIDENCE=koKR 키 `navigation.lua:41`의 `Beacon Sound` 값은 "비컨 소리"입니다. `wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:105`, `:111`, `wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:20`도 같은 방향성 소리와 설정을 "비컨 소리"라고 씁니다. 확정 용어집 `wowwork/docs/glossary.tsv:2`도 beacon을 "비컨"으로 정했습니다.
+
+REF=information/monitors.md#r2-6
+EVIDENCE=cache/gs_koKR.csv 55581 COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT "신규 경보" (enUS "New Alert"), 55585 COOLDOWN_VIEWER_SETTINGS_ALERT_DIALOG_TITLE "신규 경보", 55602 COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT "경보 편집". wowvision-ko/WowVision/retail/cooldownManager.lua:225-238 Backspace가 게임의 item:DisplayContextMenu()를 그대로 연다(메뉴 항목은 게임 문구). koKR에 "Add New Alert" 키 없음(vision-locale Grep 결과 0건).
+
+REF=reference/keybindings.md#r2-7
+EVIDENCE=wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4, 6에서 같은 keybinding screen을 "단축키 화면"이라고 하며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:18도 "단축키 화면"을 사용합니다.
+
+REF=reference/keybindings.md#r2-8
+EVIDENCE=입력 terms에서 Bindings의 값은 "단축키"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 각 binding을 "동작"과 "그 동작에 지정된 키"로 설명합니다.
+
+REF=reference/keybindings.md#r2-9
+EVIDENCE=입력 terms에서 Targeting은 "목표 선택"입니다. 같은 파일의 115행 절 제목과 125행 링크도 "목표 선택"이며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2의 페이지 제목도 "목표 선택"입니다.
+
+REF=reference/keybindings.md#r2-10
+EVIDENCE=입력 terms에서 Bindings는 "단축키"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md는 같은 개념을 "단축키"와 "지정된 키"로 설명하며 "바인딩"을 쓰지 않습니다.
+
+REF=reference/keybindings.md#r2-11
+EVIDENCE=입력 terms에서 Bindings는 "단축키"입니다. wowvision-ko/WowVision/docs/src/user/ko/controller.md:4도 동일한 기능을 "WowVision의 모든 단축키에 … 컨트롤러 버튼도 지정"한다고 표현합니다.
+
+REF=reference/keybindings.md#r2-12
+EVIDENCE=입력 terms에서 Bindings는 "단축키"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 키를 동작에 "지정"한다고 설명하고, 42행 이후에도 키 추가·제거라는 표현을 사용합니다.
+
+REF=reference/keybindings.md#r2-13
+EVIDENCE=입력 terms에서 Bindings는 "단축키"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:113은 같은 Sku 충돌 동작을 "키"와 "단축키 화면"으로 설명하며 "바인딩"을 사용하지 않습니다.
+
+REF=reference/versions.md#r2-14
+EVIDENCE=wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 동일 ID 13216, BaseTag STABLES는 각각 "Stables"와 "우리"입니다. wowvision-ko/WowVision/tbc/petStable.lua:87은 이 창에 STABLES를 사용하고, wowvision-ko/vision-locale/koKR/windows.lua:201의 Stable 값도 "우리"입니다. wowwork/docs/decisions.tsv의 2026-11-05 결정도 같은 창 이름을 "우리"로 유지하도록 확정했습니다.
+
+REF=windows/action-bars.md#r2-16
+EVIDENCE=원문의 "your own key bindings"는 WowVision 키와 대비되는 사용자의 게임 단축키를 뜻하며, 직접 다시 지정한 키로 한정하지 않는다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:79도 같은 대상을 「게임 자체 단축키」와 「게임 단축키」로 부른다.
+
+REF=windows/action-bars.md#r2-17
+EVIDENCE=wowvision-ko/vision-locale/koKR/ui.lua:119에서 「Spell Flyout」은 「주문 펼침 메뉴」이고, wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:12, 14, 73, 75도 같은 기능을 「주문 펼침 메뉴」로 부른다. 행동 단축바 구현도 wowvision-ko/WowVision/core/windows/bars/bars.lua:70에서 actionType "flyout"을 별도 유형으로 처리한다.
+
+REF=windows/character.md#r2-19
+EVIDENCE=입력 terms에서 Edit Set의 실제 한국어 값은 "세트 편집"입니다. wowvision-ko/vision-locale/koKR/windows.lua:252에도 L["Edit Set"] = "세트 편집"으로 정의되어 있습니다.
+
+REF=windows/character.md#r2-20
+EVIDENCE=입력 terms의 Edit Set은 "세트 편집"이며, wowvision-ko/vision-locale/koKR/windows.lua:252의 값도 "세트 편집"입니다.
+
+REF=windows/character.md#r2-21
+EVIDENCE=입력 terms와 wowvision-ko/vision-locale/koKR/windows.lua:252에서 Edit Set의 한국어 값은 모두 "세트 편집"입니다.
+
+REF=windows/character.md#r2-22
+EVIDENCE=wowwork/cache/gs_enUS.csv의 ID 18805, BaseTag SHOW_ON_BACKPACK은 "Show on Backpack"이고, 같은 ID의 wowwork/cache/gs_koKR.csv 값은 "소지품에 표시"입니다.
+
+REF=windows/chat.md#r2-23
+EVIDENCE=wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID 12984는 BaseTag CHAT_MSG_WHISPER, 영어 "Incoming Whisper", 한국어 "받는 귓속말"이다. 반면 ID 13125의 BaseTag CHAT_MSG_WHISPER_INFORM은 영어 "Whisper", 한국어 "귓속말"이므로 서로 다른 메시지 종류다. before에도 "받는 귓속말"로 정확히 적혀 있었다.
+
+REF=windows/collections.md#r2-24
+EVIDENCE=게임 공식 문자열의 같은 특성 동작은 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS에서 영어 "Click to learn", 한국어 "배우려면 클릭하십시오."이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 동일한 원문 "Buys one rank."를 "등급 하나를 배웁니다."로 옮긴다.
+
+REF=windows/collections.md#r2-25
+EVIDENCE=게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS는 내부 이름에 PURCHASE가 들어가지만 실제 한국어 표시는 "배우려면 클릭하십시오."이다. ID 49664, BaseTag TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS도 반대 동작을 "습득을 취소"라고 부른다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:193은 같은 단계 적용 방식을 "변경 사항은 바로 반영되지 않고 대기합니다."라고 설명해 구매라는 별도 개념을 쓰지 않는다.
+
+REF=windows/collections.md#r2-26
+EVIDENCE=게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS의 한국어 값은 "배우려면 클릭하십시오."이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 같은 동작을 "등급 하나를 배웁니다."라고 쓴다.
+
+REF=windows/loot-trade-mail.md#r2-27
+EVIDENCE=wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:56은 같은 키를 "Left와 Right"로 표기하고, 82행도 "Up과 Down", "Left와 Right"를 사용한다.
+
+REF=windows/loot-trade-mail.md#r2-28
+EVIDENCE=wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:9-10은 같은 키를 "Down"으로 표기하고, wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:82도 "Up과 Down"을 사용한다.
+
+REF=windows/spells-and-talents.md#r2-29
+EVIDENCE=changes 3번째(2. 탭: 세 특성 트리이며 -> 세 특성 계통도이며). 같은 파일 111행에 "열린 트리"가 남음. 게임 공식 용어: TALENTS_INVOLUNTARILY_RESET "talent tree" -> "특성 계통도"(gs_koKR 20141). 다른 설명서: getting-started/introduction.md:10 "특성 계통도", windows/collections.md:4 "유산 특성 계통도".
+
+REF=windows/spells-and-talents.md#r2-30
+EVIDENCE=changes 3번째에서 TBC 특성 2번 항목만 "계통도"로 바뀜. 116행 제목은 "트리" 그대로. 공식 용어 gs_koKR 20141 TALENTS_INVOLUNTARILY_RESET "특성 계통도".
+
+REF=world/combat.md#r2-32
+EVIDENCE=cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL="전투 음성 경보", 57498 COMBAT_AUDIO_ALERTS="전투 음성 경보" (enUS 같은 ID "Combat Audio Alerts"). before는 "전투 음성 경보". 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:58 "전투 음성 알림을 사용하십시오"에도 있다.
+
+REF=world/targeting.md#r2-33
+EVIDENCE=cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL "전투 음성 경보", 56672 CAA_ENABLE_COMBAT_AUDIO_ALERTS "전투 음성 경보 활성화" (gs_enUS.csv 같은 ID "Combat Audio Alerts"). before는 "전투 음성 경보"였다. 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:32 "전투 음성 알림을 쓰십시오"에도 있다.
+
+REF=world/targeting.md#r2-34
+EVIDENCE=world/targeting.md:146은 "대상을 이름으로 최대 다섯 개까지 저장하고, 각각 자기 키로 다시 불러옵니다"라고 실제 구조를 설명합니다.
+
+REF=world/targeting.md#r2-35
+EVIDENCE=같은 예시의 1단계와 2단계 앞부분은 모두 "대상으로 잡고"라고 명시합니다. 영어 원문도 두 번째와 세 번째 우두머리 모두 Target 동작의 병렬 목적어로 둡니다.
+
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$specs = @(@('"'docs/src/user/en/controller.md',89,104),@('docs/src/user/en/getting-started/manual-installation.md',80,84),@('docs/src/user/en/information/monitors.md',185,190),@('docs/src/user/en/reference/glossary.md',39,43),@('docs/src/user/en/reference/keybindings.md',1,12),@('docs/src/user/en/reference/keybindings.md',102,106),@('docs/src/user/en/reference/keybindings.md',155,185),@('docs/src/user/en/reference/versions.md',100,106),@('docs/src/user/en/windows/action-bars.md',13,17),@('docs/src/user/en/windows/action-bars.md',57,61),@('docs/src/user/en/windows/character.md',80,86),@('docs/src/user/en/windows/character.md',163,167),@('docs/src/user/en/windows/chat.md',181,185),@('docs/src/user/en/windows/collections.md',194,212),@('docs/src/user/en/windows/loot-trade-mail.md',74,79),@('docs/src/user/en/windows/loot-trade-mail.md',110,114),@('docs/src/user/en/windows/spells-and-talents.md',108,117),@('docs/src/user/en/world/combat.md',29,33),@('docs/src/user/en/world/movement.md',19,23),@('docs/src/user/en/world/targeting.md',1,6),@('docs/src/user/en/world/targeting.md',56,60),@('docs/src/user/en/world/targeting.md',101,105),@('docs/src/user/en/world/targeting.md',164,170)); foreach ("'$spec in $specs) { $p=$spec[0]; $s=[int]$spec[1]; $e=[int]$spec[2]; "---$p:$s-$e---"; $lines=Get-Content -Encoding UTF8 $p; for($i=$s;$i -le $e;$i++){ "${i}:$($lines[$i-1])" } }' in C:\project\games\wowvision-ko\WowVision
+ exited 1 in 153ms:
+ParserError: 
+Line |
+   2 |  �� s) { $p=$spec[0]; $s=[int]$spec[1]; $e=[int]$spec[2]; "---$p:$s-$e--- ��
+     |                                                              ~~~����
+     | ��:2 char:1276 + �� s) { $p=$spec[0]; $s=[int]$spec[1]; $e=[int]$spec[2]; "---$p:$s-$e--- �� +                     
+     | ~~~���� ���� ������ �ùٸ��� �ʽ��ϴ�. ':' �ڿ� �ùٸ� ���� �̸� ���ڰ� �����ϴ�. �̸��� �����Ϸ��� ${}�� ����� ������.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$specs = @(@('"'docs/src/user/en/controller.md',89,104),@('docs/src/user/en/getting-started/manual-installation.md',80,84),@('docs/src/user/en/information/monitors.md',185,190),@('docs/src/user/en/reference/glossary.md',39,43),@('docs/src/user/en/reference/keybindings.md',1,12),@('docs/src/user/en/reference/keybindings.md',102,106),@('docs/src/user/en/reference/keybindings.md',155,185),@('docs/src/user/en/reference/versions.md',100,106),@('docs/src/user/en/windows/action-bars.md',13,17),@('docs/src/user/en/windows/action-bars.md',57,61),@('docs/src/user/en/windows/character.md',80,86),@('docs/src/user/en/windows/character.md',163,167),@('docs/src/user/en/windows/chat.md',181,185),@('docs/src/user/en/windows/collections.md',194,212),@('docs/src/user/en/windows/loot-trade-mail.md',74,79),@('docs/src/user/en/windows/loot-trade-mail.md',110,114),@('docs/src/user/en/windows/spells-and-talents.md',108,117),@('docs/src/user/en/world/combat.md',29,33),@('docs/src/user/en/world/movement.md',19,23),@('docs/src/user/en/world/targeting.md',1,6),@('docs/src/user/en/world/targeting.md',56,60),@('docs/src/user/en/world/targeting.md',101,105),@('docs/src/user/en/world/targeting.md',164,170)); foreach ("'$spec in $specs) { $p=$spec[0]; $s=[int]$spec[1]; $e=[int]$spec[2]; "---${p}:${s}-${e}---"; $lines=Get-Content -Encoding UTF8 $p; for($i=$s;$i -le $e;$i++){ "${i}:$($lines[$i-1])" } }' in C:\project\games\wowvision-ko\WowVision
+ succeeded in 271ms:
+---docs/src/user/en/controller.md:89-104---
+89:- The lower row is the left half: south, south-west, west, north-west.
+90:
+91:The window is headed "Main Menu, Page 2 of 3", for example; the wheel has three pages and the emote wheel has none. A slice that the game shows greyed out is read with ", Disabled", and one that is currently open with ", opened". An empty slice is read as "Empty". The slice for the buffs is not supported yet and says "Not supported yet" when you press it.
+92:
+93:| Button | What it does |
+94:|---|---|
+95:| Left stick | Moves in the grid, one step at a time. While the wheel is open the stick does not walk your character. |
+96:| A or Enter | Closes the wheel and runs the slice. The window it opens has the focus. |
+97:| Shoulders | Turn the pages of the wheel. |
+98:| D-pad and the other buttons | Stay with the game's wheel and work as they do for sighted players (the D-pad reaches sitting and the emote pages). |
+99:| B or Start | Close the wheel. |
+100:
+101:Tracking opens the WowVision scanner and chat opens the WowVision chat window. Every other slice (social, bags, clock, PvP, the emotes) runs the game's own action.
+102:
+103:The left stick only moves in the grid out of combat.
+104:
+---docs/src/user/en/getting-started/manual-installation.md:80-84---
+80:WowVision comes with text in English, German and French; the language of your game client decides which one is used, and any other client language falls back to English.
+81:
+82:The sounds, beacon tones and recorded voices (voice packs) are inside the WowVision folder too. If you ever see a "missing sound" problem, the cause is a damaged or partial extraction: delete the folder and extract the zip again.
+83:
+84:## Updating by hand
+---docs/src/user/en/information/monitors.md:185-190---
+185:- The cooldown manager must be showing the aura. A cooldown manager row that you have hidden, or set to appear only in combat, reads as empty while it is hidden, and your rule will report Missing. If an alert plays at the wrong time, check that the rows are shown.
+186:
+187:You arrange the cooldown manager in its settings window, which WowVision makes accessible. Open it with `/cdm`. The window has the Spells, Auras and Group Buffs tabs, a Search box, a Settings menu, each category with its items, the Layout dropdown and a Revert Changes button. Press Enter on an item to pick it up and Enter on another item, or on the empty slot of a category, to drop it there. Press Backspace on an item for its menu (alerts, move to another category). Changes made with the keyboard take effect after the interface reloads, because the game rebuilds its on-screen cooldown data from them. The window tells you so the first time and offers a Reload Interface button at its end (or type `/reload`); when you close the window after such changes it reminds you again. The items are read with their name, "Unlearned" for spells you have not learned, and the number of alerts they have (for example "1 alert"). Categories can be collapsed and expanded with Enter on their heading. On the Group Buffs tab the buffs sit in a Shown and a Hidden section: Enter picks a buff up, and Enter on a buff in the other section moves it there. Choosing an alert in the item's menu (Add New Alert, or editing an existing one) opens the game's alert editor as a window of its own, called Alert Editor: the spell, one dropdown for each choice, and the button that adds or saves the alert, then Close.
+188:
+189:You rarely need the game's alerts, though: WowVision's monitors do everything they do, and do it better. Each state of a rule has its own sound and its own spoken message, in your own speech settings, and you can change both at any time. Spell Cooldowns also works for any spell, not only those in the cooldown manager. The game's alert editor is there if you want it, but start with a monitor.
+190:
+---docs/src/user/en/reference/glossary.md:39-43---
+39:Monitor — Something that watches the game for you and fires alerts when a state changes, for example a debuff falling off your target. Made of rules. See [Monitors](../information/monitors.md).
+40:
+41:Output — How an alert is delivered: TTS Alert (spoken by text to speech), Sound Alert (a sound file), Voice Alert (a recording from a voice pack). See [Alerts](../basics/alerts.md).
+42:
+43:Pandemic window — The last part of a damage-over-time effect's duration in which refreshing it does not lose any time. Monitors can alert when an aura enters this window.
+---docs/src/user/en/reference/keybindings.md:1-12---
+1:# Keybinding Reference
+2:
+3:This page lists every WowVision keybinding with its default key. You can change any of them in the keybinding window: open the WowVision menu (Shift+F1), go to UI and choose Bindings. How the keybinding window works is explained in [Keybindings](../basics/keybindings.md).
+4:
+5:"Unbound" means the binding exists but has no key until you give it one.
+6:
+7:## Two kinds of keys
+8:
+9:- Window keys only work while a WowVision window is open (bags, a merchant, the WowVision menu and so on). When no window is open, the same keys do whatever you bound them to in the game. Arrow keys, Tab, Enter, Backspace, Escape, Space, Home, End, Page Up, Page Down and the context menu key are window keys. On game windows Escape stays with the game, which closes its own windows; WowVision uses it on its own screens (see [Using the Interface](../basics/interface.md)).
+10:- Global keys work at any time, with or without a window: buffers, navigation, targeting, the loot roll keys, Destroy Cursor Item and the keys that open WowVision windows.
+11:
+12:In combat, WowVision hands the window keys back to the game (see [Combat](../world/combat.md)). The global keys keep working.
+---docs/src/user/en/reference/keybindings.md:102-106---
+102:| New WowNav Route Around a Blocked Spot | Unbound | (WoW: Forever) Plans a new route that avoids the spot where you are stuck |
+103:
+104:Alt Gr is not a binding: it is read directly, stays silent while you type in an edit box, and can be turned off with the Announce Distance with Alt Gr setting in the Maps module. See [Navigation and Routes](../world/navigation.md) and [WowNav](../world/wownav.md).
+105:
+106:## Minimap
+---docs/src/user/en/reference/keybindings.md:155-185---
+155:| Close (Controller) | Unbound (no keyboard key) | Gives the controller's close button the game's own Escape on windows where Escape stays with the game |
+156:
+157:On Retail and WoW: Forever every binding can also have controller buttons. The defaults are listed in [Controller](../controller.md).
+158:
+159:## Keys inside specific windows
+160:
+161:These are not extra bindings. They are the window keys from the first sections, doing a job that belongs to one window. Changing the binding changes the key everywhere.
+162:
+163:| Where | Key | What it does |
+164:|---|---|---|
+165:| Chat window (Shift+F3), message list | Up, Down, Home, End | Move between messages |
+166:| Chat window, message list | Left, Right | Switch to the previous or next chat tab |
+167:| Chat window, message list | Ctrl+Left, Ctrl+Right | Move between the clickable parts of a message (channel, sender, links) |
+168:| Chat window, message list | Enter, Backspace, Shift+Enter, Space | Left click, right click, shift click and read the tooltip of the selected part |
+169:| Navigation window (F10), Destinations list | Up, Down, Home, End | Walk the long destination list; Enter starts the route |
+170:| Navigation window, Search box | Enter, Tab, Escape | Enter and Tab apply the text, Escape closes the box without changing the search |
+171:| Scanner (F9) | Right, Left, Enter | Open or step into a group, close it or step out, guide you to the entry |
+172:| Scanner | Backspace | Opens the extra text of an entry, such as a quest's objective |
+173:| Scanner | Tab | Jumps between the list and the Refresh button |
+174:| Action bars (Shift+F4), bags and other slot windows | \\ or Ctrl+D, then Delete | Pick up a slot onto the cursor, then clear or destroy it |
+175:| Friends, ignore, who and guild lists (Classic Era, TBC and Mists) | Page Up, Page Down | Scroll the list a page; Home and End do nothing there |
+176:| WowVision menu, context menus, dropdown menus | Letters | Jump to the next entry that starts with the letter. Can be switched off with the Letter Navigation in Menus setting |
+177:| Edit boxes | Enter, Tab, Escape | Enter puts the cursor in a game box and accepts a WowVision box; Tab moves on; Escape cancels a WowVision box |
+178:
+179:See [Chat](../windows/chat.md), [Navigation and Routes](../world/navigation.md), [Scanner](../world/scanner.md), [Action Bars](../windows/action-bars.md) and [Using the Interface](../basics/interface.md).
+180:
+181:## When Sku is installed
+182:
+183:Some WowVision bindings do the same job as keys of Sku, the older accessibility addon. While Sku is loaded, WowVision does not activate these bindings at all and leaves the keys to Sku:
+184:
+185:- the four tooltip line keys (Shift+Up, Shift+Down, Shift+Left, Shift+Right)
+---docs/src/user/en/reference/versions.md:100-106---
+100:| Pets, toys, heirlooms, appearances | No | No | No | No | Yes |
+101:| Legacy (reward track, challenges, trees) | No | No | No | No | Yes |
+102:| Group finder | No | Yes | No | Yes (Dungeon Finder; other tabs not yet) | Yes |
+103:| Pet stable | No | Yes | No | No | No |
+104:| Auction house | No | Yes (with price database and full scan) | Yes | Yes | Yes |
+105:
+106:See [Collections](../windows/collections.md), [Group Finder](../windows/group-finder.md) and [Auction House](../windows/auction-house.md).
+---docs/src/user/en/windows/action-bars.md:13-17---
+13:
+14:You cannot navigate the window while you are in combat. WowVision gives its keys back to the game during combat so that your own key bindings keep working, and takes them again when combat ends. Use your normal bindings for abilities in a fight.
+15:
+16:## How the window is laid out
+17:
+---docs/src/user/en/windows/action-bars.md:57-61---
+57:
+58:The label updates while you are standing on it. If you pick a spell up from a slot, it immediately reads "Empty". Spells, items, macros, mounts, battle pets, equipment sets and flyouts are all read by name. Rarely a slot reads "Unknown", followed by technical details such as an id and a type; that is something the addon cannot name yet. A slot whose button the game has switched off says "Disabled" after its name.
+59:
+60:### Pet Bar
+61:
+---docs/src/user/en/windows/character.md:80-86---
+80:2. New Set.
+81:3. Once a set is selected, one stop each for Equip, Save, Edit Set and Delete. Equip puts the selected set on. Save stores what you wear now into it. Edit Set opens the name and icon window. Delete asks the game for a confirmation popup, which you answer like any [popup](system.md).
+82:
+83:New Set and Edit Set open the set window as a window of its own: a name edit box, an icon type dropdown, an Icon number you change with Left and Right (it reads "3 of 120"; Enter lets you type a number) and the Okay and Cancel buttons. The window opens with the cursor in the name box cleared, so you can use the arrow keys at once; Enter on the name box puts you back into typing.
+84:
+85:The sidebar also has a Sidebar Tabs stop (a row of tabs: Left/Right and Enter) and a button that collapses or expands the right panel. When the panel is collapsed only the equipment list and the toggle button are read. The pet stats view is called Pet and lists the stats of your pet.
+86:
+---docs/src/user/en/windows/character.md:163-167---
+163:
+164:On WoW: Forever a currency row also reads "selected" when chosen. The chosen currency has a Details stop with two check boxes, one that marks the currency as unused (it moves out of the main list) and one that shows it on your backpack bar, plus a transfer button for currencies you can move between your characters. The check boxes read with the game's own wording.
+165:
+166:## Statistics (WoW: Forever only)
+167:
+---docs/src/user/en/windows/chat.md:181-185---
+181:1. Categories: a list of buttons, such as the chat settings, the channel settings and the other message groups. Enter opens one.
+182:2. Chat settings, Channel settings and further groups of check boxes: each group is named by its heading and holds the check boxes of the messages (Say, Yell, Guild, Whisper, Loot, and so on). Enter turns a check box on or off.
+183:3. Channels: the list of global channels (General, Trade and so on), where Enter joins or leaves a channel for this tab.
+184:
+185:Which groups you see depends on the category you picked. Escape closes the window.
+---docs/src/user/en/windows/collections.md:194-212---
+194:|---|---|
+195:| Enter | Buys a rank (for a choice talent: opens its options) |
+196:| Backspace | Refunds a rank |
+197:| Space | Reads the talent's full tooltip |
+198:| \\ | Picks up an active ability for an action bar |
+199:| Shift+F10 | Context menu: Learn, Unlearn, Drag and "Link (talent) in Chat" |
+200:
+201:Buying is staged: nothing is learned until you press Apply. The apply button reads "Unsaved Changes" while changes are waiting. Undo Changes drops them, and Reset Tree refunds the whole tree (also staged until Apply). Choice talents open the game's option list; Enter picks an option, Backspace on one unlearns it, and Escape returns to the tree. The same talent tree reader is used for the class talents; see [Spells and talents](./spells-and-talents.md).
+202:
+203:### Example: spend Legacy points on a tree
+204:
+205:1. Open the Legacy window with the Toggle Legacy key.
+206:2. On the Tabs row, move to the tree page and press Enter.
+207:3. Tab to Trees and choose the tree you want.
+208:4. Tab to Talents. Use Down to reach a row and Right to find a talent that reads "Available".
+209:5. Press Enter to buy a rank. Repeat for other talents.
+210:6. Tab to the Apply button (it reads "Unsaved Changes") and press Enter.
+211:
+212:## What is not read yet
+---docs/src/user/en/windows/loot-trade-mail.md:74-79---
+74:The stops, in order:
+75:
+76:1. Tabs: Inbox and Send Mail. The one you are on says "selected". Left and Right move between them, and Enter switches.
+77:2. Open All: a button that takes everything from your inbox, when the game shows it.
+78:3. Inbox: your letters on this page.
+79:4. Previous Page and Next Page: only when there are more letters than fit.
+---docs/src/user/en/windows/loot-trade-mail.md:110-114---
+110:1. Open the mailbox and press Enter on "From: Auction House, Subject: Auction successful".
+111:2. Tab to the letter. Listen to the invoice.
+112:3. Down to the money attachment and press Enter. The gold is in your purse.
+113:4. Tab to Delete (or Close) and press Enter.
+114:
+---docs/src/user/en/windows/spells-and-talents.md:108-117---
+108:2. Tabs: the three talent trees, named by the game ("Arms", "Fury", "Protection"). The open one reads "selected".
+109:3. A line with your unspent talent points, as the game words it.
+110:4. Talent Grid: the talents of the open tree, read top to bottom and left to right. Each reads its name and rank: "Improved Heroic Strike rank 2/3". Only talents the game shows are listed.
+111:5. Close.
+112:
+113:Enter on a talent spends a point on it at once and the new rank is spoken ("rank 3/3"). The game rules apply: you need the points spent above and the prerequisite talent. Press Space for the tooltip, which says what is missing and what the next rank does. To pick up a talent that is an active ability and put it on your bars, open the context menu with Shift+F10 and choose Drag; the drag key itself does not work on the TBC talent grid.
+114:
+115:### Example: spend your first points in a Warrior tree
+116:
+117:1. Press N. You land on the tabs stop (or on the specialization row if you have one).
+---docs/src/user/en/world/combat.md:29-33---
+29:(Retail and WoW: Forever only) Blizzard hides a number of game values from addons, especially in combat and in instances. These are the ones that you notice in WowVision:
+30:
+31:- Your target's health cannot be read, so there is no target health monitor. Use the game's own Combat Audio Alerts instead, in its Accessibility options: they can say your target's health, in combat too. See [Targeting](targeting.md).
+32:- Your movement speed is hidden in combat, so wall detection can only notice that you are standing still, not that you are slowed ([Movement](movement.md)).
+33:- Raid markers are spoken as numbers.
+---docs/src/user/en/world/movement.md:19-23---
+19:
+20:The Compass module watches your character and speaks when something about your surroundings changes. Each of its entries is an alert (see [Alerts](../basics/alerts.md)): it has an Enabled switch and one or more outputs, usually TTS Alert (speech) and Sound Alert.
+21:
+22:| Alert | What triggers it | Default output |
+23:|-------|------------------|----------------|
+---docs/src/user/en/world/targeting.md:1-6---
+1:# Targeting
+2:
+3:WowVision tells you what you target, lets you keep up to five "virtual focus" targets on keys, can switch the game's soft targeting on and off, and opens the target's menu with a single key. This page covers all of it: the announcements, the keys, and the settings.
+4:
+5:All targeting settings live in the WowVision menu (type /wv) under Targeting. Targeting works the same on every supported game version, apart from the notes marked for Retail and WoW: Forever. Soft targeting needs support from the game itself; if your version lacks one of its settings, /wv soft lists it as "not available".
+6:
+---docs/src/user/en/world/targeting.md:56-60---
+56:
+57:(Retail and WoW: Forever) There is no Health Monitor here, because the game hides a target's health from addons in combat, just when you need it. Use the game's own Combat Audio Alerts instead, in its Accessibility options: they can say your target's health, in combat too.
+58:
+59:Example: you want a quieter fight, so you turn off health readouts.
+60:
+---docs/src/user/en/world/targeting.md:101-105---
+101:
+102:Each type is an alert in the Targeting menu named Soft Target Enemy, Soft Target Friend and Soft Target Interact. The alert is off by default; its Enabled setting is what the key flips. Under it you find TTS Alert (spoken, interrupting by default) and Sound Alert, both on by default once the alert is on. You can pick a different sound with the Sound setting of the sound output.
+103:
+104:### Arc and range
+105:
+---docs/src/user/en/world/targeting.md:164-170---
+164:### Example: three bosses in a raid
+165:
+166:1. Target the first boss and type /focus1.
+167:2. Target the second boss and type /focus2, then the third and /focus3.
+168:3. In the keybinding window assign Alt+1, Alt+2 and Alt+3 to Target Focus 1, 2 and 3.
+169:4. In the fight, Alt+1 targets the first boss and WowVision reads it as it would any target change.
+170:
+
+codex
+영어 원문 대조에서는 현재까지 의미 누락이나 조건 추가가 보이지 않아. 특히 `alert` 결정은 WowVision 기능 문맥에만 적용되고, 재사용 대기시간 관리자와 `Combat Audio Alerts`는 게임 자체 UI라 공식 명칭 `경보`를 유지한 변경이 맞다. 이제 인용 문자열을 실제 koKR·게임 문자열의 동일 ID에서 재확인하고 조사·띄어쓰기를 마지막으로 볼게.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n 'STABLES|DisplayContextMenu|actionType.*flyout' tbc/petStable.lua retail/cooldownManager.lua core/windows/bars/bars.lua" in C:\project\games\wowvision-ko\WowVision
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n '"'^(13216|18805|20141|49663|49664|55581|55585|55602|56670|56672|57498|58392|58480),'"' cache/gs_enUS.csv cache/gs_koKR.csv" in C:\project\games\wowwork
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command 'Get-Content -Encoding UTF8 docs/decisions.tsv' in C:\project\games\wowwork
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n -F 'L[\"Beacon Sound\"] = \"비컨 소리\"' koKR; rg -n -F 'L[\"Spell Flyout\"] = \"주문 펼침 메뉴\"' koKR; rg -n -F 'L[\"Edit Set\"] = \"세트 편집\"' koKR; rg -n -F 'L[\"Stable\"] = \"우리\"' koKR" in C:\project\games\wowvision-ko\vision-locale
+ succeeded in 202ms:
+tbc/petStable.lua:87:    builder:pushContext("petStable", STABLES or L["Stable"])
+retail/cooldownManager.lua:235:    if item.DisplayContextMenu ~= nil then
+retail/cooldownManager.lua:238:        item:DisplayContextMenu()
+retail/cooldownManager.lua:384:    filter:DisplayContextMenu(item)
+core/windows/bars/bars.lua:70:    elseif actionType == "flyout" then
+
+ succeeded in 198ms:
+cache/gs_enUS.csv:3087:13216,STABLES,Stables,1
+cache/gs_enUS.csv:7081:18805,SHOW_ON_BACKPACK,"Show on Backpack",1
+cache/gs_enUS.csv:8325:20141,TALENTS_INVOLUNTARILY_RESET,"Some of your talents have been reset due to changes in the talent tree.",1
+cache/gs_enUS.csv:20912:49663,TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS,"Click to learn",1
+cache/gs_enUS.csv:20913:49664,TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS,"Right click to unlearn",1
+cache/gs_enUS.csv:24140:55581,COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT,"New Alert",1
+cache/gs_enUS.csv:24144:55585,COOLDOWN_VIEWER_SETTINGS_ALERT_DIALOG_TITLE,"New Alert",1
+cache/gs_enUS.csv:24159:55602,COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT,"Edit Alert",1
+cache/gs_enUS.csv:24589:56670,CAA_COMBAT_AUDIO_ALERTS_LABEL,"Combat Audio Alerts",1
+cache/gs_enUS.csv:24590:56672,CAA_ENABLE_COMBAT_AUDIO_ALERTS,"Enable Combat Audio Alerts",1
+cache/gs_enUS.csv:25021:57498,COMBAT_AUDIO_ALERTS,"Combat Audio Alerts",1
+cache/gs_enUS.csv:25603:58392,RADIAL_LABEL_TARGET_EMOTES,Emotes,1
+cache/gs_enUS.csv:25686:58480,PAGE_LABEL_EMOTES,Emotes,1
+cache/gs_koKR.csv:3085:13216,STABLES,우리,1
+cache/gs_koKR.csv:7084:18805,SHOW_ON_BACKPACK,"소지품에 표시",1
+cache/gs_koKR.csv:8331:20141,TALENTS_INVOLUNTARILY_RESET,"특성 계통도 변화로 특성 일부가 초기화되었습니다.",1
+cache/gs_koKR.csv:20924:49663,TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS,"배우려면 클릭하십시오.",1
+cache/gs_koKR.csv:20925:49664,TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS,"습득을 취소하려면 오른쪽 클릭하십시오.",1
+cache/gs_koKR.csv:24151:55581,COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT,"신규 경보",1
+cache/gs_koKR.csv:24155:55585,COOLDOWN_VIEWER_SETTINGS_ALERT_DIALOG_TITLE,"신규 경보",1
+cache/gs_koKR.csv:24170:55602,COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT,"경보 편집",1
+cache/gs_koKR.csv:24598:56670,CAA_COMBAT_AUDIO_ALERTS_LABEL,"전투 음성 경보",1
+cache/gs_koKR.csv:24599:56672,CAA_ENABLE_COMBAT_AUDIO_ALERTS,"전투 음성 경보 활성화",1
+cache/gs_koKR.csv:25031:57498,COMBAT_AUDIO_ALERTS,"전투 음성 경보",1
+cache/gs_koKR.csv:25613:58392,RADIAL_LABEL_TARGET_EMOTES,감정표현,1
+cache/gs_koKR.csv:25695:58480,PAGE_LABEL_EMOTES,감정표현,1
+
+ succeeded in 226ms:
+date	scope	decision	source	note
+2026-11-03	숫자 사이 of	영어 of를 그대로 둔다. 2026-11-05 확장: 서식 문자열 안의 of(Page %d of %d 등)도 영어 of 유지	사용자	2026-11-05 사용자 결정 "일단 OF 그대로 가져간다". 예: 페이지 %d of %d, 층 %d of %d
+2026-11-03	용어 선택 기준	같은 문맥의 게임 공식 번역은 따르고, 영어만 같고 문맥이 다른 공식 번역은 문맥에 맞게 옮긴다	사용자	예: Comment=의견, Merchant=상인
+2026-11-03	행동 단축바 계열	단축바로 통일 (태세 단축바, 게임패드 단축바)	사용자	
+2026-11-05	windows.lua::Stable	"우리" 유지	사용자 승인	GPT 회귀 확인의 "우리 이용" 지적(중대)을 이 결정으로 종결. 근거: 같은 창 제목의 게임 공식 표기 STABLES=우리 (tbc/petStable.lua:87)
+2026-11-05	"; the route goes on after it" 문장 끝	현재 번역 유지	사용자 승인	현재 상태: 앞 절이 명사형이면 "; 이후 경로 계속", 앞 절이 합니다체 명령이면 "; 그 후 경로가 이어집니다" (정리는 Claude)
+2026-11-05	WoW: Forever 전용 지명	영어 그대로 (Rohashi Spires, Valanaar, Valanaar Sanctuary, Wind Bridge)	사용자 승인	리테일 AreaTable에 공식 한국어 없음
+2026-11-05	영어 복합어의 하이픈 (Auto-move 등)	한국어로 옮길 때 하이픈을 넣지 않는다 (자동 이동)	사용자	"자동-이동"은 어색하다. 원문 기호 보존 규칙은 문장 부호에 적용하고 영어 철자 속 하이픈에는 적용하지 않는다
+2026-11-05	상태 알림 문체 (원문이 마침표로 끝나는 완결 문장이어도)	합니다체로 늘리지 않고 간결하게 쓴다. 원인과 결과는 "~해서 종료"처럼 잇는다	사용자	사용자 원문: "내 번역 규칙 말고 간결해야 한다. 블라블라해서 종료, 블라블라해서 뭐뭐뭐". 상태 알림은 무슨 일이 일어났거나 지금 어떤 상태인지 알리는 발화다. 사용자가 할 일을 지시하는 문장(~하십시오)과 기능을 설명하는 도움말 문장은 해당하지 않는다
+2026-11-05	windows.lua::Picked up	"집어 듦"	사용자	GPT 판정자 제안 채택
+2026-11-05	같은 키를 두 기능이 공유하는 문자열 (Friends, Direct, Duration)	원본 코드를 수정하지 않고 지금 번역을 유지한다. upstream 요청은 실사용자 테스트 뒤에 사용자가 검토한다	사용자	평가자는 이 항목들의 공유 키 문제를 다시 지적하지 않는다
+2026-11-05	wowvision-installer Loc.cs::folders.alsoFound	"같은 World of Warcraft 폴더에서 찾은 버전: {0}. {1}"	사용자	"그곳에서 함께/추가로 찾음"은 어색하다(사용자). 평가자가 요구한 "찾았다는 사실과 위치"를 남기는 후보 중 사용자 선택
+2026-11-05	설명서: 원문이 실제 애드온 동작과 다를 때	원문에 충실하게 옮긴다. 차이는 목록으로 모아 upstream 설명서에 보고한다. 예외: 한국어 사용자에게만 생기는 차이(메뉴 글자 이동, 주문·아이템의 한국어 이름, 지원 언어 목록)는 한국어판에 적는다	사용자	원문과 다른 동작 사례는 reviews/2026-11-05-manual/escalations.json
+2026-11-05	설명서: 링크 글자가 대상 페이지 제목과 다를 때	원문 링크 글자를 그대로 옮긴다(대상 제목에 맞추지 않는다)	사용자	
+2026-11-05	설명서: sighted (player, helper 등)	"비장애인"으로 옮긴다(비장애인 플레이어, 비장애인 도우미, 비장애인의 도움)	사용자	이전 표기 "앞을 보는", "눈이 보이는", "화면을 보는" 23곳을 바꿨다
+2026-11-05	설명서: 게임 이름	World of Warcraft (영문) 유지. 공식 한국어 "월드 오브 워크래프트"는 쓰지 않는다	사용자	설치 프로그램 문구, 폴더 이름과 같은 표기
+2026-11-06	설치 프로그램: 한국어 설명서 포함 여부	넣지 않는다. 설치 프로그램은 koKR 문자열만 덮어쓴다. 설명서는 저장소(ko 브랜치)로만 제공한다	사용자	선택지: 넣지 않음 / HTML / 마크다운
+2026-11-06	번역 평가: 회귀 확인 순환 상한(2회) 뒤에 남은 지적	근거가 글자 그대로 확인되는 것(koKR 값, 설치 프로그램 Loc.cs, glossary.tsv, 게임 공식 문자열, 앱 코드, 다른 한국어 설명서 표기)만 한 번 더 반영하고 회귀는 더 돌리지 않는다. 판정이 갈린 건도 같은 기준으로 처리한다	사용자	선택지: 근거 있는 것만 반영 / 사용자가 직접 검토 / 상한 넘어 계속 / 그대로 마무리
+2026-11-07	alert의 한국어	"알림"으로 바꾼다(경보 대신). koKR·용어집·설명서를 함께 바꾼다. Announce 설정의 "X 알림"(오류 알림, 군중 제어 알림 등)은 그대로 둔다	사용자	선택지: 알림+Announce는 알리기 / 알림+Announce 그대로 / 경보 유지. 근거: 게임 공식은 위험 신호=경보(DISPLAY_SPELL_ALERTS), 소식=알림(GUILDMEMBER_ALERT). Claude·GPT 모두 알림 권고
+2026-11-07	설명서 다듬기에서 나온 koKR 값 변경 제안	같은 문맥의 게임 공식 문자열 근거가 있고 Claude·GPT 판정이 일치하는 것만 koKR을 바꾸고 설명서를 따라 고친다. 근거가 갈리는 것은 목록으로 보고한다	사용자	선택지: 공식 근거+두 회사 합의 / 하나씩 사용자 검토 / 이번에 안 바꿈
+2026-11-07	설명서: 게임 버전 이름	영어로 쓴다(Classic Era, Retail). 클래식 시대, 리테일은 쓰지 않는다	사용자	설치 프로그램 한국어 문구와 같은 표기. World of Warcraft 영문 유지(2026-11-05)와 같은 방향
+2026-11-07	speech.lua::Buffered	"모아 말하기"	사용자	"대기열"은 음성 대기열(Speech Queue)과, "버퍼"는 버퍼 기능과 겹친다. Direct는 "직접" 유지
+
+ succeeded in 267ms:
+koKR\navigation.lua:41:L["Beacon Sound"] = "비컨 소리"
+koKR\ui.lua:119:L["Spell Flyout"] = "주문 펼침 메뉴"
+koKR\windows.lua:252:L["Edit Set"] = "세트 편집"
+koKR\windows.lua:201:L["Stable"] = "우리"
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n '"'^(12984|13125),'"' cache/gs_enUS.csv cache/gs_koKR.csv; rg -n 'CHAT_MSG_WHISPER' cache/gs_enUS.csv cache/gs_koKR.csv" in C:\project\games\wowwork
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n 'Alert Editor|Add New Alert|editing an existing|Add Alert|Save Alert|alert editor' retail core" in C:\project\games\wowvision-ko\WowVision
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n 'Alert Editor|Add Alert|Save Alert|New Alert|Edit Alert|경보|알림 편집기|알림 추가|알림 저장' enUS koKR" in C:\project\games\wowvision-ko\vision-locale
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command "rg -n 'Enabled|TTS Alert|Sound Alert|Voice Alert|Speech and Sound|Muted|Priority Message|Targeting|Soft Target Enemy|Soft Target Friend|Soft Target Interact|Selected|Empty|Disabled|Opened' koKR" in C:\project\games\wowvision-ko\vision-locale
+ succeeded in 226ms:
+cache/gs_enUS.csv:2877:12984,CHAT_MSG_WHISPER,"Incoming Whisper",3
+cache/gs_enUS.csv:3005:13125,CHAT_MSG_WHISPER_INFORM,Whisper,3
+cache/gs_koKR.csv:2881:12984,CHAT_MSG_WHISPER,"받는 귓속말",3
+cache/gs_koKR.csv:3006:13125,CHAT_MSG_WHISPER_INFORM,귓속말,3
+cache/gs_enUS.csv:2877:12984,CHAT_MSG_WHISPER,"Incoming Whisper",3
+cache/gs_enUS.csv:3005:13125,CHAT_MSG_WHISPER_INFORM,Whisper,3
+cache/gs_koKR.csv:2881:12984,CHAT_MSG_WHISPER,"받는 귓속말",3
+cache/gs_koKR.csv:3006:13125,CHAT_MSG_WHISPER_INFORM,귓속말,3
+
+ succeeded in 236ms:
+retail\cooldownManager.lua:21:-- The alert editor beside the window is its own window (below).
+retail\cooldownManager.lua:225:-- Backspace: the item's context menu (its alerts, Add New Alert, Move to
+retail\cooldownManager.lua:561:-- The alert editor opens beside the window for Add New Alert and for
+retail\cooldownManager.lua:562:-- editing an existing alert: the spell, then one dropdown per choice
+retail\cooldownManager.lua:571:        builder:pushContext("alertEditor", L["Alert Editor"])
+
+ succeeded in 225ms:
+enUS\windows.lua:279:L["Alert Editor"] = true
+koKR\windows.lua:280:L["Alert Editor"] = "알림 편집기"
+
+ succeeded in 208ms:
+koKR\auction.lua:77:L["Selected"] = "선택됨"
+koKR\auction.lua:79:L["Item Selected"] = "아이템 선택됨"
+koKR\alerts.lua:6:L["TTS Alert"] = "TTS 알림"
+koKR\alerts.lua:8:L["Sound Alert"] = "소리 알림"
+koKR\alerts.lua:9:L["Voice Alert"] = "음성 팩 알림"
+koKR\alerts.lua:10:L["Priority Message (interrupts)"] = "우선 메시지 (현재 음성 중단)"
+koKR\chat.lua:17:L["Chat Box Opened"] = "대화 입력창 열림"
+koKR\errors.lua:10:L["Speech and Sound"] = "음성 및 소리"
+koKR\errors.lua:11:L["Muted"] = "음소거"
+koKR\targeting.lua:4:L["Targeting"] = "목표 선택"
+koKR\targeting.lua:19:--Soft Targeting
+koKR\targeting.lua:20:L["Soft Target Enemy"] = "적 소프트 대상"
+koKR\targeting.lua:21:L["Soft Target Friend"] = "아군 소프트 대상"
+koKR\targeting.lua:22:L["Soft Target Interact"] = "상호작용 소프트 대상"
+koKR\targeting.lua:24:L["Soft Target Enemy Arc"] = "적 소프트 대상 각도"
+koKR\targeting.lua:25:L["Soft Target Enemy Range"] = "적 소프트 대상 거리"
+koKR\targeting.lua:26:L["Soft Target Friend Arc"] = "아군 소프트 대상 각도"
+koKR\targeting.lua:27:L["Soft Target Friend Range"] = "아군 소프트 대상 거리"
+koKR\targeting.lua:28:L["Soft Target Interact Arc"] = "상호작용 소프트 대상 각도"
+koKR\targeting.lua:29:L["Soft Target Interact Range"] = "상호작용 소프트 대상 거리"
+koKR\targeting.lua:33:L["Soft Targeting With a Hard Target"] = "하드 대상이 있을 때 소프트 대상 지정"
+koKR\ui.lua:54:L["Disabled"] = "사용 안 함"
+koKR\ui.lua:56:L["Enabled"] = "사용함"
+koKR\ui.lua:78:L["Empty"] = "비어 있음"
+koKR\ui.lua:219:L["Empty Object"] = "빈 개체"
+koKR\windows.lua:203:L["Selected Pet"] = "선택한 야수"
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Program Files\\PowerShell\\7\\pwsh.exe" -Command '$num = git diff --numstat 8e3a8a6 bca1778 -- docs/src/user/ko; $added = ($num | ForEach-Object { [int](($_ -split "`t")[0]) } | Measure-Object -Sum).Sum; $files = ($num | Measure-Object).Count; "changed_addition_lines=$added"; "changed_files=$files"; git diff --check 8e3a8a6 bca1778 -- docs/src/user/ko; "status_begin"; git status --short; "status_end"' in C:\project\games\wowvision-ko\WowVision
+ succeeded in 459ms:
+changed_addition_lines=36
+changed_files=16
+status_begin
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\advck/.config/git/ignore': Permission denied
+status_end
+
+codex
+문제 없음.
+
+확인한 줄 수: 36줄, 16개 파일.
+
+- 영어 원문, koKR 값, 동일 ID의 공식 게임 문자열, 사용자 결정과 모두 일치
+- 조사·어미·띄어쓰기 이상 없음
+- `git diff --check` 통과
+- 파일 수정 없음, 작업 트리 변경 없음
+tokens used
+65,475
+문제 없음.
+
+확인한 줄 수: 36줄, 16개 파일.
+
+- 영어 원문, koKR 값, 동일 ID의 공식 게임 문자열, 사용자 결정과 모두 일치
+- 조사·어미·띄어쓰기 이상 없음
+- `git diff --check` 통과
+- 파일 수정 없음, 작업 트리 변경 없음
