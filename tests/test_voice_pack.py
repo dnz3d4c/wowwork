@@ -37,7 +37,13 @@ def test_pack_files_parse_setup_shape() -> None:
         numbers:addFile(i .. ".mp3")
     end
     """
-    assert pack_files(lua) == ["directions/north.mp3", "directions/east.mp3", "numbers/1.mp3", "numbers/2.mp3", "numbers/3.mp3"]
+    assert pack_files(lua) == [
+        "directions/north.mp3",
+        "directions/east.mp3",
+        "numbers/1.mp3",
+        "numbers/2.mp3",
+        "numbers/3.mp3",
+    ]
 
 
 def test_entries_use_kokr_direction_words() -> None:

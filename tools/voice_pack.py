@@ -43,7 +43,7 @@ def pack_files(lua: str) -> list[str]:
     """VoicePack:setup 이 등록하는 파일을 '하위폴더/파일' 로 돌려준다."""
     files: list[str] = []
     var_to_dir = dict(re.findall(r'local\s+(\w+)\s*=\s*root:addSubdirectory\(\{\s*key\s*=\s*"(\w+)"', lua))
-    for var, body in re.findall(r"(\w+):addFiles\(\{(.*?)\}\)", lua, re.S):
+    for var, body in re.findall(r"(\w+):addFiles\(\{(.*?)\}\)", lua, re.DOTALL):
         files += [f"{var_to_dir[var]}/{name}" for name in re.findall(r'"([^"]+)"', body)]
     for start, end, var, suffix in re.findall(
         r"for\s+i\s*=\s*(\d+)\s*,\s*(\d+)\s+do\s+(\w+):addFile\(i\s*\.\.\s*\"([^\"]+)\"\)", lua
@@ -103,9 +103,15 @@ def too_short(durations: dict[str, float], texts: dict[str, str]) -> list[str]:
 
 def duration(path: Path) -> float:
     """끝까지 디코딩해서 잰 길이(초). mp3 헤더의 추정값은 쓰지 않는다."""
-    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"], capture_output=True, text=True).stderr
+    err = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
+        capture_output=True,
+        text=True,
+        check=False,
+    ).stderr
     h, m, s = re.findall(r"time=(\d+):(\d+):([\d.]+)", err)[-1]
     return int(h) * 3600 + int(m) * 60 + float(s)
+
 
 # 앞 무음을 자르고, 뒤집어서 다시 잘라 뒤 무음도 없앤다.
 _TRIM = "silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse"
@@ -121,7 +127,17 @@ def build(voice: str, out: Path, rate: int = DEFAULT_RATE) -> int:
         wavs = {rel: tmp / (rel.replace("/", "_") + ".wav") for rel, _ in entries}
         listing.write_text("\n".join(f"{wavs[rel]}\t{text}" for rel, text in entries), encoding="utf-8")
         subprocess.run(
-            ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(script), voice, str(listing), str(rate)],
+            [
+                "powershell",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                str(script),
+                voice,
+                str(listing),
+                str(rate),
+            ],
             check=True,
         )
         if out.exists():
@@ -130,14 +146,33 @@ def build(voice: str, out: Path, rate: int = DEFAULT_RATE) -> int:
             target = out / rel
             target.parent.mkdir(parents=True, exist_ok=True)
             subprocess.run(
-                ["ffmpeg", "-v", "error", "-y", "-i", str(wavs[rel]), "-af", _TRIM,
-                 "-ar", "16000", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k", str(target)],
+                [
+                    "ffmpeg",
+                    "-v",
+                    "error",
+                    "-y",
+                    "-i",
+                    str(wavs[rel]),
+                    "-af",
+                    _TRIM,
+                    "-ar",
+                    "16000",
+                    "-ac",
+                    "1",
+                    "-c:a",
+                    "libmp3lame",
+                    "-b:a",
+                    "128k",
+                    str(target),
+                ],
                 check=True,
             )
     texts = dict(entries)
     short = too_short({rel: duration(out / rel) for rel in texts}, texts)
     if short:
-        raise SystemExit(f"녹음이 잘린 것으로 보이는 파일 {len(short)}개(음절당 {MIN_SECONDS_PER_SYLLABLE}초 미만): {short[:10]}")
+        raise SystemExit(
+            f"녹음이 잘린 것으로 보이는 파일 {len(short)}개(음절당 {MIN_SECONDS_PER_SYLLABLE}초 미만): {short[:10]}"
+        )
     return len(entries)
 
 
