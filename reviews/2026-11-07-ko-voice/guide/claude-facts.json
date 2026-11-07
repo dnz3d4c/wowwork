@@ -1,0 +1,31 @@
+{
+  "findings": [
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "critical",
+      "quote": "대상 생명력(목표 선택, 하드 대상의 생명력 모니터), 거리 변경(목표 선택, 하드 대상), 적 수 알림(인터페이스, 전투)의 음성 팩 알림도 같은 방법으로 바꿉니다.",
+      "suggestion": "거리 변경(목표 선택, 하드 대상)의 음성 팩 알림도 같은 방법으로 바꿉니다. 생명력 모니터(목표 선택, 하드 대상)와 적 수 알림(인터페이스, 전투)은 처음에 TTS 알림으로 숫자를 읽고 음성 팩 알림은 꺼져 있습니다. 이 둘을 녹음으로 들으려면 음성 팩 알림을 열어 사용함을 켜고 음성 팩을 Yuna로 바꾼 뒤, 돌아가서 TTS 알림의 사용함을 끕니다. 생명력 모니터는 Retail과 WoW: Forever에는 없습니다.",
+      "problem": "생명력 모니터와 적 수 알림의 음성 팩 알림은 기본으로 꺼져 있다. 안내대로 음성 팩만 Yuna로 바꾸면 이 두 알림은 계속 TTS로 숫자를 읽어서 Yuna 녹음이 전혀 들리지 않는다. 테스터는 Yuna가 동작하지 않는다고 잘못 판단하게 된다. 사용함을 켜는 단계(그리고 TTS와 겹치지 않게 TTS 알림을 끄는 단계)가 빠졌다. 또 생명력 모니터는 Retail과 WoW: Forever에 없어서 그 버전 테스터는 메뉴에서 찾지 못한다.",
+      "evidence": "wowvision-ko/WowVision/core/targeting/module.lua:107-137 (hardTargetHealth: TTS 출력은 기본 켬, Voice 출력 enabled = false), core/ui modules/combat.lua:39-70 (enemyCountAlert: TTS 켬, Voice enabled = false), core/navigation/compass.lua:12-28 (나침반은 Voice 켬, TTS enabled = false), core/targeting/range.lua:15-22 (거리 변경은 Voice만, 켬). 한국어 설명서 docs/src/user/ko/basics/alerts.md 모듈별 알림 표: 적 수 알림 '음성 팩 알림(끔, 녹음된 숫자)', 생명력 모니터 '음성 팩 알림(끔, 녹음된 숫자)' 및 'Retail과 WoW: Forever에는 없습니다', 같은 문서의 '나침반을 녹음된 음성 대신 TTS로 바꾸기' 예(사용함 켜고 끄는 절차)."
+    },
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "나침반 방향(\"east\" 같은 말)과 대상 생명력, 대상까지 거리, 적의 수 같은 숫자는 TTS가 아니라 녹음된 음성 팩으로 재생됩니다.",
+      "suggestion": "나침반 방향(\"east\" 같은 말)과 대상까지 거리는 처음부터 TTS가 아니라 녹음된 음성 팩으로 재생됩니다. 대상 생명력과 적의 수도 음성 팩으로 재생하게 바꿀 수 있습니다.",
+      "problem": "처음 상태에서 음성 팩으로 재생되는 것은 나침반 방향과 거리 변경뿐이다. 대상 생명력과 적의 수는 기본으로 TTS가 읽고 음성 팩 알림은 꺼져 있다. 테스터는 이 두 알림이 이미 영어 녹음으로 나오고 있다고 잘못 이해하고, 음성 팩만 바꾸면 한국어로 들린다고 기대하게 된다.",
+      "evidence": "wowvision-ko/WowVision/core/targeting/module.lua:123-137 (생명력 Voice 출력 enabled = false), core/ui modules/combat.lua:59-70 (적 수 Voice 출력 enabled = false). docs/src/user/ko/basics/alerts.md 모듈별 알림 표의 '음성 팩 알림(끔, 녹음된 숫자)'. (speech.md 71행도 같은 문장을 쓰지만 출력 기본값은 alerts.md와 코드가 정한다.)"
+    },
+    {
+      "id": "tester-guide",
+      "category": "accuracy",
+      "severity": "major",
+      "quote": "진행 화면에 \"한국어 음성 팩을 추가하지 못했습니다\"(영어 화면에서는 \"The Korean voice pack could not be added\")가 나오면 음성 알림은 영어 음성 팩으로 재생됩니다.",
+      "suggestion": "진행 화면에 \"한국어 음성 팩을 추가하지 못했습니다\"(영어 화면에서는 \"The Korean voice pack could not be added\")가 나오면 음성 팩을 Yuna로 바꿔 둔 알림은 소리가 나지 않을 수 있습니다. 설치 프로그램을 다시 실행해 보고, 그래도 같으면 아래 방법으로 로그를 보내 주십시오.",
+      "problem": "Yuna 추가가 실패해도 알림의 음성 팩 설정은 Yuna로 남는다. WowVision은 등록되지 않은 팩을 다른 팩으로 바꾸지 않고, 경로를 찾지 못하면 아무것도 재생하지 않는다. 업데이트로 WowVision 폴더가 원본으로 바뀐 뒤 실패하면 Yuna 폴더와 등록 줄이 모두 없으므로, 이미 Yuna를 고른 테스터는 영어가 아니라 무음을 듣는다(업데이트가 아닌 실행에서 실패하면 이전 Yuna가 그대로 남아 Yuna로 들린다). 영어로 나온다는 안내는 처음 설치에서 아직 Yuna를 고르지 않은 경우에만 맞는다. 설치 프로그램의 Ko 문구 자체도 같은 가정을 하고 있다.",
+      "evidence": "wowvision-ko/WowVision/core/alerts/outputs.lua:168-176 (speechPath = \"Voice/\" .. self.db.voicePack .. ..., 대체 팩 없음), core/WowVision.lua:254-261 (resource가 없으면 return nil, 재생 안 함), core/audio/audio.lua:17-35 (등록된 팩만 디렉터리에 추가), wowvision-installer/WowVisionInstaller/KoreanVoice.cs:60-75 (스테이징 뒤 교체라 실패 시 이전 Yuna 유지), InstallRunner.cs:309-316, Loc.cs:963."
+    }
+  ]
+}

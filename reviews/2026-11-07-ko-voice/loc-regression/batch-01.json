@@ -1,0 +1,25 @@
+{
+ "items": [
+  {
+   "id": "Loc.cs::status.koreanVoiceFailed",
+   "file": "Loc.cs",
+   "key": "status.koreanVoiceFailed",
+   "en": "The Korean voice pack could not be added: {0}. Voice alerts set to Yuna may stay silent until the installer runs again.",
+   "ko": "한국어 음성 팩을 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지, 음성 팩을 Yuna로 고른 음성 팩 알림은 소리가 나지 않을 수 있습니다.",
+   "de": "Das koreanische Sprachpaket konnte nicht hinzugefügt werden: {0}. Sprachhinweise, die auf Yuna eingestellt sind, bleiben möglicherweise stumm, bis der Installer erneut läuft.",
+   "fr": "Le pack vocal coréen n'a pas pu être ajouté : {0}. Les alertes vocales réglées sur Yuna peuvent rester muettes jusqu'à la prochaine exécution de l'installateur.",
+   "code": [
+    "InstallRunner.cs:318: SayScoped(Loc.Format(\"status.koreanVoiceFailed\", ex.Message), true);"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "Loc.cs::status.koreanFailed",
+     "en": "The Korean strings could not be added: {0}. WowVision works in English until the installer runs again.",
+     "ko": "한국어 문구를 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지 WowVision은 영어로 동작합니다."
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

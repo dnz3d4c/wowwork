@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "tester-guide",
+   "category": "accuracy",
+   "severity": "critical",
+   "quote": "대상 생명력(목표 선택, 하드 대상의 생명력 모니터), 거리 변경(목표 선택, 하드 대상), 적 수 알림(인터페이스, 전투)의 음성 팩 알림도 같은 방법으로 바꿉니다.",
+   "suggestion": "거리 변경(목표 선택, 하드 대상)의 음성 팩 알림도 같은 방법으로 바꿉니다. 대상 생명력(목표 선택, 하드 대상의 생명력 모니터)과 적 수 알림(인터페이스, 전투)은 음성 팩 알림이 기본으로 꺼져 있어서, 음성 팩을 Yuna로 바꾸고 같은 화면의 사용함도 켜야 녹음이 들립니다. 이 두 알림은 TTS 알림이 켜져 있으므로, 녹음만 들으려면 TTS 알림의 사용함을 끕니다. 생명력 모니터는 Retail과 WoW: Forever에는 없습니다.",
+   "problem": "생명력 모니터와 적 수 알림의 음성 팩 알림은 기본값이 꺼짐이다. 안내대로 음성 팩만 Yuna로 바꾼 테스터는 여전히 TTS로 숫자를 듣고 Yuna 녹음은 한 번도 듣지 못한다. 녹음이 안 나오는 것을 설치 실패로 오해해 로그를 보내거나, 시험해야 할 숫자 녹음을 시험하지 못한다. 또 Retail 테스터는 하드 대상 아래에서 생명력 모니터를 찾지 못해 막힌다.",
+   "evidence": "WowVision/core/targeting/module.lua:123-136(hardTargetHealth의 voice 출력 enabled = false), WowVision/core/ui modules/combat.lua:59-70(enemyCountAlert voice 출력 enabled = false), WowVision/core/targeting/range.lua:15-22(거리 변경은 enabled 지정 없음 = 켬), WowVision/core/targeting/module.lua:190-199(removeTargetHealth), 한국어 설명서 basics/alerts.md:73·99(적 수 알림·생명력 모니터 '음성 팩 알림(끔)', 생명력 모니터는 Retail과 WoW: Forever에 없음), alerts.md:27(알림과 출력이 둘 다 켜져 있을 때만 말함)"
+  },
+  {
+   "id": "tester-guide",
+   "category": "accuracy",
+   "severity": "major",
+   "quote": "나침반 방향(\"east\" 같은 말)과 대상 생명력, 대상까지 거리, 적의 수 같은 숫자는 TTS가 아니라 녹음된 음성 팩으로 재생됩니다.",
+   "suggestion": "나침반 방향(\"east\" 같은 말)과 대상까지 거리는 기본으로 TTS가 아니라 녹음된 음성 팩으로 재생됩니다. 대상 생명력과 적의 수도 음성 팩 알림을 켜면 녹음된 숫자로 재생됩니다.",
+   "problem": "대상 생명력과 적의 수는 기본으로 TTS로 읽고 음성 팩 녹음은 꺼져 있다. 이 문장을 들은 테스터는 생명력·적 수 숫자가 지금 영어 녹음으로 나온다고 믿게 되고, 설정을 바꾼 뒤 TTS 숫자를 들으면 Yuna가 적용되지 않았다고 오해한다.",
+   "evidence": "WowVision/core/targeting/module.lua:136, WowVision/core/ui modules/combat.lua:69(두 voice 출력 enabled = false), 한국어 설명서 basics/alerts.md:73·99('음성 팩 알림(끔, 녹음된 숫자)'), alerts.md:79·102(나침반 방향 읽기 음성 팩 알림 켬, 거리 변경은 음성 팩 알림만)"
+  }
+ ]
+}
