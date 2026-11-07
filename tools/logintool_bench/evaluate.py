@@ -80,7 +80,13 @@ def run_helper(helper: Path, image: Path, extra: list[str]) -> dict[str, Any]:
            "--data", str(TOOL / "data" / "data.ini"), "--gametype", "Forever", *extra]
     out = subprocess.run(cmd, capture_output=True, check=False, timeout=120)
     text = out.stdout.decode("utf-8", errors="replace").strip().splitlines()
-    return json.loads(text[-1]) if text else {"error": out.stderr.decode("utf-8", "replace")}
+    if out.returncode != 0 or not text:
+        return {"error": f"exit {out.returncode}: " + out.stderr.decode("utf-8", "replace").strip()}
+    try:
+        res: dict[str, Any] = json.loads(text[-1])
+    except json.JSONDecodeError as e:
+        return {"error": f"bad JSON: {e}"}
+    return res
 
 
 def _offset(marker: dict[str, Any], lines: list[dict[str, Any]]) -> tuple[int, int] | None:
@@ -133,6 +139,9 @@ def _rate(rs: list[dict[str, Any]], key: str) -> str:
 def report(result: dict[str, Any], title: str) -> str:
     rows = result["rows"]
     out = [f"# {title}", ""]
+    if result.get("failed"):
+        out += [f"보조 프로그램이 실패한 캡처: {len(result['failed'])}개", ""]
+        out += [f"- {f}" for f in result["failed"][:20]] + [""]
     if result["lost_pages"]:
         out += [f"표지를 읽지 못해 뺀 페이지: {len(result['lost_pages'])}개 {result['lost_pages'][:20]}", ""]
     ks = sorted({r["k"] for r in rows})
@@ -180,15 +189,20 @@ def main() -> None:
     items = parse_truth(Path(a.sv).read_text(encoding="utf-8"))
     cache = Path(a.out).with_suffix(".ocr.json")
     pages: dict[int, list[dict[str, Any]]] = {}
+    failed: list[str] = []
     for png in sorted(Path(a.captures).glob("p_*.png")):
         res = run_helper(Path(a.helper), png, a.extra.split())
+        if "error" in res:
+            failed.append(f"{png.name}: {res['error']}")
+            continue
         pages[int(png.stem.split("_")[1])] = res.get("lines", [])
     cache.write_text(json.dumps({str(k): v for k, v in pages.items()}, ensure_ascii=False), encoding="utf-8")
     result = evaluate(items, pages)
+    result["failed"] = failed
     Path(a.out).write_text(report(result, a.title), encoding="utf-8")
     Path(a.out).with_suffix(".rows.json").write_text(
         json.dumps(result["rows"], ensure_ascii=False, indent=0), encoding="utf-8")
-    print(f"{len(result['rows'])} rows, lost pages {len(result['lost_pages'])} -> {a.out}")
+    print(f"{len(result['rows'])} rows, lost pages {len(result['lost_pages'])}, helper failures {len(failed)} -> {a.out}")
 
 
 if __name__ == "__main__":

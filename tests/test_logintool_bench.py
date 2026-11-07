@@ -4,8 +4,13 @@
 읽혀 정답률을 잰다. 묶음이 한글 상용 음절을 빠짐없이 덮는지와 평가 지표 계산을 여기서 확인한다.
 """
 
-from tools.logintool_bench.corpus import COMMON, build_names, lua_data
+import pytest
+
+from tools.logintool_bench.corpus import COMMON, GS_KO, build_names, lua_data
 from tools.logintool_bench.evaluate import cer, has_level_word, match_lines, norm, parse_truth
+
+# word 종류는 cache/gs_koKR.csv(git 제외)에서 뽑는다. 캐시가 없는 체크아웃에서는 건너뛴다.
+needs_cache = pytest.mark.skipif(not GS_KO.exists(), reason="cache/gs_koKR.csv 없음")
 
 
 def test_common_syllables_are_ks_x_1001() -> None:
@@ -19,6 +24,7 @@ def test_names_cover_every_common_syllable() -> None:
     assert COMMON <= used
 
 
+@needs_cache
 def test_names_have_valid_lengths_and_kinds() -> None:
     names = build_names(seed=1)
     for n in names:

@@ -17,6 +17,11 @@ local BACKDROPS = {
     "glues-characterselect-card-singles-hover",
 }
 
+-- CHARACTER_SELECT_INFO is a glue string and missing in game; koKR values from
+-- GlobalStrings (CHARACTER_SELECT_INFO 33939, CHARACTER_SELECT_INFO_GHOST 33941)
+local INFO = CHARACTER_SELECT_INFO or "%d 레벨 %s"
+local INFO_GHOST = CHARACTER_SELECT_INFO_GHOST or "%d 레벨 %s (유령)"
+
 local pw, ph = GetPhysicalScreenSize()
 local pages, cards, current = nil, {}, 0
 local classes, zones = {}, {}
@@ -167,7 +172,7 @@ local function showPage(p)
         c.name:SetText(entry[1])
         local cls = classes[(idx % math.max(1, #classes)) + 1]
         local level = (idx * 37) % 60 + 1
-        local fmt = (idx % 9 == 0) and CHARACTER_SELECT_INFO_GHOST or CHARACTER_SELECT_INFO
+        local fmt = (idx % 9 == 0) and INFO_GHOST or INFO
         local plain, shown = "?", "?"
         if cls then
             plain = fmt:format(level, cls.name)
