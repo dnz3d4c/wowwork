@@ -4,9 +4,9 @@
 
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
-| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, NVDA 브리지 기본 설치, WowVision V1.0.1 새 문자열 66개 번역) | 2026-11-07 | wow-vision/wowvision-installer ef7bb8f (1.6), 설치되는 애드온은 원본 안정판 V1.0.1 | dnz3d4c/wowvision-installer ko d0bb60a, koKR은 dnz3d4c/vision-locale main a78f05a | acc3aed69eb47d4fc1a9e9aacd1962cba1e0b405297a080ab038c6f62986b116 |
+| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, NVDA 브리지 기본 설치, 한국어 음성 팩 Yuna 설치) | 2026-11-07 | wow-vision/wowvision-installer ef7bb8f (1.6), 설치되는 애드온은 원본 안정판 V1.0.1 | dnz3d4c/wowvision-installer ko c3ec7a7, koKR은 dnz3d4c/vision-locale main a78f05a, 음성 팩은 wowwork assets/voice/Yuna | fe5ce7adc6f9312a007960083ae8a8b9b916e62140ecb1ff549fa5e765071a26 |
 
-이전 배포: 2026-11-07, ko b7177f6, koKR 980fdb5, SHA-256 3157ea4c206c6e674a0ef0a324de29c894e6cc17fd4a9079156f2cac4f37c142(설명서 다듬기의 koKR 변경). 그 전: 2026-11-06, ko accab35, koKR bff9930, SHA-256 ad48ba89b5e3272afd6e6745fa6575c6e3e1e51c354d47827a797a2864dc546a. 그 전: 2026-11-06, ko 702f903, SHA-256 e4a73d96698b5fecf5059966acae4bbfa3ccc7ed6a854adf265e538164d16ecc. 그 전: 2026-11-05, ko a948d1a, koKR f36a084, SHA-256 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47.
+이전 배포: 2026-11-07, ko d0bb60a, SHA-256 acc3aed69eb47d4fc1a9e9aacd1962cba1e0b405297a080ab038c6f62986b116(V1.0.1 새 문자열). 그 전: 2026-11-07, ko b7177f6, koKR 980fdb5, SHA-256 3157ea4c206c6e674a0ef0a324de29c894e6cc17fd4a9079156f2cac4f37c142(설명서 다듬기의 koKR 변경). 그 전: 2026-11-06, ko accab35, koKR bff9930, SHA-256 ad48ba89b5e3272afd6e6745fa6575c6e3e1e51c354d47827a797a2864dc546a. 그 전: 2026-11-06, ko 702f903, SHA-256 e4a73d96698b5fecf5059966acae4bbfa3ccc7ed6a854adf265e538164d16ecc. 그 전: 2026-11-05, ko a948d1a, koKR f36a084, SHA-256 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47.
 
 원본과 다른 기본값: NVDA 음성 브리지(`InstallRunner.cs`의 `InstallSapi2Sr`)가 켜져 있다. 원본은 꺼 둔다. "지금 설치", "지금 업데이트", 구성 요소 페이지가 모두 이 기본값으로 시작하므로 모든 설치 경로에서 브리지가 설치된다. 구성 요소 페이지에서는 여전히 해제할 수 있다(2026-11-06 사용자 지시).
 
@@ -14,12 +14,14 @@
 
 ## 다시 만드는 법
 
-1. koKR이 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload`
+1. koKR이나 음성 팩이 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload` (koKR.zip과 koVoice.zip). 음성 팩 자체는 `uv run python -m tools.voice_pack build`로 다시 녹음한다(Vocalizer Expressive Yuna, SAPI COM)
 2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, PATH 앞에 scoop .NET SDK)
 3. 실제 흐름 검사(실제 릴리스를 내려받는다): `WowVisionSelfTest.exe fullinstall` — 안정판 설치 뒤와 베타 전환 뒤 모든 클라이언트에 koKR이 있는지 확인한다
 4. 테스터 폴더에 exe와 함께 `docs/tester-guide.md`를 `설치_안내.txt`로 복사한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
 
 ## 검증 이력
+
+- 2026-11-07(한국어 음성 팩 Yuna): 나침반 방향 8개와 숫자 1~100을 Vocalizer Expressive Yuna로 녹음(`tools/voice_pack.py`, 잘린 녹음은 음절당 0.09초 기준으로 실패 처리). 설치 프로그램이 `audio/voice/Yuna`를 쓰고 `audio/voice.lua`에 등록 줄을 더한다(`KoreanVoice.cs`). 자체 검사 kovoice 18개 포함 `build.ps1 -RunTests` 전부 통과, `fullinstall` 전부 통과(5개 클라이언트, 안정판과 베타 전환 뒤 모두 Yuna 확인). 등록 줄을 원본 voice.lua 뒤에 붙여 luajit으로 실행해 세 팩 등록을 확인(`tests/test_voice_registration.py`). 실패 문구와 안내는 Claude·GPT 평가, 판정, 회귀 확인을 거쳤다(`reviews/2026-11-07-ko-voice`). 테스터 폴더 교체.
 
 - 2026-11-07(V1.0.1 새 문자열 66개): payload 재생성 뒤 `build.ps1 -RunTests` 전부 통과(FAIL 0), `fullinstall` 전부 통과(안정판 V1.0.1과 베타 전환 뒤 5개 클라이언트 모두 koKR 덮어쓰기 확인). payload를 풀어 "경로 역방향 전환, %s까지 돌아감", "대상의 대상 없음", "자리 비움 (AFK)", "파티 초대 수락"이 들어 있는 것을 확인했다. 안내는 바뀌지 않았다. 테스터 폴더의 exe, `설치_안내.txt`, `tester.zip`을 교체했다. 번역 평가 기록: `reviews/2026-11-07-ui-v1.0.1`.
 
