@@ -33,3 +33,19 @@
 |--------|------|
 | `" in "` (경매장 스캔 진행 안내) | WowVision tbc/auction/ScanSession.lua:147 |
 | `" min "`, `" sec"` (경매장 스캔 남은 시간) | WowVision tbc/auction/module.lua:80-93 |
+
+## 3. 여러 기능이 같은 키를 써서 한국어로 맞게 옮길 수 없는 문자열 (2026-11-07 설명서 다듬기)
+
+같은 영어 키를 서로 다른 문맥에서 함께 써서, 한 문맥의 게임 공식 이름을 따르면 다른 문맥이 틀린다. 키를 문맥별로 나눠야 한다. 두 회사 판정자가 코드의 쓰임을 확인했다(`reviews/2026-11-07-kokr-candidates`). 보내기 전에 위치를 다시 확인한다.
+
+| 키 (koKR 현재 값) | 문맥 A와 공식 한국어 | 문맥 B와 공식 한국어 |
+|-------------------|----------------------|----------------------|
+| quests.lua `Trainers` (상급자) | 미니맵 추적 Profession Trainers: 기술 전문가 (MINIMAP_TRACKING_TRAINER_PROFESSION) | 퀘스트 스캐너 TRAINER 역할(직업 상급자 포함): 상급자 (TUTORIAL_TITLE14) |
+| ui.lua `Repair` (수리) | 미니맵 추적 Repair: 장비 수리 (MINIMAP_TRACKING_REPAIR) | 상인 창 수리 묶음: 수리 (CONTEXT_ACTION_LABEL_REPAIR) |
+| ui.lua `Available` (사용 가능) | 경매장 결과 수량: 구매 가능 수량 | 특성 선택 가능 상태: 사용 가능 (AVAILABLE) |
+
+## 4. 코드가 이어 붙여 한국어 띄어쓰기를 맞출 수 없는 문자열
+
+| 결과 | 위치 |
+|------|------|
+| "12 개 출현 지점": 숫자, 공백, `L["spawns"]` 순서로 붙여 단위 "개"가 띄어진다 | WowVision core/quests/scanner.lua:81, 125 |
