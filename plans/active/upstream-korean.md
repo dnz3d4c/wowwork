@@ -10,10 +10,10 @@
 
 ## 현황 (Status Board)  [강제]
 
-- 단계: Phase 1 / 전체 6 — 작은 PR(경매장 문구)
-- 직전: 경매장 문구 수정을 원본 main 기준으로 커밋하고 내 저장소 기능 브랜치 `auction-scan-wording`에 push했다. PR 생성은 실패했다.
-- 다음: 공개 포크 생성 승인을 받은 뒤 PR 두 개(vision-locale, WowVision)를 연다.
-- 막힘: `dnz3d4c/vision-locale`·`WowVision`·`wowvision-installer`는 GitHub 포크가 아니다(`isFork=false`). 포크 관계가 없으면 원본으로 PR을 열 수 없다. 공개 포크를 새로 만들어야 한다(사용자 승인 필요).
+- 단계: Phase 2 / 전체 6 — koKR 로케일, 관리자 답 대기
+- 직전: 경매장 PR wow-vision/vision-locale#66, wow-vision/WowVision#109 제출. koKR 상의 이슈 wow-vision/WowVision#110 제출. koKR 브랜치는 `dnz3d4c/vision-locale-pr`의 `korean-locale`(3a37df9)에 준비됨.
+- 다음: #110에 답이 오면 koKR PR을 연다. #66이 합쳐지면 새 키 4개의 koKR 값을 보충한다.
+- 사용자 결정(2026-11-07): 새 이름으로 공개 포크(`vision-locale-pr`, `WowVision-pr`), 이번 범위는 koKR만, 큰 단위는 이슈로 먼저 상의. 설치 프로그램·설명서·음성 팩(Phase 3~5)은 이번에 진행하지 않는다.
 
 ## 배경  [강제]
 
@@ -36,9 +36,10 @@
 
 - PR 브랜치는 `ko` 이력이 아니라 `upstream/main`에서 새로 딴다. 포크 이력의 한국어 커밋 메시지와 포크 전용 변경이 섞이지 않게 하기 위해서다.
 - 원본 관례: 커밋 제목 `영역: 내용`(영어), 본문에 이유, `Co-Authored-By` 줄. 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓는다. 동작을 바꾸면 en·de 설명서를 함께 고친다. 줄 끝은 LF, BOM 없음.
-- 공개 GitHub 포크가 있어야 PR을 열 수 있다. 기존 저장소 이름이 겹치므로 다른 이름으로 포크한다(승인 필요).
+- 공개 GitHub 포크가 있어야 PR을 열 수 있다. 기존 저장소(`dnz3d4c/vision-locale` 등)는 포크가 아니다. PR용 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고 로컬 복제본의 remote 이름은 `fork`다.
+- `gh pr create --head dnz3d4c:브랜치`는 같은 계정에 같은 원본의 저장소가 여럿이라 실패한다. `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> ...`로 연다.
 
-### Phase 1. 작은 PR: 경매장 스캔 결과·대기 시간 문구 [완료, PR 대기]
+### Phase 1. 작은 PR: 경매장 스캔 결과·대기 시간 문구 [제출: vision-locale#66, WowVision#109]
 
 - 문제: `" in "`, `" min "`, `" sec"`가 `L[]` 밖에 있어서 모든 언어에서 영어로 나온다(`tbc/auction/ScanSession.lua:147`, `tbc/auction/module.lua:78-93`).
 - 수정: 서식 문자열 4개(`Scan complete, %s Results in %s scanned`, `%s min %s sec`, `%s min`, `%s sec`), enUS·deDE·frFR, 독일어 설명서 인용 3곳.

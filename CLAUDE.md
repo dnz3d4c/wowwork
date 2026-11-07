@@ -2,6 +2,13 @@
 
 작업 대상은 복제 저장소 3개다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
 
+## 원본에 PR 내기 [필수]
+
+- 위 복제 저장소는 GitHub 포크가 아니라서 원본에 PR을 열 수 없다. PR용 공개 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고, 로컬 복제본의 remote 이름은 `fork`다(2026-11-07).
+- PR 브랜치는 `upstream/main`에서 새로 딴다. `ko` 이력(한국어 커밋, 포크 전용 변경)을 섞지 않는다. 원본 관례: 영어 커밋 `영역: 내용`, 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓고, 동작을 바꾸면 en·de 설명서를 함께 고친다.
+- PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> -f base=main ...`로 연다. `gh pr create --head`는 같은 원본의 저장소가 계정에 둘이라 실패한다.
+- 계획과 진행 상황: `plans/active/upstream-korean.md`.
+
 ## WoW Login Tool [필수]
 
 로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`, sparse checkout)의 `ko` 브랜치에서 관리한다. 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.

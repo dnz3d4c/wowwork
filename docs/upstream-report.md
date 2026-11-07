@@ -29,6 +29,8 @@
 
 `L[]` 밖에 영어가 직접 들어 있어서 어떤 언어에서도 영어로 읽힌다.
 
+2026-11-07 제출: wow-vision/vision-locale#66, wow-vision/WowVision#109. 합쳐지면 새 키 4개(`Scan complete, %s Results in %s scanned`, `%s min %s sec`, `%s min`, `%s sec`)의 koKR 값을 넣는다.
+
 | 문자열 | 위치 |
 |--------|------|
 | `" in "` (경매장 스캔 진행 안내) | WowVision tbc/auction/ScanSession.lua:147 |
