@@ -12,12 +12,15 @@ capture.ahk 는 쪽마다 보조 프로그램을 새로 실행했고, 그때마�
 
 사용: uv run python -m tools.logintool_bench.capture <캡처 폴더> <쪽 수>
       uv run python -m tools.logintool_bench.capture <캡처 폴더> <초> --auto
-애드온은 미리 1쪽을 보여 주고 있어야 한다(/otb start 또는 /otb auto 2).
+수동: 애드온이 1쪽을 보여 준 뒤 시작한다(/otb start).
+자동: 캡처를 먼저 시작하고 /otb auto 2 를 입력한다(1쪽은 5초 머문다). 빠진 쪽은 /otb auto 2 <쪽>으로 다시 찍는다.
 """
 
 from __future__ import annotations
 
+import argparse
 import ctypes
+import json
 import queue
 import subprocess
 import sys
@@ -77,9 +80,14 @@ def _pump(stream: IO[str], q: queue.Queue[str]) -> None:
 
 
 def main() -> int:
-    out = Path(sys.argv[1])
-    pages = int(sys.argv[2])
-    auto = len(sys.argv) > 3 and sys.argv[3] == "--auto"
+    ap = argparse.ArgumentParser()
+    ap.add_argument("out", type=Path)
+    ap.add_argument("count", type=int, help="pages (manual) or seconds (--auto)")
+    ap.add_argument("--auto", action="store_true")
+    a = ap.parse_args()
+    if a.count <= 0:
+        ap.error("count must be positive")
+    out, pages, auto = a.out, a.count, a.auto
     out.mkdir(parents=True, exist_ok=True)
     log = open(out / "capture-log.txt", "w", encoding="utf-8")  # noqa: SIM115 - closed in finally
     proc = subprocess.Popen([str(HELPER), "repl"], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -98,6 +106,12 @@ def main() -> int:
             return answers.get(timeout=ANSWER_TIMEOUT)
         except queue.Empty:
             return None
+
+    def saved(answer: str | None) -> bool:
+        try:
+            return answer is not None and "saved" in json.loads(answer)
+        except json.JSONDecodeError:
+            return False
 
     try:
         if auto:
@@ -119,7 +133,7 @@ def main() -> int:
                 return 2
             answer = save(out / f"p_{i:04d}.png")
             print(f"{i} {answer}", file=log, flush=True)
-            if answer is None or '"error"' in answer:
+            if not saved(answer):
                 print("helper failed - stopped", file=log, flush=True)
                 return 3
             if not wait_for_game():

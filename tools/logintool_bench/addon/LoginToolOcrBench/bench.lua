@@ -208,26 +208,52 @@ SlashCmdList.LOGINTOOLOCRBENCH = function(msg)
         root:Hide()
         return
     end
-    -- "/otb auto 2": advance every 2 s on its own, so the capture needs no key
-    -- presses and the game window does not have to stay in front
-    local every = tonumber(msg:match("^auto%s+([%d%.]+)"))
+    -- "/otb auto 2 [page]": advance every 2 s on its own, so the capture needs
+    -- no key presses and the game window does not have to stay in front. The
+    -- first page stays 5 s so a capture started right after is not too late.
+    -- With a start page the records of the earlier pages are kept (re-shoot).
+    local every, from
+    if msg == "" or msg == "start" then
+        from = 1
+    else
+        local a, b = msg:match("^auto%s+(%d+%.?%d*)%s*(%d*)$")
+        every, from = tonumber(a), tonumber(b) or 1
+        if not every or every <= 0 or from < 1 then
+            print("usage: /otb start | /otb auto <seconds> [start page] | /otb stop")
+            return
+        end
+    end
     pw, ph = GetPhysicalScreenSize()
     if #classes == 0 then
         collectGameData()
     end
     buildPages()
-    LoginToolOcrBenchDB = { screen = pw .. "x" .. ph, pages = #pages, classes = #classes, zones = #zones, items = {} }
+    if from > #pages then
+        print("LoginToolOcrBench: only " .. #pages .. " pages")
+        return
+    end
+    local kept = {}
+    if from > 1 and LoginToolOcrBenchDB and LoginToolOcrBenchDB.items then
+        for _, line in ipairs(LoginToolOcrBenchDB.items) do
+            if tonumber(line:match("^(%d+)\t")) < from then
+                table.insert(kept, line)
+            end
+        end
+    end
+    LoginToolOcrBenchDB = { screen = pw .. "x" .. ph, pages = #pages, classes = #classes, zones = #zones, items = kept }
     SetOverrideBindingClick(root, true, "CTRL-SHIFT-F12", "LoginToolOcrBenchNext")
     root:Show()
-    showPage(1)
+    showPage(from)
     if every then
-        ticker = C_Timer.NewTicker(every, function()
-            if current > #pages then
-                ticker:Cancel()
-                ticker = nil
-                return
-            end
-            showPage(current + 1)
+        C_Timer.After(5, function()
+            ticker = C_Timer.NewTicker(every, function()
+                if current > #pages then
+                    ticker:Cancel()
+                    ticker = nil
+                    return
+                end
+                showPage(current + 1)
+            end)
         end)
     end
     print("LoginToolOcrBench: " .. #pages .. " pages, " .. #classes .. " classes, " .. #zones .. " zones")
