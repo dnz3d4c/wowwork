@@ -1,0 +1,40 @@
+{
+  "responses": [
+    {
+      "id": "koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.",
+      "action": "accept",
+      "final_ko": "삭제하지 못했습니다. 게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르세요. 또는 Escape를 눌러 취소하세요.",
+      "reason": "수용: 붙여 써야 하는 지금삭제는 음성으로 띄어쓰기를 알 수 없고, 이 문구는 입력이 거부됐을 때(flows.ahk:2316) 나오므로 '띄어 쓰지 않고'를 더한다. '취소합니다'는 지시문이라 '취소하세요'로 고친다. 반박: 언어 조건을 빼자는 gpt-accuracy 제안은 받지 않는다. 한국어 클라이언트의 확인 문자열은 DELETE_CONFIRM_STRING=지금삭제(gs_enUS.csv:14851 DELETE와 같은 ID 34285, gs_koKR.csv:14855)라 DELETE만 안내하면 한국어 게임에서 삭제가 거부된다(툴은 입력란을 비우고 사용자가 직접 입력하게 한다, flows.ahk:2280-2291). '누르십시오'로 바꾸자는 제안도 받지 않는다. 로그인 툴 koKR.txt의 지시문은 모두 '~세요'(36곳, '~십시오' 0곳)라 이 항목만 바꾸면 툴 안에서 문체가 섞인다."
+    },
+    {
+      "id": "koKR.txt::press enter to confirm the deletion, or press escape to cancel.",
+      "action": "accept",
+      "final_ko": "게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르세요. 또는 Escape를 눌러 취소하세요.",
+      "reason": "수용: 사용자가 직접 입력하는 확인 문자열(flows.ahk:2280-2291)이라 '띄어 쓰지 않고'를 더하고, 지시문 '취소합니다'를 '취소하세요'로 고친다. 반박: 언어 조건 삭제는 받지 않는다. 한국어 클라이언트는 DELETE 대신 지금삭제를 요구한다(DELETE_CONFIRM_STRING, gs_enUS.csv:14851 / gs_koKR.csv:14855 같은 ID). '~십시오'로 바꾸는 것도 받지 않는다. 툴 koKR.txt 지시문이 모두 '~세요'로 통일돼 있다."
+    },
+    {
+      "id": "koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.",
+      "action": "accept",
+      "final_ko": "게임이 한국어면 띄어 쓰지 않고 지금삭제를 입력하고 영어면 DELETE를 입력한 뒤 Enter를 누르거나, Escape를 눌러 삭제를 취소하세요.",
+      "reason": "부분 수용: 띄어쓰기 안내는 다른 두 삭제 문구와 맞추려고 넣는다. 반박: 언어 조건과 지금삭제를 빼자는 지적은 틀리다. 한국어 클라이언트 확인 문자열이 지금삭제다(gs_koKR.csv:14855, enUS DELETE와 같은 ID). DELETE를 대문자로 쓴 것은 게임이 요구하는 실제 문자열(gs_enUS.csv:14851 DELETE)과 같고 다른 두 삭제 문구와도 맞는다. 원문 'Delete'로 두면 입력할 낱말이 틀린다. '~십시오'로 바꾸는 제안은 받지 않는다. 툴 koKR.txt 지시문은 모두 '~세요'다. 참고로 이 키는 현재 코드 사용처가 없다."
+    },
+    {
+      "id": "koKR.txt::hardcore_pvp",
+      "action": "dispute",
+      "final_ko": "하드코어 전쟁",
+      "reason": "이 키는 서버 유형 이름이다. 게임 공식 서버 유형 문자열 GDAPI_REALMTYPE_PVP는 enUS 'PvP'(gs_enUS.csv:15628), koKR '전쟁'(gs_koKR.csv:15623)으로 같은 ID 35142이고 영어도 같다. 같은 계열의 hardcore_pve==하드코어 일반도 GDAPI_REALMTYPE_NORMAL '일반'을 따른다(koKR.txt:109). 게임 화면의 서버 유형 표기를 따르는 것이 맞다."
+    },
+    {
+      "id": "koKR.txt::Cata",
+      "action": "accept",
+      "final_ko": "Cataclysm Classic",
+      "reason": "로그인 툴 대상 규칙이 게임 종류 이름으로 Cataclysm Classic을 정한다(logintool.md 9행, decisions.tsv 2026-11-07 게임 버전 이름). Classic 키도 Classic Era로 옮겼다(koKR.txt:24). detect.ahk:53과 menu.ahk:589·649·811에서 게임 종류 이름으로 말하는 사용처다."
+    },
+    {
+      "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+      "action": "dispute",
+      "final_ko": "게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 로그인 툴을 다시 설치하세요.",
+      "reason": "원문은 고유 이름 'WoW Login Tool'이 아니라 일반 명사 'the login tool'이라 옮겨도 된다. de(Login-Tool)·fr(l'outil de connexion)·es·ru도 옮겼고, 기존 번역도 'Login tool version==로그인 툴 버전'(koKR.txt:125)이다. 문체: 로그인 툴 koKR.txt의 지시문은 모두 '~세요'(36곳, '~십시오' 0곳)라 이 항목만 '~십시오'로 바꾸면 툴 안에서 문체가 섞인다."
+    }
+  ]
+}

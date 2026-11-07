@@ -1,0 +1,54 @@
+{
+ "batch_file": "reviews/2026-11-07-logintool/recheck-1/batch-01.json",
+ "items": [
+  {
+   "ref": "koKR.txt::hardcore_pvp",
+   "findings": [
+    {
+     "by": "gpt-accuracy",
+     "id": "koKR.txt::hardcore_pvp",
+     "category": "accuracy",
+     "severity": "critical",
+     "problem": "\"pvp\"를 \"전쟁\"으로 옮겨 서로 다른 개념으로 바뀌었다. 사용자가 게임 모드의 성격을 잘못 이해할 수 있다.",
+     "evidence": "원문 \"hardcore_pvp\"의 \"pvp\"는 플레이어 간 전투를 뜻하지만, \"전쟁\"은 그 의미를 정확히 전달하지 않는다.",
+     "suggestion": "하드코어 PvP"
+    }
+   ],
+   "translator": {
+    "id": "koKR.txt::hardcore_pvp",
+    "action": "dispute",
+    "final_ko": "하드코어 전쟁",
+    "reason": "이 키는 서버 유형 이름이다. 게임 공식 서버 유형 문자열 GDAPI_REALMTYPE_PVP는 enUS 'PvP'(gs_enUS.csv:15628), koKR '전쟁'(gs_koKR.csv:15623)으로 같은 ID 35142이고 영어도 같다. 같은 계열의 hardcore_pve==하드코어 일반도 GDAPI_REALMTYPE_NORMAL '일반'을 따른다(koKR.txt:109). 게임 화면의 서버 유형 표기를 따르는 것이 맞다."
+   }
+  },
+  {
+   "ref": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+   "findings": [
+    {
+     "by": "gpt-terminology",
+     "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+     "category": "terminology",
+     "severity": "minor",
+     "problem": "고유 이름인 \"WoW Login Tool\"을 일반 명칭처럼 \"로그인 툴\"로 번역했다.",
+     "evidence": "대상별 규칙의 고유 이름 목록에 \"WoW Login Tool\"이 있으며 그대로 써야 한다. `v2/includes/detect.ahk:239`에서 해당 프로그램의 재설치를 안내하는 문구이므로 여기의 `login tool`은 그 프로그램을 가리킨다.",
+     "suggestion": "게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 WoW Login Tool을 다시 설치하세요."
+    },
+    {
+     "by": "gpt-listening",
+     "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+     "category": "style",
+     "severity": "minor",
+     "problem": "사용자에게 실행과 재설치를 지시하는 문장이 해요체인 \"설치하세요\"로 끝나 합니다체 지침과 어긋난다.",
+     "evidence": "v2/includes/detect.ahk:239에서 이 문구를 `Say(...)`로 안내하며, 사용자에게 할 일을 지시하는 문장은 합니다체로 작성해야 한다.",
+     "suggestion": "게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 로그인 툴을 다시 설치하십시오."
+    }
+   ],
+   "translator": {
+    "id": "koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.",
+    "action": "dispute",
+    "final_ko": "게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 로그인 툴을 다시 설치하세요.",
+    "reason": "원문은 고유 이름 'WoW Login Tool'이 아니라 일반 명사 'the login tool'이라 옮겨도 된다. de(Login-Tool)·fr(l'outil de connexion)·es·ru도 옮겼고, 기존 번역도 'Login tool version==로그인 툴 버전'(koKR.txt:125)이다. 문체: 로그인 툴 koKR.txt의 지시문은 모두 '~세요'(36곳, '~십시오' 0곳)라 이 항목만 '~십시오'로 바꾸면 툴 안에서 문체가 섞인다."
+   }
+  }
+ ]
+}
