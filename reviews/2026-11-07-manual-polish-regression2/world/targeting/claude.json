@@ -1,0 +1,48 @@
+{
+ "findings": [
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 알림을 사용하십시오.",
+   "source_quote": "Use the game's own Combat Audio Alerts instead, in its Accessibility options",
+   "suggestion": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 경보를 사용하십시오.",
+   "problem": "다듬기에서 경보를 알림으로 일괄 바꾸면서 WowVision 알림이 아니라 게임 자체 기능 이름인 Combat Audio Alerts까지 \"전투 음성 알림\"으로 바뀌었다. 한국어 클라이언트 손쉬운 사용 옵션에는 \"전투 음성 경보\"로 표시되므로 독자가 옵션 화면에서 이 이름을 찾지 못한다. 2026-11-07 alert 결정은 WowVision koKR·용어집·설명서의 alert에 대한 것이고 게임 공식 메뉴 이름은 대상이 아니다.",
+   "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL \"전투 음성 경보\", 56672 CAA_ENABLE_COMBAT_AUDIO_ALERTS \"전투 음성 경보 활성화\" (gs_enUS.csv 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\"였다. 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:32 \"전투 음성 알림을 쓰십시오\"에도 있다."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)와 소리 알림이 있으며",
+   "source_quote": "Under it you find TTS Alert (spoken, interrupting by default) and Sound Alert",
+   "suggestion": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)과 소리 알림이 있으며",
+   "problem": "경보를 알림으로 바꾸면서 조사를 고치지 않았다. \"알림\"은 받침으로 끝나므로 \"와\"가 아니라 \"과\"가 맞다.",
+   "evidence": "changes의 before는 \"TTS 경보(음성, 기본으로 말을 끊음)와\"로, 받침 없는 \"경보\"에 맞춘 조사였다."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "게임의 상호작용 단축키는 상호작용 소프트 대상에 작용합니다.",
+   "source_quote": "The game's interact key acts on the soft interact target.",
+   "suggestion": "게임의 상호작용 단축키는 상호작용 소프트 대상에 작용합니다.",
+   "problem": "이 파일은 게임 공식 용어에 맞춰 \"상호작용 단축키\"로 바꿨지만, 같은 게임 기능(interact key)을 다른 설명서 파일은 여전히 \"상호작용 키\"로 부른다. 같은 키가 두 이름으로 나와 독자가 다른 키로 여길 수 있다. 이 파일 표기는 맞으므로 그대로 두고 다른 파일을 \"상호작용 단축키\"로 맞춰야 한다.",
+   "evidence": "cache/gs_koKR.csv 49703 ENABLE_INTERACT_TEXT \"상호작용 단축키 활성화\", 49710 INTERACT_ICONS_OPTION \"상호작용 단축키 아이콘\". 남은 다른 표기: wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md:4 \"상호작용 키 등으로 말을 겁니다\", world/movement.md:98 \"상호작용 키를 눌러\", world/movement.md:124 \"상호작용 키 등으로 상호작용할 때\"."
+  },
+  {
+   "id": "world/targeting.md",
+   "category": "terminology",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "목표 선택은 Retail과 WoW: Forever용으로 표시한 내용을 빼면",
+   "source_quote": "Targeting works the same on every supported game version, apart from the notes marked for Retail and WoW: Forever.",
+   "suggestion": "대상 지정은 Retail과 WoW: Forever용으로 표시한 내용을 빼면",
+   "problem": "바로 앞 문장이 기능을 \"대상 지정\"(\"모든 대상 지정 설정은 ... 목표 선택 아래에\")으로, 메뉴를 \"목표 선택\"으로 구분해 부른 뒤, 다듬기가 이 문장의 기능 주어를 메뉴 이름 \"목표 선택\"으로 바꿨다. 이어진 두 문장에서 같은 기능을 두 이름으로 불러, 이 문장이 메뉴 항목만 말하는지 기능 전체를 말하는지 다시 따져 봐야 한다. before 표기로 되돌리면 메뉴와 기능이 구분된다.",
+   "evidence": "changes의 before \"대상 지정은 리테일과 WoW: Forever용으로\". 같은 파일 제목 아래 섹션 \"## 대상 지정 키 한눈에 보기\", reference/versions.md:23 \"대상 지정, 소프트 대상 지정, 주시 대상, 대상 메뉴: [목표 선택](../world/targeting.md)\"도 기능은 \"대상 지정\", 페이지·메뉴는 \"목표 선택\"으로 구분한다."
+  }
+ ]
+}

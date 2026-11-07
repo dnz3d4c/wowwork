@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "world/quests.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 참고하십시오.",
+   "source_quote": "See [Alerts](../basics/alerts.md) for how alerts work.",
+   "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 참고하십시오.",
+   "problem": "다듬기에서 링크 글자 '경보'를 '알림'으로 바꾸면서 조사 '를'을 그대로 두었다. '알림'은 받침으로 끝나므로 '을'이어야 한다. 뜻은 맞지만 문법이 틀린 문장이 되었다.",
+   "evidence": "changes before: '[경보](../basics/alerts.md)를 참고하십시오' -> after: '[알림](../basics/alerts.md)를 참고하십시오'. 같은 패턴이 다른 파일에도 남아 있다: basics/menu-and-settings.md:46,103, basics/speech.md:58,76, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8,42, world/minimap.md:124 (모두 '[알림](...alerts.md)를'). 일괄 치환에서 생긴 것으로 보이며 다른 파일도 함께 고쳐야 한다."
+  }
+ ]
+}

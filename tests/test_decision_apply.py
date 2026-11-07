@@ -25,3 +25,10 @@ def test_announce_errors_follows_kokr() -> None:
 
 def test_code_spans_are_untouched() -> None:
     assert apply_text("`경보는` 경보는") == "`경보는` 알림은"
+
+
+def test_particle_after_parenthesis_follows_the_noun() -> None:
+    """조사는 괄호가 아니라 그 앞 낱말의 받침을 따른다(2026-11-07 회귀 확인 2회차에서 발견: "알림(켬)와")."""
+    assert apply_text("TTS 경보(켬)와 소리 경보(끔)가 있고, 경보(대화 등)는") == (
+        "TTS 알림(켬)과 소리 알림(끔)이 있고, 알림(대화 등)은"
+    )

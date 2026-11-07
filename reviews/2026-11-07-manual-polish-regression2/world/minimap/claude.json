@@ -1,0 +1,35 @@
+[
+ {
+  "id": "world/minimap.md",
+  "category": "style",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)를 참고하십시오.",
+  "source_quote": "see [Alerts](../basics/alerts.md) for how alert settings work",
+  "suggestion": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)을 참고하십시오.",
+  "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 받침 없는 말에 맞춘 '를'을 그대로 두었다. '알림'은 받침(ㅁ)이 있어 '을'이 맞다.",
+  "evidence": "changes의 before는 '[경보](../basics/alerts.md)를'(맞음), after는 '[알림](../basics/alerts.md)를'. 같은 링크를 바르게 쓴 예: ko/getting-started/introduction.md:12 '[알림](../basics/alerts.md)을 참고하십시오'. 같은 오류가 다른 파일에도 있다(ko/basics/menu-and-settings.md:46, ko/basics/speech.md:58, ko/getting-started/quick-start.md:61 등 '[알림](...)를')."
+ },
+ {
+  "id": "world/minimap.md",
+  "category": "style",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "- [알림](../basics/alerts.md)와 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+  "source_quote": "- [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md), for voices.",
+  "suggestion": "- [알림](../basics/alerts.md)과 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+  "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사 '와'를 그대로 두었다. 받침이 있는 '알림' 뒤에는 '과'가 맞다.",
+  "evidence": "changes의 before '[경보](../basics/alerts.md)와'(맞음) → after '[알림](../basics/alerts.md)와'. 같은 오류가 ko/windows/chat.md:225, ko/windows/system.md:166, ko/reference/glossary.md:108에도 있다."
+ },
+ {
+  "id": "world/minimap.md",
+  "category": "terminology",
+  "severity": "minor",
+  "scope": "file",
+  "quote": "- 광물 찾기는 구리 광맥, 미스릴 광맥 같은 광맥과 광상을 나열합니다.",
+  "source_quote": "- Find Minerals lists veins and deposits such as Copper Vein and Mithril Deposit.",
+  "suggestion": "- 광물 찾기는 구리 광맥, 미스릴 광맥 같은 광맥을 나열합니다.",
+  "problem": "다듬기에서 원문 'deposits'를 살리려고 '광상'을 더했지만, 바로 앞 예시 두 개가 모두 '광맥'이라 '광상'에 해당하는 예가 없다. 독자는 게임에 '광상'이라는 이름의 채집 지점이 따로 있다고 오해할 수 있다. 영어는 Vein과 Deposit 두 이름을 쓰지만 한국어 예시 이름은 둘 다 '광맥'이므로 '광맥'으로 묶어도 정보 단위가 빠지지 않는다. 다만 한국어 공식 노드 이름은 이 저장소 캐시로 확인하지 못했다(아래 evidence).",
+  "evidence": "changes before '같은 광맥을 나열합니다' → after '같은 광맥과 광상을 나열합니다'. 설명서 ko 전체에서 '광상'은 이 줄 하나뿐(Grep). cache/gs_koKR.csv에 '광상'이 0건이고, 'Mithril Deposit'·'Copper Vein'은 gs_enUS.csv에 없어 공식 노드 이름 확인 불가 — 확인하려면 게임 오브젝트 이름 데이터(GameObjects)를 봐야 한다."
+ }
+]

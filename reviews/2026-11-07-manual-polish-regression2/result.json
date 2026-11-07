@@ -1,0 +1,2120 @@
+{
+ "total": 45,
+ "passed": 28,
+ "broken": [],
+ "failed": [
+  {
+   "file": "basics/alerts.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "basics/alerts.md",
+     "category": "accuracy",
+     "severity": "major",
+     "scope": "file",
+     "quote": "반복 지연(2초, 0에서 30까지)은 같은 오류가 설정한 시간 안에 다시 나타나도 읽지 않습니다. 키를 누르고 있을 때 같은 오류가 거듭 읽히지 않게 합니다.",
+     "source_quote": "Repeat Delay (2 seconds, 0 to 30) stops the same error from being spoken again while you hold a key.",
+     "suggestion": "반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.",
+     "problem": "다듬기에서 원문 한 문장을 두 문장으로 늘리며 원문에 없는 설명(\"설정한 시간 안에 다시 나타나도 읽지 않습니다\")을 더했다. 이 설명은 world/combat.md 표에서 가져온 내용으로 이 페이지 원문에는 없다(공통 지시: 원문에 없는 설명을 덧붙이지 않는다). 첫 문장은 주어 \"반복 지연은\"과 서술어 \"읽지 않습니다\"가 맞지 않아, 설정이 무엇을 읽지 않는다는 것인지 다시 읽어야 한다. before 문장이 원문과 정확히 대응했다.",
+     "evidence": "changes의 before: \"반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.\" 영어 원문 basics/alerts.md는 \"while you hold a key\" 한 가지 효과만 말한다. 더해진 내용의 출처로 보이는 문장: en/world/combat.md:125 \"The same message is spoken at most once in this time.\" / ko/world/combat.md:126 \"같은 메시지는 이 시간 안에 많아야 한 번 말합니다.\""
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "예: 지역 변경 알림에는 TTS 알림(켬)와 소리 알림(끔)가 있습니다.",
+     "source_quote": "Example: Zone Changed Alert has a TTS Alert (on) and a Sound Alert (off).",
+     "suggestion": "예: 지역 변경 알림에는 TTS 알림(켬)과 소리 알림(끔)이 있습니다.",
+     "problem": "\"경보\"를 \"알림\"으로 일괄 바꾸면서 조사를 따라 바꾸지 않았다. \"알림\"은 받침이 있으므로 \"와\"가 아니라 \"과\", \"가\"가 아니라 \"이\"여야 한다. before(\"경보(켬)와 ... 경보(끔)가\")는 맞았다.",
+     "evidence": "changes before: \"TTS 경보(켬)와 소리 경보(끔)가 있습니다\". ko/basics/alerts.md:24에서 grep \"알림(...)(와|가|는)\"로 확인."
+    },
+    {
+     "by": "claude",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "자체 설정이 있는 알림(대화의 메시지 읽기 등)는 그 설정도 여기에 보여 줍니다.",
+     "source_quote": "Alerts that have a setting of their own (such as Speak Messages for chat) show it here too.",
+     "suggestion": "자체 설정이 있는 알림(대화의 메시지 읽기 등)은 그 설정도 여기에 보여 줍니다.",
+     "problem": "\"경보\"를 \"알림\"으로 바꾸며 조사 \"는\"이 남았다. 받침 있는 \"알림\" 뒤에는 \"은\"이어야 한다. before(\"경보(...)는\")는 맞았다.",
+     "evidence": "changes before: \"자체 설정이 있는 경보(대화의 메시지 읽기 등)는\". ko/basics/alerts.md:34."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "terminology",
+     "severity": "minor",
+     "quote": "| 음성 합성(TTS) | TTS 알림 | TTS 음성으로 \"전투 시작\" 같은 글을 읽습니다. |",
+     "suggestion": "| 텍스트 음성 변환(TTS) | TTS 알림 | TTS 음성으로 \"전투 시작\" 같은 글을 읽습니다. |",
+     "problem": "같은 TTS 기능을 다른 설명서와 달리 \"음성 합성\"이라고 불러 용어가 일관되지 않습니다. TTS가 함께 적혀 있어 다른 기능으로 오해할 가능성은 작지만, 게임 설정이나 용어 설명에서 같은 기능을 찾기 어렵게 합니다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID를 대조하면 43289(TEXT_TO_SPEECH_CONFIG)는 \"Text To Speech Config\"/\"텍스트 음성 변환 환경 설정\", 43290(TEXT_TO_SPEECH_CHAT_MESSAGE_TYPES)는 \"Enable Text to Speech for specific messages\"/\"특정 메시지 텍스트 음성 변환 활성화\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/speech.md:4는 \"TTS(텍스트 음성 변환)\", reference/glossary.md:60은 \"TTS — 텍스트 음성 변환\"이라고 씁니다.",
+     "scope": "file",
+     "source_quote": "| Text to speech | TTS Alert | Speaks text with your TTS voice, for example \"combat started\". |"
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "예: 지역 변경 알림에는 TTS 알림(켬)와 소리 알림(끔)가 있습니다.",
+     "suggestion": "예: 지역 변경 알림에는 TTS 알림(켬)과 소리 알림(끔)이 있습니다.",
+     "problem": "받침이 있는 \"켬\"과 \"끔\" 뒤에 각각 \"와\"와 \"가\"를 붙여 조사가 어긋납니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:24에서 확인했습니다. \"켬\" 뒤에는 \"과\", \"끔\" 뒤에는 \"이\"가 와야 합니다.",
+     "scope": "file",
+     "source_quote": "Example: Zone Changed Alert has a TTS Alert (on) and a Sound Alert (off)."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "자체 설정이 있는 알림(대화의 메시지 읽기 등)는 그 설정도 여기에 보여 줍니다.",
+     "suggestion": "자체 설정이 있는 알림(대화의 메시지 읽기 등)은 그 설정도 여기에 보여 줍니다.",
+     "problem": "\"등\"에 받침이 있는데 조사 \"는\"을 붙여 문장이 걸립니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:34에서 확인했습니다. 괄호 안의 마지막 명사인 \"등\"에는 \"은\"을 붙여야 합니다.",
+     "scope": "file",
+     "source_quote": "Alerts that have a setting of their own (such as Speak Messages for chat) show it here too."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "| 낙하 감지 | 길 안내, 낙하 감지 | 떨어집니다. 낙하 소리가 시작될 때 안내를 한 번 말합니다.",
+     "suggestion": "| 낙하 감지 | 길 안내, 낙하 감지 | 떨어집니다. 낙하 소리가 시작될 때 한 번 안내합니다.",
+     "problem": "\"안내를 말합니다\"는 행위와 내용을 부자연스럽게 결합한 표현이라, 알림이 한 번 나온다는 동작을 바로 파악하기 어렵습니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:88에서 확인했습니다. 원문은 안내가 한 번 나온다는 뜻이며, 정보나 조건을 추가하지 않고 \"한 번 안내합니다\"로 옮길 수 있습니다.",
+     "scope": "file",
+     "source_quote": "You fall. The announcement is said once when the falling sounds start."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "| 귓속말 탭 | 대화 | 아무 귓속말 탭에 메시지가 옵니다. 알림 하나가 모든 귓속말 탭을 맡습니다.",
+     "suggestion": "| 귓속말 탭 | 대화 | 어느 귓속말 탭에든 메시지가 옵니다. 알림 하나가 모든 귓속말 탭을 맡습니다.",
+     "problem": "\"아무 귓속말 탭에\"는 임의의 탭 하나를 가리키는 말처럼 읽힐 수 있어, 어느 귓속말 탭이든 적용된다는 범위를 즉시 드러내지 못합니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:111에서 확인했습니다. 원문의 \"any whisper tab\"은 특정 탭 하나가 아니라 모든 귓속말 탭 가운데 어느 탭이든 해당한다는 뜻입니다.",
+     "scope": "file",
+     "source_quote": "A message arrives on any whisper tab. One alert covers all whisper tabs."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/alerts.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "반복 지연(2초, 0에서 30까지)은 같은 오류가 설정한 시간 안에 다시 나타나도 읽지 않습니다.",
+     "suggestion": "반복 지연(2초, 0에서 30까지)은 설정한 시간 안에 같은 오류가 다시 나타나도 읽지 않습니다.",
+     "problem": "현재 어순에서는 \"같은 오류가 설정한 시간\"이 되어 오류가 시간을 설정한 것처럼 수식 관계가 잘못 연결됩니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:124에서 확인했습니다. 시간을 설정하는 주체는 사용자이며, 같은 오류는 설정된 지연 시간 안에 다시 나타나는 대상입니다.",
+     "scope": "file",
+     "source_quote": "Repeat Delay (2 seconds, 0 to 30) stops the same error from being spoken again while you hold a key."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "controller.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "controller.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "주 메뉴 휠은 세 페이지이고 감정 표현 휠은 페이지가 없습니다.",
+     "suggestion": "주 메뉴 휠은 세 페이지이고 감정표현 휠은 페이지가 없습니다.",
+     "problem": "게임패드 방사형 메뉴의 공식 명칭은 붙여 쓴 \"감정표현\"이다. 현재 표기는 실제 게임 메뉴와 달라 사용자가 별도 기능으로 오해하거나 같은 이름을 찾지 못할 수 있다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID를 대조하면 58480 PAGE_LABEL_EMOTES는 \"Emotes\" → \"감정표현\"이다. 게임패드 메뉴의 페이지라는 문맥도 원문의 emote wheel과 일치한다.",
+     "scope": "file",
+     "source_quote": "the wheel has three pages and the emote wheel has none."
+    },
+    {
+     "by": "gpt",
+     "id": "controller.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "게임의 휠에 그대로 남아 비장애인 플레이어가 쓸 때와 똑같이 작동합니다(방향 패드로 앉기와 감정 표현 페이지를 고를 수 있습니다).",
+     "suggestion": "게임의 휠에 그대로 남아 비장애인 플레이어가 쓸 때와 똑같이 작동합니다(방향 패드로 앉기와 감정표현 페이지를 고를 수 있습니다).",
+     "problem": "게임패드 메뉴의 페이지 이름을 공식 표기인 \"감정표현\"과 다르게 띄어 썼다. 실제 게임에서 표시되는 페이지 이름과 설명서의 이름이 일치하지 않는다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58480 PAGE_LABEL_EMOTES는 \"Emotes\" → \"감정표현\"이다. 원문도 같은 게임패드 휠의 emote pages를 가리킨다.",
+     "scope": "file",
+     "source_quote": "the D-pad reaches sitting and the emote pages"
+    },
+    {
+     "by": "gpt",
+     "id": "controller.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "나머지 칸(소셜, 가방, 시계, PvP, 감정 표현)은 게임 자체의 동작을 실행합니다.",
+     "suggestion": "나머지 칸(소셜, 가방, 시계, PvP, 감정표현)은 게임 자체의 동작을 실행합니다.",
+     "problem": "게임패드 방사형 메뉴의 칸 이름은 공식 표기인 \"감정표현\"인데 설명서에서는 띄어 썼다. 같은 목록의 소셜·가방·시계처럼 게임에 표시되는 이름을 그대로 써야 한다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58392 RADIAL_LABEL_TARGET_EMOTES는 \"Emotes\" → \"감정표현\"이다. RADIAL_LABEL이라는 BaseTag와 원문의 slice 목록이 같은 방사형 메뉴 문맥임을 확인했다.",
+     "scope": "file",
+     "source_quote": "Every other slice (social, bags, clock, PvP, the emotes) runs the game's own action."
+    }
+   ],
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/manual-installation.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "getting-started/manual-installation.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "소리, 비컨 신호음, 녹음된 음성(음성 팩)도 WowVision 폴더 안에 있습니다.",
+     "suggestion": "소리, 비컨 소리, 녹음된 음성(음성 팩)도 WowVision 폴더 안에 있습니다.",
+     "problem": "같은 기능을 다른 설명서와 화면 문구에서는 \"비컨 소리\"라고 부르지만 여기서만 \"비컨 신호음\"이라고 불렀습니다. 독자는 설치 파일에 포함된 소리가 \"비컨 소리\" 설정에서 고르는 것과 다른 종류라고 오해할 수 있습니다.",
+     "evidence": "koKR 키 `navigation.lua:41`의 `Beacon Sound` 값은 \"비컨 소리\"입니다. `wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:105`, `:111`, `wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:20`도 같은 방향성 소리와 설정을 \"비컨 소리\"라고 씁니다. 확정 용어집 `wowwork/docs/glossary.tsv:2`도 beacon을 \"비컨\"으로 정했습니다.",
+     "scope": "file",
+     "source_quote": "The sounds, beacon tones and recorded voices (voice packs) are inside the WowVision folder too."
+    }
+   ],
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/manual-installation.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "2. 더 새 릴리스나 베타 zip을 내려받습니다.",
+     "suggestion": "2. 현재 설치한 버전보다 새로운 릴리스나 베타 zip을 내려받습니다.",
+     "problem": "\"더 새\"는 영어 비교급을 어순대로 옮긴 표현이라 무엇보다 더 새로운지를 독자가 문맥에서 보충해야 합니다. 비교 대상을 직접 밝히면 업데이트할 파일을 고르는 기준이 바로 드러납니다.",
+     "evidence": "입력의 `changes`에서 \"새 릴리스\"를 \"더 새 릴리스\"로 바꾼 회귀 지점입니다. 영어 원문의 `newer`는 현재 설치된 버전과 비교해 더 새로운 릴리스를 뜻합니다.",
+     "scope": "file",
+     "source_quote": "Download the newer release or the beta zip."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/troubleshooting.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "getting-started/troubleshooting.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "| Retail이나 Forever의 재사용 대기시간 관리자 모니터 | /wv cdmlog |",
+     "suggestion": "| Retail이나 WoW: Forever의 재사용 대기시간 관리자 모니터 | /wv cdmlog |",
+     "problem": "게임 버전의 정식 표기인 \"WoW: Forever\"를 이 행에서만 \"Forever\"로 줄였습니다. 같은 버전을 다른 이름으로 오해하거나 문서 검색에서 놓칠 수 있습니다.",
+     "evidence": "wowwork/docs/decisions.tsv:21은 설명서의 게임 버전 이름을 영어 표기로 쓰도록 결정했습니다. 같은 명령을 설명하는 wowvision-ko/WowVision/docs/src/user/ko/reference/commands.md:44에는 \"Retail, WoW: Forever\"라고 표기되어 있습니다.",
+     "scope": "file",
+     "source_quote": "| Cooldown manager monitors on Retail or Forever | /wv cdmlog |"
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "getting-started/troubleshooting.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "[알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "See [Alerts](../basics/alerts.md).",
+     "suggestion": "[알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 \"경보\"를 \"알림\"으로 바꾸면서 조사를 따라 바꾸지 않았다. \"알림\"은 받침(ㅁ)으로 끝나므로 목적격 조사는 \"을\"이어야 하는데 \"경보\" 때의 \"를\"이 남았다. 뜻은 맞지만 문법이 틀린 문장이 된다.",
+     "evidence": "changes의 before \"[경보](../basics/alerts.md)를\" → after \"[알림](../basics/alerts.md)를\". decisions.tsv 2026-11-07 alert→알림 결정에 따른 치환. 같은 조사 잔재가 다른 파일에도 있다(Grep `알림\\]\\([^)]*\\)[를와]`, wowvision-ko/WowVision/docs/src/user/ko): basics/menu-and-settings.md:46,103 \"알림](./alerts.md)를\", basics/speech.md:58,76, getting-started/quick-start.md:61, information/group-health.md:106, information/monitors.md:53 \"알림](#상태-알림과-출력)를\", reference/glossary.md:8,42 \"를\" 및 108 \"와\", windows/chat.md:225 \"와\", windows/system.md:166 \"와\", world/minimap.md:124 \"를\" 및 169 \"와\", world/navigation.md:107, world/quests.md:113. 각 파일 회귀 확인에서 함께 고쳐야 한다(\"와\"는 \"과\"로)."
+    },
+    {
+     "by": "gpt",
+     "id": "getting-started/troubleshooting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "그 창이 WowVision에서 열리지 않거나 키가 아무 일도 하지 않습니다.",
+     "suggestion": "그 창이 WowVision에서 열리지 않거나 키를 눌러도 아무 일도 일어나지 않습니다.",
+     "problem": "\"아무 일도 하지 않다\"는 행위 주체가 아무 행동도 하지 않는다는 뜻이라 키의 반응이 없다는 설명에 맞지 않습니다. 독자가 키 입력이 무시된다는 뜻을 한 번 더 해석해야 합니다.",
+     "evidence": "영어 원문의 \"the key does nothing\"은 키 입력에 반응이 없다는 뜻입니다. \"키를 눌러도 아무 일도 일어나지 않습니다\"라고 쓰면 입력과 결과가 직접 연결됩니다.",
+     "scope": "file",
+     "source_quote": "so the window does not open in WowVision or the key does nothing."
+    },
+    {
+     "by": "gpt",
+     "id": "getting-started/troubleshooting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "그 알림에서 다른 목소리를 고르기 전까지는 음성 종류를 따릅니다. [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "그 알림에서 다른 목소리를 고르기 전까지는 음성 종류를 따릅니다. [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "받침이 있는 명사 \"알림\" 뒤에 목적격 조사 \"를\"을 붙여 조사 선택이 틀렸습니다.",
+     "evidence": "링크의 표시 문구는 \"알림\"이며 마지막 음절 \"림\"에 받침이 있으므로 목적격 조사는 \"을\"입니다.",
+     "scope": "file",
+     "source_quote": "See [Alerts](../basics/alerts.md)."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "information/monitors.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "information/monitors.md",
+     "category": "terminology",
+     "severity": "critical",
+     "scope": "file",
+     "quote": "항목 메뉴에서 알림을 고르면(신규 알림 또는 기존 알림 편집)",
+     "source_quote": "Choosing an alert in the item's menu (Add New Alert, or editing an existing one)",
+     "suggestion": "항목 메뉴에서 알림을 고르면(신규 경보 또는 기존 경보 편집)",
+     "problem": "다듬기에서 경보를 알림으로 일괄 바꾸면서 게임 자체 메뉴 항목 이름까지 바뀌었다. 이 메뉴는 WowVision이 아니라 블리자드 재사용 대기시간 관리자의 항목 메뉴(item:DisplayContextMenu)이고, 한국어 클라이언트에는 \"신규 경보\"로 표시된다. 독자는 메뉴에서 없는 이름 \"신규 알림\"을 찾게 된다. 2026-11-07 결정(alert를 알림으로)은 koKR·용어집·설명서 대상이며 블리자드 문구는 바꿀 수 없으므로, 게임 화면 문구 인용은 클라이언트 값을 따라야 한다. before는 \"신규 경보 또는 기존 경보 편집\"이었다.",
+     "evidence": "cache/gs_koKR.csv 55581 COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT \"신규 경보\" (enUS \"New Alert\"), 55585 COOLDOWN_VIEWER_SETTINGS_ALERT_DIALOG_TITLE \"신규 경보\", 55602 COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT \"경보 편집\". wowvision-ko/WowVision/retail/cooldownManager.lua:225-238 Backspace가 게임의 item:DisplayContextMenu()를 그대로 연다(메뉴 항목은 게임 문구). koKR에 \"Add New Alert\" 키 없음(vision-locale Grep 결과 0건)."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "information/monitors.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "아래 [알림](#상태-알림과-출력)를 보십시오.",
+     "source_quote": "See [Alerts](#state-alerts-and-their-outputs) below.",
+     "suggestion": "아래 [알림](#상태-알림과-출력)을 보십시오.",
+     "problem": "경보를 알림으로 바꾸면서 조사를 고치지 않았다. \"경보\"(받침 없음) 뒤의 \"를\"이 \"알림\"(받침 ㅁ) 뒤에 남아 \"알림를\"이 되었다. 같은 파일의 다른 링크는 \"[단축키](../basics/keybindings.md)를\"처럼 받침에 맞춰 쓴다.",
+     "evidence": "changes: before \"아래 [경보](#상태-경보와-출력)를 보십시오.\" → after \"아래 [알림](#상태-알림과-출력)를 보십시오.\" 링크 대상 제목 \"### 상태 알림과 출력\"은 앵커와 일치함(링크 자체는 정상)."
+    },
+    {
+     "by": "gpt",
+     "id": "information/monitors.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "규칙 하나는 한 가지, 보통 주문 하나를 지켜보며 효과 적용, 확산, 만료 임박, 없음 같은 상태를 오갑니다.",
+     "suggestion": "규칙 하나는 보통 주문 하나처럼 한 가지 대상을 지켜보며 효과 적용, 확산, 만료 임박, 없음 같은 상태를 오갑니다.",
+     "problem": "‘한 가지’ 뒤에 무엇을 뜻하는지 밝혀 주는 명사가 없어 영어의 ‘one thing, usually one spell’ 구조가 그대로 드러난다. ‘대상’을 넣으면 규칙이 감시하는 것이 무엇인지 바로 이해할 수 있다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/information/monitors.md:10. 원문은 감시 대상을 뜻하는 ‘one thing’을 먼저 제시하고 ‘usually one spell’로 예시를 한정한다.",
+     "scope": "file",
+     "source_quote": "A rule watches one thing, usually one spell, and moves through states such as Applied, Pandemic, Expiring and Missing."
+    },
+    {
+     "by": "gpt",
+     "id": "information/monitors.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "게임 기준으로 알림을 걸 재사용 대기가 있는 주문이 나옵니다",
+     "suggestion": "게임에서 알림할 재사용 대기가 있다고 판단한 주문이 나옵니다",
+     "problem": "‘알림을 걸’이 바로 뒤의 ‘재사용 대기’를 꾸며 알림이 재사용 대기를 건다는 뜻처럼 읽힌다. 실제 뜻은 게임이 해당 재사용 대기를 알림 대상으로 판단한 주문만 목록에 나온다는 것이다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/information/monitors.md:250. 원문의 ‘the game says’는 판단 주체가 게임임을 나타내고, ‘to alert on’은 재사용 대기가 알림 대상이라는 뜻이다.",
+     "scope": "file",
+     "source_quote": "the game says have a cooldown to alert on"
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "reference/keybindings.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "어느 것이든 단축키 창에서 바꿀 수 있습니다. WowVision 메뉴(Shift+F1)를 열고 인터페이스로 가서 단축키를 고르십시오. 단축키 창을 쓰는 법은 [단축키](../basics/keybindings.md)에서 설명합니다.",
+     "suggestion": "어느 것이든 단축키 화면에서 바꿀 수 있습니다. WowVision 메뉴(Shift+F1)를 열고 인터페이스로 가서 단축키를 고르십시오. 단축키 화면을 쓰는 법은 [단축키](../basics/keybindings.md)에서 설명합니다.",
+     "problem": "같은 화면을 이 파일에서는 \"단축키 창\", 연결된 설명서에서는 \"단축키 화면\"이라고 부릅니다. 사용자가 별도의 창이나 기능으로 오해할 수 있습니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4, 6에서 같은 keybinding screen을 \"단축키 화면\"이라고 하며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:18도 \"단축키 화면\"을 사용합니다.",
+     "scope": "file",
+     "source_quote": "You can change any of them in the keybinding window: open the WowVision menu (Shift+F1), go to UI and choose Bindings. How the keybinding window works is explained in [Keybindings](../basics/keybindings.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "\"지정 안 됨\"은 바인딩은 있지만 직접 키를 정해 주기 전까지는 키가 없다는 뜻입니다.",
+     "suggestion": "\"지정 안 됨\"은 동작은 있지만 직접 키를 정해 주기 전까지는 지정된 키가 없다는 뜻입니다.",
+     "problem": "다듬은 제목과 첫 문단은 keybinding을 \"단축키\"로 바꿨지만 이 문장에는 \"바인딩\"이 남았습니다. 연결된 단축키 설명서가 사용하는 \"동작\"과 \"지정된 키\"로 풀어야 별도 개념처럼 보이지 않습니다.",
+     "evidence": "입력 terms에서 Bindings의 값은 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 각 binding을 \"동작\"과 \"그 동작에 지정된 키\"로 설명합니다.",
+     "scope": "file",
+     "source_quote": "\"Unbound\" means the binding exists but has no key until you give it one."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "버퍼, 길 안내, 대상 지정, 주사위 키, 커서에 든 아이템 파괴, WowVision 창을 여는 키가 여기에 속합니다.",
+     "suggestion": "버퍼, 길 안내, 목표 선택, 주사위 키, 커서에 든 아이템 파괴, WowVision 창을 여는 키가 여기에 속합니다.",
+     "problem": "같은 Targeting 기능을 다듬은 절 제목과 링크에서는 \"목표 선택\"으로 바꿨지만 전역 키 목록에는 \"대상 지정\"이 남았습니다. 같은 파일 안에서 서로 다른 기능명처럼 보입니다.",
+     "evidence": "입력 terms에서 Targeting은 \"목표 선택\"입니다. 같은 파일의 115행 절 제목과 125행 링크도 \"목표 선택\"이며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2의 페이지 제목도 \"목표 선택\"입니다.",
+     "scope": "file",
+     "source_quote": "buffers, navigation, targeting, the loot roll keys, Destroy Cursor Item and the keys that open WowVision windows."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "Alt Gr은 바인딩이 아닙니다. WowVision이 Alt Gr 키를 직접 감지하며",
+     "suggestion": "Alt Gr은 지정된 단축키가 아닙니다. WowVision이 Alt Gr 키를 직접 감지하며",
+     "problem": "다듬은 제목과 첫 문단은 binding을 \"단축키\"로 부르지만 여기에는 설명되지 않은 \"바인딩\"이 남았습니다. Alt Gr이 단축키 설정에 등록된 키가 아니라는 뜻이 바로 드러나지 않습니다.",
+     "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md는 같은 개념을 \"단축키\"와 \"지정된 키\"로 설명하며 \"바인딩\"을 쓰지 않습니다.",
+     "scope": "file",
+     "source_quote": "Alt Gr is not a binding: it is read directly"
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "Retail과 WoW: Forever에서는 모든 바인딩에 컨트롤러 버튼도 지정할 수 있습니다.",
+     "suggestion": "Retail과 WoW: Forever에서는 모든 단축키에 컨트롤러 버튼도 지정할 수 있습니다.",
+     "problem": "첫 문단에서 \"모든 단축키\"라고 부른 동일한 대상을 여기서는 \"모든 바인딩\"이라고 불러 별도 설정처럼 보이게 합니다.",
+     "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/controller.md:4도 동일한 기능을 \"WowVision의 모든 단축키에 … 컨트롤러 버튼도 지정\"한다고 표현합니다.",
+     "scope": "file",
+     "source_quote": "On Retail and WoW: Forever every binding can also have controller buttons."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "이 키들은 따로 있는 바인딩이 아닙니다. 앞부분에서 설명한 창 키가 특정 창에서 그 창에 맞는 일을 하는 것입니다. 바인딩을 바꾸면 모든 곳에서 키가 바뀝니다.",
+     "suggestion": "이 키들은 별도의 단축키가 아닙니다. 앞부분에서 설명한 창 키가 특정 창에서 그 창에 맞는 일을 하는 것입니다. 키 지정을 바꾸면 모든 곳에서 키가 바뀝니다.",
+     "problem": "동일한 단축키와 키 지정을 \"바인딩\"이라고 두 번 불러, 다듬은 제목 및 첫 문단의 용어와 일치하지 않습니다. 특히 두 번째 \"바인딩\"은 동작 자체가 아니라 지정된 키를 바꾼다는 뜻이므로 \"키 지정\"이 더 정확합니다.",
+     "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 키를 동작에 \"지정\"한다고 설명하고, 42행 이후에도 키 추가·제거라는 표현을 사용합니다.",
+     "scope": "file",
+     "source_quote": "These are not extra bindings. They are the window keys from the first sections, doing a job that belongs to one window. Changing the binding changes the key everywhere."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "일부 WowVision 바인딩은 예전부터 있던 접근성 애드온 Sku의 키와 같은 일을 합니다. Sku가 로드되어 있는 동안 WowVision은 이 바인딩을 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+     "suggestion": "일부 WowVision 단축키는 예전부터 있던 접근성 애드온 Sku의 키와 같은 일을 합니다. Sku가 로드되어 있는 동안 WowVision은 이 단축키를 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+     "problem": "같은 파일에서 단축키로 정리한 대상을 이 문단에서는 다시 \"바인딩\"이라고 두 번 불러 용어가 회귀했습니다.",
+     "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:113은 같은 Sku 충돌 동작을 \"키\"와 \"단축키 화면\"으로 설명하며 \"바인딩\"을 사용하지 않습니다.",
+     "scope": "file",
+     "source_quote": "Some WowVision bindings do the same job as keys of Sku, the older accessibility addon. While Sku is loaded, WowVision does not activate these bindings at all and leaves the keys to Sku:"
+    }
+   ],
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "reference/keybindings.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "(WoW: Forever) 내가 막혀 있는 지점을 피하는 새 경로를 짭니다",
+     "suggestion": "(WoW: Forever) 현재 막혀 있는 지점을 피하는 새 경로를 짭니다",
+     "problem": "설명서가 갑자기 1인칭 \"내가\"를 사용해 애드온과 독자 중 누가 막혔다는 뜻인지 문체상 혼동을 줍니다. \"현재 막혀 있는 지점\"으로 쓰면 원문의 조건을 그대로 유지하면서 대상을 바로 알 수 있습니다.",
+     "evidence": "같은 표의 다른 설명은 \"현재 대상\", \"지금 서 있는 곳\"처럼 사용자의 현재 상태를 1인칭 없이 설명합니다.",
+     "scope": "file",
+     "source_quote": "(WoW: Forever) Plans a new route that avoids the spot where you are stuck"
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "reference/versions.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "reference/versions.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "| 야수 우리 | 아니요 | 예 | 아니요 | 아니요 | 아니요 |",
+     "suggestion": "| 우리 | 아니요 | 예 | 아니요 | 아니요 | 아니요 |",
+     "problem": "게임 창의 공식 이름과 이미 확정된 번역은 \"우리\"입니다. \"야수 우리\"라고 쓰면 게임과 WowVision에서 실제로 표시되는 \"우리\"와 다른 창으로 오해할 수 있습니다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 동일 ID 13216, BaseTag STABLES는 각각 \"Stables\"와 \"우리\"입니다. wowvision-ko/WowVision/tbc/petStable.lua:87은 이 창에 STABLES를 사용하고, wowvision-ko/vision-locale/koKR/windows.lua:201의 Stable 값도 \"우리\"입니다. wowwork/docs/decisions.tsv의 2026-11-05 결정도 같은 창 이름을 \"우리\"로 유지하도록 확정했습니다.",
+     "scope": "file",
+     "source_quote": "| Pet stable | No | Yes | No | No | No |"
+    }
+   ],
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "reference/versions.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "게임이 시작될 때 게임 스스로 WowVision 가운데 버전에 맞는 부분을 고르므로 따로 선택할 것은 없습니다.",
+     "suggestion": "게임이 시작되면 WowVision에서 버전에 맞는 부분을 자동으로 고르므로 따로 선택할 것은 없습니다.",
+     "problem": "\"게임이 시작될 때 게임 스스로\"는 같은 명사를 되풀이하고, \"WowVision 가운데 버전에 맞는 부분\"은 수식 관계를 한 번에 파악하기 어렵습니다. 무엇에서 무엇을 고르는지 바로 드러나도록 어순을 바꿔야 합니다.",
+     "evidence": "원문은 게임 시작 시 WowVision에서 현재 버전에 맞는 부분이 자동으로 선택된다는 한 가지 동작을 설명합니다. 제안문은 자동 선택과 사용자가 고를 필요가 없다는 두 정보 단위를 그대로 유지합니다.",
+     "scope": "file",
+     "source_quote": "The game itself picks the matching part of WowVision when it starts, so you never choose anything"
+    },
+    {
+     "by": "gpt",
+     "id": "reference/versions.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "\"예\"는 그 버전에서 WowVision이 이것을 읽거나 제공한다는 뜻입니다.",
+     "suggestion": "\"예\"는 해당 버전에서 WowVision이 표의 기능이나 창을 읽거나 제공한다는 뜻입니다.",
+     "problem": "\"이것\"이 아직 제시되지 않은 뒤쪽 표의 행을 가리켜 독자가 대상을 추론해야 합니다. 이 페이지에서 표가 기능 표와 창 표로 나뉘므로 구체적인 명사를 밝혀야 합니다.",
+     "evidence": "원문 앞부분은 이 페이지가 버전별 \"features and windows\"를 보여 준다고 명시하며, 뒤의 표 첫 열도 Feature 또는 Window입니다.",
+     "scope": "file",
+     "source_quote": "\"Yes\" means WowVision reads or offers this on that version."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/versions.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "- 우체통 받은 우편함, 거래 창, 전리품 주사위 키: [전리품, 거래, 우편](../windows/loot-trade-mail.md)",
+     "suggestion": "- 우체통의 받은 우편함, 거래 창, 전리품 주사위 키: [전리품, 거래, 우편](../windows/loot-trade-mail.md)",
+     "problem": "\"우체통 받은 우편함\"은 명사가 조사 없이 이어져 우체통에 속한 받은 우편함이라는 관계가 바로 드러나지 않습니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/windows/loot-trade-mail.md:77은 탭 이름을 \"받은 우편함\"으로 쓰고, windows/overview.md:56은 같은 대상을 \"우체통의 받은 우편함\"으로 씁니다.",
+     "scope": "file",
+     "source_quote": "- Mailbox inbox, trade window, loot roll keys: [Loot, Trade and Mail](../windows/loot-trade-mail.md)"
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/action-bars.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "windows/action-bars.md",
+     "category": "accuracy",
+     "severity": "major",
+     "scope": "file",
+     "quote": "차량 단축바나 행동 단축바 조정은 읽지 않습니다",
+     "source_quote": "and the vehicle or possess bars",
+     "suggestion": "차량 단축바나 조종 단축바는 읽지 않습니다",
+     "problem": "원문 \"possess bars\"는 정신 지배 등으로 다른 대상을 조종할 때 나타나는 단축바다. 번역 \"행동 단축바 조정\"은 '단축바를 조정하는 기능'으로 읽혀, 독자는 어떤 단축바가 읽히지 않는지 알 수 없고 원문에 없는 '조정' 기능이 있는 것으로 오해한다. 이번 다듬기에서 바뀐 줄(리테일→Retail)에 있지만 이 부분은 다듬기 전부터 있던 결함이다.",
+     "evidence": "en/windows/action-bars.md:44 \"the vehicle or possess bars\". ko/windows/action-bars.md:45 \"차량 단축바나 행동 단축바 조정\". cache/gs_enUS.csv에 possess bar에 해당하는 공식 문자열 없음(SPELL_FAILED_POSSESSED \"You are possessed\"만 있음). docs/decisions.tsv, docs/glossary.tsv에 possess 관련 항목 없음. 다른 ko 설명서에도 이 바를 부르는 표기 없음."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/action-bars.md",
+     "category": "accuracy",
+     "severity": "major",
+     "quote": "WowVision은 전투 중에 사용자가 직접 지정한 단축키가 계속 작동하도록 자기 키를 게임에 돌려주고, 전투가 끝나면 다시 가져옵니다.",
+     "suggestion": "WowVision은 전투 중에 사용자의 게임 단축키가 계속 작동하도록 자기 키를 게임에 돌려주고, 전투가 끝나면 다시 가져옵니다.",
+     "problem": "「직접 지정한」은 원문에 없는 조건을 더한다. 기본 게임 단축키도 계속 작동하지만, 현재 문장은 사용자가 직접 변경하거나 지정한 단축키만 해당하는 것으로 오해하게 한다.",
+     "evidence": "원문의 \"your own key bindings\"는 WowVision 키와 대비되는 사용자의 게임 단축키를 뜻하며, 직접 다시 지정한 키로 한정하지 않는다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:79도 같은 대상을 「게임 자체 단축키」와 「게임 단축키」로 부른다.",
+     "scope": "file",
+     "source_quote": "WowVision gives its keys back to the game during combat so that your own key bindings keep working, and takes them again when combat ends."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/action-bars.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "주문, 아이템, 매크로, 탈것, 전투 애완동물, 장비 구성, 펼침 메뉴는 모두 이름으로 읽습니다.",
+     "suggestion": "주문, 아이템, 매크로, 탈것, 전투 애완동물, 장비 구성, 주문 펼침 메뉴는 모두 이름으로 읽습니다.",
+     "problem": "행동 단축바에 놓이는 flyout을 이 문장만 「펼침 메뉴」라고 줄여 불러, 일반적인 펼침 메뉴와 「주문 펼침 메뉴」가 다른 기능처럼 보인다. 같은 기능의 확정된 이름을 써야 한다.",
+     "evidence": "wowvision-ko/vision-locale/koKR/ui.lua:119에서 「Spell Flyout」은 「주문 펼침 메뉴」이고, wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:12, 14, 73, 75도 같은 기능을 「주문 펼침 메뉴」로 부른다. 행동 단축바 구현도 wowvision-ko/WowVision/core/windows/bars/bars.lua:70에서 actionType \"flyout\"을 별도 유형으로 처리한다.",
+     "scope": "file",
+     "source_quote": "Spells, items, macros, mounts, battle pets, equipment sets and flyouts are all read by name."
+    }
+   ],
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "windows/bags-and-bank.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/bags-and-bank.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "일반 등급 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+     "suggestion": "보통 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+     "problem": "다듬기 과정에서 일반적인 아이템을 뜻하는 표현을 게임의 특정 등급인 일반 등급으로 한정했다. 이 문장대로면 하급·고급 아이템의 기본 확인 방식은 설명에서 빠진다.",
+     "evidence": "원문은 첫 문장에서 `common items`라고만 쓰고, 다음 문장에서 등급 조건을 명시할 때는 `rare quality or better`라고 쓴다. 게임 공식 문자열은 wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID 9705, BaseTag `ITEM_QUALITY1_DESC`에서 `Common`=`일반`이므로, 번역문의 `일반 등급`은 특정 품질을 뜻한다.",
+     "scope": "file",
+     "source_quote": "For common items the popup has a text and two buttons"
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "windows/bags-and-bank.md",
+     "category": "accuracy",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "일반 등급 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+     "source_quote": "For common items the popup has a text and two buttons",
+     "suggestion": "보통 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+     "problem": "다듬기에서 '보통 아이템'을 '일반 등급 아이템'으로 바꿔 범위가 좁아졌다. '일반'은 등급 이름(흰색, ITEM_QUALITY1_DESC)이라 독자는 흰색 아이템만 버튼 두 개짜리 확인 창이 뜬다고 읽는다. 원문은 바로 뒤 'Items of rare quality or better'와 대비되는 평범한 아이템 전체(하급·일반·고급)를 가리키며, 'common' 뒤에 quality를 붙이지 않았다. 행동을 잘못하게 만들지는 않으므로 경미로 둔다.",
+     "evidence": "cache/gs_koKR.csv: DELETE_ITEM \"%s|1을;를; 완전히 파괴하시겠습니까?\"(버튼만), DELETE_GOOD_ITEM \"정말 %s|1을;를; 완전히 파괴하시겠습니까?\\n확인을 위해 \"\"지금파괴\"\"를 입력해 주십시오.\"; ITEM_QUALITY1_DESC 일반, ITEM_QUALITY0_DESC 하급. 원문은 rare 이상만 따로 말하므로 그 아래 등급 전체가 DELETE_ITEM 쪽이다. before 표기는 '보통 아이템'."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/bags-and-bank.md",
+     "category": "accuracy",
+     "severity": "minor",
+     "quote": "설정은 WowVision 메뉴에서 바꿉니다. [WowVision 메뉴와 설정](../basics/menu-and-settings.md)을 보십시오.",
+     "suggestion": "설정은 WowVision 메뉴에서 바꿉니다. [메뉴와 설정](../basics/menu-and-settings.md)을 보십시오.",
+     "problem": "원문 링크 글자에 없는 `WowVision`을 추가해, 링크 글자는 대상 페이지 제목에 맞추지 않고 원문을 옮긴다는 사용자 결정을 어겼다.",
+     "evidence": "원문 링크 글자는 `Menu and settings`이다. wowwork/docs/decisions.tsv의 2026-11-05 결정은 원문 링크 글자를 그대로 옮기도록 정한다. 같은 표기는 wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:138에서 `[메뉴와 설정]`으로 번역됐다.",
+     "scope": "file",
+     "source_quote": "See [Menu and settings](../basics/menu-and-settings.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/bags-and-bank.md",
+     "category": "accuracy",
+     "severity": "minor",
+     "quote": "색은 툴팁 설정의 등급에서 하나씩 끌 수 있습니다. [툴팁 읽기](../basics/tooltips.md)를 보십시오.",
+     "suggestion": "색은 툴팁 설정의 등급에서 하나씩 끌 수 있습니다. [툴팁](../basics/tooltips.md)을 보십시오.",
+     "problem": "원문 링크 글자 `Tooltips`에 없는 `읽기`를 추가해, 원문 링크 글자를 그대로 옮긴다는 사용자 결정을 어겼다.",
+     "evidence": "wowwork/docs/decisions.tsv의 2026-11-05 결정은 링크 글자를 대상 페이지 제목에 맞추지 말고 원문대로 옮기도록 정한다. 동일한 원문 링크는 wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:39와 windows/action-bars.md:75에서 `[툴팁]`으로 번역됐다.",
+     "scope": "file",
+     "source_quote": "See [Tooltips](../basics/tooltips.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/bags-and-bank.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "여기서는 두 클릭 모두 가방 닫기라고 읽고, 가방을 들고 있는 동안에는 아이템 놓기라고 읽습니다.",
+     "suggestion": "여기서는 왼쪽 클릭과 오른쪽 클릭 모두 가방 닫기라고 읽고, 가방을 들고 있는 동안에는 아이템 놓기라고 읽습니다.",
+     "problem": "`두 클릭`은 왼쪽·오른쪽 클릭 두 종류가 아니라 두 번 클릭하는 동작으로도 이해할 수 있다. 클릭 종류를 밝히지 않아 어떤 동작에 같은 이름이 붙는지 바로 알기 어렵다.",
+     "evidence": "원문의 `Both clicks`는 같은 가방 보관함에서 제공하는 왼쪽 클릭과 오른쪽 클릭을 가리킨다. 이 파일 앞부분의 키 표도 두 동작을 `왼쪽 클릭`과 `오른쪽 클릭`으로 구분한다.",
+     "scope": "file",
+     "source_quote": "Both clicks on it say Close Bag, or Place Item while you hold a bag."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/character.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/character.md",
+     "category": "terminology",
+     "severity": "critical",
+     "quote": "구성을 선택하면 장비, 저장, 이름/아이콘 변경, 삭제가 정지점 하나씩 나옵니다.",
+     "suggestion": "구성을 선택하면 장비, 저장, 세트 편집, 삭제가 정지점 하나씩 나옵니다.",
+     "problem": "화면에서 \"세트 편집\"으로 낭독되는 버튼을 \"이름/아이콘 변경\"으로 안내해 사용자가 해당 정지점을 찾지 못할 수 있습니다.",
+     "evidence": "입력 terms에서 Edit Set의 실제 한국어 값은 \"세트 편집\"입니다. wowvision-ko/vision-locale/koKR/windows.lua:252에도 L[\"Edit Set\"] = \"세트 편집\"으로 정의되어 있습니다.",
+     "scope": "file",
+     "source_quote": "Once a set is selected, one stop each for Equip, Save, Edit Set and Delete."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/character.md",
+     "category": "terminology",
+     "severity": "critical",
+     "quote": "이름/아이콘 변경을 누르면 이름과 아이콘 창이 열립니다.",
+     "suggestion": "세트 편집을 누르면 이름과 아이콘 창이 열립니다.",
+     "problem": "버튼의 실제 낭독값인 \"세트 편집\" 대신 기능 설명을 버튼 이름처럼 썼습니다. 사용자가 설명서에 나온 이름과 같은 버튼을 찾을 수 없습니다.",
+     "evidence": "입력 terms의 Edit Set은 \"세트 편집\"이며, wowvision-ko/vision-locale/koKR/windows.lua:252의 값도 \"세트 편집\"입니다.",
+     "scope": "file",
+     "source_quote": "Edit Set opens the name and icon window."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/character.md",
+     "category": "terminology",
+     "severity": "critical",
+     "quote": "새 구성이나 이름/아이콘 변경을 누르면 구성 창이 따로 열립니다.",
+     "suggestion": "새 구성이나 세트 편집을 누르면 구성 창이 따로 열립니다.",
+     "problem": "같은 Edit Set 버튼을 다시 \"이름/아이콘 변경\"으로 불러 실제 낭독값과 다릅니다.",
+     "evidence": "입력 terms와 wowvision-ko/vision-locale/koKR/windows.lua:252에서 Edit Set의 한국어 값은 모두 \"세트 편집\"입니다.",
+     "scope": "file",
+     "source_quote": "New Set and Edit Set open the set window as a window of its own"
+    },
+    {
+     "by": "gpt",
+     "id": "windows/character.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "다른 하나는 소지품 가방에 보여 줍니다.",
+     "suggestion": "다른 하나는 화폐를 소지품에 표시합니다.",
+     "problem": "화폐를 표시하는 UI 위치를 \"소지품 가방\"이라고 풀어 써, 가방 안에 화폐가 나타난다는 뜻으로 오해할 수 있습니다. 같은 문맥의 게임 공식 문구를 써야 합니다.",
+     "evidence": "wowwork/cache/gs_enUS.csv의 ID 18805, BaseTag SHOW_ON_BACKPACK은 \"Show on Backpack\"이고, 같은 ID의 wowwork/cache/gs_koKR.csv 값은 \"소지품에 표시\"입니다.",
+     "scope": "file",
+     "source_quote": "one that shows it on your backpack bar"
+    }
+   ],
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "windows/chat.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/chat.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "메시지(대화, 외침, 길드 일반 메시지, 귓속말, 아이템 획득 등)의 체크 상자를 담고 있습니다.",
+     "suggestion": "메시지(대화, 외침, 길드 일반 메시지, 받는 귓속말, 아이템 획득 등)의 체크 상자를 담고 있습니다.",
+     "problem": "다듬기 전의 공식 항목명인 \"받는 귓속말\"을 \"귓속말\"로 바꿨다. 게임은 받는 귓속말과 보내는 귓속말을 서로 다른 문자열로 구분하므로, 독자가 실제 대화 설정 창에서 찾아야 할 항목을 정확히 식별하기 어려워진다.",
+     "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID 12984는 BaseTag CHAT_MSG_WHISPER, 영어 \"Incoming Whisper\", 한국어 \"받는 귓속말\"이다. 반면 ID 13125의 BaseTag CHAT_MSG_WHISPER_INFORM은 영어 \"Whisper\", 한국어 \"귓속말\"이므로 서로 다른 메시지 종류다. before에도 \"받는 귓속말\"로 정확히 적혀 있었다.",
+     "scope": "file",
+     "source_quote": "the check boxes of the messages (Say, Yell, Guild, Whisper, Loot, and so on)"
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "windows/chat.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "[알림](../basics/alerts.md)와 [음성](../basics/speech.md)을 참고하십시오.",
+     "source_quote": "see [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md).",
+     "suggestion": "[알림](../basics/alerts.md)과 [음성](../basics/speech.md)을 참고하십시오.",
+     "problem": "다듬기에서 링크 글자를 '경보'에서 '알림'으로 바꾸면서 뒤 조사 '와'를 그대로 두었다. '알림'은 받침(ㅁ)으로 끝나므로 '과'가 맞다. 뜻은 그대로지만 조사가 틀린 문장이 새로 생겼다.",
+     "evidence": "changes의 before \"[경보](../basics/alerts.md)와\" -> after \"[알림](../basics/alerts.md)와\". 같은 유형이 다른 파일에도 남아 있다: wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md:108 \"[알림](../basics/alerts.md)와 [전투]\", getting-started/quick-start.md:61과 troubleshooting.md:44, information/group-health.md:106 \"[알림](../basics/alerts.md)를\"(받침 뒤 '를'). 이 파일의 나머지 변경(경보->알림, 클래식 시대/리테일->Classic Era/Retail, 받는 귓속말->귓속말, 채널->채널 표시)은 decisions.tsv 2026-11-07 두 결정, gs_koKR CHANNELS=\"채널 표시\"(core/chat/ui.lua:548이 CHANNELS를 문맥 이름으로 씀), WHISPER=\"귓속말\"과 맞고, 앵커 #잠금-중-대화-retail과-wow-forever도 바뀐 제목과 일치한다."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/chat.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "대화 입력창이 키보드를 가져갈 때 나는 소리.",
+     "suggestion": "대화 입력창이 키보드 입력을 받기 시작할 때 나는 소리.",
+     "problem": "\"키보드를 가져갈 때\"는 영어 표현을 직역해 입력창이 초점을 얻는다는 뜻이 바로 드러나지 않는다.",
+     "evidence": "같은 파일의 \"메시지 보내기\" 절에서는 같은 동작을 \"대화 입력창이 키보드 입력을 받기 시작할 때\"라고 구체적으로 설명한다.",
+     "scope": "file",
+     "source_quote": "Sound when the chat box takes the keyboard."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/chat.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "이 세 동작은 메시지 목록에 초점이 있을 때만 그 키를 차지합니다.",
+     "suggestion": "대화 전용 키 세 개는 메시지 목록에 초점이 있을 때만 WowVision 단축키로 작동합니다.",
+     "problem": "\"키를 차지합니다\"는 영어 관용 표현을 그대로 옮긴 말이라, 키가 예약된다는 뜻인지 해당 단축키가 그때만 작동한다는 뜻인지 불분명하다.",
+     "evidence": "원문은 메시지 목록에 초점이 있을 때만 세 대화 전용 키가 WowVision에 의해 처리된다는 조건을 설명한다. 바로 앞 문장에 세 키가 명시되어 있으므로 구체적으로 다시 받으면 조건이 분명해진다.",
+     "scope": "file",
+     "source_quote": "They only hold their keys while the message list has the focus."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/collections.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/collections.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "| Enter | 등급 하나를 삽니다(선택 특성이면 선택지를 엶) |",
+     "suggestion": "| Enter | 등급 하나를 배웁니다(선택 특성이면 선택지를 엶) |",
+     "problem": "다듬기 전의 \"배웁니다\"를 \"삽니다\"로 바꾸면서 한국어 WoW의 특성 습득 용어 및 같은 기능을 설명하는 다른 문서와 달라졌다. 같은 표의 상황별 메뉴도 이 동작을 \"배우기\"라고 부르므로, 독자가 구매와 습득을 서로 다른 동작으로 오해할 수 있다.",
+     "evidence": "게임 공식 문자열의 같은 특성 동작은 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS에서 영어 \"Click to learn\", 한국어 \"배우려면 클릭하십시오.\"이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 동일한 원문 \"Buys one rank.\"를 \"등급 하나를 배웁니다.\"로 옮긴다.",
+     "scope": "file",
+     "source_quote": "| Enter | Buys a rank (for a choice talent: opens its options) |"
+    },
+    {
+     "by": "gpt",
+     "id": "windows/collections.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "특성 구매는 바로 확정되지 않습니다. 적용을 누르기 전에는 아무것도 배우지 않습니다.",
+     "suggestion": "특성 습득은 바로 확정되지 않습니다. 적용을 누르기 전에는 아무것도 배우지 않습니다.",
+     "problem": "같은 특성 동작을 첫 문장에서는 \"구매\", 다음 문장에서는 \"배우기\"로 다르게 부른다. 다듬기 때문에 생긴 불일치이며, 게임에서 별도의 구매 절차가 있는 것처럼 오해할 수 있다.",
+     "evidence": "게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS는 내부 이름에 PURCHASE가 들어가지만 실제 한국어 표시는 \"배우려면 클릭하십시오.\"이다. ID 49664, BaseTag TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS도 반대 동작을 \"습득을 취소\"라고 부른다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:193은 같은 단계 적용 방식을 \"변경 사항은 바로 반영되지 않고 대기합니다.\"라고 설명해 구매라는 별도 개념을 쓰지 않는다.",
+     "scope": "file",
+     "source_quote": "Buying is staged: nothing is learned until you press Apply."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/collections.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "5. Enter를 눌러 등급을 삽니다. 다른 특성에도 같은 방법을 반복합니다.",
+     "suggestion": "5. Enter를 눌러 등급을 배웁니다. 다른 특성에도 같은 방법을 반복합니다.",
+     "problem": "다듬기 전의 \"배웁니다\"를 \"삽니다\"로 바꾸면서 같은 절의 표 및 한국어 WoW가 사용하는 특성 습득 용어와 달라졌다. 예시를 따라 하는 독자가 특성 등급을 배우는 동작과 별도의 구매 동작이 있다고 오해할 수 있다.",
+     "evidence": "게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS의 한국어 값은 \"배우려면 클릭하십시오.\"이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 같은 동작을 \"등급 하나를 배웁니다.\"라고 쓴다.",
+     "scope": "file",
+     "source_quote": "5. Press Enter to buy a rank. Repeat for other talents."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "windows/collections.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "\"사용 가능\"(등급을 배울 수 있음)",
+     "source_quote": "\"Available\" (you can buy a rank)",
+     "suggestion": "\"사용 가능\"(등급을 살 수 있음)",
+     "problem": "다듬기에서 같은 원문 'buy a rank'를 Enter 행('등급 하나를 삽니다')과 예시 5단계('등급을 삽니다')에서는 '사다'로 바꿨는데, 상태 설명의 같은 동작만 '배울 수 있음'으로 남았다. 같은 파일에서 등급 구매를 '삽니다'와 '배울 수 있음'으로 다르게 불러, 적용 전 단계 구매(staged)와 실제 습득을 구분한 다듬기 의도가 이 한 곳에서 흐려진다.",
+     "evidence": "같은 파일 changes: '| Enter | 등급 하나를 삽니다(...)', '5. Enter를 눌러 등급을 삽니다.', '특성 구매는 바로 확정되지 않습니다. 적용을 누르기 전에는 아무것도 배우지 않습니다.' 원문은 모두 buy/Buying."
+    },
+    {
+     "by": "claude",
+     "id": "windows/collections.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "다른 특성을 환불해서 조건이 맞지 않게 되었을 때",
+     "source_quote": "\"Invalid\" if refunding something broke it",
+     "suggestion": "다른 특성의 습득을 취소해서 조건이 맞지 않게 되었을 때",
+     "problem": "같은 파일에서 refund를 Backspace 행('등급 하나의 습득을 취소합니다')과 계통도 초기화 설명('계통도 전체의 습득을 취소합니다')에서는 '습득 취소'로 부르는데 이 문장만 '환불'이라 부른다. 독자는 '환불'이 Backspace 동작과 같은 것인지 따로 찾아 맞춰야 한다.",
+     "evidence": "같은 파일: '| Backspace | 등급 하나의 습득을 취소합니다 |'(원문 Refunds a rank), '계통도 초기화는 계통도 전체의 습득을 취소합니다'(원문 Reset Tree refunds the whole tree). koKR windows.lua L[\"Unlearn\"] = \"습득 취소\"."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/loot-trade-mail.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/loot-trade-mail.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "1. 탭: 받은 우편함과 우편 발송. 지금 있는 탭은 \"선택됨\"이라고 말합니다. 왼쪽과 오른쪽 화살표로 둘 사이를 오가고, Enter로 전환합니다.",
+     "suggestion": "1. 탭: 받은 우편함과 우편 발송. 현재 탭은 \"선택됨\"이라고 말합니다. Left와 Right로 둘 사이를 오가고, Enter로 전환합니다.",
+     "problem": "키 이름 Left와 Right를 한국어 설명으로 바꿨다. 키 이름을 바꾸지 않는다는 지침에 어긋나며, 다른 설명서에서 같은 키를 부르는 방식과도 다르다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:56은 같은 키를 \"Left와 Right\"로 표기하고, 82행도 \"Up과 Down\", \"Left와 Right\"를 사용한다.",
+     "scope": "file",
+     "source_quote": "1. Tabs: Inbox and Send Mail. The one you are on says \"selected\". Left and Right move between them, and Enter switches."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/loot-trade-mail.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "3. 아래 화살표로 첨부 물품의 돈에 가서 Enter를 누릅니다. 골드가 지갑에 들어옵니다.",
+     "suggestion": "3. Down으로 첨부 물품의 돈에 가서 Enter를 누릅니다. 골드가 지갑에 들어옵니다.",
+     "problem": "키 이름 Down을 \"아래 화살표\"로 바꿨다. 키 이름을 유지한다는 지침에 어긋나며 다른 한국어 설명서의 표기와 일치하지 않는다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:9-10은 같은 키를 \"Down\"으로 표기하고, wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:82도 \"Up과 Down\"을 사용한다.",
+     "scope": "file",
+     "source_quote": "3. Down to the money attachment and press Enter. The gold is in your purse."
+    }
+   ],
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "windows/loot-trade-mail.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "그러면 전리품을 열자마자 모두 자동으로 챙깁니다.",
+     "suggestion": "그러면 시체나 상자를 뒤지자마자 전리품을 모두 자동으로 챙깁니다.",
+     "problem": "게임에서 여는 대상은 시체나 상자이지 전리품 자체가 아니다. \"전리품을 열다\" 때문에 자동 전리품 획득이 어느 행동에 반응하는지 바로 이해하기 어렵다.",
+     "evidence": "같은 문단 첫 문장은 전리품 창이 \"시체나 상자에 든 아이템\"을 보여 준다고 설명한다. 원문도 목적어 없이 loot 동작을 가리킨다.",
+     "scope": "file",
+     "source_quote": "Turn it on in the game options (see [System windows](./system.md#the-game-options-window)) and everything is picked up as soon as you loot."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/loot-trade-mail.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "편지에서 Enter를 눌러 엽니다. 그런 다음 열린 편지가 나올 때까지 Tab을 누릅니다(페이지 버튼이 있으면 그것이 먼저 나옵니다). 그곳에서 읽는 내용은 다음과 같습니다.",
+     "suggestion": "편지에서 Enter를 눌러 엽니다. 그런 다음 열린 편지가 나올 때까지 Tab을 누릅니다(페이지 버튼이 있으면 페이지 버튼이 먼저 나옵니다). 열린 편지 정지점에서 읽는 내용은 다음과 같습니다.",
+     "problem": "\"그것\"과 \"그곳\" 앞에 페이지 버튼과 열린 편지가 함께 나와 각각 무엇을 가리키는지 다시 찾아야 한다. 특히 \"그곳\"이 페이지 버튼인지 열린 편지 정지점인지 문장만으로 즉시 드러나지 않는다.",
+     "evidence": "원문은 먼저 나오는 대상을 \"the page buttons\"로, 내용을 읽는 대상을 \"the opened letter\"의 stop으로 구분한다.",
+     "scope": "file",
+     "source_quote": "Then press Tab until you reach the opened letter (the page buttons, if any, come first). Its stop reads:"
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/spells-and-talents.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "major",
+     "scope": "file",
+     "quote": "4. 특성 격자: 열린 트리의 특성을 위에서 아래로, 왼쪽에서 오른쪽으로 읽습니다.",
+     "source_quote": "Talent Grid: the talents of the open tree, read top to bottom and left to right.",
+     "suggestion": "4. 특성 격자: 열린 계통도의 특성을 위에서 아래로, 왼쪽에서 오른쪽으로 읽습니다.",
+     "problem": "다듬기가 바로 위 2번 항목의 \"세 특성 트리\"만 \"세 특성 계통도\"로 바꾸고 같은 목록 4번 항목의 \"열린 트리\"는 그대로 두었다. 같은 talent tree를 두 항목 사이에서 \"계통도\"와 \"트리\"로 달리 불러, 독자가 4번의 \"트리\"가 2번 탭의 계통도와 다른 것인지 다시 따져야 한다.",
+     "evidence": "changes 3번째(2. 탭: 세 특성 트리이며 -> 세 특성 계통도이며). 같은 파일 111행에 \"열린 트리\"가 남음. 게임 공식 용어: TALENTS_INVOLUNTARILY_RESET \"talent tree\" -> \"특성 계통도\"(gs_koKR 20141). 다른 설명서: getting-started/introduction.md:10 \"특성 계통도\", windows/collections.md:4 \"유산 특성 계통도\"."
+    },
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "major",
+     "scope": "file",
+     "quote": "### 예: 전사 트리에 처음 포인트 쓰기",
+     "source_quote": "### Example: spend your first points in a Warrior tree",
+     "suggestion": "### 예: 전사 계통도에 처음 포인트 쓰기",
+     "problem": "같은 TBC 특성 절에서 탭 설명은 \"세 특성 계통도\"로 바뀌었는데 예시 제목은 \"전사 트리\"로 남아, 같은 tree를 한 절 안에서 두 이름으로 부른다. 같은 문제를 한 곳만 고친 회귀다.",
+     "evidence": "changes 3번째에서 TBC 특성 2번 항목만 \"계통도\"로 바뀜. 116행 제목은 \"트리\" 그대로. 공식 용어 gs_koKR 20141 TALENTS_INVOLUNTARILY_RESET \"특성 계통도\"."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "전문화 정지점 안에서 트리의 각 줄은 줄 1, 줄 2처럼 이름이 붙은 묶음입니다.",
+     "source_quote": "Inside a specialization stop each row of the tree is a group named Row 1, Row 2 and so on.",
+     "suggestion": "전문화 정지점 안에서 계통도의 각 줄은 줄 1, 줄 2처럼 이름이 붙은 묶음입니다.",
+     "problem": "문서 첫 표의 WoW: Forever 행은 \"직업 특성 계통도\"로 바뀌었는데 WoW: Forever 특성 절 본문은 같은 class talent tree를 \"트리\"로 부른다. 한 파일 안에서 같은 개념의 이름이 갈린다.",
+     "evidence": "changes 2번째(직업 특성 트리 -> 직업 특성 계통도). 170행 \"트리의 각 줄\", \"트리에 포인트를\"이 남음."
+    },
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "트리에 포인트를 더 써야 게임이 그 줄을 열어 주는 경우에는",
+     "source_quote": "If the game holds the row back until you spend points in the tree",
+     "suggestion": "계통도에 포인트를 더 써야 게임이 그 줄을 열어 주는 경우에는",
+     "problem": "위 지적과 같은 문제. 같은 문단 안 두 번째 \"트리\"도 표의 \"직업 특성 계통도\"와 이름이 다르다.",
+     "evidence": "170행. changes 2번째와 대조."
+    },
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "거기서 트리 전체를 초기화할지 일부만 초기화할지 고릅니다.",
+     "source_quote": "where you choose to reset the whole tree or only one part of it.",
+     "suggestion": "거기서 계통도 전체를 초기화할지 일부만 초기화할지 고릅니다.",
+     "problem": "표에서 \"계통도\"로 바꾼 같은 class talent tree를 여기서는 \"트리\"로 부른다.",
+     "evidence": "193행. changes 2번째와 대조."
+    },
+    {
+     "by": "claude",
+     "id": "windows/spells-and-talents.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "트리로 돌아가려면 Escape를 누르십시오.",
+     "source_quote": "press Escape to go back to the tree.",
+     "suggestion": "계통도로 돌아가려면 Escape를 누르십시오.",
+     "problem": "표에서 \"계통도\"로 바꾼 같은 class talent tree를 여기서는 \"트리\"로 부른다.",
+     "evidence": "197행. changes 2번째와 대조."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/spells-and-talents.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "배우기 버튼: 고른 전문화를 확정할 수 있도록 게임이 허용하는 동안에만 나옵니다.",
+     "suggestion": "배우기 버튼: 게임에서 고른 전문화를 확정할 수 있을 때만 나옵니다.",
+     "problem": "“확정할 수 있도록 게임이 허용하는 동안”은 목적과 허용 기간을 겹쳐 표현해, 버튼이 나오는 조건을 바로 파악하기 어렵습니다.",
+     "evidence": "원문은 게임에서 고른 전문화를 확정할 수 있을 때만 버튼이 제공된다는 조건입니다. 제안문은 원문의 한정어 “only”와 조건을 유지하면서 조건을 먼저 드러냅니다.",
+     "scope": "file",
+     "source_quote": "A Learn button. It is only offered while the game allows you to commit to the chosen specialization."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/spells-and-talents.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "특성 변경 버튼은 게임이 제공하는 동안 주문 이름과 괄호 안의 이름을 읽습니다.",
+     "suggestion": "특성 변경 버튼은 게임이 보여 줄 때 나옵니다. 이 버튼은 주문 이름과 괄호 안의 이름을 읽습니다.",
+     "problem": "“게임이 제공하는 동안”은 버튼이 나오는 조건과 버튼이 읽는 내용을 한 문장에 묶어, 게임이 무엇을 제공하는지와 ‘동안’이 어느 동작에 걸리는지 다시 해석해야 합니다.",
+     "evidence": "원문의 “while the game offers it”은 특성 변경 버튼이 제공되는 조건이고, “reads a spell name and a name in brackets”는 버튼이 읽는 내용입니다. 둘을 나누면 두 정보 단위가 분명해집니다.",
+     "scope": "file",
+     "source_quote": "and a talent change button, which reads a spell name and a name in brackets while the game offers it."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/system.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "gpt",
+     "id": "windows/system.md",
+     "category": "accuracy",
+     "severity": "critical",
+     "quote": "4. Tab으로 매크로 내용까지 가십시오. `/cast Healing Touch`를 입력하고 Tab을 누르십시오.",
+     "suggestion": "4. Tab으로 매크로 내용까지 가십시오. `/cast 치유의 손길`을 입력하고 Tab을 누르십시오.",
+     "problem": "한국어 클라이언트에서 영어 주문 이름을 입력하도록 안내해 예제 매크로가 주문을 시전하지 못할 수 있다. `wowwork/docs/decisions.tsv`의 2026-11-05 결정도 주문의 한국어 이름은 원문과 다르게 쓰도록 정했다.",
+     "evidence": "`wowvision-ko/WowVision/docs/src/user/ko/windows/professions.md:25`는 한국어 클라이언트에서 `/cast` 뒤의 주문 이름을 한국어로 써야 한다고 명시한다. 블리자드 한국어 공식 자료에서는 Healing Touch를 '치유의 손길'로 표기한다. `wowwork/cache/gs_enUS.csv`와 `gs_koKR.csv`에는 이 주문 이름이 없어 같은 ID 대조는 할 수 없었다.",
+     "scope": "file",
+     "source_quote": "4. Tab to Macro Text. Type `/cast Healing Touch` and press Tab."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "windows/system.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "[알림](../basics/alerts.md)와 [음성](../basics/speech.md)을 참고하십시오.",
+     "source_quote": "see [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md).",
+     "suggestion": "[알림](../basics/alerts.md)과 [음성](../basics/speech.md)을 참고하십시오.",
+     "problem": "다듬기에서 링크 글자를 '경보'에서 '알림'으로 바꾸면서 뒤의 조사 '와'를 그대로 두었다. '알림'은 받침으로 끝나므로 '과'가 맞다. 뜻은 그대로지만 조사가 틀린 문장이 되었다.",
+     "evidence": "changes 3번 before는 '[경보](../basics/alerts.md)와'(받침 없음, 맞음), after는 '[알림](../basics/alerts.md)와'. 같은 치환이 다른 파일에도 남아 있다: world/minimap.md:169 '[알림](../basics/alerts.md)와', reference/glossary.md:108 '[알림](../basics/alerts.md)와', windows/chat.md:225 '[알림](../basics/alerts.md)와' (wowvision-ko/WowVision/docs/src/user/ko에서 Grep). 경보→알림 전환 자체는 decisions.tsv 2026-11-07 'alert의 한국어'와 glossary.tsv 'alert 알림'에 맞고, 이 파일과 ko 설명서 전체에 '경보'는 남아 있지 않다."
+    },
+    {
+     "by": "gpt",
+     "id": "windows/system.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "게임 메뉴의 설정은 게임의 설정 창을 엽니다. WowVision 읽기 기능은 이 창의 거의 전부를 다룹니다. 탭, 범주 목록, 검색 상자, 그리고 거의 모든 종류의 설정 줄입니다. 게임 메뉴에서 여십시오.",
+     "suggestion": "게임 메뉴의 설정은 게임의 설정 창을 엽니다. WowVision 읽기 기능은 탭, 범주 목록, 검색 상자, 거의 모든 종류의 설정 줄 등 이 창의 거의 전부를 다룹니다. 게임 메뉴에서 여십시오.",
+     "problem": "원문의 콜론 뒤에 이어지는 예시를 별도 문장으로 분리하면서, 명사 목록에 `입니다`만 붙은 문장이 되었다. 무엇이 무엇이라는 뜻인지 문장 관계를 다시 해석해야 한다.",
+     "evidence": "영어 원문에서는 `covers almost all of it` 뒤의 콜론에 이어 탭·범주 목록·검색 상자·설정 줄을 범위의 예시로 바로 연결한다. 번역문은 이 예시를 독립된 명사 나열 문장으로 끊었다.",
+     "scope": "file",
+     "source_quote": "Options in the game menu opens the game's settings window. The WowVision reader covers almost all of it: its tabs, the category list, the search box and nearly every kind of setting row. Open it from the game menu."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "world/combat.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "world/combat.md",
+     "category": "terminology",
+     "severity": "major",
+     "scope": "file",
+     "quote": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 알림을 쓰십시오.",
+     "source_quote": "Use the game's own Combat Audio Alerts instead, in its Accessibility options",
+     "suggestion": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 경보를 쓰십시오.",
+     "problem": "다듬기에서 경보를 알림으로 일괄 바꾸면서 WowVision 기능이 아닌 게임 자체 옵션 이름까지 바꿨다. 게임 화면의 옵션 이름은 '전투 음성 경보'라서, 독자가 손쉬운 사용 설정에서 '전투 음성 알림'을 찾으면 찾지 못한다. 2026-11-07 결정은 WowVision의 alert 번역을 바꾼 것이지 게임 공식 용어를 바꾼 것이 아니다.",
+     "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL=\"전투 음성 경보\", 57498 COMBAT_AUDIO_ALERTS=\"전투 음성 경보\" (enUS 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\". 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:58 \"전투 음성 알림을 사용하십시오\"에도 있다."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/combat.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "| 오류 알림(알림), 사용함 | 켬 |",
+     "source_quote": "| Announce Errors (alert), Enabled | On |",
+     "suggestion": "| 오류 알림(알림 항목), 사용함 | 켬 |",
+     "problem": "경보를 알림으로 바꾸면서 괄호가 앞 이름을 되풀이하는 '오류 알림(알림)'이 됐다. 원문의 (alert)는 이 설정이 알림 항목이라는 것을 밝히는 말인데, 지금은 같은 낱말을 두 번 쓴 오타처럼 읽혀 괄호의 뜻이 전달되지 않는다.",
+     "evidence": "before: \"오류 알림(경보), 사용함\". docs/decisions.tsv 2026-11-07 alert 결정은 Announce 설정의 'X 알림'(오류 알림)을 그대로 두므로 두 낱말이 겹친다."
+    },
+    {
+     "by": "claude",
+     "id": "world/combat.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "필터가 알아볼 수 없으므로 오류 알림 알림으로 그대로 말합니다.",
+     "source_quote": "are spoken as they are through the Announce Errors alert, because the filter cannot identify them",
+     "suggestion": "필터가 알아볼 수 없으므로 오류 알림 항목의 설정으로 그대로 말합니다.",
+     "problem": "경보를 알림으로 바꾸면서 '오류 알림 알림'이 되어 같은 낱말이 연달아 나온다. 독자는 오타로 읽거나 어떤 설정을 가리키는지 다시 찾아야 한다. 가리키는 대상은 위 설정 표의 '오류 알림' 알림 항목(TTS 알림 포함)이다.",
+     "evidence": "before: \"오류 알림 경보로\". 같은 파일 설정 표 \"오류 알림, TTS 알림 | 켬 | 아래 '항상 말하는 것'에 나오는 메시지를 말하는 방식입니다\"."
+    },
+    {
+     "by": "gpt",
+     "id": "world/combat.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "| 오류 알림(알림), 사용함 | 켬 | 주 스위치입니다. 끄면 게임 메시지를 하나도 말하지 않습니다 |",
+     "suggestion": "| 오류 알림의 사용함 | 켬 | 주 스위치입니다. 끄면 게임 메시지를 하나도 말하지 않습니다 |",
+     "problem": "설정 이름 \"오류 알림\" 바로 뒤에 설정 종류 \"알림\"을 다시 붙여 \"알림(알림)\"이 되었다. 독자는 서로 다른 두 단계의 설정인지 단순 중복인지 구분해야 한다.",
+     "evidence": "terms에서 Announce Errors는 \"오류 알림\", Enabled는 \"사용함\"으로 확정되어 있다. 이 파일의 다음 행은 \"오류 알림, TTS 알림\"으로 계층을 나타내며, \"오류 알림(알림)\"이라는 별도 화면 문구는 terms에 없다.",
+     "scope": "file",
+     "source_quote": "Announce Errors (alert), Enabled"
+    },
+    {
+     "by": "gpt",
+     "id": "world/combat.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "애드온이 살펴볼 수 없는 형태로 게임이 넘겨주는 메시지(Retail의 제한)는 필터가 알아볼 수 없으므로 오류 알림 알림으로 그대로 말합니다.",
+     "suggestion": "애드온이 살펴볼 수 없는 형태로 게임이 넘겨주는 메시지(Retail의 제한)는 필터가 알아볼 수 없으므로 오류 알림으로 그대로 말합니다.",
+     "problem": "확정 화면 문구 \"오류 알림\"에 일반명사 \"알림\"을 다시 붙여 \"오류 알림 알림으로\"라는 중복 표현이 생겼다.",
+     "evidence": "terms에서 Announce Errors의 한국어 값은 \"오류 알림\"이다. 따라서 원문의 \"the Announce Errors alert\"는 화면 문구를 유지해 \"오류 알림으로\"라고 쓰면 대상을 빠짐없이 전달한다.",
+     "scope": "file",
+     "source_quote": "are spoken as they are through the Announce Errors alert"
+    }
+   ],
+   "proposals": [
+    {
+     "by": "gpt",
+     "id": "world/combat.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 알림을 쓰십시오.",
+     "suggestion": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 경보를 쓰십시오.",
+     "problem": "게임 설정의 실제 한국어 이름을 \"전투 음성 알림\"으로 바꿔, 사용자가 \"전투 음성 경보\" 설정을 찾기 어렵다. 같은 오역이 다른 설명서에도 있으며, glossary.tsv의 일반 alert 규칙에 게임 고유 설정명 예외를 두어야 한다.",
+     "evidence": "게임 공식 문자열 ID 56670, BaseTag CAA_COMBAT_AUDIO_ALERTS_LABEL은 영어 \"Combat Audio Alerts\", 한국어 \"전투 음성 경보\"이다. ID 56672와 56674도 각각 \"전투 음성 경보 활성화\", \"전투 음성 경보를 사용합니다\"로 번역한다. wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:58에도 \"전투 음성 알림\"으로 잘못 적혀 있다. decisions.tsv의 2026-11-07 결정도 게임의 위험 신호 alert는 \"경보\"라고 구분한다.",
+     "scope": "global",
+     "source_quote": "Use the game's own Combat Audio Alerts instead, in its Accessibility options"
+    }
+   ]
+  },
+  {
+   "file": "world/targeting.md",
+   "passed": false,
+   "claudeOk": true,
+   "gptOk": true,
+   "blocking": [
+    {
+     "by": "claude",
+     "id": "world/targeting.md",
+     "category": "terminology",
+     "severity": "major",
+     "scope": "file",
+     "quote": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 알림을 사용하십시오.",
+     "source_quote": "Use the game's own Combat Audio Alerts instead, in its Accessibility options",
+     "suggestion": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 경보를 사용하십시오.",
+     "problem": "다듬기에서 경보를 알림으로 일괄 바꾸면서 WowVision 알림이 아니라 게임 자체 기능 이름인 Combat Audio Alerts까지 \"전투 음성 알림\"으로 바뀌었다. 한국어 클라이언트 손쉬운 사용 옵션에는 \"전투 음성 경보\"로 표시되므로 독자가 옵션 화면에서 이 이름을 찾지 못한다. 2026-11-07 alert 결정은 WowVision koKR·용어집·설명서의 alert에 대한 것이고 게임 공식 메뉴 이름은 대상이 아니다.",
+     "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL \"전투 음성 경보\", 56672 CAA_ENABLE_COMBAT_AUDIO_ALERTS \"전투 음성 경보 활성화\" (gs_enUS.csv 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\"였다. 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:32 \"전투 음성 알림을 쓰십시오\"에도 있다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "accuracy",
+     "severity": "major",
+     "quote": "\"가상 주시 대상\"을 최대 다섯 개까지 키에 저장해 두게 해 주며",
+     "suggestion": "\"가상 주시 대상\"을 최대 다섯 개까지 저장하고 각각 키로 다시 불러오게 해 주며",
+     "problem": "가상 주시 대상은 키에 저장되는 것이 아니라 칸에 이름으로 저장되고, 키는 저장된 대상을 다시 선택하는 데 쓰입니다. 현재 표현은 저장 위치와 키의 역할을 뒤섞습니다.",
+     "evidence": "world/targeting.md:146은 \"대상을 이름으로 최대 다섯 개까지 저장하고, 각각 자기 키로 다시 불러옵니다\"라고 실제 구조를 설명합니다.",
+     "scope": "file",
+     "source_quote": "lets you keep up to five \"virtual focus\" targets on keys"
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "accuracy",
+     "severity": "major",
+     "quote": "두 번째 우두머리를 대상으로 잡고 /focus2를 입력한 다음, 세 번째 우두머리를 잡고 /focus3을 입력합니다.",
+     "suggestion": "두 번째 우두머리를 대상으로 잡고 /focus2를 입력한 다음, 세 번째 우두머리를 대상으로 잡고 /focus3을 입력합니다.",
+     "problem": "두 번째 절에서 \"대상으로\"가 빠져 \"세 번째 우두머리를 처치하고\"라는 게임 행동으로도 읽힙니다. 원문은 세 번째 우두머리도 대상으로 선택하라는 지시입니다.",
+     "evidence": "같은 예시의 1단계와 2단계 앞부분은 모두 \"대상으로 잡고\"라고 명시합니다. 영어 원문도 두 번째와 세 번째 우두머리 모두 Target 동작의 병렬 목적어로 둡니다.",
+     "scope": "file",
+     "source_quote": "Target the second boss and type /focus2, then the third and /focus3."
+    }
+   ],
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/targeting.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)와 소리 알림이 있으며",
+     "source_quote": "Under it you find TTS Alert (spoken, interrupting by default) and Sound Alert",
+     "suggestion": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)과 소리 알림이 있으며",
+     "problem": "경보를 알림으로 바꾸면서 조사를 고치지 않았다. \"알림\"은 받침으로 끝나므로 \"와\"가 아니라 \"과\"가 맞다.",
+     "evidence": "changes의 before는 \"TTS 경보(음성, 기본으로 말을 끊음)와\"로, 받침 없는 \"경보\"에 맞춘 조사였다."
+    },
+    {
+     "by": "claude",
+     "id": "world/targeting.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "게임의 상호작용 단축키는 상호작용 소프트 대상에 작용합니다.",
+     "source_quote": "The game's interact key acts on the soft interact target.",
+     "suggestion": "게임의 상호작용 단축키는 상호작용 소프트 대상에 작용합니다.",
+     "problem": "이 파일은 게임 공식 용어에 맞춰 \"상호작용 단축키\"로 바꿨지만, 같은 게임 기능(interact key)을 다른 설명서 파일은 여전히 \"상호작용 키\"로 부른다. 같은 키가 두 이름으로 나와 독자가 다른 키로 여길 수 있다. 이 파일 표기는 맞으므로 그대로 두고 다른 파일을 \"상호작용 단축키\"로 맞춰야 한다.",
+     "evidence": "cache/gs_koKR.csv 49703 ENABLE_INTERACT_TEXT \"상호작용 단축키 활성화\", 49710 INTERACT_ICONS_OPTION \"상호작용 단축키 아이콘\". 남은 다른 표기: wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md:4 \"상호작용 키 등으로 말을 겁니다\", world/movement.md:98 \"상호작용 키를 눌러\", world/movement.md:124 \"상호작용 키 등으로 상호작용할 때\"."
+    },
+    {
+     "by": "claude",
+     "id": "world/targeting.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "목표 선택은 Retail과 WoW: Forever용으로 표시한 내용을 빼면",
+     "source_quote": "Targeting works the same on every supported game version, apart from the notes marked for Retail and WoW: Forever.",
+     "suggestion": "대상 지정은 Retail과 WoW: Forever용으로 표시한 내용을 빼면",
+     "problem": "바로 앞 문장이 기능을 \"대상 지정\"(\"모든 대상 지정 설정은 ... 목표 선택 아래에\")으로, 메뉴를 \"목표 선택\"으로 구분해 부른 뒤, 다듬기가 이 문장의 기능 주어를 메뉴 이름 \"목표 선택\"으로 바꿨다. 이어진 두 문장에서 같은 기능을 두 이름으로 불러, 이 문장이 메뉴 항목만 말하는지 기능 전체를 말하는지 다시 따져 봐야 한다. before 표기로 되돌리면 메뉴와 기능이 구분된다.",
+     "evidence": "changes의 before \"대상 지정은 리테일과 WoW: Forever용으로\". 같은 파일 섹션 \"## 대상 지정 키 한눈에 보기\", reference/versions.md:23 \"대상 지정, 소프트 대상 지정, 주시 대상, 대상 메뉴: [목표 선택](../world/targeting.md)\"도 기능은 \"대상 지정\", 페이지·메뉴는 \"목표 선택\"으로 구분한다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "모든 키의 전체 목록은 [단축키 목록](../reference/keybindings.md)에 있습니다.",
+     "suggestion": "모든 키는 [단축키 목록](../reference/keybindings.md)에 있습니다.",
+     "problem": "\"모든\"과 \"전체\"가 같은 범위를 중복해서 나타내 문장이 불필요하게 겹칩니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/quick-start.md:81에서도 같은 링크를 \"모든 키는 [단축키 목록]에 나와 있으며\"라고 중복 없이 표현합니다.",
+     "scope": "file",
+     "source_quote": "The complete list of all keys is in the [keybinding reference](../reference/keybindings.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "둘 다 게임 자체의 소프트 대상 지정을 (키보드와 게임패드 모두) 켜거나 끕니다.",
+     "suggestion": "둘 다 키보드와 게임패드에서 게임 자체의 소프트 대상 지정을 켜거나 끕니다.",
+     "problem": "목적어와 서술어 사이에 조건을 괄호로 끼워 넣은 영어식 어순 때문에 동작 범위를 한 번 되짚어 읽어야 합니다.",
+     "evidence": "원문의 \"for keyboard and gamepad\"는 소프트 대상 지정이 적용되는 입력 방식을 한정합니다. 이를 조건 자리로 옮겨도 정보와 한정 범위가 그대로 유지됩니다.",
+     "scope": "file",
+     "source_quote": "Both turn the game's own soft targeting on (for keyboard and gamepad) or off."
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)와 소리 알림이 있으며",
+     "suggestion": "그 아래에 TTS 알림(음성, 기본으로 말을 끊음)과 소리 알림이 있으며",
+     "problem": "받침 있는 괄호 전체 뒤에 조사 \"와\"를 붙여 문법적으로 어색합니다. 병렬 항목을 잇는 조사 \"과\"가 필요합니다.",
+     "evidence": "병렬되는 항목은 \"TTS 알림(음성, 기본으로 말을 끊음)\"과 \"소리 알림\"입니다.",
+     "scope": "file",
+     "source_quote": "Under it you find TTS Alert (spoken, interrupting by default) and Sound Alert"
+    },
+    {
+     "by": "gpt",
+     "id": "world/targeting.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "가상 주시 대상 칸은 저장되지 않습니다.",
+     "suggestion": "가상 주시 대상 칸의 내용은 접속 간에 유지되지 않습니다.",
+     "problem": "앞에서는 대상을 칸에 \"저장\"한다고 설명했는데 여기서는 칸이 \"저장되지 않는다\"고 하여 저장 기능 자체가 작동하지 않는다는 뜻으로 읽힐 수 있습니다. 원문은 칸의 내용이 재접속 뒤까지 보존되지 않는다는 의미입니다.",
+     "evidence": "바로 다음 문장은 /reload 또는 새 로그인 뒤에 칸이 빈다고 설명합니다. wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md:30도 가상 주시 대상을 \"이름으로 저장해 두는 대상\"이라고 설명합니다.",
+     "scope": "file",
+     "source_quote": "Virtual focus slots are not saved"
+    }
+   ],
+   "proposals": []
+  }
+ ],
+ "passedFiles": [
+  {
+   "file": "basics/index.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "basics/interface.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "basics/interface.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림과 단축키로 듣는 알림(버퍼, 대상 알림 등)은 영향을 받지 않고",
+     "source_quote": "Alerts and your keybound announcements (buffers, target announcements and so on) are not affected",
+     "suggestion": "알림 기능과 단축키로 듣는 안내(버퍼, 대상 알림 등)는 영향을 받지 않고",
+     "problem": "다듬기에서 Alerts를 '경보'에서 '알림'으로 바꾸면서(결정 2026-11-07 alert의 한국어에 맞는 변경) 한 구절 안에 서로 다른 두 대상(Alerts 기능과 단축키로 듣는 announcements)이 모두 '알림'이 되었다. 독자는 '알림과 ... 알림'을 같은 말의 반복으로 읽어 Alerts 기능(alerts.md)이 따로 언급된 것을 놓칠 수 있다. 뜻은 바뀌지 않았으므로 경미.",
+     "evidence": "changes 3번째 before '경보와 단축키로 듣는 알림' → after '알림과 단축키로 듣는 알림'. docs/decisions.tsv 2026-11-07 'alert의 한국어': 알림으로 바꾸고 Announce의 'X 알림'은 그대로 둔다 — 두 말이 같아지는 것을 결정이 감수했으므로 Alerts 쪽에 '기능'을 붙이거나 announcements 쪽을 일반어로 풀어 구분하는 것만 제안. 기능 이름은 ko/basics/alerts.md 제목 '# 알림'."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/interface.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림과 단축키로 듣는 알림(버퍼, 대상 알림 등)은 영향을 받지 않고 전투 중에도 계속 작동합니다.",
+     "suggestion": "알림 기능과 단축키로 듣는 안내(버퍼, 대상 알림 등)는 영향을 받지 않고 전투 중에도 계속 작동합니다.",
+     "problem": "다듬기에서 Alerts를 \"경보\"에서 \"알림\"으로 바꾸면서 서로 다른 두 대상인 Alerts 기능과 keybound announcements가 모두 \"알림\"으로 표현되었다. \"알림과 단축키로 듣는 알림\"이라는 반복 때문에 독자가 두 대상을 같은 기능으로 이해할 수 있다.",
+     "evidence": "changes의 세 번째 항목에서 \"경보와 단축키로 듣는 알림\"을 현재 문장으로 바꿨다. wowwork/docs/decisions.tsv:19와 wowwork/docs/glossary.tsv:12에 따라 Alert를 \"알림\"으로 바꾼 것은 맞다. 다만 wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md는 Alerts 기능 자체를 \"알림\"으로 부르므로, 이 문장에서는 \"알림 기능\"과 일반적인 단축키 안내를 구분해야 한다.",
+     "scope": "file",
+     "source_quote": "Alerts and your keybound announcements (buffers, target announcements and so on) are not affected: those keep working in combat."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "basics/keybindings.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "basics/menu-and-settings.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "basics/menu-and-settings.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "5. 모듈의 알림. 각각 버튼입니다. [알림](./alerts.md)를 보십시오.",
+     "source_quote": "The module's alerts, each as a button. See [Alerts](./alerts.md).",
+     "suggestion": "5. 모듈의 알림. 각각 버튼입니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "다듬기에서 링크 글자를 '경보'(모음 끝)에서 '알림'(받침 ㅁ)으로 바꾸면서 조사 '를'을 '을'로 따라 바꾸지 않아 '알림를'이 되었다. 뜻은 그대로지만 문법이 틀린 문장이다.",
+     "evidence": "changes의 before \"[경보](./alerts.md)를 보십시오\" -> after \"[알림](./alerts.md)를 보십시오\". 같은 파일의 다른 링크는 받침에 맞춰 \"[목표 선택](../world/targeting.md)을\"처럼 쓴다. 다른 파일에도 같은 잔재가 있다: basics/speech.md:58, 76, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8, 42 (모두 \"[알림](...alerts.md)를\"). getting-started/introduction.md:12만 \"[알림](../basics/alerts.md)을\"로 맞다."
+    },
+    {
+     "by": "claude",
+     "id": "basics/menu-and-settings.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림 화면을 엽니다. [알림](./alerts.md)를 보십시오.",
+     "source_quote": "Opens the alert's screen, see [Alerts](./alerts.md).",
+     "suggestion": "알림 화면을 엽니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않아 '알림를'이 되었다.",
+     "evidence": "changes의 before \"[경보](./alerts.md)를 보십시오.\" -> after \"[알림](./alerts.md)를 보십시오.\". 다른 파일의 같은 잔재 목록은 앞 지적과 같다."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/menu-and-settings.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "5. 모듈의 알림. 각각 버튼입니다. [알림](./alerts.md)를 보십시오.",
+     "suggestion": "5. 모듈의 알림. 각각 버튼입니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "다듬기에서 받침 없는 ‘경보’를 받침 있는 ‘알림’으로 바꾸면서 목적격 조사 ‘를’을 ‘을’로 바꾸지 않았다.",
+     "evidence": "changes의 before에는 “[경보](./alerts.md)를 보십시오.”, after에는 “[알림](./alerts.md)를 보십시오.”로 되어 있다. ‘알림’에는 목적격 조사 ‘을’이 붙는다.",
+     "scope": "file",
+     "source_quote": "The module's alerts, each as a button. See [Alerts](./alerts.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/menu-and-settings.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림 화면을 엽니다. [알림](./alerts.md)를 보십시오.",
+     "suggestion": "알림 화면을 엽니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "다듬기에서 ‘경보’를 ‘알림’으로 바꾸면서 조사를 그대로 두어 ‘알림를’이라는 잘못된 결합이 생겼다.",
+     "evidence": "changes의 before에는 “[경보](./alerts.md)를 보십시오.”, after에는 “[알림](./alerts.md)를 보십시오.”로 되어 있다. 같은 파일의 앞선 항목과 동일한 조사 회귀다.",
+     "scope": "file",
+     "source_quote": "Opens the alert's screen, see [Alerts](./alerts.md)."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "basics/speech.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "basics/speech.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "대상 변경 알림이 그렇습니다. [알림](./alerts.md)를 보십시오.",
+     "source_quote": "as the Target Change alert does. See [Alerts](./alerts.md).",
+     "suggestion": "대상 변경 알림이 그렇습니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "'경보'를 '알림'으로 바꾸면서 링크 뒤 조사 '를'을 그대로 두었다. '알림'은 받침(ㅁ)으로 끝나므로 목적격 조사는 '을'이어야 한다. 다듬기 전 '[경보](./alerts.md)를'은 맞았고 바꾼 뒤 틀렸다.",
+     "evidence": "changes 2번째 항목 before '[경보](./alerts.md)를 보십시오.' -> after '[알림](./alerts.md)를 보십시오.' 같은 조사 오류가 다른 파일에도 있다: basics/menu-and-settings.md:46, :103, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8, :42, world/minimap.md:124 (모두 '[알림](...)를')."
+    },
+    {
+     "by": "claude",
+     "id": "basics/speech.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "출력을 고르는 방법은 [알림](./alerts.md)를 보십시오.",
+     "source_quote": "See [Alerts](./alerts.md) for how to choose outputs.",
+     "suggestion": "출력을 고르는 방법은 [알림](./alerts.md)을 보십시오.",
+     "problem": "'경보'를 '알림'으로 바꾸면서 링크 뒤 조사 '를'을 그대로 두었다. '알림' 뒤에는 '을'이 맞다.",
+     "evidence": "changes 4번째 항목 before '[경보](./alerts.md)를 보십시오.' -> after '[알림](./alerts.md)를 보십시오.'"
+    },
+    {
+     "by": "gpt",
+     "id": "basics/speech.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "/wv speech는 음성, 속도, 음량을 한 줄로 설정합니다. 바로 적용되고 확인 안내를 말하므로 접속 매크로에 쓰기 좋게 만들어졌습니다.",
+     "suggestion": "/wv speech는 음성, 속도, 음량을 한 줄로 설정합니다. 바로 적용된 뒤 확인 메시지를 말하므로 접속 매크로에 쓰기 좋습니다.",
+     "problem": "\"확인 안내를 말하다\"는 목적어와 서술어의 결합이 어색하고, \"쓰기 좋게 만들어졌습니다\"는 원문의 영어식 피동 구조가 남아 있습니다.",
+     "evidence": "basics/speech.md:42. 원문은 명령이 즉시 적용되고 확인 메시지를 말하므로 로그인 매크로용이라는 뜻입니다. 제안문은 정보와 인과관계를 유지하면서 어색한 결합과 피동형을 없앱니다.",
+     "scope": "file",
+     "source_quote": "/wv speech sets the voice, rate and volume in one line. It is made for a login macro, because it takes effect at once and speaks a confirmation."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/speech.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "대상 변경 알림이 그렇습니다. [알림](./alerts.md)를 보십시오.",
+     "suggestion": "대상 변경 알림이 그렇습니다. [알림](./alerts.md)을 보십시오.",
+     "problem": "링크 제목 \"알림\"에 목적격 조사 \"를\"을 붙여 조사가 잘못되었습니다.",
+     "evidence": "basics/speech.md:58. 받침이 있는 명사 \"알림\" 뒤에는 목적격 조사 \"을\"을 써야 합니다.",
+     "scope": "file",
+     "source_quote": "See [Alerts](./alerts.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "basics/speech.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "음성 팩 알림 유형의 알림 출력마다 팩을 고르는 설정이 있습니다. 이름은 음성 팩이고, 출력 화면의 사용함 체크 상자 바로 아래에 있습니다. 녹음은 즉시 재생되며 음성 대기열, TTS 음성, TTS 속도의 영향을 받지 않습니다. 출력을 고르는 방법은 [알림](./alerts.md)를 보십시오.",
+     "suggestion": "음성 팩 알림 출력마다 팩을 고르는 설정이 있습니다. 이름은 음성 팩이고, 출력 화면의 사용함 체크 상자 바로 아래에 있습니다. 녹음은 즉시 재생되며 음성 대기열, TTS 음성, TTS 속도의 영향을 받지 않습니다. 출력을 고르는 방법은 [알림](./alerts.md)을 보십시오.",
+     "problem": "\"음성 팩 알림 유형의 알림 출력\"은 \"알림\"이 겹치는 명사 나열이라 출력 유형과 알림 자체의 관계를 다시 해석해야 합니다. 또한 받침이 있는 \"알림\" 뒤에 목적격 조사 \"를\"을 잘못 붙였습니다.",
+     "evidence": "basics/speech.md:76. basics/alerts.md:19에서는 같은 출력 유형을 \"음성 팩 알림\"으로 부릅니다. 해당 명칭 뒤에 \"출력\"만 붙이면 같은 개념을 분명하게 가리킬 수 있습니다.",
+     "scope": "file",
+     "source_quote": "Each alert output of type Voice Alert has a setting that picks the pack. It is called Voice Pack and sits right below the Enabled checkbox of the output's screen. Recordings play immediately and are not affected by the speech queue, your TTS voice or your TTS rate. See [Alerts](./alerts.md) for how to choose outputs."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "credits.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/first-login.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/first-login.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "또 기존 캐릭터가 새 줄을 추가하는 업데이트 후 처음 로그인하면, 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 생깁니다.",
+     "suggestion": "또 새 줄을 추가하는 업데이트 후 기존 캐릭터로 처음 로그인하면, 일반 버퍼에 새 줄 몇 개(빈 가방 칸, 내구도, 우편, 귀환석, 게임 시계)가 생깁니다.",
+     "problem": "\"기존 캐릭터가\" 바로 뒤에 \"새 줄을 추가하는\"이 이어져, 기존 캐릭터가 새 줄을 추가하는 주체처럼 잘못 연결될 수 있습니다. 시간 조건을 먼저 두면 업데이트가 새 줄을 추가하며 기존 캐릭터는 로그인 대상이라는 관계가 분명해집니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md:45의 문장 구조와 달리, wowvision-ko/WowVision/docs/src/user/ko/information/buffers.md:78은 같은 동작을 \"WowVision이 이 줄들을 일반 버퍼의 PvP 줄 앞에 한 번 추가합니다\"라고 설명합니다.",
+     "scope": "file",
+     "source_quote": "The General buffer also gains a few new lines (free bag slots, durability, mail, hearthstone, game clock) the first time an existing character logs in after an update that adds them."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/installation.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/installation.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "이 페이지에서는 둘 중 하나를 고르도록 돕고, 어느 방법으로 설치하든 그다음에 할 일인 WowVision과 함께 쓰는 애드온, 그리고 애드온을 켜는 방법을 다룹니다.",
+     "suggestion": "이 페이지에서는 둘 중 하나를 고르도록 돕고, 어느 방법으로 설치하든 이어서 확인할 WowVision과 함께 쓰는 애드온과 애드온을 켜는 방법을 다룹니다.",
+     "problem": "‘그다음에 할 일인’이 ‘WowVision과 함께 쓰는 애드온’까지 꾸며, 선택 애드온 자체가 설치 후 반드시 해야 할 일처럼 읽힙니다. 원문은 설치 후 다룰 두 주제를 소개하며, 선택 애드온 설치를 필수 절차로 지정하지 않습니다.",
+     "evidence": "같은 파일의 ‘선택 애드온’ 절은 WowVision이 단독으로도 동작한다고 명시합니다. 따라서 애드온은 설치 후 필수 작업이 아니라 이어서 설명할 주제입니다.",
+     "scope": "file",
+     "source_quote": "This page helps you choose one, and covers what comes after either: the addons WowVision works with, and switching the addon on."
+    },
+    {
+     "by": "gpt",
+     "id": "getting-started/installation.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "Sku를 불러온 상태에서는 WowVision이 목록에 정해 둔 창, 키, 명령을 처리하지 않고 Sku에 맡깁니다.",
+     "suggestion": "Sku를 불러온 상태에서는 WowVision이 일부 창, 키, 명령을 처리하지 않고 Sku에 맡깁니다.",
+     "problem": "‘목록에 정해 둔 창’은 목록이 항목을 정한다는 어색한 관계를 만들고, 독자가 별도의 설정 목록을 찾아야 하는 것으로 이해할 수 있습니다. 원문은 WowVision이 처리하지 않는 창·키·명령이 여러 개 있다는 뜻입니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku-login.md:274에서는 같은 동작을 ‘일부 키, 창, 명령을 끕니다’라고 설명합니다.",
+     "scope": "file",
+     "source_quote": "When Sku is loaded, WowVision steps back from a list of windows, keys and commands and leaves them to Sku."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/introduction.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/introduction.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "\"공통 기능만\"은 인터페이스, 음성, 알림, 버퍼, 대화, 길 안내, 대상 지정, 여러 공통 창처럼 모든 버전에서 작동하는 기능은 다 있지만 그 버전의 일부 게임 창은 아직 읽지 못한다는 뜻입니다.",
+     "suggestion": "\"공통 기능만\"은 모든 버전에서 작동하는 인터페이스, 음성, 알림, 버퍼, 대화, 길 안내, 대상 지정과 여러 공통 창을 모두 지원하지만, 그 버전의 일부 게임 창은 아직 읽지 못한다는 뜻입니다.",
+     "problem": "나열한 기능을 비교 대상처럼 받는 \"처럼\" 때문에 문장 관계가 어색합니다. 실제 뜻은 나열한 기능과 창이 모든 버전에서 작동한다는 것이므로, 수식 관계를 바로 드러내야 합니다.",
+     "evidence": "원문은 괄호 안 목록을 \"everything that works on all versions\"의 구체적인 내용으로 제시합니다. 번역의 \"처럼\"은 이 목록을 단순한 비교·예시처럼 보이게 합니다. 제안문은 목록, 모든 버전이라는 조건, 일부 창은 아직 읽지 못한다는 예외를 모두 유지합니다.",
+     "scope": "file",
+     "source_quote": "\"Shared features only\" means everything that works on all versions is there (the interface, speech, alerts, buffers, chat, navigation, targeting and many common windows), but some game windows of that version are not read yet."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/managing.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/managing.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "베타는 매번 같은 주소에서 교체되므로 원하는 만큼 자주 업데이트해도 됩니다.",
+     "suggestion": "베타는 매번 같은 주소에 새 버전으로 교체되므로 원하는 만큼 자주 업데이트해도 됩니다.",
+     "problem": "‘주소에서 교체되다’는 교체가 일어나는 장소처럼 읽혀, 같은 다운로드 주소의 파일이 새 베타로 교체된다는 뜻이 바로 드러나지 않습니다.",
+     "evidence": "원문의 ‘is replaced on the same address’는 베타를 받을 주소가 유지되고 그 주소의 파일이 새 버전으로 바뀐다는 뜻입니다. ‘주소에 새 버전으로 교체되다’로 쓰면 대상과 결과가 분명해집니다. changes의 ‘경보’→‘알림’ 변경은 wowwork/docs/decisions.tsv의 2026-11-07 결정 및 wowwork/docs/glossary.tsv의 alert=알림과 일치하므로 회귀가 아닙니다.",
+     "scope": "file",
+     "source_quote": "The beta is replaced on the same address each time, so you can update it as often as you like."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/quick-start.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "getting-started/quick-start.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "바꾸거나 끌 수 있는 알림입니다. [알림](../basics/alerts.md)를 보십시오.",
+     "source_quote": "Each of these is an alert you can change or turn off in the WowVision menu. See [Alerts](../basics/alerts.md).",
+     "suggestion": "바꾸거나 끌 수 있는 알림입니다. [알림](../basics/alerts.md)을 보십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않았다. '알림'은 받침으로 끝나므로 목적격 조사는 '을'이어야 하는데 '경보'에 맞던 '를'이 남아 '알림를'이 되었다.",
+     "evidence": "changes의 before '[경보](../basics/alerts.md)를' → after '[알림](../basics/alerts.md)를'. 용어 변경 자체는 docs/decisions.tsv 2026-11-07 'alert의 한국어 → 알림' 결정과 맞다. 같은 조사 오류가 다른 파일에도 남아 있다: basics/menu-and-settings.md:46, :103, basics/speech.md:58, :76, getting-started/troubleshooting.md:44 모두 '[알림](...alerts.md)를'. 반면 getting-started/introduction.md:12는 '[알림](../basics/alerts.md)을'로 맞게 썼다."
+    },
+    {
+     "by": "gpt",
+     "id": "getting-started/quick-start.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "[알림](../basics/alerts.md)를 보십시오.",
+     "suggestion": "[알림](../basics/alerts.md)을 보십시오.",
+     "problem": "‘경보’를 ‘알림’으로 바꾸면서 목적격 조사까지 바꾸지 않아 조사가 앞말의 받침과 맞지 않습니다.",
+     "evidence": "‘알림’은 받침으로 끝나므로 목적격 조사는 ‘를’이 아니라 ‘을’을 써야 합니다. changes의 before에서는 ‘경보를’이 맞았지만 after의 기계적 치환으로 이 결함이 생겼습니다. ‘알림’이라는 용어 자체는 wowwork/docs/glossary.tsv:12와 wowwork/docs/decisions.tsv:19의 확정 용어에 맞습니다.",
+     "scope": "file",
+     "source_quote": "See [Alerts](../basics/alerts.md)."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/sku-login.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "getting-started/sku-login.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "느긋하게 기다리십시오. 서버 목록과 캐릭터 세기는 몇 초가 걸립니다. 도구는 작업하는 동안 대기 소리를 냅니다.",
+     "suggestion": "느긋하게 기다리십시오. 서버 목록을 읽고 캐릭터 수를 세는 데는 몇 초가 걸립니다. 도구는 작업하는 동안 대기 소리를 냅니다.",
+     "problem": "읽기의 대상인 \"서버 목록\"과 동작을 명사화한 \"캐릭터 세기\"를 나란히 놓고 둘 다 시간이 걸린다고 서술해 문장 구조가 맞지 않습니다. 독자는 서버 목록에 어떤 작업이 필요하다는 뜻인지 보충해서 이해해야 합니다.",
+     "evidence": "원문은 \"Realm lists and character counts take seconds.\"로 두 작업에 시간이 든다는 뜻입니다. 한국어에서는 두 동작을 각각 \"서버 목록을 읽고\", \"캐릭터 수를 세는 데\"로 풀어야 관계가 바로 드러납니다. changes의 두 수정은 원문의 Retail 표기와 \"your voice\" 의미를 각각 정확히 반영하며, decisions.tsv의 게임 버전 이름 결정에도 맞습니다.",
+     "scope": "file",
+     "source_quote": "Be patient. Realm lists and character counts take seconds. The tool plays a waiting sound while it works."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "getting-started/sku.md",
+   "minor": [],
+   "proposals": [
+    {
+     "by": "gpt",
+     "id": "getting-started/sku.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "- 전투 준비 확인과 던전 준비 팝업.",
+     "suggestion": "- 전투 준비와 던전 준비 팝업.",
+     "problem": "한국어 WoW 클라이언트의 창 이름은 \"전투 준비\"인데 WowVision의 koKR 값과 설명서가 \"전투 준비 확인\"으로 다릅니다. `vision-locale/koKR/windows.lua`의 `Ready Check` 키를 \"전투 준비\"로 바꾸고 이를 인용하는 설명서도 함께 바꿔야 합니다.",
+     "evidence": "`wowvision-ko/vision-locale/koKR/windows.lua:128`은 `L[\"Ready Check\"] = \"전투 준비 확인\"`입니다. 공식 문자열은 `wowwork/cache/gs_enUS.csv`와 `gs_koKR.csv`의 같은 ID에서 모두 일치합니다: ID 16191, BaseTag `READY_CHECK`, \"Ready Check\" → \"전투 준비\"; ID 52128, BaseTag `CRF_READY_CHECK`, \"Ready Check\" → \"전투 준비\"; ID 58375, BaseTag `RADIAL_LABEL_READY_CHECK`, \"Ready Check\" → \"전투 준비\". 반대 번역 사례도 없습니다.",
+     "scope": "kokr",
+     "source_quote": "- Ready check and the dungeon ready popup."
+    }
+   ]
+  },
+  {
+   "file": "information/buffers.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "information/buffers.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "종류, 유닛 등의 이름은 항목 목록에서 항목 이름도 됩니다. 예: \"자원 (player, 마나)\".",
+     "suggestion": "종류와 유닛 등의 이름을 조합해 항목 목록에 표시할 이름을 만듭니다. 예: \"자원 (player, 마나)\".",
+     "problem": "\"이름은 … 이름도 됩니다\"라는 중복된 서술 때문에 종류와 유닛의 이름이 각각 항목 이름이 된다는 뜻으로 읽힐 수 있습니다. 실제 뜻은 여러 이름을 조합해 항목 이름을 만든다는 것입니다.",
+     "evidence": "바로 뒤의 예 \"자원 (player, 마나)\"는 종류와 매개변수 이름을 조합한 하나의 항목 이름입니다. 제안문은 이 관계를 명시하며 원문의 정보도 그대로 유지합니다.",
+     "scope": "file",
+     "source_quote": "The names of the type, the unit and so on also form the item's name in the item list, for example \"Power (player, mana)\"."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "information/group-health.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림의 전반적인 개념은 [알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "and [Alerts](../basics/alerts.md) for the general idea of alerts.",
+     "suggestion": "알림의 전반적인 개념은 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 뒤 조사 '를'을 그대로 두었다. '알림'은 받침(ㅁ)으로 끝나므로 '을'이어야 한다. 바로 앞 '[모니터](monitors.md)를'과 짝을 맞추다 남은 조사 오류다.",
+     "evidence": "changes before: '[경보](../basics/alerts.md)를' -> after: '[알림](../basics/alerts.md)를'. 다른 설명서도 같은 일괄 치환 흔적이 있다: basics/menu-and-settings.md:46 '[알림](./alerts.md)를', getting-started/quick-start.md:61 '[알림](../basics/alerts.md)를'. 반면 getting-started/introduction.md:12는 '[알림](../basics/alerts.md)을', information/monitors.md:57은 '[알림](../basics/alerts.md)에'로 맞게 쓴다. 용어 '알림' 자체는 decisions.tsv 2026-11-07 'alert의 한국어' 결정과 glossary.tsv 'alert\t알림'에 맞다."
+    },
+    {
+     "by": "claude",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "생명력이 자기 역할의 이 값 미만일 때 반복 설정값보다 낮은 구성원은 반복 간격마다 번호가 다시 들립니다.",
+     "source_quote": "Every member below their role's Repeat Below value is spoken again at the interval of Repeat Every.",
+     "suggestion": "생명력이 자기 역할의 '이 값 미만일 때 반복' 설정값보다 낮은 구성원은 '반복 간격' 설정값마다 번호가 다시 들립니다.",
+     "problem": "설정 이름 '이 값 미만일 때 반복'이 표시 없이 문장 속에 들어가 '이 값 미만일 때'가 조건절처럼 읽힌다. 독자는 '이 값'이 무엇을 가리키는지 앞에서 찾게 되고, 설정 이름이 어디서 끝나는지 알기 어렵다. 다듬기 변경 줄은 아니지만 공통 기준 2(대상을 다시 찾아야 하는 지시어)에 해당한다.",
+     "evidence": "terms: 'Repeat Below (percent)' -> '이 값 미만일 때 반복 (퍼센트)', 'Repeat Every (seconds, 0 is off)' -> '반복 간격 (초, 0은 끔)'. 화면 문구 글자는 바꾸지 않고 구분 표시만 더하는 제안이다."
+    },
+    {
+     "by": "gpt",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림의 전반적인 개념은 [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "알림의 전반적인 개념은 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 ‘경보’를 ‘알림’으로 바꾸면서 조사를 고치지 않았다. ‘알림’은 받침으로 끝나므로 목적격 조사는 ‘을’이어야 한다.",
+     "evidence": "changes의 before는 ‘[경보](../basics/alerts.md)를’, after는 ‘[알림](../basics/alerts.md)를’이다. 용어 변경 자체는 wowwork/docs/decisions.tsv의 2026-11-07 ‘alert의 한국어’ 결정과 wowwork/docs/glossary.tsv의 ‘alert → 알림’에 맞는다.",
+     "scope": "file",
+     "source_quote": "and [Alerts](../basics/alerts.md) for the general idea of alerts."
+    },
+    {
+     "by": "gpt",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "생명력이 자기 역할의 이 값 미만일 때 반복 설정값보다 낮은 구성원은 반복 간격마다 번호가 다시 들립니다.",
+     "suggestion": "자기 역할의 \"이 값 미만일 때 반복\" 설정값보다 생명력이 낮은 구성원은 반복 간격마다 번호가 다시 들립니다.",
+     "problem": "설정 이름인 ‘이 값 미만일 때 반복’이 조건절처럼 문장에 붙어 있어, ‘생명력이 자기 역할의 이 값 미만일 때’까지를 먼저 하나의 조건으로 읽게 된다. 설정 이름의 경계를 표시하고 비교 대상을 앞으로 옮겨야 뜻이 바로 드러난다.",
+     "evidence": "wowvision-ko/vision-locale/koKR/groupHealth.lua에서 Repeat Below (percent)의 값은 ‘이 값 미만일 때 반복 (퍼센트)’이다. 원문은 구성원의 생명력과 역할별 Repeat Below 값을 비교한다.",
+     "scope": "file",
+     "source_quote": "Every member below their role's Repeat Below value is spoken again at the interval of Repeat Every."
+    },
+    {
+     "by": "gpt",
+     "id": "information/group-health.md",
+     "category": "terminology",
+     "severity": "minor",
+     "quote": "컨트롤러에서는 오른쪽 트리거와 오른쪽 스틱을 함께 누름",
+     "suggestion": "컨트롤러에서는 오른쪽 트리거 + 오른쪽 스틱 누르기",
+     "problem": "‘오른쪽 스틱 누르기’라는 컨트롤러 버튼 이름을 일반 동작 설명으로 바꿔, 같은 단축키를 다루는 참조 문서 및 WowVision 화면 문구와 표기가 달라졌다.",
+     "evidence": "wowvision-ko/vision-locale/koKR/controller.lua:19는 Right stick press를 ‘오른쪽 스틱 누르기’로 표시한다. wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:148도 같은 단축키를 ‘오른쪽 트리거 + 오른쪽 스틱 누르기’로 적는다.",
+     "scope": "file",
+     "source_quote": "on a controller the right trigger together with the right stick press"
+    },
+    {
+     "by": "gpt",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "현황 키가 생명력이 최대인 구성원을 \"생명력 최대\"로 말합니다",
+     "suggestion": "현황 키는 생명력이 최대인 구성원의 번호와 \"생명력 최대\"를 말합니다",
+     "problem": "‘구성원을 생명력 최대로 말하다’라는 목적어·보어 관계가 어색하고, 현황 키가 구성원의 번호도 함께 말한다는 동작이 드러나지 않는다.",
+     "evidence": "같은 파일의 ‘현황 키’ 절은 생명력이 최대인 구성원을 번호와 ‘생명력 최대’로 말한다고 설명한다. 화면 문구 ‘생명력 최대’는 wowvision-ko/vision-locale/koKR/groupHealth.lua의 full 값과 일치하므로 그대로 유지해야 한다.",
+     "scope": "file",
+     "source_quote": "The snapshot says \"full\" for members at full health"
+    },
+    {
+     "by": "gpt",
+     "id": "information/group-health.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "치유를 받거나 피해를 입으면 변화로 치지만, 반복 간격마다 구성원 한 명이 받는 차례는 최대 한 번입니다.",
+     "suggestion": "치유를 받거나 피해를 입으면 변화로 치지만, 구성원마다 반복 간격당 최대 한 번만 차례를 받습니다.",
+     "problem": "‘구성원 한 명’은 반복 간격마다 전체 구성원 중 한 명만 차례를 받는다는 뜻으로도 읽힌다. 원문의 제한은 구성원별로 한 간격에 최대 한 번이라는 뜻이다.",
+     "evidence": "원문은 ‘at most one turn per member per interval’로 제한의 단위를 구성원별·간격별로 각각 명시한다.",
+     "scope": "file",
+     "source_quote": "the interval still allows at most one turn per member per interval."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "reference/commands.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "reference/commands.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "/enableaddon sku는 이 애드온을 모두 다시 켭니다.",
+     "suggestion": "/enableaddon sku는 이 애드온들을 모두 다시 켭니다.",
+     "problem": "앞에서 Sku, 오디오 데이터, 비컨 애드온을 함께 가리키는데 단수형인 \"이 애드온을\"과 복수를 나타내는 \"모두\"가 결합되어 문법적으로 어색합니다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/reference/commands.md:125에서 세 종류의 애드온을 열거한 직후 단수형으로 받습니다. 복수 목적격인 \"이 애드온들을\"로 고치면 같은 대상들을 모두 다시 켠다는 원문의 뜻이 분명해집니다.",
+     "scope": "file",
+     "source_quote": "/enableaddon sku turns them all back on."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "reference/glossary.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "An alert has one or more outputs. See [Alerts](../basics/alerts.md).",
+     "suggestion": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않았다. '알림'은 받침(ㅁ)으로 끝나므로 '를'이 아니라 '을'이어야 한다.",
+     "evidence": "changes의 before는 '[경보](../basics/alerts.md)를'(받침 없음, 맞음), after는 '[알림](../basics/alerts.md)를'. 같은 파일의 다른 링크는 '[모니터](...)를', '[길 안내와 경로](...)를'처럼 앞말 받침에 맞춰 조사를 쓴다."
+    },
+    {
+     "by": "claude",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "음성 팩 알림(음성 팩의 녹음)가 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "Voice Alert (a recording from a voice pack). See [Alerts](../basics/alerts.md).",
+     "suggestion": "음성 팩 알림(음성 팩의 녹음)이 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "'경보'를 '알림'으로 바꾼 뒤 조사 두 곳이 받침 없는 '경보'에 맞춘 그대로 남았다. 괄호 앞 낱말 '알림'에 붙는 주격 조사는 '이', 링크 '[알림]' 뒤 목적격 조사는 '을'이어야 한다.",
+     "evidence": "changes의 before: '음성 팩 경보(음성 팩의 녹음)가 있습니다. [경보](../basics/alerts.md)를', after: '음성 팩 알림(음성 팩의 녹음)가 있습니다. [알림](../basics/alerts.md)를'. 용어 변경 자체는 decisions.tsv 2026-11-07 'alert의 한국어 → 알림' 결정과 맞고, koKR Voice Alert 값 '음성 팩 알림'과도 같다. 문제는 조사뿐이다."
+    },
+    {
+     "by": "claude",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "[알림](../basics/alerts.md)와 [전투](../world/combat.md)를 참고하십시오.",
+     "source_quote": "See [Alerts](../basics/alerts.md) and [Combat](../world/combat.md).",
+     "suggestion": "[알림](../basics/alerts.md)과 [전투](../world/combat.md)를 참고하십시오.",
+     "problem": "'경보'를 '알림'으로 바꾸면서 접속 조사 '와'를 그대로 두었다. '알림'은 받침으로 끝나므로 '과'여야 한다.",
+     "evidence": "changes의 before: '[경보](../basics/alerts.md)와 [전투]', after: '[알림](../basics/alerts.md)와 [전투]'."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "링크 글자 \"알림\"이 받침으로 끝나는데 목적격 조사 \"를\"을 붙여 문법에 맞지 않습니다.",
+     "evidence": "\"알림\"의 마지막 음절 \"림\"에는 받침이 있으므로 목적격 조사는 \"을\"이어야 합니다.",
+     "scope": "file",
+     "source_quote": "An alert has one or more outputs. See [Alerts](../basics/alerts.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "출력 — 알림을 전하는 방식입니다. TTS 알림(텍스트 음성 변환으로 말함), 소리 알림(소리 파일), 음성 팩 알림(음성 팩의 녹음)가 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "출력 — 알림을 전하는 방식입니다. TTS 알림(텍스트 음성 변환으로 말함), 소리 알림(소리 파일), 음성 팩 알림(음성 팩의 녹음)이 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "받침이 있는 \"녹음\" 뒤에 \"가\", 받침이 있는 \"알림\" 뒤에 \"를\"을 붙여 두 조사가 모두 문법에 맞지 않습니다.",
+     "evidence": "\"녹음\"과 \"알림\"은 모두 받침으로 끝나므로 각각 \"이\"와 \"을\"을 붙여야 합니다.",
+     "scope": "file",
+     "source_quote": "Output — How an alert is delivered: TTS Alert (spoken by text to speech), Sound Alert (a sound file), Voice Alert (a recording from a voice pack). See [Alerts](../basics/alerts.md)."
+    },
+    {
+     "by": "gpt",
+     "id": "reference/glossary.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "게임 오류 메시지는 오류, 오류별 필터에서 하나씩 무음으로 만들 수 있습니다. [알림](../basics/alerts.md)와 [전투](../world/combat.md)를 참고하십시오.",
+     "suggestion": "게임 오류 메시지는 오류, 오류별 필터에서 하나씩 무음으로 만들 수 있습니다. [알림](../basics/alerts.md)과 [전투](../world/combat.md)를 참고하십시오.",
+     "problem": "링크 글자 \"알림\"이 받침으로 끝나는데 접속 조사 \"와\"를 붙여 문법에 맞지 않습니다.",
+     "evidence": "\"알림\"의 마지막 음절 \"림\"에는 받침이 있으므로 접속 조사는 \"과\"여야 합니다.",
+     "scope": "file",
+     "source_quote": "Game error messages can be muted one by one in Errors, Per-Error Filter. See [Alerts](../basics/alerts.md) and [Combat](../world/combat.md)."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "reference/index.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "windows/auction-house.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "windows/npcs.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "windows/npcs.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "각 창은 게임이 그 창을 열 때 열립니다.",
+     "suggestion": "게임에서 이 창들 가운데 하나가 열리면 WowVision도 해당 창을 엽니다.",
+     "problem": "주어인 \"각 창\"과 목적어인 \"그 창\"이 같은 대상을 가리켜, 창이 열릴 때 창이 열린다는 동어 반복이 됩니다. 게임에서 창이 열리는 것이 WowVision 창의 작동 조건이라는 핵심 관계가 드러나지 않습니다.",
+     "evidence": "windows/npcs.md:4에서 바로 다음 문장은 WowVision이 창을 읽는다고 설명합니다. 원문도 게임이 창을 여는 시점과 설명 대상 창이 열리는 시점을 연결합니다. changes의 Classic Era·Retail 표기는 wowwork/docs/decisions.tsv의 2026-11-07 결정과 일치해 회귀가 없습니다.",
+     "scope": "file",
+     "source_quote": "All of them open when the game opens them."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "windows/overview.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "windows/social.md",
+   "minor": [],
+   "proposals": []
+  },
+  {
+   "file": "world/index.md",
+   "minor": [],
+   "proposals": [
+    {
+     "by": "gpt",
+     "id": "world/index.md",
+     "category": "terminology",
+     "severity": "major",
+     "quote": "- [미니맵](minimap.md) — 미니맵을 스캔해 약초, 광석 등 추적 중인 것 찾기",
+     "suggestion": "- [미니맵](minimap.md) — 미니맵을 스캔해 약초, 광맥 등 추적 중인 것 찾기",
+     "problem": "여기서 `ore`는 가방에 들어가는 광석 아이템이 아니라 미니맵에 점으로 표시되는 채집 지점을 가리킨다. 같은 대상을 상세 설명서에서는 `광맥`이라고 부르므로 `광석`은 독자가 다른 게임 개념으로 이해하게 한다. `ore`가 채집 지점을 뜻할 때의 표기를 확정 용어집에 추가하고 같은 요약 문구도 함께 통일해야 한다.",
+     "evidence": "`wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:4`, `:14`, `:77`은 같은 미니맵 채집 지점을 `광맥`으로 표기하며, `world/scanner.md:80`도 미니맵 스캔이 찾은 채집 지점을 `약초, 광맥, 보물 상자`라고 한다. 반면 `getting-started/introduction.md:18`, `getting-started/quick-start.md:79`, 현재 파일은 `광석`으로 표기한다. 대응 원문 `world/minimap.md:3`도 현재 문장과 똑같이 `ore`를 사용하므로 같은 개념의 번역이 갈린 사례다.",
+     "scope": "global",
+     "source_quote": "- [Minimap](minimap.md) — scanning the minimap for herbs, ore and other tracked things"
+    }
+   ]
+  },
+  {
+   "file": "world/minimap.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "see [Alerts](../basics/alerts.md) for how alert settings work",
+     "suggestion": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 받침 없는 말에 맞춘 '를'을 그대로 두었다. '알림'은 받침(ㅁ)이 있어 '을'이 맞다.",
+     "evidence": "changes의 before는 '[경보](../basics/alerts.md)를'(맞음), after는 '[알림](../basics/alerts.md)를'. 같은 링크를 바르게 쓴 예: ko/getting-started/introduction.md:12 '[알림](../basics/alerts.md)을 참고하십시오'. 같은 오류가 다른 파일에도 있다(ko/basics/menu-and-settings.md:46, ko/basics/speech.md:58, ko/getting-started/quick-start.md:61 등 '[알림](...)를')."
+    },
+    {
+     "by": "claude",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "- [알림](../basics/alerts.md)와 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+     "source_quote": "- [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md), for voices.",
+     "suggestion": "- [알림](../basics/alerts.md)과 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사 '와'를 그대로 두었다. 받침이 있는 '알림' 뒤에는 '과'가 맞다.",
+     "evidence": "changes의 before '[경보](../basics/alerts.md)와'(맞음) → after '[알림](../basics/alerts.md)와'. 같은 오류가 ko/windows/chat.md:225, ko/windows/system.md:166, ko/reference/glossary.md:108에도 있다."
+    },
+    {
+     "by": "claude",
+     "id": "world/minimap.md",
+     "category": "terminology",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "- 광물 찾기는 구리 광맥, 미스릴 광맥 같은 광맥과 광상을 나열합니다.",
+     "source_quote": "- Find Minerals lists veins and deposits such as Copper Vein and Mithril Deposit.",
+     "suggestion": "- 광물 찾기는 구리 광맥, 미스릴 광맥 같은 광맥을 나열합니다.",
+     "problem": "다듬기에서 원문 'deposits'를 살리려고 '광상'을 더했지만, 바로 앞 예시 두 개가 모두 '광맥'이라 '광상'에 해당하는 예가 없다. 독자는 게임에 '광상'이라는 이름의 채집 지점이 따로 있다고 오해할 수 있다. 영어는 Vein과 Deposit 두 이름을 쓰지만 한국어 예시 이름은 둘 다 '광맥'이므로 '광맥'으로 묶어도 정보 단위가 빠지지 않는다. 다만 한국어 공식 노드 이름은 이 저장소 캐시로 확인하지 못했다(아래 evidence).",
+     "evidence": "changes before '같은 광맥을 나열합니다' → after '같은 광맥과 광상을 나열합니다'. 설명서 ko 전체에서 '광상'은 이 줄 하나뿐(Grep). cache/gs_koKR.csv에 '광상'이 0건이고, 'Mithril Deposit'·'Copper Vein'은 gs_enUS.csv에 없어 공식 노드 이름 확인 불가 — 확인하려면 게임 오브젝트 이름 데이터(GameObjects)를 봐야 한다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "알림 설정이 어떻게 작동하는지는 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 그대로 두었다. 받침이 있는 '알림' 뒤에는 '를'이 아니라 '을'을 써야 한다.",
+     "evidence": "changes의 before는 '[경보](../basics/alerts.md)를', after는 '[알림](../basics/alerts.md)를'이다. wowvision-ko/WowVision/docs/src/user/ko/getting-started/introduction.md:12에는 '[알림](../basics/alerts.md)을 참고하십시오'로 바르게 쓰였다.",
+     "scope": "file",
+     "source_quote": "see [Alerts](../basics/alerts.md) for how alert settings work"
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "- [알림](../basics/alerts.md)와 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+     "suggestion": "- [알림](../basics/alerts.md)과 [음성](../basics/speech.md): 음성 설정을 다룹니다.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사 '와'를 그대로 두었다. 받침이 있는 '알림' 뒤에는 '과'가 맞다.",
+     "evidence": "changes의 before는 '[경보](../basics/alerts.md)와', after는 '[알림](../basics/alerts.md)와'이다.",
+     "scope": "file",
+     "source_quote": "- [Alerts](../basics/alerts.md) and [Speech](../basics/speech.md), for voices."
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "terminology",
+     "severity": "minor",
+     "quote": "- 광물 찾기는 구리 광맥, 미스릴 광맥 같은 광맥과 광상을 나열합니다.",
+     "suggestion": "- 광물 찾기는 구리 광맥과 미스릴 광맥 같은 채광 지점을 나열합니다.",
+     "problem": "예시는 모두 이름이 '광맥'으로 끝나는데 별도 개념처럼 '광상'을 덧붙여, 독자가 게임에 '광상'이라는 종류나 표시 이름도 있다고 오해할 수 있다. 상위 개념인 '채광 지점'으로 묶으면 원문의 veins와 deposits를 모두 포함하면서 존재하지 않는 분류를 암시하지 않는다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:80이 한국어 설명서 전체에서 '광상'을 쓰는 유일한 곳이다. wowwork/cache/gs_enUS.csv와 gs_koKR.csv에는 Copper Vein, Mithril Deposit의 대응 항목이 없어 공식 이름으로 '광상'을 입증할 수 없다. 원문은 두 영어 명명 유형을 예로 들 뿐 별도 분류를 만들지는 않는다.",
+     "scope": "file",
+     "source_quote": "Find Minerals lists veins and deposits such as Copper Vein and Mithril Deposit."
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "스캔은 각 항목의 위치를 몇 야드 오차 안으로 정합니다.",
+     "suggestion": "스캔은 각 항목의 위치를 몇 야드 이내의 오차로 정합니다.",
+     "problem": "'몇 야드 오차 안으로'는 오차 범위를 나타내는 말의 결합이 어색해 위치 정확도를 바로 이해하기 어렵다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:49. 원문의 'to within a few yards'는 오차가 몇 야드 이내라는 뜻이다.",
+     "scope": "file",
+     "source_quote": "The scan gives each entry a position to within a few yards."
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "| 퀘스트 NPC | 퀘스트, 주변. 그리고 NPC, 퀘스트 NPC |",
+     "suggestion": "| 퀘스트 NPC | 퀘스트, 주변; NPC, 퀘스트 NPC |",
+     "problem": "하나의 표 칸에서 두 메뉴 경로를 나열하면서 첫 경로 뒤를 마침표로 끊어 '그리고 NPC'라는 문장 조각이 생겼다. 두 경로의 경계가 한눈에 드러나도록 원문처럼 쌍반점으로 구분해야 한다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:53. 영어 원문은 두 위치를 'Quests, Nearby; and NPCs, Quest Givers'로 구분한다.",
+     "scope": "file",
+     "source_quote": "Quest givers | Quests, Nearby; and NPCs, Quest Givers"
+    },
+    {
+     "by": "gpt",
+     "id": "world/minimap.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "결과는 \"주변에 새 항목 없음, 1 개 사라짐\" 같은 말이고, 그 약초는 목록에서 사라집니다.",
+     "suggestion": "결과로 \"주변에 새 항목 없음, 1 개 사라짐\" 같은 말이 들리고, 그 약초는 목록에서 사라집니다.",
+     "problem": "'결과는 … 같은 말이고'는 주어와 서술어의 연결이 어색하다. 결과 문구가 들린다는 동작을 직접 밝혀야 절차를 바로 이해할 수 있다.",
+     "evidence": "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:143. 원문은 'The result says'로 결과 문구가 출력되는 동작을 명시한다.",
+     "scope": "file",
+     "source_quote": "The result says \"Nothing new nearby, 1 gone\" or similar, and the herb disappears from the list."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "world/movement.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/movement.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "출력은 보통 TTS 알림(음성)와 소리 알림입니다.",
+     "source_quote": "usually TTS Alert (speech) and Sound Alert",
+     "suggestion": "출력은 보통 TTS 알림(음성)과 소리 알림입니다.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 고치지 않았다. '경보'는 모음으로 끝나 '와'가 맞았지만 '알림'은 받침(ㅁ)으로 끝나므로 '과'여야 한다. 뜻은 그대로지만 조사가 틀린 문장이 된다.",
+     "evidence": "changes의 before: '출력은 보통 TTS 경보(음성)와 소리 경보입니다.' -> after: '출력은 보통 TTS 알림(음성)와 소리 알림입니다.'. Grep 결과 wowvision-ko/WowVision/docs/src/user/ko 전체에서 '알림(음성)와'는 world/movement.md:21 한 곳뿐이다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/movement.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "출력은 보통 TTS 알림(음성)와 소리 알림입니다.",
+     "suggestion": "출력은 보통 TTS 알림(음성)과 소리 알림입니다.",
+     "problem": "괄호 안 마지막 말인 ‘음성’에 받침이 있으므로 조사 ‘와’가 아니라 ‘과’를 써야 합니다.",
+     "evidence": "‘음성’ 뒤에는 ‘과’가 결합합니다. 화면 문구인 ‘TTS 알림’과 ‘소리 알림’은 terms의 값과 일치하므로 조사만 고치면 됩니다.",
+     "scope": "file",
+     "source_quote": "usually TTS Alert (speech) and Sound Alert."
+    },
+    {
+     "by": "gpt",
+     "id": "world/movement.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "게임 자체의 \"마우스 이동\" 옵션(게임 설정에 있음)을 켭니다. 켜 두면 손이 닿지 않는 대상과 상호작용 키 등으로 상호작용할 때 캐릭터가 먼저 대상까지 걸어갑니다",
+     "suggestion": "게임 설정에 있는 게임 자체의 \"마우스 이동\" 옵션을 켭니다. 켜 두면 예를 들어 상호작용 키로 손이 닿지 않는 대상과 상호작용할 때 캐릭터가 먼저 대상까지 걸어갑니다",
+     "problem": "‘손이 닿지 않는 대상과 상호작용 키 등으로 상호작용할 때’는 대상과 조작 수단이 한 덩어리로 연결되어 문장 구조를 다시 확인해야 합니다. 원문의 예시 관계도 ‘등으로’가 아니라 ‘예를 들어’로 드러내야 합니다.",
+     "evidence": "원문은 상호작용 대상이 손이 닿지 않는다는 조건과 상호작용 키가 그 상황의 예시라는 관계를 분리합니다. ‘마우스 이동’은 gs_koKR.csv의 ID 12876, BaseTag CLICK_TO_MOVE 값과 일치합니다.",
+     "scope": "file",
+     "source_quote": "Turns on the game's own \"Click to Move\" option (in the game options). With it on, interacting with a target that is out of reach, for example with the interact key, makes your character walk up to it first"
+    },
+    {
+     "by": "gpt",
+     "id": "world/movement.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "WowNav 경로 데이터가 있는 곳(WoW: Forever)에서는 시체가 여러 층에 걸쳐 있으면 갈 수 있는 가장 낮은 층으로 경로를 잡습니다.",
+     "suggestion": "WowNav 경로 데이터가 있는 곳(WoW: Forever)에서는 시체가 여러 층 너머에 있으면 갈 수 있는 가장 낮은 층으로 경로를 잡습니다.",
+     "problem": "‘시체가 여러 층에 걸쳐 있다’는 시체 자체가 여러 층을 차지한다는 뜻으로 읽힙니다. 시체와 플레이어 사이의 층간 위치 관계를 바로 드러내야 합니다.",
+     "evidence": "원문은 시체가 여러 층 너머에 있는 위치 관계와 도달 가능한 가장 낮은 층으로 경로를 잡는 동작을 설명합니다. 시체가 여러 층에 걸쳐 존재한다는 설명이 아닙니다.",
+     "scope": "file",
+     "source_quote": "Where WowNav route data is available (WoW: Forever), a corpse that lies over several floors is routed to the lowest floor that can be reached."
+    },
+    {
+     "by": "gpt",
+     "id": "world/movement.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "예전에는 수영하거나 날 때 경유지 쪽으로 돌아설 때마다 캐릭터의 머리가 조금씩 아래로 기울어서, 결국 천천히 잠수하게 되고 어떤 키로도 바로잡을 수 없었습니다.",
+     "suggestion": "예전에는 수영하거나 날 때 경유지 쪽으로 돌아설 때마다 캐릭터가 조금씩 아래로 기울어서, 결국 천천히 잠수하게 되고 어떤 키로도 바로잡을 수 없었습니다.",
+     "problem": "‘캐릭터의 머리’는 머리 부분의 동작처럼 읽혀 상하 각도 고정이 캐릭터 전체의 기울기를 바로잡는 기능이라는 점이 흐려집니다.",
+     "evidence": "원문의 ‘character's nose’는 비행체의 기수처럼 캐릭터 전체의 상하 기울기를 나타내는 표현입니다. 이어지는 원문도 기능을 ‘keeping your character level’이라고 설명합니다.",
+     "scope": "file",
+     "source_quote": "When you swim or fly, every turn to a waypoint used to tip your character's nose slightly downwards, until you were slowly diving and no key could correct it."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "world/navigation.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/navigation.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 보십시오.",
+     "source_quote": "See [Alerts](../basics/alerts.md) for how alerts work.",
+     "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 보십시오.",
+     "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않았다. '경보'(받침 없음) 뒤의 '를'이 '알림'(받침 ㅁ) 뒤에 그대로 남아 '알림를'이 되었다. 뜻은 맞지만 조사가 틀린 문장이다.",
+     "evidence": "changes의 before '경보가 작동하는 방식은 [경보](../basics/alerts.md)를 보십시오.' → after '[알림](../basics/alerts.md)를'. 같은 치환으로 생긴 '[알림](...)를'이 다른 파일에도 있다: basics/menu-and-settings.md:46, :103, basics/speech.md:58, :76, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8, :42, world/minimap.md:124 (모두 wowvision-ko/WowVision/docs/src/user/ko 아래). 나머지 바뀐 곳(Classic Era·Retail 표기, 경보→알림, 키 바인딩 목록→단축키 목록, 대상 지정→목표 선택)은 decisions.tsv 2026-11-07 결정, terms의 Targeting=목표 선택, reference/keybindings.md 제목 '단축키 목록'과 일치한다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/navigation.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 보십시오.",
+     "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 보십시오.",
+     "problem": "다듬기에서 ‘경보’를 ‘알림’으로 바꾸면서 조사를 그대로 두어 ‘알림를’이 되었다.",
+     "evidence": "changes의 before는 ‘[경보](../basics/alerts.md)를’, after는 ‘[알림](../basics/alerts.md)를’이다. ‘알림’에는 목적격 조사 ‘을’이 붙어야 한다. 같은 치환 오류가 wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:113에도 ‘[알림](../basics/alerts.md)를’로 남아 있다.",
+     "scope": "file",
+     "source_quote": "See [Alerts](../basics/alerts.md) for how alerts work."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "world/quests.md",
+   "minor": [
+    {
+     "by": "claude",
+     "id": "world/quests.md",
+     "category": "style",
+     "severity": "minor",
+     "scope": "file",
+     "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 참고하십시오.",
+     "source_quote": "See [Alerts](../basics/alerts.md) for how alerts work.",
+     "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "다듬기에서 링크 글자 '경보'를 '알림'으로 바꾸면서 조사 '를'을 그대로 두었다. '알림'은 받침으로 끝나므로 '을'이어야 한다. 뜻은 맞지만 문법이 틀린 문장이 되었다.",
+     "evidence": "changes before: '[경보](../basics/alerts.md)를 참고하십시오' -> after: '[알림](../basics/alerts.md)를 참고하십시오'. 같은 패턴이 다른 파일에도 남아 있다: basics/menu-and-settings.md:46,103, basics/speech.md:58,76, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8,42, world/minimap.md:124 (모두 '[알림](...alerts.md)를'). 일괄 치환에서 생긴 것으로 보이며 다른 파일도 함께 고쳐야 한다."
+    },
+    {
+     "by": "gpt",
+     "id": "world/quests.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "Questie가 있으면 항상 작동합니다.",
+     "suggestion": "Questie가 있으면 장소 찾기가 항상 작동합니다.",
+     "problem": "무엇이 작동하는지 주어가 빠져 있어, Questie 자체가 항상 정상 작동한다는 뜻으로 읽힐 수 있습니다. 다음 문장에서 데이터 출처가 필요한 기능을 장소 찾기로 한정하므로 대상을 직접 밝혀야 합니다.",
+     "evidence": "같은 문단의 뒤 문장은 \"장소를 찾을 때만 출처가 필요합니다.\"라고 설명합니다. 따라서 여기서 항상 작동하는 것은 Questie 자체가 아니라 Questie 데이터를 이용한 장소 찾기입니다.",
+     "scope": "file",
+     "source_quote": "With Questie it always works."
+    },
+    {
+     "by": "gpt",
+     "id": "world/quests.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "이 알림은 퀘스트 모듈의 퀘스트 지역 알림입니다. 알림이 작동하는 방식은 [알림](../basics/alerts.md)를 참고하십시오.",
+     "suggestion": "이 알림은 퀘스트 모듈의 퀘스트 지역 알림입니다. 알림이 작동하는 방식은 [알림](../basics/alerts.md)을 참고하십시오.",
+     "problem": "받침이 있는 링크 글자 \"알림\" 뒤에 목적격 조사 \"를\"을 써서 문법에 맞지 않습니다. 다듬기에서 \"경보\"를 \"알림\"으로 바꾸면서 조사를 함께 바꾸지 않아 생긴 회귀입니다.",
+     "evidence": "changes의 before는 \"[경보](../basics/alerts.md)를\"이었으며, after에서 명사만 \"알림\"으로 바뀌었습니다. \"알림\"에는 목적격 조사 \"을\"이 붙습니다.",
+     "scope": "file",
+     "source_quote": "The alert is the Quest Area Alert in the Quests module. See [Alerts](../basics/alerts.md) for how alerts work."
+    },
+    {
+     "by": "gpt",
+     "id": "world/quests.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "- NPC, 퀘스트 NPC: 같은 퀘스트 NPC를 NPC별로 묶은 것.",
+     "suggestion": "- NPC, 퀘스트 NPC: 퀘스트, 주변에 나오는 퀘스트 NPC를 NPC별로 묶은 것.",
+     "problem": "\"같은\"의 비교 대상이 문장에 드러나지 않아 무엇과 같은 퀘스트 NPC인지 앞 항목을 다시 찾아야 합니다. 바로 앞의 \"퀘스트, 주변\" 목록과 같은 NPC라는 뜻을 구체적으로 밝혀야 합니다.",
+     "evidence": "영어 원문의 \"the same givers\"는 바로 앞 항목인 \"Quests, Nearby\"에 나오는 퀘스트 NPC를 가리킵니다.",
+     "scope": "file",
+     "source_quote": "NPCs, Quest Givers: the same givers, grouped by NPC."
+    }
+   ],
+   "proposals": []
+  },
+  {
+   "file": "world/scanner.md",
+   "minor": [
+    {
+     "by": "gpt",
+     "id": "world/scanner.md",
+     "category": "terminology",
+     "severity": "minor",
+     "quote": "각 항목에는 다음 메모가 붙습니다: 부제, 미니맵 스캐너가 찾았으면 \"발견됨\", \"실내\", 출현 지점 수, 그리고 출현 지점이 하나뿐이면 그 위치.",
+     "suggestion": "각 항목에는 다음 메모가 붙습니다: 칭호, 미니맵 스캐너가 찾았으면 \"발견됨\", \"실내\", 출현 지점 수, 그리고 출현 지점이 하나뿐이면 그 위치.",
+     "problem": "NPC의 title을 \"부제\"라고 불러, 같은 NPC 개념을 \"칭호\"라고 설명하는 다른 문서와 용어가 다릅니다.",
+     "evidence": "wowvision-ko/WowVision/core/quests/scanner.lua:69-72는 NPC의 subName을 이 메모에 넣습니다. wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:71은 NPC 이름 대신 표시되는 같은 종류의 title을 \"칭호\"라고 부릅니다.",
+     "scope": "file",
+     "source_quote": "Each of these shows a note: its title"
+    },
+    {
+     "by": "gpt",
+     "id": "world/scanner.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "목표 진행에 세어지는 생물, 물체, 아이템 출처입니다.",
+     "suggestion": "목표 진행에 반영되는 생물, 물체, 아이템 출처입니다.",
+     "problem": "\"진행에 세어지는\"은 count towards를 그대로 옮긴 피동 표현이라, 무엇이 목표 진행으로 인정되는지를 한 번에 파악하기 어렵습니다.",
+     "evidence": "원문은 목표 진행으로 인정되는 대상을 열거합니다. \"반영되는\"으로 바꾸면 정보나 조건을 바꾸지 않고 같은 관계를 분명하게 나타냅니다.",
+     "scope": "file",
+     "source_quote": "the creatures, objects or item sources that count towards it."
+    }
+   ],
+   "proposals": [
+    {
+     "by": "gpt",
+     "id": "world/scanner.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "\"리넨 옷감 출처 데피아즈단 폭력배\"",
+     "suggestion": "\"리넨 옷감 출처: 데피아즈단 폭력배\"",
+     "problem": "명사 세 덩어리가 조사나 구분 기호 없이 이어져 아이템 이름과 출처 이름의 경계를 바로 알기 어렵습니다. 화면 문구를 만드는 koKR 키 quests.lua::from도 함께 바꿔야 합니다.",
+     "evidence": "wowvision-ko/vision-locale/koKR/quests.lua:13은 L[\"from\"]=\"출처\"이고, wowvision-ko/WowVision/core/quests/scanner.lua:56은 아이템 이름, 이 값, 대상 이름을 공백으로만 연결합니다.",
+     "scope": "kokr",
+     "source_quote": "\"Linen Cloth from Defias Thug\""
+    },
+    {
+     "by": "gpt",
+     "id": "world/scanner.md",
+     "category": "style",
+     "severity": "minor",
+     "quote": "Right를 다시 누르면 \"Prowler, 12 개 출현 지점\"입니다.",
+     "suggestion": "Right를 다시 누르면 \"Prowler, 12개 출현 지점\"입니다.",
+     "problem": "수와 단위성 의존 명사 \"개\" 사이가 잘못 띄어져 있습니다. 설명서는 실제 화면 문구를 인용하므로 koKR 키 quests.lua::spawns와 문자열 결합 부분을 함께 고쳐야 합니다.",
+     "evidence": "wowvision-ko/vision-locale/koKR/quests.lua:39의 L[\"spawns\"]=\"개 출현 지점\" 앞에 wowvision-ko/WowVision/core/quests/scanner.lua:81,125가 별도 공백을 추가해 실제 문구도 \"12 개 출현 지점\"이 됩니다.",
+     "scope": "kokr",
+     "source_quote": "Press Right again: \"Prowler, 12 spawns\"."
+    }
+   ]
+  }
+ ]
+}

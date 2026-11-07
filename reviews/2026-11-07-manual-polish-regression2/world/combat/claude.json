@@ -1,0 +1,37 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "terminology",
+   "severity": "major",
+   "scope": "file",
+   "quote": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 알림을 쓰십시오.",
+   "source_quote": "Use the game's own Combat Audio Alerts instead, in its Accessibility options",
+   "suggestion": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 경보를 쓰십시오.",
+   "problem": "다듬기에서 경보를 알림으로 일괄 바꾸면서 WowVision 기능이 아닌 게임 자체 옵션 이름까지 바꿨다. 게임 화면의 옵션 이름은 '전투 음성 경보'라서, 독자가 손쉬운 사용 설정에서 '전투 음성 알림'을 찾으면 찾지 못한다. 2026-11-07 결정은 WowVision의 alert 번역을 바꾼 것이지 게임 공식 용어를 바꾼 것이 아니다.",
+   "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL=\"전투 음성 경보\", 57498 COMBAT_AUDIO_ALERTS=\"전투 음성 경보\" (enUS 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\". 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:58 \"전투 음성 알림을 사용하십시오\"에도 있다."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "| 오류 알림(알림), 사용함 | 켬 |",
+   "source_quote": "| Announce Errors (alert), Enabled | On |",
+   "suggestion": "| 오류 알림(알림 항목), 사용함 | 켬 |",
+   "problem": "경보를 알림으로 바꾸면서 괄호가 앞 이름을 되풀이하는 '오류 알림(알림)'이 됐다. 원문의 (alert)는 이 설정이 알림 항목이라는 것을 밝히는 말인데, 지금은 같은 낱말을 두 번 쓴 오타처럼 읽혀 괄호의 뜻이 전달되지 않는다.",
+   "evidence": "before: \"오류 알림(경보), 사용함\". docs/decisions.tsv 2026-11-07 alert 결정은 Announce 설정의 'X 알림'(오류 알림)을 그대로 두므로 두 낱말이 겹친다."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "필터가 알아볼 수 없으므로 오류 알림 알림으로 그대로 말합니다.",
+   "source_quote": "are spoken as they are through the Announce Errors alert, because the filter cannot identify them",
+   "suggestion": "필터가 알아볼 수 없으므로 오류 알림 항목의 설정으로 그대로 말합니다.",
+   "problem": "경보를 알림으로 바꾸면서 '오류 알림 알림'이 되어 같은 낱말이 연달아 나온다. 독자는 오타로 읽거나 어떤 설정을 가리키는지 다시 찾아야 한다. 가리키는 대상은 위 설정 표의 '오류 알림' 알림 항목(TTS 알림 포함)이다.",
+   "evidence": "before: \"오류 알림 경보로\". 같은 파일 설정 표 \"오류 알림, TTS 알림 | 켬 | 아래 '항상 말하는 것'에 나오는 메시지를 말하는 방식입니다\"."
+  }
+ ]
+}

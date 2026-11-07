@@ -22,12 +22,13 @@ _CODE = re.compile(r"```.*?```|`[^`\n]+`", re.DOTALL)
 
 def _swap_batchim(text: str, old: str, new: str) -> str:
     def repl(m: re.Match[str]) -> str:
-        p = m.group(1)
-        return new + _PARTICLE.get(p, p)
+        paren, p = m.group(1) or "", m.group(2)
+        return new + paren + _PARTICLE.get(p, p)
 
     # 바로 뒤 한 글자가 조사면 바꾼다. 설명서에서 "경보" 뒤에 오는 형태를 모두 뽑아 보니
     # 조사뿐이었다(2026-11-07: 를·가·는·와·에는·의·입니다·도·에·마다·나·처럼·에만·이며·에서·만·로·들과·까지).
-    return re.sub(re.escape(old) + r"(는|를|가|와|나|로|)", repl, text)
+    # 괄호가 끼어 있어도 조사는 괄호 앞 낱말을 따른다("경보(켬)와" → "알림(켬)과").
+    return re.sub(re.escape(old) + r"(\([^)]*\))?(는|를|가|와|나|로|)", repl, text)
 
 
 def _apply_plain(text: str) -> str:

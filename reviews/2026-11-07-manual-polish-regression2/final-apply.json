@@ -1,0 +1,250 @@
+{
+ "apply": [
+  {
+   "ref": "basics/alerts.md#r2-0",
+   "file": "basics/alerts.md",
+   "quote": "반복 지연(2초, 0에서 30까지)은 같은 오류가 설정한 시간 안에 다시 나타나도 읽지 않습니다. 키를 누르고 있을 때 같은 오류가 거듭 읽히지 않게 합니다.",
+   "suggestion": "반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.",
+   "evidence": "changes의 before: \"반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.\" 영어 원문 basics/alerts.md는 \"while you hold a key\" 한 가지 효과만 말한다. 더해진 내용의 출처로 보이는 문장: en/world/combat.md:125 \"The same message is spoken at most once in this time.\" / ko/world/combat.md:126 \"같은 메시지는 이 시간 안에 많아야 한 번 말합니다.\""
+  },
+  {
+   "ref": "controller.md#r2-1",
+   "file": "controller.md",
+   "quote": "주 메뉴 휠은 세 페이지이고 감정 표현 휠은 페이지가 없습니다.",
+   "suggestion": "주 메뉴 휠은 세 페이지이고 감정표현 휠은 페이지가 없습니다.",
+   "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID를 대조하면 58480 PAGE_LABEL_EMOTES는 \"Emotes\" → \"감정표현\"이다. 게임패드 메뉴의 페이지라는 문맥도 원문의 emote wheel과 일치한다."
+  },
+  {
+   "ref": "controller.md#r2-2",
+   "file": "controller.md",
+   "quote": "게임의 휠에 그대로 남아 비장애인 플레이어가 쓸 때와 똑같이 작동합니다(방향 패드로 앉기와 감정 표현 페이지를 고를 수 있습니다).",
+   "suggestion": "게임의 휠에 그대로 남아 비장애인 플레이어가 쓸 때와 똑같이 작동합니다(방향 패드로 앉기와 감정표현 페이지를 고를 수 있습니다).",
+   "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58480 PAGE_LABEL_EMOTES는 \"Emotes\" → \"감정표현\"이다. 원문도 같은 게임패드 휠의 emote pages를 가리킨다."
+  },
+  {
+   "ref": "controller.md#r2-3",
+   "file": "controller.md",
+   "quote": "나머지 칸(소셜, 가방, 시계, PvP, 감정 표현)은 게임 자체의 동작을 실행합니다.",
+   "suggestion": "나머지 칸(소셜, 가방, 시계, PvP, 감정표현)은 게임 자체의 동작을 실행합니다.",
+   "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 58392 RADIAL_LABEL_TARGET_EMOTES는 \"Emotes\" → \"감정표현\"이다. RADIAL_LABEL이라는 BaseTag와 원문의 slice 목록이 같은 방사형 메뉴 문맥임을 확인했다."
+  },
+  {
+   "ref": "getting-started/manual-installation.md#r2-4",
+   "file": "getting-started/manual-installation.md",
+   "quote": "소리, 비컨 신호음, 녹음된 음성(음성 팩)도 WowVision 폴더 안에 있습니다.",
+   "suggestion": "소리, 비컨 소리, 녹음된 음성(음성 팩)도 WowVision 폴더 안에 있습니다.",
+   "evidence": "koKR 키 `navigation.lua:41`의 `Beacon Sound` 값은 \"비컨 소리\"입니다. `wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:105`, `:111`, `wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:20`도 같은 방향성 소리와 설정을 \"비컨 소리\"라고 씁니다. 확정 용어집 `wowwork/docs/glossary.tsv:2`도 beacon을 \"비컨\"으로 정했습니다."
+  },
+  {
+   "ref": "information/monitors.md#r2-6",
+   "file": "information/monitors.md",
+   "quote": "항목 메뉴에서 알림을 고르면(신규 알림 또는 기존 알림 편집)",
+   "suggestion": "항목 메뉴에서 알림을 고르면(신규 경보 또는 기존 경보 편집)",
+   "evidence": "cache/gs_koKR.csv 55581 COOLDOWN_VIEWER_SETTINGS_ADD_NEW_ALERT \"신규 경보\" (enUS \"New Alert\"), 55585 COOLDOWN_VIEWER_SETTINGS_ALERT_DIALOG_TITLE \"신규 경보\", 55602 COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT \"경보 편집\". wowvision-ko/WowVision/retail/cooldownManager.lua:225-238 Backspace가 게임의 item:DisplayContextMenu()를 그대로 연다(메뉴 항목은 게임 문구). koKR에 \"Add New Alert\" 키 없음(vision-locale Grep 결과 0건)."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-7",
+   "file": "reference/keybindings.md",
+   "quote": "어느 것이든 단축키 창에서 바꿀 수 있습니다. WowVision 메뉴(Shift+F1)를 열고 인터페이스로 가서 단축키를 고르십시오. 단축키 창을 쓰는 법은 [단축키](../basics/keybindings.md)에서 설명합니다.",
+   "suggestion": "어느 것이든 단축키 화면에서 바꿀 수 있습니다. WowVision 메뉴(Shift+F1)를 열고 인터페이스로 가서 단축키를 고르십시오. 단축키 화면을 쓰는 법은 [단축키](../basics/keybindings.md)에서 설명합니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4, 6에서 같은 keybinding screen을 \"단축키 화면\"이라고 하며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:18도 \"단축키 화면\"을 사용합니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-8",
+   "file": "reference/keybindings.md",
+   "quote": "\"지정 안 됨\"은 바인딩은 있지만 직접 키를 정해 주기 전까지는 키가 없다는 뜻입니다.",
+   "suggestion": "\"지정 안 됨\"은 동작은 있지만 직접 키를 정해 주기 전까지는 지정된 키가 없다는 뜻입니다.",
+   "evidence": "입력 terms에서 Bindings의 값은 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 각 binding을 \"동작\"과 \"그 동작에 지정된 키\"로 설명합니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-9",
+   "file": "reference/keybindings.md",
+   "quote": "버퍼, 길 안내, 대상 지정, 주사위 키, 커서에 든 아이템 파괴, WowVision 창을 여는 키가 여기에 속합니다.",
+   "suggestion": "버퍼, 길 안내, 목표 선택, 주사위 키, 커서에 든 아이템 파괴, WowVision 창을 여는 키가 여기에 속합니다.",
+   "evidence": "입력 terms에서 Targeting은 \"목표 선택\"입니다. 같은 파일의 115행 절 제목과 125행 링크도 \"목표 선택\"이며, wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:2의 페이지 제목도 \"목표 선택\"입니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-10",
+   "file": "reference/keybindings.md",
+   "quote": "Alt Gr은 바인딩이 아닙니다. WowVision이 Alt Gr 키를 직접 감지하며",
+   "suggestion": "Alt Gr은 지정된 단축키가 아닙니다. WowVision이 Alt Gr 키를 직접 감지하며",
+   "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md는 같은 개념을 \"단축키\"와 \"지정된 키\"로 설명하며 \"바인딩\"을 쓰지 않습니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-11",
+   "file": "reference/keybindings.md",
+   "quote": "Retail과 WoW: Forever에서는 모든 바인딩에 컨트롤러 버튼도 지정할 수 있습니다.",
+   "suggestion": "Retail과 WoW: Forever에서는 모든 단축키에 컨트롤러 버튼도 지정할 수 있습니다.",
+   "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/controller.md:4도 동일한 기능을 \"WowVision의 모든 단축키에 … 컨트롤러 버튼도 지정\"한다고 표현합니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-12",
+   "file": "reference/keybindings.md",
+   "quote": "이 키들은 따로 있는 바인딩이 아닙니다. 앞부분에서 설명한 창 키가 특정 창에서 그 창에 맞는 일을 하는 것입니다. 바인딩을 바꾸면 모든 곳에서 키가 바뀝니다.",
+   "suggestion": "이 키들은 별도의 단축키가 아닙니다. 앞부분에서 설명한 창 키가 특정 창에서 그 창에 맞는 일을 하는 것입니다. 키 지정을 바꾸면 모든 곳에서 키가 바뀝니다.",
+   "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:4는 키를 동작에 \"지정\"한다고 설명하고, 42행 이후에도 키 추가·제거라는 표현을 사용합니다."
+  },
+  {
+   "ref": "reference/keybindings.md#r2-13",
+   "file": "reference/keybindings.md",
+   "quote": "일부 WowVision 바인딩은 예전부터 있던 접근성 애드온 Sku의 키와 같은 일을 합니다. Sku가 로드되어 있는 동안 WowVision은 이 바인딩을 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+   "suggestion": "일부 WowVision 단축키는 예전부터 있던 접근성 애드온 Sku의 키와 같은 일을 합니다. Sku가 로드되어 있는 동안 WowVision은 이 단축키를 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+   "evidence": "입력 terms에서 Bindings는 \"단축키\"입니다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:113은 같은 Sku 충돌 동작을 \"키\"와 \"단축키 화면\"으로 설명하며 \"바인딩\"을 사용하지 않습니다."
+  },
+  {
+   "ref": "reference/versions.md#r2-14",
+   "file": "reference/versions.md",
+   "quote": "| 야수 우리 | 아니요 | 예 | 아니요 | 아니요 | 아니요 |",
+   "suggestion": "| 우리 | 아니요 | 예 | 아니요 | 아니요 | 아니요 |",
+   "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 동일 ID 13216, BaseTag STABLES는 각각 \"Stables\"와 \"우리\"입니다. wowvision-ko/WowVision/tbc/petStable.lua:87은 이 창에 STABLES를 사용하고, wowvision-ko/vision-locale/koKR/windows.lua:201의 Stable 값도 \"우리\"입니다. wowwork/docs/decisions.tsv의 2026-11-05 결정도 같은 창 이름을 \"우리\"로 유지하도록 확정했습니다."
+  },
+  {
+   "ref": "windows/action-bars.md#r2-16",
+   "file": "windows/action-bars.md",
+   "quote": "WowVision은 전투 중에 사용자가 직접 지정한 단축키가 계속 작동하도록 자기 키를 게임에 돌려주고, 전투가 끝나면 다시 가져옵니다.",
+   "suggestion": "WowVision은 전투 중에 사용자의 게임 단축키가 계속 작동하도록 자기 키를 게임에 돌려주고, 전투가 끝나면 다시 가져옵니다.",
+   "evidence": "원문의 \"your own key bindings\"는 WowVision 키와 대비되는 사용자의 게임 단축키를 뜻하며, 직접 다시 지정한 키로 한정하지 않는다. wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:79도 같은 대상을 「게임 자체 단축키」와 「게임 단축키」로 부른다."
+  },
+  {
+   "ref": "windows/action-bars.md#r2-17",
+   "file": "windows/action-bars.md",
+   "quote": "주문, 아이템, 매크로, 탈것, 전투 애완동물, 장비 구성, 펼침 메뉴는 모두 이름으로 읽습니다.",
+   "suggestion": "주문, 아이템, 매크로, 탈것, 전투 애완동물, 장비 구성, 주문 펼침 메뉴는 모두 이름으로 읽습니다.",
+   "evidence": "wowvision-ko/vision-locale/koKR/ui.lua:119에서 「Spell Flyout」은 「주문 펼침 메뉴」이고, wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:12, 14, 73, 75도 같은 기능을 「주문 펼침 메뉴」로 부른다. 행동 단축바 구현도 wowvision-ko/WowVision/core/windows/bars/bars.lua:70에서 actionType \"flyout\"을 별도 유형으로 처리한다."
+  },
+  {
+   "ref": "windows/character.md#r2-19",
+   "file": "windows/character.md",
+   "quote": "구성을 선택하면 장비, 저장, 이름/아이콘 변경, 삭제가 정지점 하나씩 나옵니다.",
+   "suggestion": "구성을 선택하면 장비, 저장, 세트 편집, 삭제가 정지점 하나씩 나옵니다.",
+   "evidence": "입력 terms에서 Edit Set의 실제 한국어 값은 \"세트 편집\"입니다. wowvision-ko/vision-locale/koKR/windows.lua:252에도 L[\"Edit Set\"] = \"세트 편집\"으로 정의되어 있습니다."
+  },
+  {
+   "ref": "windows/character.md#r2-20",
+   "file": "windows/character.md",
+   "quote": "이름/아이콘 변경을 누르면 이름과 아이콘 창이 열립니다.",
+   "suggestion": "세트 편집을 누르면 이름과 아이콘 창이 열립니다.",
+   "evidence": "입력 terms의 Edit Set은 \"세트 편집\"이며, wowvision-ko/vision-locale/koKR/windows.lua:252의 값도 \"세트 편집\"입니다."
+  },
+  {
+   "ref": "windows/character.md#r2-21",
+   "file": "windows/character.md",
+   "quote": "새 구성이나 이름/아이콘 변경을 누르면 구성 창이 따로 열립니다.",
+   "suggestion": "새 구성이나 세트 편집을 누르면 구성 창이 따로 열립니다.",
+   "evidence": "입력 terms와 wowvision-ko/vision-locale/koKR/windows.lua:252에서 Edit Set의 한국어 값은 모두 \"세트 편집\"입니다."
+  },
+  {
+   "ref": "windows/character.md#r2-22",
+   "file": "windows/character.md",
+   "quote": "다른 하나는 소지품 가방에 보여 줍니다.",
+   "suggestion": "다른 하나는 화폐를 소지품에 표시합니다.",
+   "evidence": "wowwork/cache/gs_enUS.csv의 ID 18805, BaseTag SHOW_ON_BACKPACK은 \"Show on Backpack\"이고, 같은 ID의 wowwork/cache/gs_koKR.csv 값은 \"소지품에 표시\"입니다."
+  },
+  {
+   "ref": "windows/chat.md#r2-23",
+   "file": "windows/chat.md",
+   "quote": "메시지(대화, 외침, 길드 일반 메시지, 귓속말, 아이템 획득 등)의 체크 상자를 담고 있습니다.",
+   "suggestion": "메시지(대화, 외침, 길드 일반 메시지, 받는 귓속말, 아이템 획득 등)의 체크 상자를 담고 있습니다.",
+   "evidence": "wowwork/cache/gs_enUS.csv와 gs_koKR.csv의 같은 ID 12984는 BaseTag CHAT_MSG_WHISPER, 영어 \"Incoming Whisper\", 한국어 \"받는 귓속말\"이다. 반면 ID 13125의 BaseTag CHAT_MSG_WHISPER_INFORM은 영어 \"Whisper\", 한국어 \"귓속말\"이므로 서로 다른 메시지 종류다. before에도 \"받는 귓속말\"로 정확히 적혀 있었다."
+  },
+  {
+   "ref": "windows/collections.md#r2-24",
+   "file": "windows/collections.md",
+   "quote": "| Enter | 등급 하나를 삽니다(선택 특성이면 선택지를 엶) |",
+   "suggestion": "| Enter | 등급 하나를 배웁니다(선택 특성이면 선택지를 엶) |",
+   "evidence": "게임 공식 문자열의 같은 특성 동작은 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS에서 영어 \"Click to learn\", 한국어 \"배우려면 클릭하십시오.\"이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 동일한 원문 \"Buys one rank.\"를 \"등급 하나를 배웁니다.\"로 옮긴다."
+  },
+  {
+   "ref": "windows/collections.md#r2-25",
+   "file": "windows/collections.md",
+   "quote": "특성 구매는 바로 확정되지 않습니다. 적용을 누르기 전에는 아무것도 배우지 않습니다.",
+   "suggestion": "특성 습득은 바로 확정되지 않습니다. 적용을 누르기 전에는 아무것도 배우지 않습니다.",
+   "evidence": "게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS는 내부 이름에 PURCHASE가 들어가지만 실제 한국어 표시는 \"배우려면 클릭하십시오.\"이다. ID 49664, BaseTag TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS도 반대 동작을 \"습득을 취소\"라고 부른다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:193은 같은 단계 적용 방식을 \"변경 사항은 바로 반영되지 않고 대기합니다.\"라고 설명해 구매라는 별도 개념을 쓰지 않는다."
+  },
+  {
+   "ref": "windows/collections.md#r2-26",
+   "file": "windows/collections.md",
+   "quote": "5. Enter를 눌러 등급을 삽니다. 다른 특성에도 같은 방법을 반복합니다.",
+   "suggestion": "5. Enter를 눌러 등급을 배웁니다. 다른 특성에도 같은 방법을 반복합니다.",
+   "evidence": "게임 공식 문자열 ID 49663, BaseTag TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS의 한국어 값은 \"배우려면 클릭하십시오.\"이다. wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:188도 같은 동작을 \"등급 하나를 배웁니다.\"라고 쓴다."
+  },
+  {
+   "ref": "windows/loot-trade-mail.md#r2-27",
+   "file": "windows/loot-trade-mail.md",
+   "quote": "1. 탭: 받은 우편함과 우편 발송. 지금 있는 탭은 \"선택됨\"이라고 말합니다. 왼쪽과 오른쪽 화살표로 둘 사이를 오가고, Enter로 전환합니다.",
+   "suggestion": "1. 탭: 받은 우편함과 우편 발송. 현재 탭은 \"선택됨\"이라고 말합니다. Left와 Right로 둘 사이를 오가고, Enter로 전환합니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:56은 같은 키를 \"Left와 Right\"로 표기하고, 82행도 \"Up과 Down\", \"Left와 Right\"를 사용한다."
+  },
+  {
+   "ref": "windows/loot-trade-mail.md#r2-28",
+   "file": "windows/loot-trade-mail.md",
+   "quote": "3. 아래 화살표로 첨부 물품의 돈에 가서 Enter를 누릅니다. 골드가 지갑에 들어옵니다.",
+   "suggestion": "3. Down으로 첨부 물품의 돈에 가서 Enter를 누릅니다. 골드가 지갑에 들어옵니다.",
+   "evidence": "wowvision-ko/WowVision/docs/src/user/ko/basics/keybindings.md:9-10은 같은 키를 \"Down\"으로 표기하고, wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:82도 \"Up과 Down\"을 사용한다."
+  },
+  {
+   "ref": "windows/spells-and-talents.md#r2-29",
+   "file": "windows/spells-and-talents.md",
+   "quote": "4. 특성 격자: 열린 트리의 특성을 위에서 아래로, 왼쪽에서 오른쪽으로 읽습니다.",
+   "suggestion": "4. 특성 격자: 열린 계통도의 특성을 위에서 아래로, 왼쪽에서 오른쪽으로 읽습니다.",
+   "evidence": "changes 3번째(2. 탭: 세 특성 트리이며 -> 세 특성 계통도이며). 같은 파일 111행에 \"열린 트리\"가 남음. 게임 공식 용어: TALENTS_INVOLUNTARILY_RESET \"talent tree\" -> \"특성 계통도\"(gs_koKR 20141). 다른 설명서: getting-started/introduction.md:10 \"특성 계통도\", windows/collections.md:4 \"유산 특성 계통도\"."
+  },
+  {
+   "ref": "windows/spells-and-talents.md#r2-30",
+   "file": "windows/spells-and-talents.md",
+   "quote": "### 예: 전사 트리에 처음 포인트 쓰기",
+   "suggestion": "### 예: 전사 계통도에 처음 포인트 쓰기",
+   "evidence": "changes 3번째에서 TBC 특성 2번 항목만 \"계통도\"로 바뀜. 116행 제목은 \"트리\" 그대로. 공식 용어 gs_koKR 20141 TALENTS_INVOLUNTARILY_RESET \"특성 계통도\"."
+  },
+  {
+   "ref": "world/combat.md#r2-32",
+   "file": "world/combat.md",
+   "quote": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 알림을 쓰십시오.",
+   "suggestion": "대신 게임 자체의 손쉬운 사용 설정에 있는 전투 음성 경보를 쓰십시오.",
+   "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL=\"전투 음성 경보\", 57498 COMBAT_AUDIO_ALERTS=\"전투 음성 경보\" (enUS 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\". 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md:58 \"전투 음성 알림을 사용하십시오\"에도 있다."
+  },
+  {
+   "ref": "world/targeting.md#r2-33",
+   "file": "world/targeting.md",
+   "quote": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 알림을 사용하십시오.",
+   "suggestion": "대신 게임 자체의 손쉬운 사용 옵션에 있는 전투 음성 경보를 사용하십시오.",
+   "evidence": "cache/gs_koKR.csv 56670 CAA_COMBAT_AUDIO_ALERTS_LABEL \"전투 음성 경보\", 56672 CAA_ENABLE_COMBAT_AUDIO_ALERTS \"전투 음성 경보 활성화\" (gs_enUS.csv 같은 ID \"Combat Audio Alerts\"). before는 \"전투 음성 경보\"였다. 같은 문제가 wowvision-ko/WowVision/docs/src/user/ko/world/combat.md:32 \"전투 음성 알림을 쓰십시오\"에도 있다."
+  },
+  {
+   "ref": "world/targeting.md#r2-34",
+   "file": "world/targeting.md",
+   "quote": "\"가상 주시 대상\"을 최대 다섯 개까지 키에 저장해 두게 해 주며",
+   "suggestion": "\"가상 주시 대상\"을 최대 다섯 개까지 저장하고 각각 키로 다시 불러오게 해 주며",
+   "evidence": "world/targeting.md:146은 \"대상을 이름으로 최대 다섯 개까지 저장하고, 각각 자기 키로 다시 불러옵니다\"라고 실제 구조를 설명합니다."
+  },
+  {
+   "ref": "world/targeting.md#r2-35",
+   "file": "world/targeting.md",
+   "quote": "두 번째 우두머리를 대상으로 잡고 /focus2를 입력한 다음, 세 번째 우두머리를 잡고 /focus3을 입력합니다.",
+   "suggestion": "두 번째 우두머리를 대상으로 잡고 /focus2를 입력한 다음, 세 번째 우두머리를 대상으로 잡고 /focus3을 입력합니다.",
+   "evidence": "같은 예시의 1단계와 2단계 앞부분은 모두 \"대상으로 잡고\"라고 명시합니다. 영어 원문도 두 번째와 세 번째 우두머리 모두 Target 동작의 병렬 목적어로 둡니다."
+  }
+ ],
+ "skipped": [
+  {
+   "file": "getting-started/troubleshooting.md",
+   "quote": "| Retail이나 Forever의 재사용 대기시간 관리자 모니터 | /wv cdmlog |",
+   "suggestion": "| Retail이나 WoW: Forever의 재사용 대기시간 관리자 모니터 | /wv cdmlog |"
+  },
+  {
+   "file": "windows/action-bars.md",
+   "quote": "차량 단축바나 행동 단축바 조정은 읽지 않습니다",
+   "suggestion": "차량 단축바나 조종 단축바는 읽지 않습니다"
+  },
+  {
+   "file": "windows/bags-and-bank.md",
+   "quote": "일반 등급 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+   "suggestion": "보통 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다."
+  },
+  {
+   "file": "windows/system.md",
+   "quote": "4. Tab으로 매크로 내용까지 가십시오. `/cast Healing Touch`를 입력하고 Tab을 누르십시오.",
+   "suggestion": "4. Tab으로 매크로 내용까지 가십시오. `/cast 치유의 손길`을 입력하고 Tab을 누르십시오."
+  }
+ ]
+}

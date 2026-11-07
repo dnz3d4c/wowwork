@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 보십시오.",
+   "source_quote": "See [Alerts](../basics/alerts.md) for how alerts work.",
+   "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 보십시오.",
+   "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않았다. '경보'(받침 없음) 뒤의 '를'이 '알림'(받침 ㅁ) 뒤에 그대로 남아 '알림를'이 되었다. 뜻은 맞지만 조사가 틀린 문장이다.",
+   "evidence": "changes의 before '경보가 작동하는 방식은 [경보](../basics/alerts.md)를 보십시오.' → after '[알림](../basics/alerts.md)를'. 같은 치환으로 생긴 '[알림](...)를'이 다른 파일에도 있다: basics/menu-and-settings.md:46, :103, basics/speech.md:58, :76, getting-started/quick-start.md:61, getting-started/troubleshooting.md:44, information/group-health.md:106, reference/glossary.md:8, :42, world/minimap.md:124 (모두 wowvision-ko/WowVision/docs/src/user/ko 아래). 나머지 바뀐 곳(Classic Era·Retail 표기, 경보→알림, 키 바인딩 목록→단축키 목록, 대상 지정→목표 선택)은 decisions.tsv 2026-11-07 결정, terms의 Targeting=목표 선택, reference/keybindings.md 제목 '단축키 목록'과 일치한다."
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "findings": [
+  {
+   "id": "windows/bags-and-bank.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "일반 등급 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+   "source_quote": "For common items the popup has a text and two buttons",
+   "suggestion": "보통 아이템이면 확인 창에 글 하나와 버튼 두 개가 있습니다.",
+   "problem": "다듬기에서 '보통 아이템'을 '일반 등급 아이템'으로 바꿔 범위가 좁아졌다. '일반'은 등급 이름(흰색, ITEM_QUALITY1_DESC)이라 독자는 흰색 아이템만 버튼 두 개짜리 확인 창이 뜬다고 읽는다. 원문은 바로 뒤 'Items of rare quality or better'와 대비되는 평범한 아이템 전체(하급·일반·고급)를 가리키며, 'common' 뒤에 quality를 붙이지 않았다. 행동을 잘못하게 만들지는 않으므로 경미로 둔다.",
+   "evidence": "cache/gs_koKR.csv: DELETE_ITEM \"%s|1을;를; 완전히 파괴하시겠습니까?\"(버튼만), DELETE_GOOD_ITEM \"정말 %s|1을;를; 완전히 파괴하시겠습니까?\\n확인을 위해 \"\"지금파괴\"\"를 입력해 주십시오.\"; ITEM_QUALITY1_DESC 일반, ITEM_QUALITY0_DESC 하급. 원문은 rare 이상만 따로 말하므로 그 아래 등급 전체가 DELETE_ITEM 쪽이다. before 표기는 '보통 아이템'."
+  }
+ ]
+}

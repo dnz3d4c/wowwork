@@ -1,0 +1,37 @@
+{
+  "findings": [
+    {
+      "id": "reference/glossary.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+      "source_quote": "An alert has one or more outputs. See [Alerts](../basics/alerts.md).",
+      "suggestion": "알림에는 출력이 하나 이상 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+      "problem": "다듬기에서 '경보'를 '알림'으로 바꾸면서 조사를 따라 바꾸지 않았다. '알림'은 받침(ㅁ)으로 끝나므로 '를'이 아니라 '을'이어야 한다.",
+      "evidence": "changes의 before는 '[경보](../basics/alerts.md)를'(받침 없음, 맞음), after는 '[알림](../basics/alerts.md)를'. 같은 파일의 다른 링크는 '[모니터](...)를', '[길 안내와 경로](...)를'처럼 앞말 받침에 맞춰 조사를 쓴다."
+    },
+    {
+      "id": "reference/glossary.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "음성 팩 알림(음성 팩의 녹음)가 있습니다. [알림](../basics/alerts.md)를 참고하십시오.",
+      "source_quote": "Voice Alert (a recording from a voice pack). See [Alerts](../basics/alerts.md).",
+      "suggestion": "음성 팩 알림(음성 팩의 녹음)이 있습니다. [알림](../basics/alerts.md)을 참고하십시오.",
+      "problem": "'경보'를 '알림'으로 바꾼 뒤 조사 두 곳이 받침 없는 '경보'에 맞춘 그대로 남았다. 괄호 앞 낱말 '알림'에 붙는 주격 조사는 '이', 링크 '[알림]' 뒤 목적격 조사는 '을'이어야 한다.",
+      "evidence": "changes의 before: '음성 팩 경보(음성 팩의 녹음)가 있습니다. [경보](../basics/alerts.md)를', after: '음성 팩 알림(음성 팩의 녹음)가 있습니다. [알림](../basics/alerts.md)를'. 용어 변경 자체는 decisions.tsv 2026-11-07 'alert의 한국어 → 알림' 결정과 맞고, koKR Voice Alert 값 '음성 팩 알림'과도 같다. 문제는 조사뿐이다."
+    },
+    {
+      "id": "reference/glossary.md",
+      "category": "style",
+      "severity": "minor",
+      "scope": "file",
+      "quote": "[알림](../basics/alerts.md)와 [전투](../world/combat.md)를 참고하십시오.",
+      "source_quote": "See [Alerts](../basics/alerts.md) and [Combat](../world/combat.md).",
+      "suggestion": "[알림](../basics/alerts.md)과 [전투](../world/combat.md)를 참고하십시오.",
+      "problem": "'경보'를 '알림'으로 바꾸면서 접속 조사 '와'를 그대로 두었다. '알림'은 받침으로 끝나므로 '과'여야 한다.",
+      "evidence": "changes의 before: '[경보](../basics/alerts.md)와 [전투]', after: '[알림](../basics/alerts.md)와 [전투]'."
+    }
+  ]
+}

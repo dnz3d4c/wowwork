@@ -1,0 +1,161 @@
+{
+ "file": "windows/character.md",
+ "en": "# Character\n\nThe character pane is where you see what you wear, your stats, your reputations, your skills, your PvP standing and your currencies. WowVision reads it as a set of stops you move through with Tab, with the contents of each tab laid out as lists you walk with the arrow keys.\n\n## Where it is available\n\n| Game version | What is read |\n|---|---|\n| Classic Era | Not supported yet. |\n| The Burning Crusade (TBC) | Five tabs: the paper doll (equipment, stats, resistances), Pet, Reputation, Skills and PvP. |\n| Mists of Pandaria (Mists) | The paper doll (equipment and stats), Reputation and Currency. The Pet tab is listed among the tabs, but its contents are not read yet. |\n| Retail | Not supported yet. |\n| WoW: Forever | Six tabs: Character (equipment, stats, equipment sets, pet stats), Reputation, Skills, PvP, Currency and Statistics. |\n\n## Opening and closing\n\nOpen the pane with the game's own character key (C unless you changed it). The game's keys for single tabs, such as the reputation key, open the same pane on that tab, and WowVision reads whichever tab the game shows.\n\nPress Escape to close it. WowVision closes the game's own panel for you.\n\nIf the Sku addon is loaded too, WowVision does not read this window, to avoid two addons fighting over the same keys. Switch Sku off if you want WowVision to read the pane.\n\nYou can switch WowVision's reading of this window off and on with the Enabled toggle: open the WowVision menu with Shift+F1, go to Windows, then Character. See [The WowVision menu](../basics/menu-and-settings.md).\n\n## How the pane is laid out\n\nEach tab is a handful of stops. Tab and Shift+Tab move between stops, the arrow keys move inside one. The body of the active tab comes first and the row of tabs is always the last stop. That means:\n\n- When the pane opens you land on the first stop of the current tab, normally the equipment list.\n- Shift+Tab from the first stop jumps straight to the tabs, because the stops wrap around.\n- To switch tabs, go to the Tabs stop, use Left and Right to pick a tab and press Enter. The tab you are on reads as \"selected\". The body below it is rebuilt and Tab takes you into it.\n\nThe keys that work on most elements here:\n\n| Key | What it does |\n|---|---|\n| Enter | Left click: pick up an equipped item, open or select a row, toggle a check box. |\n| Backspace | Right click: for example uses an equipped trinket. |\n| \\\\ or Ctrl+D | Drag: picks up the focused equipment slot so you can move the item. |\n| Space | Reads the tooltip of the focused element. Shift+Up and Shift+Down step through its lines. |\n| Shift+F10 | Context menu with Left Click, Right Click and Drag. |\n\nMore on these in [Using the interface](../basics/interface.md) and [Reading tooltips](../basics/tooltips.md).\n\n## Equipment\n\nThe first stop of the character tab is the Equipment list, one entry per slot, in the order the game draws them: head, neck, shoulders, back, chest, shirt, tabard, wrist, hands, waist, legs, feet, the two finger slots, the two trinket slots, main hand, off hand, ranged and, where the game has one, ammo.\n\n- A filled slot reads the item name followed by its quality as a colour word: \"Stormforged Helm, Blue\".\n- An empty slot reads the name of the slot: \"Head\", \"Finger\", \"Main Hand\".\n- On the ammo slot the item reads even when the game gives no link for it.\n- A slot the game hides is skipped: on WoW: Forever the ammo slot only shows while you wear a ranged weapon, and Mists has no ammo slot.\n- On WoW: Forever the list ends with a line for your level (\"Level 60 Human Paladin\") and, for a hunter with a pet, the pet's loyalty.\n\nPress Space on a slot to read the full item tooltip with its stats. Press Enter to pick the item up onto your cursor, or to drop the item that is on your cursor into the slot. How the cursor works, and how to equip something from your bags with Backspace, is explained in [Bags and bank](bags-and-bank.md). \\\\ or Ctrl+D picks the item up too, exactly as dragging it with the mouse would.\n\n## Stats\n\nThe stats are read-only lines such as \"Strength 142\" or \"Armor 1500\". Press Space to read what a stat means.\n\n### The Burning Crusade\n\nTwo stops, both named Stats: a left column and a right column. Each starts with a dropdown that chooses the category the column shows (for example base stats, melee, ranged, spell or defense). Press Enter on the dropdown to open the game's menu, pick a category and the lines below change. After the dropdown come up to six stat lines.\n\nA third stop, Resistances, reads the five resistances (fire, frost, nature, shadow, arcane) the way the game's own tooltip words them.\n\n### Mists of Pandaria\n\nOne stop called Stats. Every stat category the game shows is a row; Up and Down switch category (you hear the category name) and Left and Right walk the stats inside the category.\n\n### WoW: Forever\n\nThe stats live in a side panel with three views, picked on the sidebar tabs (see below). The Stats stop reads the category headers as announcement levels: moving into a category speaks its name once, then you walk the stat lines with Up and Down.\n\n## Equipment manager (WoW: Forever only)\n\nChoose the equipment manager on the sidebar tabs and the panel changes to your equipment sets. The stops, in order:\n\n1. The set list. Each set reads its name, \", Equipped\" if you wear it and \", 2 items missing\" if pieces are gone from your bags. Enter selects a set and the row reads \"selected\".\n2. New Set.\n3. Once a set is selected, one stop each for Equip, Save, Edit Set and Delete. Equip puts the selected set on. Save stores what you wear now into it. Edit Set opens the name and icon window. Delete asks the game for a confirmation popup, which you answer like any [popup](system.md).\n\nNew Set and Edit Set open the set window as a window of its own: a name edit box, an icon type dropdown, an Icon number you change with Left and Right (it reads \"3 of 120\"; Enter lets you type a number) and the Okay and Cancel buttons. The window opens with the cursor in the name box cleared, so you can use the arrow keys at once; Enter on the name box puts you back into typing.\n\nThe sidebar also has a Sidebar Tabs stop (a row of tabs: Left/Right and Enter) and a button that collapses or expands the right panel. When the panel is collapsed only the equipment list and the toggle button are read. The pet stats view is called Pet and lists the stats of your pet.\n\n### Example: switch to your tanking gear on WoW: Forever\n\n1. Press C. You land on the equipment list.\n2. Press Tab until you hear the sidebar tabs and choose the equipment manager with Right and Enter.\n3. Press Tab to the set list, arrow down to \"Tank, 1 items missing\" (or whatever you named it) and press Enter.\n4. Press Tab until you hear Equip, and press Enter.\n\n## Reputation\n\nAvailable on TBC, Mists and WoW: Forever.\n\nThe faction list is one stop named Reputation. Headers (Classic, Burning Crusade, Alliance Forces and so on) read as \"Expanded\" or \"Collapsed\"; Enter on a header folds or unfolds it. A faction reads its name, your standing and progress inside it:\n\n- \"Cenarion Expedition - Honored 4500 / 12000\"\n- On Mists and WoW: Forever, friendship factions read the friendship level the game shows, for example \"Friend\", with progress towards the next level.\n- On WoW: Forever, renown factions read \"Renown 12\" with progress towards the next level. Once you are at the top standing, the maximum friendship level or the maximum renown, no progress is read, for example \"Stormwind - Exalted\".\n\nEnter on a faction opens its details. On WoW: Forever the row also reads \"selected\" while it is the chosen faction; on TBC and Mists it does not. On TBC and Mists the details are a stop of their own, named after the faction. On WoW: Forever they are a Details stop. It reads, in order:\n\n- The faction's description. On WoW: Forever the title and subtitle come first, then the description and the detail rows.\n- At War, a check box.\n- Move to Inactive, a check box (the game moves the faction to the inactive group at the bottom).\n- Watched, a check box that shows the faction on your experience bar. On WoW: Forever the labels of the three check boxes are the game's own words.\n- Close on TBC and Mists. View Renown on WoW: Forever for renown factions.\n\nOn WoW: Forever the list is preceded by a filter dropdown stop, where you choose which factions the list shows.\n\n### Example: watch a reputation on TBC\n\n1. Press C, then Shift+Tab to reach the tabs, Right to Reputation and Enter.\n2. Press Tab to enter the list. Arrow down to \"Cenarion Expedition - Honored 4500 / 12000\".\n3. Press Enter. The faction's details open.\n4. Press Tab to reach the faction details. Arrow to Watched, checkbox, unchecked and press Enter. It now reads \"checked\".\n\n## Skills (TBC and WoW: Forever)\n\nThe skills tab lists your skill lines: professions, secondary skills, weapon skills, armor proficiencies and languages.\n\n- On TBC a Collapse All / Expand All button comes first. Its label shows what pressing it will do.\n- Headers read \"Expanded\" or \"Collapsed\" and fold with Enter.\n- On TBC a skill with levels reads its name, rank and maximum: \"Mining 150/300\". An active bonus shows in brackets: \"Mining 150 (+15)/300\". Skills without levels (armor proficiencies, languages) read only their name.\n- On WoW: Forever every skill reads rank and maximum with spaces around the slash: \"Mining 150 / 300\", with the bonus in brackets: \"Mining 150 (+15) / 300\".\n- Enter selects a skill (\"selected\").\n\nThe selected skill's details come after the list. On TBC they are a Skill Details stop: the rank line, the description and, for professions you can drop, an Unlearn button. Unlearn opens the game's confirmation popup. On WoW: Forever the details are a Details stop with the same kind of rows.\n\n## PvP\n\n### The Burning Crusade\n\nOne stop, PVP, reading as short lines:\n\n- Your honor points and your arena points, each with its value (\"Honor Points 1234\").\n- A group Honorable Kills with \"Today: 12\", \"Yesterday: 8\" and \"Lifetime: 3540\".\n\nThe toggle button at the end of the tab switches the statistics between the two views the game offers and reads with the game's own label.\n\n### WoW: Forever\n\nA PvP stop reads the lines of the rank system as the game shows them: the season timer, the current season, your rank and your progress to the next one. A Next Reward button follows, then a Details stop with the rank information.\n\n## Pet (TBC only)\n\nThe Pet tab only exists while you have a pet with a pet panel (hunters and warlocks). Without one the tab reads \"No pet\". With a pet there is a stop named Pet holding:\n\n- name, level, loyalty and training points,\n- the experience text,\n- the diet (\"Diet: Meat, Fish\"),\n- a group Stats with the five attributes, then attack power, damage, spell damage and armor,\n- a group Resistances, which lists only the resistances that are not zero.\n\nAll lines are live and update as the pet changes. A Close button is the last stop of the body.\n\n## Currency (Mists and WoW: Forever)\n\nOne stop with the list of currencies. Headers read \"Expanded\" or \"Collapsed\" and fold with Enter. A currency reads its name and your amount: \"Justice Points 2150\". Space reads the currency's tooltip with its cap and description.\n\nOn WoW: Forever a currency row also reads \"selected\" when chosen. The chosen currency has a Details stop with two check boxes, one that marks the currency as unused (it moves out of the main list) and one that shows it on your backpack bar, plus a transfer button for currencies you can move between your characters. The check boxes read with the game's own wording.\n\n## Statistics (WoW: Forever only)\n\nOne stop with the statistics list as the achievements pane shows it. Category headers fold and unfold with Enter. A statistic reads its name and value: \"Total deaths 14\".\n\n## What WowVision does not read yet\n\n- Mists: the Pet tab of the character pane, the equipment manager and the titles list.\n- WoW: Forever: the titles list of the sidebar.\n- Classic Era and Retail: the whole character pane.\n\nPick up, equip and compare items through [Bags and bank](bags-and-bank.md), and read the equipped item tooltips here with Space.\n",
+ "ko": "<!-- source: docs/src/user/en/windows/character.md @ 397ffc3 -->\n# 캐릭터\n\n캐릭터 창에서는 착용한 장비, 능력치, 평판, 숙련, PvP 현황, 화폐를 봅니다. WowVision은 이 창을 Tab으로 오가는 여러 정지점으로 읽고, 각 탭의 내용을 화살표 키로 훑는 목록으로 배치합니다.\n\n## 쓸 수 있는 곳\n\n| 게임 버전 | 읽는 내용 |\n|---|---|\n| Classic Era | 아직 지원하지 않음. |\n| 불타는 성전(TBC) | 탭 다섯 개: 장비 화면(장비, 능력치, 저항력), 소환수, 평판, 숙련, PvP. |\n| 판다리아의 안개(Mists) | 장비 화면(장비와 능력치), 평판, 화폐. 소환수 탭은 탭 목록에 나오지만 그 내용은 아직 읽지 않습니다. |\n| Retail | 아직 지원하지 않음. |\n| WoW: Forever | 탭 여섯 개: 캐릭터(장비, 능력치, 장비 구성, 소환수 능력치), 평판, 숙련, PvP, 화폐, 통계. |\n\n## 열기와 닫기\n\n게임 자체의 캐릭터 키(바꾸지 않았다면 C)로 창을 엽니다. 평판 키처럼 특정 탭을 여는 게임 키를 누르면 같은 창이 그 탭으로 열리고, WowVision은 게임이 보여 주는 탭을 읽습니다.\n\n닫으려면 Escape를 누릅니다. 게임 자체의 창은 WowVision이 대신 닫습니다.\n\nSku 애드온도 함께 켜져 있으면, 두 애드온이 같은 키를 두고 부딪치지 않도록 WowVision은 이 창을 읽지 않습니다. WowVision이 이 창을 읽게 하려면 Sku를 끄십시오.\n\n사용함 토글로 WowVision이 이 창을 읽는 기능을 끄고 켤 수 있습니다. Shift+F1로 WowVision 메뉴를 열고 창, 캐릭터 순으로 들어갑니다. [WowVision 메뉴](../basics/menu-and-settings.md)를 참고하십시오.\n\n## 창의 배치\n\n탭마다 정지점이 몇 개 있습니다. Tab과 Shift+Tab은 정지점 사이를 이동하고, 화살표 키는 정지점 안에서 이동합니다. 현재 탭의 본문이 먼저 나오고, 탭 줄은 항상 마지막 정지점입니다. 따라서 다음과 같습니다.\n\n- 창이 열리면 현재 탭의 첫 정지점에 놓입니다. 보통은 장비 목록입니다.\n- 정지점은 처음과 끝이 이어지므로, 첫 정지점에서 Shift+Tab을 누르면 바로 탭으로 건너뜁니다.\n- 탭을 바꾸려면 탭 정지점으로 가서 Left와 Right로 탭을 고르고 Enter를 누릅니다. 현재 탭은 \"선택됨\"으로 읽힙니다. 그 아래 본문이 다시 만들어지고, Tab을 누르면 본문으로 들어갑니다.\n\n여기서 대부분의 요소에 쓰는 키:\n\n| 키 | 하는 일 |\n|---|---|\n| Enter | 왼쪽 클릭: 장착한 아이템을 집거나, 줄을 열거나 선택하거나, 체크 상자를 켜고 끕니다. |\n| Backspace | 오른쪽 클릭: 예를 들어 장착한 장신구를 사용합니다. |\n| \\\\ 또는 Ctrl+D | 끌기: 초점이 있는 장비 칸을 집어 아이템을 옮길 수 있게 합니다. |\n| Space | 초점이 있는 요소의 툴팁을 읽습니다. Shift+Up과 Shift+Down으로 툴팁의 줄을 하나씩 넘깁니다. |\n| Shift+F10 | 왼쪽 클릭, 오른쪽 클릭, 끌기가 있는 상황별 메뉴. |\n\n자세한 내용은 [인터페이스 사용하기](../basics/interface.md)와 [툴팁 읽기](../basics/tooltips.md)를 참고하십시오.\n\n## 장비\n\n캐릭터 탭의 첫 정지점은 장비 목록입니다. 칸마다 항목이 하나씩 있고, 게임 화면에 나오는 순서를 따릅니다. 머리, 목, 어깨, 등, 가슴, 속옷, 겉옷, 손목, 손, 허리, 다리, 발, 손가락 칸 두 개, 장신구 칸 두 개, 주장비, 보조장비, 원거리 장비, 그리고 게임에 있는 경우 탄환 및 화살입니다.\n\n- 아이템이 있는 칸은 아이템 이름 뒤에 아이템 등급을 색 이름으로 읽습니다. \"Stormforged Helm, 파란색\".\n- 빈 칸은 칸 이름을 읽습니다. \"머리\", \"손가락\", \"주장비\".\n- 탄환 및 화살 칸에서는 게임이 아이템 링크를 주지 않아도 아이템을 읽습니다.\n- 게임이 숨기는 칸은 건너뜁니다. WoW: Forever에서는 원거리 무기를 착용한 동안에만 탄환 및 화살 칸이 나오고, 판다리아의 안개에는 탄환 및 화살 칸이 없습니다.\n- WoW: Forever에서는 목록 끝에 레벨 줄(\"60 레벨 인간 성기사\")이 있고, 소환수가 있는 사냥꾼이면 소환수의 충성도도 나옵니다.\n\n칸에서 Space를 누르면 능력치가 담긴 아이템 툴팁 전체를 읽습니다. Enter를 누르면 아이템을 커서로 집거나, 커서에 든 아이템을 그 칸에 내려놓습니다. 커서의 작동 방식과 Backspace로 가방의 아이템을 장착하는 방법은 [가방과 은행](bags-and-bank.md)에서 설명합니다. \\\\ 또는 Ctrl+D를 눌러도 마우스로 끌어 옮길 때와 똑같이 아이템을 집습니다.\n\n## 능력치\n\n능력치는 \"힘 142\"나 \"방어도 1500\"처럼 읽기만 하는 줄입니다. Space를 누르면 그 능력치의 뜻을 읽습니다.\n\n### 불타는 성전\n\n능력치라는 이름의 정지점이 두 개 있습니다. 왼쪽 열과 오른쪽 열입니다. 각 열은 그 열이 보여 줄 범주(예: 기본 능력치, 근접, 원거리, 주문, 방어)를 고르는 드롭다운으로 시작합니다. 드롭다운에서 Enter를 누르면 게임의 메뉴가 열리고, 범주를 고르면 아래 줄이 바뀝니다. 드롭다운 다음에는 능력치 줄이 최대 여섯 개 나옵니다.\n\n세 번째 정지점인 저항력은 다섯 가지 저항력(화염, 냉기, 자연, 암흑, 비전)을 게임 자체의 툴팁 표현대로 읽습니다.\n\n### 판다리아의 안개\n\n능력치라는 정지점이 하나 있습니다. 게임이 보여 주는 능력치 범주가 각각 한 줄입니다. Up과 Down은 범주를 바꾸고(범주 이름이 들립니다) Left와 Right는 범주 안의 능력치를 훑습니다.\n\n### WoW: Forever\n\n능력치는 세 가지 보기를 고를 수 있는 옆 패널에 나오고, 보기는 사이드바 탭에서 고릅니다(아래 참고). 능력치 정지점에서는 범주로 들어갈 때 범주 머리글의 이름을 한 번 말하고, 그다음 Up과 Down으로 능력치 줄을 훑습니다.\n\n## 장비 관리창(WoW: Forever 전용)\n\n사이드바 탭에서 장비 관리창을 고르면 패널이 장비 구성으로 바뀝니다. 정지점은 다음 순서입니다.\n\n1. 구성 목록. 각 구성은 이름을 읽고, 착용 중이면 \", 장착\"을, 가방에서 빠진 장비가 있으면 \", 아이템 2개 없음\"을 읽습니다. Enter를 누르면 구성을 선택하고, 그 줄은 \"선택됨\"으로 읽힙니다.\n2. 새 구성.\n3. 구성을 선택하면 장비, 저장, 이름/아이콘 변경, 삭제가 정지점 하나씩 나옵니다. 장비 버튼을 누르면 선택한 구성을 착용합니다. 저장을 누르면 지금 입은 장비를 그 구성에 저장합니다. 이름/아이콘 변경을 누르면 이름과 아이콘 창이 열립니다. 삭제를 누르면 게임이 확인 팝업을 띄우며, 이 팝업에는 다른 [팝업](system.md)과 똑같이 답합니다.\n\n새 구성이나 이름/아이콘 변경을 누르면 구성 창이 따로 열립니다. 이 창에는 이름 편집 상자, 아이콘 종류 드롭다운, Left와 Right로 바꾸는 아이콘 번호(\"3 of 120\"으로 읽습니다. Enter를 누르면 번호를 입력할 수 있습니다), 확인 버튼과 취소 버튼이 있습니다. 창이 열리면 커서가 이름 상자에 있지만 입력 상태는 풀려 있으므로 바로 화살표 키를 쓸 수 있습니다. 이름 상자에서 Enter를 누르면 다시 입력 상태가 됩니다.\n\n사이드바에는 사이드바 탭 정지점(탭 줄: Left/Right와 Enter)과 오른쪽 패널을 접거나 펼치는 버튼도 있습니다. 패널을 접으면 장비 목록과 토글 버튼만 읽습니다. 소환수 능력치 보기의 이름은 소환수이며, 소환수의 능력치를 나열합니다.\n\n### 예: WoW: Forever에서 방어 전담 장비로 바꾸기\n\n1. C를 누릅니다. 장비 목록에 놓입니다.\n2. 사이드바 탭이 들릴 때까지 Tab을 누르고, Right와 Enter로 장비 관리창을 고릅니다.\n3. Tab을 눌러 구성 목록으로 가서 아래 화살표로 \"방어 전담, 아이템 1개 없음\"(또는 직접 붙인 이름)까지 내려가 Enter를 누릅니다.\n4. 장비 버튼이 들릴 때까지 Tab을 누르고 Enter를 누릅니다.\n\n## 평판\n\n불타는 성전, 판다리아의 안개, WoW: Forever에서 쓸 수 있습니다.\n\n진영 목록은 평판이라는 정지점 하나입니다. 머리글(오리지널, 불타는 성전, 얼라이언스 군대 등)은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고, 머리글에서 Enter를 누르면 접거나 펼칩니다. 진영은 이름, 평판 등급, 그 등급 안의 진행도를 읽습니다.\n\n- \"세나리온 원정대 - 우호적 4500 / 12000\"\n- 판다리아의 안개와 WoW: Forever에서 우정 진영은 게임이 보여 주는 우정 단계(예: \"친구\")를 다음 단계까지의 진행도와 함께 읽습니다.\n- WoW: Forever에서 영예 진영은 \"영예 12\"를 다음 단계까지의 진행도와 함께 읽습니다. 최고 평판 등급, 최대 우정 단계, 최대 영예에 이르면 진행도는 읽지 않습니다. 예를 들어 \"스톰윈드 - 확고한 동맹\"입니다.\n\n진영에서 Enter를 누르면 세부 정보가 열립니다. WoW: Forever에서는 선택한 진영인 동안 그 줄이 \"선택됨\"으로도 읽히고, 불타는 성전과 판다리아의 안개에서는 그렇지 않습니다. 불타는 성전과 판다리아의 안개에서 세부 정보는 진영 이름이 붙은 독립된 정지점입니다. WoW: Forever에서는 세부 정보 정지점입니다. 다음 순서로 읽습니다.\n\n- 진영 설명. WoW: Forever에서는 제목과 부제목이 먼저 나오고, 그다음 설명과 세부 줄이 나옵니다.\n- 전쟁 중, 체크 상자.\n- 비활성, 체크 상자(게임이 진영을 맨 아래의 비활성 그룹으로 옮깁니다).\n- 경험치바에 표시, 진영을 경험치 바에 보여 주는 체크 상자. WoW: Forever에서는 세 체크 상자의 이름을 게임에 나오는 그대로 읽습니다.\n- 불타는 성전과 판다리아의 안개에서는 닫기. WoW: Forever의 영예 진영에서는 영예 보기.\n\nWoW: Forever에서는 목록 앞에 필터 드롭다운 정지점이 있고, 여기서 목록에 보여 줄 진영을 고릅니다.\n\n### 예: 불타는 성전에서 평판을 경험치바에 표시하기\n\n1. C를 누르고 Shift+Tab으로 탭에 가서 Right로 평판까지 간 뒤 Enter를 누릅니다.\n2. Tab을 눌러 목록에 들어갑니다. 아래 화살표로 \"세나리온 원정대 - 우호적 4500 / 12000\"까지 내려갑니다.\n3. Enter를 누릅니다. 진영의 세부 정보가 열립니다.\n4. Tab을 눌러 진영 세부 정보로 갑니다. 화살표로 경험치바에 표시, 체크 상자, 체크되지 않음까지 가서 Enter를 누릅니다. 이제 \"체크됨\"으로 읽힙니다.\n\n## 숙련(불타는 성전과 WoW: Forever)\n\n숙련 탭은 기술 항목을 나열합니다. 전문 기술, 보조 기술, 무기 숙련, 방어구 숙련, 언어입니다.\n\n- 불타는 성전에서는 모두 접기 / 모두 펼치기 버튼이 먼저 나옵니다. 버튼 이름은 누르면 일어날 일을 나타냅니다.\n- 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다.\n- 불타는 성전에서 단계가 있는 기술은 이름, 숙련도, 최대치를 읽습니다. \"채광 150/300\". 적용 중인 보너스는 괄호 안에 나옵니다. \"채광 150 (+15)/300\". 단계가 없는 기술(방어구 숙련, 언어)은 이름만 읽습니다.\n- WoW: Forever에서는 모든 기술이 빗금 앞뒤에 공백을 두고 숙련도와 최대치를 읽습니다. \"채광 150 / 300\". 보너스는 괄호 안에 넣어 \"채광 150 (+15) / 300\"으로 읽습니다.\n- Enter를 누르면 기술을 선택합니다(\"선택됨\").\n\n선택한 기술의 세부 정보는 목록 다음에 나옵니다. 불타는 성전에서는 숙련 세부 정보 정지점이며, 숙련도 줄과 설명, 그리고 버릴 수 있는 전문 기술이면 습득 취소 버튼이 담깁니다. 습득 취소는 게임의 확인 팝업을 엽니다. WoW: Forever에서 세부 정보는 같은 종류의 줄이 담긴 세부 정보 정지점입니다.\n\n## PvP\n\n### 불타는 성전\n\nPvP라는 정지점 하나가 짧은 줄로 읽힙니다.\n\n- 명예 점수와 투기장 점수, 각각 값과 함께(\"명예 1234\").\n- \"오늘: 12\", \"어제: 8\", \"전체: 3540\"이 담긴 명예 승수 묶음.\n\n탭 끝의 토글 버튼은 통계를 게임이 제공하는 두 보기 사이에서 바꾸며, 게임 자체의 이름으로 읽힙니다.\n\n### WoW: Forever\n\nPvP 정지점은 계급 체계의 줄을 게임이 보여 주는 대로 읽습니다. 시즌 타이머, 현재 시즌, 내 계급, 다음 계급까지의 진행도입니다. 그 뒤에 다음 보상 버튼이 나오고, 이어서 계급 정보가 담긴 세부 정보 정지점이 나옵니다.\n\n## 소환수(불타는 성전 전용)\n\n소환수 탭은 사냥꾼이나 흑마법사가 소환수 창에 나오는 소환수를 데리고 있을 때만 나타납니다. 소환수가 없으면 탭은 \"소환수 없음\"으로 읽힙니다. 소환수가 있으면 소환수라는 정지점이 있고 다음을 담습니다.\n\n- 이름, 레벨, 충성도, 훈련 포인트,\n- 경험치 텍스트,\n- 먹이(\"먹이: 고기, 생선\"),\n- 능력치 묶음: 기본 능력치 다섯 가지, 그다음 전투력, 피해, 주문 공격력, 방어도,\n- 저항력 묶음: 0이 아닌 저항력만 나열합니다.\n\n모든 줄은 소환수 상태에 따라 실시간으로 갱신됩니다. 닫기 버튼은 본문의 마지막 정지점입니다.\n\n## 화폐(판다리아의 안개와 WoW: Forever)\n\n화폐 목록이 담긴 정지점 하나입니다. 머리글은 \"펼쳐짐\" 또는 \"접힘\"으로 읽히고 Enter로 접습니다. 화폐는 이름과 보유량을 읽습니다. \"정의 점수 2150\". Space를 누르면 상한과 설명이 담긴 화폐 툴팁을 읽습니다.\n\nWoW: Forever에서는 화폐 줄을 고르면 \"선택됨\"으로도 읽힙니다. 고른 화폐에는 세부 정보 정지점이 있고, 그 안에 체크 상자 두 개가 있습니다. 하나는 화폐를 미사용으로 표시하고(주 목록에서 빠집니다), 다른 하나는 소지품 가방에 보여 줍니다. 캐릭터 사이에 옮길 수 있는 화폐에는 이전 버튼도 있습니다. 체크 상자는 게임 자체의 표현으로 읽힙니다.\n\n## 통계(WoW: Forever 전용)\n\n업적 창에 나오는 통계 목록이 담긴 정지점 하나입니다. 범주 머리글은 Enter로 접고 펼칩니다. 통계는 이름과 값을 읽습니다. \"총 사망 횟수 14\".\n\n## WowVision이 아직 읽지 않는 것\n\n- 판다리아의 안개: 캐릭터 창의 소환수 탭, 장비 관리창, 칭호 목록.\n- WoW: Forever: 사이드바의 칭호 목록.\n- Classic Era와 Retail: 캐릭터 창 전체.\n\n아이템을 집고, 장착하고, 비교하는 일은 [가방과 은행](bags-and-bank.md)에서 하고, 장착한 아이템의 툴팁은 여기서 Space로 읽습니다.\n",
+ "terms": [
+  {
+   "en": "Not supported yet",
+   "ko": "아직 지원하지 않음"
+  },
+  {
+   "en": "Honorable Kills",
+   "ko": "명예 승수"
+  },
+  {
+   "en": "Skill Details",
+   "ko": "숙련 세부 정보"
+  },
+  {
+   "en": "Collapse All",
+   "ko": "모두 접기"
+  },
+  {
+   "en": "Sidebar Tabs",
+   "ko": "사이드바 탭"
+  },
+  {
+   "en": "Right Click",
+   "ko": "오른쪽 클릭"
+  },
+  {
+   "en": "Resistances",
+   "ko": "저항력"
+  },
+  {
+   "en": "Next Reward",
+   "ko": "다음 보상"
+  },
+  {
+   "en": "Left Click",
+   "ko": "왼쪽 클릭"
+  },
+  {
+   "en": "Expand All",
+   "ko": "모두 펼치기"
+  },
+  {
+   "en": "Reputation",
+   "ko": "평판"
+  },
+  {
+   "en": "Statistics",
+   "ko": "통계"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Available",
+   "ko": "사용 가능"
+  },
+  {
+   "en": "Collapsed",
+   "ko": "접힘"
+  },
+  {
+   "en": "Equipment",
+   "ko": "장비"
+  },
+  {
+   "en": "Main Hand",
+   "ko": "주장비"
+  },
+  {
+   "en": "Character",
+   "ko": "캐릭터"
+  },
+  {
+   "en": "Yesterday",
+   "ko": "어제"
+  },
+  {
+   "en": "Currency",
+   "ko": "화폐"
+  },
+  {
+   "en": "Expanded",
+   "ko": "펼쳐짐"
+  },
+  {
+   "en": "Lifetime",
+   "ko": "전체"
+  },
+  {
+   "en": "Equipped",
+   "ko": "장착"
+  },
+  {
+   "en": "Edit Set",
+   "ko": "세트 편집"
+  },
+  {
+   "en": "Windows",
+   "ko": "창"
+  },
+  {
+   "en": "Enabled",
+   "ko": "사용함"
+  },
+  {
+   "en": "Unlearn",
+   "ko": "습득 취소"
+  },
+  {
+   "en": "Details",
+   "ko": "세부 정보"
+  },
+  {
+   "en": "Watched",
+   "ko": "경험치바에 표시"
+  },
+  {
+   "en": "Reward",
+   "ko": "보상"
+  },
+  {
+   "en": "Finger",
+   "ko": "손가락"
+  },
+  {
+   "en": "Points",
+   "ko": "포인트"
+  },
+  {
+   "en": "Skills",
+   "ko": "숙련"
+  },
+  {
+   "en": "At War",
+   "ko": "전쟁 중"
+  },
+  {
+   "en": "No pet",
+   "ko": "소환수 없음"
+  }
+ ],
+ "changes": [
+  {
+   "before": "| 클래식 시대 | 아직 지원하지 않음. |",
+   "after": "| Classic Era | 아직 지원하지 않음. |"
+  },
+  {
+   "before": "| 리테일 | 아직 지원하지 않음. |",
+   "after": "| Retail | 아직 지원하지 않음. |"
+  },
+  {
+   "before": "- 클래식 시대와 리테일: 캐릭터 창 전체.",
+   "after": "- Classic Era와 Retail: 캐릭터 창 전체."
+  }
+ ]
+}

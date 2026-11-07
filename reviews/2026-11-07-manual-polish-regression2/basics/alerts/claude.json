@@ -1,0 +1,37 @@
+{
+ "findings": [
+  {
+   "id": "basics/alerts.md",
+   "category": "accuracy",
+   "severity": "major",
+   "scope": "file",
+   "quote": "반복 지연(2초, 0에서 30까지)은 같은 오류가 설정한 시간 안에 다시 나타나도 읽지 않습니다. 키를 누르고 있을 때 같은 오류가 거듭 읽히지 않게 합니다.",
+   "source_quote": "Repeat Delay (2 seconds, 0 to 30) stops the same error from being spoken again while you hold a key.",
+   "suggestion": "반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.",
+   "problem": "다듬기에서 원문 한 문장을 두 문장으로 늘리며 원문에 없는 설명(\"설정한 시간 안에 다시 나타나도 읽지 않습니다\")을 더했다. 이 설명은 world/combat.md 표에서 가져온 내용으로 이 페이지 원문에는 없다(공통 지시: 원문에 없는 설명을 덧붙이지 않는다). 첫 문장은 주어 \"반복 지연은\"과 서술어 \"읽지 않습니다\"가 맞지 않아, 설정이 무엇을 읽지 않는다는 것인지 다시 읽어야 한다. before 문장이 원문과 정확히 대응했다.",
+   "evidence": "changes의 before: \"반복 지연(2초, 0에서 30까지)은 키를 누르고 있는 동안 같은 오류가 다시 읽히지 않게 합니다.\" 영어 원문 basics/alerts.md는 \"while you hold a key\" 한 가지 효과만 말한다. 더해진 내용의 출처로 보이는 문장: en/world/combat.md:125 \"The same message is spoken at most once in this time.\" / ko/world/combat.md:126 \"같은 메시지는 이 시간 안에 많아야 한 번 말합니다.\""
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "예: 지역 변경 알림에는 TTS 알림(켬)와 소리 알림(끔)가 있습니다.",
+   "source_quote": "Example: Zone Changed Alert has a TTS Alert (on) and a Sound Alert (off).",
+   "suggestion": "예: 지역 변경 알림에는 TTS 알림(켬)과 소리 알림(끔)이 있습니다.",
+   "problem": "\"경보\"를 \"알림\"으로 일괄 바꾸면서 조사를 따라 바꾸지 않았다. \"알림\"은 받침이 있으므로 \"와\"가 아니라 \"과\", \"가\"가 아니라 \"이\"여야 한다. before(\"경보(켬)와 ... 경보(끔)가\")는 맞았다.",
+   "evidence": "changes before: \"TTS 경보(켬)와 소리 경보(끔)가 있습니다\". ko/basics/alerts.md:24에서 grep \"알림(...)(와|가|는)\"로 확인."
+  },
+  {
+   "id": "basics/alerts.md",
+   "category": "style",
+   "severity": "minor",
+   "scope": "file",
+   "quote": "자체 설정이 있는 알림(대화의 메시지 읽기 등)는 그 설정도 여기에 보여 줍니다.",
+   "source_quote": "Alerts that have a setting of their own (such as Speak Messages for chat) show it here too.",
+   "suggestion": "자체 설정이 있는 알림(대화의 메시지 읽기 등)은 그 설정도 여기에 보여 줍니다.",
+   "problem": "\"경보\"를 \"알림\"으로 바꾸며 조사 \"는\"이 남았다. 받침 있는 \"알림\" 뒤에는 \"은\"이어야 한다. before(\"경보(...)는\")는 맞았다.",
+   "evidence": "changes before: \"자체 설정이 있는 경보(대화의 메시지 읽기 등)는\". ko/basics/alerts.md:34."
+  }
+ ]
+}
