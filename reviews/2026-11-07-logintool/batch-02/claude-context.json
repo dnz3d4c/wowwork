@@ -1,0 +1,44 @@
+{
+  "findings": [
+    {
+      "id": "forever.ahk:: of ",
+      "category": "context",
+      "severity": "major",
+      "problem": "이 값은 위치 발화(\"7 / 21\")에만 쓰이지 않는다. FvIndexRegex가 이 값으로 게임 클라이언트 자체 내레이션을 해석하는 정규식을 만든다. 한국어 클라이언트 내레이션과 맞지 않아서 한국어에서는 드롭다운 위치와 선택지 이름을 익히지 못한다. 발화 형태도 숫자 사이 of를 영어로 두기로 한 결정과 다르다.",
+      "evidence": "forever.ahk:763-765 `FvIndexRegex() { return \"(\\d+)\\Q\" FvIndexText(1, 2) \"\\E(\\d+)\\s*$\" }`, forever.ahk:773-775 FvOptLearn은 정규식이 맞지 않으면 바로 return한다. 852줄 주석은 이 값이 클라이언트 문자열 NARRATION_INDEX_INFO_FORMAT에서 왔다고 적는다. 그 문자열은 enUS \"%d of %d\", koKR \"%d, %d 하위 항목\"(cache/gs_koKR.csv:26428)이다. ko 값이 \" / \"면 \"7, 21 하위 항목\"과 맞지 않는다. 끝에 \"하위 항목\"이 붙고 정규식이 `\\s*$`로 끝나기 때문에 어떤 값으로 바꿔도 맞지 않는다. 그래서 코드 수정이 필요하다(upstream-report 대상). Forever 클라이언트의 한국어 내레이션이 이 cache와 같은지는 직접 확인하지 못해서 critical에서 한 단계 낮췄다. 발화 쪽(forever.ahk:832, 1276, 1361, 1409, 2356, 2472, 2484)은 decisions.tsv 2026-11-03의 숫자 사이 of 결정을 따라야 한다.",
+      "suggestion": " of "
+    },
+    {
+      "id": "forever.ahk::strong",
+      "category": "context",
+      "severity": "minor",
+      "problem": "FvColorName은 명도어, 채도어, 색 이름을 차례로 붙인다. 채도가 높다는 뜻의 \"진한\"은 한국어 색 표현에서 어둡다는 뜻으로도 들린다. 그래서 \"밝은 진한 파란색\", \"매우 밝은 진한 분홍색\"처럼 서로 반대되는 말로 이어져 들린다.",
+      "evidence": "forever.ahk:906-928, 반환은 `shade \" \" tone hue`이다. shade에는 \"매우 밝은\"과 \"밝은\"이 들어갈 수 있고 tone에는 \"진한 \"(sat >= 0.65)이 들어갈 수 있다. 실제 화면에 이 조합이 나오는지는 확인하지 못했다.",
+      "suggestion": "강한"
+    },
+    {
+      "id": "forever.ahk::medium",
+      "category": "context",
+      "severity": "minor",
+      "problem": "영어 \"medium\"은 다섯 단계 명도 중 가운데를 뜻한다. 한국어 \"중간\"은 바로 뒤에 붙는 채도어와 함께 \"중간 옅은 빨간색\", \"중간 선명한 파란색\"이 된다. 듣는 사람은 무엇이 중간인지(밝기인지 채도인지) 알기 어렵다. 다른 단계는 \"밝은\", \"어두운\"처럼 모두 밝기를 직접 말한다.",
+      "evidence": "forever.ahk:912 `shade := Map(..., \"ko\", \"중간\")[L]`, forever.ahk:928 `return shade \" \" tone hue`. 다른 단계 shade는 매우 밝은, 밝은, 어두운, 매우 어두운이다.",
+      "suggestion": "중간 밝기"
+    },
+    {
+      "id": "koKR.txt::The game is still connecting. Press Escape to cancel.",
+      "category": "context",
+      "severity": "minor",
+      "problem": "이 문구는 툴이 60초 동안 기다린 뒤 대기를 멈추고 함수에서 빠져나가는 자리에서 나온다. 그다음 할 일은 사용자가 직접 Escape를 누르는 것이다. 그런데 \"Escape로 취소합니다.\"는 동작을 설명하는 말로 들려서 툴이 취소한다는 뜻으로 오해할 수 있다. \"still\"이 빠져서 오래 기다렸다는 사실도 전해지지 않는다.",
+      "evidence": "flows.ahk:2999-3002, 3846-3849: `if (progress > 60) { Log(\"... still up after 60 s - stopping\") Say(T(\"The game is still connecting. Press Escape to cancel.\")) return }`",
+      "suggestion": "아직 연결 중입니다. Escape를 눌러 취소하세요."
+    },
+    {
+      "id": "koKR.txt::Press Enter to agree, or press Escape to decline.",
+      "category": "context",
+      "severity": "minor",
+      "problem": "이 문구는 하드코어와 PvP 경고 창 내용을 읽은 뒤 둘 중 하나를 고르게 하는 안내다. 그런데 \"Enter로 동의하고 Escape로 거절합니다.\"는 두 동작을 차례로 하는 말처럼 들린다. 고르는 안내라는 점이 드러나지 않는다.",
+      "evidence": "flows.ahk:2584, 2771, 2783에서 창 본문을 말한 뒤 SayQueued로 이 문구를 말하고, gHardcoreConfirmFlag가 켜진 상태에서 HardcoreConfirmAnswer(accept)로 답을 받는다.",
+      "suggestion": "Enter를 누르면 동의하고, Escape를 누르면 거절합니다."
+    }
+  ]
+}

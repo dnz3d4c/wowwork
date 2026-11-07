@@ -1,0 +1,82 @@
+id	before	ko
+koKR.txt::press enter to confirm the deletion, or press escape to cancel.	게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.	게임이 한국어면 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르세요. 또는 Escape를 눌러 취소합니다.
+koKR.txt::Deleting failed. Type delete again and press enter, or press escape to cancel the deleting process.	삭제하지 못했습니다. 게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.	삭제하지 못했습니다. 게임이 한국어면 지금삭제를 입력하고 영어면 대문자로 DELETE를 입력한 뒤 Enter를 누르세요. 또는 Escape를 눌러 취소합니다.
+koKR.txt::enter delete and press enter, or press escape to cancel the deleting process.	게임이 요구하는 삭제 확인 문구를 입력하고 Enter를 누르세요. Escape로 취소합니다.	게임이 한국어면 지금삭제를 입력하고 영어면 DELETE를 입력한 뒤 Enter를 누르거나, Escape를 눌러 삭제를 취소하세요.
+koKR.txt::this race is locked for your account. Try a different race.	이 종족은 잠겨 있습니다. 다른 종족을 선택하세요.	이 계정에서는 이 종족이 잠겨 있습니다. 다른 종족을 선택하세요.
+koKR.txt::Failed. The name is not available, or the names format is not allowed.	이미 사용 중이거나 허용되지 않는 이름입니다.	실패. 사용할 수 없거나 허용되지 않는 이름입니다.
+koKR.txt::enter the name for the new character and press enter, or escape to cancel character creation.	캐릭터 이름을 입력하고 Enter를 누르세요. Escape로 취소합니다.	새 캐릭터의 이름을 입력하고 Enter를 누르거나, Escape를 눌러 캐릭터 생성을 취소하세요.
+koKR.txt::Classic	클래식 시대	Classic Era
+koKR.txt::Retail	최신 확장팩	Retail
+koKR.txt::BurningCrusade	불타는 성전	Burning Crusade
+koKR.txt::Cata	대격변	Cataclysm
+koKR.txt::Anniversary	기념 서버	Anniversary
+koKR.txt::create new character	새 캐릭터 생성	캐릭터 만들기
+koKR.txt::hardcore_pvp	하드코어 PvP	하드코어 전쟁
+koKR.txt::switched to Server	변경된 서버:	서버 변경됨
+koKR.txt::login mode for	로그인 모드:	로그인 모드
+koKR.txt::Character created	캐릭터가 생성되었습니다.	캐릭터 생성됨
+koKR.txt::character deleted	캐릭터가 삭제되었습니다.	캐릭터 삭제됨
+koKR.txt::Creation is canceled. Please wait.	생성이 취소되었습니다. 기다려 주세요.	생성 취소됨. 기다려 주세요.
+koKR.txt::Deleting is canceled. Please wait	삭제가 취소되었습니다. 기다려 주세요.	삭제 취소됨. 기다려 주세요
+koKR.txt::Could not switch server.	서버를 변경하지 못했습니다.	서버 변경 실패.
+koKR.txt::selected, restart script to apply	선택됨. 적용하려고 다시 시작합니다. 기다려 주세요.	선택됨. 적용하기 위해 스크립트를 다시 시작합니다. 기다려 주세요.
+koKR.txt::Pandaren_(Alliance)	판다렌 얼라이언스	판다렌 (얼라이언스)
+koKR.txt::Pandaren_(Horde)	판다렌 호드	판다렌 (호드)
+koKR.txt::Dracthyr_(Alliance)	드랙티르 얼라이언스	드랙티르 (얼라이언스)
+koKR.txt::Dracthyr_(Horde)	드랙티르 호드	드랙티르 (호드)
+koKR.txt::go right to select a voice	오른쪽 화살표로 음성을 선택하세요.	오른쪽 화살표로 음성을 선택하세요
+koKR.txt::go right to select a game type	오른쪽 화살표로 게임 종류를 선택하세요.	오른쪽 화살표로 게임 종류를 선택하세요
+koKR.txt::go right to select a language	오른쪽 화살표로 언어를 선택하세요.	오른쪽 화살표로 언어를 선택하세요
+koKR.txt::wait	기다려 주세요.	기다려 주세요
+koKR.txt::go right to select a region	오른쪽 화살표로 지역을 선택하세요.	오른쪽 화살표로 지역을 선택하세요
+koKR.txt::you don't have any characters on the selected server	선택한 서버에 캐릭터가 없습니다.	선택한 서버에 캐릭터가 없습니다
+koKR.txt::switching to server. please wait.	서버를 변경합니다. 기다려 주세요.	서버 변경 중. 기다려 주세요.
+koKR.txt::The server is full. You are in queue.	서버가 가득 찼습니다. 접속 대기 중입니다.	서버 가득 참. 접속 대기 중.
+koKR.txt::server full. Waiting in queue.	서버가 가득 찼습니다. 접속 대기 중입니다.	서버 가득 참. 접속 대기 중.
+koKR.txt::Fail. Client is reporting incorrect language.	서버와 게임 언어가 맞지 않아 서버를 변경하지 못했습니다.	실패. 게임 클라이언트 언어가 이 서버와 맞지 않습니다. 서버 변경 안 됨.
+koKR.txt::The social contract could not be accepted. Sighted help is needed once: scroll the text to the end and press accept.	소셜 규약에 동의하지 못했습니다. 본문을 끝까지 내린 뒤 확인을 눌러 주세요.	소셜 규약에 동의하지 못했습니다. 비장애인의 도움이 한 번 필요합니다: 본문을 끝까지 내린 뒤 수락을 눌러 주세요.
+koKR.txt::Blizzard's social contract is open. Accepting it, please wait.	블리자드 소셜 규약에 동의합니다. 기다려 주세요.	블리자드 소셜 규약 열림. 동의하는 중, 기다려 주세요.
+koKR.txt::Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.	접속되지 않았습니다. 서버 연결을 확인하거나 게임에서 계정명과 비밀번호를 입력하세요.	로그인 안 됨. 서버에 연결되지 않았거나, 게임에서 아직 계정명과 비밀번호를 입력해야 합니다.
+koKR.txt::Press Enter to agree, or press Escape to decline.	Enter로 동의하고 Escape로 거절합니다.	동의하려면 Enter를, 거절하려면 Escape를 누르세요.
+koKR.txt::The game is still connecting. Press Escape to cancel.	연결 중입니다. Escape로 취소합니다.	아직 연결 중. 취소하려면 Escape를 누르세요.
+koKR.txt::No characters on this realm yet.	이 서버에 캐릭터가 없습니다.	이 서버에 아직 캐릭터 없음.
+forever.ahk::No name check result yet	이름 확인 결과 없음	아직 이름 확인 결과 없음
+koKR.txt::Forever mode: the game reads the screen itself. Press Control Alt F3 to save a screenshot for calibration.	포에버 모드에서는 게임이 화면을 읽습니다. 인식 보정용 화면을 저장하려면 Control Alt F3을 누르세요.	WoW Forever 모드: 게임이 직접 화면을 읽습니다. 인식 보정용 화면을 저장하려면 Control Alt F3을 누르세요.
+koKR.txt::The screen recognition textures are missing from the game folder. Please run the Sku installer to reinstall the login tool.	게임 폴더에 화면 인식 파일이 없습니다. Sku 설치 프로그램으로 로그인 툴을 다시 설치하세요.	게임 폴더에 화면 인식 텍스처가 없습니다. Sku installer를 실행해 로그인 툴을 다시 설치하세요.
+koKR.txt::Forever	와우 포에버	WoW Forever
+koKR.txt::narration settings written for Forever	포에버 화면 낭독 설정을 저장했습니다.	WoW Forever 화면 낭독 설정 저장됨
+koKR.txt::log in	로그인	접속
+forever.ahk:: of 	 / 	 of 
+koKR.txt::hardcore_rp	하드코어 역할 연기	하드코어 롤플레이
+forever.ahk::strong	진한	강한
+forever.ahk::medium	중간	중간 밝기의
+koKR.txt::Type now. Enter ends the entry, Escape leaves it.	입력하세요. Enter로 마치고 Escape로 나갑니다.	입력하세요. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다.
+koKR.txt::Type now. The password is never read back. Enter ends the entry, Escape leaves it.	비밀번호를 입력하세요. 비밀번호는 읽지 않습니다. Enter로 마치고 Escape로 나갑니다.	비밀번호를 입력하세요. 비밀번호는 소리 내어 읽지 않습니다. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다.
+koKR.txt::login screen, not logged in	로그인 화면. 접속되지 않았습니다.	로그인 화면, 로그인 안 됨
+koKR.txt::typing mode, Enter or Escape to leave	입력 모드입니다. Enter 또는 Escape로 나갑니다.	입력 모드, Enter 또는 Escape로 나가기
+koKR.txt::no voices found, press enter to keep the system voice	음성을 찾지 못했습니다. Enter를 누르면 시스템 음성을 유지합니다.	음성을 찾지 못함, Enter를 누르면 시스템 음성 유지
+koKR.txt::this voice does not work, choose another one	이 음성이 작동하지 않습니다. 다른 음성을 선택하세요.	이 음성은 작동하지 않음, 다른 음성을 선택하세요
+koKR.txt::addon menu only available on character selection screen	애드온 메뉴는 캐릭터 선택 화면에서만 사용할 수 있습니다.	애드온 메뉴는 캐릭터 선택 화면에서만 사용할 수 있습니다
+koKR.txt::all addons activated	모든 애드온을 켰습니다.	모든 애드온 켜짐
+koKR.txt::all addons deactivated	모든 애드온을 껐습니다.	모든 애드온 꺼짐
+koKR.txt::out of date addons will be loaded	구버전 애드온을 불러옵니다.	구버전 애드온 불러옴
+koKR.txt::out of date addons will not be loaded	구버전 애드온을 불러오지 않습니다.	구버전 애드온 불러오지 않음
+koKR.txt::server selection closed	서버 선택 창을 닫았습니다.	서버 선택 창 닫힘
+koKR.txt::keeping the system voice	시스템 음성을 유지합니다.	시스템 음성 유지
+koKR.txt::nothing to select on this screen	이 화면에는 선택할 항목이 없습니다.	이 화면에 선택할 항목 없음
+koKR.txt::Declined.	거절했습니다.	거절함.
+koKR.txt::Agreed. Please wait.	동의했습니다. 기다려 주세요.	동의함. 기다려 주세요.
+koKR.txt::Agreed. Connecting to the server. Please wait.	동의했습니다. 서버에 연결합니다. 기다려 주세요.	동의함. 서버에 연결 중. 기다려 주세요.
+koKR.txt::Entry ended.	입력을 마쳤습니다.	입력 종료.
+koKR.txt::Social contract accepted.	소셜 규약에 동의했습니다.	소셜 규약 동의함.
+koKR.txt::Logging in. Please wait.	로그인 중입니다. 기다려 주세요.	로그인 중. 기다려 주세요.
+koKR.txt::The login did not go through.	로그인하지 못했습니다.	로그인 실패.
+koKR.txt::The game has opened the server selection.	서버 선택 창이 열렸습니다.	서버 선택 창 열림.
+koKR.txt::this category holds no servers	이 분류에 서버가 없습니다.	이 분류에 서버 없음.
+koKR.txt::The game is starting. Please wait.	게임을 시작합니다. 기다려 주세요.	게임 시작 중. 기다려 주세요.
+koKR.txt::The character list may be incomplete. Press Alt F1 twice to rebuild it.	캐릭터 목록이 불완전할 수 있습니다. Alt F1을 두 번 눌러 다시 읽으세요.	캐릭터 목록이 불완전할 수 있습니다. Alt F1을 두 번 눌러 목록을 다시 만드세요.
+koKR.txt::The tool does not know this dialog yet. Answer it in the game.	아직 지원하지 않는 창입니다. 게임에서 직접 선택하세요.	아직 지원하지 않는 창입니다. 게임에서 직접 응답하세요.
+koKR.txt::game type is detected automatically now	이제 게임 종류를 자동으로 감지합니다.	이제 게임 종류 자동 감지.
+koKR.txt::The server was not found in the list. The list is being read again.	목록에서 서버를 찾지 못했습니다. 다시 읽습니다.	목록에서 서버를 찾지 못함. 목록을 다시 읽는 중.
+forever.ahk::Name available	사용 가능한 이름	이름 사용 가능
+forever.ahk::Name not available	사용할 수 없는 이름	이름 사용 불가

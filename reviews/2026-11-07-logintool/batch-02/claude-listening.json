@@ -1,0 +1,252 @@
+{
+ "findings": [
+  {
+   "id": "koKR.txt::Type now. Enter ends the entry, Escape leaves it.",
+   "category": "listening",
+   "severity": "major",
+   "problem": "원문은 Enter와 Escape가 서로 다른 선택지(Enter=입력 완료, Escape=나가기)인데, 번역 \"Enter로 마치고 Escape로 나갑니다\"는 들으면 'Enter로 마친 다음 Escape로 나간다'는 순서 절차로 들린다. 원문의 쉼표도 없어졌다.",
+   "evidence": "en: \"Enter ends the entry, Escape leaves it.\" (쉼표로 두 선택지 나열). ko: \"Enter로 마치고 Escape로 나갑니다.\" 연결어미 '-고'가 순차로 읽힌다. flows.ahk:484 SayQueued로 입력 시작 때 말한다.",
+   "suggestion": "입력하세요. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다."
+  },
+  {
+   "id": "koKR.txt::Type now. The password is never read back. Enter ends the entry, Escape leaves it.",
+   "category": "listening",
+   "severity": "major",
+   "problem": "위 항목과 같이 \"Enter로 마치고 Escape로 나갑니다\"가 순서 절차로 들리고 원문 쉼표가 없어졌다. 또 \"비밀번호는 읽지 않습니다\"는 '소리 내어 읽어 주지 않는다(read back)'가 아니라 '툴이 비밀번호를 읽어 들이지(처리하지) 않는다'로도 들린다.",
+   "evidence": "en: \"The password is never read back. Enter ends the entry, Escape leaves it.\" ko: \"비밀번호는 읽지 않습니다. Enter로 마치고 Escape로 나갑니다.\" flows.ahk:487.",
+   "suggestion": "비밀번호를 입력하세요. 비밀번호는 소리 내어 읽지 않습니다. Enter를 누르면 입력을 마치고, Escape를 누르면 나갑니다."
+  },
+  {
+   "id": "koKR.txt::Press Enter to agree, or press Escape to decline.",
+   "category": "listening",
+   "severity": "major",
+   "problem": "\"Enter로 동의하고 Escape로 거절합니다\"는 '동의한 다음 거절한다'는 순서로 들리거나, 툴이 지금 동의·거절을 하고 있다는 알림으로 들린다. 원문은 둘 중 하나를 고르라는 지시문이고 쉼표로 선택지를 나눈다. 지시문인데 합니다체 명령형도 아니다.",
+   "evidence": "en: \"Press Enter to agree, or press Escape to decline.\" ko: \"Enter로 동의하고 Escape로 거절합니다.\" flows.ahk:2584/2771/2783 SayQueued, 뒤이어 \"동의했습니다\"/\"거절했습니다\" 알림이 나와 상태 알림과 구분이 더 어렵다.",
+   "suggestion": "동의하려면 Enter를, 거절하려면 Escape를 누르세요."
+  },
+  {
+   "id": "koKR.txt::The game is still connecting. Press Escape to cancel.",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"Escape로 취소합니다\"는 사용자에게 할 일을 지시하는 원문(Press Escape to cancel)과 달리 '툴이 Escape로 취소하고 있다'는 상태 알림으로 들릴 수 있다. 지시문은 합니다체 명령형이어야 한다.",
+   "evidence": "en: \"Press Escape to cancel.\" ko: \"Escape로 취소합니다.\" flows.ahk:3001/3848 Say. 실제로 오해할지는 문맥에 따라 다를 수 있어 한 단계 낮췄다.",
+   "suggestion": "연결 중입니다. 취소하려면 Escape를 누르세요."
+  },
+  {
+   "id": "forever.ahk:: of ",
+   "category": "listening",
+   "severity": "major",
+   "problem": "숫자 사이 of를 \" / \"로 바꿨다. 사용자 결정은 영어 of를 그대로 두는 것이고, \"/\"는 원문에 없는 기호라 스크린리더가 \"3 슬래시 5\"처럼 읽는다.",
+   "evidence": "forever.ahk:852 FvIndexText(i, n)가 \"i of n\" 위치 표시를 만든다. decisions.tsv 2026-11-03 \"숫자 사이 of: 영어 of를 그대로 둔다\", logintool.md \"숫자 사이의 of(\\\"1 of 5\\\")는 영어 of를 그대로 둔다\".",
+   "suggestion": " of "
+  },
+  {
+   "id": "koKR.txt::login screen, not logged in",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "메뉴 이름(MenuNode)인데 원문 쉼표를 마침표로 바꾸고 합니다체 문장으로 늘렸다. 또 \"접속되지 않았습니다\"는 같은 메뉴의 \"로그인\" 항목과 낱말이 달라, 서버 연결(접속) 문제로 들린다.",
+   "evidence": "en: \"Login screen, not logged in\". menu.ahk:619 MenuNode(T(\"login screen, not logged in\")). 같은 메뉴의 log in = \"로그인\"(menu.ahk:629).",
+   "suggestion": "로그인 화면, 로그인 안 됨"
+  },
+  {
+   "id": "koKR.txt::Not logged in. Either there is no connection to the server, or account name and password still have to be entered in the game.",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "\"접속되지 않았습니다\" 바로 뒤에 \"서버 연결을 확인하거나\"가 와서, 들으면 접속=연결로 들려 '로그인 안 됨'과 '서버 연결 없음'이 구분되지 않는다. 로그인 메뉴 이름(\"로그인\")과 같은 낱말을 쓰는 편이 듣기에 분명하다.",
+   "evidence": "en: \"Not logged in.\" ko: \"접속되지 않았습니다.\" flows.ahk:363. 메뉴 항목 log in = \"로그인\".",
+   "suggestion": "로그인되지 않았습니다. 서버 연결을 확인하거나 게임에서 계정명과 비밀번호를 입력하세요."
+  },
+  {
+   "id": "koKR.txt::typing mode, Enter or Escape to leave",
+   "category": "style",
+   "severity": "minor",
+   "problem": "모드 알림인데 합니다체 두 문장으로 늘렸고, 원문 쉼표를 마침표로 바꾸고 끝에 마침표를 더했다.",
+   "evidence": "en: \"typing mode, Enter or Escape to leave\" (마침표 없음). forever.ahk:2223 FvEchoLater로 모드 진입 때 말한다. 번역 지침: 상태 문구는 짧은 명사형, 원문 기호를 더하거나 없애지 않는다.",
+   "suggestion": "입력 모드, Enter 또는 Escape로 나가기"
+  },
+  {
+   "id": "koKR.txt::no voices found, press enter to keep the system voice",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "메뉴 항목 이름인데 원문 쉼표를 마침표로 바꾸고 끝에 마침표를 더해 두 문장으로 늘렸다.",
+   "evidence": "en: \"No voices found, press Enter to keep the system voice\" (마침표 없음). menu.ahk:686 MenuNode.",
+   "suggestion": "음성을 찾지 못함, Enter를 누르면 시스템 음성 유지"
+  },
+  {
+   "id": "koKR.txt::this voice does not work, choose another one",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "원문 쉼표를 마침표로 바꾸고 원문에 없는 끝 마침표를 더했다.",
+   "evidence": "en: \"This voice does not work, choose another one\" (마침표 없음). menu.ahk:701 Say.",
+   "suggestion": "이 음성은 작동하지 않음, 다른 음성을 선택하세요"
+  },
+  {
+   "id": "koKR.txt::addon menu only available on character selection screen",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "원문에 없는 끝 마침표를 더했다.",
+   "evidence": "en: \"The addon menu is only available on the character selection screen\" (마침표 없음).",
+   "suggestion": "애드온 메뉴는 캐릭터 선택 화면에서만 사용할 수 있습니다"
+  },
+  {
+   "id": "koKR.txt::all addons activated",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"All addons activated\" (마침표 없음). decisions.tsv 2026-11-05 상태 알림 문체: 합니다체로 늘리지 않고 간결하게.",
+   "suggestion": "모든 애드온 켜짐"
+  },
+  {
+   "id": "koKR.txt::all addons deactivated",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"All addons deactivated\" (마침표 없음). decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "모든 애드온 꺼짐"
+  },
+  {
+   "id": "koKR.txt::out of date addons will be loaded",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"Out of date addons will be loaded\" (마침표 없음). decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "구버전 애드온 불러옴"
+  },
+  {
+   "id": "koKR.txt::out of date addons will not be loaded",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"Out of date addons will not be loaded\" (마침표 없음). decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "구버전 애드온 불러오지 않음"
+  },
+  {
+   "id": "koKR.txt::server selection closed",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"server selection closed\" (마침표 없음). flows.ahk:3169 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "서버 선택 창 닫힘"
+  },
+  {
+   "id": "koKR.txt::keeping the system voice",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"Keeping the system voice\" (마침표 없음). menu.ahk:692 Say.",
+   "suggestion": "시스템 음성 유지"
+  },
+  {
+   "id": "koKR.txt::narration settings written for Forever",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다. (제안의 WoW Forever 표기는 logintool.md 고유 이름 규칙을 따른 것)",
+   "evidence": "en: \"narration settings written for Forever\" (마침표 없음). forever.ahk:234 Say.",
+   "suggestion": "WoW Forever 화면 낭독 설정 저장됨"
+  },
+  {
+   "id": "koKR.txt::nothing to select on this screen",
+   "category": "style",
+   "severity": "minor",
+   "problem": "명사구 상태 알림을 합니다체 문장으로 늘리고 원문에 없는 마침표를 더했다.",
+   "evidence": "en: \"nothing to select on this screen\" (마침표 없음). forever.ahk:1631 Say.",
+   "suggestion": "이 화면에 선택할 항목 없음"
+  },
+  {
+   "id": "koKR.txt::Declined.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "한 낱말 상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"Declined.\" flows.ahk:2610/2832 Say. decisions.tsv 2026-11-05: 원문이 마침표로 끝나는 완결 문장이어도 합니다체로 늘리지 않는다.",
+   "suggestion": "거절함."
+  },
+  {
+   "id": "koKR.txt::Agreed. Please wait.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림 \"Agreed.\"를 합니다체로 늘렸다.",
+   "evidence": "en: \"Agreed. Please wait.\" flows.ahk:2826 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "동의함. 기다려 주세요."
+  },
+  {
+   "id": "koKR.txt::Agreed. Connecting to the server. Please wait.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림 \"Agreed. Connecting to the server.\"를 합니다체로 늘렸다.",
+   "evidence": "en: \"Agreed. Connecting to the server. Please wait.\" flows.ahk:2605 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "동의함. 서버에 연결 중. 기다려 주세요."
+  },
+  {
+   "id": "koKR.txt::Entry ended.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "짧은 상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"Entry ended.\" flows.ahk:502 Say. 번역 지침 예: combat ended → 전투 종료.",
+   "suggestion": "입력 종료."
+  },
+  {
+   "id": "koKR.txt::Social contract accepted.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "짧은 상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"Social contract accepted.\" flows.ahk:803 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "소셜 규약 동의함."
+  },
+  {
+   "id": "koKR.txt::Logging in. Please wait.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림 \"Logging in.\"을 합니다체로 늘렸다.",
+   "evidence": "en: \"Logging in. Please wait.\" flows.ahk:525 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "로그인 중. 기다려 주세요."
+  },
+  {
+   "id": "koKR.txt::The login did not go through.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "결과 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"The login did not go through.\" flows.ahk:562/572. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "로그인 실패."
+  },
+  {
+   "id": "koKR.txt::The game has opened the server selection.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"The game has opened the server selection.\" flows.ahk:3149 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "서버 선택 창 열림."
+  },
+  {
+   "id": "koKR.txt::this category holds no servers",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"This category holds no servers.\" flows.ahk:3637 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "이 분류에 서버 없음."
+  },
+  {
+   "id": "koKR.txt::No characters on this realm yet.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림을 합니다체로 늘렸다.",
+   "evidence": "en: \"No characters on this realm yet.\" flows.ahk:2965/3871. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "이 서버에 캐릭터 없음."
+  },
+  {
+   "id": "koKR.txt::The game is starting. Please wait.",
+   "category": "style",
+   "severity": "minor",
+   "problem": "상태 알림 \"The game is starting.\"을 합니다체로 늘렸다.",
+   "evidence": "en: \"The game is starting. Please wait.\" menu.ahk:324 Say. decisions.tsv 2026-11-05 상태 알림 문체.",
+   "suggestion": "게임 시작 중. 기다려 주세요."
+  },
+  {
+   "id": "forever.ahk::strong",
+   "category": "listening",
+   "severity": "minor",
+   "problem": "색 이름은 명도어(밝은/어두운) + 채도어 + 색으로 이어 붙는데, 채도 단계 strong을 \"진한\"으로 옮기면 한국어에서 '짙다=어둡다'로도 들려 \"밝은 진한 분홍색\", \"매우 밝은 진한 노란색\"처럼 명도와 모순되게 들린다. 명도 축과 겹치지 않는 낱말이 필요하다.",
+   "evidence": "forever.ahk:927 tone := \"진한\", 930 return shade \" \" tone hue. shade는 \"매우 밝은\"/\"밝은\"/\"중간\"/\"어두운\"/\"매우 어두운\". 실제 청취자가 혼동할지는 확인하지 못해 minor로 둔다.",
+   "suggestion": "강한"
+  }
+ ]
+}

@@ -10,6 +10,7 @@
 사용:
   uv run python -m tools.logintool_loc export <출력 폴더> [--size 110]
   uv run python -m tools.logintool_loc apply <ko.tsv>      # id, ko 열
+  uv run python -m tools.logintool_loc decide <workflow 출력.json> <평가 폴더>   # apply.tsv, escalations.json
   uv run python -m tools.logintool_loc sandbox <격리 폴더> <묶음.json> <정답표 출력.json> <출처=심을목록.json>...
 """
 
@@ -166,6 +167,25 @@ def collect() -> list[dict[str, Any]]:
     return items
 
 
+def decide(result: list[dict[str, Any]], current: dict[str, str]
+           ) -> tuple[list[dict[str, str]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Workflow(full.js) 결과 -> (바뀌는 항목, 근거가 무효인 판정, 사용자 판단 목록).
+
+    tools/review/decisions.py 와 같은 규칙: 평가자가 실패한 묶음이 있으면 반영하지 않고,
+    판정자가 정한 항목은 허용 자료를 근거로 댔을 때만 반영한다.
+    """
+    from tools.review.decisions import incomplete_batches, split_invalid
+
+    broken = incomplete_batches(result)
+    if broken:
+        raise SystemExit(f"평가자가 실패한 묶음이 있어 반영하지 않는다(다시 돌릴 것): {broken}")
+    valid, invalid = split_invalid([d for b in result for d in b["decisions"]])
+    rows = [{"id": d["id"], "before": current.get(d["id"], ""), "ko": d["final_ko"]}
+            for d in valid if d["final_ko"] != current.get(d["id"], "")]
+    escalations = [e for b in result for e in b.get("escalations", [])]
+    return rows, invalid, escalations
+
+
 def build_sandbox(root: Path, batch: dict[str, Any], seeded: dict[str, str], *,
                   logintool_dir: Path, work_dir: Path) -> None:
     """평가 구조 검증용 격리 폴더. 평가자는 이 폴더만 본다(tools/review/sandbox.py 의 로그인 툴판).
@@ -206,12 +226,30 @@ def main() -> None:
     e.add_argument("--size", type=int, default=110)
     a_ = sub.add_parser("apply")
     a_.add_argument("tsv", type=Path)
+    dc = sub.add_parser("decide")
+    dc.add_argument("workflow_out", type=Path)
+    dc.add_argument("review_dir", type=Path)
     s = sub.add_parser("sandbox")
     s.add_argument("root", type=Path)
     s.add_argument("batch", type=Path)
     s.add_argument("key_out", type=Path)
     s.add_argument("sources", nargs="+")
     a = ap.parse_args()
+    if a.cmd == "decide":
+        data = json.loads(a.workflow_out.read_text(encoding="utf-8"))
+        result = data["result"] if isinstance(data, dict) else data
+        current = {i["id"]: i["ko"] for i in collect()}
+        rows, invalid, escalations = decide(result, current)
+        d = a.review_dir
+        (d / "decisions.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
+        (d / "invalid-judgments.json").write_text(json.dumps(invalid, ensure_ascii=False, indent=1), encoding="utf-8")
+        (d / "escalations.json").write_text(json.dumps(escalations, ensure_ascii=False, indent=1), encoding="utf-8")
+        with (d / "apply.tsv").open("w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, ["id", "before", "ko"], delimiter="\t", lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        print(f"변경 {len(rows)}건, 근거 무효 {len(invalid)}건, 사용자 판단 {len(escalations)}건 -> {d}")
+        return
     if a.cmd == "sandbox":
         from tools.review.seed import apply_seeds, merge_seeds
 

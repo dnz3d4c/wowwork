@@ -1,0 +1,60 @@
+{
+  "findings": [
+    {
+      "id": "koKR.txt::Classic",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "게임 버전 이름을 영어로 쓰기로 한 사용자 결정을 어기고 '클래식 시대'로 옮겼다.",
+      "evidence": "docs/decisions.tsv 21행(2026-11-07 설명서: 게임 버전 이름): \"영어로 쓴다(Classic Era, Retail). 클래식 시대, 리테일은 쓰지 않는다\". logintool.md 규칙도 Classic Era를 영어로 쓰라고 한다. menu.ahk:477 Say(T(\"login mode for\") \" \" T(gHasSetupGametype) ...)에서 게임 종류 이름으로 발화된다.",
+      "suggestion": "Classic Era"
+    },
+    {
+      "id": "koKR.txt::Retail",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "게임 버전 이름 Retail을 '최신 확장팩'으로 옮겼다. 사용자 결정은 영어 Retail이다.",
+      "evidence": "docs/decisions.tsv 21행: \"영어로 쓴다(Classic Era, Retail)\". logintool.md: 게임 버전 이름은 영어(Retail). 설치 프로그램과 한국어 설명서도 영어 이름을 쓰므로 '최신 확장팩'은 다른 문서와 이름이 갈린다.",
+      "suggestion": "Retail"
+    },
+    {
+      "id": "koKR.txt::BurningCrusade",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "게임 버전 이름 Burning Crusade를 '불타는 성전'으로 옮겼다. 툴에서는 게임 종류 이름이므로 영어로 둬야 한다.",
+      "evidence": "logintool.md: \"게임 버전(게임 종류) 이름은 영어로 쓴다: Classic Era, Burning Crusade(Anniversary), Cataclysm Classic, Retail, WoW Forever\" (근거 docs/decisions.tsv 21행). detect.ahk:52 case 2: return \"BurningCrusade\" 값이 menu.ahk:477에서 T()로 발화된다.",
+      "suggestion": "Burning Crusade"
+    },
+    {
+      "id": "koKR.txt::Cata",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "게임 버전 이름을 확장팩 공식 한국어 '대격변'으로 옮겼다. 툴에서 이 키는 게임 종류(Cataclysm Classic 클라이언트) 이름이라 영어로 둬야 한다.",
+      "evidence": "game_term은 EXPANSION_NAME3/CATACLYSM \"Cataclysm\" → \"대격변\"으로 영어는 같지만, logintool.md가 게임 버전 이름은 영어(Cataclysm Classic)로 쓰라고 정하고 있어 이 규칙이 우선한다(docs/decisions.tsv 21행). detect.ahk:53 case 4: return \"Cata\"가 menu.ahk:477에서 게임 종류로 발화된다. 원문 en 값이 \"Cataclysm\"이라 제안은 en을 따랐다. 'Cataclysm Classic'까지 넣을지는 사용자 판단.",
+      "suggestion": "Cataclysm"
+    },
+    {
+      "id": "koKR.txt::Anniversary",
+      "category": "terminology",
+      "severity": "major",
+      "problem": "Anniversary를 '기념 서버'로 옮겼다. logintool.md는 Burning Crusade(Anniversary)를 영어로 쓰는 게임 버전 이름으로 꼽는다.",
+      "evidence": "logintool.md: \"게임 버전(게임 종류) 이름은 영어로 쓴다: Classic Era, Burning Crusade(Anniversary), ...\". data.ini:1274 gRealmLangs=2,Anniversary,... 값은 menu.ahk:475 langName := T(lang.name)를 거쳐 menu.ahk:477에서 'login mode for' 뒤에 붙어 발화된다.",
+      "suggestion": "Anniversary"
+    },
+    {
+      "id": "koKR.txt::create new character",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "게임 캐릭터 선택 화면의 같은 이름 버튼 공식 번역은 '캐릭터 만들기'인데 '새 캐릭터 생성'으로 옮겼다.",
+      "evidence": "gs_enUS CREATE_NEW_CHARACTER \"Create New Character\" → gs_koKR \"캐릭터 만들기\" (game_term과 같다). logintool.md: 게임 버튼 이름을 가리키는 말은 공식 한국어를 따른다. 다만 이 항목은 툴 주 메뉴 항목(menu.ahk:554)이라 게임 버튼을 직접 가리키는지 확실하지 않고, logintool.md 예시가 CREATE_CHARACTER \"Create Character\" → \"캐릭터 생성\"이라 '생성'도 공식 용어에 있다. 그래서 한 단계 낮췄다.",
+      "suggestion": "캐릭터 만들기"
+    },
+    {
+      "id": "koKR.txt::hardcore_pvp",
+      "category": "terminology",
+      "severity": "minor",
+      "problem": "짝인 hardcore_pve는 공식 서버 유형 '일반'으로 옮겼는데 hardcore_pvp는 'PvP'로 남겨 두 서버 유형 표기가 어긋난다.",
+      "evidence": "gs_enUS GAMETYPE_PVE \"Normal\" → \"일반 서버\", GAMETYPE_PVP \"Player Versus Player (PVP)\" → \"전쟁 서버 (전쟁)\". 같은 묶음 hardcore_pve == \"하드코어 일반\". 단 koKR.txt 168행 \"PvP 서버 경고 창\"처럼 PvP 표기를 쓰는 곳도 있어 어느 쪽에 맞출지 확신하지 못해 한 단계 낮췄다.",
+      "suggestion": "하드코어 전쟁"
+    }
+  ]
+}

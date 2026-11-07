@@ -12,3 +12,4 @@
 - 화면에 표시되는 게임 버튼·창 이름을 가리키는 말은 게임 공식 한국어를 따른다(예: Enter World = 접속하기, Create Character = 캐릭터 생성).
 - 문체는 번역 지침과 같다: 상태 알림(모드 이름, "기다려 주세요" 같은 짧은 알림)은 짧게, 사용자에게 할 일을 지시하는 문장은 합니다체.
 - 숫자 사이의 of("1 of 5")는 영어 of를 그대로 둔다(`docs/decisions.tsv` 2026-11-03).
+- 회귀 확인에서 "기존 번역과의 일관성"은 `wowvision-ko/Sku-WoW-Addon-TBC/logintool/data/localization/koKR.txt`와 `v2/includes/forever.ahk`의 "ko" 값을 기준으로 본다(WowVision 로케일이 아니다). 툴이 함께 말하는 게임 화면 이름은 `cache/gs_koKR.csv`와 비교한다.
