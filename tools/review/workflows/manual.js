@@ -32,6 +32,28 @@ const RESP = {
   properties: { responses: { type: 'array', items: { type: 'object', required: ['ref', 'action', 'reason'],
     properties: { ref: { type: 'string' }, action: { type: 'string', enum: ['applied', 'dispute'] }, reason: { type: 'string' } } } } },
 }
+// 판정 근거로 인정하는 자료. tools/review/guard.py ALLOWED_EVIDENCE 와 같아야 한다(tests/test_review_tools.py 가 확인).
+// UI는 decisions.py 가 검사하지만 설명서는 이 스크립트가 바로 고치므로 여기서 검사한다(2026-11-08).
+const ALLOWED = [
+  'wowvision-ko/WowVision/', 'wowvision-ko/wowvision-installer/', 'wowvision-ko/Sku-WoW-Addon-TBC/logintool/',
+  'wowvision-ko/vision-locale/enUS/', 'wowvision-ko/vision-locale/koKR/',
+  'wowwork/cache/gs_enUS.csv', 'wowwork/cache/gs_koKR.csv', 'wowwork/cache/game_terms.tsv',
+  'wowwork/docs/translation-guide.md', 'wowwork/docs/decisions.tsv', 'wowwork/docs/glossary.tsv',
+]
+function validEvidence(srcs) {
+  if (!srcs.length) return false
+  return srcs.every(s => {
+    const p = s.replace(/\\/g, '/').replace(/\/{2,}/g, '/').trim().replace(/:\d+(-\d+)?$/, '').toLowerCase()
+    if (p === 'input') return true
+    if (p.includes('#') || p.includes('?') || `/${p}/`.includes('/../')) return false
+    return ALLOWED.some(a => {
+      const al = a.toLowerCase(), i = p.indexOf(al)
+      if (i < 0 || (i > 0 && p[i - 1] !== '/')) return false
+      const rest = p.slice(i + al.length)
+      return al.endsWith('/') ? rest.length > 0 : rest === ''
+    })
+  })
+}
 const VERDICTS = {
   type: 'object', required: ['verdicts'],
   properties: { verdicts: { type: 'array', items: { type: 'object', required: ['ref', 'uphold', 'final_ko', 'reason', 'evidence_sources'],
@@ -127,7 +149,9 @@ async function reviewAndFix(rel) {
     const a = gv[f.ref], c = cv[f.ref]
     if (!a || !c) { escalations.push({ ref: f.ref, why: `판정 누락 (gpt ${!!a}, claude ${!!c})`, quote: f.quote }); continue }
     if (a.uphold !== c.uphold) { escalations.push({ ref: f.ref, why: '두 판정자의 결론이 다름', quote: f.quote, gpt: a.reason, claude: c.reason }); continue }
-    if (a.uphold) upheld.push({ ref: f.ref, quote: f.quote, final_ko: (f.provider === 'claude' ? a : c).final_ko, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])] })
+    const evidence = [...(a.evidence_sources || []), ...(c.evidence_sources || [])]
+    if (!validEvidence(evidence)) { escalations.push({ ref: f.ref, why: '판정 근거가 허용 자료가 아님', quote: f.quote, evidence }); continue }
+    if (a.uphold) upheld.push({ ref: f.ref, quote: f.quote, final_ko: (f.provider === 'claude' ? a : c).final_ko, evidence })
     else disputeWon++
   }
   if (upheld.length) {

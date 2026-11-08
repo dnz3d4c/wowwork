@@ -44,6 +44,12 @@
 
 애드온 테스트 빌드 zip(WowVision-V1.0.0-ko1.zip, packager로 생성, 버전 V1.0.0-ko1)을 테스터가 손으로 덮어쓰는 방식이었다. 설치 프로그램이 직접 koKR을 넣게 되면서 쓰지 않는다. 그 빌드에 쓴 WowVision ko 브랜치(dcab996)는 남아 있다.
 
+## 한국어 설명서 배포
+
+- 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (`dnz3d4c/WowVision` 공개, GitHub Pages는 Actions 방식). 설치 프로그램에는 넣지 않는다(`docs/decisions.tsv` 2026-11-06).
+- ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다.
+- main에 push하면 원본 `docs.yml`(영어판으로 Pages를 덮어씀)과 `beta.yml`(beta 프리릴리스 생성)이 돈다. main을 원본에 맞출 때는 `gh workflow disable`로 두 워크플로를 끄고 push한 뒤 다시 켠다. 원본 태그(V*)는 push하지 않는다(`release.yml`).
+
 ## 원본 워크플로 주의
 
 복제 저장소의 `main`에 push하면 원본 워크플로가 내 저장소에서 실행된다(2026-11-05 확인). 그래서 한국어 작업은 `ko` 브랜치에 둔다.

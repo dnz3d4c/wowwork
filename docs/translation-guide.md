@@ -22,7 +22,7 @@ if not L then return end
 1. 원본 변경을 병합합니다: `git -C ../wowvision-ko/vision-locale pull upstream main`. 앱 코드 확인용으로 `git -C ../wowvision-ko/WowVision pull upstream main`도 실행합니다.
 2. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다.
 3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
-4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다.
+4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다. 새로 채운 번역은 반영 전에 `docs/review-process.md` 절차(묶음 만들기 `tools.review.build_batch --keys`, `full.js`, `regression.js`)를 거칩니다.
 5. 기존 번역을 고쳤으면(평가 반영 등) `uv run python -m tools.manual_sync <apply.tsv>`로 한국어 설명서의 화면 문구 인용을 새 값에 맞춥니다. "판단 필요"로 나온 곳은 영어 설명서와 대조해 직접 고칩니다. 그다음 `uv run python -m tools.manual check`를 실행합니다.
 6. 설치 프로그램에 넣는 koKR이 낡으면 `tests/test_installer_loc.py`가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 `docs/builds.md` `## 다시 만드는 법`대로 빌드합니다.
 
@@ -61,3 +61,39 @@ if not L then return end
 - 인게임 용어 후보가 여럿이라 고르기 애매한 것
 - 조사 문제로 자연스러운 번역이 불가능한 것
 - 원문 뜻을 확신하지 못한 것
+
+## 설명서
+
+`WowVision/docs/src/user/en`을 같은 저장소 `ko` 브랜치의 `docs/src/user/ko`로 옮길 때의 규칙입니다(2026-11-08 `docs/archive/manual-plan.md` `## 원칙`에서 옮김).
+
+### 원문
+
+- 원문은 영어판입니다. 독일어판은 뜻이 애매할 때 대조하는 참고본으로만 사용합니다.
+- 개발자 문서(`docs/src/developer`)는 번역하지 않습니다.
+
+### 용어
+
+우선순위는 앞의 것이 이깁니다.
+
+1. **koKR 번역값.** 원문에 로케일 문자열이 나오면 그 키의 한국어 값을 그대로 씁니다. 따옴표 안팎을 가리지 않습니다. 설명서를 번역하다 koKR 값이 어색하다고 판단되면 설명서만 다르게 쓰지 않고 koKR 값을 고칩니다. 듣는 말과 읽는 말이 갈라지지 않게 하기 위해서입니다.
+2. **게임 공식 한국어.** 위 `## 용어`와 같습니다(문맥 우선).
+3. **확정 용어집** `docs/glossary.tsv`. 로케일에 없지만 설명서에 반복되는 말도 여기에 정합니다.
+4. 셋 다 없으면 보고 목록에 올리고 지어내지 않습니다.
+
+### 번역하지 않는 것
+
+키 이름, 슬래시 명령(`/wv`, `/focus1`), 인라인 코드와 코드 블록, URL, 파일 경로, 고유 이름(WowVision, WowNav, Sku, WoW: Forever, Battle.net, Discord). 링크 대상 경로도 바꾸지 않고 링크 텍스트만 번역합니다.
+
+### 문체
+
+- 습니다체로 씁니다.
+- 독자를 부르는 "you"는 대부분 생략하고 주어를 프로그램으로 둡니다("X라고 안내합니다"). 원문 뜻이 달라지는 경우만 예외입니다.
+- 원문 구조를 그대로 둡니다: 제목 수준, 표의 행과 열, 목록 항목 수, 링크 수. `uv run python -m tools.manual check`가 검사합니다.
+- 원문에 없는 내용을 덧붙이지 않습니다. 한국 사용자에게 필요한 보충 설명은 보고 목록에 올립니다. 2026-11-06 다듬기에서 덧붙인 설명을 회귀 확인이 다시 빼는 왕복이 있었습니다.
+- 파일 첫 줄에 `<!-- source: docs/src/user/en/<경로> @ <커밋> -->`로 번역한 원문 커밋을 적습니다.
+
+### 원본이 바뀌었을 때
+
+위 `## upstream 업데이트 절차`로 문자열을 먼저 맞춘 다음, `uv run python -m tools.manual check`가 구조 차이로 잡는 파일과 원문 커밋이 바뀐 파일만 다시 번역합니다.
+
+남은 일(2026-11-07): V1.0.1에서 바뀐 영어 설명서 14개 파일을 다시 번역해야 합니다. 그중 9개(basics/keybindings, information/buffers, reference/commands, reference/keybindings, windows/group-finder, world/movement, world/navigation, world/targeting, world/wownav)는 `tools.manual check`가 잡습니다.

@@ -10,7 +10,7 @@ export const meta = {
 
 const W = 'C:/project/games/wowwork'
 const P = `${W}/tools/review/prompts`
-// 관점 파일 lens-<이름>.md 목록. 2026-11-06 최종 검수는 관점 대신 페르소나(persona-*)를 넘긴다.
+// 관점 파일 lens-<이름>.md 목록. 2026-11-06 페르소나 5명 시도는 반영 1건당 평균 3명이 겹쳐 지적해서 관점 4개로 돌아왔다.
 const LENSES = (args && args.lenses) || ['accuracy', 'terminology', 'context', 'listening']
 // 대상별 추가 규칙(예: installer.md). 공통 규칙 다음에 읽는다. 평가자·번역자·판정자 모두 같은 파일을 받는다.
 const EXTRA = (args && args.extraPrompts) || []
@@ -100,7 +100,10 @@ async function runBatch(b) {
   // 반박된 지적은 두 회사 판정자가 모두 판정한다. 번역자가 Claude라서, 한 회사만 판정하면
   // GPT 지적은 "Claude 번역자의 반박 + Claude 판정"이 되어 교차 판정이 성립하지 않는다(2026-11-05 실측: 31건 전부 기각).
   // 두 판정이 일치해야 확정하고, 갈리면 사용자 판단 목록으로 보낸다. 판정자는 서로의 결론을 보지 않는다.
-  const toJudge = disputed.filter(g => !g.consensus)
+  // 한 회사만 낸 용어 지적을 번역자가 수용한 것도 판정한다. 되돌린 번역 8건 가운데 7건이 이 경로였다
+  // (Roll Bonus, Buffered, Disabled, transit, Voice, turn in, Friends: 근거 확인 없이 수용 → 뒤 실행이 되돌림, 2026-11-08 집계).
+  const checkAccept = g => !g.consensus && resp[g.id] && resp[g.id].action === 'accept' && g.findings.some(f => f.category === 'terminology')
+  const toJudge = [...disputed.filter(g => !g.consensus), ...list.filter(checkAccept)]
   const toGpt = toJudge
   const toClaude = toJudge
   const payload = gs => gs.map(g => ({ ref: g.id, findings: g.findings, translator: resp[g.id] }))
@@ -120,6 +123,17 @@ async function runBatch(b) {
   for (const g of list) {
     const r = resp[g.id]
     if (!r) { escalations.push({ id: g.id, why: '번역자 응답 없음' }); continue }
+    if (checkAccept(g)) {
+      const a = gv[g.id], c = cv[g.id]
+      if (!a || !c) { escalations.push({ id: g.id, why: `판정 누락 (gpt ${!!a}, claude ${!!c})` }); continue }
+      if (a.uphold !== c.uphold) {
+        escalations.push({ id: g.id, why: '수용한 용어 지적에 두 판정자의 결론이 다름', translator: r.final_ko, gpt: { uphold: a.uphold, reason: a.reason }, claude: { uphold: c.uphold, reason: c.reason } })
+        continue
+      }
+      // 둘 다 기각하면 지금 번역을 유지한다(결정을 남기지 않으면 바뀌지 않는다).
+      if (a.uphold) decisions.push({ id: g.id, final_ko: r.final_ko, how: 'upheld-accept', reason: `gpt: ${a.reason} / claude: ${c.reason}`, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])], sev: g.findings.map(f => f.severity) })
+      continue
+    }
     if (r.action === 'accept') { decisions.push({ id: g.id, final_ko: r.final_ko, how: g.consensus ? 'consensus' : 'accepted', sev: g.findings.map(f => f.severity) }); continue }
     if (g.consensus) continue
     const a = gv[g.id], c = cv[g.id]

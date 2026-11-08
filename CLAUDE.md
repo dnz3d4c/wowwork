@@ -41,4 +41,5 @@
 | `docs/translation-guide.md` | 번역 규칙 |
 | `docs/decisions.tsv` | 사용자 결정 |
 | `docs/glossary.tsv` | 확정 용어 |
-| `docs/builds.md` | 테스터 배포 빌드와 다시 만드는 법 |
+| `docs/builds.md` | 테스터 배포 빌드와 다시 만드는 법, 설명서 배포 |
+| `docs/archive/` | 끝난 계획과 진행 기록(1.0 최종 검수, 설명서 번역 계획). 현행 규칙은 위 문서로 옮겼다 |

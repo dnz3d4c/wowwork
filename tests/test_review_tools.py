@@ -127,3 +127,25 @@ def test_escalations_are_collected_with_failures_marked() -> None:
     esc, failed = collect_escalations(result)
     assert [e["id"] for e in esc] == ["a.lua::A", "b.lua::B"]
     assert [e["id"] for e in failed] == ["b.lua::B"]
+
+
+def test_upheld_accept_needs_valid_evidence() -> None:
+    """수용한 용어 지적의 판정(full.js upheld-accept)도 허용 자료 근거가 있어야 반영한다."""
+    from tools.review.decisions import split_invalid
+
+    d = {"id": "a.lua::A", "final_ko": "x", "how": "upheld-accept", "evidence": ["wowwork/docs/archive/manual-plan.md"]}
+    valid, invalid = split_invalid([d])
+    assert invalid == [d] and valid == []
+
+
+def test_manual_workflow_evidence_list_matches_guard() -> None:
+    """manual.js 는 판정 근거를 직접 검사한다(2026-11-08). 허용 목록이 guard.py 와 같아야 한다."""
+    import re
+    from pathlib import Path
+
+    from tools.review.guard import ALLOWED_EVIDENCE
+
+    js = Path("tools/review/workflows/manual.js").read_text(encoding="utf-8")
+    m = re.search(r"const ALLOWED = \[(.*?)\]", js, re.DOTALL)
+    assert m, "manual.js 에 ALLOWED 목록이 없다"
+    assert tuple(re.findall(r"'([^']+)'", m.group(1))) == ALLOWED_EVIDENCE
