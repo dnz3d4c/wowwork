@@ -72,12 +72,23 @@ def test_lua_syntax(name: str, tmp_path: Path) -> None:
 
 
 def test_glossary_terms_consistent() -> None:
-    """docs/glossary.tsv 의 확정 용어가 모든 번역에 지켜지는지(예외는 용어집의 except 열)."""
+    """docs/glossary.tsv 의 확정 용어가 koKR, 설치 프로그램 Loc.cs, 로그인 툴 koKR.txt 에 지켜지는지
+    (예외는 용어집의 except 열). 설명서는 tools.manual check 가 파일 단위로 같은 용어집을 적용한다."""
     from tools.glossary import load_glossary, violations
+    from tools.installer_loc import LOC_CS, parse_table
+    from tools.logintool_loc import LOC_DIR, parse_txt
 
     entries = {}
     for name in ENUS_FILES:
         ko = parse_locale_file(KOKR_DIR / name)
         for key, en in parse_locale_file(ENUS_DIR / name).items():
             entries[(name, key)] = (en, ko.get(key, ""))
+    if LOC_CS.exists():
+        cs = LOC_CS.read_text(encoding="utf-8")
+        cs_ko = parse_table(cs, "Ko")
+        entries |= {("Loc.cs", k): (v, cs_ko.get(k, "")) for k, v in parse_table(cs, "En").items()}
+    if (LOC_DIR / "koKR.txt").exists():
+        lt_en = parse_txt((LOC_DIR / "enEN.txt").read_text(encoding="utf-8-sig"))
+        lt_ko = parse_txt((LOC_DIR / "koKR.txt").read_text(encoding="utf-8-sig"))
+        entries |= {("logintool", k): (v or k, lt_ko.get(k, "")) for k, v in lt_en.items()}
     assert violations(load_glossary(), entries) == []

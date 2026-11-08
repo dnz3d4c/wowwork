@@ -16,7 +16,8 @@ network	네트워크
 floor	층		
 yard	야드		
 aura	오라		
-focus	주시 대상|/focus	navigation.lua::spell focus;powers.lua::focus	spell focus=주문 초점, focus(자원)=집중은 다른 뜻
+focus	주시 대상|/focus	navigation.lua::spell focus;powers.lua::focus;manual::*	spell focus=주문 초점, focus(자원)=집중은 다른 뜻. 설명서의 focus는 대개 키보드 초점이라 설명서는 focus target 항목으로 검사
+focus target	주시 대상		WoW 주시 대상(focus). 설명서에도 적용
 healer	치유 전담|치유사		spirit healer=영혼의 치유사
 cooldown	재사용 대기|대기 중		On Cooldown=대기 중
 raid	공격대|대상 표시기		Raid Target Marker=대상 표시기(공식)
@@ -28,3 +29,4 @@ guild	길드
 camera following style	시점 전환 방식		게임 공식 CAMERA_FOLLOWING_STYLE(gs_koKR.csv:4018). 2026-11-05와 2026-11-06 두 번 '카메라 따라가기 방식'으로 바뀔 뻔해서 확정
 roll bonus	보너스 주사위		BonusRollFrame 굴림 버튼. 게임 공식 bonus roll=보너스 주사위(ERR_BONUS_ROLL_EMPTY 등). '추가 전리품'은 Bonus Loot의 번역이라 다른 말(2026-11-06 두 회사 판정)
 bonus roll	보너스 주사위		위와 같음
+interact key	상호작용 단축키		게임 공식 INTERACT_KEY_TUTORIAL "Interact Key" → "상호작용 단축키"(gs_koKR.csv). 2026-11-09 설명서 world/movement.md가 "상호작용 키"로 갈려 있었다

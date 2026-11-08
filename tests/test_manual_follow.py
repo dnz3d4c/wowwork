@@ -100,7 +100,28 @@ def test_changed_keys_conflict_only_matters_when_both_are_quoted() -> None:
     out, _ = follow_values(
         ch, 'the count is followed by "controlled".', '숫자 뒤에 "제어됨"이 붙습니다.', others={}
     )
-    assert out == '숫자 뒤에 "제어됨 상태"이 붙습니다.'
+    assert out == '숫자 뒤에 "제어됨 상태"가 붙습니다.'
+
+
+def test_particle_after_replaced_value_follows_new_final_consonant() -> None:
+    """2026-11-07 경보 → 알림: 값만 바꾸고 조사를 두어 "알림를", "알림와"가 남았다. 평가에서 받침 조사
+    지적이 93건 나왔다. 바꾼 값 바로 뒤 조사는 새 값의 받침에 맞춘다."""
+    ch = [Change(en="Alert", old="경보", new="알림")]
+    en = 'Pick "Alert" first.'
+    ko = '"경보"를 고르고 "경보"와 소리를 정합니다. "경보"는 "경보"로 "경보"가 "경보"라고'
+    out, _ = follow_values(ch, en, ko, others={})
+    assert out == '"알림"을 고르고 "알림"과 소리를 정합니다. "알림"은 "알림"으로 "알림"이 "알림"라고'
+
+
+def test_particle_follows_in_both_directions_and_keeps_rieul_ro() -> None:
+    ch = [Change(en="Free Bag Slots", old="비어 있는 가방 칸", new="빈 가방 칸 수")]
+    en = "free bag slots"
+    out, _ = follow_values(ch, en, "비어 있는 가방 칸을 읽고 비어 있는 가방 칸으로 셉니다.", others={})
+    assert out == "빈 가방 칸 수를 읽고 빈 가방 칸 수로 셉니다."
+    ch = [Change(en="Free Bag Slots", old="빈 가방 칸 수", new="비어 있는 가방 칸 줄")]
+    out, _ = follow_values(ch, en, "빈 가방 칸 수로 셉니다. 빈 가방 칸 수이다", others={})
+    # ㄹ 받침 뒤는 "로". 조사가 아닌 "이다"는 건드리지 않는다.
+    assert out == "비어 있는 가방 칸 줄로 셉니다. 비어 있는 가방 칸 줄이다"
 
 
 def test_long_old_value_inside_other_key_value_is_not_touched() -> None:

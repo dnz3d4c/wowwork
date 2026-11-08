@@ -22,6 +22,7 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
+from tools.glossary import Term, load_glossary, violations
 from tools.locale_lib import KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
 
 EN_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "en"
@@ -33,6 +34,10 @@ _LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*)\)")
 _CODE = re.compile(r"`[^`\n]+`")
 # 설명서는 합니다체. 문장 끝의 해요체 어미는 기계 검사로 잡는다.
 _HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지요|죠)(?=[.!?)\s]|$)", re.MULTILINE)
+# 본문은 바꾸다·바뀌다 대신 변경하다·변경되다(docs/decisions.tsv 2026-11-09, 출처는 전역 낱말 표).
+# 따옴표 인용은 화면 문구라 실물 그대로 둔다("바꾸기"는 koKR Replace 값). 맞바꾸다(교환)는 다른 낱말이다.
+_BAKKUDA = re.compile(r"(?<!맞)(?:바꾸|바꿉|바꿔|바꿨|바꾼|바꿀|바꿈|바뀌|바뀝|바뀐|바뀔|바뀜)[가-힣]*")
+_QUOTED = re.compile(r'"[^"\n]*"')
 
 # ── koKR 값 변경 따라가기 ──────────────────────────────────────────────
 # 바꾸는 곳: 같은 경로의 영어 설명서가 그 키의 영어를 인용할 때만. 짧은 값(LONG 미만)은 따옴표로 감싼
@@ -58,6 +63,25 @@ def _mentions(en_text: str, en: str, short: bool) -> bool:
 
 def _alternation(words: set[str]) -> re.Pattern[str]:
     return re.compile("|".join(re.escape(w) for w in sorted(words, key=len, reverse=True)))
+
+
+# 바꾼 값 바로 뒤의 받침 조사. 뒤에 한글이 이어지면("이다", "이라고") 조사로 보지 않는다.
+_JOSA = "(?:(으로|을|를|이|가|은|는|과|와|로)(?![가-힣]))?"
+_JOSA_PAIRS = {"을": "를", "이": "가", "은": "는", "과": "와"}
+
+
+def fit_josa(word: str, josa: str) -> str:
+    """word 의 마지막 글자 받침에 맞는 조사. 마지막이 한글이 아니면(숫자, 영어) 그대로 둔다."""
+    code = ord(word[-1]) - 0xAC00 if word else -1
+    if not 0 <= code < 11172:
+        return josa
+    final = code % 28  # 0 받침 없음, 8 ㄹ
+    if josa in ("으로", "로"):
+        return "로" if final in (0, 8) else "으로"
+    pair = next((p for p in _JOSA_PAIRS.items() if josa in p), None)
+    if pair is None:
+        return josa
+    return pair[0] if final else pair[1]
 
 
 def follow_values(
@@ -101,13 +125,15 @@ def follow_values(
     counts: Counter[str] = Counter()
 
     def sub(m: re.Match[str]) -> str:
-        hit = replace.get(m.group(0))
+        hit = replace.get(m.group(1))
         if not hit:
             return m.group(0)
-        counts[m.group(0)] += 1
-        return hit[0]
+        counts[m.group(1)] += 1
+        josa = m.group(2) or ""
+        # 받침이 다른 값으로 바뀌면 뒤 조사도 따라 바꾼다(2026-11-07 "경보를" → "알림를" 사례).
+        return hit[0] + (fit_josa(hit[0].strip('"'), josa) if josa else "")
 
-    out = _alternation({*replace, *guards}).sub(sub, ko_text)
+    out = re.compile(f"({_alternation({*replace, *guards}).pattern}){_JOSA}").sub(sub, ko_text)
     log += [f"{counts[n]}x {ch.old} -> {ch.new}" for n, (_, ch) in replace.items() if counts[n]]
     return out, log
 
@@ -188,8 +214,15 @@ def _anchors(path: Path) -> set[str]:
     return out
 
 
-def check(en: str, ko: str, ko_path: Path) -> list[str]:
+def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> list[str]:
+    """terms: 확정 용어집(없으면 docs/glossary.tsv). 원문의 코드는 빼고 대조한다."""
     problems = []
+    try:
+        rel = ko_path.resolve().relative_to(KO_ROOT.resolve()).as_posix()
+    except ValueError:
+        rel = ko_path.name
+    entries = {("manual", rel): (_CODE.sub("", _strip_fences(en)), ko)}
+    problems += [f"용어집: {v}" for v in violations(load_glossary() if terms is None else terms, entries)]
     if not SOURCE_LINE.match(ko):
         problems.append("첫 줄에 원문 기록(<!-- source: docs/src/user/en/... @ 커밋 -->)이 없다")
     a, b = structure(en), structure(ko)
@@ -213,6 +246,11 @@ def check(en: str, ko: str, ko_path: Path) -> list[str]:
     ]
     if haeyo:
         problems.append(f"해요체 어미 {len(haeyo)}곳(설명서는 합니다체): {', '.join(sorted(set(haeyo))[:8])}")
+    bakkuda = _BAKKUDA.findall(_QUOTED.sub("", _CODE.sub("", _strip_fences(ko))))
+    if bakkuda:
+        problems.append(
+            f"바꾸다·바뀌다 {len(bakkuda)}곳(변경하다·변경되다로): {', '.join(sorted(set(bakkuda))[:8])}"
+        )
     for target in _LINK.findall(_strip_fences(ko)):
         if "#" not in target or target.startswith(("http://", "https://")):
             continue

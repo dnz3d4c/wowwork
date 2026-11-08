@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from tools.manual import check, slug, structure, term_sheet
 
 EN = """# Using the Interface
@@ -22,7 +24,7 @@ Press **Enter** to click. See [Alerts](alerts.md#picking-a-sound) and [below](#l
 KO = """<!-- source: docs/src/user/en/basics/interface.md @ abc1234 -->
 # 인터페이스 사용
 
-**Enter**를 눌러 클릭합니다. [경보](alerts.md#소리-고르기)와 [아래](#메뉴에서-글자로-이동)를 보십시오.
+**Enter**를 눌러 클릭합니다. [알림](alerts.md#소리-고르기)과 [아래](#메뉴에서-글자로-이동)를 보십시오.
 
 ## 메뉴에서 글자로 이동
 
@@ -35,7 +37,7 @@ KO = """<!-- source: docs/src/user/en/basics/interface.md @ abc1234 -->
 ```
 """
 
-ALERTS_KO = "# 경보\n\n## 소리 고르기\n"
+ALERTS_KO = "# 알림\n\n## 소리 고르기\n"
 
 
 def test_slug_matches_mdbook_rules() -> None:
@@ -93,6 +95,55 @@ def test_check_rejects_haeyo_style(tmp_path: Path) -> None:
     (tmp_path / "alerts.md").write_text(ALERTS_KO, "utf-8")
     problems = "\n".join(check(EN, bad, ko))
     assert "해요체" in problems and "보세요." in problems
+
+
+def test_check_applies_glossary_per_file(tmp_path: Path) -> None:
+    """확정 용어집은 설명서에도 적용한다(파일 단위: 원문에 용어가 있으면 번역문에 정해진 번역이 있어야 한다).
+    2026-11-09 실측: reference/glossary.md 가 network 를 "연결망"으로 옮겼다(다른 곳 48곳은 "네트워크")."""
+    from tools.glossary import Term
+
+    terms = [
+        Term("network", ("네트워크",), frozenset(), ""),
+        Term("focus", ("주시 대상",), frozenset({"manual::*"}), ""),
+    ]
+    ko = tmp_path / "p.md"
+    en = "# Map data\n\nThe network of waypoints. Keyboard focus moves. `network`\n"
+    bad = "<!-- source: docs/src/user/en/p.md @ abc1234 -->\n# 지도 데이터\n\n경유지 연결망. 초점이 움직입니다. `network`\n"
+    ko.write_text(bad, "utf-8")
+    problems = check(en, bad, ko, terms)
+    assert len(problems) == 1 and "network" in problems[0] and "네트워크" in problems[0]
+    good = bad.replace("연결망", "네트워크")
+    assert check(en, good, ko, terms) == []
+
+
+def test_check_rejects_bakkuda_outside_quotes(tmp_path: Path) -> None:
+    """2026-11-09 사용자 결정: 설명서 본문은 바꾸다·바뀌다 대신 변경하다·변경되다(전역 낱말 표).
+    화면 문구 인용("바꾸기"는 koKR Replace 값)과 인라인 코드는 실물 그대로라 검사하지 않는다."""
+    ko = tmp_path / "interface.md"
+    (tmp_path / "alerts.md").write_text(ALERTS_KO, "utf-8")
+    bad = KO.replace("클릭합니다.", '클릭합니다. 설정을 바꿉니다. 값이 바뀌면 "바꾸기"를 고릅니다.')
+    ko.write_text(bad, "utf-8")
+    problems = "\n".join(check(EN, bad, ko))
+    assert "바꿉니다" in problems and "바뀌면" in problems and "바꾸기" not in problems
+    good = KO.replace("클릭합니다.", '클릭합니다. 설정을 변경합니다. 값이 변경되면 "바꾸기"를 고릅니다.')
+    assert check(EN, good, ko) == []
+
+
+def test_translated_manual_passes_check() -> None:
+    """0단계 기계 검사: 번역된 설명서 전체가 구조·앵커·해요체·용어집 검사를 통과한다.
+    그전에는 `tools.manual check`를 따로 실행해야 해서 `uv run pytest -q`가 설명서를 보지 않았다."""
+    from tools.manual import EN_ROOT, KO_ROOT
+
+    if not KO_ROOT.exists():
+        pytest.skip("한국어 설명서 없음")
+    problems = {
+        p.relative_to(KO_ROOT).as_posix(): check(
+            (EN_ROOT / p.relative_to(KO_ROOT)).read_text(encoding="utf-8"), p.read_text(encoding="utf-8"), p
+        )
+        for p in sorted(KO_ROOT.rglob("*.md"))
+        if (EN_ROOT / p.relative_to(KO_ROOT)).exists()
+    }
+    assert {k: v for k, v in problems.items() if v} == {}
 
 
 def test_korean_summary_titles_match_page_headings() -> None:
