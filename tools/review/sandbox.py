@@ -17,17 +17,12 @@ from pathlib import Path
 from typing import Any
 
 from tools.locale_lib import REPO_ROOT, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
+from tools.review.guard import ALLOWED_EVIDENCE
 from tools.review.seed import apply_seeds, merge_seeds
 from tools.sync_locale import rebuild
 
-WORK_FILES = (
-    "docs/translation-guide.md",
-    "docs/decisions.tsv",
-    "docs/glossary.tsv",
-    "cache/gs_enUS.csv",
-    "cache/gs_koKR.csv",
-    "cache/game_terms.tsv",
-)
+# 평가자에게 주는 wowwork 자료는 판정 근거로 인정하는 자료와 같다(guard.ALLOWED_EVIDENCE 가 원천).
+WORK_FILES = tuple(a.removeprefix("wowwork/") for a in ALLOWED_EVIDENCE if a.startswith("wowwork/"))
 APP_IGNORE = shutil.ignore_patterns(".git", "docs", "audio", "mapdata", "*.ogg", "*.mp3", "*.blp", "*.tga")
 
 

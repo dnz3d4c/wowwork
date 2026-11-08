@@ -15,6 +15,9 @@ const EN = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/en'
 const KO = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/ko'
 const LENSES = ['accuracy', 'terminology', 'style', 'context']
 const OUT = args.outDir
+// 번역한 원문 커밋(WowVision). 파일 첫 줄 source 주석에 적는다. 2026-11-08까지 프롬프트에 397ffc3이 박혀 있어 V1.0.1 재번역에 옛 커밋이 기록될 뻔했다.
+const SOURCE = args.source
+if (!SOURCE) throw new Error('args.source(원문 커밋)가 필요하다')
 const dirOf = rel => `${W}/${OUT}/${rel.replace(/\.md$/, '')}`
 
 const FINDINGS = {
@@ -42,7 +45,7 @@ const CHECK = rel => `cd ${W} && uv run python -m tools.manual check ${rel}`
 
 // ── 1. 번역 ─────────────────────────────────────────────────────────────
 const translate = rel => agent(
-  `너는 설명서 번역자다. ${P}/manual-translate.md 를 Read로 읽고 그대로 따른다.\n` +
+  `너는 설명서 번역자다. ${P}/manual-translate.md 를 Read로 읽고 그대로 따른다. 원문 커밋: ${SOURCE}\n` +
   `원문: ${EN}/${rel}\n번역문을 쓸 곳: ${KO}/${rel} (폴더가 없으면 만든다)\n` +
   `용어표: Bash로 \`cd ${W} && uv run python -m tools.manual terms ${rel}\` 를 실행해 받는다.\n` +
   `번역을 Write로 저장한 뒤 \`${CHECK(rel)}\` 를 실행한다. "앵커 없음" 외의 문제가 있으면 고치고 다시 검사한다(최대 3번). ` +
