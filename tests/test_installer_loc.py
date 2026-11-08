@@ -153,16 +153,29 @@ def test_logintool_entries_take_runtime_files_but_not_user_settings(tmp_path) ->
     from tools.installer_loc import logintool_entries
 
     tool, helper = tmp_path / "logintool", tmp_path / "bin"
-    for rel in ["v2/START.ahk", "v2/includes/forever.ahk", "data/data.ini", "data/settings.ini",
-                "data/localization/koKR.txt", "CHANGELOG.md", "helper/SkuLoginSense/OcrRunner.cs"]:
+    for rel in [
+        "v2/START.ahk",
+        "v2/includes/forever.ahk",
+        "data/data.ini",
+        "data/settings.ini",
+        "data/localization/koKR.txt",
+        "CHANGELOG.md",
+        "helper/SkuLoginSense/OcrRunner.cs",
+    ]:
         (tool / rel).parent.mkdir(parents=True, exist_ok=True)
         (tool / rel).write_bytes(rel.encode())
     helper.mkdir()
     for name in ["SkuLoginSense.exe", "SkuLoginSense.exe.config", "SkuLoginSense.pdb"]:
         (helper / name).write_bytes(name.encode())
     entries = logintool_entries(tool, helper)
-    assert sorted(entries) == ["data/data.ini", "data/localization/koKR.txt", "helper/SkuLoginSense.exe",
-                               "helper/SkuLoginSense.exe.config", "v2/START.ahk", "v2/includes/forever.ahk"]
+    assert sorted(entries) == [
+        "data/data.ini",
+        "data/localization/koKR.txt",
+        "helper/SkuLoginSense.exe",
+        "helper/SkuLoginSense.exe.config",
+        "v2/START.ahk",
+        "v2/includes/forever.ahk",
+    ]
     assert entries["v2/includes/forever.ahk"] == b"v2/includes/forever.ahk"
 
 
