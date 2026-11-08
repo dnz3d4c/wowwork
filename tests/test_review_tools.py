@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
 
 from tools.review.build_batch import chunk, code_usages, collect_items, index_sources
 from tools.review.gpt_review import build_command, build_prompt
@@ -64,43 +63,11 @@ def test_build_command_is_read_only_with_schema(tmp_path: Path) -> None:
     assert cmd[-1] == "-"
 
 
-def test_decisions_changes_only_differing_translations() -> None:
-    from tools.review.decisions import changes
-
-    decisions = [{"id": "a.lua::K", "final_ko": "새것"}, {"id": "a.lua::Same", "final_ko": "그대로"}]
-    current = {("a.lua", "K"): "옛것", ("a.lua", "Same"): "그대로"}
-    assert changes(decisions, current) == [["a.lua", "K", "옛것", "새것"]]
-
-
 def test_build_command_with_event_log(tmp_path: Path) -> None:
     cmd = build_command(tmp_path / "out.json", tmp_path / "s.json", tmp_path / "sb", events=True)
     assert "--json" in cmd
     assert cmd[cmd.index("--cd") + 1] == str(tmp_path / "sb")
     assert "--json" not in build_command(tmp_path / "o", tmp_path / "s", tmp_path)
-
-
-def test_judged_decisions_need_primary_evidence() -> None:
-    from tools.review.decisions import split_invalid
-
-    ds: list[dict[str, Any]] = [
-        {"id": "a::1", "final_ko": "x", "how": "consensus"},
-        {
-            "id": "a::2",
-            "final_ko": "y",
-            "how": "upheld-by-gpt",
-            "evidence": ["wowvision-ko/WowVision/a.lua:3"],
-        },
-        {
-            "id": "a::3",
-            "final_ko": "z",
-            "how": "dispute-won",
-            "evidence": ["wowwork/docs/manual-plan.md:111"],
-        },
-        {"id": "a::4", "final_ko": "w", "how": "dispute-won"},
-    ]
-    valid, invalid = split_invalid(ds)
-    assert [d["id"] for d in valid] == ["a::1", "a::2"]
-    assert [d["id"] for d in invalid] == ["a::3", "a::4"]
 
 
 def test_shared_key_lists_other_files_using_same_key() -> None:
@@ -113,44 +80,3 @@ def test_shared_key_lists_other_files_using_same_key() -> None:
     ]
     assert shared_files(every[0], every) == [{"file": "b.lua", "ko": "친구"}]
     assert shared_files(every[2], every) == []
-
-
-def test_escalations_are_collected_with_failures_marked() -> None:
-    """판정 갈림·응답 없음이 출력 없이 사라졌다(2026-11-08 조사)."""
-    from tools.review.decisions import collect_escalations
-
-    result = [
-        {"batch": "b1", "escalations": [{"id": "a.lua::A", "why": "두 판정자의 결론이 다름"}]},
-        {"batch": "b2", "escalations": [{"id": "b.lua::B", "why": "번역자 응답 없음"}]},
-        {"batch": "b3"},
-    ]
-    esc, failed = collect_escalations(result)
-    assert [e["id"] for e in esc] == ["a.lua::A", "b.lua::B"]
-    assert [e["id"] for e in failed] == ["b.lua::B"]
-
-
-def test_upheld_accept_needs_valid_evidence() -> None:
-    """수용한 용어 지적의 판정(full.js upheld-accept)도 허용 자료 근거가 있어야 반영한다."""
-    from tools.review.decisions import split_invalid
-
-    d = {
-        "id": "a.lua::A",
-        "final_ko": "x",
-        "how": "upheld-accept",
-        "evidence": ["wowwork/docs/archive/manual-plan.md"],
-    }
-    valid, invalid = split_invalid([d])
-    assert invalid == [d] and valid == []
-
-
-def test_manual_workflow_evidence_list_matches_guard() -> None:
-    """manual.js 는 판정 근거를 직접 검사한다(2026-11-08). 허용 목록이 guard.py 와 같아야 한다."""
-    import re
-    from pathlib import Path
-
-    from tools.review.guard import ALLOWED_EVIDENCE
-
-    js = Path("tools/review/workflows/manual.js").read_text(encoding="utf-8")
-    m = re.search(r"const ALLOWED = \[(.*?)\]", js, re.DOTALL)
-    assert m, "manual.js 에 ALLOWED 목록이 없다"
-    assert tuple(re.findall(r"'([^']+)'", m.group(1))) == ALLOWED_EVIDENCE

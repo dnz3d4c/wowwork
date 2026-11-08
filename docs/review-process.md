@@ -35,7 +35,7 @@
 | `docs/decisions.tsv` | 사용자 결정. 날짜와 출처(사용자)가 있는 것만 적습니다. Claude가 정한 것은 여기에 적지 않습니다 |
 | `docs/glossary.tsv` | 확정 용어. 0단계 기계 검사가 모든 번역에 적용합니다 |
 
-판정 근거로 인정하는 자료는 원문, 앱 코드, 기존 번역, 게임 공식 문자열, 위 세 문서뿐입니다(`tools/review/guard.py` `ALLOWED_EVIDENCE`). UI·설치 프로그램·로그인 툴은 `tools/review/decisions.py`가, 설명서는 `manual.js`가 같은 목록으로 검사합니다(2026-11-08까지 설명서 쪽에는 검사가 없었습니다). 계획 문서, 반박문, 평가 기록은 주장일 뿐 근거가 아닙니다. 번역 쪽이 쓴 문서를 근거로 삼으면 판정이 번역자의 결정을 되받는 순환이 되기 때문입니다.
+판정 근거로 인정하는 자료는 원문, 앱 코드, 기존 번역, 게임 공식 문자열, 위 세 문서뿐입니다(`tools/review/guard.py` `ALLOWED_EVIDENCE`). 판정자마다 따로 검사합니다. 한 판정자라도 허용 자료를 대지 않은 판정은 확정하지 않고 사용자 판단 목록으로 넘깁니다(`tools/review/decisions.py` `outcome`). 계획 문서, 반박문, 평가 기록은 주장일 뿐 근거가 아닙니다. 번역 쪽이 쓴 문서를 근거로 삼으면 판정이 번역자의 결정을 되받는 순환이 되기 때문입니다.
 
 ## 평가 관점
 
@@ -85,7 +85,9 @@ Workflow로 묶음마다 같은 구조를 결정적으로 반복합니다(2026-1
 | `guide-review.js` | 2~5 | 테스터 안내 같은 사용자 안내문 |
 | `calibrate.js` | 평가 구조 검증 | 평가 프롬프트를 바꿀 때 |
 
-GPT 평가자는 `tools/review/gpt_review.py`가 `codex exec`를 읽기 전용 샌드박스로 실행합니다. UI형 판정 결과는 `uv run python -m tools.review.decisions <출력.json> <평가 폴더>`가 근거를 검사한 뒤 반영 목록(`apply.tsv`)과 확정하지 못한 항목 목록(`escalations.json`)으로 바꿉니다. 에이전트 실패로 빠진 항목이 있으면 실패로 끝나므로 그 묶음을 다시 돌립니다.
+GPT 평가자는 `tools/review/gpt_review.py`가 `codex exec`를 읽기 전용 샌드박스로 실행합니다.
+
+스크립트는 누구에게 무엇을 물을지만 정하고, 받은 답으로 무엇을 확정할지는 `tools/review/decisions.py` 한 곳이 정합니다(2026-11-08, 그전에는 같은 규칙이 스크립트 셋과 `logintool_loc.py`에 따로 있었습니다). UI는 `uv run python -m tools.review.decisions <full.js 출력.json> <평가 폴더>`, 로그인 툴은 `uv run python -m tools.logintool_loc decide ...`가 반영 목록(`apply.tsv`)과 사용자 판단 목록(`escalations.json`)을 씁니다. 설명서는 `manual.js`의 수정 에이전트가 `decisions manual`을 실행해 고칠 곳을 받습니다. 에이전트가 하나라도 실패하면 아무것도 쓰지 않으므로, 같은 Run ID로 Workflow를 이어서 실행한 뒤 다시 반영합니다.
 
 새 키가 몇 개뿐이어도 묶음 하나에 에이전트 9~11명이 듭니다(평가 8, 번역자 1, 판정 2). 2026-11-07 V1.0.1 새 키 66개는 지적 14건, 반영 3건이었습니다.
 

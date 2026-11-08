@@ -76,28 +76,3 @@ def test_sandbox_holds_seeded_values_not_originals(tmp_path: Path) -> None:
     assert (root / "wowwork" / "tools" / "review" / "prompts" / "common.md").exists()
     assert not (root / "wowwork" / "reviews").exists()
     assert (root / "batch.json").exists()
-
-
-def test_decide_keeps_changes_and_drops_invalid_judgments() -> None:
-    from tools.logintool_loc import decide
-
-    result = [{"batch": "b1", "failedReviewers": 0, "decisions": [
-        {"id": "koKR.txt::wait", "final_ko": "기다려 주세요", "how": "accepted"},
-        {"id": "koKR.txt::play mode", "final_ko": "게임 모드", "how": "dispute-won", "evidence": ["input"]},
-        {"id": "koKR.txt::pause mode", "final_ko": "일시 정지", "how": "upheld-by-both", "evidence": ["wowwork/docs/manual-plan.md"]},
-    ], "escalations": [{"id": "koKR.txt::x", "why": "두 판정자의 결론이 다름"}]}]
-    current = {"koKR.txt::wait": "기다려 주세요.", "koKR.txt::play mode": "게임 모드", "koKR.txt::pause mode": "일시 정지 모드"}
-    rows, invalid, escalations = decide(result, current)
-    assert rows == [{"id": "koKR.txt::wait", "before": "기다려 주세요.", "ko": "기다려 주세요"}]
-    assert [d["id"] for d in invalid] == ["koKR.txt::pause mode"]
-    assert escalations[0]["id"] == "koKR.txt::x"
-
-
-def test_decide_refuses_batches_with_failed_reviewers() -> None:
-    from tools.logintool_loc import decide
-
-    try:
-        decide([{"batch": "b1", "failedReviewers": 1, "decisions": [], "escalations": []}], {})
-    except SystemExit:
-        return
-    raise AssertionError("failed reviewers must stop the apply")

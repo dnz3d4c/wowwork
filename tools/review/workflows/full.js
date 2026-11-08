@@ -1,6 +1,6 @@
 export const meta = {
   name: 'ko-review-full',
-  description: '번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 교차 회사 판정을 돌려 확정 번역을 만든다',
+  description: '번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 두 회사 판정까지 받아 온다(확정은 tools/review/decisions.py)',
   phases: [
     { title: 'Review', detail: '묶음마다 Claude 4 lens + GPT 4 lens' },
     { title: 'Rebut', detail: '번역자가 지적마다 수용 또는 반박' },
@@ -85,7 +85,7 @@ async function runBatch(b) {
     g.findings.push({ by: `${r.provider}-${r.lens}`, ...f })
   }
   const list = Object.values(groups).map(g => ({ ...g, consensus: g.providers.length === 2 }))
-  if (!list.length) return { batch: b.path, failedReviewers: failed, decisions: [], escalations: [] }
+  if (!list.length) return { batch: b.path, failedReviewers: failed, findings: 0, groups: [], responses: [], judged: [], verdicts: { gpt: [], claude: [] } }
 
   const rebut = await agent(
     `너는 이 번역의 번역자다. ${P}/rebut.md ${EXTRA_READ ? '와 ' + EXTRA_READ + ' ' : ''}를 Read로 읽고 따른다. 번역 지침은 ${W}/docs/translation-guide.md, 원문·번역·코드 사용처는 ${batch} 에 있다.\n\n` +
@@ -95,58 +95,28 @@ async function runBatch(b) {
     { label: 'translator', phase: 'Rebut', schema: REBUT })
   const resp = Object.fromEntries((rebut ? rebut.responses : []).map(r => [r.id, r]))
 
-  const disputed = list.filter(g => resp[g.id] && resp[g.id].action === 'dispute')
-  const escalations = disputed.filter(g => g.consensus).map(g => ({ id: g.id, why: '두 회사가 모두 지적했는데 번역자가 반박', reason: resp[g.id].reason }))
+  // 여기서는 누구에게 무엇을 물을지만 정한다. 받은 답으로 무엇을 확정할지는 tools/review/decisions.py 가 정한다.
   // 반박된 지적은 두 회사 판정자가 모두 판정한다. 번역자가 Claude라서, 한 회사만 판정하면
   // GPT 지적은 "Claude 번역자의 반박 + Claude 판정"이 되어 교차 판정이 성립하지 않는다(2026-11-05 실측: 31건 전부 기각).
   // 두 판정이 일치해야 확정하고, 갈리면 사용자 판단 목록으로 보낸다. 판정자는 서로의 결론을 보지 않는다.
   // 한 회사만 낸 용어 지적을 번역자가 수용한 것도 판정한다. 되돌린 번역 8건 가운데 7건이 이 경로였다
   // (Roll Bonus, Buffered, Disabled, transit, Voice, turn in, Friends: 근거 확인 없이 수용 → 뒤 실행이 되돌림, 2026-11-08 집계).
   const checkAccept = g => !g.consensus && resp[g.id] && resp[g.id].action === 'accept' && g.findings.some(f => f.category === 'terminology')
-  const toJudge = [...disputed.filter(g => !g.consensus), ...list.filter(checkAccept)]
-  const toGpt = toJudge
-  const toClaude = toJudge
+  const toJudge = [...list.filter(g => !g.consensus && resp[g.id] && resp[g.id].action === 'dispute'), ...list.filter(checkAccept)]
   const payload = gs => gs.map(g => ({ ref: g.id, findings: g.findings, translator: resp[g.id] }))
 
   const [gj, cj] = await parallel([
-    () => toGpt.length ? gptRun(['common.md', ...EXTRA, 'judge.md'], `${out}/judge-gpt-input.json`, 'verdicts.schema.json', `${out}/judge-gpt.json`,
-      VERDICTS, 'gpt:judge', 'Judge', JSON.stringify({ batch_file: b.path, items: payload(toGpt) }, null, 1)) : Promise.resolve({ verdicts: [] }),
-    () => toClaude.length ? agent(
+    () => toJudge.length ? gptRun(['common.md', ...EXTRA, 'judge.md'], `${out}/judge-gpt-input.json`, 'verdicts.schema.json', `${out}/judge-gpt.json`,
+      VERDICTS, 'gpt:judge', 'Judge', JSON.stringify({ batch_file: b.path, items: payload(toJudge) }, null, 1)) : Promise.resolve({ verdicts: [] }),
+    () => toJudge.length ? agent(
       `${P}/common.md 와 ${P}/judge.md ${EXTRA_READ ? '와 ' + EXTRA_READ + ' ' : ''}를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 ${batch}. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n` +
-      `결과를 ${out}/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n` + JSON.stringify(payload(toClaude), null, 1),
+      `결과를 ${out}/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n` + JSON.stringify(payload(toJudge), null, 1),
       { label: 'claude:judge', phase: 'Judge', schema: VERDICTS }) : Promise.resolve({ verdicts: [] }),
   ])
-  const gv = Object.fromEntries(((gj && gj.verdicts) || []).map(v => [v.ref, v]))
-  const cv = Object.fromEntries(((cj && cj.verdicts) || []).map(v => [v.ref, v]))
-
-  const decisions = []
-  for (const g of list) {
-    const r = resp[g.id]
-    if (!r) { escalations.push({ id: g.id, why: '번역자 응답 없음' }); continue }
-    if (checkAccept(g)) {
-      const a = gv[g.id], c = cv[g.id]
-      if (!a || !c) { escalations.push({ id: g.id, why: `판정 누락 (gpt ${!!a}, claude ${!!c})` }); continue }
-      if (a.uphold !== c.uphold) {
-        escalations.push({ id: g.id, why: '수용한 용어 지적에 두 판정자의 결론이 다름', translator: r.final_ko, gpt: { uphold: a.uphold, reason: a.reason }, claude: { uphold: c.uphold, reason: c.reason } })
-        continue
-      }
-      // 둘 다 기각하면 지금 번역을 유지한다(결정을 남기지 않으면 바뀌지 않는다).
-      if (a.uphold) decisions.push({ id: g.id, final_ko: r.final_ko, how: 'upheld-accept', reason: `gpt: ${a.reason} / claude: ${c.reason}`, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])], sev: g.findings.map(f => f.severity) })
-      continue
-    }
-    if (r.action === 'accept') { decisions.push({ id: g.id, final_ko: r.final_ko, how: g.consensus ? 'consensus' : 'accepted', sev: g.findings.map(f => f.severity) }); continue }
-    if (g.consensus) continue
-    const a = gv[g.id], c = cv[g.id]
-    if (!a || !c) { escalations.push({ id: g.id, why: `판정 누락 (gpt ${!!a}, claude ${!!c})` }); continue }
-    if (a.uphold !== c.uphold) {
-      escalations.push({ id: g.id, why: '두 판정자의 결론이 다름', gpt: { uphold: a.uphold, final_ko: a.final_ko, reason: a.reason }, claude: { uphold: c.uphold, final_ko: c.final_ko, reason: c.reason } })
-      continue
-    }
-    // 지적을 인정할 때 확정 번역은 지적한 회사가 아닌 쪽 판정자의 것을 쓴다.
-    const other = g.providers[0] === 'claude' ? a : c
-    decisions.push({ id: g.id, final_ko: a.uphold ? other.final_ko : r.final_ko, how: a.uphold ? 'upheld-by-both' : 'dispute-won', reason: `gpt: ${a.reason} / claude: ${c.reason}`, evidence: [...(a.evidence_sources || []), ...(c.evidence_sources || [])], sev: g.findings.map(f => f.severity) })
-  }
-  return { batch: b.path, failedReviewers: failed, findings: runs.reduce((n, r) => n + r.findings.length, 0), decisions, escalations }
+  // 판정자가 실패하면 null(판정 누락), 판정할 것이 없으면 빈 배열이다.
+  const verdicts = r => (r ? r.verdicts : null)
+  return { batch: b.path, failedReviewers: failed, findings: runs.reduce((n, r) => n + r.findings.length, 0),
+    groups: list, responses: rebut ? rebut.responses : [], judged: toJudge.map(g => g.id), verdicts: { gpt: verdicts(gj), claude: verdicts(cj) } }
 }
 
 phase('Review')

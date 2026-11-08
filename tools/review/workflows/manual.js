@@ -32,28 +32,6 @@ const RESP = {
   properties: { responses: { type: 'array', items: { type: 'object', required: ['ref', 'action', 'reason'],
     properties: { ref: { type: 'string' }, action: { type: 'string', enum: ['applied', 'dispute'] }, reason: { type: 'string' } } } } },
 }
-// 판정 근거로 인정하는 자료. tools/review/guard.py ALLOWED_EVIDENCE 와 같아야 한다(tests/test_review_tools.py 가 확인).
-// UI는 decisions.py 가 검사하지만 설명서는 이 스크립트가 바로 고치므로 여기서 검사한다(2026-11-08).
-const ALLOWED = [
-  'wowvision-ko/WowVision/', 'wowvision-ko/wowvision-installer/', 'wowvision-ko/Sku-WoW-Addon-TBC/logintool/',
-  'wowvision-ko/vision-locale/enUS/', 'wowvision-ko/vision-locale/koKR/',
-  'wowwork/cache/gs_enUS.csv', 'wowwork/cache/gs_koKR.csv', 'wowwork/cache/game_terms.tsv',
-  'wowwork/docs/translation-guide.md', 'wowwork/docs/decisions.tsv', 'wowwork/docs/glossary.tsv',
-]
-function validEvidence(srcs) {
-  if (!srcs.length) return false
-  return srcs.every(s => {
-    const p = s.replace(/\\/g, '/').replace(/\/{2,}/g, '/').trim().replace(/:\d+(-\d+)?$/, '').toLowerCase()
-    if (p === 'input') return true
-    if (p.includes('#') || p.includes('?') || `/${p}/`.includes('/../')) return false
-    return ALLOWED.some(a => {
-      const al = a.toLowerCase(), i = p.indexOf(al)
-      if (i < 0 || (i > 0 && p[i - 1] !== '/')) return false
-      const rest = p.slice(i + al.length)
-      return al.endsWith('/') ? rest.length > 0 : rest === ''
-    })
-  })
-}
 const VERDICTS = {
   type: 'object', required: ['verdicts'],
   properties: { verdicts: { type: 'array', items: { type: 'object', required: ['ref', 'uphold', 'final_ko', 'reason', 'evidence_sources'],
@@ -141,26 +119,18 @@ async function reviewAndFix(rel) {
       JSON.stringify(payload, null, 1),
       { label: `claude:judge:${rel}`, phase: 'Fix', schema: VERDICTS }),
   ])
-  const gv = Object.fromEntries(((gj && gj.verdicts) || []).map(v => [v.ref, v]))
-  const cv = Object.fromEntries(((cj && cj.verdicts) || []).map(v => [v.ref, v]))
-  const upheld = []
-  let disputeWon = 0
-  for (const f of disputed) {
-    const a = gv[f.ref], c = cv[f.ref]
-    if (!a || !c) { escalations.push({ ref: f.ref, why: `판정 누락 (gpt ${!!a}, claude ${!!c})`, quote: f.quote }); continue }
-    if (a.uphold !== c.uphold) { escalations.push({ ref: f.ref, why: '두 판정자의 결론이 다름', quote: f.quote, gpt: a.reason, claude: c.reason }); continue }
-    const evidence = [...(a.evidence_sources || []), ...(c.evidence_sources || [])]
-    if (!validEvidence(evidence)) { escalations.push({ ref: f.ref, why: '판정 근거가 허용 자료가 아님', quote: f.quote, evidence }); continue }
-    if (a.uphold) upheld.push({ ref: f.ref, quote: f.quote, final_ko: (f.provider === 'claude' ? a : c).final_ko, evidence })
-    else disputeWon++
-  }
-  if (upheld.length) {
-    await agent(
-      `${KO}/${rel} 에서 아래 각 항목의 quote를 final_ko로 Edit로 바꾼다. quote가 정확히 보이지 않으면 가장 가까운 부분을 찾아 같은 뜻으로 고친다. ` +
-      `끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ok와 remaining을 돌려준다.\n\n` + JSON.stringify(upheld, null, 1),
-      { label: `fixer:${rel}`, phase: 'Fix', schema: DONE })
-  }
-  return { file: rel, failedReviewers: failed, findings: all.length, applied: Object.values(byRef).filter(r => r.action === 'applied').length, upheld: upheld.length, disputeWon, escalations, upheldItems: upheld }
+  // 무엇을 고칠지는 tools/review/decisions.py 가 정한다(판정자마다 근거 검사, 두 판정 일치).
+  const items = disputed.map(f => ({ ref: f.ref, provider: f.provider, quote: f.quote }))
+  const judged = JSON.stringify({ items, gpt: gj ? gj.verdicts : null, claude: cj ? cj.verdicts : null }, null, 1)
+  const fix = await agent(
+    `먼저 아래 JSON을 ${dirOf(rel)}/judged.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n${judged}\n\n` +
+    `그다음 Bash로 \`cd ${W} && uv run python -m tools.review.decisions manual ${dirOf(rel)}/judged.json ${dirOf(rel)}/fix.json\` 를 실행하고 ${dirOf(rel)}/fix.json 을 Read로 읽는다. ` +
+    `그 upheld 배열의 각 항목에 대해 ${KO}/${rel} 에서 quote를 final_ko로 Edit로 바꾼다. quote가 정확히 보이지 않으면 가장 가까운 부분을 찾아 같은 뜻으로 고친다. ` +
+    `upheld가 비어 있으면 파일을 고치지 않는다. 끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ` +
+    `ok와 remaining을 돌려준다. 판정을 직접 하지 않는다.`,
+    { label: `fixer:${rel}`, phase: 'Fix', schema: DONE })
+  return { file: rel, failedReviewers: failed, findings: all.length, applied: Object.values(byRef).filter(r => r.action === 'applied').length,
+    fixOk: !!(fix && fix.ok), decisions: `${dirOf(rel)}/fix.json`, escalations }
 }
 
 // ── 실행 ────────────────────────────────────────────────────────────────
