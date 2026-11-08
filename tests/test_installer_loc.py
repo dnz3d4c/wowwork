@@ -179,6 +179,9 @@ def test_installer_logintool_payload_matches_ko_checkout() -> None:
     with zipfile.ZipFile(LOGINTOOL_PAYLOAD) as z:
         packed = {n: z.read(n) for n in z.namelist()}
     current = logintool_entries(LOGINTOOL_DIR, None)
-    assert {"helper/SkuLoginSense.exe", "helper/SkuLoginSense.exe.config"} <= set(packed)
+    helper = {"helper/SkuLoginSense.exe", "helper/SkuLoginSense.exe.config"}
+    assert helper <= set(packed)
+    # ko 에서 지운 파일이 payload 에 남아 있으면 설치 때 다시 생긴다(codex 2026-11-08).
+    assert sorted(set(packed) - helper - set(current)) == [], "ko 에 없는 파일이 payload 에 남아 있다"
     stale = sorted(k for k in current if packed.get(k) != current[k])
     assert stale == [], f"로그인 툴 payload 가 낡았다: {stale}"
