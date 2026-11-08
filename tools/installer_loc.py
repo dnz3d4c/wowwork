@@ -77,40 +77,69 @@ def apply_ko(text: str, ko: dict[str, str]) -> tuple[str, list[str]]:
 
 
 PAYLOAD = KO_WORK_ROOT / "wowvision-installer" / "WowVisionInstaller" / "payload" / "koKR.zip"
+VOICE_PAYLOAD = PAYLOAD.with_name("koVoice.zip")
+VOICE_PACK = Path(__file__).resolve().parent.parent / "assets" / "voice" / "Yuna"
+LOGINTOOL_PAYLOAD = PAYLOAD.with_name("koLoginTool.zip")
+LOGINTOOL_REPO = KO_WORK_ROOT / "Sku-WoW-Addon-TBC"
+LOGINTOOL_DIR = LOGINTOOL_REPO / "logintool"
+HELPER_PROJECT = LOGINTOOL_DIR / "helper" / "SkuLoginSense" / "SkuLoginSense.csproj"
+HELPER_BUILD = HELPER_PROJECT.parent / "bin" / "Release" / "net48"
+# scoop 은 dotnet SDK 의 shim 을 깔지 않아 PATH 로는 닿지 않는다(~/.claude/CLAUDE.md 환경 표).
+DOTNET = Path.home() / "scoop" / "apps" / "dotnet-sdk" / "current" / "dotnet.exe"
+
+
+def write_zip(entries: dict[str, bytes], out: Path) -> int:
+    """항목 이름 순으로 묶는다. 날짜를 고정해 같은 입력이면 같은 바이트가 나온다."""
+    import zipfile
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for name in sorted(entries):
+            info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(info, entries[name])
+    return len(entries)
 
 
 def build_payload(kokr_dir: Path, out: Path) -> int:
-    """koKR 폴더를 `koKR/<파일>` 항목으로 묶는다. 날짜를 고정해 같은 입력이면 같은 바이트가 나온다."""
-    import zipfile
-
-    files = sorted(p for p in kokr_dir.iterdir() if p.is_file())
-    out.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in files:
-            info = zipfile.ZipInfo(f"koKR/{p.name}", date_time=(2026, 1, 1, 0, 0, 0))
-            info.compress_type = zipfile.ZIP_DEFLATED
-            z.writestr(info, p.read_bytes())
-    return len(files)
-
-
-VOICE_PAYLOAD = PAYLOAD.with_name("koVoice.zip")
-VOICE_PACK = Path(__file__).resolve().parent.parent / "assets" / "voice" / "Yuna"
+    """koKR 폴더를 `koKR/<파일>` 항목으로 묶는다."""
+    return write_zip({f"koKR/{p.name}": p.read_bytes() for p in kokr_dir.iterdir() if p.is_file()}, out)
 
 
 def build_voice_payload(pack_dir: Path, out: Path) -> int:
-    """음성 팩 폴더를 `<팩 이름>/<하위폴더>/<파일>` 항목으로 묶는다. 날짜를 고정해 같은 입력이면 같은 바이트가 나온다."""
-    import zipfile
+    """음성 팩 폴더를 `<팩 이름>/<하위폴더>/<파일>` 항목으로 묶는다."""
+    files = [p for p in pack_dir.rglob("*") if p.is_file()]
+    return write_zip({f"{pack_dir.name}/{p.relative_to(pack_dir).as_posix()}": p.read_bytes() for p in files}, out)
 
-    files = sorted(p for p in pack_dir.rglob("*") if p.is_file())
-    out.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in files:
-            info = zipfile.ZipInfo(
-                f"{pack_dir.name}/{p.relative_to(pack_dir).as_posix()}", date_time=(2026, 1, 1, 0, 0, 0)
-            )
-            info.compress_type = zipfile.ZIP_DEFLATED
-            z.writestr(info, p.read_bytes())
-    return len(files)
+
+def logintool_entries(tool_dir: Path, helper_build: Path | None) -> dict[str, bytes]:
+    """로그인 툴 한국어판에서 설치 프로그램이 원본 릴리스 위에 덮어쓸 파일(설치 폴더 기준 경로 → 내용).
+
+    범위는 프로젝트 CLAUDE.md `## WoW Login Tool`의 테스트 폴더 복사 범위와 같다: v2/ 전체, data/*.ini,
+    data/localization/, 다시 빌드한 helper/SkuLoginSense.exe. data/settings.ini 는 사용자 설정이라 넣지 않는다.
+    helper_build 가 None 이면 도우미는 뺀다(낡았는지 검사할 때, exe 는 빌드마다 바이트가 다르다).
+    """
+    files = [p for p in (tool_dir / "v2").rglob("*") if p.is_file()]
+    files += [p for p in (tool_dir / "data").glob("*.ini") if p.name != "settings.ini"]
+    files += [p for p in (tool_dir / "data" / "localization").rglob("*") if p.is_file()]
+    entries = {p.relative_to(tool_dir).as_posix(): p.read_bytes() for p in files}
+    if helper_build is not None:
+        for name in ("SkuLoginSense.exe", "SkuLoginSense.exe.config"):
+            entries[f"helper/{name}"] = (helper_build / name).read_bytes()
+    return entries
+
+
+def build_logintool_payload(out: Path) -> int:
+    """ko 브랜치의 로그인 툴로 payload 를 만든다. 다른 브랜치가 checkout 돼 있으면 만들지 않는다."""
+    import subprocess
+
+    branch = subprocess.run(
+        ["git", "-C", str(LOGINTOOL_REPO), "branch", "--show-current"], capture_output=True, text=True, check=True
+    ).stdout.strip()
+    if branch != "ko":
+        raise SystemExit(f"로그인 툴 저장소가 ko 가 아니라 {branch!r} 브랜치다. ko 를 checkout 한 뒤 다시 실행한다.")
+    subprocess.run([str(DOTNET), "build", "-c", "Release", str(HELPER_PROJECT), "-nologo", "-v", "q"], check=True)
+    return write_zip(logintool_entries(LOGINTOOL_DIR, HELPER_BUILD), out)
 
 
 def installer_items(src_dir: Path) -> list[dict[str, object]]:
@@ -145,6 +174,8 @@ def main() -> int:
         print(f"koKR 파일 {n}개 -> {PAYLOAD}")
         n = build_voice_payload(VOICE_PACK, VOICE_PAYLOAD)
         print(f"음성 팩 파일 {n}개 -> {VOICE_PAYLOAD}")
+        n = build_logintool_payload(LOGINTOOL_PAYLOAD)
+        print(f"로그인 툴 한국어판 파일 {n}개 -> {LOGINTOOL_PAYLOAD}")
         return 0
     path = Path(sys.argv[2])
     if cmd == "batch":

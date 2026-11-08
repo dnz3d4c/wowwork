@@ -145,3 +145,40 @@ def test_installer_voice_payload_matches_current_pack() -> None:
     }
     assert len(current) == 108
     assert packed == current, "음성 payload 가 낡았다"
+
+
+def test_logintool_entries_take_runtime_files_but_not_user_settings(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """로그인 툴 한국어판(2026-11-08): 설치 프로그램이 원본 4.1 뒤에 덮어쓸 파일.
+    범위는 CLAUDE.md 테스트 폴더 복사 범위와 같다. data/settings.ini 는 사용자 설정이라 넣지 않는다."""
+    from tools.installer_loc import logintool_entries
+
+    tool, helper = tmp_path / "logintool", tmp_path / "bin"
+    for rel in ["v2/START.ahk", "v2/includes/forever.ahk", "data/data.ini", "data/settings.ini",
+                "data/localization/koKR.txt", "CHANGELOG.md", "helper/SkuLoginSense/OcrRunner.cs"]:
+        (tool / rel).parent.mkdir(parents=True, exist_ok=True)
+        (tool / rel).write_bytes(rel.encode())
+    helper.mkdir()
+    for name in ["SkuLoginSense.exe", "SkuLoginSense.exe.config", "SkuLoginSense.pdb"]:
+        (helper / name).write_bytes(name.encode())
+    entries = logintool_entries(tool, helper)
+    assert sorted(entries) == ["data/data.ini", "data/localization/koKR.txt", "helper/SkuLoginSense.exe",
+                               "helper/SkuLoginSense.exe.config", "v2/START.ahk", "v2/includes/forever.ahk"]
+    assert entries["v2/includes/forever.ahk"] == b"v2/includes/forever.ahk"
+
+
+def test_installer_logintool_payload_matches_ko_checkout() -> None:
+    """설치 프로그램에 넣은 로그인 툴 payload 가 Sku-WoW-Addon-TBC ko checkout 과 같아야 한다.
+
+    다르면: uv run python -m tools.installer_loc payload 후 설치 프로그램을 다시 빌드한다.
+    도우미 exe 는 빌드할 때마다 바이트가 달라서 있는지만 본다.
+    """
+    import zipfile
+
+    from tools.installer_loc import LOGINTOOL_DIR, LOGINTOOL_PAYLOAD, logintool_entries
+
+    with zipfile.ZipFile(LOGINTOOL_PAYLOAD) as z:
+        packed = {n: z.read(n) for n in z.namelist()}
+    current = logintool_entries(LOGINTOOL_DIR, None)
+    assert {"helper/SkuLoginSense.exe", "helper/SkuLoginSense.exe.config"} <= set(packed)
+    stale = sorted(k for k in current if packed.get(k) != current[k])
+    assert stale == [], f"로그인 툴 payload 가 낡았다: {stale}"
