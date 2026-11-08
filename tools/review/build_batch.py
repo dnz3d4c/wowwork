@@ -53,8 +53,12 @@ def index_sources(root: Path) -> Index:
 
 
 def code_usages(idx: Index, key: str, limit: int = 4) -> list[str]:
+    """사용처를 limit곳까지 돌려준다. 잘랐으면 몇 곳을 뺐는지 마지막 줄로 알린다(평가자가 다수 문맥을 보도록)."""
     needle = f"L[{lua_quote(key)}]"
-    return [f"{rel}:{n}: {text[:200]}" for rel, n, text in idx if needle in text][:limit]
+    hits = [f"{rel}:{n}: {text[:200]}" for rel, n, text in idx if needle in text]
+    if len(hits) <= limit:
+        return hits
+    return [*hits[:limit], f"... 외 {len(hits) - limit}곳 (전체 {len(hits)}곳)"]
 
 
 def chunk(items: list, size: int) -> list[list]:  # type: ignore[type-arg]

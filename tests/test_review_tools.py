@@ -41,6 +41,15 @@ def test_code_usages_finds_escaped_key_and_skips_locale(tmp_path: Path) -> None:
     assert code_usages(idx, 'Q "x"') == ['core/m.lua:3: L["Q \\"x\\""]']
 
 
+def test_code_usages_reports_how_many_sites_were_cut() -> None:
+    # 2026-11-09: "Disabled" had 16 sites; reviewers saw only the first few and judged by the minority.
+    idx = [(f"f{i}.lua", 1, 'L["Disabled"]') for i in range(5)]
+    out = code_usages(idx, "Disabled", limit=2)
+    assert out[:2] == ['f0.lua:1: L["Disabled"]', 'f1.lua:1: L["Disabled"]']
+    assert out[2] == "... 외 3곳 (전체 5곳)"
+    assert len(code_usages(idx, "Disabled", limit=5)) == 5
+
+
 def test_chunk() -> None:
     assert chunk(list(range(5)), 2) == [[0, 1], [2, 3], [4]]
 
