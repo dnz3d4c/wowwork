@@ -13,6 +13,7 @@
 
 로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`, sparse checkout)의 `ko` 브랜치에서 관리한다. 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.
 
+- 설치 프로그램 배포: `uv run python -m tools.installer_loc payload`가 이 저장소 ko 브랜치로 `koLoginTool.zip`을 만들고, 설치 프로그램이 원본 설치 뒤 덮어쓴다(`docs/builds.md`). ko 브랜치를 고치면 payload와 설치 프로그램을 다시 만든다.
 - 테스트 실행 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 브랜치를 바꾸면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
 - 2026-11-07 이전 작업본(4.1 기반, `T()`를 `TranslateText()`로 바꾼 판)은 `WoW Login Tool Korean/_reset-backup-20261107/pre-4.2/`에 있다.
 

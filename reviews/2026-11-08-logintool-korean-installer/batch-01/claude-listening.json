@@ -1,0 +1,12 @@
+{
+ "findings": [
+  {
+   "id": "Loc.cs::status.koreanLoginToolFailed",
+   "category": "style",
+   "severity": "minor",
+   "problem": "같은 문장 안에서 앞은 고유 이름 \"WoW Login Tool\", 뒤는 \"로그인 툴\"로 가리켜 대상 이름이 바뀐다. 설치 프로그램의 다른 한국어 문구(lt.*, status.loginTool, summary.loginTool)는 모두 \"WoW Login Tool\"만 쓰고 \"로그인 툴\"은 이 문구에만 있어, 음성으로 들으면 다른 것을 가리키는 말처럼 들릴 수 있다.",
+   "evidence": "Loc.cs:967 ko \"...설치 프로그램을 다시 실행할 때까지 로그인 툴은 한국어 없이 원본 그대로 동작합니다.\" / Loc.cs:1057-1067 ko는 모두 \"WoW Login Tool: ...\". 원문의 \"The login tool\"은 앞 문장을 다시 가리키는 말이라 주어를 생략해도 뜻이 같다. 뜻 손실은 없고 일관성 문제라 minor.",
+   "suggestion": "WoW Login Tool 한국어 파일을 추가하지 못했습니다: {0}. 설치 프로그램을 다시 실행할 때까지 한국어 없이 원본 그대로 동작합니다."
+  }
+ ]
+}
