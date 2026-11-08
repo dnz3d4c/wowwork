@@ -109,7 +109,9 @@ def build_payload(kokr_dir: Path, out: Path) -> int:
 def build_voice_payload(pack_dir: Path, out: Path) -> int:
     """음성 팩 폴더를 `<팩 이름>/<하위폴더>/<파일>` 항목으로 묶는다."""
     files = [p for p in pack_dir.rglob("*") if p.is_file()]
-    return write_zip({f"{pack_dir.name}/{p.relative_to(pack_dir).as_posix()}": p.read_bytes() for p in files}, out)
+    return write_zip(
+        {f"{pack_dir.name}/{p.relative_to(pack_dir).as_posix()}": p.read_bytes() for p in files}, out
+    )
 
 
 def logintool_entries(tool_dir: Path, helper_build: Path | None) -> dict[str, bytes]:
@@ -134,11 +136,18 @@ def build_logintool_payload(out: Path) -> int:
     import subprocess
 
     branch = subprocess.run(
-        ["git", "-C", str(LOGINTOOL_REPO), "branch", "--show-current"], capture_output=True, text=True, check=True
+        ["git", "-C", str(LOGINTOOL_REPO), "branch", "--show-current"],
+        capture_output=True,
+        text=True,
+        check=True,
     ).stdout.strip()
     if branch != "ko":
-        raise SystemExit(f"로그인 툴 저장소가 ko 가 아니라 {branch!r} 브랜치다. ko 를 checkout 한 뒤 다시 실행한다.")
-    subprocess.run([str(DOTNET), "build", "-c", "Release", str(HELPER_PROJECT), "-nologo", "-v", "q"], check=True)
+        raise SystemExit(
+            f"로그인 툴 저장소가 ko 가 아니라 {branch!r} 브랜치다. ko 를 checkout 한 뒤 다시 실행한다."
+        )
+    subprocess.run(
+        [str(DOTNET), "build", "-c", "Release", str(HELPER_PROJECT), "-nologo", "-v", "q"], check=True
+    )
     return write_zip(logintool_entries(LOGINTOOL_DIR, HELPER_BUILD), out)
 
 
