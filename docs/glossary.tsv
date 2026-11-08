@@ -30,3 +30,4 @@ camera following style	시점 전환 방식		게임 공식 CAMERA_FOLLOWING_STYL
 roll bonus	보너스 주사위		BonusRollFrame 굴림 버튼. 게임 공식 bonus roll=보너스 주사위(ERR_BONUS_ROLL_EMPTY 등). '추가 전리품'은 Bonus Loot의 번역이라 다른 말(2026-11-06 두 회사 판정)
 bonus roll	보너스 주사위		위와 같음
 interact key	상호작용 단축키		게임 공식 INTERACT_KEY_TUTORIAL "Interact Key" → "상호작용 단축키"(gs_koKR.csv). 2026-11-09 설명서 world/movement.md가 "상호작용 키"로 갈려 있었다
+what has changed	무엇이 바뀌었나요?		판다리아의 안개 마법책 탭. 게임 공식 BINDING_NAME_TOGGLEWHATHASCHANGEDBOOK "Toggle \"What's Changed\"" → "\"무엇이 바뀌었나요?\" 켜기/끄기"(gs_koKR.csv). 2026-11-09 낱말 치환에서 "무엇이 변경되었나요?"로 바뀔 뻔해서 확정

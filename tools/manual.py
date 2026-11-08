@@ -222,7 +222,8 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
     except ValueError:
         rel = ko_path.name
     entries = {("manual", rel): (_CODE.sub("", _strip_fences(en)), ko)}
-    problems += [f"용어집: {v}" for v in violations(load_glossary() if terms is None else terms, entries)]
+    terms = load_glossary() if terms is None else terms
+    problems += [f"용어집: {v}" for v in violations(terms, entries)]
     if not SOURCE_LINE.match(ko):
         problems.append("첫 줄에 원문 기록(<!-- source: docs/src/user/en/... @ 커밋 -->)이 없다")
     a, b = structure(en), structure(ko)
@@ -246,7 +247,10 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
     ]
     if haeyo:
         problems.append(f"해요체 어미 {len(haeyo)}곳(설명서는 합니다체): {', '.join(sorted(set(haeyo))[:8])}")
-    bakkuda = _BAKKUDA.findall(_QUOTED.sub("", _CODE.sub("", _strip_fences(ko))))
+    # 용어집에 오른 이름(게임 탭 "무엇이 바뀌었나요?" 등)은 따옴표가 없어도 실물 그대로다.
+    body = _QUOTED.sub("", _CODE.sub("", _strip_fences(ko)))
+    names = {k for term in terms for k in term.ko if _BAKKUDA.search(k)}
+    bakkuda = _BAKKUDA.findall(_alternation(names).sub("", body) if names else body)
     if bakkuda:
         problems.append(
             f"바꾸다·바뀌다 {len(bakkuda)}곳(변경하다·변경되다로): {', '.join(sorted(set(bakkuda))[:8])}"

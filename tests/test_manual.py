@@ -129,6 +129,21 @@ def test_check_rejects_bakkuda_outside_quotes(tmp_path: Path) -> None:
     assert check(EN, good, ko) == []
 
 
+def test_check_allows_bakkuda_in_glossary_names(tmp_path: Path) -> None:
+    """2026-11-09 회귀 확인(두 회사 치명): 게임 탭 이름 "무엇이 바뀌었나요?"를 "무엇이 변경되었나요?"로
+    바꿔 화면 이름과 달라졌다. 용어집에 오른 이름은 따옴표가 없어도 실물 그대로 둔다."""
+    from tools.glossary import Term
+
+    terms = [Term("What Has Changed", ("무엇이 바뀌었나요?",), frozenset(), "")]
+    ko = tmp_path / "p.md"
+    en = "# Tabs\n\nThe What Has Changed tab.\n"
+    text = "<!-- source: docs/src/user/en/p.md @ abc1234 -->\n# 탭\n\n무엇이 바뀌었나요? 탭.\n"
+    ko.write_text(text, "utf-8")
+    assert check(en, text, ko, terms) == []
+    renamed = text.replace("바뀌었나요", "변경되었나요")
+    assert "What Has Changed" in "\n".join(check(en, renamed, ko, terms))
+
+
 def test_translated_manual_passes_check() -> None:
     """0단계 기계 검사: 번역된 설명서 전체가 구조·앵커·해요체·용어집 검사를 통과한다.
     그전에는 `tools.manual check`를 따로 실행해야 해서 `uv run pytest -q`가 설명서를 보지 않았다."""
