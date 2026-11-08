@@ -12,7 +12,7 @@
 
 - 단계: Phase 2 / 전체 6 — koKR 로케일, 관리자 답 대기
 - 직전: 경매장 PR wow-vision/vision-locale#66, wow-vision/WowVision#109 제출. koKR 상의 이슈 wow-vision/WowVision#110 제출. koKR 브랜치는 `dnz3d4c/vision-locale-pr`의 `korean-locale`(3a37df9)에 준비됨.
-- 다음: #110에 답이 오면 koKR PR을 연다. #66이 합쳐지면 새 키 4개의 koKR 값을 보충한다.
+- 다음: #110에 답이 오면 koKR PR을 연다. #66이 합쳐지면 새 키 4개의 koKR 값을 보충한다. #75가 합쳐지면 Phase 1b 후속을 한다.
 - 사용자 결정(2026-11-07): 새 이름으로 공개 포크(`vision-locale-pr`, `WowVision-pr`), 이번 범위는 koKR만, 큰 단위는 이슈로 먼저 상의. 설치 프로그램·설명서·음성 팩(Phase 3~5)은 이번에 진행하지 않는다.
 
 ## 배경  [강제]
@@ -44,6 +44,13 @@
 - 문제: `" in "`, `" min "`, `" sec"`가 `L[]` 밖에 있어서 모든 언어에서 영어로 나온다(`tbc/auction/ScanSession.lua:147`, `tbc/auction/module.lua:78-93`).
 - 수정: 서식 문자열 4개(`Scan complete, %s Results in %s scanned`, `%s min %s sec`, `%s min`, `%s sec`), enUS·deDE·frFR, 독일어 설명서 인용 3곳.
 - 열린 원본 PR 16개 중 이 파일들을 고치는 것은 없다.
+
+### Phase 1b. 작은 PR: Disabled·Available 키 분리 [제출: vision-locale#75, WowVision#122, 2026-11-09]
+
+- 문제: 한 키를 뜻이 다른 문맥이 같이 쓴다. `Disabled` 16곳 중 14곳은 흐린 버튼(한국어 "사용 불가"), 2곳은 설정 끄기("사용 안 함": `core/targeting/module.lua:322`, `core/objects/types/unit/PVP.lua:28`). `Available`은 특성 1곳("사용 가능")과 Mists 경매장 수량 2곳(공식 "구매 가능 수량": `mists/auction.lua:253`, `284`). 사용자 지적: 퀘스트 수락 버튼이 "사용 안 함"으로 들림.
+- 수정: 소수 쪽만 새 키 `SettingDisabled`, `AuctionAvailable`(영어 값은 그대로)로 바꾼다. enUS·deDE·frFR `ui.lua` 끝에 두 키, 독일어·프랑스어는 지금 값.
+- 병합 전 koKR: `Disabled` = "사용 불가"(`docs/decisions.tsv` 2026-11-09). 설정 끄기 2곳도 그동안 "사용 불가"로 들린다.
+- 병합 뒤 할 일: vision-locale main에 원본 병합, `tools.sync_locale`로 `SettingDisabled` "사용 안 함", `AuctionAvailable` "구매 가능 수량". 설명서 인용 3곳을 "사용 안 함"으로 되돌린다(`world/targeting.md`, `reference/keybindings.md`의 "적 소프트 대상 사용 불가", `information/buffers.md` PvP 줄). 원본 릴리스가 나와야 테스터에게 코드가 닿는다.
 
 ### Phase 2. koKR 로케일 [승인 필요]
 
