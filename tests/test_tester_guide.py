@@ -63,12 +63,17 @@ def test_guide_quotes_match_installer_text() -> None:
     assert not stale, f"설치 프로그램에 없는 인용 문구: {stale}"
 
 
-def test_installer_text_includes_english_screen_text() -> None:
-    """Windows가 한국어가 아니면 앞 화면들이 영어로 나온다. 안내는 그 영어 버튼 이름도 인용한다(2026-11-06)."""
-    text = installer_text()
-    assert "Continue with the current version" in text
-    assert "현재 버전으로 계속" in text
-    assert "Mit der vorhandenen Version fortfahren" in text
+def test_guide_quotes_only_korean_screen_text() -> None:
+    """2026-11-08 사용자 지시: 영어·독일어·프랑스어 화면 이름("Install now" 등)은 안내에서 모두 뺀다.
+
+    인용 문구는 한국어 화면(Ko 표)에 있는 글자여야 한다.
+    """
+    ko = " ".join(visible(v) for v in parse_table(LOC_CS.read_text(encoding="utf-8"), "Ko").values())
+    guide = GUIDE.read_text(encoding="utf-8")
+    foreign = [q for q in re.findall(r'"([^"]+)"', guide) if q not in ko]
+    assert not foreign, f"한국어 화면에 없는 인용 문구: {foreign}"
+    assert "영어 화면" not in guide
+    assert "독일어 화면" not in guide and "프랑스어 화면" not in guide
 
 
 def test_guide_states_voice_bridge_default() -> None:
