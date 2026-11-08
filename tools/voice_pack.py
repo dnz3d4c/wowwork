@@ -22,7 +22,9 @@ AUDIO_PACK_LUA = WOWVISION_DIR / "core" / "audio" / "AudioPack.lua"
 # SAPI COM 의 음성 설명(GetDescription). 같은 PC의 "Code Factory Vocalizer Yuna (한국어) - Embedded High"는
 # NVDA 밖에서 녹음이 잘려 나와서 쓰지 않는다(2026-11-07 실측, too_short 가 잡는다).
 DEFAULT_VOICE = "Vocalizer Expressive Yuna Harpo 22kHz"
-DEFAULT_RATE = 0  # SAPI 속도 -10~10, 0이 보통
+DEFAULT_RATE = 5  # SAPI 속도 -10~10. 0은 영어 팩보다 느려서 5로 정했다(2026-11-08 사용자 결정)
+# SAPI 볼륨 0~100. 100은 Harpo 가 wav 단계에서 이미 0 dBFS로 잘랐다. 60이면 피크 약 -9 dB로 원본 팩(Matthew·Joanna)과 같다(2026-11-08 실측).
+DEFAULT_VOLUME = 60
 DEFAULT_OUT = REPO_ROOT / "assets" / "voice" / "Yuna"
 
 _DIGITS = ["", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"]
@@ -79,6 +81,7 @@ if ($token -eq $null) { throw ("SAPI voice not found: " + $args[0]) }
 $v.Voice = $token
 # 속도는 PC의 SAPI 기본값을 따르지 않고 지정한다.
 $v.Rate = [int]$args[2]
+$v.Volume = [int]$args[3]
 foreach ($line in [IO.File]::ReadAllLines($args[1], [Text.Encoding]::UTF8)) {
     $parts = $line.Split("`t")
     $fs = New-Object -ComObject SAPI.SpFileStream
@@ -101,6 +104,24 @@ def too_short(durations: dict[str, float], texts: dict[str, str]) -> list[str]:
     return [rel for rel, sec in durations.items() if sec < MIN_SECONDS_PER_SYLLABLE * len(texts[rel])]
 
 
+# 피크가 이보다 크면 실패로 본다. mp3 인코딩이 피크를 조금 올리므로 0 dBFS가 아니라 여유를 둔다.
+MAX_PEAK_DB = -1.0
+
+
+def too_loud(peaks: dict[str, float]) -> list[str]:
+    return [rel for rel, db in peaks.items() if db > MAX_PEAK_DB]
+
+
+def peak_db(path: Path) -> float:
+    err = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), "-af", "volumedetect", "-f", "null", "-"],
+        capture_output=True,
+        text=True,
+        check=False,
+    ).stderr
+    return float(re.findall(r"max_volume: (-?[\d.]+) dB", err)[-1])
+
+
 def duration(path: Path) -> float:
     """끝까지 디코딩해서 잰 길이(초). mp3 헤더의 추정값은 쓰지 않는다."""
     err = subprocess.run(
@@ -117,7 +138,7 @@ def duration(path: Path) -> float:
 _TRIM = "silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse"
 
 
-def build(voice: str, out: Path, rate: int = DEFAULT_RATE) -> int:
+def build(voice: str, out: Path, rate: int = DEFAULT_RATE, volume: int = DEFAULT_VOLUME) -> int:
     entries = pack_entries()
     with tempfile.TemporaryDirectory() as tmp_name:
         tmp = Path(tmp_name)
@@ -137,6 +158,7 @@ def build(voice: str, out: Path, rate: int = DEFAULT_RATE) -> int:
                 voice,
                 str(listing),
                 str(rate),
+                str(volume),
             ],
             check=True,
         )
@@ -173,6 +195,9 @@ def build(voice: str, out: Path, rate: int = DEFAULT_RATE) -> int:
         raise SystemExit(
             f"녹음이 잘린 것으로 보이는 파일 {len(short)}개(음절당 {MIN_SECONDS_PER_SYLLABLE}초 미만): {short[:10]}"
         )
+    loud = too_loud({rel: peak_db(out / rel) for rel in texts})
+    if loud:
+        raise SystemExit(f"피크가 {MAX_PEAK_DB} dB를 넘는 파일 {len(loud)}개: {loud[:10]}")
     return len(entries)
 
 
@@ -182,8 +207,9 @@ def main() -> None:
     ap.add_argument("--voice", default=DEFAULT_VOICE)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--rate", type=int, default=DEFAULT_RATE)
+    ap.add_argument("--volume", type=int, default=DEFAULT_VOLUME)
     args = ap.parse_args()
-    n = build(args.voice, args.out, args.rate)
+    n = build(args.voice, args.out, args.rate, args.volume)
     print(f"{n}개 파일 -> {args.out}")
 
 

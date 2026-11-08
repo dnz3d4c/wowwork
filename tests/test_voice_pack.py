@@ -61,3 +61,21 @@ def test_too_short_flags_truncated_recordings() -> None:
     durations = {"directions/east.mp3": 0.11, "numbers/2.mp3": 0.16, "numbers/77.mp3": 0.36}
     texts = {"directions/east.mp3": "동쪽", "numbers/2.mp3": "이", "numbers/77.mp3": "칠십칠"}
     assert too_short(durations, texts) == ["directions/east.mp3"]
+
+
+def test_too_loud_flags_peaks() -> None:
+    """2026-11-08: SAPI 볼륨 100 녹음은 wav 단계에서 이미 0 dBFS로 잘렸다(77개 파일 피크 -0.1 dB 이상)."""
+    from tools.voice_pack import MAX_PEAK_DB, too_loud
+
+    assert MAX_PEAK_DB <= -1.0
+    peaks = {"numbers/1.mp3": 0.0, "numbers/2.mp3": -0.5, "numbers/3.mp3": -9.3}
+    assert too_loud(peaks) == ["numbers/1.mp3", "numbers/2.mp3"]
+
+
+def test_defaults_rate_and_volume() -> None:
+    """2026-11-08 사용자 결정: 속도 5(샘플 east_rate5). 볼륨 60은 원본 팩 수준(피크 약 -9 dB)에 맞춘 값."""
+    from tools.voice_pack import _PS, DEFAULT_RATE, DEFAULT_VOLUME
+
+    assert DEFAULT_RATE == 5
+    assert DEFAULT_VOLUME == 60
+    assert "$v.Volume = [int]$args[3]" in _PS
