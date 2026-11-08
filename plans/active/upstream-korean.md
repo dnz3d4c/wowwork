@@ -49,6 +49,10 @@
 
 - `upstream/main`에서 `koKR/` 전체와 `modules.xml` 1줄을 커밋 하나로 만든다.
 - 이후 관리: 원본에 키가 추가되면 키 대조 스크립트로 빠진 키를 찾아 koKR 보충 PR을 낸다. 빠진 키는 AceLocale이 영어로 대신 보여 주므로 원본 기여자에게 부담이 없다.
+- 로케일 저장소 밖의 언어별 표(2026-11-09 발견, 게임에서 미확인). koKR PR을 낼 때 함께 다룰지 정한다.
+  - `core/minimap/gatheringNames.lua`: 채집물 이름이 enUS·deDE·frFR만 있고 없는 언어는 enUS로 대체한다(7-8줄 주석). 미니맵 글자와 이름을 부분 일치로 맞추므로 한국어 클라이언트에서는 채집물 탐지가 안 될 것으로 추정한다. 확인: 한국어 클라이언트에서 약초 찾기를 켜고 미니맵 스캔이 알리는지 듣는다. 고치면 `core/minimap/tests.lua`에 koKR 테스트를 더한다.
+  - `mapdata/WowVision_MapData_TBC/locale/`: 지명 번역이 deDE·frFR만 있다. `wv-mapdata-tools/names.py`가 만드는 파일이라 mapdata 저장소에 따로 PR을 낸다.
+- `changes-latest.md` 한 줄은 필수가 아니다(병합된 외부 PR 9개 중 3개만 넣었다). 넣는다면 `changes.md:89`의 독일어·프랑스어 줄 형식을 따른다.
 
 ### Phase 3. 설치 프로그램 한국어 화면 [승인 필요]
 
