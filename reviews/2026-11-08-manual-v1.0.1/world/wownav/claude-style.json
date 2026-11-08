@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowNav 데이터가 있는 곳에서 스캐너의 Enter를 NPC나 물체에 누르면, 그 지점 근처에서 WowNav의 장소 목록이 아는 대상일 경우 WowNav 자체 항목으로 높이까지 포함해 경로를 잡습니다.",
+   "suggestion": "WowNav 데이터가 있는 곳에서 NPC나 물체에 스캐너의 Enter를 누를 때, 그 대상이 그 지점 근처에 있는 WowNav 장소 목록의 항목이면 그 항목으로 높이까지 포함해 경로를 잡습니다.",
+   "problem": "\"Enter를 NPC나 물체에 누르면\"은 조사 배치가 어색하고, \"그 지점 근처에서 ... 아는 대상일 경우\"는 '근처에서'가 무엇을 꾸미는지 흐려 귀로 들으면 조건이 한 번에 잡히지 않는다. 영어 구문 순서를 그대로 따른 번역투다.",
+   "evidence": "원문(en_diff 추가 문장): \"Where WowNav has data, the scanner's Enter on an NPC or object that WowNav's place list knows near that spot routes to WowNav's own entry of it, with its height\". 지침 style 관점: 번역투, 어색한 조사, 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "world/wownav.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "그렇지 않으면 \"여기서는 현재 층이 불분명함\"이 들리고, 30야드 안에 네트워크가 전혀 없으면 \"이곳에 WowNav 네트워크 없음\"이 들립니다.",
+   "suggestion": "그렇지 않으면 \"여기서는 현재 층이 불분명함\"이 들립니다. 30야드 안에 네트워크가 전혀 없으면 대신 \"이곳에 WowNav 네트워크 없음\"이 들립니다.",
+   "problem": "\"...이 들리고, ...이 들립니다\"는 두 안내가 차례로 함께 들리는 것처럼 들릴 수 있다. 원문은 둘 중 하나가 들린다는 선택 관계(or ... when)다.",
+   "evidence": "원문(en_diff 변경 문장): \"Otherwise you hear \\\"Your floor is not clear here\\\", or \\\"No WowNav network here\\\" when nothing of the network is within 30 yards.\" 지침 style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  }
+ ]
+}

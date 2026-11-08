@@ -20,6 +20,8 @@
 | getting-started/installer.md | 업데이트 뒤 /reload만 안내하지만, TOC를 다시 쓴 실행은 게임 재시작을 안내한다 | wowvision-installer InstallRunner.cs:556-561 |
 | getting-started/quick-start.md | 스캐너 항목에서 Enter를 누르면 바로 안내가 시작된다고 하지만, 지도 데이터나 경로 엔진이 있으면 길 안내 창이 열리고 Enter를 한 번 더 눌러야 한다 | WowVision core/navigation/maps/module.lua:574-582 |
 | reference/commands.md | 요약 표는 /wv padlog를 Retail과 WoW: Forever용이라 하지만 모든 버전에 등록된다(같은 문서 본문도 그렇게 적음) | WowVision core/ui modules/module.lua:162 |
+| reference/commands.md (V1.0.1) | /wv targetinfo가 마지막에 "실제로 들리는 그대로의 알림"을 보여 주고 말로 읽는다고 하지만, 대상 알림 설정이 꺼져 있으면(기본값) 알림을 만들지 않고 말하지도 않는다 | WowVision targetNames.lua:832-835, 1006, names.lua:109-112 (2026-11-08 설명서 평가 판정자 확인) |
+| reference/commands.md (V1.0.1) | 게임이 숨기는 항목은 <secret>으로 표시된다고 하지만, 숨겨진 참·거짓 값과 숫자는 건너뛰고 읽을 값이 없으면 `-`로 표시한다 | WowVision targetNames.lua:11-15, 848-855 (2026-11-08 설명서 평가 판정자 확인) |
 | reference/commands.md | 이름 없이 실행하면 두 명령 모두 "Syntax: /enableaddon <name>"을 출력한다고 하지만 /disableaddon은 "Syntax: /disableaddon <name>"을 출력한다 | WowVision core/WowVision.lua:1139 |
 | reference/glossary.md | 상하 각도 고정이 수영과 비행 모두에 걸린다고 하지만 리테일 계열은 비행 중 고정하지 않는다 | WowVision core/navigation/pitchLock.lua:55, retail/pitchLock.lua:3 |
 | windows/action-bars.md | 상황별 메뉴의 끌기는 실제 가방 아이템으로 취급한다고 하지만 끌기 키와 같은 함수를 쓴다 | WowVision core/windows/bars/bars.lua:150-164 |

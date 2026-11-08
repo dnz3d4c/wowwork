@@ -1,0 +1,24 @@
+{
+ "file": "world/targeting.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/targeting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/targeting.md",
+ "items": [
+  {
+   "ref": "world/targeting.md#gpt-style-4",
+   "file": "world/targeting.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "우편함처럼 유닛이 아닌 것은 툴팁 글이나 최소한 이름을 읽습니다. 소프트 대상이 사라질 때는 아무 말도 하지 않습니다.",
+    "suggestion": "우편함처럼 유닛이 아닌 대상이면 WowVision이 툴팁 글을 읽으며, 최소한 이름은 읽습니다. 소프트 대상이 사라질 때는 아무 말도 하지 않습니다.",
+    "problem": "문법상 ‘유닛이 아닌 것’이 툴팁을 읽는 주체가 되어 부자연스럽습니다.",
+    "evidence": "원문은 “Things that are not units, such as a mailbox, speak their tooltip text, or at least their name.”입니다. 한국어에서는 실제 낭독 주체인 WowVision을 밝혀야 자연스럽고 명확합니다."
+   },
+   "translator": {
+    "ref": "world/targeting.md#gpt-style-4",
+    "action": "dispute",
+    "reason": "원문도 'Things that are not units ... speak their tooltip text'로 사물이 주어다. 같은 페이지 56행 '유닛이 아닌 것(...)은 항상 툴팁 글 전체를 읽습니다', 146행 '생명력 모니터는 ... 읽어' 등 이 설명서 전체가 'X는 ...을 읽습니다' 구조를 쓰고 있어 이 문장만 'WowVision이'로 바꾸면 오히려 어긋난다. 뜻도 갈리지 않는다."
+   }
+  }
+ ]
+}

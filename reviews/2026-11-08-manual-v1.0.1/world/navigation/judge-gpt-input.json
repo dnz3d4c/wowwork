@@ -1,0 +1,24 @@
+{
+ "file": "world/navigation.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/navigation.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md",
+ "items": [
+  {
+   "ref": "world/navigation.md#gpt-terminology-0",
+   "file": "world/navigation.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "그 소리 바로 뒤에 WowVision이 남은 경유지 수를 말합니다. 예: \"3개 남음\".",
+    "suggestion": "그 소리 바로 뒤에 WowVision이 남은 경유지 수를 말합니다. 예: \"3 남은 시간\".",
+    "problem": "실제로 낭독되는 화면 문구인 \"Remaining\"을 용어표와 다르게 옮겼다.",
+    "evidence": "원문은 실제 안내 예시 \"3 remaining\"을 인용한다. terms에서 \"Remaining\"의 실제 한국어 값은 \"남은 시간\"이다. manual-translate.md의 용어 규칙 1은 화면 문구의 한국어 값을 글자 그대로 쓰도록 규정한다."
+   },
+   "translator": {
+    "ref": "world/navigation.md#gpt-terminology-0",
+    "action": "dispute",
+    "reason": "이 안내는 maps/module.lua:775의 L[\"%d remaining\"]이고 koKR 값은 \"%d개 남음\"(koKR/navigation.lua:8). '남은 시간'은 쿨다운용 다른 키 L[\"Remaining\"](koKR/monitors.lua:80)이라 근거가 안 됨."
+   }
+  }
+ ]
+}

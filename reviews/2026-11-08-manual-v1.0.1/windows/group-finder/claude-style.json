@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "windows/group-finder.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision이 이 팝업을 열어 줄 수 없으므로 전투가 끝날 때까지 팝업에 닿을 수 없습니다",
+   "suggestion": "WowVision이 이 팝업을 열어 줄 수 없으므로 전투가 끝날 때까지 팝업에 답할 수 없습니다",
+   "problem": "\"팝업에 닿을 수 없습니다\"는 영어 \"out of reach\"를 그대로 옮긴 번역투라서 한국어로는 무슨 뜻인지 바로 들어오지 않습니다. 이 문장은 사용자가 그 팝업을 조작할 수 없다는 뜻입니다.",
+   "evidence": "원문(en_diff에서 새로 들어온 구절): \"In combat WowVision cannot open the popup for you, so it stays out of reach until the fight ends.\" 바로 앞 문장도 \"다른 팝업처럼 답하면 됩니다\"라고 '답하다'를 쓰므로 맞춰 쓰면 이어서 읽기 쉽습니다."
+  },
+  {
+   "id": "windows/group-finder.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "다음 두 방법은 전투 중에도 언제든 초대를 수락합니다.",
+   "suggestion": "다음 두 방법으로는 전투 중에도 언제든 초대를 수락할 수 있습니다.",
+   "problem": "'방법'이 초대를 수락하는 주어로 쓰여서 영어 무생물 주어 구문을 그대로 옮긴 번역투가 됐습니다. 수단을 나타내는 '-으로'를 쓰면 자연스러운 한국어가 됩니다.",
+   "evidence": "원문(en_diff에서 새로 들어온 구절): \"These two ways accept the invitation at any time, also in combat:\". 지침의 style 관점: 번역투."
+  }
+ ]
+}

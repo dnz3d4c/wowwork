@@ -1,0 +1,8 @@
+[
+  {"ref": "basics/tooltips.md#claude-accuracy-0", "action": "applied", "reason": "합의 지적. 원문 'which speech would leave out'은 WowVision이 처리하지 않을 때의 가정이므로 '그대로 두면 음성에서는 이 단위가 빠집니다'로 고쳐 다음 문장과 어긋나지 않게 했다."},
+  {"ref": "basics/tooltips.md#claude-style-0", "action": "applied", "reason": "합의 지적. '보여 주므로, 그대로 두면 음성에서는 이 단위가 빠집니다'로 가정을 살리고 '이것'을 '이 단위'로 구체화했다."},
+  {"ref": "basics/tooltips.md#claude-style-1", "action": "applied", "reason": "합의 지적. 번역투 '주화 몇 개 값어치밖에 안 되는'을 '값이 주화 몇 개뿐인'으로 바꾸고 끝을 '~처럼 읽힙니다'로 맞췄다. 원문은 'a few coins'라 '코퍼'로 좁히지 않고 '주화'를 유지했다(gpt-style-1 제안과 절충)."},
+  {"ref": "basics/tooltips.md#claude-style-2", "action": "applied", "reason": "맞는 지적. 원문 82~84행은 목록 끝과 '## Diagnostic command' 사이에 빈 줄이 있는데 번역문은 빠져 있었다. 빈 줄을 넣었다."},
+  {"ref": "basics/tooltips.md#gpt-style-0", "action": "applied", "reason": "합의 지적. '툴팁의 돈'을 '툴팁의 금액'으로 바꾸고, '이것'의 모호함은 '이 단위'로 풀었다. '이 그림은 음성으로 읽히지 않습니다'는 원문의 가정(would)을 단정으로 만들어 claude-accuracy-0과 충돌하므로 그 부분은 claude 제안 쪽 문장을 택했다."},
+  {"ref": "basics/tooltips.md#gpt-style-1", "action": "applied", "reason": "합의 지적. 명사 나열을 풀어 '값이 주화 몇 개뿐인 아이템은'으로 고쳤다. '주화'는 원문 'coins'와 맞아 유지했다."}
+]

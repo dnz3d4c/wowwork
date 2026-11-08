@@ -1,0 +1,47 @@
+[
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "\"경로 역방향 전환, ...까지 돌아감\"에 그 장소 이름이 들어가 들리고",
+    "suggestion": "\"경로 역방향 전환\"에 이어 그 장소 이름과 \"까지 돌아감\"이 들리고",
+    "problem": "원문에 없는 말줄임표(...)를 자리표시자로 넣었다. 스크린리더는 이를 '점점점'으로 읽거나 건너뛰어 '전환 까지 돌아감'처럼 들리고, 이어지는 '에 그 장소 이름이 들어가 들리고'도 어색한 설명이다.",
+    "evidence": "원문: You hear \"Route reversed, back to\" and the name of that place. 원문은 기호 없이 '문구 + 장소 이름'으로 설명한다. manual-review.md style 관점: 원문에 없는 기호, 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "길 안내 모듈의 남은 경유지 수 알림 설정(기본으로 켜짐)으로 끕니다.",
+    "suggestion": "이 안내는 길 안내 모듈의 남은 경유지 수 알림 설정(기본으로 켜짐)을 끄면 나오지 않습니다.",
+    "problem": "주어와 목적어 없이 '설정으로 끕니다'로 끝나 무엇을 끄는지, 지시인지 설명인지 들어서는 바로 잡히지 않는다. 영어 'turns it off'를 직역한 문장이다.",
+    "evidence": "원문: The setting Announce Remaining Waypoints in the Navigation module (on by default) turns it off. (en_diff에서 새로 생긴 항목)"
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "WowNav에서는 경유지에 그보다 큰 자기 거리가 따로 있을 수도 있습니다.",
+    "suggestion": "WowNav에서는 경유지에 따라 데이터에 그보다 큰 도착 거리가 따로 정해져 있을 수도 있습니다.",
+    "problem": "'자기 거리'는 'a distance of its own'의 직역으로 한국어에서 무슨 거리인지 드러나지 않는 번역투다.",
+    "evidence": "원문: With WowNav, a waypoint can also have a larger distance of its own. (en_diff에서 바뀐 문장)"
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "WowNav에서는 데이터에 이보다 큰 자기 거리가 있는 경유지는 그 거리를 씁니다.",
+    "suggestion": "WowNav에서는 데이터에 이보다 큰 도착 거리가 따로 정해진 경유지라면 그 거리를 씁니다.",
+    "problem": "'자기 거리' 번역투에 '~에서는 ~경유지는'으로 주제 조사가 겹쳐 문장이 무겁다.",
+    "evidence": "원문: With WowNav, a waypoint that has a larger distance of its own in the data uses that one. (en_diff에서 바뀐 문장)"
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "그 퀘스트의 다음 목표를 가리킨 채로 창이 열립니다.",
+    "suggestion": "그 퀘스트에서 다음으로 갈 곳을 가리킨 채로 창이 열립니다.",
+    "problem": "바로 다음 문장에서 'objective'를 '첫 번째 목표'로 옮겨, 'target'(갈 곳)과 'objective'(퀘스트 목표)가 둘 다 '목표'로 들린다. 들어서는 '다음 목표'가 퀘스트 목표 항목인지 가야 할 장소인지 갈린다.",
+    "evidence": "원문: opens the window aimed at that quest's next target ... the nearest target of its first unfinished objective. 번역의 다음 문장: '아직 끝내지 않은 첫 번째 목표의 가장 가까운 대상'. (en_diff에서 새로 생긴 문단)"
+  }
+]

@@ -1,0 +1,36 @@
+{
+ "upheld": [],
+ "disputeWon": 0,
+ "escalations": [
+  {
+   "ref": "reference/commands.md#gpt-context-0",
+   "quote": "이어서 대상 툴팁의 줄들을, 마지막으로 실제로 들리는 그대로의 알림을 보여 줍니다. 목록은 결과 창에 열리고 대화 창에도 출력되며, 알림은 말로 읽힙니다.",
+   "why": "두 판정자의 결론이 다름",
+   "gpt": {
+    "uphold": true,
+    "final_ko": "이어서 대상 툴팁의 줄들을 보여 주고, 마지막으로 선택된 항목을 바탕으로 구성한 알림을 보여 줍니다. 목록은 결과 창에 열리고 대화 창에도 출력됩니다. 대상 알림이 켜져 있고 읽을 내용이 있으면 알림도 말로 읽습니다.",
+    "reason": "현재 번역은 알림이 설정과 관계없이 실제 들리는 그대로 표시되고 음성 출력된다고 설명해 실제 동작과 다릅니다. 다만 지적의 수정안과 달리 보고서의 알림은 마스터 설정이 꺼져도 `compose`로 구성되므로 항상 `-`가 되지는 않습니다."
+   },
+   "claude": {
+    "uphold": false,
+    "final_ko": "",
+    "reason": "코드 지적 자체는 맞다. targetNames.describe는 설정이 꺼져 있으면 nil을 돌려주고(targetNames.lua:832-835), 기본값은 false다(1006). targetinfo 명령은 describe 결과에 글자가 있을 때만 말한다(names.lua:109-112). 하지만 원문 142행이 'last the announcement as you hear it ... and the announcement is spoken'이라고 쓰고 있고, 번역은 이 문장을 그대로 옮겼다. 원문과 코드 동작이 다른 것이지 번역 오류가 아니다. 수정안은 원문에 없는 조건을 더하는데, 번역 지침이 이를 금지한다(translation-guide.md:92). 원문 쪽 문제로 docs/upstream-report.md에 올릴 대상이다."
+   }
+  },
+  {
+   "ref": "reference/commands.md#gpt-context-1",
+   "quote": "게임이 그 순간 숨기는 항목은 <secret>으로 표시됩니다. 버그 신고에 도움이 됩니다.",
+   "why": "두 판정자의 결론이 다름",
+   "gpt": {
+    "uphold": true,
+    "final_ko": "게임이 숨긴 문자열은 <secret>으로 표시됩니다. 다만 조건을 판별하는 데 쓰이는 숨겨진 참·거짓 값이나 숫자는 그 항목이 생략되어 `-`로 표시될 수 있습니다. 버그 신고에 도움이 됩니다.",
+    "reason": "현재 번역은 숨겨진 모든 항목이 `<secret>`으로 표시된다고 단정하지만, 판별이 필요한 숨겨진 값은 항목에서 생략될 수 있습니다. 읽을 값이 남지 않은 항목은 보고서에 `-`로 출력됩니다."
+   },
+   "claude": {
+    "uphold": false,
+    "final_ko": "",
+    "reason": "코드 지적은 맞다. 숨겨진 참·거짓 값과 숫자는 건너뛰고(targetNames.lua:11-15), plain 함수는 숨겨진 텍스트만 <secret>으로 바꾸며 값이 없으면 '-'를 낸다(targetNames.lua:848-855). 하지만 원문 'A fact the game hides in that moment shows as <secret>.'를 번역이 그대로 옮겼다. 원문 설명이 코드와 다른 것이고, 수정안은 원문에 없는 내용을 더하므로 지침 위반이다(translation-guide.md:92). 원문 쪽 문제로 upstream-report에 올릴 대상이다."
+   }
+  }
+ ]
+}

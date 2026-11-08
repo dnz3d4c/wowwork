@@ -1,0 +1,29 @@
+[
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "게임은 골드, 실버, 코퍼를 작은 주화 그림으로 보여 주는데, 음성으로는 이것이 빠집니다.",
+  "suggestion": "게임은 골드, 실버, 코퍼를 작은 주화 그림으로 보여 주므로, 그대로 두면 음성에서는 이 단위가 빠집니다.",
+  "problem": "'음성으로는 이것이 빠집니다'가 단정형이라, 들으면 WowVision으로 읽어도 단위가 빠진다는 뜻으로 받아들일 수 있어 바로 다음 문장(단위와 함께 읽는다)과 부딪힙니다. '이것'이 가리키는 대상(그림인지 금액인지)도 귀로는 분명하지 않습니다.",
+  "evidence": "원문 en_diff 추가 문단: \"which speech would leave out\" (가정형, WowVision이 없을 때의 이야기). manual-review.md style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "주화 몇 개 값어치밖에 안 되는 아이템은 예를 들어 \"판매 가격: 7 코퍼\"로 읽힙니다.",
+  "suggestion": "값이 코퍼 몇 개밖에 안 되는 아이템은 예를 들어 \"판매 가격: 7 코퍼\"처럼 읽힙니다.",
+  "problem": "'주화 몇 개 값어치'는 \"worth only a few coins\"를 직역한 번역투입니다. 예시는 코퍼만 나오는 경우이므로 '코퍼 몇 개'로 쓰면 자연스럽고 예시와도 맞습니다. 앞 문장의 '~처럼 읽습니다'와 맞춰 '~처럼'으로 쓰면 예시라는 점이 더 분명합니다.",
+  "evidence": "원문 en_diff: \"An item worth only a few coins reads, for example, \\\"Sell Price: 7 Copper\\\".\" manual-review.md style 관점: 번역투."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Space는 그대로 작동합니다.\n## 진단 명령",
+  "suggestion": "Space는 그대로 작동합니다.\n\n## 진단 명령",
+  "problem": "원문에서 알려진 문제 항목을 지운 것을 반영하면서 목록 끝과 다음 제목 사이의 빈 줄까지 함께 사라졌습니다. 렌더러에 따라 제목이 목록 항목에 붙어 제목으로 인식되지 않을 수 있고, 그러면 스크린리더의 제목 탐색에서 이 절이 빠집니다.",
+  "evidence": "en_diff의 삭제 줄 \"- The vendor price in an item tooltip may not read as expected. This is a known issue.\" 뒤에 원문은 빈 줄을 유지함(\" \\n ## Diagnostic command\"). 번역문은 빈 줄 없이 바로 제목이 옴. manual-review.md: 변경 때문에 앞뒤와 어긋나게 된 곳은 지적."
+ }
+]

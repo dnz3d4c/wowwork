@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/tooltips.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "게임은 골드, 실버, 코퍼를 작은 주화 그림으로 보여 주는데, 음성으로는 이것이 빠집니다.",
+   "suggestion": "게임은 골드, 실버, 코퍼를 작은 주화 그림으로 보여 주는데, 그대로 두면 음성에서는 이것이 빠집니다.",
+   "problem": "원문의 가정(would: WowVision이 처리하지 않으면 빠질 것)을 단정으로 옮겨, 바로 다음 문장의 'WowVision은 주화 단위와 함께 읽습니다'와 어긋나게 들린다. 실제로 빠진다는 뜻으로 오해할 수 있다.",
+   "evidence": "en_diff 추가 문단: \"The game shows gold, silver and copper as small coin pictures, which speech would leave out.\""
+  }
+ ]
+}

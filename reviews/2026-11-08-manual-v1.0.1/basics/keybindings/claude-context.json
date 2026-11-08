@@ -1,0 +1,11 @@
+[
+ {
+  "id": "basics/keybindings.md",
+  "category": "context",
+  "severity": "major",
+  "quote": "S를 누르면 S로 시작하는 다음 동작으로, S를 한 번 더 누르면 그다음 동작으로 이동하고, S에 이어 C를 빠르게 누르면 \"스캐너\"를 찾습니다.",
+  "suggestion": "S를 누르면 이름이 S로 시작하는 다음 동작으로, S를 한 번 더 누르면 그다음 동작으로 이동하고, 여러 글자를 빠르게 이어 누르면 그 글자들로 시작하는 동작을 찾습니다. 다만 한국어판에서는 동작 이름이 한국어로 표시되므로 S로 \"스캐너\"를 찾을 수는 없고, 영문 글자 키로는 이름이 영문으로 시작하는 동작만 찾을 수 있습니다.",
+  "problem": "한국어 클라이언트에서는 동작 이름이 한국어(\"스캐너\")로 표시되고 글자 이동은 표시된 이름과 맞춰 보므로, S에 이어 C를 눌러도 \"스캐너\"를 찾지 못한다. 번역은 원문 예시를 그대로 옮겨 독자가 실제로 되지 않는 조작을 하게 만든다. 같은 설명서의 링크 대상(interface.md 한국어판)은 \"S로 스캐너나 음성에 … 이동할 수 없습니다\"라고 적고 있어 서로 어긋난다.",
+  "evidence": "원문 en_diff 추가 구절 \"S then C quickly finds \\\"Scanner\\\"\". 코드: WowVision/core/ui modules/graphBindings.lua:86 `local label = binding:getLabel() or binding.key`로 줄 이름을 정하고, core/graph/typeAhead.lua matchText(label)가 표시 이름을 접어서 비교(한글 등 다중 바이트 글자는 그대로 둠). 스캐너 단축키 label = L[\"Scanner\"](core/scanner/ui.lua:239), vision-locale/koKR/scanner.lua:5 L[\"Scanner\"] = \"스캐너\". 링크 대상 docs/src/user/ko/basics/interface.md `## 메뉴에서 글자로 이동` 끝 문단: \"항목 이름이 한국어로 표시되므로 S로 스캐너나 음성에 … 이동할 수 없습니다\"."
+ }
+]
