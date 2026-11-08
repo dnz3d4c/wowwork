@@ -37,10 +37,20 @@ def _mentions(en_text: str, en: str, short: bool) -> bool:
     return f'"{en}"' in en_text if short else en.lower() in en_text.lower()
 
 
+def _unmask(text: str, masks: list[str]) -> str:
+    for i, v in enumerate(masks):
+        text = text.replace(f"\x00{i}\x00", v)
+    return text
+
+
 def sync_text(
-    changes: list[Change], en_text: str, ko_text: str, others: dict[str, list[str]]
+    changes: list[Change],
+    en_text: str,
+    ko_text: str,
+    others: dict[str, list[str]],
+    values: set[str] | frozenset[str] = frozenset(),
 ) -> tuple[str, list[str]]:
-    """others: 옛 값 → 그 값을 지금도 쓰는 **다른** 키들의 영어."""
+    """others: 옛 값 → 그 값을 지금도 쓰는 **다른** 키들의 영어. values: 지금 koKR 값 전체."""
     log: list[str] = []
     for ch in sorted(changes, key=lambda c: -len(c.old)):
         if ch.old == ch.new:
@@ -48,11 +58,19 @@ def sync_text(
         short = len(ch.old) < LONG
         needle = f'"{ch.old}"' if short else ch.old
         target = f'"{ch.new}"' if short else ch.new
+        # 긴 값은 따옴표 없이 찾으므로 더 긴 다른 값 안쪽("주시 대상 강화 효과" 속 "대상 강화 효과")도
+        # 걸린다. 그런 값은 자리표시자로 가려 두고 바꾼 뒤 되돌린다(2026-11-08).
+        masks = [] if short else sorted(
+            {v for v in values if ch.old in v and v not in (ch.old, ch.new)}, key=len, reverse=True
+        )
+        for i, v in enumerate(masks):
+            ko_text = ko_text.replace(v, f"\x00{i}\x00")
         # 새 값 안에 옛 값이 들어 있으면("…경로" → "…경로 안내") 이미 바뀐 곳을 다시 바꾸지 않도록
         # 새 값으로 쪼갠 조각에서만 찾는다. 그래야 여러 번 돌려도 결과가 같다.
         parts = ko_text.split(target) if needle in target else [ko_text]
         count = sum(p.count(needle) for p in parts)
         if not count or not _mentions(en_text, ch.en, short):
+            ko_text = _unmask(ko_text, masks)
             continue
         # 이번에 함께 바뀐 키 가운데 옛 값은 같고 새 값이 다른 키도 경쟁자다. 이 검사가 없으면
         # 먼저 처리한 키가 다른 키의 인용까지 바꾸고, 뒤의 키는 옛 값이 사라져 아무 일도 안 한다
@@ -61,14 +79,15 @@ def sync_text(
         rivals = [e for e in [*others.get(ch.old, []), *peers] if _mentions(en_text, e, short)]
         if rivals:
             log.append(f"판단 필요: {ch.old!r} {count}곳, 원문이 {ch.en!r}와 {rivals}를 모두 인용")
+            ko_text = _unmask(ko_text, masks)
             continue
         joiner = target if needle in target else ""
-        ko_text = joiner.join(p.replace(needle, target) for p in parts)
+        ko_text = _unmask(joiner.join(p.replace(needle, target) for p in parts), masks)
         log.append(f"{count}x {ch.old} -> {ch.new}")
     return ko_text, log
 
 
-def load(apply_tsv: Path) -> tuple[list[Change], dict[str, list[str]]]:
+def load(apply_tsv: Path) -> tuple[list[Change], dict[str, list[str]], set[str]]:
     from tools.locale_lib import KOKR_DIR, parse_locale_file, upstream_locale_dir
 
     en_dir = upstream_locale_dir() / "enUS"
@@ -80,18 +99,20 @@ def load(apply_tsv: Path) -> tuple[list[Change], dict[str, list[str]]]:
         changes.append(Change(en=en, old=r["en"], new=r["ko"]))
     olds = {c.old for c in changes}
     others: dict[str, list[str]] = {}
+    values: set[str] = olds.copy()
     for ko_path in KOKR_DIR.glob("*.lua"):
         en_map = parse_locale_file(en_dir / ko_path.name) if (en_dir / ko_path.name).exists() else {}
         for key, value in parse_locale_file(ko_path).items():
+            values.add(value)
             if value in olds and (ko_path.name, key) not in changed:
                 others.setdefault(value, []).append(en_map.get(key) or key)
-    return changes, others
+    return changes, others, values
 
 
 def main() -> int:
     from tools.manual import EN_ROOT, KO_ROOT
 
-    changes, others = load(Path(sys.argv[1]))
+    changes, others, values = load(Path(sys.argv[1]))
     dry = "--dry-run" in sys.argv
     for ko_path in sorted(KO_ROOT.rglob("*.md")):
         rel = ko_path.relative_to(KO_ROOT)
@@ -99,7 +120,7 @@ def main() -> int:
         if not en_path.exists():
             continue
         text = ko_path.read_text(encoding="utf-8")
-        out, log = sync_text(changes, en_path.read_text(encoding="utf-8"), text, others)
+        out, log = sync_text(changes, en_path.read_text(encoding="utf-8"), text, others, values)
         for line in log:
             print(f"{rel.as_posix()}: {line}")
         if out != text and not dry:

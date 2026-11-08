@@ -88,3 +88,12 @@ def test_read_tsv(tmp_path) -> None:  # type: ignore[no-untyped-def]
     f = tmp_path / "t.tsv"
     f.write_text("file\tkey\ten\tko\na.lua\tK\tK\t번역\nb.lua\tE\tE\t\n", encoding="utf-8")
     assert read_tsv(f) == {"a.lua": {"K": "번역"}}
+
+
+def test_unknown_rows_reports_keys_missing_from_enus() -> None:
+    """apply.tsv 의 파일·키가 enUS 에 없으면 조용히 버려졌다(2026-11-08 조사)."""
+    from tools.sync_locale import unknown_rows
+
+    new = {"ui.lua": {"Ok": "확인", "Typo": "오타"}, "nofile.lua": {"X": "x"}}
+    en = {"ui.lua": {"Ok": "Ok"}}
+    assert unknown_rows(new, en) == [("nofile.lua", "X"), ("ui.lua", "Typo")]

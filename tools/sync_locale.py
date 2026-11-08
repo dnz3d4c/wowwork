@@ -115,9 +115,18 @@ def read_tsv(path: Path) -> dict[str, dict[str, str]]:
     return result
 
 
+def unknown_rows(new: dict[str, dict[str, str]], en: dict[str, dict[str, str]]) -> list[tuple[str, str]]:
+    """반영 목록에 있지만 enUS 에 없는 (파일, 키). 이런 줄은 반영되지 않으므로 알려야 한다."""
+    return sorted((f, k) for f, keys in new.items() for k in keys if k not in en.get(f, {}))
+
+
 def main(argv: list[str]) -> int:
     new = read_tsv(Path(argv[0])) if argv else {}
     en_dir = upstream_locale_dir() / "enUS"
+    unknown = unknown_rows(new, {p.name: parse_locale_file(p) for p in en_dir.glob("*.lua")})
+    if unknown:
+        print(f"enUS 에 없는 파일·키 {len(unknown)}개라 반영할 수 없음(파일은 쓰지 않음): {unknown}")
+        return 1
     snapshot = load_snapshot(SNAPSHOT_TSV)
     current: Snapshot = {}
     outputs: dict[Path, str] = {}

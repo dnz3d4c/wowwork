@@ -113,3 +113,17 @@ def test_shared_key_lists_other_files_using_same_key() -> None:
     ]
     assert shared_files(every[0], every) == [{"file": "b.lua", "ko": "친구"}]
     assert shared_files(every[2], every) == []
+
+
+def test_escalations_are_collected_with_failures_marked() -> None:
+    """판정 갈림·응답 없음이 출력 없이 사라졌다(2026-11-08 조사)."""
+    from tools.review.decisions import collect_escalations
+
+    result = [
+        {"batch": "b1", "escalations": [{"id": "a.lua::A", "why": "두 판정자의 결론이 다름"}]},
+        {"batch": "b2", "escalations": [{"id": "b.lua::B", "why": "번역자 응답 없음"}]},
+        {"batch": "b3"},
+    ]
+    esc, failed = collect_escalations(result)
+    assert [e["id"] for e in esc] == ["a.lua::A", "b.lua::B"]
+    assert [e["id"] for e in failed] == ["b.lua::B"]

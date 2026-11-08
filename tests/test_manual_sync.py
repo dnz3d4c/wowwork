@@ -97,3 +97,13 @@ def test_changed_keys_conflict_only_matters_when_both_are_quoted() -> None:
         ch, 'the count is followed by "controlled".', '숫자 뒤에 "제어됨"이 붙습니다.', others={}
     )
     assert out == '숫자 뒤에 "제어됨 상태"이 붙습니다.'
+
+
+def test_long_old_value_inside_other_key_value_is_not_touched() -> None:
+    """2026-11-08 조사: "대상 강화 효과"(Target Buffs)를 바꾸면 "주시 대상 강화 효과"(Focus Buffs)
+    인용 안쪽까지 바뀌었다. 더 긴 다른 koKR 값의 일부인 곳은 건드리지 않는다."""
+    ch = [Change(en="Target Buffs", old="대상 강화 효과", new="대상 버프")]
+    en = 'Target Buffs and Focus Buffs lists.'
+    ko = '"대상 강화 효과"와 "주시 대상 강화 효과" 목록.'
+    out, _ = sync_text(ch, en, ko, others={}, values={"주시 대상 강화 효과"})
+    assert out == '"대상 버프"와 "주시 대상 강화 효과" 목록.'

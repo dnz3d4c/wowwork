@@ -45,7 +45,16 @@ def split_invalid(decisions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     return valid, invalid
 
 
-def main() -> None:
+RETRY = ("번역자 응답 없음", "판정 누락")
+
+
+def collect_escalations(result: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """확정하지 못한 항목 전체와, 그중 실패라서 다시 돌려야 하는 것(응답 없음·판정 누락)."""
+    esc = [{"batch": b["batch"], **e} for b in result for e in b.get("escalations", [])]
+    return esc, [e for e in esc if str(e.get("why", "")).startswith(RETRY)]
+
+
+def main() -> int:
     out_json, review_dir = Path(sys.argv[1]), Path(sys.argv[2])
     result = json.loads(out_json.read_text(encoding="utf-8"))["result"]
     broken = incomplete_batches(result)
@@ -69,7 +78,17 @@ def main() -> None:
         w.writerow(["file", "key", "en", "ko"])  # en 열에는 바뀌기 전 번역을 기록한다
         w.writerows(rows)
     print(f"판정 {len(decisions)}건, 번역 변경 {len(rows)}건 -> {review_dir / 'apply.tsv'}")
+    esc, failed = collect_escalations(result)
+    if esc:
+        (review_dir / "escalations.json").write_text(
+            json.dumps(esc, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        print(f"확정하지 못한 항목 {len(esc)}건 -> 사용자 판단 목록 (escalations.json)")
+    if failed:
+        print(f"그중 {len(failed)}건은 에이전트 실패(응답 없음·판정 누락)라 다시 돌려야 함")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
