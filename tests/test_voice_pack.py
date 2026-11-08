@@ -79,3 +79,30 @@ def test_defaults_rate_and_volume() -> None:
     assert DEFAULT_RATE == 5
     assert DEFAULT_VOLUME == 60
     assert "$v.Volume = [int]$args[3]" in _PS
+
+
+def test_volume_out_of_range_is_rejected() -> None:
+    """codex 지적(2026-11-08): SAPI 볼륨은 0~100. 범위 밖 값은 녹음 전에 막는다."""
+    import argparse
+
+    import pytest
+
+    from tools.voice_pack import sapi_volume
+
+    assert sapi_volume("60") == 60
+    for bad in ("-1", "101", "abc"):
+        with pytest.raises(argparse.ArgumentTypeError):
+            sapi_volume(bad)
+
+
+def test_ffmpeg_output_without_value_names_the_file() -> None:
+    """codex 지적(2026-11-08): ffmpeg 출력에서 값을 못 찾으면 IndexError 대신 파일 이름을 담은 오류로 끝낸다."""
+    from pathlib import Path
+
+    import pytest
+
+    from tools.voice_pack import last_match
+
+    assert last_match(r"max_volume: (-?[\d.]+) dB", "max_volume: -9.5 dB", Path("a.mp3")) == ("-9.5",)
+    with pytest.raises(SystemExit, match="a.mp3"):
+        last_match(r"max_volume: (-?[\d.]+) dB", "Invalid data found", Path("a.mp3"))

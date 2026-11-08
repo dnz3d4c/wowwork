@@ -112,26 +112,44 @@ def too_loud(peaks: dict[str, float]) -> list[str]:
     return [rel for rel, db in peaks.items() if db > MAX_PEAK_DB]
 
 
-def peak_db(path: Path) -> float:
-    err = subprocess.run(
-        ["ffmpeg", "-hide_banner", "-i", str(path), "-af", "volumedetect", "-f", "null", "-"],
+def last_match(pattern: str, text: str, path: Path) -> tuple[str, ...]:
+    """ffmpeg 출력에서 pattern 의 마지막 일치를 돌려준다. 없으면 파일 이름과 출력 끝부분을 담아 끝낸다."""
+    matches = list(re.finditer(pattern, text))
+    if not matches:
+        tail = "\n".join(text.strip().splitlines()[-5:])
+        raise SystemExit(f"ffmpeg 출력에서 값을 찾지 못함: {path}\n{tail}")
+    return matches[-1].groups()
+
+
+def _ffmpeg_stderr(path: Path, *af: str) -> str:
+    return subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), *af, "-f", "null", "-"],
         capture_output=True,
         text=True,
         check=False,
     ).stderr
-    return float(re.findall(r"max_volume: (-?[\d.]+) dB", err)[-1])
+
+
+def peak_db(path: Path) -> float:
+    (db,) = last_match(r"max_volume: (-?[\d.]+) dB", _ffmpeg_stderr(path, "-af", "volumedetect"), path)
+    return float(db)
 
 
 def duration(path: Path) -> float:
     """끝까지 디코딩해서 잰 길이(초). mp3 헤더의 추정값은 쓰지 않는다."""
-    err = subprocess.run(
-        ["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
-        capture_output=True,
-        text=True,
-        check=False,
-    ).stderr
-    h, m, s = re.findall(r"time=(\d+):(\d+):([\d.]+)", err)[-1]
+    h, m, s = last_match(r"time=(\d+):(\d+):([\d.]+)", _ffmpeg_stderr(path), path)
     return int(h) * 3600 + int(m) * 60 + float(s)
+
+
+def sapi_volume(value: str) -> int:
+    """--volume 값. SAPI 볼륨은 0~100 이다."""
+    try:
+        n = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"정수가 아님: {value}") from None
+    if not 0 <= n <= 100:
+        raise argparse.ArgumentTypeError(f"SAPI 볼륨은 0~100: {n}")
+    return n
 
 
 # 앞 무음을 자르고, 뒤집어서 다시 잘라 뒤 무음도 없앤다.
@@ -207,7 +225,7 @@ def main() -> None:
     ap.add_argument("--voice", default=DEFAULT_VOICE)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--rate", type=int, default=DEFAULT_RATE)
-    ap.add_argument("--volume", type=int, default=DEFAULT_VOLUME)
+    ap.add_argument("--volume", type=sapi_volume, default=DEFAULT_VOLUME)
     args = ap.parse_args()
     n = build(args.voice, args.out, args.rate, args.volume)
     print(f"{n}개 파일 -> {args.out}")
