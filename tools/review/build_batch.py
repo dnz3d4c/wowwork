@@ -11,6 +11,7 @@ import csv
 import json
 import re
 from pathlib import Path
+from typing import Any
 
 from tools.locale_lib import REPO_ROOT, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
 from tools.sync_locale import lua_quote
@@ -58,6 +59,17 @@ def code_usages(idx: Index, key: str, limit: int = 4) -> list[str]:
 
 def chunk(items: list, size: int) -> list[list]:  # type: ignore[type-arg]
     return [items[i : i + size] for i in range(0, len(items), size)]
+
+
+def write_batches(items: list[dict[str, Any]], out: Path, size: int) -> int:
+    """평가 묶음 파일 batch-NN.json 을 쓰고 묶음 수를 돌려준다. UI, 설치 프로그램, 로그인 툴이 함께 쓴다."""
+    out.mkdir(parents=True, exist_ok=True)
+    parts = chunk(items, size)
+    for n, part in enumerate(parts, 1):
+        (out / f"batch-{n:02d}.json").write_text(
+            json.dumps({"items": part}, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+    return len(parts)
 
 
 STOPWORDS = frozenset(
@@ -173,12 +185,7 @@ def main() -> None:
         item["game_term"] = terms.get(item["key"], "")
         item["related"] = related_entries(item, every)  # type: ignore[assignment]
         item["shared_key"] = shared_files(item, all_items)  # type: ignore[assignment]
-    a.out.mkdir(parents=True, exist_ok=True)
-    for n, part in enumerate(chunk(items, a.size), 1):
-        (a.out / f"batch-{n:02d}.json").write_text(
-            json.dumps({"items": part}, ensure_ascii=False, indent=1), encoding="utf-8"
-        )
-    print(f"{len(items)}개 항목 -> {a.out} ({len(chunk(items, a.size))}개 묶음)")
+    print(f"{len(items)}개 항목 -> {a.out} ({write_batches(items, a.out, a.size)}개 묶음)")
 
 
 if __name__ == "__main__":

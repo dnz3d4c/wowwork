@@ -26,6 +26,18 @@ WORK_FILES = tuple(a.removeprefix("wowwork/") for a in ALLOWED_EVIDENCE if a.sta
 APP_IGNORE = shutil.ignore_patterns(".git", "docs", "audio", "mapdata", "*.ogg", "*.mp3", "*.blp", "*.tga")
 
 
+def copy_work(work: Path, work_dir: Path) -> None:
+    """격리 폴더의 wowwork 부분: 규칙·게임 문자열(WORK_FILES), 프롬프트, 스키마. 로그인 툴 격리 폴더도 쓴다."""
+    for rel in WORK_FILES:
+        src = work_dir / rel
+        if src.exists():
+            (work / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, work / rel)
+    shutil.copytree(work_dir / "tools" / "review" / "prompts", work / "tools" / "review" / "prompts")
+    for schema in (work_dir / "tools" / "review").glob("*.schema.json"):
+        shutil.copy2(schema, work / "tools" / "review" / schema.name)
+
+
 def build_sandbox(
     root: Path,
     batch: dict[str, Any],
@@ -38,15 +50,7 @@ def build_sandbox(
     """seeded: 항목 id → 심은 번역. batch 는 이미 심어진 상태여야 한다."""
     if root.exists():
         shutil.rmtree(root)
-    work = root / "wowwork"
-    for rel in WORK_FILES:
-        src = work_dir / rel
-        if src.exists():
-            (work / rel).parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, work / rel)
-    shutil.copytree(work_dir / "tools" / "review" / "prompts", work / "tools" / "review" / "prompts")
-    for schema in (work_dir / "tools" / "review").glob("*.schema.json"):
-        shutil.copy2(schema, work / "tools" / "review" / schema.name)
+    copy_work(root / "wowwork", work_dir)
     shutil.copytree(app_dir, root / "wowvision-ko" / "WowVision", ignore=APP_IGNORE)
     loc = root / "wowvision-ko" / "vision-locale"
     shutil.copytree(locale_dir / "enUS", loc / "enUS")

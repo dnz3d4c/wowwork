@@ -29,17 +29,23 @@ def load(loc: str) -> dict[str, str]:
         return {row["BaseTag"]: row["TagText_lang"] for row in csv.DictReader(f)}
 
 
-def main() -> None:
-    en, ko = load("enUS"), load("koKR")
-    by_text: dict[str, set[str]] = defaultdict(set)
+def by_text(en: dict[str, str], ko: dict[str, str]) -> dict[str, list[str]]:
+    """영어 문구(소문자) → 공식 한국어 목록(처음 나온 순서, 중복 없음). 로그인 툴 묶음도 이것을 쓴다."""
+    out: dict[str, list[str]] = defaultdict(list)
     for tag, text in en.items():
-        if tag in ko and ko[tag].strip():
-            by_text[text.strip().lower()].add(ko[tag].strip())
+        k = ko.get(tag, "").strip()
+        if k and k not in out[text.strip().lower()]:
+            out[text.strip().lower()].append(k)
+    return out
+
+
+def main() -> None:
+    terms = by_text(load("enUS"), load("koKR"))
 
     rows = []
     for path in sorted((upstream_locale_dir() / "enUS").glob("*.lua")):
         for key, val in parse_locale_file(path).items():
-            hits = by_text.get(val.strip().lower())
+            hits = terms.get(val.strip().lower())
             if hits:
                 rows.append((path.name, key, val, " | ".join(sorted(hits))))
 

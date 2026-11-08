@@ -21,7 +21,6 @@ import csv
 import json
 import re
 import shutil
-from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -109,21 +108,11 @@ def apply_txt(raw: bytes, changes: dict[str, str]) -> bytes:
 
 
 def _game_terms() -> dict[str, list[str]]:
-    en_path, ko_path = REPO_ROOT / "cache" / "gs_enUS.csv", REPO_ROOT / "cache" / "gs_koKR.csv"
-    if not en_path.exists() or not ko_path.exists():
+    from tools.game_terms import by_text, load
+
+    if not all((REPO_ROOT / "cache" / f"gs_{loc}.csv").exists() for loc in ("enUS", "koKR")):
         return {}
-
-    def load(p: Path) -> dict[str, str]:
-        with p.open(encoding="utf-8", newline="") as f:
-            return {r["BaseTag"]: r["TagText_lang"] for r in csv.DictReader(f)}
-
-    en, ko = load(en_path), load(ko_path)
-    out: dict[str, list[str]] = defaultdict(list)
-    for tag, text in en.items():
-        k = ko.get(tag, "")
-        if k and k not in out[text.strip().lower()]:
-            out[text.strip().lower()].append(k)
-    return out
+    return by_text(load("enUS"), load("koKR"))
 
 
 def _code_index() -> list[tuple[str, int, str]]:
@@ -175,19 +164,11 @@ def build_sandbox(root: Path, batch: dict[str, Any], seeded: dict[str, str], *,
     들어가는 것: 오류를 심은 묶음, 프롬프트·스키마, 번역 지침·결정·용어집, 게임 문자열, 오류를 심은
     로그인 툴 사본(v2, data). 들어가지 않는 것: 원래 번역, 정답표, 평가 기록(reviews).
     """
-    from tools.review.sandbox import WORK_FILES
+    from tools.review.sandbox import copy_work
 
     if root.exists():
         shutil.rmtree(root)
-    work = root / "wowwork"
-    for rel in WORK_FILES:
-        src = work_dir / rel
-        if src.exists():
-            (work / rel).parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, work / rel)
-    shutil.copytree(work_dir / "tools" / "review" / "prompts", work / "tools" / "review" / "prompts")
-    for schema in (work_dir / "tools" / "review").glob("*.schema.json"):
-        shutil.copy2(schema, work / "tools" / "review" / schema.name)
+    copy_work(root / "wowwork", work_dir)
     lt = root / "wowvision-ko" / "Sku-WoW-Addon-TBC" / "logintool"
     for part in ("v2", "data"):
         shutil.copytree(logintool_dir / part, lt / part, ignore=shutil.ignore_patterns("screenshots", "settings.ini"))
@@ -243,13 +224,10 @@ def main() -> None:
         print(f"{len(answers)}개 심음 -> {a.root}")
         return
     if a.cmd == "export":
+        from tools.review.build_batch import write_batches
+
         items = collect()
-        a.out.mkdir(parents=True, exist_ok=True)
-        parts = [items[i : i + a.size] for i in range(0, len(items), a.size)]
-        for n, part in enumerate(parts, 1):
-            (a.out / f"batch-{n:02d}.json").write_text(
-                json.dumps({"items": part}, ensure_ascii=False, indent=1), encoding="utf-8")
-        print(f"{len(items)}개 항목 -> {a.out} ({len(parts)}개 묶음)")
+        print(f"{len(items)}개 항목 -> {a.out} ({write_batches(items, a.out, a.size)}개 묶음)")
         return
     with a.tsv.open(encoding="utf-8", newline="") as f:
         changes = {r["id"]: r["ko"] for r in csv.DictReader(f, delimiter="\t")}

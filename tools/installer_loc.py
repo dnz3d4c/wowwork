@@ -148,15 +148,10 @@ def main() -> int:
         return 0
     path = Path(sys.argv[2])
     if cmd == "batch":
-        import json
+        from tools.review.build_batch import write_batches
 
         items = installer_items(LOC_CS.parent)
-        path.mkdir(parents=True, exist_ok=True)
-        for n in range(0, len(items), 70):
-            (path / f"batch-{n // 70 + 1:02d}.json").write_text(
-                json.dumps({"items": items[n : n + 70]}, ensure_ascii=False, indent=1), encoding="utf-8"
-            )
-        print(f"{len(items)}개 항목 -> {path}")
+        print(f"{len(items)}개 항목 -> {path} ({write_batches(items, path, 70)}개 묶음)")
         return 0
     text = LOC_CS.read_text(encoding="utf-8")
     if cmd == "export":
