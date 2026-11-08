@@ -110,22 +110,33 @@ def follow_values(
     return out, log
 
 
-def follow_all(changes: list[Change], others: dict[str, list[str]], values: set[str]) -> list[str]:
-    """한국어 설명서 전체에 follow_values 를 적용하고 로그(파일: 내용)를 돌려준다."""
-    if not KO_ROOT.exists():
-        return [f"설명서 폴더 없음, 건너뜀: {KO_ROOT}"]
+def follow_all(
+    changes: list[Change],
+    others: dict[str, list[str]],
+    values: set[str],
+    *,
+    en_root: Path = EN_ROOT,
+    ko_root: Path = KO_ROOT,
+) -> tuple[dict[Path, str], list[str]]:
+    """한국어 설명서 전체에 follow_values 를 적용해 (바뀌는 파일 → 새 내용, 로그)를 돌려준다.
+
+    쓰지는 않는다. sync_locale 이 koKR 과 함께 한 번에 써야, 중간에 실패해도 koKR 만 바뀐 채 남지 않는다.
+    """
+    if not ko_root.exists():
+        return {}, [f"설명서 폴더 없음, 건너뜀: {ko_root}"]
+    outputs: dict[Path, str] = {}
     log: list[str] = []
-    for ko_path in sorted(KO_ROOT.rglob("*.md")):
-        rel = ko_path.relative_to(KO_ROOT)
-        en_path = EN_ROOT / rel
+    for ko_path in sorted(ko_root.rglob("*.md")):
+        rel = ko_path.relative_to(ko_root)
+        en_path = en_root / rel
         if not en_path.exists():
             continue
         text = ko_path.read_text(encoding="utf-8")
         out, lines = follow_values(changes, en_path.read_text(encoding="utf-8"), text, others, values)
         log += [f"{rel.as_posix()}: {line}" for line in lines]
         if out != text:
-            ko_path.write_bytes(out.encode("utf-8"))
-    return log
+            outputs[ko_path] = out
+    return outputs, log
 
 
 def slug(heading: str) -> str:

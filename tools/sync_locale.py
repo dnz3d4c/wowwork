@@ -175,8 +175,7 @@ def main(argv: list[str]) -> int:
     ]
     KOKR_DIR.mkdir(exist_ok=True)
     outputs[KOKR_DIR / "modules.xml"] = (en_dir / "modules.xml").read_text(encoding="utf-8")
-    write_all(outputs)
-    save_snapshot(SNAPSHOT_TSV, current)
+    manual: dict[Path, str] = {}
     if changes:
         # koKR 값이 바뀌면 설명서의 화면 문구 인용도 따라 바뀐다(이전에는 tools.manual_sync 를 따로 실행했다).
         # others: 옛 값을 바뀌지 않은 채로 계속 쓰는 다른 키의 영어. 설명서가 그 키를 인용했을 수 있다.
@@ -190,9 +189,14 @@ def main(argv: list[str]) -> int:
                 values.add(value)
                 if value in olds and before[path.name].get(key) == value:
                     others.setdefault(value, []).append(ens[path.name].get(key) or key)
-        print(f"바뀐 한국어 값 {len(changes)}개를 설명서 인용에 반영:")
-        for line in follow_all(changes, others, values):
+        manual, log = follow_all(changes, others, values)
+        print(f"바뀐 한국어 값 {len(changes)}개를 설명서 인용에 반영(설명서 파일 {len(manual)}개):")
+        for line in log:
             print(f"  {line}")
+    # koKR 과 설명서를 한 번에 쓴다. 따로 쓰면 설명서 쪽에서 실패했을 때 koKR 만 새 값이 되어,
+    # 다시 실행해도 바뀐 값이 없어 설명서가 영영 따라오지 않는다(codex 2026-11-08).
+    write_all({**outputs, **manual})
+    save_snapshot(SNAPSHOT_TSV, current)
     stale = sorted({p.name for p in KOKR_DIR.glob("*.lua")} - {p.name for p in outputs})
     print(f"변경된 파일 {len(changed_files)}개: {', '.join(changed_files)}")
     if stale:

@@ -30,6 +30,9 @@ const FINDINGS = {
 }
 const withOk = s => ({ ...s, required: [...s.required, 'ok'], properties: { ...s.properties, ok: { type: 'boolean' } } })
 const DONE = { type: 'object', required: ['ok', 'remaining'], properties: { ok: { type: 'boolean' }, remaining: { type: 'array', items: { type: 'string' } } } }
+const FIXED = { type: 'object', required: ['ok', 'remaining', 'escalations'],
+  properties: { ...DONE.properties, escalations: { type: 'array', items: { type: 'object', required: ['ref', 'why'],
+    properties: { ref: { type: 'string' }, why: { type: 'string' }, quote: { type: 'string' } } } } } }
 const RESP = {
   type: 'object', required: ['responses'],
   properties: { responses: { type: 'array', items: { type: 'object', required: ['ref', 'action', 'reason'],
@@ -130,8 +133,11 @@ async function reviewAndFix(rel) {
     `그다음 Bash로 \`cd ${W} && uv run python -m tools.review.decisions manual ${dirOf(rel)}/judged.json ${dirOf(rel)}/fix.json\` 를 실행하고 ${dirOf(rel)}/fix.json 을 Read로 읽는다. ` +
     `그 upheld 배열의 각 항목에 대해 ${KO}/${rel} 에서 quote를 final_ko로 Edit로 바꾼다. quote가 정확히 보이지 않으면 가장 가까운 부분을 찾아 같은 뜻으로 고친다. ` +
     `upheld가 비어 있으면 파일을 고치지 않는다. 끝나면 \`${CHECK(rel)}\` 를 통과하는지 확인하고, 깨졌으면 원문 구조에 맞게 고친다. ` +
-    `ok와 remaining을 돌려준다. 판정을 직접 하지 않는다.`,
-    { label: `fixer:${rel}`, phase: 'Fix', schema: DONE })
+    `ok와 remaining을 돌려주고, fix.json 의 escalations 배열(사용자 판단 목록)을 한 글자도 바꾸지 않고 escalations로 돌려준다. 판정을 직접 하지 않는다.`,
+    { label: `fixer:${rel}`, phase: 'Fix', schema: FIXED })
+  // 판정에서 생긴 사용자 판단 항목도 결과에 싣는다. 수정 에이전트가 실패하면 알 수 없으므로 그 사실을 남긴다(codex 2026-11-08).
+  if (fix && fix.escalations) escalations.push(...fix.escalations)
+  else escalations.push({ ref: rel, why: `수정 에이전트 실패: 판정 결과는 ${dirOf(rel)}/fix.json 을 직접 확인` })
   return { file: rel, failedReviewers: failed, findings: all.length, applied: Object.values(byRef).filter(r => r.action === 'applied').length,
     fixOk: !!(fix && fix.ok), decisions: `${dirOf(rel)}/fix.json`, escalations }
 }

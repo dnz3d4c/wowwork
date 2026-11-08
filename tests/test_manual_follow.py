@@ -124,3 +124,20 @@ def test_later_change_does_not_rewrite_earlier_new_value() -> None:
         ch, "Party Health Monitor and Health Monitor", "파티 생명력 감시 창과 생명력 감시기 설정", others={}
     )
     assert out == "그룹 생명력 감시기 설정과 체력 모니터 설정"
+
+
+def test_follow_all_returns_changes_without_writing(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """codex 2026-11-08: 설명서를 쓰다 실패하면 koKR 만 바뀐 채 남아 다시 실행해도 설명서가 따라오지 않았다.
+    follow_all 은 바꿀 내용만 돌려주고, sync_locale 이 koKR 과 함께 한 번에 쓴다."""
+    from tools.manual import follow_all
+
+    en, ko = tmp_path / "en", tmp_path / "ko"
+    (en / "a").mkdir(parents=True)
+    (ko / "a").mkdir(parents=True)
+    (en / "a" / "p.md").write_text('It says "Disabled".', encoding="utf-8")
+    (ko / "a" / "p.md").write_text('"비활성화"라고 읽습니다.', encoding="utf-8")
+    ch = [Change(en="Disabled", old="비활성화", new="사용 안 함")]
+    outputs, log = follow_all(ch, {}, set(), en_root=en, ko_root=ko)
+    assert outputs == {ko / "a" / "p.md": '"사용 안 함"라고 읽습니다.'}
+    assert (ko / "a" / "p.md").read_text(encoding="utf-8") == '"비활성화"라고 읽습니다.'
+    assert log == ["a/p.md: 1x 비활성화 -> 사용 안 함"]
