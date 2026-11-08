@@ -7,7 +7,8 @@ koKR 을 쓸 때 부르므로 따로 실행하지 않는다.
   uv run python -m tools.manual list                 # 원문 파일 목록과 단어 수
   uv run python -m tools.manual terms <상대경로>       # 그 파일의 UI 문자열 용어표(JSON)
   uv run python -m tools.manual check [<상대경로>...]  # 번역문 기계 검사(없으면 번역된 전체)
-  uv run python -m tools.manual batch <상대경로> <출력.json>  # 평가 입력(원문, 번역문, 용어표)
+  uv run python -m tools.manual batch <상대경로> <출력.json>  # 평가 입력(원문, 번역문, 용어표, 원문이 바뀌었으면 en_diff)
+  uv run python -m tools.manual diff <상대경로>          # 커밋된 번역의 원문 커밋 이후 영어 원문의 변경
 상대경로는 docs/src/user/en 기준(예: basics/interface.md). 번역문은 같은 상대경로의 ko 폴더.
 """
 
@@ -15,6 +16,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from collections import Counter
 from dataclasses import dataclass
@@ -244,8 +246,38 @@ def locale_pairs() -> dict[str, str]:
     return pairs
 
 
+def source_diff(ko_text: str, rel: str, repo: Path = WOWVISION_DIR) -> str:
+    """번역 파일 첫 줄의 원문 커밋 이후 영어 원문의 변경(git diff). 바뀌지 않았거나 기록이 없으면 "".
+
+    원문이 바뀐 파일은 이 diff 에 해당하는 곳만 다시 번역하고 평가한다. 파일 전체를 다시 번역하면
+    이미 거친 다듬기와 사용자 결정이 사라진다(2026-11-08 사용자 결정).
+    """
+    m = SOURCE_LINE.match(ko_text)
+    if not m:
+        return ""
+    r = subprocess.run(
+        ["git", "-C", str(repo), "diff", m.group(2), "--", f"docs/src/user/en/{rel}"],
+        capture_output=True,
+        check=True,
+    )
+    return r.stdout.decode("utf-8")
+
+
+def _committed_ko(rel: str) -> str:
+    """마지막으로 커밋된 번역 파일. 번역자가 첫 줄의 원문 커밋을 고친 뒤에도 평가 단계가 같은 diff 를 보게 한다."""
+    r = subprocess.run(
+        ["git", "-C", str(WOWVISION_DIR), "show", f"HEAD:docs/src/user/ko/{rel}"],
+        capture_output=True,
+        check=False,
+    )
+    return r.stdout.decode("utf-8") if r.returncode == 0 else ""
+
+
 def main() -> int:
     cmd, rest = sys.argv[1], sys.argv[2:]
+    if cmd == "diff":
+        print(source_diff(_committed_ko(rest[0]), rest[0]) or "원문 변경 없음")
+        return 0
     if cmd == "list":
         for p in sorted(EN_ROOT.rglob("*.md")):
             print(f"{len(p.read_text(encoding='utf-8').split()):6d}  {p.relative_to(EN_ROOT).as_posix()}")
@@ -257,9 +289,12 @@ def main() -> int:
     if cmd == "batch":
         rel, out = rest[0], Path(rest[1])
         en = (EN_ROOT / rel).read_text(encoding="utf-8")
+        ko = (KO_ROOT / rel).read_text(encoding="utf-8")
         data = {"file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",
                 "ko_path": f"wowvision-ko/WowVision/docs/src/user/ko/{rel}", "en": en,
-                "ko": (KO_ROOT / rel).read_text(encoding="utf-8"), "terms": term_sheet(en, locale_pairs())}  # fmt: skip
+                "ko": ko, "terms": term_sheet(en, locale_pairs())}  # fmt: skip
+        if d := source_diff(_committed_ko(rel), rel):
+            data["en_diff"] = d
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         print(out)

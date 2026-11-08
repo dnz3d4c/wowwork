@@ -51,7 +51,8 @@ const translate = rel => agent(
   `너는 설명서 번역자다. ${P}/manual-translate.md 를 Read로 읽고 그대로 따른다. 원문 커밋: ${SOURCE}\n` +
   `원문: ${EN}/${rel}\n번역문을 쓸 곳: ${KO}/${rel} (폴더가 없으면 만든다)\n` +
   `용어표: Bash로 \`cd ${W} && uv run python -m tools.manual terms ${rel}\` 를 실행해 받는다.\n` +
-  `번역을 Write로 저장한 뒤 \`${CHECK(rel)}\` 를 실행한다. "앵커 없음" 외의 문제가 있으면 고치고 다시 검사한다(최대 3번). ` +
+  `번역문이 이미 있으면 manual-translate.md \`## 원문이 바뀐 파일\`대로 바뀐 곳만 Edit로 고친다(Write로 덮어쓰지 않는다). ` +
+  `번역문이 없으면 새로 번역해 Write로 저장한다. 그다음 \`${CHECK(rel)}\` 를 실행한다. "앵커 없음" 외의 문제가 있으면 고치고 다시 검사한다(최대 3번). ` +
   `다른 파일을 가리키는 "앵커 없음"은 그 파일이 아직 번역되지 않았을 수 있으므로 남겨 둔다.\n` +
   `끝나면 ok(앵커 외 문제 없음 여부)와 remaining(남은 문제 줄)을 돌려준다.`,
   { label: `translate:${rel}`, phase: 'Translate', schema: DONE })

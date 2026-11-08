@@ -195,7 +195,9 @@ def main(argv: list[str]) -> int:
             print(f"  {line}")
     # koKR 과 설명서를 한 번에 쓴다. 따로 쓰면 설명서 쪽에서 실패했을 때 koKR 만 새 값이 되어,
     # 다시 실행해도 바뀐 값이 없어 설명서가 영영 따라오지 않는다(codex 2026-11-08).
-    write_all({**outputs, **manual})
+    # 교체는 설명서가 먼저다. 교체 도중 실패해도 koKR 이 옛 값으로 남으므로 다시 실행하면 변경이 다시 잡히고,
+    # 이미 바뀐 설명서에는 옛 값이 없어 그대로 둔다.
+    write_all({**manual, **outputs})
     save_snapshot(SNAPSHOT_TSV, current)
     stale = sorted({p.name for p in KOKR_DIR.glob("*.lua")} - {p.name for p in outputs})
     print(f"변경된 파일 {len(changed_files)}개: {', '.join(changed_files)}")

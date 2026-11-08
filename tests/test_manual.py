@@ -122,3 +122,30 @@ def test_korean_summary_titles_match_page_headings() -> None:
         if title != heading:
             bad.append(f"{rel}: 목차 '{title}' / 제목 '{heading}'")
     assert bad == []
+
+
+def test_source_diff_shows_english_changes_since_translated_commit(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """V1.0.1 재번역(2026-11-08): 파일 전체를 다시 번역하면 다듬기와 사용자 결정이 사라진다.
+    번역 파일 첫 줄의 원문 커밋 이후 영어가 어떻게 바뀌었는지를 번역자와 평가자에게 준다."""
+    import subprocess
+
+    from tools.manual import source_diff
+
+    def git(*a: str) -> str:
+        return subprocess.run(
+            ["git", "-C", str(tmp_path), *a], check=True, capture_output=True, text=True
+        ).stdout
+
+    en = tmp_path / "docs" / "src" / "user" / "en" / "a.md"
+    en.parent.mkdir(parents=True)
+    en.write_text("# Title\n\nOld line.\n", encoding="utf-8")
+    git("init", "-q")
+    git("-c", "user.email=t@t", "-c", "user.name=t", "commit", "-qam", "x", "--allow-empty")
+    git("add", ".")
+    git("-c", "user.email=t@t", "-c", "user.name=t", "commit", "-qm", "en")
+    commit = git("rev-parse", "--short", "HEAD").strip()
+    ko = f"<!-- source: docs/src/user/en/a.md @ {commit} -->\n# 제목\n"
+    assert source_diff(ko, "a.md", repo=tmp_path) == ""
+    en.write_text("# Title\n\nNew line.\n", encoding="utf-8")
+    d = source_diff(ko, "a.md", repo=tmp_path)
+    assert "-Old line." in d and "+New line." in d

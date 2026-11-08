@@ -94,6 +94,6 @@ if not L then return end
 
 ### 원본이 바뀌었을 때
 
-위 `## upstream 업데이트 절차`로 문자열을 먼저 맞춘 다음, `uv run python -m tools.manual check`가 구조 차이로 잡는 파일과 원문 커밋이 바뀐 파일만 다시 번역합니다.
+위 `## upstream 업데이트 절차`로 문자열을 먼저 맞춘 다음, 원문이 바뀐 파일만 `tools/review/workflows/manual.js`(인자 `source`: 새 원문 커밋)로 돌립니다. 파일 전체를 다시 번역하지 않고 바뀐 곳만 번역하고 평가합니다(`docs/decisions.tsv` 2026-11-08). 무엇이 바뀌었는지는 `uv run python -m tools.manual diff <상대경로>`가 보여 줍니다.
 
-남은 일(2026-11-07): V1.0.1에서 바뀐 영어 설명서 14개 파일을 다시 번역해야 합니다. 그중 9개(basics/keybindings, information/buffers, reference/commands, reference/keybindings, windows/group-finder, world/movement, world/navigation, world/targeting, world/wownav)는 `tools.manual check`가 잡습니다.
+남은 일(2026-11-08 실측): V1.0.1(`2c7d4cb`)에서 바뀐 영어 설명서는 15개 파일입니다(`git -C ../wowvision-ko/WowVision diff --stat 397ffc3 2c7d4cb -- docs/src/user/en`).
