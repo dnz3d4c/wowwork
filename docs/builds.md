@@ -57,6 +57,7 @@ WoW Login Tool을 체크하면 원본 login-tool 릴리스를 설치한 뒤 exe�
 - 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (`dnz3d4c/WowVision` 공개, GitHub Pages는 Actions 방식). 설치 프로그램에는 넣지 않는다(`docs/decisions.tsv` 2026-11-06).
 - ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다.
 - main에 push하면 원본 `docs.yml`(영어판으로 Pages를 덮어씀)과 `beta.yml`(beta 프리릴리스 생성)이 돈다. main을 원본에 맞출 때는 `gh workflow disable`로 두 워크플로를 끄고 push한 뒤 다시 켠다. 원본 태그(V*)는 push하지 않는다(`release.yml`).
+- 페이지 언어: mdBook은 모든 페이지에 `<html lang="en">`을 쓴다. ko 브랜치 `docs.yml`이 빌드 뒤 `user/ko/`·`user/de/` 페이지를 `lang="ko"`·`lang="de"`로 바꾼다(2026-11-09, 그전에는 한국어 페이지가 영어로 선언돼 스크린리더가 영어 음성으로 읽을 수 있었다). 배포 뒤 `curl -s <주소> | grep -o "<html lang=[^ ]*"`로 확인한다. 이전/다음 장, 검색창 같은 화면 틀 라벨은 mdBook 테마의 영어 그대로다.
 
 ## 원본 워크플로 주의
 

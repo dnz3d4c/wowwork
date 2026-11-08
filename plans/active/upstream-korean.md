@@ -52,6 +52,10 @@
 - 병합 전 koKR: `Disabled` = "사용 불가"(`docs/decisions.tsv` 2026-11-09). 설정 끄기 2곳도 그동안 "사용 불가"로 들린다.
 - 병합 뒤 할 일: vision-locale main에 원본 병합, `tools.sync_locale`로 `SettingDisabled` "사용 안 함", `AuctionAvailable` "구매 가능 수량". 설명서 인용 3곳을 "사용 안 함"으로 되돌린다(`world/targeting.md`, `reference/keybindings.md`의 "적 소프트 대상 사용 불가", `information/buffers.md` PvP 줄). 원본 릴리스가 나와야 테스터에게 코드가 닿는다.
 
+### Phase 1c. 설명서 페이지 언어 [미제출]
+
+- 원본 `docs.yml`이 독일어 페이지도 `lang="en"`으로 낸다. ko 브랜치 a5e64f8의 단계(빌드 뒤 `user/<언어>/` 페이지의 `lang` 교체)를 원본에 낼 후보다. 독일어 사용자에게도 이득이라 한국어 PR과 묶지 않고 따로 낼 수 있다.
+
 ### Phase 2. koKR 로케일 [승인 필요]
 
 - `upstream/main`에서 `koKR/` 전체와 `modules.xml` 1줄을 커밋 하나로 만든다.
