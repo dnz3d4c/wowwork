@@ -133,7 +133,12 @@ def test_upheld_accept_needs_valid_evidence() -> None:
     """수용한 용어 지적의 판정(full.js upheld-accept)도 허용 자료 근거가 있어야 반영한다."""
     from tools.review.decisions import split_invalid
 
-    d = {"id": "a.lua::A", "final_ko": "x", "how": "upheld-accept", "evidence": ["wowwork/docs/archive/manual-plan.md"]}
+    d = {
+        "id": "a.lua::A",
+        "final_ko": "x",
+        "how": "upheld-accept",
+        "evidence": ["wowwork/docs/archive/manual-plan.md"],
+    }
     valid, invalid = split_invalid([d])
     assert invalid == [d] and valid == []
 

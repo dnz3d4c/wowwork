@@ -5,14 +5,14 @@
 다른 키 ui.lua "controlled"였다. 영어 설명서가 어느 키의 영어를 인용하는지 보고 판단한다.
 """
 
-from tools.manual_sync import Change, sync_text
+from tools.manual import Change, follow_values
 
 
 def test_short_value_replaced_only_when_quoted_and_en_quotes_key() -> None:
     ch = [Change(en="Disabled", old="비활성화", new="사용 안 함")]
     en = 'It reads "Disabled" when off.'
     ko = '꺼져 있으면 "비활성화"라고 읽습니다. 기능을 비활성화하려면'
-    out, log = sync_text(ch, en, ko, others={})
+    out, log = follow_values(ch, en, ko, others={})
     # 인용 뒤 "라고"는 받침과 무관하다. 본문 속 "비활성화하려면"은 인용이 아니라서 그대로다.
     assert out == '꺼져 있으면 "사용 안 함"라고 읽습니다. 기능을 비활성화하려면'
     assert len(log) == 1
@@ -23,7 +23,7 @@ def test_same_old_value_used_by_other_key_is_not_touched() -> None:
     ch = [Change(en="Controlled", old="제어됨", new="군중 제어 중")]
     en = 'the count is followed by "controlled".'
     ko = '숫자 뒤에 "제어됨"이 붙습니다.'
-    out, log = sync_text(ch, en, ko, others={"제어됨": ["controlled"]})
+    out, log = follow_values(ch, en, ko, others={"제어됨": ["controlled"]})
     assert out == ko
     assert log == []
 
@@ -32,7 +32,7 @@ def test_ambiguous_when_both_keys_quoted() -> None:
     ch = [Change(en="Controlled", old="제어됨", new="군중 제어 중")]
     en = 'It says "Controlled" here and "controlled" there.'
     ko = '여기서는 "제어됨", 저기서는 "제어됨".'
-    out, log = sync_text(ch, en, ko, others={"제어됨": ["controlled"]})
+    out, log = follow_values(ch, en, ko, others={"제어됨": ["controlled"]})
     assert out == ko
     assert log and "판단 필요" in log[0]
 
@@ -40,20 +40,24 @@ def test_ambiguous_when_both_keys_quoted() -> None:
 def test_long_value_replaced_anywhere_when_en_present() -> None:
     old, new = "경매장 열리지 않음 상태", "경매장이 열려 있지 않은 상태"
     ch = [Change(en="Auction not open", old=old, new=new)]
-    out, _ = sync_text(ch, "WowVision says Auction not open.", f"WowVision이 {old}라고 말합니다.", others={})
+    out, _ = follow_values(
+        ch, "WowVision says Auction not open.", f"WowVision이 {old}라고 말합니다.", others={}
+    )
     assert new in out
 
 
 def test_nothing_when_en_does_not_mention_key() -> None:
     ch = [Change(en="Disabled", old="비활성화", new="사용 안 함")]
-    out, log = sync_text(ch, "No quote here.", '"비활성화"', others={})
+    out, log = follow_values(ch, "No quote here.", '"비활성화"', others={})
     assert out == '"비활성화"' and log == []
 
 
 def test_long_value_matches_en_case_insensitively() -> None:
     """quick-start.md 사례: 원문이 화면 이름을 문장 속 소문자로 쓴다("free bag slots")."""
     ch = [Change(en="Free Bag Slots", old="비어 있는 가방 칸", new="빈 가방 칸")]
-    out, _ = sync_text(ch, "money, free bag slots, durability", "돈, 비어 있는 가방 칸, 내구도", others={})
+    out, _ = follow_values(
+        ch, "money, free bag slots, durability", "돈, 비어 있는 가방 칸, 내구도", others={}
+    )
     assert out == "돈, 빈 가방 칸, 내구도"
 
 
@@ -67,8 +71,8 @@ def test_running_twice_changes_nothing_when_new_contains_old() -> None:
         )
     ]
     en = "Route to Target"
-    once, _ = sync_text(ch, en, "키: 대상까지 경로까지 이어지는 길.", others={})
-    twice, log = sync_text(ch, en, once, others={})
+    once, _ = follow_values(ch, en, "키: 대상까지 경로까지 이어지는 길.", others={})
+    twice, log = follow_values(ch, en, once, others={})
     assert once == twice == "키: 대상까지 경로까지 이어지는 길 안내."
     assert log == []
 
@@ -82,7 +86,7 @@ def test_changed_keys_with_same_old_value_but_different_new_value_conflict() -> 
     ]
     en = 'It says "Controlled" here and "controlled" there.'
     ko = '여기서는 "제어됨", 저기서는 "제어됨".'
-    out, log = sync_text(ch, en, ko, others={})
+    out, log = follow_values(ch, en, ko, others={})
     assert out == ko
     assert log and all("판단 필요" in line for line in log)
 
@@ -93,7 +97,7 @@ def test_changed_keys_conflict_only_matters_when_both_are_quoted() -> None:
         Change(en="Controlled", old="제어됨", new="군중 제어 중"),
         Change(en="controlled", old="제어됨", new="제어됨 상태"),
     ]
-    out, _ = sync_text(
+    out, _ = follow_values(
         ch, 'the count is followed by "controlled".', '숫자 뒤에 "제어됨"이 붙습니다.', others={}
     )
     assert out == '숫자 뒤에 "제어됨 상태"이 붙습니다.'
@@ -103,7 +107,20 @@ def test_long_old_value_inside_other_key_value_is_not_touched() -> None:
     """2026-11-08 조사: "대상 강화 효과"(Target Buffs)를 바꾸면 "주시 대상 강화 효과"(Focus Buffs)
     인용 안쪽까지 바뀌었다. 더 긴 다른 koKR 값의 일부인 곳은 건드리지 않는다."""
     ch = [Change(en="Target Buffs", old="대상 강화 효과", new="대상 버프")]
-    en = 'Target Buffs and Focus Buffs lists.'
+    en = "Target Buffs and Focus Buffs lists."
     ko = '"대상 강화 효과"와 "주시 대상 강화 효과" 목록.'
-    out, _ = sync_text(ch, en, ko, others={}, values={"주시 대상 강화 효과"})
+    out, _ = follow_values(ch, en, ko, others={}, values={"주시 대상 강화 효과"})
     assert out == '"대상 버프"와 "주시 대상 강화 효과" 목록.'
+
+
+def test_later_change_does_not_rewrite_earlier_new_value() -> None:
+    """codex 2026-11-08: 앞 변경의 새 값 안에 뒤 변경의 옛 값이 있으면 다시 바뀌었다.
+    한 번에 치환하므로 koKR 값 목록 없이도 안전해야 한다."""
+    ch = [
+        Change(en="Party Health Monitor", old="파티 생명력 감시 창", new="그룹 생명력 감시기 설정"),
+        Change(en="Health Monitor", old="생명력 감시기 설정", new="체력 모니터 설정"),
+    ]
+    out, _ = follow_values(
+        ch, "Party Health Monitor and Health Monitor", "파티 생명력 감시 창과 생명력 감시기 설정", others={}
+    )
+    assert out == "그룹 생명력 감시기 설정과 체력 모니터 설정"

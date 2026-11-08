@@ -1,4 +1,7 @@
-"""설명서 번역 도구: 원문과 번역문의 구조 대조, 앵커 검사, 파일별 용어표.
+"""설명서 번역 도구: 원문과 번역문의 구조 대조, 앵커 검사, 파일별 용어표, koKR 값 변경 따라가기.
+
+koKR 값이 바뀌면 설명서의 화면 문구 인용도 따라 바뀌어야 한다(`follow_all`). tools.sync_locale 이
+koKR 을 쓸 때 부르므로 따로 실행하지 않는다.
 
 사용:
   uv run python -m tools.manual list                 # 원문 파일 목록과 단어 수
@@ -13,6 +16,8 @@ from __future__ import annotations
 import json
 import re
 import sys
+from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 
 from tools.locale_lib import KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
@@ -26,6 +31,101 @@ _LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*)\)")
 _CODE = re.compile(r"`[^`\n]+`")
 # 설명서는 합니다체. 문장 끝의 해요체 어미는 기계 검사로 잡는다.
 _HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지요|죠)(?=[.!?)\s]|$)", re.MULTILINE)
+
+# ── koKR 값 변경 따라가기 ──────────────────────────────────────────────
+# 바꾸는 곳: 같은 경로의 영어 설명서가 그 키의 영어를 인용할 때만. 짧은 값(LONG 미만)은 따옴표로 감싼
+# 인용 전체가 옛 값과 같을 때만, 긴 값은 어디에 나오든.
+# 같은 옛 값을 쓰는 다른 키가 있으면 영어 설명서가 어느 키를 인용하는지 본다. 둘 다 인용하면 바꾸지 않고
+# "판단 필요"로 보고한다(2026-11-06: targeting.lua "Controlled"를 바꾸면서 ui.lua "controlled"를 인용한
+# world/combat.md 3곳까지 바꿨다가 되돌렸다).
+LONG = 8
+
+
+@dataclass(frozen=True)
+class Change:
+    en: str
+    old: str
+    new: str
+
+
+def _mentions(en_text: str, en: str, short: bool) -> bool:
+    # 짧은 값은 대소문자를 가린다("Controlled"와 "controlled"가 다른 키). 긴 값은 원문이 문장 속에서
+    # 소문자로 쓰기도 해서("free bag slots") 가리지 않는다.
+    return f'"{en}"' in en_text if short else en.lower() in en_text.lower()
+
+
+def _alternation(words: set[str]) -> re.Pattern[str]:
+    return re.compile("|".join(re.escape(w) for w in sorted(words, key=len, reverse=True)))
+
+
+def follow_values(
+    changes: list[Change],
+    en_text: str,
+    ko_text: str,
+    others: dict[str, list[str]],
+    values: set[str] | frozenset[str] = frozenset(),
+) -> tuple[str, list[str]]:
+    """설명서 한 파일의 인용을 새 값으로 바꾼다. others: 옛 값 → 그 값을 지금도 쓰는 다른 키들의 영어.
+    values: 지금 koKR 값 전체.
+
+    옛 값, 그리고 옛 값을 품은 더 긴 값(다른 키의 값, 이번에 바뀐 새 값)을 길이 순 정규식 하나로 찾아
+    한 번에 바꾼다. 품은 값은 그대로 두므로 "주시 대상 강화 효과" 속 "대상 강화 효과"는 바뀌지 않고,
+    앞 치환의 결과를 뒤 치환이 다시 보지 않으며, 여러 번 돌려도 결과가 같다.
+    """
+    log: list[str] = []
+    keep = set(values) | {c.new for c in changes} | {c.old for c in changes}
+    replace: dict[str, tuple[str, Change]] = {}
+    guards: set[str] = set()
+    for ch in changes:
+        if ch.old == ch.new:
+            continue
+        short = len(ch.old) < LONG
+        needle, target = (f'"{ch.old}"', f'"{ch.new}"') if short else (ch.old, ch.new)
+        mine = set() if short else {v for v in keep if ch.old in v and v != ch.old}
+        count = sum(m.group(0) == needle for m in _alternation({needle, *mine}).finditer(ko_text))
+        if not count or not _mentions(en_text, ch.en, short):
+            continue
+        # 이번에 함께 바뀐 키 가운데 옛 값은 같고 새 값이 다른 키도 경쟁자다. 새 값까지 같으면 어느 키로
+        # 바꿔도 결과가 같으므로 경쟁자가 아니다.
+        peers = [c.en for c in changes if c is not ch and c.old == ch.old and c.new != ch.new]
+        rivals = [e for e in [*others.get(ch.old, []), *peers] if _mentions(en_text, e, short)]
+        if rivals:
+            log.append(f"판단 필요: {ch.old!r} {count}곳, 원문이 {ch.en!r}와 {rivals}를 모두 인용")
+            continue
+        replace[needle] = (target, ch)
+        guards |= mine
+    if not replace:
+        return ko_text, log
+    counts: Counter[str] = Counter()
+
+    def sub(m: re.Match[str]) -> str:
+        hit = replace.get(m.group(0))
+        if not hit:
+            return m.group(0)
+        counts[m.group(0)] += 1
+        return hit[0]
+
+    out = _alternation({*replace, *guards}).sub(sub, ko_text)
+    log += [f"{counts[n]}x {ch.old} -> {ch.new}" for n, (_, ch) in replace.items() if counts[n]]
+    return out, log
+
+
+def follow_all(changes: list[Change], others: dict[str, list[str]], values: set[str]) -> list[str]:
+    """한국어 설명서 전체에 follow_values 를 적용하고 로그(파일: 내용)를 돌려준다."""
+    if not KO_ROOT.exists():
+        return [f"설명서 폴더 없음, 건너뜀: {KO_ROOT}"]
+    log: list[str] = []
+    for ko_path in sorted(KO_ROOT.rglob("*.md")):
+        rel = ko_path.relative_to(KO_ROOT)
+        en_path = EN_ROOT / rel
+        if not en_path.exists():
+            continue
+        text = ko_path.read_text(encoding="utf-8")
+        out, lines = follow_values(changes, en_path.read_text(encoding="utf-8"), text, others, values)
+        log += [f"{rel.as_posix()}: {line}" for line in lines]
+        if out != text:
+            ko_path.write_bytes(out.encode("utf-8"))
+    return log
 
 
 def slug(heading: str) -> str:

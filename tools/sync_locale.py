@@ -21,7 +21,15 @@ import re
 import sys
 from pathlib import Path
 
-from tools.locale_lib import KOKR_DIR, REPO_ROOT, parse_locale_file, unescape, upstream_locale_dir
+from tools.locale_lib import (
+    KOKR_DIR,
+    REPO_ROOT,
+    parse_locale_file,
+    parse_locale_text,
+    unescape,
+    upstream_locale_dir,
+)
+from tools.manual import Change, follow_all
 
 HEADER = 'local L = LibStub("AceLocale-3.0"):NewLocale("WowVision", "koKR")\nif not L then return end\n'
 MISSING_TSV = REPO_ROOT / "cache" / "missing.tsv"
@@ -115,6 +123,13 @@ def read_tsv(path: Path) -> dict[str, dict[str, str]]:
     return result
 
 
+def value_changes(old_text: str | None, new_text: str, en: dict[str, str]) -> list[Change]:
+    """한국어 값이 바뀐 키(새 키 제외). 설명서 인용을 따라 바꿀 때 쓴다."""
+    old = parse_locale_text(old_text or "")
+    new = parse_locale_text(new_text)
+    return [Change(en=en.get(k) or k, old=old[k], new=v) for k, v in new.items() if k in old and old[k] != v]
+
+
 def unknown_rows(new: dict[str, dict[str, str]], en: dict[str, dict[str, str]]) -> list[tuple[str, str]]:
     """반영 목록에 있지만 enUS 에 없는 (파일, 키). 이런 줄은 반영되지 않으므로 알려야 한다."""
     return sorted((f, k) for f, keys in new.items() for k in keys if k not in en.get(f, {}))
@@ -123,7 +138,8 @@ def unknown_rows(new: dict[str, dict[str, str]], en: dict[str, dict[str, str]]) 
 def main(argv: list[str]) -> int:
     new = read_tsv(Path(argv[0])) if argv else {}
     en_dir = upstream_locale_dir() / "enUS"
-    unknown = unknown_rows(new, {p.name: parse_locale_file(p) for p in en_dir.glob("*.lua")})
+    ens = {p.name: parse_locale_file(p) for p in sorted(en_dir.glob("*.lua"))}
+    unknown = unknown_rows(new, ens)
     if unknown:
         print(f"enUS 에 없는 파일·키 {len(unknown)}개라 반영할 수 없음(파일은 쓰지 않음): {unknown}")
         return 1
@@ -131,16 +147,20 @@ def main(argv: list[str]) -> int:
     current: Snapshot = {}
     outputs: dict[Path, str] = {}
     rows: list[list[str]] = []
+    changes: list[Change] = []
+    before: dict[str, dict[str, str]] = {}
     for en_path in sorted(en_dir.glob("*.lua")):
         ko_path = KOKR_DIR / en_path.name
         ko_text = ko_path.read_text(encoding="utf-8") if ko_path.exists() else None
-        en = parse_locale_file(en_path)
+        en = ens[en_path.name]
         current.update({(en_path.name, k): v for k, v in en.items()})
         changed = changed_keys(snapshot, en_path.name, en)
         text, missing = rebuild(
             en_path.read_text(encoding="utf-8"), ko_text, new.get(en_path.name, {}), changed
         )
         outputs[ko_path] = text
+        changes += value_changes(ko_text, text, en)
+        before[en_path.name] = parse_locale_text(ko_text or "")
         rows += [[en_path.name, k, en[k], "", snapshot.get((en_path.name, k), "")] for k in missing]
     if rows:
         MISSING_TSV.parent.mkdir(exist_ok=True)
@@ -157,6 +177,22 @@ def main(argv: list[str]) -> int:
     outputs[KOKR_DIR / "modules.xml"] = (en_dir / "modules.xml").read_text(encoding="utf-8")
     write_all(outputs)
     save_snapshot(SNAPSHOT_TSV, current)
+    if changes:
+        # koKR 값이 바뀌면 설명서의 화면 문구 인용도 따라 바뀐다(이전에는 tools.manual_sync 를 따로 실행했다).
+        # others: 옛 값을 바뀌지 않은 채로 계속 쓰는 다른 키의 영어. 설명서가 그 키를 인용했을 수 있다.
+        olds = {c.old for c in changes}
+        others: dict[str, list[str]] = {}
+        values: set[str] = set()
+        for path, text in outputs.items():
+            if path.suffix != ".lua":
+                continue
+            for key, value in parse_locale_text(text).items():
+                values.add(value)
+                if value in olds and before[path.name].get(key) == value:
+                    others.setdefault(value, []).append(ens[path.name].get(key) or key)
+        print(f"바뀐 한국어 값 {len(changes)}개를 설명서 인용에 반영:")
+        for line in follow_all(changes, others, values):
+            print(f"  {line}")
     stale = sorted({p.name for p in KOKR_DIR.glob("*.lua")} - {p.name for p in outputs})
     print(f"변경된 파일 {len(changed_files)}개: {', '.join(changed_files)}")
     if stale:

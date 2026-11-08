@@ -34,9 +34,13 @@ def unescape(s: str) -> str:
 
 
 def parse_locale_file(path: Path) -> dict[str, str]:
+    return parse_locale_text(path.read_text(encoding="utf-8"))
+
+
+def parse_locale_text(text: str) -> dict[str, str]:
     """키 → 실제 문자열. `true` 는 키 자체를 값으로 쓴다(AceLocale 기본 로케일 규칙)."""
     entries: dict[str, str] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
+    for line in text.splitlines():
         m = _ENTRY.match(line.strip())
         if not m:
             continue

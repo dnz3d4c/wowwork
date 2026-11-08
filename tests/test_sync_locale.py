@@ -97,3 +97,14 @@ def test_unknown_rows_reports_keys_missing_from_enus() -> None:
     new = {"ui.lua": {"Ok": "확인", "Typo": "오타"}, "nofile.lua": {"X": "x"}}
     en = {"ui.lua": {"Ok": "Ok"}}
     assert unknown_rows(new, en) == [("nofile.lua", "X"), ("ui.lua", "Typo")]
+
+
+def test_value_changes_lists_keys_whose_korean_changed() -> None:
+    """설명서 인용을 따라 바꾸려면 바뀌기 전과 뒤의 한국어 값이 필요하다(manual_sync 를 흡수, 2026-11-08)."""
+    from tools.manual import Change
+    from tools.sync_locale import value_changes
+
+    old = 'L["A"] = "가"\nL["B"] = "나"\n'
+    new = 'L["A"] = "가"\nL["B"] = "다"\nL["C"] = "새 키"\n'
+    en = {"A": "A en", "B": "B en", "C": "C en"}
+    assert value_changes(old, new, en) == [Change(en="B en", old="나", new="다")]
