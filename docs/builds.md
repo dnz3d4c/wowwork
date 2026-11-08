@@ -4,9 +4,9 @@
 
 | 빌드 | 날짜 | 원본 기준 | 내 저장소 커밋 | SHA-256 |
 |------|------|-----------|----------------|---------|
-| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, NVDA 브리지 기본 설치, 한국어 음성 팩 Yuna 설치) | 2026-11-08 | wow-vision/wowvision-installer ef7bb8f (1.6), 설치되는 애드온은 원본 안정판 V1.0.1 | dnz3d4c/wowvision-installer ko 5acdf8b, koKR은 dnz3d4c/vision-locale main a78f05a, 음성 팩은 wowwork assets/voice/Yuna | 5cc1d57293de5ed32765d084baef014e0ed8cf23adb336bff5f8f795eacd6278 |
+| WowVisionInstaller.exe 1.6 (한국어 화면 + koKR 덮어쓰기, NVDA 브리지 기본 설치, 한국어 음성 팩 Yuna 설치) | 2026-11-08 | wow-vision/wowvision-installer ef7bb8f (1.6), 설치되는 애드온은 원본 안정판 V1.0.1 | dnz3d4c/wowvision-installer ko 92a8c86, koKR은 dnz3d4c/vision-locale main a78f05a, 음성 팩은 wowwork assets/voice/Yuna | a36ddb23ae6aa203585d5ed578df1bc453acc507ac4f6f448bba37dc43574779 |
 
-이전 배포: 2026-11-07, ko c3ec7a7, SHA-256 fe5ce7adc6f9312a007960083ae8a8b9b916e62140ecb1ff549fa5e765071a26(음성 팩 첫 판, 속도 0·볼륨 100). 그 전: 2026-11-07, ko d0bb60a, SHA-256 acc3aed69eb47d4fc1a9e9aacd1962cba1e0b405297a080ab038c6f62986b116(V1.0.1 새 문자열). 그 전: 2026-11-07, ko b7177f6, koKR 980fdb5, SHA-256 3157ea4c206c6e674a0ef0a324de29c894e6cc17fd4a9079156f2cac4f37c142(설명서 다듬기의 koKR 변경). 그 전: 2026-11-06, ko accab35, koKR bff9930, SHA-256 ad48ba89b5e3272afd6e6745fa6575c6e3e1e51c354d47827a797a2864dc546a. 그 전: 2026-11-06, ko 702f903, SHA-256 e4a73d96698b5fecf5059966acae4bbfa3ccc7ed6a854adf265e538164d16ecc. 그 전: 2026-11-05, ko a948d1a, koKR f36a084, SHA-256 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47.
+이전 배포: 2026-11-08, ko 5acdf8b, SHA-256 5cc1d57293de5ed32765d084baef014e0ed8cf23adb336bff5f8f795eacd6278(음성 팩 다시 녹음). 그 전: 2026-11-07, ko c3ec7a7, SHA-256 fe5ce7adc6f9312a007960083ae8a8b9b916e62140ecb1ff549fa5e765071a26(음성 팩 첫 판, 속도 0·볼륨 100). 그 전: 2026-11-07, ko d0bb60a, SHA-256 acc3aed69eb47d4fc1a9e9aacd1962cba1e0b405297a080ab038c6f62986b116(V1.0.1 새 문자열). 그 전: 2026-11-07, ko b7177f6, koKR 980fdb5, SHA-256 3157ea4c206c6e674a0ef0a324de29c894e6cc17fd4a9079156f2cac4f37c142(설명서 다듬기의 koKR 변경). 그 전: 2026-11-06, ko accab35, koKR bff9930, SHA-256 ad48ba89b5e3272afd6e6745fa6575c6e3e1e51c354d47827a797a2864dc546a. 그 전: 2026-11-06, ko 702f903, SHA-256 e4a73d96698b5fecf5059966acae4bbfa3ccc7ed6a854adf265e538164d16ecc. 그 전: 2026-11-05, ko a948d1a, koKR f36a084, SHA-256 1f3401c1733f9591f878c307041c50679b0e3f28576729b13a55daf33911ad47.
 
 원본과 다른 기본값: NVDA 음성 브리지(`InstallRunner.cs`의 `InstallSapi2Sr`)가 켜져 있다. 원본은 꺼 둔다. "지금 설치", "지금 업데이트", 구성 요소 페이지가 모두 이 기본값으로 시작하므로 모든 설치 경로에서 브리지가 설치된다. 구성 요소 페이지에서는 여전히 해제할 수 있다(2026-11-06 사용자 지시).
 
@@ -20,6 +20,8 @@
 4. 테스터 폴더에 exe와 함께 `docs/tester-guide.md`를 `설치_안내.txt`로 복사한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
 
 ## 검증 이력
+
+- 2026-11-08(첫 화면 버튼 이름): 사용자 결정으로 "지금 설치"를 "권장 구성으로 설치"로 바꿨다. "WowVision 새로 설치, 또는 다른 게임 버전에 설치"와 이름만으로 구분되지 않았기 때문이다. 업데이트 버튼은 현재 설정을 유지하므로(설명 문구 update.explainUpdate) "현재 설정으로 업데이트"로 했다. 설명 문구와 스크린리더 이름(update.installAcc, update.updateAcc)도 맞췄다. `uv run pytest -q` 233개 통과, `build.ps1 -RunTests` PASS 207개·FAIL 0, exe 안에 새 이름이 있고 옛 이름이 없는 것을 확인했다. 설치 흐름은 바뀌지 않아 `fullinstall`은 다시 돌리지 않았다. 테스터 폴더의 exe, `설치_안내.txt`, `tester.zip`을 교체했다.
 
 - 2026-11-08(음성 팩 다시 녹음): 사용자가 속도 샘플(0, 3, 5) 가운데 5를 골랐다. 볼륨 100 녹음은 SAPI wav 단계에서 이미 0 dBFS로 잘려 있었다("동쪽" 한 단어에 최대값 샘플 147개, 108개 중 77개 파일 피크 -0.1 dB 이상). SAPI 볼륨 60으로 녹음해 원본 팩 수준에 맞췄다(Yuna 평균 -22.2 dB·최대 피크 -8.3 dB, Matthew -24.1 dB·-6.3 dB). 빌드는 피크가 -1 dB를 넘는 파일이 있으면 실패한다(`too_loud`). payload 재생성 뒤 `uv run pytest -q` 231개 통과, `build.ps1 -RunTests` PASS 207개·FAIL 0. 설치 흐름은 바뀌지 않아 `fullinstall`은 다시 돌리지 않았다. 테스터 폴더의 exe와 `tester.zip`을 교체했다.
 
