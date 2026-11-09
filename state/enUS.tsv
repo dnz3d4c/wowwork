@@ -120,6 +120,7 @@ bindings.lua	Scroll Up	Scroll Up
 bindings.lua	This input already exists for this binding.	This input already exists for this binding.
 bindings.lua	This input conflicts with	This input conflicts with
 bindings.lua	Up	Up
+buffers.lua	Always Start at Top	Always Start at Top
 buffers.lua	Any	Any
 buffers.lua	Aura Buffer	Aura Buffer
 buffers.lua	Auras	Auras
@@ -154,6 +155,7 @@ buffers.lua	Previous Buffer	Previous Buffer
 buffers.lua	Previous Buffer Group	Previous Buffer Group
 buffers.lua	Previous Buffer Item	Previous Buffer Item
 buffers.lua	Shown on Raid Frames in Combat	Shown on Raid Frames in Combat
+buffers.lua	Sounds When Opening and Closing	Sounds When Opening and Closing
 buffers.lua	Sources	Sources
 buffers.lua	Speak Description	Speak Description
 buffers.lua	Speak Time Remaining	Speak Time Remaining
@@ -1001,13 +1003,28 @@ targeting.lua	not available	not available
 ui.lua	Accepted Quest	Accepted Quest
 ui.lua	Active	Active
 ui.lua	Add	Add
+ui.lua	All Action Bars	All Action Bars
+ui.lua	Already set:	Already set:
 ui.lua	Ammo	Ammo
 ui.lua	Announce Crowd Control	Announce Crowd Control
 ui.lua	Applications	Applications
+ui.lua	Apply Recommended Game Settings	Apply Recommended Game Settings
 ui.lua	Attacking You	Attacking You
 ui.lua	Attacking You or Your Group	Attacking You or Your Group
 ui.lua	AuctionAvailable	Available
+ui.lua	Audio Assist	Audio Assist
+ui.lua	Audio Assist Combat End	Audio Assist Combat End
+ui.lua	Audio Assist Combat Start	Audio Assist Combat Start
+ui.lua	Audio Assist Resource	Audio Assist Resource
+ui.lua	Audio Assist Target Health	Audio Assist Target Health
+ui.lua	Audio Assist Target Health Style	Audio Assist Target Health Style
+ui.lua	Audio Assist Target Name	Audio Assist Target Name
+ui.lua	Audio Assist You Are Targeted	Audio Assist You Are Targeted
+ui.lua	Audio Assist Your Debuffs	Audio Assist Your Debuffs
+ui.lua	Audio Assist Your Health	Audio Assist Your Health
+ui.lua	Audio Assist Your Health Style	Audio Assist Your Health Style
 ui.lua	Aura Instance ID	Aura Instance ID
+ui.lua	Auto Loot	Auto Loot
 ui.lua	Available	Available
 ui.lua	Available Quest	Available Quest
 ui.lua	Back	Back
@@ -1031,6 +1048,7 @@ ui.lua	Combat Started Alert	Combat Started Alert
 ui.lua	Complete	Complete
 ui.lua	Context Menu	Context Menu
 ui.lua	Copper	Copper
+ui.lua	Could not set:	Could not set:
 ui.lua	Count Elite Enemies Only	Count Elite Enemies Only
 ui.lua	Count Enemies	Count Enemies
 ui.lua	Crowd Control Ended Alert	Crowd Control Ended Alert
@@ -1064,6 +1082,8 @@ ui.lua	Finger	Finger
 ui.lua	Format	Format
 ui.lua	Formatted	Formatted
 ui.lua	Game Menu	Game Menu
+ui.lua	Game settings changed:	Game settings changed:
+ui.lua	Game settings: nothing to change	Game settings: nothing to change
 ui.lua	Global	Global
 ui.lua	Glyphs	Glyphs
 ui.lua	Glyphs not yet implemented	Glyphs not yet implemented
@@ -1113,6 +1133,7 @@ ui.lua	No object configured	No object configured
 ui.lua	No results	No results
 ui.lua	None	None
 ui.lua	Not implemented yet	Not implemented yet
+ui.lua	Not in combat: try again after the fight	Not in combat: try again after the fight
 ui.lua	Number	Number
 ui.lua	Object	Object
 ui.lua	Objectives	Objectives
