@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from tools.glossary import Term, load_glossary, violations
-from tools.locale_lib import KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
+from tools.locale_lib import JOSA_WORDS, KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
 
 EN_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "en"
 KO_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "ko"
@@ -65,9 +65,8 @@ def _alternation(words: set[str]) -> re.Pattern[str]:
     return re.compile("|".join(re.escape(w) for w in sorted(words, key=len, reverse=True)))
 
 
-# 바꾼 값 바로 뒤의 받침 조사. 뒤에 한글이 이어지면("이다") 조사로 보지 않는다. 인용 조사 "이라고",
-# "이라는"은 받침이 없으면 "라고", "라는"이라 따로 둔다(2026-11-09 "사용 불가"이라고 9곳).
-_JOSA = "(?:(이라고|라고|이라는|라는|으로|을|를|이|가|은|는|과|와|로)(?![가-힣]))?"
+# 바꾼 값 바로 뒤의 받침 조사. 뒤에 한글이 이어지면("이다") 조사로 보지 않는다.
+_JOSA = f"(?:({JOSA_WORDS})(?![가-힣]))?"
 _JOSA_PAIRS = {"을": "를", "이": "가", "은": "는", "과": "와", "이라고": "라고", "이라는": "라는"}
 
 

@@ -16,6 +16,11 @@ WOWVISION_DIR = KO_WORK_ROOT / "WowVision"
 _ENTRY = re.compile(r'^L\["((?:[^"\\]|\\.)*)"\] = (true|"((?:[^"\\]|\\.)*)")\s*(?:--.*)?$')
 # Lua string.format 지정자. %% 는 리터럴이라 제외한다.
 _FORMAT = re.compile(r"%(?:\d+\$)?[-+ #0]*\d*(?:\.\d+)?[sdifgxXcqeE]")
+# 앞 낱말의 받침에 따라 모양이 달라지는 조사. 인용 조사 "이라고", "이라는"은 받침이 없으면 "라고", "라는"이라
+# 따로 둔다(2026-11-09 "사용 불가"이라고 9곳). 쓰는 쪽은 뒤에 한글이 이어지면("이다") 조사로 보지 않는다.
+JOSA_WORDS = "이라고|라고|이라는|라는|으로|을|를|이|가|은|는|과|와|로"
+# 지정자(따옴표·괄호로 닫아도 같다) 바로 뒤의 받침 조사
+_JOSA_AFTER_SPEC = re.compile(f"(?:{_FORMAT.pattern})[\"')]?(?:{JOSA_WORDS})(?![가-힣])")
 
 
 def upstream_locale_dir() -> Path:
@@ -53,3 +58,8 @@ def format_specs(s: str) -> list[str]:
     """서식 지정자 목록. 위치 지정(%1$s)은 종류만 남겨 비교한다."""
     stripped = s.replace("%%", "")
     return sorted(re.sub(r"\d+\$", "", spec) for spec in _FORMAT.findall(stripped))
+
+
+def josa_after_specs(s: str) -> list[str]:
+    """지정자 바로 뒤에 붙은 받침 조사. 들어갈 값의 받침을 모르므로 어느 모양이든 값에 따라 틀린다."""
+    return _JOSA_AFTER_SPEC.findall(s.replace("%%", ""))

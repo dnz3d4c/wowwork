@@ -43,6 +43,27 @@ def test_values_valid(name: str) -> None:
         assert format_specs(ko_val) == format_specs(en[key]), f"서식 지정자 불일치: {key!r} → {ko_val!r}"
 
 
+def test_josa_after_specs_finds_batchim_particles() -> None:
+    from tools.locale_lib import josa_after_specs
+
+    assert josa_after_specs("%s을 선택") == ["%s을"]
+    assert josa_after_specs('"%1$s"로 이동') == ['%1$s"로']
+    assert josa_after_specs("%d이라고 안내") == ["%d이라고"]
+    assert josa_after_specs("%s에게 귓속말") == []  # 에게는 받침과 무관
+    assert josa_after_specs("%d개를 구매") == []  # 조사 앞이 지정자가 아니다
+    assert josa_after_specs("100%%를 넘음") == []  # %% 는 지정자가 아니다
+
+
+@pytest.mark.parametrize("name", ENUS_FILES)
+def test_no_batchim_josa_after_spec(name: str) -> None:
+    """지정자에 들어갈 값의 받침을 모르므로 바로 뒤 을/를·이/가 같은 조사는 값에 따라 틀린다
+    (docs/translation-guide.md `## 서식 지정자`). 문장 구조를 바꿔 피한다."""
+    from tools.locale_lib import josa_after_specs
+
+    ko = parse_locale_file(KOKR_DIR / name)
+    assert {k: hits for k, v in ko.items() if (hits := josa_after_specs(v))} == {}
+
+
 def test_same_key_same_translation() -> None:
     """AceLocale 은 같은 키를 나중 파일 값으로 덮어쓰므로, 파일 간 번역이 다르면 한쪽이 조용히 사라진다."""
     seen: dict[str, tuple[str, str]] = {}
