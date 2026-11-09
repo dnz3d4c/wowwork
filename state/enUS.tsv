@@ -8,6 +8,9 @@ alerts.lua	TTS Alert	TTS Alert
 alerts.lua	Voice	Voice
 alerts.lua	Voice Alert	Voice Alert
 alerts.lua	alert	alert
+auction.lua	%s min	%s min
+auction.lua	%s min %s sec	%s min %s sec
+auction.lua	%s sec	%s sec
 auction.lua	12 Hours	12 Hours
 auction.lua	24 Hours	24 Hours
 auction.lua	48 Hours	48 Hours
@@ -59,6 +62,7 @@ auction.lua	Scan	Scan
 auction.lua	Scan Results	Scan Results
 auction.lua	Scan aborted	Scan aborted
 auction.lua	Scan complete	Scan complete
+auction.lua	Scan complete, %s Results in %s scanned	Scan complete, %s Results in %s scanned
 auction.lua	Scan failed	Scan failed
 auction.lua	Scanning	Scanning
 auction.lua	Selected	Selected
@@ -469,6 +473,9 @@ navigation.lua	At the portal. Target it with soft targeting and interact with it
 navigation.lua	At the vehicle	At the vehicle
 navigation.lua	At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.	At the waiting point of the Wind Bridge. Wait until you hear the bridge, then step into the wind current.
 navigation.lua	Atlas	Atlas
+navigation.lua	Auto Direct	Auto Direct
+navigation.lua	Auto Route	Auto Route
+navigation.lua	Auto mode needs Visited Waypoints switched on	Auto mode needs Visited Waypoints switched on
 navigation.lua	Auto, height %d	Auto, height %d
 navigation.lua	Auto, height unknown	Auto, height unknown
 navigation.lua	Auto-move to Interact Target	Auto-move to Interact Target
@@ -479,6 +486,8 @@ navigation.lua	Beacon	Beacon
 navigation.lua	Beacon Aligned	Beacon Aligned
 navigation.lua	Beacon Off Course	Beacon Off Course
 navigation.lua	Beacon Sound	Beacon Sound
+navigation.lua	Beacon Volume	Beacon Volume
+navigation.lua	Beacon and Routes	Beacon and Routes
 navigation.lua	Beacon set	Beacon set
 navigation.lua	Beacon stopped	Beacon stopped
 navigation.lua	Blocked	Blocked
@@ -486,6 +495,7 @@ navigation.lua	Board only when the vehicle is safely there.	Board only when the 
 navigation.lua	Boarding point %s reached	Boarding point %s reached
 navigation.lua	Calculating route	Calculating route
 navigation.lua	Cancel Navigation	Cancel Navigation
+navigation.lua	Central point: %s	Central point: %s
 navigation.lua	Choose a destination in the navigation window first	Choose a destination in the navigation window first
 navigation.lua	Choose the target's floor	Choose the target's floor
 navigation.lua	Compass	Compass
@@ -538,6 +548,7 @@ navigation.lua	Medium Range	Medium Range
 navigation.lua	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)
 navigation.lua	Mostly Blocked	Mostly Blocked
 navigation.lua	NPC or mob	NPC or mob
+navigation.lua	Names in Your Language	Names in Your Language
 navigation.lua	Navigation	Navigation
 navigation.lua	New WowNav Route Around a Blocked Spot	New WowNav Route Around a Blocked Spot
 navigation.lua	Next Waypoint	Next Waypoint
@@ -664,6 +675,7 @@ navigation.lua	behind to the right	behind to the right
 navigation.lua	behind you	behind you
 navigation.lua	book	book
 navigation.lua	capture point	capture point
+navigation.lua	cave	cave
 navigation.lua	chair	chair
 navigation.lua	chest	chest
 navigation.lua	destructible building	destructible building
@@ -701,6 +713,7 @@ navigation.lua	object type %s	object type %s
 navigation.lua	orientation point	orientation point
 navigation.lua	outdoors	outdoors
 navigation.lua	portal	portal
+navigation.lua	quest exploration	quest exploration
 navigation.lua	quest item	quest item
 navigation.lua	remaining	remaining
 navigation.lua	right	right
@@ -830,15 +843,19 @@ quests.lua	No nearby quests	No nearby quests
 quests.lua	No quest data source	No quest data source
 quests.lua	No quests in progress	No quests in progress
 quests.lua	No targets	No targets
+quests.lua	Objective Complete Alert	Objective Complete Alert
 quests.lua	Objectives	Objectives
 quests.lua	Quest Area Alert	Quest Area Alert
+quests.lua	Quest Complete Alert	Quest Complete Alert
 quests.lua	Quest Giver	Quest Giver
 quests.lua	Quest Givers	Quest Givers
+quests.lua	Quest Progress Alert	Quest Progress Alert
 quests.lua	Questie is not loaded	Questie is not loaded
 quests.lua	Questie is still loading	Questie is still loading
 quests.lua	Questie marker	Questie marker
 quests.lua	Rares	Rares
 quests.lua	Repeatable	Repeatable
+quests.lua	Sort Quests by Proximity	Sort Quests by Proximity
 quests.lua	Spirit Healers	Spirit Healers
 quests.lua	Stable Masters	Stable Masters
 quests.lua	Start	Start
@@ -859,7 +876,9 @@ scanner.lua	Corpse	Corpse
 scanner.lua	Entries Per Category	Entries Per Category
 scanner.lua	Error	Error
 scanner.lua	Graveyards	Graveyards
+scanner.lua	Navigate to Nearest	Navigate to Nearest
 scanner.lua	Not dead	Not dead
+scanner.lua	Nothing to navigate to	Nothing to navigate to
 scanner.lua	Player	Player
 scanner.lua	Refresh	Refresh
 scanner.lua	Refreshed	Refreshed
@@ -987,6 +1006,7 @@ ui.lua	Announce Crowd Control	Announce Crowd Control
 ui.lua	Applications	Applications
 ui.lua	Attacking You	Attacking You
 ui.lua	Attacking You or Your Group	Attacking You or Your Group
+ui.lua	AuctionAvailable	Available
 ui.lua	Aura Instance ID	Aura Instance ID
 ui.lua	Available	Available
 ui.lua	Available Quest	Available Quest
@@ -1140,6 +1160,7 @@ ui.lua	Search	Search
 ui.lua	Select Buffer Type	Select Buffer Type
 ui.lua	Select Type	Select Type
 ui.lua	Separator	Separator
+ui.lua	SettingDisabled	Disabled
 ui.lua	Shirt	Shirt
 ui.lua	Shoulders	Shoulders
 ui.lua	Side Tabs	Side Tabs
@@ -1176,6 +1197,7 @@ ui.lua	Windows	Windows
 ui.lua	With Spell Names	With Spell Names
 ui.lua	Without Names	Without Names
 ui.lua	WowVision	WowVision
+ui.lua	WowVision Sound Channel	WowVision Sound Channel
 ui.lua	Wrist	Wrist
 ui.lua	Yellow	Yellow
 ui.lua	combat ended	combat ended
@@ -1412,6 +1434,7 @@ windows.lua	Track	Track
 windows.lua	Tracked	Tracked
 windows.lua	Trade Skill	Trade Skill
 windows.lua	Training	Training
+windows.lua	Training point cost: %d	Training point cost: %d
 windows.lua	Trees	Trees
 windows.lua	Undo Changes	Undo Changes
 windows.lua	Unlearn	Unlearn

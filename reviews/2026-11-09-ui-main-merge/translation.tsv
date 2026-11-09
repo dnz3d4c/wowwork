@@ -1,0 +1,24 @@
+file	key	en	ko	old_en
+auction.lua	Scan complete, %s Results in %s scanned	Scan complete, %s Results in %s scanned	스캔 완료, 결과 %s개, %s개 항목 스캔	
+auction.lua	%s min %s sec	%s min %s sec	%s분 %s초	
+auction.lua	%s min	%s min	%s분	
+auction.lua	%s sec	%s sec	%s초	
+navigation.lua	Beacon and Routes	Beacon and Routes	비컨과 경로	
+navigation.lua	Beacon Volume	Beacon Volume	비컨 음량	
+navigation.lua	cave	cave	동굴	
+navigation.lua	quest exploration	quest exploration	퀘스트 탐험	
+navigation.lua	Names in Your Language	Names in Your Language	한국어 이름	
+navigation.lua	Central point: %s	Central point: %s	중심 지점: %s	
+navigation.lua	Auto Direct	Auto Direct	자동 직선 안내	
+navigation.lua	Auto Route	Auto Route	자동 경로 안내	
+navigation.lua	Auto mode needs Visited Waypoints switched on	Auto mode needs Visited Waypoints switched on	방문한 경유지를 켜야 자동 안내 가능	
+quests.lua	Sort Quests by Proximity	Sort Quests by Proximity	가까운 순으로 퀘스트 정렬	
+quests.lua	Quest Progress Alert	Quest Progress Alert	퀘스트 진행 알림	
+quests.lua	Objective Complete Alert	Objective Complete Alert	목표 완료 알림	
+quests.lua	Quest Complete Alert	Quest Complete Alert	퀘스트 완료 알림	
+scanner.lua	Navigate to Nearest	Navigate to Nearest	가장 가까운 항목으로 길 안내	
+scanner.lua	Nothing to navigate to	Nothing to navigate to	길 안내할 대상 없음	
+ui.lua	WowVision Sound Channel	WowVision Sound Channel	WowVision 소리 채널	
+ui.lua	SettingDisabled	Disabled	사용 안 함	
+ui.lua	AuctionAvailable	Available	구매 가능 수량	
+windows.lua	Training point cost: %d	Training point cost: %d	훈련 포인트 비용: %d	

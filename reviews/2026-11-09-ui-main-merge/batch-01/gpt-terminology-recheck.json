@@ -1,0 +1,1 @@
+{"findings":[{"id":"quests.lua::Quest Progress Alert","category":"terminology","severity":"minor","problem":"같은 영어 구절 \"Quest Progress\"가 기존 번역과 다르게 옮겨져 용어가 일관되지 않는다.","evidence":"related의 targeting.lua::Quest Progress는 \"퀘스트 진행 상황\"이며, vision-locale/koKR/targeting.lua:108에서도 같은 번역을 사용한다. 현재 번역은 \"상황\"을 빼서 \"퀘스트 진행\"으로 달라졌다.","suggestion":"퀘스트 진행 상황 알림"}]}
