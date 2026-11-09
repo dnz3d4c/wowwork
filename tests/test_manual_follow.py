@@ -14,7 +14,7 @@ def test_short_value_replaced_only_when_quoted_and_en_quotes_key() -> None:
     ko = '꺼져 있으면 "비활성화"라고 읽습니다. 기능을 비활성화하려면'
     out, log = follow_values(ch, en, ko, others={})
     # 인용 뒤 "라고"는 받침과 무관하다. 본문 속 "비활성화하려면"은 인용이 아니라서 그대로다.
-    assert out == '꺼져 있으면 "사용 안 함"라고 읽습니다. 기능을 비활성화하려면'
+    assert out == '꺼져 있으면 "사용 안 함"이라고 읽습니다. 기능을 비활성화하려면'
     assert len(log) == 1
 
 
@@ -110,7 +110,20 @@ def test_particle_after_replaced_value_follows_new_final_consonant() -> None:
     en = 'Pick "Alert" first.'
     ko = '"경보"를 고르고 "경보"와 소리를 정합니다. "경보"는 "경보"로 "경보"가 "경보"라고'
     out, _ = follow_values(ch, en, ko, others={})
-    assert out == '"알림"을 고르고 "알림"과 소리를 정합니다. "알림"은 "알림"으로 "알림"이 "알림"라고'
+    assert out == '"알림"을 고르고 "알림"과 소리를 정합니다. "알림"은 "알림"으로 "알림"이 "알림"이라고'
+
+
+def test_quoting_particle_follows_new_final_consonant() -> None:
+    """2026-11-09 사용 안 함 → 사용 불가: 인용 조사 "이라고", "이라는"은 뒤에 한글이 이어져 조사로 보지 않았고,
+    설명서 9곳에 "사용 불가"이라고가 남았다. 받침이 없으면 "라고", "라는"이다."""
+    ch = [Change(en="Disabled", old="사용 안 함", new="사용 불가")]
+    en = 'It says "Disabled".'
+    ko = '"사용 안 함"이라고 말하고 "사용 안 함"이라는 표시가 붙습니다.'
+    out, _ = follow_values(ch, en, ko, others={})
+    assert out == '"사용 불가"라고 말하고 "사용 불가"라는 표시가 붙습니다.'
+    back = [Change(en="Disabled", old="사용 불가", new="사용 안 함")]
+    out, _ = follow_values(back, en, out, others={})
+    assert out == ko
 
 
 def test_particle_follows_in_both_directions_and_keeps_rieul_ro() -> None:
@@ -159,6 +172,6 @@ def test_follow_all_returns_changes_without_writing(tmp_path) -> None:  # type: 
     (ko / "a" / "p.md").write_text('"비활성화"라고 읽습니다.', encoding="utf-8")
     ch = [Change(en="Disabled", old="비활성화", new="사용 안 함")]
     outputs, log = follow_all(ch, {}, set(), en_root=en, ko_root=ko)
-    assert outputs == {ko / "a" / "p.md": '"사용 안 함"라고 읽습니다.'}
+    assert outputs == {ko / "a" / "p.md": '"사용 안 함"이라고 읽습니다.'}
     assert (ko / "a" / "p.md").read_text(encoding="utf-8") == '"비활성화"라고 읽습니다.'
     assert log == ["a/p.md: 1x 비활성화 -> 사용 안 함"]
