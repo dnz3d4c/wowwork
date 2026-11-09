@@ -11,7 +11,7 @@
 
 ### PR이 병합된 뒤
 
-1. `uv run python -m tools.pr_cleanup`을 **묻지 않고** 실행한다(2026-11-09 사용자 결정). 병합된 PR의 머리 커밋에 포함된 브랜치만 포크·origin·로컬에서 지운다. 출력의 `남김:` 줄(열린 PR, 병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
+1. 세션 시작 훅(`.claude/settings.json`)이 `tools/pr_cleanup.py --hook`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 fork·origin·로컬에서 지운다. 새로 병합된 PR이 있으면 `[PR 정리] 병합됨:` 줄로 알린다(2026-11-09 사용자 결정: 묻지 않고 지운다). 세션 도중에는 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행한다. `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
 2. vision-locale `main`과 WowVision `ko`에 원본 main을 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다.
 3. `uv run python -m tools.sync_locale`로 새 키를 찾아 `docs/review-process.md` 절차로 번역한다. 설명서가 바뀌었으면 설명서도 따라간다.
 4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.

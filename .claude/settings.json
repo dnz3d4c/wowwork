@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/run_hook.sh \"$CLAUDE_PROJECT_DIR/tools/pr_cleanup.py\" --hook",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
