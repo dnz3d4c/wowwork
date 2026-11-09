@@ -53,6 +53,25 @@ def test_structure_extracts_comparable_parts() -> None:
     assert s["links"] == ["alerts.md", ""]
     assert s["code"] == ["`F10`"]
     assert s["blocks"] == ["```\n/wv\n```"]
+    assert s["columns"] == [2]
+    assert s["lists"] == [0]
+
+
+def test_check_reports_list_items_and_table_columns(tmp_path: Path) -> None:
+    """translation-guide.md `### 문체`가 약속한 목록 항목 수와 표 열 수도 대조한다."""
+    en = "# A\n\n- one\n- two\n  1. nested\n\n| K | V | N |\n|---|---|---|\n| a | b | c |\n"
+    good = "<!-- source: docs/src/user/en/a.md @ abc1234 -->\n# 가\n\n- 하나\n- 둘\n  1. 안쪽\n\n| 키 | 값 | 비고 |\n|---|---|---|\n| a | b | c |\n"
+    ko = tmp_path / "a.md"
+    assert check(en, good, ko, terms=[]) == []
+    merged = (
+        good.replace("- 하나\n- 둘", "- 하나와 둘")
+        .replace("| 키 | 값 | 비고 |", "| 키 | 값 |")
+        .replace("|---|---|---|", "|---|---|")
+        .replace("| a | b | c |", "| a | b |")
+    )
+    problems = "\n".join(check(en, merged, ko, terms=[]))
+    assert "목록 항목" in problems
+    assert "표 열" in problems
 
 
 def test_check_passes_good_translation(tmp_path: Path) -> None:

@@ -38,6 +38,7 @@ _HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지
 # 따옴표 인용은 화면 문구라 실물 그대로 둔다("바꾸기"는 koKR Replace 값). 맞바꾸다(교환)는 다른 낱말이다.
 _BAKKUDA = re.compile(r"(?<!맞)(?:바꾸|바꿉|바꿔|바꿨|바꾼|바꿀|바꿈|바뀌|바뀝|바뀐|바뀔|바뀜)[가-힣]*")
 _QUOTED = re.compile(r'"[^"\n]*"')
+_LIST_ITEM = re.compile(r"^\s*(?:[-*+]|\d+\.) +", re.MULTILINE)
 
 # ── koKR 값 변경 따라가기 ──────────────────────────────────────────────
 # 바꾸는 곳: 같은 경로의 영어 설명서가 그 키의 영어를 인용할 때만. 짧은 값(LONG 미만)은 따옴표로 감싼
@@ -185,9 +186,11 @@ def _strip_fences(md: str) -> str:
 
 def structure(md: str) -> dict[str, list]:  # type: ignore[type-arg]
     body = _strip_fences(SOURCE_LINE.sub("", md))
-    tables, rows = [], 0
+    tables, columns, rows = [], [], 0
     for line in body.splitlines() + [""]:
         if line.lstrip().startswith("|"):
+            if not rows:
+                columns.append(len(re.split(r"(?<!\\)\|", line.strip().strip("|"))))
             rows += 1
         elif rows:
             tables.append(rows)
@@ -195,6 +198,8 @@ def structure(md: str) -> dict[str, list]:  # type: ignore[type-arg]
     return {
         "headings": [len(m.group(1)) for m in _HEADING.finditer(body)],
         "tables": tables,
+        "columns": columns,
+        "lists": [len(_LIST_ITEM.findall(body))],
         "links": [t.split("#", 1)[0] for t in _LINK.findall(body)],
         "code": _CODE.findall(body),
         "blocks": _FENCE.findall(md),
@@ -230,6 +235,8 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
     labels = {
         "headings": "제목 수준",
         "tables": "표 행 수",
+        "columns": "표 열 수",
+        "lists": "목록 항목 수",
         "links": "링크 대상",
         "code": "인라인 코드",
         "blocks": "코드 블록",
