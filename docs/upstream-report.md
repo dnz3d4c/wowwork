@@ -31,12 +31,7 @@
 
 `L[]` 밖에 영어가 직접 들어 있어서 어떤 언어에서도 영어로 읽힌다.
 
-2026-11-07 제출: wow-vision/vision-locale#66, wow-vision/WowVision#109. 합쳐지면 새 키 4개(`Scan complete, %s Results in %s scanned`, `%s min %s sec`, `%s min`, `%s sec`)의 koKR 값을 넣는다.
-
-| 문자열 | 위치 |
-|--------|------|
-| `" in "` (경매장 스캔 진행 안내) | WowVision tbc/auction/ScanSession.lua:147 |
-| `" min "`, `" sec"` (경매장 스캔 남은 시간) | WowVision tbc/auction/module.lua:80-93 |
+남은 것 없음. 경매장 스캔 안내의 `" in "`, `" min "`, `" sec"`는 wow-vision/vision-locale#66, wow-vision/WowVision#109로 서식 문자열 키가 되어 2026-11-08 병합됐고, koKR 값을 넣었다(2026-11-09).
 
 ## 3. 여러 기능이 같은 키를 써서 한국어로 맞게 옮길 수 없는 문자열 (2026-11-07 설명서 다듬기)
 
@@ -46,10 +41,19 @@
 |-------------------|----------------------|----------------------|
 | quests.lua `Trainers` (상급자) | 미니맵 추적 Profession Trainers: 기술 전문가 (MINIMAP_TRACKING_TRAINER_PROFESSION) | 퀘스트 스캐너 TRAINER 역할(직업 상급자 포함): 상급자 (TUTORIAL_TITLE14) |
 | ui.lua `Repair` (수리) | 미니맵 추적 Repair: 장비 수리 (MINIMAP_TRACKING_REPAIR) | 상인 창 수리 묶음: 수리 (CONTEXT_ACTION_LABEL_REPAIR) |
-| ui.lua `Available` (사용 가능) | 경매장 결과 수량: 구매 가능 수량 | 특성 선택 가능 상태: 사용 가능 (AVAILABLE) |
 
 ## 4. 코드가 이어 붙여 한국어 띄어쓰기를 맞출 수 없는 문자열
 
 | 결과 | 위치 |
 |------|------|
-| "12 개 출현 지점": 숫자, 공백, `L["spawns"]` 순서로 붙여 단위 "개"가 띄어진다 | WowVision core/quests/scanner.lua:81, 125 |
+| "12 개 출현 지점": 숫자, 공백, `L["spawns"]` 순서로 붙여 단위 "개"가 띄어진다 | WowVision core/quests/scanner.lua:120, 165 (원본 main 5cbf76a) |
+
+## 5. 다른 언어를 전제하거나 뜻이 모호한 설명서 문장 (2026-11-09 설명서 평가)
+
+한국어판은 원문대로 옮겼다(2026-11-09 사용자 결정: 원문 그대로 두고 원본에 보고). 평가자가 지적했고 코드로 확인한 내용이다(`reviews/2026-11-09-manual-main`, `reviews/2026-11-09-manual-main-regression`).
+
+| 설명서(en) | 문제 | 코드 위치 |
+|------------|------|-----------|
+| world/wownav.md:75 | 괄호 안 직함도 번역되므로 "aubergiste", "cuisinier"로 검색할 수 있다고 한다. 프랑스어 클라이언트의 예시라서 다른 언어 사용자에게는 그대로 맞지 않는다. "게임 언어로 된 직함" 같은 일반 표현이 낫다 | WowVision camelot/wownav/text.lua:224-234, 300-304 |
+| world/wownav.md:61 | Ctrl+Shift+N과 대상까지의 경로는 "where you stand if that is clear"에서 시작한다고 한다. 실제 조건은 서 있는 곳의 층을 가릴 수 있는지다(모호하면 "ambiguous") | WowVision camelot/wownav/module.lua:183-194 |
+| world/navigation.md:233 | "Ctrl+S before the start of a leg"는 구간 시작에서 한 번 더 뒤로 가는 동작인데, 구간 밖에서 누르라는 뜻으로도 읽힌다 | WowVision core/navigation/visited.lua:284-298 |

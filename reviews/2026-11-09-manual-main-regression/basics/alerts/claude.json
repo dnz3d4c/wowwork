@@ -1,0 +1,20 @@
+[
+ {
+  "id": "basics/alerts.md",
+  "category": "accuracy",
+  "severity": "minor",
+  "quote": "게임에 퀘스트 진행 수치가 올라간 것이 표시됩니다.",
+  "suggestion": "게임에 퀘스트 진행 수치가 바뀐 것이 표시됩니다.",
+  "problem": "원문 moving은 방향을 정하지 않는데 번역은 '올라간'으로 한정했다. 아이템 수집 목표는 아이템을 버리면 수치가 내려가기도 한다. 같은 알림을 설명하는 quests.md는 '변경될 때'로 옮겼다.",
+  "evidence": "원문 \"The game shows a quest count moving.\" / wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:141 \"퀘스트 진행 상황 알림: 진행 개수가 변경될 때입니다.\""
+ },
+ {
+  "id": "basics/alerts.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "퀘스트의 모든 목표가 끝났습니다. 끝났는지는 퀘스트 목록에서 확인합니다.",
+  "suggestion": "퀘스트의 모든 목표가 끝났습니다. WowVision이 퀘스트 목록을 읽어 판단합니다.",
+  "problem": "'확인합니다'의 주어가 없어 사용자가 퀘스트 목록을 직접 확인해야 한다는 안내로도 들린다. 원문은 애드온이 퀘스트 목록에서 읽어 낸다는 뜻이고, quests.md는 주어를 밝혔다.",
+  "evidence": "원문 \"Every objective of a quest is done, read from your quest log.\" / wowvision-ko/WowVision/docs/src/user/ko/world/quests.md:143 \"WowVision이 퀘스트 목록에서 읽어 냅니다\""
+ }
+]

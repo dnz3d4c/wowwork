@@ -1,0 +1,13 @@
+{
+  "findings": [
+    {
+      "id": "world/scanner.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "[퀘스트](quests.md)를 참고하십시오. Backspace를 누르면 목표 텍스트를 읽습니다. 퀘스트를 펼치면 목표가 보입니다:",
+      "suggestion": "[퀘스트](quests.md)를 참고하십시오. 퀘스트에서 Backspace를 누르면 목표 텍스트를 읽습니다. 퀘스트를 펼치면 목표가 보입니다:",
+      "problem": "원문 변경으로 정렬 설명 네 문장이 끼어들어, 'Backspace를 누르면'이 어디서 누르는 것인지 앞 문장(정렬 설정, 링크)과 이어지지 않는다. 원문 'its'는 퀘스트 항목을 가리킨다. 같은 파일 주변 그룹 문단은 '퀘스트에서 Backspace를 누르면'으로 대상을 밝힌다.",
+      "evidence": "en_diff: '... see [Quests](quests.md). Press Backspace to read its objective text.' / 같은 파일 주변 문단: '퀘스트에서 Backspace를 누르면 목표 텍스트를 읽습니다.' 나머지 변경 부분은 확인 결과 결함 없음: 'A Threat Within, 레벨 5'는 WowVision/core/quests/scanner.lua:411 string.format(\"%s, %s %d\", title, L[\"Level\"], entry.level)과 koKR/quests.lua:16 L[\"Level\"]=\"레벨\"에 맞고, '가까운 순으로 퀘스트 정렬'은 koKR/quests.lua:7 및 ko/world/quests.md:167 표기와 같다."
+    }
+  ]
+}

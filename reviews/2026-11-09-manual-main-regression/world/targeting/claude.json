@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "world/targeting.md",
+      "category": "style",
+      "severity": "major",
+      "quote": "모드 모두 직접 대상으로 잡은 적이 있을 때만 물러납니다.",
+      "suggestion": "모드 모두 적을 직접 대상으로 잡았을 때만 물러납니다.",
+      "problem": "\"잡은 적이 있을 때\"는 '-ㄴ 적이 있다'(경험) 구문으로 들려서 \"직접 대상으로 잡아 본 일이 있으면\"으로 오해할 수 있다. 원문의 '적(enemy)'과 경험을 뜻하는 '적'이 겹쳐서 스크린리더로 들으면 뜻이 갈린다.",
+      "evidence": "원문(en_diff에서 추가된 문장): \"So with the game's default the two Only Without modes step aside only for enemies you target yourself.\" 지침 style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+    },
+    {
+      "id": "world/targeting.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "따라서 소프트 대상을 하드 대상으로 지정 설정이 게임 기본 상태이면,",
+      "suggestion": "따라서 소프트 대상을 하드 대상으로 지정 설정이 게임 기본값이면,",
+      "problem": "이 설정의 선택지 이름은 \"게임 기본값\"인데 \"게임 기본 상태\"로 다르게 옮겼다. 바로 다음 문단에서는 같은 설정을 \"기본값은 게임 기본값\"이라고 적어서 같은 페이지 안에서 표기가 어긋난다.",
+      "evidence": "terms: \"Game Default\" = \"게임 기본값\". 번역문 다음 문단: \"소프트 대상을 하드 대상으로 지정 설정(기본값은 게임 기본값)\". 원문: \"with the game's default\"."
+    }
+  ]
+}
