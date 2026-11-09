@@ -9,6 +9,14 @@
 - PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> -f base=main ...`로 연다. `gh pr create --head`는 같은 원본의 저장소가 계정에 둘이라 실패한다.
 - 계획과 진행 상황: `plans/active/upstream-korean.md`.
 
+### PR이 병합된 뒤
+
+1. `uv run python -m tools.pr_cleanup`을 **묻지 않고** 실행한다(2026-11-09 사용자 결정). 병합된 PR의 머리 커밋에 포함된 브랜치만 포크·origin·로컬에서 지운다. 출력의 `남김:` 줄(열린 PR, 병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
+2. vision-locale `main`과 WowVision `ko`에 원본 main을 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다.
+3. `uv run python -m tools.sync_locale`로 새 키를 찾아 `docs/review-process.md` 절차로 번역한다. 설명서가 바뀌었으면 설명서도 따라간다.
+4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.
+5. 계획서 현황판을 업데이트한다.
+
 ## WoW Login Tool [필수]
 
 로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`, sparse checkout)의 `ko` 브랜치에서 관리한다. 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.
