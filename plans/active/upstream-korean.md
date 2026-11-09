@@ -11,8 +11,8 @@
 ## 현황 (Status Board)  [강제]
 
 - 단계: Phase 2 / 전체 6 — koKR 로케일, 관리자 답 대기
-- 직전: 경매장 PR wow-vision/vision-locale#66, wow-vision/WowVision#109 제출. koKR 상의 이슈 wow-vision/WowVision#110 제출. koKR 브랜치는 `dnz3d4c/vision-locale-pr`의 `korean-locale`(3a37df9)에 준비됨.
-- 다음: #110에 답이 오면 koKR PR을 연다. #66이 합쳐지면 새 키 4개의 koKR 값을 보충한다. #75가 합쳐지면 Phase 1b 후속을 한다.
+- 직전(2026-11-09): Phase 1(#66, #109)과 Phase 1b(#75, #122)가 2026-11-08 22:39에 병합됐다. 후속으로 vision-locale main과 WowVision ko에 원본 main을 병합하고, koKR 새 키 23개를 번역·평가해 넣었다. 설명서 인용 3곳을 "사용 안 함"으로 되돌리고 배포했으며, payload와 설치 프로그램도 다시 만들었다. `korean-locale`은 원본 main을 병합해 3be0ed0이 됐다(enUS와 키 일치).
+- 다음: #110에 답이 오면 `korean-locale`로 koKR PR을 연다. 한국어 설명서 11쪽이 원본 main을 따라가야 한다(설명서 검사 실패 중). #105, #108이 병합되면 Phase 6의 퀘스트 스캐너 이어 붙이기를 다시 본다.
 - 사용자 결정(2026-11-07): 새 이름으로 공개 포크(`vision-locale-pr`, `WowVision-pr`), 이번 범위는 koKR만, 큰 단위는 이슈로 먼저 상의. 설치 프로그램·설명서·음성 팩(Phase 3~5)은 이번에 진행하지 않는다.
 
 ## 배경  [강제]
@@ -39,13 +39,13 @@
 - 공개 GitHub 포크가 있어야 PR을 열 수 있다. 기존 저장소(`dnz3d4c/vision-locale` 등)는 포크가 아니다. PR용 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고 로컬 복제본의 remote 이름은 `fork`다.
 - `gh pr create --head dnz3d4c:브랜치`는 같은 계정에 같은 원본의 저장소가 여럿이라 실패한다. `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> ...`로 연다.
 
-### Phase 1. 작은 PR: 경매장 스캔 결과·대기 시간 문구 [제출: vision-locale#66, WowVision#109]
+### Phase 1. 작은 PR: 경매장 스캔 결과·대기 시간 문구 [병합: vision-locale#66, WowVision#109, 2026-11-08]
 
 - 문제: `" in "`, `" min "`, `" sec"`가 `L[]` 밖에 있어서 모든 언어에서 영어로 나온다(`tbc/auction/ScanSession.lua:147`, `tbc/auction/module.lua:78-93`).
 - 수정: 서식 문자열 4개(`Scan complete, %s Results in %s scanned`, `%s min %s sec`, `%s min`, `%s sec`), enUS·deDE·frFR, 독일어 설명서 인용 3곳.
 - 열린 원본 PR 16개 중 이 파일들을 고치는 것은 없다.
 
-### Phase 1b. 작은 PR: Disabled·Available 키 분리 [제출: vision-locale#75, WowVision#122, 2026-11-09]
+### Phase 1b. 작은 PR: Disabled·Available 키 분리 [병합: vision-locale#75, WowVision#122, 2026-11-08. 후속 완료 2026-11-09]
 
 - 문제: 한 키를 뜻이 다른 문맥이 같이 쓴다. `Disabled` 16곳 중 14곳은 흐린 버튼(한국어 "사용 불가"), 2곳은 설정 끄기("사용 안 함": `core/targeting/module.lua:322`, `core/objects/types/unit/PVP.lua:28`). `Available`은 특성 1곳("사용 가능")과 Mists 경매장 수량 2곳(공식 "구매 가능 수량": `mists/auction.lua:253`, `284`). 사용자 지적: 퀘스트 수락 버튼이 "사용 안 함"으로 들림.
 - 수정: 소수 쪽만 새 키 `SettingDisabled`, `AuctionAvailable`(영어 값은 그대로)로 바꾼다. enUS·deDE·frFR `ui.lua` 끝에 두 키, 독일어·프랑스어는 지금 값.
@@ -62,6 +62,7 @@
 - 이후 관리: 원본에 키가 추가되면 키 대조 스크립트로 빠진 키를 찾아 koKR 보충 PR을 낸다. 빠진 키는 AceLocale이 영어로 대신 보여 주므로 원본 기여자에게 부담이 없다.
 - 로케일 저장소 밖의 언어별 표(2026-11-09 발견, 게임에서 미확인). koKR PR을 낼 때 함께 다룰지 정한다.
   - `core/minimap/gatheringNames.lua`: 채집물 이름이 enUS·deDE·frFR만 있고 없는 언어는 enUS로 대체한다(7-8줄 주석). 미니맵 글자와 이름을 부분 일치로 맞추므로 한국어 클라이언트에서는 채집물 탐지가 안 될 것으로 추정한다. 확인: 한국어 클라이언트에서 약초 찾기를 켜고 미니맵 스캔이 알리는지 듣는다. 고치면 `core/minimap/tests.lua`에 koKR 테스트를 더한다.
+  - WowNav의 생물·물체 이름은 원본 #113부터 영어·독일어 외 클라이언트에서 Questie의 현지어 이름을 쓴다(`camelot/wownav/text.lua:195-200`). 한국어 클라이언트에도 따로 할 일 없이 적용된다(게임에서 미확인).
   - `mapdata/WowVision_MapData_TBC/locale/`: 지명 번역이 deDE·frFR만 있다. `wv-mapdata-tools/names.py`가 만드는 파일이라 mapdata 저장소에 따로 PR을 낸다.
 - `changes-latest.md` 한 줄은 필수가 아니다(병합된 외부 PR 9개 중 3개만 넣었다). 넣는다면 `changes.md:89`의 독일어·프랑스어 줄 형식을 따른다.
 
