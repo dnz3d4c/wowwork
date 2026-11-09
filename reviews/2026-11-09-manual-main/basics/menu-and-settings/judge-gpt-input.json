@@ -1,0 +1,24 @@
+{
+ "file": "basics/menu-and-settings.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/menu-and-settings.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md",
+ "items": [
+  {
+   "ref": "basics/menu-and-settings.md#gpt-terminology-0",
+   "file": "basics/menu-and-settings.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "| WowVision 소리 채널 | 효과 | WowVision의 모든 소리가 재생되는 게임 소리 채널입니다.",
+    "suggestion": "| WowVision 소리 채널 | 효과음 | WowVision의 모든 소리가 재생되는 게임 소리 채널입니다.",
+    "problem": "화면에 표시되는 기본 채널 이름을 게임의 실제 한국어 값과 다르게 옮겼다.",
+    "evidence": "원문은 \"Sound Effects\"이며, 같은 문자열 ID 10648의 공식 값은 wowwork/cache/gs_enUS.csv에서 \"Sound Effects\", wowwork/cache/gs_koKR.csv에서 \"효과음\"이다."
+   },
+   "translator": {
+    "ref": "basics/menu-and-settings.md#gpt-terminology-0",
+    "action": "dispute",
+    "reason": "드롭다운 항목 라벨은 WowVision/core/audio/channels.lua:10 '{ label = FX_VOLUME, value = \"SFX\" }'로 게임 전역 문자열 FX_VOLUME을 쓴다. FX_VOLUME은 ID 12807이고 cache/gs_koKR.csv 값이 '효과'다. 지적이 든 ID 10648은 ENABLE_SOUNDFX(효과음 켜기 체크박스)로 다른 문자열이라 근거가 되지 않는다. 원문도 'named like the volume sliders'라고 하므로 음량 슬라이더 이름 '효과'가 게임에서 실제로 표시되는 값이다. 현행 유지."
+   }
+  }
+ ]
+}

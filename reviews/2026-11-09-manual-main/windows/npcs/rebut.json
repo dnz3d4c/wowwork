@@ -1,0 +1,10 @@
+[
+  {"ref": "windows/npcs.md#claude-style-0", "action": "applied", "reason": "합의 지적. gpt-style-1과 함께 반영: '사냥꾼이 야수 조련 능력을 사용하면 상급자에게 말을 걸지 않아도 소환수의 기술이 같은 상급자 창에 열립니다'로 번역투 주어·목적어 구조와 '창에 ... 엽니다' 조사를 고쳤다."},
+  {"ref": "windows/npcs.md#claude-style-1", "action": "applied", "reason": "맞는 지적. 쪼갠 두 문장을 '맨 위에는 훈련 포인트 정지점이 하나 더 있으며, 소환수에게 남은 포인트를 읽습니다'로 합쳐 무엇이 훈련 포인트인지 바로 연결되게 했다."},
+  {"ref": "windows/npcs.md#claude-style-2", "action": "applied", "reason": "합의 지적. gpt-style-0과 함께 반영: '기술을 배우려면 돈 대신 훈련 포인트가 들며, 항목에서 그 비용도 함께 읽습니다. 예를 들면 \"...\"입니다.' 지시대명사 '그것'을 없애고 같은 단락 앞 문장의 '예를 들면 ...입니다' 형식에 맞췄다."},
+  {"ref": "windows/npcs.md#gpt-terminology-0", "action": "dispute", "reason": "공식 근거를 확인할 수 없다. rebut.md는 공식 용어 근거를 gs_enUS.csv의 같은 ID 영어로 확인하라고 하는데 cache/gs_enUS.csv와 cache/game_terms.tsv에 'Natural Armor'가 없고, glossary.tsv·decisions.tsv에도 없다. 지적이 든 근거는 외부 메일링 리스트라 지침상 근거가 아니며, manual-translate.md 용어 5항('모르면 지어내지 않는다')에 따라 영어를 유지한다. 같은 파일의 상인 예시 'Insignia of Conquest'도 같은 이유로 영어로 두었다."},
+  {"ref": "windows/npcs.md#gpt-style-0", "action": "applied", "reason": "합의 지적. claude-style-2와 함께 반영(위 문장). '기술을 배우려면 ... 들며'로 주술 호응을 맞추고 '그것'을 '그 비용'으로 구체화했다."},
+  {"ref": "windows/npcs.md#gpt-style-1", "action": "applied", "reason": "합의 지적. claude-style-0과 함께 반영했다. '말을 걸 상급자 없이도' 수식 구조도 '상급자에게 말을 걸지 않아도'로 고쳤다."},
+  {"ref": "windows/npcs.md#gpt-context-0", "action": "dispute", "reason": "코드 관찰(training.lua:182-233 renderDetails, 334행 호출)은 맞지만 원문 자체가 'the stops are the same: Filter, Training and the Train button'으로 세부 정보를 열거하지 않는다. manual-translate.md 문체 규칙('원문에 없는 내용을 더하지 않는다')에 따라 번역문에서 고칠 문제가 아니라 원문과 동작의 차이이므로 docs/upstream-report.md로 보낼 대상이다."},
+  {"ref": "windows/npcs.md#gpt-context-1", "action": "dispute", "reason": "코드 관찰(training.lua:247-257 live=\"focus\", liveWatch.lua 초점 노드만 낭독)은 맞지만 원문이 'The points go down, and you hear the new total'이라고 쓴다. 번역은 원문을 옮기며 원문에 없는 절차('훈련 포인트 정지점으로 이동합니다')를 더하지 않는다(manual-translate.md 문체). 설명서와 동작의 차이라 docs/upstream-report.md 대상이다."}
+]

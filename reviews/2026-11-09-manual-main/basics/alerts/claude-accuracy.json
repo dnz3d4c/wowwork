@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/alerts.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "퀘스트 목록에서 읽은 퀘스트의 모든 목표가 끝났습니다. 목표 소리 대신 재생되며",
+   "suggestion": "퀘스트의 모든 목표가 끝났습니다. 끝났는지는 퀘스트 목록에서 읽어 판단합니다. 목표 소리 대신 재생되며",
+   "problem": "원문의 \"read from your quest log\"는 모든 목표가 끝났다는 사실을 퀘스트 목록에서 읽어 판단한다는 뜻인데, 번역은 이를 \"퀘스트\"를 꾸미는 말로 옮겨 '퀘스트 목록에서 읽은 퀘스트'라는 별도 부류가 있는 것처럼 들린다. 무엇을 퀘스트 목록에서 읽는지가 바뀌었다.",
+   "evidence": "en_diff 추가 행: \"Quest Complete Alert | Quests | Every objective of a quest is done, read from your quest log. Plays in place of the objective's sound; ...\" — \"read from your quest log\"는 앞 절 \"Every objective of a quest is done\" 전체에 걸린다."
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "upheld": [],
+ "disputeWon": 0,
+ "escalations": [
+  {
+   "ref": "world/wownav.md#claude-context-0",
+   "quote": "\"(Innkeeper)\"처럼 괄호 안에 적힌 직함도 번역되므로 \"aubergiste\"나 \"cuisinier\"로 검색할 수 있습니다.",
+   "why": "두 판정자의 결론이 다름",
+   "gpt": {
+    "uphold": true,
+    "final_ko": "\"(Innkeeper)\"처럼 괄호 안에 적힌 직함도 번역되므로 게임 언어로 된 직함으로도 검색할 수 있습니다. 예를 들어 프랑스어 클라이언트에서는 \"aubergiste\"나 \"cuisinier\"로 검색할 수 있습니다.",
+    "reason": "코드는 Questie가 클라이언트 언어를 사용할 때 그 언어의 직함을 검색 문자열에 포함하며, 테스트도 두 단어를 프랑스어 환경의 값으로 확인한다. 현재 번역은 한국어 독자도 프랑스어 단어로 검색할 수 있다는 일반적인 설명으로 읽히므로, 원문에 암시된 언어 조건을 명시해야 실제 동작과 맞는다."
+   },
+   "claude": {
+    "uphold": false,
+    "final_ko": "\"(Innkeeper)\"처럼 괄호 안에 적힌 직함도 번역되므로 \"aubergiste\"나 \"cuisinier\"로 검색할 수 있습니다.",
+    "reason": "번역은 원문(en/world/wownav.md:75)을 그대로 옮겼고 코드 동작(text.lua:224-234 클라이언트 언어 일치 시에만 Questie 이름 사용, text.lua:300-304 subName 직함 부착)과도 어긋나지 않는다. 제안의 '프랑스어 클라이언트에서는', '게임 언어로 된 직함으로도'는 원문에 없는 설명이며 translation-guide.md:93은 보충 설명을 덧붙이지 말고 보고 목록에 올리라고 한다. 한국어 독자에게 예시가 어색한 문제는 원문 문제로 upstream-report 대상이다. 현재 번역 유지."
+   }
+  }
+ ]
+}

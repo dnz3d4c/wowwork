@@ -1,0 +1,10 @@
+[
+  {"ref": "getting-started/troubleshooting.md#claude-accuracy-0", "action": "applied", "reason": "원문 'the game walks you'에서 걷는 것은 캐릭터다. '게임이 캐릭터를 가능한 한 가까이 걸어가게 한 뒤 창을 엽니다.'로 고쳤다(claude-style-2와 함께 반영)."},
+  {"ref": "getting-started/troubleshooting.md#claude-style-0", "action": "applied", "reason": "'비컨이 지나갈 수 없는 곳'은 비컨이 못 지나가는 곳으로 읽힌다. 원문 주체는 you다. '캐릭터가 지나갈 수 없는 곳으로 비컨이 이끌거나, 경유지에 가도 도착한 것으로 처리되지 않습니다.'로 고쳤다. 제안의 '내가'는 설명서 문체에 맞지 않아 '캐릭터가'를 썼다."},
+  {"ref": "getting-started/troubleshooting.md#claude-style-1", "action": "applied", "reason": "합의 지적. '곧은 직선'은 겹말이다. gpt-style-1과 함께 '직선 경로가 기둥, 모서리, 상자에 막힐 수 있습니다.'로 고쳤다."},
+  {"ref": "getting-started/troubleshooting.md#claude-style-2", "action": "applied", "reason": "claude-accuracy-0과 같은 곳. '게임이 캐릭터를 가능한 한 가까이 걸어가게 한 뒤 창을 엽니다.'로 반영했다."},
+  {"ref": "getting-started/troubleshooting.md#gpt-style-0", "action": "applied", "reason": "화면 문구 '막힌 지점을 피하는 새 WowNav 경로'가 '에'와 바로 붙어 실제 경로에 키를 지정한다는 뜻으로도 들린다. 화면 문구는 글자 그대로 두고 뒤에 '기능'을 붙여 '…새 WowNav 경로 기능에 지정한 키를 누릅니다.'로 고쳤다. world/wownav.md:227에 같은 표현이 있어 그 파일도 맞출 필요가 있다(이 작업 범위 밖)."},
+  {"ref": "getting-started/troubleshooting.md#gpt-style-1", "action": "applied", "reason": "합의 지적. claude-style-1과 같은 곳이라 '직선 경로가'로 함께 반영했다."},
+  {"ref": "getting-started/troubleshooting.md#gpt-style-2", "action": "applied", "reason": "'경유지 하나를 되돌아갑니다'는 목적어 결합이 어색하다. '한 경유지 전으로 돌아갑니다.'로 고쳤다."},
+  {"ref": "getting-started/troubleshooting.md#gpt-style-3", "action": "applied", "reason": "설정값 '거리'가 이끄는 주체가 되어 어색하다. '도착 거리를 줄이면 문이나 좁은 통로를 더 정확하게 지나도록 안내합니다. 늘리면 경유지에 더 일찍 도착한 것으로 처리하므로…'로 고쳤다. 원문 shorter/longer 대비와 조건은 유지된다."}
+]

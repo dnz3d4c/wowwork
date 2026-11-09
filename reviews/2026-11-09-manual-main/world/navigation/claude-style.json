@@ -1,0 +1,38 @@
+[
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "major",
+    "quote": "이 연속 안내는 출현 지점을 모두 방문했을 때(이름이 들어간 방문하지 않은 지점 없음 안내가 들립니다)",
+    "suggestion": "이 연속 안내는 출현 지점을 모두 방문했을 때(방문하지 않은 곳이 없다는 안내가 이름과 함께 들립니다)",
+    "problem": "수식어가 겹쳐서(이름이 들어간 + 방문하지 않은 + 지점 없음 + 안내) 귀로 들으면 어디까지가 안내 문구인지 알 수 없다. '방문하지 않은 지점 없음'이 실제 안내 문구처럼 들리지만 실제 문구는 '방문하지 않은 Peacebloom 없음'처럼 이름이 가운데에 들어간다.",
+    "evidence": "원문 en_diff 'you hear \"No unvisited\" and the name'. 같은 파일 앞 절의 예 '\"방문하지 않은 Peacebloom 없음\"'. manual-review.md style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "알림이 작동하는 방식은 [알림](../basics/alerts.md)를 보십시오.",
+    "suggestion": "알림이 작동하는 방식은 [알림](../basics/alerts.md)을 보십시오.",
+    "problem": "조사 오류. 링크 글자 '알림'이 받침(ㅁ)으로 끝나므로 '를'이 아니라 '을'이어야 한다.",
+    "evidence": "en_diff에서 바뀐 'All beacon sounds are one alert called Beacon in the Beacon and Routes module ... See [Alerts](../basics/alerts.md) for how alerts work.' 줄. 같은 파일의 '[이동](./movement.md)을 보십시오'와도 어긋난다."
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "갈 수 없거나 비어 있는 출현 지점은 건너뛰며, 연속 안내는 그 지점을 다시 내놓지 않습니다.",
+    "suggestion": "갈 수 없거나 비어 있는 출현 지점은 건너뛰며, 연속 안내는 그 지점으로 다시 안내하지 않습니다.",
+    "problem": "'offer'를 '내놓다'로 직역해 어색하다. 안내 기능의 동작이므로 '다시 안내하지 않습니다'가 자연스럽다.",
+    "evidence": "원문 'It skips a spawn you cannot reach or that is empty, and the chain does not offer it again.' (en_diff 추가분)"
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "강 건너편의 약초가 같은 편에 있는 조금 더 먼 약초보다 앞서지 않습니다",
+    "suggestion": "강 건너편의 약초가 강 이쪽에 있는 조금 더 먼 약초보다 앞서지 않습니다",
+    "problem": "'같은 편'은 무엇과 같은 편인지 기준이 없고 '같은 팀'으로도 들린다. 원문 'on your side'는 내가 있는 강 이쪽이라는 뜻이다.",
+    "evidence": "원문 'so a herb across a river does not win over one a little further away on your side.' (en_diff 추가분)"
+  }
+]

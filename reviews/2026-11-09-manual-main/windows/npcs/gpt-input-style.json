@@ -1,0 +1,186 @@
+{
+ "file": "windows/npcs.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/npcs.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/npcs.md",
+ "en": "# NPCs: Gossip, Vendors, Trainers, Flight Masters and Books\n\nThis page covers the windows you meet when you talk to a character in the world: the conversation window (gossip), merchants, trainers, flight masters, books and letters, and the hunter's pet stable. All of them open when the game opens them. Walk up to the NPC and interact as usual, for example with the interact key. WowVision then reads the window and lets you move through it.\n\nIn all these windows Tab and Shift+Tab move between the parts of the window (each part is a \"stop\"), the arrow keys move inside a part, Enter clicks, Space reads the tooltip where there is one, and Escape closes the window. Backspace right clicks, which matters only where a right click does something, such as on a merchant's goods. Shift+F10 opens the context menu of the focused entry. See [Navigating windows](../basics/interface.md).\n\nIf the addon Sku is loaded, WowVision leaves the gossip, merchant, trainer, flight master and pet stable windows to Sku.\n\n## Gossip\n\nThe gossip window is the conversation you get when you talk to most NPCs. It lists what the NPC says and what you can choose.\n\nThe window reads, from the top. Every entry is a stop of its own, so use Tab and Shift+Tab to move from one to the next:\n\n1. The greeting, the NPC's current text. The name of the NPC is announced as the window's title.\n2. Options, one entry for each thing the NPC offers, for example \"Train me\", \"Make this inn your home\" or \"I want to browse your goods\". Press Enter to pick one.\n3. Available Quest: ... entries, quests you can accept from this NPC, followed by the quest title.\n4. Accepted Quest: ... entries, quests you have already taken that involve this NPC, for example to turn them in.\n5. Goodbye, which ends the conversation.\n\nWhen you pick an option, the NPC answers and the window refreshes. The new text is read to you automatically from the top, and focus returns to the greeting. While the game is still working on your choice, WowVision keeps showing the old page rather than a half-updated one, and then jumps to the new page when it is ready.\n\nPicking a quest entry opens the quest window. See [Quests](../world/quests.md). Choosing an option that opens a trainer, merchant or flight master closes the conversation and opens that window.\n\nExample: set your hearthstone at an innkeeper.\n\n1. Interact with the innkeeper. You hear the name of the NPC and the greeting.\n2. Press Tab to move through the options until you hear \"Make this inn your home\".\n3. Press Enter. The NPC answers, probably with a confirmation popup. See [System windows](./system.md#popups-and-confirmation-dialogs).\n\nNot read: some friendship and special reputation displays that the modern game shows in gossip.\n\n## Merchants\n\nThe merchant window is where you buy, sell and repair.\n\nThe stops, in order:\n\n1. Tabs: a row with two tabs, the merchant's goods and Buyback. The one you are on says \"selected\". Use Left and Right, and Enter to switch.\n2. Items: the goods for sale on this page, or the items you sold, on the Buyback tab. Ten goods per page; the buyback list has up to twelve. An empty page says \"Empty\".\n3. Previous Page and Next Page: one stop each, only when the merchant has more than one page.\n4. Repair (only at merchants who repair): Repair All, Repair Item and, where available, Guild Bank Repair. These are on the Merchant tab only.\n\n### What an item says\n\nEach item reads its name and quality colour, how many you get in a stack, the price, how many are left, and any other costs:\n\n- \"Linen Bandage, White, 1 Silver 5 Copper\"\n- \"Rough Arrow, White x 200, 3 Silver, 2 in stock\"\n- \"Insignia of Conquest, Purple, Honor Points 1200\"\n\nThe price is shown in gold, silver and copper. A stack like \"x 200\" shows only when the merchant sells more than one at a time. Items that cost extra currencies or items add them at the end, for example \"Marks of Honor 20\" or the name of the required item. Limited items add \"N in stock\". These labels are live. Page flips rewrite the same slots while you stay on them.\n\nPress Space for the item tooltip.\n\n### Buying\n\n- Backspace (right click) on an item buys it. A stack item buys the whole stack the merchant offers, as in the game.\n- Enter (left click) picks the item up onto your cursor. You can then put it into a bag slot to buy it there.\n- To buy a chosen amount of a stack item, press Shift+Enter on it. The game opens a small box that asks how many you want: type the amount and press Enter. WowVision does not read that box.\n\n### Selling\n\n- Open your bags (see [Bags and bank](./bags-and-bank.md)), and press Backspace on an item. With a merchant open this sells it. The context menu of the slot says \"Sell, Right Click\" so you can check before you press.\n- Or pick the item up with Enter and put it down in the merchant's items.\n- Items you sold by mistake can be bought back on the Buyback tab, for the price you got.\n\n### Repairing\n\nOn the Repair stop press Enter on Repair All to repair everything you have equipped for the price shown by the game (the cost is in the button's tooltip, read with Space). Repair Item puts the game's repair tool on your cursor, and then you click the item to repair. Guild Bank Repair repairs with the guild's money where you may.\n\n### Merchant settings\n\nOpen the WowVision menu and go to Windows, then Merchant.\n\n| Setting | Default | What it does |\n|---------|---------|--------------|\n| Automatically Sell Poor Items | Off | When a merchant opens, every grey item in your bags that has a vendor value is sold at once. WowVision prints \"Sold N poor quality items for X.\" in the chat. |\n| Automatically Repair If Possible | Off | When a merchant opens, your gear is repaired at once with your own money. WowVision prints \"Repaired all items for X.\" in the chat. It is skipped silently if the merchant cannot repair, nothing is damaged, or you cannot pay. |\n\nBoth are meant for the common run: arrive at a vendor, hear what you sold and repaired, and move on. Locked items are not sold. The automatic sale looks at the backpack and your four bags.\n\nLike every window, the merchant has an Enabled switch on the same menu page.\n\n## Trainers\n\nThe trainer window teaches you spells, skills and professions.\n\nThe stops, in order:\n\n1. Next rank (WoW: Forever only): WoW: Forever lifts the next rank of a profession you have not learned yet out of the list into its own button above the list.\n2. Filter: a dropdown with Available, Unavailable and Already Known. On WoW: Forever the game hides unavailable skills by default, so a new character hears only one entry and nothing of what comes later. Open the filter and tick Unavailable to see everything.\n3. Training: the list of services, a spell or skill per entry. Enter selects one.\n4. Details: the selected service's name (Space reads its tooltip), a second skill line when there is one, what it requires, and the cost.\n5. The Train button. Press Enter to learn the selected service.\n\n### What a service says\n\nA service reads its name and rank, then Known or Unavailable where that applies, the price, and its requirements:\n\n- \"Fireball Rank 2, 20 Silver, Requires: Level 6\"\n- \"Apprentice Cooking, Known\"\n- \"Heroic Strike Rank 3, Unavailable, 1 Gold, Requires: Level 16\"\n\nThe word \"selected\" follows the one you have selected. The requirements are shown whether or not you already meet them, and the line is built from the game's own wording, so it may differ slightly from the examples. Headers in the list (the groups the game uses, such as Available) say Expanded or Collapsed, and Enter folds or unfolds them.\n\nExample: learn a new spell.\n\n1. Interact with your class trainer.\n2. Press Tab until you hear \"Training\", then walk with Down through the list.\n3. Stop on a service you can afford and press Enter. It says \"selected\".\n4. Press Tab until \"Details\" and read the cost. Then press Tab to Train.\n5. Press Enter. The game teaches you the spell, and your money goes down.\n\n### Your pet's Beast Training\n\nOn WoW: Forever the hunter's Beast Training ability opens your pet's skills in the same trainer window, without a trainer to talk to. WowVision reads it like the class trainer. The window is named after your pet, and the stops are the same: Filter, Training and the Train button. One stop is new, at the top: Training Points, which reads how many points your pet has left, for example \"Training Points: 19\".\n\nA skill costs training points, not money, and says so: \"Natural Armor Rank 1, Training point cost: 1, Requires: Level 8\". Press Enter on a skill to select it, then Tab to Train and Enter to teach it. The points go down, and you hear the new total.\n\n## Flight masters\n\nA flight master window lists where you can fly. It has one stop, named with the title of the map (usually the flight master's location or the continent), and one entry per destination.\n\nEach entry reads the name of the place and the cost:\n\n- \"Ironforge, Dun Morogh, 2 Silver\"\n- \"Menethil Harbor, Wetlands, 1 Silver 40 Copper\"\n\nWalk with Up and Down, and press Enter on a destination to take the flight. Only the destinations the game draws on its map are listed, and the place you stand at may be among them.\n\n## Books, letters and plaques\n\nWhen you read an item or object that has text, such as a book, a letter or a plaque, the item text window opens. It reads:\n\n1. The text stop: the item's name, \"From\" and the author (only if there is one), and then the body of the text. A page of text is read as one piece.\n2. Previous Page and Next Page, only for texts that have more than one page. Press Enter to turn the page. The new page is read when it arrives.\n3. A Close button. Escape also closes it.\n\nThe text can take a moment to come from the server. WowVision stays quiet until it arrives and then reads it.\n\n## Pet stable\n\n(The Burning Crusade only.)\n\nHunters use the pet stable on The Burning Crusade to keep extra pets. Talk to a stable master and choose to open the stable. The window reads:\n\n1. Selected Pet: the pet's level, its loyalty or happiness text where the game shows one, and what it eats.\n2. Slots: the current pet, then Stable slot 1 and Stable slot 2. Each reads its heading, the pet's name and \"Level N Family\", or \"Empty Stable Slot\". The slot you have selected says \"selected\".\n3. Purchase: the button to buy the next slot, with its price.\n4. Money: your money.\n5. Close.\n\nStabling and taking a pet out work with the cursor, like items:\n\n- To stable your current pet: press Shift+F10 on the current pet slot, choose Drag, then press Enter on a free stable slot.\n- To bring a stabled pet out: press Shift+F10 on the stabled pet, choose Drag, then press Enter on the current pet slot. The two pets swap if you already have one.\n- Enter on a slot with nothing on your cursor selects it, and the window shows that pet's details.\n\nThe Drag keys (\\\\ and Ctrl+D) do nothing on stable slots, so use the Drag entry of the context menu.\n\nClassic Era, Mists of Pandaria, Retail and WoW: Forever have no stable reader.\n",
+ "ko": "<!-- source: docs/src/user/en/windows/npcs.md @ 5cbf76a -->\n# NPC: 대화, 상인, 상급자, 비행 조련사, 책\n\n이 페이지는 게임 세계에서 캐릭터에게 말을 걸 때 열리는 창을 다룹니다. 대화 창, 상인, 상급자, 비행 조련사, 책과 편지, 사냥꾼의 야수 우리 창입니다. 각 창은 게임이 그 창을 열 때 열립니다. 평소처럼 NPC에게 다가가 상호작용 단축키 등으로 말을 겁니다. 그러면 WowVision이 창을 읽고 그 안을 이동할 수 있게 해 줍니다.\n\n이 창들에서는 모두 Tab과 Shift+Tab으로 창의 구역 사이를 이동하고(각 구역을 \"정지점\"이라고 합니다), 화살표 키로 구역 안을 이동하고, Enter로 클릭하고, 툴팁이 있으면 Space로 읽고, Escape로 창을 닫습니다. Backspace는 오른쪽 클릭이며, 상인의 상품처럼 오른쪽 클릭에 기능이 있는 곳에서만 쓸모가 있습니다. Shift+F10은 초점이 있는 항목의 상황별 메뉴를 엽니다. [창 안에서 이동하기](../basics/interface.md)를 참고하십시오.\n\nSku 애드온이 로드되어 있으면 WowVision은 대화, 상인, 상급자, 비행 조련사, 야수 우리 창을 Sku에 맡깁니다.\n\n## 대화\n\n대화 창은 대부분의 NPC에게 말을 걸면 나오는 창입니다. NPC가 하는 말과 고를 수 있는 것을 보여 줍니다.\n\n창은 위에서부터 이렇게 읽습니다. 항목 하나하나가 별도의 정지점이므로 Tab과 Shift+Tab으로 하나씩 이동합니다.\n\n1. 인사말. NPC가 현재 하는 말입니다. NPC 이름은 창 제목으로 안내됩니다.\n2. 선택지. NPC가 제공하는 것마다 항목이 하나씩 있습니다. 예를 들면 \"훈련을 받고 싶습니다\", \"이 여관을 내 집으로 삼겠습니다\", \"물건을 보고 싶습니다\"입니다. Enter를 눌러 하나를 고릅니다.\n3. 가능한 퀘스트: ... 항목. 이 NPC에게서 받을 수 있는 퀘스트이며, 뒤에 퀘스트 제목이 붙습니다.\n4. 수락한 퀘스트: ... 항목. 이미 받은 퀘스트 중 이 NPC와 관련된 것입니다. 예를 들어 완료를 보고할 퀘스트입니다.\n5. 작별. 대화를 끝냅니다.\n\n선택지를 고르면 NPC가 대답하고 창 내용이 업데이트됩니다. 새 글을 위에서부터 자동으로 읽어 주고, 초점은 인사말로 돌아갑니다. 게임이 아직 선택을 처리하는 동안에는 WowVision이 반쯤 변경된 페이지 대신 이전 페이지를 계속 보여 주다가, 새 페이지가 준비되면 그리로 넘어갑니다.\n\n퀘스트 항목을 고르면 퀘스트 창이 열립니다. [퀘스트](../world/quests.md)를 참고하십시오. 상급자, 상인, 비행 조련사를 여는 선택지를 고르면 대화가 닫히고 그 창이 열립니다.\n\n예: 여관주인에게서 귀환 장소를 정합니다.\n\n1. 여관주인과 상호작용합니다. NPC의 이름과 인사말이 들립니다.\n2. \"이 여관을 내 집으로 삼겠습니다\"가 들릴 때까지 Tab을 눌러 선택지 사이를 이동합니다.\n3. Enter를 누릅니다. NPC가 대답하며, 대개 확인 팝업이 뜹니다. [시스템 창](./system.md#팝업과-확인-대화-상자)을 참고하십시오.\n\n읽지 않는 것: 최신 게임이 대화 창에 보여 주는 일부 우정 평판과 특수 평판 표시.\n\n## 상인\n\n상인 창에서 물건을 사고팔고 수리합니다.\n\n정지점은 순서대로 다음과 같습니다.\n\n1. 탭: 상품 목록과 재매입이라는 두 탭이 있는 줄입니다. 현재 탭에는 \"선택됨\"이 붙습니다. Left와 Right로 탭 사이를 이동하고 Enter를 눌러 탭을 변경합니다.\n2. 아이템: 이 페이지의 판매 상품, 또는 재매입 탭에서는 판 아이템입니다. 상품은 한 페이지에 10개이고, 재매입 목록은 최대 12개입니다. 빈 페이지는 \"비어 있음\"이라고 합니다.\n3. 이전 페이지와 다음 페이지: 각각 정지점 하나이며, 상인의 페이지가 둘 이상일 때만 있습니다.\n4. 수리(수리하는 상인에게만): 모든 장비 수리, 장비 수리, 그리고 가능한 곳에서는 길드 자금으로 수리. 이 수리 버튼들은 상품 목록 탭에만 있습니다.\n\n### 아이템이 읽는 내용\n\n각 아이템은 이름과 등급 색상, 한 묶음에 받는 개수, 가격, 남은 개수, 그 밖의 비용을 읽습니다.\n\n- \"리넨 붕대, 흰색, 1 실버 5 코퍼\"\n- \"조잡한 화살, 흰색 x 200, 3 실버, 2 개 남음\"\n- \"Insignia of Conquest, 보라색, 명예 1200\"\n\n가격은 골드, 실버, 코퍼로 표시됩니다. \"x 200\" 같은 묶음 수는 상인이 한 번에 둘 이상 팔 때만 나옵니다. 추가 화폐나 아이템이 필요한 아이템은 끝에 그 비용을 덧붙입니다. 예를 들면 \"명예 훈장 20\"이나 필요한 아이템의 이름입니다. 수량이 한정된 아이템은 \"N 개 남음\"을 덧붙입니다. 이 레이블은 실시간으로 변경됩니다. 페이지를 넘겨도 초점은 같은 칸에 그대로 있고 그 칸의 내용만 변경됩니다.\n\nSpace를 누르면 아이템 툴팁을 읽습니다.\n\n### 사기\n\n- 아이템에서 Backspace(오른쪽 클릭)를 누르면 그 아이템을 삽니다. 묶음 아이템은 게임에서처럼 상인이 파는 묶음 전체를 삽니다.\n- Enter(왼쪽 클릭)를 누르면 아이템을 커서로 집습니다. 그런 다음 가방 칸에 놓으면 아이템을 사서 그 칸에 넣습니다.\n- 묶음 아이템을 원하는 개수만큼 사려면 그 아이템에서 Shift+Enter를 누릅니다. 게임이 몇 개를 원하는지 묻는 작은 상자를 엽니다. 개수를 입력하고 Enter를 누릅니다. WowVision은 그 상자를 읽지 않습니다.\n\n### 팔기\n\n- 가방을 열고([가방과 은행](./bags-and-bank.md) 참고) 아이템에서 Backspace를 누릅니다. 상인 창이 열려 있으면 그 아이템을 팝니다. 칸의 상황별 메뉴에 \"판매, 오른쪽 클릭\"이라고 나오므로 누르기 전에 확인할 수 있습니다.\n- 또는 Enter로 아이템을 집어 상인의 아이템 목록에 내려놓습니다.\n- 실수로 판 아이템은 재매입 탭에서 판 가격에 되살 수 있습니다.\n\n### 수리하기\n\n수리 정지점에서 모든 장비 수리에 Enter를 누르면 착용한 모든 장비를 게임이 보여 주는 가격에 수리합니다(비용은 버튼 툴팁에 있으며 Space로 읽습니다). 장비 수리를 누르면 게임의 수리 도구가 커서에 올라오고, 그다음 수리할 아이템을 클릭합니다. 길드 자금으로 수리 버튼은 권한이 있을 때 길드 자금으로 수리합니다.\n\n### 상인 설정\n\nWowVision 메뉴를 열고 창, 상인 순서로 들어갑니다.\n\n| 설정 | 기본 | 하는 일 |\n|---------|---------|--------------|\n| 하급 아이템 자동 판매 | 끔 | 상인 창이 열리면 가방에 있는 회색 아이템 중 상점 판매 가격이 있는 것을 모두 바로 팝니다. WowVision은 대화창에 \"하급 아이템 N개를 X에 판매.\"라고 출력합니다. |\n| 가능하면 자동 수리 | 끔 | 상인 창이 열리면 자기 돈으로 장비를 바로 수리합니다. WowVision은 대화창에 \"X에 모든 장비 수리.\"라고 출력합니다. 상인이 수리할 수 없거나, 손상된 장비가 없거나, 돈이 모자라면 아무 말 없이 건너뜁니다. |\n\n두 설정 모두 상인에게 들러 무엇을 팔고 수리했는지 들은 뒤 다시 길을 떠나는 흔한 흐름을 위한 것입니다. 잠긴 아이템은 팔지 않습니다. 자동 판매는 배낭과 가방 네 개를 살핍니다.\n\n다른 모든 창처럼 상인 창에도 같은 메뉴 페이지에 사용함 스위치가 있습니다.\n\n## 상급자\n\n상급자 창에서는 주문, 기술, 전문 기술을 배웁니다.\n\n정지점은 순서대로 다음과 같습니다.\n\n1. 다음 등급(WoW: Forever 전용): WoW: Forever는 아직 배우지 않은 전문 기술의 다음 등급을 목록에서 빼내 목록 위에 있는 별도 버튼으로 둡니다.\n2. 필터: 사용 가능, 사용 불가, 이미 습득이라는 세 항목이 있는 드롭다운입니다. WoW: Forever에서는 게임이 기본으로 사용 불가 기술을 숨기므로, 새 캐릭터는 항목을 하나만 듣고 나중에 배울 것은 하나도 듣지 못합니다. 모두 보려면 필터를 열고 사용 불가를 체크합니다.\n3. 훈련: 훈련 항목의 목록이며, 항목마다 주문이나 기술이 하나입니다. Enter로 하나를 선택합니다.\n4. 세부 정보: 선택한 항목의 이름(Space로 툴팁을 읽습니다), 있으면 두 번째 기술 줄, 요구 사항, 비용입니다.\n5. 배우기 버튼. Enter를 누르면 선택한 항목을 배웁니다.\n\n### 항목이 읽는 내용\n\n항목은 이름과 등급을 읽고, 해당하면 이미 습득이나 사용 불가를, 그다음 가격과 요구 사항을 읽습니다.\n\n- \"화염구 등급 2, 20 실버, 요구 사항: 6 레벨\"\n- \"초급 요리, 이미 습득\"\n- \"영웅의 일격 등급 3, 사용 불가, 1 골드, 요구 사항: 16 레벨\"\n\n선택한 항목 뒤에는 \"선택됨\"이라는 말이 붙습니다. 요구 사항은 이미 충족했는지와 상관없이 표시되며, 그 줄은 게임 자체의 문구로 만들어지므로 예시와 조금 다를 수 있습니다. 목록의 머리글(사용 가능처럼 게임이 쓰는 묶음)에는 \"펼쳐짐\"이나 \"접힘\"이 붙으며, Enter로 접거나 펼칩니다.\n\n예: 새 주문을 배웁니다.\n\n1. 직업 상급자와 상호작용합니다.\n2. \"훈련\"이 들릴 때까지 Tab을 누르고, Down으로 목록을 따라 내려갑니다.\n3. 비용을 낼 수 있는 항목에서 멈추고 Enter를 누릅니다. \"선택됨\"이라고 합니다.\n4. \"세부 정보\"까지 Tab을 누르고 비용을 읽습니다. 그다음 Tab을 눌러 배우기로 갑니다.\n5. Enter를 누릅니다. 게임이 주문을 가르쳐 주고, 돈이 줄어듭니다.\n\n### 소환수의 야수 조련\n\nWoW: Forever에서는 사냥꾼의 야수 조련 능력이 말을 걸 상급자 없이도 같은 상급자 창에 소환수의 기술을 엽니다. WowVision은 이 창을 직업 상급자처럼 읽습니다. 창 이름은 소환수의 이름이고, 정지점도 필터, 훈련, 배우기 버튼으로 같습니다. 맨 위에 정지점이 하나 새로 있습니다. 훈련 포인트이며, 소환수에게 남은 포인트를 읽습니다. 예를 들면 \"훈련 포인트: 19\"입니다.\n\n기술은 돈이 아니라 훈련 포인트가 들며, 그것을 함께 읽습니다: \"Natural Armor 등급 1, 훈련 포인트 비용: 1, 요구 사항: 8 레벨\". 기술에서 Enter를 눌러 선택하고, Tab으로 배우기에 간 다음 Enter를 눌러 가르칩니다. 포인트가 줄어들고, 새 합계가 들립니다.\n\n## 비행 조련사\n\n비행 조련사 창은 날아갈 수 있는 곳을 보여 줍니다. 정지점이 하나이며, 그 이름은 지도 제목(대개 비행 조련사가 있는 곳이나 대륙)이고, 목적지마다 항목이 하나 있습니다.\n\n각 항목은 장소 이름과 비용을 읽습니다.\n\n- \"아이언포지, 던 모로, 2 실버\"\n- \"메네실 항구, 저습지, 1 실버 40 코퍼\"\n\nUp과 Down으로 이동하고, 목적지에서 Enter를 누르면 비행을 시작합니다. 게임이 지도에 표시하는 목적지만 목록에 나오며, 지금 서 있는 곳도 목록에 들어 있을 수 있습니다.\n\n## 책, 편지, 명판\n\n책, 편지, 명판처럼 글이 있는 아이템이나 물체를 읽으면 아이템 글 창이 열립니다. 이 창은 이렇게 읽습니다.\n\n1. 글 정지점: 아이템 이름, \"보낸이\"와 작성자(있을 때만), 그다음 본문입니다. 글 한 페이지는 한 덩어리로 읽습니다.\n2. 이전 페이지와 다음 페이지. 페이지가 둘 이상인 글에만 있습니다. Enter를 눌러 페이지를 넘깁니다. 새 페이지가 도착하면 읽습니다.\n3. 닫기 버튼. Escape로도 닫힙니다.\n\n글이 서버에서 오는 데 잠시 걸릴 수 있습니다. WowVision은 글이 도착할 때까지 조용히 있다가 도착하면 읽습니다.\n\n## 야수 우리\n\n(불타는 성전 전용.)\n\n불타는 성전에서 사냥꾼은 야수 우리에 추가 야수를 맡겨 둡니다. 야수 관리인에게 말을 걸어 우리를 여는 선택지를 고릅니다. 창은 이렇게 읽습니다.\n\n1. 선택한 야수: 야수의 레벨, 게임이 보여 주는 경우 충성도나 만족도 문구, 그리고 먹이입니다.\n2. 칸: 현재 야수, 그다음 야수 우리 1번 칸과 야수 우리 2번 칸입니다. 각 칸은 머리글, 야수 이름과 \"N 레벨 종류\", 또는 \"빈 야수 우리\"를 읽습니다. 선택한 칸은 \"선택됨\"이라고 합니다.\n3. 구입: 다음 칸을 사는 버튼이며, 가격도 읽습니다.\n4. 돈: 내 돈입니다.\n5. 닫기.\n\n야수를 우리에 맡기고 꺼내는 일은 아이템처럼 커서로 합니다.\n\n- 현재 야수를 우리에 맡기려면: 현재 야수 칸에서 Shift+F10을 누르고 끌기를 고른 다음, 빈 우리 칸에서 Enter를 누릅니다.\n- 맡긴 야수를 꺼내려면: 맡긴 야수에서 Shift+F10을 누르고 끌기를 고른 다음, 현재 야수 칸에서 Enter를 누릅니다. 이미 야수가 있으면 두 야수가 자리를 맞바꿉니다.\n- 커서에 아무것도 없을 때 칸에서 Enter를 누르면 그 칸을 선택하고, 창에 그 야수의 세부 정보가 나옵니다.\n\n끌기 키(\\\\와 Ctrl+D)는 우리 칸에서 아무것도 하지 않으므로 상황별 메뉴의 끌기 항목을 사용하십시오.\n\nClassic Era, 판다리아의 안개, Retail, WoW: Forever에는 야수 우리 읽기 기능이 없습니다.\n",
+ "terms": [
+  {
+   "en": "Automatically Repair If Possible",
+   "ko": "가능하면 자동 수리"
+  },
+  {
+   "en": "Automatically Sell Poor Items",
+   "ko": "하급 아이템 자동 판매"
+  },
+  {
+   "en": "Guild Bank Repair",
+   "ko": "길드 자금으로 수리"
+  },
+  {
+   "en": "Available Quest",
+   "ko": "가능한 퀘스트"
+  },
+  {
+   "en": "Flight Masters",
+   "ko": "비행 조련사"
+  },
+  {
+   "en": "Accepted Quest",
+   "ko": "수락한 퀘스트"
+  },
+  {
+   "en": "flight master",
+   "ko": "비행 조련사"
+  },
+  {
+   "en": "stable master",
+   "ko": "야수 관리인"
+  },
+  {
+   "en": "Previous Page",
+   "ko": "이전 페이지"
+  },
+  {
+   "en": "Selected Pet",
+   "ko": "선택한 야수"
+  },
+  {
+   "en": "Right Click",
+   "ko": "오른쪽 클릭"
+  },
+  {
+   "en": "Unavailable",
+   "ko": "사용 불가"
+  },
+  {
+   "en": "Repair Item",
+   "ko": "장비 수리"
+  },
+  {
+   "en": "Repair All",
+   "ko": "모든 장비 수리"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Available",
+   "ko": "사용 가능"
+  },
+  {
+   "en": "Collapsed",
+   "ko": "접힘"
+  },
+  {
+   "en": "Next Page",
+   "ko": "다음 페이지"
+  },
+  {
+   "en": "Selected",
+   "ko": "선택됨"
+  },
+  {
+   "en": "Previous",
+   "ko": "이전"
+  },
+  {
+   "en": "Trainers",
+   "ko": "상급자"
+  },
+  {
+   "en": "Expanded",
+   "ko": "펼쳐짐"
+  },
+  {
+   "en": "in stock",
+   "ko": "개 남음"
+  },
+  {
+   "en": "Interact",
+   "ko": "상호작용"
+  },
+  {
+   "en": "Merchant",
+   "ko": "상인"
+  },
+  {
+   "en": "Training",
+   "ko": "훈련"
+  },
+  {
+   "en": "Purchase",
+   "ko": "구입"
+  },
+  {
+   "en": "Vendors",
+   "ko": "상인"
+  },
+  {
+   "en": "Windows",
+   "ko": "창"
+  },
+  {
+   "en": "Enabled",
+   "ko": "사용함"
+  },
+  {
+   "en": "Options",
+   "ko": "설정"
+  },
+  {
+   "en": "Goodbye",
+   "ko": "작별"
+  },
+  {
+   "en": "Details",
+   "ko": "세부 정보"
+  },
+  {
+   "en": "Default",
+   "ko": "기본"
+  },
+  {
+   "en": "Filter",
+   "ko": "필터"
+  },
+  {
+   "en": "Silver",
+   "ko": "실버"
+  },
+  {
+   "en": "Copper",
+   "ko": "코퍼"
+  },
+  {
+   "en": "Repair",
+   "ko": "수리"
+  },
+  {
+   "en": "Purple",
+   "ko": "보라색"
+  },
+  {
+   "en": "Points",
+   "ko": "포인트"
+  },
+  {
+   "en": "Gossip",
+   "ko": "대화"
+  },
+  {
+   "en": "Quests",
+   "ko": "퀘스트"
+  },
+  {
+   "en": "Stable",
+   "ko": "우리"
+  },
+  {
+   "en": "Locked",
+   "ko": "잠김"
+  }
+ ],
+ "en_diff": "diff --git a/docs/src/user/en/windows/npcs.md b/docs/src/user/en/windows/npcs.md\nindex 0963b68..acadef0 100644\n--- a/docs/src/user/en/windows/npcs.md\n+++ b/docs/src/user/en/windows/npcs.md\n@@ -112,6 +112,12 @@ Example: learn a new spell.\n 4. Press Tab until \"Details\" and read the cost. Then press Tab to Train.\n 5. Press Enter. The game teaches you the spell, and your money goes down.\n \n+### Your pet's Beast Training\n+\n+On WoW: Forever the hunter's Beast Training ability opens your pet's skills in the same trainer window, without a trainer to talk to. WowVision reads it like the class trainer. The window is named after your pet, and the stops are the same: Filter, Training and the Train button. One stop is new, at the top: Training Points, which reads how many points your pet has left, for example \"Training Points: 19\".\n+\n+A skill costs training points, not money, and says so: \"Natural Armor Rank 1, Training point cost: 1, Requires: Level 8\". Press Enter on a skill to select it, then Tab to Train and Enter to teach it. The points go down, and you hear the new total.\n+\n ## Flight masters\n \n A flight master window lists where you can fly. It has one stop, named with the title of the map (usually the flight master's location or the continent), and one entry per destination.\n"
+}

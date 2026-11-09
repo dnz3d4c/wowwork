@@ -1,0 +1,22 @@
+[
+  {
+    "ref": "world/wownav.md#claude-style-0",
+    "action": "applied",
+    "reason": "지적이 맞다. '것은 ... 이름이'로 주어가 겹쳐 들었을 때 흐릿했다. 'Questie가 모르는 생물과 물체는 영어 이름 그대로 남습니다.'로 고쳤다."
+  },
+  {
+    "ref": "world/wownav.md#claude-context-0",
+    "action": "dispute",
+    "reason": "원문은 \"so you can search for \\\"aubergiste\\\" or \\\"cuisinier\\\"\"로 프랑스어 예만 들 뿐 '프랑스어 클라이언트에서는'이나 '게임 언어로 된 직함으로도'라는 말이 없다. 번역 지침(manual-translate.md 문체: 원문에 없는 내용을 더하지 않는다)상 설명을 덧붙일 수 없다. 또 제안의 근거인 한국어 클라이언트에서 Questie가 한국어 직함을 실제로 주는지는 평가자 스스로 미확인이라 했다. 예시가 한국어 독자에게 어색한 것은 원문 문제이므로 번역으로 고치지 않고 docs/upstream-report.md 대상으로 넘기는 것이 맞다."
+  },
+  {
+    "ref": "world/wownav.md#gpt-style-0",
+    "action": "applied",
+    "reason": "지적이 맞다. 설정 항목과 값의 관계가 어색한 번역투였다. 'Questie의 언어는 자동 또는 게임 언어로 설정해야 합니다.'로 고쳤다. 원문 'has to be Auto, or the game's'의 조건은 그대로 살렸다."
+  },
+  {
+    "ref": "world/wownav.md#gpt-style-1",
+    "action": "applied",
+    "reason": "지적이 맞다. 'knows them'을 옮긴 '알고 있는'은 번역투다. 표 칸을 'Questie 데이터베이스에 이름이 있는 생물과 물체를 게임 언어로 된 이름으로 부릅니다.'로 고쳤다(뒤 동사 '부릅니다'에 맞춰 조사는 '를' 유지)."
+  }
+]

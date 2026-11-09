@@ -1,0 +1,13 @@
+[
+  {"ref": "world/quests.md#claude-style-0", "action": "applied", "reason": "설명 칸이 첫 설정 이름과 같아 그 설정 하나만 가리키는 말로 들린다. 원문 'Announcements of quest progress.'는 세 알림 전체를 설명하므로 위 줄과 같은 형태인 '퀘스트가 진행될 때의 알림.'으로 고쳤다."},
+  {"ref": "world/quests.md#claude-style-1", "action": "applied", "reason": "두 회사 공통 지적(gpt-style-0과 함께 반영). 소리를 주어로 한 번역투와 '그 소리'의 모호함을 풀어 '목표 하나를 마치면 그 목표의 소리는 0.5초 미만의 짧은 시간 동안 기다렸다가 재생됩니다. 그 사이에 이 목표로 퀘스트가 완료되었는지 확인합니다.'로 고쳤다."},
+  {"ref": "world/quests.md#claude-style-2", "action": "applied", "reason": "쉼표로 이은 긴 문장을 둘로 나눠 '이 알림들은 오류 모듈의 설정과 관계없이 작동하고, 오류 모듈을 꺼도 작동합니다. 이 메시지들은 오류 모듈의 오류별 필터에도 나오지 않습니다.'로 고쳤다. 원문 내용은 그대로다."},
+  {"ref": "world/quests.md#claude-style-3", "action": "applied", "reason": "두 회사 공통 지적(gpt-style-1과 함께 반영). '곳에서'를 없애고 조건과 결과를 짝지어 '게임에서 확인 표시가 나타나는 완료한 퀘스트는 제목 뒤에 \"완료\"가 붙고, 빨간색 실패 아이콘이 나타나는 실패한 퀘스트는 \"실패\"가 붙습니다.'로 고쳤다."},
+  {"ref": "world/quests.md#claude-style-4", "action": "applied", "reason": "'세 가지 따로'의 어순이 어색하다. 원문 'three alerts of their own'에 맞춰 '이를 위한 전용 알림이 세 가지 있습니다.'로 고쳤다."},
+  {"ref": "world/quests.md#gpt-accuracy-0", "action": "applied", "reason": "원문 'a count moves'는 증가로 한정하지 않는다(아이템을 버리면 개수가 줄어든 메시지도 나온다). 낱말 규칙상 '바뀌다' 대신 '변경되다'를 써서 '진행 개수가 변경될 때입니다.'로 고쳤다."},
+  {"ref": "world/quests.md#gpt-terminology-0", "action": "applied", "reason": "'Each alert has TTS and Sound'는 설정 표의 하위 그룹 TTS 알림·소리 알림을 가리킨다. 용어표(TTS Alert=TTS 알림, Sound Alert=소리 알림)와 같은 파일 설정 표에 맞춰 '알림마다 TTS 알림과 소리 알림이 있고'로 고쳤다."},
+  {"ref": "world/quests.md#gpt-style-0", "action": "applied", "reason": "두 회사 공통 지적. '문구는 말합니다'를 '게임 문구는 곧바로 들립니다.'로 고치고, 뒤 문장은 claude-style-1과 함께 반영했다. 제안문의 '확인한 뒤 소리를 재생하므로'는 확인이 끝나야 재생된다는 뜻을 더하므로 원문 'waits a moment ... to learn whether'에 가깝게 '기다렸다가 재생됩니다. 그 사이에 ... 확인합니다'로 썼다."},
+  {"ref": "world/quests.md#gpt-style-1", "action": "applied", "reason": "두 회사 공통 지적. claude-style-3과 함께 같은 문장으로 반영했다(제안문의 조건-결과 대응 구조를 따랐다)."},
+  {"ref": "world/quests.md#gpt-style-2", "action": "applied", "reason": "'진행 개수'를 받아 '진행 개수가 변경될 때입니다.'로 반영했다. 다만 '알립니다'로 바꾸는 부분은 따르지 않았다. 같은 목록의 나머지 두 항목이 '~때입니다'로 끝나서 세 항목의 형태를 맞추기 위해서다."},
+  {"ref": "world/quests.md#gpt-style-3", "action": "applied", "reason": "긴 괄호를 풀어 두 문장으로 나눴다: '기준은 각 퀘스트에서 Enter를 눌렀을 때 안내받는 장소입니다. 그 장소는 아직 마치지 않은 다음 목표이고, 퀘스트를 마쳤다면 퀘스트 완료 장소입니다.' 원문 'next open objective'를 살려 '아직 마치지 않은 다음 목표'는 유지했다."}
+]

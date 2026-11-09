@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "\"(Innkeeper)\"처럼 괄호 안에 적힌 직함도 번역되므로 \"aubergiste\"나 \"cuisinier\"로 검색할 수 있습니다.",
+   "suggestion": "\"(Innkeeper)\"처럼 괄호 안에 적힌 직함도 번역되므로 게임 언어로 된 직함으로도 검색할 수 있습니다(예: 프랑스어 클라이언트에서는 \"aubergiste\"나 \"cuisinier\").",
+   "problem": "프랑스어 검색어 예시가 그대로라 한국어 클라이언트 독자에게는 이 낱말로 검색할 수 있다는 뜻으로 들린다. 실제 동작은 클라이언트 언어와 Questie 언어가 같을 때만 그 언어의 직함을 쓰므로, 한국어 클라이언트에서 \"aubergiste\"는 맞지 않는다. 원문 예시는 살리고 어떤 클라이언트의 예인지만 밝히면 오해가 없다.",
+   "evidence": "원문: \"Titles written in parentheses, such as \\\"(Innkeeper)\\\", are translated too, so you can search for \\\"aubergiste\\\" or \\\"cuisinier\\\".\" 코드: WowVision/camelot/wownav/text.lua:224-234 questieSpeaksClientLanguage()는 Questie UI 언어가 GetLocale()과 같을 때만 사용, text.lua:300-304 subName(직함)을 Questie에서 클라이언트 언어로 가져와 괄호에 붙임. 한국어 클라이언트에서 Questie가 한국어 직함을 실제로 주는지는 미확인(게임에서 확인 필요)."
+  }
+ ]
+}

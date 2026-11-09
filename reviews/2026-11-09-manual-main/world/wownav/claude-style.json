@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/wownav.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Questie가 모르는 것은 영어 이름이 그대로 남습니다.",
+   "suggestion": "Questie가 모르는 생물과 물체는 영어 이름 그대로 남습니다.",
+   "problem": "'모르는 것은 ... 이름이 남습니다'로 주어가 겹쳐 무엇이 남는지 한 번에 잡히지 않는다. '것'이 앞 문장의 생물·물체를 가리키는지 이름을 가리키는지도 들어서는 흐릿하다.",
+   "evidence": "원문(en_diff 추가 문장): \"where Questie does not know it, the English name stays.\" manual-review.md style 관점: 어색한 조사, 들었을 때 뜻이 갈리는 표현."
+  }
+ ]
+}

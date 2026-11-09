@@ -1,0 +1,37 @@
+{
+ "items": [
+  {
+   "ref": "world/navigation.md#gpt-context-0",
+   "provider": "gpt",
+   "quote": "첫 구간은 Enter를 누를 때처럼 창에서 선택한 진입 지점에서 시작합니다."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "world/navigation.md#gpt-context-0",
+   "uphold": false,
+   "final_ko": "첫 구간은 Enter를 누를 때처럼 창에서 선택한 진입 지점에서 시작합니다.",
+   "reason": "현재 번역은 영어 원문의 해당 문장을 정확히 옮겼다. 실제 동작과 원문이 어긋나지만, 사용자 결정에 따라 이런 경우 한국어판에 원문 밖 설명을 추가하지 않고 원문에 충실하게 번역해야 하므로 번역 결함은 아니다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/docs/src/user/en/world/navigation.md:231",
+    "wowvision-ko/WowVision/docs/src/user/ko/world/navigation.md:232",
+    "wowwork/docs/decisions.tsv:13"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "world/navigation.md#gpt-context-0",
+   "uphold": false,
+   "final_ko": "첫 구간은 Enter를 누를 때처럼 창에서 선택한 진입 지점에서 시작합니다.",
+   "reason": "번역문은 원문 'The first leg starts at the entry point you selected in the window, as Enter does.'(en/world/navigation.md:231)를 뜻 그대로 옮겼다. 지적한 동작 차이는 코드로 확인된다: ui.lua:163-179에서 startOf가 주어진 목적지 메뉴만 진입 지점을 넘기고, ui.lua:381-383의 진입 지점 메뉴는 startOf 없이 autoActions를 부르며, module.lua:452-454는 direct이면 start를 쓰지 않고 directTo를 부른다. 하지만 이는 원문 설명서와 실제 동작의 차이라서 번역에 원문에 없는 설명을 더해 고칠 일이 아니다. wowwork/CLAUDE.md 규칙대로 docs/upstream-report.md에 올릴 사안이므로 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/docs/src/user/en/world/navigation.md:231",
+    "wowvision-ko/WowVision/core/navigation/maps/ui.lua:160-180",
+    "wowvision-ko/WowVision/core/navigation/maps/ui.lua:381-383",
+    "wowvision-ko/WowVision/core/navigation/maps/module.lua:449-478"
+   ]
+  }
+ ]
+}
