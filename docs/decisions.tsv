@@ -33,3 +33,5 @@ date	scope	decision	source	note
 2026-11-09	koKR navigation.lua Names in Your Language	"한국어 이름"으로 둔다	사용자	선택지: 한국어 이름 / 게임 언어로 된 이름. 번역자 의문(확신 낮음), 평가 지적 0건
 2026-11-09	koKR quests.lua Quest Progress Alert	"퀘스트 진행 상황 알림"으로 한다(targeting.lua Quest Progress "퀘스트 진행 상황"과 맞춤)	사용자	선택지: 퀘스트 진행 알림 / 퀘스트 진행 상황 알림. GPT 용어 재평가 경미 1건(reviews/2026-11-09-ui-main-merge/batch-01/gpt-terminology-recheck.json)
 2026-11-09	설명서: 원문이 다른 언어를 전제하거나 모호한 문장	원문 그대로 옮기고 docs/upstream-report.md 5절에 보고한다. 코드 근거로 뜻을 더하지 않는다	사용자	선택지: 원문 그대로 + 원본 보고 / 코드 근거로 뜻을 분명히 / 프랑스어 예시만 고침. 대상 3건: wownav.md 프랑스어 직함 예시, wownav.md if that is clear, navigation.md before the start of a leg
+2026-11-09	평가 에이전트 구성(관점 4 × Claude·GPT, 판정 2, 회귀 2)	현 구성을 유지한다. 작은 묶음도 지금처럼 바로 평가한다	사용자	기준: 제 역할을 하면 유지. 2026-11-09 집계(UI 26묶음 반영 298, 설명서 77파일 반영 1240): 회사 하나를 빼면 UI 21~33%·설명서 20~52% 반영을 잃는다. 혼자 잡은 반영이 적은 것은 UI Claude 코드맥락 7건(전부 경미)과 UI Claude 정확성 4건(중대 1)뿐이다. 관점 구성 변경은 review-process.md 평가자 수 문단 참고
+2026-11-09	오류 심기 검증 시점(정확성 평가 지시에 의미 강도·시제 추가 뒤)	다음 실제 평가 직전에 calibrate.js를 돌린다	사용자	선택지: 다음 실제 평가 직전 / 지금

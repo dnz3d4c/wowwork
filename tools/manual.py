@@ -189,8 +189,8 @@ def structure(md: str) -> dict[str, list]:  # type: ignore[type-arg]
     tables, columns, rows = [], [], 0
     for line in body.splitlines() + [""]:
         if line.lstrip().startswith("|"):
-            if not rows:
-                columns.append(len(re.split(r"(?<!\\)\|", line.strip().strip("|"))))
+            # 머리 행만 세면 데이터 행에서 빠진 칸을 놓친다. 행마다 칸 수를 남긴다.
+            columns.append(len(re.split(r"(?<!\\)\|", line.strip().strip("|"))))
             rows += 1
         elif rows:
             tables.append(rows)

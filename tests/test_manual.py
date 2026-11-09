@@ -53,7 +53,7 @@ def test_structure_extracts_comparable_parts() -> None:
     assert s["links"] == ["alerts.md", ""]
     assert s["code"] == ["`F10`"]
     assert s["blocks"] == ["```\n/wv\n```"]
-    assert s["columns"] == [2]
+    assert s["columns"] == [2, 2, 2]
     assert s["lists"] == [0]
 
 
@@ -72,6 +72,9 @@ def test_check_reports_list_items_and_table_columns(tmp_path: Path) -> None:
     problems = "\n".join(check(en, merged, ko, terms=[]))
     assert "목록 항목" in problems
     assert "표 열" in problems
+    # 머리 행은 그대로이고 데이터 행에서만 칸이 빠진 경우도 잡는다(2026-11-09 codex 지적).
+    row_only = good.replace("| a | b | c |", "| a | b |")
+    assert "표 열" in "\n".join(check(en, row_only, ko, terms=[]))
 
 
 def test_check_passes_good_translation(tmp_path: Path) -> None:
