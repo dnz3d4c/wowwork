@@ -1,0 +1,73 @@
+{
+  "summary": "수정된 번역을 처음 보는 Claude 1명 + GPT 1명이 전 관점과 기존 번역 일관성으로 다시 평가한다",
+  "agentCount": 2,
+  "logs": [],
+  "result": {
+    "passed": false,
+    "claudeOk": true,
+    "gptOk": true,
+    "blocking": [
+      {
+        "by": "gpt",
+        "id": "misc.lua::Also takes off the off hand: %s",
+        "category": "terminology",
+        "severity": "major",
+        "problem": "\"takes off\"를 \"해제\"로만 옮겨 장착을 푼다는 뜻이 불분명하다. 음성으로 들으면 보조장비 기능이나 제한을 해제한다는 뜻으로도 해석된다.",
+        "evidence": "core/gameDB/itemCompare.lua:354-358에서 양손 무기를 장착하면 %s로 표시된 보조장비 아이템도 벗는다는 결과를 알린다. 공식 문자열 CONTEXT_ACTION_LABEL_UNEQUIP_BAG \"Unequip\" → \"장착 해제\"이며, SECONDARYHANDSLOT \"Off Hand\" → \"보조장비\"다.",
+        "suggestion": "보조장비도 장착 해제: %s"
+      }
+    ],
+    "minor": []
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Regression"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:regression",
+      "phaseIndex": 1,
+      "phaseTitle": "Regression",
+      "agentId": "af4ecf5db68a8b465",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794362212622,
+      "queuedAt": 1794362212583,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 순서대로 Read로 읽고 지시를 따른다. 공통 규칙은 첫 파일이고, 이번에는 관점 하나가 아니라 모든 관점을 적용한다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md\n2. C:/project/games/wowwork/tools/review/prompts/lens-accuracy.md\n3. C:/project/games/wowwork/tools/review/prompts/lens-terminology.md\n4. C:/project/games/wowwork/tools/review/prompts/lens-context.md\n5. C:/project/games/wowwork/tools/review/prompts/lens-l…",
+      "promptFramed": true,
+      "lastProgressAt": 1794362241108,
+      "tokens": 64299,
+      "toolCalls": 12,
+      "durationMs": 28486,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "gpt:regression",
+      "phaseIndex": 1,
+      "phaseTitle": "Regression",
+      "agentId": "ac3b01eaf767fc670",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794362212622,
+      "queuedAt": 1794362212583,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000).\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-accuracy.md --prompt tools/review/prompts/lens-terminology.md --prompt tools/review/prompts/lens-context.md --prompt tools/review/prompts/lens-listening.md --prompt tools/review/prompts/regression.md --batch C:/pr…",
+      "promptFramed": true,
+      "lastProgressAt": 1794362318697,
+      "tokens": 53689,
+      "toolCalls": 3,
+      "durationMs": 106072,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"misc.lua::Also takes off the off hand: %s\",\"category\":\"terminology\",\"severity\":\"major\",\"problem\":\"\\\"takes off\\\"를 \\\"해제\\\"로만 옮겨 장착을 푼다는 뜻이 불분명하다. 음성으로 들으면 보조장비 기능이나 제한을 해제한다는 뜻으로도 해석된다.\",\"evidence\":\"core/gameDB/itemCompare.lua:354-358에서 양손 무기를 장착하면 %s로 표시된 보조장비 아이템도 벗는다는 결과를 알린다. 공식 문자열 CONTEXT_ACTION_LABEL_UNEQUIP_BAG \\\"Unequip\\\" → \\\"장착 해제\\\"이며, SECONDARYHANDSLOT \\\"Off H…"
+    }
+  ],
+  "totalTokens": 117988,
+  "totalToolCalls": 15
+}

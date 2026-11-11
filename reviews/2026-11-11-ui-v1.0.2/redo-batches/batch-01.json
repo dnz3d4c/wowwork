@@ -1,0 +1,28 @@
+{
+ "items": [
+  {
+   "id": "misc.lua::Also takes off the off hand: %s",
+   "file": "misc.lua",
+   "key": "Also takes off the off hand: %s",
+   "en": "Also takes off the off hand: %s",
+   "ko": "보조장비도 해제: %s",
+   "code": [
+    "core/gameDB/itemCompare.lua:358: lines[#lines + 1] = string.format(L[\"Also takes off the off hand: %s\"], itemLabel(off) or L[\"unknown item\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Turn off the WowVisionNavigation addon to use its routes here",
+     "en": "Turn off the WowVisionNavigation addon to use its routes here",
+     "ko": "여기서 WowVisionNavigation 애드온의 경로를 사용하려면 그 애드온을 끄십시오"
+    },
+    {
+     "id": "ui.lua::Off Hand",
+     "en": "Off Hand",
+     "ko": "보조장비"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}
