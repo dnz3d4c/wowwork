@@ -1,0 +1,14 @@
+{
+  "seeds": [
+    {"id": "targeting.lua::Your target has no target", "seeded": "대상 없음", "kind": "한정어 누락(대상의 대상 → 대상)", "lens": "accuracy"},
+    {"id": "targeting.lua::Target in Combat", "seeded": "대상과 전투 중", "kind": "뜻 변경(대상이 전투 중 → 나와 전투 중)", "lens": "accuracy"},
+    {"id": "ui.lua::Reload, then search settings for Discord, to use this", "seeded": "사용하려면, 설정에서 디스코드를 검색한 뒤, UI를 재시작하십시오", "kind": "절차 순서 반전", "lens": "accuracy"},
+    {"id": "targeting.lua::Free-for-All PvP", "seeded": "개인 전투", "kind": "게임 공식 용어 오류(독립 전투)", "lens": "terminology"},
+    {"id": "targeting.lua::World Boss", "seeded": "필드 우두머리", "kind": "게임 공식 용어 오류(야외 우두머리)", "lens": "terminology"},
+    {"id": "targeting.lua::Do Not Disturb (DND)", "seeded": "방해 금지 (DND)", "kind": "기존 번역과 불일치(다른 용무 중)", "lens": "terminology"},
+    {"id": "targeting.lua::Realm", "seeded": "서버에서", "kind": "코드에서 이어 붙일 때 깨지는 표현(L[Realm] .. 공백 .. 서버명)", "lens": "context"},
+    {"id": "targeting.lua::Quest Target", "seeded": "퀘스트 목표", "kind": "뜻 변경(퀘스트 관련 유닛 → 퀘스트 목표)", "lens": "context"},
+    {"id": "targeting.lua::Dead or Ghost", "seeded": "죽음/유령", "kind": "원문에 없는 기호 추가(낭독 시 슬래시로 읽힘)", "lens": "listening"},
+    {"id": "windows.lua::Group invitation accepted", "seeded": "파티 초대를 수락했습니다", "kind": "문체 규칙 위반(알림은 명사형)", "lens": "style"}
+  ]
+}

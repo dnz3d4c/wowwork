@@ -1,0 +1,133 @@
+{
+ "claude": {
+  "recall": "16/20",
+  "by_origin": {
+   "claude": "8/10",
+   "gpt": "8/10"
+  },
+  "missed": [
+   "navigation.lua::Announce Remaining Waypoints",
+   "targeting.lua::Do Not Disturb (DND)",
+   "targeting.lua::Do Not Disturb",
+   "targeting.lua::Quest Target"
+  ],
+  "non_seed_flagged": [],
+  "by_lens": {
+   "accuracy": [
+    "buffers.lua::Speak Time Remaining",
+    "navigation.lua::%d remaining",
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Realm",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Your target has no target",
+    "ui.lua::Reload, then search settings for Discord, to use this"
+   ],
+   "terminology": [
+    "navigation.lua::Route reversed, back to %s",
+    "targeting.lua::Free-for-All PvP",
+    "targeting.lua::Realm",
+    "targeting.lua::Target of Target",
+    "targeting.lua::World Boss"
+   ],
+   "context": [
+    "navigation.lua::%d remaining",
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Guild",
+    "targeting.lua::Realm",
+    "targeting.lua::Reset to Defaults",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Your target has no target"
+   ],
+   "listening": [
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Dead or Ghost",
+    "targeting.lua::Guild",
+    "targeting.lua::Realm",
+    "targeting.lua::Reset to Defaults",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Your target has no target",
+    "windows.lua::Group invitation accepted",
+    "windows.lua::No group invitation"
+   ]
+  }
+ },
+ "gpt": {
+  "recall": "15/20",
+  "by_origin": {
+   "claude": "7/10",
+   "gpt": "8/10"
+  },
+  "missed": [
+   "navigation.lua::Announce Remaining Waypoints",
+   "targeting.lua::Free-for-All PvP",
+   "targeting.lua::Do Not Disturb (DND)",
+   "targeting.lua::Do Not Disturb",
+   "targeting.lua::Quest Target"
+  ],
+  "non_seed_flagged": [
+   "navigation.lua::Reverse Route"
+  ],
+  "by_lens": {
+   "accuracy": [
+    "buffers.lua::Speak Time Remaining",
+    "navigation.lua::%d remaining",
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Realm",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Target of Target",
+    "targeting.lua::Your target has no target",
+    "ui.lua::Reload, then search settings for Discord, to use this",
+    "windows.lua::No group invitation"
+   ],
+   "terminology": [
+    "targeting.lua::Realm",
+    "targeting.lua::Target of Target",
+    "targeting.lua::World Boss",
+    "ui.lua::Reload, then search settings for Discord, to use this"
+   ],
+   "context": [
+    "navigation.lua::%d remaining",
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Guild",
+    "targeting.lua::Realm",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Your target has no target",
+    "ui.lua::Reload, then search settings for Discord, to use this"
+   ],
+   "listening": [
+    "navigation.lua::Route reversed, back to %s",
+    "navigation.lua::the start of the previous route",
+    "targeting.lua::Dead or Ghost",
+    "targeting.lua::Guild",
+    "targeting.lua::Realm",
+    "targeting.lua::Reset to Defaults",
+    "targeting.lua::Target in Combat",
+    "targeting.lua::Target of Target",
+    "targeting.lua::Your target has no target",
+    "windows.lua::Group invitation accepted",
+    "windows.lua::No group invitation"
+   ]
+  }
+ },
+ "combined": {
+  "recall": "16/20",
+  "by_origin": {
+   "claude": "8/10",
+   "gpt": "8/10"
+  },
+  "missed": [
+   "navigation.lua::Announce Remaining Waypoints",
+   "targeting.lua::Do Not Disturb (DND)",
+   "targeting.lua::Do Not Disturb",
+   "targeting.lua::Quest Target"
+  ],
+  "non_seed_flagged": [
+   "navigation.lua::Reverse Route"
+  ]
+ }
+}
