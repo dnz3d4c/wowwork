@@ -1,0 +1,22 @@
+file	key
+buffers.lua	Always Start at Top
+buffers.lua	Sounds When Opening and Closing
+ui.lua	Apply Recommended Game Settings
+ui.lua	Not in combat: try again after the fight
+ui.lua	Game settings: nothing to change
+ui.lua	Game settings changed:
+ui.lua	Already set:
+ui.lua	Could not set:
+ui.lua	Auto Loot
+ui.lua	All Action Bars
+ui.lua	Audio Assist
+ui.lua	Audio Assist Combat Start
+ui.lua	Audio Assist Combat End
+ui.lua	Audio Assist Target Name
+ui.lua	Audio Assist Your Debuffs
+ui.lua	Audio Assist Your Health
+ui.lua	Audio Assist Target Health
+ui.lua	Audio Assist Your Health Style
+ui.lua	Audio Assist Target Health Style
+ui.lua	Audio Assist Resource
+ui.lua	Audio Assist You Are Targeted
