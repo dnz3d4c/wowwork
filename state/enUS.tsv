@@ -19,6 +19,9 @@ auction.lua	Ascending	Ascending
 auction.lua	Auction House	Auction House
 auction.lua	Auction Price	Auction Price
 auction.lua	Auction Prices	Auction Prices
+auction.lua	Auction average	Auction average
+auction.lua	Auction maximum	Auction maximum
+auction.lua	Auction minimum	Auction minimum
 auction.lua	Auction not open	Auction not open
 auction.lua	Auctions	Auctions
 auction.lua	Auto Scan	Auto Scan
@@ -78,6 +81,7 @@ auction.lua	Tooltip Prices	Tooltip Prices
 auction.lua	Unit Price	Unit Price
 auction.lua	Vendor Buy	Vendor Buy
 auction.lua	Vendor Sell	Vendor Sell
+auction.lua	Vendor price per item	Vendor price per item
 auction.lua	Very Long	Very Long
 auction.lua	auctions	auctions
 auction.lua	days ago	days ago
@@ -98,11 +102,13 @@ bindings.lua	Left Click	Left Click
 bindings.lua	Next	Next
 bindings.lua	Next Buffer	Next Buffer
 bindings.lua	Next Buffer Item	Next Buffer Item
+bindings.lua	Next Tooltip Block	Next Tooltip Block
 bindings.lua	Next Tooltip Line	Next Tooltip Line
 bindings.lua	Next Window	Next Window
 bindings.lua	Previous	Previous
 bindings.lua	Previous Buffer	Previous Buffer
 bindings.lua	Previous Buffer Item	Previous Buffer Item
+bindings.lua	Previous Tooltip Block	Previous Tooltip Block
 bindings.lua	Previous Tooltip Line	Previous Tooltip Line
 bindings.lua	Previous Window	Previous Window
 bindings.lua	Read Tooltip	Read Tooltip
@@ -170,6 +176,7 @@ buffers.lua	no target	no target
 buffers.lua	stacks	stacks
 buffers.lua	unavailable	unavailable
 chat.lua	Achievement	Achievement
+chat.lua	Addon Messages in Chat	Addon Messages in Chat
 chat.lua	Channel	Channel
 chat.lua	Channel Menu for %s	Channel Menu for %s
 chat.lua	Chat	Chat
@@ -346,14 +353,34 @@ minimap.lua	moved	moved
 minimap.lua	new	new
 minimap.lua	quest available	quest available
 minimap.lua	quest giver	quest giver
+minimap.lua	targeting	targeting
 minimap.lua	turn in	turn in
 minimap.lua	turned	turned
 minimap.lua	window	window
+misc.lua	%s less	%s less
+misc.lua	%s more	%s more
+misc.lua	%s: %s	%s: %s
+misc.lua	Also takes off the off hand: %s	Also takes off the off hand: %s
+misc.lua	Compare	Compare
+misc.lua	Compare With Equipped Item	Compare With Equipped Item
+misc.lua	Compared to equipped: %s	Compared to equipped: %s
 misc.lua	Cursor	Cursor
+misc.lua	Game	Game
+misc.lua	Item level	Item level
 misc.lua	Miscellaneous	Miscellaneous
 misc.lua	Mists	Mists
+misc.lua	No difference in stats	No difference in stats
+misc.lua	Nothing equipped in this slot	Nothing equipped in this slot
+misc.lua	Pawn Summary	Pawn Summary
+misc.lua	Pawn: %s, %s	Pawn: %s, %s
 misc.lua	Quality	Quality
+misc.lua	Slot %d of %d:	Slot %d of %d:
 misc.lua	Tooltip	Tooltip
+misc.lua	big upgrade	big upgrade
+misc.lua	over %s	over %s
+misc.lua	same	same
+misc.lua	unknown item	unknown item
+misc.lua	upgrade of %d percent	upgrade of %d percent
 monitors.lua	%d minutes %d seconds	%d minutes %d seconds
 monitors.lua	%d seconds	%d seconds
 monitors.lua	All Auras	All Auras
@@ -500,6 +527,7 @@ navigation.lua	Cancel Navigation	Cancel Navigation
 navigation.lua	Central point: %s	Central point: %s
 navigation.lua	Choose a destination in the navigation window first	Choose a destination in the navigation window first
 navigation.lua	Choose the target's floor	Choose the target's floor
+navigation.lua	Close All Windows When a Route Starts	Close All Windows When a Route Starts
 navigation.lua	Compass	Compass
 navigation.lua	Crossing to %s	Crossing to %s
 navigation.lua	Cycle Arrival Distance	Cycle Arrival Distance
@@ -825,7 +853,10 @@ powers.lua	runic power	runic power
 powers.lua	shadow orbs	shadow orbs
 powers.lua	soul shards	soul shards
 powers.lua	unholy runes	unholy runes
+quests.lua	%d players	%d players
 quests.lua	Auctioneers	Auctioneers
+quests.lua	Available Quest Range	Available Quest Range
+quests.lua	Available Quest Sound	Available Quest Sound
 quests.lua	Bankers	Bankers
 quests.lua	Battlemasters	Battlemasters
 quests.lua	Class Trainers	Class Trainers
@@ -847,22 +878,35 @@ quests.lua	No quests in progress	No quests in progress
 quests.lua	No targets	No targets
 quests.lua	Objective Complete Alert	Objective Complete Alert
 quests.lua	Objectives	Objectives
+quests.lua	Play Available Quests Once	Play Available Quests Once
+quests.lua	Play Quest Objectives Once	Play Quest Objectives Once
+quests.lua	Play Turn-In Quests Once	Play Turn-In Quests Once
 quests.lua	Quest Area Alert	Quest Area Alert
 quests.lua	Quest Complete Alert	Quest Complete Alert
 quests.lua	Quest Giver	Quest Giver
 quests.lua	Quest Givers	Quest Givers
+quests.lua	Quest Objective Range	Quest Objective Range
+quests.lua	Quest Objective Sound	Quest Objective Sound
 quests.lua	Quest Progress Alert	Quest Progress Alert
+quests.lua	Quest Sound Volume	Quest Sound Volume
+quests.lua	Quest available	Quest available
+quests.lua	Quest objective	Quest objective
+quests.lua	Quest to turn in	Quest to turn in
 quests.lua	Questie is not loaded	Questie is not loaded
 quests.lua	Questie is still loading	Questie is still loading
 quests.lua	Questie marker	Questie marker
 quests.lua	Rares	Rares
 quests.lua	Repeatable	Repeatable
+quests.lua	Required Level	Required Level
+quests.lua	Silence Distance	Silence Distance
 quests.lua	Sort Quests by Proximity	Sort Quests by Proximity
 quests.lua	Spirit Healers	Spirit Healers
 quests.lua	Stable Masters	Stable Masters
 quests.lua	Start	Start
 quests.lua	Trainers	Trainers
 quests.lua	Turn In	Turn In
+quests.lua	Turn-In Quest Range	Turn-In Quest Range
+quests.lua	Turn-In Quest Sound	Turn-In Quest Sound
 quests.lua	Unknown	Unknown
 quests.lua	Vendors	Vendors
 quests.lua	far	far
@@ -879,13 +923,13 @@ scanner.lua	Entries Per Category	Entries Per Category
 scanner.lua	Error	Error
 scanner.lua	Graveyards	Graveyards
 scanner.lua	Navigate to Nearest	Navigate to Nearest
-scanner.lua	Not dead	Not dead
 scanner.lua	Nothing to navigate to	Nothing to navigate to
 scanner.lua	Player	Player
 scanner.lua	Refresh	Refresh
 scanner.lua	Refreshed	Refreshed
 scanner.lua	Scan Radius	Scan Radius
 scanner.lua	Scanner	Scanner
+scanner.lua	Scanner as Tree	Scanner as Tree
 speech.lua	Activity Sound When Unfocused	Activity Sound When Unfocused
 speech.lua	Buffered	Buffered
 speech.lua	Direct	Direct
@@ -1004,6 +1048,7 @@ ui.lua	Accepted Quest	Accepted Quest
 ui.lua	Active	Active
 ui.lua	Add	Add
 ui.lua	All Action Bars	All Action Bars
+ui.lua	All windows closed	All windows closed
 ui.lua	Already set:	Already set:
 ui.lua	Ammo	Ammo
 ui.lua	Announce Crowd Control	Announce Crowd Control
@@ -1041,6 +1086,7 @@ ui.lua	Checked	Checked
 ui.lua	Chest	Chest
 ui.lua	Clear	Clear
 ui.lua	Close	Close
+ui.lua	Close All Windows	Close All Windows
 ui.lua	Collapsed	Collapsed
 ui.lua	Combat	Combat
 ui.lua	Combat Ended Alert	Combat Ended Alert
@@ -1078,6 +1124,7 @@ ui.lua	Expanded	Expanded
 ui.lua	Expiration Time	Expiration Time
 ui.lua	Failed	Failed
 ui.lua	Feet	Feet
+ui.lua	Filter removed	Filter removed
 ui.lua	Finger	Finger
 ui.lua	Format	Format
 ui.lua	Formatted	Formatted
@@ -1110,6 +1157,7 @@ ui.lua	Known	Known
 ui.lua	Label	Label
 ui.lua	Left Click	Left Click
 ui.lua	Legs	Legs
+ui.lua	Letter Navigation	Letter Navigation
 ui.lua	Letter Navigation in Menus	Letter Navigation in Menus
 ui.lua	Light Blue	Light Blue
 ui.lua	Light Gold	Light Gold
@@ -1186,7 +1234,9 @@ ui.lua	Shirt	Shirt
 ui.lua	Shoulders	Shoulders
 ui.lua	Side Tabs	Side Tabs
 ui.lua	Silver	Silver
+ui.lua	Skip Empty Slots on Double Arrow	Skip Empty Slots on Double Arrow
 ui.lua	Socketing	Socketing
+ui.lua	Sounds on Opening and Closing WowVision Menus	Sounds on Opening and Closing WowVision Menus
 ui.lua	Source	Source
 ui.lua	Source Unit	Source Unit
 ui.lua	Specialization Info	Specialization Info

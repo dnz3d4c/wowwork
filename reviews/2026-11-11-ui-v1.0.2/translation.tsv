@@ -1,0 +1,52 @@
+file	key	en	ko	old_en
+auction.lua	Auction minimum	Auction minimum	경매 최저가	
+auction.lua	Auction average	Auction average	경매 평균가	
+auction.lua	Auction maximum	Auction maximum	경매 최고가	
+auction.lua	Vendor price per item	Vendor price per item	개당 상인 판매 가격	
+bindings.lua	Previous Tooltip Block	Previous Tooltip Block	이전 툴팁 구역	
+bindings.lua	Next Tooltip Block	Next Tooltip Block	다음 툴팁 구역	
+chat.lua	Addon Messages in Chat	Addon Messages in Chat	애드온 메시지를 대화창에 표시	
+minimap.lua	targeting	targeting	목표 선택	
+misc.lua	Compare	Compare	비교	
+misc.lua	Pawn Summary	Pawn Summary	Pawn 요약	
+misc.lua	Compare With Equipped Item	Compare With Equipped Item	장착 아이템과 비교	
+misc.lua	Game	Game	게임	
+misc.lua	Pawn: %s, %s	Pawn: %s, %s	Pawn: %s, %s	
+misc.lua	upgrade of %d percent	upgrade of %d percent	%d퍼센트 향상	
+misc.lua	big upgrade	big upgrade	큰 향상	
+misc.lua	over %s	over %s	%s 대비	
+misc.lua	Compared to equipped: %s	Compared to equipped: %s	장착 아이템과 비교: %s	
+misc.lua	Slot %d of %d:	Slot %d of %d:	칸 %d of %d:	
+misc.lua	Nothing equipped in this slot	Nothing equipped in this slot	이 칸에 장착한 아이템 없음	
+misc.lua	unknown item	unknown item	알 수 없는 아이템	
+misc.lua	Also takes off the off hand: %s	Also takes off the off hand: %s	보조장비도 해제됨: %s	
+misc.lua	Item level	Item level	아이템 레벨	
+misc.lua	same	same	같음	
+misc.lua	%s more	%s more	%s 높음	
+misc.lua	%s less	%s less	%s 낮음	
+misc.lua	%s: %s	%s: %s	%s: %s	
+misc.lua	No difference in stats	No difference in stats	능력치 차이 없음	
+navigation.lua	Close All Windows When a Route Starts	Close All Windows When a Route Starts	경로 시작 시 모든 창 닫기	
+quests.lua	Available Quest Sound	Available Quest Sound	수락 가능 퀘스트 소리	
+quests.lua	Turn-In Quest Sound	Turn-In Quest Sound	완료 가능 퀘스트 소리	
+quests.lua	Quest Objective Sound	Quest Objective Sound	퀘스트 목표 소리	
+quests.lua	Available Quest Range	Available Quest Range	수락 가능 퀘스트 거리	
+quests.lua	Turn-In Quest Range	Turn-In Quest Range	완료 가능 퀘스트 거리	
+quests.lua	Quest Objective Range	Quest Objective Range	퀘스트 목표 거리	
+quests.lua	Play Available Quests Once	Play Available Quests Once	수락 가능 퀘스트 한 번만 재생	
+quests.lua	Play Turn-In Quests Once	Play Turn-In Quests Once	완료 가능 퀘스트 한 번만 재생	
+quests.lua	Play Quest Objectives Once	Play Quest Objectives Once	퀘스트 목표 한 번만 재생	
+quests.lua	Silence Distance	Silence Distance	무음 거리	
+quests.lua	Quest Sound Volume	Quest Sound Volume	퀘스트 소리 음량	
+quests.lua	Quest available	Quest available	수락 가능 퀘스트	
+quests.lua	Quest to turn in	Quest to turn in	완료 가능 퀘스트	
+quests.lua	Quest objective	Quest objective	퀘스트 목표	
+quests.lua	Required Level	Required Level	요구 레벨	
+quests.lua	%d players	%d players	%d인	
+scanner.lua	Scanner as Tree	Scanner as Tree	스캐너를 트리로 표시	
+ui.lua	Sounds on Opening and Closing WowVision Menus	Sounds on Opening and Closing WowVision Menus	WowVision 메뉴를 열고 닫을 때 소리	
+ui.lua	Letter Navigation	Letter Navigation	글자로 이동	
+ui.lua	Filter removed	Filter removed	필터 해제됨	
+ui.lua	All windows closed	All windows closed	모든 창 닫힘	
+ui.lua	Close All Windows	Close All Windows	모든 창 닫기	
+ui.lua	Skip Empty Slots on Double Arrow	Skip Empty Slots on Double Arrow	화살표 두 번 누르면 빈 칸 건너뛰기	
