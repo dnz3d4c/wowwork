@@ -1,0 +1,1 @@
+{"findings":[{"id":"auction.lua::Vendor price per item","category":"accuracy","severity":"major","problem":"상인이 플레이어에게 파는 가격처럼 대상과 거래 방향이 뒤바뀌었다. 실제 값은 플레이어가 아이템을 상인에게 팔 때 받는 개당 가격이다.","evidence":"retail/auction/prices.lua:149에서 가격값으로 `vendorSell`을 사용한다. 그런데 `개당 상인 판매 가격`은 일반적으로 상인이 판매하는 가격을 뜻해 반대 방향으로 이해된다.","suggestion":"개당 상인 매입 가격"}]}

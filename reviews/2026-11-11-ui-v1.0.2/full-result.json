@@ -1,0 +1,603 @@
+{
+  "summary": "번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 두 회사 판정까지 받아 온다(확정은 tools/review/decisions.py)",
+  "agentCount": 11,
+  "logs": [],
+  "result": [
+    {
+      "batch": "reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json",
+      "failedReviewers": 0,
+      "findings": 14,
+      "groups": [
+        {
+          "id": "misc.lua::Also takes off the off hand: %s",
+          "providers": [
+            "claude"
+          ],
+          "findings": [
+            {
+              "by": "claude-accuracy",
+              "id": "misc.lua::Also takes off the off hand: %s",
+              "category": "accuracy",
+              "severity": "minor",
+              "problem": "원문은 비교 중인 양손 무기를 장착하면 보조장비도 벗게 된다는 앞으로의 결과를 알리는데, '해제됨'은 이미 해제가 끝난 상태로 들린다(시제·상태 변경).",
+              "evidence": "core/gameDB/itemCompare.lua:354-358: \"-- A two-hander takes the off hand off as well.\" equipLoc == \"INVTYPE_2HWEAPON\"일 때 현재 장착한 보조장비(equippedLink(17))를 비교 툴팁 줄에 덧붙인다. 아직 장착하지 않은 아이템의 비교 정보라 실제 해제는 일어나지 않았다. 툴팁 문맥이라 오해 가능성이 크지 않다고 보고 major에서 한 단계 낮췄다.",
+              "suggestion": "보조장비도 해제: %s"
+            }
+          ],
+          "consensus": false
+        },
+        {
+          "id": "auction.lua::Vendor price per item",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-accuracy",
+              "id": "auction.lua::Vendor price per item",
+              "category": "accuracy",
+              "severity": "minor",
+              "problem": "'상인 판매 가격'은 '상인에게 파는 가격'과 '상인이 파는 가격' 양쪽으로 들린다. 같은 툴팁 끝에 상인에게서 사는 가격(\"Vendor Buy\" → \"상인에게서 구입\") 줄이 함께 나와서 방향을 거꾸로 이해할 수 있다.",
+              "evidence": "retail/auction/prices.lua:149: L[\"Vendor price per item\"] .. \": \" .. coin(vendorSell) — 값은 vendorSell(상인에게 팔 때 받는 값). 같은 함수 163행: L[\"Vendor Buy\"] .. \": \" .. coin(vendorBuy). 기존 번역 koKR/auction.lua:60 \"Vendor Sell\" = \"상인에게 판매\". 현재 번역도 '판매'를 플레이어 기준으로 읽으면 맞으므로 확신하지 못해 major에서 낮췄다.",
+              "suggestion": "개당 상인에게 판매 가격"
+            },
+            {
+              "by": "claude-listening",
+              "id": "auction.lua::Vendor price per item",
+              "category": "listening",
+              "severity": "major",
+              "problem": "\"상인 판매 가격\"은 들었을 때 '상인이 파는 가격'(구입가)으로도 '상인에게 파는 가격'으로도 들린다. 같은 툴팁 끝에 구입가 줄(\"Vendor Buy\" = \"상인에게서 구입\")이 함께 읽혀서 두 가격을 헷갈리기 쉽다. 원문의 값은 vendorSell, 즉 플레이어가 상인에게 팔 때 받는 가격이다.",
+              "evidence": "retail/auction/prices.lua:149 `L[\"Vendor price per item\"] .. \": \" .. coin(vendorSell)`, 같은 함수 :163 `L[\"Vendor Buy\"] .. \": \" .. coin(vendorBuy)`. 기존 koKR/auction.lua:60 `L[\"Vendor Sell\"] = \"상인에게 판매\"`는 방향을 조사로 밝히고 있다.",
+              "suggestion": "개당 상인에게 파는 가격"
+            },
+            {
+              "by": "gpt-accuracy",
+              "id": "auction.lua::Vendor price per item",
+              "category": "accuracy",
+              "severity": "major",
+              "problem": "상인이 플레이어에게 파는 가격처럼 대상과 거래 방향이 뒤바뀌었다. 실제 값은 플레이어가 아이템을 상인에게 팔 때 받는 개당 가격이다.",
+              "evidence": "retail/auction/prices.lua:149에서 가격값으로 `vendorSell`을 사용한다. 그런데 `개당 상인 판매 가격`은 일반적으로 상인이 판매하는 가격을 뜻해 반대 방향으로 이해된다.",
+              "suggestion": "개당 상인 매입 가격"
+            }
+          ],
+          "consensus": true
+        },
+        {
+          "id": "bindings.lua::Previous Tooltip Block",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-listening",
+              "id": "bindings.lua::Previous Tooltip Block",
+              "category": "style",
+              "severity": "minor",
+              "problem": "같은 툴팁 이동 단축키 묶음인데 어순이 다르다. 기존 \"툴팁 이전 줄\"·\"툴팁 다음 줄\"은 '툴팁'이 앞에 오고, 새 키는 \"이전 툴팁 구역\"으로 '이전'이 앞에 온다. 단축키 목록을 차례로 들으면 기준 낱말 위치가 바뀌어 비교하기 어렵다.",
+              "evidence": "related: \"Previous Tooltip Line\" → \"툴팁 이전 줄\", \"Next Tooltip Line\" → \"툴팁 다음 줄\". 기존 번역에 맞추는 것이 바뀌는 키가 적다(새 키 2개만).",
+              "suggestion": "툴팁 이전 구역"
+            },
+            {
+              "by": "gpt-context",
+              "id": "bindings.lua::Previous Tooltip Block",
+              "category": "context",
+              "severity": "major",
+              "problem": "툴팁 내부의 이전 구역으로 이동하는 단축키인데 \"이전 툴팁 구역\"은 이전 툴팁에 속한 구역으로 들릴 수 있다.",
+              "evidence": "core/ui modules/tooltip.lua:33의 단축키 라벨이며, 같은 기능의 `Previous Tooltip Line`은 \"툴팁 이전 줄\"로 번역되어 이동 대상이 툴팁 내부임을 분명히 한다.",
+              "suggestion": "툴팁 이전 구역"
+            },
+            {
+              "by": "gpt-listening",
+              "id": "bindings.lua::Previous Tooltip Block",
+              "category": "style",
+              "severity": "minor",
+              "problem": "같은 툴팁 이동 기능의 항목인데 수식어 순서가 달라, 음성으로 들을 때 항목 구조의 일관성이 떨어진다.",
+              "evidence": "현재 번역은 \"이전 툴팁 구역\"이지만 related의 `Previous Tooltip Line`은 \"툴팁 이전 줄\"이다. 같은 종류의 이동 항목은 문형을 맞춰야 한다.",
+              "suggestion": "툴팁 이전 구역"
+            }
+          ],
+          "consensus": true
+        },
+        {
+          "id": "bindings.lua::Next Tooltip Block",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-listening",
+              "id": "bindings.lua::Next Tooltip Block",
+              "category": "style",
+              "severity": "minor",
+              "problem": "\"Previous Tooltip Block\"과 같은 이유로, 기존 \"툴팁 다음 줄\"과 어순이 어긋난다.",
+              "evidence": "related: \"Next Tooltip Line\" → \"툴팁 다음 줄\".",
+              "suggestion": "툴팁 다음 구역"
+            },
+            {
+              "by": "gpt-context",
+              "id": "bindings.lua::Next Tooltip Block",
+              "category": "context",
+              "severity": "major",
+              "problem": "툴팁 내부의 다음 구역으로 이동하는 단축키인데 \"다음 툴팁 구역\"은 다음 툴팁에 속한 구역으로 들릴 수 있다.",
+              "evidence": "core/ui modules/tooltip.lua:45의 단축키 라벨이며, 같은 기능의 `Next Tooltip Line`은 \"툴팁 다음 줄\"로 번역되어 이동 대상이 툴팁 내부임을 분명히 한다.",
+              "suggestion": "툴팁 다음 구역"
+            },
+            {
+              "by": "gpt-listening",
+              "id": "bindings.lua::Next Tooltip Block",
+              "category": "style",
+              "severity": "minor",
+              "problem": "같은 툴팁 이동 기능의 항목인데 수식어 순서가 달라, 연속해서 들을 때 항목 구조의 일관성이 떨어진다.",
+              "evidence": "현재 번역은 \"다음 툴팁 구역\"이지만 related의 `Next Tooltip Line`은 \"툴팁 다음 줄\"이다. 같은 종류의 이동 항목은 문형을 맞춰야 한다.",
+              "suggestion": "툴팁 다음 구역"
+            }
+          ],
+          "consensus": true
+        },
+        {
+          "id": "auction.lua::Auction minimum",
+          "providers": [
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "gpt-context",
+              "id": "auction.lua::Auction minimum",
+              "category": "context",
+              "severity": "major",
+              "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 최저가 7 일\"처럼 된다. 7일이 집계 기간인지 경매 기간인지 뜻이 갈린다.",
+              "evidence": "retail/auction/prices.lua:153,158에서 `L[\"Auction minimum\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립되며, koKR의 `L[\"days\"]`는 \"일\"이다.",
+              "suggestion": "경매 최저가 집계 기간"
+            }
+          ],
+          "consensus": false
+        },
+        {
+          "id": "auction.lua::Auction average",
+          "providers": [
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "gpt-context",
+              "id": "auction.lua::Auction average",
+              "category": "context",
+              "severity": "major",
+              "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 평균가 7 일\"처럼 된다. 가격과 기간의 관계가 드러나지 않아 경매 기간으로 오해할 수 있다.",
+              "evidence": "retail/auction/prices.lua:153,159에서 `L[\"Auction average\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립된다.",
+              "suggestion": "경매 평균가 집계 기간"
+            }
+          ],
+          "consensus": false
+        },
+        {
+          "id": "auction.lua::Auction maximum",
+          "providers": [
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "gpt-context",
+              "id": "auction.lua::Auction maximum",
+              "category": "context",
+              "severity": "major",
+              "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 최고가 7 일\"처럼 된다. 7일간 집계한 최고가라는 관계가 발화에서 불분명하다.",
+              "evidence": "retail/auction/prices.lua:153,160에서 `L[\"Auction maximum\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립된다.",
+              "suggestion": "경매 최고가 집계 기간"
+            }
+          ],
+          "consensus": false
+        },
+        {
+          "id": "misc.lua::big upgrade",
+          "providers": [
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "gpt-listening",
+              "id": "misc.lua::big upgrade",
+              "category": "style",
+              "severity": "minor",
+              "problem": "\"큰 향상\"은 영어 어순을 그대로 옮긴 번역투라서 음성으로 들었을 때 어색하다.",
+              "evidence": "`core/gameDB/itemCompare.lua:426`에서 아이템 비교 결과를 나타내는 짧은 상태 문구로 쓰인다. 한국어 상태 표현에는 \"대폭 향상\"이 더 자연스럽다.",
+              "suggestion": "대폭 향상"
+            }
+          ],
+          "consensus": false
+        }
+      ],
+      "responses": [
+        {
+          "id": "misc.lua::Also takes off the off hand: %s",
+          "action": "accept",
+          "final_ko": "보조장비도 해제: %s",
+          "reason": "itemCompare.lua:354-358은 아직 장착하지 않은 양손 무기의 비교 정보로 앞으로의 결과를 알린다. '해제됨'은 이미 해제된 상태로 들려 '해제'로 고친다."
+        },
+        {
+          "id": "auction.lua::Vendor price per item",
+          "action": "accept",
+          "final_ko": "개당 상인에게 파는 가격",
+          "reason": "prices.lua:149 값은 vendorSell, 같은 함수 163행 'Vendor Buy'='상인에게서 구입'과 함께 읽힌다. 기존 'Vendor Sell'='상인에게 판매'처럼 조사로 방향을 밝힌다. '상인 매입 가격'은 상인 기준이라 플레이어 기준 기존 번역과 어긋나 쓰지 않았다."
+        },
+        {
+          "id": "bindings.lua::Previous Tooltip Block",
+          "action": "accept",
+          "final_ko": "툴팁 이전 구역",
+          "reason": "'툴팁 이전 줄'과 어순을 맞추고 '이전 툴팁의 구역' 오해를 없앤다(tooltip.lua:33, 현재 툴팁 안 이동)."
+        },
+        {
+          "id": "bindings.lua::Next Tooltip Block",
+          "action": "accept",
+          "final_ko": "툴팁 다음 구역",
+          "reason": "'툴팁 다음 줄'과 어순을 맞추고 '다음 툴팁의 구역' 오해를 없앤다(tooltip.lua:45)."
+        },
+        {
+          "id": "auction.lua::Auction minimum",
+          "action": "dispute",
+          "final_ko": "경매 최저가",
+          "reason": "prices.lua:153,158 조립은 '경매 최저가 7 일: 금액'으로 원문 구조와 같다. '집계 기간'을 넣으면 '경매 최저가 집계 기간 7 일: 금액'이 되어 콜론 뒤 값이 기간의 값처럼 들리고 라벨이 가격 대신 기간을 가리킨다."
+        },
+        {
+          "id": "auction.lua::Auction average",
+          "action": "dispute",
+          "final_ko": "경매 평균가",
+          "reason": "최저가와 같은 근거(prices.lua:153,159). 제안은 라벨이 기간을 가리키게 만들어 의미를 흐린다."
+        },
+        {
+          "id": "auction.lua::Auction maximum",
+          "action": "dispute",
+          "final_ko": "경매 최고가",
+          "reason": "최저가와 같은 근거(prices.lua:153,160). 현재 번역이 원문 'Auction maximum 7 days: 금액' 구조를 그대로 따른다."
+        },
+        {
+          "id": "misc.lua::big upgrade",
+          "action": "accept",
+          "final_ko": "대폭 향상",
+          "reason": "itemCompare.lua:426에서 '%d퍼센트 향상'(misc.lua:17)과 같은 자리에 들어간다. 정도 부사+향상 꼴인 '대폭 향상'이 더 자연스럽고 짝 문구와 형태가 맞는다."
+        }
+      ],
+      "judged": [
+        "auction.lua::Auction minimum",
+        "auction.lua::Auction average",
+        "auction.lua::Auction maximum"
+      ],
+      "verdicts": {
+        "gpt": [
+          {
+            "ref": "auction.lua::Auction minimum",
+            "uphold": false,
+            "final_ko": "경매 최저가",
+            "reason": "`stats.days`는 연속된 집계 기간이 아니라 스캔에서 아이템을 발견한 날짜 수다. 제안대로 바꾸면 \"경매 최저가 집계 기간 7일: 금액\"이 되어 날짜 수를 기간으로 오해하게 하고, 콜론 뒤 금액과도 어울리지 않으므로 현재 번역을 유지한다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:107",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:128",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:158",
+              "wowvision-ko/WowVision/retail/auction/tests.lua:238",
+              "wowvision-ko/vision-locale/koKR/auction.lua:53"
+            ]
+          },
+          {
+            "ref": "auction.lua::Auction average",
+            "uphold": false,
+            "final_ko": "경매 평균가",
+            "reason": "`stats.days`는 스캔에서 아이템을 발견한 날짜 수이며, 코드와 테스트의 의도된 출력도 `Auction average 7 days: 2c`다. \"집계 기간\"을 넣으면 날짜 수를 기간으로 바꾸고 라벨이 금액보다 기간을 가리키게 되므로 현재 번역이 더 정확하다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:107",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:128",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:159",
+              "wowvision-ko/WowVision/retail/auction/tests.lua:239",
+              "wowvision-ko/vision-locale/koKR/auction.lua:54"
+            ]
+          },
+          {
+            "ref": "auction.lua::Auction maximum",
+            "uphold": false,
+            "final_ko": "경매 최고가",
+            "reason": "`stats.days`는 스캔에서 아이템을 발견한 날짜 수이며, 실제 조립 결과에서 마지막 값은 최고가 금액이다. \"집계 기간\"을 추가하면 날짜 수의 성격과 콜론 뒤 금액의 관계를 오히려 왜곡하므로 현재 번역을 유지한다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:107",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:128",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:160",
+              "wowvision-ko/WowVision/retail/auction/tests.lua:240",
+              "wowvision-ko/vision-locale/koKR/auction.lua:55"
+            ]
+          }
+        ],
+        "claude": [
+          {
+            "ref": "auction.lua::Auction minimum",
+            "uphold": false,
+            "final_ko": "경매 최저가",
+            "reason": "prices.lua:153,158 조립은 'Auction minimum 7 days: 1c'(tests.lua:238)이고 번역은 '경매 최저가 7 일: 금액'으로 원문 구조와 뜻을 그대로 옮긴다. 기간과 가격의 관계가 덜 드러나는 것은 영어 원문도 같은 조립 구조의 문제다. 제안 '경매 최저가 집계 기간'은 라벨 중심어가 '기간'이 되어 콜론 뒤 금액이 기간의 값처럼 들리고 원문에 없는 말을 더한다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:158",
+              "wowvision-ko/WowVision/retail/auction/tests.lua:238",
+              "wowvision-ko/vision-locale/koKR/auction.lua:53",
+              "wowvision-ko/vision-locale/koKR/ui.lua:238"
+            ]
+          },
+          {
+            "ref": "auction.lua::Auction average",
+            "uphold": false,
+            "final_ko": "경매 평균가",
+            "reason": "prices.lua:153,159 조립이 최저가와 같다. 현재 번역이 원문 구조를 따르고, 제안은 라벨이 기간을 가리키게 만들어 금액과의 관계를 흐린다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:159",
+              "wowvision-ko/vision-locale/koKR/auction.lua:54"
+            ]
+          },
+          {
+            "ref": "auction.lua::Auction maximum",
+            "uphold": false,
+            "final_ko": "경매 최고가",
+            "reason": "prices.lua:153,160 조립이 최저가와 같다. 현재 번역이 원문 'Auction maximum 7 days: 금액' 구조를 그대로 따르고, 제안은 원문에 없는 말을 더해 라벨 뜻을 기간으로 바꾼다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/retail/auction/prices.lua:153",
+              "wowvision-ko/WowVision/retail/auction/prices.lua:160",
+              "wowvision-ko/vision-locale/koKR/auction.lua:55"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Rebut"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Judge"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a57baf44cb3440bdc",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904439,
+      "queuedAt": 1794361904346,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-accuracy.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361958814,
+      "tokens": 75978,
+      "toolCalls": 8,
+      "durationMs": 54374,
+      "resultPreview": "{\"findings\":[{\"id\":\"misc.lua::Also takes off the off hand: %s\",\"category\":\"accuracy\",\"severity\":\"minor\",\"problem\":\"원문은 비교 중인 양손 무기를 장착하면 보조장비도 벗게 된다는 앞으로의 결과를 알리는데, '해제됨'은 이미 해제가 끝난 상태로 들린다(시제·상태 변경).\",\"evidence\":\"core/gameDB/itemCompare.lua:354-358: \\\"-- A two-hander takes the off hand off as well.\\\" equipLoc == \\\"INVTYPE_2HWEAPON\\\"일 때 현재 장착한 보조장비(equippedLink(17))를 비교 툴팁 줄에 덧붙인다. 아직 장착하지 않은 아이템의…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae0a3b6867fa5ac1c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904439,
+      "queuedAt": 1794361904346,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-terminology.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361953886,
+      "tokens": 79318,
+      "toolCalls": 11,
+      "durationMs": 49443,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae0ab67555ad1532e",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904439,
+      "queuedAt": 1794361904346,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-context.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나면…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361939385,
+      "tokens": 76963,
+      "toolCalls": 9,
+      "durationMs": 34941,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ad0ff4a3ad60a26b8",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904440,
+      "queuedAt": 1794361904346,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-listening.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361947466,
+      "tokens": 74704,
+      "toolCalls": 6,
+      "durationMs": 43020,
+      "resultPreview": "{\"findings\":[{\"id\":\"auction.lua::Vendor price per item\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"\\\"상인 판매 가격\\\"은 들었을 때 '상인이 파는 가격'(구입가)으로도 '상인에게 파는 가격'으로도 들린다. 같은 툴팁 끝에 구입가 줄(\\\"Vendor Buy\\\" = \\\"상인에게서 구입\\\")이 함께 읽혀서 두 가격을 헷갈리기 쉽다. 원문의 값은 vendorSell, 즉 플레이어가 상인에게 팔 때 받는 가격이다.\",\"evidence\":\"retail/auction/prices.lua:149 `L[\\\"Vendor price per item\\\"] .. \\\": \\\" .. coin(vendorSell)`, 같은 함수 :163 …"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "gpt:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a056ce4e6c5da0b1a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904440,
+      "queuedAt": 1794361904346,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-accuracy.md --batch C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-11-u…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361938616,
+      "tokens": 53384,
+      "toolCalls": 3,
+      "durationMs": 34169,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"auction.lua::Vendor price per item\",\"category\":\"accuracy\",\"severity\":\"major\",\"problem\":\"상인이 플레이어에게 파는 가격처럼 대상과 거래 방향이 뒤바뀌었다. 실제 값은 플레이어가 아이템을 상인에게 팔 때 받는 개당 가격이다.\",\"evidence\":\"retail/auction/prices.lua:149에서 가격값으로 `vendorSell`을 사용한다. 그런데 `개당 상인 판매 가격`은 일반적으로 상인이 판매하는 가격을 뜻해 반대 방향으로 이해된다.\",\"suggestion\":\"개당 상인 매입 가격\"}]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a1b3cc3b3fcfaad17",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904440,
+      "queuedAt": 1794361904347,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-terminology.md --batch C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-1…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361936031,
+      "tokens": 53140,
+      "toolCalls": 3,
+      "durationMs": 31583,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a8122c3e515f37862",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904440,
+      "queuedAt": 1794361904347,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-context.md --batch C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-11-ui…",
+      "promptFramed": true,
+      "lastProgressAt": 1794362050010,
+      "tokens": 54232,
+      "toolCalls": 3,
+      "durationMs": 145561,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"auction.lua::Auction minimum\",\"category\":\"context\",\"severity\":\"major\",\"problem\":\"뒤에 집계 일수가 직접 이어져 실제 발화가 \\\"경매 최저가 7 일\\\"처럼 된다. 7일이 집계 기간인지 경매 기간인지 뜻이 갈린다.\",\"evidence\":\"retail/auction/prices.lua:153,158에서 `L[\\\"Auction minimum\\\"] .. \\\" \\\" .. stats.days .. \\\" \\\" .. L[\\\"days\\\"]` 형태로 조립되며, koKR의 `L[\\\"days\\\"]`는 \\\"일\\\"이다.\",\"suggestion\":\"경매 최저가 집계 기간\"},{\"id\":\"auction.lua::Aucti…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ad4c1b6fdc4db8c5b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794361904440,
+      "queuedAt": 1794361904347,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-listening.md --batch C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-11-…",
+      "promptFramed": true,
+      "lastProgressAt": 1794361947030,
+      "tokens": 53744,
+      "toolCalls": 3,
+      "durationMs": 42581,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"bindings.lua::Previous Tooltip Block\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"같은 툴팁 이동 기능의 항목인데 수식어 순서가 달라, 음성으로 들을 때 항목 구조의 일관성이 떨어진다.\",\"evidence\":\"현재 번역은 \\\"이전 툴팁 구역\\\"이지만 related의 `Previous Tooltip Line`은 \\\"툴팁 이전 줄\\\"이다. 같은 종류의 이동 항목은 문형을 맞춰야 한다.\",\"suggestion\":\"툴팁 이전 구역\"},{\"id\":\"bindings.lua::Next Tooltip Block\",\"category\":\"style\",\"severity\":\"minor\",\"problem\"…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "ae20ec31c337dbe0c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794362051853,
+      "queuedAt": 1794362051835,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)마다 응답 하나를 낸다. consensus=true인 항목은 두 회사 평가자가 모두 지적한 것이므로 반드시 accept하고, 지적들을 반영한 가장 좋은 번역을 final_ko로 확정한다. consensus=false인 항목은 지적이 …",
+      "promptFramed": true,
+      "lastProgressAt": 1794362095999,
+      "tokens": 64519,
+      "toolCalls": 6,
+      "durationMs": 44146,
+      "resultPreview": "{\"responses\":[{\"id\":\"misc.lua::Also takes off the off hand: %s\",\"action\":\"accept\",\"final_ko\":\"보조장비도 해제: %s\",\"reason\":\"itemCompare.lua:354-358은 아직 장착하지 않은 양손 무기의 비교 정보로 앞으로의 결과를 알린다. '해제됨'은 이미 해제된 상태로 들려 '해제'로 고친다.\"},{\"id\":\"auction.lua::Vendor price per item\",\"action\":\"accept\",\"final_ko\":\"개당 상인에게 파는 가격\",\"reason\":\"prices.lua:149 값은 vendorSell, 같은 함수 163행 'Vendor Buy'='상인에게서 구입'과 함께 읽힌다. 기존 'Vendor S…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 10,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a0a8f8b47841bc1ad",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794362097847,
+      "queuedAt": 1794362097829,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batch-01/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json\",\n \"items\": [\n  {\n   \"ref\": \"auction.lua::Auction minimum\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-context\",\n     \"id\": \"auction.lua::Auction minimum\",\n     \"category\": \"context\",\n     \"severity\": \"ma…",
+      "promptFramed": true,
+      "lastProgressAt": 1794362191072,
+      "tokens": 57187,
+      "toolCalls": 4,
+      "durationMs": 93224,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"auction.lua::Auction minimum\",\"uphold\":false,\"final_ko\":\"경매 최저가\",\"reason\":\"`stats.days`는 연속된 집계 기간이 아니라 스캔에서 아이템을 발견한 날짜 수다. 제안대로 바꾸면 \\\"경매 최저가 집계 기간 7일: 금액\\\"이 되어 날짜 수를 기간으로 오해하게 하고, 콜론 뒤 금액과도 어울리지 않으므로 현재 번역을 유지한다.\",\"evidence_sources\":[\"wowvision-ko/WowVision/retail/auction/prices.lua:107\",\"wowvision-ko/WowVision/retail/auction/prices.lua:128\",\"wowvision-ko/WowVision…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 11,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a288e89325838cd1b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794362097847,
+      "queuedAt": 1794362097829,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/games/wowwork/reviews/2026-11-11-ui-v1.0.2/batch-01/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n[\n {\n  \"ref\": \"auction.lua::A…",
+      "promptFramed": true,
+      "lastProgressAt": 1794362120538,
+      "tokens": 59979,
+      "toolCalls": 5,
+      "durationMs": 22689,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"auction.lua::Auction minimum\",\"uphold\":false,\"final_ko\":\"경매 최저가\",\"reason\":\"prices.lua:153,158 조립은 'Auction minimum 7 days: 1c'(tests.lua:238)이고 번역은 '경매 최저가 7 일: 금액'으로 원문 구조와 뜻을 그대로 옮긴다. 기간과 가격의 관계가 덜 드러나는 것은 영어 원문도 같은 조립 구조의 문제다. 제안 '경매 최저가 집계 기간'은 라벨 중심어가 '기간'이 되어 콜론 뒤 금액이 기간의 값처럼 들리고 원문에 없는 말을 더한다.\",\"evidence_sources\":[\"wowvision-ko/WowVision/retail/auction/prices.lua:153\",\"…"
+    }
+  ],
+  "totalTokens": 703148,
+  "totalToolCalls": 61
+}

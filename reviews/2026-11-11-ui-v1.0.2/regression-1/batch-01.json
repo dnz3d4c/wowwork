@@ -1,0 +1,102 @@
+{
+ "items": [
+  {
+   "id": "auction.lua::Vendor price per item",
+   "file": "auction.lua",
+   "key": "Vendor price per item",
+   "en": "Vendor price per item",
+   "ko": "개당 상인에게 파는 가격",
+   "code": [
+    "retail/auction/prices.lua:149: lines[#lines + 1] = L[\"Vendor price per item\"] .. \": \" .. coin(vendorSell)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Previous Tooltip Block",
+   "file": "bindings.lua",
+   "key": "Previous Tooltip Block",
+   "en": "Previous Tooltip Block",
+   "ko": "툴팁 이전 구역",
+   "code": [
+    "core/ui modules/tooltip.lua:33: label = L[\"Previous Tooltip Block\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Tooltip Block",
+     "en": "Next Tooltip Block",
+     "ko": "툴팁 다음 구역"
+    },
+    {
+     "id": "bindings.lua::Previous Tooltip Line",
+     "en": "Previous Tooltip Line",
+     "ko": "툴팁 이전 줄"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "bindings.lua::Next Tooltip Block",
+   "file": "bindings.lua",
+   "key": "Next Tooltip Block",
+   "en": "Next Tooltip Block",
+   "ko": "툴팁 다음 구역",
+   "code": [
+    "core/ui modules/tooltip.lua:45: label = L[\"Next Tooltip Block\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "bindings.lua::Next Tooltip Line",
+     "en": "Next Tooltip Line",
+     "ko": "툴팁 다음 줄"
+    },
+    {
+     "id": "bindings.lua::Previous Tooltip Block",
+     "en": "Previous Tooltip Block",
+     "ko": "툴팁 이전 구역"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "misc.lua::big upgrade",
+   "file": "misc.lua",
+   "key": "big upgrade",
+   "en": "big upgrade",
+   "ko": "대폭 향상",
+   "code": [
+    "core/gameDB/itemCompare.lua:426: amount = L[\"big upgrade\"]"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "misc.lua::Also takes off the off hand: %s",
+   "file": "misc.lua",
+   "key": "Also takes off the off hand: %s",
+   "en": "Also takes off the off hand: %s",
+   "ko": "보조장비도 해제: %s",
+   "code": [
+    "core/gameDB/itemCompare.lua:358: lines[#lines + 1] = string.format(L[\"Also takes off the off hand: %s\"], itemLabel(off) or L[\"unknown item\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Turn off the WowVisionNavigation addon to use its routes here",
+     "en": "Turn off the WowVisionNavigation addon to use its routes here",
+     "ko": "여기서 WowVisionNavigation 애드온의 경로를 사용하려면 그 애드온을 끄십시오"
+    },
+    {
+     "id": "ui.lua::Off Hand",
+     "en": "Off Hand",
+     "ko": "보조장비"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

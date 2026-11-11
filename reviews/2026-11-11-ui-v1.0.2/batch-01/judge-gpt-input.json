@@ -1,0 +1,65 @@
+{
+ "batch_file": "reviews/2026-11-11-ui-v1.0.2/batches/batch-01.json",
+ "items": [
+  {
+   "ref": "auction.lua::Auction minimum",
+   "findings": [
+    {
+     "by": "gpt-context",
+     "id": "auction.lua::Auction minimum",
+     "category": "context",
+     "severity": "major",
+     "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 최저가 7 일\"처럼 된다. 7일이 집계 기간인지 경매 기간인지 뜻이 갈린다.",
+     "evidence": "retail/auction/prices.lua:153,158에서 `L[\"Auction minimum\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립되며, koKR의 `L[\"days\"]`는 \"일\"이다.",
+     "suggestion": "경매 최저가 집계 기간"
+    }
+   ],
+   "translator": {
+    "id": "auction.lua::Auction minimum",
+    "action": "dispute",
+    "final_ko": "경매 최저가",
+    "reason": "prices.lua:153,158 조립은 '경매 최저가 7 일: 금액'으로 원문 구조와 같다. '집계 기간'을 넣으면 '경매 최저가 집계 기간 7 일: 금액'이 되어 콜론 뒤 값이 기간의 값처럼 들리고 라벨이 가격 대신 기간을 가리킨다."
+   }
+  },
+  {
+   "ref": "auction.lua::Auction average",
+   "findings": [
+    {
+     "by": "gpt-context",
+     "id": "auction.lua::Auction average",
+     "category": "context",
+     "severity": "major",
+     "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 평균가 7 일\"처럼 된다. 가격과 기간의 관계가 드러나지 않아 경매 기간으로 오해할 수 있다.",
+     "evidence": "retail/auction/prices.lua:153,159에서 `L[\"Auction average\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립된다.",
+     "suggestion": "경매 평균가 집계 기간"
+    }
+   ],
+   "translator": {
+    "id": "auction.lua::Auction average",
+    "action": "dispute",
+    "final_ko": "경매 평균가",
+    "reason": "최저가와 같은 근거(prices.lua:153,159). 제안은 라벨이 기간을 가리키게 만들어 의미를 흐린다."
+   }
+  },
+  {
+   "ref": "auction.lua::Auction maximum",
+   "findings": [
+    {
+     "by": "gpt-context",
+     "id": "auction.lua::Auction maximum",
+     "category": "context",
+     "severity": "major",
+     "problem": "뒤에 집계 일수가 직접 이어져 실제 발화가 \"경매 최고가 7 일\"처럼 된다. 7일간 집계한 최고가라는 관계가 발화에서 불분명하다.",
+     "evidence": "retail/auction/prices.lua:153,160에서 `L[\"Auction maximum\"] .. \" \" .. stats.days .. \" \" .. L[\"days\"]` 형태로 조립된다.",
+     "suggestion": "경매 최고가 집계 기간"
+    }
+   ],
+   "translator": {
+    "id": "auction.lua::Auction maximum",
+    "action": "dispute",
+    "final_ko": "경매 최고가",
+    "reason": "최저가와 같은 근거(prices.lua:153,160). 현재 번역이 원문 'Auction maximum 7 days: 금액' 구조를 그대로 따른다."
+   }
+  }
+ ]
+}

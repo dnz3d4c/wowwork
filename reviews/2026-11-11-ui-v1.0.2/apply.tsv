@@ -1,0 +1,6 @@
+file	key	ko
+misc.lua	Also takes off the off hand: %s	보조장비도 해제: %s
+auction.lua	Vendor price per item	개당 상인에게 파는 가격
+bindings.lua	Previous Tooltip Block	툴팁 이전 구역
+bindings.lua	Next Tooltip Block	툴팁 다음 구역
+misc.lua	big upgrade	대폭 향상
