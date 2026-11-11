@@ -1,0 +1,11 @@
+[
+  {"ref": "basics/alerts.md#claude-terminology-0", "action": "applied", "reason": "같은 파일 비컨 행이 directional ping을 '방향성 신호음'으로 옮겼다. 퀘스트 소리 세 행 모두 '방향성 신호음을 재생하고'로 통일했다."},
+  {"ref": "basics/alerts.md#claude-terminology-1", "action": "applied", "reason": "terminology-0과 같은 근거. '방향성 신호음을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다.'로 반영했다."},
+  {"ref": "basics/alerts.md#claude-terminology-2", "action": "applied", "reason": "terminology-0과 같은 근거. '방향성 신호음을 재생하고 \"퀘스트 목표: \" 다음에 퀘스트를 말합니다.'로 반영했다."},
+  {"ref": "basics/alerts.md#claude-style-0", "action": "applied", "reason": "'퀘스트의 퀘스트 NPC' 반복을 없애고 giver를 '퀘스트를 주는 대상'으로 풀었다. gpt-context-0(NPC뿐 아니라 물체도 퀘스트를 줌)과 함께 반영해 '수락할 수 있는 퀘스트를 주는 대상이 가까이 있습니다.'로 정했다. 원문의 giver가 NPC로 한정되지 않으므로 '대상'이 원문에도 맞다."},
+  {"ref": "basics/alerts.md#claude-context-0", "action": "dispute", "reason": "원문은 \"says \\\"Quest to turn in: \\\" and the quest\"이고 거리를 말하지 않는다. 지적 스스로 원문과 동작의 차이라고 밝혔다. 원문에 없는 내용은 번역에서 더하지 않는다(manual-translate.md 문체 규칙). 이 차이는 docs/upstream-report.md에 올릴 일이다. 현재 번역 유지."},
+  {"ref": "basics/alerts.md#gpt-style-0", "action": "applied", "reason": "claude-style-0과 같은 곳. '수락할 수 있는 퀘스트를 주는 대상이 가까이 있습니다.'로 반영했다."},
+  {"ref": "basics/alerts.md#gpt-style-1", "action": "applied", "reason": "관형어가 겹쳐 주체가 흐려진다는 지적이 맞다. 제안대로 두 사실을 나눠 '퀘스트 목록에 완료한 퀘스트가 있고, 그 퀘스트를 보고할 NPC가 가까이 있습니다.'로 고쳤다. 원문이 'the person'이라 NPC는 유지했다."},
+  {"ref": "basics/alerts.md#gpt-style-2", "action": "dispute", "reason": "제안문도 '퀘스트 목록에 있는 퀘스트에서'로 '퀘스트' 반복이 그대로라 지적한 문제를 풀지 못한다. 현재 '퀘스트 목록에 있는 퀘스트의 남은 목표'는 원문 'A quest in your log has an open objective'의 관계를 그대로 전하고, '남은 목표'는 open objective의 뜻을 짧게 옮긴 것이다. 현재 번역 유지."},
+  {"ref": "basics/alerts.md#gpt-context-0", "action": "applied", "reason": "questie.lua가 퀘스트 시작 대상을 NPC와 GameObject로 나누고 nearbySounds.lua가 아이템 시작 퀘스트만 뺀다는 근거를 받아들였다. 원문 giver는 대상을 한정하지 않으므로 'NPC나 물체'를 덧붙이기보다 '퀘스트를 주는 대상'으로 옮겨 둘 다 포함했다."}
+]

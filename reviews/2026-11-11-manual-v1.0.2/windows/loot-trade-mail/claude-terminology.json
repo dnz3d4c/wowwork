@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "windows/loot-trade-mail.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "주사위에 걸린 아이템의 툴팁 전체를 읽습니다. 이름, 품질, 아이템 레벨, 능력치, 요구 조건입니다.",
+   "suggestion": "주사위에 걸린 아이템의 툴팁 전체를 읽습니다. 이름, 등급, 아이템 레벨, 능력치, 요구 조건입니다.",
+   "problem": "새로 바뀐 행에서 quality를 '품질'로 옮겼다. 같은 파일 거래 절은 quality colour를 '등급 색'으로 옮겼고, 애드온 화면 문구도 Quality를 '등급'으로 쓴다. 같은 말이 한 파일에서 '품질'과 '등급'으로 갈린다.",
+   "evidence": "원문 'name, quality, item level, stats and requirements' (en_diff로 바뀐 행). 같은 파일 'its quality colour as a word' -> '등급 색 이름'. vision-locale koKR/misc.lua:9 L[\"Quality\"] = \"등급\", koKR/windows.lua:235 L[\"Item Quality Colors\"] = \"아이템 등급 색상\". 나머지 낱말은 koKR/misc.lua:25 '아이템 레벨', koKR/ui.lua:148 '능력치'와 일치."
+  }
+ ]
+}

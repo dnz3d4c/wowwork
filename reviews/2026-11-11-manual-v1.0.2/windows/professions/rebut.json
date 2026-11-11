@@ -1,0 +1,6 @@
+[
+  {"ref": "windows/professions.md#claude-style-0", "action": "applied", "reason": "합의 지적. 91행 '창이 열리면 여기에 놓입니다'에 주어 '초점이'를 넣어 37행 표현과 맞췄다."},
+  {"ref": "windows/professions.md#claude-style-1", "action": "applied", "reason": "합의 지적. 179행 '페이지가 열리면 여기에 놓입니다'에 주어 '초점이'를 넣었다."},
+  {"ref": "windows/professions.md#gpt-style-0", "action": "applied", "reason": "claude-style-0과 같은 곳(91행). 함께 반영했다."},
+  {"ref": "windows/professions.md#gpt-style-1", "action": "applied", "reason": "claude-style-1과 같은 곳(179행). 함께 반영했다."}
+]

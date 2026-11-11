@@ -1,0 +1,15 @@
+[
+  {"ref": "basics/interface.md#claude-accuracy-0", "action": "applied", "reason": "typeAhead.lua:100-103의 contains가 label:find로 이름 어디서든 일치시키므로 두 글자 필터는 이름 중간에 영문이 든 항목도 남긴다. 제한을 글자 하나로 건너뛸 때로 한정하고 필터 동작을 덧붙였다(claude-context-0과 함께 반영)."},
+  {"ref": "basics/interface.md#claude-style-0", "action": "applied", "reason": "원문은 각 창의 Letter Navigation 스위치 위치를 말한다. 각 항목에 '~의 스위치는'을 붙여 주어를 분명히 했다(gpt-style-0과 함께 반영)."},
+  {"ref": "basics/interface.md#claude-style-1", "action": "applied", "reason": "'창마다'를 설정 이름 '글자로 이동 스위치' 뒤로 옮겨 이름 경계를 분명히 했다."},
+  {"ref": "basics/interface.md#claude-style-2", "action": "applied", "reason": "'메뉴에서는 메뉴에서' 반복을 없애 '메뉴의 이 기능은 메뉴에서 글자로 이동 설정(...)으로 끌 수 있습니다'로 고쳤다. 설정 이름은 koKR ui.lua:8 값 그대로."},
+  {"ref": "basics/interface.md#claude-style-3", "action": "applied", "reason": "설정 이름이 '누르면'으로 끝나 뒤의 '켜면'과 조건절이 겹쳐 들린다. '인터페이스 메뉴의'를 앞에 두어 명사구임을 드러냈다. 원문 정보(UI 메뉴, 기본값 꺼짐)는 모두 유지."},
+  {"ref": "basics/interface.md#claude-style-4", "action": "applied", "reason": "'말하는 줄'을 '읽어 주는 줄'로, '이름 어디에든'을 '이름 어딘가에'로 고쳤다(gpt-style-1과 함께 반영). 'anywhere' 뜻은 '어딘가에'로 유지."},
+  {"ref": "basics/interface.md#claude-style-5", "action": "applied", "reason": "'필터링된 동안'을 상태 지속의 '필터링되어 있는 동안'으로 고쳤다(gpt-terminology-0과 같은 문장에 함께 반영)."},
+  {"ref": "basics/interface.md#claude-context-0", "action": "applied", "reason": "claude-accuracy-0과 같은 곳. 글자 하나로 건너뛸 때만 영문 시작 제한이 있고, 서로 다른 영문 글자 두 개로 필터링하면 이름 어딘가에 그 글자가 든 항목도 남는다고 적었다(typeAhead.lua:3-8, 100-103)."},
+  {"ref": "basics/interface.md#claude-context-1", "action": "applied", "reason": "단축키 화면 괄호 안 제한도 같은 이유로 '글자 하나로 건너뛸 때는'으로 한정했다."},
+  {"ref": "basics/interface.md#gpt-terminology-0", "action": "applied", "reason": "manual-translate.md 용어 4항: 키 이름은 그대로 둔다. 원문 'Left Arrow'를 그대로 썼다."},
+  {"ref": "basics/interface.md#gpt-style-0", "action": "applied", "reason": "claude-style-0과 같은 곳. 각 위치에 '~의 스위치는'을 붙이고 마지막 문장을 '스위치를 켜면'으로 고쳤다. '있으며' 대신 원래 '있고'는 유지(뜻 차이 없음)."},
+  {"ref": "basics/interface.md#gpt-style-1", "action": "applied", "reason": "claude-style-4와 함께 반영. '입력한 글자가 적힌 줄'보다는 스크린리더 사용자에게 맞게 '읽어 주는 줄'을 택했고, 'anywhere'를 살려 '이름 어딘가에'로 썼다."},
+  {"ref": "basics/interface.md#gpt-style-2", "action": "applied", "reason": "claude-style-2와 함께 반영. 다만 '글자 이동 기능'은 화면 문구가 아니고 문장을 둘로 나눌 필요도 없어, 원래 괄호 형식을 유지한 '메뉴의 이 기능은 메뉴에서 글자로 이동 설정(인터페이스 메뉴, 기본값 켜짐)으로 끌 수 있습니다'로 고쳤다."}
+]

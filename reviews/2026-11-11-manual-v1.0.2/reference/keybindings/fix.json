@@ -1,0 +1,66 @@
+{
+ "upheld": [],
+ "disputeWon": 0,
+ "escalations": [
+  {
+   "ref": "reference/keybindings.md#gpt-context-0",
+   "quote": "| 모든 창 닫기 | Shift+Escape | 열려 있는 모든 WowVision 창과 게임의 모든 창을 닫습니다 |",
+   "why": "판정 근거가 허용 자료가 아님 (claude)",
+   "evidence": {
+    "gpt": [
+     "wowwork/docs/decisions.tsv:13",
+     "wowwork/docs/translation-guide.md:93",
+     "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md:59",
+     "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:60",
+     "wowvision-ko/WowVision/core/ui/WindowManager.lua:168"
+    ],
+    "claude": [
+     "WowVision/docs/src/user/en/reference/keybindings.md:59",
+     "WowVision/core/ui/WindowManager.lua:168-189",
+     "wowwork/docs/translation-guide.md:93"
+    ]
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-context-1",
+   "quote": "| 같은 이름의 가장 가까운 미방문 지점까지 경로 안내 | 지정 안 됨 | 아직 가 보지 않은 같은 이름의 장소 가운데 걸어서 가장 가까운 곳으로 경로를 안내합니다 |",
+   "why": "판정 근거가 허용 자료가 아님 (claude)",
+   "evidence": {
+    "gpt": [
+     "wowwork/docs/decisions.tsv:13",
+     "wowwork/docs/translation-guide.md:93",
+     "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md:101",
+     "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:102",
+     "wowvision-ko/WowVision/core/navigation/visited.lua:98",
+     "wowvision-ko/WowVision/core/navigation/visited.lua:116",
+     "wowvision-ko/WowVision/core/navigation/visited.lua:156"
+    ],
+    "claude": [
+     "WowVision/docs/src/user/en/reference/keybindings.md:101",
+     "WowVision/core/navigation/visited.lua:96-116",
+     "wowwork/docs/translation-guide.md:93"
+    ]
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-context-2",
+   "quote": "| 주사위 툴팁 | Alt+Ctrl+Y | 주사위를 굴릴 아이템의 툴팁 전체를 읽습니다: 이름, 품질, 아이템 레벨, 능력치, 요구 사항 |",
+   "why": "판정 근거가 허용 자료가 아님 (claude)",
+   "evidence": {
+    "gpt": [
+     "wowwork/docs/decisions.tsv:13",
+     "wowwork/docs/translation-guide.md:93",
+     "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md:133",
+     "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md:134",
+     "wowvision-ko/WowVision/core/windows/loot.lua:21",
+     "wowvision-ko/WowVision/core/windows/loot.lua:42"
+    ],
+    "claude": [
+     "WowVision/docs/src/user/en/reference/keybindings.md:133",
+     "WowVision/core/windows/loot.lua:20-43",
+     "wowwork/docs/translation-guide.md:93"
+    ]
+   }
+  }
+ ]
+}

@@ -26,6 +26,13 @@
 | reference/glossary.md | 상하 각도 고정이 수영과 비행 모두에 걸린다고 하지만 리테일 계열은 비행 중 고정하지 않는다 | WowVision core/navigation/pitchLock.lua:55, retail/pitchLock.lua:3 |
 | windows/action-bars.md | 상황별 메뉴의 끌기는 실제 가방 아이템으로 취급한다고 하지만 끌기 키와 같은 함수를 쓴다 | WowVision core/windows/bars/bars.lua:150-164 |
 | windows/loot-trade-mail.md | 개수를 두 개 이상일 때만 읽는다고 하지만 1개여도 " x1"을 붙인다 | WowVision core/windows/trade.lua:19-20 |
+| reference/keybindings.md (V1.0.2) | 모든 창 닫기(Shift+Escape)가 모든 창을 닫는다고 하지만, 응답을 기다리는 팝업과 전투 중 보호된 게임 창은 남는다(릴리스 노트에는 적혀 있음) | WowVision core/ui/WindowManager.lua:168-189 |
+| reference/keybindings.md (V1.0.2) | 같은 이름의 미방문 지점 경로 안내가 걸어서 가장 가까운 곳을 고른다고 하지만, 직선거리로 가까운 후보 8곳 가운데서만 고른다 | WowVision core/navigation/visited.lua:96-116 |
+| reference/keybindings.md (V1.0.2) | 주사위 툴팁이 툴팁 전체를 읽는다고 하지만, 아이템 링크나 툴팁 내용을 얻지 못하면 이름만 읽는다 | WowVision core/windows/loot.lua:20-43 |
+| windows/auction-house.md (V1.0.2) | Retail 전체 스캔이 모든 아이템의 가격을 기억한다고 하지만, 즉시 구입가가 없는 경매는 빼고 기록한다 | WowVision retail/auction/prices.lua:26-32 |
+| windows/auction-house.md (V1.0.2) | Retail "Vendor Buy"는 상인에게서 아이템을 본 뒤 나온다고 하지만, 수량 제한이 없고 추가 비용이 없는 아이템만 기록한다 | WowVision retail/auction/module.lua:160-168 |
+| world/quests.md (V1.0.2) | 주변 퀘스트 소리는 장소가 앞쪽에 있을 때만 들린다고 하지만, 거리와 정면에서 벗어난 각도를 합쳐 판단해 가까우면 옆쪽(10야드에서 100도)도 들린다 | WowVision core/quests/nearbyEngine.lua:32-46, nearbyEngineTests.lua:68-74 |
+| world/quests.md (V1.0.2) | 축제 퀘스트는 축제 기간에만 포함된다고 하지만, 축제 뒤에도 완료할 수 있는 퀘스트는 완료 가능 장소로 계속 남는다 | WowVision core/quests/nearbySounds.lua:215 |
 
 ## 2. 번역할 수 없는 코드 문자열
 

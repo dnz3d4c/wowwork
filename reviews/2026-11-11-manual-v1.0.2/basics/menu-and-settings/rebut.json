@@ -1,0 +1,12 @@
+[
+  {"ref": "basics/menu-and-settings.md#claude-terminology-0", "action": "applied", "reason": "koKR scanner.lua:6-7 값 '스캔 반경', '범주별 항목 수'로 바꿨다. 같은 행의 수식 문제(style 지적)와 함께 반영: '스캐너(F9): 스캔 반경, 범주별 항목 수, 스캐너를 트리로 표시 설정. 이 설정으로 트리와 메뉴 중 하나를 고릅니다.'"},
+  {"ref": "basics/menu-and-settings.md#claude-terminology-1", "action": "applied", "reason": "키 이름은 영어 그대로(manual-translate.md 용어 4, translation-guide.md 용어 5). 'Right Arrow'로 되돌렸다."},
+  {"ref": "basics/menu-and-settings.md#claude-terminology-2", "action": "applied", "reason": "같은 근거로 'Left Arrow'로 되돌렸다."},
+  {"ref": "basics/menu-and-settings.md#claude-style-0", "action": "applied", "reason": "설정 이름 뒤에 '설정'을 붙여 이름임을 드러내고, 용도 설명은 다음 문장으로 떼어 수식 관계가 갈리지 않게 했다. 원문에 없는 따옴표는 더하지 않았다(manual-translate.md 문체: 원문에 없는 기호 금지)."},
+  {"ref": "basics/menu-and-settings.md#claude-style-1", "action": "applied", "reason": "'자체' 반복을 없앴다: '게임 기본 창은 게임이 내는 소리가 나고 WowVision 소리는 나지 않습니다.' '만'은 원문에 없는 한정이라 넣지 않았다."},
+  {"ref": "basics/menu-and-settings.md#claude-context-0", "action": "applied", "reason": "terminology-0과 같은 곳, 함께 반영했다."},
+  {"ref": "basics/menu-and-settings.md#gpt-terminology-0", "action": "applied", "reason": "terminology-1·2와 함께 Right Arrow, Left Arrow로 되돌렸다."},
+  {"ref": "basics/menu-and-settings.md#gpt-terminology-1", "action": "dispute", "reason": "여기 'the action bars'는 WowVision의 행동 단축바 창(Shift+F4)을 가리키고, koKR windows.lua:6 L[\"Action Bar\"] = \"행동 단축바\"가 게임에서 들리는 값이다. decisions.tsv:4·translation-guide.md:41의 '단축바로 통일'은 태세 단축바·게임패드 단축바 같은 하위 계열 이름을 줄이는 결정이지 창 이름 '행동 단축바'를 바꾸는 것이 아니다. 설명서 interface.md:14, controller.md:83도 이 창을 '행동 단축바 창'으로 적는다. 현재 번역 유지."},
+  {"ref": "basics/menu-and-settings.md#gpt-style-0", "action": "applied", "reason": "claude-style-0과 같은 곳, 함께 반영했다. 다만 제안문의 '탐색 반경', '분류별 항목 수'는 koKR 값과 달라 '스캔 반경', '범주별 항목 수'를 썼다."},
+  {"ref": "basics/menu-and-settings.md#gpt-style-1", "action": "applied", "reason": "claude-style-1과 함께 반영했다."}
+]

@@ -1,0 +1,56 @@
+[
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "[WowVision 메뉴](./menu-and-settings.md)의 인터페이스, 툴팁, 비교에 있는 장착 아이템과 비교 설정에서 어느 비교를 쓸지 고릅니다.",
+  "suggestion": "어느 비교를 쓸지는 [WowVision 메뉴](./menu-and-settings.md)의 인터페이스, 툴팁, 비교에 있는 설정 장착 아이템과 비교에서 고릅니다.",
+  "problem": "설정 이름 '장착 아이템과 비교' 바로 뒤에 '설정'이 붙어 들으면 '장착 아이템과 / 비교 설정'으로 끊겨, '장착 아이템과 비교 설정'이라는 두 대상을 나열한 것처럼 들린다. 설정 이름의 경계가 들리지 않는다.",
+  "evidence": "원문: \"The setting Compare With Equipped Item, under UI, Tooltip, Compare ... picks which one\". 원문은 'The setting'을 이름 앞에 두어 경계가 분명하다. manual-review.md style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowVision은 그 아이템이 향상인 Pawn 기준마다 한 줄씩 툴팁 끝에 더합니다.",
+  "suggestion": "WowVision은 그 아이템이 향상으로 판정된 Pawn 기준마다 한 줄씩 툴팁 끝에 더합니다.",
+  "problem": "'아이템이 향상인 기준'은 영어 'per Pawn scale it upgrades'를 그대로 옮긴 번역투라 관계가 잘 들어오지 않는다.",
+  "evidence": "원문: \"adds one line per Pawn scale it upgrades at the end of the tooltip\". manual-review.md style 관점: 번역투."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "인터페이스, 툴팁, 비교로 가서 Pawn 요약의 확인을 해제합니다.",
+  "suggestion": "인터페이스, 툴팁, 비교로 가서 Pawn 요약 확인란을 끕니다.",
+  "problem": "'확인을 해제합니다'는 어색하고, 같은 파일의 다른 곳('해당 확인란을 끕니다', '사용함 확인란은 ... 끕니다')과 표현이 다르다.",
+  "evidence": "원문: \"uncheck Pawn Summary\". 같은 파일: \"아이템 이름 뒤에 그 색을 듣고 싶지 않으면 해당 확인란을 끕니다.\""
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "착용한 아이템마다 구역이 시작되고, 능력치 변화 위에 있는 게임의 제목도 구역을 시작합니다.",
+  "suggestion": "착용한 아이템마다 구역이 시작되고, 능력치 변화 앞에 오는 게임의 제목에서도 새 구역이 시작됩니다.",
+  "problem": "'제목도 구역을 시작합니다'는 영어 'so does the heading'을 그대로 옮긴 번역투다. 또 소리로 읽는 순서에서는 '위에'보다 '앞에'가 자연스럽다.",
+  "evidence": "원문: \"Each item you wear starts a block, and so does the game's heading over the stat changes.\" manual-review.md style 관점: 번역투."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowVision 자체 비교는 다른 점만 한 구역에 말합니다.",
+  "suggestion": "WowVision 자체 비교는 다른 점만 한 구역에 모아 말합니다.",
+  "problem": "'한 구역에 말합니다'는 조사 '에'와 '말하다'가 어울리지 않아 어색하다.",
+  "evidence": "원문: \"WowVision's own comparison says only what differs, in one block\". manual-review.md style 관점: 어색한 조사."
+ },
+ {
+  "id": "basics/tooltips.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "다음 구역(장착한 아이템 하나. [장착한 아이템과 비교하기](#장착한-아이템과-비교하기) 참고)의 시작으로",
+  "suggestion": "다음 구역(장착한 아이템 하나, [장착한 아이템과 비교하기](#장착한-아이템과-비교하기) 참고)의 시작으로",
+  "problem": "괄호 안에서 마침표로 끊어 문장 중간에 문장 끝 휴지가 생긴다. 원문은 쉼표로 이어진다.",
+  "evidence": "원문: \"the next block (an item you wear, see [Comparing with what you wear](#comparing-with-what-you-wear))\". manual-review.md style 관점: 원문에 없는 기호."
+ }
+]

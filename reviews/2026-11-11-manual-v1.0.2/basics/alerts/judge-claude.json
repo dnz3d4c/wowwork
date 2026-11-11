@@ -1,0 +1,26 @@
+{
+  "verdicts": [
+    {
+      "ref": "basics/alerts.md#claude-context-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "코드(nearbySounds.lua:359-370)는 세 종류 모두 제목 뒤에 거리를 붙여 말하는 게 맞다. 하지만 영어 원문 137행도 \"says 'Quest to turn in: ' and the quest\"로 거리를 빼고 있어, 이것은 번역 결함이 아니라 원문과 동작의 차이다. 번역에 원문에 없는 내용을 넣기보다 docs/upstream-report.md에 올릴 일이므로 번역자 반박이 맞다. 참고로 지적의 quote('방향이 있는 핑을 재생하고')는 현재 번역(137행 '방향성 신호음을 재생하고')과 글자가 맞지 않는다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/core/quests/nearbySounds.lua:359-370",
+        "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:136-137",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:137-138"
+      ]
+    },
+    {
+      "ref": "basics/alerts.md#gpt-style-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "제안문도 '퀘스트 목록에 있는 퀘스트에서'로 지적한 반복을 그대로 남겨 문제를 풀지 못한다. 현재 문장 '퀘스트 목록에 있는 퀘스트의 남은 목표가 가까이 있습니다'는 원문 'A quest in your log has an open objective near you'의 관계를 정확히 전하고 뜻도 갈리지 않는다. 취향 차이 수준이라 현재 번역 유지. 지적의 quote 뒷부분('방향이 있는 핑을 재생하고')도 현재 번역(138행 '방향성 신호음을 재생하고')과 맞지 않는다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:137",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:138"
+      ]
+    }
+  ]
+}

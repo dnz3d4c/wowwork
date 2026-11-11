@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "windows/chat.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "예를 들어 경로가 시작되었다는 것, 경매장 검색이 얼마나 진행되었는지, 무언가가 왜 작동하지 않는지 같은 메시지입니다.",
+   "suggestion": "예를 들어 경로가 시작되었다는 메시지, 경매장 검색이 얼마나 진행되었는지 알리는 메시지, 무언가가 왜 작동하지 않는지 알려 주는 메시지가 있습니다.",
+   "problem": "나열 항목의 형태가 '~다는 것'과 '~는지'로 섞인 채 '같은 메시지입니다'로 묶여 있어, 들을 때 항목 경계와 문장 구조가 흐릿하고 번역투로 들립니다.",
+   "evidence": "원문 'for example that a route has started, how far an auction house scan is, or why something does not work.' 영어의 that절·how절·why절 병렬을 그대로 옮긴 구조. en_diff로 새로 추가된 행이라 평가 대상."
+  }
+ ]
+}

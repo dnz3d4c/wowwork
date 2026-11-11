@@ -1,0 +1,16 @@
+{
+  "responses": [
+    {
+      "ref": "information/buffers.md#claude-style-0",
+      "action": "applied",
+      "final_ko": "버퍼나 그룹을 전환할 때도 그 첫 항목으로 갑니다.",
+      "reason": "원문 \"you also land on its first item\"은 본문 '키 동작 방식'에서 \"첫 항목으로 갑니다\"로 옮겼다. 같은 동작을 같은 말로 맞추고 피동 번역투 '놓입니다'를 없앴다."
+    },
+    {
+      "ref": "information/buffers.md#gpt-style-0",
+      "action": "applied",
+      "final_ko": "Alt+화살표 키를 처음 눌러 버퍼에 들어갈 때 소리를 하나 재생하고, Alt 키를 뗄 때 다른 소리를 재생합니다",
+      "reason": "원문 \"when the first Alt+arrow key takes you into the buffers\"의 뜻(첫 Alt+화살표 입력으로 버퍼에 들어가는 시점)은 그대로이고, '키를 처음 눌러 ~ 들어갈 때'가 동작 순서대로 들려 관형 구조의 모호함이 없다."
+    }
+  ]
+}

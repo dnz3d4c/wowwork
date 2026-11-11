@@ -1,0 +1,20 @@
+[
+  {
+    "ref": "getting-started/first-login.md#claude-terminology-0",
+    "action": "applied",
+    "final_ko": "자원 알림과 \"대상 지정 시 알림\"은 게임이 전문화마다 따로 저장하므로, 전문화를 전환한 뒤에는 버튼을 다시 누르십시오.",
+    "reason": "원문이 따옴표로 인용한 \"targeted\"는 버튼이 변경하고 WowVision이 변경 항목으로 말하는 설정 이름이다. koKR/ui.lua:274 L[\"Audio Assist You Are Targeted\"] = \"음성 지원 대상 지정 시 알림\"이므로 들리는 이름과 맞춰 '대상 지정 시 알림'으로 쓰고, 원문의 따옴표를 살려 설정 이름임을 드러냈다(manual-translate.md 용어 1항)."
+  },
+  {
+    "ref": "getting-started/first-login.md#claude-style-0",
+    "action": "dispute",
+    "final_ko": "자원 알림과 \"대상 지정 시 알림\"은 게임이 전문화마다 따로 저장하므로, 전문화를 전환한 뒤에는 버튼을 다시 누르십시오.",
+    "reason": "같은 구절에 대한 terminology 지적을 반영했다. 원문 \"targeted\"는 따옴표로 인용된 설정 이름이라 manual-translate.md 용어 1항에 따라 게임에서 낭독되는 값(koKR/ui.lua:274 '음성 지원 대상 지정 시 알림')을 글자 그대로 써야 한다. '내가 대상이 되었을 때의 알림'으로 풀면 버튼을 누른 뒤 들리는 이름과 달라진다. 따옴표로 묶어 설정 이름임을 표시했으므로 앞 문단의 '대상의 생명력'과 섞이는 문제도 줄어든다."
+  },
+  {
+    "ref": "getting-started/first-login.md#gpt-style-0",
+    "action": "applied",
+    "final_ko": "단축키, 카메라, 소프트 대상, 소리 크기는 건드리지 않습니다. 전투 중에는 이 버튼을 눌러도 아무 변화가 없습니다.",
+    "reason": "'버튼이 아무 일도 하지 않습니다'는 영어 주어 구조를 따른 번역투라는 지적이 맞다. 원문 'The button does nothing in combat.'의 뜻을 그대로 유지하면서 한국어로 자연스럽게 고쳤다."
+  }
+]

@@ -1,0 +1,58 @@
+{
+ "file": "reference/keybindings.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/reference/keybindings.md",
+ "items": [
+  {
+   "ref": "reference/keybindings.md#gpt-context-0",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| 모든 창 닫기 | Shift+Escape | 열려 있는 모든 WowVision 창과 게임의 모든 창을 닫습니다 |",
+    "suggestion": "| 모든 창 닫기 | Shift+Escape | 열려 있는 WowVision 창과 게임 창을 닫습니다. 응답을 기다리는 팝업은 남으며, 전투 중에는 보호된 게임 창도 남습니다 |",
+    "problem": "실제로 닫히지 않는 창의 예외를 설명하지 않아, 사용자가 모든 창이 닫혔다고 잘못 판단할 수 있다.",
+    "evidence": "`core/ui/WindowManager.lua:168-170`은 응답 대기 팝업과 전투 중 보호된 게임 창이 남는다고 명시한다. `core/ui/WindowManager.lua:189`는 전투 중 `CloseAllWindows()`를 호출하지 않으며, `core/graph/menuNavTests.lua:459-464`에서도 이 동작을 검증한다."
+   },
+   "translator": {
+    "ref": "reference/keybindings.md#gpt-context-0",
+    "action": "dispute",
+    "reason": "원문(en/reference/keybindings.md:59)은 'Closes every open WowVision window and every window of the game'뿐이고 예외 문장이 없다. 번역 지침은 원문에 없는 내용을 더하지 않게 한다. 코드(WindowManager.lua:168-170, 189)의 예외는 사실이지만 설명서와 동작의 차이는 번역으로 고치지 않고 docs/upstream-report.md로 보낼 사항이다. 현재 번역은 원문과 일치한다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-context-1",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| 같은 이름의 가장 가까운 미방문 지점까지 경로 안내 | 지정 안 됨 | 아직 가 보지 않은 같은 이름의 장소 가운데 걸어서 가장 가까운 곳으로 경로를 안내합니다 |",
+    "suggestion": "| 같은 이름의 가장 가까운 미방문 지점까지 경로 안내 | 지정 안 됨 | 아직 가 보지 않은 같은 이름의 장소 중 직선거리로 가장 가까운 8곳을 확인해, 그 가운데 걷는 거리가 가장 짧은 곳으로 경로를 안내합니다 |",
+    "problem": "전체 후보 가운데 도보 거리가 가장 짧은 곳을 고르는 것처럼 설명하지만, 실제 동작은 직선거리 기준 후보 8곳으로 검색 범위를 제한한다. 따라서 더 멀리 있는 후보의 도보 경로가 짧아도 선택되지 않을 수 있다.",
+    "evidence": "`core/navigation/visited.lua:98-100`에서 후보 수를 8로 정하고, `core/navigation/visited.lua:102-116`에서 직선거리상 가까운 후보 8개만 반환한다. 이후 `core/navigation/visited.lua:156-158`에서 그 후보들만 `routeToNearestWalk`에 전달한다."
+   },
+   "translator": {
+    "ref": "reference/keybindings.md#gpt-context-1",
+    "action": "dispute",
+    "reason": "원문(en:101)은 'Routes to the place with the same name you have not visited yet that is the shortest walk away'로 후보 8곳 제한을 언급하지 않는다. 현재 번역은 원문 그대로다. visited.lua:98-116의 AUTO_CANDIDATES=8 제한은 설명서와 동작의 차이이므로 번역에 덧붙이지 않고 upstream-report 대상이다."
+   }
+  },
+  {
+   "ref": "reference/keybindings.md#gpt-context-2",
+   "file": "reference/keybindings.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "| 주사위 툴팁 | Alt+Ctrl+Y | 주사위를 굴릴 아이템의 툴팁 전체를 읽습니다: 이름, 품질, 아이템 레벨, 능력치, 요구 사항 |",
+    "suggestion": "| 주사위 툴팁 | Alt+Ctrl+Y | 주사위를 굴릴 아이템의 툴팁 전체를 읽습니다: 이름, 품질, 아이템 레벨, 능력치, 요구 사항. 아이템 링크나 툴팁 내용을 얻을 수 없으면 이름만 읽습니다 |",
+    "problem": "항상 툴팁 전체를 읽는다고 설명하지만, 게임에서 아이템 링크나 툴팁 내용을 제공하지 않는 경우에는 아이템 이름만 읽는다.",
+    "evidence": "`core/windows/loot.lua:21-24`가 전체 툴팁을 얻지 못할 때 이름을 사용하는 동작을 명시하며, `core/windows/loot.lua:26-42`는 링크가 없거나 읽은 내용이 없으면 `frame.Name:GetText()`를 반환한다."
+   },
+   "translator": {
+    "ref": "reference/keybindings.md#gpt-context-2",
+    "action": "dispute",
+    "reason": "원문(en:133)에는 이름만 읽는 폴백이 없다. loot.lua:21-42의 폴백은 사실이지만 원문에 없는 내용을 번역에 더하지 않는다는 규칙에 따라 반영하지 않는다. 같은 문장의 문체 지적(gpt-style-0)은 반영했다."
+   }
+  }
+ ]
+}

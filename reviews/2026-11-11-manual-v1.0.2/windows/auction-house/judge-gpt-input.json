@@ -1,0 +1,41 @@
+{
+ "file": "windows/auction-house.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/windows/auction-house.md",
+ "items": [
+  {
+   "ref": "windows/auction-house.md#gpt-context-1",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "전체 스캔은 서버에 한 번 요청해 경매장 전체 정보를 받아 와 모든 아이템의 가격을 기억합니다.",
+    "suggestion": "전체 스캔은 서버에 한 번 요청해 경매장 전체 정보를 받아 와, 즉시 구입가가 있는 아이템의 가격을 기억합니다.",
+    "problem": "실제 데이터베이스는 모든 아이템의 가격을 기록하지 않는다. 즉시 구입가가 없거나 0인 경매는 제외하므로, 입찰만 가능한 아이템에는 경매 가격 줄이 생기지 않을 수 있다.",
+    "evidence": "wowvision-ko/WowVision/retail/auction/prices.lua:26-30은 buyout이 없거나 0 이하면 기록하지 않는다. 이 동작은 wowvision-ko/WowVision/retail/auction/tests.lua:104-110의 \"an auction without a buyout or count is not a price\" 테스트에서도 확인된다."
+   },
+   "translator": {
+    "ref": "windows/auction-house.md#gpt-context-1",
+    "action": "dispute",
+    "reason": "번역은 원문 en:312 'remembers the prices of every item'을 그대로 옮김. prices.lua:26-30의 즉시 구입가 제외는 원문 설명서와 코드의 차이라 upstream-report.md에 올릴 사항이고, 번역에서 원문에 없는 한정을 더하면 manual-translate.md 규칙 위반."
+   }
+  },
+  {
+   "ref": "windows/auction-house.md#gpt-context-2",
+   "file": "windows/auction-house.md",
+   "finding": {
+    "category": "context",
+    "severity": "major",
+    "quote": "상인에게서 구입: 상인이 파는 가격. 상인에게서 그 아이템을 본 뒤에만 나옵니다.",
+    "suggestion": "상인에게서 구입: 상인이 파는 개당 가격. 상인이 수량 제한 없이 돈으로 판매하는 아이템을 본 뒤에만 나옵니다.",
+    "problem": "상인에게서 아이템을 보기만 하면 가격이 기록되는 것이 아니다. 수량 제한이 있거나 추가 비용이 들거나 돈으로 된 가격이 없는 아이템은 기록하지 않으므로, 현재 설명은 이 줄이 나타나는 조건을 실제보다 넓게 안내한다.",
+    "evidence": "wowvision-ko/WowVision/retail/auction/module.lua:153-175는 numAvailable == -1, hasExtendedCost가 아님, price > 0, stackCount > 0인 경우에만 상인 구입 가격을 저장한다."
+   },
+   "translator": {
+    "ref": "windows/auction-house.md#gpt-context-2",
+    "action": "dispute",
+    "reason": "번역은 원문 en:329 'once you have seen the item at a merchant'를 그대로 옮김. module.lua:153-175의 조건은 원문 Retail 절에 없고(TBC 절 :221에만 있음) 제안의 '개당'도 원문에 없음. 설명서와 동작의 차이로 upstream-report.md에 올릴 사항."
+   }
+  }
+ ]
+}

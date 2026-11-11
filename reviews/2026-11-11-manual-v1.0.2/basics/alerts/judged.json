@@ -1,0 +1,64 @@
+{
+ "items": [
+  {
+   "ref": "basics/alerts.md#claude-context-0",
+   "provider": "claude",
+   "quote": "방향이 있는 핑을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다."
+  },
+  {
+   "ref": "basics/alerts.md#gpt-style-2",
+   "provider": "gpt",
+   "quote": "퀘스트 목록에 있는 퀘스트의 남은 목표가 가까이 있습니다. 방향이 있는 핑을 재생하고"
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "basics/alerts.md#claude-context-0",
+   "uphold": false,
+   "final_ko": "퀘스트 목록에 완료한 퀘스트가 있고, 그 퀘스트를 보고할 NPC가 가까이 있습니다. 방향성 신호음을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다. Questie가 필요합니다.",
+   "reason": "코드는 거리를 발화하지만 영어 원문은 거리 없이 퀘스트만 말한다고 설명한다. 원문과 실제 동작이 다를 때에는 원문에 충실하게 번역하고 차이를 별도로 보고한다는 사용자 결정이 있으므로 현재 번역을 유지해야 한다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/core/quests/nearbySounds.lua:359",
+    "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:136",
+    "wowwork/docs/decisions.tsv:13",
+    "wowwork/docs/translation-guide.md:93"
+   ]
+  },
+  {
+   "ref": "basics/alerts.md#gpt-style-2",
+   "uphold": false,
+   "final_ko": "퀘스트 목록에 있는 퀘스트의 남은 목표가 가까이 있습니다. 방향성 신호음을 재생하고 \"퀘스트 목표: \" 다음에 퀘스트를 말합니다. Questie가 필요합니다.",
+   "reason": "‘퀘스트 목록에 있는 퀘스트의’는 반복이 있지만 소유 관계가 명확하고 한국어로 부자연스럽다고 단정할 수준은 아니다. 제안문도 같은 반복을 유지하므로 현재 표현보다 명확하게 개선된다는 근거가 약하다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:137",
+    "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:138"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "basics/alerts.md#claude-context-0",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "코드(nearbySounds.lua:359-370)는 세 종류 모두 제목 뒤에 거리를 붙여 말하는 게 맞다. 하지만 영어 원문 137행도 \"says 'Quest to turn in: ' and the quest\"로 거리를 빼고 있어, 이것은 번역 결함이 아니라 원문과 동작의 차이다. 번역에 원문에 없는 내용을 넣기보다 docs/upstream-report.md에 올릴 일이므로 번역자 반박이 맞다. 참고로 지적의 quote('방향이 있는 핑을 재생하고')는 현재 번역(137행 '방향성 신호음을 재생하고')과 글자가 맞지 않는다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/core/quests/nearbySounds.lua:359-370",
+    "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:136-137",
+    "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:137-138"
+   ]
+  },
+  {
+   "ref": "basics/alerts.md#gpt-style-2",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "제안문도 '퀘스트 목록에 있는 퀘스트에서'로 지적한 반복을 그대로 남겨 문제를 풀지 못한다. 현재 문장 '퀘스트 목록에 있는 퀘스트의 남은 목표가 가까이 있습니다'는 원문 'A quest in your log has an open objective near you'의 관계를 정확히 전하고 뜻도 갈리지 않는다. 취향 차이 수준이라 현재 번역 유지. 지적의 quote 뒷부분('방향이 있는 핑을 재생하고')도 현재 번역(138행 '방향성 신호음을 재생하고')과 맞지 않는다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md:137",
+    "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:138"
+   ]
+  }
+ ]
+}

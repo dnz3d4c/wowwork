@@ -1,0 +1,29 @@
+[
+  {
+    "id": "basics/alerts.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "방향이 있는 핑을 재생하고, 예를 들어 \"수락 가능 퀘스트: A Threat Within, 30 야드\"라고 말합니다.",
+    "suggestion": "방향성 신호음을 재생하고, 예를 들어 \"수락 가능 퀘스트: A Threat Within, 30 야드\"라고 말합니다.",
+    "problem": "새로 추가된 행이 directional ping을 '방향이 있는 핑'으로 옮겨, 같은 파일의 비컨 행('방향성 신호음')과 비컨 음량 행('비컨 신호음')의 번역과 어긋난다.",
+    "evidence": "같은 파일 비컨 행: 'a directional ping that speeds up' -> '방향성 신호음'. 비컨 음량 행: 'beacon pings' -> '비컨 신호음'. 연결 문서 world/quests.md의 주변 퀘스트 소리 설명도 '신호음'을 쓴다."
+  },
+  {
+    "id": "basics/alerts.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "방향이 있는 핑을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다.",
+    "suggestion": "방향성 신호음을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다.",
+    "problem": "directional ping을 '방향이 있는 핑'으로 옮겨 같은 파일의 '방향성 신호음'과 다르다.",
+    "evidence": "원문 'Plays a directional ping'. 같은 파일 비컨 행 'directional ping' -> '방향성 신호음', world/quests.md는 '신호음'."
+  },
+  {
+    "id": "basics/alerts.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "방향이 있는 핑을 재생하고 \"퀘스트 목표: \" 다음에 퀘스트를 말합니다.",
+    "suggestion": "방향성 신호음을 재생하고 \"퀘스트 목표: \" 다음에 퀘스트를 말합니다.",
+    "problem": "directional ping을 '방향이 있는 핑'으로 옮겨 같은 파일의 '방향성 신호음'과 다르다.",
+    "evidence": "원문 'Plays a directional ping'. 같은 파일 비컨 행 'directional ping' -> '방향성 신호음', world/quests.md는 '신호음'."
+  }
+]

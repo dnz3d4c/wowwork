@@ -1,0 +1,24 @@
+{
+ "file": "getting-started/first-login.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/first-login.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/first-login.md",
+ "items": [
+  {
+   "ref": "getting-started/first-login.md#claude-style-0",
+   "file": "getting-started/first-login.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "자원 알림과 대상이 되었을 때 알림은 게임이 전문화마다 따로 저장하므로",
+    "suggestion": "자원 알림과 내가 대상이 되었을 때의 알림은 게임이 전문화마다 따로 저장하므로",
+    "problem": "앞 문단에서는 '내가 대상이 되었을 때'라고 했는데 여기서는 '내가'가 빠져 '대상이 되었을 때 알림'이 명사처럼 이어진다. 바로 앞 문단에 '대상의 생명력', '대상 이름'이 함께 나와서, 들으면 '대상'이 내 대상(target)인지 내가 대상이 된 것인지 잠깐 헷갈리고 관형 연결도 어색하다.",
+    "evidence": "원문 'Resource and \"targeted\" are kept per specialization by the game'의 \"targeted\"는 앞 문단 'when you are targeted'를 가리킨다. 번역 앞 문단은 '내가 대상이 되었을 때(공격자 이름 없이) 알리게 합니다'로 옮겼다. manual-review.md style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+   },
+   "translator": {
+    "ref": "getting-started/first-login.md#claude-style-0",
+    "action": "dispute",
+    "reason": "같은 구절은 terminology 지적대로 고쳤다. 원문이 인용한 설정 이름은 낭독값(ui.lua:274)을 글자 그대로 써야 한다(용어 1항). 제안처럼 '내가 대상이 되었을 때의 알림'으로 풀면 버튼을 누른 뒤 들리는 이름과 달라진다. 따옴표로 설정 이름임을 표시해서 '대상'이 무엇을 가리키는지 헷갈리는 문제도 줄였다."
+   }
+  }
+ ]
+}

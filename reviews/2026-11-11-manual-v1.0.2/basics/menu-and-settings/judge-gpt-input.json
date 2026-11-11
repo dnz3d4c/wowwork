@@ -1,0 +1,24 @@
+{
+ "file": "basics/menu-and-settings.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/menu-and-settings.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md",
+ "items": [
+  {
+   "ref": "basics/menu-and-settings.md#gpt-terminology-1",
+   "file": "basics/menu-and-settings.md",
+   "finding": {
+    "category": "terminology",
+    "severity": "major",
+    "quote": "WowVision 메뉴, 스캐너, 길 안내 창, 행동 단축바, 대화가 해당합니다.",
+    "suggestion": "WowVision 메뉴, 스캐너, 길 안내 창, 단축바, 대화가 해당합니다.",
+    "problem": "action bars를 프로젝트에서 통일한 용어인 \"단축바\"가 아니라 \"행동 단축바\"로 옮겼다.",
+    "evidence": "변경된 원문은 \"the action bars\"이다. translation-guide.md:41은 행동 단축바 계열을 모두 \"단축바\"로 통일하도록 규정한다."
+   },
+   "translator": {
+    "ref": "basics/menu-and-settings.md#gpt-terminology-1",
+    "action": "dispute",
+    "reason": "'the action bars'는 WowVision의 행동 단축바 창(Shift+F4)이고 koKR windows.lua:6 L[\"Action Bar\"] = \"행동 단축바\"가 게임에서 들리는 값이다. decisions.tsv:4·translation-guide.md:41의 '단축바로 통일'은 태세 단축바·게임패드 단축바 같은 하위 계열 이름에 대한 결정이지 창 이름을 바꾸는 것이 아니다. interface.md:14, controller.md:83도 '행동 단축바 창'으로 적는다. 현재 번역 유지."
+   }
+  }
+ ]
+}

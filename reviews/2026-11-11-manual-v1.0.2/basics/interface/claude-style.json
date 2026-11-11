@@ -1,0 +1,58 @@
+{
+ "findings": [
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "길 안내 창은 길 안내 메뉴에, 스캐너는 스캐너 메뉴에, 각 게임 창은 창 메뉴의 해당 창 항목에 있습니다.",
+   "suggestion": "길 안내 창의 스위치는 길 안내 메뉴에, 스캐너의 스위치는 스캐너 메뉴에, 각 게임 창의 스위치는 창 메뉴의 해당 창 항목에 있습니다.",
+   "problem": "문장의 주어가 스위치가 아니라 창이 되어, 들으면 길 안내 창이나 스캐너 자체가 그 메뉴 안에 있다는 뜻으로 들립니다. 앞 문장에서 넘어온 생략된 주어(스위치)가 귀로는 이어지지 않습니다.",
+   "evidence": "원문 'the navigation window in the Navigation menu, the Scanner in the Scanner menu, and each game window in its own entry of the Windows menu'는 앞의 'its own Letter Navigation switch'의 위치를 말합니다. manual-review.md style 관점: 스크린리더로 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "그 밖의 창에는 창마다 글자로 이동 스위치가 따로 있고, 기본값은 꺼짐입니다.",
+   "suggestion": "그 밖의 창에는 글자로 이동 스위치가 창마다 따로 있고, 기본값은 꺼짐입니다.",
+   "problem": "'창마다 글자로 이동'이 붙어 들려서 설정 이름이 아니라 '창마다 글자로 이동한다'는 동작 설명처럼 들립니다. 부사 '창마다'를 설정 이름 뒤로 옮기면 이름의 경계가 분명해집니다.",
+   "evidence": "원문 'Every other window has its own Letter Navigation switch, off by default'. terms: Letter Navigation = 글자로 이동. manual-review.md style 관점: 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "메뉴에서는 메뉴에서 글자로 이동 설정(인터페이스 메뉴, 기본값 켜짐)으로 이 기능을 끌 수 있습니다.",
+   "suggestion": "메뉴에서 쓰는 이 기능은 메뉴에서 글자로 이동 설정(인터페이스 메뉴, 기본값 켜짐)으로 끌 수 있습니다.",
+   "problem": "'메뉴에서는 메뉴에서'가 연달아 나와 들으면 말이 반복된 것처럼 들리고, 어디까지가 설정 이름인지 구분하기 어렵습니다.",
+   "evidence": "원문 'For the menus, you can turn this off with the Letter Navigation in Menus setting (UI menu, on by default).' terms: Letter Navigation in Menus = 메뉴에서 글자로 이동."
+  },
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "화살표 두 번 누르면 빈 칸 건너뛰기 설정(인터페이스 메뉴, 기본값 꺼짐)을 켜면, 가방, 은행, 행동 단축바에서",
+   "suggestion": "인터페이스 메뉴의 화살표 두 번 누르면 빈 칸 건너뛰기 설정(기본값 꺼짐)을 켜면, 가방, 은행, 행동 단축바에서",
+   "problem": "설정 이름이 '누르면'으로 끝나 문장 첫머리에서 조건절처럼 들리고, 바로 뒤에 '켜면'이 다시 나와 조건이 두 번 겹친 문장으로 들립니다. 앞에 '인터페이스 메뉴의'를 두면 이름이 명사구로 시작한다는 것이 귀로 드러납니다.",
+   "evidence": "원문 'With the Skip Empty Slots on Double Arrow setting switched on (UI menu, off by default)'. terms: Skip Empty Slots on Double Arrow = 화살표 두 번 누르면 빈 칸 건너뛰기. manual-review.md style 관점: 들었을 때 뜻이 갈리는 표현."
+  },
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "필터와 입력한 글자를 말하는 줄에 도착하고, 그 아래에는 이름 어디에든 그 글자들이 들어 있는 항목만 남습니다.",
+   "suggestion": "필터와 입력한 글자를 읽어 주는 줄에 도착하고, 그 아래에는 이름 어딘가에 그 글자들이 들어 있는 항목만 남습니다.",
+   "problem": "'줄이 말한다'는 'a line that says'의 직역이고, '이름 어디에든'은 어색한 조사 결합입니다.",
+   "evidence": "원문 'You land on a line that says Filter and what you typed; below it are only the entries containing those letters anywhere in their name.' manual-review.md style 관점: 번역투, 어색한 조사."
+  },
+  {
+   "id": "basics/interface.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "목록이 필터링된 동안 Backspace나 Left 화살표를 누르면 전체 목록이 돌아옵니다.",
+   "suggestion": "목록이 필터링되어 있는 동안 Backspace나 Left 화살표를 누르면 전체 목록이 돌아옵니다.",
+   "problem": "'필터링된 동안'은 완료형 관형어와 '동안'이 어울리지 않아 어색합니다. 상태가 이어지는 '되어 있는 동안'이 자연스럽습니다.",
+   "evidence": "원문 'While a list is filtered'. manual-review.md style 관점: 어색한 조사·번역투."
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/first-login.md#claude-style-0",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "지적한 구절 '대상이 되었을 때 알림'은 현재 번역에 더 이상 없다. 지금 문장은 '자원 알림과 \"대상 지정 시 알림\"은 게임이 전문화마다 따로 저장하므로'(ko 54줄)이다. 원문은 \"targeted\"를 따옴표로 묶어 설정을 가리키고(en 53줄), 그 설정의 화면 문구는 koKR ui.lua:274 '음성 지원 대상 지정 시 알림'(enUS ui.lua:273 'Audio Assist You Are Targeted')이다. 지금 번역은 원문처럼 따옴표 안에 화면 문구의 일부를 그대로 써서, 지적이 걱정한 '대상'이 내 대상인지 헷갈리는 문제와 관형 연결 어색함이 모두 없어졌다. 제안한 '내가 대상이 되었을 때의 알림'은 화면 문구에서 멀어지므로 받아들이지 않는다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/vision-locale/koKR/ui.lua:274",
+        "wowvision-ko/vision-locale/enUS/ui.lua:273"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/managing.md",
+   "category": "context",
+   "severity": "minor",
+   "quote": "이름은 WowVisionGlobalDB.lua와 WowVisionDump.lua이고, TBC에서는 WowVisionPriceDB.lua도 있습니다.",
+   "suggestion": "이름은 WowVisionGlobalDB.lua와 WowVisionDump.lua이고, 불타는 성전, Retail, WoW: Forever에서는 WowVisionPriceDB.lua도 있습니다.",
+   "problem": "원문 변경으로 표의 WowVisionPriceDB 행은 '불타는 성전, Retail, WoW: Forever'로 바뀌었는데, 바로 아래 파일 목록은 여전히 TBC에서만 이 파일이 생긴다고 말한다. 실제로 Retail과 WoW: Forever 판도 이 파일을 만든다. 이 문장은 영어 원문('and, on TBC, WowVisionPriceDB.lua')을 그대로 옮긴 것이라 원문 자체의 어긋남이므로, 번역만 고칠지 docs/upstream-report.md에 올릴지는 처리자가 정한다.",
+   "evidence": "en_diff: '(TBC only)' -> '(The Burning Crusade, Retail and WoW: Forever)'. 코드: WowVision_Standard.toc:8, WowVision_Camelot.toc:8, WowVision_TBC.toc:7 모두 '## SavedVariables: WowVisionDump, WowVisionPriceDB, WowVisionGlobalDB'(Mists·Vanilla toc에는 없음). retail/auction/module.lua:27-35에서 Retail도 WowVisionPriceDB를 기록한다. 표의 번역 행 자체는 원문 변경과 일치한다."
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "file": "basics/alerts.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/alerts.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md",
+ "items": [
+  {
+   "ref": "basics/alerts.md#claude-context-0",
+   "file": "basics/alerts.md",
+   "finding": {
+    "category": "context",
+    "severity": "minor",
+    "quote": "방향이 있는 핑을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트를 말합니다.",
+    "suggestion": "방향이 있는 핑을 재생하고 \"완료 가능 퀘스트: \" 다음에 퀘스트와 거리를 말합니다.",
+    "problem": "완료 가능 퀘스트 소리와 퀘스트 목표 소리의 TTS도 수락 가능 퀘스트 소리처럼 퀘스트 제목 뒤에 \", N 야드\" 거리를 붙여 읽는데, 설명은 퀘스트만 말한다고 해서 실제 발화와 다르다. 영어 원문도 같은 생략을 하고 있어 번역 충실성 문제라기보다 원문과 동작의 차이이므로, 번역을 고치기보다 docs/upstream-report.md에 올리는 쪽이 맞을 수 있다. 퀘스트 목표 소리 줄(\"퀘스트 목표: \" 다음에 퀘스트를 말합니다)도 같다.",
+    "evidence": "WowVision/core/quests/nearbySounds.lua:359-370 — 세 종류 모두 text = pingLabel(kind) .. \": \" .. 제목들 .. \", \" .. floor(ping.distance) .. \" \" .. L[\"yards\"]로 같은 형식이다. 원문: \"Plays a directional ping and says \\\"Quest to turn in: \\\" and the quest.\""
+   },
+   "translator": {
+    "ref": "basics/alerts.md#claude-context-0",
+    "action": "dispute",
+    "reason": "원문은 거리를 말하지 않는다(\"says 'Quest to turn in: ' and the quest\"). 지적도 원문과 동작의 차이라고 밝혔다. 원문에 없는 내용은 번역에 더하지 않으므로 docs/upstream-report.md에 올릴 일이다. 현재 번역 유지."
+   }
+  },
+  {
+   "ref": "basics/alerts.md#gpt-style-2",
+   "file": "basics/alerts.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "퀘스트 목록에 있는 퀘스트의 남은 목표가 가까이 있습니다. 방향이 있는 핑을 재생하고",
+    "suggestion": "퀘스트 목록에 있는 퀘스트에서 아직 완료하지 않은 목표가 가까이 있습니다. 방향이 있는 핑을 재생하고",
+    "problem": "‘퀘스트 목록에 있는 퀘스트의’처럼 ‘퀘스트’가 연달아 반복되어 문장이 번역투이고 소리로 들을 때 관계를 바로 파악하기 어렵습니다.",
+    "evidence": "원문은 “A quest in your log has an open objective near you.”이며, 미완료 목표라는 관계를 반복 없이 풀어 쓰면 더 명확합니다."
+   },
+   "translator": {
+    "ref": "basics/alerts.md#gpt-style-2",
+    "action": "dispute",
+    "reason": "제안문도 '퀘스트 목록에 있는 퀘스트에서'라서 반복이 그대로 남아 지적한 문제를 풀지 못한다. 현재 문장은 원문 'A quest in your log has an open objective'의 관계를 정확히 전한다. 현재 번역 유지."
+   }
+  }
+ ]
+}

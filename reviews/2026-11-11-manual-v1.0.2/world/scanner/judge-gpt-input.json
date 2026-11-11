@@ -1,0 +1,41 @@
+{
+ "file": "world/scanner.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/world/scanner.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md",
+ "items": [
+  {
+   "ref": "world/scanner.md#claude-style-4",
+   "file": "world/scanner.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "이런 대원은 거리와 방향도 들립니다",
+    "suggestion": "이런 대원에서는 거리와 방향도 들립니다",
+    "problem": "'대원은 ~이 들립니다'는 주어와 서술어가 맞지 않는다. 들리는 것은 대원의 거리와 방향이다.",
+    "evidence": "원문 'for them you also hear distance and direction'(이번에 바뀐 Group 문단)."
+   },
+   "translator": {
+    "ref": "world/scanner.md#claude-style-4",
+    "action": "dispute",
+    "reason": "'이런 대원은'의 '은'은 주제 표시다('코끼리는 코가 길다'와 같은 구조). 그래서 자연스럽고 원문의 뜻도 그대로 담는다. 바로 다음 문장이 '이런 대원에서 Enter를'이어서 고치면 비슷한 말머리가 연달아 나온다."
+   }
+  },
+  {
+   "ref": "world/scanner.md#gpt-style-1",
+   "file": "world/scanner.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "안에 아무것도 없는 항목은 \"비어 있음\"이라고 알리고 열리지 않습니다. 내 이름에서는 나를 대상으로 잡습니다.",
+    "suggestion": "안에 아무것도 없는 항목은 \"비어 있음\"이라고 알리고 열리지 않습니다. 내 이름에서 Enter를 누르면 자신을 대상으로 선택합니다.",
+    "problem": "‘내 이름에서는 나를 대상으로 잡습니다’는 동작을 일으키는 키가 생략되었고 ‘대상으로 잡다’도 번역투라, 표의 다른 설명보다 동작이 불분명하다.",
+    "evidence": "원문은 “On your own name: target yourself.”이며, 이 문장은 Enter 키의 동작을 설명하는 행에 있다."
+   },
+   "translator": {
+    "ref": "world/scanner.md#gpt-style-1",
+    "action": "dispute",
+    "reason": "이 문장은 Enter 행의 칸 안에 있어서 키가 이미 드러나 있다. 원문도 키를 반복하지 않는다. 21행과 61행이 같은 동작을 '나를 대상으로 잡습니다'로 쓰고 있어서, 이 칸만 바꾸면 같은 동작이 다른 말로 들린다."
+   }
+  }
+ ]
+}

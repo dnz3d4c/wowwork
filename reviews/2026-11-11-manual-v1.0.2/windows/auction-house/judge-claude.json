@@ -1,0 +1,27 @@
+{
+  "verdicts": [
+    {
+      "ref": "windows/auction-house.md#gpt-context-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "번역(ko:313)은 원문 en:312 'remembers the prices of every item'을 정확히 옮겼다. prices.lua:28-30이 즉시 구입가 없는 경매를 빼는 것은 사실이지만, 이는 영어 원문 설명서와 코드 사이의 차이다. 번역에서 원문에 없는 '즉시 구입가가 있는' 한정을 더하면 원문과 어긋나고, wowwork CLAUDE.md도 설명서와 동작의 차이는 docs/upstream-report.md에 모으라고 한다. 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:312",
+        "wowvision-ko/WowVision/retail/auction/prices.lua:26-30"
+      ]
+    },
+    {
+      "ref": "windows/auction-house.md#gpt-context-2",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "번역(ko:330)은 원문 en:329 'Vendor Buy, what a vendor charges, once you have seen the item at a merchant.'를 정확히 옮겼다. module.lua:160-168의 조건(numAvailable == -1, 추가 비용 없음 등)은 실제로 있으나 이 Retail 절 원문에는 없고, 제안의 '개당'도 원문에 없다(TBC 절 en:221에만 유사한 한정이 있음). 원문 설명서와 코드의 차이이므로 번역에서 고치지 않고 upstream 보고 대상이다. 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:221",
+        "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:329",
+        "wowvision-ko/WowVision/retail/auction/module.lua:153-175"
+      ]
+    }
+  ]
+}

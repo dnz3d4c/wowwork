@@ -1,0 +1,14 @@
+{
+  "responses": [
+    {
+      "ref": "world/movement.md#claude-style-0",
+      "action": "applied",
+      "reason": "원문 'wall detection stays quiet while your auto-attack is on and you press no movement key'에서 auto-attack is on은 while 조건의 일부다. '켜져 있고'는 별개 서술로 들릴 수 있어 '전투에 들어간 뒤에는, 자동 공격이 켜진 채로 이동 키를 누르지 않는 동안'으로 고쳐 두 조건이 '동안'에 함께 걸리게 했다. 원문의 쉼표(Once you are in combat,)도 살렸다."
+    },
+    {
+      "ref": "world/movement.md#gpt-style-0",
+      "action": "applied",
+      "reason": "원문은 'before the fight begins'의 접근 중 경우와 'when you press a movement key' 경우를 별개 조건으로 나열한다. '~알리며, 이동 키를 누를 때도 마찬가지'는 전투 전 접근 중에만 걸리는 것으로 들릴 수 있어 두 문장으로 나눴다. 제안의 '전투 중에도'는 원문에 없는 한정이라 넣지 않고 '이동 키를 누를 때도 장애물을 알립니다.'로 원문 범위대로 옮겼다. 'On the way to the enemy'는 '다가가는'으로 수용."
+    }
+  ]
+}

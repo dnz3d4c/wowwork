@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "windows/auction-house.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "경매 평균가: 모든 묶음의 아이템을 하나하나 모두 셈한 개당 평균 가격.",
+      "suggestion": "경매 평균가: 모든 묶음의 아이템을 낱개로 모두 넣어 계산한 개당 평균 가격.",
+      "problem": "'하나하나'와 '모두'가 겹치고, '셈한'은 평균 가격을 꾸미는 말로 어색하다. 들었을 때 '셈'이 무엇을 세었다는 것인지 바로 잡히지 않는다.",
+      "evidence": "원문(en_diff 추가 구절) \"Auction average, the average price per item, counting every item of every stack\". 뜻은 맞으므로 minor."
+    },
+    {
+      "id": "windows/auction-house.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "세 가지 경매 가격은 스캔이 그 아이템을 본 모든 날을 대상으로 하며, 최대 최근 30일까지입니다.",
+      "suggestion": "세 가지 경매 가격은 최근 30일 안에서 스캔이 그 아이템을 본 모든 날을 대상으로 합니다.",
+      "problem": "'최대 최근 30일까지'는 '최대'와 '까지'가 겹쳐 번역투로 들린다(at most the last 30 days의 직역).",
+      "evidence": "원문(en_diff 추가 구절) \"The three auction prices cover every day on which a scan saw the item, at most the last 30 days.\" 뜻은 맞으므로 minor."
+    }
+  ]
+}

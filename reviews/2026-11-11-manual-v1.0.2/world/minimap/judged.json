@@ -1,0 +1,42 @@
+{
+ "items": [
+  {
+   "ref": "world/minimap.md#gpt-context-0",
+   "provider": "gpt",
+   "quote": "/reload 뒤에는 결과가 `WTF\\Account\\<account>\\SavedVariables\\WowVision.lua` 파일(WowVisionDump, minimapRaw)에 있으므로, 창 내용을 복사하는 대신 이 파일을 보내도 됩니다."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "world/minimap.md#gpt-context-0",
+   "uphold": false,
+   "final_ko": "/reload 뒤에는 결과가 `WTF\\Account\\<account>\\SavedVariables\\WowVision.lua` 파일(WowVisionDump, minimapRaw)에 있으므로, 창 내용을 복사하는 대신 이 파일을 보내도 됩니다.",
+   "reason": "TOC의 `SavedVariables: WowVisionDump`는 저장할 전역 변수 이름을 등록하며, 코드도 결과를 `WowVisionDump.minimapRaw`에 기록한다. 개발자 문서가 저장 파일을 `WowVision.lua`로 안내하고 애드온 폴더 이름도 WowVision임을 확인할 수 있으므로, `WowVisionDump.lua`로 고칠 근거보다 현재 번역을 유지할 근거가 강하다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/WowVision_Standard.toc:8",
+    "wowvision-ko/WowVision/WowVision_Camelot.toc:8",
+    "wowvision-ko/WowVision/core/minimap/module.lua:1640",
+    "wowvision-ko/WowVision/core/minimap/module.lua:1641",
+    "wowvision-ko/WowVision/docs/src/developer/fundamental-fixes.md:14",
+    "wowvision-ko/WowVision/docs/src/user/en/getting-started/manual-installation.md:60",
+    "wowvision-ko/WowVision/docs/src/user/en/world/minimap.md:164",
+    "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:165"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "world/minimap.md#gpt-context-0",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "번역은 원문(en/world/minimap.md:164)의 인라인 코드 경로 WowVision.lua와 괄호 (WowVisionDump, minimapRaw)를 그대로 옮겼다. 번역 지침상 인라인 코드는 바꿀 수 없다. 코드에서 toc(WowVision_Standard.toc:8)는 WowVisionDump를 SavedVariables 변수로 등록하고 module.lua:1641은 WowVisionDump.minimapRaw에 기록할 뿐이다. 변수 이름이 WowVisionDump라는 것이 파일 이름이 WowVisionDump.lua라는 근거는 되지 않는다(WoW는 저장 변수를 애드온 이름의 파일에 쓴다). 원문 managing.md:18의 WowVisionDump.lua 표기와 어긋나는 것은 원문 두 페이지 사이의 차이라서 번역으로 고칠 일이 아니고 upstream-report 대상이다. 현재 번역 유지.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/docs/src/user/en/world/minimap.md:164",
+    "wowvision-ko/WowVision/WowVision_Standard.toc:8",
+    "wowvision-ko/WowVision/core/minimap/module.lua:1641",
+    "wowvision-ko/WowVision/docs/src/user/en/getting-started/managing.md:18"
+   ]
+  }
+ ]
+}

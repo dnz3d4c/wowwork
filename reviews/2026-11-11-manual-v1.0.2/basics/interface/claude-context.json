@@ -1,0 +1,20 @@
+[
+ {
+  "id": "basics/interface.md",
+  "category": "context",
+  "severity": "minor",
+  "quote": "영문 글자 키로는 이름이 영문으로 시작하는 항목만 찾을 수 있습니다.",
+  "suggestion": "글자 하나로 건너뛸 때는 이름이 영문으로 시작하는 항목만 찾을 수 있습니다. 서로 다른 글자 두 개를 빠르게 입력해 필터링하면 이름 중간에 영문이 든 항목(예: \"기타 NPC\")도 남습니다.",
+  "problem": "원문 변경으로 두 글자 필터가 생겼는데, 한국어판에서 덧붙인 이 안내는 여전히 '영문으로 시작하는 항목만' 찾을 수 있다고 단정합니다. 필터는 이름 어디에든 그 글자가 들어 있는 항목을 남기므로 바로 위 필터 설명과 어긋나고, 독자가 필터로 찾을 수 있는 항목을 못 찾는다고 오해합니다.",
+  "evidence": "en_diff: \"below it are only the entries containing those letters anywhere in their name\". WowVision/core/graph/typeAhead.lua:3-8, 100-103 (typeAhead.contains가 label:find로 이름 어디서든 일치). koKR에 이름 중간에 영문이 든 값이 있음(예: L[\"Other NPCs\"] = \"기타 NPC\")."
+ },
+ {
+  "id": "basics/interface.md",
+  "category": "context",
+  "severity": "minor",
+  "quote": "단축키 화면에서는 글자로 동작 이름을 찾습니다. 다만 이름이 영문으로 시작하는 동작만 찾을 수 있습니다",
+  "suggestion": "단축키 화면에서는 글자로 동작 이름을 찾습니다. 다만 글자 하나로 건너뛸 때는 이름이 영문으로 시작하는 동작만 찾을 수 있습니다",
+  "problem": "새로 생긴 두 글자 필터는 이름 어디에든 그 글자가 들어 있는 항목을 남기므로, '영문으로 시작하는 동작만 찾을 수 있다'는 한국어판 추가 문장이 필터 설명과 어긋납니다. 제한을 글자 하나로 건너뛰기에만 걸어야 합니다.",
+  "evidence": "en_diff의 필터 항목 \"containing those letters anywhere in their name\". WowVision/core/graph/typeAhead.lua:100-103."
+ }
+]

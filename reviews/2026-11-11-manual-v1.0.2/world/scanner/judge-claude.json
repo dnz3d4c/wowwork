@@ -1,0 +1,29 @@
+{
+  "verdicts": [
+    {
+      "ref": "world/scanner.md#claude-style-4",
+      "uphold": true,
+      "final_ko": "이런 대원은 거리와 방향도 함께 나옵니다",
+      "reason": "'X는 Y가 들립니다'는 한국어에서 X를 듣는 사람(경험자)으로 읽는 구문이다('나는 소리가 들린다'). 그래서 '이런 대원은 거리와 방향도 들립니다'는 귀로 들으면 대원이 거리와 방향을 듣는다는 뜻으로도 갈린다. 번역자가 든 '코끼리는 코가 길다'는 경험자 구문이 아니어서 이 경우와 다르다. 다만 지적의 수정안 '대원에서는'은 바로 다음 문장 '이런 대원에서 Enter를'과 말머리가 겹친다는 번역자 지적이 맞다. 같은 문단 앞 문장이 '...길드가 나옵니다'를 쓰므로 서술어를 '나옵니다'로 바꾸면 주제어 '대원은'을 두고도 뜻이 갈리지 않고 반복도 생기지 않는다. 원문 'for them you also hear distance and direction'의 뜻은 유지된다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:67",
+        "wowvision-ko/WowVision/docs/src/user/en/world/scanner.md:66"
+      ]
+    },
+    {
+      "ref": "world/scanner.md#gpt-style-1",
+      "uphold": false,
+      "final_ko": "안에 아무것도 없는 항목은 \"비어 있음\"이라고 알리고 열리지 않습니다. 내 이름에서는 나를 대상으로 잡습니다.",
+      "reason": "이 문장은 Enter 행의 설명 칸 안에 있어서 키가 이미 정해져 있고, 같은 칸의 다른 절('하위 항목이 있는 항목에서는 ...', '추적 범주의 확인란에서는 ...')도 키를 반복하지 않는다. 원문 34행도 'On your own name: target yourself.'로 키를 반복하지 않는다. 같은 동작을 21행과 61행이 '나를 대상으로 잡습니다'로 쓰고 있어 이 칸만 바꾸면 파일 안의 표현이 갈린다. 용어집·결정 기록에 '대상으로 잡다'를 금하는 항목은 없다. 지적의 근거가 취향 수준이라 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:21",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:35",
+        "wowvision-ko/WowVision/docs/src/user/ko/world/scanner.md:61",
+        "wowvision-ko/WowVision/docs/src/user/en/world/scanner.md:34",
+        "wowwork/docs/glossary.tsv"
+      ]
+    }
+  ]
+}

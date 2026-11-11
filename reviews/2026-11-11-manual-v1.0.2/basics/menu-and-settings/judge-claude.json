@@ -1,0 +1,17 @@
+{
+  "verdicts": [
+    {
+      "ref": "basics/menu-and-settings.md#gpt-terminology-1",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "원문 'the action bars'는 WowVision 창 목록(메뉴, 스캐너, 길 안내 창, 대화) 속 창 이름이다. 게임에서 들리는 창 이름은 koKR windows.lua:6 L[\"Action Bar\"] = \"행동 단축바\"(bindings.lua:37 'Action Bars'도 같음)이다. translation-guide.md:41·decisions.tsv:4의 '단축바로 통일'은 예시(태세 단축바, 게임패드 단축바)대로 하위 단축바 이름에 대한 규칙이며 행동 단축바 창 이름 자체를 '단축바'로 줄이라는 결정이 아니다. 지적의 근거가 약해 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "wowvision-ko/vision-locale/koKR/windows.lua:6",
+        "wowvision-ko/vision-locale/koKR/bindings.lua:37",
+        "wowwork/docs/translation-guide.md:41",
+        "wowwork/docs/decisions.tsv:4",
+        "input"
+      ]
+    }
+  ]
+}
