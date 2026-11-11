@@ -1,0 +1,58 @@
+[
+ {
+  "batch": "reviews/2026-11-11-ui-0109-keys/batches/batch-01.json",
+  "id": "ui.lua::Audio Assist Your Debuffs",
+  "why": "판정 근거가 허용 자료가 아님 (claude)",
+  "evidence": {
+   "gpt": [
+    "input",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:24",
+    "wowvision-ko/vision-locale/koKR/ui.lua:268"
+   ],
+   "claude": [
+    "wowwork/cache/gs_enUS.csv:CAA_SAY_YOUR_DEBUFFS_LABEL",
+    "wowwork/cache/gs_koKR.csv:CAA_SAY_YOUR_DEBUFFS_LABEL",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:24",
+    "wowvision-ko/vision-locale/koKR/buffers.lua:40"
+   ]
+  }
+ },
+ {
+  "batch": "reviews/2026-11-11-ui-0109-keys/batches/batch-01.json",
+  "id": "ui.lua::Audio Assist Your Health",
+  "why": "판정 근거가 허용 자료가 아님 (claude)",
+  "evidence": {
+   "gpt": [
+    "input",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:25",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:26",
+    "wowvision-ko/vision-locale/koKR/ui.lua:269"
+   ],
+   "claude": [
+    "wowwork/cache/gs_enUS.csv:CAA_SAY_PLAYER_HEALTH_LABEL",
+    "wowwork/cache/gs_koKR.csv:CAA_SAY_PLAYER_HEALTH_LABEL",
+    "wowwork/cache/gs_koKR.csv:CAA_SAY_TARGET_HEALTH_LABEL",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:25"
+   ]
+  }
+ },
+ {
+  "batch": "reviews/2026-11-11-ui-0109-keys/batches/batch-01.json",
+  "id": "ui.lua::Audio Assist Your Health Style",
+  "why": "판정 근거가 허용 자료가 아님 (claude)",
+  "evidence": {
+   "gpt": [
+    "input",
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:104",
+    "wowvision-ko/vision-locale/koKR/ui.lua:271",
+    "wowvision-ko/vision-locale/koKR/ui.lua:272"
+   ],
+   "claude": [
+    "wowvision-ko/WowVision/core/ui modules/gameDefaults.lua:105",
+    "wowwork/cache/gs_enUS.csv:CAA_SAY_PLAYER_HEALTH_LABEL",
+    "wowwork/cache/gs_koKR.csv:CAA_SAY_PLAYER_HEALTH_LABEL",
+    "wowwork/cache/gs_koKR.csv:CAA_SAY_YOUR_DEBUFFS_FORMAT"
+   ]
+  }
+ }
+]

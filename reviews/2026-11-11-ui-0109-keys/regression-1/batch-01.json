@@ -1,0 +1,46 @@
+{
+ "items": [
+  {
+   "id": "ui.lua::Audio Assist You Are Targeted",
+   "file": "ui.lua",
+   "key": "Audio Assist You Are Targeted",
+   "en": "Audio Assist You Are Targeted",
+   "ko": "음성 지원 내가 대상으로 지정됨",
+   "code": [],
+   "game_term": "",
+   "related": [
+    {
+     "id": "ui.lua::Audio Assist",
+     "en": "Audio Assist",
+     "ko": "음성 지원"
+    },
+    {
+     "id": "ui.lua::Audio Assist Combat End",
+     "en": "Audio Assist Combat End",
+     "ko": "음성 지원 전투 종료"
+    },
+    {
+     "id": "ui.lua::Audio Assist Combat Start",
+     "en": "Audio Assist Combat Start",
+     "ko": "음성 지원 전투 시작"
+    },
+    {
+     "id": "ui.lua::Audio Assist Resource",
+     "en": "Audio Assist Resource",
+     "ko": "음성 지원 자원"
+    },
+    {
+     "id": "ui.lua::Audio Assist Target Health",
+     "en": "Audio Assist Target Health",
+     "ko": "음성 지원 대상 생명력"
+    },
+    {
+     "id": "ui.lua::Audio Assist Target Health Style",
+     "en": "Audio Assist Target Health Style",
+     "ko": "음성 지원 대상 생명력 형식"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}
