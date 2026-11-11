@@ -33,6 +33,8 @@
 | windows/auction-house.md (V1.0.2) | Retail "Vendor Buy"는 상인에게서 아이템을 본 뒤 나온다고 하지만, 수량 제한이 없고 추가 비용이 없는 아이템만 기록한다 | WowVision retail/auction/module.lua:160-168 |
 | world/quests.md (V1.0.2) | 주변 퀘스트 소리는 장소가 앞쪽에 있을 때만 들린다고 하지만, 거리와 정면에서 벗어난 각도를 합쳐 판단해 가까우면 옆쪽(10야드에서 100도)도 들린다 | WowVision core/quests/nearbyEngine.lua:32-46, nearbyEngineTests.lua:68-74 |
 | world/quests.md (V1.0.2) | 축제 퀘스트는 축제 기간에만 포함된다고 하지만, 축제 뒤에도 완료할 수 있는 퀘스트는 완료 가능 장소로 계속 남는다 | WowVision core/quests/nearbySounds.lua:215 |
+| information/buffers.md (V1.0.2) | 버퍼 설정 화면이 사용함, 버퍼, 항목 방향 반전 세 가지를 이 순서로 보여 준다고 하지만(244줄), 같은 문서 설정 표에 새로 생긴 Always Start at Top과 Sounds When Opening and Closing도 그 화면에 있다 | WowVision core/buffers/module.lua:20-38 |
+| getting-started/managing.md (V1.0.2) | 표(14줄)는 WowVisionPriceDB를 TBC, Retail, WoW: Forever용이라 하고 본문(18줄)은 "on TBC"라고만 해서 문서 안에서 어긋난다. 코드는 표와 같다 | WowVision WowVision_Standard.toc:8, WowVision_Camelot.toc:8 |
 
 ## 2. 번역할 수 없는 코드 문자열
 

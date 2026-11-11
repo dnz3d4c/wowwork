@@ -1,0 +1,11 @@
+[
+ {
+  "id": "world/targeting.md",
+  "category": "terminology",
+  "severity": "minor",
+  "quote": "새 대상이 나 또는 내 그룹과 전투 중이면 소리를 재생합니다. 내 그룹만 싸우고 있고 아직 내가 전투에 참여하지 않았을 때도 재생합니다.",
+  "suggestion": "새 대상이 나 또는 내 파티원이나 공격대원과 전투 중이면 소리를 재생합니다. 파티원이나 공격대원만 싸우고 있고 아직 내가 전투에 참여하지 않았을 때도 재생합니다.",
+  "problem": "같은 소리를 설명하는 다른 설명서 문구와 이 파일 앞부분은 \"your group\"을 \"파티원 또는 공격대원\"으로 옮겼는데, 이 행만 \"내 그룹\"으로 옮겼다. 설명서에서 \"그룹\"은 펼치고 접는 메뉴 그룹, 버퍼 그룹을 가리키는 말로 쓰여 들었을 때 헷갈릴 수 있다. 뜻은 통하므로 경미.",
+  "evidence": "원문 en_diff: \"in combat with you or your group, also when only your group is fighting it\". wowvision-ko/WowVision/docs/src/user/ko/basics/alerts.md:99 \"대상이 나 또는 내 파티원이나 공격대원과 전투 중이면 차임 소리를 재생\". 같은 파일 세부 사항 목록: \"나와 파티원 또는 공격대원, 그리고 그 소환수들의 위협 수준 목록\". ko/basics/interface.md:100 \"열고 닫는 그룹\", ko/basics/menu-and-settings.md:59 \"버퍼 그룹\". glossary.tsv·decisions.tsv에 group 항목 없음."
+ }
+]

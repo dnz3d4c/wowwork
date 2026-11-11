@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/menu-and-settings.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "WowVision 메뉴, 스캐너, 길 안내 창, 행동 단축바, 대화가 해당합니다.",
+   "suggestion": "WowVision 메뉴, 스캐너, 길 안내 창, 행동 단축바 창, 대화 창이 해당합니다.",
+   "problem": "원문은 WowVision 자체 창을 나열하는데, 같은 목록 안에서 길 안내만 '창'을 붙이고 행동 단축바와 대화는 붙이지 않았다. '행동 단축바', '대화'만으로는 게임의 단축바나 대화 기능 자체로 들릴 수 있다.",
+   "evidence": "원문 'the navigation window, the action bars and chat'. ko/basics/interface.md:14가 같은 창들을 '대화 창(Shift+F3), 길 안내 창(F10), 스캐너(F9), 행동 단축바 창(Shift+F4)'으로 적는다."
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/navigation.md",
+   "category": "accuracy",
+   "severity": "minor",
+   "quote": "이 키들로 이미 안내받은 지점도 다른 방법으로 목적지를 고를 때까지 건너뜁니다. 도착하기 전에 떠난 지점도 마찬가지입니다.",
+   "suggestion": "이 키들로 이미 안내받은 지점도, 도착하기 전에 떠났더라도, 다른 방법으로 목적지를 고를 때까지 건너뜁니다.",
+   "problem": "원문은 'even when you left one before reaching it'으로 '키로 안내받은 지점' 안에서의 양보 조건인데, 번역은 별도 문장으로 떼어 '도착하기 전에 떠난 지점' 일반이 모두 건너뛰어지는 것처럼 들릴 여지가 있다. 앞 문장과 이어 읽으면 뜻은 통하므로 경미.",
+   "evidence": "en_diff: \"So are the spots the keys already led you to, even when you left one before reaching it, until you pick a destination another way.\""
+  }
+ ]
+}
