@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "world/navigation.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "두 체계 모두 같은 창, 같은 키, 같은 비컨을 사용하므로 이 페이지는 두 체계에 모두 해당합니다. 두 체계가 다른 곳에서는 그 차이를 밝힙니다.",
+   "suggestion": "두 체계 모두 같은 창, 같은 키, 같은 비컨을 사용하므로 이 페이지는 두 체계에 모두 해당합니다. 두 체계가 서로 다르게 동작하는 부분에서는 그 차이를 밝힙니다.",
+   "problem": "들은 대로 이해한 뜻: 두 체계가 '다른 장소(other places)'에 있을 때 차이를 밝힌다는 말로도 들린다. '다른 곳'이 '서로 다른(differ) 부분'인지 '그 밖의 장소'인지 한 번 들어서 갈린다. 뜻은 원문(says so where they differ)과 맞으므로 경미.",
+   "evidence": "유형 ①: '다른'이 '상이한'과 '그 밖의' 두 뜻으로 읽힌다. 원문 'and says so where they differ'."
+  }
+ ]
+}

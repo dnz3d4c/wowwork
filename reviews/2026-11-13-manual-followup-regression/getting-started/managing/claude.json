@@ -1,0 +1,20 @@
+[
+  {
+    "id": "getting-started/managing.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "단축키의 범위는 WowVision 메뉴의 단축키 버튼에 따로 있는 범위 항목에서 고릅니다.",
+    "suggestion": "단축키의 범위는 인터페이스 메뉴의 단축키 버튼에 따로 있는 범위 항목에서 고릅니다.",
+    "problem": "단축키 버튼의 위치를 다른 설명서와 다르게 적었습니다. 단축키 버튼은 WowVision 메뉴 바로 아래가 아니라 인터페이스 모듈 안에 있어서, 'WowVision 메뉴의 단축키 버튼'만 듣고는 어디로 가야 할지 찾기 어렵습니다.",
+    "evidence": "원문 'have their own Scope entry on the Bindings button'. 다른 파일 표기: wowvision-ko/WowVision/docs/src/user/ko/basics/menu-and-settings.md:178 '인터페이스 메뉴의 단축키 버튼', basics/keybindings.md:111 '인터페이스 메뉴의 단축키로 가서'. 코드: WowVision/core/ui modules/graphBindings.lua:160-163 getGraphMenuItems가 UI 모듈에 단축키 버튼을 붙임, koKR/ui.lua:5 L[\"UI\"] = \"인터페이스\"."
+  },
+  {
+    "id": "getting-started/managing.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "게임 설정에서 행동 단축바 잠그기, 시점 전환 방식, 대화 메시지 사이 소리를 다시 변경하고, WowVision 설정으로 마우스 이동을 켜거나 껐다면 마우스 이동도 다시 변경합니다.",
+    "suggestion": "게임 설정에서 이 설정들을 다시 변경합니다.",
+    "problem": "들은 대로 이해한 뜻: 앞의 두 문장에서 나열한 설정 네 가지와 조건을 그대로 한 번 더 읽어 줍니다. 뜻은 맞지만 같은 목록과 조건을 연달아 두 번 들어야 해서 문장이 길고 어색합니다.",
+    "evidence": "바로 앞 두 문장이 같은 세 가지 설정과 '마우스 이동을 켜거나 껐다면' 조건을 이미 말함. 원문은 'Change them back in the game options if you want them as before'로 대명사 하나로 받음. 회귀 확인 1번(수정 때문에 생긴 결함) 관점의 경미 사항."
+  }
+]

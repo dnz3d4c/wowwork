@@ -1,0 +1,29 @@
+[
+  {
+    "id": "windows/bags-and-bank.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "은행 가방 보관함 버튼이 있는 줄. 끌기 키로 집을 수 있습니다.",
+    "suggestion": "은행 가방 보관함 버튼이 있는 줄. 이 버튼은 끌기 키로 집을 수 있습니다.",
+    "problem": "들은 대로 이해한 뜻: 줄 안의 무언가를 끌기 키로 집을 수 있다. 무엇을 집는지(버튼인지 아이템인지) 목적어가 빠져 있다.",
+    "evidence": "유형 ③ 목적어 누락. 원문 'a row with the bank bag slot buttons, which can be picked up with the Drag key' — 집는 대상은 버튼이다."
+  },
+  {
+    "id": "windows/bags-and-bank.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "커서에 든 아이템은 다른 창에서도 사용합니다.",
+    "suggestion": "커서에 든 아이템은 다른 창에서도 쓸 수 있습니다.",
+    "problem": "들은 대로 이해한 뜻: 아이템이 다른 창에서도 무언가를 사용한다. 누가 사용하는지 주어가 없어 아이템이 주어처럼 들린다.",
+    "evidence": "유형 ③ 주어 누락. 원문 'Items on the cursor are also used with other windows'는 피동이며, 뒤 문장(거래 칸·우편 첨부 칸에 놓기)이 독자가 할 수 있는 일이므로 가능형이 자연스럽다."
+  },
+  {
+    "id": "windows/bags-and-bank.md",
+    "category": "context",
+    "severity": "minor",
+    "quote": "[창 사이 이동](../basics/interface.md)을 보십시오.",
+    "suggestion": "[인터페이스 사용하기의 한 번에 여러 창](../basics/interface.md#한-번에-여러-창)을 보십시오.",
+    "problem": "링크 글자 '창 사이 이동'이 대상 페이지 제목 '인터페이스 사용하기'와 다르다. 원문 링크 글자 'Navigating windows'도 대상 제목 'Using the Interface'와 달라 원본의 문제를 옮긴 것이므로 경미로 둔다.",
+    "evidence": "ko/basics/interface.md 1행 '# 인터페이스 사용하기', 209행 '## 한 번에 여러 창'. 다른 설명서는 모두 이 페이지를 '[인터페이스 사용하기]'로 링크한다(ko/basics/index.md:6, ko/basics/keybindings.md:107, ko/getting-started/quick-start.md:41)."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reference/keybindings.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "Sku를 불러온 상태에서는 WowVision은 이 단축키를 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+    "suggestion": "Sku를 불러온 상태에서는 WowVision이 이 단축키를 아예 활성화하지 않고 키를 Sku에 맡깁니다.",
+    "problem": "들은 대로 이해한 뜻: Sku가 켜져 있으면 WowVision이 이 단축키를 켜지 않고 Sku에 넘긴다. 뜻은 통하지만 '상태에서는'과 'WowVision은'으로 보조사 '-는'이 연달아 나와 주어가 흐려진다.",
+    "evidence": "어색한 조사. 원문 'While Sku is loaded, WowVision does not activate these bindings at all'에서 WowVision이 동작 주체이므로 주격 '이'가 자연스럽다."
+  },
+  {
+    "id": "reference/keybindings.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "(WoW: Forever) 내가 막혀 있는 지점을 피하는 새 경로를 짭니다",
+    "suggestion": "(WoW: Forever) 지금 걸려서 움직이지 못하는 지점을 피하는 새 경로를 짭니다",
+    "problem": "들은 대로 이해한 뜻: 막힌 지점을 피해 새 경로를 만든다. '내가 막혀 있는'은 길이 막혔다는 뜻인지 캐릭터가 끼어 못 움직인다는 뜻인지 한 번에 갈리지 않고, 설명서 본문에서 '내가'라는 1인칭도 어색하다.",
+    "evidence": "유형 ① 경미. 원문 'avoids the spot where you are stuck'. 동작 이름 '막힌 지점을 피하는 새 WowNav 경로'(terms)와는 맞으므로 설명 문장만 다듬는 경미 지적."
+  }
+]

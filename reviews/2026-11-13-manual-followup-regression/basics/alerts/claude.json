@@ -1,0 +1,20 @@
+[
+  {
+    "id": "basics/alerts.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "인스턴스 안에서는 게임이 바라보는 방향을 알려 주지 않으므로 나침반 방향 읽기가 들리지 않습니다.",
+    "suggestion": "인스턴스 안에서는 게임이 캐릭터가 바라보는 방향을 알려 주지 않으므로 나침반 방향 읽기가 들리지 않습니다.",
+    "problem": "들은 대로 이해한 뜻: 인스턴스 안에서는 게임이 (무언가가) 바라보는 방향을 알려 주지 않는다. '게임이 바라보는 방향'으로 이어 들으면 게임이 바라보는 것처럼 들리고, 누가 바라보는지가 빠져 있다. 뜻은 짐작되므로 경미.",
+    "evidence": "유형 ③(바라보는 주체 누락). 원문 'the game does not report which way you face'의 you가 한국어에서 빠졌다."
+  },
+  {
+    "id": "basics/alerts.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "떨어집니다. 낙하 소리가 시작될 때 안내를 한 번 말합니다.",
+    "suggestion": "떨어집니다. 낙하 소리가 시작될 때 낙하 안내를 한 번 말합니다.",
+    "problem": "들은 대로 이해한 뜻: 떨어지면 소리가 시작될 때 어떤 안내를 한 번 말한다. '안내'가 같은 행 출력 칸의 '낙하 안내' 출력을 가리키는데, 표를 행 순서로 들으면 출력 칸보다 먼저 나와 무엇인지 바로 알기 어렵다.",
+    "evidence": "유형 ②(가리키는 대상이 뒤 칸에 있음). 원문 'The announcement is said once when the falling sounds start'의 announcement는 출력 Falling Announcement(낙하 안내)."
+  }
+]

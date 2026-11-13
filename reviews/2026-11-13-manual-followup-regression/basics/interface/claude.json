@@ -1,0 +1,13 @@
+{
+ "findings": [
+  {
+   "id": "basics/interface.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "자동 알림, 그리고 단축키를 눌러 듣는 안내(버퍼, 대상 알림 등)는 영향을 받지 않고 전투 중에도 계속 작동합니다.",
+   "suggestion": "알림, 그리고 단축키를 눌러 듣는 안내(버퍼, 대상 알림 등)는 영향을 받지 않고 전투 중에도 계속 작동합니다.",
+   "problem": "원문 Alerts는 WowVision의 알림 기능(모듈)을 가리키는데, 다른 설명서가 모두 \"알림\"으로 쓰는 것과 달리 이 파일에서만 \"자동 알림\"으로 옮겼다. 뜻은 통하지만 기능 이름이 파일마다 다르게 들린다.",
+   "evidence": "원문: \"Alerts and your keybound announcements ... are not affected\". 다른 설명서 표기: ko/basics/menu-and-settings.md:4 \"음성, 알림, 길 안내, 버퍼\", ko/getting-started/sku.md:70 \"음성과 알림\", ko/world/combat.md:50 \"## 전투 알림\". \"자동 알림\"은 ko 설명서 전체에서 이 줄 하나뿐(Grep)."
+  }
+ ]
+}
