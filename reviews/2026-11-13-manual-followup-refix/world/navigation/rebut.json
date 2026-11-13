@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "world/navigation.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "원문 'Afterwards, Ctrl+Shift+N goes to that start again.'의 that start는 바로 앞 문장의 'the start of the previous route'다. 앞 문단에 새 경로의 시작과 이전 경로의 시작이 함께 나와 '그 시작 지점'이 모호하므로 '역방향 전환 뒤에는 Ctrl+Shift+N을 누르면 이전 경로의 시작 지점으로 다시 갑니다.'로 지시어를 명사로 되돌렸다. 기계 검사 통과."
+  }
+]

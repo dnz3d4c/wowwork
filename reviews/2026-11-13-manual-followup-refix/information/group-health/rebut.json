@@ -1,0 +1,8 @@
+{"responses": [
+ {"ref": "information/group-health.md#claude-regression-0", "action": "applied", "reason": "설정 이름을 koKR/groupHealth.lua:19 실제 값 \"생명력이 이 값 미만일 때 반복 (퍼센트)\"로 되돌렸다. gpt-regression-0과 함께 반영."},
+ {"ref": "information/group-health.md#claude-regression-1", "action": "applied", "reason": "표 머리를 실제 설정 이름으로 변경. gpt-regression-1과 함께 \"생명력이 이 값 미만일 때 반복 (퍼센트)\" / \"반복 간격 (초, 0은 끔)\"으로 맞췄다."},
+ {"ref": "information/group-health.md#gpt-regression-0", "action": "applied", "reason": "41행을 제안대로 실제 화면 문구 두 개(groupHealth.lua:19-20)를 따옴표로 인용해 다시 썼다."},
+ {"ref": "information/group-health.md#gpt-regression-1", "action": "applied", "reason": "표 머리와 54행 후속 설명 모두 실제 설정 이름으로 변경, 86행 설정 표와 표기를 일치시켰다."},
+ {"ref": "information/group-health.md#gpt-regression-2", "action": "applied", "reason": "\"구성원 한 명\"은 전체 중 한 명으로 읽힐 수 있어 원문 per member per interval에 맞게 \"구성원마다 반복 간격당 받을 수 있는 차례는 최대 한 번\"으로 고쳤다."},
+ {"ref": "information/group-health.md#gpt-regression-3", "action": "applied", "reason": "원문 98행 set Repeat Every to 0은 설정을 직접 지칭하므로 실제 화면 문구 \"반복 간격 (초, 0은 끔)\"을 따옴표로 인용했다(decisions.tsv 2026-11-13 따옴표 결정)."}
+]}

@@ -1,0 +1,41 @@
+{
+ "items": [
+  {
+   "ref": "reference/glossary.md#gpt-regression-0",
+   "provider": "gpt",
+   "quote": "상하 각도 고정 — 수영하거나 날 때 캐릭터를 수평으로 유지해, 방향을 돌려도 천천히 아래로 내려가지 않게 합니다."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "reference/glossary.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "상하 각도 고정 — 수영하거나 날 때 캐릭터를 수평으로 유지해, 방향을 돌려도 천천히 아래로 내려가지 않게 합니다.",
+   "reason": "현재 번역은 영어 원문의 사실 범위를 그대로 보존했다. 실제 동작과 원문이 다를 때는 한국어판만 고치지 않고 원문대로 번역하라는 사용자 결정이 있으므로 번역자의 반박이 맞다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/docs/src/user/en/reference/glossary.md:45",
+    "wowvision-ko/WowVision/docs/src/user/ko/reference/glossary.md:46",
+    "wowvision-ko/WowVision/core/navigation/pitchLock.lua:42",
+    "wowvision-ko/WowVision/core/navigation/pitchLock.lua:55",
+    "wowvision-ko/WowVision/retail/pitchLock.lua:3",
+    "wowwork/docs/decisions.tsv:13"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "reference/glossary.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "상하 각도 고정 — 수영하거나 날 때 캐릭터를 수평으로 유지해, 방향을 돌려도 천천히 아래로 내려가지 않게 합니다.",
+   "reason": "코드상 지적은 사실이다(core/navigation/pitchLock.lua:41-55의 lockWhileFlying, retail/pitchLock.lua:1-3에서 false). 그러나 원문 en/reference/glossary.md:45가 'while swimming or flying'으로 같은 내용을 말하고 있어 번역은 원문에 충실하다. decisions.tsv:13(2026-11-05) 결정은 원문이 실제 동작과 다르면 원문대로 옮기고 차이는 upstream에 보고하도록 정했고, 예외는 한국어 사용자에게만 생기는 차이뿐인데 이 건은 영어 사용자에게도 같은 차이라 해당하지 않는다. decisions.tsv:41(2026-11-13)도 사실 보존을 요구하며 원문에 없는 버전 조건 추가를 허용하지 않는다. 현재 번역 유지.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/docs/src/user/en/reference/glossary.md:45",
+    "wowvision-ko/WowVision/core/navigation/pitchLock.lua:41-55",
+    "wowvision-ko/WowVision/retail/pitchLock.lua:1-3",
+    "wowwork/docs/decisions.tsv:13",
+    "wowwork/docs/decisions.tsv:41"
+   ]
+  }
+ ]
+}

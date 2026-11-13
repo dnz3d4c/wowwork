@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "windows/social.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "독자가 '제공합니다'를 전리품·던전 난이도를 실제로 준다는 뜻으로 이해했는데, 원문(With yourself targeted it offers Reset All Instances, loot and dungeon difficulty)은 메뉴 항목을 말한다. 전달 실패라 '메뉴에 모든 인스턴스 초기화, 전리품, 던전 난이도 항목이 나옵니다'로 고쳤다. 원문에 없는 '설정'·'선택'은 더하지 않고 '메뉴에 ... 항목'으로 주어와 성격만 밝혔다. manual check 통과."
+  }
+]

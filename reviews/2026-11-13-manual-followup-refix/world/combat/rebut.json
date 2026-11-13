@@ -1,0 +1,17 @@
+[
+  {
+    "ref": "world/combat.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "원문 'stay as they are'는 전투 중에도 WowVision이 그 키를 계속 처리한다는 뜻인데, '그대로 남습니다'는 누가 처리하는지 알 수 없었다. 또 'cannot do everything'을 옮긴 '모든 기능을 사용할 수 없습니다'는 '아무 기능도 못 쓴다'로도 들린다. 그래서 'WowVision이 그대로 처리합니다. 다만 그중 일부는 전투 중에 기능이 제한됩니다.'로 고쳤다. 원문의 '일부'와 '전부는 아님'은 그대로 살렸다."
+  },
+  {
+    "ref": "world/combat.md#gpt-regression-1",
+    "action": "applied",
+    "reason": "원문 'they can say your target's health'의 can이 번역에서 빠져 있었다. targeting.md 번역과 같이 '말해 줄 수 있습니다'로 고쳐 가능의 뜻을 되살렸다."
+  },
+  {
+    "ref": "world/combat.md#gpt-regression-2",
+    "action": "applied",
+    "reason": "원문은 'nothing by itself; the number or the end of combat says the rest'다. 기존 번역은 '나머지'가 무엇을 가리키는지 분명하지 않았다. 그래서 '죽은 것 자체는 따로 알리지 않습니다. 그 뒤의 상황은 적 수 알림이나 전투 종료 알림으로 알 수 있습니다.'로 고쳤다. 제안문의 '적 수가 변경되거나'는 쓰지 않았다. 군중 제어에 걸린 적은 이미 숫자에서 빠져 있어서, 그 적이 죽어도 적 수가 반드시 변경되지는 않기 때문이다."
+  }
+]
