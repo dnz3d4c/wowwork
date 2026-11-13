@@ -13,7 +13,8 @@ const W = 'C:/project/games/wowwork'
 const P = `${W}/tools/review/prompts`
 const EN = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/en'
 const KO = 'C:/project/games/wowvision-ko/WowVision/docs/src/user/ko'
-const LENSES = ['accuracy', 'terminology', 'style', 'context']
+// args.lenses: 일부 관점만 다시 평가할 때(2026-11-13 독자 관점 소급은 ['style']만). 없으면 전부.
+const LENSES = args.lenses || ['accuracy', 'terminology', 'style', 'context']
 const OUT = args.outDir
 // 번역한 원문 커밋(WowVision). 파일 첫 줄 source 주석에 적는다. 2026-11-08까지 프롬프트에 397ffc3이 박혀 있어 V1.0.1 재번역에 옛 커밋이 기록될 뻔했다.
 const SOURCE = args.source
