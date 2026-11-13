@@ -1,0 +1,18 @@
+[
+ {"ref": "basics/speech.md#claude-style-0", "action": "applied", "reason": "consensus. 원문 'because a screen reader would cut them off at every key press'. 끊는 주체(스크린리더)와 대상(걷기 안내)을 밝혀 '음성 종류로 스크린리더 음성을 쓰면 키를 누를 때마다 스크린리더가 걷기 안내를 끊기 때문입니다.'로 고침."},
+ {"ref": "basics/speech.md#claude-style-1", "action": "applied", "reason": "consensus. 지시어 '거기서·그 음성·그 알림'을 명사로 되돌림: '이 음성 설정은 다른 음성을 고르기 전까지 음성 종류를 그대로 따르며, 음성 종류에서 고른 음성을 값으로 보여 줍니다. 여기서 다른 음성을 고르면 해당 알림은 항상 새로 고른 음성을 사용합니다.' gpt-style-2와 함께 반영."},
+ {"ref": "basics/speech.md#claude-style-2", "action": "applied", "reason": "원문 'waits a moment after every interruption', 'first words after an interruption get swallowed'. interruption은 중간에 끊기는 것이 맞으므로 제안의 '한 줄을 다 말한 뒤'는 쓰지 않고, '음성이 중간에 끊길 때마다', '다음 줄의 첫 단어들이 들리지 않으면'으로 '묻히다'의 모호함만 없앰."},
+ {"ref": "basics/speech.md#claude-style-3", "action": "applied", "reason": "원문 'WowVision then talks to the game directly'. 대기열 설정을 끈 결과이므로 '끄면 WowVision이 대기열을 거치지 않고 게임 TTS에 바로 말을 보냅니다.'로 실제 동작을 드러냄."},
+ {"ref": "basics/speech.md#claude-style-4", "action": "applied", "reason": "원문 'the first time each character logs in with the addon'. 'WowVision을 켠 채 각 캐릭터로 처음 접속하면 WowVision이 이 소리를 꺼 둡니다.'로 지시어와 주어 혼동 해소."},
+ {"ref": "basics/speech.md#claude-style-5", "action": "applied", "reason": "원문 'Every navigation key ... stops what is being spoken before it reads the new control'. '모든(every)'을 '어느 것을 누르든'으로 살리고 동작 주체를 WowVision으로 밝힘: '탐색 키(...)는 어느 것을 누르든 WowVision이 하던 말을 먼저 멈추고 새 컨트롤을 읽으므로'."},
+ {"ref": "basics/speech.md#claude-style-6", "action": "applied", "reason": "consensus. 원문 'Retail and WoW: Forever hand the text over untouched'. untouched는 빗금 공백에 한정되지 않으므로 'Retail과 WoW: Forever에서는 WowVision이 말할 글자를 변경하지 않고 그대로 게임 TTS에 전달합니다.'로 씀. gpt-style-0과 함께 반영."},
+ {"ref": "basics/speech.md#claude-style-7", "action": "applied", "reason": "원문 'as the Target Change alert does'는 예시이므로 '대상 변경 알림이 그 예입니다.'로 고침."},
+ {"ref": "basics/speech.md#claude-style-8", "action": "applied", "reason": "consensus. 원문 'If your TTS voice hands the text to a screen reader, such as NVDA through the SAPI2SR voice'. '음성 종류로 고른 TTS 음성이 텍스트를 스크린리더에 전달해 읽게 하는 경우에도(SAPI2SR 음성으로 NVDA가 읽는 경우 등),'로 사용자 설정 상황과 예시를 분리. gpt-style-4와 함께 반영."},
+ {"ref": "basics/speech.md#claude-style-9", "action": "applied", "reason": "원문 'You normally hear it as a chat message.' 주어를 채워 '이 출력은 보통 대화 메시지처럼 음성으로 들립니다.'로 고침."},
+ {"ref": "basics/speech.md#claude-style-10", "action": "dispute", "reason": "'보조 키'는 docs/glossary.tsv 39행에서 modifier의 확정 용어로 정했다(2026-11-13). 용어집이 정한 표현이라 반박 사유에 해당. 문장 주어는 앞 문장의 'Ctrl만 누르면 음성이 끊깁니다'가 이어져 문맥상 분명하므로 그대로 둠."},
+ {"ref": "basics/speech.md#gpt-style-0", "action": "applied", "reason": "consensus. claude-style-6과 같은 곳, 함께 반영."},
+ {"ref": "basics/speech.md#gpt-style-1", "action": "applied", "reason": "원문 'Voice 2 only'는 명사구라 표 칸을 명사구로 두되 '2만'이 숫자로 들리지 않게 '음성 2번만.'으로 고침."},
+ {"ref": "basics/speech.md#gpt-style-2", "action": "applied", "reason": "consensus. claude-style-1과 같은 곳, 함께 반영."},
+ {"ref": "basics/speech.md#gpt-style-3", "action": "applied", "reason": "consensus. claude-style-0과 같은 곳, 함께 반영('이 안내'를 '걷기 안내'로 되돌림)."},
+ {"ref": "basics/speech.md#gpt-style-4", "action": "applied", "reason": "consensus. claude-style-8과 같은 곳, '글자를 넘기다'를 '텍스트를 전달하다'로 함께 반영."}
+]

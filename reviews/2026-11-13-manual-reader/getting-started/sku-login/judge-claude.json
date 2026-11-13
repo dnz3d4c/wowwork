@@ -1,0 +1,16 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/sku-login.md#claude-style-22",
+      "uphold": false,
+      "final_ko": "",
+      "reason": "'상급자'는 화면 문구다. koKR navigation.lua:197 L[\"trainer\"]=\"상급자\", quests.lua:39 L[\"Trainers\"]=\"상급자\"이고, 게임 공식 문자열 TUTORIAL14(gs_enUS class trainer, trainers ↔ gs_koKR 직업 상급자)도 같은 말이다. judge.md의 style 반박 인정 사유(화면 문구 koKR 인용)에 해당하므로 현재 번역을 유지한다. 지적의 수정안도 '확실하지 않음'으로 대안이 없다.",
+      "evidence_sources": [
+        "wowvision-ko/vision-locale/koKR/navigation.lua:197",
+        "wowvision-ko/vision-locale/koKR/quests.lua:39",
+        "wowwork/cache/gs_enUS.csv:851",
+        "wowwork/cache/gs_koKR.csv:852"
+      ]
+    }
+  ]
+}

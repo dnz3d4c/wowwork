@@ -1,0 +1,175 @@
+{
+ "findings": [
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "WowVision Updater를 실행해 현재 설정으로 업데이트를 고르거나",
+   "suggestion": "WowVision Updater를 실행해 지금 설치된 구성 그대로 업데이트하거나 (원문을 모르므로 '현재 설정'이 설치 프로그램의 어떤 선택지를 가리키는지 확인 필요)",
+   "problem": "들은 대로 이해한 뜻: 업데이터에서 '현재 설정으로'라는 무언가를 골라 업데이트한다는 것 같은데, 무엇을 고르는지 알 수 없다. '현재 설정으로 업데이트를 고른다'는 선택지 이름인지 설명인지 구분되지 않는다.",
+   "evidence": "유형 ①. 독자가 업데이터 화면에서 무엇을 눌러야 하는지 한 번 들어서 알 수 없다. 화면 문구라면 따옴표나 '선택지' 같은 표지가 필요하다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "그 알림에서 다른 목소리를 고르기 전까지는 음성 종류를 따릅니다.",
+   "suggestion": "그 알림에서 다른 목소리를 고르기 전까지는 음성 모듈의 음성 종류 설정과 같은 목소리를 씁니다.",
+   "problem": "들은 대로 이해한 뜻: 알림이 '음성 종류'라는 무언가를 따른다. 주어(알림의 목소리)가 빠졌고, '음성 종류'가 설정 이름이라는 표지가 없어 일반 명사로 들린다.",
+   "evidence": "유형 ③. 주어가 없고 '음성 종류를 따른다'가 무엇이 무엇을 따르는지 비어 있다. 설정 이름은 어느 모듈의 설정인지 밝혀야 들어서 구분된다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "인터페이스, 단축키로 들어가 그 단축키가 무엇으로 설정되어 있는지 봅니다.",
+   "suggestion": "인터페이스, 단축키로 들어가 작동하지 않는 기능에 어떤 키가 지정되어 있는지 봅니다.",
+   "problem": "들은 대로 이해한 뜻: '그 단축키'가 앞 문장의 '게임 단축키'인지, 작동하지 않는 WowVision 단축키인지 알 수 없다.",
+   "evidence": "유형 ②. 지시어 '그'의 대상이 바로 앞 문장에 하나로 정해지지 않아 앞으로 돌아가도 찾기 어렵다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "major",
+   "quote": "전투 중에는 덮어쓰기 단축키를 변경할 수 없으므로, WowVision은 전투가 시작되면 모든 창 키를 게임의 원래 기능으로 되돌리고 전투가 끝나면 다시 처리합니다.",
+   "suggestion": "게임은 전투 중에 애드온이 단축키를 바꾸지 못하게 하므로, WowVision은 전투가 시작되면 모든 창 키를 게임의 원래 기능으로 되돌리고 전투가 끝나면 다시 창 키를 맡습니다. (원문을 모르므로 확실하지 않음)",
+   "problem": "들은 대로 이해한 뜻: 전투 중에는 무언가를 바꿀 수 없어서 창 키가 게임 기능으로 돌아간다. '덮어쓰기 단축키'가 무엇인지 설명이 없고, 누가 변경할 수 없는지 주어가 없으며, '다시 처리합니다'의 목적어가 빠졌다.",
+   "evidence": "유형 ①과 ③. '덮어쓰기 단축키'는 한국어 설명서에서 쓰지 않는 말이고, '다시 처리합니다'가 무엇을 처리하는지 비어 있다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "2. 열린 창이 없습니다. 창 키는 열린 창이 있어야 합니다.",
+   "suggestion": "2. 열린 창이 없습니다. 창 키는 열린 창이 있어야 작동합니다.",
+   "problem": "들은 대로 이해한 뜻: 창 키에 열린 창이 필요하다. '있어야 합니다'로 끝나 무엇을 위해 필요한지(작동) 빠졌다.",
+   "evidence": "유형 ③. 서술어가 잘려 뜻이 비어 있다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "키에서 손을 뗀 입력을 게임이 놓치지 않게 하려는 것입니다.",
+   "suggestion": "그래야 게임이 키를 뗀 것을 놓치지 않습니다.",
+   "problem": "들은 대로 이해한 뜻: 키를 뗀 것을 게임이 알아채게 하려는 것. '키에서 손을 뗀 입력'은 어색한 명사구라 한 번에 들어오지 않는다. 같은 표현이 '그 키에서 손을 뗀 입력을 게임이 놓쳤다는 뜻'에도 있다.",
+   "evidence": "유형 ⑤. '키를 뗀 입력(key-up)'을 직역한 듯한 표현으로, 한국어 설명서는 '키를 뗀 것', '키를 떼는 동작'이라고 쓴다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "다른 애드온이나 게임이 차지한 키는 확인하지 않으므로 다른 키를 시도합니다.",
+   "suggestion": "다른 애드온이나 게임이 쓰는 키와의 충돌은 WowVision이 확인하지 않으므로, 의심되면 다른 키를 지정해 봅니다.",
+   "problem": "들은 대로 이해한 뜻: 누군가 다른 애드온의 키를 확인하지 않는다. '확인하지 않으므로'의 주어(WowVision)가 빠져 독자가 확인하지 말라는 뜻으로도 들린다.",
+   "evidence": "유형 ③. 주어가 빠져 행위자가 독자인지 프로그램인지 갈린다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "게임 자체 프레임으로 만든 창(상인, 가방, 우편함)에서는 Escape를 게임에 맡기고 게임이 자기 프레임을 닫습니다.",
+   "suggestion": "게임 자체 프레임으로 만든 창(상인, 가방, 우편함)에서는 WowVision이 Escape를 게임에 넘기고, 게임이 그 프레임을 닫습니다.",
+   "problem": "들은 대로 이해한 뜻: 이런 창에서는 Escape를 게임이 처리한다. '맡기고'의 주어가 없어 독자가 맡기는 것처럼 들린다.",
+   "evidence": "유형 ③. 앞 절의 주어가 빠져 뒤 절의 주어 '게임이'와 엇갈린다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "/wv speech 1 9 100 줄을 담은 매크로를 만들고 로그인하거나 /reload한 뒤에 누릅니다.",
+   "suggestion": "/wv speech 1 9 100 줄을 담은 매크로를 만들어 두고, 로그인하거나 /reload한 뒤에 그 매크로를 누릅니다.",
+   "problem": "들은 대로 이해한 뜻: 매크로를 만들고, 로그인 뒤에 무언가를 누른다. '누릅니다'의 목적어가 빠져 무엇을 누르는지 들어서 바로 이어지지 않는다.",
+   "evidence": "유형 ③. 타동사 '누르다'의 목적어가 없다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Sku에 맡긴 기능의 WowVision 설정과 단축키는 지워지지 않으며, Sku를 끄면 바로 돌아옵니다.",
+   "suggestion": "Sku에 맡긴 기능의 WowVision 설정과 단축키는 지워지지 않으며, Sku를 끄면 바로 다시 작동합니다.",
+   "problem": "들은 대로 이해한 뜻: 지워지지 않은 설정이 '돌아온다'. 사라지지 않았는데 돌아온다고 해서 앞 절과 맞지 않게 들린다.",
+   "evidence": "유형 ⑤. 실제 뜻은 기능이 다시 작동한다는 것인데 '돌아온다'는 사라졌던 것에 쓰는 동사다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "Sku와 그 오디오, 비컨 보조 애드온을 끄고 인터페이스를 다시 불러옵니다.",
+   "suggestion": "Sku와, Sku의 오디오 보조 애드온과 비컨 보조 애드온을 끄고 인터페이스를 다시 불러옵니다.",
+   "problem": "들은 대로 이해한 뜻: Sku, 그리고 무언가의 오디오, 그리고 비컨 보조 애드온을 끈다. '그 오디오'가 무엇인지, '보조 애드온'이 어디까지 걸리는지 들어서 갈린다.",
+   "evidence": "유형 ②. 지시어 '그'와 쉼표 나열 때문에 끄는 대상이 몇 개인지 알 수 없다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "그 애드온이 오류 처리기를 넘겨받아 자체 목록에 오류를 보관합니다. /wv errors는 그 목록을 먼저 읽습니다.",
+   "suggestion": "그 애드온이 오류 처리기를 넘겨받아 자체 목록에 오류를 보관합니다. 이때는 /wv errors가 그 애드온의 목록을 먼저 읽으므로, BugSack 목록을 확인하거나 /wv errors all을 입력합니다. (원문을 모르므로 독자 행동은 확실하지 않음)",
+   "problem": "들은 대로 이해한 뜻: 다른 애드온이 오류를 가져가고 /wv errors가 그걸 먼저 읽는다. 증상 항목인데 독자가 무엇을 해야 하는지 나오지 않는다.",
+   "evidence": "유형 ①. 다른 항목은 모두 독자 행동으로 끝나는데 이 항목만 설명으로 끝나 해결 방법이 들리지 않는다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "그런 다음 문제에 맞는 기록을 추가합니다. 각 기록은 텍스트가 선택된 창입니다.",
+   "suggestion": "그런 다음 문제에 맞는 기록을 추가합니다. 아래 명령은 기록을 텍스트가 선택된 창에 보여 줍니다.",
+   "problem": "들은 대로 이해한 뜻: 기록이 곧 창이다. '기록은 창입니다'는 기록과 창을 같은 것으로 말해 어색하다.",
+   "evidence": "유형 ⑤. 한국어 설명서는 명령이 창을 연다고 쓰지, 기록이 창이라고 쓰지 않는다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "120프레임 동안 WowVision의 프레임당 작업을 측정해 최단, 평균, 최장 시간을 읽어 줍니다. 신고에 그 줄을 포함합니다.",
+   "suggestion": "120프레임 동안 WowVision의 프레임당 작업을 측정해 최단, 평균, 최장 시간을 읽어 줍니다. 신고에 이 결과를 적습니다.",
+   "problem": "들은 대로 이해한 뜻: 측정 결과를 신고에 넣는다. 앞에 '줄'이 나온 적이 없어 '그 줄'이 무엇인지 돌아가 찾아야 한다.",
+   "evidence": "유형 ②. 지시 대상 '줄'이 앞 문장에 없다(결과를 말로 읽어 준다고만 했다)."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision-beta 같은 이름의 오래된 사본은 게임을 혼란스럽게 할 수 있습니다.",
+   "suggestion": "WowVision-beta 같은 이름의 오래된 사본이 있으면 게임이 엉뚱한 사본을 불러오거나 둘 다 불러올 수 있습니다. (원문을 모르므로 실제 증상은 확실하지 않음)",
+   "problem": "들은 대로 이해한 뜻: 사본이 여러 개면 문제가 생길 수 있다. 게임을 '혼란스럽게' 한다는 의인화라 실제로 무슨 일이 일어나는지 보이지 않는다.",
+   "evidence": "유형 ④. 프로그램을 사람처럼 그려 실제 동작이 드러나지 않는다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "무언가 알리는 순간에 Ctrl을 누르면 아무것도 들리지 않습니다.",
+   "suggestion": "WowVision이 무언가 알리는 순간에 Ctrl을 누르면 그 알림이 끊겨 아무것도 들리지 않습니다.",
+   "problem": "들은 대로 이해한 뜻: 알림 도중에 Ctrl을 누르면 소리가 안 난다. '알리는'의 주어가 빠졌다.",
+   "evidence": "유형 ③. 주어가 없어 누가 알리는지 비어 있다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "여기 나온 방법으로 해결되지 않으면, 고칠 수 있도록 버그를 신고하는 방법을 마지막 절에서 설명합니다.",
+   "suggestion": "여기 나온 방법으로 해결되지 않으면, 개발자가 고칠 수 있도록 버그를 신고하는 방법을 마지막 절에서 설명합니다.",
+   "problem": "들은 대로 이해한 뜻: 해결이 안 되면 버그를 신고하는 방법이 마지막에 있다. '고칠 수 있도록'의 주어가 없어 독자가 고친다는 뜻으로도 들린다.",
+   "evidence": "유형 ③. 주어가 빠졌다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "한 경유지 전으로 돌아갑니다. Ctrl+S는 비컨을 이전 경유지로 옮깁니다.",
+   "suggestion": "이전 경유지로 돌아갑니다. Ctrl+S는 비컨을 이전 경유지로 옮깁니다.",
+   "problem": "들은 대로 이해한 뜻: 이전 경유지로 돌아간다. '한 경유지 전으로'는 한국어에서 쓰지 않는 구성이다.",
+   "evidence": "유형 ⑤. '한 단계 전'을 경유지에 붙인 직역 어순으로, 바로 뒤 문장의 '이전 경유지'와도 표현이 다르다."
+  },
+  {
+   "id": "getting-started/troubleshooting.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "일부 명령은 답을 말로 읽지 않고 대화 창에 출력합니다.",
+   "suggestion": "일부 명령은 결과를 말로 읽지 않고 대화 창에 출력합니다.",
+   "problem": "들은 대로 이해한 뜻: 일부 명령은 결과를 대화 창에 쓴다. 명령의 출력을 '답'이라고 해서 질문에 대한 답처럼 들린다.",
+   "evidence": "유형 ⑤. 한국어 소프트웨어 설명서는 명령의 출력을 '결과'라고 쓴다."
+  }
+ ]
+}

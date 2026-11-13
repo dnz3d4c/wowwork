@@ -1,0 +1,24 @@
+{
+ "file": "basics/tooltips.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/tooltips.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/tooltips.md",
+ "items": [
+  {
+   "ref": "basics/tooltips.md#claude-style-7",
+   "file": "basics/tooltips.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "반지와 장신구는 두 칸 모두와 비교합니다(\"칸 1 of 2: ...\").",
+    "suggestion": "반지와 장신구는 두 칸 모두와 비교합니다(\"칸 1/2: ...\"처럼). (게임에서 실제로 이렇게 읽힌다면 그대로 두고, 아니면 실제 출력에 맞춤. 확실하지 않음)",
+    "problem": "들은 대로 이해한 뜻: 반지는 두 칸과 비교되고 '칸 1 of 2'처럼 들린다. 한국어 문장 속 영어 'of'가 그대로 들려 낯설다.",
+    "evidence": "기타(원문에 없어 보이는 기호·영어): 한국어 낭독 중 'of'가 섞여 있다. 실제 화면 문구라면 결함이 아니므로 확인 필요."
+   },
+   "translator": {
+    "ref": "basics/tooltips.md#claude-style-7",
+    "action": "dispute",
+    "reason": "화면 문구 인용이다. vision-locale koKR/misc.lua:21 L[\"Slot %d of %d:\"] = \"칸 %d of %d:\" 이므로 게임에서 실제로 '칸 1 of 2:'로 읽힌다."
+   }
+  }
+ ]
+}

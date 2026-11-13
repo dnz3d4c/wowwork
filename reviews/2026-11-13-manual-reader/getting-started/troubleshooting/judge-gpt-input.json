@@ -1,0 +1,24 @@
+{
+ "file": "getting-started/troubleshooting.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/getting-started/troubleshooting.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/getting-started/troubleshooting.md",
+ "items": [
+  {
+   "ref": "getting-started/troubleshooting.md#claude-style-11",
+   "file": "getting-started/troubleshooting.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "그 애드온이 오류 처리기를 넘겨받아 자체 목록에 오류를 보관합니다. /wv errors는 그 목록을 먼저 읽습니다.",
+    "suggestion": "그 애드온이 오류 처리기를 넘겨받아 자체 목록에 오류를 보관합니다. 이때는 /wv errors가 그 애드온의 목록을 먼저 읽으므로, BugSack 목록을 확인하거나 /wv errors all을 입력합니다. (원문을 모르므로 독자 행동은 확실하지 않음)",
+    "problem": "들은 대로 이해한 뜻: 다른 애드온이 오류를 가져가고 /wv errors가 그걸 먼저 읽는다. 증상 항목인데 독자가 무엇을 해야 하는지 나오지 않는다.",
+    "evidence": "유형 ①. 다른 항목은 모두 독자 행동으로 끝나는데 이 항목만 설명으로 끝나 해결 방법이 들리지 않는다."
+   },
+   "translator": {
+    "ref": "getting-started/troubleshooting.md#claude-style-11",
+    "action": "dispute",
+    "reason": "원문은 '/wv errors reads it first'로 끝나며 독자 행동이 없다. 행동 지시를 더하면 원문 사실이 바뀐다. 지시 대상만 '그 애드온의 목록'으로 밝혔다."
+   }
+  }
+ ]
+}

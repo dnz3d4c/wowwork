@@ -1,0 +1,83 @@
+[
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "지워지는 것은 없습니다. 이 기능들의 WowVision 설정과 단축키는 그대로 남아 있다가 Sku를 끄면 바로 돌아옵니다.",
+  "suggestion": "지워지는 것은 없습니다. 이 기능들의 WowVision 설정과 단축키는 그대로 남아 있다가, Sku를 끄고 UI를 재시작하거나 다시 로그인하면 다시 동작합니다.",
+  "problem": "들은 대로 이해한 뜻: Sku를 끄는 즉시 WowVision 기능이 살아난다. 바로 앞 문장은 로그인할 때 한 번만 판단하므로 재시작이나 재로그인이 필요하다고 했는데, '바로 돌아옵니다'가 이와 어긋나게 들려 독자가 재시작 없이 기다릴 수 있다. 원문을 모르므로 '바로'가 원문 강조인지는 확실하지 않다.",
+  "evidence": "유형 ①: 앞 문장(재시작 필요)과 '바로 돌아옵니다'가 한 번 들어서는 서로 다른 행동을 지시한다."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "(Sku와 Sku의 보조 애드온을 끄고 UI를 재시작합니다. /enableaddon sku를 입력하면 다시 켜집니다)",
+  "suggestion": "(이 명령은 Sku와 Sku의 보조 애드온을 끄고 UI를 재시작합니다. /enableaddon sku를 입력하면 다시 켜집니다)",
+  "problem": "들은 대로 이해한 뜻: 독자가 Sku와 보조 애드온을 끄고 UI를 재시작해야 한다. 괄호 안 첫 문장에 주어가 없어서 명령이 자동으로 하는 일인지, 독자가 따로 해야 하는 절차인지 갈린다.",
+  "evidence": "유형 ③: 주어가 빠져 행위자가 불분명하다. 본문이 합니다체 지시문이라 주어 없는 '끄고 재시작합니다'는 독자 행동으로 들린다."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "major",
+  "quote": "Sku에는 같은 기능이 없는 수집품 창과 전문 기술 창, 게임 메뉴와 설정, WowVision 메뉴가 여기에 해당합니다.",
+  "suggestion": "Sku에는 같은 기능이 없는 수집품 창과 전문 기술 창(불타는 성전 제외), 게임 메뉴와 설정, WowVision 메뉴가 여기에 해당합니다.",
+  "problem": "들은 대로 이해한 뜻: 전문 기술 창은 항상 WowVision이 처리한다. 그런데 앞의 '불타는 성전(TBC)에서만 추가로 맡는 창' 목록에 '전문 기술 창과 제작 창'이 있어 두 곳이 서로 반대로 들린다. 원문을 모르므로 괄호 보충이 맞는지는 확실하지 않다.",
+  "evidence": "유형 ①: 같은 파일 안에서 전문 기술 창의 담당이 엇갈리게 들려 독자가 어느 쪽을 믿어야 할지 모른다."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Sku를 불러온 상태에서 WowVision이 어떤 창을 읽지 않는다면 거의 틀림없이 이 때문입니다.",
+  "suggestion": "Sku를 불러온 상태에서 WowVision이 어떤 창을 읽지 않는다면 거의 틀림없이 Sku가 그 창을 맡았기 때문입니다.",
+  "problem": "들은 대로 이해한 뜻: 앞 문단에서 설명한 무언가 때문에 창을 읽지 않는다. '이 때문'이 가리키는 것이 앞 문단 전체라 새 문단에서 듣는 독자는 원인을 되짚어야 한다.",
+  "evidence": "유형 ②: 문단 첫 문장의 지시어가 앞 문단을 가리킨다."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "그중에 Sku가 있으면 \"Sku 담당\"으로 표시된 창, 단축키, 명령을 그 세션 동안 모두 끕니다.",
+  "suggestion": "그중에 Sku가 있으면 \"Sku 담당\"으로 표시된 창, 단축키, 명령을 이번 접속 동안 모두 끕니다.",
+  "problem": "들은 대로 이해한 뜻: 어떤 세션 동안 기능을 끈다. 앞에서 세션을 말한 적이 없어 '그 세션'이 무엇을 가리키는지 찾게 된다.",
+  "evidence": "유형 ②: 앞에 선행어가 없는 지시어 '그'."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "WowVision과 Sku는 나란히 설치할 수 있고, 둘 다 사용하는 플레이어도 많습니다. 두 애드온은 같은 창을 두고 다투지 않습니다.",
+  "suggestion": "WowVision과 Sku는 함께 설치할 수 있고, 둘 다 사용하는 플레이어도 많습니다. 두 애드온은 같은 창을 동시에 처리하지 않습니다.",
+  "problem": "들은 대로 이해한 뜻: 두 애드온을 같이 깔 수 있고, 한 창을 둘이 함께 다루지 않는다. '나란히 설치'와 '창을 두고 다투다'는 한국어 소프트웨어 설명서에서 쓰지 않는 표현이고, 애드온을 사람처럼 그려 실제 동작(한쪽만 처리)이 흐려진다.",
+  "evidence": "유형 ④·⑤: 'side by side', 'fight over'를 옮긴 듯한 동사와 의인화."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "Sku가 맡는 키(Sku를 불러온 상태에서는 WowVision은 이 키의 입력을 처리하지 않습니다):",
+  "suggestion": "Sku가 맡는 키(Sku를 불러온 상태에서는 WowVision이 이 키의 입력을 처리하지 않습니다):",
+  "problem": "들은 대로 이해한 뜻: Sku를 불러오면 WowVision이 이 키를 처리하지 않는다. '-에서는 ... -은'으로 보조사 '는'이 한 문장에 겹쳐 어색하다.",
+  "evidence": "어색한 조사: 주제 보조사 중복."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "- 친구, 차단, 누구, 길드 페이지가 있는 친구 및 소셜 창.",
+  "suggestion": "- '친구', '차단', '누구', '길드' 페이지가 있는 친구 및 소셜 창.",
+  "problem": "들은 대로 이해한 뜻: 친구, 차단, (누구?), 길드 페이지가 있는 창. 스크린리더로 들으면 '누구'가 페이지 이름이 아니라 의문사처럼 들려 문장이 끊긴다.",
+  "evidence": "유형 ①: 화면 이름 '누구'를 표시 없이 나열해 한 번 들어서 페이지 이름인지 알기 어렵다."
+ },
+ {
+  "id": "getting-started/sku.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "- 대화와 그 밖의 NPC 대화 창.",
+  "suggestion": "- NPC 대화 창과 그 밖의 NPC 상호작용 창.",
+  "problem": "들은 대로 이해한 뜻: 대화, 그리고 또 다른 NPC 대화 창. '대화'와 'NPC 대화 창'이 같은 말로 들려 무엇이 따로 있는지 모르겠다. 원문을 모르므로 제안 문구는 확실하지 않다.",
+  "evidence": "유형 ①: 같은 낱말 반복으로 목록 항목이 무엇을 구분하는지 들리지 않는다."
+ }
+]

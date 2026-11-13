@@ -1,0 +1,24 @@
+{
+ "file": "basics/speech.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/speech.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/speech.md",
+ "items": [
+  {
+   "ref": "basics/speech.md#claude-style-10",
+   "file": "basics/speech.md",
+   "finding": {
+    "category": "style",
+    "severity": "minor",
+    "quote": "창이 열려 있든 아니든 동작하고, Ctrl을 보조 키로 사용할 때(Ctrl+Tab, Ctrl+D)도 동작합니다.",
+    "suggestion": "창이 열려 있든 아니든 되고, Ctrl을 다른 키와 함께 누를 때(Ctrl+Tab, Ctrl+D)도 됩니다.",
+    "problem": "들은 대로 이해한 뜻: Ctrl로 음성 끊기는 언제나 된다. '보조 키'는 한국어 설명서에서 Ctrl 같은 조합 키를 가리키는 말로 잘 쓰지 않아 무슨 뜻인지 한 번에 들어오지 않는다.",
+    "evidence": "유형 ⑤(낯선 용어), 주어 '이 기능'이 빠진 '동작하고'도 유형 ③에 가깝다."
+   },
+   "translator": {
+    "ref": "basics/speech.md#claude-style-10",
+    "action": "dispute",
+    "reason": "'보조 키'는 docs/glossary.tsv 39행에서 modifier의 확정 용어(2026-11-13). 용어집이 정한 표현이라 유지. 주어는 앞 문장(Ctrl로 음성 끊기)이 이어져 문맥상 분명."
+   }
+  }
+ ]
+}

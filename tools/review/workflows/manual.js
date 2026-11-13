@@ -94,7 +94,7 @@ async function reviewAndFix(rel) {
     ...LENSES.map(l => () => claudeReview(rel, l).then(r => r && { provider: 'claude', lens: l, findings: r.findings })),
     ...LENSES.map(l => () => gptReview(rel, l).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
   ])).filter(Boolean)
-  const failed = 8 - runs.length
+  const failed = LENSES.length * 2 - runs.length
   const all = runs.flatMap(r => r.findings.map((f, i) => ({ ...f, by: `${r.provider}-${r.lens}`, provider: r.provider, ref: `${rel}#${r.provider}-${r.lens}-${i}` })))
   for (const f of all) f.consensus = all.some(g => g.provider !== f.provider && overlaps(f.quote, g.quote))
   if (!all.length) return { file: rel, failedReviewers: failed, findings: 0, applied: 0, upheld: 0, disputeWon: 0, escalations: [] }

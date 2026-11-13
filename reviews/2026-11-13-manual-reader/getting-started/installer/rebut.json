@@ -1,0 +1,28 @@
+{
+  "responses": [
+    {"ref": "getting-started/installer.md#claude-style-0", "action": "applied", "reason": "원문 'is left as it is until you choose Reinstall everything, because the installer cannot tell'의 행위자는 설치 프로그램이다. 주어를 설치 프로그램으로 밝히고 until 조건을 살려 '직접 압축을 푼 베타나 그 밖의 테스트 빌드는, 모두 다시 설치(복구) 항목을 고르기 전까지 설치 프로그램이 업데이트하지 않고 그대로 둡니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-1", "action": "applied", "reason": "원문 'The game's voice numbers can shift, so check your speech voice afterward'. 저절로 달라지는 것이라 '달라질 수 있으니'로 쓰고, 확인 대상을 '사용하던 음성이 그대로인지'로 풀었다. 원문에 없는 확인 위치(게임 설정)는 넣지 않았다."},
+    {"ref": "getting-started/installer.md#claude-style-2", "action": "applied", "reason": "consensus. gpt-style-2와 함께 반영. 항목을 체크하면 설치 프로그램이 게임이 사용하는 음성 목록을 먼저 백업한 뒤 새 음성을 그 목록으로 복사한다고 행위자와 목적어를 채웠다(원문 'copies them into the game's list, after a backup')."},
+    {"ref": "getting-started/installer.md#claude-style-3", "action": "applied", "reason": "원문 'matches WowVision to your game's patch, so a game patch does not stop WowVision from loading'. 동작이 들리도록 '게임 패치에 맞는 WowVision을 설치합니다. 그래서 게임이 패치된 뒤에도 게임이 WowVision을 계속 불러옵니다'로 고쳤다. '업데이트'는 원문에 없어 쓰지 않았다."},
+    {"ref": "getting-started/installer.md#claude-style-4", "action": "applied", "reason": "버튼을 누르는 독자 동작을 넣어 '다음 버튼을 누르면 ... 뒤로 버튼을 누르면 ...'으로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-5", "action": "applied", "reason": "consensus. gpt-style-1과 함께 '체크한 모든 게임 버전에 WowVision을 한 번에 설치합니다'로 목적어를 채웠다."},
+    {"ref": "getting-started/installer.md#claude-style-6", "action": "applied", "reason": "원문 'The folders WowVision will be written to'의 주어를 살려 '이 페이지에는 게임 버전마다 WowVision을 설치할 폴더가 나옵니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-7", "action": "applied", "reason": "원문 'says so and is skipped there'. 알리는 주체를 설치 프로그램으로 두고 지시어를 풀어 '설치 프로그램이 빌드가 없다고 알리고 그 게임 버전에는 그 애드온을 설치하지 않습니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-8", "action": "applied", "reason": "원문 'Your choice is remembered for later updates'. 주어 '설치 프로그램은'을 넣었다."},
+    {"ref": "getting-started/installer.md#claude-style-9", "action": "applied", "reason": "원문 'audio menu'. 같은 설명서 first-login.md 8행과 sku-login.md 91행이 '음성 메뉴'로 쓰므로 '음성 메뉴'로 통일했다. 수정안의 '읽어 주는'은 원문보다 구체적이라 쓰지 않았다."},
+    {"ref": "getting-started/installer.md#claude-style-10", "action": "applied", "reason": "원문 'replaces WowVision even when it is current'. 목적어를 채워 '설치된 WowVision 파일을 새 파일로 교체합니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-11", "action": "applied", "reason": "consensus. gpt-style-3과 함께 '두 음성 항목을 체크하면 컴퓨터 전체의 음성 목록이 변경되어, 음성을 사용하는 다른 모든 프로그램에도 변경된 목록이 나타납니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-12", "action": "applied", "reason": "consensus. 원문 'Update now never runs them'의 강도(never)를 살려 '현재 설정으로 업데이트를 골라도 이 두 항목은 절대 실행되지 않습니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#claude-style-13", "action": "applied", "reason": "consensus. gpt-style-4와 함께 '지금 하던 단계를 마친 뒤 멈추므로, 중간까지만 쓰인 파일이 남지 않습니다'로 고쳤다(원문 'nothing is left half written')."},
+    {"ref": "getting-started/installer.md#claude-style-14", "action": "applied", "reason": "지시어 '그 이유'를 '문제가 생긴 이유'로 풀었다."},
+    {"ref": "getting-started/installer.md#claude-style-15", "action": "applied", "reason": "consensus. gpt-style-5와 함께 '파일을 설치하고 몇 가지 설정을 변경하는 것뿐이기 때문입니다'로 고쳤다. 수정안 뒷부분 '아래 항목을 지우면 되기 때문'은 원문에 없는 내용이라 넣지 않았다."},
+    {"ref": "getting-started/installer.md#claude-style-16", "action": "applied", "reason": "translation-guide와 manual-translate.md는 문장 부호를 한국어 문장에 맞게 다루라고 한다. 목록 항목 끝의 쌍반점과 마지막 마침표를 지우고, 지시어 '그 바로 가기'도 '업데이터 바로 가기', 'WoW Login Tool 바로 가기'로 풀었다."},
+    {"ref": "getting-started/installer.md#gpt-style-0", "action": "applied", "reason": "'질문을 끕니다'를 '질문이 나타나지 않게 설정합니다. 이 질문이 나타나면 일부 명령이 중간에 끊깁니다'로 고쳤다(원문 'turns off the question, which otherwise interrupts some commands')."},
+    {"ref": "getting-started/installer.md#gpt-style-1", "action": "applied", "reason": "consensus. claude-style-5와 함께 반영했다."},
+    {"ref": "getting-started/installer.md#gpt-style-2", "action": "applied", "reason": "consensus. claude-style-2와 함께 반영했다. '게임이 보지 못하는 목록에 둡니다'를 '게임이 인식하지 못하는 목록에 등록합니다'로 고쳤다."},
+    {"ref": "getting-started/installer.md#gpt-style-3", "action": "applied", "reason": "consensus. claude-style-11·12와 함께 반영했다. '꺼져 있고'도 체크 상자에 맞게 '체크되어 있지 않고'로 고쳤다."},
+    {"ref": "getting-started/installer.md#gpt-style-4", "action": "applied", "reason": "consensus. claude-style-13과 함께 반영했다."},
+    {"ref": "getting-started/installer.md#gpt-style-5", "action": "applied", "reason": "consensus. claude-style-15와 함께 반영했다."},
+    {"ref": "getting-started/installer.md#gpt-style-6", "action": "applied", "reason": "원문 'no \"run this script?\" question'을 '질문이 나타나지 않게 하는 설정'으로 풀어 설정의 동작이 들리게 했다. 따옴표 안 화면 문구는 그대로 두었다."}
+  ]
+}

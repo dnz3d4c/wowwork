@@ -1,0 +1,15 @@
+[
+  {"ref": "getting-started/sku.md#claude-style-0", "action": "applied", "reason": "합의 지적. 원문 'come back as soon as Sku is off'의 'Sku is off'는 앞 문장대로 재시작이나 재로그인 뒤 Sku가 불러와지지 않은 상태다. '바로'(as soon as)는 살리고 'Sku를 끈 상태로 UI를 재시작하거나 다시 로그인하면 바로 다시 적용됩니다'로 조건을 문장에 드러냈다. gpt-style-1과 함께 반영."},
+  {"ref": "getting-started/sku.md#claude-style-1", "action": "applied", "reason": "합의 지적. 원문 괄호의 주어는 'it'(/disableaddon sku 명령)이다. 괄호를 풀어 '/disableaddon sku 명령은 Sku와 Sku의 보조 애드온을 끈 뒤 UI를 재시작합니다. 다시 켜려면 /enableaddon sku를 입력합니다.'로 주어를 밝혔다. gpt-style-3과 함께 반영."},
+  {"ref": "getting-started/sku.md#claude-style-2", "action": "applied", "reason": "원문 'the collections and professions windows where Sku has no equivalent'는 Sku에 대응 기능이 없는 경우로 한정한다(TBC에서는 Sku가 전문 기술 창을 맡는다). 번역이 이 한정을 창의 속성처럼 들리게 해 목록과 엇갈렸으므로 'Sku에 같은 기능이 없는 게임 버전의 수집품 창과 전문 기술 창'으로 고쳤다. 원문에 없는 TBC 명시는 더하지 않았다."},
+  {"ref": "getting-started/sku.md#claude-style-3", "action": "applied", "reason": "합의 지적. 원문 'this is almost certainly why'의 this는 앞 문단의 Sku 담당 기능 끄기다. '거의 틀림없이 Sku가 그 창을 맡았기 때문입니다'로 지시어를 명사로 되돌렸다. 강도 'almost certainly'는 '거의 틀림없이'로 유지했다. gpt-style-2와 함께 반영."},
+  {"ref": "getting-started/sku.md#claude-style-4", "action": "applied", "reason": "원문 'for that session'은 지금 로그인한 세션이다. 선행어 없는 '그 세션'을 '이번 세션 동안'으로 고쳤다. 세션은 다음 문단의 '한 세션 동안'과 같은 낱말로 맞췄다."},
+  {"ref": "getting-started/sku.md#claude-style-5", "action": "applied", "reason": "'side by side'를 '함께 설치'로, 의인화 'fight over'를 '두 애드온이 같은 창을 동시에 처리하지는 않습니다'로 고쳤다. gpt-style-0과 함께 반영."},
+  {"ref": "getting-started/sku.md#claude-style-6", "action": "applied", "reason": "보조사 '는' 중복을 'WowVision이'로 고쳤다. 뜻 변화 없음."},
+  {"ref": "getting-started/sku.md#claude-style-7", "action": "applied", "reason": "원문 'Friends, Ignore, Who and Guild pages'는 창의 페이지 이름이다. 화면 문구를 가리키는 따옴표로 묶어 '\"친구\", \"차단\", \"누구\", \"길드\" 페이지'로 고쳤다. 페이지 이름 자체는 그대로다."},
+  {"ref": "getting-started/sku.md#claude-style-8", "action": "dispute", "reason": "사용자 결정(docs/decisions.tsv 23행, 2026-11-07)이 NPC 대화 창(gossip)의 이름을 '지금대로 둔다(대화 창 표기를 바꾸지 않는다)'고 정했고 평가자가 다시 지적하지 않도록 했다. 원문도 'Gossip and other NPC dialogs'로 gossip 창과 그 밖의 NPC 대화 창을 함께 묶은 것이라 제안문 'NPC 상호작용 창'은 원문에 없는 범주를 만든다."},
+  {"ref": "getting-started/sku.md#gpt-style-0", "action": "applied", "reason": "원문 'deliberately steps back ... and leaves them to Sku'. 의인화를 줄여 '아래 목록의 창, 키, 명령은 WowVision이 일부러 처리하지 않고 Sku가 처리합니다'로 고쳤다. 'deliberately'는 '일부러'로 남겼다. claude-style-5와 함께 반영."},
+  {"ref": "getting-started/sku.md#gpt-style-1", "action": "applied", "reason": "합의 지적. 주어 없는 '지워지는 것은 없습니다'와 지시어 '이 기능들', 은유 '돌아옵니다'를 'Sku가 맡는 기능의 WowVision 설정과 단축키는 지워지지 않고 그대로 남아 있다가 ... 바로 다시 적용됩니다'로 고쳤다. claude-style-0과 함께 반영."},
+  {"ref": "getting-started/sku.md#gpt-style-2", "action": "applied", "reason": "합의 지적. claude-style-3과 같은 곳. 제안의 '가능성이 큽니다'는 원문 'almost certainly'보다 약해 쓰지 않고 '거의 틀림없이 Sku가 그 창을 맡았기 때문입니다'로 반영했다."},
+  {"ref": "getting-started/sku.md#gpt-style-3", "action": "applied", "reason": "합의 지적. claude-style-1과 같은 곳. 괄호를 풀어 명령이 하는 일과 다시 켜는 방법을 별도 문장으로 나눴다."}
+]

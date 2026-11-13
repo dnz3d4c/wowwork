@@ -1,0 +1,37 @@
+{
+ "items": [
+  {
+   "ref": "getting-started/sku-login.md#claude-style-22",
+   "provider": "claude",
+   "quote": "Shift+Right), 그리고 대화, 거래, 우편, 상급자 같은 창입니다."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "getting-started/sku-login.md#claude-style-22",
+   "uphold": false,
+   "final_ko": "Shift+Right), 그리고 대화, 거래, 우편, 상급자 같은 창입니다.",
+   "reason": "‘상급자’는 WowVision 한국어 화면에서 trainer를 가리키는 실제 문구이며, 관련 설명서의 창 목록에도 동일하게 쓰인다. 따라서 게임에서 쓰지 않는 표현이라는 지적 근거가 성립하지 않아 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/vision-locale/enUS/navigation.lua:196",
+    "wowvision-ko/vision-locale/koKR/navigation.lua:197",
+    "wowvision-ko/WowVision/docs/src/user/ko/getting-started/sku.md:24"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "getting-started/sku-login.md#claude-style-22",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "'상급자'는 화면 문구다. koKR navigation.lua:197 L[\"trainer\"]=\"상급자\", quests.lua:39 L[\"Trainers\"]=\"상급자\"이고, 게임 공식 문자열 TUTORIAL14(gs_enUS class trainer, trainers ↔ gs_koKR 직업 상급자)도 같은 말이다. judge.md의 style 반박 인정 사유(화면 문구 koKR 인용)에 해당하므로 현재 번역을 유지한다. 지적의 수정안도 '확실하지 않음'으로 대안이 없다.",
+   "evidence_sources": [
+    "wowvision-ko/vision-locale/koKR/navigation.lua:197",
+    "wowvision-ko/vision-locale/koKR/quests.lua:39",
+    "wowwork/cache/gs_enUS.csv:851",
+    "wowwork/cache/gs_koKR.csv:852"
+   ]
+  }
+ ]
+}
