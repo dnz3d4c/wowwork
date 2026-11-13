@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "groupHealth.lua::Repeat Below (percent)",
+      "category": "accuracy",
+      "severity": "minor",
+      "problem": "원문의 방향 한정어 Below(이 값 아래일 때 반복)가 빠졌다. \"반복 기준 생명력\"만으로는 생명력이 이 값보다 낮을 때 반복하는지 높을 때 반복하는지 문구에 드러나지 않는다.",
+      "evidence": "retail/groupHealth/module.lua:154-160 repeatThreshold 설정(기본값 탱커 80, 치유 70 등, module.lua:39-42)의 레이블이다. 원문 \"Repeat Below\"는 생명력이 이 퍼센트 아래로 떨어지면 반복 알림한다는 뜻이다. 다만 생명력 경고 맥락에서 '기준'은 보통 하한으로 읽히고, '생명력'을 더한 것은 코드 문맥과 맞으므로 심각도를 한 단계 낮췄다.",
+      "suggestion": "반복 기준: 생명력 미만 (퍼센트)"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "id": "auction.lua::items updated",
+   "file": "auction.lua",
+   "key": "items updated",
+   "en": "items updated",
+   "ko": "개 아이템 업데이트",
+   "code": [
+    "retail/auction/module.lua:87: WowVision:notify(L[\"Full scan complete\"] .. \", \" .. count .. \" \" .. L[\"items updated\"])",
+    "tbc/auction/prices.lua:180: WowVision:notify(L[\"Full scan complete\"] .. \", \" .. count .. \" \" .. L[\"items updated\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "auction.lua::Vendor price per item",
+   "file": "auction.lua",
+   "key": "Vendor price per item",
+   "en": "Vendor price per item",
+   "ko": "상인에게 파는 개당 가격",
+   "code": [
+    "retail/auction/prices.lua:149: lines[#lines + 1] = L[\"Vendor price per item\"] .. \": \" .. coin(vendorSell)"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "groupHealth.lua::Repeat Below (percent)",
+   "file": "groupHealth.lua",
+   "key": "Repeat Below (percent)",
+   "en": "Repeat Below (percent)",
+   "ko": "반복 기준 생명력 (퍼센트)",
+   "code": [
+    "retail/groupHealth/module.lua:156: label = L[\"Repeat Below (percent)\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}

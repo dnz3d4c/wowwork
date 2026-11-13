@@ -285,5 +285,6 @@ def test_changed_ko_lines_maps_english_hunks_to_korean_lines() -> None:
         "@@ -3,2 +3,3 @@ heading\n ctx\n+new\n ctx\n"
         "@@ -10 +11,0 @@\n-gone\n"
     )
-    assert changed_ko_lines(diff) == [(4, 6), (12, 12)]
+    # 문맥 줄(앞뒤 3줄)은 빼고 실제로 바뀐 줄만 준다(2026-11-13 사용자 결정, Codex 지적).
+    assert changed_ko_lines(diff) == [(5, 5), (12, 12)]
     assert changed_ko_lines("") == []

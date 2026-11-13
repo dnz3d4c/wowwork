@@ -358,11 +358,27 @@ def changed_ko_lines(diff: str) -> list[tuple[int, int]]:
     """영어 변경분(git diff)의 새 쪽 줄 범위를 한국어 번역의 줄 범위로 바꾼다. 번역은 첫 줄 source 주석 때문에
     한 줄씩 밀려 있다. 지워지기만 한 곳은 그 위치 한 줄로 준다. style 관점은 원문을 보지 않으므로
     en_diff 대신 이 범위를 받는다(docs/decisions.tsv 2026-11-13)."""
-    out = []
-    for m in _HUNK.finditer(diff):
-        start, count = int(m.group(1)), int(m.group(2) or 1)
-        out.append((start + 1, start + max(count, 1)))
-    return out
+    lines: list[int] = []
+    new: int | None = None
+    for line in diff.splitlines():
+        if m := _HUNK.match(line):
+            new = int(m.group(1))  # +N,0 이면 N번 줄 뒤에서 지워졌다는 뜻이라 그 줄을 가리킨다
+        elif new is None or line.startswith(chr(92)):
+            continue
+        elif line.startswith("+"):
+            lines.append(new)
+            new += 1
+        elif line.startswith("-"):
+            lines.append(new)
+        else:
+            new += 1
+    out: list[tuple[int, int]] = []
+    for n in sorted(set(lines)):
+        if out and n == out[-1][1] + 1:
+            out[-1] = (out[-1][0], n)
+        else:
+            out.append((n, n))
+    return [(a + 1, b + 1) for a, b in out]
 
 
 def main() -> int:

@@ -1,0 +1,1 @@
+{"findings":[{"id":"groupHealth.lua::Repeat Below (percent)","category":"accuracy","severity":"major","problem":"`Below`의 방향 의미가 빠져, 해당 퍼센트 미만일 때만 반복한다는 조건이 단순한 생명력 기준으로 바뀌었다.","evidence":"원문 `Repeat Below (percent)`의 `Below`는 반복 조건이 임계값 미만임을 명시한다. `retail/groupHealth/module.lua:156`에서 설정 항목의 label로 사용되므로 조건 방향을 번역에 포함해야 한다.","suggestion":"생명력이 다음 퍼센트 미만이면 반복"}]}

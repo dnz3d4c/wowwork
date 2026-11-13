@@ -1,0 +1,16 @@
+[
+ {
+  "ref": "auction.lua::items updated",
+  "uphold": false,
+  "final_ko": "개 아이템 업데이트",
+  "reason": "지적의 핵심인 '수량+개+명사' 어순은 제안 '개 품목 업데이트'에서도 그대로라 제안이 지적한 문제를 풀지 못한다. 코드가 count .. \" \" .. L[...]로 숫자를 앞에 붙이므로 '3 개 아이템 업데이트' 꼴은 한국어에서 자연스러운 수량 표현이다. koKR/auction.lua 68·69·83행이 item을 '아이템'으로 옮겨 여기만 '품목'으로 바꾸면 같은 파일 안에서 용어가 갈린다. 지적 근거가 약하므로 현재 번역 유지.",
+  "evidence_sources": [
+   "input",
+   "wowvision-ko/vision-locale/koKR/auction.lua:51",
+   "wowvision-ko/vision-locale/koKR/auction.lua:68",
+   "wowvision-ko/vision-locale/koKR/auction.lua:69",
+   "wowvision-ko/vision-locale/koKR/auction.lua:83",
+   "wowwork/docs/glossary.tsv"
+  ]
+ }
+]

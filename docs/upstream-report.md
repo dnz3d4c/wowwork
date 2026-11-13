@@ -48,7 +48,11 @@
 
 `L[]` 밖에 영어가 직접 들어 있어서 어떤 언어에서도 영어로 읽힌다.
 
-남은 것 없음. 경매장 스캔 안내의 `" in "`, `" min "`, `" sec"`는 wow-vision/vision-locale#66, wow-vision/WowVision#109로 서식 문자열 키가 되어 2026-11-08 병합됐고, koKR 값을 넣었다(2026-11-09).
+| 결과 | 위치 |
+|------|------|
+| 클래식 버전(Classic Era, TBC, 판다리아의 안개)의 모니터 종류 이름 "Aura", "Cooldown"이 영어로 읽힌다. 종류 선택 목록의 버튼과 새 모니터의 기본 이름("신규 Aura")에 나온다. Retail 종류는 `label = L["Cooldown Manager Auras"]`, `L["Spell Cooldowns"]`가 있는데 클래식 종류는 `label`이 없어 등록 키가 그대로 쓰인다 | WowVision classic/monitors/types/AuraMonitor.lua:183, CooldownMonitor.lua:187(`createType("Aura")`, `createType("Cooldown")`), core/monitors/module.lua:24(`item.label or key`), core/graph/settings.lua:381(`L["New"] .. " " .. typeLabel`) (2026-11-13 설명서 감수 9번, ko 브랜치에서 확인. 게임 안에서는 확인하지 않았다) |
+
+그 밖에 고쳐진 것: 경매장 스캔 안내의 `" in "`, `" min "`, `" sec"`는 wow-vision/vision-locale#66, wow-vision/WowVision#109로 서식 문자열 키가 되어 2026-11-08 병합됐고, koKR 값을 넣었다(2026-11-09).
 
 ## 3. 여러 기능이 같은 키를 써서 한국어로 맞게 옮길 수 없는 문자열 (2026-11-07 설명서 다듬기)
 
@@ -64,6 +68,7 @@
 | 결과 | 위치 |
 |------|------|
 | "12 개 출현 지점": 숫자, 공백, `L["spawns"]` 순서로 붙여 단위 "개"가 띄어진다 | WowVision core/quests/scanner.lua:120, 165 (원본 main 5cbf76a) |
+| "7-일간 평균": 일수, 하이픈, `L["Day Mean"]` 순서로 붙여 영어 복합어 "7-Day Mean"의 하이픈이 한국어에도 들어간다. 일수까지 넣는 서식 문자열 키(`%d-Day Mean`)여야 "7일간 평균"으로 옮길 수 있다 | WowVision tbc/auction/prices.lua:242 (2026-11-13 설명서 감수 8번, ko 브랜치에서 확인) |
 
 ## 5. 다른 언어를 전제하거나 뜻이 모호한 설명서 문장 (2026-11-09 설명서 평가)
 
