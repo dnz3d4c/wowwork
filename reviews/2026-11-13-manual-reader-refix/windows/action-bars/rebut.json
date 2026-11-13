@@ -1,0 +1,8 @@
+[
+  {
+    "ref": "windows/action-bars.md#gpt-regression-0",
+    "action": "dispute",
+    "final_ko": "아이템 바로 가기를 상황별 메뉴로 집어 들면 WowVision은 그것을 가방의 실제 아이템으로 여기고, Delete를 누르면 그 아이템의 파괴 확인 창이 열립니다.",
+    "reason": "지적한 코드 동작은 맞다(bars.lua:150-173에서 상황별 메뉴의 끌기도 같은 drag 함수로 pickupIsActionBar를 true로 설정, cursor.lua:53-55는 그 경우 ClearCursor만 실행). 그러나 이것은 원문과 코드의 차이다. 원문 en/windows/action-bars.md:107이 'If you pick up an item shortcut through the context menu instead, WowVision treats it as a real bag item, and Delete then opens the destroy confirmation for that item'이라고 적고 있고, 번역은 이를 그대로 옮겼다. 번역에서 원문과 반대되는 사실을 쓰면 원문에 없는 내용을 더하는 것이 된다(manual-translate.md 문체 규칙). 번역으로 고칠 수 없는 설명서와 동작의 차이는 docs/upstream-report.md에 모으는 것이 규칙이며(wowwork CLAUDE.md), 이 건은 이미 upstream-report.md:27에 기록되어 있다. 원문이 고쳐지면 그때 번역을 따라 고친다."
+  }
+]

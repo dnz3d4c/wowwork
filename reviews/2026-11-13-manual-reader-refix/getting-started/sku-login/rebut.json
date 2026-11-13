@@ -1,0 +1,12 @@
+[
+  {
+    "ref": "getting-started/sku-login.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "원문 'This page explains ..., so that you can hand over to WowVision as soon as you enter the world.'는 설명의 목적만 밝힌다. 번역의 '이 도구로 로그인하면'은 원문에 없는 조건이고 같은 페이지의 '도구는 WowVision이 필요 없고'와도 어긋난다. '이 페이지에서는 월드에 들어서자마자 WowVision으로 넘어갈 수 있도록 이 도구가 무엇인지, 어떻게 받는지, 어떻게 사용하는지 설명합니다.'로 고쳤다."
+  },
+  {
+    "ref": "getting-started/sku-login.md#gpt-regression-1",
+    "action": "applied",
+    "reason": "설치 프로그램 화면 문구는 wowvision-installer/WowVisionInstaller/Loc.cs:1053 opt.loginTool.label = 'WoW Login Tool 설치(권장)'(영어 Loc.cs:296 'Install the WoW Login Tool (recommended)')이다. 화면 문구는 글자 그대로 쓴다는 번역 규칙과 ko/getting-started/first-login.md:12 표기에 맞춰 'WoW Login Tool 설치(권장) 항목'으로 고쳤다."
+  }
+]

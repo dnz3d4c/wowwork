@@ -1,0 +1,17 @@
+{
+  "verdicts": [
+    {
+      "ref": "getting-started/sku.md#gpt-regression-0",
+      "uphold": false,
+      "final_ko": "- 툴팁 줄 키: 툴팁 이전 줄과 툴팁 다음 줄(Shift+Up과 Shift+Down), 툴팁 왼쪽 읽기와 툴팁 오른쪽 읽기(Shift+Left와 Shift+Right).",
+      "reason": "코드 사실은 평가자 말이 맞다. tooltip.lua에서 Previous/Next Tooltip Block(CTRL-SHIFT-UP/DOWN)은 conflictingAddons={\"Sku\"}이고, activator.lua:117-126은 Sku를 불러왔으면 키를 연결하지 않는다. 그러나 영어 원문 sku.md:61도 툴팁 줄 키 네 개만 적는다. 그러니 이 누락은 번역 결함이 아니라 원문과 실제 동작의 차이다. decisions.tsv:13(2026-11-05)은 이런 경우 원문에 충실하게 옮기고 차이는 upstream에 보고하라고 정한다. 예외는 한국어 사용자에게만 생기는 차이뿐인데, 이 차이는 모든 언어 사용자에게 똑같다. decisions.tsv:41(2026-11-13)도 사실과 문서 구조는 보존하라고 하므로, 원문에 없는 항목을 더하는 근거가 되지 않는다. 그래서 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "wowvision-ko/WowVision/docs/src/user/en/getting-started/sku.md:61",
+        "wowvision-ko/WowVision/core/ui modules/tooltip.lua:29-51",
+        "wowvision-ko/WowVision/core/ui/input/activator.lua:117-126",
+        "wowwork/docs/decisions.tsv:13",
+        "wowwork/docs/decisions.tsv:41"
+      ]
+    }
+  ]
+}

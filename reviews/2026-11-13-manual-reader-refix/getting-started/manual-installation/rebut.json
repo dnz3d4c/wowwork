@@ -1,0 +1,12 @@
+[
+  {
+    "ref": "getting-started/manual-installation.md#claude-regression-0",
+    "action": "applied",
+    "reason": "consensus 지적. 원문 \"the map data of the classic routes\"의 classic routes는 WowNav와 대비되는 경로 체계 이름이고, ko/reference/glossary.md:20과 world/navigation.md가 '클래식 경로'로 정의한다. '클래식 게임 버전의 이동 경로가 담긴 지도 데이터입니다'를 '클래식 경로의 지도 데이터입니다'로 고쳤다."
+  },
+  {
+    "ref": "getting-started/manual-installation.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "consensus 지적. claude-regression-0과 같은 곳이라 함께 반영했다. '클래식 경로의 지도 데이터입니다'로 고쳐 체계 이름을 살리고 WoW: Forever도 쓸 수 있다는 범위 왜곡을 없앴다. 기계 검사 통과(문제 있는 파일 0개)."
+  }
+]

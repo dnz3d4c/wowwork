@@ -1,0 +1,27 @@
+[
+  {
+    "ref": "windows/spells-and-talents.md#claude-regression-0",
+    "action": "applied",
+    "reason": "합의 지적. koKR/chat.lua:38 L[\"Link %s in Chat\"] = \"대화창에 %s 링크 걸기\"이므로 화면 문구대로 \"대화창에 필사의 일격 링크 걸기\"로 고쳤다."
+  },
+  {
+    "ref": "windows/spells-and-talents.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "claude-regression-0과 같은 곳. 같은 수정으로 반영했다."
+  },
+  {
+    "ref": "windows/spells-and-talents.md#gpt-regression-1",
+    "action": "dispute",
+    "reason": "코드 관찰은 맞다(camelot/spellbook.lua:162가 주문 뒤에 pagingRow를 만들고, nodes.lua:939-941은 페이지가 둘 이상일 때만 정지점을 만든다). 그러나 원문 \"Shift+Tab from there reaches the tabs, Tab the search\"에는 페이지 조건이 없고, 원문의 정지점 목록(3번 페이지 줄)이 이미 이 순서를 말한다. 번역에 원문에 없는 조건을 더하면 원문의 사실이 바뀌므로 번역으로 고치지 않는다. 설명서와 동작의 차이이므로 docs/upstream-report.md에 올릴 대상이다."
+  },
+  {
+    "ref": "windows/spells-and-talents.md#gpt-regression-2",
+    "action": "dispute",
+    "reason": "코드 관찰은 맞다(camelot/talents.lua:38-97에서 탭 상태 항목은 specTabs 정지점에 들어가고, 150·155행에서 설정과 검색은 각각 beginStop). 그러나 원문 목록은 \"2. The state of the tab\", \"4. Options and Search\"로 6항목이며, 기계 검사가 목록 항목 수를 원문과 맞추도록 요구한다. 원문 구조와 내용을 번역에서 바꿀 수 없으므로 반박하고, 설명서와 동작의 차이로 docs/upstream-report.md에 올릴 대상이다."
+  },
+  {
+    "ref": "windows/spells-and-talents.md#gpt-regression-3",
+    "action": "applied",
+    "reason": "독자 지적 반영. 원문 \"Arrow down to the row\"의 the row는 필사의 일격이 있는 줄을 가리키므로 문맥상 정해진 목적어를 채워 \"Down으로 필사의 일격이 있는 줄까지 가고\"로 고쳤다. 나머지 문장은 원문대로 두었다."
+  }
+]

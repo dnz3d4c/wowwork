@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "world/minimap.md#gpt-regression-0",
+    "action": "dispute",
+    "reason": "지적의 사실은 맞다: 저장 변수는 WowVisionDump로 등록되고(WowVision_Standard.toc:8) 결과도 WowVisionDump.minimapRaw에 기록되므로(core/minimap/module.lua:1640-1641) 실제 파일은 WowVisionDump.lua다. 그러나 이 오류는 영어 원문 en/world/minimap.md:164에 그대로 있다(`SavedVariables\\WowVision.lua` (WowVisionDump, minimapRaw)). 한국어 번역은 원문을 정확히 옮겼고, 사용자 결정 docs/decisions.tsv 2026-11-05(설명서: 원문이 실제 애드온 동작과 다를 때 원문에 충실하게 옮기고 차이는 upstream에 보고)에 따라 번역에서 고치지 않는다. 또한 파일 경로는 인라인 코드라 한 글자도 바꾸지 않는다는 번역 규칙에도 걸린다. 대신 docs/upstream-report.md 1절에 이 차이를 추가했다."
+  }
+]

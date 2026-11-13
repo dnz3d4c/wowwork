@@ -1,0 +1,69 @@
+{
+ "items": [
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-1",
+   "provider": "gpt",
+   "quote": "Forever는 최신 마법책을 사용합니다. 창을 열면 초점이 주문 목록에 놓입니다. 여기서 Shift+Tab을 누르면 탭으로, Tab을 누르면 검색으로 갑니다."
+  },
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-2",
+   "provider": "gpt",
+   "quote": "2. 탭의 상태: 지금 사용하는 전문화가 아니면 활성화 버튼이, 사용하는 전문화이면 \"활성\"이라는 줄이 나옵니다.\n3. 사용하지 않은 포인트: \"사용하지 않은 포인트, 5\".\n4. 설정과 검색: 위의 주문 검색을 참고하십시오."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-1",
+   "uphold": true,
+   "final_ko": "Forever는 최신 마법책을 사용합니다. 창을 열면 초점이 주문 목록에 놓입니다. 여기서 Shift+Tab을 누르면 탭으로 갑니다. Tab을 누르면 책이 한 페이지일 때는 검색으로 가고, 여러 페이지일 때는 먼저 페이지 줄로 갑니다.",
+   "reason": "context 관점은 원문 구조보다 실제 애드온 동작과의 일치를 판정합니다. 주문 정지점 다음에 페이지 줄이 조건부로 생성되고 그 뒤에 검색 정지점이 생성되므로, 여러 페이지일 때 Tab이 곧바로 검색으로 간다는 현재 번역은 실제 동작과 다릅니다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/camelot/spellbook.lua:161",
+    "wowvision-ko/WowVision/camelot/spellbook.lua:162",
+    "wowvision-ko/WowVision/camelot/spellbook.lua:164",
+    "wowvision-ko/WowVision/core/graph/nodes.lua:939",
+    "wowvision-ko/WowVision/core/graph/nodes.lua:943"
+   ]
+  },
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-2",
+   "uphold": true,
+   "final_ko": "탭 정지점에는 지금 사용하는 전문화가 아니면 활성화 버튼이, 사용하는 전문화이면 \"활성\"이라는 줄도 포함됩니다.\n2. 사용하지 않은 포인트: \"사용하지 않은 포인트, 5\".\n3. 설정: 위의 주문 검색을 참고하십시오.\n4. 검색: 위의 주문 검색을 참고하십시오.",
+   "reason": "활성화 버튼이나 \"활성\" 줄 앞에는 별도의 정지점 생성 호출이 없으므로 탭과 같은 정지점에 포함됩니다. 반면 설정과 검색 앞에는 각각 정지점 생성 호출이 있어 현재 목록은 실제 Tab 이동 단위를 잘못 설명합니다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/camelot/talents.lua:38",
+    "wowvision-ko/WowVision/camelot/talents.lua:73",
+    "wowvision-ko/WowVision/camelot/talents.lua:97",
+    "wowvision-ko/WowVision/camelot/talents.lua:150",
+    "wowvision-ko/WowVision/camelot/talents.lua:155"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-1",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "코드 관찰은 맞다. camelot/spellbook.lua:162가 주문 뒤에 nodes.pagingRow를 만들고, core/graph/nodes.lua:939-941은 페이지가 둘 이상일 때만 정지점을 만든다. 그러나 번역은 원문 \"Shift+Tab from there reaches the tabs, Tab the search\"를 그대로 옮겼고, 원문 정지점 목록 3번이 이미 페이지 줄의 조건과 순서를 적고 있다. 번역 지침은 사실·조건을 보존하고 원문에 없는 새 조건을 넣지 않도록 정한다(translation-guide.md:93-94). 페이지 조건을 문장에 더하는 것은 번역 오류 수정이 아니라 원문 내용 변경이므로 지금 번역을 유지한다. 설명서와 동작의 차이로 따로 다룰 대상이다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/camelot/spellbook.lua:155-162",
+    "wowvision-ko/WowVision/core/graph/nodes.lua:935-941",
+    "wowwork/docs/translation-guide.md:93-94"
+   ]
+  },
+  {
+   "ref": "windows/spells-and-talents.md#gpt-regression-2",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "코드 관찰은 맞다. camelot/talents.lua:38에서 specTabs 정지점이 시작되고 97행에서 points 정지점이 시작되며, 150·155행에서 설정(searchOptions)과 검색(search)이 각각 beginStop을 호출한다. 그러나 번역 목록은 원문의 \"2. The state of the tab\", \"4. Options and Search\"를 포함한 6항목 구조를 그대로 옮긴 것이다. 번역 지침은 문서 구조와 사실을 보존 대상으로 정한다(translation-guide.md:94). 항목을 합치거나 나누는 것은 원문 구조 변경이므로 번역으로 고치지 않고 지금 번역을 유지한다. 설명서와 동작의 차이로 따로 다룰 대상이다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/camelot/talents.lua:38",
+    "wowvision-ko/WowVision/camelot/talents.lua:97",
+    "wowvision-ko/WowVision/camelot/talents.lua:150-155",
+    "wowwork/docs/translation-guide.md:93-94"
+   ]
+  }
+ ]
+}

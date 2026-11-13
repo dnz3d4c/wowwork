@@ -1,0 +1,24 @@
+[
+  {
+    "ref": "reference/commands.md#gpt-regression-0",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "코드(core/WowVision.lua:889-898)는 IsPartyLFG()일 때만 파티를 떠나고, 인스턴스 안에서는 pvp·arena에서만 전장을 떠난다. 그래서 일반 던전 파티는 떠나지 않으며 평가자가 말한 동작 차이는 사실이다. 그러나 영어 원문 en/reference/commands.md:33이 'Leaves the dungeon group or battleground'이고, 현재 번역은 이 원문을 그대로 옮겼다. '던전 찾기 파티'로 좁히면 번역이 원문의 사실을 바꾼다. 이것은 원본 설명서와 코드가 다른 문제라서 번역에서 고치지 않고 upstream 보고 대상으로 넘긴다. 현재 번역을 유지한다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/core/WowVision.lua:884-899",
+      "wowvision-ko/WowVision/docs/src/user/en/reference/commands.md:33"
+    ]
+  },
+  {
+    "ref": "reference/commands.md#gpt-regression-1",
+    "uphold": false,
+    "final_ko": "",
+    "reason": "원문 en/reference/commands.md:122는 'Leaves your dungeon or looking-for-group party, and in a battleground or arena leaves the battleground. Outside an instance and outside a looking-for-group party it does nothing.'이다. 현재 번역은 대상(던전 파티, 던전 찾기 파티)과 조건(인스턴스 밖이면서 던전 찾기 파티 밖)을 빠짐없이 옮겼고, 번역이 덧붙인 동작은 없다. 코드(core/WowVision.lua:889-898)가 던전 찾기 파티·전장·투기장만 처리하는 것은 맞지만, 이는 원문 설명서와 코드의 차이다. 제안대로 고치면 원문의 사실과 조건이 바뀌므로 현재 번역을 유지하고 upstream 보고 대상으로 넘긴다.",
+    "evidence_sources": [
+      "input",
+      "wowvision-ko/WowVision/core/WowVision.lua:884-899",
+      "wowvision-ko/WowVision/docs/src/user/en/reference/commands.md:122"
+    ]
+  }
+]

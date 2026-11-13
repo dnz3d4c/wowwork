@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "information/monitors.md#claude-regression-0",
+    "action": "applied",
+    "reason": "원문 259행 'The global cooldown never counts.'는 같은 파일 173행 'never counts as a cooldown'과 같은 뜻이다. 2026-11-13 대응표(count as → 간주하다)와 용어집 피할 표현('~(으)로 치다')에 따라 '전역 재사용 대기는 재사용 대기로 간주하지 않습니다.'로 고쳐 174행 표기와 맞췄다. '치지'는 들으면 '때리다'로 이해될 수 있어 전달이 실패한다. 기계 검사 통과(문제 있는 파일 0개)."
+  }
+]

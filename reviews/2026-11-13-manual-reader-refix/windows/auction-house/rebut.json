@@ -1,0 +1,11 @@
+[
+  {"ref": "windows/auction-house.md#claude-regression-0", "action": "applied", "reason": "합의 지적. mists/auction.lua:253이 L[\"AuctionAvailable\"]을 쓰고 koKR/ui.lua:253 값이 '구매 가능 수량'이라 예시를 '구리 광석, 5 실버, 구매 가능 수량 340'으로 고쳤다."},
+  {"ref": "windows/auction-house.md#claude-regression-1", "action": "applied", "reason": "합의 지적. mists/auction.lua:284도 AuctionAvailable을 쓴다. 판매자 묶음 예시를 '구매 가능 수량 200'으로 고쳤다."},
+  {"ref": "windows/auction-house.md#claude-regression-2", "action": "applied", "reason": "합의 지적. 구리 광석 구매 예시 2단계를 '구매 가능 수량 340'으로 고쳐 앞의 결과 줄 예시와 맞췄다."},
+  {"ref": "windows/auction-house.md#gpt-regression-0", "action": "dispute", "reason": "이 줄은 불타는 성전 경매장의 필터 화면 설명이다(원문 111행, '#### Filters screen'은 '## The Burning Crusade auction house' 아래). TBC 기존 경매장 창의 체크 상자는 USABLE_ITEMS(gs_enUS.csv 12423 'Usable Items', gs_koKR.csv '사용 가능한 아이템')이다. 지적이 든 AUCTION_HOUSE_FILTER_USABLE_ONLY(41507 'Usable Only')는 최신 경매장(판다리아의 안개 이후)의 필터 문자열이라 이 구절과 같은 화면이 아니다. 현재 번역 '사용 가능한 아이템'이 이 창의 공식 문구와 같으므로 유지한다."},
+  {"ref": "windows/auction-house.md#gpt-regression-1", "action": "applied", "reason": "독자가 '게임이 24시간 동안 시작된다'로 이해했고 원문 'The game starts on 24 Hours'는 기간 체크 상자의 초기 선택 상태를 뜻하므로 전달 실패다. 주어(게임)를 살려 '처음에는 게임이 24시간을 선택해 둡니다.'로 고쳤다."},
+  {"ref": "windows/auction-house.md#gpt-regression-2", "action": "applied", "reason": "원문 'that result'는 앞에서 Enter로 선택해 즉시 구입하거나 입찰한 스캔 결과 행이다. '그 결과'가 거래 결과로 들리므로 '구입하거나 입찰한 경매가 빠진 목록으로 돌아옵니다'로 지시어를 명사로 되돌렸다."},
+  {"ref": "windows/auction-house.md#gpt-regression-3", "action": "applied", "reason": "합의 지적. claude-regression-0과 같은 곳(260행)으로 함께 반영했다."},
+  {"ref": "windows/auction-house.md#gpt-regression-4", "action": "applied", "reason": "합의 지적. claude-regression-1과 같은 곳(271행)으로 함께 반영했다."},
+  {"ref": "windows/auction-house.md#gpt-regression-5", "action": "applied", "reason": "합의 지적. claude-regression-2와 같은 곳(345행)으로 함께 반영했다."}
+]

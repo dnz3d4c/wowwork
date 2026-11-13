@@ -1,0 +1,14 @@
+{
+  "responses": [
+    {
+      "ref": "windows/social.md#gpt-regression-0",
+      "action": "applied",
+      "reason": "원문 329행 'The game also declines on its own after one minute.'은 확정 동작이다. '거절하기도 합니다'는 가끔 거절한다는 가능성으로 읽혀 강도가 약해지므로 '1분이 지나면 게임이 자동으로 거절합니다.'로 고쳤다."
+    },
+    {
+      "ref": "windows/social.md#gpt-regression-1",
+      "action": "applied",
+      "reason": "원문 48행 'the same two clicks'는 바로 위 Enter(왼쪽 클릭)와 Backspace(오른쪽 클릭)를 가리킨다. 지시어를 명사로 되돌려 'Shift+F10은 이 왼쪽 클릭과 오른쪽 클릭을 메뉴로 나열합니다.'로 고쳤다. 'same'의 앞 항목 참조는 '이'로 살렸다."
+    }
+  ]
+}

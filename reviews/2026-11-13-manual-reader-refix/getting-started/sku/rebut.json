@@ -1,0 +1,9 @@
+{
+  "responses": [
+    {
+      "ref": "getting-started/sku.md#gpt-regression-0",
+      "action": "dispute",
+      "reason": "코드 사실은 맞다: tooltip.lua:29-51에서 Previous/Next Tooltip Block(CTRL-SHIFT-UP/DOWN)이 conflictingAddons={\"Sku\"}이고 activator.lua:117-126이 Sku를 불러왔으면 키를 연결하지 않는다. 그러나 영어 원문 sku.md:61도 툴팁 줄 키 네 개만 적고 구역 키를 빼고 있다. decisions.tsv 2026-11-05 결정(설명서: 원문이 실제 동작과 다를 때 원문에 충실하게 옮기고 차이는 upstream에 보고, 예외는 한국어 사용자에게만 생기는 차이)에 따라 한국어판에만 원문에 없는 항목을 더하지 않는다. 이 차이는 모든 언어 사용자에게 같으므로 예외에 해당하지 않는다. 평가자 근거도 원문 설명서에 보고해야 한다고 적고 있어, docs/upstream-report.md 1번 표에 getting-started/sku.md 행을 추가했다. 번역문은 그대로이며 tools.manual check 통과."
+    }
+  ]
+}

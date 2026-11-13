@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "controller.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "독자는 WowVision이 버튼을 누르는 주체로, '그 키'를 불분명하게 들었다. 원문 en/controller.md:18은 'WowVision reads the held buttons itself and treats them like those keys'로 사용자가 누르고 있는 버튼을 WowVision이 읽는다는 뜻이라 전달 실패다. '그래서 WowVision은 사용자가 누르고 있는 버튼을 직접 읽어 Shift, Ctrl, Alt처럼 처리합니다.'로 고쳐 누르는 주체를 사용자로 밝히고 지시어를 키 이름으로 되돌렸다. 원문의 reads(읽다)는 보존했다. 기계 검사 통과."
+  }
+]

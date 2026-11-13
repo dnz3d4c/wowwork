@@ -1,0 +1,42 @@
+{
+ "items": [
+  {
+   "ref": "windows/auction-house.md#gpt-regression-0",
+   "provider": "gpt",
+   "quote": "- 게임의 사용 가능한 아이템 체크 상자(사용할 수 있는 아이템만)."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "windows/auction-house.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "- 게임의 사용 가능한 아이템 체크 상자(사용할 수 있는 아이템만).",
+   "reason": "이 항목은 TBC의 `IsUsableCheckButton`을 설명하며, 해당 구형 경매장 문자열 `USABLE_ITEMS`의 영어는 “Usable Items”, 한국어는 “사용 가능한 아이템”이다. “사용 가능 아이템만”은 영어가 “Usable Only”인 다른 문자열이므로 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:11",
+    "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:104",
+    "wowvision-ko/WowVision/docs/src/user/en/windows/auction-house.md:111",
+    "wowvision-ko/WowVision/tbc/auction/module.lua:707",
+    "wowwork/cache/gs_enUS.csv:2459",
+    "wowwork/cache/gs_koKR.csv:2461",
+    "wowwork/cache/gs_enUS.csv:17903",
+    "wowwork/cache/gs_koKR.csv:17892"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "windows/auction-house.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "- 게임의 사용 가능한 아이템 체크 상자(사용할 수 있는 아이템만).",
+   "reason": "원문 111행은 TBC 경매장 필터 화면의 'Usable' 체크 상자다. WowVision 코드(tbc/auction/module.lua:707-711)가 다루는 것은 TBC 기존 경매장 UI의 IsUsableCheckButton이고, 이 화면 문구에 해당하는 공식 문자열은 USABLE_ITEMS 'Usable Items'(gs_enUS.csv:2459) = '사용 가능한 아이템'(gs_koKR.csv:2461)이다. 지적이 든 AUCTION_HOUSE_FILTER_USABLE_ONLY 'Usable Only'는 최신 경매장 필터 문자열로 이 화면이 아니며 영어도 원문 구절과 다르다. 현재 번역이 이 창의 공식 문구와 같으므로 유지한다.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/tbc/auction/module.lua:707",
+    "wowwork/cache/gs_enUS.csv:2459",
+    "wowwork/cache/gs_koKR.csv:2461",
+    "wowwork/cache/gs_enUS.csv:17903"
+   ]
+  }
+ ]
+}

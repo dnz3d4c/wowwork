@@ -1,0 +1,9 @@
+{
+  "responses": [
+    {
+      "ref": "basics/interface.md#gpt-regression-0",
+      "action": "applied",
+      "reason": "docs/decisions.tsv:21은 설명서의 게임 버전 이름을 영어로 쓰도록 정했고, 원문도 'Classic Era, The Burning Crusade and Mists of Pandaria'다. '불타는 성전, 판다리아의 안개'를 'The Burning Crusade, Mists of Pandaria'로 고쳐 speech.md 표기와 맞췄다. tools.manual check 통과."
+    }
+  ]
+}

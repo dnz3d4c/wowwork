@@ -1,0 +1,22 @@
+[
+  {
+    "ref": "getting-started/introduction.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "원문 targeting은 화면 문구 Targeting이고 koKR/targeting.lua:4와 terms가 \"목표 선택\"으로 정했다. 같은 파일 20행 링크 글자와도 맞춰 \"대상 지정\"을 \"목표 선택\"으로 고쳤다."
+  },
+  {
+    "ref": "getting-started/introduction.md#gpt-regression-1",
+    "action": "applied",
+    "reason": "같은 근거(terms, koKR/targeting.lua:4, 연결 대상 world/index.md의 \"목표 선택\")로 목록 항목의 \"대상 지정\"을 \"목표 선택\"으로 고쳤다."
+  },
+  {
+    "ref": "getting-started/introduction.md#gpt-regression-2",
+    "action": "applied",
+    "reason": "독자가 이동 대상을 알 수 없었다. 원문 'the arrow keys and Tab move'는 창을 데스크톱 프로그램처럼 다루는 문맥이라 목적어(창 안의 항목)를 채우는 것은 추가가 아니다. \"화살표 키와 Tab으로 창 안의 항목 사이를 이동합니다.\"로 고쳤다."
+  },
+  {
+    "ref": "getting-started/introduction.md#gpt-regression-3",
+    "action": "applied",
+    "reason": "\"맡깁니다\"는 의인화라 누가 처리하는지 흐렸다(2026-11-13 원문 충실 범위 결정). 원문 'leaves a number of windows and keys to Sku'의 뜻을 보존해 \"일부 창과 키는 WowVision이 처리하지 않고 Sku가 처리합니다.\"로 고쳤다."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "ref": "world/scanner.md#gpt-regression-0",
+    "action": "dispute",
+    "reason": "지적한 동작은 코드로 확인된다(core/quests/scanner.lua:322-327, 484-486에서 퀘스트 상태를 말할 때마다 다시 읽음). 그러나 원문 49행 'Only distance and direction update.'가 그렇게 적고 있고, 번역은 원문을 충실히 옮겼다. 문서 안의 모순(77행 'The progress is read fresh each time')도 원문에 있다. decisions.tsv 2026-11-05 결정(원문이 실제 동작과 다르면 원문에 충실하게 옮기고 차이는 upstream에 보고, 예외는 한국어 사용자에게만 생기는 차이뿐)에 따라 번역은 고치지 않고 docs/upstream-report.md 1번 목록에 world/scanner.md 항목으로 추가했다.",
+    "final_ko": "열려 있는 동안에는 목록이 변경되지 않으므로, 전투나 비행 도중에 게임을 느리게 만들지 않습니다. 거리와 방향만 새로 계산합니다."
+  },
+  {
+    "ref": "world/scanner.md#gpt-regression-1",
+    "action": "dispute",
+    "reason": "범주에서 Backspace가 가장 가까운 항목으로 길 안내하는 동작은 코드로 확인된다(core/scanner/ui.lua:260-264, koKR scanner.lua L[\"Navigate to Nearest\"]). 그러나 원문 21행 표의 Backspace 행도 'On entries that have extra text (quests)'만 적고 있어 번역은 원문과 같다. 이 동작을 한국어판에만 더하면 decisions.tsv 2026-11-05 결정(원문 충실, 차이는 upstream 보고)을 어긴다. 한국어 사용자에게만 생기는 차이도 아니다. 번역은 그대로 두고 docs/upstream-report.md 1번 목록에 추가했다.",
+    "final_ko": "| Backspace | 추가 텍스트가 있는 항목(퀘스트)에서 그 텍스트를 담은 작은 읽기 전용 목록을 엽니다. |"
+  }
+]

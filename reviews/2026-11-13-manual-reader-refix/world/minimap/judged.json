@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "ref": "world/minimap.md#gpt-regression-0",
+   "provider": "gpt",
+   "quote": "/reload 뒤에는 결과가 `WTF\\Account\\<account>\\SavedVariables\\WowVision.lua` 파일(WowVisionDump, minimapRaw)에 있으므로, 창 내용을 복사하는 대신 이 파일을 보내도 됩니다."
+  }
+ ],
+ "gpt": [
+  {
+   "ref": "world/minimap.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "/reload 뒤에는 결과가 `WTF\\Account\\<account>\\SavedVariables\\WowVision.lua` 파일(WowVisionDump, minimapRaw)에 있으므로, 창 내용을 복사하는 대신 이 파일을 보내도 됩니다.",
+   "reason": "실제 저장 파일이 `WowVisionDump.lua`인 것은 맞지만, 영어 원문에도 `WowVision.lua`로 적혀 있다. 원문과 실제 동작이 다르면 원문대로 번역하고 차이는 upstream에 보고한다는 사용자 결정이 있으므로 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/docs/src/user/en/world/minimap.md:164",
+    "wowvision-ko/WowVision/docs/src/user/ko/world/minimap.md:165",
+    "wowwork/docs/decisions.tsv:13",
+    "wowvision-ko/WowVision/WowVision_Standard.toc:8",
+    "wowvision-ko/WowVision/core/minimap/module.lua:1640"
+   ]
+  }
+ ],
+ "claude": [
+  {
+   "ref": "world/minimap.md#gpt-regression-0",
+   "uphold": false,
+   "final_ko": "",
+   "reason": "지적의 사실(실제 파일은 WowVisionDump.lua)은 코드로 확인된다. 그러나 영어 원문 en/world/minimap.md:164가 같은 경로 WowVision.lua를 적고 있고 번역은 이를 정확히 옮겼다. 사용자 결정(decisions.tsv:13, 2026-11-05)은 원문이 실제 동작과 다를 때 원문에 충실하게 옮기고 차이는 upstream에 보고하라고 정했으며, 이 사례는 한국어 사용자에게만 생기는 차이(예외)에 해당하지 않는다. 따라서 현재 번역을 유지한다.",
+   "evidence_sources": [
+    "wowvision-ko/WowVision/docs/src/user/en/world/minimap.md:164",
+    "wowvision-ko/WowVision/WowVision_Standard.toc:8",
+    "wowvision-ko/WowVision/core/minimap/module.lua:1640-1641",
+    "wowwork/docs/decisions.tsv:13"
+   ]
+  }
+ ]
+}

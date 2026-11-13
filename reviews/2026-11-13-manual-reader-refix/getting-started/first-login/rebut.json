@@ -1,0 +1,7 @@
+[
+  {
+    "ref": "getting-started/first-login.md#gpt-regression-0",
+    "action": "applied",
+    "reason": "원문 5행 'standing in the world'는 바로 뒤 'once a character enters the world'와 같은 월드 진입 상태를 가리킨다. '서 있을 때'는 자세 조건으로 읽혀 앉거나 움직일 때는 작동하지 않는다고 오해될 수 있어 '월드에 들어간 뒤부터'로 고쳤다. 기계 검사 통과."
+  }
+]

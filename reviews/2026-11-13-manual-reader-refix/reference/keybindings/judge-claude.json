@@ -1,0 +1,15 @@
+{
+  "verdicts": [
+    {
+      "ref": "reference/keybindings.md#gpt-regression-0",
+      "uphold": false,
+      "final_ko": "| 모든 창 닫기 | Shift+Escape | 열려 있는 모든 WowVision 창과 게임의 모든 창을 닫습니다 |",
+      "reason": "원문 en/reference/keybindings.md:59는 \"Closes every open WowVision window and every window of the game\"이고 번역은 이를 빠짐없이 옮겼다. 코드 WindowManager.lua:168-169 주석과 189행(전투 중 CloseAllWindows 미호출)으로 예외가 실제로 있음은 확인되지만, 이는 원문 설명서와 동작의 차이이지 번역 결함이 아니다. 예외를 번역에만 더하면 원문에 없는 사실이 추가된다. 이 차이는 이미 upstream-report.md 29행에 기록돼 있다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/docs/src/user/en/reference/keybindings.md:59",
+        "wowvision-ko/WowVision/core/ui/WindowManager.lua:168-189"
+      ]
+    }
+  ]
+}

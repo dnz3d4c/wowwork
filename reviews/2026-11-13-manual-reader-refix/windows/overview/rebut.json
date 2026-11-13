@@ -1,0 +1,6 @@
+{
+  "responses": [
+    {"ref": "windows/overview.md#gpt-regression-0", "action": "applied", "reason": "decisions.tsv 2026-11-07 '설명서: 게임 버전 이름은 영어로 쓴다'에 따라 '불타는 성전(TBC)'을 원문과 같은 'The Burning Crusade (TBC)'로 바꿨다. basics/speech.md:19 표기와도 일치. tools.manual check 통과."},
+    {"ref": "windows/overview.md#gpt-regression-1", "action": "applied", "reason": "같은 사용자 결정에 따라 '판다리아의 안개(Mists)'를 원문과 같은 'Mists of Pandaria (Mists)'로 바꿨다. basics/speech.md:19 표기와도 일치. tools.manual check 통과."}
+  ]
+}
