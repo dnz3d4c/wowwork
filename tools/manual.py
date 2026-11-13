@@ -22,7 +22,7 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
-from tools.glossary import Term, load_glossary, violations
+from tools.glossary import Term, _excepted, load_glossary, violations
 from tools.locale_lib import JOSA_WORDS, KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
 
 EN_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "en"
@@ -262,6 +262,17 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
         problems.append(
             f"바꾸다·바뀌다 {len(bakkuda)}곳(변경하다·변경되다로): {', '.join(sorted(set(bakkuda))[:8])}"
         )
+    # 용어집 avoid 열: 쓰지 않기로 한 직역(2026-11-13 사용자 결정 대응표). 따옴표 인용은 화면 문구라 뺀다.
+    en_plain = _CODE.sub("", _strip_fences(en))
+    for term in terms:
+        if not term.avoid or _excepted(f"manual::{rel}", term.except_ids):
+            continue
+        if term.en and not re.search(r"\b" + re.escape(term.en) + r"s?\b", en_plain, re.IGNORECASE):
+            continue
+        if found := [a for a in term.avoid if a in body]:
+            problems.append(
+                f"피할 표현: {', '.join(found)} -> {'|'.join(term.ko)} ({term.en or '설명서 전체'})"
+            )
     for target in _LINK.findall(_strip_fences(ko)):
         if "#" not in target or target.startswith(("http://", "https://")):
             continue

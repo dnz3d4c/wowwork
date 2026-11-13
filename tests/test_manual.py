@@ -251,3 +251,25 @@ def test_batch_hides_english_from_style_lens() -> None:
     assert "en" in full and "en_path" in full
     assert "en" not in reader and "en_path" not in reader
     assert reader["ko"] == full["ko"] and reader["terms"] == full["terms"]
+
+
+def test_check_rejects_avoided_expressions(tmp_path: Path) -> None:
+    """용어집 avoid 열: 설명서 본문에 쓰지 않을 직역(2026-11-13 사용자 결정 대응표).
+    en 이 비어 있으면 모든 설명서 파일에, 있으면 원문에 그 말이 있는 파일에만 적용한다.
+    따옴표 인용(화면 문구)과 예외 파일은 검사하지 않는다. 한글은 받침이 붙으면 글자가 달라지므로
+    활용형을 따로 적는다(가져가, 가져갑)."""
+    from tools.glossary import Term
+
+    terms = [
+        Term("", ("처리",), frozenset({"manual::world/*"}), "", ("가져가", "가져갑")),
+        Term("back one level", ("이전 단계",), frozenset(), "", ("한 단계 뒤로",)),
+    ]
+    ko = tmp_path / "p.md"
+    en = "# Keys\n\nWowVision takes your keys. Escape goes back one level.\n"
+    head = "<!-- source: docs/src/user/en/p.md @ abc1234 -->\n# 키\n\n"
+    bad = head + 'WowVision이 키를 가져갑니다. Escape는 한 단계 뒤로 갑니다. "가져가기"\n'
+    ko.write_text(bad, "utf-8")
+    problems = "\n".join(check(en, bad, ko, terms))
+    assert "가져갑" in problems and "한 단계 뒤로" in problems and "가져가기" not in problems
+    good = head + 'WowVision이 키 입력을 처리합니다. Escape는 이전 단계로 돌아갑니다. "가져가기"\n'
+    assert check(en, good, ko, terms) == []
