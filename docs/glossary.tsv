@@ -43,3 +43,13 @@ router	경로 계획 도구		위와 같음(클래식 경로의 router)
 picker	선택 목록	windows.lua::Color Picker;manual::windows/system.md;manual::windows/overview.md;manual::reference/versions.md	소리·비컨 picker. 설명서에서 "선택기"와 갈려 있었다(2026-11-13). color picker는 koKR "색 지정"을 따르므로 예외
 Retail	Retail		decisions.tsv 2026-11-07 게임 버전 이름은 영어로 쓴다. 설명서에 "리테일"이 남아 있었다(2026-11-13)
 numpad	Numpad		번역 지침 `## 용어` 5번(키 이름은 영어). 설명서에 "숫자 키패드"가 있었다(2026-11-13)
+	대신 처리하다|다시 처리하다		2026-11-13 대응표, 원문 take (over) keys. 프로그램이 키를 "가져가다"라고 쓰지 않는다(decisions.tsv 2026-11-13). take them again은 "다시 처리하다"	가져가|가져갑|가져간|가져갈|가져갔
+	게임의 원래 기능으로 되돌리다		2026-11-13 대응표, 원문 give back·hand back·release (keys)	돌려주|돌려줍|돌려준|돌려줄|돌려줬
+	키 처리를 멈추다|작동하지 않다	manual::world/wownav.md	2026-11-13 대응표, 원문 step aside·stay out of the way. wownav.md는 koKR 설정 이름 "관문에서 물러나기"와 그 동작(비컨이 실제로 뒤로 간다) 설명이라 예외	물러나|물러납|물러난|물러날|물러났
+	이전 단계로 돌아가다|상위 폴더로 돌아가다|이전 화면으로 돌아가다		2026-11-13 대응표, 원문 go back one level·folder·screen. 버튼 이름 "뒤로"와 koKR "경유지 하나 뒤로"는 대상이 아니다	한 단계 뒤로|한 폴더 뒤로|한 화면 뒤로
+	달라지는지 확인하다|감시하다		2026-11-13 대응표, 원문 watch. 컨트롤 변화는 확인하다, 모니터 기능은 감시하다(koKR "파티 감시")	지켜보|지켜봅|지켜본|지켜볼|지켜봤
+	간주하다|인식하다|포함하다		2026-11-13 대응표, 원문 count as. "~(으)로 치다"를 쓰지 않는다	로 치지|로 칩니다|로 치는|로 치고|로 치면|로 쳐서|로 쳤
+	확인 없이		2026-11-13 대응표, 원문 without asking	묻지 않고
+	제공하다		2026-11-13 대응표, 원문 hands you text	건네주|건네줍|건네준|건네줄|건네줬
+	열리다|표시하다		2026-11-13 대응표, 원문 popup·show. 창과 팝업에 뜨다·띄우다를 쓰지 않는다(번역 지침 `## 설명서` 문체)	뜹니다|뜨는|뜨면|떠 있|띄우|띄웁|띄운|띄울|띄워|띄웠
+	전환하다|이동하다	manual::world/navigation.md;manual::information/monitors.md	2026-11-13 대응표, 원문 switch between·move between. 예외 두 파일은 "연속 안내를 오갑니다"(step through the chain)와 "상태를 오갑니다"가 사용자 판단 대기	오가|오갑|오간|오갈|오갔
