@@ -346,7 +346,23 @@ def batch_data(rel: str, lens: str | None = None) -> dict[str, object]:
         data["en_diff"] = d
     if lens == "style":
         del data["en"], data["en_path"]
+        if d:
+            data["ko_lines"] = changed_ko_lines(str(data.pop("en_diff")))
     return data
+
+
+_HUNK = re.compile(r"^@@ -\S+ \+(\d+)(?:,(\d+))? @@", re.MULTILINE)
+
+
+def changed_ko_lines(diff: str) -> list[tuple[int, int]]:
+    """영어 변경분(git diff)의 새 쪽 줄 범위를 한국어 번역의 줄 범위로 바꾼다. 번역은 첫 줄 source 주석 때문에
+    한 줄씩 밀려 있다. 지워지기만 한 곳은 그 위치 한 줄로 준다. style 관점은 원문을 보지 않으므로
+    en_diff 대신 이 범위를 받는다(docs/decisions.tsv 2026-11-13)."""
+    out = []
+    for m in _HUNK.finditer(diff):
+        start, count = int(m.group(1)), int(m.group(2) or 1)
+        out.append((start + 1, start + max(count, 1)))
+    return out
 
 
 def main() -> int:

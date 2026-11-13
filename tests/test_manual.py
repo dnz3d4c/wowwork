@@ -273,3 +273,17 @@ def test_check_rejects_avoided_expressions(tmp_path: Path) -> None:
     assert "가져갑" in problems and "한 단계 뒤로" in problems and "가져가기" not in problems
     good = head + 'WowVision이 키 입력을 처리합니다. Escape는 이전 단계로 돌아갑니다. "가져가기"\n'
     assert check(en, good, ko, terms) == []
+
+
+def test_changed_ko_lines_maps_english_hunks_to_korean_lines() -> None:
+    """원문이 바뀐 파일의 style 관점에는 영어 변경분 대신 평가할 한국어 줄 범위를 준다(2026-11-13 사용자 결정).
+    번역 파일은 첫 줄 source 주석 때문에 영어보다 한 줄씩 밀려 있다."""
+    from tools.manual import changed_ko_lines
+
+    diff = (
+        "diff --git a/x b/x\n--- a/x\n+++ b/x\n"
+        "@@ -3,2 +3,3 @@ heading\n ctx\n+new\n ctx\n"
+        "@@ -10 +11,0 @@\n-gone\n"
+    )
+    assert changed_ko_lines(diff) == [(4, 6), (12, 12)]
+    assert changed_ko_lines("") == []
