@@ -51,3 +51,4 @@ date	scope	decision	source	note
 2026-11-13	koKR turn in(완료 보고 대상 NPC)	"완료"를 유지한다(퀘스트 상태 Complete와 같은 말이 겹치는 것을 감수)	사용자	게임 지도 범례 MAP_LEGEND_TURNIN과 같음. 선택지: 완료 보고 / 제출 / 그대로 완료
 2026-11-13	koKR Controls, Bag Controls, Bank Controls	"컨트롤", "가방 컨트롤", "은행 컨트롤"로 바꾼다	사용자	감수 지적: Tab으로 조작에 가서가 구역 이름으로 안 들림. 같은 질문에서 noted를 기억해 둔으로 바꾸는 것과 설명서 따옴표 전체 확장은 고르지 않았다(현행 유지)
 2026-11-13	원문이 바뀐 파일의 독자 관점 평가 범위	diff 앞뒤 문맥 줄을 빼고 실제로 바뀐 줄만 준다	사용자	Codex 교차 리뷰 지적
+2026-11-14	한국어 설명서 사이트(gong.aheu.org/WowVision)	영어 사용 설명서를 사이트에서 뺀다. 독일어 설명서와 Developer Guide는 남긴다	사용자	사용자는 영어 버전만 지시함. 원본 SUMMARY.md·introduction.md는 그대로 두고 배포 워크플로에서 뺀다(원본 병합 충돌 방지)
