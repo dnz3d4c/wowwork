@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "getting-started/installer.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "WoW: Forever, 불타는 성전 기념 서버, Classic Era, Mists of Pandaria Classic, Retail",
+      "suggestion": "WoW: Forever, 불타는 성전 기념 서버, Classic Era, 판다리아의 안개 클래식, Retail",
+      "problem": "같은 목록에서 불타는 성전은 한국어로, 판다리아의 안개는 영어로 적어 표기가 섞였고, 다른 설명서 파일의 표기와도 다르다.",
+      "evidence": "ko/getting-started/introduction.md:27 \"판다리아의 안개 클래식\", ko/getting-started/sku-login.md:33 \"판다리아의 안개 클래식\", ko/getting-started/first-login.md:8 \"판다리아의 안개 클래식과 Retail\", ko/reference/versions.md:10 \"판다리아의 안개 클래식(Mists of Pandaria Classic)\". 설치 프로그램 화면 이름(WowLocator.cs:107,113)은 \"Anniversary (TBC)\", \"Mists of Pandaria Classic\"이라 이 줄은 화면 글자를 그대로 인용한 것도 아니다. 다른 설명서 표기에 맞추는 쪽을 제안한다."
+    },
+    {
+      "id": "getting-started/installer.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "현재 설정으로 업데이트를 골라도 이 두 항목은 절대 실행되지 않습니다.",
+      "suggestion": "현재 설정으로 업데이트를 골라도 이 두 항목은 적용되지 않습니다.",
+      "problem": "들은 대로 이해한 뜻: 업데이트 버튼을 눌러도 두 음성 항목의 변경은 일어나지 않는다. 뜻은 통하지만 체크 상자 항목을 \"실행\"한다는 표현이 어색하고 \"절대\"가 원문보다 강하게 들린다.",
+      "evidence": "유형 ⑤ 근처(설명서에서 선택 항목에 \"실행되다\"를 잘 쓰지 않음). 원문 \"Update now never runs them\"의 never는 \"~않습니다\"로 충분하다."
+    }
+  ]
+}

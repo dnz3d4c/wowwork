@@ -1,0 +1,11 @@
+[
+  {
+    "id": "getting-started/sku.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "\"친구\", \"차단\", \"누구\", \"길드\" 페이지가 있는 친구 및 소셜 창.",
+    "suggestion": "\"친구\", \"차단\", \"누구\", \"길드\" 페이지가 있는 친구 창.",
+    "problem": "Classic Era·TBC·Mists의 친구 창을 \"친구 및 소셜 창\"으로 옮겨, 다른 설명서가 쓰는 이름(친구 창)과 다르고 Retail·WoW: Forever의 별개 창인 \"소셜 창\"(같은 파일 아래 Retail 목록)과 섞여 들릴 수 있다.",
+    "evidence": "원문 \"The Friends and Social window, with its Friends, Ignore, Who and Guild pages\"는 클래식 계열의 한 창. 다른 파일 표기: wowvision-ko/WowVision/docs/src/user/ko/windows/social.md:12·23 \"친구 창\"(Classic Era, TBC, Mists), social.md:113 \"소셜 창 (Retail, WoW: Forever)\". 뜻은 통하므로 경미."
+  }
+]

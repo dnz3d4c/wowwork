@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "windows/collections.md",
+   "category": "terminology",
+   "severity": "minor",
+   "quote": "다른 특성을 환불해서 조건이 맞지 않게 되었을 때 읽는 \"유효하지 않음\"입니다",
+   "suggestion": "다른 특성의 습득을 취소해서 조건이 맞지 않게 되었을 때 읽는 \"유효하지 않음\"입니다",
+   "problem": "같은 파일에서 refund를 \"습득 취소\"(Backspace 표, 계통도 초기화 설명, 상황별 메뉴)로 옮겼는데 이 문장만 \"환불\"을 써서 같은 동작이 두 말로 들립니다.",
+   "evidence": "원문 \"or \\\"Invalid\\\" if refunding something broke it\". 같은 파일 표 \"Backspace | 등급 하나의 습득을 취소합니다\", terms Unlearn=습득 취소. 다른 설명서 wowvision-ko/WowVision/docs/src/user/ko/windows/spells-and-talents.md:177 \"특성 습득을 취소하면서 이 특성에 필요한 것이 없어졌습니다\". 설명서 ko 폴더 전체에서 \"환불\"은 이 줄 하나뿐(Grep)."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "이미 열려 있는 탭에서는 Enter가 \"선택됨\"이라고만 말하므로 실수로 도감을 닫을 일이 없습니다",
+   "suggestion": "이미 열려 있는 탭에서 Enter를 누르면 \"선택됨\"이라고만 읽으므로 실수로 도감을 닫을 일이 없습니다",
+   "problem": "들은 대로 이해한 뜻: 열려 있는 탭에서 Enter 키가 \"선택됨\"이라고 말한다. 키가 말을 하는 것처럼 그려져 실제 동작(Enter를 누르면 WowVision이 \"선택됨\"만 읽고 탭 키를 실행하지 않음)이 덜 드러납니다.",
+   "evidence": "유형 ④(키를 사람처럼 그림). 이해를 막지는 않아 경미."
+  },
+  {
+   "id": "windows/collections.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "\"획득\"은 영예가 도달한 레벨에 붙습니다",
+   "suggestion": "\"획득\"은 영예 레벨이 이미 도달한 레벨에 붙습니다",
+   "problem": "들은 대로 이해한 뜻: 영예라는 것이 어떤 레벨에 도달하면 그 레벨에 \"획득\"이 붙는다. \"영예가 도달한\"은 무엇이 도달하는지 한 번 들어서 조금 걸립니다. 뜻은 통합니다.",
+   "evidence": "유형 ⑤에 가까운 어색한 주어. 원문 \"for levels your renown has reached\"와 뜻은 일치."
+  }
+ ]
+}

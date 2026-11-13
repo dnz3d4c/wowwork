@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "reference/glossary.md",
+      "category": "terminology",
+      "severity": "minor",
+      "quote": "Sku 로그인 도구를 사용하거나, 처음 한 번은 비장애인의 도움을 받으십시오.",
+      "suggestion": "Sku Login Tool을 사용하거나, 처음 한 번은 비장애인의 도움을 받으십시오.",
+      "problem": "같은 문단의 링크 글자와 다른 설명서 파일은 프로그램 이름을 \"Sku Login Tool\"로 두는데, 이 문장만 \"Sku 로그인 도구\"로 옮겨 같은 프로그램이 두 이름으로 들립니다.",
+      "evidence": "원문 \"Use the Sku login tool\". 같은 문단 링크 [Sku Login Tool로 로그인하기], ko/getting-started/sku-login.md 제목 \"# Sku Login Tool로 로그인하기\", ko/getting-started/introduction.md:40 \"Sku Login Tool로 이 화면들을 통과할 수 있습니다\", ko/getting-started/installation.md:42 \"Sku Login Tool이 대신 조작할 수 있습니다\". 고유 이름은 번역하지 않는다(manual-review.md terminology 관점)."
+    },
+    {
+      "id": "reference/glossary.md",
+      "category": "style",
+      "severity": "minor",
+      "quote": "범위 — 설정을 캐릭터별로 저장할지 계정 전체로 저장할지를 정합니다.",
+      "suggestion": "범위 — 설정을 캐릭터별로 저장하는지 계정 전체로 저장하는지를 나타냅니다.",
+      "problem": "들은 대로 이해한 뜻: \"범위\"라는 무언가가 저장 방식을 스스로 결정한다. 실제로는 사용자가 상황별 메뉴로 바꾸는 설정의 저장 방식 자체를 가리키는 말이라, 용어 정의로는 \"정합니다\"보다 \"나타냅니다\"가 자연스럽습니다.",
+      "evidence": "유형 ④(설정 속성을 결정하는 주체처럼 그림). 다음 문장 \"WowVision 메뉴에서 상황별 메뉴(Shift+F10)로 변경합니다\"가 결정 주체가 사용자임을 보여 줍니다. 원문 \"Whether a setting is stored per character or account-wide.\" 뜻은 맞으므로 경미."
+    }
+  ]
+}

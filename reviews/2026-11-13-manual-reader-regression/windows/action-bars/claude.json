@@ -1,0 +1,29 @@
+[
+  {
+    "id": "windows/action-bars.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "기타 행동 버튼, 지역 능력 버튼, 차량 단축바나 행동 단축바 조정은 읽지 않습니다.",
+    "suggestion": "기타 행동 버튼, 지역 능력 버튼, 탈것 단축바나 행동 단축바 조정은 읽지 않습니다.",
+    "problem": "원문 vehicle bar를 '차량 단축바'로 옮겼다. 게임 한국어판은 vehicle을 '탈것'으로 쓰므로 독자가 게임에서 접하는 말과 다르다. 화면 문구 인용은 아니라 경미로 둔다.",
+    "evidence": "cache/gs_enUS.csv 18813 BINDING_NAME_VEHICLEEXIT \"Exit Vehicle\" = gs_koKR.csv \"탈것 내리기\", 18894 VEHICLE_LEAVE. 같은 문장의 possess bar '행동 단축바 조정'은 gs 58631 GAMEPAD_POSSESS_BAR_OVERRIDE(\"Possess Bar Override\" = \"행동 단축바 조정으로 대체\")와 맞아 문제없음."
+  },
+  {
+    "id": "windows/action-bars.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "행동 단축바 수정 키를 함께 누르지 않는 한 단축바에서 행동을 끌어내도 아무 일도 일어나지 않고",
+    "suggestion": "행동 단축바 수정 키를 함께 누르지 않는 한 단축바에서 주문이나 아이템을 끌어내도 아무 일도 일어나지 않고",
+    "problem": "들은 대로 이해한 뜻: 잠그기가 켜져 있으면 단축바에서 무언가를 끌어내도 안 된다. '행동을 끌어내다'는 action을 그대로 옮긴 말이라 한국어 설명서에서 무엇을 끄는지 바로 와닿지 않는다.",
+    "evidence": "유형 ⑤. 같은 내용을 다룬 getting-started/first-login.md:36은 '행동 단축바에서 주문이나 아이템을 끌어내면'으로 썼다. 원문 'dragging an action off a bar'의 action은 칸에 놓인 주문·아이템·매크로를 가리킨다."
+  },
+  {
+    "id": "windows/action-bars.md",
+    "category": "style",
+    "severity": "minor",
+    "quote": "자기 키를 게임의 원래 기능으로 되돌리고, 전투가 끝나면 다시 처리합니다.",
+    "suggestion": "자기 키를 게임의 원래 기능으로 되돌리고, 전투가 끝나면 그 키를 다시 맡습니다.",
+    "problem": "들은 대로 이해한 뜻: 전투 중에는 WowVision 키가 게임 기능으로 돌아가고 전투가 끝나면 WowVision이 다시 쓴다. '다시 처리합니다'는 목적어가 없어 무엇을 처리하는지 한 번에 들리지 않는다. 뜻은 통하므로 경미.",
+    "evidence": "유형 ③. 원문 'takes them again when combat ends'. controller.md:119는 '버튼 입력을 다시 처리합니다'로 목적어를 밝혔다."
+  }
+]

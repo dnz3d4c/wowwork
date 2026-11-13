@@ -1,0 +1,11 @@
+[
+  {
+    "id": "basics/alerts.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "2. 아래로 하드 대상까지 가서 Enter를 누르고, 그다음 대상 변경으로 가서 Enter를 누릅니다.",
+    "suggestion": "2. Down으로 하드 대상까지 가서 Enter를 누르고, 그다음 대상 변경으로 가서 Enter를 누릅니다.",
+    "problem": "원문 \"Down to Hard Target\"의 키 이름 Down을 \"아래로\"로 옮겼다. 같은 예시의 1·3단계와 나침반 예시 1단계도 \"아래로\"를 쓴다. 다른 설명서 파일은 키 이름을 그대로 두고 \"Down으로 ...까지 가서\"라고 쓴다.",
+    "evidence": "en: \"Down to Hard Target, Enter\", \"Down to TTS Alert, Enter, then Down (past ...)\". 다른 파일 표기: basics/keybindings.md:9 \"Down으로 인터페이스까지 내려가\", basics/menu-and-settings.md:187 \"Down으로 범위까지 가서\", basics/interface.md:141 \"Down으로 레벨 범위 행까지\". 용어 관점 기준: 키 이름은 번역하지 않는다. 같은 파일의 54·56·61행(아래로 목표 선택, 아래로 TTS 알림, 아래로 길 안내)도 같은 방식으로 맞춘다."
+  }
+]

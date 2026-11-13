@@ -1,0 +1,29 @@
+{
+ "file": "basics/index.md",
+ "en_path": "wowvision-ko/WowVision/docs/src/user/en/basics/index.md",
+ "ko_path": "wowvision-ko/WowVision/docs/src/user/ko/basics/index.md",
+ "en": "# Basics\n\nThese pages explain the parts of WowVision you use everywhere: how to move through a window and click its elements, how tooltips are read, how speech works, where the settings live, what alerts are, and how to change keys.\n\n- [Using the Interface](interface.md) — moving through windows, clicking, dropdowns, edit boxes, the context menu, the cursor\n- [Tooltips](tooltips.md) — reading tooltips as a whole or line by line\n- [Speech and Sound](speech.md) — voice, rate, volume, interrupting speech, sounds and voice packs\n- [The WowVision Menu and Settings](menu-and-settings.md) — the settings menu, per-character and account settings\n- [Alerts](alerts.md) — automatic announcements and how to change them\n- [Keybindings](keybindings.md) — the keybinding window\n\nIf you are new to WowVision, read [Using the Interface](interface.md) first: the same keys work in every window of the game.\n",
+ "ko": "<!-- source: docs/src/user/en/basics/index.md @ 9090454 -->\n# 기본\n\n이 장에서는 WowVision에서 어디서나 사용하는 기능을 설명합니다. 창 안에서 이동하고 요소를 클릭하는 법, 툴팁을 읽는 방식, 음성이 나오는 방식, 설정을 찾는 곳, 알림이 무엇인지, 키를 변경하는 법을 다룹니다.\n\n- [인터페이스 사용하기](interface.md) — 창 안에서 이동하기, 클릭하기, 드롭다운, 텍스트 상자, 상황별 메뉴, 커서\n- [툴팁 읽기](tooltips.md) — 툴팁을 한꺼번에 또는 한 줄씩 읽기\n- [음성 및 소리](speech.md) — 목소리, 속도, 음량, 음성 끊기, 소리와 음성 팩\n- [WowVision 메뉴와 설정](menu-and-settings.md) — 설정 메뉴, 캐릭터별 설정과 계정 전체 설정\n- [알림](alerts.md) — 자동 안내와 그 안내를 변경하는 법\n- [단축키](keybindings.md) — 단축키 화면\n\nWowVision을 처음 사용한다면 [인터페이스 사용하기](interface.md)부터 읽으십시오. 그 장에서 익히는 키가 게임의 모든 창에서 똑같이 동작하기 때문입니다.\n",
+ "terms": [
+  {
+   "en": "Speech and Sound",
+   "ko": "음성 및 소리"
+  },
+  {
+   "en": "WowVision Menu",
+   "ko": "WowVision 메뉴"
+  },
+  {
+   "en": "WowVision",
+   "ko": "WowVision"
+  },
+  {
+   "en": "Settings",
+   "ko": "설정"
+  },
+  {
+   "en": "Speech",
+   "ko": "음성"
+  }
+ ]
+}

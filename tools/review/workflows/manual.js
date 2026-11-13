@@ -90,11 +90,15 @@ const norm = s => s.replace(/\s+/g, ' ').trim()
 const overlaps = (a, b) => { const x = norm(a), y = norm(b); return x.length > 0 && y.length > 0 && (x.includes(y) || y.includes(x)) }
 
 async function reviewAndFix(rel) {
-  const runs = (await parallel([
-    ...LENSES.map(l => () => claudeReview(rel, l).then(r => r && { provider: 'claude', lens: l, findings: r.findings })),
-    ...LENSES.map(l => () => gptReview(rel, l).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
-  ])).filter(Boolean)
-  const failed = LENSES.length * 2 - runs.length
+  // args.findings: 회귀 확인(5단계)의 중대 이상 지적을 2~4단계로 다시 보낼 때(review-process.md 5단계). 평가자를 새로 돌리지 않는다.
+  const given = GIVEN && GIVEN[rel]
+  const runs = given
+    ? ['claude', 'gpt'].map(p => ({ provider: p, lens: 'regression', findings: given.filter(f => f.by === p) }))
+    : (await parallel([
+      ...LENSES.map(l => () => claudeReview(rel, l).then(r => r && { provider: 'claude', lens: l, findings: r.findings })),
+      ...LENSES.map(l => () => gptReview(rel, l).then(r => r && { provider: 'gpt', lens: l, findings: r.findings })),
+    ])).filter(Boolean)
+  const failed = given ? 0 : LENSES.length * 2 - runs.length
   const all = runs.flatMap(r => r.findings.map((f, i) => ({ ...f, by: `${r.provider}-${r.lens}`, provider: r.provider, ref: `${rel}#${r.provider}-${r.lens}-${i}` })))
   for (const f of all) f.consensus = all.some(g => g.provider !== f.provider && overlaps(f.quote, g.quote))
   if (!all.length) return { file: rel, failedReviewers: failed, findings: 0, applied: 0, upheld: 0, disputeWon: 0, escalations: [] }
@@ -145,14 +149,31 @@ async function reviewAndFix(rel) {
 }
 
 // ── 실행 ────────────────────────────────────────────────────────────────
-const files = args.files
-phase('Translate')
-const translated = await parallel(files.map(rel => () => translate(rel).then(r => ({ rel, r }))))
-log(`번역 끝: ${translated.filter(Boolean).filter(t => t.r && t.r.ok).length}/${files.length} 앵커 외 문제 없음`)
-phase('Anchors')
-const anchored = await parallel(files.map(rel => () => fixAnchors(rel).then(r => ({ rel, r }))))
-const notClean = anchored.filter(Boolean).filter(a => !a.r || !a.r.ok).map(a => ({ file: a.rel, remaining: a.r ? a.r.remaining : ['응답 없음'] }))
-if (notClean.length) log(`기계 검사 미통과 ${notClean.length}개: 평가는 진행하되 결과에 표시`)
+// args.findingsFile: 회귀 지적 JSON({파일: [지적...]}) 경로. 인자로 직접 넘기기엔 커서 에이전트 하나가 읽어 그대로 돌려준다.
+let GIVEN = args.findings
+if (args.findingsFile && !GIVEN) {
+  const F = { type: 'object', required: ['by', 'category', 'severity', 'quote', 'suggestion', 'problem', 'evidence'],
+    properties: { by: { type: 'string' }, category: { type: 'string' }, severity: { type: 'string' }, quote: { type: 'string' },
+      suggestion: { type: 'string' }, problem: { type: 'string' }, evidence: { type: 'string' } } }
+  const got = await agent(`${args.findingsFile} 를 Read로 읽는다. 최상위 객체의 findings 필드는 {설명서 상대경로: [지적...]} 이다. ` +
+    `이것을 files 배열(항목마다 rel과 findings)로 바꿔 구조화 출력으로 돌려준다. 글자를 한 자도 바꾸거나 빼지 않는다. 판단하지 않는다.`,
+    { label: 'load-findings', phase: 'Review', effort: 'low',
+      schema: { type: 'object', required: ['files'], properties: { files: { type: 'array', items: { type: 'object', required: ['rel', 'findings'],
+        properties: { rel: { type: 'string' }, findings: { type: 'array', items: F } } } } } } })
+  GIVEN = Object.fromEntries(((got && got.files) || []).map(f => [f.rel, f.findings]))
+  log(`회귀 지적 ${Object.values(GIVEN).flat().length}건, 파일 ${Object.keys(GIVEN).length}개`)
+}
+const files = GIVEN ? Object.keys(GIVEN) : args.files
+let notClean = []
+if (!GIVEN) {
+  phase('Translate')
+  const translated = await parallel(files.map(rel => () => translate(rel).then(r => ({ rel, r }))))
+  log(`번역 끝: ${translated.filter(Boolean).filter(t => t.r && t.r.ok).length}/${files.length} 앵커 외 문제 없음`)
+  phase('Anchors')
+  const anchored = await parallel(files.map(rel => () => fixAnchors(rel).then(r => ({ rel, r }))))
+  notClean = anchored.filter(Boolean).filter(a => !a.r || !a.r.ok).map(a => ({ file: a.rel, remaining: a.r ? a.r.remaining : ['응답 없음'] }))
+  if (notClean.length) log(`기계 검사 미통과 ${notClean.length}개: 평가는 진행하되 결과에 표시`)
+}
 phase('Review')
 const reviewed = await pipeline(files, rel => reviewAndFix(rel))
 return { notClean, reviewed }

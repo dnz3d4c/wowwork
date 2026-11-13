@@ -1,0 +1,31 @@
+{
+ "findings": [
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "필터가 알아볼 수 없으므로 오류 알림 알림으로 그대로 말합니다.",
+   "suggestion": "필터가 알아볼 수 없으므로 오류 알림의 TTS 알림으로 그대로 말합니다.",
+   "problem": "들은 대로 이해한 뜻: 필터가 못 알아보는 메시지를 '오류 알림 알림'이라는 무언가로 말한다. 같은 낱말이 두 번 이어져 들을 때 말이 더듬은 것처럼 들리고, 어느 설정을 가리키는지 바로 잡히지 않는다.",
+   "evidence": "유형 ⑤에 가까운 어색함. 원문 'spoken as they are through the Announce Errors alert'. 같은 파일 설정 표가 이 경로를 '오류 알림, TTS 알림 | 아래 \"항상 말하는 것\"에 나오는 메시지를 말하는 방식입니다'로 설명하므로 그 행 이름을 쓰면 겹침 없이 같은 대상을 가리킨다."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "열려 있던 창은 그대로 열려 있고, 전과 같은 요소에 있게 됩니다.",
+   "suggestion": "열려 있던 창은 그대로 열려 있고, 초점도 전과 같은 요소에 놓입니다.",
+   "problem": "들은 대로 이해한 뜻: 창이 열려 있고, (무엇인가가) 전과 같은 요소에 있다. 뒤 절의 주어가 없어 앞 절의 '창'이 요소에 있다는 말로도 들린다.",
+   "evidence": "유형 ③ 주어 누락. 원문 'you are on the same element as before'. 용어집 2026-11-13 대응표(land on → 초점이 놓이다·이동하다)를 따르면 주어가 드러난다."
+  },
+  {
+   "id": "world/combat.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision이 탐색 키 입력을 처리하기 시작하거나 게임의 원래 기능으로 되돌릴 때마다 출력하는 기록 기능을 켭니다.",
+   "suggestion": "WowVision이 탐색 키를 처리하기 시작할 때와 게임의 원래 기능으로 되돌릴 때마다 그 사실을 출력하는 기록을 켭니다.",
+   "problem": "들은 대로 이해한 뜻: 키 처리가 바뀔 때마다 무언가를 출력하는 기능을 켠다. '출력하는'의 목적어가 없어 무엇이 나오는지 알 수 없고, '키 입력을 게임의 원래 기능으로 되돌린다'는 목적어 짝이 어색하다.",
+   "evidence": "유형 ③ 목적어 누락. 원문 'prints when WowVision takes and releases its navigation keys'. 같은 파일 첫 목록은 '키 ... 는 게임의 원래 기능으로 되돌립니다'처럼 '키'를 목적어로 쓴다."
+  }
+ ]
+}

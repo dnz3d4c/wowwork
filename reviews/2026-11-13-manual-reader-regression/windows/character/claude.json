@@ -1,0 +1,29 @@
+[
+ {
+  "id": "windows/character.md",
+  "category": "style",
+  "severity": "minor",
+  "quote": "능력치 정지점에서는 범주로 들어갈 때 범주 머리글의 이름을 한 번 말하고, 그다음 Up과 Down으로 능력치 줄을 훑습니다.",
+  "suggestion": "능력치 정지점에서는 범주로 들어가면 그 범주의 이름을 한 번 읽어 주고, 그다음 Up과 Down으로 능력치 줄을 훑습니다.",
+  "problem": "들은 대로 이해한 뜻: 능력치 정지점에서 범주에 들어가면 누군가가 범주 이름을 한 번 말하고, 독자는 Up과 Down으로 줄을 훑는다. '말하고'의 주어가 없어 '정지점이 말한다'처럼 들리고, 앞 절('말하고')과 뒤 절('훑습니다')의 주어가 바뀌는데 표시가 없다.",
+  "evidence": "유형 ③(주어 누락)과 ④(정지점을 사람처럼 그림). 원문 'moving into a category speaks its name once, then you walk the stat lines'도 주어가 바뀐다. 뜻은 맞으므로 경미."
+ },
+ {
+  "id": "windows/character.md",
+  "category": "terminology",
+  "severity": "minor",
+  "quote": "경험치바에 표시, 진영을 경험치 바에 보여 주는 체크 상자.",
+  "suggestion": "경험치바에 표시, 진영을 경험치바에 보여 주는 체크 상자.",
+  "problem": "같은 문장 안에서 화면 문구 '경험치바'와 설명 '경험치 바'의 띄어쓰기가 다르다. 들을 때는 차이가 없지만 같은 말을 두 표기로 쓴 것이다.",
+  "evidence": "terms: Watched = '경험치바에 표시', cache/gs_koKR.csv:4718 SHOW_FACTION_ON_MAINSCREEN = '경험치바에 표시'. 같은 파일 115행 제목도 '경험치바'."
+ },
+ {
+  "id": "windows/character.md",
+  "category": "context",
+  "severity": "minor",
+  "quote": "세트 편집을 누르면 이름과 아이콘 창이 열립니다.",
+  "suggestion": "번역은 원문을 따른 것이므로 그대로 둔다. WoW: Forever 클라이언트에 EQUIPMENT_SET_EDIT가 있으면 버튼은 '이름/아이콘 변경'으로 읽히므로 docs/upstream-report.md에 원문 설명서와 동작의 차이로 올린다.",
+  "problem": "코드는 버튼 이름으로 게임 전역 문자열 EQUIPMENT_SET_EDIT를 먼저 쓰고, 없을 때만 L[\"Edit Set\"](세트 편집)을 쓴다. 게임의 이 문자열은 영어 'Change Name/Icon', 한국어 '이름/아이콘 변경'이라, 클라이언트에 전역이 있으면 독자는 '세트 편집'이 아니라 '이름/아이콘 변경'을 듣게 된다. Forever 클라이언트에 이 전역이 있는지는 확인하지 못했다(미확인 추정).",
+  "evidence": "WowVision/camelot/character.lua:559 `label = EQUIPMENT_SET_EDIT or L[\"Edit Set\"]`; cache/gs_enUS.csv:9932 EQUIPMENT_SET_EDIT = 'Change Name/Icon'; cache/gs_koKR.csv:9938 = '이름/아이콘 변경'. 영어 원문도 'Edit Set'이라 번역 결함이 아니라 원문 문제."
+ }
+]

@@ -1,0 +1,22 @@
+{
+ "findings": [
+  {
+   "id": "basics/tooltips.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "WowVision은 그 아이템이 향상인 Pawn 기준마다 툴팁 끝에 한 줄씩 더합니다.",
+   "suggestion": "WowVision은 그 아이템을 향상으로 판정한 Pawn 기준(Pawn의 능력치 가중치 설정)마다 툴팁 끝에 한 줄씩 더합니다.",
+   "problem": "들은 대로 이해한 뜻: Pawn의 어떤 '기준'마다 한 줄씩 붙는다는데, '아이템이 향상인 기준'이 무엇인지 한 번 들어서는 잡히지 않는다. '향상인 기준'은 조사 연결이 어색하고, 'Pawn 기준'이 무엇을 가리키는지 설명이 없다.",
+   "evidence": "유형 ①·⑤. 원문 'one line per Pawn scale it upgrades'. 뜻은 맞으나 '~이 향상인 기준'이라는 연결이 한국어 설명서에서 쓰지 않는 구조라 경미."
+  },
+  {
+   "id": "basics/tooltips.md",
+   "category": "style",
+   "severity": "minor",
+   "quote": "반지, 장신구, 한손 무기는 구역이 두 개이고, 양손 무기를 들고 있으면 두 손에 구역이 하나씩 생깁니다.",
+   "suggestion": "반지, 장신구, 한손 무기는 구역이 두 개이고, 양손 무기를 들고 있으면 주장비와 보조장비 칸에 대해 구역이 하나씩 생깁니다.",
+   "problem": "들은 대로 이해한 뜻: 양손 무기를 들면 '두 손에' 구역이 생긴다는데, 손에 구역이 생긴다는 표현이 무엇과 비교한다는 뜻인지 바로 와닿지 않는다.",
+   "evidence": "유형 ⑤. 원문 'both hands when you hold a two-handed weapon'(양손 칸 모두와 비교). 뜻은 대체로 전달되므로 경미. 수정안의 칸 이름은 확실하지 않다."
+  }
+ ]
+}
