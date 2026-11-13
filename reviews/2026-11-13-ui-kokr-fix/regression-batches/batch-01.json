@@ -1,0 +1,61 @@
+{
+ "items": [
+  {
+   "id": "groupHealth.lua::Repeat Below (percent)",
+   "file": "groupHealth.lua",
+   "key": "Repeat Below (percent)",
+   "en": "Repeat Below (percent)",
+   "ko": "생명력이 이 값 미만일 때 반복 (퍼센트)",
+   "code": [
+    "retail/groupHealth/module.lua:156: label = L[\"Repeat Below (percent)\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "windows.lua::Controls",
+   "file": "windows.lua",
+   "key": "Controls",
+   "en": "Controls",
+   "ko": "컨트롤",
+   "code": [
+    "classic/friends.lua:459: builder:pushContext(\"controls\", L[\"Controls\"])",
+    "classic/friends.lua:568: builder:pushContext(\"controls\", L[\"Controls\"])",
+    "classic/friends.lua:662: builder:pushContext(\"controls\", L[\"Controls\"])",
+    "classic/guild.lua:241: builder:pushContext(\"guildControls\", L[\"Controls\"])",
+    "retail/communities.lua:989: builder:pushContext(\"buttons\", L[\"Controls\"])",
+    "retail/socialUI.lua:486: builder:pushContext(\"raidControls\", L[\"Controls\"])"
+   ],
+   "game_term": "조작 | 조작 설정",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "windows.lua::Bag Controls",
+   "file": "windows.lua",
+   "key": "Bag Controls",
+   "en": "Bag Controls",
+   "ko": "가방 컨트롤",
+   "code": [
+    "retail/containers/Bags.lua:290: builder:pushContext(frameKey .. \":controls\", L[\"Bag Controls\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "windows.lua::Bank Controls",
+   "file": "windows.lua",
+   "key": "Bank Controls",
+   "en": "Bank Controls",
+   "ko": "은행 컨트롤",
+   "code": [
+    "retail/containers/Bank.lua:402: builder:pushContext(\"bank:controls\", L[\"Bank Controls\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  }
+ ]
+}
