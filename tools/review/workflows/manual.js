@@ -68,7 +68,7 @@ const fixAnchors = rel => agent(
 // ── 3. 평가 ─────────────────────────────────────────────────────────────
 const claudeReview = (rel, lens) => agent(
   `너는 번역 평가자다. ${P}/manual-review.md 와 ${P}/manual-lens-${lens}.md 를 Read로 읽고 따른다.\n` +
-  `입력은 Bash로 \`cd ${W} && uv run python -m tools.manual batch ${rel} ${dirOf(rel)}/claude-input-${lens}.json\` 를 실행해 만든 뒤 Read로 읽는다. ` +
+  `입력은 Bash로 \`cd ${W} && uv run python -m tools.manual batch ${rel} ${dirOf(rel)}/claude-input-${lens}.json ${lens}\` 를 실행해 만든 뒤 Read로 읽는다. ` +
   `${OUT} 폴더의 다른 평가 결과 파일은 열지 않는다. 결과를 ${dirOf(rel)}/claude-${lens}.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.`,
   { label: `claude:${lens}:${rel}`, phase: 'Review', schema: FINDINGS })
 
@@ -81,7 +81,7 @@ const gptRun = (label, phaseName, pre, prompts, input, schemaFile, out, schema) 
   { label, phase: phaseName, schema: withOk(schema), effort: 'low' }).then(r => (r && r.ok === true ? r : null))
 
 const gptReview = (rel, lens) => gptRun(`gpt:${lens}:${rel}`, 'Review',
-  `먼저 Bash로 \`cd ${W} && uv run python -m tools.manual batch ${rel} ${dirOf(rel)}/gpt-input-${lens}.json\` 를 실행한다. 그다음 `,
+  `먼저 Bash로 \`cd ${W} && uv run python -m tools.manual batch ${rel} ${dirOf(rel)}/gpt-input-${lens}.json ${lens}\` 를 실행한다. 그다음 `,
   ['manual-review.md', `manual-lens-${lens}.md`], `${dirOf(rel)}/gpt-input-${lens}.json`, 'docs-findings.schema.json',
   `${dirOf(rel)}/gpt-${lens}.json`, FINDINGS)
 

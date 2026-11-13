@@ -237,3 +237,17 @@ def test_source_diff_shows_english_changes_since_translated_commit(tmp_path) -> 
     en.write_text("# Title\n\nNew line.\n", encoding="utf-8")
     d = source_diff(ko, "a.md", repo=tmp_path)
     assert "-Old line." in d and "+New line." in d
+
+
+def test_batch_hides_english_from_style_lens() -> None:
+    """설명서 style 관점은 원문 없이 한국어만 읽는다(docs/decisions.tsv 2026-11-13).
+    원문을 본 평가자는 직역을 정답으로 받아들여 "키를 가져갑니다" 같은 문장을 통과시켰다."""
+    from tools.manual import KO_ROOT, batch_data
+
+    if not (KO_ROOT / "basics/interface.md").exists():
+        pytest.skip("한국어 설명서 없음")
+    full = batch_data("basics/interface.md")
+    reader = batch_data("basics/interface.md", lens="style")
+    assert "en" in full and "en_path" in full
+    assert "en" not in reader and "en_path" not in reader
+    assert reader["ko"] == full["ko"] and reader["terms"] == full["terms"]

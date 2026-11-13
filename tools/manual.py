@@ -7,7 +7,7 @@ koKR 을 쓸 때 부르므로 따로 실행하지 않는다.
   uv run python -m tools.manual list                 # 원문 파일 목록과 단어 수
   uv run python -m tools.manual terms <상대경로>       # 그 파일의 UI 문자열 용어표(JSON)
   uv run python -m tools.manual check [<상대경로>...]  # 번역문 기계 검사(없으면 번역된 전체)
-  uv run python -m tools.manual batch <상대경로> <출력.json>  # 평가 입력(원문, 번역문, 용어표, 원문이 바뀌었으면 en_diff)
+  uv run python -m tools.manual batch <상대경로> <출력.json> [관점]  # 평가 입력(원문, 번역문, 용어표, 원문이 바뀌었으면 en_diff). 관점이 style이면 원문을 뺀다
   uv run python -m tools.manual diff <상대경로>          # 커밋된 번역의 원문 커밋 이후 영어 원문의 변경
 상대경로는 docs/src/user/en 기준(예: basics/interface.md). 번역문은 같은 상대경로의 ko 폴더.
 """
@@ -322,6 +322,22 @@ def _committed_ko(rel: str) -> str:
     return r.stdout.decode("utf-8") if r.returncode == 0 else ""
 
 
+def batch_data(rel: str, lens: str | None = None) -> dict[str, object]:
+    """평가 입력 한 파일. style 관점은 원문 없이 한국어만 읽으므로 en·en_path 를 뺀다
+    (docs/decisions.tsv 2026-11-13: 원문을 본 평가자는 직역을 통과시켰다)."""
+    en = (EN_ROOT / rel).read_text(encoding="utf-8")
+    data: dict[str, object] = {
+        "file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",
+        "ko_path": f"wowvision-ko/WowVision/docs/src/user/ko/{rel}", "en": en,
+        "ko": (KO_ROOT / rel).read_text(encoding="utf-8"), "terms": term_sheet(en, locale_pairs()),
+    }  # fmt: skip
+    if d := source_diff(_committed_ko(rel), rel):
+        data["en_diff"] = d
+    if lens == "style":
+        del data["en"], data["en_path"]
+    return data
+
+
 def main() -> int:
     cmd, rest = sys.argv[1], sys.argv[2:]
     if cmd == "diff":
@@ -337,13 +353,7 @@ def main() -> int:
         return 0
     if cmd == "batch":
         rel, out = rest[0], Path(rest[1])
-        en = (EN_ROOT / rel).read_text(encoding="utf-8")
-        ko = (KO_ROOT / rel).read_text(encoding="utf-8")
-        data = {"file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",
-                "ko_path": f"wowvision-ko/WowVision/docs/src/user/ko/{rel}", "en": en,
-                "ko": ko, "terms": term_sheet(en, locale_pairs())}  # fmt: skip
-        if d := source_diff(_committed_ko(rel), rel):
-            data["en_diff"] = d
+        data = batch_data(rel, rest[2] if len(rest) > 2 else None)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         print(out)
