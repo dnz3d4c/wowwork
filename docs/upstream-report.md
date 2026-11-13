@@ -34,7 +34,15 @@
 | world/quests.md (V1.0.2) | 주변 퀘스트 소리는 장소가 앞쪽에 있을 때만 들린다고 하지만, 거리와 정면에서 벗어난 각도를 합쳐 판단해 가까우면 옆쪽(10야드에서 100도)도 들린다 | WowVision core/quests/nearbyEngine.lua:32-46, nearbyEngineTests.lua:68-74 |
 | world/quests.md (V1.0.2) | 축제 퀘스트는 축제 기간에만 포함된다고 하지만, 축제 뒤에도 완료할 수 있는 퀘스트는 완료 가능 장소로 계속 남는다 | WowVision core/quests/nearbySounds.lua:215 |
 | information/buffers.md (V1.0.2) | 버퍼 설정 화면이 사용함, 버퍼, 항목 방향 반전 세 가지를 이 순서로 보여 준다고 하지만(244줄), 같은 문서 설정 표에 새로 생긴 Always Start at Top과 Sounds When Opening and Closing도 그 화면에 있다 | WowVision core/buffers/module.lua:20-38 |
+| getting-started/sku.md | Sku가 맡는 키 목록에 툴팁 줄 키와 소프트 대상 키만 있고, 같은 이유로 꺼지는 Previous Tooltip Block·Next Tooltip Block(Ctrl+Shift+Up·Ctrl+Shift+Down)이 빠졌다. "목록에 없는 것은 모두 WowVision이 처리한다"는 문장과 어긋난다 | WowVision core/ui modules/tooltip.lua:29-51 (conflictingAddons = Sku), core/ui/input/activator.lua:117-126 (2026-11-13 설명서 독자 재수정 회귀 지적) |
+| world/minimap.md | /wv mscan raw 결과가 `SavedVariables\WowVision.lua` 파일에 있다고 하지만, 저장 변수는 WowVisionDump로 등록되어 파일 이름은 WowVisionDump.lua다(getting-started/managing.md도 WowVisionDump.lua라고 적음) | WowVision core/minimap/module.lua:1640-1641, WowVision_Standard.toc:8 (2026-11-13 설명서 독자 재수정 회귀 지적) |
+| world/scanner.md | "A snapshot" 절은 열려 있는 동안 거리와 방향만 갱신된다(Only distance and direction update)고 하지만, 진행 중 퀘스트의 상태("2 of 3" 등)도 말할 때마다 퀘스트 목록에서 새로 읽는다. 같은 문서 In Progress 문단의 "The progress is read fresh each time"과도 어긋난다 | WowVision core/quests/scanner.lua:322-327, 484-486, core/scanner/ui.lua:88-95 (2026-11-13 설명서 독자 재수정 회귀 지적) |
+| world/scanner.md | 트리 키 표의 Backspace 행이 추가 텍스트가 있는 항목만 적고, 범주에서 Backspace를 누르면 가장 가까운 항목으로 길 안내하는 동작(상황별 메뉴의 Navigate to Nearest와 같음)이 빠졌다 | WowVision core/scanner/ui.lua:260-270 (2026-11-13 설명서 독자 재수정 회귀 지적) |
 | getting-started/managing.md (V1.0.2) | 표(14줄)는 WowVisionPriceDB를 TBC, Retail, WoW: Forever용이라 하고 본문(18줄)은 "on TBC"라고만 해서 문서 안에서 어긋난다. 코드는 표와 같다 | WowVision WowVision_Standard.toc:8, WowVision_Camelot.toc:8 |
+| basics/tooltips.md | Ctrl+Shift+Down이 다음 구역(착용한 아이템)의 시작으로 건너뛴다고 하지만(12줄, 56줄), 아이템에 초점을 옮긴 뒤 아직 어느 줄에도 위치하지 않았으면 첫 Ctrl+Shift+Down은 아이템 자체의 첫 줄을 읽는다. 아이템 줄을 걷는 중에는 설명대로 다음 구역으로 간다 | WowVision core/ui/tooltip/Tooltip.lua:16-17, 35-46, 349-358, comparisonTests.lua:121 (2026-11-13 설명서 독자 재수정 판정 갈림) |
+| reference/commands.md | /dquit가 던전 파티(요약 표 33줄 "the dungeon group", 본문 122줄 "your dungeon or looking-for-group party")를 떠난다고 하지만, 던전 찾기 파티(IsPartyLFG)만 떠나고 일반 던전 파티는 떠나지 않는다. 전장·투기장은 설명대로 떠난다 | WowVision core/WowVision.lua:887-898 (2026-11-13 설명서 독자 재수정 판정 갈림) |
+| windows/spells-and-talents.md | Forever 마법책에서 주문 목록에서 Tab을 누르면 검색으로 간다고 하지만(78줄), 책이 두 페이지 이상이면 페이지 줄 정지점이 먼저 나온다. 같은 문서의 정지점 목록 3번(페이지 줄)과도 어긋난다 | WowVision camelot/spellbook.lua:155-164, core/graph/nodes.lua:935-943 (2026-11-13 설명서 독자 재수정 판정 갈림) |
+| windows/spells-and-talents.md | Forever 특성 창 정지점 목록이 탭의 상태(활성화 버튼 또는 "Active" 줄)를 2번 정지점으로, Options and Search를 한 정지점(4번)으로 적지만, 탭의 상태는 탭과 같은 정지점에 들어 있고 설정과 검색은 정지점이 따로다(설정이 먼저) | WowVision camelot/talents.lua:38, 72-93, 97, 150-155 (2026-11-13 설명서 독자 재수정 판정 갈림) |
 
 ## 2. 번역할 수 없는 코드 문자열
 
