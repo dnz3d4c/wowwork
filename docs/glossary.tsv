@@ -53,3 +53,4 @@ numpad	Numpad		번역 지침 `## 용어` 5번(키 이름은 영어). 설명서�
 	제공하다		2026-11-13 대응표, 원문 hands you text	건네주|건네줍|건네준|건네줄|건네줬
 	열리다|표시하다		2026-11-13 대응표, 원문 popup·show. 창과 팝업에 뜨다·띄우다를 쓰지 않는다(번역 지침 `## 설명서` 문체)	뜹니다|뜨는|뜨면|떠 있|띄우|띄웁|띄운|띄울|띄워|띄웠
 	전환하다|이동하다	manual::world/navigation.md;manual::information/monitors.md	2026-11-13 대응표, 원문 switch between·move between. 예외 두 파일은 "연속 안내를 오갑니다"(step through the chain)와 "상태를 오갑니다"가 사용자 판단 대기	오가|오갑|오간|오갈|오갔
+	공유하다		2026-11-13 사용자 결정, 원문 share	함께 쓰|함께 씁|함께 쓴|함께 쓸|함께 써
