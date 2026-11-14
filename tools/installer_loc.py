@@ -185,12 +185,43 @@ def pe_hash(dll: Path, sign_script: Path) -> str:
     return m.group(1)
 
 
+def sense_reader_submodule_problem(status: str, dirty: str) -> str | None:
+    """`git submodule status korean` 줄과 서브모듈의 `git status --porcelain` 출력으로 빌드를 막을 사유를 돌려준다.
+
+    installer 가 기록한 커밋을 고친 것 없이 checkout 한 상태가 아니면 배포 payload 를 만들지 않는다.
+    """
+    if not status.strip():
+        return "git submodule status 출력이 없다. 서브모듈 korean 이 등록돼 있는지 확인한다."
+    flag = status[0]
+    if flag == "-":
+        return "서브모듈 korean 이 초기화되지 않았다. `git submodule update --init korean` 을 실행한다."
+    if flag == "+":
+        return "서브모듈 korean 이 installer 에 기록된 커밋과 다르다. 기록을 커밋하거나 `git submodule update korean` 을 실행한다."
+    if flag == "U":
+        return "서브모듈 korean 에 병합 충돌이 있다."
+    if dirty.strip():
+        return f"서브모듈 korean 에 커밋하지 않은 변경이 있다:\n{dirty.rstrip()}"
+    return None
+
+
 def build_sense_reader_payload(out: Path) -> int:
     """프록시를 빌드하고 테스트를 돌린 뒤, 프록시와 해시를 더한 서명 스크립트를 묶는다."""
     import subprocess
     import tempfile
     import zipfile
 
+    def git(repo: Path, *args: str) -> str:
+        return subprocess.run(
+            ["git", "-C", str(repo), *args], capture_output=True, text=True, check=True
+        ).stdout
+
+    korean = SR_BRIDGE.parent
+    problem = sense_reader_submodule_problem(
+        git(korean.parent, "submodule", "status", "korean"),
+        git(korean, "status", "--porcelain") if (korean / ".git").exists() else "",
+    )
+    if problem:
+        raise SystemExit(f"센스 리더 payload 를 만들지 않는다. {problem}")
     subprocess.run(["cmd", "/c", str(SR_BRIDGE / "build.bat"), "test"], check=True)
     dll = SR_BRIDGE / "out" / "nvdaControllerClient.dll"
     with zipfile.ZipFile(BRIDGE_PAYLOAD) as z:

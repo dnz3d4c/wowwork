@@ -237,3 +237,16 @@ def test_installer_sense_reader_payload_matches_bridge() -> None:
             sku_script.decode("utf-8-sig"), pe_hash(Path(tmp) / "p.dll", Path(tmp) / "s.ps1")
         )
     assert script.decode("utf-8-sig") == expected
+
+
+def test_sense_reader_submodule_problem_rejects_anything_but_the_recorded_clean_commit() -> None:
+    """payload 는 installer 가 기록한 korean 커밋 그대로일 때만 만든다."""
+    from tools.installer_loc import sense_reader_submodule_problem as problem
+
+    ok = " 672edc2e4f63066af838df94e0d2e567dfb09d4d korean (heads/main)"
+    assert problem(ok, "") is None
+    assert "초기화" in problem("-672edc2e4f63066af838df94e0d2e567dfb09d4d korean", "")  # type: ignore[operator]
+    assert "기록된 커밋" in problem("+1111111e4f63066af838df94e0d2e567dfb09d4d korean (heads/main)", "")  # type: ignore[operator]
+    assert "충돌" in problem("U672edc2e4f63066af838df94e0d2e567dfb09d4d korean", "")  # type: ignore[operator]
+    assert "koSenseReader.c" in problem(ok, " M sense-reader-bridge/koSenseReader.c\n")  # type: ignore[operator]
+    assert "출력이 없다" in problem("", "")  # type: ignore[operator]
