@@ -1,0 +1,10 @@
+file	finding	action	reason
+basics/alerts.md	gpt terminology: 죽은척하기	applied	게임 문자열 32478 "죽은 척하기"(cache/gs_koKR.csv), movement.md와 같은 표기
+basics/interface.md	gpt terminology: 우편함	applied	게임 MINIMAP_TRACKING_MAILBOX "우체통", keybindings.md:190과 같은 표기
+basics/menu-and-settings.md	gpt accuracy: 화살표 키	applied	원문 "the arrow key"는 앞 문장의 Up/Down을 가리킨다(en menu-and-settings.md:85)
+getting-started/first-login.md	gpt accuracy: 바로 포함됩니다	applied	원문 "can say it right away"의 가능 표현(en first-login.md:51)
+information/monitors.md	gpt style: 이 변경은	applied	원문 "Make these changes", 지시어 규칙(docs/decisions.tsv 2026-11-14)
+reference/commands.md	gpt accuracy: 돌아서기가 시작된	applied	원문 "Lists the last presses"(en commands.md:207)
+world/movement.md	gpt style: 다시 묻습니다	applied	원문 "asks again"은 시체 위치 조회 반복(core/navigation/corpse.lua:65-74), 의인화 동사 규칙(docs/decisions.tsv 2026-11-13)
+world/movement.md	gpt accuracy: 여러 층에 걸쳐	not applied	번역이 원문 "a corpse that lies over several floors"를 그대로 옮겼다. 지적 근거는 코드 해석이라 글자 그대로 확인되지 않음
+world/wownav.md	claude context + gpt terminology: 있습니다 인용	applied	koKR navigation.lua:229-230 실제 값 "있음."

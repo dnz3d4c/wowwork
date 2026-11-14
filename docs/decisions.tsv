@@ -53,3 +53,6 @@ date	scope	decision	source	note
 2026-11-13	원문이 바뀐 파일의 독자 관점 평가 범위	diff 앞뒤 문맥 줄을 빼고 실제로 바뀐 줄만 준다	사용자	Codex 교차 리뷰 지적
 2026-11-14	한국어 설명서 사이트(gong.aheu.org/WowVision)	영어 사용 설명서를 사이트에서 뺀다. 독일어 설명서와 Developer Guide는 남긴다	사용자	사용자는 영어 버전만 지시함. 원본 SUMMARY.md·introduction.md는 그대로 두고 배포 워크플로에서 뺀다(원본 병합 충돌 방지)
 2026-11-14	설명서 지시어·대명사와 "대상"	it/that/one 등을 "그것"·"그 X"·"하나"로 옮기지 않고 가리키는 명사를 쓰거나 생략한다. 같은 문장의 명사 되풀이를 줄인다. "대상"은 target만 뜻한다	사용자	"그 종류의 대상" 지적과 "최고 설명서 작성자 방식으로 살펴보고 적용" 지시. 51개 파일 137곳 반영(reviews/2026-11-14-demonstratives)
+2026-11-14	koKR Friendly NPC Nameplates	"아군 NPC 이름표"를 유지한다	사용자	게임 UNIT_NAMEPLATES_SHOW_FRIENDLY_NPCS와 영어·한국어가 같음. 설명서 평가에서 GPT가 targeting Friendly "우호적"에 맞추자고 제안(reviews/2026-11-14-manual-v1.0.3 first-login)
+2026-11-14	koKR Copy(메뉴 항목과 복사본 이름이 같은 키)	원본에 키 분리 PR을 낸다(복사본 이름은 CopyName)	사용자	vision-locale#87, WowVision#140. 병합되면 CopyName을 "사본"으로 번역한다. 그때까지 복사본 이름은 "… 복사 1"로 들린다
+2026-11-14	설명서 mailbox	게임 공식 용어 "우체통"으로 통일한다	사용자	우편함 5곳 수정, 용어집에 등록. 우편 창 Inbox 탭 "받은 우편함"은 그대로
