@@ -1,0 +1,326 @@
+{
+  "summary": "번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 두 회사 판정까지 받아 온다(확정은 tools/review/decisions.py)",
+  "agentCount": 11,
+  "logs": [],
+  "result": [
+    {
+      "batch": "reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json",
+      "failedReviewers": 0,
+      "findings": 1,
+      "groups": [
+        {
+          "id": "navigation.lua::On the ship to %s",
+          "providers": [
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "gpt-listening",
+              "id": "navigation.lua::On the ship to %s",
+              "category": "listening",
+              "severity": "major",
+              "problem": "“배 위”는 음성으로 들으면 배에 탑승해 있다는 뜻보다 배의 윗부분에 있다는 뜻으로 받아들여져 상태가 모호하다.",
+              "evidence": "원문 “On the ship to %s”는 `on_ship` 상태로 쓰이며, 관련 번역에서도 ship 탑승 상태를 “배 탑승”으로 표현한다. “%s행 배 탑승 중”은 화면 없이 들어도 목적지와 현재 상태가 분명하다.",
+              "suggestion": "%s행 배 탑승 중"
+            }
+          ],
+          "consensus": false
+        }
+      ],
+      "responses": [
+        {
+          "id": "navigation.lua::On the ship to %s",
+          "action": "dispute",
+          "final_ko": "%s행 배 위",
+          "reason": "이 문자열은 상태 안내가 아니라 길찾기 지점의 이름이다. camelot/wownav/text.lua:117의 주석이 'dyn name templates (nameKey)'이고, on_ship은 DYN 표 안에서 portal('Portal to %s'), dock_ship('Ship dock to %s'), in_tram('In the tram toward %s') 같은 장소 이름 템플릿과 나란히 있다(text.lua:125). 그러니 이 문자열은 배 갑판 위에 있는 지점을 가리킨다. '%s행 배 탑승 중'은 플레이어가 지금 배를 타고 있다는 상태 문장으로 들려서 지점 이름의 뜻이 바뀐다. 지적이 근거로 든 '배 탑승'은 관련 키 'On the ship'(boarding_boat, '배 탑승 지점')의 번역이다. 그 키는 배에 오르는 지점이고 이 키와는 다른 지점이다. 그 키는 '탑승'에 '지점'을 붙여서 장소 이름을 만들었다. '배 위'는 한국어에서 '배 위에 있다'처럼 배에 타고 있다는 뜻으로 자연스럽게 쓰이고, 배의 윗부분이라는 뜻으로 먼저 들리지 않는다. 같은 계열의 번역인 '%s 방면 지하철 안'(In the tram toward %s), '%s행 비행선 위'(On the zeppelin to %s)와도 표현이 맞는다."
+        }
+      ],
+      "judged": [
+        "navigation.lua::On the ship to %s"
+      ],
+      "verdicts": {
+        "gpt": [
+          {
+            "ref": "navigation.lua::On the ship to %s",
+            "uphold": false,
+            "final_ko": "%s행 배 위",
+            "reason": "이 문자열은 현재 탑승 상태가 아니라 선박 갑판에 있는 독립 길찾기 지점의 이름이다. “%s행 배 탑승 중”은 사용자가 지금 이동 중인 배에 타고 있다는 상태로 의미를 바꾸므로 현재 번역을 유지한다.",
+            "evidence_sources": [
+              "wowvision-ko/WowVision/camelot/wownav/text.lua:117",
+              "wowvision-ko/WowVision/camelot/wownav/dock.lua:23",
+              "wowvision-ko/WowVision/camelot/wownav/dock.lua:120",
+              "wowvision-ko/vision-locale/enUS/navigation.lua:328",
+              "wowvision-ko/vision-locale/koKR/navigation.lua:329"
+            ]
+          }
+        ],
+        "claude": [
+          {
+            "ref": "navigation.lua::On the ship to %s",
+            "uphold": false,
+            "final_ko": "%s행 배 위",
+            "reason": "text.lua:115 주석이 'dyn name templates (nameKey)'이고 on_ship(125줄)은 portal, dock_ship, in_tram 같은 지점 이름 템플릿과 같은 DYN 표에 있어, 이 문자열은 상태 안내가 아니라 길찾기 대상(배 안에 있는 지점)의 이름이다(text.lua:318·328에서 nameKey로 DYN을 찾아 targetName을 만든다). '%s행 배 탑승 중'은 플레이어의 현재 상태처럼 들려 지점 이름의 뜻이 바뀐다. 지적이 근거로 든 '배 탑승'은 boarding_boat('On the ship' → '배 탑승 지점', koKR 240줄)로 배에 오르는 다른 지점이다. '배 위'는 한국어에서 배에 타고 있는 곳을 뜻하는 일반적 표현이고, 같은 계열 번역 '%s행 비행선 위'(330줄), '%s 방면 지하철 안'(331줄)과 문형이 맞는다. 현재 번역 유지.",
+            "evidence_sources": [
+              "input",
+              "wowvision-ko/WowVision/camelot/wownav/text.lua:115",
+              "wowvision-ko/WowVision/camelot/wownav/text.lua:125",
+              "wowvision-ko/WowVision/camelot/wownav/text.lua:328",
+              "wowvision-ko/vision-locale/koKR/navigation.lua:240",
+              "wowvision-ko/vision-locale/koKR/navigation.lua:329"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Rebut"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Judge"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a3f8ef1a36c5e1a57",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755956,
+      "queuedAt": 1794614755877,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-accuracy.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614784584,
+      "tokens": 60933,
+      "toolCalls": 5,
+      "durationMs": 28627,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a607d2cf77a57d2f0",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755956,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-terminology.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614780436,
+      "tokens": 61640,
+      "toolCalls": 6,
+      "durationMs": 22447,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ac4651d9080d3b320",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755956,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-context.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614818646,
+      "tokens": 67705,
+      "toolCalls": 10,
+      "durationMs": 60656,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "abb8ecd2b59e15a95",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755956,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-listening.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614784528,
+      "tokens": 61952,
+      "toolCalls": 7,
+      "durationMs": 26537,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "gpt:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "af377020d8e46fc58",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755956,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-accuracy.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614780389,
+      "tokens": 57019,
+      "toolCalls": 3,
+      "durationMs": 24430,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a790d8f7f3d43fee8",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755957,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-terminology.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/20…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614790070,
+      "tokens": 57013,
+      "toolCalls": 3,
+      "durationMs": 32467,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ab6837677d431fe58",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755957,
+      "queuedAt": 1794614755878,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-context.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-1…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614831195,
+      "tokens": 56997,
+      "toolCalls": 3,
+      "durationMs": 73590,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "ae4f3dbad0bd4e9f3",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614755957,
+      "queuedAt": 1794614755879,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-listening.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614796575,
+      "tokens": 57239,
+      "toolCalls": 3,
+      "durationMs": 38969,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"navigation.lua::On the ship to %s\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"“배 위”는 음성으로 들으면 배에 탑승해 있다는 뜻보다 배의 윗부분에 있다는 뜻으로 받아들여져 상태가 모호하다.\",\"evidence\":\"원문 “On the ship to %s”는 `on_ship` 상태로 쓰이며, 관련 번역에서도 ship 탑승 상태를 “배 탑승”으로 표현한다. “%s행 배 탑승 중”은 화면 없이 들어도 목적지와 현재 상태가 분명하다.\",\"suggestion\":\"%s행 배 탑승 중\"}]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "a6e02d27c35b5e9e0",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614833002,
+      "queuedAt": 1794614832989,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)마다 응답 하나를 낸다. consensus=true인 항목은 두 회사 평가자가 모두 지적한 것이므로 반드시 accept하고, 지적들을 반영한 가장 좋은 번역을 final_ko로 확정한다. consensus=false인 항…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614866761,
+      "tokens": 61294,
+      "toolCalls": 6,
+      "durationMs": 33759,
+      "resultPreview": "{\"responses\":[{\"id\":\"navigation.lua::On the ship to %s\",\"action\":\"dispute\",\"final_ko\":\"%s행 배 위\",\"reason\":\"이 문자열은 상태 안내가 아니라 길찾기 지점의 이름이다. camelot/wownav/text.lua:117의 주석이 'dyn name templates (nameKey)'이고, on_ship은 DYN 표 안에서 portal('Portal to %s'), dock_ship('Ship dock to %s'), in_tram('In the tram toward %s') 같은 장소 이름 템플릿과 나란히 있다(text.lua:125). 그러니 이 문자열은 배 갑판 위에 있는 지점을 가리킨다. '%s행 배 탑승 중'은 플레이어가 지…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 10,
+      "label": "gpt:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a7479ced27e7179e2",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614868557,
+      "queuedAt": 1794614868532,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "먼저 아래 JSON을 C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-01/judge-gpt-input.json 에 Write로 그대로 저장한다(한 글자도 바꾸지 않는다).\n\n{\n \"batch_file\": \"reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json\",\n \"items\": [\n  {\n   \"ref\": \"navigation.lua::On the ship to %s\",\n   \"findings\": [\n    {\n     \"by\": \"gpt-listening\",\n     \"id\": \"navigation.lua::On the ship to %s\",\n     \"category\": \"listening\"…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614917050,
+      "tokens": 59537,
+      "toolCalls": 4,
+      "durationMs": 48492,
+      "resultPreview": "{\"ok\":true,\"verdicts\":[{\"ref\":\"navigation.lua::On the ship to %s\",\"uphold\":false,\"final_ko\":\"%s행 배 위\",\"reason\":\"이 문자열은 현재 탑승 상태가 아니라 선박 갑판에 있는 독립 길찾기 지점의 이름이다. “%s행 배 탑승 중”은 사용자가 지금 이동 중인 배에 타고 있다는 상태로 의미를 바꾸므로 현재 번역을 유지한다.\",\"evidence_sources\":[\"wowvision-ko/WowVision/camelot/wownav/text.lua:117\",\"wowvision-ko/WowVision/camelot/wownav/dock.lua:23\",\"wowvision-ko/WowVision/camelot/wownav/dock.lua:12…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 11,
+      "label": "claude:judge",
+      "phaseIndex": 3,
+      "phaseTitle": "Judge",
+      "agentId": "a32e3d6ddd253bb00",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614868558,
+      "queuedAt": 1794614868532,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "C:/project/games/wowwork/tools/review/prompts/common.md 와 C:/project/games/wowwork/tools/review/prompts/judge.md 를 Read로 읽고 판정자로서 따른다. 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-batches/batch-01.json. 아래 각 항목(ref=항목 id)에 대해 판정한다.\n결과를 C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/vessel-01/judge-claude.json 에 Write로 저장하고 구조화 출력으로도 돌려준다.\n\n[\n {\n  \"ref\": \"naviga…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614891855,
+      "tokens": 64924,
+      "toolCalls": 4,
+      "durationMs": 23296,
+      "resultPreview": "{\"verdicts\":[{\"ref\":\"navigation.lua::On the ship to %s\",\"uphold\":false,\"final_ko\":\"%s행 배 위\",\"reason\":\"text.lua:115 주석이 'dyn name templates (nameKey)'이고 on_ship(125줄)은 portal, dock_ship, in_tram 같은 지점 이름 템플릿과 같은 DYN 표에 있어, 이 문자열은 상태 안내가 아니라 길찾기 대상(배 안에 있는 지점)의 이름이다(text.lua:318·328에서 nameKey로 DYN을 찾아 targetName을 만든다). '%s행 배 탑승 중'은 플레이어의 현재 상태처럼 들려 지점 이름의 뜻이 바뀐다. 지적이 근거로 든 '배 탑승'은 boarding_boat('On…"
+    }
+  ],
+  "totalTokens": 666253,
+  "totalToolCalls": 54
+}

@@ -1,0 +1,18 @@
+{
+ "verdicts": [
+  {
+   "ref": "navigation.lua::On the ship to %s",
+   "uphold": false,
+   "final_ko": "%s행 배 위",
+   "reason": "text.lua:115 주석이 'dyn name templates (nameKey)'이고 on_ship(125줄)은 portal, dock_ship, in_tram 같은 지점 이름 템플릿과 같은 DYN 표에 있어, 이 문자열은 상태 안내가 아니라 길찾기 대상(배 안에 있는 지점)의 이름이다(text.lua:318·328에서 nameKey로 DYN을 찾아 targetName을 만든다). '%s행 배 탑승 중'은 플레이어의 현재 상태처럼 들려 지점 이름의 뜻이 바뀐다. 지적이 근거로 든 '배 탑승'은 boarding_boat('On the ship' → '배 탑승 지점', koKR 240줄)로 배에 오르는 다른 지점이다. '배 위'는 한국어에서 배에 타고 있는 곳을 뜻하는 일반적 표현이고, 같은 계열 번역 '%s행 비행선 위'(330줄), '%s 방면 지하철 안'(331줄)과 문형이 맞는다. 현재 번역 유지.",
+   "evidence_sources": [
+    "input",
+    "wowvision-ko/WowVision/camelot/wownav/text.lua:115",
+    "wowvision-ko/WowVision/camelot/wownav/text.lua:125",
+    "wowvision-ko/WowVision/camelot/wownav/text.lua:328",
+    "wowvision-ko/vision-locale/koKR/navigation.lua:240",
+    "wowvision-ko/vision-locale/koKR/navigation.lua:329"
+   ]
+  }
+ ]
+}

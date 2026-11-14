@@ -1,0 +1,10 @@
+[
+  {"ref": "basics/interface.md#claude-style-0", "action": "applied", "reason": "'이 키가 필요한 목록'이 무엇인지 표만으로 안 들림. 원문 'on the lists that need it'이 가리키는 조건을 같은 파일 긴 목록 절의 표현대로 '게임이 애드온의 스크롤 조작을 막아 둔 긴 목록에서만 필요합니다'로 풀었다."},
+  {"ref": "basics/interface.md#claude-style-1", "action": "applied", "reason": "키를 소리 내는 주체로 그린 표현과 '가장자리'를 고쳐 'Left나 Right로 끝에 이르렀을 때는 소리가 나지 않으며, 대화 메시지에서 처음이나 끝에 이르렀을 때도 소리가 나지 않습니다'로 썼다. 원문 edge가 행인지 확정되지 않아 제안의 '행'은 넣지 않았다."},
+  {"ref": "basics/interface.md#claude-style-2", "action": "applied", "reason": "합의 지적. 주어 '초점'을 넣고 '초점이 이렇게 페이지로 나뉜 내용에 있을 때 Page Up이나 Page Down을 누르면 ... 버튼이 눌리고, 초점이 새 페이지의 첫 항목으로 이동합니다'로 고쳤다."},
+  {"ref": "basics/interface.md#claude-style-3", "action": "applied", "reason": "'읽습니다'의 주어가 갈려서 'WowVision이 그 페이지의 글을 읽습니다'로 주어를 밝혔다. 원문 수동태 'is read'는 WowVision의 낭독이다."},
+  {"ref": "basics/interface.md#claude-style-4", "action": "applied", "reason": "사용자가 만드는 것은 목록의 항목이고 복사는 상황별 메뉴 항목이므로 '사용자가 직접 항목을 만드는 목록(...)에서는 항목의 상황별 메뉴에 복사 항목이 나옵니다'로 고쳤다. 원문에 따옴표가 없어 따옴표는 넣지 않았다."},
+  {"ref": "basics/interface.md#claude-style-5", "action": "applied", "reason": "합의 지적(gpt-style-1과 같은 곳). '비어 있는 다음 번호'를 '같은 이름이 이미 있으면 아직 쓰지 않은 다음 번호가 붙습니다'로 고쳤다(원문 next free number)."},
+  {"ref": "basics/interface.md#gpt-style-0", "action": "applied", "reason": "합의 지적(claude-style-2와 같은 곳). 함께 반영했다."},
+  {"ref": "basics/interface.md#gpt-style-1", "action": "applied", "reason": "합의 지적. 문장을 나누고 번호 조건을 풀었으며 '그 이름'을 'WowVision은 새 사본의 이름을 읽습니다'로 고쳐 지시 대상을 밝혔다."}
+]

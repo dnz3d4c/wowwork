@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "navigation.lua::On the zeppelin to %s",
+      "category": "context",
+      "severity": "major",
+      "problem": "이 문자열은 상태 알림이 아니라 동적 목표 지점(비행선 갑판 위 지점)의 이름 템플릿이다. '탑승 중'이라는 상태 문형이 지점 이름 자리에 들어가, 아직 타지 않은 승강장 도착 안내에서 '다음 지점: 오그리마행 비행선에 탑승 중.'처럼 이미 탄 것처럼 들린다.",
+      "evidence": "camelot/wownav/text.lua:116-126 '-- dyn name templates (nameKey)' 표의 on_zeppelin. mapdata dyn_targets.lua의 nameKey=\"on_zeppelin\", facilityRole=\"onboard\", positionBasis=\"vessel_deck\". DockNavigation.lua:136-137에서 승강장 도착 문장(\"%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.\") 뒤에 dock_boarding_next(\" 다음 지점: %s.\")로 이 지점 이름이 붙는다. 같은 표의 boarding_zeppelin \"On the zeppelin\"은 \"비행선 탑승 지점\"으로 지점 이름으로 옮겼다. 형제 키 on_ship \"%s행 배에 탑승 중\", in_tram \"%s 방면 지하철에 탑승 중\"도 같은 문제가 있으나 이 배치 밖이다. \"탑승 지점\"으로 맞추면 dock.lua:572의 \"Boarding point %s reached\"(\"%s 탑승 지점 도착\")에 이 이름이 들어갈 경우 '탑승 지점'이 겹칠 수 있어 '위'를 제안한다(그 경로에 이 이름이 들어가는지는 BeaconTarget 반환값을 확인하지 못했다).",
+      "suggestion": "%s행 비행선 위"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "navigation.lua::On the zeppelin to %s",
+    "action": "accept",
+    "final_ko": "%s행 비행선 위",
+    "reason": "지적이 맞다. camelot/wownav/text.lua:114-126에서 on_zeppelin은 'dyn name templates (nameKey)' 표에 있는 지점 이름이고, mapdata dyn_targets.lua의 해당 지점은 facilityRole=\"onboard\", positionBasis=\"vessel_deck\"(비행선 갑판 위 지점)이다. '탑승 중'은 현재 상태 알림처럼 들려서 지점 이름 자리에 맞지 않는다. 같은 표의 boarding_zeppelin이 '비행선 탑승 지점'이라 '탑승 지점'을 다시 쓰면 둘이 구분되지 않으므로, 갑판 위 위치를 그대로 나타내는 '%s행 비행선 위'로 정한다. 형제 키 on_ship '%s행 배에 탑승 중', in_tram '%s 방면 지하철에 탑승 중'(koKR/navigation.lua:329,331)도 같은 문제라 이 배치 밖에서 맞춰야 한다."
+  },
+  {
+    "id": "navigation.lua::Target is above, about %d yards.",
+    "action": "accept",
+    "final_ko": "대상이 약 %d야드 위에 있음.",
+    "reason": "두 평가자 공통 지적. text.lua:28 height_hint_above는 경로 시작 때 발화되는 상태 알림이고, 번역 지침은 상태 알림을 원문이 완결 문장이어도 합니다체로 늘리지 않는다고 정한다. 같은 기능의 related '대상이 다른 지도에 있음'과 말투를 맞춰 '~에 있음' 명사형으로 정한다. '대상 약 %d야드 위'보다 주어와 서술이 분명해 한 번 듣고 이해하기 쉽다."
+  },
+  {
+    "id": "navigation.lua::Target is below, about %d yards.",
+    "action": "accept",
+    "final_ko": "대상이 약 %d야드 아래에 있음.",
+    "reason": "두 평가자 공통 지적. text.lua:29 height_hint_below는 위 항목의 짝인 상태 알림이라 지침에 따라 명사형으로 줄이고, 짝 항목과 같은 형태 '대상이 약 %d야드 아래에 있음.'으로 맞춘다."
+  },
+  {
+    "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+    "action": "accept",
+    "final_ko": "블리자드 제한으로 미니맵 스캐너 사용 불가.",
+    "reason": "두 평가자 공통 지적. core/minimap/module.lua:673에서 speak()로 발화되는 상태 알림이고, 지침은 상태 알림을 합니다체로 늘리지 않고 원인과 결과를 간결하게 잇도록 한다. related 'Minimap scanner not available on this client' → '이 클라이언트에서는 미니맵 스캐너 사용 불가'와 말투를 맞춘다."
+  }
+]

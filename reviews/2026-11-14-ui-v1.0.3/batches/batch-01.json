@@ -1,0 +1,620 @@
+{
+ "items": [
+  {
+   "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+   "file": "minimap.lua",
+   "key": "Due to Blizzard restrictions the minimap scanner is unavailable.",
+   "en": "Due to Blizzard restrictions the minimap scanner is unavailable.",
+   "ko": "블리자드 제한으로 미니맵 스캐너를 사용할 수 없습니다.",
+   "code": [
+    "core/minimap/module.lua:673: speak(L[\"Due to Blizzard restrictions the minimap scanner is unavailable.\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "minimap.lua::Minimap Scanner",
+     "en": "Minimap Scanner",
+     "ko": "미니맵 스캐너"
+    },
+    {
+     "id": "minimap.lua::Minimap scanner not available on this client",
+     "en": "Minimap scanner not available on this client",
+     "ko": "이 클라이언트에서는 미니맵 스캐너 사용 불가"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "monitors.lua::Only Changes",
+   "file": "monitors.lua",
+   "key": "Only Changes",
+   "en": "Only Changes",
+   "ko": "변경된 것만",
+   "code": [
+    "core/monitors/Monitor.lua:232: { value = \"changes\", label = L[\"Only Changes\"] },"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "monitors.lua::Never",
+   "file": "monitors.lua",
+   "key": "Never",
+   "en": "Never",
+   "ko": "안 함",
+   "code": [
+    "core/monitors/Monitor.lua:234: { value = \"never\", label = L[\"Never\"] },"
+   ],
+   "game_term": "없음 | 영구 | 표시 안 함",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Environmental Alerts",
+   "file": "navigation.lua",
+   "key": "Environmental Alerts",
+   "en": "Environmental Alerts",
+   "ko": "환경 알림",
+   "code": [
+    "core/navigation/compass.lua:5: module:setLabel(L[\"Environmental Alerts\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Breath Alert",
+   "file": "navigation.lua",
+   "key": "Breath Alert",
+   "en": "Breath Alert",
+   "ko": "호흡 알림",
+   "code": [
+    "core/navigation/compass.lua:214: label = L[\"Breath Alert\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Breath Step",
+   "file": "navigation.lua",
+   "key": "Breath Step",
+   "en": "Breath Step",
+   "ko": "호흡 알림 간격",
+   "code": [
+    "core/navigation/compass.lua:251: label = L[\"Breath Step\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Turn to Target",
+   "file": "navigation.lua",
+   "key": "Turn to Target",
+   "en": "Turn to Target",
+   "ko": "대상 쪽으로 돌아서기",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:498: label = L[\"Turn to Target\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Could not turn to it",
+     "en": "Could not turn to it",
+     "ko": "돌아서지 못함"
+    },
+    {
+     "id": "navigation.lua::Turn to Focus",
+     "en": "Turn to Focus",
+     "ko": "주시 대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Unit",
+     "en": "Turn to Unit",
+     "ko": "유닛 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Waypoint",
+     "en": "Turn to Waypoint",
+     "ko": "경유지 쪽으로 돌아서기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Turn to Focus",
+   "file": "navigation.lua",
+   "key": "Turn to Focus",
+   "en": "Turn to Focus",
+   "ko": "주시 대상 쪽으로 돌아서기",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:506: label = L[\"Turn to Focus\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Could not turn to it",
+     "en": "Could not turn to it",
+     "ko": "돌아서지 못함"
+    },
+    {
+     "id": "navigation.lua::Turn to Target",
+     "en": "Turn to Target",
+     "ko": "대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Unit",
+     "en": "Turn to Unit",
+     "ko": "유닛 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Waypoint",
+     "en": "Turn to Waypoint",
+     "ko": "경유지 쪽으로 돌아서기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Turn to Unit",
+   "file": "navigation.lua",
+   "key": "Turn to Unit",
+   "en": "Turn to Unit",
+   "ko": "유닛 쪽으로 돌아서기",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:76: local alert = module:addAlert({ key = \"turnToUnit\", label = L[\"Turn to Unit\"] })"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Could not turn to it",
+     "en": "Could not turn to it",
+     "ko": "돌아서지 못함"
+    },
+    {
+     "id": "navigation.lua::Turn to Focus",
+     "en": "Turn to Focus",
+     "ko": "주시 대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Target",
+     "en": "Turn to Target",
+     "ko": "대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Waypoint",
+     "en": "Turn to Waypoint",
+     "ko": "경유지 쪽으로 돌아서기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Facing Unit",
+   "file": "navigation.lua",
+   "key": "Facing Unit",
+   "en": "Facing Unit",
+   "ko": "유닛을 향함",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:81: label = L[\"Facing Unit\"],"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::No focus",
+   "file": "navigation.lua",
+   "key": "No focus",
+   "en": "No focus",
+   "ko": "주시 대상 없음",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:431: WowVision:notify(unit == \"focus\" and L[\"No focus\"] or L[\"No target\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "buffers.lua::no focus",
+     "en": "no focus",
+     "ko": "주시 대상 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::No nameplate",
+   "file": "navigation.lua",
+   "key": "No nameplate",
+   "en": "No nameplate",
+   "ko": "이름표 없음",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:395: return finish(run, run.plateSeen and L[\"Could not turn to it\"] or L[\"No nameplate\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Lost the nameplate",
+   "file": "navigation.lua",
+   "key": "Lost the nameplate",
+   "en": "Lost the nameplate",
+   "ko": "이름표를 놓침",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:252: finish(run, L[\"Lost the nameplate\"])",
+    "core/navigation/maps/turnToUnit.lua:338: return finish(run, L[\"Lost the nameplate\"])",
+    "core/navigation/maps/turnToUnit.lua:388: return finish(run, L[\"Lost the nameplate\"])"
+   ],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Nameplate position is hidden here",
+   "file": "navigation.lua",
+   "key": "Nameplate position is hidden here",
+   "en": "Nameplate position is hidden here",
+   "ko": "여기서는 이름표 위치가 숨겨져 있음",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:343: return finish(run, L[\"Nameplate position is hidden here\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Friendly nameplates are hidden here",
+     "en": "Friendly nameplates are hidden here",
+     "ko": "여기서는 아군 이름표가 숨겨져 있음"
+    },
+    {
+     "id": "navigation.lua::The position is approximate.",
+     "en": "The position is approximate.",
+     "ko": "대략적인 위치."
+    },
+    {
+     "id": "navigation.lua::The target position is outdated",
+     "en": "The target position is outdated",
+     "ko": "대상 위치 정보가 오래됨"
+    },
+    {
+     "id": "navigation.lua::Your target's position is not known",
+     "en": "Your target's position is not known",
+     "ko": "대상의 위치를 알 수 없음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Could not turn to it",
+   "file": "navigation.lua",
+   "key": "Could not turn to it",
+   "en": "Could not turn to it",
+   "ko": "돌아서지 못함",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:395: return finish(run, run.plateSeen and L[\"Could not turn to it\"] or L[\"No nameplate\"])",
+    "core/navigation/maps/turnToUnit.lua:402: return finish(run, L[\"Could not turn to it\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Turn to Focus",
+     "en": "Turn to Focus",
+     "ko": "주시 대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Target",
+     "en": "Turn to Target",
+     "ko": "대상 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Unit",
+     "en": "Turn to Unit",
+     "ko": "유닛 쪽으로 돌아서기"
+    },
+    {
+     "id": "navigation.lua::Turn to Waypoint",
+     "en": "Turn to Waypoint",
+     "ko": "경유지 쪽으로 돌아서기"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Friendly nameplates are hidden here",
+   "file": "navigation.lua",
+   "key": "Friendly nameplates are hidden here",
+   "en": "Friendly nameplates are hidden here",
+   "ko": "여기서는 아군 이름표가 숨겨져 있음",
+   "code": [
+    "core/navigation/maps/turnToUnit.lua:439: WowVision:notify(L[\"Friendly nameplates are hidden here\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Nameplate position is hidden here",
+     "en": "Nameplate position is hidden here",
+     "ko": "여기서는 이름표 위치가 숨겨져 있음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua:: Next point: %s.",
+   "file": "navigation.lua",
+   "key": " Next point: %s.",
+   "en": " Next point: %s.",
+   "ko": " 다음 지점: %s.",
+   "code": [
+    "camelot/wownav/text.lua:27: dock_boarding_next = L[\" Next point: %s.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Boarding point %s reached",
+     "en": "Boarding point %s reached",
+     "ko": "%s 탑승 지점 도착"
+    },
+    {
+     "id": "navigation.lua::Central point: %s",
+     "en": "Central point: %s",
+     "ko": "중심 지점: %s"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Target is above, about %d yards.",
+   "file": "navigation.lua",
+   "key": "Target is above, about %d yards.",
+   "en": "Target is above, about %d yards.",
+   "ko": "대상이 약 %d야드 위에 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:28: height_hint_above = L[\"Target is above, about %d yards.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Target is below, about %d yards.",
+     "en": "Target is below, about %d yards.",
+     "ko": "대상이 약 %d야드 아래에 있습니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Direct: %s, %d yards",
+     "en": "Direct: %s, %d yards",
+     "ko": "직선: %s, %d야드"
+    },
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    },
+    {
+     "id": "navigation.lua::The target is on another map",
+     "en": "The target is on another map",
+     "ko": "대상이 다른 지도에 있음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::Target is below, about %d yards.",
+   "file": "navigation.lua",
+   "key": "Target is below, about %d yards.",
+   "en": "Target is below, about %d yards.",
+   "ko": "대상이 약 %d야드 아래에 있습니다.",
+   "code": [
+    "camelot/wownav/text.lua:29: height_hint_below = L[\"Target is below, about %d yards.\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Target is above, about %d yards.",
+     "en": "Target is above, about %d yards.",
+     "ko": "대상이 약 %d야드 위에 있습니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "en": "%s reached. The water is %s. Cast range about %d to %d yards. Press I to turn to the water.",
+     "ko": "%s 도착. 물은 %s. 시전 거리 약 %d에서 %d야드. I 키를 누르면 물 쪽으로 돌아섭니다."
+    },
+    {
+     "id": "navigation.lua::Direct: %s, %d yards",
+     "en": "Direct: %s, %d yards",
+     "ko": "직선: %s, %d야드"
+    },
+    {
+     "id": "navigation.lua::The target is no longer available; no new route",
+     "en": "The target is no longer available; no new route",
+     "ko": "대상을 더 이상 찾을 수 없음; 새 경로 없음"
+    },
+    {
+     "id": "navigation.lua::The target is on another map",
+     "en": "The target is on another map",
+     "ko": "대상이 다른 지도에 있음"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::On the zeppelin to %s",
+   "file": "navigation.lua",
+   "key": "On the zeppelin to %s",
+   "en": "On the zeppelin to %s",
+   "ko": "%s행 비행선에 탑승 중",
+   "code": [
+    "camelot/wownav/text.lua:126: on_zeppelin = L[\"On the zeppelin to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the zeppelin",
+     "en": "On the zeppelin",
+     "ko": "비행선 탑승 지점"
+    },
+    {
+     "id": "navigation.lua::the zeppelin",
+     "en": "the zeppelin",
+     "ko": "비행선"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "ui.lua::Sound at the Start and End of Lists",
+   "file": "ui.lua",
+   "key": "Sound at the Start and End of Lists",
+   "en": "Sound at the Start and End of Lists",
+   "ko": "목록 처음과 끝에서 소리",
+   "code": [
+    "core/ui modules/module.lua:30: label = L[\"Sound at the Start and End of Lists\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::End of route",
+     "en": "End of route",
+     "ko": "경로 끝"
+    },
+    {
+     "id": "navigation.lua::Waiting for the far end of %s",
+     "en": "Waiting for the far end of %s",
+     "ko": "%s 구간 완료 대기 중"
+    },
+    {
+     "id": "navigation.lua::the start of the previous route",
+     "en": "the start of the previous route",
+     "ko": "이전 경로의 시작 지점"
+    },
+    {
+     "id": "windows.lua::Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "en": "Changes made here apply after the interface reloads. A Reload Interface button is at the end of the window.",
+     "ko": "여기서 바꾼 내용은 UI를 재시작한 뒤 적용됩니다. 창 끝에 UI 재시작 버튼이 있습니다."
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "ui.lua::Copy",
+   "file": "ui.lua",
+   "key": "Copy",
+   "en": "Copy",
+   "ko": "복사",
+   "code": [
+    "core/graph/settings.lua:341: while taken[base .. \" \" .. L[\"Copy\"] .. \" \" .. number] do",
+    "core/graph/settings.lua:344: return base .. \" \" .. L[\"Copy\"] .. \" \" .. number",
+    "core/graph/settings.lua:430: label = L[\"Copy\"],"
+   ],
+   "game_term": "복사",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "ui.lua::Offscreen Nameplates",
+   "file": "ui.lua",
+   "key": "Offscreen Nameplates",
+   "en": "Offscreen Nameplates",
+   "ko": "화면 밖 이름표",
+   "code": [],
+   "game_term": "",
+   "related": [],
+   "shared_key": []
+  },
+  {
+   "id": "ui.lua::Friendly NPC Nameplates",
+   "file": "ui.lua",
+   "key": "Friendly NPC Nameplates",
+   "en": "Friendly NPC Nameplates",
+   "ko": "아군 NPC 이름표",
+   "code": [],
+   "game_term": "아군 NPC 이름표",
+   "related": [
+    {
+     "id": "minimap.lua::Turn on friendly NPC nameplates to learn NPC names",
+     "en": "Turn on friendly NPC nameplates to learn NPC names",
+     "ko": "NPC 이름을 알아내려면 아군 NPC 이름표를 켜십시오"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "windows.lua::Choose a role first",
+   "file": "windows.lua",
+   "key": "Choose a role first",
+   "en": "Choose a role first",
+   "ko": "먼저 역할을 선택하십시오",
+   "code": [
+    "core/windows/popups.lua:188: WowVision:notify(L[\"Choose a role first\"])"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "groupHealth.lua::This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "en": "This screen reader voice does not play the health pitch. For the pitch, choose a Windows voice such as Microsoft Zira in the Voice setting.",
+     "ko": "이 스크린 리더 음성은 생명력을 음높이로 들려주지 않습니다. 음높이를 들으려면 음성 설정에서 Microsoft Zira 같은 Windows 음성을 선택하십시오."
+    },
+    {
+     "id": "navigation.lua::Choose a destination in the navigation window first",
+     "en": "Choose a destination in the navigation window first",
+     "ko": "먼저 길 안내 창에서 목적지를 선택하십시오"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

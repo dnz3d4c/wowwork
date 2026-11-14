@@ -1,0 +1,5 @@
+file	key	ko
+navigation.lua	On the zeppelin to %s	%s행 비행선 위
+navigation.lua	Target is above, about %d yards.	대상이 약 %d야드 위에 있음.
+navigation.lua	Target is below, about %d yards.	대상이 약 %d야드 아래에 있음.
+minimap.lua	Due to Blizzard restrictions the minimap scanner is unavailable.	블리자드 제한으로 미니맵 스캐너 사용 불가.

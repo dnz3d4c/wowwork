@@ -1,0 +1,22 @@
+[
+  {
+    "ref": "world/minimap.md#claude-style-0",
+    "action": "applied",
+    "reason": "합의 지적. 키·명령을 사람처럼 '답한다'고 쓴 것을 '스캔 키를 누르거나 `/wv mscan`을 입력하면 \"...\"라는 메시지가 나오며'로 고쳤다. 화면 문구 인용과 걷는 중 알림 문장은 그대로."
+  },
+  {
+    "ref": "world/minimap.md#claude-style-1",
+    "action": "applied",
+    "reason": "원문 'broke the minimap reads the scanner depends on'의 사실(블리자드 변경으로 스캐너가 쓰는 미니맵 읽기가 깨짐)을 보존하면서 명사화를 풀어 '블리자드의 변경으로 스캐너가 미니맵을 읽을 수 없게 되어'로 고쳤다."
+  },
+  {
+    "ref": "world/minimap.md#claude-style-2",
+    "action": "applied",
+    "reason": "원문 'when the game allows it'에서 허용 대상은 바로 앞 문장의 미니맵 읽기다. 문맥상 정해진 목적어를 채워 '게임이 미니맵 읽기를 허용할 때'로 고쳤다. 제안의 '다시'는 원문에 없는 전망을 더하므로 넣지 않았다."
+  },
+  {
+    "ref": "world/minimap.md#gpt-style-0",
+    "action": "applied",
+    "reason": "claude-style-0과 같은 곳. 함께 반영했다(사용자 행동과 결과로 서술)."
+  }
+]

@@ -1,0 +1,20 @@
+[
+ {
+  "id": "world/navigation.md",
+  "category": "context",
+  "severity": "minor",
+  "quote": "카메라가 먼저 움직이고, 캐릭터는 마지막에 한 번 돌아섭니다. 유닛을 바라보게 되면 딸깍 소리가 들립니다.",
+  "suggestion": "카메라가 먼저 움직이고, 캐릭터는 마지막에 한 번 돌아섭니다. 유닛을 바라보게 되면 clack 소리(비컨 방향 일치와 같은 소리)가 들립니다.",
+  "problem": "실제로 나는 소리는 clack.mp3인데, 이 페이지는 '들리는 내용'과 '비컨 소리' 표에서 clack(방향 일치)과 click(경로 이탈)을 이름으로 구분해 적는다. '딸깍 소리'만으로는 독자가 어느 소리인지 알 수 없고, 원문 'a click'을 따르면 경로 이탈 소리로 오해할 수 있다. 원문 자체가 코드와 다르므로 upstream-report 후보이기도 하다.",
+  "evidence": "WowVision core/navigation/maps/turnToUnit.lua:76-83 (turnToUnit 알림의 Facing Unit 출력 path = Sound/WowVision/alerts/clack.mp3), core/navigation/maps/module.lua:20-33 (Beacon Aligned = clack.mp3, Beacon Off Course = click.mp3). 원문: 'You hear a click when you face the unit.'"
+ },
+ {
+  "id": "world/navigation.md",
+  "category": "context",
+  "severity": "minor",
+  "quote": "이미 유닛을 바라보고 있으면(약 3도 안쪽) 캐릭터가 돌아서지 않고 딸깍 소리만 들립니다.",
+  "suggestion": "이미 유닛을 바라보고 있으면(약 3도 안쪽) 캐릭터가 돌아서지 않고 clack 소리만 들립니다.",
+  "problem": "위와 같은 소리다. 이미 바라보고 있을 때도 finish(run)이 Facing Unit 알림(clack.mp3)을 울리므로, 이 페이지에서 click(경로 이탈)과 구분되는 이름으로 적어야 실제 동작과 맞는다.",
+  "evidence": "turnToUnit.lua:408-411 (TURN_TOLERANCE 안이면 finish(run)), :234-235 (message nil이면 fireAlert facing), :82 (clack.mp3); turnTo.lua:43 TOLERANCE = 3."
+ }
+]

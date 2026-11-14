@@ -1,0 +1,22 @@
+{
+  "findings": [
+    {
+      "id": "world/navigation.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "유닛을 바라보게 되면 방향 일치 소리(clack)가 들립니다.",
+      "suggestion": "유닛을 바라보게 되면 \"유닛을 향함\" 소리(clack)가 들립니다.",
+      "problem": "\"방향 일치 소리\"는 비컨 알림의 \"비컨 방향 일치\" 소리를 가리키는 말로 들립니다. 실제로 이 소리는 비컨 알림이 아니라 별도 알림 \"유닛 쪽으로 돌아서기\"의 \"유닛을 향함\" 출력입니다. 비컨 방향 일치 소리를 바꾸거나 꺼도 이 소리는 그대로라서, 소리를 바꾸려는 독자가 엉뚱한 설정을 찾게 됩니다. 원문 \"You hear a click\"을 code에 맞춰 clack으로 고친 것은 맞습니다.",
+      "evidence": "WowVision/core/navigation/maps/turnToUnit.lua:76-83 (addAlert key turnToUnit, label L[\"Turn to Unit\"], output L[\"Facing Unit\"], clack.mp3). vision-locale/koKR/navigation.lua:96-97 (\"유닛 쪽으로 돌아서기\", \"유닛을 향함\"). 같은 파일 113~120줄의 비컨 알림 소리 표에는 이 소리가 없습니다."
+    },
+    {
+      "id": "world/navigation.md",
+      "category": "context",
+      "severity": "minor",
+      "quote": "캐릭터가 돌아서지 않고 방향 일치 소리(clack)만 들립니다.",
+      "suggestion": "캐릭터가 돌아서지 않고 \"유닛을 향함\" 소리(clack)만 들립니다.",
+      "problem": "위 161줄과 같은 문제입니다. 이 소리는 비컨 방향 일치 소리가 아니라 \"유닛 쪽으로 돌아서기\" 알림의 \"유닛을 향함\" 소리입니다. 한쪽만 고치면 같은 절 안에서 표기가 갈립니다.",
+      "evidence": "WowVision/core/navigation/maps/turnToUnit.lua:76-83, vision-locale/koKR/navigation.lua:97. 원문: \"If you already face the unit (within about 3 degrees), nothing turns; you only hear the click.\""
+    }
+  ]
+}

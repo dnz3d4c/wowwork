@@ -1,0 +1,26 @@
+file	key	en	ko	old_en
+minimap.lua	Due to Blizzard restrictions the minimap scanner is unavailable.	Due to Blizzard restrictions the minimap scanner is unavailable.	블리자드 제한으로 미니맵 스캐너를 사용할 수 없습니다.	
+monitors.lua	Only Changes	Only Changes	변경된 것만	
+monitors.lua	Never	Never	안 함	
+navigation.lua	Environmental Alerts	Environmental Alerts	환경 알림	
+navigation.lua	Breath Alert	Breath Alert	호흡 알림	
+navigation.lua	Breath Step	Breath Step	호흡 알림 간격	
+navigation.lua	Turn to Target	Turn to Target	대상 쪽으로 돌아서기	
+navigation.lua	Turn to Focus	Turn to Focus	주시 대상 쪽으로 돌아서기	
+navigation.lua	Turn to Unit	Turn to Unit	유닛 쪽으로 돌아서기	
+navigation.lua	Facing Unit	Facing Unit	유닛을 향함	
+navigation.lua	No focus	No focus	주시 대상 없음	
+navigation.lua	No nameplate	No nameplate	이름표 없음	
+navigation.lua	Lost the nameplate	Lost the nameplate	이름표를 놓침	
+navigation.lua	Nameplate position is hidden here	Nameplate position is hidden here	여기서는 이름표 위치가 숨겨져 있음	
+navigation.lua	Could not turn to it	Could not turn to it	돌아서지 못함	
+navigation.lua	Friendly nameplates are hidden here	Friendly nameplates are hidden here	여기서는 아군 이름표가 숨겨져 있음	
+navigation.lua	 Next point: %s.	 Next point: %s.	 다음 지점: %s.	
+navigation.lua	Target is above, about %d yards.	Target is above, about %d yards.	대상이 약 %d야드 위에 있습니다.	
+navigation.lua	Target is below, about %d yards.	Target is below, about %d yards.	대상이 약 %d야드 아래에 있습니다.	
+navigation.lua	On the zeppelin to %s	On the zeppelin to %s	%s행 비행선에 탑승 중	
+ui.lua	Sound at the Start and End of Lists	Sound at the Start and End of Lists	목록 처음과 끝에서 소리	
+ui.lua	Copy	Copy	복사	
+ui.lua	Offscreen Nameplates	Offscreen Nameplates	화면 밖 이름표	
+ui.lua	Friendly NPC Nameplates	Friendly NPC Nameplates	아군 NPC 이름표	
+windows.lua	Choose a role first	Choose a role first	먼저 역할을 선택하십시오	

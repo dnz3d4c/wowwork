@@ -317,6 +317,7 @@ groupHealth.lua	dead	dead
 groupHealth.lua	full	full
 minimap.lua	Announce Tracked Dots While Walking	Announce Tracked Dots While Walking
 minimap.lua	Centre Mouse Cursor Before Scanning	Centre Mouse Cursor Before Scanning
+minimap.lua	Due to Blizzard restrictions the minimap scanner is unavailable.	Due to Blizzard restrictions the minimap scanner is unavailable.
 minimap.lua	Gathering	Gathering
 minimap.lua	Map Filter	Map Filter
 minimap.lua	Minimap Scanner	Minimap Scanner
@@ -428,6 +429,7 @@ monitors.lua	Missing	Missing
 monitors.lua	Monitors	Monitors
 monitors.lua	Monitors off	Monitors off
 monitors.lua	Monitors on	Monitors on
+monitors.lua	Never	Never
 monitors.lua	No essential or utility spells	No essential or utility spells
 monitors.lua	No proc	No proc
 monitors.lua	No spells with cooldowns	No spells with cooldowns
@@ -437,6 +439,7 @@ monitors.lua	No tracked cooldowns	No tracked cooldowns
 monitors.lua	Not Found	Not Found
 monitors.lua	On Cooldown	On Cooldown
 monitors.lua	One Decimal Timer	One Decimal Timer
+monitors.lua	Only Changes	Only Changes
 monitors.lua	Outputs	Outputs
 monitors.lua	Pandemic	Pandemic
 monitors.lua	Pandemic Window	Pandemic Window
@@ -477,6 +480,7 @@ navigation.lua	 (lower)	 (lower)
 navigation.lua	 (no network point within the radius)	 (no network point within the radius)
 navigation.lua	 (upper)	 (upper)
 navigation.lua	 (water surface, diving depth %.1f yards)	 (water surface, diving depth %.1f yards)
+navigation.lua	 Next point: %s.	 Next point: %s.
 navigation.lua	 The beacon shows the boarding direction; I turns you toward it.	 The beacon shows the boarding direction; I turns you toward it.
 navigation.lua	 horizontal, height unknown	 horizontal, height unknown
 navigation.lua	 horizontally	 horizontally
@@ -522,6 +526,8 @@ navigation.lua	Beacon stopped	Beacon stopped
 navigation.lua	Blocked	Blocked
 navigation.lua	Board only when the vehicle is safely there.	Board only when the vehicle is safely there.
 navigation.lua	Boarding point %s reached	Boarding point %s reached
+navigation.lua	Breath Alert	Breath Alert
+navigation.lua	Breath Step	Breath Step
 navigation.lua	Calculating route	Calculating route
 navigation.lua	Cancel Navigation	Cancel Navigation
 navigation.lua	Central point: %s	Central point: %s
@@ -529,6 +535,7 @@ navigation.lua	Choose a destination in the navigation window first	Choose a dest
 navigation.lua	Choose the target's floor	Choose the target's floor
 navigation.lua	Close All Windows When a Route Starts	Close All Windows When a Route Starts
 navigation.lua	Compass	Compass
+navigation.lua	Could not turn to it	Could not turn to it
 navigation.lua	Crossing to %s	Crossing to %s
 navigation.lua	Cycle Arrival Distance	Cycle Arrival Distance
 navigation.lua	Deeprun Tram entrance	Deeprun Tram entrance
@@ -548,6 +555,8 @@ navigation.lua	Elevator: %s	Elevator: %s
 navigation.lua	En route to %s, waypoint %d of %d	En route to %s, waypoint %d of %d
 navigation.lua	End of route	End of route
 navigation.lua	Entry Points	Entry Points
+navigation.lua	Environmental Alerts	Environmental Alerts
+navigation.lua	Facing Unit	Facing Unit
 navigation.lua	Fall Detection	Fall Detection
 navigation.lua	Falling	Falling
 navigation.lua	Falling Announcement	Falling Announcement
@@ -559,6 +568,7 @@ navigation.lua	Flying Ended Alert	Flying Ended Alert
 navigation.lua	Flying Started Alert	Flying Started Alert
 navigation.lua	Follow	Follow
 navigation.lua	Forget Visited Waypoints	Forget Visited Waypoints
+navigation.lua	Friendly nameplates are hidden here	Friendly nameplates are hidden here
 navigation.lua	Game Version	Game Version
 navigation.lua	Group	Group
 navigation.lua	Height Tolerance of a Floor (Yards)	Height Tolerance of a Floor (Yards)
@@ -571,6 +581,7 @@ navigation.lua	Indoors Alert	Indoors Alert
 navigation.lua	Key	Key
 navigation.lua	Last network point; the last stretch is unchecked, move carefully	Last network point; the last stretch is unchecked, move carefully
 navigation.lua	Long Range	Long Range
+navigation.lua	Lost the nameplate	Lost the nameplate
 navigation.lua	Map change after the activation area; route ended. The destination is not confirmed.	Map change after the activation area; route ended. The destination is not confirmed.
 navigation.lua	Map change; the activation guidance is finished.	Map change; the activation guidance is finished.
 navigation.lua	Maps	Maps
@@ -578,6 +589,7 @@ navigation.lua	Medium Range	Medium Range
 navigation.lua	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)	Minimum Arrival Distance for WowNav Waypoints (0 = Their Own)
 navigation.lua	Mostly Blocked	Mostly Blocked
 navigation.lua	NPC or mob	NPC or mob
+navigation.lua	Nameplate position is hidden here	Nameplate position is hidden here
 navigation.lua	Names in Your Language	Names in Your Language
 navigation.lua	Navigation	Navigation
 navigation.lua	New WowNav Route Around a Blocked Spot	New WowNav Route Around a Blocked Spot
@@ -585,6 +597,8 @@ navigation.lua	Next Waypoint	Next Waypoint
 navigation.lua	No WowNav network here	No WowNav network here
 navigation.lua	No active route	No active route
 navigation.lua	No active waypoint	No active waypoint
+navigation.lua	No focus	No focus
+navigation.lua	No nameplate	No nameplate
 navigation.lua	No network path from here to the target	No network path from here to the target
 navigation.lua	No network path to the target	No network path to the target
 navigation.lua	No network point at the chosen start	No network point at the chosen start
@@ -599,6 +613,7 @@ navigation.lua	No water point nearby	No water point nearby
 navigation.lua	On the ship	On the ship
 navigation.lua	On the ship to %s	On the ship to %s
 navigation.lua	On the zeppelin	On the zeppelin
+navigation.lua	On the zeppelin to %s	On the zeppelin to %s
 navigation.lua	One waypoint back	One waypoint back
 navigation.lua	Outdoors Alert	Outdoors Alert
 navigation.lua	Pitch Lock	Pitch Lock
@@ -642,6 +657,8 @@ navigation.lua	Surface here	Surface here
 navigation.lua	Surface here; the route goes on after it	Surface here; the route goes on after it
 navigation.lua	Swimming Alert	Swimming Alert
 navigation.lua	Target Radius Around the Network (Yards)	Target Radius Around the Network (Yards)
+navigation.lua	Target is above, about %d yards.	Target is above, about %d yards.
+navigation.lua	Target is below, about %d yards.	Target is below, about %d yards.
 navigation.lua	Target position reached	Target position reached
 navigation.lua	Target the portal with soft targeting and interact with it; the route goes on after it	Target the portal with soft targeting and interact with it; the route goes on after it
 navigation.lua	The boarding point has no valid direction proof on this map	The boarding point has no valid direction proof on this map
@@ -664,6 +681,9 @@ navigation.lua	The waiting point proof is invalid; no boarding instruction	The w
 navigation.lua	There is no such floor	There is no such floor
 navigation.lua	Tram dock toward %s	Tram dock toward %s
 navigation.lua	Turn off the WowVisionNavigation addon to use its routes here	Turn off the WowVisionNavigation addon to use its routes here
+navigation.lua	Turn to Focus	Turn to Focus
+navigation.lua	Turn to Target	Turn to Target
+navigation.lua	Turn to Unit	Turn to Unit
 navigation.lua	Turn to Waypoint	Turn to Waypoint
 navigation.lua	Turning is not available here	Turning is not available here
 navigation.lua	Use %s; the route goes on after it	Use %s; the route goes on after it
@@ -1094,6 +1114,7 @@ ui.lua	Combat Started Alert	Combat Started Alert
 ui.lua	Complete	Complete
 ui.lua	Context Menu	Context Menu
 ui.lua	Copper	Copper
+ui.lua	Copy	Copy
 ui.lua	Could not set:	Could not set:
 ui.lua	Count Elite Enemies Only	Count Elite Enemies Only
 ui.lua	Count Enemies	Count Enemies
@@ -1128,6 +1149,7 @@ ui.lua	Filter removed	Filter removed
 ui.lua	Finger	Finger
 ui.lua	Format	Format
 ui.lua	Formatted	Formatted
+ui.lua	Friendly NPC Nameplates	Friendly NPC Nameplates
 ui.lua	Game Menu	Game Menu
 ui.lua	Game settings changed:	Game settings changed:
 ui.lua	Game settings: nothing to change	Game settings: nothing to change
@@ -1187,6 +1209,7 @@ ui.lua	Object	Object
 ui.lua	Objectives	Objectives
 ui.lua	Objects	Objects
 ui.lua	Off Hand	Off Hand
+ui.lua	Offscreen Nameplates	Offscreen Nameplates
 ui.lua	Options	Options
 ui.lua	Orange	Orange
 ui.lua	Page	Page
@@ -1236,6 +1259,7 @@ ui.lua	Side Tabs	Side Tabs
 ui.lua	Silver	Silver
 ui.lua	Skip Empty Slots on Double Arrow	Skip Empty Slots on Double Arrow
 ui.lua	Socketing	Socketing
+ui.lua	Sound at the Start and End of Lists	Sound at the Start and End of Lists
 ui.lua	Sounds on Opening and Closing WowVision Menus	Sounds on Opening and Closing WowVision Menus
 ui.lua	Source	Source
 ui.lua	Source Unit	Source Unit
@@ -1324,6 +1348,7 @@ windows.lua	Channels	Channels
 windows.lua	Character	Character
 windows.lua	Chat Channels	Chat Channels
 windows.lua	Choice	Choice
+windows.lua	Choose a role first	Choose a role first
 windows.lua	Close Bag	Close Bag
 windows.lua	Collapse All	Collapse All
 windows.lua	Collections	Collections

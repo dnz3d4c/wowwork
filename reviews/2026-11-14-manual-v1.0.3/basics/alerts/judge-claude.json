@@ -1,0 +1,17 @@
+{
+  "verdicts": [
+    {
+      "ref": "basics/alerts.md#gpt-accuracy-0",
+      "uphold": false,
+      "final_ko": "1. Shift+F1을 누르고 아래로 길 안내까지 가서 Enter를 누르고, 그다음 환경 알림까지 가서 Enter를 누릅니다.",
+      "reason": "N과 E는 항목 이름의 첫 글자로 이동하는 글자 이동 키다(core/graph/typeAhead.lua:3-8). 한국어판에서 두 항목 이름은 '길 안내'(koKR/navigation.lua:4)와 '환경 알림'(koKR/navigation.lua:13)이라 N이나 E를 눌러도 그 항목으로 가지 않는다. 지적의 수정안을 따르면 독자가 작동하지 않는 키를 누르게 된다. 한국어 설명서 interface.md:197도 같은 이유로 글자 이동이 영문 이름 항목에만 된다고 밝히고, 같은 파일의 T for Targeting 예시도 같은 방식으로 옮겼다. 원문이 전하는 실제 절차(메뉴를 열어 길 안내, 환경 알림 순으로 들어간다)는 현재 번역에 보존되어 있으므로 현재 번역을 유지한다.",
+      "evidence_sources": [
+        "input",
+        "wowvision-ko/WowVision/core/graph/typeAhead.lua:3-8",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:4",
+        "wowvision-ko/vision-locale/koKR/navigation.lua:13",
+        "wowvision-ko/WowVision/docs/src/user/ko/basics/interface.md:197"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"findings":[{"id":"navigation.lua::On the ship to %s","category":"listening","severity":"major","problem":"“배 위”는 음성으로 들으면 배에 탑승해 있다는 뜻보다 배의 윗부분에 있다는 뜻으로 받아들여져 상태가 모호하다.","evidence":"원문 “On the ship to %s”는 `on_ship` 상태로 쓰이며, 관련 번역에서도 ship 탑승 상태를 “배 탑승”으로 표현한다. “%s행 배 탑승 중”은 화면 없이 들어도 목적지와 현재 상태가 분명하다.","suggestion":"%s행 배 탑승 중"}]}

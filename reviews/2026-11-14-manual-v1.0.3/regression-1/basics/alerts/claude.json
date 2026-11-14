@@ -1,0 +1,11 @@
+[
+  {
+    "id": "basics/alerts.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "호흡, 피로, 죽은척하기 막대가 한 단계(호흡 알림 간격, 기본값 10퍼센트) 줄어듭니다.",
+    "suggestion": "호흡, 피로, 죽은 척하기 막대가 한 단계(호흡 알림 간격, 기본값 10퍼센트) 줄어듭니다.",
+    "problem": "새로 추가된 호흡 알림 줄에서 'Feign Death'를 '죽은척하기'로 붙여 써서, 게임 공식 표기와 같은 기능을 설명하는 다른 설명서 파일의 '죽은 척하기'와 글자가 다르다.",
+    "evidence": "원문 'feign death bar'. 게임 문자열 cache/gs_koKR.csv 32478 BOOST2_HUNTERBEAST_FEIGNDEATH의 영어가 'Feign Death'이고 한국어가 '죽은 척하기'. 같은 알림을 설명하는 wowvision-ko/WowVision/docs/src/user/ko/world/movement.md:34와 :54는 '죽은 척하기'로 쓴다."
+  }
+]

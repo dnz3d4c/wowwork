@@ -1,0 +1,12 @@
+[
+  {"ref": "world/wownav.md#claude-style-0", "action": "applied", "reason": "consensus. 한 문장을 둘로 나누고 '그 지점'을 '탑승 지점'으로 되돌렸다. 배 위 지점은 같은 파일 목적지 목록에서 '배 탑승 지점'(koKR L[\"On the ship\"])으로 불리므로 이름이 맞다. 간주하는 주체 WowNav를 밝혔다. gpt-style-2와 함께 반영."},
+  {"ref": "world/wownav.md#claude-style-1", "action": "applied", "reason": "consensus. 원문 'work without a waiting circle'의 실제 뜻은 대기 구역이 없다는 것이므로 '일부 승강장에는 원형 대기 구역이 없습니다'로 고쳤다. gpt-style-1과 함께 반영."},
+  {"ref": "world/wownav.md#claude-style-2", "action": "applied", "reason": "원문 'Choosing one walks you to it like to any place'. 고르는 사람과 안내하는 주체를 구분하도록 'WowNav가 다른 장소와 마찬가지로'로 주어를 밝혔다."},
+  {"ref": "world/wownav.md#claude-style-3", "action": "applied", "reason": "consensus. 'come from'의 직역 '분류에서 옵니다'를 '덧붙는 낱말은 장소의 분류입니다'로 고쳤다. gpt-style-0과 함께 반영."},
+  {"ref": "world/wownav.md#claude-style-4", "action": "applied", "reason": "원문 'the target'은 경로의 목적지(장소)라 설명문은 '목적지가'로 고쳤다. 뒤의 음성 인용 '대상이 약 12야드 위에 있습니다.'는 koKR L[\"Target is above, about %d yards.\"] 값이라 그대로 둔다."},
+  {"ref": "world/wownav.md#claude-context-0", "action": "dispute", "reason": "설명서 인용 '아우버다인행 배에 탑승 중'은 현재 koKR 값(vision-locale/koKR/navigation.lua:329 L[\"On the ship to %s\"] = \"%s행 배에 탑승 중\")과 글자 그대로 같다. 설명서는 화면 문구를 글자 그대로 인용해야 하므로(manual-translate.md 용어 1) 설명서만 고칠 수 없다. 지적 자체(장소 이름이 진행 상태처럼 들림)는 타당하므로 koKR 값을 tools.sync_locale로 고치는 별도 번역 건으로 넘겨야 하며, 그때 설명서 인용도 따라 바뀐다. 이 파일 범위에서는 수정하지 않는다."},
+  {"ref": "world/wownav.md#gpt-terminology-0", "action": "dispute", "reason": "근거로 든 L[\"On the ship\"] = \"배 탑승 지점\"(navigation.lua:240)은 다른 키다. 이 음성 문구는 L[\"On the ship to %s\"](navigation.lua:329, 값 \"%s행 배에 탑승 중\")로 만들어지므로(DockNavigation.lua:137 dock_boarding_next) 설명서 인용은 현재 값과 일치한다. '아우버다인행 배 탑승 지점'은 게임에서 실제로 들리지 않는 말이 된다. 표현 개선은 koKR 값을 sync_locale로 고치는 별도 건이다(claude-context-0과 같은 사안)."},
+  {"ref": "world/wownav.md#gpt-style-0", "action": "applied", "reason": "consensus. claude-style-3과 같은 곳. '덧붙는 낱말은 장소의 분류입니다'로 반영했다(낱말이 이름 뒤에 이어진다는 것은 앞의 예시로 이미 드러난다)."},
+  {"ref": "world/wownav.md#gpt-style-1", "action": "applied", "reason": "consensus. claude-style-1과 함께 반영. '그렇습니다'는 '이에 해당합니다'로 고쳤다."},
+  {"ref": "world/wownav.md#gpt-style-2", "action": "applied", "reason": "consensus. claude-style-0과 함께 반영. 문장을 나누고 '탑승 지점'으로 명시했다. '저절로'(by itself)는 그대로 두었다."}
+]

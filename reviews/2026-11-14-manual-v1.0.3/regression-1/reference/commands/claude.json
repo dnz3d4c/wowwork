@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reference/commands.md",
+    "category": "accuracy",
+    "severity": "minor",
+    "quote": "단축키를 눌러 돌아서기가 시작된 최근 기록을 최대 40개까지 창과 대화 창에 나열합니다",
+    "suggestion": "단축키를 누른 최근 기록을 최대 40개까지 창과 대화 창에 나열합니다",
+    "problem": "원문은 단축키를 누른 기록(presses)을 나열한다고 한다. 번역의 \"돌아서기가 시작된\"은 실제로 돌아서기가 시작된 경우만 기록되는 것처럼 범위를 좁힌다. 이름표를 못 찾았거나 이미 바라보고 있어 돌지 않은 누름도 기록에 남는다.",
+    "evidence": "원문: \"Lists the last presses of Turn to Target and Turn to Focus (up to 40), one line each with ... what the press found\". 코드: WowVision/core/navigation/maps/turnToUnit.lua:207-233 finish()가 \"No nameplate\", \"already facing\" 등으로 끝난 누름도 WowVisionDump.turnToUnit에 한 줄씩 기록한다(101-102행 주석 \"one line per press\")."
+  },
+  {
+    "id": "reference/commands.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "\"대상 쪽으로 돌아서기\"와 \"주시 대상 쪽으로 돌아서기\" 단축키를 눌러",
+    "suggestion": "대상 쪽으로 돌아서기와 주시 대상 쪽으로 돌아서기 단축키를 눌러",
+    "problem": "같은 파일의 /wv turnlog 설명(\"경유지 쪽으로 돌아서기 기능으로\")과 다른 설명서 파일은 단축키 이름을 따옴표 없이 쓰는데, 이 문장만 따옴표로 감쌌다. 표기가 섞인다.",
+    "evidence": "같은 파일 /wv turnlog 절: \"경유지 쪽으로 돌아서기 기능으로\". docs/src/user/ko/getting-started/first-login.md:53 \"대상 쪽으로 돌아서기와 주시 대상 쪽으로 돌아서기로\", docs/src/user/ko/reference/keybindings.md:94-95 따옴표 없음. 표기 자체는 koKR navigation.lua:94-95와 일치한다."
+  }
+]

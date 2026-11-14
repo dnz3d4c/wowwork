@@ -1,0 +1,20 @@
+[
+  {
+    "id": "world/navigation.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "카메라가 먼저 움직이고, 캐릭터는 마지막에 한 번 돌아섭니다. 유닛을 바라보게 되면 딸깍 소리가 들립니다.",
+    "suggestion": "카메라가 먼저 움직이고, 캐릭터는 마지막에 한 번 돌아섭니다. 유닛을 바라보게 되면 clack 소리가 들립니다.",
+    "problem": "같은 파일의 '따라갈 때 들리는 소리'와 '비컨 소리' 절은 비컨 소리 이름을 clack, click 그대로 적는데, 새로 들어온 절만 이 소리를 '딸깍'으로 옮겼다. 독자는 '딸깍'이 앞에서 소개한 어느 소리인지 연결할 수 없다. 실제로 재생되는 파일은 방향 일치 소리와 같은 clack이다.",
+    "evidence": "원문 'You hear a click when you face the unit.' / 같은 파일 표 '비컨 방향 일치 | clack', '비컨 경로 이탈 | click' / 코드 WowVision/core/navigation/maps/turnToUnit.lua:82 path = \"Sound/WowVision/alerts/clack.mp3\". 원문의 click이 코드와 다른 점은 context 관점 확인 대상."
+  },
+  {
+    "id": "world/navigation.md",
+    "category": "terminology",
+    "severity": "minor",
+    "quote": "- 이미 유닛을 바라보고 있으면(약 3도 안쪽) 캐릭터가 돌아서지 않고 딸깍 소리만 들립니다.",
+    "suggestion": "- 이미 유닛을 바라보고 있으면(약 3도 안쪽) 캐릭터가 돌아서지 않고 clack 소리만 들립니다.",
+    "problem": "위 지적과 같은 소리를 같은 방식으로 '딸깍'으로 옮겼다. 파일 안에서 비컨 소리 이름(clack, click)을 그대로 두는 표기와 다르다.",
+    "evidence": "원문 'nothing turns; you only hear the click.' / 같은 파일 비컨 소리 표의 clack, click / turnToUnit.lua:82 clack.mp3"
+  }
+]

@@ -1,0 +1,52 @@
+{
+ "items": [
+  {
+   "id": "navigation.lua::On the ship to %s",
+   "file": "navigation.lua",
+   "key": "On the ship to %s",
+   "en": "On the ship to %s",
+   "ko": "%s행 배 위",
+   "code": [
+    "camelot/wownav/text.lua:125: on_ship = L[\"On the ship to %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::On the ship",
+     "en": "On the ship",
+     "ko": "배 탑승 지점"
+    },
+    {
+     "id": "navigation.lua::the ship",
+     "en": "the ship",
+     "ko": "배"
+    }
+   ],
+   "shared_key": []
+  },
+  {
+   "id": "navigation.lua::In the tram toward %s",
+   "file": "navigation.lua",
+   "key": "In the tram toward %s",
+   "en": "In the tram toward %s",
+   "ko": "%s 방면 지하철 안",
+   "code": [
+    "camelot/wownav/text.lua:127: in_tram = L[\"In the tram toward %s\"],"
+   ],
+   "game_term": "",
+   "related": [
+    {
+     "id": "navigation.lua::Tram dock toward %s",
+     "en": "Tram dock toward %s",
+     "ko": "%s 방면 지하철 승강장"
+    },
+    {
+     "id": "navigation.lua::the tram",
+     "en": "the tram",
+     "ko": "지하철"
+    }
+   ],
+   "shared_key": []
+  }
+ ]
+}

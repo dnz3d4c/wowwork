@@ -1,0 +1,364 @@
+{
+  "summary": "번역 묶음마다 Claude 4 + GPT 4 블라인드 평가 → 번역자 반박 → 두 회사 판정까지 받아 온다(확정은 tools/review/decisions.py)",
+  "agentCount": 9,
+  "logs": [],
+  "result": [
+    {
+      "batch": "reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json",
+      "failedReviewers": 0,
+      "findings": 8,
+      "groups": [
+        {
+          "id": "navigation.lua::On the zeppelin to %s",
+          "providers": [
+            "claude"
+          ],
+          "findings": [
+            {
+              "by": "claude-context",
+              "id": "navigation.lua::On the zeppelin to %s",
+              "category": "context",
+              "severity": "major",
+              "problem": "이 문자열은 상태 알림이 아니라 동적 목표 지점(비행선 갑판 위 지점)의 이름 템플릿이다. '탑승 중'이라는 상태 문형이 지점 이름 자리에 들어가, 아직 타지 않은 승강장 도착 안내에서 '다음 지점: 오그리마행 비행선에 탑승 중.'처럼 이미 탄 것처럼 들린다.",
+              "evidence": "camelot/wownav/text.lua:116-126 '-- dyn name templates (nameKey)' 표의 on_zeppelin. mapdata dyn_targets.lua의 nameKey=\"on_zeppelin\", facilityRole=\"onboard\", positionBasis=\"vessel_deck\". DockNavigation.lua:136-137에서 승강장 도착 문장(\"%s 도착. 여기서 %s 도착을 기다리십시오. 들어오는 소리가 들리면 탑승하십시오.\") 뒤에 dock_boarding_next(\" 다음 지점: %s.\")로 이 지점 이름이 붙는다. 같은 표의 boarding_zeppelin \"On the zeppelin\"은 \"비행선 탑승 지점\"으로 지점 이름으로 옮겼다. 형제 키 on_ship \"%s행 배에 탑승 중\", in_tram \"%s 방면 지하철에 탑승 중\"도 같은 문제가 있으나 이 배치 밖이다. \"탑승 지점\"으로 맞추면 dock.lua:572의 \"Boarding point %s reached\"(\"%s 탑승 지점 도착\")에 이 이름이 들어갈 경우 '탑승 지점'이 겹칠 수 있어 '위'를 제안한다(그 경로에 이 이름이 들어가는지는 BeaconTarget 반환값을 확인하지 못했다).",
+              "suggestion": "%s행 비행선 위"
+            },
+            {
+              "by": "claude-listening",
+              "id": "navigation.lua::On the zeppelin to %s",
+              "category": "listening",
+              "severity": "major",
+              "problem": "이 문자열은 현재 상태 알림이 아니라 비행선 갑판 위 지점의 이름(목적지 이름)이다. '%s행 비행선에 탑승 중'이라고 들으면 사용자가 지금 비행선에 타고 있다는 상태 알림으로 오해한다. 목록에서 지점을 고를 때나 '%s 도착' 같은 문장에 이름으로 들어갈 때 뜻이 갈린다.",
+              "evidence": "camelot/wownav/text.lua:126 on_zeppelin은 지점 이름 키이고, mapdata dyn_targets.lua에서 nameKey=\"on_zeppelin\", facilityRole=\"onboard\", positionBasis=\"vessel_deck\"인 지점의 이름으로 쓰인다(nameEn \"On the zeppelin to Orgrimmar\"). related \"On the zeppelin\"은 지점 이름 '비행선 탑승 지점'으로 옮겨져 있다.",
+              "suggestion": "%s행 비행선 위"
+            }
+          ],
+          "consensus": false
+        },
+        {
+          "id": "navigation.lua::Target is above, about %d yards.",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-listening",
+              "id": "navigation.lua::Target is above, about %d yards.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "길 안내 시작 때 말하는 상태 알림인데 합니다체로 늘렸다. 같은 기능의 다른 상태 알림은 '~있음' 명사형이다.",
+              "evidence": "camelot/wownav/module.lua:581-583 경로 시작 시 say(self.heightHint). 번역 지침: 상태 알림은 원문이 완결 문장이어도 합니다체로 늘리지 않는다. related \"The target is on another map\" → \"대상이 다른 지도에 있음\".",
+              "suggestion": "대상이 약 %d야드 위에 있음."
+            },
+            {
+              "by": "gpt-listening",
+              "id": "navigation.lua::Target is above, about %d yards.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "길 안내 중 발화되는 상태 문구를 “있습니다”라는 문장형으로 옮겨 알림 문체 규칙과 어긋난다.",
+              "evidence": "`camelot/wownav/text.lua:28`의 `height_hint_above`에 쓰이는 높이 상태 알림이다. 상태 알림은 원문이 문장이더라도 간결한 명사형으로 번역한다는 지침이 적용된다.",
+              "suggestion": "대상 약 %d야드 위"
+            }
+          ],
+          "consensus": true
+        },
+        {
+          "id": "navigation.lua::Target is below, about %d yards.",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-listening",
+              "id": "navigation.lua::Target is below, about %d yards.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "위 항목과 같은 상태 알림인데 합니다체로 늘렸다. 짝 항목과 함께 명사형으로 맞춰야 한다.",
+              "evidence": "camelot/wownav/text.lua:29 height_hint_below, module.lua:583에서 say로 발화. related \"The target is on another map\" → \"대상이 다른 지도에 있음\".",
+              "suggestion": "대상이 약 %d야드 아래에 있음."
+            },
+            {
+              "by": "gpt-listening",
+              "id": "navigation.lua::Target is below, about %d yards.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "길 안내 중 발화되는 상태 문구를 “있습니다”라는 문장형으로 옮겨 알림 문체 규칙과 어긋난다.",
+              "evidence": "`camelot/wownav/text.lua:29`의 `height_hint_below`에 쓰이는 높이 상태 알림이다. 상태 알림은 원문이 문장이더라도 간결한 명사형으로 번역한다는 지침이 적용된다.",
+              "suggestion": "대상 약 %d야드 아래"
+            }
+          ],
+          "consensus": true
+        },
+        {
+          "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+          "providers": [
+            "claude",
+            "gpt"
+          ],
+          "findings": [
+            {
+              "by": "claude-listening",
+              "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "같은 기능의 사용 불가 알림인 related 항목은 '사용 불가' 명사형인데 이 항목만 합니다체라 말투가 어긋난다. 상태 알림이라 간결한 명사형이 규칙에 맞다. 다만 원인 설명을 겸한 오류 안내로 볼 수도 있어 확신이 낮다.",
+              "evidence": "core/minimap/module.lua:673 speak(...)로 발화. related \"Minimap scanner not available on this client\" → \"이 클라이언트에서는 미니맵 스캐너 사용 불가\". 번역 지침: 원인과 결과는 '~해서 ~' 식으로 간결하게.",
+              "suggestion": "블리자드 제한으로 미니맵 스캐너 사용 불가."
+            },
+            {
+              "by": "gpt-listening",
+              "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+              "category": "style",
+              "severity": "minor",
+              "problem": "음성 상태 알림인데 완결 문장형인 “사용할 수 없습니다”로 길게 표현했다. 알림 문체 규칙에 맞게 짧은 명사형으로 바꿔야 한다.",
+              "evidence": "`core/minimap/module.lua:673`에서 `speak(...)`로 발화되는 상태 알림이다. 관련 항목 `Minimap scanner not available on this client`도 “미니맵 스캐너 사용 불가”라는 명사형을 쓴다.",
+              "suggestion": "블리자드 제한으로 미니맵 스캐너 사용 불가"
+            }
+          ],
+          "consensus": true
+        }
+      ],
+      "responses": [
+        {
+          "id": "navigation.lua::On the zeppelin to %s",
+          "action": "accept",
+          "final_ko": "%s행 비행선 위",
+          "reason": "지적이 맞다. camelot/wownav/text.lua:114-126에서 on_zeppelin은 'dyn name templates (nameKey)' 표에 있는 지점 이름이고, mapdata dyn_targets.lua의 해당 지점은 facilityRole=\"onboard\", positionBasis=\"vessel_deck\"(비행선 갑판 위 지점)이다. '탑승 중'은 현재 상태 알림처럼 들려서 지점 이름 자리에 맞지 않는다. 같은 표의 boarding_zeppelin이 '비행선 탑승 지점'이라 '탑승 지점'을 다시 쓰면 둘이 구분되지 않으므로, 갑판 위 위치를 그대로 나타내는 '%s행 비행선 위'로 정한다. 형제 키 on_ship '%s행 배에 탑승 중', in_tram '%s 방면 지하철에 탑승 중'(koKR/navigation.lua:329,331)도 같은 문제라 이 배치 밖에서 맞춰야 한다."
+        },
+        {
+          "id": "navigation.lua::Target is above, about %d yards.",
+          "action": "accept",
+          "final_ko": "대상이 약 %d야드 위에 있음.",
+          "reason": "두 평가자 공통 지적. text.lua:28 height_hint_above는 경로 시작 때 발화되는 상태 알림이고, 번역 지침은 상태 알림을 원문이 완결 문장이어도 합니다체로 늘리지 않는다고 정한다. 같은 기능의 related '대상이 다른 지도에 있음'과 말투를 맞춰 '~에 있음' 명사형으로 정한다. '대상 약 %d야드 위'보다 주어와 서술이 분명해 한 번 듣고 이해하기 쉽다."
+        },
+        {
+          "id": "navigation.lua::Target is below, about %d yards.",
+          "action": "accept",
+          "final_ko": "대상이 약 %d야드 아래에 있음.",
+          "reason": "두 평가자 공통 지적. text.lua:29 height_hint_below는 위 항목의 짝인 상태 알림이라 지침에 따라 명사형으로 줄이고, 짝 항목과 같은 형태 '대상이 약 %d야드 아래에 있음.'으로 맞춘다."
+        },
+        {
+          "id": "minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.",
+          "action": "accept",
+          "final_ko": "블리자드 제한으로 미니맵 스캐너 사용 불가.",
+          "reason": "두 평가자 공통 지적. core/minimap/module.lua:673에서 speak()로 발화되는 상태 알림이고, 지침은 상태 알림을 합니다체로 늘리지 않고 원인과 결과를 간결하게 잇도록 한다. related 'Minimap scanner not available on this client' → '이 클라이언트에서는 미니맵 스캐너 사용 불가'와 말투를 맞춘다."
+        }
+      ],
+      "judged": [],
+      "verdicts": {
+        "gpt": [],
+        "claude": []
+      }
+    }
+  ],
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Review"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Rebut"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Judge"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "claude:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a1b51aeaf40bbb957",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984181,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-accuracy.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614018369,
+      "tokens": 74342,
+      "toolCalls": 6,
+      "durationMs": 34089,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "claude:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a6ee4f3a541538618",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984181,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-terminology.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614021942,
+      "tokens": 74324,
+      "toolCalls": 9,
+      "durationMs": 35654,
+      "resultPreview": "{\"findings\":[]}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "claude:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a54844f80a0af98a4",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984181,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-context.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝나면…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614055143,
+      "tokens": 83096,
+      "toolCalls": 10,
+      "durationMs": 68853,
+      "resultPreview": "{\"findings\":[{\"id\":\"navigation.lua::On the zeppelin to %s\",\"category\":\"context\",\"severity\":\"major\",\"problem\":\"이 문자열은 상태 알림이 아니라 동적 목표 지점(비행선 갑판 위 지점)의 이름 템플릿이다. '탑승 중'이라는 상태 문형이 지점 이름 자리에 들어가, 아직 타지 않은 승강장 도착 안내에서 '다음 지점: 오그리마행 비행선에 탑승 중.'처럼 이미 탄 것처럼 들린다.\",\"evidence\":\"camelot/wownav/text.lua:116-126 '-- dyn name templates (nameKey)' 표의 on_zeppelin. mapdata dyn_targets.lua의 nameKey=\\\"on_zeppelin\\\",…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "claude:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "afdf9300147e1cc71",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984181,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 번역 평가자다. 다음 파일을 Read로 읽고 그 지시를 그대로 따른다.\n1. C:/project/games/wowwork/tools/review/prompts/common.md (역할과 규칙)\n2. C:/project/games/wowwork/tools/review/prompts/lens-listening.md (네 관점)\n3. C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json (평가할 입력, items 배열)\n\n작업 폴더: C:/project/games (wowwork, wowvision-ko 아래 파일은 근거 확인용으로 Read/Grep 가능). reviews 폴더의 다른 평가 결과 파일은 열지 않는다.\n평가가 끝…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614040461,
+      "tokens": 83194,
+      "toolCalls": 7,
+      "durationMs": 54171,
+      "resultPreview": "{\"findings\":[{\"id\":\"navigation.lua::On the zeppelin to %s\",\"category\":\"listening\",\"severity\":\"major\",\"problem\":\"이 문자열은 현재 상태 알림이 아니라 비행선 갑판 위 지점의 이름(목적지 이름)이다. '%s행 비행선에 탑승 중'이라고 들으면 사용자가 지금 비행선에 타고 있다는 상태 알림으로 오해한다. 목록에서 지점을 고를 때나 '%s 도착' 같은 문장에 이름으로 들어갈 때 뜻이 갈린다.\",\"evidence\":\"camelot/wownav/text.lua:126 on_zeppelin은 지점 이름 키이고, mapdata dyn_targets.lua에서 nameKey=\\\"on_zeppelin\\\", facilityRole=\\\"onb…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "gpt:accuracy",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a14fa272211d23b6c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984182,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-accuracy.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-14-u…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614011141,
+      "tokens": 56906,
+      "toolCalls": 3,
+      "durationMs": 26859,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "gpt:terminology",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a171dc6fd5ab68282",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984279,
+      "queuedAt": 1794613984182,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-terminology.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-1…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614013088,
+      "tokens": 56898,
+      "toolCalls": 3,
+      "durationMs": 27114,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "gpt:context",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a8c6d388618a32bc4",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984280,
+      "queuedAt": 1794613984182,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-context.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-14-ui…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614010100,
+      "tokens": 56882,
+      "toolCalls": 3,
+      "durationMs": 24124,
+      "resultPreview": "{\"findings\":[],\"ok\":true}"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "gpt:listening",
+      "phaseIndex": 1,
+      "phaseTitle": "Review",
+      "agentId": "a82abad12f32bba9c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794613984280,
+      "queuedAt": 1794613984182,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "다음 명령을 Bash로 한 번 실행한다(timeout 600000). GPT를 실행하고 결과를 파일로 남긴다.\n\ncd C:/project/games/wowwork && uv run python -m tools.review.gpt_review --prompt tools/review/prompts/common.md --prompt tools/review/prompts/lens-listening.md --batch C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json --schema tools/review/findings.schema.json --out C:/project/games/wowwork/reviews/2026-11-14-…",
+      "promptFramed": true,
+      "lastProgressAt": 1794614027554,
+      "tokens": 57575,
+      "toolCalls": 3,
+      "durationMs": 41578,
+      "resultPreview": "{\"ok\":true,\"findings\":[{\"id\":\"minimap.lua::Due to Blizzard restrictions the minimap scanner is unavailable.\",\"category\":\"style\",\"severity\":\"minor\",\"problem\":\"음성 상태 알림인데 완결 문장형인 “사용할 수 없습니다”로 길게 표현했다. 알림 문체 규칙에 맞게 짧은 명사형으로 바꿔야 한다.\",\"evidence\":\"`core/minimap/module.lua:673`에서 `speak(...)`로 발화되는 상태 알림이다. 관련 항목 `Minimap scanner not available on this client`도 “미니맵 스캐너 사용 불가”라는 명사형을 쓴다.\",\"suggestion\":\"블…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 9,
+      "label": "translator",
+      "phaseIndex": 2,
+      "phaseTitle": "Rebut",
+      "agentId": "a49c16eb3afe6131d",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1794614056994,
+      "queuedAt": 1794614056972,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "promptPreview": "너는 이 번역의 번역자다. C:/project/games/wowwork/tools/review/prompts/rebut.md 를 Read로 읽고 따른다. 번역 지침은 C:/project/games/wowwork/docs/translation-guide.md, 원문·번역·코드 사용처는 C:/project/games/wowwork/reviews/2026-11-14-ui-v1.0.3/batches/batch-01.json 에 있다.\n\n아래는 항목별로 묶은 평가자 지적이다. 항목(id)마다 응답 하나를 낸다. consensus=true인 항목은 두 회사 평가자가 모두 지적한 것이므로 반드시 accept하고, 지적들을 반영한 가장 좋은 번역을 final_ko로 확정한다. consensus=false인 항목은 지적이 …",
+      "promptFramed": true,
+      "lastProgressAt": 1794614092067,
+      "tokens": 72869,
+      "toolCalls": 6,
+      "durationMs": 35072,
+      "resultPreview": "{\"responses\":[{\"id\":\"navigation.lua::On the zeppelin to %s\",\"action\":\"accept\",\"final_ko\":\"%s행 비행선 위\",\"reason\":\"지적이 맞다. camelot/wownav/text.lua:114-126에서 on_zeppelin은 'dyn name templates (nameKey)' 표에 있는 지점 이름이고, mapdata dyn_targets.lua의 해당 지점은 facilityRole=\\\"onboard\\\", positionBasis=\\\"vessel_deck\\\"(비행선 갑판 위 지점)이다. '탑승 중'은 현재 상태 알림처럼 들려서 지점 이름 자리에 맞지 않는다. 같은 표의 boarding_zeppelin이 '비행선 탑승 지점'이라 '탑승 …"
+    }
+  ],
+  "totalTokens": 616086,
+  "totalToolCalls": 50
+}
