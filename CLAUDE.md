@@ -2,6 +2,8 @@
 
 작업 대상은 복제 저장소 3개다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
 
+새로 만드는 한국어판 전용 기능은 wowvision-installer의 서브모듈 `korean`(비공개 `dnz3d4c/wowvision-korean`, `main` 브랜치)에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성과 센스 리더 연결: `korean/README.md`(2026-11-14 사용자 지시).
+
 ## 원본에 PR 내기 [필수]
 
 - 위 복제 저장소는 GitHub 포크가 아니라서 원본에 PR을 열 수 없다. PR용 공개 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고, 로컬 복제본의 remote 이름은 `fork`다(2026-11-07).

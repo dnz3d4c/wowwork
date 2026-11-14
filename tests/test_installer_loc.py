@@ -198,3 +198,42 @@ def test_installer_logintool_payload_matches_ko_checkout() -> None:
     assert sorted(set(packed) - helper - set(current)) == [], "ko 에 없는 파일이 payload 에 남아 있다"
     stale = sorted(k for k in current if packed.get(k) != current[k])
     assert stale == [], f"로그인 툴 payload 가 낡았다: {stale}"
+
+
+SIGN_SCRIPT = "param()\r\n$PinnedPeHashes = @{\r\n\t'AAAA' = 'engine'\r\n}\r\n$CertSubject = 'x'\r\n"
+
+
+def test_pin_sign_script_adds_the_proxy_pin_and_keeps_the_rest() -> None:
+    from tools.installer_loc import SR_PIN_LABEL, pin_sign_script
+
+    out = pin_sign_script(SIGN_SCRIPT, "B" * 64)
+    assert f"\t'{'B' * 64}' = '{SR_PIN_LABEL}'\r\n" in out
+    assert out.index("$PinnedPeHashes = @{") < out.index("B" * 64) < out.index("'AAAA' = 'engine'")
+    assert out.replace(out[out.index("@{") + 2 : out.index("\t'AAAA'")], "\r\n") == SIGN_SCRIPT
+
+
+def test_installer_sense_reader_payload_matches_bridge() -> None:
+    """설치 프로그램에 넣은 센스 리더 payload 가 프록시 소스와 원본 브리지 서명 스크립트에 맞아야 한다.
+
+    다르면: uv run python -m tools.installer_loc payload 후 설치 프로그램을 다시 빌드한다.
+    DLL 은 빌드마다 바이트가 달라서, 표지가 있고 서명 스크립트가 그 DLL 의 고정 해시를 담는지 본다.
+    """
+    import tempfile
+    import zipfile
+    from pathlib import Path
+
+    from tools.installer_loc import BRIDGE_PAYLOAD, SR_PAYLOAD, pe_hash, pin_sign_script
+
+    with zipfile.ZipFile(SR_PAYLOAD) as z:
+        assert sorted(z.namelist()) == ["nvdaControllerClient.dll", "sign.ps1"]
+        dll, script = z.read("nvdaControllerClient.dll"), z.read("sign.ps1")
+    with zipfile.ZipFile(BRIDGE_PAYLOAD) as z:
+        sku_script = z.read("sku-nvda-voice-sign.ps1")
+    assert b"WowVisionKoreanSenseReaderProxy/" in dll
+    with tempfile.TemporaryDirectory() as tmp:
+        (Path(tmp) / "p.dll").write_bytes(dll)
+        (Path(tmp) / "s.ps1").write_bytes(sku_script)
+        expected = pin_sign_script(
+            sku_script.decode("utf-8-sig"), pe_hash(Path(tmp) / "p.dll", Path(tmp) / "s.ps1")
+        )
+    assert script.decode("utf-8-sig") == expected

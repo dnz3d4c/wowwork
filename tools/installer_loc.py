@@ -86,6 +86,11 @@ HELPER_PROJECT = LOGINTOOL_DIR / "helper" / "SkuLoginSense" / "SkuLoginSense.csp
 HELPER_BUILD = HELPER_PROJECT.parent / "bin" / "Release" / "net48"
 # scoop 은 dotnet SDK 의 shim 을 깔지 않아 PATH 로는 닿지 않는다(~/.claude/CLAUDE.md 환경 표).
 DOTNET = Path.home() / "scoop" / "apps" / "dotnet-sdk" / "current" / "dotnet.exe"
+# 센스 리더 프록시: 소스는 korean 서브모듈(dnz3d4c/wowvision-korean), 서명 스크립트는 공유 브리지 payload 의 것.
+SR_BRIDGE = KO_WORK_ROOT / "wowvision-installer" / "korean" / "sense-reader-bridge"
+SR_PAYLOAD = PAYLOAD.with_name("koSenseReader.zip")
+BRIDGE_PAYLOAD = PAYLOAD.with_name("sapi2sr-payload.zip")
+SR_PIN_LABEL = "nvdaControllerClient.dll x64 (WowVision Korean Sense Reader proxy)"
 
 
 def write_zip(entries: dict[str, bytes], out: Path) -> int:
@@ -151,6 +156,53 @@ def build_logintool_payload(out: Path) -> int:
     return write_zip(logintool_entries(LOGINTOOL_DIR, HELPER_BUILD), out)
 
 
+def pin_sign_script(script: str, pe_hash_hex: str) -> str:
+    """브리지 서명 스크립트의 고정 해시 표 맨 앞에 프록시의 해시를 더한다. 나머지는 그대로 둔다.
+
+    스크립트는 고정 해시가 맞는 파일만 서명하므로, 프록시를 서명하려면 그 해시가 표에 있어야 한다.
+    공유 payload(Sku 설치 프로그램과 같은 바이트)는 고치지 않고 빌드 때마다 여기서 만든다.
+    """
+    anchor = "$PinnedPeHashes = @{"
+    at = script.index(anchor) + len(anchor)
+    nl = "\r\n" if "\r\n" in script else "\n"
+    pin = f"{nl}\t# WowVision Korean build: Sense Reader proxy (wowvision-korean sense-reader-bridge).{nl}\t'{pe_hash_hex}' = '{SR_PIN_LABEL}'"
+    return script[:at] + pin + script[at:]
+
+
+def pe_hash(dll: Path, sign_script: Path) -> str:
+    """서명 스크립트의 Pin 모드로 Authenticode PE 해시를 구한다(서명 여부와 무관한 해시)."""
+    import re
+    import subprocess
+
+    out = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(sign_script),
+         "-Mode", "Pin", "-DllPaths", str(dll)],
+        capture_output=True, text=True, check=True,
+    ).stdout  # fmt: skip
+    m = re.search(r"'([0-9A-F]{64})'", out)
+    if not m:
+        raise RuntimeError(f"PE 해시를 얻지 못했다: {out!r}")
+    return m.group(1)
+
+
+def build_sense_reader_payload(out: Path) -> int:
+    """프록시를 빌드하고 테스트를 돌린 뒤, 프록시와 해시를 더한 서명 스크립트를 묶는다."""
+    import subprocess
+    import tempfile
+    import zipfile
+
+    subprocess.run(["cmd", "/c", str(SR_BRIDGE / "build.bat"), "test"], check=True)
+    dll = SR_BRIDGE / "out" / "nvdaControllerClient.dll"
+    with zipfile.ZipFile(BRIDGE_PAYLOAD) as z:
+        raw = z.read("sku-nvda-voice-sign.ps1")
+    with tempfile.TemporaryDirectory() as tmp:
+        sku_script = Path(tmp) / "sku-nvda-voice-sign.ps1"
+        sku_script.write_bytes(raw)
+        script = pin_sign_script(raw.decode("utf-8-sig"), pe_hash(dll, sku_script))
+    encoded = script.encode("utf-8-sig" if raw.startswith(b"\xef\xbb\xbf") else "utf-8")
+    return write_zip({"nvdaControllerClient.dll": dll.read_bytes(), "sign.ps1": encoded}, out)
+
+
 def installer_items(src_dir: Path) -> list[dict[str, object]]:
     """평가 묶음 항목: 원문·번역·다른 언어 번역, 코드에서 키를 쓰는 줄(Loc.cs 제외)."""
     text = (src_dir / "Loc.cs").read_text(encoding="utf-8")
@@ -185,6 +237,8 @@ def main() -> int:
         print(f"음성 팩 파일 {n}개 -> {VOICE_PAYLOAD}")
         n = build_logintool_payload(LOGINTOOL_PAYLOAD)
         print(f"로그인 툴 한국어판 파일 {n}개 -> {LOGINTOOL_PAYLOAD}")
+        n = build_sense_reader_payload(SR_PAYLOAD)
+        print(f"센스 리더 프록시 파일 {n}개 -> {SR_PAYLOAD}")
         return 0
     path = Path(sys.argv[2])
     if cmd == "batch":
