@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from tools.manual import check, slug, structure, term_sheet
+from tools.manual import check, slug, structure
 
 EN = """# Using the Interface
 
@@ -100,14 +100,6 @@ def test_check_reports_structure_and_anchor_problems(tmp_path: Path) -> None:
     assert "제목" in problems
     assert "인라인 코드" in problems
     assert "alerts.md#picking-a-sound" in problems
-
-
-def test_term_sheet_finds_ui_strings_with_korean_values() -> None:
-    en_values = {"Letter Navigation in Menus": "메뉴에서 글자로 이동", "Navigation": "길 안내", "Off": "끄기"}
-    sheet = term_sheet(EN, en_values)
-    assert {"en": "Letter Navigation in Menus", "ko": "메뉴에서 글자로 이동"} in sheet
-    assert {"en": "Navigation", "ko": "길 안내"} in sheet
-    assert all(t["en"] != "Off" for t in sheet)
 
 
 def test_check_rejects_haeyo_style(tmp_path: Path) -> None:
@@ -239,20 +231,6 @@ def test_source_diff_shows_english_changes_since_translated_commit(tmp_path) -> 
     assert "-Old line." in d and "+New line." in d
 
 
-def test_batch_hides_english_from_style_lens() -> None:
-    """설명서 style 관점은 원문 없이 한국어만 읽는다(docs/decisions.tsv 2026-11-13).
-    원문을 본 평가자는 직역을 정답으로 받아들여 "키를 가져갑니다" 같은 문장을 통과시켰다."""
-    from tools.manual import KO_ROOT, batch_data
-
-    if not (KO_ROOT / "basics/interface.md").exists():
-        pytest.skip("한국어 설명서 없음")
-    full = batch_data("basics/interface.md")
-    reader = batch_data("basics/interface.md", lens="style")
-    assert "en" in full and "en_path" in full
-    assert "en" not in reader and "en_path" not in reader
-    assert reader["ko"] == full["ko"] and reader["terms"] == full["terms"]
-
-
 def test_check_rejects_avoided_expressions(tmp_path: Path) -> None:
     """용어집 avoid 열: 설명서 본문에 쓰지 않을 직역(2026-11-13 사용자 결정 대응표).
     en 이 비어 있으면 모든 설명서 파일에, 있으면 원문에 그 말이 있는 파일에만 적용한다.
@@ -273,18 +251,3 @@ def test_check_rejects_avoided_expressions(tmp_path: Path) -> None:
     assert "가져갑" in problems and "한 단계 뒤로" in problems and "가져가기" not in problems
     good = head + 'WowVision이 키 입력을 처리합니다. Escape는 이전 단계로 돌아갑니다. "가져가기"\n'
     assert check(en, good, ko, terms) == []
-
-
-def test_changed_ko_lines_maps_english_hunks_to_korean_lines() -> None:
-    """원문이 바뀐 파일의 style 관점에는 영어 변경분 대신 평가할 한국어 줄 범위를 준다(2026-11-13 사용자 결정).
-    번역 파일은 첫 줄 source 주석 때문에 영어보다 한 줄씩 밀려 있다."""
-    from tools.manual import changed_ko_lines
-
-    diff = (
-        "diff --git a/x b/x\n--- a/x\n+++ b/x\n"
-        "@@ -3,2 +3,3 @@ heading\n ctx\n+new\n ctx\n"
-        "@@ -10 +11,0 @@\n-gone\n"
-    )
-    # 문맥 줄(앞뒤 3줄)은 빼고 실제로 바뀐 줄만 준다(2026-11-13 사용자 결정, Codex 지적).
-    assert changed_ko_lines(diff) == [(5, 5), (12, 12)]
-    assert changed_ko_lines("") == []

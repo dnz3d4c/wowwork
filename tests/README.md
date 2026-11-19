@@ -51,8 +51,7 @@
 |------|---------------|
 | `test_kokr.py`의 `test_lua_syntax`, `test_voice_registration.py` | LuaJIT이 설치되지 않았을 때 |
 | `test_logintool_ko.py` | `Sku-WoW-Addon-TBC` 복제본이 없을 때 |
-| `test_logintool_bench.py`의 `test_names_have_valid_lengths_and_kinds` | `cache/gs_koKR.csv`가 없을 때. `uv run python -m tools.game_terms`가 만듭니다 |
-| `test_manual.py`의 `test_translated_manual_passes_check`, `test_batch_hides_english_from_style_lens` | 한국어 설명서가 없을 때 |
+| `test_manual.py`의 `test_translated_manual_passes_check` | 한국어 설명서가 없을 때 |
 
 LuaJIT이 없으면 번역 파일의 Lua 문법을 검사하지 못합니다. 번역을 고칠 일이 있으면 LuaJIT을 설치합니다(`README.md` `### 작업에 따라 필요한 프로그램`).
 
@@ -66,9 +65,7 @@ LuaJIT이 없으면 번역 파일의 Lua 문법을 검사하지 못합니다. �
 
 ### 한국어 설명서
 
-- `test_manual.py`: 설명서 검사 도구 `tools.manual`을 확인하고, 실제 한국어 설명서 전체에 검사를 적용합니다. 검사 항목은 원문과 같은 구조(제목, 표, 목록, 링크, 인라인 코드), 링크 앵커, 해요체, 확정 용어, "바꾸다" 대신 "변경하다", 쓰지 않기로 정한 직역입니다. 설명서는 사람이 다듬은 문장이 많아서, 원문을 다시 번역하는 대신 바뀐 원문만 보여 주는 `source_diff`도 여기서 검사합니다.
-  - `test_batch_hides_english_from_style_lens`와 `test_changed_ko_lines_maps_english_hunks_to_korean_lines`는 AI 검수 파이프라인(`docs/archive/review-pipeline/`)이 사용하던 `tools.manual batch`를 검사합니다. 파이프라인은 기록으로 옮겼지만 `tools.manual batch` 코드는 남아 있어서 테스트도 남겼습니다.
-- `test_manual_follow.py`: 번역 값을 변경했을 때 설명서의 화면 문구 인용을 따라 고치는 기능을 확인합니다. 값이 같은 다른 키를 잘못 고치거나, 값만 변경하고 조사를 그대로 두어 "알림를"이 남거나, 두 번 실행하면 "안내 안내"가 되는 실제 사고를 하나씩 테스트로 남겼습니다.
+- `test_manual.py`: 설명서 검사 도구 `tools.manual`을 확인하고, 실제 한국어 설명서 전체에 검사를 적용합니다. 검사 항목은 원문과 같은 구조(제목, 표, 목록, 링크, 인라인 코드), 링크 앵커, 해요체, 확정 용어, "바꾸다" 대신 "변경하다", 쓰지 않기로 정한 직역입니다. 설명서는 사람이 다듬은 문장이 많아서, 원문을 다시 번역하는 대신 바뀐 원문만 보여 주는 `source_diff`도 여기서 검사합니다.- `test_manual_follow.py`: 번역 값을 변경했을 때 설명서의 화면 문구 인용을 따라 고치는 기능을 확인합니다. 값이 같은 다른 키를 잘못 고치거나, 값만 변경하고 조사를 그대로 두어 "알림를"이 남거나, 두 번 실행하면 "안내 안내"가 되는 실제 사고를 하나씩 테스트로 남겼습니다.
 - `test_docs_style.py`: 이 저장소의 한국어 문서(README, CLAUDE.md, 스킬, `docs/*.md`, 이 문서)에 지시어 번역투와 "~것입니다", 해요체가 없는지 봅니다. AI 검토로는 같은 표현이 계속 남아서 기계 검사로 막았습니다.
 
 ### 설치 프로그램과 테스터 안내
@@ -86,15 +83,16 @@ LuaJIT이 없으면 번역 파일의 Lua 문법을 검사하지 못합니다. �
 
 - `test_logintool_ko.py`: 로그인 툴 한국어판이 캐릭터 선택 화면에서 레벨 줄을 알아보는 규칙(`flows.ahk`의 정규식)을 실제 OCR 결과로 검사합니다. AutoHotkey에는 테스트 도구가 없어서 파이썬에서 정규식을 꺼내 검사합니다. OCR이 "레벨"을 "해일"로 잘못 읽어도 알아보고, 이름에 "레벨"이 포함된 캐릭터는 레벨 줄로 오인하지 않아야 합니다.
 - `test_logintool_loc.py`: 로그인 툴 번역 파일(`koKR.txt`)과 `forever.ahk` 안의 한국어 낱말을 읽고 고치는 기능을 확인합니다. 화면 판별에 사용하는 문구는 게임 화면 글자와 같아야 하므로 번역 대상에서 빼는지도 봅니다.
-- `test_logintool_bench.py`: 로그인 툴 OCR 인식률을 재는 측정 도구(`tools/logintool_bench/`)를 확인합니다. 측정용 캐릭터 이름 묶음이 한글 상용 음절 2,350자를 빠짐없이 포함하는지, 오류율 계산이 맞는지 봅니다. OCR 방식을 변경해 인식률을 다시 잴 때 사용합니다.
-
 ### 저장소 관리
 
 - `test_pr_cleanup.py`: 원본에 병합된 PR 브랜치를 지우는 도구 `tools.pr_cleanup`의 판단을 확인합니다. 병합된 브랜치만 지우고, 병합 없이 닫혔거나 병합 뒤 새 커밋이 있으면 남기고 알리며, `main` 같은 보호 브랜치와 `origin` 밖의 원격은 건드리지 않아야 합니다. 브랜치 삭제는 되돌리기 어려워서 판단 규칙을 테스트로 고정했습니다.
 
 ## 정리 기록
 
-2026-11-19에 인계를 앞두고 테스트를 정리하면서 두 개를 지웠습니다.
+2026-11-19에 인계를 앞두고 테스트를 정리하면서 아래 테스트를 지웠습니다.
+
+- `test_logintool_bench.py`와 측정 도구 `tools/logintool_bench/`: 2026-11-07에 로그인 툴 OCR 인식률을 한 번 잰 도구입니다. 측정 결과는 `flows.ahk`의 레벨 줄 판정 규칙과 `test_logintool_ko.py`의 OCR 문자열로 남아 있고, 다시 재려면 게임 안 애드온과 화면 캡처 준비가 필요해서 현재 절차에는 쓰이지 않습니다. 도구를 다시 쓰려면 `git log --diff-filter=D -- tools/logintool_bench`로 삭제 커밋을 찾아 직전 커밋에서 꺼냅니다.
+- `test_manual.py`의 `test_term_sheet_finds_ui_strings_with_korean_values`, `test_batch_hides_english_from_style_lens`, `test_changed_ko_lines_maps_english_hunks_to_korean_lines`와 `tools.manual`의 `batch`, `terms`, `list` 명령: AI 검수 파이프라인(`docs/archive/review-pipeline/`)에만 쓰이던 기능이라 코드와 함께 지웠습니다.
 
 - `test_tester_guide.py`의 `test_guide_quotes_match_installer_text`: 안내의 인용 문구가 설치 프로그램 네 언어 표 가운데 하나에 있는지 보는 검사였습니다. 같은 파일의 `test_guide_quotes_only_korean_screen_text`가 더 좁은 한국어 표만 허용하므로, 지운 검사가 잡는 문제는 남은 검사도 모두 잡습니다. 지운 검사의 사고 기록은 남은 검사의 설명으로 옮겼습니다.
 - `test_voice_pack.py`의 `test_defaults_rate_and_volume`: 녹음 속도 5와 볼륨 60이라는 상수 값을 테스트에 한 번 더 적고, 녹음 스크립트에 볼륨 지정 줄이 있는지 글자로 확인하는 검사였습니다. 상수 값은 누가 일부러 변경할 때만 달라지고, 그때 테스트는 같은 값을 한 번 더 고치게 할 뿐입니다. 값을 정한 이유는 `tools/voice_pack.py`의 주석과 `docs/builds.md` 배포 기록(2026-11-08 음성 팩 다시 녹음)에 있습니다. 볼륨 지정 줄이 빠지면 SAPI 기본 볼륨 100으로 녹음되어 소리가 잘리고(2026-11-08 실측), 음성 팩을 만드는 `tools.voice_pack build`가 피크 검사(`too_loud`)에서 실패합니다. 2026-11-19 GPT 교차 검토는 볼륨 검사를 남기자고 했지만, 같은 실수를 빌드가 잡으므로 지운 상태를 유지했습니다.

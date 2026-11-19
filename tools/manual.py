@@ -1,20 +1,16 @@
-"""설명서 번역 도구: 원문과 번역문의 구조 대조, 앵커 검사, 파일별 용어표, koKR 값 변경 따라가기.
+"""설명서 번역 도구: 원문과 번역문의 구조 대조, 앵커 검사, koKR 값 변경 따라가기.
 
 koKR 값이 바뀌면 설명서의 화면 문구 인용도 따라 바뀌어야 한다(`follow_all`). tools.sync_locale 이
 koKR 을 쓸 때 부르므로 따로 실행하지 않는다.
 
 사용:
-  uv run python -m tools.manual list                 # 원문 파일 목록과 단어 수
-  uv run python -m tools.manual terms <상대경로>       # 그 파일의 UI 문자열 용어표(JSON)
   uv run python -m tools.manual check [<상대경로>...]  # 번역문 기계 검사(없으면 번역된 전체)
-  uv run python -m tools.manual batch <상대경로> <출력.json> [관점]  # 평가 입력(원문, 번역문, 용어표, 원문이 바뀌었으면 en_diff). 관점이 style이면 원문을 뺀다
   uv run python -m tools.manual diff <상대경로>          # 커밋된 번역의 원문 커밋 이후 영어 원문의 변경
 상대경로는 docs/src/user/en 기준(예: basics/interface.md). 번역문은 같은 상대경로의 ko 폴더.
 """
 
 from __future__ import annotations
 
-import json
 import re
 import subprocess
 import sys
@@ -23,7 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from tools.glossary import Term, _excepted, load_glossary, violations
-from tools.locale_lib import JOSA_WORDS, KOKR_DIR, WOWVISION_DIR, parse_locale_file, upstream_locale_dir
+from tools.locale_lib import JOSA_WORDS, WOWVISION_DIR
 
 EN_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "en"
 KO_ROOT = WOWVISION_DIR / "docs" / "src" / "user" / "ko"
@@ -309,29 +305,6 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
     return problems
 
 
-def term_sheet(en: str, en_to_ko: dict[str, str]) -> list[dict[str, str]]:
-    """원문에 나오는 UI 문자열(두 단어 이상, 또는 한 단어라도 대문자로 시작하는 6자 이상)과 koKR 값."""
-    text = _strip_fences(en)
-    sheet = []
-    for value, ko in sorted(en_to_ko.items(), key=lambda kv: -len(kv[0])):
-        words = value.split()
-        if "%" in value or not ko or (len(words) < 2 and not (value[:1].isupper() and len(value) >= 6)):
-            continue
-        if re.search(r"(?<![\w])" + re.escape(value) + r"(?![\w])", text):
-            sheet.append({"en": value, "ko": ko})
-    return sheet
-
-
-def locale_pairs() -> dict[str, str]:
-    pairs: dict[str, str] = {}
-    for p in (upstream_locale_dir() / "enUS").glob("*.lua"):
-        ko = parse_locale_file(KOKR_DIR / p.name)
-        for key, value in parse_locale_file(p).items():
-            if key in ko:
-                pairs.setdefault(value, ko[key])
-    return pairs
-
-
 def source_diff(ko_text: str, rel: str, repo: Path = WOWVISION_DIR) -> str:
     """번역 파일 첫 줄의 원문 커밋 이후 영어 원문의 변경(git diff). 바뀌지 않았거나 기록이 없으면 "".
 
@@ -359,73 +332,10 @@ def _committed_ko(rel: str) -> str:
     return r.stdout.decode("utf-8") if r.returncode == 0 else ""
 
 
-def batch_data(rel: str, lens: str | None = None) -> dict[str, object]:
-    """평가 입력 한 파일. style 관점은 원문 없이 한국어만 읽으므로 en·en_path 를 뺀다
-    (docs/decisions.tsv 2026-11-13: 원문을 본 평가자는 직역을 통과시켰다)."""
-    en = (EN_ROOT / rel).read_text(encoding="utf-8")
-    data: dict[str, object] = {
-        "file": rel, "en_path": f"wowvision-ko/WowVision/docs/src/user/en/{rel}",
-        "ko_path": f"wowvision-ko/WowVision/docs/src/user/ko/{rel}", "en": en,
-        "ko": (KO_ROOT / rel).read_text(encoding="utf-8"), "terms": term_sheet(en, locale_pairs()),
-    }  # fmt: skip
-    if d := source_diff(_committed_ko(rel), rel):
-        data["en_diff"] = d
-    if lens == "style":
-        del data["en"], data["en_path"]
-        if d:
-            data["ko_lines"] = changed_ko_lines(str(data.pop("en_diff")))
-    return data
-
-
-_HUNK = re.compile(r"^@@ -\S+ \+(\d+)(?:,(\d+))? @@", re.MULTILINE)
-
-
-def changed_ko_lines(diff: str) -> list[tuple[int, int]]:
-    """영어 변경분(git diff)의 새 쪽 줄 범위를 한국어 번역의 줄 범위로 바꾼다. 번역은 첫 줄 source 주석 때문에
-    한 줄씩 밀려 있다. 지워지기만 한 곳은 그 위치 한 줄로 준다. style 관점은 원문을 보지 않으므로
-    en_diff 대신 이 범위를 받는다(docs/decisions.tsv 2026-11-13)."""
-    lines: list[int] = []
-    new: int | None = None
-    for line in diff.splitlines():
-        if m := _HUNK.match(line):
-            new = int(m.group(1))  # +N,0 이면 N번 줄 뒤에서 지워졌다는 뜻이라 그 줄을 가리킨다
-        elif new is None or line.startswith(chr(92)):
-            continue
-        elif line.startswith("+"):
-            lines.append(new)
-            new += 1
-        elif line.startswith("-"):
-            lines.append(new)
-        else:
-            new += 1
-    out: list[tuple[int, int]] = []
-    for n in sorted(set(lines)):
-        if out and n == out[-1][1] + 1:
-            out[-1] = (out[-1][0], n)
-        else:
-            out.append((n, n))
-    return [(a + 1, b + 1) for a, b in out]
-
-
 def main() -> int:
     cmd, rest = sys.argv[1], sys.argv[2:]
     if cmd == "diff":
         print(source_diff(_committed_ko(rest[0]), rest[0]) or "원문 변경 없음")
-        return 0
-    if cmd == "list":
-        for p in sorted(EN_ROOT.rglob("*.md")):
-            print(f"{len(p.read_text(encoding='utf-8').split()):6d}  {p.relative_to(EN_ROOT).as_posix()}")
-        return 0
-    if cmd == "terms":
-        en = (EN_ROOT / rest[0]).read_text(encoding="utf-8")
-        print(json.dumps(term_sheet(en, locale_pairs()), ensure_ascii=False, indent=1))
-        return 0
-    if cmd == "batch":
-        rel, out = rest[0], Path(rest[1])
-        data = batch_data(rel, rest[2] if len(rest) > 2 else None)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-        print(out)
         return 0
     rels = rest or sorted(p.relative_to(KO_ROOT).as_posix() for p in KO_ROOT.rglob("*.md"))
     bad = 0

@@ -1,7 +1,0 @@
-## Interface: 16001, 11509, 20506, 120105
-## Title: LoginToolOcrBench
-## Notes: Dev only. Draws character-select cards with test names for the login tool OCR benchmark.
-## SavedVariables: LoginToolOcrBenchDB
-
-data.lua
-bench.lua
