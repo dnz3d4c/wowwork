@@ -34,7 +34,7 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 ### 2-1. 공유 키: 사용처를 전부 센다
 
 1. `../wowvision-ko/WowVision` 아래에서 `L["키"]`를 검색해 사용처를 전부 센다. 한두 곳만 보고 정하지 않는다.
-2. 모든 문맥에 맞는 말이 없으면 `docs/translation-guide.md` `## 용어` 3번대로 보고 목록에 올리고, 원본에 키를 나누는 PR을 제안한다.
+2. 사용처를 센 결과로 `docs/translation-guide.md` `## 용어` 3번에 따라 번역을 정한다. 모든 문맥에 맞는 말이 없으면 원본에 키를 나누는 PR을 제안한다.
 3. 다른 파일에 같은 키가 있으면 그 번역을 따른다(`docs/translation-guide.md` `## 파일 형식`). 파일 사이 값이 다르면 `test_same_key_same_translation`이 실패한다.
 
 ### 2-2. 용어: 용어집, 게임 공식 용어, 문맥 순서
@@ -60,7 +60,7 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 koKR을 변경하면 설치 프로그램에 든 koKR과 달라져 `test_installer_loc.py`가 실패한다.
 
 1. `uv run python -m tools.installer_loc payload`
-2. `docs/builds.md` `## 다시 만드는 법` 2~4단계(설치 프로그램 빌드와 자체 검사, 설치 흐름이 바뀌었을 때만 `fullinstall`, 테스터 폴더 교체)
+2. `docs/builds.md` `## 다시 만드는 법` 2~4단계(설치 프로그램 빌드와 자체 검사, 실제 흐름 검사, 테스터 폴더 교체)
 3. `uv run pytest -q` 전체 통과
 4. payload를 풀어 새 값이 있고 옛 값이 없는지 확인한다.
 5. `docs/builds.md`의 현재 배포 표와 검증 이력을 업데이트한다. 실행한 검사, 실행하지 않은 검사와 그 이유를 적는다.
