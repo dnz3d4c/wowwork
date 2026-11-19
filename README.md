@@ -85,7 +85,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | 로그인 툴 화면 읽기 시험 | AutoHotkey v2 | `winget install --id AutoHotkey.AutoHotkey -e` |
 | 센스 리더 동작 확인 | 센스 리더 | winget에 없어서 따로 구해야 합니다 |
 
-작업 기록(`docs/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 사용한 AI 도구입니다. 설치하지 않아도 됩니다.
+작업 기록(`docs/archive/review-pipeline/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 사용한 AI 도구입니다. 설치하지 않아도 됩니다.
 
 ## 처음 내려받기
 
@@ -178,7 +178,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 - 전체 순서: `CLAUDE.md` `## 원본 새 릴리스 따라가기`
 - 명령: `docs/translation-guide.md` `## upstream 업데이트 절차`, `### 원본이 바뀌었을 때`
 
-1.0 때는 Claude와 GPT 두 AI로 번역을 교차 검수했습니다(`docs/review-process.md`). 그 도구는 기록으로만 남아 있으니 검수 방식은 새 관리자가 정합니다. 어떤 방식이든 마지막에 `uv run pytest -q`(확정 용어 검사 포함)는 통과해야 합니다.
+1.0 때는 Claude와 GPT 두 AI로 번역을 교차 검수했습니다(`docs/archive/review-pipeline/review-process.md`). 그 도구는 기록으로만 남아 있으니 검수 방식은 새 관리자가 정합니다. 어떤 방식이든 마지막에 `uv run pytest -q`(확정 용어 검사 포함)는 통과해야 합니다.
 
 ### 4. 로그인 툴을 원본 4.2에 맞추기
 
@@ -208,7 +208,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | `docs/tester-guide.md` | 테스터용 설치 안내. 배포할 때 `설치_안내.txt`로 복사합니다 |
 | `docs/upstream-report.md` | 번역으로 고칠 수 없어 원본에 알릴 문제 |
 | `plans/active/upstream-korean.md` | 원본에 한국어를 보내는 계획과 진행 상황 |
-| `docs/review-process.md` | 1.0 번역 검수 방식 기록 |
+| `docs/archive/review-pipeline/review-process.md` | 1.0 번역 검수 방식 기록 |
 | `reviews/README.md` | 검수 회차별 기록, 지운 검수 파일 꺼내는 법 |
 
 ## 자주 하는 작업

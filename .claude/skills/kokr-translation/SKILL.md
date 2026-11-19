@@ -22,7 +22,7 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 2. 고칠 키가 `docs/decisions.tsv`에 결정으로 있는지 찾는다. 있으면 그 결정을 따른다.
 3. 여러 키에 걸리는 방침이면 `CLAUDE.md` `## 번역을 고칠 때`대로 작업 전에 사용자 결정을 받는다.
 
-## 1. koKR은 `tools.sync_locale`로만 고친다
+## 1. koKR 고치기
 
 - 새 키: `docs/translation-guide.md` `## upstream 업데이트 절차` 4~5단계(`cache/missing.tsv`의 `ko` 열을 채워 다시 실행).
 - 기존 번역 수정: 열이 `file`, `key`, `en`, `ko`인 TSV를 만들어 `uv run python -m tools.sync_locale <파일>`로 넣는다. 같은 실행이 설명서의 인용과 그 뒤 조사도 새 값에 맞춘다(`tools/manual.py` `follow_values`).
@@ -53,7 +53,7 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 
 ## 3. 검수
 
-번역한 사람이 아닌 검토자가 번역을 검수한다. 검수 방식은 관리자가 정한다. 검수 결과는 `CLAUDE.md` `## 번역을 고칠 때`에 따라 반영한다(되돌린 번역의 용어집 등록, 남은 의문 넘기기, 지적의 유형 처리).
+검수 방식은 관리자가 정한다. 검수 결과는 `CLAUDE.md` `## 번역을 고칠 때`에 따라 반영한다(되돌린 번역의 용어집 등록, 남은 의문 넘기기, 지적의 유형 처리).
 
 ## 4. payload, 설치 프로그램, 테스트
 
@@ -68,4 +68,4 @@ koKR을 변경하면 설치 프로그램에 든 koKR과 달라져 `test_installe
 ## 5. 커밋
 
 - vision-locale `main`과 wowwork에 각각 커밋한다.
-- 사용자가 정한 것은 `docs/decisions.tsv`에 날짜와 출처(사용자)를 적는다. Claude가 정한 것은 적지 않는다.
+- 사용자가 정한 것은 `docs/decisions.tsv`에 날짜와 출처(사용자)를 적는다. 사용자 결정이 아닌 것은 적지 않는다.

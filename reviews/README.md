@@ -1,6 +1,6 @@
 # 번역 검수 기록
 
-WowVision 한국어판 1.0을 회차별로 검수한 기록입니다. 회차마다 검수 대상과 변경 내용을 남겼습니다. 검수 방식 전체는 `docs/review-process.md`에 있습니다.
+WowVision 한국어판 1.0을 회차별로 검수한 기록입니다. 회차마다 검수 대상과 변경 내용을 남겼습니다. 검수 방식 전체는 `docs/archive/review-pipeline/review-process.md`에 있습니다.
 
 ## 용어
 

@@ -83,5 +83,5 @@
 | `docs/glossary.tsv` | 확정 용어 |
 | `docs/decisions.tsv` | 사용자 결정과 이유 |
 | `docs/upstream-report.md` | 원본에 알릴 문제 |
-| `docs/review-process.md` | 1.0 번역 검수 방식의 기록 |
+| `docs/archive/review-pipeline/review-process.md` | 1.0 번역 검수 방식의 기록 |
 | `reviews/`, `docs/archive/` | 끝난 작업의 기록. 현행 규칙은 위 문서에 있다 |
