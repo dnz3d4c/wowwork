@@ -214,7 +214,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | 원본에 알릴 문제 목록 [`docs/upstream-report.md`](docs/upstream-report.md) | 아직 보내지 않았습니다 | 보낼지와 언제 보낼지 정합니다. 보내기 전에 코드 위치를 직접 확인합니다 |
 | 센스 리더 실패 안내 문구(`status.koreanSenseReaderFailed`) | 문구 검수와 실제 PC 설치 확인을 하지 않았습니다 | 테스터 설치 뒤 센스 리더로 듣기가 되는지 확인합니다 |
 | 로그인 툴 한국어판 게임 확인 | 한국어판을 게임에서 직접 사용해 확인하지 않았습니다 | Forever 클라이언트에서 로그인 화면 낭독을 확인합니다 |
-| 한국어 음성 팩(Vocalizer Expressive Yuna 녹음) 사용권 | 재배포해도 되는지 확인하지 않았는데, 이미 테스터에게 배포하고 있습니다 | 음성 라이선스를 확인하고 결과를 [`docs/decisions.tsv`](docs/decisions.tsv)에 적습니다 |
+| 한국어 음성 팩(Vocalizer Expressive Yuna 녹음) 배포 | Yuna는 이전 관리자가 작업한 음성 엔진입니다. 지금은 테스터 설치 프로그램에 넣어 배포합니다 | 계속 배포할지, 원본 음성 팩 저장소(`wow-vision/vision-default-audio`)에 보낼지 관리자가 정합니다([`docs/decisions.tsv`](docs/decisions.tsv) 2026-11-19) |
 
 테스터 명단과 설치 파일을 보내는 경로, 테스터 로그를 받는 곳은 저장소에 적지 않았습니다. 인계 때 따로 받습니다.
 

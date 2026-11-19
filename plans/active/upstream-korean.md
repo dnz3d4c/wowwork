@@ -32,7 +32,7 @@
 | vision-locale | `koKR/` 24파일 +1711줄, `modules.xml` 1줄. 키 1429개가 enUS와 완전히 일치(deDE는 10개 부족) | 그대로 가능 |
 | wowvision-installer | `Loc.cs` Ko 표(206키, En과 일치), `ComponentsForm.cs` 2줄 / 한국어 전용: `KoreanLocale.cs`, `KoreanVoice.cs`, payload 2개, 브리지 기본값, 자체 검사 kolocale·kovoice, `status.korean*` 키 | Ko 표만 가능. 나머지는 포크 전용 |
 | WowVision | `docs/src/user/ko` 51쪽(en과 쪽수 같음) + `SUMMARY.md` 54줄. 코드 차이 없음 | 가능하지만 유지 방침 결정이 필요 |
-| vision-default-audio | 한국어 음성 팩 Yuna(현재 설치 프로그램이 덮어씀) | 라이선스 미확인 |
+| vision-default-audio | 한국어 음성 팩 Yuna(현재 설치 프로그램이 덮어씀) | 관리자가 정한다(2026-11-19 결정) |
 
 ## 실행 계획  [강제]
 
@@ -82,7 +82,7 @@
 
 ### Phase 5. 한국어 음성 팩 Yuna [승인 필요]
 
-- Vocalizer Expressive 음성 녹음을 재배포해도 되는지 확인하지 않았다(미확인). 사용권을 확인한 뒤 `wow-vision/vision-default-audio`에 PR을 낼지 정한다.
+- Yuna는 이전 관리자가 작업한 음성 엔진이다. `wow-vision/vision-default-audio`에 PR을 낼지는 관리자가 정한다(`docs/decisions.tsv` 2026-11-19).
 
 ### Phase 6. 나중으로 미룬 것
 
