@@ -24,6 +24,7 @@ if not L then return end
 1. 원본을 받습니다: `git -C ../wowvision-ko/WowVision fetch upstream --tags`와 `git -C ../wowvision-ko/vision-locale fetch upstream`.
 2. 따라갈 원본 릴리스를 병합하고 원본 테스트를 돌립니다.
    - WowVision `ko`에는 릴리스 태그를 병합합니다: `git -C ../wowvision-ko/WowVision merge <태그>`.
+   - 병합이 충돌로 멈추면 `git -C ../wowvision-ko/WowVision status`로 충돌한 파일을 봅니다. 한국어판이 원본과 다르게 둔 파일(`docs/src/user/ko`, `docs/src/SUMMARY.md`, `docs/site/introduction.md`, `.github/workflows/docs.yml` 등)은 원본 변경을 넣되 한국어판 변경도 살립니다. 다르게 둔 파일 목록은 `git -C ../wowvision-ko/WowVision diff --stat <이전 태그> ko`로 확인합니다. 고친 뒤 `git -C ../wowvision-ko/WowVision add <파일>`과 `git -C ../wowvision-ko/WowVision commit`으로 병합을 마칩니다. 처음부터 다시 하려면 `git -C ../wowvision-ko/WowVision merge --abort`를 실행합니다. vision-locale 병합도 같은 방법으로 처리합니다.
    - vision-locale `main`에는 같은 태그의 `locale` 서브모듈 커밋을 병합합니다. 커밋은 `git -C ../wowvision-ko/WowVision ls-tree <태그> locale`이 보여 줍니다.
    - 원본 테스트 전에 WowVision 폴더에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행합니다. 테스트는 git에 없는 생성물 `mapdata/WowNavPacked/`를 읽기 때문에, 이 묶음이 낡으면 WowNav 경로 테스트가 실패합니다.
    - 원본 테스트는 WowVision 폴더에서 `luajit tools/headless-tests.lua`로 돌립니다. 결과 없이 종료 코드 139로 끝나면 다시 실행합니다.
@@ -84,7 +85,7 @@ if not L then return end
 
 1. koKR 번역값. 원문에 로케일 문자열이 나오면 koKR에 있는 같은 키의 값을 그대로 씁니다. 따옴표 안팎을 가리지 않습니다. 설명서를 번역하다 koKR 값이 어색하다고 판단되면 설명서만 다르게 쓰지 않고 koKR 값을 고칩니다. 게임에서 듣는 말과 설명서에서 읽는 말은 같아야 합니다.
 2. 게임 공식 한국어. 위 [`## 용어`](#용어)와 같습니다(문맥 우선).
-3. 확정 용어집 [`docs/glossary.tsv`](glossary.tsv). 로케일에는 없지만 설명서에 반복되는 말도 여기에 정합니다.
+3. 확정 용어집 [`docs/glossary.tsv`](glossary.tsv). 로케일에는 없지만 설명서에 반복되는 말도 여기에 정합니다. 열은 `en`(영어 용어, 복수형 s 포함), `ko`(번역, `|`로 대체 표기), `except`(예외로 둘 `파일::키`, `;`로 구분), `note`(비고), `avoid`(설명서 본문에 쓰지 않을 직역)입니다. `avoid`가 있는 줄은 `en`이 비어 있으면 모든 설명서에, 있으면 원문에 `en` 용어가 있는 쪽에만 적용합니다.
    - 설명서에는 파일 단위로 적용합니다. 원문 파일에 용어가 있으면 번역 파일에도 정해진 번역이 한 번 이상 있어야 합니다.
    - 같은 영어가 설명서에서 다른 뜻이면(키보드 초점의 focus) 용어집에서 같은 용어 줄의 예외 열에 `manual::*`을 적고, 설명서에서 사용하는 뜻은 더 긴 구절(`focus target`)로 따로 등록합니다.
    - 파일마다 번역이 갈린 말(예: 상호작용 키와 상호작용 단축키)은 고칠 때 용어집에도 등록합니다.
@@ -120,7 +121,7 @@ if not L then return end
 
 1. 바뀐 영어 설명서 파일을 찾습니다: `git -C ../wowvision-ko/WowVision diff --stat <이전 태그> <새 태그> -- docs/src/user/en`.
 2. 파일마다 `uv run python -m tools.manual diff <상대경로>`로 바뀐 영어 원문을 봅니다. 상대경로는 `docs/src/user/en` 기준입니다(예: `basics/interface.md`).
-3. 바뀐 곳만 이 문서의 규칙대로 번역하고, 파일 첫 줄의 `<!-- source: ... @ <커밋> -->`을 새 원문 커밋으로 변경합니다. 변경하지 않으면 `manual diff`가 같은 차이를 계속 보여 줍니다.
+3. 바뀐 곳만 이 문서의 규칙대로 번역하고, 파일 첫 줄의 `<!-- source: ... @ <커밋> -->`을 새 원문 커밋으로 변경합니다. 새 원문 커밋은 `git -C ../wowvision-ko/WowVision rev-parse '<새 태그>^{commit}'`으로 구합니다(PowerShell에서는 작은따옴표가 있어야 합니다). `manual diff`는 커밋된 번역 파일의 첫 줄을 읽으므로, 첫 줄을 변경하고 커밋하기 전까지는 같은 차이를 계속 보여 줍니다.
 4. `uv run python -m tools.manual check`로 구조와 낱말을 검사합니다.
 5. WowVision `ko`에 커밋하고 push한 뒤 설명서를 배포합니다([`docs/builds.md` `## 한국어 설명서 배포`](builds.md#한국어-설명서-배포)).
 

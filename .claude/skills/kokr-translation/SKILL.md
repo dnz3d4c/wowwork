@@ -67,5 +67,5 @@ koKR을 변경하면 설치 프로그램에 든 koKR과 달라져 `test_installe
 
 ## 5. 커밋
 
-- vision-locale `main`과 wowwork에 각각 커밋한다.
+- vision-locale `main`과 wowwork에 각각 커밋한다. payload를 다시 만들었으면 wowvision-installer `ko`에도 커밋한다. 저장소별 목록은 [`docs/builds.md` `## 다시 만드는 법`](../../../docs/builds.md#다시-만드는-법) 5단계에 있다.
 - 사용자가 정한 것은 [`docs/decisions.tsv`](../../../docs/decisions.tsv)에 날짜와 출처(사용자)를 적는다. 사용자 결정이 아닌 것은 적지 않는다.

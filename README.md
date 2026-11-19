@@ -14,7 +14,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 - 원본: 한국어판의 바탕인 원래 프로젝트. WowVision은 `wow-vision`이 만들고, 로그인 툴은 `Sku75`가 만듭니다.
 - 포크: 원본 저장소를 내 계정에 복사한 저장소. 원본과 연결되어 있어서 원본에 수정 제안을 보낼 수 있습니다.
 - 복제: 저장소를 내 컴퓨터로 내려받기. 명령은 `git clone`입니다.
-- 브랜치: 저장소 안의 작업본. 한국어 작업은 `ko` 브랜치에 있습니다. vision-locale만 `main` 브랜치입니다.
+- 브랜치: 저장소 안의 작업본. 한국어 작업은 `ko` 브랜치에 있습니다. vision-locale과 설치 프로그램의 서브모듈 `korean`만 `main` 브랜치입니다.
 - 커밋: 수정한 내용을 기록에 저장하기.
 - push: 커밋을 GitHub에 올리기.
 - 병합: 다른 작업본의 변경을 내 작업본에 합치기.
@@ -23,6 +23,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 - 서브모듈: 다른 저장소의 특정 버전을 연결한 폴더. 안에서 고친 내용은 연결된 저장소에 따로 커밋합니다.
 - payload: 한국어 설치 프로그램에 넣는 한국어 파일 묶음. 번역을 수정하면 payload를 다시 만들어야 설치 프로그램에 반영됩니다.
 - Actions: GitHub가 저장소에서 정해진 작업을 자동으로 실행하는 기능. 여기서는 설명서 사이트를 만들 때 사용합니다.
+- 관리자: 이 저장소를 맡은 사람. `CLAUDE.md`의 "사용자"도 관리자를 뜻합니다. 배포 기록(`docs/builds.md`)과 결정 기록(`docs/decisions.tsv`)에 나오는 "사용자"는 기록을 남긴 이전 관리자입니다. 문서가 "사용자 결정을 받는다"고 하면, 관리자가 직접 정하고 결정 기록에 적는다는 뜻입니다.
 
 ## 함께 넘겨받는 저장소
 
@@ -72,6 +73,11 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 설치가 끝나면 새 창에서 `gh auth login`을 실행해 GitHub에 로그인합니다. 질문에는 차례로 GitHub.com, HTTPS를 고르고, Git 인증 질문에는 Y, 로그인 방법은 웹 브라우저를 고릅니다.
 
+이어서 커밋에 남길 이름과 이메일을 등록합니다. 등록하지 않으면 첫 커밋이 실패합니다.
+
+    git config --global user.name "<이름>"
+    git config --global user.email "<GitHub 계정 이메일>"
+
 ### 작업에 따라 필요한 프로그램
 
 | 작업 | 프로그램 | 설치 명령 |
@@ -114,6 +120,9 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
     git clone -b ko --recurse-submodules https://github.com/<계정>/wowvision-installer.git
     git clone -b ko --filter=blob:none --sparse https://github.com/<계정>/Sku-WoW-Addon-TBC.git
     git -C Sku-WoW-Addon-TBC sparse-checkout set installer logintool
+    git -C wowvision-installer/korean switch main
+
+마지막 줄은 설치 프로그램의 서브모듈 `korean`을 작업 브랜치로 옮깁니다. `--recurse-submodules`로 받은 서브모듈은 브랜치가 없는 상태라서, 그대로 고치고 커밋하면 커밋이 브랜치에 남지 않습니다.
 
 이어서 원본 주소를 `upstream`으로 등록한 뒤 원본의 최신 기록과 버전 이름표를 받습니다. 원본 새 버전을 가져올 때 필요합니다. 창을 닫았다면 `wowvision-ko` 폴더에서 새로 열고 실행합니다.
 
@@ -138,7 +147,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 - `tools.game_terms`: 번역에 참고하는 게임 공식 용어(영어, 한국어)를 wago.tools에서 받아 `cache` 폴더에 저장합니다.
 - `pytest`: 번역 파일과 문서를 검사합니다. `failed`나 `error` 없이 끝나면 준비가 끝났습니다. LuaJIT이 없으면 일부 검사가 `skipped`로 건너뜁니다. 2026-11-19에 이 순서로 새로 받아 모두 통과하는 것을 확인했습니다. 검사마다 생긴 이유와 실패했을 때 할 일은 [`tests/README.md`](tests/README.md)에 있습니다.
 
-`failed`나 `error`가 나오면 폴더 배치와 내려받기 명령부터 다시 확인합니다. 저장소가 빠졌거나 폴더 이름이 다르면 검사가 한꺼번에 실패합니다. 그래도 실패하면 출력 전체를 저장해 이전 관리자에게 보냅니다.
+`failed`나 `error`가 나오면 폴더 배치와 내려받기 명령부터 다시 확인합니다. 저장소가 빠졌거나 폴더 이름이 다르면 검사가 한꺼번에 실패합니다. 그래도 실패하면 출력 전체를 저장해, 인계 때 따로 받은 연락처로 이전 관리자에게 보냅니다.
 
 ## 수정한 내용 올리기
 
@@ -160,9 +169,11 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
     gh workflow disable release.yml -R <계정>/WowVision
     gh workflow run docs.yml -R <계정>/WowVision --ref ko
 
-앞의 두 명령은 한국어판에 필요 없는 원본 자동 작업인 베타 빌드와 릴리스를 끕니다. 마지막 명령은 설명서 사이트를 만듭니다. `404` 오류가 나면 버튼을 아직 누르지 않은 상태입니다. 몇 분 뒤 아래 주소가 열리면 성공입니다. 이전 관리자 계정의 옛 주소는 더 이상 열리지 않습니다.
+앞의 두 명령은 한국어판에 필요 없는 원본 자동 작업인 베타 빌드와 릴리스를 끕니다. 마지막 명령은 설명서 사이트를 만듭니다. `404` 오류가 나면 버튼을 아직 누르지 않은 상태입니다. 몇 분 뒤 아래 주소가 열리면 성공입니다. 인계 시점(2026-11-19)에는 포크의 Actions가 꺼져 있어서, 테스터 안내에 적힌 이전 관리자 계정의 주소도 열리지 않습니다(404). 이 단계를 마쳐야 설명서를 다시 볼 수 있습니다.
 
     https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html
+
+워크플로가 끝났는데도 주소가 열리지 않으면 `gh run list -R <계정>/WowVision`으로 실행 결과를 봅니다. 실패했으면 `gh run view <실행 번호> -R <계정>/WowVision --log-failed`로 원인을 봅니다. 저장소 설정의 Pages에서 Source가 GitHub Actions인지, Environments의 github-pages에서 배포 브랜치에 `ko`가 있는지도 확인합니다.
 
 설명서 사이트를 만드는 `docs.yml`은 켜 둡니다. 다만 원본에도 있는 작업이라, 내 WowVision 저장소의 `main` 브랜치에서 `docs` 폴더를 변경한 커밋을 push하면 사이트가 영어판으로 바뀝니다. `main` 브랜치는 원본과 맞출 필요가 없습니다. 원본에 보낼 PR은 원본의 `main`에서 새로 만들기 때문입니다. 꼭 맞춰야 한다면 [`docs/builds.md` `## 한국어 설명서 배포`](docs/builds.md#한국어-설명서-배포)의 절차를 따릅니다.
 
@@ -172,21 +183,42 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 ### 3. 원본 WowVision V1.0.4 반영
 
-인계 시점(2026-11-19)의 원본 최신 버전은 V1.0.4이고, 한국어판은 V1.0.3 기준입니다. 원본 새 버전을 병합하고, 새 영어 문장을 번역하고, 설치 프로그램과 설명서를 다시 만들어야 합니다.
+인계 시점(2026-11-19)의 원본 최신 버전은 V1.0.4이고, 한국어판은 V1.0.3 기준입니다. 지금 테스터 설치 프로그램은 원본 V1.0.4를 설치한 뒤 V1.0.3 기준 번역을 덮습니다. 그래서 V1.0.4에 새로 생긴 문구는 게임에서 영어로 나옵니다. 원본 새 버전을 병합하고, 새 영어 문장을 번역하고, 설치 프로그램과 설명서를 다시 만들어야 합니다.
+
+새 키 가운데 `CopyName`(복사한 항목의 이름)은 "사본"으로 번역하기로 이미 정했습니다([`docs/decisions.tsv`](docs/decisions.tsv) 2026-11-14 koKR Copy).
 
 - 병합 대상: WowVision 저장소는 원본 `V1.0.4`, vision-locale 저장소는 원본 커밋 `3172cd5`(V1.0.4에서 사용하는 번역 파일 버전)
 - 전체 순서: [`CLAUDE.md` `## 원본 새 릴리스 따라가기`](CLAUDE.md#원본-새-릴리스-따라가기)
 - 명령: [`docs/translation-guide.md` `## upstream 업데이트 절차`](docs/translation-guide.md#upstream-업데이트-절차), [`### 원본이 바뀌었을 때`](docs/translation-guide.md#원본이-바뀌었을-때)
 
+끝나면 고친 저장소마다 커밋하고 push합니다. 저장소별 목록은 [`docs/builds.md` `## 다시 만드는 법`](docs/builds.md#다시-만드는-법) 5단계에 있습니다.
+
 1.0 때는 Claude와 GPT 두 AI로 번역을 교차 검수했습니다([`docs/archive/review-pipeline/review-process.md`](docs/archive/review-pipeline/review-process.md)). 검수 도구는 기록으로만 남아 있으니 검수 방식은 새 관리자가 정합니다. 어떤 방식이든 마지막에 `uv run pytest -q`(확정 용어 검사 포함)는 통과해야 합니다.
 
 ### 4. 로그인 툴을 원본 4.2에 맞추기
 
-로그인 툴 한국어판(`ko` 브랜치)은 원본 4.2 개발 도중의 커밋 `6c64791`을 기준으로 합니다. 원본에 한국어를 보내려고(원본 이슈 Sku75/Sku-WoW-Addon-TBC#37) 당시 최신 상태에 맞췄습니다. 이 이슈는 인계 시점까지 답이 없습니다.
+로그인 툴 한국어판(`ko` 브랜치)은 원본 릴리스를 기준으로 합니다([`docs/decisions.tsv`](docs/decisions.tsv) 2026-11-19). 그런데 인계 시점의 `ko`에는 원본 4.2 릴리스(2026-11-18)의 마지막 수정인 커밋 `f621e25`가 없습니다. Forever 클라이언트에서 로그인 툴이 강제 종료되던 문제를 고친 수정입니다. 한국어 설치 프로그램은 원본 4.2를 설치한 뒤 한국어판 파일을 덮어쓰기 때문에, 지금은 이 수정이 사라집니다. 기준 커밋과 빠진 수정의 자세한 내용은 [`docs/builds.md` `## 현재 배포`](docs/builds.md#현재-배포-테스터-폴더-wowvision-kotester) 아래 설명에 있습니다.
 
-원본은 2026-11-18에 4.2를 정식으로 출시했습니다. 하지만 한국어판에는 4.2의 마지막 수정인 커밋 `f621e25`(`logintool/v2/includes/forever.ahk`)가 없습니다. Forever 클라이언트에서 로그인 툴이 강제 종료되던 문제를 고친 수정입니다. 한국어 설치 프로그램은 원본 4.2를 설치한 뒤 한국어판 파일을 덮어쓰기 때문에, 지금은 이 수정이 사라집니다.
+로그인 툴 저장소 폴더에서 `git merge f621e25`로 `ko` 브랜치에 병합합니다. 충돌이 나면 원본 수정과 한국어 문구를 모두 살리고, `git add`와 `git commit`으로 병합을 마칩니다. 처음부터 다시 하려면 `git merge --abort`를 실행합니다. 그다음 payload와 설치 프로그램을 다시 만듭니다([`docs/builds.md` `## 다시 만드는 법`](docs/builds.md#다시-만드는-법)).
 
-로그인 툴 저장소의 `ko` 브랜치에 원본 `main`을 병합하고, payload와 설치 프로그램을 다시 만듭니다([`docs/builds.md` `## 다시 만드는 법`](docs/builds.md#다시-만드는-법)). 로그인 툴 저장소는 원본 작업 규칙을 따릅니다([`CLAUDE.md` `## WoW Login Tool`](CLAUDE.md#wow-login-tool)).
+게임에서 확인하려면 시험 폴더를 만들어 한국어판 파일을 복사합니다([`CLAUDE.md` `## WoW Login Tool`](CLAUDE.md#wow-login-tool)). 게임에서 확인하지 못한 커밋은 제목 끝에 `(UNTESTED)`를 붙이는 등 로그인 툴 저장소는 원본 작업 규칙을 따릅니다(같은 절).
+
+### 5. 열려 있는 일 확인
+
+인계 시점(2026-11-19)에 끝나지 않은 일입니다. 순서는 정해져 있지 않습니다.
+
+| 일 | 상태 | 할 일 |
+|----|------|-------|
+| 원본 이슈 [wow-vision/WowVision#110](https://github.com/wow-vision/WowVision/issues/110): koKR을 원본에 넣어도 되는지 문의 | 2026-11-14에 다시 물었고 답이 없습니다 | 이슈는 이전 관리자 계정으로 열렸으므로, 새 계정으로 관리자가 바뀌었다는 댓글을 달고 이슈 오른쪽의 Subscribe로 알림을 켭니다. 답이 오면 [`plans/active/upstream-korean.md`](plans/active/upstream-korean.md)의 다음 단계를 따릅니다 |
+| 원본 이슈 [Sku75/Sku-WoW-Addon-TBC#37](https://github.com/Sku75/Sku-WoW-Addon-TBC/issues/37): 로그인 툴 한국어 지원 문의 | 답이 없습니다 | 같은 방법으로 댓글을 달고 알림을 켭니다. PR 전에 남은 확인은 [`docs/logintool-upstream.md`](docs/logintool-upstream.md)에 있습니다 |
+| 원본에 알릴 문제 목록 [`docs/upstream-report.md`](docs/upstream-report.md) | 아직 보내지 않았습니다 | 보낼지와 언제 보낼지 정합니다. 보내기 전에 코드 위치를 직접 확인합니다 |
+| 센스 리더 실패 안내 문구(`status.koreanSenseReaderFailed`) | 문구 검수와 실제 PC 설치 확인을 하지 않았습니다 | 테스터 설치 뒤 센스 리더로 듣기가 되는지 확인합니다 |
+| 로그인 툴 한국어판 게임 확인 | 한국어판을 게임에서 직접 사용해 확인하지 않았습니다 | Forever 클라이언트에서 로그인 화면 낭독을 확인합니다 |
+| 한국어 음성 팩(Vocalizer Expressive Yuna 녹음) 사용권 | 재배포해도 되는지 확인하지 않았는데, 이미 테스터에게 배포하고 있습니다 | 음성 라이선스를 확인하고 결과를 [`docs/decisions.tsv`](docs/decisions.tsv)에 적습니다 |
+
+테스터 명단과 설치 파일을 보내는 경로, 테스터 로그를 받는 곳은 저장소에 적지 않았습니다. 인계 때 따로 받습니다.
+
+원본 새 버전은 원본 저장소(wow-vision/WowVision, wow-vision/wowvision-installer, Sku75/Sku-WoW-Addon-TBC) 페이지 오른쪽 위의 Watch에서 Custom, Releases를 골라 알림을 받습니다. 로그인 툴은 새 태그 없이 릴리스 파일만 바뀌므로 원본 `main`의 `Login-Tool <버전>` 커밋도 가끔 확인합니다.
 
 ## 문서
 
@@ -199,6 +231,9 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | [`docs/builds.md`](docs/builds.md) | 설치 프로그램 만들기, 테스터 배포, 설명서 배포 |
 | [`docs/tester-guide.md`](docs/tester-guide.md) | 테스터용 설치 안내. 배포할 때 `설치_안내.txt`로 복사합니다 |
 | [`docs/upstream-report.md`](docs/upstream-report.md) | 번역으로 고칠 수 없어 원본에 알릴 문제 |
+| [`docs/logintool-upstream.md`](docs/logintool-upstream.md) | 로그인 툴 한국어를 원본에 보내는 절차와 진행 상황 |
+| [`.claude/skills/kokr-translation/SKILL.md`](.claude/skills/kokr-translation/SKILL.md) | 번역을 고칠 때의 작업 순서. AI 도구용으로 썼지만 사람도 그대로 따를 수 있습니다 |
+| [`tests/README.md`](tests/README.md) | 테스트가 지키는 것과 실패했을 때 할 일 |
 | [`plans/active/upstream-korean.md`](plans/active/upstream-korean.md) | 원본에 한국어를 보내는 계획과 진행 상황 |
 | [`docs/archive/review-pipeline/review-process.md`](docs/archive/review-pipeline/review-process.md) | 1.0 번역 검수 방식 기록 |
 | [`reviews/README.md`](reviews/README.md) | 검수 회차별 기록, 지운 검수 파일 꺼내는 법 |
