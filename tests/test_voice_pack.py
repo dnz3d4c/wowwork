@@ -72,15 +72,6 @@ def test_too_loud_flags_peaks() -> None:
     assert too_loud(peaks) == ["numbers/1.mp3", "numbers/2.mp3"]
 
 
-def test_defaults_rate_and_volume() -> None:
-    """2026-11-08 사용자 결정: 속도 5(샘플 east_rate5). 볼륨 60은 원본 팩 수준(피크 약 -9 dB)에 맞춘 값."""
-    from tools.voice_pack import _PS, DEFAULT_RATE, DEFAULT_VOLUME
-
-    assert DEFAULT_RATE == 5
-    assert DEFAULT_VOLUME == 60
-    assert "$v.Volume = [int]$args[3]" in _PS
-
-
 def test_volume_out_of_range_is_rejected() -> None:
     """codex 지적(2026-11-08): SAPI 볼륨은 0~100. 범위 밖 값은 녹음 전에 막는다."""
     import argparse

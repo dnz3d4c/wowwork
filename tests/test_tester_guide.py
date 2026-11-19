@@ -46,27 +46,11 @@ def test_guide_names_every_installer_option() -> None:
     assert not missing, f"테스터 안내에 없는 설치 프로그램 문구: {missing}"
 
 
-def installer_text() -> str:
-    """화면에 실제로 나오는 글자. Windows 언어에 따라 Ko, En, De, Fr 표 가운데 하나가 나온다."""
-    text = LOC_CS.read_text(encoding="utf-8")
-    return " ".join(visible(v) for lang in ("Ko", "En", "De", "Fr") for v in parse_table(text, lang).values())
-
-
-def test_guide_quotes_match_installer_text() -> None:
-    """안내가 따옴표로 인용한 화면 문구는 설치 프로그램 Ko(또는 En) 표에 실제로 있어야 한다.
+def test_guide_quotes_only_korean_screen_text() -> None:
+    """안내가 따옴표로 인용한 화면 문구는 설치 프로그램 Ko 표에 실제로 있어야 한다.
 
     2026-11-06 최종 검수에서 status.koreanFailed 문구가 바뀌었는데 안내는 옛 문구를 인용하고 있었다.
-    """
-    screen = installer_text()
-    quotes = re.findall(r'"([^"]+)"', GUIDE.read_text(encoding="utf-8"))
-    stale = [q for q in quotes if q not in screen]
-    assert not stale, f"설치 프로그램에 없는 인용 문구: {stale}"
-
-
-def test_guide_quotes_only_korean_screen_text() -> None:
-    """2026-11-08 사용자 지시: 영어·독일어·프랑스어 화면 이름("Install now" 등)은 안내에서 모두 뺀다.
-
-    인용 문구는 한국어 화면(Ko 표)에 있는 글자여야 한다.
+    2026-11-08 사용자 지시: 영어·독일어·프랑스어 화면 이름("Install now" 등)은 안내에서 모두 뺀다.
     """
     ko = " ".join(visible(v) for v in parse_table(LOC_CS.read_text(encoding="utf-8"), "Ko").values())
     guide = GUIDE.read_text(encoding="utf-8")

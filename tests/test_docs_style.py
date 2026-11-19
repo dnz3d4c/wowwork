@@ -13,7 +13,7 @@ from tools.manual import doc_style_problems
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = sorted(
-    [ROOT / "README.md", ROOT / "CLAUDE.md", ROOT / "reviews" / "README.md"]
+    [ROOT / "README.md", ROOT / "CLAUDE.md", ROOT / "reviews" / "README.md", ROOT / "tests" / "README.md"]
     + list((ROOT / "docs").glob("*.md"))
     + list((ROOT / ".claude").rglob("*.md"))
 )
