@@ -29,7 +29,7 @@ def test_flags_demonstrative_and_filler_endings() -> None:
 
 
 def test_ignores_code_quotes_and_this() -> None:
-    text = '이 저장소의 `그 값`과 "그 창"은 인용입니다. 그대로 두고, 그다음 실행합니다. 이 규칙에 해당하지 않습니다.\n'
+    text = '이 저장소의 `그 값`과 "그 창"은 인용입니다. 그대로 두고, 그다음 실행합니다. 이 규칙에 해당하지 않습니다. 비고: 해당 없음.\n'
     assert doc_style_problems(text) == []
 
 
