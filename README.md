@@ -16,7 +16,7 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 
 ## 넘겨받은 뒤 처음 할 일
 
-1. 저장소 이전: 위 저장소를 GitHub의 Transfer ownership으로 넘겨받습니다. 받는 계정에 같은 이름의 저장소가 있거나, 포크 4개(vision-locale, WowVision, wowvision-installer, Sku-WoW-Addon-TBC)와 같은 원본의 포크가 이미 있으면 이전되지 않습니다. 그런 저장소가 있으면 먼저 지우거나 이름을 변경합니다. 이전 뒤 GitHub Pages 주소는 리디렉션되지 않습니다.
+1. 저장소 이전: 위 표의 저장소 5개와 이 저장소(wowwork)까지 6개를 GitHub의 Transfer ownership으로 넘겨받습니다. `-old` 저장소 3개는 기록용이라 넘기지 않아도 됩니다. 받는 계정에 같은 이름의 저장소가 있거나, 포크 4개(vision-locale, WowVision, wowvision-installer, Sku-WoW-Addon-TBC)와 같은 원본의 포크가 이미 있으면 이전되지 않습니다. 그런 저장소가 있으면 먼저 지우거나 이름을 변경합니다. 이전 뒤 GitHub Pages 주소는 리디렉션되지 않습니다.
 2. 설명서 사이트 켜기: WowVision 포크는 Actions가 꺼진 상태로 넘어갑니다. 저장소의 Actions 탭에서 워크플로 활성화 버튼을 누른 뒤, 원본 main 동기화 때 실행되는 `beta.yml`과 `release.yml`을 끕니다. 그다음 설명서를 배포하고 주소를 확인합니다.
 
         gh workflow disable beta.yml -R <계정>/WowVision
@@ -24,9 +24,13 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
         gh workflow run docs.yml -R <계정>/WowVision --ref ko
 
    설명서 주소는 `https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html`이 됩니다. Pages 설정과 배포 허용 브랜치(ko, main)는 저장소와 함께 넘어갑니다.
-3. 주소 업데이트: `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `.gitmodules`의 서브모듈 주소(wowvision-installer `ko`)를 새 계정으로 변경합니다.
+3. 계정 이름 바꾸기: 저장소 안에 이전 계정 이름 `dnz3d4c`가 적힌 곳을 새 계정으로 변경합니다. 각 저장소에서 `git grep -n dnz3d4c`로 찾습니다. 꼭 바꿀 곳은 `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `CLAUDE.md`의 PR 명령, wowvision-installer `ko` 브랜치의 `.gitmodules`(서브모듈 주소)입니다. `reviews/`, `docs/archive/`, `docs/builds.md`의 지난 배포 기록처럼 당시 사실을 적은 기록은 그대로 둡니다.
 4. 원본 V1.0.4 따라가기: 2026-11-19 기준 원본 안정판은 V1.0.4이고, 한국어판(koKR, 설명서)은 V1.0.3 기준입니다. `CLAUDE.md` `### PR이 병합된 뒤` 2~5단계(원본 병합, 새 키 번역과 검수, payload와 설치 프로그램, 설명서 배포)로 따라갑니다.
-5. 로그인 툴 기준 버전 정하기: 로그인 툴 `ko` 브랜치는 원본 릴리스(4.1)가 아니라 아직 발표되지 않은 원본 `main`(4.2) 위에 있습니다. 원본에 PR을 내려고 2026-11-07에 `main` 위로 정리했기 때문입니다(원본 이슈 Sku75/Sku-WoW-Addon-TBC#37, 인계 시점까지 답변 없음). 설치 프로그램은 원본 4.1 릴리스 위에 이 브랜치의 파일을 덮어쓰므로, 원본 릴리스 기준으로 맞출지 4.2 릴리스를 기다릴지 정합니다. 4.1 기반의 옛 작업본은 `WoW Login Tool Korean/_reset-backup-20261107/pre-4.2/`(git 밖)에 있었습니다.
+5. 로그인 툴 기준 버전 정하기: 로그인 툴 `ko` 브랜치는 원본 릴리스(4.1)가 아니라 아직 발표되지 않은 원본 `main`(4.2) 위에 있습니다. 원본에 PR을 내려고 2026-11-07에 `main` 위로 정리했기 때문입니다(원본 이슈 Sku75/Sku-WoW-Addon-TBC#37, 인계 시점까지 답변 없음). 설치 프로그램은 원본 4.1 릴리스 위에 이 브랜치의 파일을 덮어쓰므로, 원본 릴리스 기준으로 맞출지 4.2 릴리스를 기다릴지 정합니다. 4.1 기반의 옛 작업본은 git 밖에 있습니다(아래 6번).
+6. git 밖에 있는 파일 받기: 아래 파일은 저장소에 없어서 이전 관리자에게 따로 받아야 합니다. 받지 못해도 작업은 할 수 있습니다.
+   - `WoW Login Tool Korean/_reset-backup-20261107/pre-4.2/`(wowwork 안, git 제외): 로그인 툴 4.1 기반의 옛 한국어 작업본입니다. 5번을 정할 때 참고합니다.
+   - `wowvision-ko/tester/`: 마지막으로 테스터에게 배포한 파일(`WowVisionInstaller.exe`, `설치_안내.txt`, `tester.zip`)입니다. `docs/builds.md` `## 다시 만드는 법`으로 다시 만들 수 있습니다.
+   - `WoW Login Tool Korean/`의 나머지: 로그인 툴 테스트 실행 폴더입니다. 만드는 법은 `CLAUDE.md` `## WoW Login Tool`에 있습니다.
 
 ## 설치 환경
 
@@ -53,7 +57,7 @@ Windows 기준입니다. 모든 작업에 필요한 것과 특정 작업에만 �
       wowwork/
       wowvision-ko/
         vision-locale/            main
-        WowVision/                ko
+        WowVision/                ko, 서브모듈(audio, locale, mapdata) 포함. 약 530MB
         wowvision-installer/      ko, 서브모듈 korean 포함
         Sku-WoW-Addon-TBC/        ko, installer/와 logintool/만 sparse checkout
         tester/                   테스터 배포 파일(git 밖)
@@ -61,7 +65,7 @@ Windows 기준입니다. 모든 작업에 필요한 것과 특정 작업에만 �
 `wowvision-ko` 폴더에서 다음을 실행합니다. `<계정>`은 저장소를 넘겨받은 계정입니다.
 
     git clone -b main https://github.com/<계정>/vision-locale.git
-    git clone -b ko https://github.com/<계정>/WowVision.git
+    git clone -b ko --recurse-submodules https://github.com/<계정>/WowVision.git
     git clone -b ko --recurse-submodules https://github.com/<계정>/wowvision-installer.git
     git clone -b ko --filter=blob:none --sparse https://github.com/<계정>/Sku-WoW-Addon-TBC.git
     git -C Sku-WoW-Addon-TBC sparse-checkout set installer logintool
@@ -70,12 +74,15 @@ Windows 기준입니다. 모든 작업에 필요한 것과 특정 작업에만 �
     git -C wowvision-installer remote add upstream https://github.com/wow-vision/wowvision-installer.git
     git -C Sku-WoW-Addon-TBC remote add upstream https://github.com/Sku75/Sku-WoW-Addon-TBC.git
 
-WowVision의 테스트를 돌리기 전에 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행합니다(이유는 `CLAUDE.md` `### PR이 병합된 뒤`).
+WowVision 자체의 테스트(`luajit tools/headless-tests.lua`)를 돌리기 전에는 WowVision 폴더에서 `luajit tools/wownav-pack.lua`를 실행합니다(이유는 `CLAUDE.md` `### PR이 병합된 뒤`).
 
-마지막으로 이 저장소에서 개발 의존성을 설치하고 테스트가 통과하는지 확인합니다.
+마지막으로 이 저장소(wowwork)에서 개발 의존성을 설치하고, 게임 용어 캐시를 만든 뒤, 테스트가 통과하는지 확인합니다. 게임 용어 캐시(`cache/`)는 git에 넣지 않는 파일로, `tools.game_terms`가 wago.tools에서 게임 공식 문자열(영어, 한국어)을 내려받아 만듭니다.
 
     uv sync
+    uv run python -m tools.game_terms
     uv run pytest -q
+
+2026-11-19에 이 순서대로 새로 받아서 테스트 232개가 모두 통과하는 것을 확인했습니다.
 
 ## 문서
 
