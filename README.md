@@ -14,19 +14,72 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 
 `WowVision-old`, `vision-locale-old`, `wowvision-installer-old`는 포크로 옮기기 전의 복제본입니다. 보관 처리되어 읽기만 할 수 있습니다.
 
-## 폴더 배치
+## 넘겨받은 뒤 처음 할 일
 
-도구는 이 저장소 옆 폴더 `../wowvision-ko/`에 위 저장소가 복제되어 있다고 가정합니다.
+1. 저장소 이전: 위 저장소를 GitHub의 Transfer ownership으로 넘겨받습니다. 받는 계정에 같은 이름의 저장소가 있거나, 포크 4개(vision-locale, WowVision, wowvision-installer, Sku-WoW-Addon-TBC)와 같은 원본의 포크가 이미 있으면 이전되지 않습니다. 그런 저장소가 있으면 먼저 지우거나 이름을 변경합니다. 이전 뒤 GitHub Pages 주소는 리디렉션되지 않습니다.
+2. 설명서 사이트 켜기: WowVision 포크는 Actions가 꺼진 상태로 넘어갑니다. 저장소의 Actions 탭에서 워크플로 활성화 버튼을 누른 뒤, 원본 main 동기화 때 실행되는 `beta.yml`과 `release.yml`을 끕니다. 그다음 설명서를 배포하고 주소를 확인합니다.
+
+        gh workflow disable beta.yml -R <계정>/WowVision
+        gh workflow disable release.yml -R <계정>/WowVision
+        gh workflow run docs.yml -R <계정>/WowVision --ref ko
+
+   설명서 주소는 `https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html`이 됩니다. Pages 설정과 배포 허용 브랜치(ko, main)는 저장소와 함께 넘어갑니다.
+3. 주소 업데이트: `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `.gitmodules`의 서브모듈 주소(wowvision-installer `ko`)를 새 계정으로 변경합니다.
+4. 이 PC 전용 설정 정리: `.claude/settings.json`의 세션 시작 훅은 이전 관리자 PC의 `~/.claude/hooks/run_hook.sh`를 부릅니다. Claude Code를 사용한다면 `uv run python tools/pr_cleanup.py --hook`으로 변경하고, 사용하지 않는다면 지웁니다.
+
+## 설치 환경
+
+Windows 기준입니다. 모든 작업에 필요한 것과 특정 작업에만 필요한 것을 구분했습니다.
+
+| 도구 | 용도 | 필요한 때 |
+|------|------|-----------|
+| Git, [GitHub CLI](https://cli.github.com/)(`gh`) | 복제, 원본 PR, 병합된 PR 브랜치 정리(`tools/pr_cleanup.py`) | 항상 |
+| [uv](https://docs.astral.sh/uv/)와 Python 3.14 | 이 저장소의 도구와 테스트. `uv sync`로 개발 의존성(pytest, ruff, mypy)을 설치 | 항상 |
+| [LuaJIT](https://luajit.org/) | 원본 병합 뒤 WowVision의 `luajit tools/headless-tests.lua` | 원본 병합 |
+| .NET SDK, PowerShell 7 | 설치 프로그램 빌드와 자체 검사(`build.ps1 -RunTests`). `tools/installer_loc.py`는 SDK를 `%USERPROFILE%\scoop\apps\dotnet-sdk\current\dotnet.exe`에서 찾으므로, scoop으로 설치하지 않았다면 이 경로를 고칩니다 | 설치 프로그램 빌드 |
+| Visual Studio 2022 Build Tools(C++) | 센스 리더 프록시 빌드(`korean\sense-reader-bridge\build.bat test`). payload를 만들 때 함께 실행됩니다 | 설치 프로그램 빌드 |
+| 7-Zip | 테스터 배포 파일 `tester.zip` | 테스터 배포 |
+| [Claude Code](https://claude.com/claude-code) | 번역 검수 Workflow(`tools/review/workflows/*.js`)와 Claude 평가자 | 번역 검수 |
+| [Codex CLI](https://github.com/openai/codex) | GPT 평가자(`tools/review/gpt_review.py`). 프로필 `review_strict`를 사용합니다 | 번역 검수 |
+| Vocalizer Expressive 음성 Yuna(SAPI) | 한국어 음성 팩 다시 녹음(`tools/voice_pack.py`) | 음성 팩 변경 |
+| AutoHotkey v2 | 로그인 툴 화면 읽기 시험(`tools/logintool_bench`) | 로그인 툴 시험 |
+
+알아 둘 제약이 둘 있습니다.
+
+- 검수 Workflow 스크립트와 `tools/review/prompts/manual-translate.md`는 이 저장소 위치를 `C:/project/games/wowwork`로 적고 있습니다. 같은 위치에 두거나, 스크립트 안의 경로를 고칩니다.
+- Codex 프로필 `review_strict`는 Codex 설정 파일(`%USERPROFILE%\.codex\config.toml`)에 직접 정의해야 합니다. 이 저장소에는 그 정의가 없습니다.
+
+## 처음 받기
+
+이 저장소와 복제본을 같은 상위 폴더에 둡니다. 도구는 이 저장소 옆의 `../wowvision-ko/`에서 복제본을 찾습니다.
 
     games/
       wowwork/
       wowvision-ko/
-        vision-locale/
-        WowVision/
-        wowvision-installer/      (서브모듈 korean 포함)
-        Sku-WoW-Addon-TBC/        (logintool/ 만 sparse checkout)
+        vision-locale/            main
+        WowVision/                ko
+        wowvision-installer/      ko, 서브모듈 korean 포함
+        Sku-WoW-Addon-TBC/        ko, installer/와 logintool/만 sparse checkout
+        tester/                   테스터 배포 파일(git 밖)
 
-각 복제본의 `origin`은 위 포크이고, `upstream`은 원본입니다.
+`wowvision-ko` 폴더에서 다음을 실행합니다. `<계정>`은 저장소를 넘겨받은 계정입니다.
+
+    git clone -b main https://github.com/<계정>/vision-locale.git
+    git clone -b ko https://github.com/<계정>/WowVision.git
+    git clone -b ko --recurse-submodules https://github.com/<계정>/wowvision-installer.git
+    git clone -b ko --filter=blob:none --sparse https://github.com/<계정>/Sku-WoW-Addon-TBC.git
+    git -C Sku-WoW-Addon-TBC sparse-checkout set installer logintool
+    git -C vision-locale remote add upstream https://github.com/wow-vision/vision-locale.git
+    git -C WowVision remote add upstream https://github.com/wow-vision/WowVision.git
+    git -C wowvision-installer remote add upstream https://github.com/wow-vision/wowvision-installer.git
+    git -C Sku-WoW-Addon-TBC remote add upstream https://github.com/Sku75/Sku-WoW-Addon-TBC.git
+
+WowVision의 테스트를 돌리기 전에 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행합니다(이유는 `CLAUDE.md` `### PR이 병합된 뒤`).
+
+마지막으로 이 저장소에서 개발 의존성을 설치하고 테스트가 통과하는지 확인합니다.
+
+    uv sync
+    uv run pytest -q
 
 ## 문서
 
@@ -37,12 +90,15 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 | `docs/review-process.md` | 번역 검수 절차 |
 | `reviews/README.md` | 검수 회차 목록과 대표 사례, 지운 원본을 꺼내는 법 |
 | `docs/glossary.tsv`, `docs/decisions.tsv` | 확정 용어와 결정 기록 |
-| `docs/builds.md` | 설치 프로그램 빌드와 설명서 배포 |
+| `docs/builds.md` | 설치 프로그램 빌드, 테스터 배포, 설명서 배포 |
 | `plans/active/upstream-korean.md` | 원본에 한국어를 보내는 계획과 진행 상황 |
 
-## 실행
+## 자주 하는 작업
 
-Python 도구는 [uv](https://docs.astral.sh/uv/)로 실행합니다.
-
-    uv run pytest -q
-    uv run python -m tools.sync_locale
+| 작업 | 명령 또는 문서 |
+|------|----------------|
+| 원본에 새 문자열이 생겼을 때 찾기 | `uv run python -m tools.sync_locale` |
+| koKR 번역 수정 | `tools.sync_locale`로만 수정(`CLAUDE.md` `## 번역을 고칠 때`) |
+| 설치 프로그램 payload 다시 만들기 | `uv run python -m tools.installer_loc payload` |
+| 설치 프로그램 빌드부터 테스터 배포까지 | `docs/builds.md` `## 다시 만드는 법` |
+| 병합된 원본 PR의 브랜치 정리 | `uv run python -m tools.pr_cleanup` |
