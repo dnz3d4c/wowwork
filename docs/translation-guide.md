@@ -1,6 +1,6 @@
 # WowVision 한국어 번역 지침
 
-WowVision 원문(`../wowvision-ko/vision-locale/enUS/*.lua`)을 같은 저장소의 `koKR/*.lua`로 번역할 때 따르는 규칙입니다. 번역 파일은 비공개 복제 저장소 `dnz3d4c/vision-locale`에 커밋하고, 이 저장소(wowwork)는 도구와 기록만 둡니다.
+WowVision 원문(`../wowvision-ko/vision-locale/enUS/*.lua`)을 같은 저장소의 `koKR/*.lua`로 번역할 때 따르는 규칙입니다. 번역 파일은 원본의 공개 포크 `dnz3d4c/vision-locale`에 커밋하고, 이 저장소(wowwork)는 도구와 기록만 둡니다.
 
 ## 파일 형식
 

@@ -14,7 +14,7 @@ NVDA 음성 브리지(`InstallRunner.cs`의 `InstallSapi2Sr`)가 켜져 있다. 
 
 WoW Login Tool을 체크하면 원본 login-tool 릴리스를 설치한 뒤 exe에 넣은 `payload/koLoginTool.zip`을 도구 폴더에 매번 덮어쓴다(`KoreanLoginTool.cs`). 내용은 Sku-WoW-Addon-TBC ko 브랜치의 `v2/`, `data/*.ini`(사용자 `settings.ini` 제외), `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`다. ko 브랜치는 원본 main(4.2, 미발표) 기준이라 원본 릴리스(4.1)보다 앞선 코드가 들어간다. 원본이 새 로그인 툴 릴리스를 내면 ko 브랜치를 그 위로 맞춘 뒤 payload를 다시 만든다. 그러지 않으면 새 원본 위에 옛 한국어판이 덮인다.
 
-NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 넣는다(`korean/installer/KoreanSenseReader.cs`). 브리지의 `nvdaControllerClient.dll`(Sku 말한 내용 기록 프록시)을 `nvdaControllerClient.next.dll`로 옮기고, `payload/koSenseReader.zip`의 프록시를 넣은 뒤 같은 zip의 `sign.ps1`(브리지 서명 스크립트에 프록시 고정 해시를 더한 것)로 서명한다. 프록시는 모든 호출을 next로 먼저 보내고, NVDA가 꺼져 있고 센스 리더가 실행 중일 때만 센스 리더(`SenseReader.Application`)로 보낸다. 동작과 한계는 서브모듈 `korean/README.md`. 한국어판 전용 코드는 이제 wowvision-installer의 서브모듈 `korean`(dnz3d4c/wowvision-korean, 비공개)에 둔다. 기존 한국어 단계(`KoreanLocale.cs` 등)는 아직 원본 폴더에 있다.
+NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 넣는다(`korean/installer/KoreanSenseReader.cs`). 브리지의 `nvdaControllerClient.dll`(Sku 말한 내용 기록 프록시)을 `nvdaControllerClient.next.dll`로 옮기고, `payload/koSenseReader.zip`의 프록시를 넣은 뒤 같은 zip의 `sign.ps1`(브리지 서명 스크립트에 프록시 고정 해시를 더한 것)로 서명한다. 프록시는 모든 호출을 next로 먼저 보내고, NVDA가 꺼져 있고 센스 리더가 실행 중일 때만 센스 리더(`SenseReader.Application`)로 보낸다. 동작과 한계는 서브모듈 `korean/README.md`. 한국어판 전용 코드는 이제 wowvision-installer의 서브모듈 `korean`(dnz3d4c/wowvision-korean, 공개)에 둔다. 기존 한국어 단계(`KoreanLocale.cs` 등)는 아직 원본 폴더에 있다.
 
 설치 프로그램은 원본 릴리스(wow-vision/WowVision)를 그대로 설치한 뒤, exe에 넣은 koKR(`payload/koKR.zip`)을 클라이언트마다 `WowVision/locale/koKR`에 쓰고 `locale/modules.xml`에 포함 줄을 한 번 더한다(`KoreanLocale.cs`). 매 실행마다 하므로 원본 업데이트로 폴더가 교체돼도 다시 들어간다.
 
@@ -68,6 +68,7 @@ NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 �
 ## 한국어 설명서 배포
 
 - 주소: https://gong.aheu.org/WowVision/user/ko/getting-started/introduction.html (`dnz3d4c/WowVision` 공개, GitHub Pages는 Actions 방식). 설치 프로그램에는 넣지 않는다(`docs/decisions.tsv` 2026-11-06).
+- 2026-11-19부터 `dnz3d4c/WowVision`은 원본의 GitHub 포크다(이전 비포크 복제본은 `WowVision-old`로 보관). Pages 설정과 `github-pages` 환경의 배포 브랜치(ko, main)를 포크로 옮겼다. 포크의 Actions는 저장소 Actions 탭의 활성화 버튼으로 한 번 켜야 워크플로가 등록된다. 켜기 전에는 `gh workflow run`이 404로 실패한다.
 - ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다.
 - main에 push하면 원본 `docs.yml`(영어판으로 Pages를 덮어씀)과 `beta.yml`(beta 프리릴리스 생성)이 돈다. main을 원본에 맞출 때는 `gh workflow disable`로 두 워크플로를 끄고 push한 뒤 다시 켠다. 원본 태그(V*)는 push하지 않는다(`release.yml`).
 - 페이지 언어: mdBook은 모든 페이지에 `<html lang="en">`을 쓴다. ko 브랜치 `docs.yml`이 빌드 뒤 `user/ko/`·`user/de/` 페이지를 `lang="ko"`·`lang="de"`로 바꾼다(2026-11-09, 그전에는 한국어 페이지가 영어로 선언돼 스크린리더가 영어 음성으로 읽을 수 있었다). 배포 뒤 `curl -s <주소> | grep -o "<html lang=[^ ]*"`로 확인한다. 이전/다음 장, 검색창 같은 화면 틀 라벨은 mdBook 테마의 영어 그대로다.

@@ -39,7 +39,7 @@
 
 - PR 브랜치는 `ko` 이력이 아니라 `upstream/main`에서 새로 딴다. 포크 이력의 한국어 커밋 메시지와 포크 전용 변경이 섞이지 않게 하기 위해서다.
 - 원본 관례: 커밋 제목 `영역: 내용`(영어), 본문에 이유, `Co-Authored-By` 줄. 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓는다. 동작을 바꾸면 en·de 설명서를 함께 고친다. 줄 끝은 LF, BOM 없음.
-- 공개 GitHub 포크가 있어야 PR을 열 수 있다. 기존 저장소(`dnz3d4c/vision-locale` 등)는 포크가 아니다. PR용 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고 로컬 복제본의 remote 이름은 `fork`다.
+- 공개 GitHub 포크가 있어야 PR을 열 수 있다. 2026-11-19에 PR용 포크(`-pr`)로 한국어 브랜치를 옮기고 포크의 이름을 원래 이름으로 변경했다(`dnz3d4c/vision-locale`, `dnz3d4c/WowVision`). 로컬 복제본의 `origin`이 그 포크다.
 - `gh pr create --head dnz3d4c:브랜치`는 같은 계정에 같은 원본의 저장소가 여럿이라 실패한다. `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> ...`로 연다.
 
 ### Phase 1. 작은 PR: 경매장 스캔 결과·대기 시간 문구 [병합: vision-locale#66, WowVision#109, 2026-11-08]

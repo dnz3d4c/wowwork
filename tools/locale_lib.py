@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-# 비공개 복제 저장소들(dnz3d4c/vision-locale, WowVision, wowvision-installer)이 모인 폴더
+# 원본 포크 복제본들(dnz3d4c/vision-locale, WowVision, wowvision-installer)이 모인 폴더
 KO_WORK_ROOT = REPO_ROOT.parent / "wowvision-ko"
 # 원본 앱 코드. 키가 어떻게 쓰이는지 확인할 때 검색한다.
 WOWVISION_DIR = KO_WORK_ROOT / "WowVision"

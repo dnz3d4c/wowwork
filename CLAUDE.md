@@ -2,18 +2,18 @@
 
 작업 대상은 복제 저장소 3개다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
 
-새로 만드는 한국어판 전용 기능은 wowvision-installer의 서브모듈 `korean`(비공개 `dnz3d4c/wowvision-korean`, `main` 브랜치)에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성과 센스 리더 연결: `korean/README.md`(2026-11-14 사용자 지시).
+새로 만드는 한국어판 전용 기능은 wowvision-installer의 서브모듈 `korean`(공개 `dnz3d4c/wowvision-korean`, `main` 브랜치)에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성과 센스 리더 연결: `korean/README.md`(2026-11-14 사용자 지시).
 
 ## 원본에 PR 내기 [필수]
 
-- 위 복제 저장소는 GitHub 포크가 아니라서 원본에 PR을 열 수 없다. PR용 공개 포크는 `dnz3d4c/vision-locale-pr`, `dnz3d4c/WowVision-pr`이고, 로컬 복제본의 remote 이름은 `fork`다(2026-11-07).
+- 위 복제 저장소의 `origin`(`dnz3d4c/vision-locale`, `dnz3d4c/WowVision`, `dnz3d4c/wowvision-installer`)은 원본의 공개 GitHub 포크다. 한국어 브랜치와 PR 브랜치를 같은 저장소에 둔다. 2026-11-19 이전의 비포크 복제본은 `-old`를 붙여 보관 처리했고, PR용 포크(`-pr`)의 이름을 원래 이름으로 변경했다.
 - PR 브랜치는 `upstream/main`에서 새로 딴다. `ko` 이력(한국어 커밋, 포크 전용 변경)을 섞지 않는다. 원본 관례: 영어 커밋 `영역: 내용`, 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓고, 동작을 바꾸면 en·de 설명서를 함께 고친다.
-- PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<포크 이름> -f base=main ...`로 연다. `gh pr create --head`는 같은 원본의 저장소가 계정에 둘이라 실패한다.
+- PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<저장소> -f base=main ...`로 연다. 같은 원본의 저장소가 계정에 둘이던 때에는 `gh pr create --head`가 실패했다. 하나로 합친 뒤에는 확인하지 않았다.
 - 계획과 진행 상황: `plans/active/upstream-korean.md`.
 
 ### PR이 병합된 뒤
 
-1. 세션 시작 훅(`.claude/settings.json`)이 `tools/pr_cleanup.py --hook`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 fork·origin·로컬에서 지운다. 새로 병합된 PR이 있으면 `[PR 정리] 병합됨:` 줄로 알린다(2026-11-09 사용자 결정: 묻지 않고 지운다). 세션 도중에는 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행한다. `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
+1. 세션 시작 훅(`.claude/settings.json`)이 `tools/pr_cleanup.py --hook`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 origin·로컬에서 지운다. 새로 병합된 PR이 있으면 `[PR 정리] 병합됨:` 줄로 알린다(2026-11-09 사용자 결정: 묻지 않고 지운다). 세션 도중에는 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행한다. `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
 2. vision-locale `main`과 WowVision `ko`에 원본 main을 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다. 그 전에 WowVision에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행한다. 테스트는 git 밖의 생성물 `mapdata/WowNavPacked/`를 읽어서, 묶음이 낡으면 WowNav 경로 테스트가 실패한다(2026-11-14 V1.0.3: 7건 실패, 다시 묶은 뒤 1016개 통과). luajit이 결과 없이 세그폴트(종료 코드 139)로 끝나면 다시 돌린다(같은 날 세 번 중 두 번).
 3. `uv run python -m tools.sync_locale`로 새 키를 찾아 `docs/review-process.md` 절차로 번역한다. 설명서가 바뀌었으면 설명서도 따라간다.
 4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.
@@ -21,7 +21,7 @@
 
 ## WoW Login Tool [필수]
 
-로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`, sparse checkout)의 `ko` 브랜치에서 관리한다. 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.
+로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`, sparse checkout)의 `ko` 브랜치에서 관리한다. `origin`은 공개 포크 `dnz3d4c/Sku-WoW-Addon-TBC`이고 원본은 `upstream`이다(2026-11-19). 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.
 
 - 설치 프로그램 배포: `uv run python -m tools.installer_loc payload`가 이 저장소 ko 브랜치로 `koLoginTool.zip`을 만들고, 설치 프로그램이 원본 설치 뒤 덮어쓴다(`docs/builds.md`). ko 브랜치를 고치면 payload와 설치 프로그램을 다시 만든다.
 - 테스트 실행 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 브랜치를 바꾸면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
