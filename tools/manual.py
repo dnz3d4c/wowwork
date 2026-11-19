@@ -34,7 +34,7 @@ _LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*)\)")
 _CODE = re.compile(r"`[^`\n]+`")
 # 설명서는 합니다체. 문장 끝의 해요체 어미는 기계 검사로 잡는다.
 _HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지요|죠)(?=[.!?)\s]|$)", re.MULTILINE)
-# 본문은 바꾸다·바뀌다 대신 변경하다·변경되다(docs/decisions.tsv 2026-11-09, 출처는 전역 낱말 표).
+# 본문은 바꾸다·바뀌다 대신 변경하다·변경되다(docs/decisions.tsv 2026-11-09, docs/translation-guide.md 낱말 표).
 # 따옴표 인용은 화면 문구라 실물 그대로 둔다("바꾸기"는 koKR Replace 값). 맞바꾸다(교환)는 다른 낱말이다.
 _BAKKUDA = re.compile(r"(?<!맞)(?:바꾸|바꿉|바꿔|바꿨|바꾼|바꿀|바꿈|바뀌|바뀝|바뀐|바뀔|바뀜)[가-힣]*")
 _QUOTED = re.compile(r'"[^"\n]*"')
