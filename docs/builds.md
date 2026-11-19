@@ -21,7 +21,7 @@ NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 �
 ## 다시 만드는 법
 
 1. koKR이나 음성 팩, 센스 리더 프록시가 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload` (koKR.zip, koVoice.zip, koLoginTool.zip, koSenseReader.zip). 센스 리더 프록시는 `korean/sense-reader-bridge/build.bat test`로 빌드와 오프라인 테스트를 거친다(VS 2022 Build Tools). 설치 프로그램 저장소를 새로 받으면 `git submodule update --init korean`이 필요하다. 음성 팩 자체는 `uv run python -m tools.voice_pack build`로 다시 녹음한다(Vocalizer Expressive Yuna, SAPI COM)
-2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, PATH 앞에 scoop .NET SDK)
+2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, `dotnet`이 PATH에 있어야 한다)
 3. 실제 흐름 검사(실제 릴리스를 내려받는다): `WowVisionSelfTest.exe fullinstall` — 안정판 설치 뒤와 베타 전환 뒤 모든 클라이언트에 koKR이 있는지 확인한다
 4. 테스터 폴더에 exe와 함께 `docs/tester-guide.md`를 `설치_안내.txt`로 복사한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
 

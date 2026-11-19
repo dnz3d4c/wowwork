@@ -5,13 +5,10 @@
 병합 없이 닫힌 PR과 병합 뒤 커밋이 더 생긴 브랜치는 지우지 않고 보고만 한다(사용자 확인 대상).
 열린 PR의 브랜치, PR이 없는 브랜치, main·ko·master, 체크아웃된 브랜치는 보지 않는다.
 
-대상: fork·origin 원격 브랜치와 로컬 브랜치. 다른 원격(upstream 등)은 건드리지 않는다.
+대상: origin 원격 브랜치와 로컬 브랜치. 다른 원격(upstream 등)은 건드리지 않는다.
 
     uv run python -m tools.pr_cleanup            # 지운다
     uv run python -m tools.pr_cleanup --dry-run  # 무엇을 지울지만 본다
-
-`--hook`은 wowwork 세션 시작 훅(.claude/settings.json)이 부른다. 지운 브랜치와 확인이 필요한
-브랜치, 처음 보는 병합 PR을 알리고, 아무 일도 없으면 침묵한다. 실패는 health `pr-cleanup`에 남긴다.
 """
 
 from __future__ import annotations
@@ -22,21 +19,18 @@ import subprocess
 import sys
 from collections.abc import Callable
 from pathlib import Path
-from typing import NamedTuple, Protocol
+from typing import NamedTuple
 
 if not __package__:  # 훅이 파일 경로로 실행하면 저장소 루트가 sys.path에 없다
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from tools.locale_lib import KO_WORK_ROOT, REPO_ROOT
+from tools.locale_lib import KO_WORK_ROOT
 
 #: (로컬 복제본 폴더 이름, PR을 받는 원본 저장소)
 REPOS = [("vision-locale", "wow-vision/vision-locale"), ("WowVision", "wow-vision/WowVision")]
 PROTECTED = frozenset({"main", "master", "ko"})
-CLEAN_REMOTES = ("fork", "origin")
+CLEAN_REMOTES = ("origin",)
 TIMEOUT = 60
-SEEN_PATH = REPO_ROOT / "cache" / "pr_cleanup_seen.json"
-HEALTH_COMPONENT = "pr-cleanup"  # 훅 파일 이름(pr_cleanup)과 같으면 hook_runner가 실패 기록을 지운다
-FOLLOW_UP = "후속 절차: CLAUDE.md `### PR이 병합된 뒤` 2~5단계"
 
 
 class PR(NamedTuple):
@@ -156,63 +150,12 @@ def describe(e: Exception) -> str:
     return f"{type(e).__name__}: {e}"
 
 
-class Health(Protocol):
-    def record_ok(self, component: str) -> None: ...
-    def record_fail(self, component: str, error_tail: str, kind: str = ...) -> None: ...
-
-
-def run_hook(
-    collect_fn: Callable[[], tuple[list[str], dict[str, str]]], health: Health, seen_path: Path
-) -> str:
-    """세션 시작 훅 본체. 사용자에게 알릴 글(없으면 빈 문자열)을 돌려준다. 예외를 올리지 않는다."""
-    try:
-        lines, merged = collect_fn()
-        seen = set(json.loads(seen_path.read_text(encoding="utf-8"))) if seen_path.exists() else None
-        # 처음 실행에서는 이미 병합된 PR을 기록만 한다(후속 작업은 이미 끝났다)
-        new = {} if seen is None else {k: t for k, t in merged.items() if k not in seen}
-        seen_path.parent.mkdir(parents=True, exist_ok=True)
-        seen_path.write_text(json.dumps(sorted((seen or set()) | merged.keys())), encoding="utf-8")
-    except (subprocess.SubprocessError, OSError, ValueError) as e:
-        desc = describe(e)
-        health.record_fail(HEALTH_COMPONENT, desc)
-        return f"[PR 정리] 실패: {desc}. 손으로 확인: uv run python -m tools.pr_cleanup --dry-run"
-    health.record_ok(HEALTH_COMPONENT)
-    if not lines and not new:
-        return ""
-    out = ["[PR 정리]"]
-    out += [f"병합됨: {k} {t}" for k, t in new.items()]
-    out += lines
-    if new:
-        out.append(FOLLOW_UP)
-    return "\n".join(out)
-
-
-class _NoHealth:
-    def record_ok(self, component: str) -> None:
-        pass
-
-    def record_fail(self, component: str, error_tail: str, kind: str = "crash") -> None:
-        pass
-
-
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     ap.add_argument("--dry-run", action="store_true", help="지우지 않고 무엇을 지울지만 보인다")
-    ap.add_argument("--hook", action="store_true", help="세션 시작 훅으로 실행한다")
     args = ap.parse_args()
-    if args.hook:
-        try:
-            import health_lib  # type: ignore[import-not-found]  # hook_runner가 ~/.claude/hooks를 sys.path에 넣는다
-
-            health: Health = health_lib
-        except ImportError:
-            health = _NoHealth()
-        text = run_hook(collect, health, SEEN_PATH)
-        if text:
-            print(text)
-        return 0
     try:
         lines, _ = collect(args.dry_run)
     except (subprocess.SubprocessError, OSError) as e:

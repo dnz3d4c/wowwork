@@ -25,7 +25,6 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 
    설명서 주소는 `https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html`이 됩니다. Pages 설정과 배포 허용 브랜치(ko, main)는 저장소와 함께 넘어갑니다.
 3. 주소 업데이트: `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `.gitmodules`의 서브모듈 주소(wowvision-installer `ko`)를 새 계정으로 변경합니다.
-4. 이 PC 전용 설정 정리: `.claude/settings.json`의 세션 시작 훅은 이전 관리자 PC의 `~/.claude/hooks/run_hook.sh`를 부릅니다. Claude Code를 사용한다면 `uv run python tools/pr_cleanup.py --hook`으로 변경하고, 사용하지 않는다면 지웁니다.
 
 ## 설치 환경
 
@@ -36,18 +35,13 @@ Windows 기준입니다. 모든 작업에 필요한 것과 특정 작업에만 �
 | Git, [GitHub CLI](https://cli.github.com/)(`gh`) | 복제, 원본 PR, 병합된 PR 브랜치 정리(`tools/pr_cleanup.py`) | 항상 |
 | [uv](https://docs.astral.sh/uv/)와 Python 3.14 | 이 저장소의 도구와 테스트. `uv sync`로 개발 의존성(pytest, ruff, mypy)을 설치 | 항상 |
 | [LuaJIT](https://luajit.org/) | 원본 병합 뒤 WowVision의 `luajit tools/headless-tests.lua` | 원본 병합 |
-| .NET SDK, PowerShell 7 | 설치 프로그램 빌드와 자체 검사(`build.ps1 -RunTests`). `tools/installer_loc.py`는 SDK를 `%USERPROFILE%\scoop\apps\dotnet-sdk\current\dotnet.exe`에서 찾으므로, scoop으로 설치하지 않았다면 이 경로를 고칩니다 | 설치 프로그램 빌드 |
+| .NET SDK, PowerShell 7 | 설치 프로그램 빌드와 자체 검사(`build.ps1 -RunTests`), 로그인 툴 도우미 빌드. `dotnet`이 PATH에 있어야 합니다 | 설치 프로그램 빌드 |
 | Visual Studio 2022 Build Tools(C++) | 센스 리더 프록시 빌드(`korean\sense-reader-bridge\build.bat test`). payload를 만들 때 함께 실행됩니다 | 설치 프로그램 빌드 |
 | 7-Zip | 테스터 배포 파일 `tester.zip` | 테스터 배포 |
-| [Claude Code](https://claude.com/claude-code) | 번역 검수 Workflow(`tools/review/workflows/*.js`)와 Claude 평가자 | 번역 검수 |
-| [Codex CLI](https://github.com/openai/codex) | GPT 평가자(`tools/review/gpt_review.py`). 프로필 `review_strict`를 사용합니다 | 번역 검수 |
-| Vocalizer Expressive 음성 Yuna(SAPI) | 한국어 음성 팩 다시 녹음(`tools/voice_pack.py`) | 음성 팩 변경 |
+| Vocalizer Expressive 음성 Yuna(SAPI), ffmpeg | 한국어 음성 팩 다시 녹음과 길이 측정(`tools/voice_pack.py`) | 음성 팩 변경 |
 | AutoHotkey v2 | 로그인 툴 화면 읽기 시험(`tools/logintool_bench`) | 로그인 툴 시험 |
 
-알아 둘 제약이 둘 있습니다.
-
-- 검수 Workflow 스크립트와 `tools/review/prompts/manual-translate.md`는 이 저장소 위치를 `C:/project/games/wowwork`로 적고 있습니다. 같은 위치에 두거나, 스크립트 안의 경로를 고칩니다.
-- Codex 프로필 `review_strict`는 Codex 설정 파일(`%USERPROFILE%\.codex\config.toml`)에 직접 정의해야 합니다. 이 저장소에는 그 정의가 없습니다.
+번역 검수 기록(`docs/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex CLI는 이전 관리자가 1.0 검수에 사용한 도구입니다. 그 스크립트는 `docs/archive/review-pipeline/`에 기록으로만 남아 있고, 위 표의 어느 작업에도 필요하지 않습니다.
 
 ## 처음 받기
 
@@ -87,7 +81,7 @@ WowVision의 테스트를 돌리기 전에 `git submodule update --init`과 `lua
 |------|------|
 | `CLAUDE.md` | 작업 규칙 전체(원본 PR, 병합 뒤 절차, 로그인 툴 규약) |
 | `docs/translation-guide.md` | 번역 규칙 |
-| `docs/review-process.md` | 번역 검수 절차 |
+| `docs/review-process.md` | 1.0 때의 번역 검수 방식 기록 |
 | `reviews/README.md` | 검수 회차 목록과 대표 사례, 지운 원본을 꺼내는 법 |
 | `docs/glossary.tsv`, `docs/decisions.tsv` | 확정 용어와 결정 기록 |
 | `docs/builds.md` | 설치 프로그램 빌드, 테스터 배포, 설명서 배포 |

@@ -84,8 +84,6 @@ LOGINTOOL_REPO = KO_WORK_ROOT / "Sku-WoW-Addon-TBC"
 LOGINTOOL_DIR = LOGINTOOL_REPO / "logintool"
 HELPER_PROJECT = LOGINTOOL_DIR / "helper" / "SkuLoginSense" / "SkuLoginSense.csproj"
 HELPER_BUILD = HELPER_PROJECT.parent / "bin" / "Release" / "net48"
-# scoop 은 dotnet SDK 의 shim 을 깔지 않아 PATH 로는 닿지 않는다(~/.claude/CLAUDE.md 환경 표).
-DOTNET = Path.home() / "scoop" / "apps" / "dotnet-sdk" / "current" / "dotnet.exe"
 # 센스 리더 프록시: 소스는 korean 서브모듈(dnz3d4c/wowvision-korean), 서명 스크립트는 공유 브리지 payload 의 것.
 SR_BRIDGE = KO_WORK_ROOT / "wowvision-installer" / "korean" / "sense-reader-bridge"
 SR_PAYLOAD = PAYLOAD.with_name("koSenseReader.zip")
@@ -151,7 +149,7 @@ def build_logintool_payload(out: Path) -> int:
             f"로그인 툴 저장소가 ko 가 아니라 {branch!r} 브랜치다. ko 를 checkout 한 뒤 다시 실행한다."
         )
     subprocess.run(
-        [str(DOTNET), "build", "-c", "Release", str(HELPER_PROJECT), "-nologo", "-v", "q"], check=True
+        ["dotnet", "build", "-c", "Release", str(HELPER_PROJECT), "-nologo", "-v", "q"], check=True
     )
     return write_zip(logintool_entries(LOGINTOOL_DIR, HELPER_BUILD), out)
 
@@ -234,29 +232,6 @@ def build_sense_reader_payload(out: Path) -> int:
     return write_zip({"nvdaControllerClient.dll": dll.read_bytes(), "sign.ps1": encoded}, out)
 
 
-def installer_items(src_dir: Path) -> list[dict[str, object]]:
-    """평가 묶음 항목: 원문·번역·다른 언어 번역, 코드에서 키를 쓰는 줄(Loc.cs 제외)."""
-    text = (src_dir / "Loc.cs").read_text(encoding="utf-8")
-    tables = {n: parse_table(text, n) for n in ("En", "De", "Fr", "Ko")}
-    code_lines = [
-        (p.relative_to(src_dir).as_posix(), n, line.strip())
-        for p in sorted(src_dir.rglob("*.cs"))
-        if p.name != "Loc.cs"
-        for n, line in enumerate(p.read_text(encoding="utf-8", errors="replace").splitlines(), 1)
-        if "Loc." in line
-    ]
-    items: list[dict[str, object]] = []
-    for key, en in tables["En"].items():
-        needle = f'"{key}"'
-        items.append({
-            "id": f"Loc.cs::{key}", "file": "Loc.cs", "key": key, "en": en,
-            "ko": tables["Ko"].get(key, ""), "de": tables["De"].get(key, ""), "fr": tables["Fr"].get(key, ""),
-            "code": [f"{rel}:{n}: {t[:200]}" for rel, n, t in code_lines if needle in t][:6],
-            "game_term": "", "related": [], "shared_key": [],
-        })  # fmt: skip
-    return items
-
-
 def main() -> int:
     cmd = sys.argv[1]
     if cmd == "payload":  # vision-locale 의 koKR 을 설치 프로그램 payload 로
@@ -272,12 +247,6 @@ def main() -> int:
         print(f"센스 리더 프록시 파일 {n}개 -> {SR_PAYLOAD}")
         return 0
     path = Path(sys.argv[2])
-    if cmd == "batch":
-        from tools.review.build_batch import write_batches
-
-        items = installer_items(LOC_CS.parent)
-        print(f"{len(items)}개 항목 -> {path} ({write_batches(items, path, 70)}개 묶음)")
-        return 0
     text = LOC_CS.read_text(encoding="utf-8")
     if cmd == "export":
         tables = {n: parse_table(text, n) for n in ("En", "De", "Fr", "Ko")}

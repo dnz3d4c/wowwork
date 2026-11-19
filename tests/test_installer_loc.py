@@ -58,22 +58,6 @@ def test_quote_round_trip() -> None:
         assert unquote(cs_quote(s)[1:-1]) == s
 
 
-def test_installer_items_include_code_usage_and_other_languages(tmp_path) -> None:  # type: ignore[no-untyped-def]
-    from tools.installer_loc import installer_items
-
-    src = tmp_path / "src"
-    src.mkdir()
-    (src / "Loc.cs").write_text(LOC.replace("    }\n}\n", "") + "        };\n    }\n}\n", "utf-8")
-    loc_text, _ = apply_ko(LOC, {"app.title": "가", "nav.next": "다음(&N) >", "q": "말 {0}"})
-    (src / "Loc.cs").write_text(loc_text, "utf-8")
-    (src / "Form.cs").write_text('btn.Text = Loc.Get("nav.next");\nx = Loc.Format("q", n);\n', "utf-8")
-    items = installer_items(src)
-    nxt = next(i for i in items if i["key"] == "nav.next")
-    assert nxt["id"] == "Loc.cs::nav.next"
-    assert nxt["en"] == "&Next >" and nxt["ko"] == "다음(&N) >" and nxt["fr"] == "&Suivant >"
-    assert nxt["code"] == ['Form.cs:1: btn.Text = Loc.Get("nav.next");']
-
-
 def test_build_payload_zips_kokr_folder_deterministically(tmp_path) -> None:  # type: ignore[no-untyped-def]
     import zipfile
 

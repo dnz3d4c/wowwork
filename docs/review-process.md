@@ -1,6 +1,8 @@
-# 번역 품질 평가 절차
+# 번역 품질 평가 절차(기록)
 
-게임 UI 문자열, 설명서, 설치 프로그램 문자열의 모든 번역은 이 절차를 통과해야 커밋합니다. 번역한 쪽이 "좋다"고 판단하는 것으로는 통과가 아닙니다.
+2026-11-05부터 11-14까지 게임 UI 문자열, 설명서, 설치 프로그램 문자열을 이 절차로 검수했습니다. 이 문서는 그 방식의 기록입니다. 당시에는 Claude Code의 Workflow와 Codex CLI(GPT)로 평가자와 판정자를 돌렸고, 그 스크립트와 프롬프트는 `docs/archive/review-pipeline/`에 보관합니다. 스크립트는 이전 관리자 PC의 경로와 설정을 전제하므로 그대로 실행되지 않습니다. 회차별 결과는 `reviews/README.md`에 있습니다.
+
+새로 검수할 때는 아래 원칙(번역자와 평가자 분리, 서로 다른 모델의 교차 판정, 되돌린 번역의 용어집 등록)을 참고해 자기 환경에 맞는 방식을 정합니다. 용어집 검사(`uv run pytest -q`)는 지금도 모든 번역에 적용됩니다.
 
 ## 원칙
 
@@ -36,7 +38,7 @@
 | `docs/decisions.tsv` | 사용자 결정. 날짜와 출처(사용자)가 있는 것만 적습니다. Claude가 정한 것은 여기에 적지 않습니다 |
 | `docs/glossary.tsv` | 확정 용어. 0단계 기계 검사가 모든 번역에 적용합니다 |
 
-판정 근거로 인정하는 자료는 원문, 앱 코드, 기존 번역, 게임 공식 문자열, 위 세 문서뿐입니다(`tools/review/guard.py` `ALLOWED_EVIDENCE`). 판정자마다 따로 검사합니다. 한 판정자라도 허용 자료를 대지 않은 판정은 확정하지 않고 사용자 판단 목록으로 넘깁니다(`tools/review/decisions.py` `outcome`). 계획 문서, 반박문, 평가 기록은 주장일 뿐 근거가 아닙니다. 번역 쪽이 쓴 문서를 근거로 삼으면 판정이 번역자의 결정을 되받는 순환이 되기 때문입니다.
+판정 근거로 인정하는 자료는 원문, 앱 코드, 기존 번역, 게임 공식 문자열, 위 세 문서뿐입니다(`docs/archive/review-pipeline/tools-review/guard.py` `ALLOWED_EVIDENCE`). 판정자마다 따로 검사합니다. 한 판정자라도 허용 자료를 대지 않은 판정은 확정하지 않고 사용자 판단 목록으로 넘깁니다(`docs/archive/review-pipeline/tools-review/decisions.py` `outcome`). 계획 문서, 반박문, 평가 기록은 주장일 뿐 근거가 아닙니다. 번역 쪽이 쓴 문서를 근거로 삼으면 판정이 번역자의 결정을 되받는 순환이 되기 때문입니다.
 
 ## 평가 관점
 
@@ -67,9 +69,9 @@ MQM(번역 품질 평가 업계 표준)의 세 등급을 씁니다.
 평가 프롬프트를 바꾸거나 새 대상(설명서, 설치 프로그램)을 시작할 때 2단계만 따로 돌려 잽니다.
 
 1. **오류는 두 회사가 따로 심습니다.** Claude 10개, GPT 10개(`prompts/seed-generate.md`). 한 회사만 심으면 같은 회사 평가자가 유리합니다.
-2. **격리 폴더에서 평가합니다.** `tools/review/sandbox.py`가 저장소 밖 임시 폴더에 오류를 심은 묶음, 오류를 심은 koKR 사본, 앱 코드, 규칙 문서, 게임 문자열만 복사합니다. 원래 번역, 정답표, 평가 기록은 들어가지 않습니다. 심을 목록과 정답표는 그 폴더 밖에 둡니다.
-3. **접근을 감사합니다.** GPT는 `--events`로 실행한 명령 전체를 기록하고, Claude는 에이전트 기록이 남습니다. `tools/review/audit.py`가 격리 폴더 밖 절대 경로나 상위 폴더 이동(`..`)을 찾으면 그 검증은 무효입니다.
-4. **채점합니다.** `tools/review/score.py`가 회사별, 심은 쪽별 검출률과 심지 않은 항목 지적 수를 냅니다. 어느 회사든 80% 미만이면 평가 프롬프트를 고친 뒤 다시 잽니다.
+2. **격리 폴더에서 평가합니다.** `docs/archive/review-pipeline/tools-review/sandbox.py`가 저장소 밖 임시 폴더에 오류를 심은 묶음, 오류를 심은 koKR 사본, 앱 코드, 규칙 문서, 게임 문자열만 복사합니다. 원래 번역, 정답표, 평가 기록은 들어가지 않습니다. 심을 목록과 정답표는 그 폴더 밖에 둡니다.
+3. **접근을 감사합니다.** GPT는 `--events`로 실행한 명령 전체를 기록하고, Claude는 에이전트 기록이 남습니다. `docs/archive/review-pipeline/tools-review/audit.py`가 격리 폴더 밖 절대 경로나 상위 폴더 이동(`..`)을 찾으면 그 검증은 무효입니다.
+4. **채점합니다.** `docs/archive/review-pipeline/tools-review/score.py`가 회사별, 심은 쪽별 검출률과 심지 않은 항목 지적 수를 냅니다. 어느 회사든 80% 미만이면 평가 프롬프트를 고친 뒤 다시 잽니다.
 
 한계: 심은 오류는 Claude 평가자 4명만으로도 8명과 같은 검출률이 나왔습니다(ui-v1.0 20/20, logintool 16/17). 실제 기록에서는 GPT만 잡은 반영이 33%였습니다(2026-11-09 집계). 이 검증은 평가 지시가 망가졌는지 확인하는 데 쓰고, 평가자를 줄여도 되는지 판단하는 근거로는 쓰지 않습니다.
 
@@ -81,7 +83,7 @@ MQM(번역 품질 평가 업계 표준)의 세 등급을 씁니다.
 
 ## 실행
 
-Workflow로 묶음마다 같은 구조를 결정적으로 반복합니다(2026-11-05 사용자 허용). 스크립트는 `tools/review/workflows/`에 있습니다.
+Workflow로 묶음마다 같은 구조를 결정적으로 반복합니다(2026-11-05 사용자 허용). 스크립트는 `docs/archive/review-pipeline/tools-review/workflows/`에 있습니다.
 
 | 스크립트 | 단계 | 대상 |
 |----------|------|------|
@@ -92,9 +94,9 @@ Workflow로 묶음마다 같은 구조를 결정적으로 반복합니다(2026-1
 | `guide-review.js` | 2~5 | 테스터 안내 같은 사용자 안내문 |
 | `calibrate.js` | 평가 구조 검증 | 평가 프롬프트를 바꿀 때 |
 
-GPT 평가자는 `tools/review/gpt_review.py`가 `codex exec`를 읽기 전용 샌드박스로 실행합니다.
+GPT 평가자는 `docs/archive/review-pipeline/tools-review/gpt_review.py`가 `codex exec`를 읽기 전용 샌드박스로 실행합니다.
 
-스크립트는 누구에게 무엇을 물을지만 정하고, 받은 답으로 무엇을 확정할지는 `tools/review/decisions.py` 한 곳이 정합니다(2026-11-08, 그전에는 같은 규칙이 스크립트 셋과 `logintool_loc.py`에 따로 있었습니다). UI는 `uv run python -m tools.review.decisions <full.js 출력.json> <평가 폴더>`, 로그인 툴은 `uv run python -m tools.logintool_loc decide ...`가 반영 목록(`apply.tsv`)과 사용자 판단 목록(`escalations.json`)을 씁니다. 설명서는 `manual.js`의 수정 에이전트가 `decisions manual`을 실행해 고칠 곳을 받습니다. 에이전트가 하나라도 실패하면 아무것도 쓰지 않으므로, 같은 Run ID로 Workflow를 이어서 실행한 뒤 다시 반영합니다.
+스크립트는 누구에게 무엇을 물을지만 정하고, 받은 답으로 무엇을 확정할지는 `docs/archive/review-pipeline/tools-review/decisions.py` 한 곳이 정합니다(2026-11-08, 그전에는 같은 규칙이 스크립트 셋과 `logintool_loc.py`에 따로 있었습니다). UI는 `uv run python -m tools.review.decisions <full.js 출력.json> <평가 폴더>`, 로그인 툴은 `uv run python -m tools.logintool_loc decide ...`가 반영 목록(`apply.tsv`)과 사용자 판단 목록(`escalations.json`)을 씁니다. 설명서는 `manual.js`의 수정 에이전트가 `decisions manual`을 실행해 고칠 곳을 받습니다. 에이전트가 하나라도 실패하면 아무것도 쓰지 않으므로, 같은 Run ID로 Workflow를 이어서 실행한 뒤 다시 반영합니다.
 
 새 키가 몇 개뿐이어도 묶음 하나에 에이전트 9~11명이 듭니다(평가 8, 번역자 1, 판정 2). 2026-11-07 V1.0.1 새 키 66개는 지적 14건, 반영 3건이었습니다.
 

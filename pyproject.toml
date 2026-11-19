@@ -12,7 +12,7 @@ dev = [
     "ruff>=0.14.6",
 ]
 
-# 루트 C:\project 워크스페이스에 끼지 않는 독립 venv (워크스페이스 멤버는 2개만 허용)
+# 상위 폴더의 uv 워크스페이스에 끼지 않는 독립 venv
 [tool.uv.workspace]
 members = []
 

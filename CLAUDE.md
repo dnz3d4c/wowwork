@@ -13,9 +13,9 @@
 
 ### PR이 병합된 뒤
 
-1. 세션 시작 훅(`.claude/settings.json`)이 `tools/pr_cleanup.py --hook`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 origin·로컬에서 지운다. 새로 병합된 PR이 있으면 `[PR 정리] 병합됨:` 줄로 알린다(2026-11-09 사용자 결정: 묻지 않고 지운다). 세션 도중에는 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행한다. `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
+1. `uv run python -m tools.pr_cleanup`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 origin·로컬에서 지운다(2026-11-09 사용자 결정: 묻지 않고 지운다). `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
 2. vision-locale `main`과 WowVision `ko`에 원본 main을 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다. 그 전에 WowVision에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행한다. 테스트는 git 밖의 생성물 `mapdata/WowNavPacked/`를 읽어서, 묶음이 낡으면 WowNav 경로 테스트가 실패한다(2026-11-14 V1.0.3: 7건 실패, 다시 묶은 뒤 1016개 통과). luajit이 결과 없이 세그폴트(종료 코드 139)로 끝나면 다시 돌린다(같은 날 세 번 중 두 번).
-3. `uv run python -m tools.sync_locale`로 새 키를 찾아 `docs/review-process.md` 절차로 번역한다. 설명서가 바뀌었으면 설명서도 따라간다.
+3. `uv run python -m tools.sync_locale`로 새 키를 찾아 번역하고 검수한다. 1.0 때의 검수 방식은 `docs/review-process.md`(기록)에 있다. 설명서가 바뀌었으면 설명서도 따라간다.
 4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.
 5. 계획서 현황판을 업데이트한다.
 
@@ -56,7 +56,7 @@
 
 | 문서 | 내용 |
 |------|------|
-| `docs/review-process.md` | 번역 품질 평가 절차 (Claude + GPT, 교차 판정) |
+| `docs/review-process.md` | 1.0 때의 번역 검수 방식 기록(Claude + GPT 교차 판정). 실행 스크립트는 `docs/archive/review-pipeline/` |
 | `docs/translation-guide.md` | 번역 규칙 |
 | `docs/decisions.tsv` | 사용자 결정 |
 | `docs/glossary.tsv` | 확정 용어 |

@@ -1,4 +1,4 @@
-"""WoW Login Tool 한국어 문자열의 평가 묶음을 만들고, 확정 번역을 반영한다.
+"""WoW Login Tool 한국어 문자열에 확정 번역을 반영한다.
 
 대상
 - logintool/data/localization/koKR.txt: "영어 키==한국어" 줄. id 는 "koKR.txt::<키>".
@@ -8,28 +8,21 @@
   같아야 하는 값이라 번역 평가에서 뺀다.
 
 사용:
-  uv run python -m tools.logintool_loc export <출력 폴더> [--size 110]
   uv run python -m tools.logintool_loc apply <ko.tsv>      # id, ko 열
-  uv run python -m tools.logintool_loc decide <workflow 출력.json> <평가 폴더>   # apply.tsv, escalations.json
-  uv run python -m tools.logintool_loc sandbox <격리 폴더> <묶음.json> <정답표 출력.json> <출처=심을목록.json>...
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
-import json
 import re
-import shutil
 from pathlib import Path
-from typing import Any
 
-from tools.locale_lib import KO_WORK_ROOT, REPO_ROOT
+from tools.locale_lib import KO_WORK_ROOT
 
 LOGINTOOL = KO_WORK_ROOT / "Sku-WoW-Addon-TBC" / "logintool"
 LOC_DIR = LOGINTOOL / "data" / "localization"
 FOREVER_AHK = LOGINTOOL / "v2" / "includes" / "forever.ahk"
-REFS = ("deDE", "frFR", "esES", "ruRU")
 
 _ANCHOR = re.compile(r'^\s*"\w+",\s*Map\(')
 _MAP = re.compile(r"Map\(((?:\s*\"[a-z]{2}\",\s*\"(?:[^\"\\]|\\.)*\",?)+)\s*\)")
@@ -107,128 +100,12 @@ def apply_txt(raw: bytes, changes: dict[str, str]) -> bytes:
     return nl.join(out).encode("utf-8")
 
 
-def _game_terms() -> dict[str, list[str]]:
-    from tools.game_terms import by_text, load
-
-    if not all((REPO_ROOT / "cache" / f"gs_{loc}.csv").exists() for loc in ("enUS", "koKR")):
-        return {}
-    return by_text(load("enUS"), load("koKR"))
-
-
-def _code_index() -> list[tuple[str, int, str]]:
-    idx = []
-    for p in sorted((LOGINTOOL / "v2").rglob("*.ahk")):
-        for n, line in enumerate(p.read_text(encoding="utf-8-sig", errors="replace").splitlines(), 1):
-            idx.append((p.relative_to(LOGINTOOL).as_posix(), n, line.strip()))
-    data = LOGINTOOL / "data" / "data.ini"
-    if data.exists():
-        for n, line in enumerate(data.read_text(encoding="utf-16", errors="replace").splitlines(), 1):
-            idx.append(("data/data.ini", n, line.strip()))
-    return idx
-
-
-def _usages(idx: list[tuple[str, int, str]], key: str, limit: int = 6) -> list[str]:
-    q = f'"{key}"'.lower()
-    word = re.compile(r"(?<![\w])" + re.escape(key.lower()) + r"(?![\w])")
-    hits = [f"{f}:{n}: {t[:200]}" for f, n, t in idx if q in t.lower()]
-    if not hits:
-        hits = [f"{f}:{n}: {t[:200]}" for f, n, t in idx if f.endswith(".ini") and word.search(t.lower())]
-    return hits[:limit]
-
-
-def collect() -> list[dict[str, Any]]:
-    en = parse_txt((LOC_DIR / "enEN.txt").read_text(encoding="utf-8"))
-    ko = parse_txt((LOC_DIR / "koKR.txt").read_text(encoding="utf-8"))
-    refs = {r: parse_txt((LOC_DIR / f"{r}.txt").read_text(encoding="utf-8")) for r in REFS}
-    terms = _game_terms()
-    idx = _code_index()
-    items: list[dict[str, Any]] = []
-    for key, ko_text in ko.items():
-        en_text = en.get(key, key)
-        items.append({"id": f"koKR.txt::{key}", "file": "koKR.txt", "key": key, "en": en_text, "ko": ko_text,
-                      **{r[:2]: refs[r].get(key, "") for r in REFS},
-                      "code": _usages(idx, key), "game_term": " | ".join(terms.get(en_text.strip().lower(), [])[:4]),
-                      "related": [], "shared_key": []})
-    for it in forever_items(FOREVER_AHK.read_text(encoding="utf-8")):
-        items.append({**it, "file": "forever.ahk", "code": _usages(idx, it["en"]),
-                      "game_term": " | ".join(terms.get(it["en"].strip().lower(), [])[:4]),
-                      "related": [], "shared_key": []})
-    return items
-
-
-
-def build_sandbox(root: Path, batch: dict[str, Any], seeded: dict[str, str], *,
-                  logintool_dir: Path, work_dir: Path) -> None:
-    """평가 구조 검증용 격리 폴더. 평가자는 이 폴더만 본다(tools/review/sandbox.py 의 로그인 툴판).
-
-    들어가는 것: 오류를 심은 묶음, 프롬프트·스키마, 번역 지침·결정·용어집, 게임 문자열, 오류를 심은
-    로그인 툴 사본(v2, data). 들어가지 않는 것: 원래 번역, 정답표, 평가 기록(reviews).
-    """
-    from tools.review.sandbox import copy_work
-
-    if root.exists():
-        shutil.rmtree(root)
-    copy_work(root / "wowwork", work_dir)
-    lt = root / "wowvision-ko" / "Sku-WoW-Addon-TBC" / "logintool"
-    for part in ("v2", "data"):
-        shutil.copytree(logintool_dir / part, lt / part, ignore=shutil.ignore_patterns("screenshots", "settings.ini"))
-    txt = lt / "data" / "localization" / "koKR.txt"
-    txt.write_bytes(apply_txt(txt.read_bytes(), {k: v for k, v in seeded.items() if k.startswith("koKR.txt::")}))
-    fv_seeds = {k: v for k, v in seeded.items() if k.startswith("forever.ahk::")}
-    if fv_seeds:
-        fv = lt / "v2" / "includes" / "forever.ahk"
-        fv.write_text(apply_forever(fv.read_text(encoding="utf-8"), fv_seeds), encoding="utf-8", newline="")
-    (root / "batch.json").write_text(json.dumps(batch, ensure_ascii=False, indent=1), encoding="utf-8")
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
-    e = sub.add_parser("export")
-    e.add_argument("out", type=Path)
-    e.add_argument("--size", type=int, default=110)
     a_ = sub.add_parser("apply")
     a_.add_argument("tsv", type=Path)
-    dc = sub.add_parser("decide")
-    dc.add_argument("workflow_out", type=Path)
-    dc.add_argument("review_dir", type=Path)
-    s = sub.add_parser("sandbox")
-    s.add_argument("root", type=Path)
-    s.add_argument("batch", type=Path)
-    s.add_argument("key_out", type=Path)
-    s.add_argument("sources", nargs="+")
     a = ap.parse_args()
-    if a.cmd == "decide":
-        data = json.loads(a.workflow_out.read_text(encoding="utf-8"))
-        result = data["result"] if isinstance(data, dict) else data
-        from tools.review.decisions import decide
-
-        current = {i["id"]: i["ko"] for i in collect()}
-        rows, escalations = decide(result, current)
-        d = a.review_dir
-        (d / "escalations.json").write_text(json.dumps(escalations, ensure_ascii=False, indent=1), encoding="utf-8")
-        with (d / "apply.tsv").open("w", encoding="utf-8", newline="") as f:
-            w = csv.DictWriter(f, ["id", "before", "ko"], delimiter="\t", lineterminator="\n")
-            w.writeheader()
-            w.writerows(rows)
-        print(f"변경 {len(rows)}건, 사용자 판단 {len(escalations)}건 -> {d}")
-        return
-    if a.cmd == "sandbox":
-        from tools.review.seed import apply_seeds, merge_seeds
-
-        seeds = merge_seeds({n: Path(p) for n, p in (x.split("=", 1) for x in a.sources)})
-        batch = json.loads(a.batch.read_text(encoding="utf-8"))
-        answers = apply_seeds(batch, seeds)
-        build_sandbox(a.root, batch, {i: v[0] for i, v in seeds.items()}, logintool_dir=LOGINTOOL, work_dir=REPO_ROOT)
-        a.key_out.write_text(json.dumps(answers, ensure_ascii=False, indent=1), encoding="utf-8")
-        print(f"{len(answers)}개 심음 -> {a.root}")
-        return
-    if a.cmd == "export":
-        from tools.review.build_batch import write_batches
-
-        items = collect()
-        print(f"{len(items)}개 항목 -> {a.out} ({write_batches(items, a.out, a.size)}개 묶음)")
-        return
     with a.tsv.open(encoding="utf-8", newline="") as f:
         changes = {r["id"]: r["ko"] for r in csv.DictReader(f, delimiter="\t")}
     txt = LOC_DIR / "koKR.txt"
