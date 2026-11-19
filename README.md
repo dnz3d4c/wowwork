@@ -25,6 +25,7 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 
    설명서 주소는 `https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html`이 됩니다. Pages 설정과 배포 허용 브랜치(ko, main)는 저장소와 함께 넘어갑니다.
 3. 주소 업데이트: `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `.gitmodules`의 서브모듈 주소(wowvision-installer `ko`)를 새 계정으로 변경합니다.
+4. 원본 V1.0.4 따라가기: 2026-11-19 기준 원본 안정판은 V1.0.4이고, 한국어판(koKR, 설명서)은 V1.0.3 기준입니다. `CLAUDE.md` `### PR이 병합된 뒤` 2~5단계(원본 병합, 새 키 번역과 검수, payload와 설치 프로그램, 설명서 배포)로 따라갑니다.
 
 ## 설치 환경
 
