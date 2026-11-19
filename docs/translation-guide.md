@@ -1,6 +1,6 @@
 # WowVision 한국어 번역 지침
 
-WowVision 원문(`../wowvision-ko/vision-locale/enUS/*.lua`)을 `koKR/*.lua`로 번역하거나 영어 설명서를 한국어로 옮길 때 적용하는 규칙입니다. 번역 파일은 vision-locale 저장소(원본의 포크)의 `main` 브랜치에 커밋합니다. wowwork에는 도구와 기록만 둡니다. 규칙을 정한 경위는 `docs/decisions.tsv`와 작업 기록(`reviews/`)에 있습니다.
+WowVision 원문(`../wowvision-ko/vision-locale/enUS/*.lua`)을 `koKR/*.lua`로 번역하거나 영어 설명서를 한국어로 옮길 때 적용하는 규칙입니다. 번역 파일은 vision-locale 저장소(원본의 포크)의 `main` 브랜치에 커밋합니다. wowwork에는 도구와 기록만 둡니다. 규칙을 정한 경위는 [`docs/decisions.tsv`](decisions.tsv)와 작업 기록(`reviews/`)에 있습니다.
 
 ## 파일 형식
 
@@ -28,17 +28,17 @@ if not L then return end
    - 원본 테스트 전에 WowVision 폴더에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행합니다. 테스트는 git에 없는 생성물 `mapdata/WowNavPacked/`를 읽기 때문에, 이 묶음이 낡으면 WowNav 경로 테스트가 실패합니다.
    - 원본 테스트는 WowVision 폴더에서 `luajit tools/headless-tests.lua`로 돌립니다. 결과 없이 종료 코드 139로 끝나면 다시 실행합니다.
 3. `uv run python -m tools.game_terms`로 게임 용어 목록을 업데이트합니다. 번역할 때 이 목록의 공식 용어를 씁니다.
-4. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
+4. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값([`state/enUS.tsv`](../state/enUS.tsv))입니다.
 5. `cache/missing.tsv`의 `ko` 열을 채우고 검수한 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 그다음 `uv run pytest -q`로 검증합니다.
 6. 한국어 값을 변경한 키가 있으면 4·5단계에서 실행한 `tools.sync_locale`이 한국어 설명서의 화면 문구 인용도 새 값에 맞춥니다. 값 바로 뒤의 조사(을/를, 이/가, 은/는, 와/과, 으로/로)도 새 값의 받침에 맞춥니다. "판단 필요"로 나온 곳은 영어 설명서와 대조해 직접 고칩니다. 그다음 `uv run pytest -q`로 검증합니다(설명서 검사 `tools.manual check`가 포함되어 있습니다).
-7. 설치 프로그램에 넣는 koKR이 낡으면 `tests/test_installer_loc.py`가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 `docs/builds.md` `## 다시 만드는 법`대로 빌드합니다.
+7. 설치 프로그램에 넣는 koKR이 낡으면 [`tests/test_installer_loc.py`](../tests/test_installer_loc.py)가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 [`docs/builds.md` `## 다시 만드는 법`](builds.md#다시-만드는-법)대로 빌드합니다.
 
 ## 서식 지정자
 
 - `%s`, `%d` 같은 지정자는 개수와 종류를 원문과 똑같이 유지합니다.
 - 한국어 어순 때문에 순서를 바꿔야 하면 `%2$s`처럼 위치 지정을 사용합니다(WoW의 `format`이 지원합니다).
 - 숫자 사이의 `of`("1 of 5")는 영어 `of`를 그대로 둡니다. 코드가 이어 붙이는 `L["of"]`와 서식 문자열 안의 `of`(`Page %d of %d` → `페이지 %d of %d`)가 모두 해당합니다.
-- 지정자 바로 뒤에 받침에 따라 달라지는 조사(을/를, 이/가, 은/는, 와/과, 으로/로, 이라고/라고)를 붙이지 않습니다. 문장 구조를 바꿔 피합니다. 예: `Whisper %s` → `%s에게 귓속말`(에게는 받침과 무관). 피할 수 없는 경우는 보고 목록에 올립니다. `tests/test_kokr.py` `test_no_batchim_josa_after_spec`이 검사합니다.
+- 지정자 바로 뒤에 받침에 따라 달라지는 조사(을/를, 이/가, 은/는, 와/과, 으로/로, 이라고/라고)를 붙이지 않습니다. 문장 구조를 바꿔 피합니다. 예: `Whisper %s` → `%s에게 귓속말`(에게는 받침과 무관). 피할 수 없는 경우는 보고 목록에 올립니다. [`tests/test_kokr.py`](../tests/test_kokr.py) `test_no_batchim_josa_after_spec`이 검사합니다.
 
 ## 용어
 
@@ -83,8 +83,8 @@ if not L then return end
 번호가 앞선 항목을 먼저 적용합니다.
 
 1. koKR 번역값. 원문에 로케일 문자열이 나오면 koKR에 있는 같은 키의 값을 그대로 씁니다. 따옴표 안팎을 가리지 않습니다. 설명서를 번역하다 koKR 값이 어색하다고 판단되면 설명서만 다르게 쓰지 않고 koKR 값을 고칩니다. 게임에서 듣는 말과 설명서에서 읽는 말은 같아야 합니다.
-2. 게임 공식 한국어. 위 `## 용어`와 같습니다(문맥 우선).
-3. 확정 용어집 `docs/glossary.tsv`. 로케일에는 없지만 설명서에 반복되는 말도 여기에 정합니다.
+2. 게임 공식 한국어. 위 [`## 용어`](#용어)와 같습니다(문맥 우선).
+3. 확정 용어집 [`docs/glossary.tsv`](glossary.tsv). 로케일에는 없지만 설명서에 반복되는 말도 여기에 정합니다.
    - 설명서에는 파일 단위로 적용합니다. 원문 파일에 용어가 있으면 번역 파일에도 정해진 번역이 한 번 이상 있어야 합니다.
    - 같은 영어가 설명서에서 다른 뜻이면(키보드 초점의 focus) 용어집에서 같은 용어 줄의 예외 열에 `manual::*`을 적고, 설명서에서 사용하는 뜻은 더 긴 구절(`focus target`)로 따로 등록합니다.
    - 파일마다 번역이 갈린 말(예: 상호작용 키와 상호작용 단축키)은 고칠 때 용어집에도 등록합니다.
@@ -99,7 +99,7 @@ if not L then return end
 - 합니다체로 씁니다.
 - 독자를 부르는 "you"는 대부분 생략하고 주어를 프로그램으로 둡니다("X라고 안내합니다"). 원문 뜻이 달라지는 경우만 예외입니다. 프로그램이 실제로 하는 동작(읽다, 알리다, 열다)에만 그렇게 쓰고, 사람 동작에 빗댄 영어 동사(take, watch, step aside)는 기능을 설명하는 말로 옮깁니다.
 - 원문 구조를 그대로 둡니다: 제목 수준, 표의 행과 열, 목록 항목 수, 링크 수. `uv run python -m tools.manual check`가 검사합니다.
-- 낱말은 아래 `## 낱말 표`를 따릅니다. 설명서에서 특히 주의할 것:
+- 낱말은 아래 [`## 낱말 표`](#낱말-표)를 따릅니다. 설명서에서 특히 주의할 것:
   - 사람이 설정이나 값을 바꾸는 뜻이면 바꾸다·바뀌다 대신 변경하다·변경되다를 사용합니다. 변경하다는 원문이 change일 때만 사용합니다.
   - change가 아닌 동사는 원문 뜻을 따릅니다: switch는 전환하다, replace는 교체하다·대체하다, turn into는 변환하다·전환되다, swap은 맞바꾸다.
   - 관용 표현("마음이 바뀌면")은 "생각이 달라지면"처럼 뜻에 맞게 씁니다.
@@ -116,13 +116,13 @@ if not L then return end
 
 ### 원본이 바뀌었을 때
 
-위 `## upstream 업데이트 절차`로 문자열을 먼저 맞춘 다음, 원문이 바뀐 파일에서 변경된 부분만 번역합니다. 파일 전체를 다시 번역하지 않습니다.
+위 [`## upstream 업데이트 절차`](#upstream-업데이트-절차)로 문자열을 먼저 맞춘 다음, 원문이 바뀐 파일에서 변경된 부분만 번역합니다. 파일 전체를 다시 번역하지 않습니다.
 
 1. 바뀐 영어 설명서 파일을 찾습니다: `git -C ../wowvision-ko/WowVision diff --stat <이전 태그> <새 태그> -- docs/src/user/en`.
 2. 파일마다 `uv run python -m tools.manual diff <상대경로>`로 바뀐 영어 원문을 봅니다. 상대경로는 `docs/src/user/en` 기준입니다(예: `basics/interface.md`).
 3. 바뀐 곳만 이 문서의 규칙대로 번역하고, 파일 첫 줄의 `<!-- source: ... @ <커밋> -->`을 새 원문 커밋으로 변경합니다. 변경하지 않으면 `manual diff`가 같은 차이를 계속 보여 줍니다.
 4. `uv run python -m tools.manual check`로 구조와 낱말을 검사합니다.
-5. WowVision `ko`에 커밋하고 push한 뒤 설명서를 배포합니다(`docs/builds.md` `## 한국어 설명서 배포`).
+5. WowVision `ko`에 커밋하고 push한 뒤 설명서를 배포합니다([`docs/builds.md` `## 한국어 설명서 배포`](builds.md#한국어-설명서-배포)).
 
 ## 낱말 표
 

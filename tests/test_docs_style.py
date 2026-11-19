@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from tools.manual import doc_style_problems
+from tools.manual import broken_links, doc_style_problems
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = sorted(
@@ -42,3 +42,25 @@ def test_allows_time_and_scope_idioms() -> None:
 @pytest.mark.parametrize("path", DOCS, ids=lambda p: p.relative_to(ROOT).as_posix())
 def test_repo_docs_pass_style_check(path: Path) -> None:
     assert doc_style_problems(path.read_text(encoding="utf-8")) == []
+
+
+def test_broken_links_reports_missing_file_and_heading(tmp_path: Path) -> None:
+    """문서 사이 링크는 제목을 바꾸면 조용히 깨진다(2026-11-19: decisions.tsv 가 README 의 옛 절 번호를 가리켰다)."""
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "b.md").write_text("# B\n\n## 다시 만드는 법\n", encoding="utf-8")
+    (tmp_path / "docs" / "t.tsv").write_text("a\tb\n", encoding="utf-8")
+    doc = tmp_path / "a.md"
+    ok = "[`b`](docs/b.md#다시-만드는-법) [t](docs/t.tsv) [위](#a) [웹](https://example.com/x#y)\n\n# A\n"
+    assert broken_links(ok, doc) == []
+    bad = (
+        "[b](docs/b.md#옛-제목) [없음](docs/none.md)\n\n- 목록\n\n    [목록 안](docs/in-list.md)\n\n"
+        "`[인라인](inline-code.md)`\n\n~~~\n[블록](tilde-block.md)\n~~~\n"
+    )
+    problems = "\n".join(broken_links(bad, doc))
+    assert "docs/b.md#옛-제목" in problems and "docs/none.md" in problems and "docs/in-list.md" in problems
+    assert "inline-code.md" not in problems and "tilde-block.md" not in problems
+
+
+@pytest.mark.parametrize("path", DOCS, ids=lambda p: p.relative_to(ROOT).as_posix())
+def test_repo_docs_links_resolve(path: Path) -> None:
+    assert broken_links(path.read_text(encoding="utf-8"), path) == []

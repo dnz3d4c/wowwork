@@ -2,9 +2,9 @@
 
 WowVision 한국어판 작업 폴더입니다. WowVision은 시각장애인이 화면 낭독기로 World of Warcraft를 플레이할 수 있게 해 주는 애드온입니다. 한국어판에는 한국어 번역, 한국어 설치 프로그램, 한국어 설명서가 있습니다.
 
-이 폴더에는 번역 도구, 작업 기록, 설치 프로그램 만드는 절차가 있습니다. 번역 파일과 프로그램은 다른 저장소에 있습니다(아래 `## 함께 넘겨받는 저장소`).
+이 폴더에는 번역 도구, 작업 기록, 설치 프로그램 만드는 절차가 있습니다. 번역 파일과 프로그램은 다른 저장소에 있습니다(아래 [`## 함께 넘겨받는 저장소`](#함께-넘겨받는-저장소)).
 
-진행 순서: 저장소 넘겨받기, 프로그램 설치, 처음 내려받기, 내려받은 뒤 할 일.
+진행 순서: [저장소 넘겨받기](#저장소-넘겨받기), [프로그램 설치](#프로그램-설치), [처음 내려받기](#처음-내려받기), [내려받은 뒤 할 일](#내려받은-뒤-할-일).
 
 ## 용어
 
@@ -85,7 +85,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | 로그인 툴 화면 읽기 시험 | AutoHotkey v2 | `winget install --id AutoHotkey.AutoHotkey -e` |
 | 센스 리더 동작 확인 | 센스 리더 | winget에 없어서 따로 구해야 합니다 |
 
-작업 기록(`docs/archive/review-pipeline/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 사용한 AI 도구입니다. 설치하지 않아도 됩니다.
+작업 기록([`docs/archive/review-pipeline/review-process.md`](docs/archive/review-pipeline/review-process.md), `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 사용한 AI 도구입니다. 설치하지 않아도 됩니다.
 
 ## 처음 내려받기
 
@@ -136,7 +136,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 - `uv sync`: 도구에 필요한 파이썬 패키지를 설치합니다.
 - `tools.game_terms`: 번역에 참고하는 게임 공식 용어(영어, 한국어)를 wago.tools에서 받아 `cache` 폴더에 저장합니다.
-- `pytest`: 번역 파일과 문서를 검사합니다. `failed`나 `error` 없이 끝나면 준비가 끝났습니다. LuaJIT이 없으면 일부 검사가 `skipped`로 건너뜁니다. 2026-11-19에 이 순서로 새로 받아 모두 통과하는 것을 확인했습니다. 검사마다 생긴 이유와 실패했을 때 할 일은 `tests/README.md`에 있습니다.
+- `pytest`: 번역 파일과 문서를 검사합니다. `failed`나 `error` 없이 끝나면 준비가 끝났습니다. LuaJIT이 없으면 일부 검사가 `skipped`로 건너뜁니다. 2026-11-19에 이 순서로 새로 받아 모두 통과하는 것을 확인했습니다. 검사마다 생긴 이유와 실패했을 때 할 일은 [`tests/README.md`](tests/README.md)에 있습니다.
 
 `failed`나 `error`가 나오면 폴더 배치와 내려받기 명령부터 다시 확인합니다. 저장소가 빠졌거나 폴더 이름이 다르면 검사가 한꺼번에 실패합니다. 그래도 실패하면 출력 전체를 저장해 이전 관리자에게 보냅니다.
 
@@ -148,7 +148,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
     git commit -m "무엇을 왜 고쳤는지 한 줄"
     git push
 
-커밋 메시지 규칙은 저장소마다 다릅니다. 로그인 툴 저장소는 원본 규칙(영어)을 따릅니다(`CLAUDE.md` `## WoW Login Tool`).
+커밋 메시지 규칙은 저장소마다 다릅니다. 로그인 툴 저장소는 원본 규칙(영어)을 따릅니다([`CLAUDE.md` `## WoW Login Tool`](CLAUDE.md#wow-login-tool)).
 
 ## 내려받은 뒤 할 일
 
@@ -164,21 +164,21 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
     https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html
 
-설명서 사이트를 만드는 `docs.yml`은 켜 둡니다. 다만 원본에도 있는 작업이라, 내 WowVision 저장소의 `main` 브랜치에서 `docs` 폴더를 변경한 커밋을 push하면 사이트가 영어판으로 바뀝니다. `main` 브랜치는 원본과 맞출 필요가 없습니다. 원본에 보낼 PR은 원본의 `main`에서 새로 만들기 때문입니다. 꼭 맞춰야 한다면 `docs/builds.md` `## 한국어 설명서 배포`의 절차를 따릅니다.
+설명서 사이트를 만드는 `docs.yml`은 켜 둡니다. 다만 원본에도 있는 작업이라, 내 WowVision 저장소의 `main` 브랜치에서 `docs` 폴더를 변경한 커밋을 push하면 사이트가 영어판으로 바뀝니다. `main` 브랜치는 원본과 맞출 필요가 없습니다. 원본에 보낼 PR은 원본의 `main`에서 새로 만들기 때문입니다. 꼭 맞춰야 한다면 [`docs/builds.md` `## 한국어 설명서 배포`](docs/builds.md#한국어-설명서-배포)의 절차를 따릅니다.
 
 ### 2. 테스터 안내의 설명서 주소 변경
 
-`docs/tester-guide.md` 첫머리에는 이전 관리자 계정의 설명서 주소가 있습니다. 1번에서 확인한 새 주소로 변경하고 커밋합니다. 다른 문서와 설정에는 계정 이름이 없어서 고칠 필요가 없습니다.
+[`docs/tester-guide.md`](docs/tester-guide.md) 첫머리에는 이전 관리자 계정의 설명서 주소가 있습니다. 1번에서 확인한 새 주소로 변경하고 커밋합니다. 다른 문서와 설정에는 계정 이름이 없어서 고칠 필요가 없습니다.
 
 ### 3. 원본 WowVision V1.0.4 반영
 
 인계 시점(2026-11-19)의 원본 최신 버전은 V1.0.4이고, 한국어판은 V1.0.3 기준입니다. 원본 새 버전을 병합하고, 새 영어 문장을 번역하고, 설치 프로그램과 설명서를 다시 만들어야 합니다.
 
 - 병합 대상: WowVision 저장소는 원본 `V1.0.4`, vision-locale 저장소는 원본 커밋 `3172cd5`(V1.0.4에서 사용하는 번역 파일 버전)
-- 전체 순서: `CLAUDE.md` `## 원본 새 릴리스 따라가기`
-- 명령: `docs/translation-guide.md` `## upstream 업데이트 절차`, `### 원본이 바뀌었을 때`
+- 전체 순서: [`CLAUDE.md` `## 원본 새 릴리스 따라가기`](CLAUDE.md#원본-새-릴리스-따라가기)
+- 명령: [`docs/translation-guide.md` `## upstream 업데이트 절차`](docs/translation-guide.md#upstream-업데이트-절차), [`### 원본이 바뀌었을 때`](docs/translation-guide.md#원본이-바뀌었을-때)
 
-1.0 때는 Claude와 GPT 두 AI로 번역을 교차 검수했습니다(`docs/archive/review-pipeline/review-process.md`). 검수 도구는 기록으로만 남아 있으니 검수 방식은 새 관리자가 정합니다. 어떤 방식이든 마지막에 `uv run pytest -q`(확정 용어 검사 포함)는 통과해야 합니다.
+1.0 때는 Claude와 GPT 두 AI로 번역을 교차 검수했습니다([`docs/archive/review-pipeline/review-process.md`](docs/archive/review-pipeline/review-process.md)). 검수 도구는 기록으로만 남아 있으니 검수 방식은 새 관리자가 정합니다. 어떤 방식이든 마지막에 `uv run pytest -q`(확정 용어 검사 포함)는 통과해야 합니다.
 
 ### 4. 로그인 툴을 원본 4.2에 맞추기
 
@@ -186,22 +186,22 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 원본은 2026-11-18에 4.2를 정식으로 출시했습니다. 하지만 한국어판에는 4.2의 마지막 수정인 커밋 `f621e25`(`logintool/v2/includes/forever.ahk`)가 없습니다. Forever 클라이언트에서 로그인 툴이 강제 종료되던 문제를 고친 수정입니다. 한국어 설치 프로그램은 원본 4.2를 설치한 뒤 한국어판 파일을 덮어쓰기 때문에, 지금은 이 수정이 사라집니다.
 
-로그인 툴 저장소의 `ko` 브랜치에 원본 `main`을 병합하고, payload와 설치 프로그램을 다시 만듭니다(`docs/builds.md` `## 다시 만드는 법`). 로그인 툴 저장소는 원본 작업 규칙을 따릅니다(`CLAUDE.md` `## WoW Login Tool`).
+로그인 툴 저장소의 `ko` 브랜치에 원본 `main`을 병합하고, payload와 설치 프로그램을 다시 만듭니다([`docs/builds.md` `## 다시 만드는 법`](docs/builds.md#다시-만드는-법)). 로그인 툴 저장소는 원본 작업 규칙을 따릅니다([`CLAUDE.md` `## WoW Login Tool`](CLAUDE.md#wow-login-tool)).
 
 ## 문서
 
 | 문서 | 내용 |
 |------|------|
-| `CLAUDE.md` | 작업 규칙(저장소 구성, 원본 새 릴리스 반영, PR, 로그인 툴, 번역 수정). AI 도구인 Claude Code용 지시 파일이지만 사람이 읽는 규칙으로도 사용합니다. 문서의 "사용자"는 관리자입니다 |
-| `docs/translation-guide.md` | 번역 규칙, 원본 새 버전 반영 명령 |
-| `docs/glossary.tsv` | 확정 용어. 테스트가 모든 번역에 적용합니다 |
-| `docs/decisions.tsv` | 이전 관리자가 번역, 설명서, 설치 프로그램의 방침을 정한 결정과 이유. 날짜순으로 적혀 있습니다 |
-| `docs/builds.md` | 설치 프로그램 만들기, 테스터 배포, 설명서 배포 |
-| `docs/tester-guide.md` | 테스터용 설치 안내. 배포할 때 `설치_안내.txt`로 복사합니다 |
-| `docs/upstream-report.md` | 번역으로 고칠 수 없어 원본에 알릴 문제 |
-| `plans/active/upstream-korean.md` | 원본에 한국어를 보내는 계획과 진행 상황 |
-| `docs/archive/review-pipeline/review-process.md` | 1.0 번역 검수 방식 기록 |
-| `reviews/README.md` | 검수 회차별 기록, 지운 검수 파일 꺼내는 법 |
+| [`CLAUDE.md`](CLAUDE.md) | 작업 규칙(저장소 구성, 원본 새 릴리스 반영, PR, 로그인 툴, 번역 수정). AI 도구인 Claude Code용 지시 파일이지만 사람이 읽는 규칙으로도 사용합니다. 문서의 "사용자"는 관리자입니다 |
+| [`docs/translation-guide.md`](docs/translation-guide.md) | 번역 규칙, 원본 새 버전 반영 명령 |
+| [`docs/glossary.tsv`](docs/glossary.tsv) | 확정 용어. 테스트가 모든 번역에 적용합니다 |
+| [`docs/decisions.tsv`](docs/decisions.tsv) | 이전 관리자가 번역, 설명서, 설치 프로그램의 방침을 정한 결정과 이유. 날짜순으로 적혀 있습니다 |
+| [`docs/builds.md`](docs/builds.md) | 설치 프로그램 만들기, 테스터 배포, 설명서 배포 |
+| [`docs/tester-guide.md`](docs/tester-guide.md) | 테스터용 설치 안내. 배포할 때 `설치_안내.txt`로 복사합니다 |
+| [`docs/upstream-report.md`](docs/upstream-report.md) | 번역으로 고칠 수 없어 원본에 알릴 문제 |
+| [`plans/active/upstream-korean.md`](plans/active/upstream-korean.md) | 원본에 한국어를 보내는 계획과 진행 상황 |
+| [`docs/archive/review-pipeline/review-process.md`](docs/archive/review-pipeline/review-process.md) | 1.0 번역 검수 방식 기록 |
+| [`reviews/README.md`](reviews/README.md) | 검수 회차별 기록, 지운 검수 파일 꺼내는 법 |
 
 ## 자주 하는 작업
 
@@ -209,11 +209,11 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 | 작업 | 방법 |
 |------|------|
-| 새 영어 문장 찾기 | 원본 새 버전을 병합한 뒤(내려받은 뒤 할 일 3번) `uv run python -m tools.sync_locale` 실행. 번역할 문장이 `cache\missing.tsv`에 모입니다 |
+| 새 영어 문장 찾기 | 원본 새 버전을 병합한 뒤([내려받은 뒤 할 일 3번](#3-원본-wowvision-v104-반영)) `uv run python -m tools.sync_locale` 실행. 번역할 문장이 `cache\missing.tsv`에 모입니다 |
 | 찾은 문장 번역 넣기 | `cache\missing.tsv`를 메모장으로 열어 ko 열을 채우고 저장한 뒤 `uv run python -m tools.sync_locale cache\missing.tsv` 실행. Excel로 저장하면 파일 형식이 바뀌어 읽지 못할 수 있습니다 |
-| 기존 번역 고치기 | 열이 `file`, `key`, `en`, `ko`인 파일을 만들어 `uv run python -m tools.sync_locale <파일>` 실행. 번역 파일을 직접 고치지 않습니다(`CLAUDE.md` `## 번역을 고칠 때`) |
+| 기존 번역 고치기 | 열이 `file`, `key`, `en`, `ko`인 파일을 만들어 `uv run python -m tools.sync_locale <파일>` 실행. 번역 파일을 직접 고치지 않습니다([`CLAUDE.md` `## 번역을 고칠 때`](CLAUDE.md#번역을-고칠-때)) |
 | 영어 설명서 변경 확인 | `uv run python -m tools.manual diff <쪽 경로>`. 쪽 경로는 WowVision `docs\src\user\en` 폴더 기준입니다(예: `basics/interface.md`) |
 | payload 다시 만들기 | `uv run python -m tools.installer_loc payload` |
-| 설치 프로그램 빌드부터 테스터 배포까지 | `docs/builds.md` `## 다시 만드는 법` |
+| 설치 프로그램 빌드부터 테스터 배포까지 | [`docs/builds.md` `## 다시 만드는 법`](docs/builds.md#다시-만드는-법) |
 | 원본에 반영된 PR의 브랜치 정리 | `uv run python -m tools.pr_cleanup` |
 | 번역 파일과 문서 검사 | `uv run pytest -q` |

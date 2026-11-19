@@ -1,6 +1,6 @@
 # upstream 보고 목록
 
-원본(wow-vision/WowVision, wow-vision/wowvision-installer)에 알릴 것을 모은다. 한국어판에서는 고칠 수 없거나, 고치면 원문 충실 결정(`docs/decisions.tsv` 2026-11-05)을 어기는 것들이다.
+원본(wow-vision/WowVision, wow-vision/wowvision-installer)에 알릴 것을 모은다. 한국어판에서는 고칠 수 없거나, 고치면 원문 충실 결정([`docs/decisions.tsv`](decisions.tsv) 2026-11-05)을 어기는 것들이다.
 
 ## 상태
 

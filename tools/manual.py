@@ -28,6 +28,7 @@ _HEADING = re.compile(r"^(#{1,6}) +(.*?)\s*$", re.MULTILINE)
 _FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 _LINK = re.compile(r"\[[^\]]*\]\(([^)\s]*)\)")
 _CODE = re.compile(r"`[^`\n]+`")
+_ANY_FENCE = re.compile(r"^(```|~~~).*?^\1", re.MULTILINE | re.DOTALL)
 # 설명서는 합니다체. 문장 끝의 해요체 어미는 기계 검사로 잡는다.
 _HAEYO = re.compile(r"[가-힣]*(?:세요|해요|에요|예요|어요|아요|지요|죠)(?=[.!?)\s]|$)", re.MULTILINE)
 # 본문은 바꾸다·바뀌다 대신 변경하다·변경되다(docs/decisions.tsv 2026-11-09, docs/translation-guide.md 낱말 표).
@@ -202,12 +203,10 @@ def structure(md: str) -> dict[str, list]:  # type: ignore[type-arg]
     }
 
 
-def _anchors(path: Path) -> set[str]:
-    if not path.exists():
-        return set()
+def _anchors(md: str) -> set[str]:
     seen: dict[str, int] = {}
     out = set()
-    for m in _HEADING.finditer(_strip_fences(path.read_text(encoding="utf-8"))):
+    for m in _HEADING.finditer(_strip_fences(md)):
         s = slug(m.group(2))
         n = seen.get(s, 0)
         out.add(s if n == 0 else f"{s}-{n}")
@@ -295,12 +294,29 @@ def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> l
             problems.append(
                 f"피할 표현: {', '.join(found)} -> {'|'.join(term.ko)} ({term.en or '설명서 전체'})"
             )
-    for target in _LINK.findall(_strip_fences(ko)):
-        if "#" not in target or target.startswith(("http://", "https://")):
+    problems += broken_links(ko, ko_path)
+    return problems
+
+
+def broken_links(md: str, path: Path) -> list[str]:
+    """상대 링크의 대상 파일이 없거나 #앵커가 대상 문서의 제목과 맞지 않는 곳. 코드와 웹 주소는 보지 않는다.
+
+    들여쓴 줄은 목록 안의 문단일 수 있어서 검사한다. 저장소 문서의 들여쓴 명령 예시에는 링크 모양이 없다.
+    """
+    body = _CODE.sub("", _ANY_FENCE.sub("", md))
+    problems = []
+    for target in _LINK.findall(body):
+        if target.startswith(("http://", "https://", "mailto:")):
             continue
-        file_part, frag = target.split("#", 1)
-        dest = ko_path if not file_part else (ko_path.parent / file_part).resolve()
-        if frag not in _anchors(dest):
+        file_part, _, frag = target.partition("#")
+        if not file_part:
+            if frag not in _anchors(md):
+                problems.append(f"앵커 없음: {target} (이 문서의 제목에서 만든 앵커와 맞지 않는다)")
+            continue
+        dest = (path.parent / file_part).resolve()
+        if not dest.exists():
+            problems.append(f"파일 없음: {target}")
+        elif frag and dest.suffix == ".md" and frag not in _anchors(dest.read_text(encoding="utf-8")):
             problems.append(f"앵커 없음: {target} (대상 {dest.name}의 제목에서 만든 앵커와 맞지 않는다)")
     return problems
 
