@@ -84,7 +84,7 @@ LOGINTOOL_REPO = KO_WORK_ROOT / "Sku-WoW-Addon-TBC"
 LOGINTOOL_DIR = LOGINTOOL_REPO / "logintool"
 HELPER_PROJECT = LOGINTOOL_DIR / "helper" / "SkuLoginSense" / "SkuLoginSense.csproj"
 HELPER_BUILD = HELPER_PROJECT.parent / "bin" / "Release" / "net48"
-# 센스 리더 프록시: 소스는 korean 서브모듈(dnz3d4c/wowvision-korean), 서명 스크립트는 공유 브리지 payload 의 것.
+# 센스 리더 프록시: 소스는 korean 서브모듈(wowvision-korean 저장소), 서명 스크립트는 공유 브리지 payload 의 것.
 SR_BRIDGE = KO_WORK_ROOT / "wowvision-installer" / "korean" / "sense-reader-bridge"
 SR_PAYLOAD = PAYLOAD.with_name("koSenseReader.zip")
 BRIDGE_PAYLOAD = PAYLOAD.with_name("sapi2sr-payload.zip")

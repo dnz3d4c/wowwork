@@ -1,64 +1,86 @@
-# wowwork: WowVision 한국어화 작업 저장소
+# wowwork: WowVision 한국어판 작업 저장소
 
-작업 대상은 복제 저장소 3개와 로그인 툴 저장소(아래 `## WoW Login Tool`)다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
+이 저장소에는 번역 도구(`tools/`), 규칙과 절차(`docs/`), 작업 기록(`reviews/`, `docs/archive/`)이 있다. 번역 파일과 프로그램은 옆 폴더 `../wowvision-ko/`의 저장소에 있다.
 
-새로 만드는 한국어판 전용 기능은 wowvision-installer의 서브모듈 `korean`(공개 `dnz3d4c/wowvision-korean`, `main` 브랜치)에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성과 센스 리더 연결: `korean/README.md`(2026-11-14 사용자 지시).
+## 저장소 구성
 
-## 원본에 PR 내기 [필수]
+| 폴더(`../wowvision-ko/` 아래) | 작업 브랜치 | 내용 |
+|------|------|------|
+| `vision-locale` | `main` | koKR 번역 파일 |
+| `WowVision` | `ko` | 한국어 설명서 |
+| `wowvision-installer` | `ko` | 한국어 설치 프로그램. 서브모듈 `korean`(wowvision-korean 저장소, `main` 브랜치) 포함 |
+| `Sku-WoW-Addon-TBC` | `ko` | WoW Login Tool 한국어판. `installer/`와 `logintool/`만 sparse checkout |
 
-- 위 복제 저장소의 `origin`(`dnz3d4c/vision-locale`, `dnz3d4c/WowVision`, `dnz3d4c/wowvision-installer`)은 원본의 공개 GitHub 포크다. 한국어 브랜치와 PR 브랜치를 같은 저장소에 둔다. 2026-11-19 이전의 비포크 복제본은 `-old`를 붙여 보관 처리했고, PR용 포크(`-pr`)의 이름을 원래 이름으로 변경했다.
-- PR 브랜치는 `upstream/main`에서 새로 딴다. `ko` 이력(한국어 커밋, 포크 전용 변경)을 섞지 않는다. 원본 관례: 영어 커밋 `영역: 내용`, 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓고, 동작을 바꾸면 en·de 설명서를 함께 고친다.
-- PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=dnz3d4c:<브랜치> -f head_repo=<저장소> -f base=main ...`로 연다. 같은 원본의 저장소가 계정에 둘이던 때에는 `gh pr create --head`가 실패했다. 하나로 합친 뒤에는 확인하지 않았다.
-- 계획과 진행 상황: `plans/active/upstream-korean.md`.
+- 각 저장소의 `origin`은 원본의 포크이고, `upstream`은 원본(`wow-vision`, `Sku75`)이다.
+- 한국어 작업은 위 작업 브랜치에만 커밋한다. WowVision과 wowvision-installer의 `main`에는 push하지 않는다. 포크의 `main`에 push하면 원본 워크플로가 포크에서 실행된다(`docs/builds.md` `## 원본 워크플로 주의`).
+- 한국어판에만 있는 새 기능은 서브모듈 `korean`에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성은 `korean/README.md`에 있다.
+- 기준은 원본 릴리스다. 설치 프로그램은 원본처럼 안정판을 미리 선택하고, 원본을 따라갈 때는 릴리스 태그를 병합한다. 원본과 다르게 둔 기본값은 NVDA 음성 브리지 기본 설치 하나다(`docs/builds.md`).
 
-### PR이 병합된 뒤
+## 원본 새 릴리스 따라가기
 
-1. `uv run python -m tools.pr_cleanup`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 origin·로컬에서 지운다(2026-11-09 사용자 결정: 묻지 않고 지운다). `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
-2. 따라갈 원본 릴리스를 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다. WowVision `ko`에는 원본 릴리스 태그(예: `V1.0.4`)를, vision-locale `main`에는 그 태그의 `locale` 서브모듈이 가리키는 커밋을 병합한다(2026-11-19 사용자 결정: 원본 규약대로 릴리스 기준). 명령은 `docs/translation-guide.md` `## upstream 업데이트 절차`. 그 전에 WowVision에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행한다. 테스트는 git 밖의 생성물 `mapdata/WowNavPacked/`를 읽어서, 묶음이 낡으면 WowNav 경로 테스트가 실패한다(2026-11-14 V1.0.3: 7건 실패, 다시 묶은 뒤 1016개 통과). luajit이 결과 없이 세그폴트(종료 코드 139)로 끝나면 다시 돌린다(같은 날 세 번 중 두 번).
-3. `uv run python -m tools.sync_locale`로 새 키를 찾아 번역하고 검수한다. 1.0 때의 검수 방식은 `docs/review-process.md`(기록)에 있다. 설명서가 바뀌었으면 설명서도 따라간다.
-4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.
-5. 계획서 현황판을 업데이트한다.
+1. 병합, 원본 테스트, 새 문자열 번역: `docs/translation-guide.md` `## upstream 업데이트 절차`
+2. 영어 설명서가 바뀐 쪽: `docs/translation-guide.md` `### 원본이 바뀌었을 때`
+3. payload, 설치 프로그램, 테스터 파일, 설명서 배포: `docs/builds.md` `## 다시 만드는 법`, `## 한국어 설명서 배포`
+4. `plans/active/upstream-korean.md` 현황판과 `docs/builds.md` 현재 배포 표를 업데이트한다.
 
-## WoW Login Tool [필수]
+## 원본에 PR 내기
 
-로그인 툴은 네 번째 복제 저장소 `../wowvision-ko/Sku-WoW-Addon-TBC`(원본 `Sku75/Sku-WoW-Addon-TBC`, `installer/`와 `logintool/`만 sparse checkout)의 `ko` 브랜치에서 관리한다. `origin`은 공개 포크 `dnz3d4c/Sku-WoW-Addon-TBC`이고 원본은 `upstream`이다(2026-11-19). 이 저장소에는 **원본 규약을 그대로 적용한다**(2026-11-07 사용자 결정): 원본 `dev/FOREVER-PRS.md`의 규칙. 커밋은 영어 `logintool ...: 변경 내용`, 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`, 모든 클라이언트에 영향을 주는 수정은 별도 커밋에 `(all clients)`, 주제와 무관한 이름 변경·정리 금지, 코드 주석은 영어, 원본 파일의 BOM·줄 끝 유지. 큰 주제는 PR 전에 이슈로 관리자와 먼저 상의한다.
+- PR 브랜치는 `upstream/main`에서 새로 딴다. `ko` 이력(한국어 커밋, 포크에만 있는 변경)을 섞지 않는다.
+- 원본 관례를 따른다: 커밋 제목은 영어 `영역: 내용`, 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓고, 동작을 바꾸면 en·de 설명서를 함께 고친다.
+- PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=<계정>:<브랜치> -f head_repo=<저장소> -f base=main -f title=<제목> -f body=<본문>`으로 연다.
+- 계획과 진행 상황은 `plans/active/upstream-korean.md`에 있다.
+- PR이 병합되면 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행해 병합된 브랜치를 `origin`과 로컬에서 지운다. 출력의 `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때도 확인을 받는다.
 
-- 설치 프로그램 배포: `uv run python -m tools.installer_loc payload`가 이 저장소 ko 브랜치로 `koLoginTool.zip`을 만들고, 설치 프로그램이 원본 설치 뒤 덮어쓴다(`docs/builds.md`). ko 브랜치를 고치면 payload와 설치 프로그램을 다시 만든다.
-- 테스트 실행 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 브랜치를 바꾸면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
-- 2026-11-07 이전 작업본(4.1 기반, `T()`를 `TranslateText()`로 바꾼 판)은 `WoW Login Tool Korean/_reset-backup-20261107/pre-4.2/`에 있다.
+## WoW Login Tool
 
-## 원본 기능을 빼지 않는다 [필수]
+- 로그인 툴 저장소에는 원본 규약(`dev/FOREVER-PRS.md`)을 그대로 적용한다.
+  - 커밋 제목은 영어 `logintool ...: 변경 내용`
+  - 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`
+  - 모든 클라이언트에 영향을 주는 수정은 별도 커밋으로 하고 끝에 `(all clients)`
+  - 주제와 무관한 이름 변경과 정리를 하지 않는다
+  - 코드 주석은 영어로 쓰고, 원본 파일의 BOM과 줄 끝을 유지한다
+  - 큰 주제는 PR 전에 이슈로 원본 관리자와 먼저 상의한다
+- `ko` 브랜치를 고치면 `uv run python -m tools.installer_loc payload`로 payload(`koLoginTool.zip`)를 다시 만들고 설치 프로그램을 다시 빌드한다.
+- 게임에서 시험하는 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 브랜치를 바꾸면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
 
-한국어판은 원본에 한국어를 **더한** 것이다. 원본 사용자가 할 수 있는 일은 한국어 사용자도 할 수 있어야 한다.
+## 원본 기능을 빼지 않는다
 
-- 사용자에게 주는 안내(테스터 안내, README, 설명)는 **원본 문서의 절차에서 출발해** 쓴다. "한국어에서 달라진 점"만 적지 않는다. 원본에 있는 선택 기능과 경로는 모두 옮기고, 뺄 때는 그 이유를 안내에 적는다.
-- 근거: 2026-11-06, 테스터 안내(`docs/tester-guide.md`)가 "평소처럼 설치합니다"라고만 해서 NVDA 음성 브리지를 설치하는 방법이 빠졌다. 원본 설명서 `getting-started/installer.md`는 그 방법을 적고 있었다. 실행 파일에는 기능이 있었지만 사용자는 찾을 수 없었다.
-- 기계 검사: `tests/test_tester_guide.py`가 설치 프로그램 구성 요소 페이지의 모든 옵션 이름이 안내에 있는지 확인한다. 옵션 목록은 `ComponentsForm.cs`에서 뽑으므로, 원본에 옵션이 새로 생기면 검사가 실패한다.
-- 코드: 원본 태그와 `ko` 브랜치의 차이에서 지운 줄(`git diff <원본 태그> ko`의 `-` 줄)은 모두 이유가 있어야 한다. 설치 프로그램을 빌드하기 전에 확인한다.
+한국어판은 원본에 한국어를 더한 것이다. 원본 사용자가 할 수 있는 일은 한국어 사용자도 할 수 있어야 한다.
 
-## 도구를 늘리지 않는다 [필수]
+- 사용자에게 주는 안내(테스터 안내, README, 설명)는 원본 문서의 절차에서 출발해 쓴다. 한국어판에서 달라진 점만 적지 않는다. 원본의 선택 기능과 경로는 모두 옮기고, 뺄 때는 그 이유를 안내에 적는다.
+- `tests/test_tester_guide.py`가 설치 프로그램 구성 요소 페이지의 모든 옵션 이름이 테스터 안내에 있는지 검사한다. 옵션 목록은 `ComponentsForm.cs`에서 읽으므로 원본에 옵션이 생기면 이 검사가 실패한다.
+- 설치 프로그램을 빌드하기 전에 `git diff <원본 태그> ko`에서 지운 줄(`-` 줄)을 확인한다. 지운 줄은 모두 이유가 있어야 한다.
 
-사고가 나면 그 일의 **원래 주인 도구**를 고친다. 새 도구, 새 검사, 새 복사본(상수·목록·프롬프트 문단)은 기존 것이 맡을 수 없는 이유를 커밋 메시지에 적을 때만 만든다.
+## 도구를 늘리지 않는다
 
-- 근거: 2026-11-08 점검. 재발 방지 장치 12개가 전부 덧붙인 것이었고 합치거나 지운 것은 없었다. 설명서 인용 맞추기를 `sync_locale` 밖의 도구로 만들어 실행 순서 의존과 누락 경로가 생겼다.
-- 재발 방지 기록에는 더한 것과 함께 **합치거나 지운 것**을 적는다.
+- 문제가 생기면 그 일을 맡은 기존 도구를 고친다. 새 도구, 새 검사, 새 복사본(상수, 목록, 프롬프트 문단)은 기존 것이 맡을 수 없는 이유를 커밋 메시지에 적을 때만 만든다.
+- 재발 방지를 기록할 때는 더한 것과 함께 합치거나 지운 것을 적는다.
 - 같은 정보는 한 곳에만 둔다. 다른 곳에는 그 위치를 가리키는 한 줄만 쓴다.
 
-## 번역을 고칠 때 [필수]
+## 번역을 고칠 때
 
-- **되돌린 번역은 `docs/glossary.tsv`에 넣는다.** 기록만으로는 다시 제안되는 것을 막지 못했다("카메라 따라가기 방식", 2026-11-06). 용어집은 `uv run pytest -q`가 모든 번역에 적용한다.
-- **게임 공식 용어는 영어가 같아야 근거다.** `cache/gs_enUS.csv`의 같은 ID 영어가 원문 구절과 같은 말인지 확인한다. "Roll Bonus"에 "Bonus Loot"의 번역 "추가 전리품"을 쓴 것이 반영됐다가 되돌려졌다.
-- **koKR은 `tools.sync_locale`로만 고친다.** 설명서 인용도 같은 실행에서 따라 바뀐다. 손으로 일괄 치환하지 않는다(같은 값을 쓰는 다른 키를 잘못 바꾼 사례가 있다).
-- **많은 항목에 걸리는 방침은 대량 작업 전에 사용자 결정을 받는다**(`docs/review-process.md` 원칙 7).
-- 번역으로 고칠 수 없는 것(코드에 박힌 영어, 설명서와 동작의 차이)은 `docs/upstream-report.md`에 모은다.
+- koKR은 `tools.sync_locale`로만 고친다. 같은 실행이 설명서의 화면 문구 인용도 새 값에 맞춘다. 손으로 일괄 치환하지 않는다. 같은 값을 쓰는 다른 키까지 바뀐다.
+- 되돌린 번역은 `docs/glossary.tsv`에 넣는다. 기록만으로는 같은 번역이 다시 제안되는 것을 막지 못한다. `uv run pytest -q`가 용어집을 모든 번역에 적용한다.
+- 게임 공식 용어는 영어가 같아야 근거가 된다. `cache/gs_enUS.csv`에서 같은 ID의 영어가 원문 구절과 같은 말인지 확인한다. 예: "Roll Bonus"에 "Bonus Loot"의 공식 번역 "추가 전리품"을 쓰지 않는다.
+- 여러 항목에 걸리는 방침(문체, 여러 곳에 쓰인 용어)은 대량 작업 전에 사용자 결정을 받고, `docs/decisions.tsv`에 날짜와 함께 적는다. 이미 기록된 결정은 다시 정하지 않는다.
+- 작업 중 남긴 의문은 검수에서 지적이 없어도 사용자에게 넘긴다.
+- 번역으로 고칠 수 없는 것(코드에 박힌 영어, 설명서와 동작이 다른 곳)은 `docs/upstream-report.md`에 모은다.
+- 번역 작업의 순서와 확인 항목은 스킬 `kokr-translation`에 있다.
 
-## 절차 문서
+## 검증
+
+- 커밋 전에 `uv run pytest -q`와 `uv run ruff check tools tests`가 통과해야 한다.
+- 설치 프로그램을 고치면 wowvision-installer 폴더에서 `.\build.ps1 -RunTests`가 통과해야 한다(`docs/builds.md` `## 다시 만드는 법`).
+
+## 문서
 
 | 문서 | 내용 |
 |------|------|
-| `docs/review-process.md` | 1.0 때의 번역 검수 방식 기록(Claude + GPT 교차 판정). 실행 스크립트는 `docs/archive/review-pipeline/` |
-| `docs/translation-guide.md` | 번역 규칙 |
-| `docs/decisions.tsv` | 사용자 결정 |
+| `README.md` | 처음 내려받기, 설치할 프로그램, 넘겨받는 순서 |
+| `docs/translation-guide.md` | 번역 규칙, 원본 새 릴리스 따라가기 명령 |
+| `docs/builds.md` | 설치 프로그램 빌드, 테스터 배포, 설명서 배포, 배포 기록 |
 | `docs/glossary.tsv` | 확정 용어 |
-| `docs/builds.md` | 테스터 배포 빌드와 다시 만드는 법, 설명서 배포 |
-| `docs/archive/` | 끝난 계획과 진행 기록(1.0 최종 검수, 설명서 번역 계획). 현행 규칙은 위 문서로 옮겼다 |
+| `docs/decisions.tsv` | 사용자 결정과 이유 |
+| `docs/upstream-report.md` | 원본에 알릴 문제 |
+| `docs/review-process.md` | 1.0 번역 검수 방식의 기록 |
+| `reviews/`, `docs/archive/` | 끝난 작업의 기록. 현행 규칙은 위 문서에 있다 |
