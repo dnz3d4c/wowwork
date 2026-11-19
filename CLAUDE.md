@@ -12,9 +12,9 @@
 | `Sku-WoW-Addon-TBC` | `ko` | WoW Login Tool 한국어판. `installer/`와 `logintool/`만 sparse checkout |
 
 - 각 저장소의 `origin`은 원본의 포크이고, `upstream`은 원본(`wow-vision`, `Sku75`)이다.
-- 한국어 작업은 위 작업 브랜치에만 커밋한다. WowVision과 wowvision-installer의 `main`에는 push하지 않는다. 포크의 `main`에 push하면 원본 워크플로가 포크에서 실행된다(`docs/builds.md` `## 원본 워크플로 주의`).
-- 한국어판에만 있는 새 기능은 서브모듈 `korean`에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성은 `korean/README.md`에 있다.
-- 기준은 원본 릴리스다. 설치 프로그램은 원본처럼 안정판을 미리 선택하고, 원본을 따라갈 때는 릴리스 태그를 병합한다. 원본과 다르게 둔 기본값은 NVDA 음성 브리지 기본 설치 하나다(`docs/builds.md`).
+- 한국어 작업은 위 작업 브랜치에만 커밋한다. 포크의 `main`에 push하면 원본 워크플로가 포크에서 실행된다(`docs/builds.md` `## 원본 워크플로 주의`). wowvision-installer의 `main`에는 push하지 않는다. WowVision의 `main`에 push해야 할 때는 `docs/builds.md` `## 한국어 설명서 배포`의 절차(설명서 워크플로를 끄고 push)를 따른다.
+- 한국어판에만 있는 새 기능은 서브모듈 `korean`에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성은 `../wowvision-ko/wowvision-installer/korean/README.md`에 있다.
+- vision-locale, WowVision, wowvision-installer의 기준은 원본 릴리스다. 설치 프로그램은 원본처럼 안정판을 미리 선택하고, 원본을 따라갈 때는 릴리스 태그를 병합한다. 로그인 툴은 원본 `main`을 기준으로 한다(아래 `## WoW Login Tool`). 원본과 다르게 둔 기본값은 NVDA 음성 브리지 기본 설치 하나다(`docs/builds.md`).
 
 ## 원본 새 릴리스 따라가기
 
@@ -29,11 +29,11 @@
 - 원본 관례를 따른다: 커밋 제목은 영어 `영역: 내용`, 로케일 PR과 코드 PR은 같은 브랜치 이름으로 짝을 짓고, 동작을 바꾸면 en·de 설명서를 함께 고친다.
 - PR은 `gh api repos/wow-vision/<저장소>/pulls -f head=<계정>:<브랜치> -f head_repo=<저장소> -f base=main -f title=<제목> -f body=<본문>`으로 연다.
 - 계획과 진행 상황은 `plans/active/upstream-korean.md`에 있다.
-- PR이 병합되면 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행해 병합된 브랜치를 `origin`과 로컬에서 지운다. 출력의 `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때도 확인을 받는다.
+- PR이 병합되면 `uv run python -m tools.pr_cleanup`을 묻지 않고 실행해 병합된 브랜치를 `origin`과 로컬에서 지운다. 출력의 `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때도 확인을 받는다. 그다음 `plans/active/upstream-korean.md` 현황판을 업데이트한다.
 
 ## WoW Login Tool
 
-- 로그인 툴 저장소에는 원본 규약(`dev/FOREVER-PRS.md`)을 그대로 적용한다.
+- 로그인 툴 저장소에는 원본 규약(`dev/FOREVER-PRS.md`)을 그대로 적용한다. 이 파일은 sparse checkout 밖에 있으므로 `git -C ../wowvision-ko/Sku-WoW-Addon-TBC show HEAD:dev/FOREVER-PRS.md`로 읽는다.
   - 커밋 제목은 영어 `logintool ...: 변경 내용`
   - 게임에서 확인하지 않은 커밋은 끝에 `(UNTESTED)`
   - 모든 클라이언트에 영향을 주는 수정은 별도 커밋으로 하고 끝에 `(all clients)`
@@ -54,7 +54,7 @@
 ## 도구를 늘리지 않는다
 
 - 문제가 생기면 그 일을 맡은 기존 도구를 고친다. 새 도구, 새 검사, 새 복사본(상수, 목록, 프롬프트 문단)은 기존 것이 맡을 수 없는 이유를 커밋 메시지에 적을 때만 만든다.
-- 재발 방지를 기록할 때는 더한 것과 함께 합치거나 지운 것을 적는다.
+- 재발 방지 조치를 커밋할 때는 커밋 메시지에 더한 것과 함께 합치거나 지운 것을 적는다.
 - 같은 정보는 한 곳에만 둔다. 다른 곳에는 그 위치를 가리키는 한 줄만 쓴다.
 
 ## 번역을 고칠 때
@@ -64,6 +64,7 @@
 - 게임 공식 용어는 영어가 같아야 근거가 된다. `cache/gs_enUS.csv`에서 같은 ID의 영어가 원문 구절과 같은 말인지 확인한다. 예: "Roll Bonus"에 "Bonus Loot"의 공식 번역 "추가 전리품"을 쓰지 않는다.
 - 여러 항목에 걸리는 방침(문체, 여러 곳에 쓰인 용어)은 대량 작업 전에 사용자 결정을 받고, `docs/decisions.tsv`에 날짜와 함께 적는다. 이미 기록된 결정은 다시 정하지 않는다.
 - 작업 중 남긴 의문은 검수에서 지적이 없어도 사용자에게 넘긴다.
+- 사용자가 번역을 지적하면 그 문장만 고치지 않는다. 같은 유형(낱말, 관용구 직역, 지시어, 성분 누락)을 전체에서 찾아 세고, 그 유형에 대한 결정을 한 번 받은 뒤 용어집이나 번역 지침에 올린다.
 - 번역으로 고칠 수 없는 것(코드에 박힌 영어, 설명서와 동작이 다른 곳)은 `docs/upstream-report.md`에 모은다.
 - 번역 작업의 순서와 확인 항목은 스킬 `kokr-translation`에 있다.
 
