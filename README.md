@@ -26,6 +26,7 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
    설명서 주소는 `https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html`이 됩니다. Pages 설정과 배포 허용 브랜치(ko, main)는 저장소와 함께 넘어갑니다.
 3. 주소 업데이트: `docs/tester-guide.md`의 설명서 주소, 이 README의 저장소 링크, `.gitmodules`의 서브모듈 주소(wowvision-installer `ko`)를 새 계정으로 변경합니다.
 4. 원본 V1.0.4 따라가기: 2026-11-19 기준 원본 안정판은 V1.0.4이고, 한국어판(koKR, 설명서)은 V1.0.3 기준입니다. `CLAUDE.md` `### PR이 병합된 뒤` 2~5단계(원본 병합, 새 키 번역과 검수, payload와 설치 프로그램, 설명서 배포)로 따라갑니다.
+5. 로그인 툴 기준 버전 정하기: 로그인 툴 `ko` 브랜치는 원본 릴리스(4.1)가 아니라 아직 발표되지 않은 원본 `main`(4.2) 위에 있습니다. 원본에 PR을 내려고 2026-11-07에 `main` 위로 정리했기 때문입니다(원본 이슈 Sku75/Sku-WoW-Addon-TBC#37, 인계 시점까지 답변 없음). 설치 프로그램은 원본 4.1 릴리스 위에 이 브랜치의 파일을 덮어쓰므로, 원본 릴리스 기준으로 맞출지 4.2 릴리스를 기다릴지 정합니다. 4.1 기반의 옛 작업본은 `WoW Login Tool Korean/_reset-backup-20261107/pre-4.2/`(git 밖)에 있었습니다.
 
 ## 설치 환경
 
