@@ -1,16 +1,16 @@
 # WoW Login Tool 한국어 지원: 원본 저장소 기여 절차
 
-원본은 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`이다. 원본 규약(`dev/FOREVER-PRS.md`)에 따라 큰 주제는 PR 전에 이슈로 관리자(JeanStiletto)와 먼저 상의한다.
+원본은 `Sku75/Sku-WoW-Addon-TBC`의 `logintool/`이다. 원본 규약(`dev/FOREVER-PRS.md`)에 따라 큰 주제는 PR 전에 이슈로 원본 관리자(JeanStiletto)와 먼저 상의한다.
 
 ## 진행 상황
 
 | 단계 | 누가 | 상태 |
 |------|------|------|
-| 1. `ko`를 원본 `main` 위로 정리하고 PR 단위로 브랜치를 나눔 | Claude | 완료(2026-11-07): `logintool-fixes` 3커밋, `logintool-korean` 6커밋 |
-| 2. 이슈 초안 작성 | Claude | 완료(아래 `## 이슈 초안`) |
-| 3. 이슈 게시 | 사용자 승인 후 Claude | 완료(2026-11-07): https://github.com/Sku75/Sku-WoW-Addon-TBC/issues/37 |
-| 4. GitHub 포크 생성(공개), PR 열기(동시에 2개까지) | 관리자 답변 뒤, 사용자 승인 후 Claude | 대기 |
-| 5. 두 클라이언트 게임 테스트(Forever 기능, Anniversary 또는 Era는 변화 없음) | 사용자 | 대기 |
+| 1. `ko`를 원본 `main` 위로 정리하고 PR 단위로 브랜치를 나눔 | 작업자 | 완료(2026-11-07): `logintool-fixes` 3커밋, `logintool-korean` 6커밋 |
+| 2. 이슈 초안 작성 | 작업자 | 완료(아래 `## 이슈 초안`) |
+| 3. 이슈 게시 | 관리자 승인 후 작업자 | 완료(2026-11-07): https://github.com/Sku75/Sku-WoW-Addon-TBC/issues/37 |
+| 4. GitHub 포크 생성(공개), PR 열기(동시에 2개까지) | 원본 관리자 답변 뒤, 관리자 승인 후 작업자 | 대기 |
+| 5. 두 클라이언트 게임 테스트(Forever 기능, Anniversary 또는 Era는 변화 없음) | 관리자 | 대기 |
 
 ## PR 전에 남은 확인
 

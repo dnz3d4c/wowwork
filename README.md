@@ -85,7 +85,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | 로그인 툴 화면 읽기 시험 | AutoHotkey v2 | `winget install --id AutoHotkey.AutoHotkey -e` |
 | 센스 리더 동작 확인 | 센스 리더 | winget에 없어서 따로 구해야 합니다 |
 
-작업 기록(`docs/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 쓴 AI 도구입니다. 설치하지 않아도 됩니다.
+작업 기록(`docs/review-process.md`, `reviews/`)에 나오는 Claude Code와 Codex는 이전 관리자가 번역 검수에 사용한 AI 도구입니다. 설치하지 않아도 됩니다.
 
 ## 처음 내려받기
 
@@ -104,7 +104,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 ### 내려받기
 
-작업 폴더에서 창을 열고 한 줄씩 실행합니다. `<계정>`은 넘겨받은 GitHub 계정 이름으로 바꿉니다.
+작업 폴더에서 창을 열고 한 줄씩 실행합니다. `<계정>`은 넘겨받은 GitHub 계정 이름으로 변경합니다.
 
     git clone https://github.com/<계정>/wowwork.git
     mkdir wowvision-ko
@@ -160,7 +160,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
     gh workflow disable release.yml -R <계정>/WowVision
     gh workflow run docs.yml -R <계정>/WowVision --ref ko
 
-앞의 두 명령은 한국어판에 필요 없는 원본 자동 작업인 베타 빌드와 릴리스를 끕니다. 마지막 명령은 설명서 사이트를 만듭니다. `404` 오류가 나면 버튼을 아직 누르지 않은 것입니다. 몇 분 뒤 아래 주소가 열리면 성공입니다. 이전 관리자 계정의 옛 주소는 더 이상 열리지 않습니다.
+앞의 두 명령은 한국어판에 필요 없는 원본 자동 작업인 베타 빌드와 릴리스를 끕니다. 마지막 명령은 설명서 사이트를 만듭니다. `404` 오류가 나면 버튼을 아직 누르지 않은 상태입니다. 몇 분 뒤 아래 주소가 열리면 성공입니다. 이전 관리자 계정의 옛 주소는 더 이상 열리지 않습니다.
 
     https://<계정>.github.io/WowVision/user/ko/getting-started/introduction.html
 

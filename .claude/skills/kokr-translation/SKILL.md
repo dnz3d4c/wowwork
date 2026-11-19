@@ -33,21 +33,16 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 
 ### 2-1. 공유 키: 사용처를 전부 센다
 
-AceLocale은 키 하나에 값 하나다. 영어가 같으면 뜻이 다른 문맥도 같은 번역을 받는다.
-
 1. `../wowvision-ko/WowVision` 아래에서 `L["키"]`를 검색해 사용처를 전부 센다. 한두 곳만 보고 정하지 않는다.
-2. 모든 문맥에 맞는 말이 없으면 일부 문맥에만 맞는 말을 고르지 않는다. 사용자 판단 목록에 올리고, 해법으로 원본에 키를 나누는 PR을 제안한다.
-
-예: `Disabled`는 대부분 흐리게 표시된 버튼에 사용되고 일부만 설정 끄기 상태에 사용됐다. 설정에 맞춘 "사용 안 함"을 쓰면 퀘스트 수락 버튼이 "사용 안 함"으로 들렸다.
-
-같은 키의 번역은 `docs/translation-guide.md` `## 파일 형식`을 따른다. 파일 사이 값이 다르면 `test_same_key_same_translation`이 실패한다.
+2. 모든 문맥에 맞는 말이 없으면 `docs/translation-guide.md` `## 용어` 3번대로 보고 목록에 올리고, 원본에 키를 나누는 PR을 제안한다.
+3. 다른 파일에 같은 키가 있으면 그 번역을 따른다(`docs/translation-guide.md` `## 파일 형식`). 파일 사이 값이 다르면 `test_same_key_same_translation`이 실패한다.
 
 ### 2-2. 용어: 용어집, 게임 공식 용어, 문맥 순서
 
-1. `docs/glossary.tsv`의 확정 용어를 사용한다. 지키지 않으면 `test_glossary_terms_consistent`가 실패한다. 예외는 그 줄의 `except` 열에 `파일::키`로 적는다.
-2. 게임 공식 한국어는 `cache/game_terms.tsv`와 `cache/gs_koKR.csv`에서 찾는다. 근거로 삼는 조건은 `CLAUDE.md` `## 번역을 고칠 때`에 있다.
-3. 영어만 같고 문맥이 다른 공식 번역은 따르지 않는다(`docs/translation-guide.md` `## 용어` 2번).
-4. 셋 다 없으면 지어내지 말고 보고 목록에 올린다.
+1. 용어를 고르는 순서는 `docs/translation-guide.md` `## 용어`를 따른다.
+2. 확정 용어는 `docs/glossary.tsv`에 있다. 지키지 않으면 `test_glossary_terms_consistent`가 실패한다. 예외는 그 줄의 `except` 열에 `파일::키`로 적는다.
+3. 게임 공식 한국어는 `cache/game_terms.tsv`와 `cache/gs_koKR.csv`에서 찾는다. 근거로 삼는 조건은 `CLAUDE.md` `## 번역을 고칠 때`에 있다.
+4. 근거가 없으면 지어내지 말고 보고 목록에 올린다.
 
 ### 2-3. 조사: 들어갈 값의 받침을 모르는 곳
 
@@ -58,7 +53,7 @@ AceLocale은 키 하나에 값 하나다. 영어가 같으면 뜻이 다른 문�
 
 ## 3. 검수
 
-번역한 사람이 아닌 검토자가 번역을 검수한다. 검수 방식은 관리자가 정한다. 1.0 때 쓴 방식(Claude와 GPT의 교차 판정)은 `docs/review-process.md`에 기록으로 있다. 검수 결과를 반영할 때는 `CLAUDE.md` `## 번역을 고칠 때`를 따른다(되돌린 번역의 용어집 등록, 남은 의문 넘기기, 지적의 유형 처리).
+번역한 사람이 아닌 검토자가 번역을 검수한다. 검수 방식은 관리자가 정한다. 검수 결과는 `CLAUDE.md` `## 번역을 고칠 때`에 따라 반영한다(되돌린 번역의 용어집 등록, 남은 의문 넘기기, 지적의 유형 처리).
 
 ## 4. payload, 설치 프로그램, 테스트
 

@@ -18,4 +18,4 @@
 
 이 폴더 바로 아래의 `tests/`는 코드를 옮기기 전에 사용한 테스트입니다. `uv run pytest`는 이 폴더의 테스트를 실행하지 않습니다.
 
-다시 사용하려면 `tools/` 아래로 옮기고, 경로와 평가자 실행 방식을 사용할 환경에 맞게 변경합니다. 이 폴더를 옮길 때 삭제한 하위 명령(`tools.installer_loc batch`, `tools.logintool_loc export·decide·sandbox`)은 옮기기 직전 커밋 `0b39d28^`에서 볼 수 있습니다.
+다시 사용하려면 `tools/` 아래로 옮긴 뒤 경로와 평가자 실행 방식을 사용 환경에 맞게 변경합니다. 이 폴더로 옮기면서 삭제한 하위 명령(`tools.installer_loc batch`, `tools.logintool_loc export·decide·sandbox`)은 옮기기 직전 커밋 `0b39d28^`에서 볼 수 있습니다.
