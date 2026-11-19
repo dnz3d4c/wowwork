@@ -14,12 +14,12 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 | 확정 용어, 되돌린 번역 | `docs/glossary.tsv` |
 | payload와 설치 프로그램 다시 만들기 | `docs/builds.md` `## 다시 만드는 법` |
 
-모든 명령은 wowwork 폴더에서 실행한다. 번역 파일은 `../wowvision-ko/vision-locale/koKR/`에 있고, 그 저장소의 `main` 브랜치에 커밋한다.
+모든 명령은 wowwork 폴더에서 실행한다. 번역 파일은 `../wowvision-ko/vision-locale/koKR/`에 있고, vision-locale 저장소의 `main` 브랜치에 커밋한다.
 
 ## 0. 시작 전에
 
 1. `uv run pytest -q`가 모두 통과하는지 확인한다. 실패한 상태에서 시작하면 새로 깨뜨린 것과 원래 깨져 있던 것을 가릴 수 없다.
-2. 고칠 키가 `docs/decisions.tsv`에 결정으로 있는지 찾는다. 있으면 그 결정을 따른다.
+2. 고칠 키가 `docs/decisions.tsv`에 결정으로 있는지 찾는다. 있으면 기록된 결정을 따른다.
 3. 여러 키에 걸리는 방침이면 `CLAUDE.md` `## 번역을 고칠 때`대로 작업 전에 사용자 결정을 받는다.
 
 ## 1. koKR 고치기
@@ -35,12 +35,12 @@ description: WowVision koKR 번역(vision-locale/koKR/*.lua)을 새로 쓰거나
 
 1. `../wowvision-ko/WowVision` 아래에서 `L["키"]`를 검색해 사용처를 전부 센다. 한두 곳만 보고 정하지 않는다.
 2. 사용처를 센 결과로 `docs/translation-guide.md` `## 용어` 3번에 따라 번역을 정한다. 모든 문맥에 맞는 말이 없으면 원본에 키를 나누는 PR을 제안한다.
-3. 다른 파일에 같은 키가 있으면 그 번역을 따른다(`docs/translation-guide.md` `## 파일 형식`). 파일 사이 값이 다르면 `test_same_key_same_translation`이 실패한다.
+3. 다른 파일에 같은 키가 있으면 기존 번역을 따른다(`docs/translation-guide.md` `## 파일 형식`). 파일 사이 값이 다르면 `test_same_key_same_translation`이 실패한다.
 
 ### 2-2. 용어: 용어집, 게임 공식 용어, 문맥 순서
 
 1. 용어를 고르는 순서는 `docs/translation-guide.md` `## 용어`를 따른다.
-2. 확정 용어는 `docs/glossary.tsv`에 있다. 지키지 않으면 `test_glossary_terms_consistent`가 실패한다. 예외는 그 줄의 `except` 열에 `파일::키`로 적는다.
+2. 확정 용어는 `docs/glossary.tsv`에 있다. 지키지 않으면 `test_glossary_terms_consistent`가 실패한다. 예외는 용어집 줄의 `except` 열에 `파일::키`로 적는다.
 3. 게임 공식 한국어는 `cache/game_terms.tsv`와 `cache/gs_koKR.csv`에서 찾는다. 근거로 삼는 조건은 `CLAUDE.md` `## 번역을 고칠 때`에 있다.
 4. 근거가 없으면 지어내지 말고 보고 목록에 올린다.
 
@@ -63,7 +63,7 @@ koKR을 변경하면 설치 프로그램에 든 koKR과 달라져 `test_installe
 2. `docs/builds.md` `## 다시 만드는 법` 2~4단계(설치 프로그램 빌드와 자체 검사, 실제 흐름 검사, 테스터 폴더 교체)
 3. `uv run pytest -q` 전체 통과
 4. payload를 풀어 새 값이 있고 옛 값이 없는지 확인한다.
-5. `docs/builds.md`의 현재 배포 표와 검증 이력을 업데이트한다. 실행한 검사, 실행하지 않은 검사와 그 이유를 적는다.
+5. `docs/builds.md`의 현재 배포 표와 검증 이력을 업데이트한다. 실행한 검사, 실행하지 않은 검사와 이유를 적는다.
 
 ## 5. 커밋
 

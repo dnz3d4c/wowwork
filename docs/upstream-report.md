@@ -11,7 +11,7 @@
 
 | 설명서(en) | 차이 | 코드 위치 |
 |------------|------|-----------|
-| basics/alerts.md | "you or your group"과 전투 중이면 울린다고 하지만, 파티에서는 party1~5와 그 소환수만 검사한다(나와 내 소환수 제외). 혼자일 때는 player와 소환수, 공격대에서는 raid1~40과 그 소환수 | WowVision core/targeting/module.lua:75-103 |
+| basics/alerts.md | "you or your group"과 전투 중이면 울린다고 하지만, 파티에서는 party1~5와 각자의 소환수만 검사한다(나와 내 소환수 제외). 혼자일 때는 player와 소환수, 공격대에서는 raid1~40과 각자의 소환수 | WowVision core/targeting/module.lua:75-103 |
 | basics/interface.md | 희귀 등급 이상이면 모두 "DELETE" 확인을 받는다고 하지만 계승 아이템은 빠진다 | WowVision core/ui modules/cursor.lua:61 |
 | basics/keybindings.md | 어깨·트리거·오른쪽 스틱 누르기가 같은 보조 키라고 하지만, 양쪽 어깨를 함께 누르면 바로 가기 층이 되고 오른쪽 스틱 누르기는 방향 패드와만 조합된다 | WowVision core/ui/input/padLogic.lua:15-35, core/graph/keyCapture.lua:136-142 |
 | basics/keybindings.md | 같은 충돌 안내가 적용된다고 하지만, 컨트롤러에는 필수 동작의 마지막 입력 보호가 없다 | WowVision core/ui modules/graphBindings.lua:61-79 |
@@ -33,7 +33,7 @@
 | windows/auction-house.md (V1.0.2) | Retail "Vendor Buy"는 상인에게서 아이템을 본 뒤 나온다고 하지만, 수량 제한이 없고 추가 비용이 없는 아이템만 기록한다 | WowVision retail/auction/module.lua:160-168 |
 | world/quests.md (V1.0.2) | 주변 퀘스트 소리는 장소가 앞쪽에 있을 때만 들린다고 하지만, 거리와 정면에서 벗어난 각도를 합쳐 판단해 가까우면 옆쪽(10야드에서 100도)도 들린다 | WowVision core/quests/nearbyEngine.lua:32-46, nearbyEngineTests.lua:68-74 |
 | world/quests.md (V1.0.2) | 축제 퀘스트는 축제 기간에만 포함된다고 하지만, 축제 뒤에도 완료할 수 있는 퀘스트는 완료 가능 장소로 계속 남는다 | WowVision core/quests/nearbySounds.lua:215 |
-| information/buffers.md (V1.0.2) | 버퍼 설정 화면이 사용함, 버퍼, 항목 방향 반전 세 가지를 이 순서로 보여 준다고 하지만(244줄), 같은 문서 설정 표에 새로 생긴 Always Start at Top과 Sounds When Opening and Closing도 그 화면에 있다 | WowVision core/buffers/module.lua:20-38 |
+| information/buffers.md (V1.0.2) | 버퍼 설정 화면이 사용함, 버퍼, 항목 방향 반전 세 가지를 이 순서로 보여 준다고 하지만(244줄), 같은 문서 설정 표에 새로 생긴 Always Start at Top과 Sounds When Opening and Closing도 같은 화면에 있다 | WowVision core/buffers/module.lua:20-38 |
 | getting-started/sku.md | Sku가 맡는 키 목록에 툴팁 줄 키와 소프트 대상 키만 있고, 같은 이유로 꺼지는 Previous Tooltip Block·Next Tooltip Block(Ctrl+Shift+Up·Ctrl+Shift+Down)이 빠졌다. "목록에 없는 것은 모두 WowVision이 처리한다"는 문장과 어긋난다 | WowVision core/ui modules/tooltip.lua:29-51 (conflictingAddons = Sku), core/ui/input/activator.lua:117-126 (2026-11-13 설명서 독자 재수정 회귀 지적) |
 | world/minimap.md | /wv mscan raw 결과가 `SavedVariables\WowVision.lua` 파일에 있다고 하지만, 저장 변수는 WowVisionDump로 등록되어 파일 이름은 WowVisionDump.lua다(getting-started/managing.md도 WowVisionDump.lua라고 적음) | WowVision core/minimap/module.lua:1640-1641, WowVision_Standard.toc:8 (2026-11-13 설명서 독자 재수정 회귀 지적) |
 | world/scanner.md | "A snapshot" 절은 열려 있는 동안 거리와 방향만 갱신된다(Only distance and direction update)고 하지만, 진행 중 퀘스트의 상태("2 of 3" 등)도 말할 때마다 퀘스트 목록에서 새로 읽는다. 같은 문서 In Progress 문단의 "The progress is read fresh each time"과도 어긋난다 | WowVision core/quests/scanner.lua:322-327, 484-486, core/scanner/ui.lua:88-95 (2026-11-13 설명서 독자 재수정 회귀 지적) |

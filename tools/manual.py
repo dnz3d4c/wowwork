@@ -219,6 +219,30 @@ def _anchors(path: Path) -> set[str]:
     return out
 
 
+# 저장소 문서(README, 지침, 스킬, docs)용. 영어 that·it 을 옮긴 "그 X"와 "~것입니다" 결말은
+# 사람이 쓰는 문서에 남기 쉬운 번역투다. 번역 설명서는 바로 앞 명사를 가리키는 "그 X"를 허용하므로
+# check() 에는 넣지 않는다(docs/translation-guide.md `### 문체`).
+# 그 뒤·그 전·그 밖에 같은 시간·범위 관용 표현은 지시어 번역투가 아니라서 뺀다.
+_DEMONSTRATIVE = re.compile(
+    r"(?<![가-힣])그(?: (?!(?:뒤|전|후|밖|외|다음|사이|대신|때|결과|동안)[에로는은의만도서]*(?![가-힣]))[가-힣]+|것[가-힣]*)"
+)
+_FILLER_ENDING = re.compile(r"[가-힣]*것(?:입니다|이다)")
+
+
+def doc_style_problems(md: str) -> list[str]:
+    """코드, 코드 블록, 따옴표 인용을 뺀 본문에서 지시어 "그 X", "~것입니다" 결말, 해요체를 찾는다."""
+    body = _QUOTED.sub("", _CODE.sub("", _strip_fences(md)))
+    problems = []
+    for label, pattern in (
+        ("지시어(가리키는 명사로)", _DEMONSTRATIVE),
+        ('"~것입니다" 결말', _FILLER_ENDING),
+        ("해요체(합니다체로)", _HAEYO),
+    ):
+        if found := [m.group(0) for m in pattern.finditer(body)]:
+            problems.append(f"{label} {len(found)}곳: {', '.join(sorted(set(found)))}")
+    return problems
+
+
 def check(en: str, ko: str, ko_path: Path, terms: list[Term] | None = None) -> list[str]:
     """terms: 확정 용어집(없으면 docs/glossary.tsv). 원문의 코드는 빼고 대조한다."""
     problems = []
