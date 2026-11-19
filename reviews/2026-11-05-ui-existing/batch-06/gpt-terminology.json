@@ -1,1 +1,0 @@
-{"findings":[{"id":"navigation.lua::spirit guide","category":"terminology","severity":"major","problem":"게임 용어인 \"spirit guide\"를 \"영혼의 안내자\"로 옮겼지만, 공식 한국어 명칭은 \"영혼의 인도자\"다.","evidence":"camelot/wownav/text.lua:234에서 NPC 유형 이름으로 사용된다. 월드 오브 워크래프트 한국어 클라이언트는 전장 등의 Spirit Guide NPC를 \"영혼의 인도자\"로 표기한다.","suggestion":"영혼의 인도자"}]}

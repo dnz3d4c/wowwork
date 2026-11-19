@@ -1,6 +1,0 @@
-{"findings": [
- {"id": "groupHealth.lua::Speak Group Health", "category": "style", "severity": "minor",
-  "problem": "같은 종류(단축키 목록에 뜨는 'Speak ~' 기능 이름)가 다른 곳에서는 모두 '읽기'로 끝나는데 이 항목만 '말하기'다. 단축키 설정 목록을 빠르게 훑어 들을 때 같은 동작이 다른 낱말로 들려 다른 종류의 기능처럼 느껴진다.",
-  "evidence": "retail/groupHealth/module.lua:643-646 registerBinding(type=Function) label. 같은 Function 바인딩인 retail/monitors/CdmAuraMonitor.lua:906 'Speak Tracked Auras'=\"추적 중인 오라 읽기\", koKR 'Speak Tracked Cooldowns'=\"추적 중인 재사용 대기 읽기\", 'Speak Compass Direction'=\"나침반 방향 읽기\", 'Speak Messages'=\"메시지 읽기\".",
-  "suggestion": "파티 및 공격대 생명력 읽기"}
-]}

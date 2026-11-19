@@ -35,6 +35,7 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 | `CLAUDE.md` | 작업 규칙 전체(원본 PR, 병합 뒤 절차, 로그인 툴 규약) |
 | `docs/translation-guide.md` | 번역 규칙 |
 | `docs/review-process.md` | 번역 검수 절차 |
+| `reviews/README.md` | 검수 회차 목록과 대표 사례, 지운 원본을 꺼내는 법 |
 | `docs/glossary.tsv`, `docs/decisions.tsv` | 확정 용어와 결정 기록 |
 | `docs/builds.md` | 설치 프로그램 빌드와 설명서 배포 |
 | `plans/active/upstream-korean.md` | 원본에 한국어를 보내는 계획과 진행 상황 |

@@ -1,7 +1,0 @@
-[
-  {
-    "ref": "world/wownav.md#claude-regression-0",
-    "action": "applied",
-    "reason": "docs/decisions.tsv와 docs/glossary.tsv 2026-11-13 대응표가 count as를 '간주하다'로 정하고 '로 치다' 활용형을 피할 표현으로 정했다. 같은 파일 107·193·197행도 '간주'를 쓴다. 150행 '도착한 것으로 치므로'를 '도착한 것으로 간주하므로'로 고쳤다. tools.manual check 통과."
-  }
-]

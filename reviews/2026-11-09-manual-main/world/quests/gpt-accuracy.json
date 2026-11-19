@@ -1,1 +1,0 @@
-{"findings":[{"id":"world/quests.md","category":"accuracy","severity":"major","quote":"퀘스트 진행 상황 알림: 개수가 올라갈 때입니다.","suggestion":"퀘스트 진행 상황 알림: 개수가 바뀔 때입니다.","problem":"원문은 진행 개수가 변하는 경우 전반을 뜻하지만, 번역은 개수가 증가하는 경우로 범위를 좁혔습니다.","evidence":"변경된 원문은 \"Quest Progress Alert: a count moves\"입니다. \"moves\"에는 증가 방향만 한정하는 표현이 없습니다."}]}

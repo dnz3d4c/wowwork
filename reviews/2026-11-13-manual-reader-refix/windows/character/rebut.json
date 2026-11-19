@@ -1,9 +1,0 @@
-{
-  "responses": [
-    {
-      "ref": "windows/character.md#gpt-regression-0",
-      "action": "applied",
-      "reason": "독자가 '정지점 자체가 Tab으로 이동한다'로 이해했는데, 원문(en/windows/character.md:3 'a set of stops you move through with Tab')은 사용자가 Tab으로 정지점 사이를 이동한다는 뜻이라 전달 실패다. 'WowVision은 이 창을 여러 정지점으로 읽으며, 정지점 사이는 Tab으로 이동합니다. 각 탭의 내용은 화살표 키로 훑는 목록으로 나옵니다.'로 고쳤다. 정지점 사이 이동은 원문 27행 'Tab and Shift+Tab move between stops'와도 일치한다. 기계 검사 통과."
-    }
-  ]
-}

@@ -1,1 +1,0 @@
-{"findings":[{"id":"ui.lua::Audio Assist You Are Targeted","category":"context","severity":"major","problem":"현재 번역은 사용자가 대상을 지정할 때 알리는 기능으로 들릴 수 있다. 실제로는 플레이어 자신이 다른 대상에게 지정됐을 때 알리는 설정이다.","evidence":"core/ui modules/gameDefaults.lua:36-37에서 `SayIfTargeted` 값 2를 `targeted without the name`으로 설명하며, 플레이어가 대상이 된 상태를 보고한다.","suggestion":"음성 지원 내가 대상이 됐을 때 알림"}]}

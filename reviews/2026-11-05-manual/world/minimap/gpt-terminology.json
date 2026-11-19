@@ -1,1 +1,0 @@
-{"findings":[{"id":"world/minimap.md","category":"terminology","severity":"major","quote":"\"보안관 맥브라이드, 퀘스트 NPC\"","suggestion":"\"치안대장 맥브라이드, 퀘스트 NPC\"","problem":"게임 고유 NPC 이름인 \"Marshal McBride\"를 공식 한국어 이름과 다르게 옮겼다.","evidence":"원문은 \"Marshal McBride, quest giver\"이며, 월드 오브 워크래프트 한국어판의 NPC 이름은 \"치안대장 맥브라이드\"다. \"quest giver\"는 terms의 \"퀘스트 NPC\"와 일치한다."}]}

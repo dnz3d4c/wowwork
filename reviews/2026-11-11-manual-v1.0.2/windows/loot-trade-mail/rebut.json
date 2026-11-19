@@ -1,9 +1,0 @@
-{
-  "responses": [
-    {
-      "ref": "windows/loot-trade-mail.md#claude-terminology-0",
-      "action": "applied",
-      "reason": "지적이 맞다. 같은 파일 거래 절이 quality colour를 '등급 색 이름'으로 옮겼고, 애드온 화면 문구도 vision-locale koKR/misc.lua:9 L[\"Quality\"] = \"등급\", koKR/windows.lua:235 \"아이템 등급 색상\"으로 쓴다. 22행 '이름, 품질, 아이템 레벨'을 '이름, 등급, 아이템 레벨'로 고쳤다. 기계 검사 통과(문제 0개). 참고: reference/keybindings.md:134의 같은 행도 '품질'이라 그 파일 평가에서 맞춰야 한다(이 파일 범위 밖이라 손대지 않음). auction-house.md의 '품질'은 게임 정렬 버튼·드롭다운 이름이라 별개다."
-    }
-  ]
-}

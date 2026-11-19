@@ -1,7 +1,0 @@
-[
-  {
-    "ref": "reference/keybindings.md#gpt-regression-0",
-    "action": "applied",
-    "reason": "style 지적은 반영이 기본이다(rebut.md). 원문 \"The same as a straight beacon instead of a route\"의 \"The same\"은 앞 행의 대상(아직 가 보지 않은 같은 이름의 장소 가운데 걸어서 가장 가까운 곳)을 가리키므로, '위와 같지만'을 그 명사구로 되돌려 행만 들어도 뜻이 통하게 했다(translation-guide.md 지시어를 명사로 되돌리기는 추가가 아님). 앞 행 번역과 같은 표현을 써서 대상 기준을 그대로 유지했다. 기계 검사 통과."
-  }
-]

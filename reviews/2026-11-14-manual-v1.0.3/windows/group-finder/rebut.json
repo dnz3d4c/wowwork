@@ -1,9 +1,0 @@
-[
-  {"ref": "windows/group-finder.md#claude-style-0", "action": "applied", "reason": "피동 '읽힙니다'의 주어를 '그 경고가'로 채웠다. 원문 'it comes next'의 it이 경고라 사실 변경 없음."},
-  {"ref": "windows/group-finder.md#claude-style-1", "action": "applied", "reason": "consensus. '역할의 체크 상자, 그리고 수락 버튼과 거절 버튼이 읽힙니다'로 컨트롤 종류를 밝혔다. 원문이 '위의 역할 팝업과 같이 읽힌다'고 하고 그 팝업이 체크 상자 목록과 버튼이라 문맥상 정해진 명사다. gpt-style-1과 함께 반영."},
-  {"ref": "windows/group-finder.md#claude-style-2", "action": "applied", "reason": "'대신 체크합니다'를 '자동으로 체크합니다'(원문 checks it for you), 처음 나오는 '타이머'를 '초대의 제한 시간이 지나면'(원문 its timer runs out, its=초대)으로 고쳤다. 조건은 원문 그대로."},
-  {"ref": "windows/group-finder.md#claude-style-3", "action": "applied", "reason": "첫 문장에 '초대를 수락하면' 조건을 채우고 '체크된 역할'을 '초대 창에서 체크된 역할'로 밝혔다. 원문 You hear는 앞 표의 수락 동작 결과이고, 역할은 초대 창의 체크 상자이므로 문맥상 정해진 내용이다."},
-  {"ref": "windows/group-finder.md#claude-style-4", "action": "applied", "reason": "두 문장으로 나누고 뒤 문장을 '이때는 전투가 끝난 뒤 초대 창에서 역할을 선택하십시오'로 써서 사용자가 할 일임을 분명히 했다. 원문 'you pick it in the invitation window after the fight'와 같은 뜻."},
-  {"ref": "windows/group-finder.md#gpt-style-0", "action": "applied", "reason": "'별도의 창으로 옵니다'를 '별도의 창에 표시됩니다'로 고쳤다. 원문 does not come as ... but as its own window의 뜻 보존."},
-  {"ref": "windows/group-finder.md#gpt-style-1", "action": "applied", "reason": "consensus. claude-style-1과 같은 곳이라 함께 반영했다. '수락과 거절이 옵니다'를 '수락 버튼과 거절 버튼이 읽힙니다'로, 다음 문장의 '수락'을 '수락 버튼'으로 고쳤다."}
-]

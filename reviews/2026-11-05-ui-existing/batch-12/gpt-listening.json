@@ -1,1 +1,0 @@
-{"findings":[{"id":"windows.lua::Search Match","category":"style","severity":"minor","problem":"「검색 일치」는 번역투가 강한 명사 나열이라 음성으로 들으면 무엇이 검색과 일치한다는 뜻인지 바로 파악하기 어렵다.","evidence":"retail/talentTree.lua:180에서 검색 조건과 일치한 상태를 나타내는 짧은 반환 문구로 사용된다. 조사 없이 「검색 일치」라고만 하면 두 명사의 관계가 불분명하다.","suggestion":"검색어와 일치"}]}

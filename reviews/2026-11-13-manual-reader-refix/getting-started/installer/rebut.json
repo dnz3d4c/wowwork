@@ -1,5 +1,0 @@
-[
- {"ref": "getting-started/installer.md#gpt-regression-0", "action": "applied", "reason": "한국어판 설치 프로그램은 Config.cs:82-86에서 DefaultChannel = Channel.Beta이고 이전 선택을 유지한다(원본 upstream/main은 Stable). 설명서가 이미 한국어판 화면 문구와 한국어 언어 선택을 안내하므로 독자는 한국어판을 실행한다. 3번 항목 첫 문장에 한국어판은 설치할 WowVision과 NVDA 음성 항목의 기본값이 원본과 다르다고 적고, 설치할 WowVision 항목에 '처음 실행하면 베타가 미리 선택되고 전에 고른 것이 있으면 유지'를 넣었다."},
- {"ref": "getting-started/installer.md#gpt-regression-1", "action": "applied", "reason": "한국어판 InstallRunner.cs:13-23의 InstallSapi2Sr 기본값은 true(원본은 false). 항목 표시를 '(한국어판은 체크됨)'으로 고쳤다."},
- {"ref": "getting-started/installer.md#gpt-regression-2", "action": "applied", "reason": "InstallRunner.cs 주석대로 한국어판은 브리지를 구성 요소 페이지·권장 구성으로 설치·현재 설정으로 업데이트 모든 경로에서 설치하고, Windows 음성 복사만 기본 꺼짐이다. 원본의 이유(컴퓨터 전체 음성 목록 변경)는 살리고, 원본은 둘 다 꺼짐, 한국어판은 브리지가 켜져 업데이트에서도 설치됨, 피하려면 구성 요소 페이지에서 체크 해제, Windows 음성 항목은 업데이트에서 절대 실행되지 않음으로 고쳤다."}
-]

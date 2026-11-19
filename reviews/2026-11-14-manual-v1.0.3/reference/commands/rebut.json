@@ -1,8 +1,0 @@
-[
- {"ref": "reference/commands.md#claude-style-0", "action": "applied", "reason": "누르는 것이 단축키임을 밝히고, 다섯 항목 나열을 두 문장으로 나눔(한 줄에 무엇이 나오는지 별도 문장). 화면 문구 두 개는 2026-11-13 결정대로 따옴표. 'what the press found'는 원문이 더 구체화하지 않아 '눌렀을 때 찾은 결과'로 유지."},
- {"ref": "reference/commands.md#claude-style-1", "action": "applied", "reason": "주어를 사용자로 세워 '역할을 묻는 초대를 수락하려면 먼저 역할을 선택해 두어야 합니다'로 나눔. 말하는 주체는 같은 문단의 다른 문장들처럼 생략(앞 문장들도 주어 없이 '말합니다')."},
- {"ref": "reference/commands.md#gpt-style-0", "action": "applied", "reason": "claude-style-1과 함께 반영. 초대가 아니라 사용자가 역할을 선택하는 문장으로 고침."},
- {"ref": "reference/commands.md#gpt-style-1", "action": "applied", "reason": "claude-style-0과 함께 반영. 단축키임을 밝히고 화면 문구에 따옴표, 기록 단위와 출력 항목을 문장으로 분리."},
- {"ref": "reference/commands.md#gpt-context-0", "action": "applied", "reason": "turnToUnit.lua:228-233에서 finish는 실패 메시지로 끝난 경우도 기록에 넣는다. '방향을 돌린'은 실패한 시도를 빼는 것으로 들리므로 원문 'turns'(돌아서기 동작)에 맞게 '돌아서기를 시도한 최근 기록'으로 고침."},
- {"ref": "reference/commands.md#gpt-context-1", "action": "applied", "reason": "turnToUnit.lua:421-446에서 대상 없음, 이미 돌아서는 중, 사용 불가일 때는 run을 만들기 전에 반환해 기록이 없다. '단축키를 눌러 돌아서기가 시작된 최근 기록'으로 고쳐 기록 범위를 실제에 맞춤."}
-]

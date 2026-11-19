@@ -1,7 +1,0 @@
-[
-  {
-    "ref": "reference/commands.md#gpt-style-0",
-    "action": "applied",
-    "reason": "지적이 맞다. '미니맵 검색을 측정'은 목적어와 서술어 결합이 어색하다. 원문 'Measures the scanner's minimap searches on the spot where you stand'의 뜻을 살려 '지금 서 있는 곳에서 스캐너가 미니맵을 검색하는 동작을 측정합니다(버그 신고용)'로 고쳤다. 제안의 '과정' 대신 원문 searches에 가까운 '동작'을 썼고, 표의 다른 행과 맞춰 '지금 서 있는 곳'은 유지했다. tools.manual check 통과."
-  }
-]

@@ -1,9 +1,0 @@
-{
- "responses": [
-  {"ref": "windows/auction-house.md#reg-claude-0", "action": "applied", "reason": "원문 링크 글자 Interface basics를 대상 제목 대신 그대로 옮기라는 decisions.tsv 2026-11-05 결정에 따라 '인터페이스 기본'으로 바꿨다. collections.md:24와도 맞춘다.", "upstream": ""},
-  {"ref": "windows/auction-house.md#reg-claude-1", "action": "applied", "reason": "같은 결정에 따라 Windows overview, Tooltips를 '창 개요', '툴팁'으로 바꿨다. collections.md:219와 같은 표기.", "upstream": ""},
-  {"ref": "windows/auction-house.md#reg-gpt-2", "action": "applied", "reason": "reg-claude-0과 같은 곳. '인터페이스 기본'으로 함께 반영.", "upstream": ""},
-  {"ref": "windows/auction-house.md#reg-gpt-3", "action": "applied", "reason": "reg-claude-1과 같은 곳. '창 개요', '툴팁'으로 함께 반영.", "upstream": ""},
-  {"ref": "windows/auction-house.md#reg-gpt-4", "action": "applied", "reason": "원문 browse rows는 검색(Browse) 탭의 경매 결과 줄이다. '검색 줄'은 검색 입력란 줄로도 들려서 '검색 탭의 결과 줄'로 바꿨다(제안보다 짧게, 같은 뜻).", "upstream": ""}
- ]
-}

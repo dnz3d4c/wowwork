@@ -1,8 +1,0 @@
-{
-  "responses": [
-    {"ref": "basics/keybindings.md#reg-claude-0", "action": "applied", "reason": "graphBindings.lua:95-96이 GetBindingText(input, \"KEY_\")로 버튼 이름을 만들고, gs_koKR.csv에서 KEY_UP=\"위 화살표\"라 한국어 클라이언트 낭독은 \"위 화살표\"다. decisions.tsv의 한국어 사용자 전용 차이 예외에 해당해 \"단축키, 목록, 위, 막대, 위 화살표, 버튼, 1 of 2\"로 고쳤다.", "upstream": ""},
-    {"ref": "basics/keybindings.md#reg-claude-1", "action": "applied", "reason": "같은 근거(GetBindingText, KEY_UP=\"위 화살표\")로 버튼 이름 예시를 (\"Enter\", \"위 화살표\", \"Ctrl-Tab\")로 고쳤다. Enter는 한국어 클라이언트에서도 영어 그대로라 유지.", "upstream": ""},
-    {"ref": "basics/keybindings.md#reg-gpt-2", "action": "applied", "reason": "reg-claude-0과 같은 곳, 같은 수정으로 함께 반영했다.", "upstream": ""},
-    {"ref": "basics/keybindings.md#reg-gpt-3", "action": "applied", "reason": "reg-claude-1과 같은 곳, 같은 수정으로 함께 반영했다.", "upstream": ""}
-  ]
-}

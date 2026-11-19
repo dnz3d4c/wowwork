@@ -1,1 +1,0 @@
-{"findings":[{"id":"windows.lua::Extended","category":"context","severity":"major","problem":"공격대 귀속 기간이 연장된 상태를 \"확장\"으로 읽어, 콘텐츠나 기능이 확장됐다는 뜻으로 오해할 수 있다.","evidence":"`retail/socialUI.lua:760-780`에서 `instanceExtended`가 참일 때 인스턴스 이름, 난이도, 남은 시간 뒤에 `EXTENDED or L[\"Extended\"]`를 쉼표로 이어 붙인다. 따라서 이 문자열은 일반적인 확장이 아니라 귀속 기간의 연장 상태를 나타낸다.","suggestion":"연장됨"}]}

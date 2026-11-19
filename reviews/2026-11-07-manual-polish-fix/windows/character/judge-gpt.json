@@ -1,1 +1,0 @@
-{"verdicts":[{"ref":"windows/character.md#gpt-manual-editor-9","uphold":false,"final_ko":"능력치는 \"힘 142\"나 \"방어도 1500\"처럼 읽기만 하는 줄입니다.","reason":"앱 코드는 능력치 항목을 `read-only rows`이자 텍스트 컨트롤로 구현하고 있으며, 현재 번역의 “읽기만 하는 줄”이 이를 그대로 전달한다. 바로 다음 문장이 Space로 뜻을 읽는다고 명시하므로 Space 동작까지 불가능하다고 오해한다는 주장은 확인되지 않는다.","evidence_sources":["input","wowvision-ko/WowVision/camelot/character.lua:340"]}]}

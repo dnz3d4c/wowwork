@@ -1,7 +1,0 @@
-[
-  {
-    "ref": "windows/chat.md#claude-regression-0",
-    "action": "applied",
-    "reason": "같은 파일의 체크 상자 목록은 CHAT_MSG_ 계열 공식 문자열(CHAT_MSG_SAY 대화, CHAT_MSG_YELL 외침, CHAT_MSG_GUILD 길드 일반 메시지, CHAT_MSG_WHISPER 받는 귓속말, CHAT_MSG_LOOT 아이템 획득)로 체크 상자 이름을 적었다. 예제 3단계도 같은 체크 상자(받은 귓속말, gs 12984 CHAT_MSG_WHISPER 'Incoming Whisper' = '받는 귓속말')를 가리키므로 '받는 귓속말만 켭니다'로 맞췄다. '귓속말'(13125 CHAT_MSG_WHISPER_INFORM)은 보낸 귓속말이라 독자가 잘못 찾을 수 있다. 기계 검사 통과."
-  }
-]
