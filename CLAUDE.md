@@ -41,7 +41,7 @@
   - 코드 주석은 영어로 쓰고, 원본 파일의 BOM과 줄 끝을 유지한다
   - 큰 주제는 PR 전에 이슈로 원본 관리자와 먼저 상의한다
 - `ko` 브랜치를 고치면 `uv run python -m tools.installer_loc payload`로 payload(`koLoginTool.zip`)를 다시 만들고 설치 프로그램을 다시 빌드한다.
-- 게임에서 시험하는 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 브랜치를 변경하면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
+- 게임에서 시험하는 폴더는 `WoW Login Tool Korean/`(git 제외)이다. 폴더가 없으면 원본 로그인 툴 릴리스를 이 이름으로 풀고 아래 파일을 복사해 만든다. 브랜치를 변경하면 `v2/`, `data/*.ini`, `data/localization/`, 다시 빌드한 `helper/SkuLoginSense.exe`를 이 폴더에 복사한다. `data/settings.ini`는 사용자 설정이라 덮지 않는다.
 
 ## 원본 기능 유지
 

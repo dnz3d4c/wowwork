@@ -188,14 +188,6 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 
 로그인 툴 저장소의 `ko` 브랜치에 원본 `main`을 병합하고, payload와 설치 프로그램을 다시 만듭니다(`docs/builds.md` `## 다시 만드는 법`). 로그인 툴 저장소는 원본 작업 규칙을 따릅니다(`CLAUDE.md` `## WoW Login Tool`).
 
-### 5. 저장소에 없는 파일 받기
-
-아래 파일은 저장소에 없어서 이전 관리자에게 따로 받아야 합니다. 없어도 작업은 할 수 있습니다.
-
-- `wowwork\WoW Login Tool Korean\_reset-backup-20261107\pre-4.2\`: 로그인 툴 4.1 기준의 옛 한국어 작업본
-- `wowwork\WoW Login Tool Korean\`의 나머지: 로그인 툴을 게임에서 시험하는 폴더. 원본 로그인 툴을 풀고 한국어판 파일을 복사해 만듭니다. 복사할 파일은 `CLAUDE.md` `## WoW Login Tool`에 있습니다
-- `wowvision-ko\tester\`: 마지막으로 테스터에게 보낸 파일(`WowVisionInstaller.exe`, `설치_안내.txt`, `tester.zip`). `docs/builds.md` `## 다시 만드는 법`으로 다시 만들 수 있습니다
-
 ## 문서
 
 | 문서 | 내용 |
@@ -203,7 +195,7 @@ GitHub와 git에서 사용하는 용어입니다. 화면과 명령에는 아래 
 | `CLAUDE.md` | 작업 규칙(저장소 구성, 원본 새 릴리스 반영, PR, 로그인 툴, 번역 수정). AI 도구인 Claude Code용 지시 파일이지만 사람이 읽는 규칙으로도 사용합니다. 문서의 "사용자"는 관리자입니다 |
 | `docs/translation-guide.md` | 번역 규칙, 원본 새 버전 반영 명령 |
 | `docs/glossary.tsv` | 확정 용어. 테스트가 모든 번역에 적용합니다 |
-| `docs/decisions.tsv` | 지금까지의 결정과 이유 |
+| `docs/decisions.tsv` | 이전 관리자가 번역, 설명서, 설치 프로그램의 방침을 정한 결정과 이유. 날짜순으로 적혀 있습니다 |
 | `docs/builds.md` | 설치 프로그램 만들기, 테스터 배포, 설명서 배포 |
 | `docs/tester-guide.md` | 테스터용 설치 안내. 배포할 때 `설치_안내.txt`로 복사합니다 |
 | `docs/upstream-report.md` | 번역으로 고칠 수 없어 원본에 알릴 문제 |
