@@ -20,10 +20,10 @@ NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 �
 
 ## 다시 만드는 법
 
-1. koKR이나 음성 팩, 센스 리더 프록시가 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload` (koKR.zip, koVoice.zip, koLoginTool.zip, koSenseReader.zip). 센스 리더 프록시는 `korean/sense-reader-bridge/build.bat test`로 빌드와 오프라인 테스트를 거친다(VS 2022 Build Tools). 설치 프로그램 저장소를 새로 받으면 `git submodule update --init korean`이 필요하다. 음성 팩 자체는 `uv run python -m tools.voice_pack build`로 다시 녹음한다(Vocalizer Expressive Yuna, SAPI COM)
-2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더에서 `build.ps1 -RunTests` (PowerShell 7, `dotnet`이 PATH에 있어야 한다)
+1. koKR이나 음성 팩, 센스 리더 프록시가 바뀌면 payload를 다시 만든다: `uv run python -m tools.installer_loc payload` (koKR.zip, koVoice.zip, koLoginTool.zip, koSenseReader.zip). payload 명령이 센스 리더 프록시의 빌드와 오프라인 테스트(`korean/sense-reader-bridge/build.bat test`)도 함께 실행한다(VS 2022 Build Tools 필요). 설치 프로그램 저장소를 새로 받으면 `git submodule update --init korean`이 필요하다. 음성 팩 자체는 `uv run python -m tools.voice_pack build`로 다시 녹음한다(Vocalizer Expressive Yuna, SAPI COM)
+2. 설치 프로그램 빌드와 원본 자체 검사: wowvision-installer 폴더의 PowerShell에서 `.\build.ps1 -RunTests` (PowerShell 7, `dotnet`이 PATH에 있어야 한다)
 3. 실제 흐름 검사(실제 릴리스를 내려받는다): `WowVisionSelfTest\bin\Release\net48\WowVisionSelfTest.exe fullinstall`(2단계가 빌드한다) — 안정판 설치 뒤와 베타 전환 뒤 모든 클라이언트에 koKR이 있는지 확인한다
-4. 테스터 폴더(`wowvision-ko/tester/`)에 `dist\WowVisionInstaller.exe`(2단계가 만든다)와 `docs/tester-guide.md`를 `설치_안내.txt`로 복사하고, 두 파일을 `tester.zip`으로 묶는다(`7z a -tzip -mcu=on tester.zip WowVisionInstaller.exe 설치_안내.txt`). 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지)
+4. 테스터 폴더를 교체한다. 먼저 `uv run pytest -q tests/test_tester_guide.py`로 안내가 설치 프로그램의 모든 옵션을 담고 있는지 확인한다(2026-11-06 NVDA 브리지 누락의 재발 방지). 그다음 `wowvision-installer\dist\WowVisionInstaller.exe`(2단계가 만든다)와 `docs/tester-guide.md`를 `wowvision-ko\tester\`에 복사한다. 안내 파일의 이름은 `설치_안내.txt`로 한다. 마지막으로 tester 폴더에서 `7z a -tzip -mcu=on tester.zip WowVisionInstaller.exe 설치_안내.txt`로 두 파일을 묶는다.
 
 ## 검증 이력
 
@@ -68,7 +68,7 @@ NVDA 브리지를 설치할 때마다 바로 뒤에 센스 리더 프록시를 �
 
 ## 한국어 설명서 배포
 
-- 주소: https://dnz3d4c.github.io/WowVision/user/ko/getting-started/introduction.html (`dnz3d4c/WowVision`의 GitHub Pages, Actions 방식). 저장소에는 사용자 지정 도메인이 없다(이전 관리자 계정에서는 계정 사이트의 도메인으로 넘어갔다). 저장소를 다른 계정으로 넘기면 주소가 `<새 계정>.github.io/WowVision/`으로 바뀌므로 테스터 안내의 주소도 함께 업데이트한다. 설치 프로그램에는 넣지 않는다(`docs/decisions.tsv` 2026-11-06).
+- 주소: https://dnz3d4c.github.io/WowVision/user/ko/getting-started/introduction.html (`dnz3d4c/WowVision`의 GitHub Pages, Actions 방식). 저장소에는 사용자 지정 도메인이 없다. 저장소를 다른 계정으로 넘기면 주소가 `<새 계정>.github.io/WowVision/`으로 바뀌므로 테스터 안내의 주소도 함께 업데이트한다. 설치 프로그램에는 넣지 않는다(`docs/decisions.tsv` 2026-11-06).
 - 2026-11-19부터 `dnz3d4c/WowVision`은 원본의 GitHub 포크다(이전 비포크 복제본은 `WowVision-old`로 보관). Pages 설정과 `github-pages` 환경의 배포 브랜치(ko, main)를 포크로 옮겼다. 포크의 Actions는 저장소 Actions 탭의 활성화 버튼으로 한 번 켜야 워크플로가 등록된다. 켜기 전에는 `gh workflow run`이 404로 실패한다.
 - ko 브랜치에 push해도 자동 배포되지 않는다(원본 `docs.yml`은 main push에만 돈다). 설명서를 고친 뒤 `gh workflow run docs.yml -R dnz3d4c/WowVision --ref ko`로 다시 배포한다.
 - `beta.yml`(beta 프리릴리스 생성)과 `release.yml`(V* 태그 push 때 릴리스)은 꺼 둔다. `docs.yml`은 ko 배포에 쓰므로 켜 두는데, main에 `docs/`가 바뀐 커밋이 push되면 영어판으로 Pages를 덮어쓴다. 포크의 main은 원본에 맞출 필요가 없다(PR 브랜치는 `upstream/main`에서 딴다). 맞출 때는 `gh workflow disable docs.yml`로 끄고 push한 뒤, 다시 켜고 ko로 한 번 배포한다. 원본 태그(V*)는 push하지 않는다.

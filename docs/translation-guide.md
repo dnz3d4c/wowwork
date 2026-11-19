@@ -19,12 +19,13 @@ if not L then return end
 
 ## upstream 업데이트 절차
 
-1. 원본 변경을 병합합니다: `git -C ../wowvision-ko/vision-locale pull upstream main`. 앱 코드 확인용으로 `git -C ../wowvision-ko/WowVision pull upstream main`도 실행합니다.
-2. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다.
-3. `cache/missing.tsv`의 `ko` 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
-4. `uv run python -m tools.game_terms`로 용어 목록을 업데이트하고 `uv run pytest -q`로 검증합니다. 새로 채운 번역은 반영 전에 검수합니다. 1.0 때의 검수 방식은 `docs/review-process.md`(기록)에 있습니다.
-5. 한국어 값이 바뀐 키가 있으면 2·3단계의 `tools.sync_locale`이 한국어 설명서의 화면 문구 인용도 새 값에 맞춥니다(평가 반영이든 영어 값이 바뀐 키의 재번역이든 같습니다). 바꾼 값 바로 뒤의 조사(을/를, 이/가, 은/는, 와/과, 으로/로)도 새 값의 받침에 맞춥니다. "판단 필요"로 나온 곳은 영어 설명서와 대조해 직접 고칩니다. 그다음 `uv run pytest -q`로 검증합니다(설명서 검사 `tools.manual check`가 포함되어 있습니다).
-6. 설치 프로그램에 넣는 koKR이 낡으면 `tests/test_installer_loc.py`가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 `docs/builds.md` `## 다시 만드는 법`대로 빌드합니다.
+1. 원본을 받습니다: `git -C ../wowvision-ko/WowVision fetch upstream --tags`와 `git -C ../wowvision-ko/vision-locale fetch upstream`.
+2. 따라갈 원본 릴리스를 병합합니다. WowVision `ko`에는 릴리스 태그를 병합합니다(`git -C ../wowvision-ko/WowVision merge <태그>`). vision-locale `main`에는 그 태그의 `locale` 서브모듈 커밋을 병합합니다. 커밋은 `git -C ../wowvision-ko/WowVision ls-tree <태그> locale`이 보여 줍니다. 그다음 `CLAUDE.md` `### PR이 병합된 뒤` 2단계대로 원본 테스트를 돌립니다.
+3. `uv run python -m tools.game_terms`로 게임 용어 목록을 업데이트합니다. 번역할 때 이 목록의 공식 용어를 씁니다.
+4. `uv run python -m tools.sync_locale`을 실행합니다. 번역이 없는 키가 있으면 파일을 쓰지 않고 `cache/missing.tsv`를 만듭니다. 키는 그대로인데 영어 값이 바뀐 키도 `old_en` 열과 함께 이 목록에 올라옵니다. 비교 기준은 마지막 동기화 때의 영어 값(`state/enUS.tsv`)입니다.
+5. `cache/missing.tsv`의 `ko` 열을 채우고 검수한 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`를 실행합니다. 줄 순서와 주석은 enUS를 따르고, 원문에서 사라진 키는 빠지며, `modules.xml`은 enUS 것을 복사합니다. 1.0 때의 검수 방식은 `docs/review-process.md`(기록)에 있습니다. 그다음 `uv run pytest -q`로 검증합니다.
+6. 한국어 값이 바뀐 키가 있으면 4·5단계의 `tools.sync_locale`이 한국어 설명서의 화면 문구 인용도 새 값에 맞춥니다(평가 반영이든 영어 값이 바뀐 키의 재번역이든 같습니다). 바꾼 값 바로 뒤의 조사(을/를, 이/가, 은/는, 와/과, 으로/로)도 새 값의 받침에 맞춥니다. "판단 필요"로 나온 곳은 영어 설명서와 대조해 직접 고칩니다. 그다음 `uv run pytest -q`로 검증합니다(설명서 검사 `tools.manual check`가 포함되어 있습니다).
+7. 설치 프로그램에 넣는 koKR이 낡으면 `tests/test_installer_loc.py`가 실패합니다. `uv run python -m tools.installer_loc payload`로 다시 만들고 `docs/builds.md` `## 다시 만드는 법`대로 빌드합니다.
 
 ## 서식 지정자
 
@@ -100,14 +101,13 @@ if not L then return end
 
 위 `## upstream 업데이트 절차`로 문자열을 먼저 맞춘 다음, 원문이 바뀐 파일만 바뀐 곳을 번역합니다. 파일 전체를 다시 번역하지 않습니다(`docs/decisions.tsv` 2026-11-08).
 
-1. `uv run python -m tools.manual diff <상대경로>`로 바뀐 영어 원문을 봅니다.
-2. 바뀐 곳만 이 문서의 규칙대로 번역합니다.
-3. `uv run python -m tools.manual check`로 구조와 낱말을 검사합니다.
-4. WowVision `ko`에 커밋하고 push한 뒤 설명서를 배포합니다(`docs/builds.md` `## 한국어 설명서 배포`).
+1. 바뀐 영어 설명서 파일을 찾습니다: `git -C ../wowvision-ko/WowVision diff --stat <이전 태그> <새 태그> -- docs/src/user/en`.
+2. 파일마다 `uv run python -m tools.manual diff <상대경로>`로 바뀐 영어 원문을 봅니다. 상대경로는 `docs/src/user/en` 기준입니다(예: `basics/interface.md`).
+3. 바뀐 곳만 이 문서의 규칙대로 번역하고, 파일 첫 줄의 `<!-- source: ... @ <커밋> -->`을 새 원문 커밋으로 바꿉니다. 바꾸지 않으면 `manual diff`가 같은 차이를 계속 보여 줍니다.
+4. `uv run python -m tools.manual check`로 구조와 낱말을 검사합니다.
+5. WowVision `ko`에 커밋하고 push한 뒤 설명서를 배포합니다(`docs/builds.md` `## 한국어 설명서 배포`).
 
 1.0 때는 이 단계를 Claude Code Workflow(`docs/archive/review-pipeline/tools-review/workflows/manual.js`)로 번역과 검수까지 돌렸습니다. 그 스크립트는 기록으로만 남아 있습니다.
-
-남은 일(2026-11-08 실측): V1.0.1(`2c7d4cb`)에서 바뀐 영어 설명서는 15개 파일입니다(`git -C ../wowvision-ko/WowVision diff --stat 397ffc3 2c7d4cb -- docs/src/user/en`).
 
 ## 낱말 표
 
@@ -121,7 +121,7 @@ if not L then return end
 | 뜨다, 떠 있다(프로그램이) | 실행되다, 실행된 |
 | 배정 | 할당 |
 | 한 단계 뒤로(메뉴나 화면 계층) | 이전 단계로 |
-| 나뉘다(구분의 뜻) | 구분하다 |
+| 나뉘다(구분의 뜻) | 구분되다, 구분하다 |
 | 들어가다(포함의 뜻) | 포함되다 |
 | 링크를 켜다 | 링크를 클릭하다 |
 | 설치기(installer) | 설치 프로그램 |

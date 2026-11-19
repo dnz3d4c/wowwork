@@ -16,6 +16,6 @@
 - `guard.py`: 판정 근거가 원문, 코드, 용어집 같은 1차 자료인지 검사합니다.
 - `audit.py`: 평가자가 격리 폴더 밖의 파일에 접근했는지 기록을 감사합니다.
 
-`tests/`는 옮기기 전에 이 코드를 검사하던 테스트입니다. `uv run pytest`는 이 폴더를 실행하지 않습니다.
+이 폴더 바로 아래의 `tests/`는 옮기기 전에 이 코드를 검사하던 테스트입니다. `uv run pytest`는 이 폴더를 실행하지 않습니다.
 
 다시 사용하려면 `tools/` 아래로 옮기고, 경로와 평가자 실행 방식을 자기 환경에 맞게 고칩니다. 함께 지운 하위 명령(`tools.installer_loc batch`, `tools.logintool_loc export·decide·sandbox`)은 옮기기 직전 커밋 `0b39d28^`에서 볼 수 있습니다.

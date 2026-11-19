@@ -18,7 +18,7 @@ WowVision 한국어판을 만드는 작업 저장소입니다. 번역 도구, �
 
 ## 넘겨받는 순서
 
-1번과 2번은 저장소를 넘겨받은 직후에 합니다. 3번부터는 아래 `## 설치 환경`과 `## 처음 받기`를 끝낸 뒤에 합니다.
+1번은 저장소를 넘겨받은 직후에 합니다. 2번은 `## 설치 환경`의 GitHub CLI를 설치하고 로그인한 뒤에 합니다. 3번부터는 `## 처음 받기`까지 끝낸 뒤에 합니다.
 
 ### 1. 저장소 이전
 
@@ -62,7 +62,7 @@ GitHub의 Transfer ownership으로 저장소 6개를 넘겨받습니다. 위 표
 - WowVision `ko`: 원본 태그 `V1.0.4`
 - vision-locale `main`: 원본 커밋 `3172cd5`(V1.0.4의 `locale` 서브모듈이 가리키는 커밋)
 
-절차는 `CLAUDE.md` `### PR이 병합된 뒤` 2~5단계입니다. 원본 병합과 테스트, 새 문자열 번역, payload(설치 프로그램에 넣는 한국어 파일 묶음)와 설치 프로그램 빌드, 설명서 배포, 계획서 현황판 업데이트 순서입니다. 영어 설명서가 바뀐 쪽을 따라가는 순서는 `docs/translation-guide.md` `### 원본이 바뀌었을 때`에 있습니다.
+명령은 `docs/translation-guide.md` `## upstream 업데이트 절차`에 있고, 전체 순서는 `CLAUDE.md` `### PR이 병합된 뒤` 2~5단계입니다. 원본 병합과 테스트, 새 문자열 번역, payload(설치 프로그램에 넣는 한국어 파일 묶음)와 설치 프로그램 빌드, 설명서 배포, 계획서 현황판 업데이트 순서입니다. 영어 설명서가 바뀐 쪽을 따라가는 순서는 `docs/translation-guide.md` `### 원본이 바뀌었을 때`에 있습니다.
 
 1.0 때는 번역마다 Claude와 GPT로 교차 검수했습니다(`docs/review-process.md`). 그 도구는 기록으로만 남아 있으니, 검수 방식은 넘겨받는 사람이 정합니다. 어떤 방식이든 `uv run pytest -q`(확정 용어집 검사 포함)는 통과해야 합니다.
 
@@ -89,7 +89,7 @@ Windows 기준입니다. 필요한 때를 기준으로 구분했습니다.
 | Git, [GitHub CLI](https://cli.github.com/)(`gh`) | 항상 | 복제, 원본 PR, 설명서 배포, PR 브랜치 정리. 설치 뒤 `gh auth login`으로 로그인합니다 |
 | [uv](https://docs.astral.sh/uv/)와 Python 3.14 | 항상 | 이 저장소의 도구와 테스트 |
 | LuaJIT | 원본 병합 | WowVision 자체 테스트(`luajit tools/headless-tests.lua`). 공식 사이트는 소스만 배포하므로 Windows에서는 scoop(`scoop install luajit`) 같은 패키지 관리자로 설치합니다 |
-| .NET SDK, PowerShell 7 | payload와 설치 프로그램 빌드 | 설치 프로그램 빌드와 자체 검사(`build.ps1 -RunTests`), 로그인 툴 도우미 빌드. `dotnet`이 PATH에 있어야 합니다 |
+| .NET SDK, PowerShell 7 | payload와 설치 프로그램 빌드 | 설치 프로그램 빌드와 자체 검사(`.\build.ps1 -RunTests`), 로그인 툴 도우미 빌드. `dotnet`이 PATH에 있어야 합니다 |
 | Visual Studio 2022 Build Tools(C++) | payload와 설치 프로그램 빌드 | 센스 리더 연결 DLL 빌드(`korean\sense-reader-bridge\build.bat test`). payload를 만들 때 함께 실행됩니다 |
 | 7-Zip | 테스터 배포 | 테스터 배포 파일 `tester.zip` |
 | Vocalizer Expressive 음성 Yuna(SAPI), ffmpeg | 음성 팩 변경 | 한국어 음성 팩 녹음과 길이 측정(`tools/voice_pack.py`) |
@@ -122,6 +122,10 @@ Windows 기준입니다. 필요한 때를 기준으로 구분했습니다.
     git -C WowVision remote add upstream https://github.com/wow-vision/WowVision.git
     git -C wowvision-installer remote add upstream https://github.com/wow-vision/wowvision-installer.git
     git -C Sku-WoW-Addon-TBC remote add upstream https://github.com/Sku75/Sku-WoW-Addon-TBC.git
+    git -C vision-locale fetch upstream
+    git -C WowVision fetch upstream --tags
+    git -C wowvision-installer fetch upstream
+    git -C Sku-WoW-Addon-TBC fetch upstream
 
 WowVision 자체 테스트를 돌리기 전에는 WowVision 폴더에서 `luajit tools/wownav-pack.lua`를 실행합니다. 이유는 `CLAUDE.md` `### PR이 병합된 뒤` 2단계에 있습니다.
 
@@ -153,7 +157,7 @@ WowVision 자체 테스트를 돌리기 전에는 WowVision 폴더에서 `luajit
 |------|----------------|
 | 원본에 생긴 새 문자열 찾기와 번역 반영 | `uv run python -m tools.sync_locale`. 번역이 없는 키는 `cache/missing.tsv`에 모이므로, ko 열을 채운 뒤 `uv run python -m tools.sync_locale cache/missing.tsv`로 반영합니다 |
 | koKR 번역 수정 | `tools.sync_locale`로만 수정(`CLAUDE.md` `## 번역을 고칠 때`) |
-| 영어 설명서에서 바뀐 곳 보기 | `uv run python -m tools.manual diff <상대경로>` |
+| 영어 설명서에서 바뀐 곳 보기 | `uv run python -m tools.manual diff <상대경로>`. 상대경로는 WowVision의 `docs/src/user/en` 기준입니다 |
 | 설치 프로그램 payload 다시 만들기 | `uv run python -m tools.installer_loc payload` |
 | 설치 프로그램 빌드부터 테스터 배포까지 | `docs/builds.md` `## 다시 만드는 법` |
 | 병합된 원본 PR의 브랜치 정리 | `uv run python -m tools.pr_cleanup` |

@@ -1,6 +1,6 @@
 # wowwork: WowVision 한국어화 작업 저장소
 
-작업 대상은 복제 저장소 3개다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
+작업 대상은 복제 저장소 3개와 로그인 툴 저장소(아래 `## WoW Login Tool`)다(`../wowvision-ko/vision-locale`, `../wowvision-ko/wowvision-installer`, `../wowvision-ko/WowVision`). 한국어 작업은 `ko` 브랜치(vision-locale은 `main`)에 둔다. 이유는 `docs/builds.md` `## 원본 워크플로 주의`.
 
 새로 만드는 한국어판 전용 기능은 wowvision-installer의 서브모듈 `korean`(공개 `dnz3d4c/wowvision-korean`, `main` 브랜치)에 둔다. 원본 파일에는 호출 줄과 csproj 포함 줄만 더한다. 구성과 센스 리더 연결: `korean/README.md`(2026-11-14 사용자 지시).
 
@@ -14,7 +14,7 @@
 ### PR이 병합된 뒤
 
 1. `uv run python -m tools.pr_cleanup`을 실행해서, 병합된 PR의 머리 커밋에 포함된 브랜치를 origin·로컬에서 지운다(2026-11-09 사용자 결정: 묻지 않고 지운다). `남김:` 줄(병합 없이 닫힘, 병합 뒤 새 커밋)은 사용자에게 보고하고 확인을 받는다. 이 도구가 지우지 않은 브랜치를 지울 때는 지금처럼 확인을 받는다.
-2. vision-locale `main`과 WowVision `ko`에 원본 main을 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다. 그 전에 WowVision에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행한다. 테스트는 git 밖의 생성물 `mapdata/WowNavPacked/`를 읽어서, 묶음이 낡으면 WowNav 경로 테스트가 실패한다(2026-11-14 V1.0.3: 7건 실패, 다시 묶은 뒤 1016개 통과). luajit이 결과 없이 세그폴트(종료 코드 139)로 끝나면 다시 돌린다(같은 날 세 번 중 두 번).
+2. 따라갈 원본 릴리스를 병합하고 원본 `luajit tools/headless-tests.lua`를 돌린다. WowVision `ko`에는 원본 릴리스 태그(예: `V1.0.4`)를, vision-locale `main`에는 그 태그의 `locale` 서브모듈이 가리키는 커밋을 병합한다(2026-11-19 사용자 결정: 원본 규약대로 릴리스 기준). 명령은 `docs/translation-guide.md` `## upstream 업데이트 절차`. 그 전에 WowVision에서 `git submodule update --init`과 `luajit tools/wownav-pack.lua`를 실행한다. 테스트는 git 밖의 생성물 `mapdata/WowNavPacked/`를 읽어서, 묶음이 낡으면 WowNav 경로 테스트가 실패한다(2026-11-14 V1.0.3: 7건 실패, 다시 묶은 뒤 1016개 통과). luajit이 결과 없이 세그폴트(종료 코드 139)로 끝나면 다시 돌린다(같은 날 세 번 중 두 번).
 3. `uv run python -m tools.sync_locale`로 새 키를 찾아 번역하고 검수한다. 1.0 때의 검수 방식은 `docs/review-process.md`(기록)에 있다. 설명서가 바뀌었으면 설명서도 따라간다.
 4. payload, 설치 프로그램, 설명서 배포: `docs/builds.md`.
 5. 계획서 현황판을 업데이트한다.
