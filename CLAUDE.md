@@ -71,7 +71,7 @@
 ## 검증
 
 - 커밋 전에 `uv run pytest -q`와 `uv run ruff check tools tests`가 통과해야 한다.
-- 저장소의 한국어 문서(README, CLAUDE.md, 스킬, `docs/*.md`, `reviews/README.md`)는 앞에 나온 명사를 "그 X"로 다시 받지 않는다. 명사를 직접 쓰거나 생략한다. "~것입니다" 결말과 해요체도 쓰지 않는다. `tests/test_docs_style.py`가 검사한다.
+- 저장소의 한국어 문서(README, CLAUDE.md, 스킬, `docs/*.md`, `reviews/README.md`)는 앞에 나온 명사를 "그 X"나 "해당 X"로 다시 받지 않는다. 명사를 직접 쓰거나 생략한다. "~것입니다" 결말과 해요체도 쓰지 않는다. `tests/test_docs_style.py`가 검사한다.
 - 설치 프로그램을 고치면 wowvision-installer 폴더에서 `.\build.ps1 -RunTests`가 통과해야 한다(`docs/builds.md` `## 다시 만드는 법`).
 
 ## 문서

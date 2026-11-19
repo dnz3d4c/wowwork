@@ -20,15 +20,16 @@ DOCS = sorted(
 
 
 def test_flags_demonstrative_and_filler_endings() -> None:
-    text = "`pwsh`를 입력하면 그 폴더에서 창이 열립니다. 버튼을 누르지 않은 것입니다. 확인하세요.\n"
+    text = "`pwsh`를 입력하면 그 폴더에서 창이 열립니다. 해당 파일을 엽니다. 버튼을 누르지 않은 것입니다. 확인하세요.\n"
     problems = "\n".join(doc_style_problems(text))
     assert "그 폴더에서" in problems
+    assert "해당 파일을" in problems
     assert "것입니다" in problems
     assert "확인하세요" in problems
 
 
 def test_ignores_code_quotes_and_this() -> None:
-    text = '이 저장소의 `그 값`과 "그 창"은 인용입니다. 그대로 두고, 그다음 실행합니다.\n'
+    text = '이 저장소의 `그 값`과 "그 창"은 인용입니다. 그대로 두고, 그다음 실행합니다. 이 규칙에 해당하지 않습니다.\n'
     assert doc_style_problems(text) == []
 
 
