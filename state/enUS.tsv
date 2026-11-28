@@ -393,6 +393,7 @@ monitors.lua	Aura Monitor	Aura Monitor
 monitors.lua	Aura Name	Aura Name
 monitors.lua	Aura Removed	Aura Removed
 monitors.lua	Aura State Rule	Aura State Rule
+monitors.lua	Brass	Brass
 monitors.lua	Bundle Speech	Bundle Speech
 monitors.lua	Charge Gained	Charge Gained
 monitors.lua	Charge Lost	Charge Lost
@@ -409,9 +410,11 @@ monitors.lua	Critical health	Critical health
 monitors.lua	Dead	Dead
 monitors.lua	Event	Event
 monitors.lua	Event Rule	Event Rule
+monitors.lua	Every %d%%	Every %d%%
 monitors.lua	Expiring	Expiring
 monitors.lua	Expiry Threshold (seconds)	Expiry Threshold (seconds)
 monitors.lua	Filter	Filter
+monitors.lua	Glass	Glass
 monitors.lua	Has Charges	Has Charges
 monitors.lua	Health Changed	Health Changed
 monitors.lua	Health States	Health States
@@ -425,18 +428,24 @@ monitors.lua	Low Power (%)	Low Power (%)
 monitors.lua	Low power	Low power
 monitors.lua	Max Charges	Max Charges
 monitors.lua	Message Template	Message Template
+monitors.lua	Minimum Time Between Messages (seconds)	Minimum Time Between Messages (seconds)
 monitors.lua	Missing	Missing
 monitors.lua	Monitors	Monitors
 monitors.lua	Monitors off	Monitors off
 monitors.lua	Monitors on	Monitors on
+monitors.lua	Name and Number (Mana 40)	Name and Number (Mana 40)
+monitors.lua	Name and Percent (Mana 40%)	Name and Percent (Mana 40%)
+monitors.lua	Name and Tenths (Mana 4)	Name and Tenths (Mana 4)
 monitors.lua	Never	Never
 monitors.lua	No essential or utility spells	No essential or utility spells
 monitors.lua	No proc	No proc
 monitors.lua	No spells with cooldowns	No spells with cooldowns
+monitors.lua	No steps yet	No steps yet
 monitors.lua	No tracked auras	No tracked auras
 monitors.lua	No tracked buffs or bars	No tracked buffs or bars
 monitors.lua	No tracked cooldowns	No tracked cooldowns
 monitors.lua	Not Found	Not Found
+monitors.lua	Number Only (40)	Number Only (40)
 monitors.lua	On Cooldown	On Cooldown
 monitors.lua	One Decimal Timer	One Decimal Timer
 monitors.lua	Only Changes	Only Changes
@@ -444,17 +453,24 @@ monitors.lua	Outputs	Outputs
 monitors.lua	Pandemic	Pandemic
 monitors.lua	Pandemic Window	Pandemic Window
 monitors.lua	Pandemic Window (%)	Pandemic Window (%)
+monitors.lua	Percent Only (40%)	Percent Only (40%)
 monitors.lua	Power Changed	Power Changed
 monitors.lua	Power States	Power States
 monitors.lua	Proc	Proc
 monitors.lua	Proc Ended	Proc Ended
 monitors.lua	Ready	Ready
 monitors.lua	Remaining	Remaining
+monitors.lua	Resource	Resource
+monitors.lua	Rising Notes	Rising Notes
 monitors.lua	Rules	Rules
 monitors.lua	Sound	Sound
+monitors.lua	Sound on Every Step	Sound on Every Step
+monitors.lua	Speak Main Resource	Speak Main Resource
 monitors.lua	Speak Tracked Auras	Speak Tracked Auras
 monitors.lua	Speak Tracked Cooldowns	Speak Tracked Cooldowns
+monitors.lua	Speech Format	Speech Format
 monitors.lua	Speech Separator	Speech Separator
+monitors.lua	Speech on Every Step	Speech on Every Step
 monitors.lua	Spell	Spell
 monitors.lua	Spell Cooldown Rule	Spell Cooldown Rule
 monitors.lua	Spell Cooldowns	Spell Cooldowns
@@ -465,11 +481,17 @@ monitors.lua	Stagger Delay (seconds)	Stagger Delay (seconds)
 monitors.lua	Stagger Sounds	Stagger Sounds
 monitors.lua	Start Time	Start Time
 monitors.lua	State Rule	State Rule
+monitors.lua	Step Sounds	Step Sounds
+monitors.lua	Steps	Steps
+monitors.lua	Steps (Bars)	Steps (Bars)
+monitors.lua	Stuck	Stuck
 monitors.lua	Sufficient	Sufficient
 monitors.lua	Target	Target
+monitors.lua	Tenths Only (4)	Tenths Only (4)
 monitors.lua	Toggle All Monitors	Toggle All Monitors
 monitors.lua	Units	Units
 monitors.lua	Voice Path	Voice Path
+monitors.lua	Water Drop	Water Drop
 monitors.lua	charges	charges
 navigation.lua	 (%d)	 (%d)
 navigation.lua	 (choose the floor)	 (choose the floor)
@@ -571,6 +593,7 @@ navigation.lua	Forget Visited Waypoints	Forget Visited Waypoints
 navigation.lua	Friendly nameplates are hidden here	Friendly nameplates are hidden here
 navigation.lua	Game Version	Game Version
 navigation.lua	Group	Group
+navigation.lua	Guess the Start From the Last Height	Guess the Start From the Last Height
 navigation.lua	Height Tolerance of a Floor (Yards)	Height Tolerance of a Floor (Yards)
 navigation.lua	Horde arrival in Valanaar Sanctuary	Horde arrival in Valanaar Sanctuary
 navigation.lua	Ignore Jumps	Ignore Jumps
@@ -1064,14 +1087,17 @@ targeting.lua	Yours	Yours
 targeting.lua	after combat	after combat
 targeting.lua	default	default
 targeting.lua	not available	not available
+ui.lua	Accept Trade	Accept Trade
 ui.lua	Accepted Quest	Accepted Quest
 ui.lua	Active	Active
 ui.lua	Add	Add
 ui.lua	All Action Bars	All Action Bars
 ui.lua	All windows closed	All windows closed
+ui.lua	Already accepted, waiting for	Already accepted, waiting for
 ui.lua	Already set:	Already set:
 ui.lua	Ammo	Ammo
 ui.lua	Announce Crowd Control	Announce Crowd Control
+ui.lua	Answer the popup about the enchant first	Answer the popup about the enchant first
 ui.lua	Applications	Applications
 ui.lua	Apply Recommended Game Settings	Apply Recommended Game Settings
 ui.lua	Attacking You	Attacking You
@@ -1093,6 +1119,7 @@ ui.lua	Auto Loot	Auto Loot
 ui.lua	Available	Available
 ui.lua	Available Quest	Available Quest
 ui.lua	Back	Back
+ui.lua	Bag layout changed, Enter may pick up the wrong item	Bag layout changed, Enter may pick up the wrong item
 ui.lua	Bar	Bar
 ui.lua	Blue	Blue
 ui.lua	Buffer Group	Buffer Group
@@ -1115,6 +1142,7 @@ ui.lua	Complete	Complete
 ui.lua	Context Menu	Context Menu
 ui.lua	Copper	Copper
 ui.lua	Copy	Copy
+ui.lua	CopyName	Copy
 ui.lua	Could not set:	Could not set:
 ui.lua	Count Elite Enemies Only	Count Elite Enemies Only
 ui.lua	Count Enemies	Count Enemies
@@ -1122,6 +1150,7 @@ ui.lua	Crowd Control Ended Alert	Crowd Control Ended Alert
 ui.lua	Current	Current
 ui.lua	Curse	Curse
 ui.lua	Custom	Custom
+ui.lua	Death	Death
 ui.lua	Default	Default
 ui.lua	Details	Details
 ui.lua	Disable	Disable
@@ -1140,6 +1169,7 @@ ui.lua	Enchant	Enchant
 ui.lua	Enemy Count Alert	Enemy Count Alert
 ui.lua	Enrage	Enrage
 ui.lua	Equipment	Equipment
+ui.lua	Escape and the Close All Windows Key	Escape and the Close All Windows Key
 ui.lua	Expand/Collapse	Expand/Collapse
 ui.lua	Expanded	Expanded
 ui.lua	Expiration Time	Expiration Time
@@ -1160,6 +1190,7 @@ ui.lua	Gold	Gold
 ui.lua	Goodbye	Goodbye
 ui.lua	Green	Green
 ui.lua	Grey	Grey
+ui.lua	Group Invitation	Group Invitation
 ui.lua	Hands	Hands
 ui.lua	Head	Head
 ui.lua	Icon	Icon
@@ -1189,6 +1220,7 @@ ui.lua	Main Hand	Main Hand
 ui.lua	Max Charges	Max Charges
 ui.lua	Maximum	Maximum
 ui.lua	Menu	Menu
+ui.lua	Menus in Combat	Menus in Combat
 ui.lua	Meta	Meta
 ui.lua	Minimum	Minimum
 ui.lua	Mounted	Mounted
@@ -1199,9 +1231,13 @@ ui.lua	Neck	Neck
 ui.lua	New	New
 ui.lua	New Buffer	New Buffer
 ui.lua	Next Page	Next Page
+ui.lua	No menu open, Escape gives the keys back	No menu open, Escape gives the keys back
 ui.lua	No object configured	No object configured
+ui.lua	No other window	No other window
 ui.lua	No results	No results
+ui.lua	No trade open	No trade open
 ui.lua	None	None
+ui.lua	Not available in combat	Not available in combat
 ui.lua	Not implemented yet	Not implemented yet
 ui.lua	Not in combat: try again after the fight	Not in combat: try again after the fight
 ui.lua	Number	Number
@@ -1210,12 +1246,16 @@ ui.lua	Objectives	Objectives
 ui.lua	Objects	Objects
 ui.lua	Off Hand	Off Hand
 ui.lua	Offscreen Nameplates	Offscreen Nameplates
+ui.lua	Only the Close All Windows Key	Only the Close All Windows Key
 ui.lua	Options	Options
 ui.lua	Orange	Orange
 ui.lua	Page	Page
 ui.lua	Panel	Panel
 ui.lua	Parameters	Parameters
 ui.lua	Parameters must identify a single object	Parameters must identify a single object
+ui.lua	Pending	Pending
+ui.lua	Pending Windows	Pending Windows
+ui.lua	Pending test	Pending test
 ui.lua	Percent	Percent
 ui.lua	Place Item Here	Place Item Here
 ui.lua	Points	Points
@@ -1242,6 +1282,7 @@ ui.lua	Replace	Replace
 ui.lua	Replace?	Replace?
 ui.lua	Resistances	Resistances
 ui.lua	Results	Results
+ui.lua	Resurrection	Resurrection
 ui.lua	Reward	Reward
 ui.lua	Rewards	Rewards
 ui.lua	Save	Save
@@ -1249,6 +1290,7 @@ ui.lua	Scope	Scope
 ui.lua	Scroll Down	Scroll Down
 ui.lua	Scroll Up	Scroll Up
 ui.lua	Search	Search
+ui.lua	Security confirmation WowVision cannot reach: use the mouse, or cancel and trade again	Security confirmation WowVision cannot reach: use the mouse, or cancel and trade again
 ui.lua	Select Buffer Type	Select Buffer Type
 ui.lua	Select Type	Select Type
 ui.lua	Separator	Separator
@@ -1275,8 +1317,15 @@ ui.lua	Tabs	Tabs
 ui.lua	Talents	Talents
 ui.lua	Template	Template
 ui.lua	Text	Text
+ui.lua	The game asks for a security confirmation for this mail that WowVision cannot reach	The game asks for a security confirmation for this mail that WowVision cannot reach
 ui.lua	Time Mod	Time Mod
+ui.lua	To answer, press	To answer, press
+ui.lua	To pick up items in a fight, open your bags once more out of combat	To pick up items in a fight, open your bags once more out of combat
+ui.lua	To read, press	To read, press
+ui.lua	To use items, press	To use items, press
 ui.lua	Trade	Trade
+ui.lua	Trade accepted	Trade accepted
+ui.lua	Trade cannot be accepted now	Trade cannot be accepted now
 ui.lua	Trinket	Trinket
 ui.lua	Turn on enemy nameplates to count enemies	Turn on enemy nameplates to count enemies
 ui.lua	Type	Type
@@ -1287,6 +1336,7 @@ ui.lua	Unit	Unit
 ui.lua	Unlearn	Unlearn
 ui.lua	Voice Pack	Voice Pack
 ui.lua	Waist	Waist
+ui.lua	While this test popup is open, an Escape that goes to the game reports a blocked action	While this test popup is open, an Escape that goes to the game reports a blocked action
 ui.lua	White	White
 ui.lua	Windows	Windows
 ui.lua	With Spell Names	With Spell Names
@@ -1295,11 +1345,13 @@ ui.lua	WowVision	WowVision
 ui.lua	WowVision Sound Channel	WowVision Sound Channel
 ui.lua	Wrist	Wrist
 ui.lua	Yellow	Yellow
+ui.lua	changed the offer	changed the offer
 ui.lua	combat ended	combat ended
 ui.lua	combat started	combat started
 ui.lua	controlled	controlled
 ui.lua	day	day
 ui.lua	days	days
+ui.lua	held as the menu took the keys. Close the menu and tap the key once to stop moving	held as the menu took the keys. Close the menu and tap the key once to stop moving
 ui.lua	hour	hour
 ui.lua	hours	hours
 ui.lua	in stock	in stock
@@ -1308,6 +1360,7 @@ ui.lua	minutes	minutes
 ui.lua	second	second
 ui.lua	seconds	seconds
 ui.lua	selected	selected
+ui.lua	timed out	timed out
 windows.lua	%d alerts	%d alerts
 windows.lua	%d items missing	%d items missing
 windows.lua	1 alert	1 alert
