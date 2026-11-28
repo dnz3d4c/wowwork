@@ -2,7 +2,7 @@ WowVision 한국어판 테스트 설치 안내
 
 테스터용 안내입니다. WowVisionInstaller.exe를 실행해 설치하고, 업데이트도 같은 파일로 진행합니다. 이 설치 프로그램은 원본 WowVision 설치 프로그램 1.6을 바탕으로 합니다. 화면 문구를 한국어로 보여 주고, 설치나 업데이트를 마칠 때마다 WowVision에 한국어 문구를 덮어쓰며, 한국어 음성 팩(Yuna)와 NVDA 음성 브리지를 기본으로 설치합니다. 이 브리지로 센스 리더에도 말할 수 있습니다.
 
-한국어 설명서: https://dnz3d4c.github.io/WowVision/user/ko/getting-started/introduction.html
+한국어 설명서: https://secret3532-ai.github.io/WowVision/user/ko/getting-started/introduction.html
 
 
 시작하기 전에
